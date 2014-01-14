@@ -31,7 +31,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
     class BWA3_Wind {
-      clientFiredBISPlayer = "_this call BWA3_Wind_fnc_firedEH";
+      clientFiredBISPlayer = "_this spawn BWA3_Wind_fnc_firedEH";
     };
   };
 };
