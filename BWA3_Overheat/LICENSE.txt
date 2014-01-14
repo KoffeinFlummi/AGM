@@ -17,7 +17,3 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 ADDITIONALLY, I explicitly grant the right for this software to compiled and freely distributed as a ArmA PBO together with a file which reproduces the contents of this file.
-
----------
-
-Some of the code was supplied by Ryan "Taosensai" Schultz and released under the GNU General Public License as published by the Free Software Foundation.
