@@ -5,7 +5,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F, tmr_core};
+		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
 		version = 1.0;
 		author[] = {"KoffeinFlummi"};
 		authorUrl = "http://www.bwmod.de";
@@ -60,7 +60,7 @@ class CfgAmmo {
 		// TODO: Correct airfriction for 7.62x51mm M80
 	};
 
-	class TMR_B_762x51_M118LR : B_762x51_Ball {
+	class BWA3_B_762x51_M118LR : B_762x51_Ball {
 		// http://www.snipercentral.com/m118.phtml
 		// 175gr Sierra HPBT MatchKing
 		// 1:12" rifling twist (probably, some civilian shooters like 1:10" for heavies)
@@ -127,7 +127,7 @@ class CfgMagazines {
 	class 20Rnd_762x51_Mag: CA_Magazine {
 		descriptionshort = "Caliber: 7.62x51mm M118LR<br />Rounds: 20<br />Type: M14";
 		initSpeed = 792; // 18" M14 EBR barrel
-		ammo = "TMR_B_762x51_M118LR"; // Use M118LR
+		ammo = "BWA3_B_762x51_M118LR"; // Use M118LR
 	};
 
 	class 150Rnd_762x51_Box : CA_Magazine {
