@@ -67,54 +67,54 @@ class Extended_FiredBIS_EventHandlers {
 
  // 0.114 +BWA3_RSD
 class CfgRecoils {
-	bwa3_recoil_single_mx[] =                                 {0, 0.014, 0.024+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0069+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_mx[] =                                 {0, 0.014, 0.024+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0072+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_mx[] =                 {0, 0.014, 0.011+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0036+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_mx[] =                         {0, 0.014, 0.011+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0038+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_mx[] =       			{0, 0.014, 0.024+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0069+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_mx[] =               {0, 0.014, 0.024+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0072+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_mx[] =       {0, 0.014, 0.011+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0036+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_mx[] =         {0, 0.014, 0.011+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.081+BWA3_RSD, 0, -0.0038+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_katiba[] =                         {0, 0.014, 0.022+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0068+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_katiba[] =                         {0, 0.014, 0.022+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0071+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_katiba[] =         {0, 0.014, 0.009+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0035+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_katiba[] =                 {0, 0.014, 0.009+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0037+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_katiba[] =         {0, 0.014, 0.022+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0068+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_katiba[] =           {0, 0.014, 0.022+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0071+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_katiba[] =   {0, 0.014, 0.009+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0035+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_katiba[] =     {0, 0.014, 0.009+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0037+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_mk20[] =                         {0, 0.013, 0.012+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_mk20[] =                                 {0, 0.013, 0.012+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0034+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_mk20[] =                 {0, 0.013, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_mk20[] =                 {0, 0.013, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0008+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_mk20[] =           {0, 0.013, 0.012+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_mk20[] = 						{0, 0.013, 0.012+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0034+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_mk20[] =			{0, 0.013, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_mk20[] =				{0, 0.013, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.078+BWA3_RSD, 0, -0.0008+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_vermin[] =                         {0, 0.008, 0.011+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0031+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_vermin[] =                         {0, 0.008, 0.011+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_vermin[] =         {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_vermin[] =                 {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_vermin[] =        	{0, 0.008, 0.011+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0031+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_vermin[] =        		{0, 0.008, 0.011+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_vermin[] =   {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_vermin[] =			{0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_scorpion[] =                 {0, 0.008, 0.012+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.072+BWA3_RSD, 0, -0.0030+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_scorpion[] =                         {0, 0.008, 0.013+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.072+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_scorpion[] =         {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_scorpion[] =         {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_scorpion[] =				{0, 0.008, 0.012+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.072+BWA3_RSD, 0, -0.0030+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_scorpion[] =        	{0, 0.008, 0.013+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.072+BWA3_RSD, 0, -0.0033+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_scorpion[] = {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_scorpion[] =   {0, 0.008, 0.002+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.071+BWA3_RSD, 0, -0.0007+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_mk200[] =                         {0, 0.014, 0.021+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.079+BWA3_RSD, 0, -0.0063+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_mk200[] =                         {0, 0.014, 0.021+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.079+BWA3_RSD, 0, -0.0143+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_mk200[] =         {0, 0.014, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.077+BWA3_RSD, 0, -0.0037+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_mk200[] =                 {0, 0.014, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.077+BWA3_RSD, 0, -0.0041+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_mk200[] =        	{0, 0.014, 0.021+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.079+BWA3_RSD, 0, -0.0063+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_mk200[] =        		{0, 0.014, 0.021+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.079+BWA3_RSD, 0, -0.0143+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_mk200[] =  	{0, 0.014, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.077+BWA3_RSD, 0, -0.0037+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_mk200[] =			{0, 0.014, 0.002+BWA3_MC,                0.048+BWA3_RSD, 0, 0,                0.077+BWA3_RSD, 0, -0.0041+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_zafir[] =                         {0, 0.015, 0.026+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.088+BWA3_RSD, 0, -0.0072+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_zafir[] =                         {0, 0.015, 0.026+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.088+BWA3_RSD, 0, -0.0147+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_zafir[] =         {0, 0.015, 0.004+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.080+BWA3_RSD, 0, -0.0017+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_zafir[] =                 {0, 0.015, 0.004+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.080+BWA3_RSD, 0, -0.0070+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_zafir[] =        	{0, 0.015, 0.026+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.088+BWA3_RSD, 0, -0.0072+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_zafir[] =        		{0, 0.015, 0.026+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.088+BWA3_RSD, 0, -0.0147+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_zafir[] =  	{0, 0.015, 0.004+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.080+BWA3_RSD, 0, -0.0017+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_zafir[] =			{0, 0.015, 0.004+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.080+BWA3_RSD, 0, -0.0070+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_ebr[] =                         {0, 0.014, 0.028+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0074+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_ebr[] =                                 {0, 0.014, 0.028+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0077+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_ebr[] =                 {0, 0.014, 0.013+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0038+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_auto_prone_ebr[] =                 {0, 0.014, 0.013+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0041+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_ebr[] =        		{0, 0.014, 0.028+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0074+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_ebr[] =         			{0, 0.014, 0.028+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0077+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_ebr[] =			{0, 0.014, 0.013+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0038+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_auto_prone_ebr[] =				{0, 0.014, 0.013+BWA3_MC,                0.045+BWA3_RSD, 0, 0,                0.084+BWA3_RSD, 0, -0.0041+BWA3_RCT,                 0.135+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_lrr[] =                         {0, 0.030, 0.114+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0130+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_lrr[] =                 {0, 0.030, 0.074+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0100+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_lrr[] =        		{0, 0.030, 0.114+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0130+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_lrr[] =			{0, 0.030, 0.074+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0100+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_gm6[] =                         {0, 0.030, 0.114+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0130+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_prone_gm6[] =                 {0, 0.030, 0.074+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0100+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_gm6[] =        		{0, 0.030, 0.114+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0130+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_prone_gm6[] =			{0, 0.030, 0.074+BWA3_MC,                0.043+BWA3_RSD, 0, 0,                0.250+BWA3_RSD, 0, -0.0100+BWA3_RCT,                0.430+BWA3_RSD, 0, 0};
 
-	bwa3_recoil_single_pistol9mm[] =                 {0, 0.010, 0.029+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.090+BWA3_RSD, 0, -0.0075+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
-	bwa3_recoil_single_pistol45[] =                 {0, 0.010, 0.033+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.085+BWA3_RSD, 0, -0.0079+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_pistol9mm[] =			{0, 0.010, 0.029+BWA3_MC,                0.046+BWA3_RSD, 0, 0,                0.090+BWA3_RSD, 0, -0.0075+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
+	bwa3_recoil_single_pistol45[] =				{0, 0.010, 0.033+BWA3_MC,                0.047+BWA3_RSD, 0, 0,                0.085+BWA3_RSD, 0, -0.0079+BWA3_RCT,                0.135+BWA3_RSD, 0, 0};
 };
 
 class CfgCameraShake {
