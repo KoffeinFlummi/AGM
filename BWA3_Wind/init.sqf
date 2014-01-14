@@ -19,7 +19,7 @@ BWA3_Wind_fnc_firedEH = {
   _interval = 0.1;
 
   0 spawn {
-    while (!isNull _projectile and alive _round) do {
+    while (!isNull _round and alive _round) do {
       _windX = wind select 0;
       _windY = wind select 1;
 
