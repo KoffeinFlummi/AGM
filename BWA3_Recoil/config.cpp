@@ -5,7 +5,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {A3_Weapons_F, A3_Anims_F, BWA3_Weapons};
+		requiredAddons[] = {A3_Weapons_F, A3_Anims_F, BWA3_Smallarms};
 		version = 1.0;
 		author[] = {"KoffeinFLummi"};
 		authorUrl = "http://www.bwmod.de";
