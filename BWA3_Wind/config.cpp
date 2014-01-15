@@ -35,12 +35,3 @@ class Extended_FiredBIS_EventHandlers {
     };
   };
 };
-
-class CfgAmmo {
-  class Default {
-    BWA3_windCoefficient = 1;
-  };
-  class GrenadeCore: Default {
-    BWA3_windCoefficient = 0.2;
-  };
-};
