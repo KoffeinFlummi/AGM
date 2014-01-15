@@ -49,7 +49,6 @@ BWA3_Wind_fnc_firedEH = {
 // Wind Reading
 0 spawn {
   while {true} do {
-    hint "";
     waitUntil {inputAction "Compass" > 0 or inputAction "CompassToggle" > 0};
     _windStrength = sqrt((wind select 0) ^ 2 + (wind select 1) ^ 2);
     _windOrigin = (windDir + 180) % 360;
@@ -83,5 +82,6 @@ BWA3_Wind_fnc_firedEH = {
     };
 
     sleep 0.05;
+    hint "";
   };
 };
