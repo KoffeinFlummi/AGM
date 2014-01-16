@@ -200,8 +200,11 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    displayName = "L-39 Albatros";
+    displayName = "L-39 Albatros (CAS)";
     lockDetectionSystem = 16;
+  };
+  class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
+    displayName = "L-39 Albatros (AA)";
   };
 
   // OPFOR
