@@ -120,6 +120,7 @@ class CfgVehicles {
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    displayName = "RAH-66 Comanche";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -144,6 +145,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
+    displayName = "MH-6 Little Bird";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -153,6 +155,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
+    displayName = "AH-6 Little Bird";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -164,6 +167,7 @@ class CfgVehicles {
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
+    displayName = "AW159 Wildcat";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -173,6 +177,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+    displayName = "AW159 Wildcat (unarmed)";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -182,6 +187,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
+    displayName = "AW101 Merlin";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -194,6 +200,7 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
+    displayName = "L-39 Albatros";
     lockDetectionSystem = 16;
   };
 
@@ -217,6 +224,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
+    displayName = "Ka-60 Kasatka";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -229,6 +237,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
+    displayName = "Ka-60 Kasatka (unarmed)";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
