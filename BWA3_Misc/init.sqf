@@ -1,7 +1,7 @@
 // BWA3 Misc - IR Strobes
 // (C) 2013 KoffeinFlummi. See LICENSE.
 
-BWA3_Misc_fnc_attachStrobe = {
+BWA3_Misc_fnc_activateStrobe = {
   private ["_unit","_strobeClass", "_strobe"];
 
   _unit = _this select 1;
@@ -23,7 +23,7 @@ BWA3_Misc_fnc_attachStrobe = {
   _strobe attachTo [_unit, [0,0,0.2], "neck"];
 };
 
-BWA3_Misc_fnc_detachStrobe = {
+BWA3_Misc_fnc_deactivateStrobe = {
   private ["_unit"];
 
   _unit = _this select 1;
@@ -38,5 +38,10 @@ BWA3_Misc_fnc_detachStrobe = {
 };
 
 player setVariable ["BWA3_IRStrobe", ""];
-player addAction ["Activate Strobelight", {_this call BWA3_Misc_fnc_attachStrobe}, "", 0, false, true, "", "('B_IR_Grenade' in (magazines player) or 'I_IR_Grenade' in (magazines player) or 'O_IR_Grenade' in (magazines player)) and player getVariable 'BWA3_IRStrobe' == ''"];
-player addAction ["Deactivate Strobelight", {_this call BWA3_Misc_fnc_detachStrobe}, "", 0, false, true, "", "!isNull(player getVariable 'BWA3_IRStrobe')"];
+player addAction ["Activate Strobelight", {_this call BWA3_Misc_fnc_activateStrobe}, "", 0, false, true, "", "('B_IR_Grenade' in (magazines player) or 'I_IR_Grenade' in (magazines player) or 'O_IR_Grenade' in (magazines player)) and player getVariable 'BWA3_IRStrobe' == ''"];
+player addAction ["Deactivate Strobelight", {_this call BWA3_Misc_fnc_deactivateStrobe}, "", 0, false, true, "", "!isNull(player getVariable 'BWA3_IRStrobe')"];
+
+// Init EH for vehicles
+BWA3_Misc_fnc_initEH = {
+
+};

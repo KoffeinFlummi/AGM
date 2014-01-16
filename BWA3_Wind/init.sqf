@@ -21,6 +21,18 @@ BWA3_Wind_fnc_firedEH = {
   _interval = 0.05;
   _oldtime = time;
 
+  // HUMIDITY
+  _fog = fogParams select 0;
+  _velocity = velocity _round;
+  _velocityX = _velocity select 0;
+  _velocityY = _velocity select 1;
+  _velocityZ = _velocity select 2;
+  _velocityNewX = _velocityX - _velocityX * _fog * 0.2;
+  _velocityNewY = _velocityY - _velocityY * _fog * 0.2;
+  _velocityNewZ = _velocityZ - _velocityZ * _fog * 0.2;
+  _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
+
+  // WIND
   while {!isNull _round and alive _round} do {
     _windX = wind select 0;
     _windY = wind select 1;
