@@ -34,6 +34,8 @@ _unit spawn {
     // Determine if unit is revivable.
     if (_unit getHitPointDamage "HitHead" < 0.5 or _unit getHitPointDamage "HitBody" < 1 and _unit getVariable "BWA3_Blood" > 0.2) then {
       _unit setVariable ["BWA3_CPR", 1];
+    } else {
+      _unit setVariable ["BWA3_CPR", 0];
     };
   };
 
