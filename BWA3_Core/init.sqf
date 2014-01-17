@@ -4,7 +4,7 @@
 
 // MP Synchronization
 0 spawn {
-  while {true} do {
+  while {isMultiplayer} do {
     if (isServer) then {
       BWA3_Date = date;
       BWA3_Wind = wind;
