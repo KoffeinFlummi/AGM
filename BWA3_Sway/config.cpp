@@ -45,25 +45,6 @@ class CfgMods {
 #define TMR_SWAY_50 4.8
 #define TMR_SWAY_70 6.8
 
-// #define TMR_SWAY_005 0
-// #define TMR_SWAY_01 0
-// #define TMR_SWAY_03 0
-// #define TMR_SWAY_05 0
-// #define TMR_SWAY_055 0
-// #define TMR_SWAY_07 0
-// #define TMR_SWAY_10 0
-// #define TMR_SWAY_105 1
-// #define TMR_SWAY_12 0
-// #define TMR_SWAY_15 0
-// #define TMR_SWAY_165 0
-// #define TMR_SWAY_17 0
-// #define TMR_SWAY_20 0
-// #define TMR_SWAY_25 0
-// #define TMR_SWAY_30 0
-// #define TMR_SWAY_40 0
-// #define TMR_SWAY_50 0
-// #define TMR_SWAY_70 0
-
 
 class CfgMovesBasic {
   class Default {
