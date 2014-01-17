@@ -20,7 +20,7 @@
       sleep 3;
       setDate BWA3_Date;
       setWind (BWA3_Wind + [false]);
-      setFog BWA3_Fog;
+      0 setFog BWA3_Fog;
       setOvercast BWA3_Overcast;
       setRain BWA3_Rain;
     };
