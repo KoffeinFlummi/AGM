@@ -24,6 +24,6 @@
       setOvercast BWA3_Overcast;
       setRain BWA3_Rain;
     };
-    sleep 120;
+    sleep 30;
   }
 }
