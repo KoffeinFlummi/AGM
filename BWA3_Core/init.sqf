@@ -4,26 +4,19 @@
 
 // MP Synchronization
 0 spawn {
-  while {isMultiplayer} do {
+  if (!isMultiplayer) exitWith {};
+  while {true} do {
     if (isServer) then {
-      BWA3_Date = date;
-      BWA3_Wind = wind;
-      BWA3_Fog = fogParams;
-      BWA3_Overcast = overcast;
-      BWA3_Rain = rain;
-      publicVariable "BWA3_Date";
-      publicVariable "BWA3_Wind";
-      publicVariable "BWA3_Fog";
-      publicVariable "BWA3_Overcast";
-      publicVariable "BWA3_Rain";
+      BWA3_Weather = [date, wind, fogParams, overcast, rain];
+      publicVariable "BWA3_Weather";
     } else {
       sleep 3;
-      setDate BWA3_Date;
-      setWind (BWA3_Wind + [false]);
-      0 setFog BWA3_Fog;
-      0 setOvercast BWA3_Overcast;
-      0 setRain BWA3_Rain;
+      setDate (BWA3_Weather select 0);
+      setWind ((BWA3_Weather select 1) + [false]);
+      0 setFog (BWA3_Weather select 2);
+      0 setOvercast (BWA3_Weather select 3);
+      0 setRain (BWA3_Weather select 4);
     };
-    sleep 30;
+    sleep 300;
   }
 }
