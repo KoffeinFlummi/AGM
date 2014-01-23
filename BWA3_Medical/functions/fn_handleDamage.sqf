@@ -28,10 +28,16 @@ _unit spawn {
   _this setHitPointDamage ["HitLegs", 0];
   _this setHitPointDamage ["HitHands", 0];
 
+  _unit setVariable ["BWA3_Diagnose", false];
+
+  if (damage _unit * _unit getHitPointDamage "BWA3_Painkiller" > _unit getVariable "BWA3_Pain") then {
+    _unit setVariable ["BWA3_Pain", damage _unit * _unit getHitPointDamage "BWA3_Painkiller"];
+  };
+
   // Check if unit is already dead
   if (damage _unit == 1) then {
     // Determine if unit is revivable.
-    if (_unit getHitPointDamage "HitHead" < 0.5 or _unit getHitPointDamage "HitBody" < 1 and _unit getVariable "BWA3_Blood" > 0.2) then {
+    if (_unit getHitPointDamage "HitHead" < 0.5 and _unit getHitPointDamage "HitBody" < 1 and _unit getVariable "BWA3_Blood" > 0.2) then {
       _unit setVariable ["BWA3_CPR", 1];
     } else {
       _unit setVariable ["BWA3_CPR", 0];
@@ -66,7 +72,7 @@ _unit spawn {
 
   // Pain
   #define PAINKILLERTRESHOLD 0.1;
-  #define PAINTRESHOLD 0;
+  #define PAINTRESHOLD 0.1;
   _this spawn {
     while {_this getVariable "BWA3_Pain" > PAINTRESHOLD and _this getVariable "BWA3_Painkiller" > PAINKILLERTRESHOLD} do {
       //Pain effect (later)
