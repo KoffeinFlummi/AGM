@@ -4,7 +4,7 @@ Author: KoffeinFlummi
 Do I really need to explain what this does?!
 */
 
-_this addEventHandler ["HandleDamage", {[_this] call BWA3_fnc_handleDamage}];
+_this addEventHandler ["HandleDamage", {[_this] call BWA3_Medical_fnc_handleDamage}];
 
 _this setVariable ["BWA3_Blood", 1];      // Amount of blood in the body.
 _this setVariable ["BWA3_Bleeding", 0];   // Is the unit losing blood? (Rate is determined by damage.)

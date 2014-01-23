@@ -12,7 +12,6 @@ Arguments:
 
 Return value:
 Damage value to be inflicted (optional)
-
 */
 
 _unit = _this select 0;
@@ -23,11 +22,11 @@ _projectile = _this select 4;
 
 // Code to be executed AFTER damage was dealt
 _unit spawn {
-  sleep 0.01;
+  sleep 0.001;
 
   // Reset "unused" hitpoints.
-  _this setHitPointDamage ["HitLegs", 1];
-  _this setHitPointDamage ["HitHands", 1];
+  _this setHitPointDamage ["HitLegs", 0];
+  _this setHitPointDamage ["HitHands", 0];
 
   // Check if unit is already dead
   if (damage _unit == 1) then {
@@ -96,78 +95,3 @@ _unit spawn {
   };
 
 };
-
-/*
-
-if (isNull(_source)) then {
-  0;
-};
-
-// If damage caused by projectile would be fatal anyways, unit is killed off
-if (_damage >= 1) {
-  1;
-};
-
-// PAIN
-_painOld = player getVariable "FluCo_Pain";
-_painNew = _painOld + _damage * (1 - _painOld) / 2;
-if (_painNew >= 1) then {
-  1;
-};
-player setVariable ["FluCo_Pain", _painNew];
-
-// FATAL HITS
-if (_selectionName == "head") then {
-  _fatalTreshold = random 1;
-
-  if (_fatalTreshold < _damage) then {
-    1;
-  };
-
-  _damageOld = player getVariable "FluCo_HitHead";
-  _damageNew = _damageOld + _damage;
-  player setVariable ["FluCo_HitHead", _damageNew];
-  
-  _bleedingOld = player getVariable "FluCo_BleedHead";
-  _bleedingNew = _bleedingOld + _damage / 100;
-  player setVariable ["FluCo_BleedHead", _bleedinNew];
-
-  if (_damageNew >= 1) then {
-    1;
-  };
-
-  if (_damageNew >= 0.7) {
-    // pass out
-  };
-
-  0;
-};
-if (_selectionName == "body") then {
-  _fatalTreshold = random 3;
-
-  if (_fatalTreshold < _damage) then {
-    1;
-  };
-
-  _damageOld = player getVariable "FluCo_HitBody";
-  _damageNew = _damageOld + _damage;
-  player setVariable ["FluCo_HitBody", _damageNew];
-  
-  _bleedingOld = player getVariable "FluCo_BleedBody";
-  _bleedingNew = _bleedingOld + _damage / 100;
-  player setVariable ["FluCo_BleedBody", _bleedinNew];
-
-  if (_damageNew >= 1) then {
-    1;
-  };
-
-  if (_damageNew >= 0.7) {
-    // pass out
-  };
-
-  0;
-};
-
-// NONFATAL HITS
-
-*/
