@@ -42,7 +42,7 @@ BWA3_Wind_fnc_firedEH = {
     _velocityY = _velocity select 1;
     _velocityZ = _velocity select 2;
     
-    // Use actual time delay between iterations instead of sleep to account for ultra-low framerates.
+    // Use actual time delay between iterations instead of set interval to account for ultra-low framerates.
     _newtime = time;
     _deltaTime = _newtime - _oldtime;
 
@@ -75,7 +75,7 @@ BWA3_Wind_fnc_firedEH = {
       case (_windStrength <= 7) :   {_strengthString = "Moderate"; _colorString = "99FF00";};
       default                       {_strengthString = "Strong"; _colorString = "FF6600";};
     };
-
+/*
     switch true do {
       case (_windOrigin > 22.5 and _windOrigin <= 67.5) : {_originString = "NE";};
       case (_windOrigin > 67.5 and _windOrigin <= 112.5) : {_originString = "E";};
@@ -85,7 +85,9 @@ BWA3_Wind_fnc_firedEH = {
       case (_windOrigin > 247.5 and _windOrigin <= 292.5) : {_originString = "W";};
       case (_windOrigin > 292.5 and _windOrigin <= 337.5) : {_originString = "NW";};
       default {_originString = "N"};
-    };
+    };*/
+
+    _originString = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] select (round ((_windOrigin % 360) / 45) % 8);
 
     if (_windStrength <= 0.5) then {
       hintSilent "No measurable wind";
