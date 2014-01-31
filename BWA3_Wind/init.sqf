@@ -22,15 +22,20 @@ BWA3_Wind_fnc_firedEH = {
   _oldtime = time;
 
   // HUMIDITY
-  _fog = fogParams select 0;
+  _humidity = (fogParams select 0 + rain) / 2;
+  // CORIOLIS FORCE
+  _latitude = abs getNumber(configFile >> "CfgWorlds" >> worldName >> "latitude");
+  _speed = cos _latitude * 456.1; // Eastward angular speed in m/s
+
   _velocity = velocity _round;
   _velocityX = _velocity select 0;
   _velocityY = _velocity select 1;
   _velocityZ = _velocity select 2;
-  _velocityNewX = _velocityX - _velocityX * _fog * 0.2;
-  _velocityNewY = _velocityY - _velocityY * _fog * 0.2;
-  _velocityNewZ = _velocityZ - _velocityZ * _fog * 0.2;
+  _velocityNewX = _velocityX - _velocityX * _humidity * 0.3;
+  _velocityNewY = _velocityY - _velocityY * _humidity * 0.3;
+  _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.3;
   _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
+
 
   // WIND
   while {!isNull _round and alive _round} do {
@@ -75,17 +80,6 @@ BWA3_Wind_fnc_firedEH = {
       case (_windStrength <= 7) :   {_strengthString = "Moderate"; _colorString = "99FF00";};
       default                       {_strengthString = "Strong"; _colorString = "FF6600";};
     };
-/*
-    switch true do {
-      case (_windOrigin > 22.5 and _windOrigin <= 67.5) : {_originString = "NE";};
-      case (_windOrigin > 67.5 and _windOrigin <= 112.5) : {_originString = "E";};
-      case (_windOrigin > 112.5 and _windOrigin <= 157.5) : {_originString = "SE";};
-      case (_windOrigin > 157.5 and _windOrigin <= 202.5) : {_originString = "S";};
-      case (_windOrigin > 202.5 and _windOrigin <= 247.5) : {_originString = "SW";};
-      case (_windOrigin > 247.5 and _windOrigin <= 292.5) : {_originString = "W";};
-      case (_windOrigin > 292.5 and _windOrigin <= 337.5) : {_originString = "NW";};
-      default {_originString = "N"};
-    };*/
 
     _originString = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] select (round ((_windOrigin % 360) / 45) % 8);
 

@@ -12,12 +12,19 @@ class CfgPatches {
 class CfgFunctions {
   class BWA3_Medical {
     class BWA3_Medical {
-        file = "BWA3_Medical\functions";
-      class init {};
+      file = "BWA3_Medical\functions";
+      class bandage {};
+      class cpr {};
+      class diagnose {};
+      class drag {};
+      class epinephrine {};
       class handleDamage {};
-      class knockOut {};
-      class wakeUp {};
+      class init {};
       class infoDump {};
+      class knockOut {};
+      class morphine {};
+      class undrag {};
+      class wakeUp {};
     };
   };
 };
@@ -29,6 +36,8 @@ class Extended_Init_EventHandlers {
     };
   };
 };
+
+// ACTIONS OVER CONFIG ?
 
 class CfgVehicles {
 

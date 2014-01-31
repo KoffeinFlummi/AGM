@@ -5,7 +5,7 @@ class CfgPatches {
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
     version = 1.0;
-    author[] = {"KoffeinFLummi"};
+    author[] = {"KoffeinFlummi"};
     authorUrl = "http://www.bwmod.de";
   };
 };
@@ -41,19 +41,23 @@ class CfgVehicles {
   // Basic Inheritance
   class AllVehicles;
   class Air: AllVehicles {
+    class AnimationSources;
     class Turrets;
   };
   class Helicopter: Air {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret;
     };
   };
   class Helicopter_Base_F: Helicopter {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
   };
   class Helicopter_Base_H: Helicopter_Base_F {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
       class CopilotTurret;
@@ -82,6 +86,7 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {};
       class RightDoorGun;
     };
+
   };
 
   // INDEP Inheritance
