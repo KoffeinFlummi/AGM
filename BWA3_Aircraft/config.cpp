@@ -5,7 +5,7 @@ class CfgPatches {
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
     version = 1.0;
-    author[] = {"KoffeinFLummi"};
+    author[] = {"KoffeinFlummi"};
     authorUrl = "http://www.bwmod.de";
   };
 };
