@@ -69,9 +69,6 @@ BWA3_Wind_fnc_firedEH = {
     waitUntil {inputAction "Compass" > 0 or inputAction "CompassToggle" > 0};
     _windStrength = sqrt((wind select 0) ^ 2 + (wind select 1) ^ 2);
     _windOrigin = (windDir + 180) % 360;
-    _strengthString = "";
-    _colorString = "";
-    _originString = "";
 
     switch true do {
       case (_windStrength <= 0.5) : {_strengthString = "No measurable"; _colorString = "FFFFFF";};
@@ -81,7 +78,7 @@ BWA3_Wind_fnc_firedEH = {
       default                       {_strengthString = "Strong"; _colorString = "FF6600";};
     };
 
-    _originString = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] select (round ((_windOrigin % 360) / 45) % 8);
+    _originString = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] select (round (_windOrigin / 45) % 8);
 
     if (_windStrength <= 0.5) then {
       hintSilent "No measurable wind";
