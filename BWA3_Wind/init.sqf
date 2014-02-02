@@ -22,15 +22,20 @@ BWA3_Wind_fnc_firedEH = {
   _oldtime = time;
 
   // HUMIDITY
-  _fog = fogParams select 0;
+  _humidity = (fogParams select 0 + rain) / 2;
+  // CORIOLIS FORCE
+  _latitude = abs getNumber(configFile >> "CfgWorlds" >> worldName >> "latitude");
+  _speed = cos _latitude * 456.1; // Eastward angular speed in m/s
+
   _velocity = velocity _round;
   _velocityX = _velocity select 0;
   _velocityY = _velocity select 1;
   _velocityZ = _velocity select 2;
-  _velocityNewX = _velocityX - _velocityX * _fog * 0.2;
-  _velocityNewY = _velocityY - _velocityY * _fog * 0.2;
-  _velocityNewZ = _velocityZ - _velocityZ * _fog * 0.2;
+  _velocityNewX = _velocityX - _velocityX * _humidity * 0.3;
+  _velocityNewY = _velocityY - _velocityY * _humidity * 0.3;
+  _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.3;
   _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
+
 
   // WIND
   while {!isNull _round and alive _round} do {

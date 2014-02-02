@@ -41,19 +41,23 @@ class CfgVehicles {
   // Basic Inheritance
   class AllVehicles;
   class Air: AllVehicles {
+    class AnimationSources;
     class Turrets;
   };
   class Helicopter: Air {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret;
     };
   };
   class Helicopter_Base_F: Helicopter {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
   };
   class Helicopter_Base_H: Helicopter_Base_F {
+    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
       class CopilotTurret;
@@ -77,11 +81,45 @@ class CfgVehicles {
     };
   };
   class Heli_Transport_01_base_F: Helicopter_Base_H {
+    gearRetracting = 0;
+    class AnimationSources: AnimationSources {
+      class RearRightCover {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class RearLeftCover {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class RightGear {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class LeftGear {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class RightGear_hide {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class LeftGear_hide {
+        source = "::gear";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+    };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
       class CopilotTurret: CopilotTurret {};
       class RightDoorGun;
     };
+
   };
 
   // INDEP Inheritance
