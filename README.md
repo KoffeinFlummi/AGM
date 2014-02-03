@@ -7,9 +7,9 @@ A modular realism mod based on Taosensai's work.
 ## Philosophy
 
 *   **Open Source** 
-*   **Modular Setup**
+*   **Modular Setup**  
 Disable/Delete features you don't want
-*   **No Bullshit**
+*   **No Bullshit**  
 No gimmicky features that don't add anything to gameplay and are out of place in Arma, like aerial refueling.
 
 ## Features
