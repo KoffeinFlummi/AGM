@@ -1,27 +1,32 @@
 BWA3 Realism
 ============
 
-A modular realism mod based on Taosensai's work.
+A modular realism mod for Arma 3 based on Taosensai's work.
 
 
 ## Philosophy
 
-*   **Open Source** 
+*   **Open Source**  
+Everyone is free to fork this and make contributions.
 *   **Modular Setup**  
-Disable/Delete features you don't want
+Disable/Delete features you don't want.
 *   **No Bullshit**  
-No gimmicky features that don't add anything to gameplay and are out of place in Arma, like aerial refueling.
+No gimmicky features that don't add anything to gameplay and are out of place in Arma.
 
 ## Features
 
-- **Medical System**
-*Detailed damagemodel, unconsciousness, in-depth treatment...*
-- **Logistical System**
-*Fuel Cannisters, changing vehicle magazines, replace wheels...*
-- **Detailed Ballistics**
-*Wind & humidity influence bullet path.*
-- **Overheating**
-*Overheating, jams & barrel changes*
-- **IR Strobes**
-*Attach IR Strobes to helmets and vehicles.*
-...
+*   **Medical System**  
+    *   detailed damagemodel
+    *   bleeding
+    *   pain
+    *   detailed treatment
+*   **Logistical System**  
+    *   vehicle refueling & rearming
+    *   towing & airlifting vehicles
+*   **Detailed Ballistics**  
+    *   realistic ballistic data
+    *   wind & humidity affect bullet trajectory
+*   **Overheating**  
+Overheating, jams & barrel changes
+*   **IR Strobes**  
+Attach IR Strobes to helmets and vehicles.
