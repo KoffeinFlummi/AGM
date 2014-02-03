@@ -16,17 +16,20 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 ## Features
 
 *   **Medical System**  
-    *   detailed damagemodel
+    *   detailed damage model
     *   bleeding
     *   pain
+    *   unconsciousness
     *   detailed treatment
+    *   patient transport
 *   **Logistical System**  
     *   vehicle refueling & rearming
     *   towing & airlifting vehicles
 *   **Detailed Ballistics**  
     *   realistic ballistic data
-    *   wind & humidity affect bullet trajectory
+    *   Wind & humidity affect bullet trajectory
 *   **Overheating**  
-Overheating, jams & barrel changes
-*   **IR Strobes**  
-Attach IR Strobes to helmets and vehicles.
+    *   Guns can overheat and jam
+    *   Barrels can be changed.
+*   **Misc**  
+    *   Attach IR Strobes to helmets and vehicles.
