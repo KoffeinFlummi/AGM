@@ -22,20 +22,6 @@ class CfgMods {
   };
 };
 
-class Mode_Burst;
-
-// Manual Switching Of Flare Mode
-class CfgWeapons {
-  class SmokeLauncher;
-
-  class CMFlareLauncher: SmokeLauncher {
-    modes[] = {"Single", "Burst", "AIBurst"};
-    class Burst: Mode_Burst {
-      displayName = "Burst";
-    };
-  };
-};
-
 
 class CfgVehicles {
 
