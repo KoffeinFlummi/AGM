@@ -32,8 +32,4 @@ _string = "Hands: " + str(floor ((_unit getHitPointDamage "HitHands") * 100) / 1
           "---------------\n" +
           "Damage: " + str(damage _unit);
 
-<<<<<<< HEAD
 hintSilent _string;
-=======
-hintSilent _string;
->>>>>>> 9e20256c5909d23a9d88483fa966fca015dd6f1a
