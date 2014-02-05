@@ -30,7 +30,7 @@ if (_unit getVariable "BWA3_Epinephrine") then {
   _successrate = _successrate * EPIMULTIPLIER;
 }
 
-player switchMove "placeholder"; // cpr animation
+player switchMove "Acts_TreatingWounded01"; // cpr animation
 
 // START COUNTDOWN RSC
 
@@ -53,4 +53,4 @@ if (_cpr <= 0) then {
   _unit setVariable ["BWA3_Dead", _cpr];
 }
 
-player switchMove "backtonormal";
+player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

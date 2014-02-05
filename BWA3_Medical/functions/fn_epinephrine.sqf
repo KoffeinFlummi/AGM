@@ -26,7 +26,7 @@ if (true) then { // later
   _epitime = EPITIMENONMEDIC;
 };
 
-player switchMove "placeholder"; // healing animation
+player switchMove "Acts_TreatingWounded02"; // healing animation
 
 // START COUNTDOWN RSC
 
@@ -42,4 +42,4 @@ while (_i > 0) then {
 
 _unit setVariable ["BWA3_Epinephrine", true];
 
-player switchMove "backtonormal";
+player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

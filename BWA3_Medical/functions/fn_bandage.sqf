@@ -27,7 +27,7 @@ if (true) then { // later
   _healtime = BANDAGETIMENONMEDIC;
 };
 
-player switchMove "placeholder"; // healing animation
+player switchMove "Acts_TreatingWounded03"; // healing animation
 
 // START COUNTDOWN RSC
 
@@ -45,4 +45,4 @@ _damage = _unit getHitPointDamage _selection - BANDAGEHEAL;
 if (_damage < 0) then {_damage = 0;};
 _unit setHitPointDamage [_selection, _damage];
 
-player switchMove "backtonormal";
+player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";
