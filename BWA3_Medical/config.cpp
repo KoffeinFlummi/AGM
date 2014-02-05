@@ -20,7 +20,6 @@ class CfgFunctions {
       class epinephrine {};
       class handleDamage {};
       class init {};
-      class infoDump {};
       class knockOut {};
       class morphine {};
       class undrag {};

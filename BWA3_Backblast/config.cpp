@@ -26,15 +26,40 @@ class Extended_FiredNear_EventHandlers {
 };
 
 class CfgWeapons {
-  class Launcher_Base_F;
-
-  class BWA3_Pzf3: Launcher_Base_F {
+  class Launcher_Base_F {
+    BWA3_Backblast_Angle = 60;
+    BWA3_Backblast_Range = 5;
+    BWA3_Backblast_Damage = 0.5;
+  };
+  
+  class launch_Titan_short_base {
+    BWA3_Backblast_Angle = 40;
+    BWA3_Backblast_Range = 3;
+    BWA3_Backblast_Damage = 0.4;
+  };
+  class launch_Titan_base {
+    BWA3_Backblast_Angle = 40;
+    BWA3_Backblast_Range = 3;
+    BWA3_Backblast_Damage = 0.2;
+  };
+  
+  class launch_NLAW_F {
+    BWA3_Backblast_Angle = 40;
+    BWA3_Backblast_Range = 5;
+    BWA3_Backblast_Damage = 0.5;
+  };
+  class launch_RPG32_F {
     BWA3_Backblast_Angle = 60;
     BWA3_Backblast_Range = 10;
     BWA3_Backblast_Damage = 0.5;
   };
-
-  class BWA3_RGW90: Launcher_Base_F {
+  
+  class BWA3_Pzf3 {
+    BWA3_Backblast_Angle = 60;
+    BWA3_Backblast_Range = 10;
+    BWA3_Backblast_Damage = 0.5;
+  };
+  class BWA3_RGW90 {
     BWA3_Backblast_Angle = 60;
     BWA3_Backblast_Range = 2;
     BWA3_Backblast_Damage = 0.5;
