@@ -144,7 +144,63 @@ class CfgVehicles {
         name = "RightFoot";
       };
     };
+
+    class UserActions {
+      // See http://community.bistudio.com/wiki/UserActions for doc
+      // Ideas for later:
+      // - Color Coding
+      // - Icons
+
+      #define DEFAULTCONDITIONS this != player
+
+      class Drag {
+        displayName = "Drag";         // name in action menu
+        displayNameDefault = "";      // name on screen (icons)
+        priority = 6;                 // 0 (low) - 6 (high)
+        position = "leaning_axis";    // memory point of model
+        radius = 3;                   // minimum distance for the action to be available
+        showWindow = false;           // show text/icon on screen
+        onlyForPlayer = false;        // enable AI to be ordered to do something
+        shortcut = "";                // key (CfgDefaultKeyMappings)
+        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Unconscious'";
+        statement = "[this] call BWA3_Medical_fnc_drag";
+      };
+      class Carry: Drag {
+        displayName = "Carry";
+        priority = 5.99;
+        statement = "[this] call BWA3_Medical_fnc_carry";
+      };
+      class Diagnose: Drag {
+        displayName = "Diagnose";
+        priority = 5.98;
+        condition = "DEFAULTCONDITIONS";
+        statement = "[this] call BWA3_Medical_fnc_diagnose";
+      };
+
+      class CPR: Drag {
+        displayName = "Perform CPR";
+        priority = 5.9;
+        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Dead' > 0";
+        statement = "[this] call BWA3_Medical_fnc_CPR";
+      };
+      class Epinephrine: Drag {
+        displayName = "Inject Epinephrine";
+        priority = 5.89;
+        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Dead' > 0";
+        statement = "[this] call BWA3_Medical_fnc_epinephrine";
+      };
+      class Morphine: Drag {
+        displayName = "Inject Morphine";
+        priority = 5.88;
+        condition = "DEFAULTCONDITIONS";
+        statement = "[this] call BWA3_Medical_fnc_morphine";
+      };
+
+    };
   };
+
+  // Copy SoldierWB over to these once 'done'
+  /*
   class SoldierEB {
     armor = 1.5;
     armorStructural = 4.5;
@@ -351,6 +407,7 @@ class CfgVehicles {
       };
     };
   };
+  */
 
   class BWA3_Medical_CollisionHelper: Land_CargoBox_V1_F {
     model = "\BWA3_Medical\BWA3_Medical_Helper.p3d";

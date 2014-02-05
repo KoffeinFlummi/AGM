@@ -19,6 +19,7 @@ if (_unit == player) then {
 };
 
 // Not possible to ragdollize on command, so we slam a 'vehicle' in his face.
+_unit setCaptive 13;
 _unit allowDamage false;
 _eh = _unit addEventHandler ["EpeContactStart", {(_this select 0) setVariable ["BWA3_Collision", (_this select 1)];}];
 
