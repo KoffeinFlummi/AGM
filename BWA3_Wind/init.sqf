@@ -1,9 +1,12 @@
 // BWA3 Realism - Wind Simulation
 // (C) 2013 KoffeinFlummi. See LICENSE.
 
+#define BWA3_INTERVAL 0.05;
 
 // Fired EH
 BWA3_Wind_fnc_firedEH = {
+  private ["_unit", "_weaponType", "_ammoType", "_round", "_coefficient", "_humidity", "_velocity", "_velocityX", "_velocityY", "_velocityZ", "_velocityNewX", "_velocityNewY", "_velocityNewZ", "_deltaTime", "_time"];
+
   _unit = _this select 0;
   _weaponType = _this select 1;
   _ammoType = _this select 4;
@@ -18,15 +21,9 @@ BWA3_Wind_fnc_firedEH = {
   if (_round isKindOf "GrenadeCore") then {
     _coefficient = 0.3;
   };
-  _interval = 0.05;
-  _oldtime = time;
 
   // HUMIDITY
   _humidity = (fogParams select 0 + rain) / 2;
-  // CORIOLIS FORCE
-  _latitude = abs getNumber(configFile >> "CfgWorlds" >> worldName >> "latitude");
-  _speed = cos _latitude * 456.1; // Eastward angular speed in m/s
-
   _velocity = velocity _round;
   _velocityX = _velocity select 0;
   _velocityY = _velocity select 1;
@@ -36,28 +33,23 @@ BWA3_Wind_fnc_firedEH = {
   _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.3;
   _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
 
-
+  _time = time;
   // WIND
   while {!isNull _round and alive _round} do {
-    _windX = wind select 0;
-    _windY = wind select 1;
-
     _velocity = velocity _round;
     _velocityX = _velocity select 0;
     _velocityY = _velocity select 1;
-    _velocityZ = _velocity select 2;
     
     // Use actual time delay between iterations instead of set interval to account for ultra-low framerates.
-    _newtime = time;
-    _deltaTime = _newtime - _oldtime;
+    _deltaTime = time - _time;
 
-    _velocityNewX = _velocityX + _coefficient * _windX * _deltaTime;
-    _velocityNewY = _velocityY + _coefficient * _windY * _deltaTime;
+    _velocityNewX = _velocityX + _coefficient * (wind select 0) * _deltaTime;
+    _velocityNewY = _velocityY + _coefficient * (wind select 1) * _deltaTime;
 
     _round setVelocity [_velocityNewX, _velocityNewY, _velocityZ];
 
-    _oldtime = time;
-    sleep _interval;
+    _time = time;
+    sleep BWA3_INTERVAL;
   };
   
 };

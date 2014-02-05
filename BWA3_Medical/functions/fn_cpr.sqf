@@ -44,13 +44,13 @@ while (_i > 0) then {
 
 // STOP COUNTDOWN RSC
 
-_cpr = (_unit getVariable "BWA3_CPR") - random _successrate;
+_cpr = (_unit getVariable "BWA3_Dead") - random _successrate;
 
 if (_cpr <= 0) then {
-  _unit setVariable ["BWA3_CPR", 0];
+  _unit setVariable ["BWA3_Dead", 0];
   [_unit] call BWA3_Medical_fnc_revive;
 } else {
-  _unit setVariable ["BWA3_CPR", _cpr];
+  _unit setVariable ["BWA3_Dead", _cpr];
 }
 
 player switchMove "backtonormal";
