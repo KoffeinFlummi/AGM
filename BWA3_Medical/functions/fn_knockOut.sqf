@@ -10,7 +10,7 @@ Return Values:
 None
 */
 
-privat ["_unit", "_eh", "_helper"];
+private ["_unit", "_eh", "_helper"];
 
 _unit = _this select 0;
 

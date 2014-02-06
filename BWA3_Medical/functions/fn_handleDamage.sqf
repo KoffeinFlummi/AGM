@@ -1,29 +1,32 @@
 /*
-By: KoffeinFlummi
-
-Called when some dude gets shot. Or stabbed. Or blown up. Or pushed off a cliff. Or hit by a car. Or burnt. Or poisoned. Or gassed. Or cut. You get the idea.
-
-Arguments:
-0: Unit that got hit (Object)
-1: Name of the selection that was hit (String); "" for structural damage
-2: Amount of damage inflicted (Number)
-3: Shooter (Object); Null for explosion damage, falling, fire etc.
-4: Projectile (Object)
-
-Return value:
-Damage value to be inflicted (optional)
+ * Author: KoffeinFlummi
+ * 
+ * Called when some dude gets shot. Or stabbed. Or blown up. Or pushed off a cliff. Or hit by a car. Or burnt. Or poisoned. Or gassed. Or cut. You get the idea.
+ * 
+ * Arguments:
+ * 0: Unit that got hit (Object)
+ * 1: Name of the selection that was hit (String); "" for structural damage
+ * 2: Amount of damage inflicted (Number)
+ * 3: Shooter (Object); Null for explosion damage, falling, fire etc.
+ * 4: Projectile (Object)
+ * 
+ * Return value:
+ * Damage value to be inflicted (optional)
 */
 
-#define REVIVETRESHOLD 0.7;
-#define LEGDAMAGETRESHOLD1 0.4;
-#define LEGDAMAGETRESHOLD2 0.6;
-#define PRONEANIMATION "abcdefg";
-#define ARMDAMAGETRESHOLD 0.7;
-#define PAINKILLERTRESHOLD 0.1;
-#define PAINTRESHOLD 0.1;
-#define BLOODTRESHOLD1 0.4; // Treshold for unconsciousness
-#define BLOODTRESHOLD2 0.2; // Treshold for death
-#define BLOODLOSSRATE 0.02;
+#define REVIVETHRESHOLD 0.8
+#define UNCONSCIOUSNESSTHRESHOLD 0.65
+#define LEGDAMAGETHRESHOLD1 0.4
+#define LEGDAMAGETHRESHOLD2 0.6
+#define PRONEANIMATION "abcdefg"
+#define ARMDAMAGETHRESHOLD 0.7
+#define PAINKILLERTHRESHOLD 0.1
+#define PAINTHRESHOLD 0.1
+#define BLOODTHRESHOLD1 0.4
+#define BLOODTHRESHOLD2 0.2
+#define BLOODLOSSRATE 0.02
+
+hint format ["%1", _this];
 
 _unit = _this select 0;
 _selectionName = _this select 1;
@@ -35,18 +38,21 @@ _projectile = _this select 4;
 _unit spawn {
   sleep 0.001;
 
+  _this globalChat "handleDamage";
+
   // Reset "unused" hitpoints.
   _this setHitPointDamage ["HitLegs", 0];
   _this setHitPointDamage ["HitHands", 0];
-
-  _this setVariable ["BWA3_Diagnose", false];
 
   if (damage _this * _this getHitPointDamage "BWA3_Painkiller" > _this getVariable "BWA3_Pain") then {
     _this setVariable ["BWA3_Pain", damage _this * _this getHitPointDamage "BWA3_Painkiller"];
   };
 
   // Check if unit is already dead
-  if (damage _this > REVIVETRESHOLD) then {
+  if (damage _this > UNCONSCIOUSNESSTHRESHOLD and !(_this getVariable "BWA3_Unconscious")) then {
+    [_this] call BWA3_Medical_fnc_knockOut;
+  };
+  if (damage _this > REVIVETHRESHOLD) then {
     // Determine if unit is revivable.
     if (_this getHitPointDamage "HitHead" < 0.5 and _this getHitPointDamage "HitBody" < 1 and _this getVariable "BWA3_Blood" > 0.2) then {
       _this setVariable ["BWA3_Dead", 1];
@@ -56,33 +62,33 @@ _unit spawn {
   };
 
   // Handle leg damage symptoms
-  if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETRESHOLD2 or
-      _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETRESHOLD2 or
-      _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETRESHOLD2 or
-      _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETRESHOLD2 or
-      _this getHitPointDamage "HitRightLeg" > LEGDAMAGETRESHOLD2 or
-      _this getHitPointDamage "HitRightFoot" > LEGDAMAGETRESHOLD2) then {
+  if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
+      _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD2 or
+      _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD2 or
+      _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD2 or
+      _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD2 or
+      _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2) then {
 
     // Force the unit to the ground.
     _this switchMove PRONEANIMATION;
     _this spawn {
-      while (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETRESHOLD2 or
-            _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETRESHOLD2 or
-            _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETRESHOLD2 or
-            _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETRESHOLD2 or
-            _this getHitPointDamage "HitRightLeg" > LEGDAMAGETRESHOLD2 or
-            _this getHitPointDamage "HitRightFoot" > LEGDAMAGETRESHOLD2) do {
+      while (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
+            _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD2 or
+            _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD2 or
+            _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD2 or
+            _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD2 or
+            _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2) do {
         waitUntil {stance _this != "PRONE"};
         _this switchMove PRONEANIMATION;
       };
     };
   } else {
-    if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETRESHOLD1 or
-        _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETRESHOLD1 or
-        _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETRESHOLD1 or
-        _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETRESHOLD1 or
-        _this getHitPointDamage "HitRightLeg" > LEGDAMAGETRESHOLD1 or
-        _this getHitPointDamage "HitRightFoot" > LEGDAMAGETRESHOLD1) then {
+    if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD1 or
+        _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD1 or
+        _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD1 or
+        _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD1 or
+        _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD1 or
+        _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD1) then {
 
       // Force unit to walk slowly
       //_this forceWalk true; // disable sprinting ?
@@ -91,12 +97,12 @@ _unit spawn {
   };
 
   // Handle arm damage symptoms
-  if (_this getHitPointDamage "HitLeftShoulder" > ARMDAMAGETRESHOLD or
-      _this getHitPointDamage "HitLeftArm" > ARMDAMAGETRESHOLD or
-      _this getHitPointDamage "HitLeftForeArm" > ARMDAMAGETRESHOLD or
-      _this getHitPointDamage "HitRightShoulder" > ARMDAMAGETRESHOLD or
-      _this getHitPointDamage "HitRightArm" > ARMDAMAGETRESHOLD or
-      _this getHitPointDamage "HitRightForeArm" > ARMDAMAGETRESHOLD) then {
+  if (_this getHitPointDamage "HitLeftShoulder" > ARMDAMAGETHRESHOLD or
+      _this getHitPointDamage "HitLeftArm" > ARMDAMAGETHRESHOLD or
+      _this getHitPointDamage "HitLeftForeArm" > ARMDAMAGETHRESHOLD or
+      _this getHitPointDamage "HitRightShoulder" > ARMDAMAGETHRESHOLD or
+      _this getHitPointDamage "HitRightArm" > ARMDAMAGETHRESHOLD or
+      _this getHitPointDamage "HitRightForeArm" > ARMDAMAGETHRESHOLD) then {
 
     // Drop weapon
     0 spawn {
@@ -125,7 +131,7 @@ _unit spawn {
 
   // Pain
   _this spawn {
-    while {_this getVariable "BWA3_Pain" > PAINTRESHOLD and _this getVariable "BWA3_Painkiller" > PAINKILLERTRESHOLD} do {
+    while {_this getVariable "BWA3_Pain" > PAINTHRESHOLD and _this getVariable "BWA3_Painkiller" > PAINKILLERTHRESHOLD} do {
       //Pain RSC (later)
       hintSilent format ["Pain: %1 \n Painkillers: %2", _this getVariable "BWA3_Pain", _this getVariable "BWA3_Painkiller"];
       sleep 5;
@@ -138,10 +144,10 @@ _unit spawn {
       _blood = _this getVariable "BWA3_Blood";
       _blood = _blood - BLOODLOSSRATE * damage _this;
       _this setVariable ["BWA3_Blood", _blood];
-      if (_blood < BLOODTRESHOLD1) then {
+      if (_blood < BLOODTHRESHOLD1) then {
         [_this] call BWA3_Medical_fnc_knockOut;
       };
-      if (_blood < BLOODTRESHOLD2) then {
+      if (_blood < BLOODTHRESHOLD2) then {
         _this setDamage 1;
       };
       sleep 10;

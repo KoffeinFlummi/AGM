@@ -31,12 +31,11 @@ class CfgFunctions {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class BWA3_Medical_Init {
-      clientInit = "0 spawn BWA3_Medical_fnc_init";
+      init = "_this spawn BWA3_Medical_fnc_init";
     };
   };
 };
 
-// ACTIONS OVER CONFIG ?
 
 class CfgVehicles {
 
@@ -151,8 +150,6 @@ class CfgVehicles {
       // - Color Coding
       // - Icons
 
-      #define DEFAULTCONDITIONS this != player
-
       class Drag {
         displayName = "Drag";         // name in action menu
         displayNameDefault = "";      // name on screen (icons)
@@ -162,7 +159,7 @@ class CfgVehicles {
         showWindow = false;           // show text/icon on screen
         onlyForPlayer = false;        // enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Unconscious'";
+        condition = "this != player and this getVariable 'BWA3_Unconscious'";
         statement = "[this] call BWA3_Medical_fnc_drag";
       };
       class Carry: Drag {
@@ -173,26 +170,26 @@ class CfgVehicles {
       class Diagnose: Drag {
         displayName = "Diagnose";
         priority = 5.98;
-        condition = "DEFAULTCONDITIONS";
+        condition = "this != player";
         statement = "[this] call BWA3_Medical_fnc_diagnose";
       };
 
       class CPR: Drag {
         displayName = "Perform CPR";
         priority = 5.9;
-        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Dead' > 0";
+        condition = "this != player and this getVariable 'BWA3_Dead' > 0";
         statement = "[this] call BWA3_Medical_fnc_CPR";
       };
       class Epinephrine: Drag {
         displayName = "Inject Epinephrine";
         priority = 5.89;
-        condition = "DEFAULTCONDITIONS and this getVariable 'BWA3_Dead' > 0";
+        condition = "this != player and this getVariable 'BWA3_Dead' > 0";
         statement = "[this] call BWA3_Medical_fnc_epinephrine";
       };
       class Morphine: Drag {
         displayName = "Inject Morphine";
         priority = 5.88;
-        condition = "DEFAULTCONDITIONS";
+        condition = "this != player";
         statement = "[this] call BWA3_Medical_fnc_morphine";
       };
 

@@ -33,11 +33,11 @@ player switchMove "Acts_TreatingWounded03"; // healing animation
 
 //sleep _healtime;
 _i = _healtime;
-while (_i > 0) then {
+while {_i > 0} do {
   hint format ["%1", _i];
   _i = _i - 1;
   sleep 1;
-}
+};
 
 // STOP COUNTDOWN RSC
 

@@ -15,9 +15,9 @@
 
 private ["_unit", "_epitime", "_i"];
 
-_unit = this select 0;
+_unit = _this select 0;
 
-if (_unit getVariable "BWA3_Epinephrine"]) exitWith {};
+if (_unit getVariable "BWA3_Epinephrine") exitWith {};
 
 // DETERMINE IF UNIT IS MEDIC
 if (true) then { // later
@@ -32,11 +32,11 @@ player switchMove "Acts_TreatingWounded02"; // healing animation
 
 //sleep _epitime;
 _i = _epitime;
-while (_i > 0) then {
+while {_i > 0} do {
   hint format ["%1", _i];
   _i = _i - 1;
   sleep 1;
-}
+};
 
 // STOP COUNTDOWN RSC
 

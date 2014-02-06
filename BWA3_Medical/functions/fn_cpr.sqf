@@ -28,7 +28,7 @@ if (true) then { // later
 
 if (_unit getVariable "BWA3_Epinephrine") then {
   _successrate = _successrate * EPIMULTIPLIER;
-}
+};
 
 player switchMove "Acts_TreatingWounded01"; // cpr animation
 
@@ -36,11 +36,11 @@ player switchMove "Acts_TreatingWounded01"; // cpr animation
 
 //sleep CPRTIMEPERCYCLE;
 _i = CPRTIMEPERCYCLE;
-while (_i > 0) then {
+while {_i > 0} do {
   hint format ["%1", _i];
   _i = _i - 1;
   sleep 1;
-}
+};
 
 // STOP COUNTDOWN RSC
 
@@ -51,6 +51,6 @@ if (_cpr <= 0) then {
   [_unit] call BWA3_Medical_fnc_revive;
 } else {
   _unit setVariable ["BWA3_Dead", _cpr];
-}
+};
 
 player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

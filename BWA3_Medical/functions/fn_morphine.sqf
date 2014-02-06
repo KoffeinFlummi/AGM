@@ -16,7 +16,7 @@
 
 private ["_unit", "_morphinetime", "_painkiller", "_i"];
 
-_unit = this select 0;
+_unit = _this select 0;
 
 // DETERMINE IF UNIT IS MEDIC
 if (true) then { // later
@@ -31,11 +31,11 @@ player switchMove "placeholder"; // healing animation
 
 //sleep _morphinetime;
 _i = _morphinetime;
-while (_i > 0) then {
+while {_i > 0} do {
   hint format ["%1", _i];
   _i = _i - 1;
   sleep 1;
-}
+};
 
 // STOP COUNTDOWN RSC
 
