@@ -8,6 +8,8 @@
  * 
  * Return value:
  * none
+ *
+ * !!! NEEDS TO BE CALLED USING spawn !!!
  */
 
 #define EPITIMEMEDIC 5
@@ -20,7 +22,7 @@ _unit = _this select 0;
 if (_unit getVariable "BWA3_Epinephrine") exitWith {};
 
 // DETERMINE IF UNIT IS MEDIC
-if (true) then { // later
+if (getNumber (configfile >> "CfgVehicles" >> typeOf player >> "attendant") == 1) then {
   _epitime = EPITIMEMEDIC;
 } else {
   _epitime = EPITIMENONMEDIC;
@@ -33,10 +35,13 @@ player switchMove "Acts_TreatingWounded02"; // healing animation
 //sleep _epitime;
 _i = _epitime;
 while {_i > 0} do {
-  hint format ["%1", _i];
+  hintSilent format ["Injecting Epinephrine:\n%1", _i];
   _i = _i - 1;
   sleep 1;
 };
+hintSilent "Injecting Epinephrine:\nDone.";
+sleep 1;
+hintSilent "";
 
 // STOP COUNTDOWN RSC
 

@@ -8,6 +8,8 @@
  * 
  * Return value:
  * none
+ *
+ * !!! NEEDS TO BE CALLED USING spawn !!!
  */
 
 #define CPRSUCCESSRATEMEDIC 0.5

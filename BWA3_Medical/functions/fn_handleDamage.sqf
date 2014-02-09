@@ -21,12 +21,9 @@
 #define PRONEANIMATION "abcdefg"
 #define ARMDAMAGETHRESHOLD 0.7
 #define PAINKILLERTHRESHOLD 0.1
-#define PAINTHRESHOLD 0.1
 #define BLOODTHRESHOLD1 0.4
 #define BLOODTHRESHOLD2 0.2
 #define BLOODLOSSRATE 0.02
-
-hint format ["%1", _this];
 
 _unit = _this select 0;
 _selectionName = _this select 1;
@@ -34,21 +31,20 @@ _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
 
-// Code to be executed AFTER damage was dealt
-_unit spawn {
-  sleep 0.001;
+// Prevent unnecessary processing
+if (damage _unit == 1) exitWith {};
 
-  _this globalChat "handleDamage";
+// No structural damage; All damage needs to be assigned to a body part.
+//if (_selectionName == "") exitWith {damage _unit};
+
+// Code to be executed AFTER damage was dealt
+null = _unit spawn {
+  sleep 0.001;
 
   // Reset "unused" hitpoints.
   _this setHitPointDamage ["HitLegs", 0];
   _this setHitPointDamage ["HitHands", 0];
 
-  if (damage _this * _this getHitPointDamage "BWA3_Painkiller" > _this getVariable "BWA3_Pain") then {
-    _this setVariable ["BWA3_Pain", damage _this * _this getHitPointDamage "BWA3_Painkiller"];
-  };
-
-  // Check if unit is already dead
   if (damage _this > UNCONSCIOUSNESSTHRESHOLD and !(_this getVariable "BWA3_Unconscious")) then {
     [_this] call BWA3_Medical_fnc_knockOut;
   };
@@ -105,7 +101,7 @@ _unit spawn {
       _this getHitPointDamage "HitRightForeArm" > ARMDAMAGETHRESHOLD) then {
 
     // Drop weapon
-    0 spawn {
+    _this spawn {
       while {true} do {
         waitUntil {currentWeapon _this != ""};
         _weapon = currentWeapon _this;
@@ -113,7 +109,7 @@ _unit spawn {
           _attachments = primaryWeaponItems _this;
         } else {
           if (currentWeapon _this == handGunWeapon _this) then {
-            _attachments = handGunWeaponItems _this;
+            _attachments = handGunItems _this;
           } else {
             _attachments = secondaryWeaponItems _this;
           };
@@ -129,28 +125,45 @@ _unit spawn {
     };
   };
 
+  if (damage _this * (_this getVariable "BWA3_Painkiller") > _this getVariable "BWA3_Pain") then {
+    _this setVariable ["BWA3_Pain", (damage _this) * (_this getVariable "BWA3_Painkiller")];
+  };
+
   // Pain
-  _this spawn {
-    while {_this getVariable "BWA3_Pain" > PAINTHRESHOLD and _this getVariable "BWA3_Painkiller" > PAINKILLERTHRESHOLD} do {
-      //Pain RSC (later)
-      hintSilent format ["Pain: %1 \n Painkillers: %2", _this getVariable "BWA3_Pain", _this getVariable "BWA3_Painkiller"];
-      sleep 5;
+  if (_this == player) then {
+    _this spawn {
+      if (_this getVariable "BWA3_InPain") exitWith {};
+      _this setVariable ["BWA3_InPain", true];
+      "chromAberration" ppEffectEnable true;
+      while {(_this getVariable "BWA3_Pain") > 0} do {
+        "chromAberration" ppEffectAdjust [0.02 * (_this getVariable "BWA3_Pain"), 0.02 * (_this getVariable "BWA3_Pain"), false];
+        "chromAberration" ppEffectCommit 1;
+        sleep (1.5 - (_this getVariable "BWA3_Pain"));
+        "chromAberration" ppEffectAdjust [0.2 * (_this getVariable "BWA3_Pain"), 0.2 * (_this getVariable "BWA3_Pain"), false];
+        "chromAberration" ppEffectCommit 1;
+        sleep 0.15;
+      };
+      "chromAberration" ppEffectEnable false;
+      _this setVariable ["BWA3_InPain", false];
     };
   };
 
   // Bleeding
-  _this spawn {
-    while {_this getVariable "BWA3_Blood" > 0} do {
-      _blood = _this getVariable "BWA3_Blood";
-      _blood = _blood - BLOODLOSSRATE * damage _this;
-      _this setVariable ["BWA3_Blood", _blood];
-      if (_blood < BLOODTHRESHOLD1) then {
-        [_this] call BWA3_Medical_fnc_knockOut;
+  if !(_this getVariable "BWA3_Bleeding") then {
+    _this setVariable ["BWA3_Bleeding", true];
+    _this spawn {
+      while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding")} do {
+        _blood = _this getVariable "BWA3_Blood";
+        _blood = _blood - BLOODLOSSRATE * damage _this;
+        _this setVariable ["BWA3_Blood", _blood];
+        if (_blood < BLOODTHRESHOLD1 and !(_this getVariable "BWA3_Unconscious")) then {
+          [_this] call BWA3_Medical_fnc_knockOut;
+        };
+        if (_blood < BLOODTHRESHOLD2) then {
+          _this setDamage 1;
+        };
+        sleep 10;
       };
-      if (_blood < BLOODTHRESHOLD2) then {
-        _this setDamage 1;
-      };
-      sleep 10;
     };
   };
 
