@@ -31,5 +31,7 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 *   **Overheating**  
     *   Guns can overheat and jam
     *   Barrels can be changed.
-*   **Misc**  
-    *   Attach IR Strobes to helmets and vehicles.
+
+**...**
+
+https://github.com/KoffeinFlummi/BWA3_Realism/wiki
