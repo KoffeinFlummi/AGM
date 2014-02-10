@@ -212,7 +212,7 @@ class CfgVehicles {
         priority = 5.895;
         condition = "this == player";
       };
-      class Morphine: Drag {DCE§:LÄÜ)´0/2+-5
+      class Morphine: Drag {
         displayName = "Inject Morphine";
         priority = 5.88;
         condition = "this != player";
