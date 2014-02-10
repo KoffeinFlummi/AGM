@@ -23,7 +23,7 @@
 #define PAINKILLERTHRESHOLD 0.1
 #define BLOODTHRESHOLD1 0.4
 #define BLOODTHRESHOLD2 0.2
-#define BLOODLOSSRATE 0.02
+#define BLOODLOSSRATE 0.005
 
 _unit = _this select 0;
 _selectionName = _this select 1;
