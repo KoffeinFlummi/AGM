@@ -1,6 +1,5 @@
 class CfgPatches {
   class BWA3_Backblast {
-    requiredVersion = 0.1;
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;

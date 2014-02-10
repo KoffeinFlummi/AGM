@@ -166,7 +166,7 @@ class CfgVehicles {
       // - Color Coding
       // - Icons
 
-      class Drag {
+      class BWA3_Drag {
         displayName = "Drag";         // name in action menu
         displayNameDefault = "";      // name on screen (icons)
         priority = 6;                 // 0 (low) - 6 (high)
@@ -178,49 +178,49 @@ class CfgVehicles {
         condition = "this != player and this getVariable 'BWA3_Unconscious'";
         statement = "[this] spawn BWA3_Medical_fnc_drag";
       };
-      class Carry: Drag {
+      class BWA3_Carry: BWA3_Drag {
         displayName = "Carry";
         priority = 5.99;
         statement = "[this] spawn BWA3_Medical_fnc_carry";
       };
-      class Diagnose: Drag {
+      class BWA3_Diagnose: BWA3_Drag {
         displayName = "Diagnose";
         priority = 5.98;
         condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_diagnose";
       };
-      class Diagnose_Self: Diagnose {
+      class BWA3_Diagnose_Self: BWA3_Diagnose {
         displayName = "Diagnose (Self)";
-        priority = 5.985;
+        priority = 0.485;
         condition = "this == player";
       };
 
-      class CPR: Drag {
+      class BWA3_CPR: BWA3_Drag {
         displayName = "Perform CPR";
         priority = 5.9;
         condition = "this != player and this getVariable 'BWA3_Dead' > 0";
         statement = "[this] spawn BWA3_Medical_fnc_CPR";
       };
-      class Epinephrine: Drag {
+      class BWA3_Epinephrine: BWA3_Drag {
         displayName = "Inject Epinephrine";
         priority = 5.89;
         condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_epinephrine";
       };
-      class Epinephrine_Self: Epinephrine {
+      class BWA3_Epinephrine_Self: BWA3_Epinephrine {
         displayName = "Inject Epinephrine (Self)";
-        priority = 5.895;
+        priority = 0.395;
         condition = "this == player";
       };
-      class Morphine: Drag {
+      class BWA3_Morphine: BWA3_Drag {
         displayName = "Inject Morphine";
         priority = 5.88;
         condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_morphine";
       };
-      class Morphine_Self: Morphine {
+      class BWA3_Morphine_Self: BWA3_Morphine {
         displayName = "Inject Morphine (Self)";
-        priority = 5.885;
+        priority = 0.385;
         condition = "this == player";
       };
 

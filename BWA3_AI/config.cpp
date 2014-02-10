@@ -38,8 +38,8 @@ class CfgMods {
 
 class CfgAISkill {
   aimingAccuracy[] = {0,0, 1,0.6};
-  aimingShake[] = {0,0, 1,0.4};
-  aimingSpeed[] = {0,0, 1,0.4};
+  aimingShake[] = {0,0, 1,0.5};
+  aimingSpeed[] = {0,0, 1,0.6};
   commanding[] = {0,0, 1,0.8};
   courage[] = {0,0, 1,0.7};
   reloadSpeed[] = {0,0, 1,0.8};

@@ -3,7 +3,19 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Armor_F};
+    requiredAddons[] = {
+                          A3_Armor_F,
+                          A3_Armor_F_AMV,
+                          A3_Armor_F_APC_Wheeled_03,
+                          A3_armor_f_beta,
+                          A3_armor_f_beta_APC_Tracked_02,
+                          A3_armor_F_EPB_APC_tracked_03,
+                          A3_Armor_F_EPB_MBT_03,
+                          A3_Armor_F_Marid,
+                          A3_Armor_F_Panther,
+                          A3_Armor_F_Slammer,
+                          A3_Armor_F_T100K
+                        };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -24,40 +36,55 @@ class CfgMods {
 
 
 class CfgVehicles {
+  // BLUFOR Inheritance
+  class MRAP_01_base_F;
+  class MRAP_01_hmg_base_F;
+  class MRAP_01_gmg_base_F;
+  class B_MBT_01_base_F;
+  class B_MBT_01_mlrs_base_F;
+  class B_MBT_01_arty_base_F;
+  class B_APC_Wheeled_01_base_F;
+  class B_APC_Tracked_01_base_F;
+
+  // INDEP Inheritance
+  // OPFOR Inheritance
+
+  ////////////////////////////////////
 
   // BLUFOR
-  class B_MRAP_01_F {
+  class B_MRAP_01_F: MRAP_01_base_F {
     displayName = "M-ATV";
   };
-  class B_MRAP_01_hmg_F {
+  class B_MRAP_01_hmg_F: MRAP_01_hmg_base_F {
     displayName = "M-ATV (HMG)";
   };
-  class B_MRAP_01_gmg_F {
+  class B_MRAP_01_gmg_F: MRAP_01_gmg_base_F {
     displayName = "M-ATV (GMG)";
   };
-  class B_MBT_01_cannon_F {
+  class B_MBT_01_cannon_F: B_MBT_01_base_F {
     displayName = "Merkava Mk IV";
   };
-  class B_MBT_01_arty_F {
+  class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
     displayName = "Sholef";
   };
-  class B_MBT_01_mlrs_F {
+  class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {
     displayName = "Seara";
     // Fictional name, (probably wrong) hebrew translation of storm.
   };
-  class B_APC_Tracked_01_rcws_F {
+  class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
     displayName = "Namer";
   };
-  class B_APC_Tracked_01_AA_F {
+  class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
     displayName = "Bardelas";
     // Fictional name, (probably wrong) hebrew translation of cheetah.
   };
-  class B_APC_Wheeled_01_cannon_F {
+  class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
     displayName = "Patria AMV";
   };
-  class B_APC_Tracked_01_CRV_F {
+  class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
     displayName = "Nemmera";
   };
+  /*
   class B_Truck_01_ammo_F {
     displayName = "HEMTT (Ammo)";
   };
@@ -69,7 +96,7 @@ class CfgVehicles {
   };
   class B_Truck_01_Repair_F {
     displayName = "HEMTT (Repair)";
-  };
+  };*/
 
   // INDEP
   class I_MRAP_03_F {
