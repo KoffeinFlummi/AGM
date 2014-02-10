@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
+    requiredAddons[] = {A3_Armor_F};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
-    authorUrl = "http://www.bwmod.de";
+    authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
@@ -17,8 +17,8 @@ class CfgMods {
     picture = "";
     hidePicture = "true";
     hideName = "true";
-    actionName = "Website";
-    action = "http://www.bwmod.de";
+    actionName = "Github";
+    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
 
@@ -43,12 +43,14 @@ class CfgVehicles {
   };
   class B_MBT_01_mlrs_F {
     displayName = "Seara";
+    // Fictional name, (probably wrong) hebrew translation of storm.
   };
   class B_APC_Tracked_01_rcws_F {
     displayName = "Namer";
   };
   class B_APC_Tracked_01_AA_F {
     displayName = "Bardelas";
+    // Fictional name, (probably wrong) hebrew translation of cheetah.
   };
   class B_APC_Wheeled_01_cannon_F {
     displayName = "Patria AMV";
@@ -124,19 +126,24 @@ class CfgVehicles {
     displayName = "Kamaz (Covered)";
   };
   class O_MBT_02_cannon_F {
-    displayName = "T100 Black Eagle";
+    displayName = "T100 Black Eagle"; 
+    // I know it's called Object 64 or something like that,
+    // but assuming that it was actually introduced, 
+    // it would probably be T-something.
   };
   class O_MBT_02_arty_F {
     displayName = "2S9 Sochor";
   };
   class O_APC_Tracked_02_cannon_F {
     displayName = "BMP-K Kamysh";
+    // From my understanding, tracked APCs are BMPs, wheeled ones are BTRs.
   };
   class O_APC_Tracked_02_AA_F {
     displayName = "ZSU-39 Tigris";
   };
   class O_APC_Wheeled_02_rcws_F {
     displayName = "Arma";
+    // Yeah, it's actually called Arma.
   };
   class O_Truck_02_Ammo_F {
     displayName = "Kamaz (Ammo)";
