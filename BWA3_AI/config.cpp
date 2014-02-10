@@ -26,7 +26,7 @@ class CfgMods {
  * Documentation:
  * https://community.bistudio.com/wiki/AI_Sub-skills
  * 
- * The Idea here is to reduce the AI's godlike aiming
+ * The idea here is to reduce the AI's godlike aiming
  * capabilties while retaining it's high intelligence.
  * The AI should be smart enough to move through a town,
  * but also be 'human' in their reaction time and aim.
