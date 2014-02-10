@@ -3,10 +3,20 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
+    requiredAddons[] = {
+                          A3_Air_F,
+                          A3_Air_F_Heli_Light_01,
+                          A3_Air_F_Heli_Light_02,
+                          A3_Air_F_Beta,
+                          A3_Air_F_Beta_Heli_attack_01,
+                          A3_Air_F_Beta_Heli_Attack_02,
+                          A3_Air_F_Beta_Heli_Transport_01,
+                          A3_Air_F_Beta_Heli_Transport_02,
+                          A3_Air_F_Gamma_Plane_Fighter_03
+                        };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
-    authorUrl = "http://www.bwmod.de";
+    authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
@@ -17,8 +27,8 @@ class CfgMods {
     picture = "";
     hidePicture = "true";
     hideName = "true";
-    actionName = "Website";
-    action = "http://www.bwmod.de";
+    actionName = "Github";
+    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
 
@@ -121,7 +131,7 @@ class CfgVehicles {
     };
   };
 
-  // -------- //
+  ////////////////////////////////////////////////////////////
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {

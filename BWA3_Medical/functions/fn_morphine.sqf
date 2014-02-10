@@ -16,7 +16,7 @@
 #define MORPHINETIMENONMEDIC 10
 #define MORPHINEHEAL 0.4
 
-private ["_unit", "_morphinetime", "_painkiller", "_i"];
+private ["_unit", "_morphinetime", "_painkiller", "_pain", "_i"];
 
 _unit = _this select 0;
 
@@ -43,8 +43,10 @@ sleep 1;
 hintSilent "";
 
 // STOP COUNTDOWN RSC
-
 _painkiller = (_unit getVariable "BWA3_Painkiller" + MORPHINEHEAL) min 1;
 _unit setVariable ["BWA3_Painkiller", _painkiller];
+
+_pain = (_unit getVariable "BWA3_Pain" - MORPHINEHEAL) max 0;
+_unit setVariable ["BWA3_Pain", _pain];
 
 player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

@@ -7,8 +7,8 @@ class CfgPatches {
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
     version = 1.0;
-    author[] = {"KoffeinFLummi"};
-    authorUrl = "http://www.bwmod.de";
+    author[] = {"TaoSensai"};
+    authorUrl = "https://github.com/Taosenai/tmr";
   };
 };
 
@@ -19,8 +19,8 @@ class CfgMods {
     picture = "";
     hidePicture = "true";
     hideName = "true";
-    actionName = "Website";
-    action = "http://www.bwmod.de";
+    actionName = "Github";
+    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
 

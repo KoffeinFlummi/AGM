@@ -15,7 +15,7 @@ BWA3_Misc_fnc_activateStrobe = {
       _strobeClass = "O_IR_Grenade";
     }
   };
-  _strobe = "B_IRStrobe" createVehicle (getPos _unit);
+  _strobe = (toString [(toArray _strobeClass) select 0] + "_IRStrobe") createVehicle (getPos _unit);
 
   _unit removeMagazine _strobeClass;
   _unit setVariable ["BWA3_IRStrobe", _strobe];
@@ -52,7 +52,7 @@ BWA3_Misc_fnc_attachStrobe = {
       _strobeClass = "O_IR_Grenade";
     }
   };
-  _strobe = "B_IRStrobe" createVehicle (getPos _target);
+  _strobe = (toString [(toArray _strobeClass) select 0] + "_IRStrobe") createVehicle (getPos _target);
 
   _unit removeMagazine _strobeClass;
   _target setVariable ["BWA3_IRStrobe", _strobe];
@@ -78,6 +78,8 @@ BWA3_Misc_fnc_detachStrobe = {
 };
 
 player setVariable ["BWA3_IRStrobe", ""];
+
+// Move actions to config?
 player addAction ["Activate Strobelight", {_this call BWA3_Misc_fnc_activateStrobe}, "", 0, false, true, "", "('B_IR_Grenade' in (magazines player) or 'I_IR_Grenade' in (magazines player) or 'O_IR_Grenade' in (magazines player)) and player getVariable 'BWA3_IRStrobe' == ''"];
 player addAction ["Deactivate Strobelight", {_this call BWA3_Misc_fnc_deactivateStrobe}, "", 0, false, true, "", "!isNull(player getVariable 'BWA3_IRStrobe')"];
 player addAction ["Attach Strobelight", {_this call BWA3_Misc_fnc_attachStrobe}, cursorTarget, 0, false, true, "", "cursorTarget distance player < 4 and (cursorTarget isKindOf 'Car' or cursorTarget isKindOf 'Tank' or cursorTarget isKindOf 'Helicopter' or cursorTarget isKindOf 'Ship') and ('B_IR_Grenade' in (magazines player) or 'I_IR_Grenade' in (magazines player) or 'O_IR_Grenade' in (magazines player)) and cursorTarget getVariable 'BWA3_IRStrobe' == ''"];

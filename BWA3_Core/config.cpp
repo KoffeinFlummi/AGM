@@ -6,7 +6,7 @@ class CfgPatches {
     requiredAddons[] = {};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
-    authorUrl = "http://www.bwmod.de";
+    authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
@@ -17,8 +17,8 @@ class CfgMods {
     picture = "";
     hidePicture = "true";
     hideName = "true";
-    actionName = "Website";
-    action = "http://www.bwmod.de";
+    actionName = "Github";
+    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
 

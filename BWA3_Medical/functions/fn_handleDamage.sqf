@@ -21,6 +21,7 @@
 #define PRONEANIMATION "abcdefg"
 #define ARMDAMAGETHRESHOLD 0.7
 #define PAINKILLERTHRESHOLD 0.1
+#define PAINLOSS 0.005
 #define BLOODTHRESHOLD1 0.4
 #define BLOODTHRESHOLD2 0.2
 #define BLOODLOSSRATE 0.005
@@ -33,9 +34,6 @@ _projectile = _this select 4;
 
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {};
-
-// No structural damage; All damage needs to be assigned to a body part.
-//if (_selectionName == "") exitWith {damage _unit};
 
 // Code to be executed AFTER damage was dealt
 null = _unit spawn {
@@ -135,6 +133,7 @@ null = _unit spawn {
       if (_this getVariable "BWA3_InPain") exitWith {};
       _this setVariable ["BWA3_InPain", true];
       "chromAberration" ppEffectEnable true;
+      _time = time;
       while {(_this getVariable "BWA3_Pain") > 0} do {
         "chromAberration" ppEffectAdjust [0.02 * (_this getVariable "BWA3_Pain"), 0.02 * (_this getVariable "BWA3_Pain"), false];
         "chromAberration" ppEffectCommit 1;
@@ -142,6 +141,10 @@ null = _unit spawn {
         "chromAberration" ppEffectAdjust [0.2 * (_this getVariable "BWA3_Pain"), 0.2 * (_this getVariable "BWA3_Pain"), false];
         "chromAberration" ppEffectCommit 1;
         sleep 0.15;
+        
+        _pain = ((_this getVariable "BWA3_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
+        _this setVariable ["BWA3_Pain", _pain];
+        _time = time;
       };
       "chromAberration" ppEffectEnable false;
       _this setVariable ["BWA3_InPain", false];

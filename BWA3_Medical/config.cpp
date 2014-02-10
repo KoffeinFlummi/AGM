@@ -3,9 +3,23 @@ class CfgPatches {
   class BWA3_Medical {
     units[] = {};
     weapons[] = {};
+    requiredVersion = 0.60;
+    requiredAddons[] = {Extended_EventHandlers};
+    version = 1.0;
+    author[] = {"KoffeinFlummi"};
+    authorUrl = "https://github.com/KoffeinFlummi/";
+  };
+};
 
-    requiredVersion = 0.1;
-    requiredAddons[] = {"Extended_EventHandlers"};
+class CfgMods {
+  class BWA3_Medical {
+    dir = "BWA3_Medical";
+    name = "BWA3: Medical Module";
+    picture = "";
+    hidePicture = "true";
+    hideName = "true";
+    actionName = "Github";
+    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
 
@@ -41,15 +55,15 @@ class CfgVehicles {
 
   class Land_CargoBox_V1_F;
 
+  // Why the fuck does CAManBase not work?!
   class SoldierWB {
     armor = 1.5;
     armorStructural = 4.5;
 
     class HitPoints {
       // "DEACTIVE" DEFAULT HITPOINTS
-      
       class HitHands {
-        armor = 0; //armor = 2;
+        armor = 999; //armor = 2;
         explosionShielding = 0; //explosionShielding = 1;
         material = -1;
         minimalHit = 0;
@@ -59,7 +73,7 @@ class CfgVehicles {
         visual = "injury_hands";
       };
       class HitLegs {
-        armor = 0; //armor = 2;
+        armor = 999; //armor = 2;
         explosionShielding = 0; //explosionShielding = 1;
         material = -1;
         minimalHit = 0;
@@ -145,7 +159,9 @@ class CfgVehicles {
     };
 
     class UserActions {
-      // See http://community.bistudio.com/wiki/UserActions for doc
+      // Documentation:
+      // http://community.bistudio.com/wiki/UserActions
+      //
       // Ideas for later:
       // - Color Coding
       // - Icons
@@ -173,6 +189,11 @@ class CfgVehicles {
         condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_diagnose";
       };
+      class Diagnose_Self: Diagnose {
+        displayName = "Diagnose (Self)";
+        priority = 5.985;
+        condition = "this == player";
+      };
 
       class CPR: Drag {
         displayName = "Perform CPR";
@@ -183,20 +204,29 @@ class CfgVehicles {
       class Epinephrine: Drag {
         displayName = "Inject Epinephrine";
         priority = 5.89;
-        condition = "this != player and this getVariable 'BWA3_Dead' > 0";
+        condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_epinephrine";
       };
-      class Morphine: Drag {
+      class Epinephrine_Self: Epinephrine {
+        displayName = "Inject Epinephrine (Self)";
+        priority = 5.895;
+        condition = "this == player";
+      };
+      class Morphine: Drag {DCE§:LÄÜ)´0/2+-5
         displayName = "Inject Morphine";
         priority = 5.88;
         condition = "this != player";
         statement = "[this] spawn BWA3_Medical_fnc_morphine";
       };
+      class Morphine_Self: Morphine {
+        displayName = "Inject Morphine (Self)";
+        priority = 5.885;
+        condition = "this == player";
+      };
 
     };
   };
 
-  // Copy SoldierWB over to these once 'done'
   /*
   class SoldierEB {
     armor = 1.5;
@@ -223,7 +253,8 @@ class CfgVehicles {
         name = "";
         passThrough = 1; //passThrough = 1;
         radius = 0; //radius = 0.08;
-        visual = "injury_legs";
+        visual = "injury_legs";4
+
       };
 
       // HEAD
