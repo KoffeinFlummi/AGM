@@ -27,6 +27,7 @@ class CfgFunctions {
     class BWA3_Civilians {
       file = "BWA3_Civilians\functions";
       class sendAway {};
+      class getDown {};
     };
   };
 };
@@ -50,6 +51,18 @@ class CfgVehicles {
         shortcut = "";                // key (CfgDefaultKeyMappings)
         condition = "this != player and (count (weapons this)) == 0";
         statement = "[this] call BWA3_Civilians_fnc_sendAway";
+      };
+      class BWA3_GetDown {
+        displayName = "Get Down!";    // name in action menu
+        displayNameDefault = "";      // name on screen (icons)
+        priority = 4;                 // 0 (low) - 6 (high)
+        position = "leaning_axis";    // memory point of model
+        radius = 3;                   // minimum distance for the action to be available
+        showWindow = false;           // show text/icon on screen
+        onlyForPlayer = false;        // enable AI to be ordered to do something
+        shortcut = "";                // key (CfgDefaultKeyMappings)
+        condition = "this != player and (count (weapons this)) == 0";
+        statement = "[this] call BWA3_Civilians_fnc_getDown";
       };
     };
   };
