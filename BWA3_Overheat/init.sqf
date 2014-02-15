@@ -55,7 +55,8 @@ BWA3_weaponOverheat = {
   _temperature = _overheat select 0;
   _time = _overheat select 1;
 
-  _temperature = (_temperature + INCREMENT) * (1 / (COOLDOWN * (time - _time) + 1) ^ 2); hint ("Temp.:" + str(_temperature) + "\n" + "Zeit:" + str(time - _time));
+  _temperature = (_temperature + INCREMENT) * (1 / (COOLDOWN * (time - _time) + 1) ^ 2);
+  hint ("Temp.:" + str(_temperature) + "\n" + "Zeit:" + str(time - _time));
   _time = time;
 
   player setVariable ["BWA3_Overheat", [_temperature, _time], false];

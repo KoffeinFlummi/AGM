@@ -10,7 +10,7 @@
  * none
 */
 
-#define DISTANCE 50
+#define RADIUS 10
 
 private ["_unit", "_chance", "_x"];
 
@@ -28,4 +28,4 @@ if (count (weapons player) > 0) then {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
     _x setUnitPos "DOWN";
   };
-} foreach (_unit nearEntities ["Civilian", 10]);
+} foreach (_unit nearEntities ["Civilian", RADIUS]);
