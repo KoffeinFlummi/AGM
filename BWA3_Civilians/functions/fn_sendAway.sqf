@@ -11,6 +11,7 @@
 */
 
 #define DISTANCE 50
+#define RADIUS 10
 
 private ["_unit", "_chance", "_x"];
 
@@ -30,4 +31,4 @@ if (count (weapons player) > 0) then {
     _x setUnitPos "UP";
     _x doMove [(getPos _x select 0) + DISTANCE * (eyeDirection player select 0), (getPos _x select 1) + DISTANCE * (eyeDirection player select 1), 0];
   };
-} foreach (_unit nearEntities ["Civilian", 10]);
+} foreach (_unit nearEntities ["Civilian", RADIUS]);

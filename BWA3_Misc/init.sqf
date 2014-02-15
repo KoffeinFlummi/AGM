@@ -1,5 +1,9 @@
-// BWA3 Misc - IR Strobes
-// (C) 2013 KoffeinFlummi. See LICENSE.
+/*
+ * Author: KoffeinFlummi
+ * 
+ * IR Strobes, ...
+ *
+ */
 
 BWA3_Misc_fnc_activateStrobe = {
   private ["_unit","_strobeClass", "_strobe"];
