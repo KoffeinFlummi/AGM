@@ -27,7 +27,6 @@ if (count (weapons player) > 0) then {
 
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    _x stop true;
     _x setUnitPos "UP";
     _x doMove [(getPos _x select 0) + DISTANCE * (eyeDirection player select 0), (getPos _x select 1) + DISTANCE * (eyeDirection player select 1), 0];
   };

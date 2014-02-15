@@ -31,12 +31,13 @@ class CfgFunctions {
       class cpr {};
       class diagnose {};
       class drag {};
+      class carry {};
       class epinephrine {};
       class handleDamage {};
       class init {};
       class knockOut {};
       class morphine {};
-      class undrag {};
+      class release {};
       class wakeUp {};
     };
   };
@@ -175,13 +176,18 @@ class CfgVehicles {
         showWindow = false;           // show text/icon on screen
         onlyForPlayer = false;        // enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "this != player and this getVariable 'BWA3_Unconscious'";
+        condition = "this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
         statement = "[this] spawn BWA3_Medical_fnc_drag";
       };
       class BWA3_Carry: BWA3_Drag {
         displayName = "Carry";
         priority = 5.99;
         statement = "[this] spawn BWA3_Medical_fnc_carry";
+      };
+      class BWA3_Release: BWA3_Drag {
+        displayName = "Release";
+        priority = 6;
+        condition = "this != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
       };
       class BWA3_Diagnose: BWA3_Drag {
         displayName = "Diagnose";

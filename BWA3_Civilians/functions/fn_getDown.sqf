@@ -26,7 +26,6 @@ if (count (weapons player) > 0) then {
 
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    _x stop true;
     _x setUnitPos "DOWN";
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);
