@@ -13,10 +13,8 @@ None
 private ["_unit", "_eh", "_helper"];
 
 _unit = _this select 0;
-
 _unit setVariable ["BWA3_Unconscious", true, true];
 
-player globalChat format ["Unit: %1:", _unit];
 
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
@@ -25,9 +23,14 @@ if (_unit == player) then {
 // Not possible to ragdollize on command, so we slam a 'vehicle' in his face.
 _unit setCaptive 13;
 _unit allowDamage false;
+
+_unit disableAI "MOVE";
+_unit disableAI "ANIM";
+_unit disableAI "TARGET";
+_unit disableAI "AUTOTARGET";
+_unit disableAI "FSM";
 //_eh = _unit addEventHandler ["EpeContactStart", {(_this select 0) setVariable ["BWA3_Collision", (_this select 1)];}];
 
-player globalChat "still here...";
 
 _helper = "BWA3_CollisionHelper" createVehicle [0,0,0];
 _helper setPosATL [(getPos _unit select 0), (getPos _unit select 1), 1.8];
@@ -39,7 +42,6 @@ _helper setVectorUp [0,0,1];
   };
 } foreach (_unit nearEntities 5);
 
-player globalChat format ["Helper: %1", _helper];
 
 sleep 0.7;
 
@@ -60,4 +62,6 @@ _unit allowDamage true;
 
 sleep 2;
 _unit enableSimulation false;
+_unit switchMove "unconscious";
+
 player globalChat "done.";

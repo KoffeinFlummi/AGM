@@ -19,6 +19,8 @@
 
 private ["_weaponPos", "_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosUp", "_checkPosDown"];
 
+if (currentWeapon player == "") exitWith {};
+
 // PREPARE INTERSECTS
 _weaponPos = player selectionPosition "Weapon";
 _checkPosMiddle = [
@@ -48,28 +50,30 @@ _checkPosDown = [
                   ];
 
 // CHECK FOR APPROPRIATE SURFACE
-if !(lineIntersects [_weaponPos, _checkPosMiddle, player] or
+if (!(lineIntersects [_weaponPos, _checkPosMiddle, player] or
     lineIntersects [_weaponPos, _checkPosLeft, player] or
     lineIntersects [_weaponPos, _checkPosRight, player] or
     lineIntersects [_weaponPos, _checkPosUp, player] or
     lineIntersects [_weaponPos, _checkPosDown, player]
-    ) exitWith {false};
+    ) or speed player > 1) exitWith {false};
 
-// REST THE Weapon
-player setUnitRecoilCoefficient BWA3_weaponRested;
+// REST THE WEAPON
+player setUnitRecoilCoefficient RESTEDRECOIL;
 addCamShake CAMSHAKE;
 // apply different animation for sway etc.
-hint "Weapon rested."
+hint "Weapon rested.";
+
 BWA3_weaponRested = true;
 
+// CHECK FOR PLAYER MOVING AWAY
 0 spawn {
   while {BWA3_weaponRested} do {
-    if !(lineIntersects [_weaponPos, _checkPosMiddle, player] or
+    if (!(lineIntersects [_weaponPos, _checkPosMiddle, player] or
     lineIntersects [_weaponPos, _checkPosLeft, player] or
     lineIntersects [_weaponPos, _checkPosRight, player] or
     lineIntersects [_weaponPos, _checkPosUp, player] or
     lineIntersects [_weaponPos, _checkPosDown, player]
-    ) then {
+    ) or speed player > 1) then {
       [] call BWA3_Resting_fnc_unRestWeapon.sqf;
     };
     sleep 0.3;

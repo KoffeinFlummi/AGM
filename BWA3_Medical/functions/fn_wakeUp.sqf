@@ -17,6 +17,12 @@ _position = getPos _unit;
 
 _unit enableSimulation true;
 
+_unit enableAI "MOVE";
+_unit enableAI "ANIM";
+_unit enableAI "TARGET";
+_unit enableAI "AUTOTARGET";
+_unit enableAI "FSM";
+
 if (_unit == player) then {
   [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
 };

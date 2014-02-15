@@ -81,7 +81,7 @@ BWA3_Misc_fnc_detachStrobe = {
   _strobe setPos [0,0,-500]; // cause fuck you again (see above)
 };
 
-player setVariable ["BWA3_IRStrobe", ""];
+player setVariable ["BWA3_IRStrobe", Null];
 
 // Move actions to config?
 player addAction ["Activate Strobelight", {_this call BWA3_Misc_fnc_activateStrobe}, "", 0, false, true, "", "('B_IR_Grenade' in (magazines player) or 'I_IR_Grenade' in (magazines player) or 'O_IR_Grenade' in (magazines player)) and player getVariable 'BWA3_IRStrobe' == ''"];
