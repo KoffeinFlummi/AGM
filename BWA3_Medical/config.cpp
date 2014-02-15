@@ -53,11 +53,10 @@ class Extended_Init_EventHandlers {
 
 
 class CfgVehicles {
-
+  class Man;
   class Land_CargoBox_V1_F;
 
-  // Why the fuck does CAManBase not work?!
-  class SoldierWB {
+  class CAManBase: Man {
     armor = 1.5;
     armorStructural = 4.5;
 
@@ -159,6 +158,30 @@ class CfgVehicles {
       };
     };
 
+    class BWA3_Actions {
+      class Drag {
+        displayName = "Drag";
+        distance = 4;
+        condition = "this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
+        statement = "[this] spawn BWA3_Medical_fnc_drag";
+      };
+      class Carry: Drag {
+        displayName = "Carry";
+        statement = "[this] spawn BWA3_Medical_fnc_carry";
+      };
+      class Release: Drag {
+        displayName = "Release";
+        condition = "this != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
+        statement = "[this] spawn BWA3_Medical_fnc_release";
+      };
+      class Diagnose: Drag {
+        displayName = "Diagnose";
+        condition = "this != player";
+        statement = "[this] spawn BWA3_Medical_fnc_diagnose";
+      };
+    };
+
+    /*
     class UserActions {
       // Documentation:
       // http://community.bistudio.com/wiki/UserActions
@@ -230,220 +253,11 @@ class CfgVehicles {
         condition = "this == player";
       };
 
-    };
+    };*/
+
   };
 
-  /*
-  class SoldierEB {
-    armor = 1.5;
-    armorStructural = 4.5;
-
-    class HitPoints {
-      // "DEACTIVE" DEFAULT HITPOINTS
-      
-      class HitHands {
-        armor = 0; //armor = 2;
-        explosionShielding = 0; //explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "";
-        passThrough = 1; //passThrough = 1;
-        radius = 0; //radius = 0.06;
-        visual = "injury_hands";
-      };
-      class HitLegs {
-        armor = 0; //armor = 2;
-        explosionShielding = 0; //explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "";
-        passThrough = 1; //passThrough = 1;
-        radius = 0; //radius = 0.08;
-        visual = "injury_legs";4
-
-      };
-
-      // HEAD
-      class HitHead {
-        armor = 1;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "head";
-        passThrough = 1;
-        radius = 0.1;
-      };
-      // TORSO
-      class HitBody {
-        armor = 2;
-        explosionShielding = 6;
-        material = -1;
-        minimalHit = 0;
-        name = "body";
-        passThrough = 1;
-        radius = 0.15;
-        visual = "infury_body";
-      };
-      // ARMS
-      class HitLeftShoulder {
-        armor = 2;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "LeftArm";
-        passThrough = 1;
-        radius = 0.06;
-        visual = "injury_hands";
-      };
-      class HitLeftArm: HitLeftShoulder {
-        name = "LeftArmRoll";
-      };
-      class HitLeftForeArm: HitLeftShoulder {
-        name = "LeftForeArm";
-      };
-      class HitRightShoulder: HitLeftShoulder {
-        name = "RightArm";
-      };
-      class HitRightArm: HitLeftShoulder {
-        name = "RightArmRoll";
-      };
-      class HitRightForeArm: HitLeftShoulder {
-        name = "RightForeArm";
-      };
-      // LEGS
-      class HitLeftUpLeg {
-        armor = 2;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "L_Femur_hit";
-        passThrough = 1;
-        radius = 0.08;
-        visual = "injury_legs";
-      };
-      class HitLeftLeg: HitLeftUpLeg {
-        name = "LeftLegRoll";
-      };
-      class HitLeftFoot: HitLeftUpLeg {
-        name = "LeftFoot";
-      };
-      class HitRightUpLeg: HitLeftUpLeg {
-        name = "R_Femur_hit";
-      };
-      class HitRightLeg: HitLeftUpLeg {
-        name = "RightLeg";
-      };
-      class HitRightFoot: HitLeftUpLeg {
-        name = "RightFoot";
-      };
-    };
-  };
-  class SoldierGB {
-    armor = 1.5;
-    armorStructural = 4.5;
-
-    class HitPoints {
-      // "DEACTIVE" DEFAULT HITPOINTS
-      
-      class HitHands {
-        armor = 0; //armor = 2;
-        explosionShielding = 0; //explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "";
-        passThrough = 1; //passThrough = 1;
-        radius = 0; //radius = 0.06;
-        visual = "injury_hands";
-      };
-      class HitLegs {
-        armor = 0; //armor = 2;
-        explosionShielding = 0; //explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "";
-        passThrough = 1; //passThrough = 1;
-        radius = 0; //radius = 0.08;
-        visual = "injury_legs";
-      };
-
-      // HEAD
-      class HitHead {
-        armor = 1;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "head";
-        passThrough = 1;
-        radius = 0.1;
-      };
-      // TORSO
-      class HitBody {
-        armor = 2;
-        explosionShielding = 6;
-        material = -1;
-        minimalHit = 0;
-        name = "body";
-        passThrough = 1;
-        radius = 0.15;
-        visual = "infury_body";
-      };
-      // ARMS
-      class HitLeftShoulder {
-        armor = 2;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "LeftArm";
-        passThrough = 1;
-        radius = 0.06;
-        visual = "injury_hands";
-      };
-      class HitLeftArm: HitLeftShoulder {
-        name = "LeftArmRoll";
-      };
-      class HitLeftForeArm: HitLeftShoulder {
-        name = "LeftForeArm";
-      };
-      class HitRightShoulder: HitLeftShoulder {
-        name = "RightArm";
-      };
-      class HitRightArm: HitLeftShoulder {
-        name = "RightArmRoll";
-      };
-      class HitRightForeArm: HitLeftShoulder {
-        name = "RightForeArm";
-      };
-      // LEGS
-      class HitLeftUpLeg {
-        armor = 2;
-        explosionShielding = 1;
-        material = -1;
-        minimalHit = 0;
-        name = "L_Femur_hit";
-        passThrough = 1;
-        radius = 0.08;
-        visual = "injury_legs";
-      };
-      class HitLeftLeg: HitLeftUpLeg {
-        name = "LeftLegRoll";
-      };
-      class HitLeftFoot: HitLeftUpLeg {
-        name = "LeftFoot";
-      };
-      class HitRightUpLeg: HitLeftUpLeg {
-        name = "R_Femur_hit";
-      };
-      class HitRightLeg: HitLeftUpLeg {
-        name = "RightLeg";
-      };
-      class HitRightFoot: HitLeftUpLeg {
-        name = "RightFoot";
-      };
-    };
-  };
-  */
-
-  class BWA3_Medical_CollisionHelper: Land_CargoBox_V1_F {
+  class BWA3_CollisionHelper: Land_CargoBox_V1_F {
     model = "\BWA3_Medical\BWA3_Medical_Helper.p3d";
   };
 

@@ -17,9 +17,9 @@ BWA3_Wind_fnc_firedEH = {
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _coefficient = 1;
+  _coefficient = 0.7;
   if (_round isKindOf "GrenadeCore") then {
-    _coefficient = 0.3;
+    _coefficient = 0.2;
   };
 
   // HUMIDITY
@@ -28,9 +28,9 @@ BWA3_Wind_fnc_firedEH = {
   _velocityX = _velocity select 0;
   _velocityY = _velocity select 1;
   _velocityZ = _velocity select 2;
-  _velocityNewX = _velocityX - _velocityX * _humidity * 0.3;
-  _velocityNewY = _velocityY - _velocityY * _humidity * 0.3;
-  _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.3;
+  _velocityNewX = _velocityX - _velocityX * _humidity * 0.2;
+  _velocityNewY = _velocityY - _velocityY * _humidity * 0.2;
+  _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.2;
   _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
 
   _time = time;
