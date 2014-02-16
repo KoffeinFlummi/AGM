@@ -34,4 +34,5 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 
 **...**
 
+For a full list, look at the wiki:
 https://github.com/KoffeinFlummi/BWA3_Realism/wiki
