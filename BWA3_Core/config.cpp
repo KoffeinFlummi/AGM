@@ -30,6 +30,8 @@ class CfgFunctions {
       class openInteractionMenu {};
       class openSelfMenu {};
       class openMenu {};
+      class toBin {};
+      class toHex {};
     };
   };
 };
