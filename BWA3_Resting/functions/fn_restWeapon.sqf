@@ -19,11 +19,11 @@
 
 private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosUp", "_checkPosDown"];
 
-if (currentWeapon player == "") exitWith {};
+if (currentWeapon player != primaryWeapon player) exitWith {};
 
 // PREPARE INTERSECTS
-_weaponPos = player selectionPosition "Weapon";
-_weaponDir = player weaponDirection currentWeapon player;
+_weaponPos = player modelToWorld (player selectionPosition "Weapon");
+_weaponDir = player weaponDirection (currentWeapon player);
 _checkPosMiddle = [
                     _weaponPos select 0 + MAXDISTANCE * _weaponDir select 0,
                     _weaponPos select 1 + MAXDISTANCE * _weaponDir select 1,
@@ -55,12 +55,12 @@ if (!(lineIntersects [_weaponPos, _checkPosMiddle, player] or
 // REST THE WEAPON
 player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
 addCamShake CAMSHAKE;
-// apply different animation for sway etc.
-hint "Weapon rested.";
+player switchMove format ["%1_BWA3_rested", (animationState player)];
+hintSilent "Weapon rested.";
 
 BWA3_weaponRested = true;
 
-// CHECK FOR PLAYER MOVING AWAY
+// CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC
 [_weaponPos, _checkPosMiddle, _checkPosLeft, _checkPosRight, _checkPosDown] spawn {
   hint format ["%1", _this];
   _weaponPos = _this select 0;
@@ -73,7 +73,7 @@ BWA3_weaponRested = true;
     lineIntersects [_weaponPos, _checkPosLeft, player] or
     lineIntersects [_weaponPos, _checkPosRight, player] or
     lineIntersects [_weaponPos, _checkPosDown, player]
-    ) or speed player > 1 or currentWeapon player == "") then {
+    ) or speed player > 1 or currentWeapon player != primaryWeapon player) then {
       [] call BWA3_Resting_fnc_unRestWeapon;
     };
     sleep 0.3;
