@@ -20,5 +20,5 @@ BWA3_weaponRested = false;
 // UNREST THE WEAPON
 player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / RESTEDRECOIL);
 addCamShake CAMSHAKE;
-// apply different animation for sway etc.
-hint "Weapon unrested.";
+player switchMove format ["%1", [(animationState player), "_BWA3_rested", ""] call CBA_fnc_replace];
+hintSilent "Weapon unrested.";
