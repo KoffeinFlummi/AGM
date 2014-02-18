@@ -14,8 +14,6 @@
 
 private ["_key"];
 
-hint format ["%1", _this];
-
 _key = _this select 1;
 
 switch true do {

@@ -43,7 +43,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
 
-    // WEAPON RAISED - WALKING
+    // WEAPON RAISED - RUNNING
     class RifleStandActionsRunF: RifleStandActionsNoAdjust {
       getOver = "AovrPercMrunSrasWrflDf";
     };
@@ -64,6 +64,13 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       getOver = "AovrPercMrunSrasWrflDf";
     };
     // WEAPON LOWERED - WALKING
+    /* doesn't work for some reason
+    class RifleLowStandActionsWlkF: RifleLowStandActionsNoAdjust {
+      PlayerWalkF = "AmovPercMwlkSlowWrflDf_v2";
+      WalkF = "AmovPercMwlkSlowWrflDf_v2";
+    };
+    */
+    // WEAPON LOWERED - RUNNING
     class RifleLowStandActionsRunF: RifleLowStandActionsNoAdjust {
       getOver = "AovrPercMrunSrasWrflDf";
     };

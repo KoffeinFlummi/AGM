@@ -21,13 +21,13 @@ class CfgMods {
     action = "https://github.com/KoffeinFlummi/BWA3_Realism";
   };
 };
-
+/* deactivated temporarily, cause too lazy to fix bugs
 class Extended_PostInit_EventHandlers {
   class BWA3_Misc {
     clientInit = "call compile preProcessFileLineNumbers '\BWA3_Misc\init.sqf'";
   };
 };
-
+*/
 class CfgMagazines {
   class CA_Magazine;
 

@@ -14,15 +14,10 @@
  *
  */
 
- player globalChat "key input detected";
-
 if (inputAction "LockTargets" > 0) then {
-  player globalChat "locktargets key detected";
   if (BWA3_weaponRested) then {
-    player globalChat "resting weapon";
     [] call BWA3_Resting_fnc_unRestWeapon;
   } else {
-    player globalChat "unresting weapon";
     [] call BWA3_Resting_fnc_restWeapon;
   };
 };
