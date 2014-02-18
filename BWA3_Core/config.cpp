@@ -43,10 +43,13 @@ class CfgSounds {
   };
 };
 
+/* deactivated temporarily
+>>>>>>> 8627b0aef4b400b3beffc2c96cd88272901daf95
 class Extended_PostInit_EventHandlers {
   class BWA3_Core {
     init = "call compile preProcessFileLineNumbers '\BWA3_Core\init.sqf'";
   };
 };
+*/
 
 #include <MenuConfig.hpp>
