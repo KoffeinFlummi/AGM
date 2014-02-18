@@ -36,7 +36,15 @@ class CfgFunctions {
   };
 };
 
+class CfgSounds {
+  class BWA3_Sound_Click {
+    sound[] = {"\bwa3_realism\sounds\BWA3_click.wav", 5, 1, 200};
+    titles[] = {};
+  };
+};
+
 /* deactivated temporarily
+>>>>>>> 8627b0aef4b400b3beffc2c96cd88272901daf95
 class Extended_PostInit_EventHandlers {
   class BWA3_Core {
     init = "call compile preProcessFileLineNumbers '\BWA3_Core\init.sqf'";
