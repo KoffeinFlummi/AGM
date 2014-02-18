@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Anims_F, A3_Anims_F_Config_Sdr};
+    requiredAddons[] = {A3_Data_F, A3_Anims_F, A3_Anims_F_Config_Sdr};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -22,15 +22,17 @@ class CfgMods {
   };
 };
 
+
+// WHAT DO THESE VALUES EVEN DO?
 class CfgFatigue {
   FrequencyMax = 1;
   FrequencyMin = 0.2;
   MaxDuty = 10;
   MinValue1 = 0.1;
   MinValue2 = 0.8;
-  NormalRunSpeed = 7.2;
+  NormalRunSpeed = 7.2; // seems to have no effect
   TiredRunSpeedLimit = 1;
-  TotalLoadCoef = 1.1;
+  TotalLoadCoef = 1.1; // seems to have no effect
 };
 
 
