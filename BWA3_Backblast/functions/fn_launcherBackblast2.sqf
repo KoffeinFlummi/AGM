@@ -10,20 +10,22 @@ _firer = _this select 1;
 _distance = _this select 2;
 _weapon = _this select 3;
 
-if (vehicle _unit != _unit) exitWith {};
-
 _backblastAngle = getNumber (configFile >> "CfgWeapons" >> _weapon >> "BWA3_Backblast_Angle") / 2;
 _backblastRange = getNumber (configFile >> "CfgWeapons" >> _weapon >> "BWA3_Backblast_Range");
 _backblastDamage = getNumber (configFile >> "CfgWeapons" >> _weapon >> "BWA3_Backblast_Damage") * 2;
 
 _position = eyePos _firer;
-_direction = _firer weaponDirection currentWeapon _firer;
+_direction = direction _firer;
 
 if (_unit == _firer) then {
-	_direction set [0, (_position select 0) - (_direction select 0) * _backblastRange];
-	_direction set [1, (_position select 1) - (_direction select 1) * _backblastRange];
-	_direction set [2, (_position select 2) + (_direction select 2) * _backblastRange];
-	_line = [_position, _direction];
+	_line = [
+		_position,
+		[
+			(_position select 0) - (sin _direction) * _backblastRange,
+			(_position select 1) - (cos _direction) * _backblastRange,
+			_position select 2
+		]
+	];
 
 	_hitSelf = false;
 	{
@@ -42,28 +44,17 @@ if (_unit == _firer) then {
 		_unit setDamage (damage _unit + _damage);
 	};
 } else {
-	_direction set [0, (_position select 0) - (_direction select 0)];
-	_direction set [1, (_position select 1) - (_direction select 1)];
-	_direction set [2, (_position select 2) + (_direction select 2)];
+	if (vehicle _unit != _unit) exitWith {};
 
-	_azimuth = (_direction select 0) atan2 (_direction select 1);
-	_inclination = asin (_direction select 2);
+	if (_direction > 180) then {_direction = _direction - 360};
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [
-		(_relativePosition select 0) - (_position select 0),
-		(_relativePosition select 1) - (_position select 1),
-		(_relativePosition select 2) - (_position select 2)
-	];
+	_relativeDirection = ((_position select 0) - (_relativePosition select 0)) atan2 ((_position select 1) - (_relativePosition select 1));
 
-	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
-	_relativeInclination = asin (_relativeDirection select 2);
+	_difference = abs ((_direction + 360) - (_relativeDirection + 360));
+	_height = abs ((_position select 2) - (_relativePosition select 2));
 
-	_distance = _position distance _relativePosition;
-	_angle = abs (_relativeAzimuth - _azimuth) + abs (_relativeInclination - _inclination);
-	_line = [_position, _relativePosition];
-
-	if (_distance < _backblastRange && {_angle < _backblastAngle} && {!lineIntersects _line} && {!terrainIntersectASL _line}) then {
+	if (_distance < _backblastRange && {_difference < _backblastAngle} && {_height < 1} && {!lineIntersects [_position, _relativePosition, _unit, _firer]}) then {
 		_alpha = sqrt (1 - _difference / _backblastAngle);
 		_beta = sqrt (1 - _distance / _backblastRange);
 
