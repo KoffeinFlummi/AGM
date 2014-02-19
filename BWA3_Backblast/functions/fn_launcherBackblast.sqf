@@ -21,19 +21,17 @@ _direction = _firer weaponDirection currentWeapon _firer;
 
 if (_unit == _firer) then {
 	_distance = 0;
-	_laser = _position;
+	_laser = + _position;
 	_line = [_position, _laser];
 	_intersection = false;
 	while {
 		_distance < _backblastRange && {!_intersection} && {!terrainIntersectASL _line}
 	} do {
 		_distance = _distance + _backblastRange / 100;
-		_laser = [
-			(_position select 0) - (_direction select 0) * _distance,
-			(_position select 1) - (_direction select 1) * _distance,
-			(_position select 2) - (_direction select 2) * _distance
-		];
-		_line = [_position, _laser];
+		_laser set [0, (_position select 0) - (_direction select 0) * _distance];
+		_laser set [1, (_position select 1) - (_direction select 1) * _distance];
+		_laser set [2, (_position select 2) - (_direction select 2) * _distance];
+		_line set [1, _laser];
 		{
 			if (_x isKindOf "Static" || {_x isKindOf "AllVehicles"}) then {_intersection = true};
 		} forEach (lineIntersectsWith _line);
