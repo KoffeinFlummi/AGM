@@ -4,7 +4,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {Extended_EventHandlers};
+    requiredAddons[] = {Extended_EventHandlers, BWA3_Core};
     version = 1.0;
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -37,6 +37,29 @@ class CfgFunctions {
 class Extended_PostInit_EventHandlers {
   class BWA3_Resting {
     clientInit = "call compile preProcessFileLineNumbers '\BWA3_Resting\init.sqf'";
+  };
+};
+
+class CfgWeapons {
+  class Rifle_Long_Base_F;
+  class arifle_MX_Base_F;
+
+  class arifle_MX_SW_F : arifle_MX_Base_F {
+    BWA3_Bipod = 1;
+  };
+
+  class LMG_Mk200_F : Rifle_Long_Base_F {
+    BWA3_Bipod = 1;
+  };
+  class LMG_Zafir_F: Rifle_Long_Base_F {
+    BWA3_Bipod = 1;
+  };
+
+  class LRR_base_F : Rifle_Long_Base_F {
+    BWA3_Bipod = 1;
+  };
+  class GM6_base_F : Rifle_Long_Base_F {
+    BWA3_Bipod = 1;
   };
 };
 

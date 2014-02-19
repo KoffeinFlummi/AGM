@@ -11,13 +11,13 @@ if (isServer) then {
 
 	if (_clientVersion < BWA3_serverVersion) exitWith {
 		systemChat format ["Your version of BWA3 (%1) does not match the server version (%2).", str (_clientVersion), str (BWA3_serverVersion)];
-		systemChat "Please visit http://www.bwmod.de to update your mod installation.";
-		diag_log "BWA3: Client Version older than server version"
+		systemChat "Please visit https://github.com/KoffeinFlummi/BWA3_Realism/ to update your mod installation.";
+		diag_log "BWA3: Client Version older than server version";
 	};
 
 	if (_clientVersion > BWA3_serverVersion) exitWith {
 		systemChat format["Your version of BWA3 (%1) does not match the server version (%2).", str (_clientVersion), str (BWA3_serverVersion)];
 		systemChat "Please contact the server administrator.";
-		diag_log "BWA3: Client Version newer than server version"
+		diag_log "BWA3: Client Version newer than server version";
 	};
 };

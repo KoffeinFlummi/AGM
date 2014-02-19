@@ -14,10 +14,13 @@
  *
  */
 
-if (inputAction "LockTargets" > 0) then {
+if (inputAction "LockTargets" > 0 and currentWeapon player == primaryWeapon player) then {
   if (BWA3_weaponRested) then {
     [] call BWA3_Resting_fnc_unRestWeapon;
   } else {
     [] call BWA3_Resting_fnc_restWeapon;
   };
+  true
+} else {
+  false
 };
