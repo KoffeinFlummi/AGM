@@ -28,14 +28,16 @@ if (_unit == _firer) then {
 		_distance < _backblastRange && {!_intersection} && {!terrainIntersectASL _line}
 	} do {
 		_distance = _distance + _backblastRange / 100;
-		_laser set [0, (_laser select 0) - (_direction select 0) * _distance];
-		_laser set [1, (_laser select 1) - (_direction select 1) * _distance];
-		_laser set [2, (_laser select 2) - (_direction select 2) * _distance];
-		_line set [1, _laser];
+		_laser = [
+			(_position select 0) - (_direction select 0) * _distance,
+			(_position select 1) - (_direction select 1) * _distance,
+			(_position select 2) - (_direction select 2) * _distance
+		];
+		_line = [_position, _laser];
 		{
 			if (_x isKindOf "Static" || {_x isKindOf "AllVehicles"}) then {_intersection = true};
 		} forEach (lineIntersectsWith _line);
-	}; hintSilent str _distance;
+	}; //hintSilent str _distance;
 
 	if (_distance < _backblastRange) then {
 		_alpha = sqrt (1 - _distance / _backblastRange);
@@ -59,11 +61,11 @@ if (_unit == _firer) then {
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
 
-	/*hintSilent format ["%1\n%2\n%3\n%4"
-		, str _azimuth
-		, str _inclination
-		, str _relativeAzimuth
-		, str _relativeInclination
+	/*hintSilent format ["%1\n%2\n%3\n%4",
+		str _azimuth,
+		str _inclination,
+		str _relativeAzimuth,
+		str _relativeInclination
 	];*/
 
 	_azimuth = _azimuth + 360;
@@ -71,7 +73,7 @@ if (_unit == _firer) then {
 	_relativeAzimuth = _relativeAzimuth + 360;
 	_relativeInclination = _relativeInclination + 360;
 
-	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2); hintSilent str _angle;
+	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2); //hintSilent str _angle;
 	_distance = _position distance _relativePosition;
 	_line = [_position, _relativePosition];
 
