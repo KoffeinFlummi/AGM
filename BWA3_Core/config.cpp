@@ -26,6 +26,7 @@ class CfgFunctions {
   class BWA3_Core {
     class BWA3_Core {
       file = "BWA3_Core\functions";
+      class getDirectionVector {};
       class keyInput {};
       class openInteractionMenu {};
       class openSelfMenu {};

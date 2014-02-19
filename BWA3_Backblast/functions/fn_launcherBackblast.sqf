@@ -20,54 +20,66 @@ _position = eyePos _firer;
 _direction = _firer weaponDirection currentWeapon _firer;
 
 if (_unit == _firer) then {
-	_direction set [0, (_position select 0) - (_direction select 0) * _backblastRange];
-	_direction set [1, (_position select 1) - (_direction select 1) * _backblastRange];
-	_direction set [2, (_position select 2) + (_direction select 2) * _backblastRange];
-	_line = [_position, _direction];
+	_distance = 0;
+	_laser = _position;
+	_line = [_position, _laser];
+	_intersection = false;
+	while {
+		_distance < _backblastRange && {!_intersection} && {!terrainIntersectASL _line}
+	} do {
+		_distance = _distance + _backblastRange / 100;
+		_laser set [0, (_laser select 0) - (_direction select 0) * _distance];
+		_laser set [1, (_laser select 1) - (_direction select 1) * _distance];
+		_laser set [2, (_laser select 2) - (_direction select 2) * _distance];
+		_line set [1, _laser];
+		{
+			if (_x isKindOf "Static" || {_x isKindOf "AllVehicles"}) then {_intersection = true};
+		} forEach (lineIntersectsWith _line);
+	}; hintSilent str _distance;
 
-	_hitSelf = false;
-	{
-		if (_x isKindOf "Static" || {_x isKindOf "AllVehicles"}) then {
-			_hitSelf = true;
-		};
-	} forEach lineIntersectsWith _line;
+	if (_distance < _backblastRange) then {
+		_alpha = sqrt (1 - _distance / _backblastRange);
+		_beta = sqrt 0.5;
 
-	if (terrainIntersectASL _line) then {
-		_hitSelf = true;
-	};
-
-	if (_hitSelf) then {
-		_damage = _backblastDamage / 2;
+		_damage = 2 * _alpha * _beta * _backblastDamage;
 		[_damage * 100] call BIS_fnc_bloodEffect;
 		_unit setDamage (damage _unit + _damage);
 	};
 } else {
-	_direction set [0, (_position select 0) - (_direction select 0)];
-	_direction set [1, (_position select 1) - (_direction select 1)];
-	_direction set [2, (_position select 2) + (_direction select 2)];
+	_direction set [0, - (_direction select 0)];
+	_direction set [1, - (_direction select 1)];
+	_direction set [2, - (_direction select 2)];
 
 	_azimuth = (_direction select 0) atan2 (_direction select 1);
 	_inclination = asin (_direction select 2);
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [
-		(_relativePosition select 0) - (_position select 0),
-		(_relativePosition select 1) - (_position select 1),
-		(_relativePosition select 2) - (_position select 2)
-	];
+	_relativeDirection = [_position, _relativePosition] call BWA3_Core_fnc_getDirectionVector;
 
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
 
+	/*hintSilent format ["%1\n%2\n%3\n%4"
+		, str _azimuth
+		, str _inclination
+		, str _relativeAzimuth
+		, str _relativeInclination
+	];*/
+
+	_azimuth = _azimuth + 360;
+	_inclination = _inclination + 360;
+	_relativeAzimuth = _relativeAzimuth + 360;
+	_relativeInclination = _relativeInclination + 360;
+
+	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2); hintSilent str _angle;
 	_distance = _position distance _relativePosition;
-	_angle = abs (_relativeAzimuth - _azimuth) + abs (_relativeInclination - _inclination);
 	_line = [_position, _relativePosition];
 
-	if (_distance < _backblastRange && {_angle < _backblastAngle} && {!lineIntersects _line} && {!terrainIntersectASL _line}) then {
-		_alpha = sqrt (1 - _difference / _backblastAngle);
-		_beta = sqrt (1 - _distance / _backblastRange);
+	if (_angle < _backblastAngle && {_distance < _backblastRange} && {!lineIntersects _line} && {!terrainIntersectASL _line}) then {
+		_alpha = sqrt (1 - _distance / _backblastRange);
+		_beta = sqrt (1 - _angle / _backblastAngle);
 
-		_damage = _backblastDamage * 2 * _alpha * _beta;
+		_damage = 2 * _alpha * _beta * _backblastDamage;
 		if (_unit == player) then {[_damage * 100] call BIS_fnc_bloodEffect};
 		_unit setDamage (damage _unit + _damage);
 	};
