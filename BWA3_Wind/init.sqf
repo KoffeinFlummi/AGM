@@ -23,7 +23,7 @@ BWA3_Wind_fnc_firedEH = {
   };
 
   // HUMIDITY
-  _humidity = (fogParams select 0 + rain) / 2;
+  _humidity = ((fogParams select 0) + rain) / 2;
   _velocity = velocity _round;
   _velocityX = _velocity select 0;
   _velocityY = _velocity select 1;
@@ -39,6 +39,7 @@ BWA3_Wind_fnc_firedEH = {
     _velocity = velocity _round;
     _velocityX = _velocity select 0;
     _velocityY = _velocity select 1;
+    _velocityZ = _velocity select 2;
     
     // Use actual time delay between iterations instead of set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
