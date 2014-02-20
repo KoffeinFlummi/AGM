@@ -39,7 +39,7 @@ class Extended_FiredNear_EventHandlers {
   };
 };
 
-class CfgWeapons {
+/*class CfgWeapons {
   class Launcher_Base_F {
     BWA3_Backblast_Angle = 60;
     BWA3_Backblast_Range = 10;
@@ -67,4 +67,4 @@ class CfgWeapons {
     BWA3_Backblast_Range = 20;
     BWA3_Backblast_Damage = 0.5;
   };
-};
+};*/
