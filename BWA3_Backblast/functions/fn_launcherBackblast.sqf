@@ -20,22 +20,13 @@ _position = eyePos _firer;
 _direction = _firer weaponDirection currentWeapon _firer;
 
 if (_unit == _firer) then {
-	_distance = 0;
-	_laser = + _position;
-	_line = [_position, _laser];
-	_intersection = false;
-	while {
-		_distance < _backblastRange && {!_intersection} && {!terrainIntersectASL _line}
-	} do {
-		_distance = _distance + _backblastRange / 100;
-		_laser set [0, (_position select 0) - (_direction select 0) * _distance];
-		_laser set [1, (_position select 1) - (_direction select 1) * _distance];
-		_laser set [2, (_position select 2) - (_direction select 2) * _distance];
-		_line set [1, _laser];
-		{
-			if (_x isKindOf "Static" || {_x isKindOf "AllVehicles"}) then {_intersection = true};
-		} forEach (lineIntersectsWith _line);
-	}; //hintSilent str _distance;
+	_direction set [0, (_position select 0) - _backblastRange * (_direction select 0)];
+	_direction set [1, (_position select 1) - _backblastRange * (_direction select 1)];
+	_direction set [2, (_position select 2) - _backblastRange * (_direction select 2)];
+
+	_direction = [_position, _direction] call BWA3_Backblast_fnc_getDistance;
+
+	_distance = _position distance _direction;
 
 	if (_distance < _backblastRange) then {
 		_alpha = sqrt (1 - _distance / _backblastRange);
@@ -59,19 +50,7 @@ if (_unit == _firer) then {
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
 
-	/*hintSilent format ["%1\n%2\n%3\n%4",
-		str _azimuth,
-		str _inclination,
-		str _relativeAzimuth,
-		str _relativeInclination
-	];*/
-
-	_azimuth = _azimuth + 360;
-	_inclination = _inclination + 360;
-	_relativeAzimuth = _relativeAzimuth + 360;
-	_relativeInclination = _relativeInclination + 360;
-
-	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2); //hintSilent str _angle;
+	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2);
 	_distance = _position distance _relativePosition;
 	_line = [_position, _relativePosition];
 

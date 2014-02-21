@@ -27,6 +27,7 @@ class CfgFunctions {
     class BWA3_Backblast {
         file = "bwa3_backblast\functions";
       class launcherBackblast {};
+      class getDistance {};
     };
   };
 };

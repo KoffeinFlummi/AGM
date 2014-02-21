@@ -33,6 +33,12 @@ class CfgFunctions {
       class openMenu {};
       class toBin {};
       class toHex {};
+      class addVector {};
+      class subtractVector {};
+      class scaleVector {};
+      class scalarProduct {};
+      class vectorProduct {};
+      class vectorLenght {};
     };
   };
 };
