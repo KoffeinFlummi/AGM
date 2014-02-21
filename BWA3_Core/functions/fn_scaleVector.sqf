@@ -15,7 +15,7 @@ A Vector, Array
 private ["_scale", "_vector"];
 
 _scale = _this select 0;
-_vector = _this select 1;
+_vector = + _this select 1;
 
 {
 	_vector set [_forEachIndex, _scale * (_vector select _forEachIndex)];
