@@ -26,8 +26,10 @@ PREPROCESS(Hint_displayText)
   };
 };
 
+/*
 // Menu
 0 spawn {
   waituntil {!isnull (finddisplay 46)};
   (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call BWA3_Core_fnc_keyInput;"];  
 };
+*/
