@@ -12,7 +12,7 @@ Return Value:
 A unit vector, 3-element-Array
 */
 
-private ["_position0", "_position1", "_vectorX", "_vectorY", "_vectorZ", "_lenght", "_vector"];
+private ["_position0", "_position1", "_vectorX", "_vectorY", "_vectorZ", "_lenght"];
 
 _position0 = _this select 0;
 _position1 = _this select 1;
@@ -29,9 +29,8 @@ _vectorZ = (_position1 select 2) - (_position0 select 2);
 
 _lenght = sqrt (_vectorX ^ 2 + _vectorY ^ 2 + _vectorZ ^ 2);
 
-_vector = [
+[
 	((_vectorX / _lenght) min 1) max -1,
 	((_vectorY / _lenght) min 1) max -1,
 	((_vectorZ / _lenght) min 1) max -1
-];
-_vector
+]

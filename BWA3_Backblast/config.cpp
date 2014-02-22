@@ -22,30 +22,29 @@ class CfgMods {
   };
 };
 
-class CfgFunctions {
+class Extended_PostInit_EventHandlers {
   class BWA3_Backblast {
-    class BWA3_Backblast {
-        file = "bwa3_backblast\functions";
-      class launcherBackblast {};
-    };
+    Init = "call compile preProcessFileLineNumbers '\BWA3_Backblast\init.sqf'";
   };
 };
 
 class Extended_FiredNear_EventHandlers {
   class CAManBase {
     class BWA3_FiredNear {
-      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'BWA3_Backblast_Damage') > 0}) then {_this call BWA3_Backblast_fnc_launcherBackblast}";
+      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'BWA3_Backblast_Damage') > 0}) then {_this call BWA3_Backblast_launcherBackblast}";
     };
   };
 };
 
-/*class CfgWeapons {
-  class Launcher_Base_F {
+class CfgWeapons {
+  class Launcher;
+
+  class Launcher_Base_F: Launcher {
     BWA3_Backblast_Angle = 60;
     BWA3_Backblast_Range = 10;
     BWA3_Backblast_Damage = 0.5;
   };
-  
+
   class launch_Titan_base: Launcher_Base_F {
     BWA3_Backblast_Angle = 40;
     BWA3_Backblast_Range = 6;
@@ -56,7 +55,7 @@ class Extended_FiredNear_EventHandlers {
     BWA3_Backblast_Range = 6;
     BWA3_Backblast_Damage = 0.4;
   };
-  
+
   class launch_NLAW_F: Launcher_Base_F {
     BWA3_Backblast_Angle = 40;
     BWA3_Backblast_Range = 15;
@@ -67,4 +66,4 @@ class Extended_FiredNear_EventHandlers {
     BWA3_Backblast_Range = 20;
     BWA3_Backblast_Damage = 0.5;
   };
-};*/
+};
