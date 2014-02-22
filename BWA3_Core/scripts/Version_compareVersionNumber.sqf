@@ -1,4 +1,4 @@
-//by commy2
+// by commy2
 
 #define VERSION 1.0
 

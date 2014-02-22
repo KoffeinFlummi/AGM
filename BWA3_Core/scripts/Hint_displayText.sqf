@@ -1,4 +1,4 @@
-//by commy2
+// by commy2
 
 #define DEFAULT_PLAY_SOUND false
 #define DEFAULT_DELAY 2

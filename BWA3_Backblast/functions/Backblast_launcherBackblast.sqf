@@ -1,9 +1,4 @@
-/*
-BWA3 function, by commy2
-this code is property of the ArmA 3 Bundeswehr modification
-ask us nicely at http://www.bwmod.de/ if you want to re-use any of this script
-we don't support changed code based on this work
-*/
+// by commy2
 
 _unit = _this select 0;
 _firer = _this select 1;
@@ -20,13 +15,7 @@ _position = eyePos _firer;
 _direction = _firer weaponDirection currentWeapon _firer;
 
 if (_unit == _firer) then {
-	_direction set [0, (_position select 0) - _backblastRange * (_direction select 0)];
-	_direction set [1, (_position select 1) - _backblastRange * (_direction select 1)];
-	_direction set [2, (_position select 2) - _backblastRange * (_direction select 2)];
-
-	_direction = [_position, _direction] call BWA3_Backblast_fnc_getDistance;
-
-	_distance = _position distance _direction;
+	_distance = [_position, _direction, _backblastRange] call BWA3_Backblast_getDistance;
 
 	if (_distance < _backblastRange) then {
 		_alpha = sqrt (1 - _distance / _backblastRange);
@@ -45,7 +34,7 @@ if (_unit == _firer) then {
 	_inclination = asin (_direction select 2);
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [_position, _relativePosition] call BWA3_Core_fnc_getDirectionVector;
+	_relativeDirection = [_position, _relativePosition] call BWA3_Backblast_getDirectionVector;
 
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
