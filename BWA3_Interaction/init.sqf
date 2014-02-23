@@ -23,7 +23,7 @@ BWA3_Interaction_keyRelease = compile preProcessFileLineNumbers "\BWA3_Interacti
 
 	player addAction [
 		format["<t color='#808000'>%1</t>", localize "STR_BWA3_LeaveGroup"],
-		{_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {_newGroup reveal _x} forEach _oldGroup},
+		{_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup},
 		[],
 		6.2,
 		false,
