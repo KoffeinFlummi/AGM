@@ -7,24 +7,32 @@ BWA3_Hint_lastHint = [time, 0];
 
 PREPROCESS(Hint_displayText)
 
-// MP Synchronization
-0 spawn {
-  if (!isMultiplayer) exitWith {};
-  while {true} do {
-    if (isServer) then {
-      BWA3_Weather = [date, wind, fogParams, overcast, rain];
-      publicVariable "BWA3_Weather";
-    } else {
-      sleep 3;
-      setDate (BWA3_Weather select 0);
-      setWind [((BWA3_Weather select 1) select 0), ((BWA3_Weather select 1) select 1), true];
-      0 setFog (BWA3_Weather select 2);
-      0 setOvercast (BWA3_Weather select 3);
-      0 setRain (BWA3_Weather select 4);
+if (isMultiplayer) then {
+  BWA3_Weather = [];
+
+  // SERVER
+  if (isServer) then {
+    0 spawn {
+      while (true) do {
+        BWA3_Weather = [date, wind, fogParams, overcast, rain, time mod 60];
+        publicVariable "BWA3_Weather";
+        sleep 60;
+      };
     };
-    sleep 300;
+  };
+
+  // CLIENT
+  "BWA3_Weather" addPublicVariableEventHandler {
+    _publicArray = _this select 1;
+    setDate (_publicArray select 0);
+    skipTime ((_publicArray select 5) / 3600);
+    setWind [((_publicArray select 1) select 0), ((_publicArray select 1) select 1), true];
+    0 setFog (_publicArray select 2);
+    0 setOvercast (_publicArray select 3); // seems to be bugged ATM
+    0 setRain (_publicArray select 4);
   };
 };
+
 
 /*
 // Menu
