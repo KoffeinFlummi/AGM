@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BWRealism">
+  <Package name="Interaction">
+
+    <Key ID="STR_BWA3_JoinGroup">
+      <English>Join group</English>
+      <German>Gruppe beitreten</German>
+    </Key>
+    <Key ID="STR_BWA3_LeaveGroup">
+      <English>Leave group</English>
+      <German>Gruppe verlassen</German>
+    </Key>
+    <Key ID="STR_BWA3_BecomeLeader">
+      <English>Become Leader</English>
+      <German>Gruppenführung übernehmen</German>
+    </Key>
+
+  </Package>
+</Project>
