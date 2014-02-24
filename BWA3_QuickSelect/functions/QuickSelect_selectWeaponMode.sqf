@@ -20,4 +20,4 @@ while {
 } do {
 	player action ["SwitchWeapon", vehicle player, vehicle player, _index];
 	_index = _index + 1;
-};hint str _i;
+};

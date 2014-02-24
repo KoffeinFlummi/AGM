@@ -7,6 +7,9 @@ _weapon = _this select 0;
 _muzzles = [_weapon] call BWA3_QuickSelect_getWeaponMuzzles;	
 
 _count = count _muzzles;
+if (_count < 2) exitWith {};
+player selectWeapon _weapon;
+
 _index = (_muzzles find currentMuzzle player) + 1;
 if (_index > _count - 1) then {_index = 1};
 
@@ -18,4 +21,4 @@ while {
 } do {
 	player action ["SwitchWeapon", vehicle player, vehicle player, _index];
 	_index = _index + 1;
-};hint str _i;
+};

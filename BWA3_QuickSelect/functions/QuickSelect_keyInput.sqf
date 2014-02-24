@@ -22,20 +22,6 @@ if (_key == 2) then {		//KEY 1
 
 if (_key == 3) then {		//KEY 2
 	if (!BWA3_QuickSelect_keyDown) then {
-		/*_weapon = primaryWeapon player;
-		if (currentWeapon player == _weapon) then {
-			[_weapon] call BWA3_QuickSelect_selectWeaponMode;
-		} else {
-			player selectWeapon _weapon;
-		};*/
-	};
-
-	BWA3_QuickSelect_keyDown = true;
-	_isInput = true;
-};
-
-if (_key == 4) then {		//KEY 3
-	if (!BWA3_QuickSelect_keyDown) then {
 		_weapon = primaryWeapon player;
 		if (currentWeapon player == _weapon) then {
 			[_weapon] call BWA3_QuickSelect_selectWeaponMode;
@@ -48,11 +34,25 @@ if (_key == 4) then {		//KEY 3
 	_isInput = true;
 };
 
-if (_key == 5) then {		//KEY 4
+if (_key == 4) then {		//KEY 3
 	if (!BWA3_QuickSelect_keyDown) then {
 		_weapon = primaryWeapon player;
-		player selectWeapon _weapon;
+		//player selectWeapon _weapon;
 		[_weapon] call BWA3_QuickSelect_selectWeaponMuzzle;
+	};
+
+	BWA3_QuickSelect_keyDown = true;
+	_isInput = true;
+};
+
+if (_key == 5) then {		//KEY 4
+	if (!BWA3_QuickSelect_keyDown) then {
+		_weapon = secondaryWeapon player;
+		if (currentWeapon player == _weapon) then {
+			[_weapon] call BWA3_QuickSelect_selectWeaponMode;
+		} else {
+			player selectWeapon _weapon;
+		};
 	};
 
 	BWA3_QuickSelect_keyDown = true;
@@ -61,7 +61,10 @@ if (_key == 5) then {		//KEY 4
 
 if (_key == 6) then {		//KEY 5
 	if (!BWA3_QuickSelect_keyDown) then {
-		_weapon = secondaryWeapon player;
+		_weapons = weapons player - [handgunWeapon player] - [primaryWeapon player] - [secondaryWeapon player];
+		_weapon = (
+			if (count _weapons == 1) then {_weapons select 0} else {""}
+		);
 		if (currentWeapon player == _weapon) then {
 			[_weapon] call BWA3_QuickSelect_selectWeaponMode;
 		} else {
