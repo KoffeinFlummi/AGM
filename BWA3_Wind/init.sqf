@@ -33,8 +33,8 @@ BWA3_Wind_fnc_firedEH = {
   _velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.2;
   _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
 
-  _time = time;
   // WIND
+  _time = time;
   while {!isNull _round and alive _round} do {
     _velocity = velocity _round;
     _velocityX = _velocity select 0;
