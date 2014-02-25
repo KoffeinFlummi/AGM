@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_NightVision {
-    dir = "BWA3_NightVision";
-    name = "BWA3: Night Vision Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class CfgFunctions {
   class BWA3_NightVision {
     class BWA3_NightVision {

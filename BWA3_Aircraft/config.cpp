@@ -20,18 +20,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Aircraft {
-    dir = "BWA3_Aircraft";
-    name = "BWA3: Aircraft Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class Mode_Burst;
 
 // Manual Switching Of Flare Mode

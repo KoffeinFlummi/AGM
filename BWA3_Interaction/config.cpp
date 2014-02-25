@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Interaction {
-    dir = "BWA3_Interaction";
-    name = "BWA3: Interaction Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class Extended_PostInit_EventHandlers {
   class BWA3_Interaction {
     Init = "call compile preProcessFileLineNumbers '\BWA3_Interaction\init.sqf'";

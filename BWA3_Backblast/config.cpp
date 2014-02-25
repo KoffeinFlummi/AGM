@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Backblast {
-    dir = "BWA3_Backblast";
-    name = "BWA3: Backblast Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class Extended_PostInit_EventHandlers {
   class BWA3_Backblast {
     Init = "call compile preProcessFileLineNumbers '\BWA3_Backblast\init.sqf'";

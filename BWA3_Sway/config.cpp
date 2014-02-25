@@ -12,18 +12,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Recoil {
-    dir = "BWA3_Sway";
-    name = "BWA3: Sway Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 // EVERYTHING BELOW BELONGS TO TAOSENSAI
 
 #define TMR_SWAY_005 0.048

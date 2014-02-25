@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Hash {
-    dir = "BWA3_Hash";
-    name = "BWA3: Hash Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class CfgFunctions {
   class BWA3_Hash {
     class BWA3_Hash {

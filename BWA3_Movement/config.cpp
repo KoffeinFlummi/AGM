@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Movement {
-    dir = "BWA3_Movement";
-    name = "BWA3: Movement Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 
 // WHAT DO THESE VALUES EVEN DO?
 class CfgFatigue {

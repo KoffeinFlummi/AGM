@@ -12,18 +12,6 @@ class CfgPatches {
 	};
 };
 
-class CfgMods {
-	class BWA3_Ballistics {
-		dir = "BWA3_Ballistics";
-		name = "BWA3: Ballistics Module";
-		picture = "";
-		hidePicture = "true";
-		hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-	};
-};
-
 // EVERYTHING BELOW BELONGS TO TAOSENSAI
 
 class CfgAmmo {

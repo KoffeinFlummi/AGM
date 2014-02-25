@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Civilians {
-    dir = "BWA3_Civilians";
-    name = "BWA3: Civilians Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class CfgFunctions {
   class BWA3_Civilians {
     class BWA3_Civilians {

@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Wind {
-    dir = "BWA3_Wind";
-    name = "BWA3: Wind Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class Extended_PostInit_EventHandlers {
   class BWA3_Wind {
     clientInit = "call compile preProcessFileLineNumbers '\BWA3_Wind\init.sqf'";

@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_WeaponSelect {
-    dir = "BWA3_WeaponSelect";
-    name = "BWA3: Weapon Select Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class Extended_PostInit_EventHandlers {
   class BWA3_WeaponSelect {
     Init = "call compile preProcessFileLineNumbers '\BWA3_WeaponSelect\init.sqf'";

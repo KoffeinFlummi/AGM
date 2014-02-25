@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Core {
-    dir = "BWA3_Core";
-    name = "BWA3: Core Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class CfgFunctions {
   class BWA3_Core {
     class BWA3_Core {

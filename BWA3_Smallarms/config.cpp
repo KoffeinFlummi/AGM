@@ -15,18 +15,6 @@ class CfgPatches {
 	};
 };
 
-class CfgMods {
-	class BWA3_Smallarms {
-		dir = "BWA3_Smallarms";
-		name = "BWA3: Smallarms Module";
-		picture = "";
-		hidePicture = "true";
-		hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-	};
-};
-
 // EVERYTHING BELOW BELONGS TO TAOSENSAI
 
 //////////////////////////////////////////////////////

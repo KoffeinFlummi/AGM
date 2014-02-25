@@ -13,7 +13,7 @@ if (isMultiplayer) then {
   // SERVER
   if (isServer) then {
     0 spawn {
-      while (true) do {
+      while {true} do {
         BWA3_Weather = [date, wind, fogParams, overcast, rain, time mod 60];
         publicVariable "BWA3_Weather";
         sleep 60;

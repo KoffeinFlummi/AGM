@@ -11,18 +11,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Medical {
-    dir = "BWA3_Medical";
-    name = "BWA3: Medical Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 class CfgFunctions {
   class BWA3_Medical {
     class BWA3_Medical {

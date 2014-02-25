@@ -10,17 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Misc {
-    dir = "BWA3_Misc";
-    name = "BWA3: Misc Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
 /* deactivated temporarily, cause too lazy to fix bugs
 class Extended_PostInit_EventHandlers {
   class BWA3_Misc {

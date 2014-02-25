@@ -22,18 +22,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_Vehicles {
-    dir = "BWA3_Vehicles";
-    name = "BWA3: Vehicle Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 
 class CfgVehicles {
   // BLUFOR Inheritance

@@ -10,18 +10,6 @@ class CfgPatches {
   };
 };
 
-class CfgMods {
-  class BWA3_AI {
-    dir = "BWA3_AI";
-    name = "BWA3: AI Module";
-    picture = "";
-    hidePicture = "true";
-    hideName = "true";
-    actionName = "Github";
-    action = "https://github.com/KoffeinFlummi/BWA3_Realism";
-  };
-};
-
 /* 
  * Documentation:
  * https://community.bistudio.com/wiki/AI_Sub-skills
