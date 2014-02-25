@@ -2,10 +2,14 @@
 
 private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode"];
 
-_weapon = _this select 0;
+_weapon = _this;
 
-_muzzles = [_weapon] call BWA3_QuickSelect_getWeaponMuzzles;	
-_modes = [_weapon] call BWA3_QuickSelect_getWeaponModes;
+if (currentWeapon player != _weapon) exitWith {
+	player selectWeapon _weapon;
+};
+
+_muzzles = _weapon call BWA3_WeaponSelect_getWeaponMuzzles;	
+_modes = _weapon call BWA3_WeaponSelect_getWeaponModes;
 
 _count = count _modes;
 _index = (_modes find currentWeaponMode player) + 1;
@@ -20,4 +24,4 @@ while {
 } do {
 	player action ["SwitchWeapon", vehicle player, vehicle player, _index];
 	_index = _index + 1;
-};hint str _i;
+};

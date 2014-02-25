@@ -1,5 +1,5 @@
 class CfgPatches {
-  class BWA3_QuickSelect {
+  class BWA3_WeaponSelect {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
@@ -11,9 +11,9 @@ class CfgPatches {
 };
 
 class CfgMods {
-  class BWA3_QuickSelect {
-    dir = "BWA3_QuickSelect";
-    name = "BWA3: Quick Select Module";
+  class BWA3_WeaponSelect {
+    dir = "BWA3_WeaponSelect";
+    name = "BWA3: Weapon Select Module";
     picture = "";
     hidePicture = "true";
     hideName = "true";
@@ -23,7 +23,7 @@ class CfgMods {
 };
 
 class Extended_PostInit_EventHandlers {
-  class BWA3_QuickSelect {
-    Init = "call compile preProcessFileLineNumbers '\BWA3_QuickSelect\init.sqf'";
+  class BWA3_WeaponSelect {
+    Init = "call compile preProcessFileLineNumbers '\BWA3_WeaponSelect\init.sqf'";
   };
 };

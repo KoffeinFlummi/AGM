@@ -2,7 +2,7 @@
 
 private ["_weapon", "_modes"];
 
-_weapon = _this select 0;
+_weapon = _this;
 
 _modes = [];
 {
@@ -13,5 +13,4 @@ _modes = [];
 		_modes set [count _modes, _weapon];
 	};
 } forEach getArray (configfile >> "CfgWeapons" >> _weapon >> "modes");
-
 _modes
