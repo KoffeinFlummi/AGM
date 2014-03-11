@@ -8,8 +8,6 @@
  * 
  * Return value:
  * none
- *
- * !!! NEEDS TO BE CALLED USING spawn !!!
  */
 
 #define CPRSUCCESSRATEMEDIC 0.5
@@ -17,42 +15,41 @@
 #define CPRTIMEPERCYCLE 15
 #define EPIMULTIPLIER 1.5
 
-private ["_unit", "_successrate", "_cpr", "_i"];
+_this spawn {
+  _unit = this select 0;
 
-_unit = this select 0;
+  // DETERMINE IF UNIT IS MEDIC
+  _successrate = 0;
+  if ([_unit] call BWA3_Medical_isMedic) then { // later
+    _successrate = CPRSUCCESSRATEMEDIC;
+  } else {
+    _successrate = CPRSUCCESSRATENONMEDIC;
+  };
 
-// DETERMINE IF UNIT IS MEDIC
-if (true) then { // later
-  _successrate = CPRSUCCESSRATEMEDIC;
-} else {
-  _successrate = CPRSUCCESSRATENONMEDIC;
-};
+  if (_unit getVariable "BWA3_Epinephrine") then {
+    _successrate = _successrate * EPIMULTIPLIER;
+  };
 
-if (_unit getVariable "BWA3_Epinephrine") then {
-  _successrate = _successrate * EPIMULTIPLIER;
-};
+  player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // animation
 
-player switchMove "Acts_TreatingWounded01"; // cpr animation
-
-// START COUNTDOWN RSC
-
-//sleep CPRTIMEPERCYCLE;
-_i = CPRTIMEPERCYCLE;
-while {_i > 0} do {
-  hint format ["%1", _i];
-  _i = _i - 1;
+  // START COUNTDOWN RSC (this is just a placeholder)
+  _i = CPRTIMEPERCYCLE;
+  while {_i > 0} do {
+    hintSilent format ["CPR:\n%1", _i];
+    _i = _i - 1;
+    sleep 1;
+  };
+  hintSilent "CPR:\nDone.";
   sleep 1;
+  hintSilent "";
+  // STOP COUNTDOWN RSC
+
+  _cpr = (_unit getVariable "BWA3_Dead") - (random _successrate);
+
+  if (_cpr <= 0) then {
+    _unit setVariable ["BWA3_Dead", 0];
+    [_unit] call BWA3_Medical_fnc_revive;
+  } else {
+    _unit setVariable ["BWA3_Dead", _cpr];
+  };
 };
-
-// STOP COUNTDOWN RSC
-
-_cpr = (_unit getVariable "BWA3_Dead") - random _successrate;
-
-if (_cpr <= 0) then {
-  _unit setVariable ["BWA3_Dead", 0];
-  [_unit] call BWA3_Medical_fnc_revive;
-} else {
-  _unit setVariable ["BWA3_Dead", _cpr];
-};
-
-player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

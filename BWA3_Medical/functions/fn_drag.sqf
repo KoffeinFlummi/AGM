@@ -8,24 +8,22 @@
  * 
  * Return value:
  * none
- *
- * !!! NEEDS TO BE CALLED USING spawn !!!
  */
 
-private ["_unit"];
+_this spawn {
+  _unit = _this select 0;
 
-_unit = _this select 0;
+  _unit setVariable ["BWA3_Treatable", false, true];
+  player setVariable ["BWA3_Dragging", _unit, false];
 
-_unit setVariable ["BWA3_Treatable", false, true];
-player setVariable ["BWA3_Dragging", _unit, false];
+  #define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
+  #define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_grab"
 
-#define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
-#define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_grab"
+  player playMoveNow DRAGGINGMOVE;
+  waitUntil {animationState player == DRAGGINGMOVE};
 
-player playMoveNow DRAGGINGMOVE;
-waitUntil {animationState player == DRAGGINGMOVE};
+  _unit attachTo [player, [0, 1.1, 0.092]];
+  _unit setDir 180;
 
-_unit attachTo [player, [0, 1.1, 0.092]];
-_unit setDir 180;
-
-_unit switchMove DRAGGEDMOVE;
+  _unit playMoveNow DRAGGEDMOVE;
+};

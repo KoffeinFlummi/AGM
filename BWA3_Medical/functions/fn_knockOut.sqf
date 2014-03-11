@@ -15,13 +15,12 @@ private ["_unit", "_eh", "_helper"];
 _unit = _this select 0;
 _unit setVariable ["BWA3_Unconscious", true, true];
 
-
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
 };
 
 // Not possible to ragdollize on command, so we slam a 'vehicle' in his face.
-_unit setCaptive 13;
+_unit setCaptive 213;
 _unit allowDamage false;
 
 _unit disableAI "MOVE";

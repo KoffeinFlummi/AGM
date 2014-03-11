@@ -28,6 +28,6 @@ if (_unit == player) then {
 };
 
 _unit setPos _position;
-if (captiveNum _unit == 13) then {
+if (captiveNum _unit == 213) then {
   _unit setCaptive false;
 };

@@ -8,43 +8,37 @@
  * 
  * Return value:
  * none
- *
- * !!! NEEDS TO BE CALLED USING spawn !!!
  */
 
 #define EPITIMEMEDIC 5
 #define EPITIMENONMEDIC 10
 
-private ["_unit", "_epitime", "_i"];
+if ((_this select 0) getVariable "BWA3_Epinephrine") exitWith {};
 
-_unit = _this select 0;
+_this spawn {
+  _unit = _this select 0;
 
-if (_unit getVariable "BWA3_Epinephrine") exitWith {};
+  // DETERMINE IF UNIT IS MEDIC
+  _epitime = 0;
+  if ([_unit] call BWA3_Medical_isMedic) then {
+    _epitime = EPITIMEMEDIC;
+  } else {
+    _epitime = EPITIMENONMEDIC;
+  };
 
-// DETERMINE IF UNIT IS MEDIC
-if (getNumber (configfile >> "CfgVehicles" >> typeOf player >> "attendant") == 1) then {
-  _epitime = EPITIMEMEDIC;
-} else {
-  _epitime = EPITIMENONMEDIC;
-};
+  player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
-player switchMove "Acts_TreatingWounded02"; // healing animation
-
-// START COUNTDOWN RSC
-
-//sleep _epitime;
-_i = _epitime;
-while {_i > 0} do {
-  hintSilent format ["Injecting Epinephrine:\n%1", _i];
-  _i = _i - 1;
+  // START COUNTDOWN RSC (this is just a placeholder)
+  _i = _epitime;
+  while {_i > 0} do {
+    hintSilent format ["Injecting Epinephrine:\n%1", _i];
+    _i = _i - 1;
+    sleep 1;
+  };
+  hintSilent "Injecting Epinephrine:\nDone.";
   sleep 1;
+  hintSilent "";
+  // STOP COUNTDOWN RSC
+
+  _unit setVariable ["BWA3_Epinephrine", true];
 };
-hintSilent "Injecting Epinephrine:\nDone.";
-sleep 1;
-hintSilent "";
-
-// STOP COUNTDOWN RSC
-
-_unit setVariable ["BWA3_Epinephrine", true];
-
-player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

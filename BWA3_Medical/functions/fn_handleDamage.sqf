@@ -44,7 +44,7 @@ null = _unit spawn {
   _this setHitPointDamage ["HitHands", 0];
 
   if (damage _this > UNCONSCIOUSNESSTHRESHOLD and !(_this getVariable "BWA3_Unconscious")) then {
-    [_this] call BWA3_Medical_fnc_knockOut;
+    //[_this] call BWA3_Medical_fnc_knockOut;
   };
   if (damage _this > REVIVETHRESHOLD) then {
     // Determine if unit is revivable.

@@ -15,18 +15,19 @@ class CfgFunctions {
   class BWA3_Medical {
     class BWA3_Medical {
       file = "BWA3_Medical\functions";
-      class bandage {};
-      class cpr {};
-      class diagnose {};
-      class drag {};
-      class carry {};
-      class epinephrine {};
-      class handleDamage {};
-      class init {};
-      class knockOut {};
-      class morphine {};
-      class release {};
-      class wakeUp {};
+      class bandage;
+      class carry;
+      class cpr;
+      class diagnose;
+      class drag;
+      class epinephrine;
+      class handleDamage;
+      class init;
+      class isMedic;
+      class knockOut;
+      class morphine;
+      class release;
+      class wakeUp;
     };
   };
 };
@@ -34,7 +35,7 @@ class CfgFunctions {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class BWA3_Medical_Init {
-      init = "_this spawn BWA3_Medical_fnc_init";
+      init = "_this call BWA3_Medical_fnc_init";
     };
   };
 };
@@ -151,21 +152,21 @@ class CfgVehicles {
         displayName = "Drag";
         distance = 4;
         condition = "this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
-        statement = "[this] spawn BWA3_Medical_fnc_drag";
+        statement = "[this] call BWA3_Medical_fnc_drag";
       };
       class Carry: Drag {
         displayName = "Carry";
-        statement = "[this] spawn BWA3_Medical_fnc_carry";
+        statement = "[this] call BWA3_Medical_fnc_carry";
       };
       class Release: Drag {
         displayName = "Release";
         condition = "this != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
-        statement = "[this] spawn BWA3_Medical_fnc_release";
+        statement = "[this] call BWA3_Medical_fnc_release";
       };
       class Diagnose: Drag {
         displayName = "Diagnose";
         condition = "this != player";
-        statement = "[this] spawn BWA3_Medical_fnc_diagnose";
+        statement = "[this] call BWA3_Medical_fnc_diagnose";
       };
     };
 
@@ -188,12 +189,12 @@ class CfgVehicles {
         onlyForPlayer = false;        // enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
         condition = "this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
-        statement = "[this] spawn BWA3_Medical_fnc_drag";
+        statement = "[this] call BWA3_Medical_fnc_drag";
       };
       class BWA3_Carry: BWA3_Drag {
         displayName = "Carry";
         priority = 5.99;
-        statement = "[this] spawn BWA3_Medical_fnc_carry";
+        statement = "[this] call BWA3_Medical_fnc_carry";
       };
       class BWA3_Release: BWA3_Drag {
         displayName = "Release";
@@ -204,7 +205,7 @@ class CfgVehicles {
         displayName = "Diagnose";
         priority = 5.98;
         condition = "this != player";
-        statement = "[this] spawn BWA3_Medical_fnc_diagnose";
+        statement = "[this] call BWA3_Medical_fnc_diagnose";
       };
       class BWA3_Diagnose_Self: BWA3_Diagnose {
         displayName = "Diagnose (Self)";
@@ -216,13 +217,13 @@ class CfgVehicles {
         displayName = "Perform CPR";
         priority = 5.9;
         condition = "this != player and this getVariable 'BWA3_Dead' > 0";
-        statement = "[this] spawn BWA3_Medical_fnc_CPR";
+        statement = "[this] call BWA3_Medical_fnc_CPR";
       };
       class BWA3_Epinephrine: BWA3_Drag {
         displayName = "Inject Epinephrine";
         priority = 5.89;
         condition = "this != player";
-        statement = "[this] spawn BWA3_Medical_fnc_epinephrine";
+        statement = "[this] call BWA3_Medical_fnc_epinephrine";
       };
       class BWA3_Epinephrine_Self: BWA3_Epinephrine {
         displayName = "Inject Epinephrine (Self)";
@@ -233,7 +234,7 @@ class CfgVehicles {
         displayName = "Inject Morphine";
         priority = 5.88;
         condition = "this != player";
-        statement = "[this] spawn BWA3_Medical_fnc_morphine";
+        statement = "[this] call BWA3_Medical_fnc_morphine";
       };
       class BWA3_Morphine_Self: BWA3_Morphine {
         displayName = "Inject Morphine (Self)";

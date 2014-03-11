@@ -15,34 +15,32 @@
 #define BANDAGETIMENONMEDIC 20
 #define BANDAGEHEAL 0.3
 
-private ["_unit", "_selection", "_healtime", "_damage", "_i"];
+_this spawn {
+  _unit = this select 0;
+  _selection = this select 1;
 
-_unit = this select 0;
-_selection = this select 1;
+  // DETERMINE IF UNIT IS MEDIC
+  _healtime = 0;
+  if ([_unit] call BWA3_Medical_isMedic) then { // later
+    _healtime = BANDAGETIMEMEDIC;
+  } else {
+    _healtime = BANDAGETIMENONMEDIC;
+  };
 
-// DETERMINE IF UNIT IS MEDIC
-if (true) then { // later
-  _healtime = BANDAGETIMEMEDIC;
-} else {
-  _healtime = BANDAGETIMENONMEDIC;
-};
+  player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
-player switchMove "Acts_TreatingWounded03"; // healing animation
-
-// START COUNTDOWN RSC
-
-//sleep _healtime;
-_i = _healtime;
-while {_i > 0} do {
-  hint format ["%1", _i];
-  _i = _i - 1;
+  // START COUNTDOWN RSC (this is just a placeholder)
+  _i = _healtime;
+  while {_i > 0} do {
+    hintSilent format ["Bandaging %1:\n%2", _selection, _i];
+    _i = _i - 1;
+    sleep 1;
+  };
+  hintSilent format ["Bandaging %1:\nDone", _selection];
   sleep 1;
+  hintSilent "";
+  // STOP COUNTDOWN RSC
+
+  _damage = (_unit getHitPointDamage _selection - BANDAGEHEAL) max 0;
+  _unit setHitPointDamage [_selection, _damage];
 };
-
-// STOP COUNTDOWN RSC
-
-_damage = _unit getHitPointDamage _selection - BANDAGEHEAL;
-if (_damage < 0) then {_damage = 0;};
-_unit setHitPointDamage [_selection, _damage];
-
-player switchMove "AidlPknlMstpSlowWrflDnon_G01_combat";

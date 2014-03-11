@@ -10,26 +10,37 @@ Return value:
 none
 */
 
-_unit = _this select 0;
+#define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDnon_medic1"
 
-_string = "Hands: " + str(floor ((_unit getHitPointDamage "HitHands") * 100) / 100) + "\n" +
-          "Legs: " + str(floor ((_unit getHitPointDamage "HitLegs") * 100) / 100) + "\n" +
-          "---------------\n" +
-          "Head: " + str(floor ((_unit getHitPointDamage "HitHead") * 100) / 100) + "\n" +
-          "Body: " + str(floor ((_unit getHitPointDamage "HitBody") * 100) / 100) + "\n" +
-          "LeftShoulder: " + str(floor ((_unit getHitPointDamage "HitLeftShoulder") * 100) / 100) + "\n" +
-          "LeftArm: " + str(floor ((_unit getHitPointDamage "HitLeftArm") * 100) / 100) + "\n" +
-          "LeftForeArm: " + str(floor ((_unit getHitPointDamage "HitLeftForeArm") * 100) / 100) + "\n" +
-          "RightShoulder: " + str(floor ((_unit getHitPointDamage "HitRightShoulder") * 100) / 100) + "\n" +
-          "RightArm: " + str(floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100) + "\n" +
-          "RightForeArm: " + str(floor ((_unit getHitPointDamage "HitRightForeArm") * 100) / 100) + "\n" +
-          "LeftUpLeg: " + str(floor ((_unit getHitPointDamage "HitLeftUpLeg") * 100) / 100) + "\n" +
-          "LeftLeg: " + str(floor ((_unit getHitPointDamage "HitLeftLeg") * 100) / 100) + "\n" +
-          "LeftFoot: " + str(floor ((_unit getHitPointDamage "HitLeftFoot") * 100) / 100) + "\n" +
-          "RightUpLeg: " + str(floor ((_unit getHitPointDamage "HitRightUpLeg") * 100) / 100) + "\n" +
-          "RightLeg: " + str(floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100) + "\n" +
-          "RightFoot: " + str(floor ((_unit getHitPointDamage "HitRightFoot") * 100) / 100) + "\n" +
-          "---------------\n" +
-          "Damage: " + str(damage _unit);
+_this spawn {
+  _unit = _this select 0;
 
-hintSilent _string;
+  player playMoveNow DIAGNOSEMOVE;
+
+  // wait for animation to finish without using absolute times or event handlers
+  waitUntil {sleep 0.5; animationState player == DIAGNOSEMOVE};
+  waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
+
+  // this is going to be replaced with some fancy UI at some point. maybe. possibly.
+  _string = formatText ["Hands: %1\nLegs: %2\n-----------\nHead: %3\nBody: %4\nLeftShoulder: %5\nLeftArm: %6\nLeftForeArm: %7\nRightShoulder: %8\nRightArm: %9\nRightForeArm: %10\nLeftUpLeg: %11\nLeftLeg: %12\nLeftFoot: %13\nRightUpLeg: %14\nRightLeg: %15\nRightFoot: %16\n-----------\nTotal Damage: %17",
+    floor ((_unit getHitPointDamage "HitHands") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLegs") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitHead") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitBody") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftShoulder") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftArm") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftForeArm") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightShoulder") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightForeArm") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftUpLeg") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftLeg") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitLeftFoot") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightUpLeg") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100,
+    floor ((_unit getHitPointDamage "HitRightFoot") * 100) / 100,
+    floor ((damage _unit) * 100) / 100
+  ];
+
+  hintSilent _string;
+};
