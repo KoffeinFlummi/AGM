@@ -20,7 +20,7 @@
 
 private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosUp", "_checkPosDown"];
 
-if (currentWeapon player != primaryWeapon player) exitWith {};
+if (currentWeapon player != primaryWeapon player or vehicle player != player) exitWith {};
 
 // PREPARE INTERSECTS
 BWA3_Resting_checkIntersection = {
@@ -73,7 +73,7 @@ BWA3_Resting_checkIntersection = {
       lineIntersects [_weaponPos, _checkPosRight] or
       lineIntersects [_weaponPosDown, _checkPosDown] or
       terrainIntersectASL [_weaponPosDown, _checkPosDown]
-      ) and (speed player) < 1 and currentWeapon player == primaryWeapon player) then {
+      ) and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) then {
     true
   } else {
     false

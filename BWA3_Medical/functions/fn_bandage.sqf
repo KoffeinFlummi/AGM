@@ -13,15 +13,15 @@
 
 #define BANDAGETIMEMEDIC 10
 #define BANDAGETIMENONMEDIC 20
-#define BANDAGEHEAL 0.3
+#define BANDAGEHEAL 0.4
 
 _this spawn {
-  _unit = this select 0;
-  _selection = this select 1;
+  _unit = _this select 0;
+  _selection = _this select 1;
 
   // DETERMINE IF UNIT IS MEDIC
   _healtime = 0;
-  if ([_unit] call BWA3_Medical_isMedic) then { // later
+  if ([player] call BWA3_Medical_fnc_isMedic) then { // later
     _healtime = BANDAGETIMEMEDIC;
   } else {
     _healtime = BANDAGETIMENONMEDIC;
@@ -41,6 +41,14 @@ _this spawn {
   hintSilent "";
   // STOP COUNTDOWN RSC
 
-  _damage = (_unit getHitPointDamage _selection - BANDAGEHEAL) max 0;
+  _damage = ((_unit getHitPointDamage _selection) - 0.4) max 0;
   _unit setHitPointDamage [_selection, _damage];
+
+  _fullyHealed = true;
+  {
+    if (_unit getHitPointDamage _x > 0.01) exitWith {_fullyHealed = false;};
+  } forEach ["HitHead","HitBody","HitLeftShoulder","HitLeftArm","HitLeftForeArm","HitRightShoulder","HitRightArm","HitRightForeArm","HitLeftUpLeg","HitLeftLeg","HitLeftFoot","HitRightUpLeg","HitRightLeg","HitRightFoot"];
+  if (_fullyHealed) then {
+    _unit setDamage 0;
+  };
 };

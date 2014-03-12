@@ -20,7 +20,7 @@ _this spawn {
 
   // DETERMINE IF UNIT IS MEDIC
   _successrate = 0;
-  if ([_unit] call BWA3_Medical_isMedic) then { // later
+  if ([_unit] call BWA3_Medical_fnc_isMedic) then { // later
     _successrate = CPRSUCCESSRATEMEDIC;
   } else {
     _successrate = CPRSUCCESSRATENONMEDIC;
