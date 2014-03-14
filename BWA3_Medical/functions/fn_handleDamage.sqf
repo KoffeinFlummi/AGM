@@ -16,8 +16,8 @@
 
 #define REVIVETHRESHOLD 0.8
 #define UNCONSCIOUSNESSTHRESHOLD 0.65
-#define LEGDAMAGETHRESHOLD1 0.4
-#define LEGDAMAGETHRESHOLD2 0.6
+#define LEGDAMAGETHRESHOLD1 1.5
+#define LEGDAMAGETHRESHOLD2 3
 #define PRONEANIMATION "abcdefg"
 #define ARMDAMAGETHRESHOLD 0.7
 #define PAINKILLERTHRESHOLD 0.1
@@ -37,102 +37,75 @@ _projectile = _this select 4;
 if (damage _unit == 1) exitWith {};
 
 // Code to be executed AFTER damage was dealt
-null = _unit spawn {
+null = [_unit, damage _unit] spawn {
+  _unit = _this select 0;
+  _damageold = _this select 1;
+  _painold = _unit getVariable "BWA3_Pain";
+
   sleep 0.001;
 
+  _armdamage = (_unit getHitPointDamage "HitLeftShoulder" + _unit getHitPointDamage "HitLeftArm" + _unit getHitPointDamage "HitLeftForeArm" + _unit getHitPointDamage "HitRightShoulder" + _unit getHitPointDamage "HitRightArm" + _unit getHitPointDamage "HitRightForeArm");
+  _legdamage = (_unit getHitPointDamage "HitLeftUpLeg" + _unit getHitPointDamage "HitLeftLeg" + _unit getHitPointDamage "HitLeftFoot" + _unit getHitPointDamage "HitRightUpLeg" + _unit getHitPointDamage "HitRightLeg" + _unit getHitPointDamage "HitRightFoot");
+
   // Reset "unused" hitpoints.
-  _this setHitPointDamage ["HitLegs", 0];
-  _this setHitPointDamage ["HitHands", 0];
+  _unit setHitPointDamage ["HitLegs", 0];
+  _unit setHitPointDamage ["HitHands", 0];
   
-  if (damage _this > UNCONSCIOUSNESSTHRESHOLD and !(_this getVariable "BWA3_Unconscious")) then {
-    //[_this] call BWA3_Medical_fnc_knockOut;
+  /*
+  // Handle death and unconsciousness
+  if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and !(_unit getVariable "BWA3_Unconscious")) then {
+    //[_unit] call BWA3_Medical_fnc_knockOut;
   };
-  if (damage _this > REVIVETHRESHOLD) then {
+  if (damage _unit > REVIVETHRESHOLD) then {
     // Determine if unit is revivable.
-    if (_this getHitPointDamage "HitHead" < 0.5 and _this getHitPointDamage "HitBody" < 1 and _this getVariable "BWA3_Blood" > 0.2) then {
-      _this setVariable ["BWA3_Dead", 1];
+    if (_unit getHitPointDamage "HitHead" < 0.5 and _unit getHitPointDamage "HitBody" < 1 and _unit getVariable "BWA3_Blood" > 0.2) then {
+      _unit setVariable ["BWA3_Dead", 1];
     } else {
-      _this setDamage 1;
+      _unit setDamage 1;
     };
   };
+  */
 
   // Handle leg damage symptoms
-  if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
-      _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD2 or
-      _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD2 or
-      _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD2 or
-      _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD2 or
-      _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2) then {
-
-    // Force the unit to the ground.
-    _this switchMove PRONEANIMATION;
-    _this spawn {
-      while {_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2} do {
-        waitUntil {sleep 0.7; stance _this != "PRONE"};
-        _this switchMove PRONEANIMATION;
+  if (_legdamage >= LEGDAMAGETHRESHOLD1 and _legdamage < LEGDAMAGETHRESHOLD2) then {
+    // lightly wounded, limit walking speed
+    _unit setHitPointDamage ["HitLegs", 1];
+  };
+  if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
+    // heavily wounded, stop unit from walking alltogether
+    // TODO: replace playMoveNow with setUnitPos for AI units
+    if !(_unit getVariable "BWA3_NoLegs") then {
+      _unit setVariable ["BWA3_NoLegs", true, true];
+      _unit spawn {
+        _unit = _this select 0;
+        _legdamage = (_unit getHitPointDamage "HitLeftUpLeg" + _unit getHitPointDamage "HitLeftLeg" + _unit getHitPointDamage "HitLeftFoot" + _unit getHitPointDamage "HitRightUpLeg" + _unit getHitPointDamage "HitRightLeg" + _unit getHitPointDamage "HitRightFoot");
+        _unit playMoveNow "proneAnimation"; // fill this in
+        while {_legdamage >= LEGDAMAGETHRESHOLD2} do {
+          waitUntil {sleep 2; stance _unit != "PRONE"};
+          _unit playMoveNow "proneAnimation"; // fill this in
+        };
+        _unit setVariable ["BWA3_NoLegs", false, true];
       };
-    };
-  } else {
-    if (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD1 or
-        _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD1 or
-        _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD1 or
-        _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD1 or
-        _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD1 or
-        _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD1) then {
-
-      // Force unit to walk slowly
-      //_this forceWalk true; // disable sprinting ?
-      _this setHitPointDamage ["HitLegs", 1];
     };
   };
 
   // Handle arm damage symptoms
-  if (_this getHitPointDamage "HitLeftShoulder" > ARMDAMAGETHRESHOLD or
-      _this getHitPointDamage "HitLeftArm" > ARMDAMAGETHRESHOLD or
-      _this getHitPointDamage "HitLeftForeArm" > ARMDAMAGETHRESHOLD or
-      _this getHitPointDamage "HitRightShoulder" > ARMDAMAGETHRESHOLD or
-      _this getHitPointDamage "HitRightArm" > ARMDAMAGETHRESHOLD or
-      _this getHitPointDamage "HitRightForeArm" > ARMDAMAGETHRESHOLD) then {
+  if (_unit getHitPointDamage "HitLeftShoulder" > ARMDAMAGETHRESHOLD or
+      _unit getHitPointDamage "HitLeftArm" > ARMDAMAGETHRESHOLD or
+      _unit getHitPointDamage "HitLeftForeArm" > ARMDAMAGETHRESHOLD or
+      _unit getHitPointDamage "HitRightShoulder" > ARMDAMAGETHRESHOLD or
+      _unit getHitPointDamage "HitRightArm" > ARMDAMAGETHRESHOLD or
+      _unit getHitPointDamage "HitRightForeArm" > ARMDAMAGETHRESHOLD) then {
 
-    // Drop weapon
-    /*
-    _this spawn {
-      while {true} do {
-        waitUntil {currentWeapon _this != ""};
-        _weapon = currentWeapon _this;
-        if (currentWeapon _this == primaryWeapon _this) then {
-          _attachments = primaryWeaponItems _this;
-        } else {
-          if (currentWeapon _this == handGunWeapon _this) then {
-            _attachments = handGunItems _this;
-          } else {
-            _attachments = secondaryWeaponItems _this;
-          };
-        };
-        _magazine = currentMagazine _this;
-        _rounds = 1;
-
-        _this removeWeapon (currentWeapon _this);
-        _this addMagazine [_magazine, _rounds];
-        _weaponVehicle = _weapon createVehicle (eyePos player);
-        {_weaponVehicle addItem _x} forEach _attachments;
-        sleep 1;
-      };
-    };*/
   };
 
-  if (damage _this * (_this getVariable "BWA3_Painkiller") > _this getVariable "BWA3_Pain") then {
-    _this setVariable ["BWA3_Pain", (damage _this) * (_this getVariable "BWA3_Painkiller")];
+  if (damage _unit * (_unit getVariable "BWA3_Painkiller") > _unit getVariable "BWA3_Pain") then {
+    _unit setVariable ["BWA3_Pain", (damage _unit) * (_unit getVariable "BWA3_Painkiller")];
   };
 
   // Pain
-  if (_this == player) then {
-    _this spawn {
+  if (_unit == player) then {
+    _unit spawn {
       if (_this getVariable "BWA3_InPain") exitWith {};
       _this setVariable ["BWA3_InPain", true];
       "chromAberration" ppEffectEnable true;
@@ -155,9 +128,9 @@ null = _unit spawn {
   };
 
   // Bleeding
-  if !(_this getVariable "BWA3_Bleeding") then {
-    _this setVariable ["BWA3_Bleeding", true];
-    _this spawn {
+  if !(_unit getVariable "BWA3_Bleeding") then {
+    _unit setVariable ["BWA3_Bleeding", true];
+    _unit spawn {
       while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding")} do {
         {
           _this setHitPointDamage [_x, ((_this getHitPointDamage _x) - AUTOHEALRATE) max 0];
@@ -181,7 +154,7 @@ null = _unit spawn {
 
 };
 
-// Prevent structural damage
+// reduce structural damage
 if (_selectionName == "") exitWith {
   damage _unit + _damage / 3
 };
