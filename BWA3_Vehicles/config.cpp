@@ -28,7 +28,12 @@ class CfgVehicles {
   class MRAP_01_base_F;
   class MRAP_01_hmg_base_F: MRAP_01_base_F {};
   class MRAP_01_gmg_base_F: MRAP_01_hmg_base_F {};
-  class B_MBT_01_base_F;
+  class MBT_01_base_F;
+  class B_MBT_01_base_F: MBT_01_base_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
   class B_MBT_01_mlrs_base_F;
   class B_MBT_01_arty_base_F;
   class B_APC_Wheeled_01_base_F;
@@ -36,9 +41,22 @@ class CfgVehicles {
   class Truck_01_base_F;
 
   // INDEP Inheritance
-  class MRAP_03_base_F;
-  class MRAP_03_hmg_base_F: MRAP_03_base_F {};
-  class MRAP_03_gmg_base_F: MRAP_03_hmg_base_F {};
+  class Car_F;
+  class MRAP_03_base_F: Car_F {
+    class Turrets {
+      class CommanderTurret;
+    };
+  };
+  class MRAP_03_hmg_base_F: MRAP_03_base_F {
+    class Turrets: Turrets {
+      class CommanderTurret: CommanderTurret {};
+    };
+  };
+  class MRAP_03_gmg_base_F: MRAP_03_hmg_base_F {
+    class Turrets: Turrets {
+      class CommanderTurret: CommanderTurret {};
+    };
+  };
   class I_MBT_03_base_F;
   class I_APC_Wheeled_03_base_F;
   class I_APC_tracked_03_base_F;
@@ -68,6 +86,28 @@ class CfgVehicles {
 
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
     displayName = "Merkava Mk IV";
+    transportSoldiers = 0;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        magazines[] = {};
+      };
+    };
+  };
+  class BWA3_B_MBT_01_cannon_APC: B_MBT_01_cannon_F {
+    displayName = "Merkava Mk IV (APC)";
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        magazines[] = {};
+      };
+    };
+  };
+  class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
+    displayName = "Merkava LIC";
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {};
+      };
+    };
   };
   class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
     displayName = "Sholef";
@@ -120,12 +160,33 @@ class CfgVehicles {
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
     displayName = "Fennek";
+    smokeLauncherGrenadeCount = 3;
+    smokeLauncherAngle = 80;
+    class Turrets: Turrets {
+      class CommanderTurret: CommanderTurret {
+        stabilizedInAxes = 3;
+      };
+    };
   };
   class I_MRAP_03_hmg_F: MRAP_03_hmg_base_F {
     displayName = "Fennek (HMG)";
+    smokeLauncherGrenadeCount = 3;
+    smokeLauncherAngle = 80;
+    class Turrets: Turrets {
+      class CommanderTurret: CommanderTurret {
+        stabilizedInAxes = 3;
+      };
+    };
   };
   class I_MRAP_03_gmg_F: MRAP_03_gmg_base_F {
     displayName = "Fennek (GMG)";
+    smokeLauncherGrenadeCount = 3;
+    smokeLauncherAngle = 80;
+    class Turrets: Turrets {
+      class CommanderTurret: CommanderTurret {
+        stabilizedInAxes = 3;
+      };
+    };
   };
 
   class I_MBT_03_cannon_F: I_MBT_03_base_F {

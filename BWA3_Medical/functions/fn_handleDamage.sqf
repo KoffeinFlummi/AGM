@@ -25,6 +25,7 @@
 #define BLOODTHRESHOLD1 0.4
 #define BLOODTHRESHOLD2 0.2
 #define BLOODLOSSRATE 0.005
+#define AUTOHEALRATE 0.005
 
 _unit = _this select 0;
 _selectionName = _this select 1;
@@ -42,7 +43,7 @@ null = _unit spawn {
   // Reset "unused" hitpoints.
   _this setHitPointDamage ["HitLegs", 0];
   _this setHitPointDamage ["HitHands", 0];
-
+  
   if (damage _this > UNCONSCIOUSNESSTHRESHOLD and !(_this getVariable "BWA3_Unconscious")) then {
     //[_this] call BWA3_Medical_fnc_knockOut;
   };
@@ -66,13 +67,13 @@ null = _unit spawn {
     // Force the unit to the ground.
     _this switchMove PRONEANIMATION;
     _this spawn {
-      while (_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
+      while {_this getHitPointDamage "HitLeftUpLeg" > LEGDAMAGETHRESHOLD2 or
             _this getHitPointDamage "HitLeftLeg" > LEGDAMAGETHRESHOLD2 or
             _this getHitPointDamage "HitLeftFoot" > LEGDAMAGETHRESHOLD2 or
             _this getHitPointDamage "HitRightUpLeg" > LEGDAMAGETHRESHOLD2 or
             _this getHitPointDamage "HitRightLeg" > LEGDAMAGETHRESHOLD2 or
-            _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2) do {
-        waitUntil {stance _this != "PRONE"};
+            _this getHitPointDamage "HitRightFoot" > LEGDAMAGETHRESHOLD2} do {
+        waitUntil {sleep 0.7; stance _this != "PRONE"};
         _this switchMove PRONEANIMATION;
       };
     };
@@ -99,6 +100,7 @@ null = _unit spawn {
       _this getHitPointDamage "HitRightForeArm" > ARMDAMAGETHRESHOLD) then {
 
     // Drop weapon
+    /*
     _this spawn {
       while {true} do {
         waitUntil {currentWeapon _this != ""};
@@ -113,14 +115,15 @@ null = _unit spawn {
           };
         };
         _magazine = currentMagazine _this;
-        _rounds = 1; // later
+        _rounds = 1;
 
         _this removeWeapon (currentWeapon _this);
         _this addMagazine [_magazine, _rounds];
         _weaponVehicle = _weapon createVehicle (eyePos player);
-        {_weaponVehicle addItem _x} forEach _attachments; // Does this work?
+        {_weaponVehicle addItem _x} forEach _attachments;
+        sleep 1;
       };
-    };
+    };*/
   };
 
   if (damage _this * (_this getVariable "BWA3_Painkiller") > _this getVariable "BWA3_Pain") then {
@@ -156,6 +159,11 @@ null = _unit spawn {
     _this setVariable ["BWA3_Bleeding", true];
     _this spawn {
       while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding")} do {
+        {
+          _this setHitPointDamage [_x, ((_this getHitPointDamage _x) - AUTOHEALRATE) max 0];
+        } forEach ["HitHead","HitBody","HitLeftShoulder","HitLeftArm","HitLeftForeArm","HitRightShoulder","HitRightArm","HitRightForeArm","HitLeftUpLeg","HitLeftLeg","HitLeftFoot","HitRightUpLeg","HitRightLeg","HitRightFoot"];
+        if (damage _this == 0) exitWith {_this setVariable ["BWA3_Bleeding", false];};
+        
         _blood = _this getVariable "BWA3_Blood";
         _blood = _blood - BLOODLOSSRATE * damage _this;
         _this setVariable ["BWA3_Blood", _blood];
@@ -165,9 +173,15 @@ null = _unit spawn {
         if (_blood < BLOODTHRESHOLD2) then {
           _this setDamage 1;
         };
+
         sleep 10;
       };
     };
   };
 
+};
+
+// Prevent structural damage
+if (_selectionName == "") exitWith {
+  damage _unit + _damage / 3
 };

@@ -19,7 +19,7 @@ _this spawn {
 
   // DETERMINE IF UNIT IS MEDIC
   _morphinetime = 0;
-  if ([_unit] call BWA3_Medical_isMedic) then {
+  if ([_unit] call BWA3_Medical_fnc_isMedic) then {
     _morphinetime = MORPHINETIMEMEDIC;
   } else {
     _morphinetime = MORPHINETIMENONMEDIC;

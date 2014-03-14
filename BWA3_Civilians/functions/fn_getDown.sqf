@@ -24,8 +24,12 @@ if (count (weapons player) > 0) then {
   _chance = 0.5;
 };
 
+BWA3_getDown = {
+  _this setUnitPos "DOWN";
+};
+
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    _x setUnitPos "DOWN";
+    [_x, "BWA3_getDown", true, true] spawn BIS_fnc_MP;
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);

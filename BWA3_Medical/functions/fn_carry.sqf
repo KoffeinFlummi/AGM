@@ -10,8 +10,8 @@
  * none
  */
 
-#define CARRYINGMOVE "AcinPercMstpSnonWnonDnon"
-#define CARRIEDMOVE "AinjPfalMstpSnonWnonDf_carried_dead"
+#define CARRYINGMOVE "AcinPercMstpSrasWrflDnon"
+#define CARRIEDMOVE "AinjPfalMstpSnonWnonDf_carried"
 
 _this spawn {
   _unit = _this select 0;
@@ -19,10 +19,9 @@ _this spawn {
   _unit setVariable ["BWA3_Treatable", false, true];
   player setVariable ["BWA3_Carrying", _unit, false];
 
-  player playMoveNow CARRYINGMOVE;
-  _unit playMoveNow CARRIEDMOVE;
-  waitUntil {animationState player == CARRYINGMOVE};
-
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   _unit setDir 15;
+
+  player playMoveNow "AcinPercMstpSrasWrflDnon";
+  _unit playMoveNow "AinjPfalMstpSnonWnonDf_carried";
 };

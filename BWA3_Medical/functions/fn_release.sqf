@@ -13,11 +13,11 @@
 _this spawn {
   _unit = _this select 0;
 
-  if !(player getVariable "BWA3_Carrying") then {
+  if isNull (player getVariable "BWA3_Carrying") then {
     _unit = player getVariable "BWA3_Dragging";
 
     _unit setVariable ["BWA3_Treatable", true, true];
-    player setVariable ["BWA3_Dragging", false, false];
+    player setVariable ["BWA3_Dragging", objNull, false];
 
     #define DRAGGINGMOVE "AcinPknlMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon"
     #define DRAGGEDMOVE "Static_Dead"
@@ -32,7 +32,7 @@ _this spawn {
     _unit = player getVariable "BWA3_Carrying";
 
     _unit setVariable ["BWA3_Treatable", true, true];
-    player setVariable ["BWA3_Carrying", false, false];
+    player setVariable ["BWA3_Carrying", objNull, false];
 
     #define CARRYINGMOVE "AidlPercMstpSrasWrflDnon_G01_player"
     #define CARRIEDMOVE1 "AinjPfalMstpSnonWnonDnon_carried_Down"

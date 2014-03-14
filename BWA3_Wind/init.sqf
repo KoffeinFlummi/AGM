@@ -21,6 +21,9 @@ BWA3_Wind_fnc_firedEH = {
   if (_round isKindOf "GrenadeCore") then {
     _coefficient = 0.2;
   };
+  if (_round isKindOf "RocketCore") then {
+    _coefficient = 0.35;
+  };
 
   // HUMIDITY
   _humidity = ((fogParams select 0) + rain) / 2;
@@ -81,7 +84,7 @@ BWA3_Wind_fnc_firedEH = {
       hintSilent parseText format["<t color='#%1'>%2</t> wind from the %3", _colorString, _strengthString, _originString];
     };
 
-    sleep 0.05;
+    sleep 0.1;
     hint "";
   };
 };

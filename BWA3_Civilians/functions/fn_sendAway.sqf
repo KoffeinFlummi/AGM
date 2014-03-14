@@ -25,9 +25,13 @@ if (count (weapons player) > 0) then {
   _chance = 0.5;
 };
 
+BWA3_sendAway = {
+  (_this select 0) setUnitPos "UP";
+  (_this select 0) doMove [(getPos (_this select 0) select 0) + DISTANCE * (eyeDirection (_this select 1) select 0), (getPos (_this select 0) select 1) + DISTANCE * (eyeDirection (_this select 1) select 1), 0];
+};
+
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    _x setUnitPos "UP";
-    _x doMove [(getPos _x select 0) + DISTANCE * (eyeDirection player select 0), (getPos _x select 1) + DISTANCE * (eyeDirection player select 1), 0];
+    [[_x, player], "BWA3_sendAway", true, false] spawn BIS_fnc_MP;
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);

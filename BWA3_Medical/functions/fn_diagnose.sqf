@@ -22,7 +22,7 @@ _this spawn {
   waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
 
   // this is going to be replaced with some fancy UI at some point. maybe. possibly.
-  _string = formatText ["Hands: %1\nLegs: %2\n-----------\nHead: %3\nBody: %4\nLeftShoulder: %5\nLeftArm: %6\nLeftForeArm: %7\nRightShoulder: %8\nRightArm: %9\nRightForeArm: %10\nLeftUpLeg: %11\nLeftLeg: %12\nLeftFoot: %13\nRightUpLeg: %14\nRightLeg: %15\nRightFoot: %16\n-----------\nTotal Damage: %17",
+  _string = parseText format ["Hands: %1<br />Legs: %2<br />-----------<br />Head: %3<br />Body: %4<br />LeftShoulder: %5<br />LeftArm: %6<br />LeftForeArm: %7<br />RightShoulder: %8<br />RightArm: %9<br />RightForeArm: %10<br />LeftUpLeg: %11<br />LeftLeg: %12<br />LeftFoot: %13<br />RightUpLeg: %14<br />RightLeg: %15<br />RightFoot: %16<br />-----------<br />Total Damage: %17",
     floor ((_unit getHitPointDamage "HitHands") * 100) / 100,
     floor ((_unit getHitPointDamage "HitLegs") * 100) / 100,
     floor ((_unit getHitPointDamage "HitHead") * 100) / 100,
