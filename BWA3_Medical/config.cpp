@@ -170,7 +170,6 @@ class CfgVehicles {
       };
     };
 
-    /*
     class UserActions {
       // Documentation:
       // http://community.bistudio.com/wiki/UserActions
@@ -186,7 +185,7 @@ class CfgVehicles {
         position = "leaning_axis";    // memory point of model
         radius = 3;                   // minimum distance for the action to be available
         showWindow = false;           // show text/icon on screen
-        onlyForPlayer = false;        // enable AI to be ordered to do something
+        onlyForPlayer = false;        // false to enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
         condition = "this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
         statement = "[this] call BWA3_Medical_fnc_drag";
@@ -242,7 +241,7 @@ class CfgVehicles {
         condition = "this == player";
       };
 
-    };*/
+    };
 
   };
 
