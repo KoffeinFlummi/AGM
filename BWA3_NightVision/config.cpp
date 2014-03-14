@@ -14,6 +14,7 @@ class CfgFunctions {
   class BWA3_NightVision {
     class BWA3_NightVision {
         file = "\bwa3_nightvision\functions";
+      class convertKeyCode {};
       class increaseBrightness {};
       class decreaseBrightness {};
     };

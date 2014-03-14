@@ -12,8 +12,8 @@ if (isNil "_key") then { \
 };
 #define PREPROCESS(FILE) BWA3_NightVision_##FILE = compile preprocessFile format["\bwa3_nightvision\scripts\%1.sqf", #FILE];
 
-SETKEYDEFAULT(increaseBrightness, 201)
-SETKEYDEFAULT(decreaseBrightness, 209)
+SETKEYDEFAULT(increaseBrightness, 201.1)
+SETKEYDEFAULT(decreaseBrightness, 209.1)
 
 PREPROCESS(adjustBrightness)
 PREPROCESS(keyInput)
