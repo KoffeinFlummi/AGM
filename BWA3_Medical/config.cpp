@@ -420,7 +420,6 @@ class CfgVehicles {
         condition = "this == player and GC_bandageMenuSelf and (this getHitPointDamage 'HitRightFoot' > 0.01)";
         statement = "[this, 'HitRightFoot'] call BWA3_Medical_fnc_bandage; GC_bandageMenuSelf = false;";
       };
-
     };
 
   };
