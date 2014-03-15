@@ -30,9 +30,6 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 *   **Detailed Ballistics**  
     *   realistic ballistic data
     *   Wind & humidity affect bullet trajectory
-*   **Overheating**  
-    *   Guns can overheat and jam
-    *   Barrels can be changed.
 
 **...**
 
