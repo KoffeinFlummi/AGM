@@ -11,9 +11,9 @@
  * none
  */
 
-#define BANDAGETIMEMEDIC 10
-#define BANDAGETIMENONMEDIC 20
-#define BANDAGEHEAL 0.4
+#define BANDAGETIMEMEDIC 4
+#define BANDAGETIMENONMEDIC 8
+#define BANDAGEHEAL 0.55
 
 _this spawn {
   _unit = _this select 0;

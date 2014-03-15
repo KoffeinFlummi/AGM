@@ -26,7 +26,10 @@ if (count (weapons player) > 0) then {
 };
 
 BWA3_sendAway = {
-  (_this select 0) setUnitPos "UP";
+  _noLegs = (_this select 0) getVariable "BWA3_NoLegs";
+  if (isNil "_noLegs" or !(_noLegs)) then {
+    (_this select 0) setUnitPos "AUTO";
+  };
   (_this select 0) doMove [(getPos (_this select 0) select 0) + DISTANCE * (eyeDirection (_this select 1) select 0), (getPos (_this select 0) select 1) + DISTANCE * (eyeDirection (_this select 1) select 1), 0];
 };
 

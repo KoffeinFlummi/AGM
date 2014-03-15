@@ -29,7 +29,7 @@ class CfgVehicles {
       // http://community.bistudio.com/wiki/UserActions
 
       class BWA3_SendAway {
-        displayName = "Send Away";    // name in action menu
+        displayName = "<t color='#2222ff'>Send Away</t>";    // name in action menu
         displayNameDefault = "";      // name on screen (icons)
         priority = 4;                 // 0 (low) - 6 (high)
         position = "leaning_axis";    // memory point of model
@@ -37,11 +37,11 @@ class CfgVehicles {
         showWindow = false;           // show text/icon on screen
         onlyForPlayer = false;        // enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "this != player and (count (weapons this)) == 0";
+        condition = "alive this and this != player and (count (weapons this)) == 0";
         statement = "[this] call BWA3_Civilians_fnc_sendAway";
       };
       class BWA3_GetDown {
-        displayName = "Get Down!";    // name in action menu
+        displayName = "<t color='#2222ff'>Get Down!</t>";    // name in action menu
         displayNameDefault = "";      // name on screen (icons)
         priority = 4;                 // 0 (low) - 6 (high)
         position = "leaning_axis";    // memory point of model
@@ -49,7 +49,7 @@ class CfgVehicles {
         showWindow = false;           // show text/icon on screen
         onlyForPlayer = false;        // enable AI to be ordered to do something
         shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "this != player and (count (weapons this)) == 0";
+        condition = "alive this and this != player and (count (weapons this)) == 0";
         statement = "[this] call BWA3_Civilians_fnc_getDown";
       };
     };

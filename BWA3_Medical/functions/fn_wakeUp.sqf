@@ -1,14 +1,14 @@
 /*
-By: KoffeinFlummi
-
-Wakes an unconscious player up.
-
-Arguments:
-0: Unconscious unit (Object)
-
-Return Values:
-None
-*/
+ * By: KoffeinFlummi
+ * 
+ * Wakes an unconscious player up.
+ * 
+ * Arguments:
+ * 0: Unconscious unit (Object)
+ * 
+ * Return Values:
+ * None
+ */
 
 private ["_unit", "_position"];
 
@@ -26,6 +26,10 @@ _unit enableAI "FSM";
 if (_unit == player) then {
   [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
 };
+
+[-2, {
+  _this switchMove "amovppnemstpsnonwnondnon";
+}, _unit] call CBA_fnc_globalExecute;
 
 _unit setPos _position;
 if (captiveNum _unit == 213) then {

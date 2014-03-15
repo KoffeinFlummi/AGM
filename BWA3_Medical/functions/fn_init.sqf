@@ -16,7 +16,8 @@ BWA3_setVariables = {
   _this setVariable ["BWA3_Pain", 0, true];            // Amount of pain the unit is in.
   _this setVariable ["BWA3_InPain", false, true];      // Is the weid effect going on?
   _this setVariable ["BWA3_Epinephrine", false, true]; // Is the unit under the influence of epinephrine?
-  _this setVariable ["BWA3_NoLegs", false, true];      // Is the weid effect going on?
+  _this setVariable ["BWA3_NoLegs", false, true];      // Is the unit able to walk?
+  _this setVariable ["BWA3_NoArms", false, true];      // Is the unit able to hold a gun?
   _this setVariable ["BWA3_Dead", 0, true];            // 1 for dead, but revivable units (damage == 1 means unrevivable), 0 for alive ones
   _this setVariable ["BWA3_Unconscious", false, true]; // figure it out
   _this setVariable ["BWA3_Dragging", objNull];

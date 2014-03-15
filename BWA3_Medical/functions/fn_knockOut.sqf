@@ -1,20 +1,39 @@
 /*
-By: KoffeinFlummi
+ * By: KoffeinFlummi
+ * 
+ * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
+ * 
+ * Arguments:
+ * 0: Unit to be knocked out (Object)
+ * 
+ * Return Values:
+ * None
+ */
 
-Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
-
-Arguments:
-0: Unit to be knocked out (Object)
-
-Return Values:
-None
-*/
-
-private ["_unit", "_eh", "_helper"];
+private ["_unit"];
 
 _unit = _this select 0;
 _unit setVariable ["BWA3_Unconscious", true, true];
 
+if (_unit == player) then {
+  [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
+};
+
+_unit setCaptive 213;
+
+_unit disableAI "MOVE";
+_unit disableAI "ANIM";
+_unit disableAI "TARGET";
+_unit disableAI "AUTOTARGET";
+_unit disableAI "FSM";
+
+[-2, {
+  _this switchMove "Static_Dead";
+}, _unit] call CBA_fnc_globalExecute;
+
+_unit enableSimulation false;
+
+/*
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
 };
@@ -41,18 +60,8 @@ _helper setVectorUp [0,0,1];
   };
 } foreach (_unit nearEntities 5);
 
-
 sleep 0.7;
 
-/*
-// Plan B incase the collision didn't happen; generic death animation
-if (_unit getVariable "BWA3_Collision" == _helper) then {
-  _unit switchMove "Static_Dead";
-  sleep 0.1;
-  _unit enableSimulation false;
-  _unit removeEventHandler ["EpeContactEnd", _eh];
-};
-*/
 deleteVehicle _helper;
 
 player globalChat "Helper deleted.";
@@ -64,3 +73,4 @@ _unit enableSimulation false;
 _unit switchMove "unconscious";
 
 player globalChat "done.";
+*/
