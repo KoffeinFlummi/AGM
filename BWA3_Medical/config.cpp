@@ -407,10 +407,11 @@ class CfgVehicles {
     };
 
   };
-
+  /*
   class BWA3_CollisionHelper: Land_CargoBox_V1_F {
     model = "\BWA3_Medical\BWA3_Medical_Helper.p3d";
   };
+  */
 
 };
 

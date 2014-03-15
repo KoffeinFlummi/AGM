@@ -13,11 +13,13 @@
 #define MORPHINETIMEMEDIC 5
 #define MORPHINETIMENONMEDIC 10
 #define MORPHINEHEAL 0.4
+#define MORPHINEREDUCTION 0.015
 
 _this spawn {
   _unit = _this select 0;
+  _painkillerOld = _unit getVariable "BWA3_Painkiller";
 
-  if (_unit getVariable "BWA3_Painkiller" == 0) exitWith {
+  if (_painkillerOld == 0) exitWith {
     if (_unit == player) then {
       [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
     };
@@ -58,4 +60,13 @@ _this spawn {
 
   _pain = (_unit getVariable "BWA3_Pain" - MORPHINEHEAL) max 0;
   _unit setVariable ["BWA3_Pain", _pain];
+
+  if (_painkillerOld < 1) then {
+    0 = _unit spawn {
+      while {_this getVariable "BWA3_Painkiller" < 1} do {
+        _this setVariable ["BWA3_Painkiller", ((_this getVariable "BWA3_Painkiller") + MORPHINEREDUCTION) min 1];
+        sleep 10;
+      };
+    };
+  };
 };
