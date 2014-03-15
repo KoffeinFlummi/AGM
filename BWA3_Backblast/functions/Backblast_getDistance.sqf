@@ -24,13 +24,7 @@ while {
 		_x isKindOf "Static" || {_x isKindOf "AllVehicles"}
 	} count (lineIntersectsWith _line);
 
-	if (
-		_intersections > 0 || {terrainIntersectASL _line}
-	) then {
-		_distance = _distance - _iteration;
-	} else {
-		_distance = _distance + _iteration;
-	};
+	_distance = _distance + ([1, -1] select (_intersections > 0)) * _iteration;
 };
 
 if (_distance > _maxDistance) then {999} else {_distance}

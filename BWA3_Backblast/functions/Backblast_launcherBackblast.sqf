@@ -40,7 +40,11 @@ if (_unit == _firer) then {
 	_relativeInclination = asin (_relativeDirection select 2);
 
 	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2);
-	_distance = _position distance _relativePosition;
+	_distance = sqrt (
+		((_position select 0) - (_relativePosition select 0)) ^ 2 +
+		((_position select 1) - (_relativePosition select 1)) ^ 2 +
+		((_position select 2) - (_relativePosition select 2)) ^ 2
+	);
 	_line = [_position, _relativePosition];
 
 	if (_angle < _backblastAngle && {_distance < _backblastRange} && {!lineIntersects _line} && {!terrainIntersectASL _line}) then {
