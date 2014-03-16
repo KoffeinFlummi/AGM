@@ -8,7 +8,7 @@ _isInput = false;
 
 if (_key == 2 && {!_ctrl}) then {		//KEY 1
 	if (!BWA3_WeaponSelect_keyDown) then {
-		handgunWeapon player call BWA3_WeaponSelect_selectWeaponMode;
+		primaryWeapon player call BWA3_WeaponSelect_selectWeaponMode;
 	};
 	BWA3_WeaponSelect_keyDown = true;
 	_isInput = true;
@@ -16,7 +16,7 @@ if (_key == 2 && {!_ctrl}) then {		//KEY 1
 
 if (_key == 3 && {!_ctrl}) then {		//KEY 2
 	if (!BWA3_WeaponSelect_keyDown) then {
-		primaryWeapon player call BWA3_WeaponSelect_selectWeaponMode;
+		handgunWeapon player call BWA3_WeaponSelect_selectWeaponMode;
 	};
 	BWA3_WeaponSelect_keyDown = true;
 	_isInput = true;
