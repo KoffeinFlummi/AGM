@@ -17,21 +17,14 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 
 ## Features
 
-*   **Medical System**  
-    *   detailed damage model
-    *   bleeding
-    *   pain
-    *   unconsciousness
-    *   detailed treatment
-    *   patient transport
-*   **Logistical System**  
-    *   vehicle refueling & rearming
-    *   towing & airlifting vehicles
-*   **Detailed Ballistics**  
-    *   realistic ballistic data
-    *   Wind & humidity affect bullet trajectory
+*   Improved Medical System
+*   Realistic names for vehicles and weapons
+*   Backblast
+*   Realistic ballistics including wind and humidity
+*   Weapon resting
+*   Interaction with civilians
 
-**...**
+and more
 
 For a full list, look at the wiki:
 https://github.com/KoffeinFlummi/BWA3_Realism/wiki
