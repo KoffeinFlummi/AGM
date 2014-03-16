@@ -21,10 +21,10 @@ BWA3_weaponRested = false;
 addCamShake CAMSHAKE;
 if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "BWA3_Bipod") == 1) then {
   player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / BIPODRECOIL);
-  player switchMove format ["%1", [(animationState player), "_BWA3_deploy", ""] call CBA_fnc_replace];
+  player switchMove ([(animationState player), "_bwa3_deploy", ""] call CBA_fnc_replace);
   ["Bipod undeployed.", false] spawn BWA3_Hint_displayText;
 } else {
   player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / RESTEDRECOIL);
-  player switchMove format ["%1", [(animationState player), "_BWA3_rested", ""] call CBA_fnc_replace];
+  player switchMove ([(animationState player), "_bwa3_rested", ""] call CBA_fnc_replace);
   ["Weapon lifted.", false] spawn BWA3_Hint_displayText;
 };
