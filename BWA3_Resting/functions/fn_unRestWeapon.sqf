@@ -8,7 +8,6 @@
  *
  * Return Values:
  * None
- *
  */
 
 #define RESTEDRECOIL 0.6

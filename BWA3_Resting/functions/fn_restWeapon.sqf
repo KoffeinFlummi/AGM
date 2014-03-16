@@ -89,11 +89,11 @@ if (call BWA3_Resting_checkIntersection) then {
   addCamShake CAMSHAKE;
   if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "BWA3_Bipod") == 1) then {
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
-    player switchMove format ["%1_BWA3_deploy", (animationState player)];
+    player switchMove format ["%1_bwa3_deploy", (animationState player)];
     ["Bipod deployed.", false] spawn BWA3_Hint_displayText;
   } else {
     player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
-    player switchMove format ["%1_BWA3_rested", (animationState player)];
+    player switchMove format ["%1_bwa3_rested", (animationState player)];
     ["Weapon rested.", false] spawn BWA3_Hint_displayText;
   };
 
