@@ -18,14 +18,16 @@ _magazine = currentMagazine _unit;
 
 if (_weapon == "") exitWith {};
 
-_array = toArray (currentMagazineDetail player);
-_string = "";
-_i = _array find 40;
-while {_i < (_array find 47)} do {
-  _string = _string + toString([_array select _i]);
-  _i = _i + 1;
+_magazineDetail = toArray (currentMagazineDetail player);
+_index = (_magazineDetail find 40) + 1;
+_end = _magazineDetail find 47;
+
+_ammoCount = [];
+while {_index < _end} do {
+	_ammoCount set [count _ammoCount, _magazineDetail select _index];
+	_index = _index + 1;
 };
-_ammoCount = parseNumber _string;
+_ammoCount = parseNumber toString _ammoCount;
 
 if (_weapon == primaryWeapon _unit) then {
   _attachments = primaryWeaponItems _unit;
