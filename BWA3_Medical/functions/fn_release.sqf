@@ -10,6 +10,9 @@
  * none
  */
 
+#define DRAGGINGMOVE ""
+#define DRAGGEDMOVE "Unconscious"
+
 _this spawn {
   _unit = _this select 0;
 
@@ -18,34 +21,23 @@ _this spawn {
 
     _unit setVariable ["BWA3_Treatable", true, true];
     player setVariable ["BWA3_Dragging", objNull, false];
-
-    #define DRAGGINGMOVE "AcinPknlMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon"
-    #define DRAGGEDMOVE "Unconscious"
-
-    detach _unit;
-
-    player playMoveNow DRAGGINGMOVE;
-    waitUntil {animationState player == DRAGGINGMOVE};
-
-    _unit playMoveNow DRAGGEDMOVE;
   } else {
     _unit = player getVariable "BWA3_Carrying";
 
     _unit setVariable ["BWA3_Treatable", true, true];
     player setVariable ["BWA3_Carrying", objNull, false];
-
-    #define CARRYINGMOVE "AidlPercMstpSrasWrflDnon_G01_player"
-    #define CARRIEDMOVE1 "AinjPfalMstpSnonWnonDnon_carried_Down"
-    #define CARRIEDMOVE2 "Unconscious";
-
-    detach _unit;
-
-    player playMoveNow CARRYINGMOVE;
-    waitUntil {animationState player == CARRYINGMOVE};
-
-    _unit playMoveNow CARRIEDMOVE1;
-    _unit playMoveNOW CARRIEDMOVE2;
   };
 
+  detach _unit;
+
+  [-2, {
+    (_this select 0) switchMove DRAGGINGMOVE;
+    (_this select 1) switchMove DRAGGEDMOVE;
+  }, [player, _unit]] call CBA_fnc_globalExecute;
+
   player setVariable ["BWA3_CanTreat", true, false];
+
+  _unit enableSimulation true;
+  sleep 3.8;
+  _unit enableSimulation false;
 };

@@ -207,13 +207,13 @@ class CfgVehicles {
       class BWA3_Load: BWA3_Drag {
         displayName = "<t color='#ff0000'>Load Into Vehicle</t>"
         priority = 5.99;
-        condition = "vehicle player == player and !(this isKindOf 'Man') and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man') and cursorTarget distance player < 5 and cursorTarget emptyPositions 'cargo' > 0";
+        condition = "!(cursorTarget isKindOf 'Man') and vehicle player == player and this == player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man') and cursorTarget distance player < 5 and cursorTarget emptyPositions 'cargo' > 0";
         statement = "[cursorTarget] call BWA3_Medical_fnc_loadIntoVehicle;";
       };
       class BWA3_Unload: BWA3_Drag {
         displayName = "<t color='#ff0000'>Unload Patients</t>"
         priority = 5.985;
-        condition = "return = false; {if (_x getVariable 'BWA3_Unconscious') exitWith {return = true;};} foreach (crew cursorTarget); return and vehicle player == player and !(this isKindOf 'Man') and (cursorTarget distance player < 5)";
+        condition = "return = false; {if (_x getVariable 'BWA3_Unconscious') exitWith {return = true;};} foreach (crew cursorTarget); return and vehicle player == player and this == player and (cursorTarget distance player < 5) and !(cursorTarget isKindOf 'Man')";
         statement = "[cursorTarget] call BWA3_Medical_fnc_unloadPatients;";
       };
 

@@ -10,6 +10,9 @@
  * none
  */
 
+#define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
+#define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_still"
+
 _this spawn {
   _unit = _this select 0;
 
@@ -17,16 +20,15 @@ _this spawn {
   player setVariable ["BWA3_Dragging", _unit, false];
   player setVariable ["BWA3_CanTreat", false, false];
 
-  #define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
-  #define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_grab"
-
   player playMoveNow DRAGGINGMOVE;
   waitUntil {animationState player == DRAGGINGMOVE};
 
   _unit attachTo [player, [0, 1.1, 0.092]];
   _unit setDir 180;
 
-  _unit playMoveNow DRAGGEDMOVE;
+  [-2, {
+    _this switchMove DRAGGEDMOVE;
+  }, _unit] call CBA_fnc_globalExecute;
 
   waitUntil {sleep 1; vehicle player != player};
   if (isNull (player getVariable "BWA3_Dragging")) exitWith {};
@@ -35,4 +37,8 @@ _this spawn {
   [-2, {
     _this switchMove "Unconscious";
   }, _unit] call CBA_fnc_globalExecute;
+
+  _unit enableSimulation true;
+  sleep 3.8;
+  _unit enableSimulation false;
 };

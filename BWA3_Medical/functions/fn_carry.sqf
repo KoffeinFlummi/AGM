@@ -10,8 +10,8 @@
  * none
  */
 
-#define CARRYINGMOVE "AcinPercMstpSrasWrflDnon"
-#define CARRIEDMOVE "AinjPfalMstpSnonWnonDf_carried"
+#define CARRYINGMOVE "AcinPercMstpSnonWnonDnon"
+#define CARRIEDMOVE "AinjPfalMstpSnonWnonDf_carried_dead"
 
 _this spawn {
   _unit = _this select 0;
@@ -20,11 +20,15 @@ _this spawn {
   player setVariable ["BWA3_Carrying", _unit, false];
   player setVariable ["BWA3_CanTreat", false, false];
 
+  player playMoveNow CARRYINGMOVE;
+  waitUntil {animationState player == CARRYINGMOVE};
+
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   _unit setDir 15;
 
-  player playMoveNow "AcinPercMstpSrasWrflDnon";
-  _unit playMoveNow "AinjPfalMstpSnonWnonDf_carried";
+  [-2, {
+    _this switchMove CARRIEDMOVE;
+  }, _unit] call CBA_fnc_globalExecute;
 
   waitUntil {sleep 1; vehicle player != player};
   if (isNull (player getVariable "BWA3_Carrying")) exitWith {};
@@ -33,4 +37,8 @@ _this spawn {
   [-2, {
     _this switchMove "Unconscious";
   }, _unit] call CBA_fnc_globalExecute;
+
+  _unit enableSimulation true;
+  sleep 3.8;
+  _unit enableSimulation false;
 };

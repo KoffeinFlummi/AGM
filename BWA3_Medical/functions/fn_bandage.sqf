@@ -56,6 +56,8 @@ _this spawn {
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
   [_unit, _selection, _damage] call BWA3_Medical_fnc_setHitPointDamage;
 
+  player setVariable ["BWA3_CanTreat", true, false];
+
   // since we have to set the damage remotely, it might take some time.
   waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
 
@@ -73,6 +75,4 @@ _this spawn {
   if (_fullyHealed) then {
     _unit setDamage 0;
   };
-
-  player setVariable ["BWA3_CanTreat", true, false];
 };

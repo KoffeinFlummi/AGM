@@ -16,7 +16,7 @@ _vehicle = _this select 0;
 
 {
   if (_x getVariable "BWA3_Unconscious") then {
-    _x setPosATL [(getPos _unit select 0) + (random 4) + 2, (getPos _unit select 1) + (random 4) + 2, 0];
+    _x setPosATL [(getPos player select 0) + (random 2) - 1, (getPos player select 1) + (random 2) - 1, 0];
     [-2, {
       _this switchMove "Unconscious";
     }, _x] call CBA_fnc_globalExecute;
