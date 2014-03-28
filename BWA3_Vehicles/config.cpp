@@ -28,12 +28,7 @@ class CfgVehicles {
   class MRAP_01_base_F;
   class MRAP_01_hmg_base_F: MRAP_01_base_F {};
   class MRAP_01_gmg_base_F: MRAP_01_hmg_base_F {};
-  class MBT_01_base_F;
-  class B_MBT_01_base_F: MBT_01_base_F {
-    class Turrets {
-      class MainTurret;
-    };
-  };
+  class B_MBT_01_base_F;
   class B_MBT_01_mlrs_base_F;
   class B_MBT_01_arty_base_F;
   class B_APC_Wheeled_01_base_F;
@@ -85,14 +80,15 @@ class CfgVehicles {
   };
 
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
-    displayName = "Merkava Mk IV";
+    displayName = "Merkava Mk IV";/*
     transportSoldiers = 0;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         magazines[] = {};
       };
-    };
+    };*/
   };
+  /*
   class BWA3_B_MBT_01_cannon_APC: B_MBT_01_cannon_F {
     displayName = "Merkava Mk IV (APC)";
     class Turrets: Turrets {
@@ -101,13 +97,14 @@ class CfgVehicles {
       };
     };
   };
+  */
   class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
-    displayName = "Merkava LIC";
+    displayName = "Merkava LIC";/*
     class Turrets: Turrets {
       class MainTurret: MainTurret {
-        weapons[] = {};
+        magazines[] = {};
       };
-    };
+    };*/
   };
   class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
     displayName = "Sholef";

@@ -13,6 +13,8 @@
 private ["_unit"];
 
 _unit = _this select 0;
+//if !(isPlayer _unit) exitWith {_unit setDamage 1;};
+
 _unit setVariable ["BWA3_Unconscious", true, true];
 
 if (_unit == player) then {
@@ -27,11 +29,16 @@ _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 
-[-2, {
-  _this switchMove "Static_Dead";
-}, _unit] call CBA_fnc_globalExecute;
+if (vehicle _unit != _unit) then {
+  _unit playMoveNow ((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0;
+} else {
+  _unit playMoveNow "Unconscious";
+};
 
-_unit enableSimulation false;
+_unit spawn {
+  sleep 3.8;
+  _this enableSimulation false;
+};
 
 /*
 if (_unit == player) then {

@@ -26,4 +26,12 @@ _this spawn {
   _unit setDir 180;
 
   _unit playMoveNow DRAGGEDMOVE;
+
+  waitUntil {sleep 1; vehicle player != player};
+  if (isNull (player getVariable "BWA3_Dragging")) exitWith {};
+
+  detach _unit;
+  [-2, {
+    _this switchMove "Unconscious";
+  }, _unit] call CBA_fnc_globalExecute;
 };

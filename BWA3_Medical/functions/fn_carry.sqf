@@ -24,4 +24,12 @@ _this spawn {
 
   player playMoveNow "AcinPercMstpSrasWrflDnon";
   _unit playMoveNow "AinjPfalMstpSnonWnonDf_carried";
+
+  waitUntil {sleep 1; vehicle player != player};
+  if (isNull (player getVariable "BWA3_Carrying")) exitWith {};
+
+  detach _unit;
+  [-2, {
+    _this switchMove "Unconscious";
+  }, _unit] call CBA_fnc_globalExecute;
 };

@@ -15,6 +15,8 @@
 #define MORPHINEHEAL 0.4
 #define MORPHINEREDUCTION 0.015
 
+player removeItem "BWA3_Morphine";
+
 _this spawn {
   _unit = _this select 0;
   _painkillerOld = _unit getVariable "BWA3_Painkiller";
@@ -33,9 +35,9 @@ _this spawn {
     };
   };
 
-  // DETERMINE IF UNIT IS MEDIC
+  // DETERMINE IF PLAYER IS MEDIC
   _morphinetime = 0;
-  if ([_unit] call BWA3_Medical_fnc_isMedic) then {
+  if ([player] call BWA3_Medical_fnc_isMedic) then {
     _morphinetime = MORPHINETIMEMEDIC;
   } else {
     _morphinetime = MORPHINETIMENONMEDIC;
@@ -55,11 +57,13 @@ _this spawn {
   hintSilent "";
   // STOP COUNTDOWN RSC
 
-  _painkiller = (_unit getVariable "BWA3_Painkiller" - MORPHINEHEAL) max 0;
-  _unit setVariable ["BWA3_Painkiller", _painkiller];
+  if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
 
-  _pain = (_unit getVariable "BWA3_Pain" - MORPHINEHEAL) max 0;
-  _unit setVariable ["BWA3_Pain", _pain];
+  _painkiller = ((_unit getVariable "BWA3_Painkiller") - MORPHINEHEAL) max 0;
+  _unit setVariable ["BWA3_Painkiller", _painkiller, true];
+
+  _pain = ((_unit getVariable "BWA3_Pain") - MORPHINEHEAL) max 0;
+  _unit setVariable ["BWA3_Pain", _pain, true];
 
   if (_painkillerOld < 1) then {
     0 = _unit spawn {

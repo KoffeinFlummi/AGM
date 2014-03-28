@@ -20,7 +20,7 @@ _this spawn {
     player setVariable ["BWA3_Dragging", objNull, false];
 
     #define DRAGGINGMOVE "AcinPknlMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon"
-    #define DRAGGEDMOVE "Static_Dead"
+    #define DRAGGEDMOVE "Unconscious"
 
     detach _unit;
 
@@ -36,7 +36,7 @@ _this spawn {
 
     #define CARRYINGMOVE "AidlPercMstpSrasWrflDnon_G01_player"
     #define CARRIEDMOVE1 "AinjPfalMstpSnonWnonDnon_carried_Down"
-    #define CARRIEDMOVE2 "Static_Dead";
+    #define CARRIEDMOVE2 "Unconscious";
 
     detach _unit;
 
