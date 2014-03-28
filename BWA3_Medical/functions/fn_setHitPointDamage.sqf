@@ -20,7 +20,6 @@ if (local _unit) exitWith {
   _unit setHitPointDamage [_selection, _damage];
 };
 
-
 [-2, {
 
   _unit = _this select 0;

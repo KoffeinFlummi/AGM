@@ -25,6 +25,8 @@ _this spawn {
   _unit = _this select 0;
   _selection = _this select 1;
 
+  player setVariable ["BWA3_CanTreat", false, false];
+
   // determine if unit is medic
   _healtime = 0;
   if ([player] call BWA3_Medical_fnc_isMedic) then {
@@ -63,9 +65,11 @@ _this spawn {
   // remove extremely small wounds
   _fullyHealed = true;
   {
-    if (_unit getHitPointDamage _x > 0.01) exitWith {_fullyHealed = false;};
+    if ((_unit getHitPointDamage _x) > 0.02) exitWith {_fullyHealed = false;};
   } forEach ["HitHead","HitBody","HitLeftShoulder","HitLeftArm","HitLeftForeArm","HitRightShoulder","HitRightArm","HitRightForeArm","HitLeftUpLeg","HitLeftLeg","HitLeftFoot","HitRightUpLeg","HitRightLeg","HitRightFoot"];
   if (_fullyHealed) then {
     _unit setDamage 0;
   };
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };

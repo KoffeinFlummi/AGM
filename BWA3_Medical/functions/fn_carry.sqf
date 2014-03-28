@@ -15,9 +15,10 @@
 
 _this spawn {
   _unit = _this select 0;
-
+  
   _unit setVariable ["BWA3_Treatable", false, true];
   player setVariable ["BWA3_Carrying", _unit, false];
+  player setVariable ["BWA3_CanTreat", false, false];
 
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   _unit setDir 15;

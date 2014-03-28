@@ -22,6 +22,8 @@ player removeItem "BWA3_Epipen";
 _this spawn {
   _unit = _this select 0;
 
+  player setVariable ["BWA3_CanTreat", false, false];
+
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
   // START COUNTDOWN RSC (this is just a placeholder)
@@ -39,4 +41,6 @@ _this spawn {
   if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
 
   [_unit] call BWA3_Medical_fnc_wakeUp;
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };

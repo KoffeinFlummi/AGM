@@ -46,4 +46,6 @@ _this spawn {
     _unit playMoveNow CARRIEDMOVE1;
     _unit playMoveNOW CARRIEDMOVE2;
   };
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };

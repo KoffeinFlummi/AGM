@@ -15,6 +15,7 @@ _this spawn {
 
   _unit setVariable ["BWA3_Treatable", false, true];
   player setVariable ["BWA3_Dragging", _unit, false];
+  player setVariable ["BWA3_CanTreat", false, false];
 
   #define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
   #define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_grab"

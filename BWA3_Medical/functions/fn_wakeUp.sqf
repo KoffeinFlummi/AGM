@@ -27,6 +27,7 @@ _unit enableAI "FSM";
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
   };
+  _this switchMove "";
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 

@@ -15,6 +15,8 @@ none
 _this spawn {
   _unit = _this select 0;
 
+  player setVariable ["BWA3_CanTreat", false, false];
+
   player playMoveNow DIAGNOSEMOVE;
 
   _damages = [
@@ -64,7 +66,7 @@ _this spawn {
 
     _lightinjuries = "";
     {
-      if ((_x select 1) < 0.5 and (_x select 1) > 0) then {
+      if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
         if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
         _lightinjuries = _lightinjuries + (_x select 0);
       };
@@ -116,4 +118,6 @@ _this spawn {
   };
 
   hintSilent parseText _string;
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };

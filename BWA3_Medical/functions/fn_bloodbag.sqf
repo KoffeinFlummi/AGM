@@ -23,6 +23,8 @@ player removeItem "BWA3_Bloodbag";
 _this spawn {
   _unit = _this select 0;
 
+  player setVariable ["BWA3_CanTreat", false, false];
+
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
   // START COUNTDOWN RSC (this is just a placeholder)
@@ -41,4 +43,6 @@ _this spawn {
 
   _blood = ((_unit getVariable "BWA3_Blood") + BLOODBAGHEAL) min 1;
   _unit setVariable ["BWA3_Blood", _blood, true];
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };

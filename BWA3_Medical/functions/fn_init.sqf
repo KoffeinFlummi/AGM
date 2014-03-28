@@ -10,6 +10,7 @@ GC_bandageMenu = false;
 GC_bandageMenuSelf = false;
 
 BWA3_unitInit = {
+  _this setVariable ["BWA3_CanTreat", true, false];    // Can unit treat others?
   _this setVariable ["BWA3_Treatable", true, true];    // Can unit be treated/diagnosed?
   _this setVariable ["BWA3_Blood", 1, true];           // Amount of blood in the body.
   _this setVariable ["BWA3_Bleeding", false, true];    // Is the unit losing blood? (Rate is determined by damage.)

@@ -21,19 +21,7 @@ _this spawn {
   _unit = _this select 0;
   _painkillerOld = _unit getVariable "BWA3_Painkiller";
 
-  if (_painkillerOld == 0) exitWith {
-    if (_unit == player) then {
-      [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
-    };
-    [-2, {
-      _this switchMove "Unconscious";
-      _this playAction "GestureSpasm4";
-    }, _unit] call CBA_fnc_globalExecute;
-    _unit spawn {
-      sleep 20;
-      [_this, "HitHead", 1] call BWA3_Medical_fnc_setHitPointDamage;
-    };
-  };
+  player setVariable ["BWA3_CanTreat", false, false];
 
   // DETERMINE IF PLAYER IS MEDIC
   _morphinetime = 0;
@@ -59,6 +47,20 @@ _this spawn {
 
   if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
 
+  if (_painkillerOld == 0) exitWith {
+    if (_unit == player) then {
+      [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
+    };
+    [-2, {
+      _this switchMove "Unconscious";
+      _this playAction "GestureSpasm4";
+    }, _unit] call CBA_fnc_globalExecute;
+    _unit spawn {
+      sleep 20;
+      [_this, "HitHead", 1] call BWA3_Medical_fnc_setHitPointDamage;
+    };
+  };
+
   _painkiller = ((_unit getVariable "BWA3_Painkiller") - MORPHINEHEAL) max 0;
   _unit setVariable ["BWA3_Painkiller", _painkiller, true];
 
@@ -73,4 +75,6 @@ _this spawn {
       };
     };
   };
+
+  player setVariable ["BWA3_CanTreat", true, false];
 };
