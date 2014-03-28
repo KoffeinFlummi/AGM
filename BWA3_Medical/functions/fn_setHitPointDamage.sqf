@@ -30,4 +30,4 @@ if (local _unit) exitWith {
     _unit setHitPointDamage [_selection, _damage];
   };
 
-}, [_this]] call CBA_fnc_globalExecute;
+}, _this] call CBA_fnc_globalExecute;
