@@ -56,6 +56,9 @@ _this spawn {
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
   [_unit, _selection, _damage] call BWA3_Medical_fnc_setHitPointDamage;
 
+  // since we have to set the damage remotely, it might take some time.
+  waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
+
   // check if legs are healed
   _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
   if (_legdamage < LEGDAMAGETHRESHOLD1) then {
