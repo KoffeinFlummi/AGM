@@ -48,8 +48,8 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
   _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
 
   // Reset "unused" hitpoints.
-  _unit setHitPointDamage ["HitLegs", 0];
-  _unit setHitPointDamage ["HitHands", 0];
+  [_unit, "HitLegs", 0] call BWA3_Medical_fnc_setHitPointDamage;
+  [_unit, "HitHands", 0] call BWA3_Medical_fnc_setHitPointDamage;
   
   // Handle death and unconsciousness
   if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and damage _unit < 1 and !(_unit getVariable "BWA3_Unconscious")) then {
@@ -59,7 +59,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
   // Handle leg damage symptoms
   if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
     // lightly wounded, limit walking speed
-    _unit setHitPointDamage ["HitLegs", 1];
+    [_unit, "HitLegs", 1] call BWA3_Medical_fnc_setHitPointDamage;
   };
   /* DEAL WITH THIS LATER
     if (_legdamage >= LEGDAMAGETHRESHOLD2) then {

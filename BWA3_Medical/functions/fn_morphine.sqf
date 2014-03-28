@@ -31,7 +31,7 @@ _this spawn {
     }, _unit] call CBA_fnc_globalExecute;
     _unit spawn {
       sleep 20;
-      _this setHitPointDamage ["HitHead", 1];
+      [_this, "HitHead", 1] call BWA3_Medical_fnc_setHitPointDamage;
     };
   };
 

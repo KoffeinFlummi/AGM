@@ -52,12 +52,12 @@ _this spawn {
 
   // change damage of body part
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
-  _unit setHitPointDamage [_selection, _damage];
+  [_unit, _selection, _damage] call BWA3_Medical_fnc_setHitPointDamage;
 
   // check if legs are healed
   _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
   if (_legdamage < LEGDAMAGETHRESHOLD1) then {
-    _unit setHitPointDamage ["HitLegs", 0];
+    [_unit, "HitLegs", 0] call BWA3_Medical_fnc_setHitPointDamage;
   };
 
   // remove extremely small wounds

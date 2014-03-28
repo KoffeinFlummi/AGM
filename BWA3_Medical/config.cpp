@@ -30,6 +30,7 @@ class CfgFunctions {
       class loadIntoVehicle;
       class morphine;
       class release;
+      class setHitPointDamage;
       class unloadPatients;
       class wakeUp;
     };
@@ -219,7 +220,7 @@ class CfgVehicles {
       class BWA3_Diagnose: BWA3_Drag {
         displayName = "<t color='#ff0000'>Diagnose</t>";
         priority = 5.98;
-        condition = "(this getVariable 'BWA3_Treatable') and vehicle player == player and vehicle this == this and alive this and this != player";
+        condition = "(this getVariable 'BWA3_Treatable') and vehicle player == player and vehicle this == this and this != player";
         statement = "[this] call BWA3_Medical_fnc_diagnose;";
       };
       class BWA3_Morphine: BWA3_Drag {

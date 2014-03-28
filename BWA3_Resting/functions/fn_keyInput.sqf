@@ -14,6 +14,8 @@
  *
  */
 
+if (player getVariable "BWA3_Unconscious") exitWith {false};
+
 if (inputAction "LockTargets" > 0 and currentWeapon player == primaryWeapon player) then {
   if (BWA3_weaponRested) then {
     [] call BWA3_Resting_fnc_unRestWeapon;

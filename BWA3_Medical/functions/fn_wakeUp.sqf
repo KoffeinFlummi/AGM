@@ -23,11 +23,10 @@ _unit enableAI "TARGET";
 _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
 
-if (_unit == player) then {
-  [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
-};
-
 [-2, {
+  if (_this == player) then {
+    [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+  };
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 
