@@ -13,14 +13,14 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>BWA3 Realism by KoffeinFlummi</title>
+    <title>BWA3 Realism for Arma 3</title>
   </head>
 
   <body>
     <header class="header">
       <div class="inner">
         <h1>BWA3 Realism</h1>
-        <h2>Super Epic Realism Mod For Arma 3</h2>
+        <h2>A modular realism mod for Arma 3, partly based on Taosensai's work.</h2>
         <a href="https://github.com/KoffeinFlummi/BWA3_Realism" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -28,40 +28,90 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>
-<a name="bwa3-realism" class="anchor" href="#bwa3-realism"><span class="octicon octicon-link"></span></a>BWA3 Realism</h1>
 
-<p>A modular realism mod for Arma 3, partly based on Taosensai's work.</p>
+          <h1><a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
+
+          <ul>
+            <li><strong>Open Source</strong><br>
+            Everyone is free to fork this and make contributions.</li><br><br>
+            <li><strong>Modular Setup</strong>
+            Disable/Delete features you don't want.<br><em>Due to the amount of .pbos you cannot toggle the features in the in-game expansions menu to avoid clutter, but have to be removed from the modfolder manually. Sorry.</em><br><br>
+            </li>
+            <li><strong>No Bullshit</strong><br>
+            No gimmicky features that don't add anything to gameplay and are out of place in Arma.<br><em>(And if there is a feature that you consider unneccessary, just disable it!)</em>
+            </li>
+          </ul>
 
 
-<?php echo "test"; ?>
+          <h1><a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
 
-<h2>
-<a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h2>
+          <h2><a name="medical" class="anchor" href="#medical"><span class="octicon octicon-link"></span></a>Medical System</h2>
+          <ul>
+            <li>14 hit areas (head, torso, left shoulder, right foot ...)</li>
+            <li>bloodloss and unconsciousness</li>
+            <li>pain simulation and morphine</li>
+            <li>patient transport (drag, carry, load into vehicles)</li>
+          </ul>
 
-<ul>
-<li>  <strong>Open Source</strong><br>
-Everyone is free to fork this and make contributions.</li>
-<li>  <strong>Modular Setup</strong><br>
-Disable/Delete features you don't want.<br><em>Due to the amount of .pbos you cannot toggle the features in the in-game expansions menu to avoid clutter, but have to be removed from the modfolder manually. Sorry.</em><br>
-</li>
-<li>  <strong>No Bullshit</strong><br>
-No gimmicky features that don't add anything to gameplay and are out of place in Arma.<br><em>(And if there is a feature that you consider unneccessary, just disable it!)</em>
-</li>
-</ul><h2>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+          <h2><a name="weapons" class="anchor" href="#weapons"><span class="octicon octicon-link"></span></a>Weapons &amp; Ballistics</h2>
+          <ul>
+            <li>real-world weapon names (based on TMR)</li>
+            <li>wind and humidity affect bullet trajectory (wind readout available using the compass)</li>
+            <li>real-world ballistic data (based on TMR)</li>
+            <li>weapon resting using the [Next Target] key</li>
+            <li>rocket launchers create a backblast area behind the soldier wounding units behind him and wounding him if he is standing too close to an obstacle.</li>
+          </ul>
 
-<ul>
-<li>  Improved Medical System</li>
-<li>  Realistic names for vehicles and weapons</li>
-<li>  Backblast</li>
-<li>  Realistic ballistics including wind and humidity</li>
-<li>  Weapon resting</li>
-<li>  Interaction with civilians</li>
-</ul><p>and more</p>
+          <h2><a name="vehicles" class="anchor" href="#vehicles"><span class="octicon octicon-link"></span></a>Vehicles</h2>
+          <ul>
+            <li>real-world names whenever possible</li>
+            <li>single-pair flares for aircraft</li>
+            <li>better radar warnings</li>
+            <li>eject from all aircraft in any seat</li>
+          </ul>
 
-<p>For a full list, look at the wiki:
-<a href="https://github.com/KoffeinFlummi/BWA3_Realism/wiki">https://github.com/KoffeinFlummi/BWA3_Realism/wiki</a></p>
+          <h2><a name="interaction" class="anchor" href="#interaction"><span class="octicon octicon-link"></span></a>Interaction</h2>
+          <ul>
+            <li>show (player) names of units you're looking at</li>
+            <li>send civilians away or tell them to get down</li>
+          </ul>
+
+          <h2><a name="movement" class="anchor" href="#movement"><span class="octicon octicon-link"></span></a>Movement</h2>
+          <ul>
+            <li>jumping while running/sprinting</li>
+            <li>improved slow-walking animations</li>
+          </ul>
+
+          <h2><a name="maptools" class="anchor" href="#maptools"><span class="octicon octicon-link"></span></a>Map Changes</h2>
+          <ul>
+            <li>bigger coordinates &amp; compass</li>
+            <li>deactivated the bugged "jump to current position" button</li>
+          </ul>
+
+          <h2><a name="others" class="anchor" href="#others"><span class="octicon octicon-link"></span></a>Others</h2>
+          <ul>
+            <li>attach IR strobes to your helmet</li>
+            <li>ingame effect of sunglasses</li>
+          </ul>
+
+
+          <h1><a name="plans" class="anchor" href="#plans"><span class="octicon octicon-link"></span></a>Plans</h1>
+
+          <p>BWA3 Realism is under continuous development. The planned features include but are not limited to:
+
+          <ul>
+            <li>realistic vehicle weaponry and ammocounts</li>
+            <li>logistics system including towing vehicles and rearming vehicle weapons</li>
+            <li>weapon overheating and barrel changes</li>
+            <li>better fatigue system with a bigger focus on weight</li>
+            <li>fire control system for tanks &amp; apcs</li>
+            <li>more realistic armor model</li>
+            <li>disposable launchers</li>
+            <li>prisoner system</li>
+            <li>improved laser rangefinders</li>
+          </ul>
+
+
         </section>
 
         <aside id="sidebar">
@@ -76,13 +126,12 @@ No gimmicky features that don't add anything to gameplay and are out of place in
           </a>
           -->
 
-          <p class="repo-owner"><a href="https://github.com/KoffeinFlummi/BWA3_Realism"></a> is maintained by <a href="https://github.com/KoffeinFlummi">KoffeinFlummi</a>.</p>
+          <p class="repo-owner">This page is being maintained<a href="https://github.com/KoffeinFlummi/BWA3_Realism"></a> is maintained by <a href="https://github.com/KoffeinFlummi">KoffeinFlummi</a>.</p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+          <p>This page is based on the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
     </div>
-    
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
