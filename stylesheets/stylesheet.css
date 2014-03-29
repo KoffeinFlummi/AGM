@@ -67,10 +67,10 @@ a:hover {
 }
 
 header {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 70px;
+  padding-bottom: 70px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(../images/bgs/bg3.jpg) 0 -20px repeat-x;
+  background: #2e7bcf url(../images/bgs/bg3.jpg) 0 -30px repeat-x;
   background-size: 100% auto;
   border-bottom: solid 1px #275da1;
   text-shadow: 0 0 3px #000;
