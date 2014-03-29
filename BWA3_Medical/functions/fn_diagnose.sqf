@@ -17,8 +17,6 @@ _this spawn {
 
   player setVariable ["BWA3_CanTreat", false, false];
 
-  player playMoveNow DIAGNOSEMOVE;
-
   _damages = [
     ["head", floor ((_unit getHitPointDamage "HitHead") * 100) / 100],
     ["torso", floor ((_unit getHitPointDamage "HitBody") * 100) / 100],
@@ -36,9 +34,13 @@ _this spawn {
     ["right foot", floor ((_unit getHitPointDamage "HitRightFoot") * 100) / 100]
   ];
 
-  // wait for animation to finish without using absolute times or event handlers
-  waitUntil {sleep 0.5; animationState player == DIAGNOSEMOVE};
-  waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
+  if (_unit != player) then {
+    player playMoveNow DIAGNOSEMOVE;
+
+    // wait for animation to finish without using absolute times or event handlers
+    waitUntil {sleep 0.5; animationState player == DIAGNOSEMOVE};
+    waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
+  };
 
   _string = "Patient: " + name _unit;
 
@@ -47,7 +49,7 @@ _this spawn {
   } else {
     // Consciousness
     if (_unit getVariable "BWA3_Unconscious") then {
-      _string = _string + "<br/><br/>The patient is unconsious.";
+      _string = _string + "<br/><br/>The patient is unconscious.";
     } else {
       _string = _string + "<br/><br/>The patient is awake.";
     };
@@ -88,7 +90,7 @@ _this spawn {
     if (_unit getVariable "BWA3_Blood" < 0.4) then {
       _string = _string + "The patient has already lost a lot of blood.";
     } else {
-      if (_unit getVariable "BWA3_Blood" < 0.98) then {
+      if (_unit getVariable "BWA3_Blood" < 1) then {
         _string = _string + "The patient has already lost some blood.";
       } else {
         _string = _string + "The patient hasn't lost any blood.";

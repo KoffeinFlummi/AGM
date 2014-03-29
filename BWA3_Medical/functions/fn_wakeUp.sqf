@@ -21,6 +21,8 @@ _unit enableAI "TARGET";
 _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
 
+_unit setVariable ["BWA3_Unconscious", false, true];
+
 [-2, {
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;

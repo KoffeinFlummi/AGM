@@ -24,20 +24,30 @@ _this spawn {
   waitUntil {animationState player == DRAGGINGMOVE};
 
   _unit attachTo [player, [0, 1.1, 0.092]];
-  _unit setDir 180;
+  [-2, {
+    _this setDir 180;
+  }, _unit] call CBA_fnc_globalExecute;
   _unit setPos (getPos _unit); // force Arma to synchronize direction
 
   [-2, {
     _this switchMove DRAGGEDMOVE;
   }, _unit] call CBA_fnc_globalExecute;
 
-  waitUntil {sleep 1; vehicle player != player};
+  waitUntil {sleep 1; vehicle player != player or isNull (player getVariable "BWA3_Dragging") or damage player >= 1 or damage _unit >= 1};
   if (isNull (player getVariable "BWA3_Dragging")) exitWith {};
 
   detach _unit;
   [-2, {
     _this switchMove "Unconscious";
   }, _unit] call CBA_fnc_globalExecute;
+
+  if (vehicle player == player) then {
+    [-2, {
+      _this switchMove "";
+    }, player] call CBA_fnc_globalExecute;
+  };
+
+  _unit setVariable ["BWA3_Treatable", true, true];
 
   _unit enableSimulation true;
   sleep 3.8;

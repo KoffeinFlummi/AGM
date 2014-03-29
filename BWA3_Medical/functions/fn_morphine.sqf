@@ -47,7 +47,7 @@ _this spawn {
 
   if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
 
-  if (_painkillerOld == 0) exitWith {
+  if (_painkillerOld < 0.1) exitWith {
     if (_unit == player) then {
       [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
     };

@@ -116,8 +116,8 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
   if (_unit == player and !(_unit getVariable "BWA3_InPain")) then {
     player setVariable ["BWA3_InPain", true, true];
     0 spawn {
-      "chromAberration" ppEffectEnable true;
       _time = time;
+      "chromAberration" ppEffectEnable true;
       while {(player getVariable "BWA3_Pain") > 0} do {
         "chromAberration" ppEffectAdjust [0.02 * (player getVariable "BWA3_Pain"), 0.02 * (player getVariable "BWA3_Pain"), false];
         "chromAberration" ppEffectCommit 1;
@@ -127,11 +127,11 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
         sleep 0.15;
         
         _pain = ((player getVariable "BWA3_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
-        player setVariable ["BWA3_Pain", _pain];
+        player setVariable ["BWA3_Pain", _pain, true];
         _time = time;
       };
       "chromAberration" ppEffectEnable false;
-      player setVariable ["BWA3_InPain", false];
+      player setVariable ["BWA3_InPain", false, true];
     };
   };
 
@@ -153,7 +153,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
 
         sleep 10;
       };
-      _unit setVariable ["BWA3_Bleeding", false, true];
+      _this setVariable ["BWA3_Bleeding", false, true];
     };
   };
 

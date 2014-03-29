@@ -30,7 +30,7 @@ _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 
 if (vehicle _unit != _unit) then {
-  _unit playMoveNow ((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0;
+  _unit playMoveNow (((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0);
 } else {
   _unit playMoveNow "Unconscious";
 };

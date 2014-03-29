@@ -189,7 +189,7 @@ class CfgVehicles {
         onlyForPlayer = false;                        // enable AI to be ordered to do something
         shortcut = "";                                // key (CfgDefaultKeyMappings)
         hideOnUse = 1;
-        condition = "vehicle player == player and vehicle this == this and alive this and this != player and this getVariable 'BWA3_Unconscious' and isNull (player getVariable 'BWA3_Dragging') and isNull (player getVariable 'BWA3_Carrying')";
+        condition = "vehicle player == player and vehicle this == this and alive this and this != player and this getVariable 'BWA3_Treatable' and this getVariable 'BWA3_Unconscious' and isNull (player getVariable 'BWA3_Dragging') and isNull (player getVariable 'BWA3_Carrying')";
         statement = "[this] call BWA3_Medical_fnc_drag;";
       };
       class BWA3_Carry: BWA3_Drag {
