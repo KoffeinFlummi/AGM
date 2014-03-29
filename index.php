@@ -33,6 +33,9 @@
 
 <p>A modular realism mod for Arma 3, partly based on Taosensai's work.</p>
 
+
+<?php echo "test"; ?>
+
 <h2>
 <a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h2>
 
