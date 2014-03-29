@@ -68,6 +68,7 @@ header {
   padding-bottom: 40px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
   background: #2e7bcf url(../images/bgs/bg3.jpg) 0 -50px repeat-x;
+  background-size: 100% auto;
   border-bottom: solid 1px #275da1;
 }
 
