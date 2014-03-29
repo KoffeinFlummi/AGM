@@ -15,8 +15,6 @@ private ["_unit", "_position"];
 _unit = _this select 0;
 _position = getPos _unit;
 
-_unit enableSimulation true;
-
 _unit enableAI "MOVE";
 _unit enableAI "ANIM";
 _unit enableAI "TARGET";
@@ -26,6 +24,9 @@ _unit enableAI "FSM";
 [-2, {
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+  };
+  if (local _this) then {
+    _this enableSimulation true;
   };
   _this switchMove "";
   _this switchMove "amovppnemstpsnonwnondnon";

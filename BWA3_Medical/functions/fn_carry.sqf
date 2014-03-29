@@ -25,6 +25,7 @@ _this spawn {
 
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   _unit setDir 15;
+  _unit setPos (getPos _unit); // force Arma to synchronize direction
 
   [-2, {
     _this switchMove CARRIEDMOVE;

@@ -25,6 +25,7 @@ _this spawn {
 
   _unit attachTo [player, [0, 1.1, 0.092]];
   _unit setDir 180;
+  _unit setPos (getPos _unit); // force Arma to synchronize direction
 
   [-2, {
     _this switchMove DRAGGEDMOVE;

@@ -114,24 +114,24 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
 
   // Pain
   if (_unit == player and !(_unit getVariable "BWA3_InPain")) then {
-    _unit setVariable ["BWA3_InPain", true, true];
-    _unit spawn {
+    player setVariable ["BWA3_InPain", true, true];
+    0 spawn {
       "chromAberration" ppEffectEnable true;
       _time = time;
-      while {(_this getVariable "BWA3_Pain") > 0} do {
-        "chromAberration" ppEffectAdjust [0.02 * (_this getVariable "BWA3_Pain"), 0.02 * (_this getVariable "BWA3_Pain"), false];
+      while {(player getVariable "BWA3_Pain") > 0} do {
+        "chromAberration" ppEffectAdjust [0.02 * (player getVariable "BWA3_Pain"), 0.02 * (player getVariable "BWA3_Pain"), false];
         "chromAberration" ppEffectCommit 1;
-        sleep (1.5 - (_this getVariable "BWA3_Pain"));
-        "chromAberration" ppEffectAdjust [0.2 * (_this getVariable "BWA3_Pain"), 0.2 * (_this getVariable "BWA3_Pain"), false];
+        sleep (1.5 - (player getVariable "BWA3_Pain"));
+        "chromAberration" ppEffectAdjust [0.2 * (player getVariable "BWA3_Pain"), 0.2 * (player getVariable "BWA3_Pain"), false];
         "chromAberration" ppEffectCommit 1;
         sleep 0.15;
         
-        _pain = ((_this getVariable "BWA3_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
-        _this setVariable ["BWA3_Pain", _pain];
+        _pain = ((player getVariable "BWA3_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
+        player setVariable ["BWA3_Pain", _pain];
         _time = time;
       };
       "chromAberration" ppEffectEnable false;
-      _this setVariable ["BWA3_InPain", false];
+      player setVariable ["BWA3_InPain", false];
     };
   };
 
@@ -139,7 +139,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
   if !(_unit getVariable "BWA3_Bleeding") then {
     _unit setVariable ["BWA3_Bleeding", true, true];
     _unit spawn {
-      while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding")} do {
+      while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding") and damage _this > 0 and damage _this < 1} do {
         if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
         _blood = _this getVariable "BWA3_Blood";
         _blood = _blood - BLOODLOSSRATE * damage _this;
@@ -153,6 +153,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
 
         sleep 10;
       };
+      _unit setVariable ["BWA3_Bleeding", false, true];
     };
   };
 

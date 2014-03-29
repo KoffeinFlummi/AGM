@@ -24,7 +24,15 @@ if isNull (player getVariable "BWA3_Carrying") then {
 
 detach _unit;
 _unit moveInCargo _vehicle;
-_unit playMoveNow ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
+_unit spawn {
+  sleep 0.5;
+
+  [-2, {
+    if (local _this) then {
+      _this switchMove ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
+    };
+  }, _this] call CBA_fnc_globalExecute;
+};
 
 [-2, {
   _this switchMove "";
