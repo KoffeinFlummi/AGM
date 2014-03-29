@@ -114,6 +114,10 @@ header h2 {
   max-width: 100%;
 }
 
+#main-content ul {
+  margin-left: -20px;
+}
+
 aside#sidebar {
   width: 200px;
   padding-left: 20px;
