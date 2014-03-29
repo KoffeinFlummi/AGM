@@ -67,7 +67,7 @@ header {
   padding-top: 40px;
   padding-bottom: 40px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #2e7bcf url(../images/bgs/bg1.jpg) 0 0 repeat-x;
+  background: #2e7bcf url(../images/bgs/bg3.jpg) 0 -50px repeat-x;
   border-bottom: solid 1px #275da1;
 }
 
@@ -82,7 +82,7 @@ header h1 {
 
 header h2 {
   font-size: 26px;
-  color: #9ddcff;
+  color: #fff;
   font-weight: normal;
   line-height: 1.3;
   width: 540px;
