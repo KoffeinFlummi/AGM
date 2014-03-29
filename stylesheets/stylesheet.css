@@ -73,7 +73,7 @@ header {
   background: #2e7bcf url(../images/bgs/bg3.jpg) 0 -15px repeat-x;
   background-size: 100% auto;
   border-bottom: solid 1px #275da1;
-  text-shadow: 0 0 3px #000;
+  text-shadow: 0 0 6px #000;
 }
 
 header h1 {
