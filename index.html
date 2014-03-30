@@ -186,6 +186,17 @@
     
     <script>
       (function(window,document,undefined){
+        $('a').click(function(){
+          $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+          }, 500);
+          return false;
+        });
+      })(this,this.document);
+    </script>
+    
+    <script>
+      (function(window,document,undefined){
         $(window).scroll(function() {
           $el = $('.sidenav'); 
           if ($(this).scrollTop() + 20 > $(".sidenav-helper").offset().top && $el.css('position') != 'fixed'){ 
