@@ -151,10 +151,17 @@ aside#sidebar p.repo-owner a {
   content: "/";
   margin-right: 15px;
 }
+.sidenav li:hover:before {
+  content: "/";
+  margin-right: 15px;
+}
 .sidenav a {
   color: #666;
 }
 .sidenav .active a {
+  color: #000;
+}
+.sidenav li:hover a {
   color: #000;
 }
 
