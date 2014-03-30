@@ -148,6 +148,9 @@ aside#sidebar p.repo-owner a {
   margin-right: 5px;
 }
 .sidenav a {
+  color: #666;
+}
+.sidenav .active a {
   color: #000;
 }
 
