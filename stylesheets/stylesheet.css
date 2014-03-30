@@ -140,11 +140,12 @@ aside#sidebar p.repo-owner a {
 .sidenav {
   list-style: none;
   font-size: 2.2em;
+  font-weight: bold;
   color: #CCC;
 }
 .sidenav li:before {
   content: "/";
-  margin-left: 5px;
+  margin-right: 5px;
 }
 .sidenav a {
   color: #000;
