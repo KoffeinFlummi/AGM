@@ -227,7 +227,7 @@ ul, ol, dl {
 
 footer {
   margin: 0 auto 0 auto;
-  width: 100%;
+  width: 940;
 }
 
 
@@ -517,6 +517,9 @@ footer a:hover {
     content: none;
     padding-right: 0;
     margin-left: 0;
+  }
+  footer {
+    width: 100%;
   }
 }
 
