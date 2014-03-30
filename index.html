@@ -169,6 +169,7 @@
       // PARALLAX EFFECT
       (function(window,document,undefined){
         $(window).scroll(function() {
+          if ($(window).width() <= 767) {return 0;}
           var yPos = ($(window).scrollTop() / 5) - 15; 
           var coords = '50% '+ yPos + 'px';
           $(".header").css({ backgroundPosition: coords });
