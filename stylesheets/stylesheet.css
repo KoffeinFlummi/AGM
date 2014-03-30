@@ -470,6 +470,7 @@ footer a:hover {
     font-size: 24px;
   }
   header span {
+    display: block;
     width: 100%;
     text-align: center;
   }
