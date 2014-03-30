@@ -70,10 +70,11 @@ header {
   padding-top: 70px;
   padding-bottom: 70px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #000 url(../images/bgs/bg3.jpg) 0 -15px repeat-x;
-  background-size: 100% auto;
+  background: #000 url(../images/bgs/bg.jpg) 0 -15px repeat-x;
+  background-size: auto 100%;
   border-bottom: solid 1px #275da1;
   text-shadow: 0 0 6px #000;
+  height: 400%;
 }
 
 header h1 {
