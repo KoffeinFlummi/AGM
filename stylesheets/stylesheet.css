@@ -147,6 +147,9 @@ aside#sidebar p.repo-owner a {
   content: "/";
   margin-right: 5px;
 }
+.sidenav li {
+  padding-left: 5px;
+}
 .sidenav a {
   color: #666;
 }
