@@ -72,6 +72,7 @@ header {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
   background: #000 url(../images/bgs/bg.jpg) 0 -15px repeat-x;
   background-size: auto 400px;
+  background-position: 50% auto;
   border-bottom: solid 1px #275da1;
   text-shadow: 0 0 6px #000;
   max-height: 400px;
