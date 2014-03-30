@@ -137,6 +137,18 @@ aside#sidebar p.repo-owner a {
   margin-bottom: 40px;
 }
 
+.sidenav {
+  list-style: none;
+  font-size: 20px;
+  color: #CCC;
+}
+.sidenav li:before {
+  content: "/";
+}
+.sidenav a {
+  color: #000;
+}
+
 a.button {
   width: 134px;
   height: 58px;
