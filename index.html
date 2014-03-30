@@ -29,7 +29,7 @@
       <div class="inner clearfix">
         <section id="main-content">
 
-          <h1 style="margin-top: 5px"><a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
+          <h1 style="margin-top: 5px" id="philosophy"><a name="philosophy" class="anchor" href="#philosophy"><span class="octicon octicon-link"></span></a>Philosophy</h1>
 
           <h2>Open Source</h2>
           <p>Everyone is free to fork this and make contributions.</p>
@@ -41,7 +41,7 @@
           No gimmicky features that don't add anything to gameplay and are out of place in Arma.<br><i>(And if there is a feature that you consider unneccessary, just disable it!)</i>
 
 
-          <h1><a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
+          <h1 id="features"><a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
 
           <h2><a name="medical" class="anchor" href="#medical"><span class="octicon octicon-link"></span></a>Medical System</h2>
           <ul>
@@ -93,7 +93,7 @@
           </ul>
 
 
-          <h1><a name="plans" class="anchor" href="#plans"><span class="octicon octicon-link"></span></a>Plans</h1>
+          <h1 id="plans"><a name="plans" class="anchor" href="#plans"><span class="octicon octicon-link"></span></a>Plans</h1>
 
           <p>BWA3 Realism is under continuous development. The planned features include but are not limited to:
 
@@ -110,14 +110,14 @@
           </ul>
 
 
-          <h1><a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h1>
+          <h1 id="contribute"><a name="contribute" class="anchor" href="#contribute"><span class="octicon octicon-link"></span></a>Contribute</h1>
           
           <p>BWA3 Realism is open-source! If you want to help out, be it adding features yourself, or just reporting bugs and giving feedback, head over to <a href="github.com/KoffeinFlummi/BWA3_Realism.git">GitHub</a> and get started!</p>
           <p>If you want to report an issue or bug, please use the <a href="https://github.com/KoffeinFlummi/BWA3_Realism/issues">Issue Tracker</a>.</p>
           <p>If you want to develop your own feature, fork the repository and create a pull request. (If you don't know how to do that, click <a href="https://help.github.com/articles/fork-a-repo">here</a>.)</p>
 
 
-          <h1><a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h1>
+          <h1 id="contribute"><a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h1>
           
           <p>If you have any questions, you can contact me on the <a href="http://forums.bistudio.com/member.php?112598-KoffeinFlummi">BI Forums</a> or send me an email at <a href="mailto:koffeinflummi@gmail.com">koffeinflummi@gmail.com</a>.</p>
 
@@ -154,12 +154,15 @@
             <li id="nav-contact"><a href="#contact">Contact</a></li>
           </ul>
 
-          <p class="repo-owner">This page is being maintained by <a href="https://github.com/KoffeinFlummi">KoffeinFlummi</a>.</p>
-
-          <p>This page is based on the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
         </aside>
       </div>
     </div>
+    
+    <footer>
+      <p class="repo-owner">This page is being maintained by <a href="https://github.com/KoffeinFlummi">KoffeinFlummi</a>.</p>
+
+      <p>This page is based on the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     
@@ -194,6 +197,20 @@
               $el.css({'position': 'relative', 'margin-top': '0'});
             }
           }
+          
+          $(".sidenav li").removeClass("active");
+          if ($(this).scrollTop() > $("#contact").offset().top) {
+            $("#nav-contact").addClass("active");
+          } else if $(this).scrollTop() > $("#contribute").offset().top) {
+            $("#nav-contribute").addClass("active");
+          } else if $(this).scrollTop() > $("#plans").offset().top) {
+            $("#nav-plans").addClass("active");
+          } else if $(this).scrollTop() > $("#features").offset().top) {
+            $("#nav-features").addClass("active");
+          } else if $(this).scrollTop() > $("#philosophy").offset().top) {
+            $("#nav-philosophy").addClass("active");
+          }
+          
         });
       })(this,this.document);
     </script>
