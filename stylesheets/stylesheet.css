@@ -457,7 +457,7 @@ footer a:hover {
   }
   header {
     padding: 20px 0;
-    background: middle;
+    background: #000 url();
   }
   header .inner {
     position: relative;
