@@ -225,6 +225,11 @@ ul, ol, dl {
   margin-bottom: 20px;
 }
 
+footer {
+  margin: 0 auto 0 auto;
+  width: 940px;
+}
+
 
 /* COMMON STYLES */
 
