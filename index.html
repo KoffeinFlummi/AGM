@@ -201,14 +201,23 @@
           $(".sidenav li").removeClass("active");
           if ($(this).scrollTop() > $("#contact").offset().top) {
             $("#nav-contact").addClass("active");
-          } else if $(this).scrollTop() > $("#contribute").offset().top) {
+            return 0;
+          }
+          if ($(this).scrollTop() > $("#contribute").offset().top) {
             $("#nav-contribute").addClass("active");
-          } else if $(this).scrollTop() > $("#plans").offset().top) {
+            return 0;
+          }
+          if ($(this).scrollTop() > $("#plans").offset().top) {
             $("#nav-plans").addClass("active");
-          } else if $(this).scrollTop() > $("#features").offset().top) {
+            return 0;
+          }
+          if ($(this).scrollTop() > $("#features").offset().top) {
             $("#nav-features").addClass("active");
-          } else if $(this).scrollTop() > $("#philosophy").offset().top) {
+            return 0;
+          }
+          if ($(this).scrollTop() > $("#philosophy").offset().top) {
             $("#nav-philosophy").addClass("active");
+            return 0;
           }
           
         });
