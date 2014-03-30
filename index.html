@@ -187,11 +187,11 @@
       (function(window,document,undefined){
         $(window).scroll(function() {
           $el = $('.sidenav'); 
-          if ($(this).scrollTop() > $(".sidenav-helper").offset().top && $el.css('position') != 'fixed'){ 
-            $el.css({'position': 'fixed', 'top': '0px'}); 
+          if ($(this).scrollTop() + 20 > $(".sidenav-helper").offset().top && $el.css('position') != 'fixed'){ 
+            $el.css({'position': 'fixed', 'top': '0px', 'margin-top': '20px'}); 
           } else {
-            if ($el.css('position') == 'fixed') {
-              $el.css({'position': 'relative'});
+            if ($(this).scrollTop() + 20 <= $(".sidenav-helper").offset().top && $el.css('position') == 'fixed') {
+              $el.css({'position': 'relative', 'margin-top': '0'});
             }
           }
         });
