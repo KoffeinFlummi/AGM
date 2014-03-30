@@ -145,7 +145,7 @@
             v 1.0.12
           </a>
           
-          
+          <div class="sidenav-helper" style="width: 0; height: 0"></div>
           <ul class="sidenav">
             <li id="nav-philosophy"><a href="#philosophy">Philosphy</a></li>
             <li id="nav-features"><a href="#features">Featuers</a></li>
@@ -179,6 +179,17 @@
           var yPos = ($(window).scrollTop() / 5) - 15; 
           var coords = '50% '+ yPos + 'px';
           $(".header").css({ backgroundPosition: coords });
+        });
+      })(this,this.document);
+    </script>
+    
+    <script>
+      (function(window,document,undefined){
+        $(window).scroll(function() {
+          $el = $('.sidenav'); 
+          if ($(this).scrollTop() > 200 && $el.css('position') != 'fixed'){ 
+            $el.css({'position': 'fixed', 'top': '0px'}); 
+          }
         });
       })(this,this.document);
     </script>
