@@ -123,29 +123,48 @@ class CfgVehicles {
       };
     };
 
-    /* for later (custom interaction system)
     class BWA3_Actions {
-      class Drag {
-        displayName = "Drag";
+      class Test {
+        displayName = "Test";
         distance = 4;
-        condition = "vehicle player == player and vehicle this == this and this != player and this getVariable 'BWA3_Unconscious' and !(player getVariable 'BWA3_Dragging') and !(player getVariable 'BWA3_Carrying')";
-        statement = "[this] call BWA3_Medical_fnc_drag";
+        condition = "false";
+        statement = "hint 'Schinken!'";
       };
-      class Carry: Drag {
-        displayName = "Carry";
-        statement = "[this] call BWA3_Medical_fnc_carry";
+      class Test2 {
+        displayName = "Test2";
+        distance = 4;
+        condition = "true";
+        statement = "hint 'Schinken! mhm'";
       };
-      class Release: Drag {
-        displayName = "Release";
-        condition = "vehicle player == player and vehicle this == this and this != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
-        statement = "[this] call BWA3_Medical_fnc_release";
+    };
+
+    class BWA3_SelfActions {
+      class Test {
+        displayName = "Test Self";
+        condition = "true";
+        statement = "hint 'YOLOSWAG'";
       };
-      class Diagnose: Drag {
-        displayName = "Diagnose";
-        condition = "vehicle player == player and vehicle this == this and this != player";
-        statement = "[this] call BWA3_Medical_fnc_diagnose";
+      class Test2 {
+        displayName = "Test Self";
+        condition = "true";
+        statement = "hint 'YOLOSWAG'";
       };
-    };*/
+      class Test3 {
+        displayName = "Test Self";
+        condition = "true";
+        statement = "hint 'YOLOSWAG'";
+      };
+      class Test4 {
+        displayName = "Test Self";
+        condition = "true";
+        statement = "hint 'YOLOSWAG'";
+      };
+      class Test5 {
+        displayName = "Test Self";
+        condition = "false";
+        statement = "hint 'YOLOSWAG'";
+      };
+    };
 
     class UserActions {
       // Documentation:

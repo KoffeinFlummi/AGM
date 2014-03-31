@@ -10,8 +10,20 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class BWA3_Interaction {
+    class BWA3_Interaction {
+        file = "\bwa3_interaction\functions";
+      class openMenu {};
+      class openMenuSelf {};
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class BWA3_Interaction {
     Init = "call compile preProcessFileLineNumbers '\BWA3_Interaction\init.sqf'";
   };
 };
+
+#include <Menu_Config.hpp>
