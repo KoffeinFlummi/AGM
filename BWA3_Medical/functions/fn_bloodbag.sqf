@@ -39,7 +39,7 @@ _this spawn {
   hintSilent "";
   // STOP COUNTDOWN RSC
 
-  if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
+  if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   _blood = ((_unit getVariable "BWA3_Blood") + BLOODBAGHEAL) min 1;
   _unit setVariable ["BWA3_Blood", _blood, true];

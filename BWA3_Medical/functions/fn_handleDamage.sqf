@@ -44,12 +44,17 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
 
   sleep 0.001;
 
-  _armdamage = (_unit getHitPointDamage "HitLeftShoulder") + (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitLeftForeArm") + (_unit getHitPointDamage "HitRightShoulder") + (_unit getHitPointDamage "HitRightArm") + (_unit getHitPointDamage "HitRightForeArm");
-  _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+  _armdamage = (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitRightArm");
+  _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
 
   // Reset "unused" hitpoints.
   [_unit, "HitLegs", 0] call BWA3_Medical_fnc_setHitPointDamage;
   [_unit, "HitHands", 0] call BWA3_Medical_fnc_setHitPointDamage;
+
+  // Account for unassigned structural damage, like when you crash into something with a vehicle
+  if (damage _unit > 0 and (_unit getHitPointDamage "HitHead") and (_unit getHitPointDamage "HitBody") and (_unit getHitPointDamage "HitLeftArm") and (_unit getHitPointDamage "HitRightArm") and (_unit getHitPointDamage "HitLeftLeg") and (_unit getHitPointDamage "HitRightLeg")) then {
+    [_unit, "HitBody", (damage _unit)] call BWA3_Medical_fnc_setHitPointDamage;
+  };
   
   // Handle death and unconsciousness
   if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and damage _unit < 1 and !(_unit getVariable "BWA3_Unconscious")) then {
@@ -142,7 +147,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
       while {_this getVariable "BWA3_Blood" > 0 and (_this getVariable "BWA3_Bleeding") and damage _this > 0 and damage _this < 1} do {
         if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
         _blood = _this getVariable "BWA3_Blood";
-        _blood = _blood - BLOODLOSSRATE * damage _this;
+        _blood = _blood - BLOODLOSSRATE * (damage _this);
         _this setVariable ["BWA3_Blood", _blood, true];
         if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "BWA3_Unconscious")) then {
           [_this] call BWA3_Medical_fnc_knockOut;

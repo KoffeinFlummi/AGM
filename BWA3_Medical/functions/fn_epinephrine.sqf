@@ -38,7 +38,7 @@ _this spawn {
   hintSilent "";
   // STOP COUNTDOWN RSC
   
-  if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
+  if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   [_unit] call BWA3_Medical_fnc_wakeUp;
 

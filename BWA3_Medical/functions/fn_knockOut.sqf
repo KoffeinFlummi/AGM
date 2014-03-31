@@ -13,12 +13,13 @@
 private ["_unit"];
 
 _unit = _this select 0;
-//if !(isPlayer _unit) exitWith {_unit setDamage 1;};
+if !(isPlayer _unit) exitWith {_unit setDamage 1;};
 
 _unit setVariable ["BWA3_Unconscious", true, true];
 
 if (_unit == player) then {
-  [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
+  [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
+  4209 cutText [format ["You are unconscious.", _time], "PLAIN", 0, false];
 };
 
 _unit setCaptive 213;

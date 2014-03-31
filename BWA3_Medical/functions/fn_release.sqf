@@ -37,7 +37,13 @@ _this spawn {
 
   player setVariable ["BWA3_CanTreat", true, false];
 
-  _unit enableSimulation true;
-  sleep 3.8;
-  _unit enableSimulation false;
+  [-2, {
+    if (local _this) then {
+      0 spawn {
+        _this enableSimulation true;
+        sleep 3.8;
+        _this enableSimulation false;
+      };
+    };
+  }, _unit] call CBA_fnc_globalExecute;
 };

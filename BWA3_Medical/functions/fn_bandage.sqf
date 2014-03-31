@@ -50,7 +50,7 @@ _this spawn {
   hintSilent "";
 
   // is unit still in range?
-  if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
+  if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   // change damage of body part
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
@@ -62,7 +62,7 @@ _this spawn {
   waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
 
   // check if legs are healed
-  _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+  _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
   if (_legdamage < LEGDAMAGETHRESHOLD1) then {
     [_unit, "HitLegs", 0] call BWA3_Medical_fnc_setHitPointDamage;
   };
@@ -71,7 +71,7 @@ _this spawn {
   _fullyHealed = true;
   {
     if ((_unit getHitPointDamage _x) > 0.02) exitWith {_fullyHealed = false;};
-  } forEach ["HitHead","HitBody","HitLeftShoulder","HitLeftArm","HitLeftForeArm","HitRightShoulder","HitRightArm","HitRightForeArm","HitLeftUpLeg","HitLeftLeg","HitLeftFoot","HitRightUpLeg","HitRightLeg","HitRightFoot"];
+  } forEach ["HitHead","HitBody","HitLeftArm","HitRightArm","HitLeftLeg","HitRightLeg"];
   if (_fullyHealed) then {
     _unit setDamage 0;
   };

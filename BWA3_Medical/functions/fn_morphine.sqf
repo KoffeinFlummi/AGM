@@ -45,11 +45,11 @@ _this spawn {
   hintSilent "";
   // STOP COUNTDOWN RSC
 
-  if (player distance _unit > 4 or vehicle player != player or damage player >= 1) exitWith {};
+  if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   if (_painkillerOld < 0.1) exitWith {
     if (_unit == player) then {
-      [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
+      [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
     };
     [-2, {
       _this switchMove "Unconscious";

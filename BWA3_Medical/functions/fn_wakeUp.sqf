@@ -26,6 +26,7 @@ _unit setVariable ["BWA3_Unconscious", false, true];
 [-2, {
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+    4209 cutText ["", "PLAIN", 0, false];
   };
   if (local _this) then {
     _this enableSimulation true;

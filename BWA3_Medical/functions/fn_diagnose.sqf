@@ -20,18 +20,10 @@ _this spawn {
   _damages = [
     ["head", floor ((_unit getHitPointDamage "HitHead") * 100) / 100],
     ["torso", floor ((_unit getHitPointDamage "HitBody") * 100) / 100],
-    ["left shoulder", floor ((_unit getHitPointDamage "HitLeftShoulder") * 100) / 100],
     ["left arm", floor ((_unit getHitPointDamage "HitLeftArm") * 100) / 100],
-    ["left forearm", floor ((_unit getHitPointDamage "HitLeftForeArm") * 100) / 100],
-    ["right shoulder", floor ((_unit getHitPointDamage "HitRightShoulder") * 100) / 100],
     ["right arm", floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100],
-    ["right forearm", floor ((_unit getHitPointDamage "HitRightForeArm") * 100) / 100],
-    ["left upper leg", floor ((_unit getHitPointDamage "HitLeftUpLeg") * 100) / 100],
-    ["left lower leg", floor ((_unit getHitPointDamage "HitLeftLeg") * 100) / 100],
-    ["left foot", floor ((_unit getHitPointDamage "HitLeftFoot") * 100) / 100],
-    ["right upper leg", floor ((_unit getHitPointDamage "HitRightUpLeg") * 100) / 100],
-    ["right lower leg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100],
-    ["right foot", floor ((_unit getHitPointDamage "HitRightFoot") * 100) / 100]
+    ["left leg", floor ((_unit getHitPointDamage "HitLeftLeg") * 100) / 100],
+    ["right leg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
   ];
 
   if (_unit != player) then {
@@ -42,7 +34,7 @@ _this spawn {
     waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
   };
 
-  _string = "Patient: " + name _unit;
+  _string = "Patient: " + (_unit getVariable "BWA3_Name");
 
   if (damage _unit >= 1) then {
     _string = _string + "<br/><br/>The patient is dead.";
