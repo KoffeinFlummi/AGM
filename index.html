@@ -211,25 +211,25 @@
               $el.css({'position': 'relative', 'margin-top': '0'});
             }
           }
-          
+
           $(".sidenav li").removeClass("active");
-          if ($(this).scrollTop() >= $("#contact").offset().top) {
+          if ($(this).scrollTop() + 5 >= $("#contact").offset().top) {
             $("#nav-contact").addClass("active");
             return 0;
           }
-          if ($(this).scrollTop() >= $("#contribute").offset().top) {
+          if ($(this).scrollTop() + 5 >= $("#contribute").offset().top) {
             $("#nav-contribute").addClass("active");
             return 0;
           }
-          if ($(this).scrollTop() >= $("#plans").offset().top) {
+          if ($(this).scrollTop() + 5 >= $("#plans").offset().top) {
             $("#nav-plans").addClass("active");
             return 0;
           }
-          if ($(this).scrollTop() >= $("#features").offset().top) {
+          if ($(this).scrollTop() + 5 >= $("#features").offset().top) {
             $("#nav-features").addClass("active");
             return 0;
           }
-          if ($(this).scrollTop() >= $("#philosophy").offset().top) {
+          if ($(this).scrollTop() + 5 >= $("#philosophy").offset().top) {
             $("#nav-philosophy").addClass("active");
             return 0;
           }
