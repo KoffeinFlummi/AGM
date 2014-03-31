@@ -14,7 +14,7 @@ BWA3_unitInit = {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
     4209 cutText ["", "PLAIN", 0, false];
   };
-  _this setVariable ["BWA3_Name"], (name _this), true];
+  _this setVariable ["BWA3_Name", (name _this), true];
   _this setVariable ["BWA3_CanTreat", true, false];    // Can unit treat others?
   _this setVariable ["BWA3_Treatable", true, true];    // Can unit be treated/diagnosed?
   _this setVariable ["BWA3_Blood", 1, true];           // Amount of blood in the body.
