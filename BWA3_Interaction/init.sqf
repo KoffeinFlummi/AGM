@@ -7,10 +7,6 @@ BWA3_Interaction_keyDown = false;
 BWA3_Interaction_keyInput = compile preProcessFileLineNumbers "\BWA3_Interaction\functions\Interaction_keyInput.sqf";
 BWA3_Interaction_keyRelease = compile preProcessFileLineNumbers "\BWA3_Interaction\functions\Interaction_keyRelease.sqf";
 
-BWA3_Interaction_openMenu = compile preProcessFileLineNumbers "\BWA3_Interaction\functions\Interaction_openMenu.sqf";
-BWA3_Interaction_addOption = compile preProcessFileLineNumbers "\BWA3_Interaction\functions\Interaction_addOption.sqf";
-BWA3_Interaction_removeOption = compile preProcessFileLineNumbers "\BWA3_Interaction\functions\Interaction_removeOption.sqf";
-
 0 spawn {
 	sleep 0.1;
 
