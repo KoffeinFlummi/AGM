@@ -124,45 +124,148 @@ class CfgVehicles {
     };
 
     class BWA3_Actions {
-      class Test {
-        displayName = "Test";
+      class BWA3_Medical {
+        displayName = "Treat >>";
         distance = 4;
-        condition = "false";
-        statement = "hint 'Schinken!'";
+        condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player";
+        statement = "'BWA3_Medical' call BWA3_Interaction_fnc_openMenu;";
+        showDisabled = 1;
+
+        class BWA3_Diagnose {
+          displayName = "Diagnose";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and BWA3_Interaction_Target != player";
+          statement = "[BWA3_Interaction_Target] call BWA3_Medical_fnc_diagnose;";
+          showDisabled = 1;
+        };
+        class BWA3_Morphine {
+          displayName = "Inject Morphine";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and 'BWA3_Morphine' in itemsWithMagazines player";
+          statement = "[BWA3_Interaction_Target] call BWA3_Medical_fnc_morphine;";
+        };
+        class BWA3_Epipen {
+          displayName = "Inject Epinephrine";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and 'BWA3_Epipen' in itemsWithMagazines player and BWA3_Interaction_Target getVariable 'BWA3_Unconscious'";
+          statement = "[BWA3_Interaction_Target] call BWA3_Medical_fnc_epinephrine;";
+        };
+        class BWA3_BloodBag {
+          displayName = "Transfuse Blood";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and 'BWA3_Bloodbag' in itemsWithMagazines player and (BWA3_Interaction_Target getVariable 'BWA3_Blood' < 0.7)";
+          statement = "[BWA3_Interaction_Target] call BWA3_Medical_fnc_bloodbag;";
+        };
+        class BWA3_Bandage_Head {
+          displayName = "Bandage Head";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitHead' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitHead'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_Body {
+          displayName = "Bandage Torso";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitBody' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitBody'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_LeftArm {
+          displayName = "Bandage Left Arm";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitLeftArm' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitLeftArm'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_RightArm {
+          displayName = "Bandage Right Arm";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitRightArm' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitRightArm'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_LeftLeg {
+          displayName = "Bandage Left Leg";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitLeftLeg' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitLeftLeg'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_RightLeg {
+          displayName = "Bandage Right Leg";
+          condition = "(player getVariable 'BWA3_CanTreat') and (BWA3_Interaction_Target getVariable 'BWA3_Treatable') and vehicle player == player and vehicle BWA3_Interaction_Target == BWA3_Interaction_Target and 'BWA3_Bandage' in itemsWithMagazines player and alive BWA3_Interaction_Target and BWA3_Interaction_Target != player and (BWA3_Interaction_Target getHitPointDamage 'HitRightLeg' > 0.01)";
+          statement = "[BWA3_Interaction_Target, 'HitRightLeg'] call BWA3_Medical_fnc_bandage;";
+        };
       };
-      class Test2 {
-        displayName = "Test2";
+
+      class BWA3_Drag {
+        displayName = "Drag";
         distance = 4;
-        condition = "true";
-        statement = "hint 'Schinken! mhm'";
+        condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'BWA3_Treatable' and cursorTarget getVariable 'BWA3_Unconscious' and isNull (player getVariable 'BWA3_Dragging') and isNull (player getVariable 'BWA3_Carrying')";
+        statement = "[cursorTarget] call BWA3_Medical_fnc_drag;";
+      };
+      class BWA3_Carry {
+        displayName = "Carry";
+        distance = 4;
+        condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'BWA3_Treatable' and cursorTarget getVariable 'BWA3_Unconscious' and isNull (player getVariable 'BWA3_Dragging') and isNull (player getVariable 'BWA3_Carrying')";
+        statement = "[cursorTarget] call BWA3_Medical_fnc_carry;";
+      };
+      class BWA3_Release {
+        displayName = "Release";
+        distance = 4;
+        condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
+        statement = "[cursorTarget] call BWA3_Medical_fnc_release;";
+      };
+
+      class BWA3_Load {
+        displayName = "Load Into Vehicle"
+        distance = 4;
+        condition = "!(cursorTarget isKindOf 'Man') and vehicle player == player and cursorTarget == player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man') and cursorTarget distance player < 5 and cursorTarget emptyPositions 'cargo' > 0";
+        statement = "[cursorTarget] call BWA3_Medical_fnc_loadIntoVehicle;";
+      };
+      class BWA3_Unload {
+        displayName = "Unload Patients"
+        distance = 4;
+        condition = "return = false; {if (_x getVariable 'BWA3_Unconscious') exitWith {return = true;};} foreach (crew cursorTarget); return and vehicle player == player and cursorTarget == player and (cursorTarget distance player < 5) and !(cursorTarget isKindOf 'Man')";
+        statement = "[cursorTarget] call BWA3_Medical_fnc_unloadPatients;";
       };
     };
 
     class BWA3_SelfActions {
-      class Test {
-        displayName = "Test Self";
-        condition = "true";
-        statement = "hint 'YOLOSWAG'";
-      };
-      class Test2 {
-        displayName = "Test Self";
-        condition = "true";
-        statement = "hint 'YOLOSWAG'";
-      };
-      class Test3 {
-        displayName = "Test Self";
-        condition = "true";
-        statement = "hint 'YOLOSWAG'";
-      };
-      class Test4 {
-        displayName = "Test Self";
-        condition = "true";
-        statement = "hint 'YOLOSWAG'";
-      };
-      class Test5 {
-        displayName = "Test Self";
-        condition = "false";
-        statement = "hint 'YOLOSWAG'";
+      class BWA3_Medical {
+        displayName = "Self-treatment >>";
+        condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player";
+        statement = "'BWA3_Medical' call BWA3_Interaction_fnc_openMenuSelf;";
+        showDisabled = 1;
+
+        class BWA3_Diagnose {
+          displayName = "Diagnose";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player";
+          statement = "[player] call BWA3_Medical_fnc_diagnose;";
+          showDisabled = 1;
+        };
+        class BWA3_Morphine {
+          displayName = "Inject Morphine";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Morphine' in itemsWithMagazines player";
+          statement = "[player] call BWA3_Medical_fnc_morphine;";
+        };
+
+        class BWA3_Bandage_Head {
+          displayName = "Bandage Head";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitHead' > 0.01)";
+          statement = "[player, 'HitHead'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_Body {
+          displayName = "Bandage Torso";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitBody' > 0.01)";
+          statement = "[player, 'HitBody'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_LeftArm {
+          displayName = "Bandage Left Arm";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitLeftArm' > 0.01)";
+          statement = "[player, 'HitLeftArm'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_RightArm {
+          displayName = "Bandage Right Arm";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitRightArm' > 0.01)";
+          statement = "[player, 'HitRightArm'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_LeftLeg {
+          displayName = "Bandage Left Leg";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitLeftLeg' > 0.01)";
+          statement = "[player, 'HitLeftLeg'] call BWA3_Medical_fnc_bandage;";
+        };
+        class BWA3_Bandage_RightLeg {
+          displayName = "Bandage Right Leg";
+          condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player and vehicle player == player and 'BWA3_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitRightLeg' > 0.01)";
+          statement = "[player, 'HitRightLeg'] call BWA3_Medical_fnc_bandage;";
+        };
       };
     };
 

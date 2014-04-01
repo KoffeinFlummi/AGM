@@ -13,7 +13,7 @@ if (_key == 54) then {
 
 if (_key == 221) then {
 	if !dialog then {
-		call ([BWA3_Interaction_fnc_openMenu, BWA3_Interaction_fnc_openMenuSelf] select _ctrl);
+		"" call ([BWA3_Interaction_fnc_openMenu, BWA3_Interaction_fnc_openMenuSelf] select _ctrl);
 	};
 	_isInput = true;
 };

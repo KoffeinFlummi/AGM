@@ -7,24 +7,30 @@ we don't support changed code based on this work
 
 BWA3_Interaction_Buttons = [];
 
-private ["_actions", "_object", "_config", "_count", "_action", "_displayName", "_distance", "_condition", "_statement", "_dlgInteractionDialog", "_ctrlInteractionDialog"];
-
 _actions = [];
-_object = cursorTarget;
-_config = configfile >> "CfgVehicles" >> typeOf _object >> "BWA3_Actions";
-_count = count _config;
+_class = _this;
+if (_class == "") then {BWA3_Interaction_Target = cursorTarget};
 
+_object = BWA3_Interaction_Target;
+_config = configfile >> "CfgVehicles" >> typeOf _object >> "BWA3_Actions";
+if (_class != "") then {_config = _config >> _this};
+
+_count = count _config;
 if (_count == 0) exitWith {};
 
 for "_a" from 0 to (_count - 1) do {
 	_action = _config select _a;
-	_displayName = getText (_action >> "displayName");
-	_distance = getNumber (_action >> "distance");
-	_condition = compile getText (_action >> "condition");
-	_statement = compile getText (_action >> "statement");
 
-	if (player distance _object < _distance) then {
-		_actions set [count _actions, [_displayName, _statement, _condition]];
+	if (count _action > 0) then {
+		_displayName = getText (_action >> "displayName");
+		_distance = getNumber (_action >> "distance");
+		_condition = compile getText (_action >> "condition");
+		_statement = compile getText (_action >> "statement");
+		_showDisabled = getNumber (_action >> "showDisabled") == 1;
+
+		if ((_showDisabled || {call _condition}) && {player distance _object < _distance || {_distance == 0}}) then {
+			_actions set [count _actions, [_displayName, _statement, _condition]];
+		};
 	};
 };
 
@@ -36,7 +42,7 @@ if (_count == 0) exitWith {};
 closeDialog 0;
 createDialog "BWA3_Interaction_Dialog";
 
-setMousePosition [0.5, 0.5];
+if (_class == "") then {setMousePosition [0.5, 0.5]};
 
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "BWA3_Interaction_Dialog";
