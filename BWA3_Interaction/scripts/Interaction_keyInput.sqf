@@ -6,11 +6,6 @@ _ctrl = _this select 2;
 _alt = _this select 3;
 _isInput = false;
 
-if (_key == 54) then {
-	BWA3_Interaction_keyDown = true;
-	_isInput = true;
-};
-
 if (_key == 221) then {
 	if !dialog then {
 		"" call ([BWA3_Interaction_fnc_openMenu, BWA3_Interaction_fnc_openMenuSelf] select _ctrl);

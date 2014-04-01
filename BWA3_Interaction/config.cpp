@@ -26,4 +26,36 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class CfgVehicles {
+  class Man;
+  class Land_CargoBox_V1_F;
+
+  class CAManBase: Man {
+    class BWA3_Actions {
+      class BWA3_JoinGroup {
+        displayName = "$STR_BWA3_JoinGroup";
+        distance = 4;
+        condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
+        statement = "[player] joinSilent group cursorTarget;";
+        showDisabled = 1;
+      };
+    };
+
+    class BWA3_SelfActions {
+      class BWA3_LeaveGroup {
+        displayName = "$STR_BWA3_LeaveGroup";
+        condition = "count (units group player) > 1";
+        statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
+        showDisabled = 1;
+      };
+      class BWA3_BecomeLeader {
+        displayName = "$STR_BWA3_BecomeLeader";
+        condition = "count (units group player) > 1 && {leader group player != player}";
+        statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
+        showDisabled = 1;
+      };
+    };
+  };
+};
+
 #include <Menu_Config.hpp>

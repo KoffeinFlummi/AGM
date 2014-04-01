@@ -1,6 +1,7 @@
 // by commy2
 
-#define DISTANCE 5
+#define RSC_INDEX 127
+#define DISTANCE 4
 #define DELAY 1
 
 while {true} do {
@@ -9,11 +10,11 @@ while {true} do {
 	_visibleName = false;
 	if (vehicle player == player && {isPlayer _cursorTarget} && {player distance _cursorTarget < DISTANCE}) then {
 		_name = name _cursorTarget;
-		127 cutText [_name, "PLAIN", 0.1];
+		RSC_INDEX cutText [_name, "PLAIN", 0.1];
 		_visibleName = true;
 	} else {
 		if (_visibleName) then {
-			127 cutText ["", "PLAIN", 0.1];
+			RSC_INDEX cutText ["", "PLAIN", 0.1];
 			_visibleName = false;
 		};
 	};

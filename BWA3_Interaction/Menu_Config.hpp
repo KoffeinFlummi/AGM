@@ -1,7 +1,6 @@
 
-#define HSPACE 0.3
-#define VSPACE 0.3
-#define BORDER 0.1
+#define HSPACE 0.5-2.0/16/2
+#define VSPACE 0.5-0.3/9/2
 
 class BWA3_Interaction_Button_Base {
   tooltip = "";
@@ -42,48 +41,6 @@ class BWA3_Interaction_Button_Base {
   soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
-#define HSPACE 0.5-2.0/16/2
-#define VSPACE 0.5-0.3/9/2
-
-class BWA3_Interaction_Button_Base_noFlash {
-  tooltip = "";
-  action = "";
-
-  idc = -1;
-  access = 0;
-  style = 2;
-  type = 1;
-  text = "";
-  font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5)";
-  shadow = 2;
-
-  x = 0;
-  y = 0;
-  w = 0;
-  h = 0;
-
-  offsetX = 0;
-  offsetY = 0;
-  offsetPressedX = 0;
-  offsetPressedY = 0;
-  borderSize = 0;
-
-  colorText[] = {1,1,1,1};
-  colorDisabled[] = {0.5,0.5,0.5,1};
-  colorBackground[] = {0,0,0,0.8};
-  colorBackgroundDisabled[] = {0,0,0,0.8};
-  colorBackgroundActive[] = {0,0,0,0.8};
-  colorFocused[] = {0,0,0,0};
-  colorShadow[] = {0,0,0,0};
-  colorBorder[] = {1,1,1,0.8};
-
-  soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1};
-  soundPush[] = {"",0.09,1};
-  soundClick[] = {"",0.09,1};
-  soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
-};
-
 class BWA3_Interaction_Dialog {
   idd = -1;
   movingEnable = false;
@@ -106,7 +63,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button0 : BWA3_Interaction_Button_Base {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 0) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 0; if (call (_action select 2)) then {call (_action select 1)};";
       style = 2;
       tooltip = "";
       text = "";
@@ -118,7 +75,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button1 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 1) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 1; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 11;
@@ -129,7 +86,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button2 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 2) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 2; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 12;
@@ -140,7 +97,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button3 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 3) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 3; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 13;
@@ -151,7 +108,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button4 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 4) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 4; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 14;
@@ -162,7 +119,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button5 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 5) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 5; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 15;
@@ -173,7 +130,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button6 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 6) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 6; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 16;
@@ -184,7 +141,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button7 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 7) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 7; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 17;
@@ -195,7 +152,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button8 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 8) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 8; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 18;
@@ -206,7 +163,7 @@ class BWA3_Interaction_Dialog {
     };
 
     class Interaction_Button9 : Interaction_Button0 {
-      action = "closeDialog 0; call ((BWA3_Interaction_Buttons select 9) select 1)";
+      action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 9; if (call (_action select 2)) then {call (_action select 1)};";
       tooltip = "";
       text = "";
       idc = 19;
