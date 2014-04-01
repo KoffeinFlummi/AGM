@@ -52,7 +52,7 @@ null = [_unit, damage _unit, (_unit getVariable "BWA3_Pain")] spawn {
   [_unit, "HitHands", 0] call BWA3_Medical_fnc_setHitPointDamage;
 
   // Account for unassigned structural damage, like when you crash into something with a vehicle
-  if ((damage _unit > 0) and (_unit getHitPointDamage "HitHead") and (_unit getHitPointDamage "HitBody") and (_unit getHitPointDamage "HitLeftArm") and (_unit getHitPointDamage "HitRightArm") and (_unit getHitPointDamage "HitLeftLeg") and (_unit getHitPointDamage "HitRightLeg")) then {
+  if ((damage _unit > 0) and (_unit getHitPointDamage "HitHead" < 0.01) and (_unit getHitPointDamage "HitBody" < 0.01) and (_unit getHitPointDamage "HitLeftArm" < 0.01) and (_unit getHitPointDamage "HitRightArm" < 0.01) and (_unit getHitPointDamage "HitLeftLeg" < 0.01) and (_unit getHitPointDamage "HitRightLeg" < 0.01)) then {
     [_unit, "HitBody", (damage _unit)] call BWA3_Medical_fnc_setHitPointDamage;
   };
   

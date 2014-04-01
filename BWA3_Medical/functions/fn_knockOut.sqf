@@ -19,7 +19,7 @@ _unit setVariable ["BWA3_Unconscious", true, true];
 
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
-  4209 cutText [format ["You are unconscious.\nIf someone doesn't treat your wounds, you will bleed out soon.\n\nHave fun :>", _time], "PLAIN", 0, false];
+  4209 cutText ["You are unconscious.\nIf someone doesn't treat your wounds, you will bleed out soon.\n\nHave fun :>", "PLAIN", 0, false];
 };
 
 _unit setCaptive 213;
