@@ -1,7 +1,7 @@
 // by commy2
 
 #define RSC_INDEX 127
-#define DISTANCE 4
+#define DISTANCE 5
 #define DELAY 1
 
 while {true} do {
