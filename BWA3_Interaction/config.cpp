@@ -16,6 +16,7 @@ class CfgFunctions {
         file = "\bwa3_interaction\functions";
       class openMenu {};
       class openMenuSelf {};
+      class sortOptionsByPriority {};
     };
   };
 };
@@ -38,6 +39,7 @@ class CfgVehicles {
         condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
         statement = "[player] joinSilent group cursorTarget;";
         showDisabled = 1;
+        priority = -1;
       };
     };
 
@@ -47,12 +49,14 @@ class CfgVehicles {
         condition = "count (units group player) > 1";
         statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
         showDisabled = 1;
+        priority = -1;
       };
       class BWA3_BecomeLeader {
         displayName = "$STR_BWA3_BecomeLeader";
         condition = "count (units group player) > 1 && {leader group player != player}";
         statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
         showDisabled = 1;
+        priority = -1;
       };
     };
   };

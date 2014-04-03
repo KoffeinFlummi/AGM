@@ -1,9 +1,4 @@
-/*
-BWA3 functions, by commy2
-this code is property of the ArmA 3 Bundeswehr modification
-ask us nicely at http://www.bwmod.de/ if you want to re-use any of this script
-we don't support changed code based on this work
-*/
+// by commy2
 
 BWA3_Interaction_Buttons = [];
 
@@ -25,17 +20,20 @@ for "_a" from 0 to (_count - 1) do {
 		_condition = compile getText (_action >> "condition");
 		_statement = compile getText (_action >> "statement");
 		_showDisabled = getNumber (_action >> "showDisabled") == 1;
+		_priority = getNumber (_action >> "priority");
 
 		if (_showDisabled || {call _condition}) then {
-			_actions set [count _actions, [_displayName, _statement, _condition]];
+			_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 		};
 	};
 };
 
-BWA3_Interaction_Buttons = _actions;
-_count = count BWA3_Interaction_Buttons;
-
+_count = count _actions;
 if (_count == 0) exitWith {};
+
+_actions call BWA3_Interaction_fnc_sortOptionsByPriority;
+
+BWA3_Interaction_Buttons = _actions;
 
 closeDialog 0;
 createDialog "BWA3_Interaction_Dialog";
