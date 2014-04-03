@@ -131,6 +131,7 @@ class CfgVehicles {
         condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player";
         statement = "'BWA3_Medical' call BWA3_Interaction_fnc_openMenu;";
         showDisabled = 1;
+        priority = 1;
 
         class BWA3_Diagnose {
           displayName = "$STR_BWA3_Diagnose";
@@ -224,6 +225,7 @@ class CfgVehicles {
         condition = "(player getVariable 'BWA3_CanTreat') and (player getVariable 'BWA3_Treatable') and vehicle player == player";
         statement = "'BWA3_Medical' call BWA3_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
+        priority = 1;
 
         class BWA3_Diagnose {
           displayName = "$STR_BWA3_Diagnose";
