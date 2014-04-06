@@ -10,9 +10,21 @@ class CfgPatches {
   };
 };
 
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class BWA3_Wind {
-    clientInit = "call compile preProcessFileLineNumbers '\BWA3_Wind\init.sqf'";
+    class BWA3_Wind {
+      file = "BWA3_Wind\functions";
+      class firedEH;
+      class init;
+    };
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class BWA3_Wind {
+      init = "_this call BWA3_Wind_fnc_init";
+    };
   };
 };
 

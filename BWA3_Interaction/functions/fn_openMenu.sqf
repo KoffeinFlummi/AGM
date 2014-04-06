@@ -45,6 +45,7 @@ if (_class == "") then {setMousePosition [0.5, 0.5]};
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "BWA3_Interaction_Dialog";
 
+/*
 for "_a" from 0 to (_count - 1) do {
 	_action = BWA3_Interaction_Buttons select _a;
 
@@ -52,4 +53,19 @@ for "_a" from 0 to (_count - 1) do {
 	_ctrlInteractionDialog ctrlShow true;
 	_ctrlInteractionDialog ctrlSetText (_action select 0);
 	_ctrlInteractionDialog ctrlEnable (call (_action select 2));
+};
+*/
+
+for "_i" from 0 to 9 do {
+	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
+	_ctrlInteractionDialog ctrlShow true;
+
+	if (_i < _count) then {
+		_action = BWA3_Interaction_Buttons select _i;
+		_ctrlInteractionDialog ctrlSetText (_action select 0);
+		_ctrlInteractionDialog ctrlEnable (call (_action select 2));
+	} else {
+		_ctrlInteractionDialog ctrlSetText "";
+		_ctrlInteractionDialog ctrlEnable false;
+	}
 };

@@ -49,14 +49,14 @@ _this spawn {
   sleep 1;
   hintSilent "";
 
+  player setVariable ["BWA3_CanTreat", true, false];
+
   // is unit still in range?
   if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   // change damage of body part
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
   [_unit, _selection, _damage] call BWA3_Medical_fnc_setHitPointDamage;
-
-  player setVariable ["BWA3_CanTreat", true, false];
 
   // since we have to set the damage remotely, it might take some time.
   waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
