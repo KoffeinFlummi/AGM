@@ -16,6 +16,7 @@ _unit = _this select 0;
 if !(isPlayer _unit) exitWith {_unit setDamage 1;};
 
 _unit setVariable ["BWA3_Unconscious", true, true];
+_unit setVariable ["BWA3_CanTreat", false, true];
 
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;

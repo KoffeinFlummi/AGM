@@ -22,6 +22,7 @@ _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
 
 _unit setVariable ["BWA3_Unconscious", false, true];
+_unit setVariable ["BWA3_CanTreat", true, true];
 
 [-2, {
   if (_this == player) then {
