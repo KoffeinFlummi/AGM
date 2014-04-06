@@ -3,6 +3,7 @@
 private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode"];
 
 _weapon = _this;
+if (_weapon == "") exitWith {};
 
 if (currentWeapon player != _weapon) exitWith {
 	player selectWeapon _weapon;
