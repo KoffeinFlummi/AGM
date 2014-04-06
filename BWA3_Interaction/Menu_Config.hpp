@@ -12,7 +12,7 @@ class BWA3_Interaction_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5)";
+  sizeEx = "1 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
   shadow = 2;
 
   x = 0;

@@ -3,6 +3,7 @@
 private ["_weapon", "_muzzles", "_count", "_index", "_muzzle"];
 
 _weapon = _this;
+if (_weapon == "") exitWith {};
 
 _muzzles = _weapon call BWA3_WeaponSelect_getWeaponMuzzles;
 
