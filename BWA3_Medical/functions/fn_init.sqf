@@ -11,9 +11,14 @@ GC_bandageMenuSelf = false;
 
 BWA3_unitInit = {
   if (_this == player) then {
-    [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+    0 spawn {
+      sleep 1;
+      [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+    };
     4209 cutText ["", "PLAIN", 0, false];
   };
+
+  _this setCaptive false;
   _this setVariable ["BWA3_Name", (name _this), true];
   _this setVariable ["BWA3_CanTreat", true, false];    // Can unit treat others?
   _this setVariable ["BWA3_Treatable", true, true];    // Can unit be treated/diagnosed?
@@ -30,12 +35,12 @@ BWA3_unitInit = {
 };
 
 BWA3_itemCheck = {
-  while {count (itemsWithMagazines _this - (itemsWithMagazines _this - ["FirstAidKit"]) ) > 0} do {
+  while {count (itemsWithMagazines _this) > count (itemsWithMagazines _this - ["FirstAidKit"])} do {
     _this removeItem "FirstAidKit";
     _this addItem "BWA3_Bandage";
     _this addItem "BWA3_Bandage";
   };
-  while {count (itemsWithMagazines _this - (itemsWithMagazines _this - ["Medikit"]) ) > 0} do {
+  while {count (itemsWithMagazines _this) > count (itemsWithMagazines _this - ["Medikit"])} do {
     _this removeItem "Medikit";
     _this addItemToBackpack "BWA3_Morphine";
     _this addItemToBackpack "BWA3_Morphine";

@@ -31,12 +31,11 @@ _unit setVariable ["BWA3_CanTreat", true, true];
   };
   if (local _this) then {
     _this enableSimulation true;
+    _this setCaptive false;
   };
   _this switchMove "";
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 
 _unit setPos _position;
-if (captiveNum _unit == 213) then {
-  _unit setCaptive false;
-};
+_unit setCaptive false;
