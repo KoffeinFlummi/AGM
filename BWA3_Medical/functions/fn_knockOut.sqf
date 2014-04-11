@@ -39,6 +39,8 @@ if (vehicle _unit != _unit) then {
 
 _unit spawn {
   sleep 3.8;
+  waitUntil {((getPosATL _this) select 2) <= 0.2};
+  _this setPosATL [getPos _this select 0, getPos _this select 1, 0];
   _this enableSimulation false;
 };
 
