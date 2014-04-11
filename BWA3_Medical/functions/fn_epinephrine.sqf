@@ -43,4 +43,12 @@ _this spawn {
   if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "BWA3_Unconscious")) exitWith {};
 
   [_unit] call BWA3_Medical_fnc_wakeUp;
+
+  if (getNumber(configFile >> "BWA3_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (_unit == player) then {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenuSelf;
+    } else {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenu;
+    }
+  };
 };

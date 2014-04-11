@@ -34,7 +34,12 @@ _this spawn {
     waitUntil {sleep 0.5; animationState player != DIAGNOSEMOVE};
   };
 
-  _string = "Patient: " + (_unit getVariable "BWA3_Name");
+  _string = "";
+  if (name _unit != "Error: No unit") then {
+    _string = "Patient: " + (name _unit);
+  } else {
+    _string = "Patient: Unknown";
+  };
 
   if (damage _unit >= 1) then {
     _string = _string + "<br/><br/>The patient is dead.";
@@ -114,4 +119,12 @@ _this spawn {
   hintSilent parseText _string;
 
   player setVariable ["BWA3_CanTreat", true, false];
+
+  if (getNumber(configFile >> "BWA3_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (_unit == player) then {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenuSelf;
+    } else {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenu;
+    }
+  };
 };

@@ -45,4 +45,12 @@ _this spawn {
 
   _blood = ((_unit getVariable "BWA3_Blood") + BLOODBAGHEAL) min 1;
   _unit setVariable ["BWA3_Blood", _blood, true];
+
+  if (getNumber(configFile >> "BWA3_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (_unit == player) then {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenuSelf;
+    } else {
+      "BWA3_Medical" call BWA3_Interaction_fnc_openMenu;
+    }
+  };
 };
