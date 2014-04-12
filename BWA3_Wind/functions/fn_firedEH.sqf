@@ -37,7 +37,7 @@ while {!isNull _round and alive _round} do {
   _velocityY = _velocity select 1;
   _velocityZ = _velocity select 2;
   
-  // Use actual time delay between iterations instead of set interval to account for ultra-low framerates.
+  // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
   _deltaTime = time - _time;
 
   _velocityNewX = _velocityX + _coefficient * (wind select 0) * _deltaTime;

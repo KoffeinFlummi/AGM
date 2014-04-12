@@ -1,5 +1,5 @@
 http://www.gnu.org/licenses/gpl-2.0.html
-Copyright (c) 2012-2013, Ryan "Taosensai" Schultz (edited by KoffeinFlummi)
+Copyright (c) 2012-2013, Ryan "Taosensai" Schultz
 All rights reserved.
 
 This program is free software; you can redistribute it and/or

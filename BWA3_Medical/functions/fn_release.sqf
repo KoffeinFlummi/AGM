@@ -39,7 +39,7 @@ _this spawn {
 
   [-2, {
     if (local _this) then {
-      0 spawn {
+      _this spawn {
         _this enableSimulation true;
         sleep 3.8;
         _this enableSimulation false;

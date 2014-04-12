@@ -217,12 +217,6 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'BWA3_Treatable' and cursorTarget getVariable 'BWA3_Unconscious' and isNull (player getVariable 'BWA3_Dragging') and isNull (player getVariable 'BWA3_Carrying')";
         statement = "[cursorTarget] call BWA3_Medical_fnc_carry;";
       };
-      class BWA3_Release {
-        displayName = "$STR_BWA3_Release";
-        distance = 4;
-        condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man' or (player getVariable 'BWA3_Carrying') isKindOf 'Man')"
-        statement = "[cursorTarget] call BWA3_Medical_fnc_release;";
-      };
 
       class BWA3_Load {
         displayName = "$STR_BWA3_Load"
@@ -303,6 +297,17 @@ class CfgVehicles {
           priority = 0.15;
           showDisabled = 1;
         };
+      };
+      
+      class BWA3_Release_Drag {
+        displayName = "$STR_BWA3_Release";
+        distance = 4;
+        condition = "vehicle player == player and ((player getVariable 'BWA3_Dragging') isKindOf 'Man')"
+        statement = "[(player getVariable 'BWA3_Dragging')] call BWA3_Medical_fnc_release;";
+      };
+      class BWA3_Release_Carry: BWA3_Release_Drag {
+        condition = "vehicle player == player and ((player getVariable 'BWA3_Carrying') isKindOf 'Man')"
+        statement = "[(player getVariable 'BWA3_Carrying')] call BWA3_Medical_fnc_release;";
       };
     };
   };
