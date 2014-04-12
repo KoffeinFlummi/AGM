@@ -298,7 +298,7 @@ class CfgVehicles {
           showDisabled = 1;
         };
       };
-      
+
       class BWA3_Release_Drag {
         displayName = "$STR_BWA3_Release";
         distance = 4;
@@ -342,7 +342,7 @@ class CfgWeapons {
     displayname = "Bandage";
     descriptionshort = "Use to stop the bleeding.<br/>Usable on: Others &amp; Self";
     model = "\A3\Structures_F_EPA\Items\Medical\Bandage_F.p3d";
-    picture = "\A3\Weapons_F\Items\data\UI\gear_FirstAidKit_CA.paa";
+    picture = "\BWA3_Medical\UI\bwa3_bandage_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
@@ -353,16 +353,19 @@ class CfgWeapons {
     displayName = "Morphine Injector";
     descriptionShort = "Heavy Painkiller<br/>Usable on: Others & Self";
     model = "\A3\Structures_F_EPA\Items\Medical\PainKillers_F.p3d";
+    picture = "\BWA3_Medical\UI\bwa3_morphine_ca.paa";
   };
   class BWA3_Epipen: BWA3_Bandage {
     displayName = "Epinephrine Injector";
     descriptionShort = "Used to wake up unconscious units.<br/>Usable on: Others &amp; Self";
     model = "\A3\Weapons_F\Items\FirstAidkit";
+    picture = "\BWA3_Medical\UI\bwa3_epipen_ca.paa";
   };
   class BWA3_Bloodbag: BWA3_Bandage {
     displayName = "Blood Bag";
     descriptionShort = "0- blood used to compensate for heavy blood loss.<br/>Usable on: Others &amp; Self";
     model = "\A3\Structures_F_EPA\Items\Medical\BloodBag_F.p3d";
+    picture = "\BWA3_Medical\UI\bwa3_bloodbag_ca.paa";
   };
 
 
