@@ -49,6 +49,7 @@ class BWA3_Interaction_Dialog {
   objects[] = {};
 
   class controls {
+    /*
     class Interaction_BWA3_Logo : BWA3_Interaction_Button_Base {
       action = "closeDialog 0;";
       type = 0;
@@ -62,6 +63,19 @@ class BWA3_Interaction_Dialog {
       w = 1.0 / 16 * safezoneW;
       h = 1.0 / 9 * safezoneH;
     };
+    */
+    class Interaction_ButtonMain : BWA3_Interaction_Button_Base {
+      action = "call compile BWA3_Interaction_MainButton";
+      style = 2;
+      tooltip = "";
+      text = "Interaction Menu";
+      idc = 2;
+      sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
+      x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 1.8 / 16 * safezoneW;
+      h = 0.55 / 9 * safezoneH;
+    };    
 
     class Interaction_Button0 : BWA3_Interaction_Button_Base {
       action = "closeDialog 0; _action = BWA3_Interaction_Buttons select 0; if (call (_action select 2)) then {call (_action select 1)};";

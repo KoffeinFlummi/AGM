@@ -54,6 +54,15 @@ for "_a" from 0 to (_count - 1) do {
 };
 */
 
+_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
+if (_class == "") then {
+	BWA3_Interaction_MainButton = "closeDialog 0;";
+	_ctrlInteractionDialog ctrlSetText name player;
+} else {
+	BWA3_Interaction_MainButton = "'' call BWA3_Interaction_fnc_openMenuSelf;";
+	_ctrlInteractionDialog ctrlSetText "<< Back";
+};
+
 for "_i" from 0 to 9 do {
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
 	_ctrlInteractionDialog ctrlShow true;
