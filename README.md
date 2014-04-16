@@ -29,6 +29,6 @@ https://github.com/KoffeinFlummi/BWA3_Realism/wiki
 
 ## Contributing
 
-If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author-array of any .pbo you might be editing.
+If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author array of any .pbo you might be editing.
 
 If you find a bug or want to request a feature, please use the Issue Tracker.
