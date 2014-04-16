@@ -17,14 +17,18 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 
 ## Features
 
-*   Improved Medical System
+*   Improved medical system
 *   Realistic names for vehicles and weapons
-*   Backblast
 *   Realistic ballistics including wind and humidity
+*   Backblast simulation
 *   Weapon resting
-*   Interaction with civilians
-
 and more
 
 For a full list, look at the wiki:
 https://github.com/KoffeinFlummi/BWA3_Realism/wiki
+
+## Contributing
+
+If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author-array of any .pbo you might be editing.
+
+If you find a bug or want to request a feature, please use the Issue Tracker.
