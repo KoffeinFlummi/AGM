@@ -21,7 +21,7 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 *   Realistic names for vehicles and weapons
 *   Realistic ballistics including wind and humidity
 *   Backblast simulation
-*   Weapon resting
+*   Weapon resting  
 and more
 
 For a full list, look at the wiki:
