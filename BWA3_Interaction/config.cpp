@@ -23,7 +23,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class BWA3_Interaction {
-    Init = "call compile preProcessFileLineNumbers '\BWA3_Interaction\init.sqf'";
+    Init = "call compile preprocessFileLineNumbers '\BWA3_Interaction\init.sqf'";
   };
 };
 
@@ -94,13 +94,13 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 1.7;
         };
-        class BWA3_Gesture_Point {
+        /*class BWA3_Gesture_Point {
           displayName = "$STR_BWA3_Gestures_Point";
           condition = "canStand player && {alive player}";
           statement = "player playActionNow 'gesturePoint';";
           showDisabled = 1;
           priority = 1.6;
-        };
+        };*/
         class BWA3_Gesture_Up {
           displayName = "$STR_BWA3_Gestures_Up";
           condition = "canStand player && {alive player}";
