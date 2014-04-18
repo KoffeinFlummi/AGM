@@ -62,7 +62,7 @@
       <English>Release</English>
       <German>Loslassen</German>
     </Key>
-    <Key ID="STR_BWA3_LoadInto">
+    <Key ID="STR_BWA3_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
     </Key>
