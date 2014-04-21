@@ -5,6 +5,7 @@ Do I really need to explain what this does?!
 */
 
 _unit = _this select 0;
+if !(local _unit) exitWith {};
 
 GC_bandageMenu = false;
 GC_bandageMenuSelf = false;

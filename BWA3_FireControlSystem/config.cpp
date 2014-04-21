@@ -14,23 +14,25 @@ class CfgFunctions {
   class BWA3_FCS {
     class BWA3_FCS {
       file = "BWA3_FireControlSystem\functions";
+      class firedEH;
       class getAngle;
+      class init;
+      class keyDown;
+      class keyUp;
     };
   };
 };
 
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class BWA3_FCS {
-      init = "_this call BWA3_FCS_fnc_init";
-    };
+class Extended_PostInit_EventHandlers {
+  class BWA3_FCS {
+    clientInit = "_this call BWA3_FCS_fnc_init";
   };
 };
 
 class Extended_FiredBIS_EventHandlers {
-  class CAManBase {
+  class AllVehicles {
     class BWA3_FCS {
-      clientFiredBISPlayer = "_this spawn BWA3_FCS_fnc_firedEH";
+      clientFiredBISPlayer = "_this call BWA3_FCS_fnc_firedEH";
     };
   };
 };
