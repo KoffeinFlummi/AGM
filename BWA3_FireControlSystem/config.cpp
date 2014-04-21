@@ -19,6 +19,7 @@ class CfgFunctions {
       class init;
       class keyDown;
       class keyUp;
+      class vehicleInit;
     };
   };
 };
@@ -29,10 +30,22 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class Extended_FiredBIS_EventHandlers {
+class Extended_Init_EventHandlers {
   class AllVehicles {
     class BWA3_FCS {
-      clientFiredBISPlayer = "_this call BWA3_FCS_fnc_firedEH";
+      clientInit = "_this call BWA3_FCS_fnc_vehicleInit";
     };
+  };
+};
+
+class CfgVehicles {
+  class All;
+  class AllVehicles: All {
+    BWA3_FCSEnabled = 0; // FCS defaults to off
+  };
+  class Land: AllVehicles {};
+  class LandVehicle: Land {};
+  class Tank: LandVehicle {
+    BWA3_FCSEnabled = 1; // all tracked vehicles get one by default
   };
 };

@@ -22,13 +22,13 @@ if !(_magazineType in (_unit getVariable "BWA3_FCSMagazines")) exitWith {};
 /*
 _FCSMagazines = _unit getVariable "BWA3_FCSMagazines";
 for "_i" from 0 to (count _FCSMagazines - 1) do {
-  if (_FCSMagazines select _i == _magazineType) exitWith {_offset = (_unit getVariable "BWA3_FCSOffsets") select _i;};
+  if (_FCSMagazines select _i == _magazineType) exitWith {_offset = (_unit getVariable "BWA3_FCSElevation") select _i;};
 };
 */
-_offset = (_unit getVariable "BWA3_FCSOffsets") select 0;
+_offset = (_unit getVariable "BWA3_FCSElevation") select 0;
 
 _direction = vectorDir _round;
-_azimuth = (_direction select 0) atan2 (_direction select 1);
+_azimuth = (_direction select 0) atan2 (_direction select 1) + (_unit getVariable "BWA3_FCSAzimuth");
 _altitude = sqrt ((_direction select 1) ^ 2 + (_direction select 0) ^ 2) atan2 - (_direction select 2) + _offset;
 
 _direction = [

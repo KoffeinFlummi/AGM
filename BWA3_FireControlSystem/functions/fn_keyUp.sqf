@@ -19,8 +19,12 @@ _magazines = magazines _vehicle;
 _distance = [5, 5000, 0] call BWA3_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
 _angleTarget = asin ((_vehicle weaponDirection (currentWeapon _vehicle)) select 2);
 
+// calculate azimuth difference
+_viewDiff = _vehicle getVariable "BWA3_FCSViewDiff";
+_FCSAzimuth = atan (_distance / _viewDiff) - (abs _viewDiff / _viewDiff) * 90;
+
 _FCSMagazines = [];
-_FCSOffsets = [];
+_FCSElevation = [];
 
 /*
 for "_i" from 0 to (count _magazines - 1) do {
@@ -37,7 +41,7 @@ for "_i" from 0 to (count _magazines - 1) do {
     _simulationStep = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "simulationStep");
 
     _offset = [_distance, _angleTarget, _maxElev, _initSpeed, _airFriction, _timeToLive, _simulationStep] call BWA3_FCS_fnc_getAngle;
-    _FCSOffsets = _FCSOffsets + [_offset];
+    _FCSElevation = _FCSElevation + [_offset];
   };
 };
 */
@@ -53,10 +57,12 @@ _simulationStep = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "simulation
 _offset = [_distance, _angleTarget, _maxElev, _initSpeed, _airFriction, _timeToLive, _simulationStep] call BWA3_FCS_fnc_getAngle;
 
 _FCSMagazines = _FCSMagazines + [_magazineType];
-_FCSOffsets = _FCSOffsets + [_offset];
+_FCSElevation = _FCSElevation + [_offset];
 
+_vehicle setVariable ["BWA3_FCSDistance",  _distance,     true];
 _vehicle setVariable ["BWA3_FCSMagazines", _FCSMagazines, true];
-_vehicle setVariable ["BWA3_FCSOffsets", _FCSOffsets, true];
+_vehicle setVariable ["BWA3_FCSElevation", _FCSElevation, true];
+_vehicle setVariable ["BWA3_FCSAzimuth",   _FCSAzimuth,   true];
 
 hintSilent format ["Zeroed To: %1", _distance];
 
