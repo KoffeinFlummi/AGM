@@ -13,6 +13,11 @@
 if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "BWA3_FCSEnabled") == 1) then {
   (_this select 0) addEventHandler ["Fired", {_this call BWA3_FCS_fnc_firedEH}];
 
+  (_this select 0) setVariable ["BWA3_FCSDistance",  0,   true];
+  (_this select 0) setVariable ["BWA3_FCSMagazines", [],  true];
+  (_this select 0) setVariable ["BWA3_FCSElevation", [],  true];
+  (_this select 0) setVariable ["BWA3_FCSAzimuth",   0,   true];
+
   // calculate offset between gunner camera and muzzle position
   _gunBeg = getText (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "gunBeg");
   _gunnerView = getText (configFile >> "CfgVehicles" >>  (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "memoryPointGunnerOptics");

@@ -15,17 +15,19 @@ _ammoType = _this select 4;
 _magazineType = _this select 5;
 _round = _this select 6;
 
-if (player != gunner _unit) exitWith {};
-if !(_magazineType in (_unit getVariable "BWA3_FCSMagazines")) exitWith {};
-
-// get offset
-/*
 _FCSMagazines = _unit getVariable "BWA3_FCSMagazines";
-for "_i" from 0 to (count _FCSMagazines - 1) do {
-  if (_FCSMagazines select _i == _magazineType) exitWith {_offset = (_unit getVariable "BWA3_FCSElevation") select _i;};
-};
-*/
-_offset = (_unit getVariable "BWA3_FCSElevation") select 0;
+_FCSElevation = _unit getVariable "BWA3_FCSElevation";
+
+if (player != gunner _unit) exitWith {};
+if !(_magazineType in _FCSMagazines) exitWith {};
+
+// GET ELEVATION OFFSET OF CURRENT MAGAZINE
+_offset = 0;
+{
+  if (_x == _magazineType) exitWith {
+    _offset = _FCSElevation select _forEachIndex;
+  };
+} forEach _FCSMagazines;
 
 _direction = vectorDir _round;
 _azimuth = (_direction select 0) atan2 (_direction select 1) + (_unit getVariable "BWA3_FCSAzimuth");

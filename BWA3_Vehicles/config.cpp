@@ -4,18 +4,18 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
-                          A3_Armor_F,
-                          A3_Armor_F_AMV,
-                          A3_Armor_F_APC_Wheeled_03,
-                          A3_armor_f_beta,
-                          A3_armor_f_beta_APC_Tracked_02,
-                          A3_armor_F_EPB_APC_tracked_03,
-                          A3_Armor_F_EPB_MBT_03,
-                          A3_Armor_F_Marid,
-                          A3_Armor_F_Panther,
-                          A3_Armor_F_Slammer,
-                          A3_Armor_F_T100K
-                        };
+      A3_Armor_F,
+      A3_Armor_F_AMV,
+      A3_Armor_F_APC_Wheeled_03,
+      A3_armor_f_beta,
+      A3_armor_f_beta_APC_Tracked_02,
+      A3_armor_F_EPB_APC_tracked_03,
+      A3_Armor_F_EPB_MBT_03,
+      A3_Armor_F_Marid,
+      A3_Armor_F_Panther,
+      A3_Armor_F_Slammer,
+      A3_Armor_F_T100K
+    };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
