@@ -56,35 +56,110 @@ class CfgVehicles {
   class All;
   class AllVehicles: All {
     BWA3_FCSEnabled = 0; // FCS defaults to off
+    BWA3_FCSMinDistance = 0;
+    BWA3_FCSMaxDistance = 5000;
+    BWA3_FCSDistanceInterval = 1;
   };
   class Land: AllVehicles {};
   class LandVehicle: Land {};
   class Tank: LandVehicle {
     BWA3_FCSEnabled = 1; // all tracked vehicles get one by default
   };
+  class Tank_F: Tank {};
+  class Car: LandVehicle {};
+  class Car_F: Car {};
+  class Wheeled_APC_F: Car_F {};
 
   // REMOVE STANDARD ZEROING FOR AFFECTED VEHICLES
+
   // BLUFOR Inheritance
-  class MBT_01_base_F;
+  class MBT_01_base_F: Tank_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
   class B_MBT_01_base_F: MBT_01_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class APC_Tracked_01_base_F: Tank_F {
     class Turrets {
       class MainTurret;
     };
   };
-  class APC_Tracked_01_base_F;
   class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class APC_Wheeled_01_base_F: Wheeled_APC_F {
     class Turrets {
       class MainTurret;
     };
   };
-  class APC_Wheeled_01_base_F;
   class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {
-    class Turrets {
-      class MainTurret;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
     };
   };
   class B_MBT_01_mlrs_base_F;
   class B_MBT_01_arty_base_F;
+
+  // Independent Inheritance
+  class MBT_03_base_F: Tank_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
+  class I_MBT_03_base_F: MBT_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class APC_Wheeled_03_base_F: Wheeled_APC_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
+  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class APC_Tracked_03_base_F: Tank_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
+  class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  // OPFOR Inheritance
+  class MBT_02_base_F: Tank_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
+  class O_MBT_02_base_F: MBT_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class APC_Tracked_02_base_F: Tank_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
+  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+  class O_MBT_02_arty_base_F;
 
   // BLUFOR
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
@@ -132,4 +207,61 @@ class CfgVehicles {
   class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
     BWA3_FCSEnabled = 0;
   };
+
+  // Independent
+  class I_MBT_03_cannon_F: I_MBT_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class I_APC_tracked_03_cannon_F: I_APC_tracked_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
+    BWA3_FCSEnabled = 1;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+
+  // OPFOR
+  class O_MBT_02_cannon_F: O_MBT_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
+    BWA3_FCSEnabled = 0;
+  };
+
 };

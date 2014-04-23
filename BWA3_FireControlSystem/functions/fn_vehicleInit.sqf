@@ -25,5 +25,4 @@ if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "BWA3
   _gunnerViewPos = ((_this select 0) selectionPosition _gunnerView) select 0;
   _viewDiff = _gunBegPos - _gunnerViewPos;
   (_this select 0) setVariable ["BWA3_FCSViewDiff", _viewDiff, true];
-  player globalChat format["ViewDiff: %1", _viewDiff];
 };
