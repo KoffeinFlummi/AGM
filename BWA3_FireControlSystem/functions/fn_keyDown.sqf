@@ -9,8 +9,17 @@
  * Return Value:
  * none
  */
+_key  = _this select 1;
+_shft = [0, 1] select (_this select 2);
+_ctrl = [0, 1] select (_this select 3);
+_alt  = [0, 1] select (_this select 4);
 
-if ((_this select 1) != 15 or BWA3_FCSEnabled) exitWith {false};
+_keyLase   = getNumber(configFile >> "BWA3_Realism_Keys" >> "BWA3_LaseTarget" >> "key");
+_ctrlLase  = getNumber(configFile >> "BWA3_Realism_Keys" >> "BWA3_LaseTarget" >> "ctrl");
+_altLase   = getNumber(configFile >> "BWA3_Realism_Keys" >> "BWA3_LaseTarget" >> "alt");
+_shiftLase = getNumber(configFile >> "BWA3_Realism_Keys" >> "BWA3_LaseTarget" >> "shift");
+if (_key != _keyLase or _ctrl != _ctrlLase or _shft != _shiftLase or _alt != _altLase) exitWith {false};
+if (BWA3_FCSEnabled) exitWith {false};
 
 _vehicle = vehicle player;
 

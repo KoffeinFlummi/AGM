@@ -11,10 +11,17 @@
     alt   = 0;
     shift = 0;
   };
+  class BWA3_LaseTarget {
+    key   = 15;
+    ctrl  = 0;
+    alt   = 0;
+    shift = 0;
+  };
 };
 
 class BWA3_Realism_Settings {
   reopenInteractionMenu = 0;
+  enableWeaponQuickSelect = 1;
 };
 
 /* KEY LIST
