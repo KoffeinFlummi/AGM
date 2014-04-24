@@ -21,7 +21,7 @@ _mode = _modes select _index;
 
 _index = 0;
 while {
-	currentMuzzle player != _muzzle || {currentWeaponMode player != _mode}
+	_index < 100 && {currentMuzzle player != _muzzle || {currentWeaponMode player != _mode}}
 } do {
 	player action ["SwitchWeapon", vehicle player, vehicle player, _index];
 	_index = _index + 1;
