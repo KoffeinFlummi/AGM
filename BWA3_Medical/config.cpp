@@ -41,7 +41,7 @@ class CfgFunctions {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class BWA3_Medical {
-      init = "_this call BWA3_Medical_fnc_init";
+      init = "_this spawn BWA3_Medical_fnc_init";
     };
   };
 };

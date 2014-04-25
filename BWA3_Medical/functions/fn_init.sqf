@@ -5,6 +5,8 @@ Do I really need to explain what this does?!
 */
 
 _unit = _this select 0;
+if (isDedicated) exitWith {};
+waitUntil {player == player};
 if !(local _unit) exitWith {};
 
 GC_bandageMenu = false;

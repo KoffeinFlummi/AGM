@@ -1,7 +1,7 @@
 // SEE LICENSE.TXT FOR LICENSING INFORMATION
 
 class CfgPatches {
-  class BWA3_Recoil {
+  class BWA3_Sway {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;

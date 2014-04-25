@@ -425,7 +425,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
       ConnectTo[] = {"aadjpknlmstpsraswrflddown_bwa3_deploy", 0.02};
       ConnectFrom[] = {"aadjpknlmstpsraswrflddown_bwa3_deploy", 0.02};
-      InterpolateFrom[] = {"aaadjpknlmstpsraswrflddown", 0.02};
+      InterpolateFrom[] = {"aadjpknlmstpsraswrflddown", 0.02};
       InterpolateTo[] = {"aadjpknlmstpsraswrflddown", 0.02};
     };
 
@@ -599,7 +599,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
       ConnectTo[] = {"aadjpknlmstpsraswrflddown_bwa3_rested", 0.02};
       ConnectFrom[] = {"aadjpknlmstpsraswrflddown_bwa3_rested", 0.02};
-      InterpolateFrom[] = {"aaadjpknlmstpsraswrflddown", 0.02};
+      InterpolateFrom[] = {"aadjpknlmstpsraswrflddown", 0.02};
       InterpolateTo[] = {"aadjpknlmstpsraswrflddown", 0.02};
     };
 
