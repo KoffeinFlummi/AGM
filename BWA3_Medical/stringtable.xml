@@ -36,19 +36,19 @@
     </Key>
     <Key ID="STR_BWA3_Bandage_LeftArm">
       <English>Bandage Left Arm</English>
-      <German>Linken Arm verbinden</German>
+	  <German>Arm links verbinden</German>
     </Key>
     <Key ID="STR_BWA3_Bandage_RightArm">
       <English>Bandage Right Arm</English>
-      <German>Rechten Arm verbinden</German>
+      <German>Arm rechts verbinden</German>
     </Key>
     <Key ID="STR_BWA3_Bandage_LeftLeg">
       <English>Bandage Left Leg</English>
-      <German>Linkes Bein verbinden</German>
+      <German>Bein links verbinden</German>
     </Key>
     <Key ID="STR_BWA3_Bandage_RightLeg">
       <English>Bandage Right Leg</English>
-      <German>Rechtes Bein verbinden</German>
+      <German>Bein rechts verbinden</German>
     </Key>
     <Key ID="STR_BWA3_Drag">
       <English>Drag</English>
