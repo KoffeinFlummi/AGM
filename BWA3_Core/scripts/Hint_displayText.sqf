@@ -4,6 +4,8 @@
 #define DEFAULT_DELAY 2
 #define DEFAULT_PRIORITY 1.5
 
+/* OBSOLETE */
+
 private ["_text", "_sound", "_delay", "_priority", "_lastHintTime", "_lastHintPriority", "_time"];
 
 _this resize 4;

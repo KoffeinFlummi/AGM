@@ -31,6 +31,7 @@ class CfgFunctions {
       class getWindDirection {};
       class setKeyDefault {};
       class convertKeyCode {};
+      class revertKeyCodeLocalized {};
       class binarizeNumber {};
       class numberToDigits {};
       class numberToDigitsString {};
@@ -58,9 +59,8 @@ class CfgSounds {
 
 class Extended_PostInit_EventHandlers {
   class BWA3_Core {
-    init = "call compile preProcessFileLineNumbers '\BWA3_Core\init.sqf'";
+    clientInit = "execVM '\BWA3_Core\init.sqf'";
   };
 };
 
 #include <MenuConfig.hpp>
-#include <Default_Keys.hpp>

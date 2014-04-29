@@ -2,29 +2,98 @@
 <Project name="BWMod">
   <Package name="Core">
 
-    <Key ID="STR_BWA3_Save">
+    <Key ID="STR_BWA3_Core_Save">
       <English>Save</English>
       <German>Speichern</German>
     </Key>
-    <Key ID="STR_BWA3_Cancel">
+    <Key ID="STR_BWA3_Core_Cancel">
       <English>Cancel</English>
       <German>Abbrechen</German>
     </Key>
-    <Key ID="STR_BWA3_Options">
-      <English>Options</English>
-      <German>Optionen</German>
+    <Key ID="STR_BWA3_Core_Options">
+      <English>A3R Options</English>
+      <German>A3R Optionen</German>
     </Key>
-    <Key ID="STR_BWA3_Shift">
+    <Key ID="STR_BWA3_Core_Shift">
       <English>Shift</English>
       <German>Umschalt</German>
     </Key>
-    <Key ID="STR_BWA3_Ctrl">
+    <Key ID="STR_BWA3_Core_Ctrl">
       <English>Ctrl</English>
       <German>Strg</German>
     </Key>
-    <Key ID="STR_BWA3_Alt">
+    <Key ID="STR_BWA3_Core_Alt">
       <English>Alt</English>
       <German>Alt</German>
+    </Key>
+
+    <Key ID="STR_BWA3_vectorAzimuthKey">
+      <English>Vector: Azimuth Key</English>
+      <German>Vector: Azimut-Taste</German>
+    </Key>
+    <Key ID="STR_BWA3_vectorDistanceKey">
+      <English>Vector: Distance Key</English>
+      <German>Vector: Distanz-Taste</German>
+    </Key>
+    <Key ID="STR_BWA3_switchLaserLight">
+      <English>Switch Laser / Light</English>
+      <German>Umschalten Laser / Licht</German>
+    </Key>
+    <Key ID="STR_BWA3_attachNightVision">
+      <English>Attach night vision device</English>
+      <German>Nachtsichtvorsatz anbringen</German>
+    </Key>
+    <Key ID="STR_BWA3_attachThermalVision">
+      <English>Attach thermal imaging camera</English>
+      <German>IR-Vorsatz anbringen</German>
+    </Key>
+    <Key ID="STR_BWA3_showNaviPad">
+      <English>Show NaviPad</English>
+      <German>NaviPad anzeigen</German>
+    </Key>
+    <Key ID="STR_BWA3_showNaviPadDetail">
+      <English>Show NaviPad (Detail)</English>
+      <German>NaviPad anzeigen (Detail)</German>
+    </Key>
+    <Key ID="STR_BWA3_showKestrel">
+      <English>Show Kestrel</English>
+      <German>Kestrel anzeigen</German>
+    </Key>
+    <Key ID="STR_BWA3_rangefinder">
+      <English>Puma: Rangefinder</English>
+      <German>Puma: Entfernungsmesser</German>
+    </Key>
+    <Key ID="STR_BWA3_zeroingUp">
+      <English>Puma: Zeroing Up</English>
+      <German>Puma: Haltepunkt hoch</German>
+    </Key>
+    <Key ID="STR_BWA3_zeroingDown">
+      <English>Puma: Zeroing Down</English>
+      <German>Puma: Haltepunkt runter</German>
+    </Key>
+    <Key ID="STR_BWA3_zeroingLeft">
+      <English>Puma: Windage Left</English>
+      <German>Puma: Windvorhalt links</German>
+    </Key>
+    <Key ID="STR_BWA3_zeroingRight">
+      <English>Puma: Windage Right</English>
+      <German>Puma: Windvorhalt rechts</German>
+    </Key>
+    <Key ID="STR_BWA3_speedLimiter">
+      <English>Puma: Speed limiter</English>
+      <German>Puma: Geschwindigkeitsbegrenzer</German>
+    </Key>
+    <Key ID="STR_BWA3_rearViewCamera">
+      <English>Puma: Rear View camera</English>
+      <German>Puma: Rückfahrkamera</German>
+    </Key>
+    <Key ID="STR_BWA3_selectLeftCamera">
+      <English>Puma: select left camera</English>
+      <German>Puma: linke Kamera wählen</German>
+    </Key>
+    <Key ID="STR_BWA3_selectRightCamera">
+      <English>Puma: select right camera</English>
+      <German>Puma: rechte Kamera wählen</German>
     </Key>
 
   </Package>

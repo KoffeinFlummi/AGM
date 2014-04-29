@@ -18,6 +18,7 @@ class Extended_PostInit_EventHandlers {
 
 class BWA3_Core_Default_Keys {
   class speedLimiter {
+    displayName = "Speed Limiter";
     key = 211;
     shift = 0;
     control = 0;

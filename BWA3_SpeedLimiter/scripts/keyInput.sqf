@@ -10,11 +10,11 @@ if (
 	{_keyCode == profileNamespace getVariable "BWA3_Key_speedLimiter"}
 ) then {
 	if (BWA3_isSpeedLimiter) then {
-		[localize "STR_BWA3_Limiter_Off", true] call BWA3_Core_fnc_displayText;
+		[localize "STR_BWA3_SpeedLimiter_Off", true] call BWA3_Core_fnc_displayText;
 		BWA3_isSpeedLimiter = false;
 	} else {
 		BWA3_isSpeedLimiter = true;
-		[localize "STR_BWA3_Limiter_On", true] call BWA3_Core_fnc_displayText;
+		[localize "STR_BWA3_SpeedLimiter_On", true] call BWA3_Core_fnc_displayText;
 		[_vehicle] spawn BWA3_SpeedLimiter_speedLimiter;
 	};
 	_isInput = true;
