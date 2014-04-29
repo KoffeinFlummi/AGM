@@ -2,15 +2,15 @@
 
 private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode"];
 
-_weapon = _this;
+_weapon = _this select 0;
 if (_weapon == "") exitWith {};
 
 if (currentWeapon player != _weapon) exitWith {
 	player selectWeapon _weapon;
 };
 
-_muzzles = _weapon call AGM_WeaponSelect_getWeaponMuzzles;	
-_modes = _weapon call AGM_WeaponSelect_getWeaponModes;
+_muzzles = [_weapon] call BWA3_WeaponSelect_fnc_getWeaponMuzzles;	
+_modes = [_weapon] call BWA3_WeaponSelect_fnc_getWeaponModes;
 
 _count = count _modes;
 _index = (_modes find currentWeaponMode player) + 1;
