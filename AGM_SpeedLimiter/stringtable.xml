@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="SpeedLimiter">
+
+    <Key ID="STR_AGM_SpeedLimiter_On">
+      <English>Speed Limiter on</English>
+      <German>Begrenzer an</German>
+    </Key>
+    <Key ID="STR_AGM_SpeedLimiter_Off">
+      <English>Speed Limiter Off</English>
+      <German>Begrenzer aus</German>
+    </Key>
+
+  </Package>
+</Project>
