@@ -16,6 +16,7 @@ class CfgFunctions {
       file = "BWA3_Core\functions";
       class getDirectionVector {};
       class getTargetDistance {};
+      class isHigherRank {};
       class keyInput {};
       class openInteractionMenu {};
       class openSelfMenu {};
