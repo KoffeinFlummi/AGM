@@ -14,8 +14,7 @@ class CfgFunctions {
   class BWA3_Core {
     class BWA3_Core {
       file = "BWA3_Core\functions";
-      class getDirectionVector {};
-      class getTargetDistance {};
+      class getDirectionVector2 {};
       class keyInput {};
       class openInteractionMenu {};
       class openSelfMenu {};
@@ -27,7 +26,25 @@ class CfgFunctions {
       class scaleVector {};
       class scalarProduct {};
       class vectorProduct {};
-      class vectorLenght {};
+      class vectorLength {};
+
+      class getWindDirection {};
+      class setKeyDefault {};
+      class convertKeyCode {};
+      class binarizeNumber {};
+      class numberToDigits {};
+      class numberToDigitsString {};
+      class getDirection {};
+      class getPitch {};
+      class getBank {};
+      class setPitchBank {};
+      class getDirectionVector {};
+      class getTargetDistance {};
+      class getTurrets {};
+      class getTurretIndex {};
+      class isTurnedOut {};
+      class isInBuilding {};
+      class displayText {};
     };
   };
 };
@@ -46,3 +63,4 @@ class Extended_PostInit_EventHandlers {
 };
 
 #include <MenuConfig.hpp>
+#include <Default_Keys.hpp>

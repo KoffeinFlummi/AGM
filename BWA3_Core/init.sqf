@@ -14,3 +14,5 @@ PREPROCESS(Hint_displayText)
   (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call BWA3_Core_fnc_keyInput;"];  
 };
 */
+
+call BWA3_Core_fnc_setKeyDefault;

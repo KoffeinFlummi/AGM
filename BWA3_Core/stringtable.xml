@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BWMod">
+  <Package name="Core">
+
+    <Key ID="STR_BWA3_Save">
+      <English>Save</English>
+      <German>Speichern</German>
+    </Key>
+    <Key ID="STR_BWA3_Cancel">
+      <English>Cancel</English>
+      <German>Abbrechen</German>
+    </Key>
+    <Key ID="STR_BWA3_Options">
+      <English>Options</English>
+      <German>Optionen</German>
+    </Key>
+    <Key ID="STR_BWA3_Shift">
+      <English>Shift</English>
+      <German>Umschalt</German>
+    </Key>
+    <Key ID="STR_BWA3_Ctrl">
+      <English>Ctrl</English>
+      <German>Strg</German>
+    </Key>
+    <Key ID="STR_BWA3_Alt">
+      <English>Alt</English>
+      <German>Alt</German>
+    </Key>
+
+  </Package>
+</Project>

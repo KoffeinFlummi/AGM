@@ -2,7 +2,7 @@
 Author: commy2
 
 Description:
-multiplies a vector with a scale to change the lenght of a vector
+multiplies a vector with a scale to change the length of a vector
 
 Arguments:
 A Vector, Array
