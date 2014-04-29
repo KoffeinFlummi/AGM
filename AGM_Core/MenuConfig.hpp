@@ -452,8 +452,8 @@ class AGM_Core_OptionsMenu_Dialog {
       type = 0;
       style = 0 + 0x800;
       size = 1;
-      colorBackground[] = {0, 0.265, 0, 0.5};
-      //colorBackground[] = {0, 0, 0, 0.5};
+      //colorBackground[] = {0, 0.265, 0, 0.5};
+      colorBackground[] = {0, 0, 0, 0.5};
       colorText[] = {0, 0, 0, 0};
       x = HSPACE / 2 * safezoneW + safezoneX;
       y = VSPACE / 2 * safezoneH + safezoneY;
@@ -472,7 +472,8 @@ class AGM_Core_OptionsMenu_Dialog {
       type = 0;
       style = 1 + 0x800;
       size = 1;
-      colorBackground[] = {0,0,0,0};
+      //colorBackground[] = {0,0,0,0};
+      colorBackground[] = {0, 0.265, 0, 0.5};
       colorText[] = {1,1,1,1};
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
