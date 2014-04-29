@@ -24,7 +24,17 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Resting {
-    clientInit = "call compile preProcessFileLineNumbers '\AGM_Resting\init.sqf'";
+    clientInit = "execVM '\AGM_Resting\init.sqf'";
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class restWeapon {
+    displayName = "Waffe auflegen";
+    key = 15;
+    shift = 0;
+    control = 0;
+    alt = 0;
   };
 };
 

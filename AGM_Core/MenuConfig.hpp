@@ -13,7 +13,7 @@ class AGM_Core_Interactive_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+  sizeEx = "1 / 40 / (getResolution select 5)";
   shadow = 2;
 
   x = 0;
@@ -73,7 +73,7 @@ class AGM_Core_Menu_Dialog {
       moving = 1;
       text = "HEADER";
       font = "PuristaMedium";
-      sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+      sizeEx = "1 / 40 / (getResolution select 5)";
       lineSpacing = 0;
       access = 0;
       type = 0;
@@ -216,7 +216,7 @@ class AGM_Core_Interactive_Button_Base_noFlash {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+  sizeEx = "1 / 40 / (getResolution select 5)";
   shadow = 2;
 
   x = 0;
@@ -473,7 +473,7 @@ class AGM_Core_OptionsMenu_Dialog {
       style = 1 + 0x800;
       size = 1;
       //colorBackground[] = {0,0,0,0};
-      colorBackground[] = {0, 0.265, 0, 0.5};
+      colorBackground[] = {1, 0.647, 0, 0.5};
       colorText[] = {1,1,1,1};
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;

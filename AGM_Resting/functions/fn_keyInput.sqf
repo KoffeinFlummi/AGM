@@ -16,13 +16,16 @@
 
 if (player getVariable "AGM_Unconscious") exitWith {false};
 
-if (inputAction "LockTargets" > 0 and currentWeapon player == primaryWeapon player) then {
-  if (AGM_weaponRested) then {
-    [] call AGM_Resting_fnc_unRestWeapon;
-  } else {
-    [] call AGM_Resting_fnc_restWeapon;
-  };
-  true
-} else {
-  false
+_keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call AGM_Core_fnc_convertKeyCode;
+_vehicle = vehicle player;
+_isInput = false;
+
+if (_keyCode == profileNamespace getVariable "AGM_Key_restWeapon") then {
+	if (AGM_weaponRested) then {
+		[] call AGM_Resting_fnc_unRestWeapon;
+	} else {
+		[] call AGM_Resting_fnc_restWeapon;
+	};
+	_isInput = true;
 };
+_isInput

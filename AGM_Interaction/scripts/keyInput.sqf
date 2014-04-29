@@ -4,6 +4,11 @@ _keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call
 _vehicle = vehicle player;
 _isInput = false;
 
+if (_keyCode == 198.2 && {!dialog}) exitWith {
+	0 spawn AGM_Core_openMenu;
+	true
+};
+
 if (_keyCode == profileNamespace getVariable "AGM_Key_openInteractionMenu") then {
 	if !dialog then {
 		"" call AGM_Interaction_fnc_openMenu;
