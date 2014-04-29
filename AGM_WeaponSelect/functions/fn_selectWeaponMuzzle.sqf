@@ -5,7 +5,7 @@ private ["_weapon", "_muzzles", "_count", "_index", "_muzzle"];
 _weapon = _this select 0;
 if (_weapon == "") exitWith {};
 
-_muzzles = [_weapon] call BWA3_WeaponSelect_fnc_getWeaponMuzzles;
+_muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
 
 if (currentWeapon player != _weapon) exitWith {
 	if (count _muzzles > 1) then {

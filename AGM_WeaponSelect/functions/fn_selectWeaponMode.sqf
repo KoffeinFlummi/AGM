@@ -9,8 +9,8 @@ if (currentWeapon player != _weapon) exitWith {
 	player selectWeapon _weapon;
 };
 
-_muzzles = [_weapon] call BWA3_WeaponSelect_fnc_getWeaponMuzzles;	
-_modes = [_weapon] call BWA3_WeaponSelect_fnc_getWeaponModes;
+_muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;	
+_modes = [_weapon] call AGM_WeaponSelect_fnc_getWeaponModes;
 
 _count = count _modes;
 _index = (_modes find currentWeaponMode player) + 1;
