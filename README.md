@@ -1,7 +1,7 @@
-BWA3 Realism
-============
+Authentic Gameplay Mod
+======================
 
-A modular realism mod for Arma 3, partly based on Taosensai's work.
+A modular authenticism/realism mod for Arma 3, partly based on Taosensai's work.
 
 
 ## Philosophy
@@ -25,7 +25,7 @@ No gimmicky features that don't add anything to gameplay and are out of place in
 and more...
 
 For a full list, look at the wiki:
-https://github.com/KoffeinFlummi/BWA3_Realism/wiki
+https://github.com/KoffeinFlummi/AGM/wiki
 
 ## Contributing
 
