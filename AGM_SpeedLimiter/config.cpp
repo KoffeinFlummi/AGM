@@ -12,7 +12,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_SpeedLimiter {
-    clientInit = "execVM '\bwa3_speedLimiter\init.sqf'";
+    clientInit = "execVM '\AGM_speedLimiter\init.sqf'";
   };
 };
 
