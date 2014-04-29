@@ -29,7 +29,7 @@ _this spawn {
 	_time = time;
 	if (_time > _lastHintTime + _delay || {_priority >= _lastHintPriority}) then {
 		hintSilent _text;
-		if (_sound) then {playSound "AGM_click"};
+		if (_sound) then {playSound "AGM_Sound_Click"};
 		AGM_Core_lastHint set [0, _time];
 		AGM_Core_lastHint set [1, _priority];
 

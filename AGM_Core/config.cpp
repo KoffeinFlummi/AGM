@@ -51,7 +51,7 @@ class CfgFunctions {
 
 class CfgSounds {
   class AGM_Sound_Click {
-    sound[] = {"\AGM_realism\sounds\AGM_click.wav", 5, 1, 200};
+    sound[] = {"\AGM_Core\sounds\AGM_click.wav", 5, 1, 200};
     titles[] = {};
   };
 };
