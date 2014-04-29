@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Config};
+    requiredAddons[] = {};
     version = 0.7;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -27,7 +27,6 @@ class CfgFunctions {
       class scalarProduct {};
       class vectorProduct {};
       class vectorLength {};
-
       class getWindDirection {};
       class setKeyDefault {};
       class convertKeyCode {};

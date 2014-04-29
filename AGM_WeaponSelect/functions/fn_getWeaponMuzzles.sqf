@@ -2,7 +2,7 @@
 
 private ["_weapon", "_muzzles"];
 
-_weapon = _this;
+_weapon = _this select 0;
 
 _muzzles = getArray (configFile >> "CfgWeapons" >> _weapon >> "muzzles");
 
