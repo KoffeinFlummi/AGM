@@ -2,7 +2,7 @@
 
 private ["_weapon", "_modes"];
 
-_weapon = _this;
+_weapon = _this select 0;
 
 _modes = [];
 {

@@ -17,6 +17,7 @@ class CfgFunctions {
       class getDirectionVector {};
       class getTargetDistance {};
       class isHigherRank {};
+      class getDirectionVector2 {};
       class keyInput {};
       class openInteractionMenu {};
       class openSelfMenu {};
@@ -28,7 +29,26 @@ class CfgFunctions {
       class scaleVector {};
       class scalarProduct {};
       class vectorProduct {};
-      class vectorLenght {};
+      class vectorLength {};
+
+      class getWindDirection {};
+      class setKeyDefault {};
+      class convertKeyCode {};
+      class revertKeyCodeLocalized {};
+      class binarizeNumber {};
+      class numberToDigits {};
+      class numberToDigitsString {};
+      class getDirection {};
+      class getPitch {};
+      class getBank {};
+      class setPitchBank {};
+      class getDirectionVector {};
+      class getTargetDistance {};
+      class getTurrets {};
+      class getTurretIndex {};
+      class isTurnedOut {};
+      class isInBuilding {};
+      class displayText {};
     };
   };
 };
@@ -42,7 +62,7 @@ class CfgSounds {
 
 class Extended_PostInit_EventHandlers {
   class BWA3_Core {
-    init = "call compile preProcessFileLineNumbers '\BWA3_Core\init.sqf'";
+    clientInit = "execVM '\BWA3_Core\init.sqf'";
   };
 };
 

@@ -3,7 +3,7 @@
 #define VSPACE 0.3
 #define BORDER 0.1
 
-class BWA3_Interactive_Button_Base {
+class BWA3_Core_Interactive_Button_Base {
   tooltip = "";
   action = "";
 
@@ -42,10 +42,10 @@ class BWA3_Interactive_Button_Base {
   soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
-class BWA3_Menu_Dialog {
+class BWA3_Core_Menu_Dialog {
   idd = -1;
   movingEnable = true;
-  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['BWA3_Menu_Dialog', _dlgMenuDialog];"
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['BWA3_Core_Menu_Dialog', _dlgMenuDialog];"
   objects[] = {};
 
   class controlsBackground {
@@ -89,9 +89,9 @@ class BWA3_Menu_Dialog {
   };
 
   class controls {
-    class Interactive_Button0 : BWA3_Interactive_Button_Base {
+    class Interactive_Button0 : BWA3_Core_Interactive_Button_Base {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 0);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 0);";
       text = "0";
       idc = 10;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -102,7 +102,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button1 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 1);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 1);";
       text = "1";
       idc = 11;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -113,7 +113,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button2 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 2);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 2);";
       text = "2";
       idc = 12;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -124,7 +124,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button3 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 3);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 3);";
       text = "3";
       idc = 13;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -135,7 +135,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button4 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 4);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 4);";
       text = "4";
       idc = 14;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -146,7 +146,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button5 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 5);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 5);";
       text = "5";
       idc = 15;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -157,7 +157,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button6 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 6);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 6);";
       text = "6";
       idc = 16;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -168,7 +168,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button7 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 7);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 7);";
       text = "7";
       idc = 17;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -179,7 +179,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button8 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 8);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 8);";
       text = "8";
       idc = 18;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -190,7 +190,7 @@ class BWA3_Menu_Dialog {
 
     class Interactive_Button9 : Interactive_Button0 {
       tooltip = "";
-      action = "closeDialog 0; call (BWA3_Menu_Button select 9);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 9);";
       text = "9";
       idc = 19;
       x = (HSPACE + 1 * 0.1) * safezoneW + safezoneX;
@@ -203,77 +203,10 @@ class BWA3_Menu_Dialog {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class BWA3_QuickMenu_Control_Base {
-  default = 0;
-  idc = -1;
-  access = 0;
-  type = 11;
-  style = 2;
-  text = "";
-  font = "TahomaB";
-  sizeEx = 0;
-  color[] = {0, 0, 0, 1};
-  colorActive[] = {0.3, 0.4, 0, 1};
-  colortext[] = {0, 0, 0, 1};
-  soundEnter[] = {"", 0.1, 1};
-  soundPush[] = {"", 0.1, 1};
-  soundClick[] = {"", 0.1, 1};
-  soundEscape[] = {"", 0.1, 1};
-  x = 0;
-  y = 0;
-  h = 0;
-  w = 0;
-};
-
-class BWA3_QuickMenu_Dialog {
-  idd = -1;
-  movingEnable = false;
-  onLoad = "uiNamespace setVariable ['BWA3_QuickMenu_Dialog', _this select 0]; setMousePosition [0.5, 0.5];"
-  objects[] = {};
-
-  class controlsBackground {
-    class Background {
-      idc = 1;
-      moving = 0;
-      font = "TahomaB";
-      text = "";
-      sizeEx = 0;
-      lineSpacing = 0;
-      access = 0;
-      type = 48;
-      style = 0;
-      size = 1;
-      colorBackground[] = {0, 0.265, 0, 0.5};
-      colorText[] = {1, 1, 1, 1};
-      x = (-0.5) * safezoneW + safezoneX;
-      y = (-0.5) * safezoneH + safezoneY;
-      w = 1 * safezoneW;
-      h = 1 * safezoneH;
-    };
-  };
-
-  class controls {
-    class BWA3_QuickMenu_Control : BWA3_QuickMenu_Control_Base {
-      onMouseMoving = "BWA3_Menu_MousePosition = [_this select 1, _this select 2]; hintSilent str(BWA3_Menu_MousePosition);";
-      idc = -1;
-      style = 48;
-      text = "#(argb,8,8,3)color(1,1,1,1)";
-      color[] = {0, 0, 0, 0};
-      colorActive[] = {0, 0, 0, 0};
-      x = 0 * safezoneW + safezoneX;
-      y = 0 * safezoneH + safezoneY;
-      w = 1 * safezoneW;
-      h = 1 * safezoneH;
-    };
-  };
-};
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 #define HSPACE 0.5-2.0/16/2
 #define VSPACE 0.5-0.3/9/2
 
-class BWA3_Interactive_Button_Base_noFlash {
+class BWA3_Core_Interactive_Button_Base_noFlash {
   tooltip = "";
   action = "";
 
@@ -312,10 +245,10 @@ class BWA3_Interactive_Button_Base_noFlash {
   soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
-class BWA3_CommyRose_Dialog {
+class BWA3_Core_CommyRose_Dialog {
   idd = -1;
   movingEnable = false;
-  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['BWA3_Menu_Dialog', _dlgMenuDialog];"
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['BWA3_Core_Menu_Dialog', _dlgMenuDialog];"
   objects[] = {};
 
   class controlsBackground {
@@ -339,7 +272,7 @@ class BWA3_CommyRose_Dialog {
     };*/
   };
   class controls {
-    class Interactive_BWA3_Logo : BWA3_Interactive_Button_Base {
+    class Interactive_BWA3_Logo : BWA3_Core_Interactive_Button_Base {
       action = "closeDialog 0;";
       type = 0;
       style = 48;
@@ -353,8 +286,8 @@ class BWA3_CommyRose_Dialog {
       h = 1.0 / 9 * safezoneH;
     };
 
-    class Interactive_Button0 : BWA3_Interactive_Button_Base {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 0);";
+    class Interactive_Button0 : BWA3_Core_Interactive_Button_Base {
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 0);";
       style = 2;
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
@@ -367,7 +300,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button1 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 1);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 1);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "1";
@@ -379,7 +312,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button2 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 2);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 2);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "2";
@@ -391,7 +324,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button3 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 3);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 3);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "3";
@@ -403,7 +336,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button4 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 4);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 4);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "4";
@@ -415,7 +348,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button5 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 5);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 5);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "5";
@@ -427,7 +360,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button6 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 6);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 6);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "6";
@@ -439,7 +372,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button7 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 7);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 7);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "7";
@@ -451,7 +384,7 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button8 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 8);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 8);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "8";
@@ -463,13 +396,549 @@ class BWA3_CommyRose_Dialog {
     };
 
     class Interactive_Button9 : Interactive_Button0 {
-      action = "closeDialog 0; call (BWA3_Menu_Button select 9);";
+      action = "closeDialog 0; call (BWA3_Core_Menu_Button select 9);";
       //onMouseEnter = "hint str(_this)";
       tooltip = "";
       text = "9";
       idc = 19;
       x = (HSPACE - 1.0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+  };
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define HSPACE 0.05
+#define VSPACE 0.05
+#define BORDER 0.1
+
+class BWA3_Core_Text_Button_Base {
+  idc = 2;
+  moving = 0;
+  text = "";
+  font = "PuristaMedium";
+  sizeEx = "1 / 40 / (getResolution select 5)";
+  lineSpacing = 0;
+  access = 0;
+  type = 0;
+  style = 2 + 0x800;
+  size = 1;
+  colorBackground[] = {0,0,0,0.8};
+  colorText[] = {1,1,1,1};
+  x = 0;
+  y = 0;
+  w = 0;
+  h = 0;
+};
+
+class BWA3_Core_OptionsMenu_Dialog {
+  idd = -1;
+  movingEnable = true;
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['BWA3_Core_MenuDialog', _dlgMenuDialog];"
+  objects[] = {};
+
+  class controlsBackground {
+    class Background {
+      idc = 1;
+      moving = 0;
+      font = "TahomaB";
+      text = "";
+      sizeEx = 0;
+      lineSpacing = 0;
+      access = 0;
+      type = 0;
+      style = 0 + 0x800;
+      size = 1;
+      colorBackground[] = {0, 0.265, 0, 0.5};
+      //colorBackground[] = {0, 0, 0, 0.5};
+      colorText[] = {0, 0, 0, 0};
+      x = HSPACE / 2 * safezoneW + safezoneX;
+      y = VSPACE / 2 * safezoneH + safezoneY;
+      w = (1 - 2 * HSPACE / 2) * safezoneW;
+      h = (1 - 2 * VSPACE / 2) * safezoneH;
+    };
+
+    class Header {
+      idc = 2;
+      moving = 0;
+      text = "$STR_BWA3_Core_Options";
+      font = "PuristaMedium";
+      sizeEx = "1 / 40 / (getResolution select 5)";
+      lineSpacing = 0;
+      access = 0;
+      type = 0;
+      style = 1 + 0x800;
+      size = 1;
+      colorBackground[] = {0,0,0,0};
+      colorText[] = {1,1,1,1};
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class BWA3_Logo : BWA3_Core_Interactive_Button_Base {
+      action = "closeDialog 0;";
+      type = 0;
+      style = 48;
+      onMouseEnter = "hint ('_' + str(_this))";
+      tooltip = "";
+      text = "\bwa3_common\rsc\bwlogo.paa";
+      idc = 2;
+      x = ((1 - 2 * HSPACE / 2) - (HSPACE + 0.5 * 0.1)) * safezoneW + safezoneX;
+      y = (VSPACE + 2 * 0.04) * safezoneH + safezoneY;
+      w = 1.0 / 16 * safezoneW;
+      h = 1.0 / 9 * safezoneH;
+    };
+  };
+
+  class controls {
+    class Text_Button0 : BWA3_Core_Text_Button_Base {
+      text = "";
+      idc = 100;
+      style = 0 + 0x800;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 2 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button1 : Text_Button0 {
+      text = "";
+      idc = 101;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 3 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button2 : Text_Button0 {
+      text = "";
+      idc = 102;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 4 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button3 : Text_Button0 {
+      text = "";
+      idc = 103;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 5 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button4 : Text_Button0 {
+      text = "";
+      idc = 104;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 6 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button5 : Text_Button0 {
+      text = "";
+      idc = 105;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 7 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button6 : Text_Button0 {
+      text = "";
+      idc = 106;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 8 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button7 : Text_Button0 {
+      text = "";
+      idc = 107;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 9 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button8 : Text_Button0 {
+      text = "";
+      idc = 108;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 10 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button9 : Text_Button0 {
+      text = "";
+      idc = 109;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 11 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button10 : Text_Button0 {
+      text = "";
+      idc = 110;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 12 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button11 : Text_Button0 {
+      text = "";
+      idc = 111;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 13 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button12 : Text_Button0 {
+      text = "";
+      idc = 112;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 14 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button13 : Text_Button0 {
+      text = "";
+      idc = 113;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 15 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button14 : Text_Button0 {
+      text = "";
+      idc = 114;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 16 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button15 : Text_Button0 {
+      text = "";
+      idc = 115;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 17 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button16 : Text_Button0 {
+      text = "";
+      idc = 116;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 18 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button17 : Text_Button0 {
+      text = "";
+      idc = 117;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 19 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button18 : Text_Button0 {
+      text = "";
+      idc = 118;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 20 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Text_Button19 : Text_Button0 {
+      text = "";
+      idc = 119;
+      x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 21 * 0.04) * safezoneH + safezoneY;
+      w = 4.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button0 : BWA3_Core_Interactive_Button_Base {
+      action = "BWA3_Core_keySet = -1; [0] spawn BWA3_Core_editKey";
+      idc = 200;
+      style = 2 + 0x800;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 2 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button1 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [1] spawn BWA3_Core_editKey";
+      idc = 201;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 3 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button2 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [2] spawn BWA3_Core_editKey";
+      idc = 202;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 4 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button3 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [3] spawn BWA3_Core_editKey";
+      idc = 203;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 5 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button4 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [4] spawn BWA3_Core_editKey";
+      idc = 204;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 6 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button5 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [5] spawn BWA3_Core_editKey";
+      idc = 205;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 7 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button6 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [6] spawn BWA3_Core_editKey";
+      idc = 206;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 8 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button7 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [7] spawn BWA3_Core_editKey";
+      idc = 207;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 9 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button8 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [8] spawn BWA3_Core_editKey";
+      idc = 208;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 10 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button9 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [9] spawn BWA3_Core_editKey";
+      idc = 209;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 11 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button10 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [10] spawn BWA3_Core_editKey";
+      idc = 210;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 12 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button11 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [11] spawn BWA3_Core_editKey";
+      idc = 211;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 13 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button12 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [12] spawn BWA3_Core_editKey";
+      idc = 212;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 14 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button13 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [13] spawn BWA3_Core_editKey";
+      idc = 213;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 15 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button14 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [14] spawn BWA3_Core_editKey";
+      idc = 214;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 16 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button15 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [15] spawn BWA3_Core_editKey";
+      idc = 215;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 17 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button16 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [16] spawn BWA3_Core_editKey";
+      idc = 216;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 18 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button17 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [17] spawn BWA3_Core_editKey";
+      idc = 217;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 19 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button18 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [18] spawn BWA3_Core_editKey";
+      idc = 218;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 20 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_Button19 : Interactive_Button0 {
+      action = "BWA3_Core_keySet = -1; [19] spawn BWA3_Core_editKey";
+      idc = 219;
+      x = (HSPACE + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 21 * 0.04) * safezoneH + safezoneY;
+      w = 3.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class TextBox_KeyChange : Text_Button0 {
+      text = "";
+      idc = 20;
+      style = 2 + 0x800;
+      x = (6 * 0.1) * safezoneW + safezoneX;
+      y = (8 * 0.04) * safezoneH + safezoneY;
+      w = (6.0 / 16 - HSPACE / 2) * safezoneW;
+      h = (3.0 / 9 - VSPACE / 2) * safezoneH;
+    };
+
+    class TextBox_Key_Shift : TextBox_KeyChange {
+      text = "$STR_BWA3_Core_Shift";
+      idc = 21;
+      colorText[] = {0.25,0.25,0.25,1};
+      colorBackground[] = {0,0,0,0};
+      x = (3 / 4 * HSPACE + 5.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 10 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class TextBox_Key_Control : TextBox_Key_Shift {
+      text = "$STR_BWA3_Core_Ctrl";
+      idc = 22;
+      x = (3 / 4 * HSPACE + 6.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 10 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_Alt : TextBox_Key_Shift {
+      text = "$STR_BWA3_Core_Alt";
+      idc = 23;
+      x = (3 / 4 * HSPACE + 7.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 10 * 0.04) * safezoneH + safezoneY;
+    };
+ 
+    class TextBox_Key : TextBox_Key_Shift {
+      text = "";
+      idc = 24;
+      colorText[] = {1,1,1,1};
+      colorBackground[] = {0,0,0,0};
+      x = (3 / 4 * HSPACE + 6.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 8 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class Interactive_ButtonV : Interactive_Button0 {
+      action = "BWA3_Core_keySet = 1";
+      text = "$STR_BWA3_Core_Save";
+      idc = 25;
+      colorBackground[] = {0,0,0,0};
+      x = (HSPACE + 6 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 13 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_ButtonW : Interactive_ButtonV {
+      action = "BWA3_Core_keySet = -1";
+      text = "$STR_BWA3_Core_Cancel";
+      idc = 26;
+      x = (HSPACE + 7.5 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 13 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_ButtonX : Interactive_Button0 {
+      action = "BWA3_Core_keySave = 1; closeDialog 0";
+      text = "$STR_BWA3_Core_Save";
+      idc = 10;
+      x = ((1 - 2 * HSPACE / 2) - (HSPACE + 2.5 * 0.1)) * safezoneW + safezoneX;
+      y = (VSPACE + 21 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_ButtonY : Interactive_Button0 {
+      action = "BWA3_Core_keySave = -1; closeDialog 0";
+      text = "$STR_BWA3_Core_Cancel";
+      idc = 11;
+      x = ((1 - 2 * HSPACE / 2) - (HSPACE + 1 * 0.1)) * safezoneW + safezoneX;
+      y = (VSPACE + 21 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };

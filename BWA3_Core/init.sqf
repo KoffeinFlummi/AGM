@@ -14,3 +14,12 @@ PREPROCESS(Hint_displayText)
   (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call BWA3_Core_fnc_keyInput;"];  
 };
 */
+
+BWA3_Core_Menu_Button = [];
+
+BWA3_Core_keyInput = compile preprocessFile "\bwa3_core\scripts\keyInput.sqf";
+BWA3_Core_editKey = compile preprocessFile "\bwa3_core\scripts\editKey.sqf";
+BWA3_Core_openMenu = compile preprocessFile "\bwa3_core\scripts\openMenu.sqf";
+BWA3_Core_closeMenu = compile preprocessFile "\bwa3_core\scripts\closeMenu.sqf";
+
+call BWA3_Core_fnc_setKeyDefault;
