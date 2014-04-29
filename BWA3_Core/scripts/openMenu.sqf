@@ -38,14 +38,22 @@ for "_index" from 0 to (_count - 1) do {
 waitUntil {!dialog};
 
 if (BWA3_Core_keySave == 1) then {
-	for "_a" from 0 to (count BWA3_Core_keyNew - 1) do {
+	_count = count BWA3_Core_keyNew;
+
+	for "_a" from 0 to (_count - 1) do {
 		_key = BWA3_Core_keyNew select _a;
 		_keyName = _key select 0;
 		_keyCode = _key select 1;
 
 		profileNamespace setVariable [format ["BWA3_Key_%1", _keyName], _keyCode];
 	};
-	saveProfileNamespace;
+
+	if (_count > 0) then {
+		saveProfileNamespace;
+		["Profile saved", false] call BWA3_Core_fnc_displayText;
+	} else {
+		["Profile not saved", false] call BWA3_Core_fnc_displayText;
+	};
 };
 
 BWA3_Core_keyNewTemp = nil;

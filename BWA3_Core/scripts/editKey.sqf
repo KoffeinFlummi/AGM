@@ -54,12 +54,8 @@ if (BWA3_Core_keySet == 1 && {count BWA3_Core_keyNewTemp > 0}) then {
 	_ctrlMenuDialog ctrlSetText _description;
 
 	BWA3_Core_keyNew set [_index, [_action, _keyCode]];
-
-	["Profile saved", true] call BWA3_Core_fnc_displayText;
 } else {
 	_ctrlMenuDialog ctrlSetText _description;
-
-	["Profile not saved", true] call BWA3_Core_fnc_displayText;
 };
 
 BWA3_Core_keySet = -1;
