@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Characters_F_Civil};
+    requiredAddons[] = {A3_Characters_F_Civil, AGM_Core, AGM_Interaction};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -24,33 +24,22 @@ class CfgVehicles {
   class CAManBase;
 
   class Civilian: CAManBase {
-    class UserActions {
-      // Documentation:
-      // http://community.bistudio.com/wiki/UserActions
-
+    class AGM_Actions {
       class AGM_SendAway {
-        displayName = "<t color='#2222ff'>Send Away</t>";    // name in action menu
-        displayNameDefault = "";      // name on screen (icons)
-        priority = 4;                 // 0 (low) - 6 (high)
-        position = "leaning_axis";    // memory point of model
-        radius = 3;                   // minimum distance for the action to be available
-        showWindow = false;           // show text/icon on screen
-        onlyForPlayer = false;        // enable AI to be ordered to do something
-        shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "alive this and this != player and (count (weapons this)) == 0";
-        statement = "[this] call AGM_Civilians_fnc_sendAway";
+        displayName = "Go Away!";
+        distance = 4;
+        condition = "alive cursorTarget and cursorTarget != player and (count (weapons cursorTarget)) == 0";
+        statement = "[cursorTarget] call AGM_Civilians_fnc_sendAway";
+        showDisabled = 0;
+        priority = -2.5;
       };
       class AGM_GetDown {
-        displayName = "<t color='#2222ff'>Get Down!</t>";    // name in action menu
-        displayNameDefault = "";      // name on screen (icons)
-        priority = 4;                 // 0 (low) - 6 (high)
-        position = "leaning_axis";    // memory point of model
-        radius = 3;                   // minimum distance for the action to be available
-        showWindow = false;           // show text/icon on screen
-        onlyForPlayer = false;        // enable AI to be ordered to do something
-        shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "alive this and this != player and (count (weapons this)) == 0";
-        statement = "[this] call AGM_Civilians_fnc_getDown";
+        displayName = "Get Down!";
+        distance = 4;
+        condition = "alive cursorTarget and cursorTarget != player and (count (weapons cursorTarget)) == 0";
+        statement = "[cursorTarget] call AGM_Civilians_fnc_getDown";
+        showDisabled = 0;
+        priority = -2.6;
       };
     };
   };

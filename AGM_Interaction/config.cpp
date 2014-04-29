@@ -27,6 +27,23 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class AGM_Core_Default_Keys {
+  class openInteractionMenu {
+    displayName = "Interaktionsmenu";
+    key = 221;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class openInteractionMenuSelf {
+    displayName = "Interaktionsmenu (Selbst)";
+    key = 221;
+    shift = 0;
+    control = 1;
+    alt = 0;
+  };
+};
+
 class CfgVehicles {
   class Man;
   class Land_CargoBox_V1_F;
