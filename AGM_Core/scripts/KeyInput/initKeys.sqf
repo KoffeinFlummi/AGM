@@ -37,6 +37,3 @@ _onKeyUp = _onKeyUp + _return;
 
 AGM_Core_onKeyDown = compileFinal _onKeyDown;
 AGM_Core_onKeyUp = compileFinal _onKeyUp;
-
-(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-(findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
