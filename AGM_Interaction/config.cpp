@@ -23,13 +23,15 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Interaction {
-    Init = "call compile preprocessFileLineNumbers '\AGM_Interaction\init.sqf'";
+    Init = "execVM '\AGM_Interaction\init.sqf'";
   };
 };
 
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "Interaktionsmenu";
+    conditionUp = "true";
+    statementUp = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 0;
@@ -37,6 +39,8 @@ class AGM_Core_Default_Keys {
   };
   class openInteractionMenuSelf {
     displayName = "Interaktionsmenu (Selbst)";
+    conditionUp = "true";
+    statementUp = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 1;

@@ -14,6 +14,7 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class execRemoteFnc {};
       class getDirectionVector2 {};
       class keyInput {};
       class openInteractionMenu {};
