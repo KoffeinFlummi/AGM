@@ -17,13 +17,14 @@ class CfgFunctions {
       class openMenu {};
       class openMenuSelf {};
       class sortOptionsByPriority {};
+      class tapShoulder {};
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Interaction {
-    Init = "execVM '\AGM_Interaction\init.sqf'";
+    clientInit = "execVM '\AGM_Interaction\init.sqf'";
   };
 };
 
@@ -61,6 +62,14 @@ class CfgVehicles {
         statement = "[player] joinSilent group cursorTarget;";
         showDisabled = 1;
         priority = -1;
+      };
+      class AGM_TapShoulder {
+        displayName = "$STR_AGM_TapShoulder";
+        distance = 4;
+        condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
+        statement = "[AGM_Interaction_Target, player], AGM_Interaction_fnc_tapShoulder] call AGM_Core_fnc_execRemoteFnc";
+        showDisabled = 1;
+        priority = 0.1;
       };
     };
 

@@ -72,6 +72,10 @@
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
     </Key>
+    <Key ID="STR_AGM_TapShoulder">
+      <English>Tap shoulder</English>
+      <German>Auf Schulter klopfen</German>
+    </Key>
 
   </Package>
 </Project>
