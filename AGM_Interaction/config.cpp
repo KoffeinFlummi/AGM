@@ -67,7 +67,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_TapShoulder";
         distance = 4;
         condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
-        statement = "[AGM_Interaction_Target, player], AGM_Interaction_fnc_tapShoulder] call AGM_Core_fnc_execRemoteFnc";
+        statement = "[[AGM_Interaction_Target, player], AGM_Interaction_fnc_tapShoulder] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 1;
         priority = 0.1;
       };
