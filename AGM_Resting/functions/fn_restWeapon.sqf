@@ -90,11 +90,11 @@ if (call AGM_Resting_checkIntersection) then {
   if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1) then {
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_deploy", (animationState player)];
-    ["Bipod deployed.", false] spawn AGM_Hint_displayText;
+    ["Bipod deployed.", false] call AGM_Core_fnc_displayText;
   } else {
     player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_rested", (animationState player)];
-    ["Weapon rested.", false] spawn AGM_Hint_displayText;
+    ["Weapon rested.", false] call AGM_Core_fnc_displayText;
   };
 
   // CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC

@@ -15,7 +15,6 @@ class CfgFunctions {
   class AGM_Resting {
     class AGM_Resting {
       file = "AGM_Resting\functions";
-      class keyInput;
       class restWeapon;
       class unRestWeapon;
     };
@@ -31,6 +30,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "Waffe auflegen";
+    condition = "!(player getVariable ['AGM_Unconscious', false])";
+    statement = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
     key = 15;
     shift = 0;
     control = 0;

@@ -2,6 +2,14 @@
 
 _vehicle = _this select 0;
 
+if (AGM_isSpeedLimiter) exitWith {
+	[localize "STR_AGM_SpeedLimiter_Off", true] call AGM_Core_fnc_displayText;
+	AGM_isSpeedLimiter = false;
+};
+
+[localize "STR_AGM_SpeedLimiter_On", true] call AGM_Core_fnc_displayText;
+AGM_isSpeedLimiter = true;
+
 _maxSpeed = speed _vehicle;
 if (_maxSpeed < 10) then {_maxSpeed = 10};
 

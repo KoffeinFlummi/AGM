@@ -14,7 +14,8 @@ class CfgPatches {
       A3_Armor_F_Marid,
       A3_Armor_F_Panther,
       A3_Armor_F_Slammer,
-      A3_Armor_F_T100K
+      A3_Armor_F_T100K,
+      AGM_Core
     };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
@@ -28,7 +29,6 @@ class CfgFunctions {
       file = "AGM_FireControlSystem\functions";
       class firedEH;
       class getAngle;
-      class init;
       class keyDown;
       class keyUp;
       class vehicleInit;
@@ -38,7 +38,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_FCS {
-    clientInit = "_this call AGM_FCS_fnc_init";
+    clientInit = "execVM '\AGM_FireControlSystem\init.sqf'";
   };
 };
 
@@ -47,6 +47,20 @@ class Extended_Init_EventHandlers {
     class AGM_FCS {
       clientInit = "_this call AGM_FCS_fnc_vehicleInit";
     };
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class laseTarget {
+    displayName = "Lase target";
+    condition = "!AGM_FCSEnabled";
+    statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
+    conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
+    key = 15;
+    shift = 0;
+    control = 0;
+    alt = 0;
   };
 };
 
