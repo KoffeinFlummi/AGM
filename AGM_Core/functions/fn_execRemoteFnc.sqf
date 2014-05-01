@@ -9,7 +9,7 @@ _unit = _arguments select 0;
 if (local _unit) then {
 	_arguments call _function;
 } else {
-	AGM_Core_remoteFnc = [_arguments, _function];
+	AGM_Core_remoteFnc = str [_arguments, _function];
 
 	if (isServer) then {
 		_ownerID = owner _unit;

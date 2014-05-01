@@ -437,7 +437,7 @@ class AGM_Core_Text_Button_Base {
 class AGM_Core_OptionsMenu_Dialog {
   idd = -1;
   movingEnable = true;
-  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];"
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 100 to 119 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 200 to 219 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];"
   objects[] = {};
 
   class controlsBackground {
@@ -487,7 +487,7 @@ class AGM_Core_OptionsMenu_Dialog {
       style = 48;
       onMouseEnter = "hint ('_' + str(_this))";
       tooltip = "";
-      text = "\AGM_common\rsc\bwlogo.paa";
+      text = "";//"\AGM_common\rsc\bwlogo.paa";
       idc = 2;
       x = ((1 - 2 * HSPACE / 2) - (HSPACE + 0.5 * 0.1)) * safezoneW + safezoneX;
       y = (VSPACE + 2 * 0.04) * safezoneH + safezoneY;

@@ -52,7 +52,7 @@ class AGM_Core_Default_Keys {
     control = 0;
     alt = 0;
   };
-  class selectPistolMuzzle {
+  /*class selectPistolMuzzle {
     displayName = "Select Pistol Muzzle";
     condition = "player == _vehicle";
     statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
@@ -61,7 +61,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 0;
-  };
+  };*/
   class selectRifleMuzzle {
     displayName = "Select Grenade Launcher";
     condition = "player == _vehicle";
@@ -71,7 +71,7 @@ class AGM_Core_Default_Keys {
     control = 0;
     alt = 0;
   };
-  class selectLauncherMuzzle {
+  /*class selectLauncherMuzzle {
     displayName = "Select Launcher Muzzle";
     condition = "player == _vehicle";
     statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
@@ -80,7 +80,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 0;
-  };
+  };*/
   class selectBinocular {
     displayName = "Select Binocular";
     condition = "player == _vehicle";
