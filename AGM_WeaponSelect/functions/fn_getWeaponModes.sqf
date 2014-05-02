@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get the available firing modes of a weapon. Will ignore the ai helper modes.
+ * 
+ * Argument:
+ * 0: A weapon in cfgWeapons (String)
+ * 
+ * Return value:
+ * All firing modes (Array)
+ */
 
 private ["_weapon", "_modes"];
 

@@ -1,4 +1,4 @@
-// by commy2
+// by -
 
 private ["_vectorDir", "_vectorUp", "_direction", "_pitch", "_bank"];
 

@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * The player will select the specified weapon or will change to the next firing mode if the weapon was already selected.
+ * 
+ * Argument:
+ * 0: A weapon (String)
+ * 
+ * Return value:
+ * None.
+ */
 
 private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode"];
 

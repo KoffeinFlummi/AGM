@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get all turret indicies of a vehicle.
+ * 
+ * Argument:
+ * 0: Vehicle (Object)
+ * 
+ * Return value:
+ * All turret index arrays of the vehicle. E.g: [[0], [0,0]] (Array)
+ */
 
 private ["_vehicle", "_config", "_turrets", "_fnc_addTurret"];
 

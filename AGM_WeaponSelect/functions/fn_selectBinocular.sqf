@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * The player will select the binocular.
+ * 
+ * Argument:
+ * None.
+ * 
+ * Return value:
+ * None.
+ */
 
 _weapons = weapons player - [handgunWeapon player] - [primaryWeapon player] - [secondaryWeapon player];
 _binocular = (

@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * The player will select the specified weapon and change to the first additional muzzle. E.g. the grenade launcher of a assault rifle.
+ * 
+ * Argument:
+ * 0: A weapon (String)
+ * 
+ * Return value:
+ * None.
+ */
 
 private ["_weapon", "_muzzles", "_count", "_index", "_muzzle"];
 

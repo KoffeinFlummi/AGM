@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get the turret index of a units current turret.
+ * 
+ * Argument:
+ * 0: Unit, not the vehicle (as in not a car but the player) (Object)
+ * 
+ * Return value:
+ * Turret index array or config path. E.g: [0] for gunner or [0,0] for commander. Returns empty array if unit is not in a turret. (Array)
+ */
 
 private ["_unit", "_vehicle", "_turrets", "_units", "_index"];
 

@@ -1,9 +1,10 @@
 // by commy2
 
-_player = _this select 0;
-_unit = _this select 1;
+private ["_unit", "_message"];
 
-if (player == _player) exitWith {};
+_unit = _this select 0;
+
+if (_unit == player) exitWith {};
 
 addCamShake [1, 0.5, 5];
 

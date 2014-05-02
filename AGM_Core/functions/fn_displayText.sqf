@@ -1,4 +1,17 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Display a message.
+ * 
+ * Argument:
+ * 0: Message (String)
+ * 1: Play a clicking sound (Bool, optional default: false)
+ * 2: How long before hiding the message in seconds (Number, optional default: 2 sec)
+ * 3: Priority, higher priority messages will override lesser important ones (Number, optional default: 0)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 #define DEFAULT_PLAY_SOUND false
 #define DEFAULT_DELAY 2

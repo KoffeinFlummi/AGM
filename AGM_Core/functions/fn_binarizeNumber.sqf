@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get binary equivalent of a decimal number.
+ * 
+ * Argument:
+ * 0: Decimal Number (Number)
+ * 
+ * Return value:
+ * Booleans (Array)
+ */
 
 private ["_number", "_array", "_index", "_rest"];
 

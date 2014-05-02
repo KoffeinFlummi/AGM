@@ -58,16 +58,16 @@ class CfgVehicles {
       class AGM_JoinGroup {
         displayName = "$STR_AGM_JoinGroup";
         distance = 4;
-        condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
-        statement = "[player] joinSilent group cursorTarget;";
+        condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
+        statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 1;
         priority = -1;
       };
       class AGM_TapShoulder {
         displayName = "$STR_AGM_TapShoulder";
         distance = 4;
-        condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
-        statement = "[AGM_Interaction_Target, player, AGM_Interaction_fnc_tapShoulder] call AGM_Core_fnc_execRemoteFnc";
+        condition = "playerSide == side AGM_Interaction_Target";
+        statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 1;
         priority = 0.1;
       };

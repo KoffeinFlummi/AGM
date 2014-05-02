@@ -1,4 +1,15 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get players viewing direction and slope
+ * 
+ * Argument:
+ * None.
+ * 
+ * Return value:
+ * 0: Azimuth (Number)
+ * 1: Inclination or 'slope' (Number)
+ */
 
 private ["_position", "_direction", "_azimuth", "_inclination"];
 

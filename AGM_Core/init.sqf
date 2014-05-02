@@ -2,7 +2,7 @@
 // (C) 2013 KoffeinFlummi. See LICENSE.
 
 "AGM_Core_remoteFnc" addPublicVariableEventHandler {
-	(call compile (_this select 1)) call AGM_Core_fnc_execRemoteFnc;
+	(_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
 AGM_Core_Menu_Button = [];
