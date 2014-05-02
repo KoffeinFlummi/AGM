@@ -175,10 +175,12 @@
       (function(window,document,undefined){
         $(window).scroll(function() {
           if ($(window).width() <= 767) {return 0;}
-          var yPos = ($(window).scrollTop() / 1.2) - 15; 
-          var coords = '50% '+ yPos + 'px';
-          $(".header").css({ backgroundPosition: coords });
-          $(".footer").css({ backgroundPosition: coords });
+          var yPosH = ($(window).scrollTop() / 1.2) - 15; 
+          var coordsH = '50% '+ yPosH + 'px';
+          var yPosF = ($(window).scrollTop() / 1.2); 
+          var coordsF = '50% '+ yPosF + 'px';
+          $(".header").css({ backgroundPosition: coordsH });
+          $(".footer").css({ backgroundPosition: coordsF });
         });
       })(this,this.document);
     </script>
