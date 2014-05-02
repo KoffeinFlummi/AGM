@@ -6,6 +6,7 @@ _unit = _this select 0;
 
 if (_unit == player) exitWith {};
 
+enableCamShake true;
 addCamShake [1, 0.5, 5];
 
 _message = format ["%1 tapped you on your shoulder.", name _unit];

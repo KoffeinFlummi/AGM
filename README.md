@@ -1,7 +1,7 @@
 Authentic Gameplay Mod
 ======================
 
-A modular authenticism/realism mod for Arma 3, partly based on Taosensai's work.
+A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work.
 
 
 ## Philosophy
