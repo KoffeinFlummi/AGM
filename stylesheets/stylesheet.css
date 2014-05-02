@@ -246,7 +246,7 @@ footer {
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
   background: #000 url(../images/bgs/bg_footer.jpg) 50%;
   background-size: auto 400px;
-  background-position: 50% -20px;
+  background-position: 50% 450px;
   border-bottom: solid 1px #275da1;
   text-shadow: 0 0 6px #000;
   max-height: 400px;
