@@ -105,9 +105,6 @@ header h2 {
   border-top: solid 1px #fff;
   padding-top: 30px;
   z-index: 99;
-  -moz-box-shadow:    0 0 5px 6px #ccc;
-  -webkit-box-shadow: 0 0 5px 6px #ccc;
-  box-shadow:         0 0 5px 6px #ccc;
 }
 
 #main-content {
@@ -255,6 +252,9 @@ footer {
   max-height: 400px;
   min-height: 200px;
   margin: 0 auto 0 auto;
+  -moz-box-shadow:    0 0 5px 6px #ccc inset;
+  -webkit-box-shadow: 0 0 5px 6px #ccc inset;
+  box-shadow:         0 0 5px 6px #ccc inset;
 }
 
 
