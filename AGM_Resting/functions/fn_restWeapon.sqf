@@ -87,7 +87,7 @@ if (call AGM_Resting_checkIntersection) then {
 
   // REST THE WEAPON
   addCamShake CAMSHAKE;
-  if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1) then {
+  if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1 and (stance player) == "PRONE") then {
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_deploy", (animationState player)];
     ["Bipod deployed.", false] spawn AGM_Hint_displayText;
