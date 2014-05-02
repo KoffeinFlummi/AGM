@@ -252,9 +252,9 @@ footer {
   max-height: 400px;
   min-height: 200px;
   margin: 0 auto 0 auto;
-  -moz-box-shadow:    inset 0 7px 9px -7px #000;
-  -webkit-box-shadow: inset 0 7px 9px -7px #000;
-  box-shadow:         inset 0 7px 9px -7px #000;
+  -moz-box-shadow:    inset 0 7px 20px -7px #000;
+  -webkit-box-shadow: inset 0 7px 20px -7px #000;
+  box-shadow:         inset 0 7px 20px -7px #000;
 }
 
 
