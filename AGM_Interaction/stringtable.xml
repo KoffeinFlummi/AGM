@@ -2,6 +2,15 @@
 <Project name="BWRealism">
   <Package name="Interaction">
 
+    <Key ID="STR_AGM_InteractionMenu">
+      <English>Interaction Menu</English>
+      <German>Interaktionsmenü</German>
+    </Key>
+    <Key ID="STR_AGM_InteractionMenuSelf">
+      <EnglisH>Interaction Menu (Self)</English>
+      <German>Interaktionsmenü (Selbst)</German>
+    </Key>
+
     <Key ID="STR_AGM_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
@@ -75,6 +84,15 @@
     <Key ID="STR_AGM_TapShoulder">
       <English>Tap shoulder</English>
       <German>Auf Schulter klopfen</German>
+    </Key>
+
+    <Key ID="STR_AGM_BackpackVentralTake">
+      <English>Take (Ventral)</English>
+      <German>Aufnehmen (Ventral)</German>
+    </Key>
+    <Key ID="STR_AGM_BackpackVentralPut">
+      <English>Take Off Backpack</English>
+      <German>Rucksack ablegen</German>
     </Key>
 
   </Package>
