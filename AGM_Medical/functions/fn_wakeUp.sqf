@@ -24,6 +24,8 @@ _unit enableAI "FSM";
 _unit setVariable ["AGM_Unconscious", false, true];
 _unit setVariable ["AGM_CanTreat", true, true];
 
+[_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
+
 [-2, {
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;

@@ -18,6 +18,15 @@ if !(isPlayer _unit) exitWith {_unit setDamage 1;};
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
 
+_oldGroup = group _unit;
+_newGroup = createGroup side _unit;
+[_unit] joinSilent _newGroup;
+{
+  _unit reveal _x;
+} 
+forEach (units _oldGroup);
+_unit setVariable ["AGM_Group", _oldGroup, true];
+
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
   4209 cutText ["You are unconscious.\nIf someone doesn't treat your wounds, you will bleed out soon.\n\nHave fun :>", "PLAIN", 0, false];
