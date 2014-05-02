@@ -1,15 +1,18 @@
 // by commy2
 
-private ["_arguments", "_function", "_unit", "_ownerID"];
+private ["_unit", "_count", "_arguments", "_function", "_ownerID"];
 
-_arguments = _this select 0;
-_function = _this select 1;
-_unit = _arguments select 0;
+_unit = _this select 0;
 
 if (local _unit) then {
+	_count = count _this;
+	_arguments = + _this;
+	_arguments resize (_count - 1);
+	_function = _this select (_count - 1);
+
 	_arguments call _function;
 } else {
-	AGM_Core_remoteFnc = str [_arguments, _function];
+	AGM_Core_remoteFnc = _this;
 
 	if (isServer) then {
 		_ownerID = owner _unit;
