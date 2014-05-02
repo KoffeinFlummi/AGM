@@ -173,7 +173,7 @@
       (function(window,document,undefined){
         $(window).scroll(function() {
           if ($(window).width() <= 767) {return 0;}
-          var yPos = ($(window).scrollTop() / 100) - 15; 
+          var yPos = ($(window).scrollTop() / 2) - 15; 
           var coords = '50% '+ yPos + 'px';
           $(".header").css({ backgroundPosition: coords });
         });
