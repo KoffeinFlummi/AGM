@@ -18,9 +18,3 @@ class CfgFunctions {
     };
   };
 };
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Hash {
-    clientInit = "execVM '\AGM_hash\init.sqf'";
-  };
-};

@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Get the compass direction the wind is blowing from.
+ * 
+ * Argument:
+ * None.
+ * 
+ * Return value:
+ * Wind direction. (String)
+ */
 
 switch (round (windDir / 360 * 16)) do {
 	case 1 : {"NNE"};

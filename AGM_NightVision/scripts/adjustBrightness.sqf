@@ -1,20 +1,20 @@
 // by commy2
 
 waitUntil {
-	_vehicle = vehicle player;
-	_NVGBrightness = _vehicle getVariable "AGM_NVGBrightness";
-	if (isNil "_NVGBrightness") then {
-		_vehicle setVariable ["AGM_NVGBrightness", 50, false];
-	};
+	waitUntil {currentVisionMode vehicle player == 1};
+
+	_ppEffectNVG = ppEffectCreate ["FilmGrain", 1235];
+	_ppEffectNVG ppEffectEnable true;
+	_ppEffectNVG ppEffectAdjust [0.25, 2.5, 2.5, 2.5, 2.5, false];
+	_ppEffectNVG ppEffectCommit 0;
 
 	waitUntil {
-		if (currentVisionMode player == 1) then {
-			_NVGBrightness = (_vehicle getVariable "AGM_NVGBrightness") / 10 + 0.1;
-			setAperture _NVGBrightness;
-		} else {
-			setAperture -1;
-		};
-		vehicle player != _vehicle
+		_vehicle = vehicle player;
+		setAperture ((_vehicle getVariable ["AGM_NVGBrightness", 50]) / 10 + 0.1);
+		currentVisionMode _vehicle != 1
 	};
+
+	ppEffectDestroy _ppEffectNVG;
+	setAperture -1;
 	false
 };

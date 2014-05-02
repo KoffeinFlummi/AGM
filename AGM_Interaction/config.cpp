@@ -17,13 +17,35 @@ class CfgFunctions {
       class openMenu {};
       class openMenuSelf {};
       class sortOptionsByPriority {};
+      class tapShoulder {};
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Interaction {
-    Init = "call compile preprocessFileLineNumbers '\AGM_Interaction\init.sqf'";
+    clientInit = "execVM '\AGM_Interaction\init.sqf'";
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class openInteractionMenu {
+    displayName = "Interaktionsmenu";
+    condition = "true";
+    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    key = 221;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class openInteractionMenuSelf {
+    displayName = "Interaktionsmenu (Selbst)";
+    condition = "true";
+    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    key = 221;
+    shift = 0;
+    control = 1;
+    alt = 0;
   };
 };
 
@@ -36,10 +58,18 @@ class CfgVehicles {
       class AGM_JoinGroup {
         displayName = "$STR_AGM_JoinGroup";
         distance = 4;
-        condition = "playerSide == side cursorTarget && {group player != group cursorTarget}";
-        statement = "[player] joinSilent group cursorTarget;";
+        condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
+        statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 1;
         priority = -1;
+      };
+      class AGM_TapShoulder {
+        displayName = "$STR_AGM_TapShoulder";
+        distance = 4;
+        condition = "playerSide == side AGM_Interaction_Target";
+        statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+        showDisabled = 1;
+        priority = 0.1;
       };
     };
 

@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {};
+    requiredAddons[] = {A3_UI_F};
     version = 0.7;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -14,6 +14,7 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class execRemoteFnc {};
       class getDirectionVector2 {};
       class keyInput {};
       class openInteractionMenu {};
@@ -51,7 +52,7 @@ class CfgFunctions {
 
 class CfgSounds {
   class AGM_Sound_Click {
-    sound[] = {"\AGM_realism\sounds\AGM_click.wav", 5, 1, 200};
+    sound[] = {"\AGM_Core\sounds\AGM_click.wav", 5, 1, 200};
     titles[] = {};
   };
 };
@@ -62,4 +63,5 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+#include <MainMenu.hpp>
 #include <MenuConfig.hpp>

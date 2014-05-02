@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if the unit is in a building. Will return true if the unit is sitting in a bush.
+ * 
+ * Argument:
+ * 0: Unit (Object)
+ * 
+ * Return value:
+ * Is the unit in a building? (Bool)
+ */
 
 #define DISTANCE 10
 

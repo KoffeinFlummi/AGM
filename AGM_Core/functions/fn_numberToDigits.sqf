@@ -1,4 +1,15 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Transforms a number to an array of the correspondending digits.
+ * 
+ * Argument:
+ * 0: Number to 'digitize' (Number)
+ * 1: Set the minimal length of the returned array. Useful for getting left hand zeroes. (Number, optional)
+ * 
+ * Return value:
+ * Digits. The maximum count is six digits. (Array)
+ */
 
 private ["_number", "_minLength", "_length", "_digits", "_index", "_count"];
 

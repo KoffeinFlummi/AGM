@@ -1,15 +1,15 @@
 /*
  * Author: commy2
  *
- * Gets the distance to the current target
- *
- * Arguments:
- * 0: interval
- * 1: maxDistance
- * 2: minDistance
- *
- * Return Value:
- * distance
+ * Get the distance to the next object the player is looking at. Used for laser distance measurements.
+ * 
+ * Argument:
+ * 0: How accurate will the measurement be? In meters. (Number)
+ * 1: Maximal distance to measure. (Number)
+ * 2: Minimal distance to measure. (optional, Number)
+ * 
+ * Return value:
+ * Measured distance in meters. Can return maximal or minimal distance (Number)
  */
 
 private ["_interval", "_maxDistance", "_minDistance", "_position", "_direction", "_distance", "_iteration", "_laser", "_line"];

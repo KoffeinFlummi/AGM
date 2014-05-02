@@ -12,13 +12,15 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_SpeedLimiter {
-    clientInit = "execVM '\bwa3_speedLimiter\init.sqf'";
+    clientInit = "execVM '\AGM_speedLimiter\init.sqf'";
   };
 };
 
 class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "Speed Limiter";
+    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statementUp = "[_vehicle] spawn AGM_SpeedLimiter_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;

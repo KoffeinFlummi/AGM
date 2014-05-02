@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Characters_F_Civil};
+    requiredAddons[] = {A3_Characters_F_Civil, AGM_Core, AGM_Interaction};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -16,6 +16,7 @@ class CfgFunctions {
       file = "AGM_Civilians\functions";
       class sendAway {};
       class getDown {};
+      class setCaptive {};
     };
   };
 };
@@ -24,33 +25,30 @@ class CfgVehicles {
   class CAManBase;
 
   class Civilian: CAManBase {
-    class UserActions {
-      // Documentation:
-      // http://community.bistudio.com/wiki/UserActions
-
+    class AGM_Actions {
       class AGM_SendAway {
-        displayName = "<t color='#2222ff'>Send Away</t>";    // name in action menu
-        displayNameDefault = "";      // name on screen (icons)
-        priority = 4;                 // 0 (low) - 6 (high)
-        position = "leaning_axis";    // memory point of model
-        radius = 3;                   // minimum distance for the action to be available
-        showWindow = false;           // show text/icon on screen
-        onlyForPlayer = false;        // enable AI to be ordered to do something
-        shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "alive this and this != player and (count (weapons this)) == 0";
-        statement = "[this] call AGM_Civilians_fnc_sendAway";
+        displayName = "Go Away!";
+        distance = 4;
+        condition = "alive AGM_Interaction_Target and AGM_Interaction_Target != player and (count (weapons AGM_Interaction_Target)) == 0";
+        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_sendAway";
+        showDisabled = 0;
+        priority = -2.5;
       };
       class AGM_GetDown {
-        displayName = "<t color='#2222ff'>Get Down!</t>";    // name in action menu
-        displayNameDefault = "";      // name on screen (icons)
-        priority = 4;                 // 0 (low) - 6 (high)
-        position = "leaning_axis";    // memory point of model
-        radius = 3;                   // minimum distance for the action to be available
-        showWindow = false;           // show text/icon on screen
-        onlyForPlayer = false;        // enable AI to be ordered to do something
-        shortcut = "";                // key (CfgDefaultKeyMappings)
-        condition = "alive this and this != player and (count (weapons this)) == 0";
-        statement = "[this] call AGM_Civilians_fnc_getDown";
+        displayName = "Get Down!";
+        distance = 4;
+        condition = "alive AGM_Interaction_Target and AGM_Interaction_Target != player and (count (weapons AGM_Interaction_Target)) == 0";
+        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_getDown";
+        showDisabled = 0;
+        priority = -2.6;
+      };
+      class AGM_SetCaptive {
+        displayName = "Take Prisoner";
+        distance = 4;
+        condition = "alive AGM_Interaction_Target && {AGM_Interaction_Target != player} && {count (weapons AGM_Interaction_Target) == 0}";
+        statement = "[[AGM_Interaction_Target, [0.5, 0.8] select (count weapons player > 0)], 'AGM_Civilians_fnc_setCaptive', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+        showDisabled = 0;
+        priority = -2.7;
       };
     };
   };

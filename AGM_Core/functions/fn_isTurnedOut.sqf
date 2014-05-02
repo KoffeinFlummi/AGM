@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if the unit is in a vehicle and turned out.
+ * 
+ * Argument:
+ * 0: Unit, not the vehicle (Object)
+ * 
+ * Return value:
+ * Is the unit turned out or not? Will return false if there is no option to turn out in the first place. (Bool)
+ */
 
 private ["_unit", "_vehicle", "_config", "_animation", "_action", "_inAction", "_turretIndex", "_count", "_index"];
 

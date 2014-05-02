@@ -13,7 +13,7 @@ class AGM_Core_Interactive_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+  sizeEx = "1 / 40 / (getResolution select 5)";
   shadow = 2;
 
   x = 0;
@@ -73,7 +73,7 @@ class AGM_Core_Menu_Dialog {
       moving = 1;
       text = "HEADER";
       font = "PuristaMedium";
-      sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+      sizeEx = "1 / 40 / (getResolution select 5)";
       lineSpacing = 0;
       access = 0;
       type = 0;
@@ -216,7 +216,7 @@ class AGM_Core_Interactive_Button_Base_noFlash {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+  sizeEx = "1 / 40 / (getResolution select 5)";
   shadow = 2;
 
   x = 0;
@@ -437,7 +437,7 @@ class AGM_Core_Text_Button_Base {
 class AGM_Core_OptionsMenu_Dialog {
   idd = -1;
   movingEnable = true;
-  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];"
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 100 to 119 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 200 to 219 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];"
   objects[] = {};
 
   class controlsBackground {
@@ -452,8 +452,8 @@ class AGM_Core_OptionsMenu_Dialog {
       type = 0;
       style = 0 + 0x800;
       size = 1;
-      colorBackground[] = {0, 0.265, 0, 0.5};
-      //colorBackground[] = {0, 0, 0, 0.5};
+      //colorBackground[] = {0, 0.265, 0, 0.5};
+      colorBackground[] = {0, 0, 0, 0.5};
       colorText[] = {0, 0, 0, 0};
       x = HSPACE / 2 * safezoneW + safezoneX;
       y = VSPACE / 2 * safezoneH + safezoneY;
@@ -472,7 +472,8 @@ class AGM_Core_OptionsMenu_Dialog {
       type = 0;
       style = 1 + 0x800;
       size = 1;
-      colorBackground[] = {0,0,0,0};
+      //colorBackground[] = {0,0,0,0};
+      colorBackground[] = {1, 0.647, 0, 0.5};
       colorText[] = {1,1,1,1};
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
@@ -486,7 +487,7 @@ class AGM_Core_OptionsMenu_Dialog {
       style = 48;
       onMouseEnter = "hint ('_' + str(_this))";
       tooltip = "";
-      text = "\AGM_common\rsc\bwlogo.paa";
+      text = "";//"\AGM_common\rsc\bwlogo.paa";
       idc = 2;
       x = ((1 - 2 * HSPACE / 2) - (HSPACE + 0.5 * 0.1)) * safezoneW + safezoneX;
       y = (VSPACE + 2 * 0.04) * safezoneH + safezoneY;

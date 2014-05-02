@@ -32,7 +32,18 @@ for "_index" from 0 to (_count - 1) do {
 	_control1 ctrlSetText _displayName;
 	_control2 ctrlSetText _description;
 
+	_control1 ctrlShow true;
+	_control2 ctrlShow true;
+
 	AGM_Core_keyNames set [_index, _keyName];
+};
+
+for "_index" from _count to 19 do {
+	_control1 = _dlgMenuDialog displayCtrl (OFFSET_1 + _index);
+	_control2 = _dlgMenuDialog displayCtrl (OFFSET_2 + _index);
+
+	_control1 ctrlShow false;
+	_control2 ctrlShow false;
 };
 
 waitUntil {!dialog};

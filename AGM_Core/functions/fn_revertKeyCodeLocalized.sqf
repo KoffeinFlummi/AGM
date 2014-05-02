@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Revert a key code to a readible text.
+ * 
+ * Argument:
+ * 0: Key code (Number)
+ * 
+ * Return value:
+ * What input will result in the given key code? (String)
+ */
 
 private ["_keyCode", "_key", "_alt", "_ctrl", "_shft"];
 

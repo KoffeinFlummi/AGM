@@ -10,20 +10,7 @@
  * none
  */
 
-_key  = _this select 1;
-_shft = [0, 1] select (_this select 2);
-_ctrl = [0, 1] select (_this select 3);
-_alt  = [0, 1] select (_this select 4);
-
-_keyLase   = getNumber(configFile >> "AGM_Realism_Keys" >> "AGM_LaseTarget" >> "key");
-_ctrlLase  = getNumber(configFile >> "AGM_Realism_Keys" >> "AGM_LaseTarget" >> "ctrl");
-_altLase   = getNumber(configFile >> "AGM_Realism_Keys" >> "AGM_LaseTarget" >> "alt");
-_shiftLase = getNumber(configFile >> "AGM_Realism_Keys" >> "AGM_LaseTarget" >> "shift");
-if (_key != _keyLase or _ctrl != _ctrlLase or _shft != _shiftLase or _alt != _altLase) exitWith {false};
-if (player != gunner (vehicle player)) exitWith {};
-if (getNumber (configFile >> "CfgVehicles" >> (typeOf vehicle player) >> "AGM_FCSEnabled") == 0) exitWith {};
-
-_vehicle = vehicle player;
+_vehicle = _this select 0;
 _magazines = magazines _vehicle;
 
 _distance = [5, 5000, 0] call AGM_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
@@ -148,5 +135,3 @@ _vehicle setVariable ["AGM_FCSAzimuth",   _FCSAzimuth,   true];
 };
 
 hintSilent format ["Zeroed To: %1", _distance];
-
-true

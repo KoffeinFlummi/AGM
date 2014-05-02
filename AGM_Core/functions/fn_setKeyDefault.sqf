@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Set all keys from the 'AGM_Core_Default_Keys' base class that are missing in the current user profile.
+ * 
+ * Argument:
+ * None.
+ * 
+ * Return value:
+ * None.
+ */
 
 _config = configFile >> "AGM_Core_Default_Keys";
 _count = count _config;

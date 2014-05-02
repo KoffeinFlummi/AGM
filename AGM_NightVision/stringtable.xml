@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Project name="AGM">
+<Project name="AGMod">
   <Package name="NightVision">
 
     <Key ID="STR_AGM_NVGBrightness">
