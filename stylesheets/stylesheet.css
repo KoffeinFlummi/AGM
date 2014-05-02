@@ -104,6 +104,10 @@ header h2 {
 #content-wrapper {
   border-top: solid 1px #fff;
   padding-top: 30px;
+  z-index: 99;
+  -moz-box-shadow:    0 0 5px 6px #ccc;
+  -webkit-box-shadow: 0 0 5px 6px #ccc;
+  box-shadow:         0 0 5px 6px #ccc;
 }
 
 #main-content {
