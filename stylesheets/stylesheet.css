@@ -70,7 +70,7 @@ header {
   padding-top: 70px;
   padding-bottom: 70px;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
-  background: #000 url(../images/bgs/bg.jpg) 50% -15px no-repeat;
+  background: #000 url(../images/bgs/bg_header.jpg) 50% -15px no-repeat;
   background-size: auto 400px;
   border-bottom: solid 1px #275da1;
   text-shadow: 0 0 6px #000;
@@ -241,8 +241,16 @@ ul, ol, dl {
 }
 
 footer {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif; 
+  background: #000 url(../images/bgs/bg_footer.jpg) 50% -15px no-repeat;
+  background-size: auto 400px;
+  border-bottom: solid 1px #275da1;
+  text-shadow: 0 0 6px #000;
+  max-height: 400px;
+  min-height: 250px;
   margin: 0 auto 0 auto;
-  width: 940px;
 }
 
 
