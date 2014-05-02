@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {};
+    requiredAddons[] = {A3_UI_F};
     version = 0.7;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -63,4 +63,5 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+#include <MainMenu.hpp>
 #include <MenuConfig.hpp>
