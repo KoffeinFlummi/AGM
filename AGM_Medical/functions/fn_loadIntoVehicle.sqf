@@ -23,14 +23,14 @@ if isNull (player getVariable "AGM_Carrying") then {
 };
 
 detach _unit;
-_unit moveInCargo _vehicle;
 _unit spawn {
-  sleep 0.5;
 
   [-2, {
     if (local _this) then {
-      _this switchMove ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
+      _this moveInCargo _vehicle;
     };
+    sleep 0.5;
+    _this switchMove ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
   }, _this] call CBA_fnc_globalExecute;
 };
 
