@@ -2,6 +2,7 @@
 
 if (isDedicated) exitWith {};
 
-AGM_Hearing_firedNearEH = compile preprocessFileLineNumbers "\AGM_Hearing\scripts\firedNearEH.sqf";
+BWA3_EarRingingPlaying = false;
 
-player addEventHandler ["firedNear", _this call AGM_Hearing_firedNearEH];
+player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];
+player addEventHandler ["explosion", {_this call AGM_Hearing_fnc_explosionEH}];
