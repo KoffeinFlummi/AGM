@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_position", "_direction", "_vectorX", "_vectorY", "_vectorZ", "_lenght"];
+private ["_position", "_direction", "_vectorX", "_vectorY", "_vectorZ", "_length"];
 
 _position = _this select 0;
 _direction = _this select 1;
@@ -15,10 +15,10 @@ _vectorX = (_direction select 0) - (_position select 0);
 _vectorY = (_direction select 1) - (_position select 1);
 _vectorZ = (_direction select 2) - (_position select 2);
 
-_lenght = sqrt (_vectorX ^ 2 + _vectorY ^ 2 + _vectorZ ^ 2);
+_length = sqrt (_vectorX ^ 2 + _vectorY ^ 2 + _vectorZ ^ 2);
 
 [
-	((_vectorX / _lenght) min 1) max -1,
-	((_vectorY / _lenght) min 1) max -1,
-	((_vectorZ / _lenght) min 1) max -1
+	((_vectorX / _length) min 1) max -1,
+	((_vectorY / _length) min 1) max -1,
+	((_vectorZ / _length) min 1) max -1
 ]

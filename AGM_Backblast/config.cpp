@@ -18,8 +18,11 @@ class Extended_PostInit_EventHandlers {
 
 class Extended_FiredNear_EventHandlers {
   class CAManBase {
-    class AGM_FiredNear {
+    class AGM_FiredNear_LauncherBackblast {
       FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'AGM_Backblast_Damage') > 0}) then {_this call AGM_Backblast_launcherBackblast}";
+    };
+    class AGM_FiredNear_TankDangerZone {
+      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'AGM_DangerZone_Damage') > 0}) then {_this call AGM_Backblast_tankDangerZone}";
     };
   };
 };
@@ -53,5 +56,13 @@ class CfgWeapons {
     AGM_Backblast_Angle = 60;
     AGM_Backblast_Range = 20;
     AGM_Backblast_Damage = 0.5;
+  };
+
+  class CannonCore;
+
+  class cannon_120mm: CannonCore {
+    AGM_DangerZone_Angle = 90;
+    AGM_DangerZone_Range = 50;
+    AGM_DangerZone_Damage = 1.0;
   };
 };
