@@ -23,7 +23,7 @@ private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_check
 if (currentWeapon player != primaryWeapon player or vehicle player != player) exitWith {};
 
 // PREPARE INTERSECTS
-AGM_Resting_checkIntersection = {
+AGM_Resting_getIntersection = {
   _weaponPos = ATLtoASL (player modelToWorld (player selectionPosition "RightHand"));
   _weaponDir = player weaponDirection (currentWeapon player);
   _weaponPosDown = [
@@ -65,33 +65,31 @@ AGM_Resting_checkIntersection = {
     drawLine3D [weaponPos, checkPosLeft, [1,0,0,1]];
     drawLine3D [weaponPos, checkPosRight, [1,0,0,1]];
     drawLine3D [weaponPosDown, checkPosDown, [1,0,0,1]];
-  };
-  */
+  };*/
 
-  if ((lineIntersects [_weaponPos, _checkPosMiddle] or
-      lineIntersects [_weaponPos, _checkPosLeft] or
-      lineIntersects [_weaponPos, _checkPosRight] or
-      lineIntersects [_weaponPosDown, _checkPosDown] or
-      terrainIntersectASL [_weaponPosDown, _checkPosDown]
-      ) and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) then {
-    true
-  } else {
-    false
-  };
+  _intersectsMiddle = lineIntersects [_weaponPos, _checkPosMiddle];
+  _intersectsLeft = lineIntersects [_weaponPos, _checkPosLeft];
+  _intersectsRight = lineIntersects [_weaponPos, _checkPosRight];
+  _intersectsDown = lineIntersects [_weaponPos, _checkPosDown] or terrainIntersectASL [_weaponPosDown, _checkPosDown];
+
+  [_intersectsMiddle, _intersectsLeft, _intersectsRight, _intersectsDown]
 };
 
 // CHECK FOR APPROPRIATE SURFACE
-if (call AGM_Resting_checkIntersection) then {
+_intersects = [] call AGM_Resting_getIntersection;
+if (true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) then {
   AGM_weaponRested = true;
   AGM_restedPosition = getPos player;
 
   // REST THE WEAPON
   addCamShake CAMSHAKE;
-  if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1 and (stance player) == "PRONE") then {
+  if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1 and (_intersects select 3)) then {
+    AGM_bipodDeployed = true;
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_deploy", (animationState player)];
     ["Bipod deployed.", false] call AGM_Core_fnc_displayText;
   } else {
+    AGM_bipodDeployed = false;
     player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_rested", (animationState player)];
     ["Weapon rested.", false] call AGM_Core_fnc_displayText;
@@ -100,7 +98,8 @@ if (call AGM_Resting_checkIntersection) then {
   // CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC
   0 spawn {
     while {AGM_weaponRested} do {
-      if (!(call AGM_Resting_checkIntersection) or (getPos player) distance AGM_restedPosition > 1) then {
+      _intersects = [] call AGM_Resting_getIntersection;
+      if (!(true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) or (getPos player) distance AGM_restedPosition > 1) then {
         [] call AGM_Resting_fnc_unRestWeapon;
       };
       sleep 0.3;

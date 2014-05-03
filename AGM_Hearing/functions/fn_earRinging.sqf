@@ -12,8 +12,8 @@
 
 _strength = _this select 0;
 
-1 fadeSound 0.1;
-1 fadeSpeech 0.1;
+0.5 fadeSound 0.1;
+0.5 fadeSpeech 0.1;
 
 _strength spawn {
   sleep (_this * 8);
