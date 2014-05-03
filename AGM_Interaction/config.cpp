@@ -13,10 +13,12 @@ class CfgPatches {
 class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
-        file = "\AGM_interaction\functions";
+      file = "\AGM_interaction\functions";
       class openMenu {};
       class openMenuSelf {};
+      class putBackpack {};
       class sortOptionsByPriority {};
+      class takeBackpack {};
       class tapShoulder {};
     };
   };
@@ -30,7 +32,7 @@ class Extended_PostInit_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
-    displayName = "Interaktionsmenu";
+    displayName = "$STR_AGM_InteractionMenu";
     condition = "true";
     statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
     key = 221;
@@ -39,7 +41,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };
   class openInteractionMenuSelf {
-    displayName = "Interaktionsmenu (Selbst)";
+    displayName = "$STR_AGM_InteractionMenuSelf";
     condition = "true";
     statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
     key = 221;
@@ -52,6 +54,7 @@ class AGM_Core_Default_Keys {
 class CfgVehicles {
   class Man;
   class Land_CargoBox_V1_F;
+  class ReammoBox;
 
   class CAManBase: Man {
     class AGM_Actions {
@@ -188,6 +191,28 @@ class CfgVehicles {
         statement = "player action ['SwitchWeapon', vehicle player, vehicle player, 99];";
         showDisabled = 0;
         priority = -2;
+      };
+    };
+  };
+
+  class Bag_Base: ReammoBox {
+    class AGM_Actions {
+      class AGM_BackpackVentral_Take {
+        displayName = "$STR_AGM_BackpackVentralTake";
+        distance = 4;
+        condition = "vehicle player == player";
+        statement = "[AGM_Interaction_Target] call BWA3_Interaction_fnc_takeBackpack;";
+        showDisabled = 1;
+        priority = -1;
+      };
+    };
+    class AGM_SelfActions {
+      class AGM_BackpackVentral_Put {
+        displayName = "$STR_AGM_BackpackVentralPut";
+        condition = "!(isNull (player getVariable ['AGM_Backpack', objNull]))";
+        statement = "[player] call BWA3_Interaction_fnc_putBackpack;";
+        showDisabled = 1;
+        priority = -1;
       };
     };
   };
