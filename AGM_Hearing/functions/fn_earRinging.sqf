@@ -25,7 +25,7 @@ if (_strength > 0.75 and !BWA3_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Heavy", true];
   BWA3_EarRingingPlaying = true;
   0 spawn {
-    sleep 8;
+    sleep 7;
     BWA3_EarRingingPlaying = false;
   };
 };
@@ -33,7 +33,7 @@ if (_strength > 0.5 and !BWA3_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Medium", true];
   BWA3_EarRingingPlaying = true;
   0 spawn {
-    sleep 6;
+    sleep 5;
     BWA3_EarRingingPlaying = false;
   };
 };
@@ -41,7 +41,7 @@ if (_strength > 0.2 and !BWA3_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Weak", true];
   BWA3_EarRingingPlaying = true;
   0 spawn {
-    sleep 5;
+    sleep 3;
     BWA3_EarRingingPlaying = false;
   };
 };
