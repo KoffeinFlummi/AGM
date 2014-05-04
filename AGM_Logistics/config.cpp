@@ -17,10 +17,9 @@ class Extended_PostInit_EventHandlers {
 };
 
 class CfgVehicles {
-  class Items_base_F;
-  class thingX;
-  class Man;
 
+  //Jerry Can
+  class Items_base_F;
   class Land_CanisterFuel_F: Items_base_F {
     class AGM_Actions {
       class AGM_CarryJerryCan {
@@ -42,6 +41,8 @@ class CfgVehicles {
     };
   };
 
+  //Crates
+  class thingX;
   class ReammoBox_F: thingX {
     class AGM_Actions {
       class AGM_CarryBox {
@@ -60,24 +61,56 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.1;
       };
+      class AGM_loadBoxIntoVehicle {
+        displayName = "Load Box";
+        distance = 4;
+        condition = "call AGM_Logistics_canLoadInto";
+        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_loadBoxIntoVehicle";
+        showDisabled = 0;
+        priority = 2.26;
+      };
     };
   };
 
+  //Men
+  class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
       class AGM_DropBoxSelf {
-        displayName = "Drop Box";
+        displayName = "Drop Item";
         condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
         statement = "0 spawn AGM_Logistics_dropItem";
         showDisabled = 0;
         priority = -2.1;
       };
-      class AGM_DropJerryCanSelf {
-        displayName = "Drop jerry can";
-        condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "0 spawn AGM_Logistics_dropJerryCan";
+    };
+  };
+
+  //Vehicles
+  class LandVehicle;
+  class Car: LandVehicle {
+    AGM_Vehicle_Cargo = 4;
+    class AGM_Actions {
+      class AGM_unloadBox {
+        displayName = "Unload Box";
+        distance = 99;
+        condition = "call AGM_Logistics_canUnload";
+        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_unloadBox";
         showDisabled = 0;
-        priority = -2.1;
+        priority = 2.25;
+      };
+    };
+  };
+  class Tank: LandVehicle {
+    AGM_Vehicle_Cargo = 8;
+    class AGM_Actions {
+      class AGM_unloadBox {
+        displayName = "Unload Box";
+        distance = 99;
+        condition = "call AGM_Logistics_canUnload";
+        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_unloadBox";
+        showDisabled = 0;
+        priority = 2.25;
       };
     };
   };
