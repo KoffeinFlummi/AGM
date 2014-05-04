@@ -11,7 +11,7 @@ if (vehicle _unit != _unit) exitWith {};
 
 _dangerZoneAngle = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Angle") / 2;
 _dangerZoneRange = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Range");
-_dangerZoneDamage = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Damage") * 2;
+_dangerZoneDamage = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Damage");
 
 _position = ATLToASL (_vehicle modelToWorld (_vehicle selectionPosition BARREL_MUZZLE));
 _direction = _vehicle weaponDirection _weapon;

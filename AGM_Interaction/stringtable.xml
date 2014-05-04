@@ -23,6 +23,14 @@
       <English>Become Leader</English>
       <German>Grp.-führung übern.</German>
     </Key>
+    <Key ID="STR_AGM_Dance">
+      <English>DANCE!</English>
+      <German>TANZEN!</German>
+    </Key>
+    <Key ID="STR_AGM_StopDancing">
+      <English>Stop Dancing</English>
+      <German>Tanzen abbrechen</German>
+    </Key>
 
     <Key ID="STR_AGM_Gestures">
       <English>Gestures >></English>
