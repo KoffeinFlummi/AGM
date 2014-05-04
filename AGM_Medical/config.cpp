@@ -316,6 +316,46 @@ class CfgVehicles {
     model = "\AGM_Medical\AGM_Medical_Helper.p3d";
   };
   */
+
+  class Box_NATO_Support_F;
+
+  class AGM_Box_Medical: Box_NATO_Support_F {
+    author = "AGM";
+    displayName = "Sanikiste";
+    transportmaxmagazines = 128;
+    transportmaxbackpacks = 0;
+    maximumload = 2000;
+
+    class TransportMagazines {};
+    class TransportWeapons {
+      class _xx_BWA3_Vector {
+        count = 4;
+        weapon = "BWA3_Vector";
+      };
+    };
+    class TransportItems {
+      class _xx_AGM_Bandage {
+        count = 64;
+        name = "AGM_Bandage";
+      };
+      /*class _xx_AGM_Bandage2 {
+        count = 4;
+        name = "AGM_Bandage";
+      };*/
+      class _xx_AGM_Morphine {
+        count = 24;
+        name = "AGM_Morphine";
+      };
+      class _xx_AGM_Epipen {
+        count = 24;
+        name = "AGM_Epipen";
+      };
+      class _xx_AGM_Bloodbag {
+        count = 16;
+        name = "AGM_Bloodbag";
+      };
+    };
+  };
 };
 
 class CfgWeapons {
