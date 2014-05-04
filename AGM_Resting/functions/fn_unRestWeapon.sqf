@@ -14,11 +14,9 @@
 #define BIPODRECOIL 0.3
 #define CAMSHAKE [1,0.5,5]
 
-AGM_weaponRested = false;
-
 // UNREST THE WEAPON
 addCamShake CAMSHAKE;
-if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1) then {
+if (AGM_bipodDeployed) then {
   player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / BIPODRECOIL);
   player switchMove ([(animationState player), "_bwa3_deploy", ""] call CBA_fnc_replace);
   ["Bipod undeployed.", false] call AGM_Core_fnc_displayText;
@@ -27,3 +25,6 @@ if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod
   player switchMove ([(animationState player), "_bwa3_rested", ""] call CBA_fnc_replace);
   ["Weapon lifted.", false] call AGM_Core_fnc_displayText;
 };
+
+AGM_weaponRested = false;
+AGM_bipodDeployed = false;
