@@ -24,8 +24,6 @@ if (player != vehicle player and !([player] call AGM_Core_fnc_isTurnedOut)) exit
 _loudness = (getNumber (configFile >> "CfgAmmo" >> _ammo >> "audibleFire")) / 64;
 _strength = _loudness - (_loudness/30 * _distance); // linear drop off
 
-hint str _strength;
-
 if (_strength < 0.15) exitWith {};
 
 [_strength] call AGM_Hearing_fnc_earRinging;

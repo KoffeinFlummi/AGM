@@ -85,5 +85,9 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };
+
+    class TestDance: AmovPercMstpSrasWrflDnon {
+      file = "\AGM_Movement\anim\agm_dancing.rtm";
+    };
   };
 };

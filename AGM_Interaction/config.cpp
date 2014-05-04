@@ -92,6 +92,23 @@ class CfgVehicles {
         priority = -1;
       };
 
+      /* DANCE ANIMATION DOESN'T WORK :(
+      class AGM_Dance {
+        displayName = "$STR_AGM_Dance";
+        condition = "isClass (configFile >> 'CfgPatches' >> 'AGM_Movement') and !AGM_Dancing";
+        statement = "AGM_Dancing = true; [-2, {_this switchMove 'TestDance';}, player] call CBA_fnc_globalExecute;";
+        showDisabled = 0;
+        priority = -1;
+      };
+      class AGM_StopDancing {
+        displayName = "$STR_AGM_StopDancing";
+        condition = "AGM_Dancing";
+        statement = "AGM_Dancing = false; [-2, {_this switchMove '';}, player] call CBA_fnc_globalExecute;";
+        showDisabled = 0;
+        priority = -1;
+      };
+      */
+
       class AGM_Gestures {
         displayName = "$STR_AGM_Gestures";
         condition = "canStand player && {alive player}";

@@ -9,7 +9,7 @@ if (vehicle _unit != _unit) exitWith {};
 
 _backblastAngle = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Angle") / 2;
 _backblastRange = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Range");
-_backblastDamage = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Damage") * 2;
+_backblastDamage = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Damage");
 
 _position = eyePos _firer;
 _direction = _firer weaponDirection currentWeapon _firer;
