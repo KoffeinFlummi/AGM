@@ -27,6 +27,11 @@ _newGroup = createGroup side _unit;
 forEach (units _oldGroup);
 _unit setVariable ["AGM_Group", _oldGroup, true];
 
+if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+  player setVariable ["tf_unable_to_use_radio", true, true];
+  player setVariable ["tf_voiceVolume", 0, true];
+};
+
 if (_unit == player) then {
   [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
   4209 cutText ["You are unconscious.\nIf someone doesn't treat your wounds, you will bleed out soon.\n\nHave fun :>", "PLAIN", 0, false];

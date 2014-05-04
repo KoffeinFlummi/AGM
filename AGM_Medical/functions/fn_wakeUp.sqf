@@ -26,6 +26,11 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 [_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
 
+if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+  player setVariable ["tf_unable_to_use_radio", false, true];
+  player setVariable ["tf_voiceVolume", 1, true];
+};
+
 [-2, {
   if (_this == player) then {
     [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
