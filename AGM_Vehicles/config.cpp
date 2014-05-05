@@ -14,7 +14,14 @@ class CfgPatches {
       A3_Armor_F_Marid,
       A3_Armor_F_Panther,
       A3_Armor_F_Slammer,
-      A3_Armor_F_T100K
+      A3_Armor_F_T100K,
+      A3_Soft_F,
+      A3_Soft_F_MRAP_01,
+      A3_Soft_F_MRAP_02,
+      A3_Soft_F_MRAP_03,
+      A3_Soft_F_HEMTT,
+      A3_Soft_F_TruckHeavy,
+      A3_Soft_F_EPC_Truck_03
     };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
@@ -65,6 +72,7 @@ class CfgVehicles {
   class O_MBT_02_arty_base_F;
   class O_APC_Wheeled_02_base_F;
   class O_APC_Tracked_02_base_F;
+  class Truck_03_base_F;
 
   ////////////////////////////////////
 
@@ -80,31 +88,10 @@ class CfgVehicles {
   };
 
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
-    displayName = "Merkava Mk IV";/*
-    transportSoldiers = 0;
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        magazines[] = {};
-      };
-    };*/
+    displayName = "Merkava Mk IV";
   };
-  /*
-  class AGM_B_MBT_01_cannon_APC: B_MBT_01_cannon_F {
-    displayName = "Merkava Mk IV (APC)";
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        magazines[] = {};
-      };
-    };
-  };
-  */
   class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
-    displayName = "Merkava LIC";/*
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        magazines[] = {};
-      };
-    };*/
+    displayName = "Merkava LIC";
   };
   class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
     displayName = "Sholef";
@@ -260,5 +247,27 @@ class CfgVehicles {
   };
   class O_Truck_02_medical_F: O_Truck_02_box_F {
     displayName = "Kamaz Medical";
+  };
+
+  class O_Truck_03_transport_F: Truck_03_base_F {
+    displayName = "Typhoon";
+  };
+  class O_Truck_03_covered_F: Truck_03_base_F {
+    displayName = "Typhoon (covered)";
+  };
+  class O_Truck_03_device_F: Truck_03_base_F {
+    displayName = "Typhhon (Device)";
+  };
+  class O_Truck_03_ammo_F: Truck_03_base_F {
+    displayName = "Typhoon Ammo";
+  };
+  class O_Truck_03_fuel_F: Truck_03_base_F {
+    displayName = "Typhoon Fuel";
+  };
+  class O_Truck_03_repair_F: Truck_03_base_F {
+    displayName = "Typhoon Repair";
+  };
+  class O_Truck_03_medical_F: Truck_03_base_F {
+    displayName = "Typhoon Medical";
   };
 };
