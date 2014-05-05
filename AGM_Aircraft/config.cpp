@@ -4,16 +4,19 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
-                          A3_Air_F,
-                          A3_Air_F_Heli_Light_01,
-                          A3_Air_F_Heli_Light_02,
-                          A3_Air_F_Beta,
-                          A3_Air_F_Beta_Heli_attack_01,
-                          A3_Air_F_Beta_Heli_Attack_02,
-                          A3_Air_F_Beta_Heli_Transport_01,
-                          A3_Air_F_Beta_Heli_Transport_02,
-                          A3_Air_F_Gamma_Plane_Fighter_03
-                        };
+      A3_Air_F,
+      A3_Air_F_Heli_Light_01,
+      A3_Air_F_Heli_Light_02,
+      A3_Air_F_Beta,
+      A3_Air_F_Beta_Heli_attack_01,
+      A3_Air_F_Beta_Heli_Attack_02,
+      A3_Air_F_Beta_Heli_Transport_01,
+      A3_Air_F_Beta_Heli_Transport_02,
+      A3_Air_F_Gamma_Plane_Fighter_03,
+      A3_Air_F_EPC_Plane_CAS_01,
+      A3_Air_F_EPC_Plane_CAS_02,
+      A3_Air_F_EPC_Plane_Fighter_03
+    };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -84,8 +87,8 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {};
       class RightDoorGun;
     };
-
   };
+  class Plane_CAS_01_base_F;
 
   // INDEP Inheritance
   class I_Heli_light_03_base_F: Helicopter_Base_F {
@@ -118,6 +121,7 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+  class Plane_CAS_02_base_F;
 
   ////////////////////////////////////////////////////////////
 
@@ -166,6 +170,10 @@ class CfgVehicles {
         canEject = 1;
       };
     };
+  };
+  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+    displayName = "A-12 Warthog";
+    lockDetectionSystem = 16;
   };
 
   // INDEP
@@ -254,5 +262,9 @@ class CfgVehicles {
         canEject = 1;
       };
     };
+  };
+  class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
+    displayName = "Yak-130";
+    lockDetectionSystem = 16;
   };
 };
