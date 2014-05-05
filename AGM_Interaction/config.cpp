@@ -20,6 +20,7 @@ class CfgFunctions {
       class sortOptionsByPriority {};
       class takeBackpack {};
       class tapShoulder {};
+      class openDoor {};
     };
   };
 };
@@ -48,6 +49,15 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 1;
     alt = 0;
+  };
+  class openDoor {
+    displayName = "Open / cloose Door";
+    condition = "true";
+    statement = "call AGM_Interaction_fnc_openDoor";
+    key = 20;
+    shift = 0;
+    control = 0;
+    alt = 1;
   };
 };
 
