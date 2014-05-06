@@ -52,8 +52,10 @@ class AGM_Core_Default_Keys {
   };
   class openDoor {
     displayName = "Open / cloose Door";
-    condition = "true";
+    condition = "!AGM_Interaction_isOpeningDoor";
     statement = "call AGM_Interaction_fnc_openDoor";
+    conditionUp = "AGM_Interaction_isOpeningDoor";
+    statementUp = "AGM_Interaction_isOpeningDoor = false";
     key = 20;
     shift = 0;
     control = 0;
