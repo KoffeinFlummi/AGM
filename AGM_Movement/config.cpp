@@ -85,6 +85,27 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };
+    class AmovPercMwlkSlowWrflDfl: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDfr: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDb: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDbl: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDbr: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDl: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
+    class AmovPercMwlkSlowWrflDr: AmovPercMwlkSlowWrflDf {
+      leftHandIKCurve[] = {};
+    };
 
     class TestDance: AmovPercMstpSrasWrflDnon {
       file = "\AGM_Movement\anim\agm_dancing.rtm";
