@@ -128,7 +128,7 @@ class CfgVehicles {
   class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
 
   class Truck_03_base_F: Truck_F {
-    fuelCapacity = 900 * FUEL_FACTOR; // NO. MUTHERFUCKING. DATA.
+    fuelCapacity = 900 * FUEL_FACTOR; // NO. MUTHAFUCKING. DATA.
   };
 
   ////////////////////////////////////
