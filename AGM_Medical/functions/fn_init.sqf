@@ -31,6 +31,11 @@ AGM_unitInit = {
   _this setVariable ["AGM_Unconscious", false, true]; // figure it out
   _this setVariable ["AGM_Dragging", objNull];
   _this setVariable ["AGM_Carrying", objNull];
+  
+  if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
+    player setVariable ["tf_unable_to_use_radio", false, true];
+    player setVariable ["tf_voiceVolume", 1, true];
+  };
 };
 
 AGM_itemCheck = {

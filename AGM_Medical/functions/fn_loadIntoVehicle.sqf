@@ -30,7 +30,7 @@ _unit spawn {
       _this moveInCargo _vehicle;
     };
     sleep 0.5;
-    _this switchMove ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
+    _this switchMove ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _this) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
   }, _this] call CBA_fnc_globalExecute;
 };
 
