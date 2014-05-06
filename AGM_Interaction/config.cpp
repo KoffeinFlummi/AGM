@@ -14,13 +14,13 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
-      class openMenu {};
-      class openMenuSelf {};
-      class putBackpack {};
-      class sortOptionsByPriority {};
-      class takeBackpack {};
-      class tapShoulder {};
-      class openDoor {};
+      class openMenu;
+      class openMenuSelf;
+      class putBackpack;
+      class sortOptionsByPriority;
+      class takeBackpack;
+      class tapShoulder;
+      class openDoor;
     };
   };
 };
@@ -79,7 +79,7 @@ class CfgVehicles {
       class AGM_TapShoulder {
         displayName = "$STR_AGM_TapShoulder";
         distance = 4;
-        condition = "playerSide == side AGM_Interaction_Target";
+        condition = "playerSide == side AGM_Interaction_Target and alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
         statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 1;
         priority = 0.1;
