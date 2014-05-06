@@ -14,7 +14,7 @@
 
 private ["_interval", "_maxDistance", "_minDistance", "_position", "_direction", "_distance", "_iteration", "_laser", "_line"];
 
-_interval = (_this select 0) max 1;
+_interval = _this select 0;
 _maxDistance = _this select 1;
 _minDistance = _this select 2;
 

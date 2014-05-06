@@ -29,22 +29,47 @@ class CfgPatches {
   };
 };
 
+#define FUEL_FACTOR 0.18
+// fuel capacity = range in km * FUEL_FACTOR
 
 class CfgVehicles {
+  // Inheritance
+  class Car_F;
+  class Wheeled_APC_F: Car_F {};
+  class Truck_F: Car_F {};
+  class Tank_F;
+
   // BLUFOR Inheritance
-  class MRAP_01_base_F;
+  class MRAP_01_base_F: Car_F {
+    fuelCapacity = 510 * FUEL_FACTOR;
+  };
   class MRAP_01_hmg_base_F: MRAP_01_base_F {};
   class MRAP_01_gmg_base_F: MRAP_01_hmg_base_F {};
-  class B_MBT_01_base_F;
-  class B_MBT_01_mlrs_base_F;
-  class B_MBT_01_arty_base_F;
-  class B_APC_Wheeled_01_base_F;
-  class B_APC_Tracked_01_base_F;
-  class Truck_01_base_F;
+
+  class MBT_01_base_F: Tank_F {
+    fuelCapacity = 500 * FUEL_FACTOR;
+  };
+  class B_MBT_01_base_F: MBT_01_base_F {};
+  class B_MBT_01_mlrs_base_F: MBT_01_base_F {};
+  class B_MBT_01_arty_base_F: MBT_01_base_F {};
+
+  class APC_Wheeled_01_base_F: Wheeled_APC_F {
+    fuelCapacity = 800 * FUEL_FACTOR;
+  };
+  class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
+
+  class APC_Tracked_01_base_F: Tank_F {
+    fuelCapacity = 500 * FUEL_FACTOR;
+  };
+  class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {};
+
+  class Truck_01_base_F: Truck_F {
+    fuelCapacity = 644 * FUEL_FACTOR;
+  };
 
   // INDEP Inheritance
-  class Car_F;
   class MRAP_03_base_F: Car_F {
+    fuelCapacity = 860 * FUEL_FACTOR;
     class Turrets {
       class CommanderTurret;
     };
@@ -59,20 +84,52 @@ class CfgVehicles {
       class CommanderTurret: CommanderTurret {};
     };
   };
-  class I_MBT_03_base_F;
-  class I_APC_Wheeled_03_base_F;
-  class I_APC_tracked_03_base_F;
-  class Truck_02_base_F;
+
+  class MBT_03_base_F;
+  class I_MBT_03_base_F: MBT_03_base_F {
+    fuelCapacity = 550 * FUEL_FACTOR;
+  };
+
+  class APC_Wheeled_03_base_F;
+  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {
+    fuelCapacity = 700 * FUEL_FACTOR;
+  };
+
+  class APC_Tracked_03_base_F;
+  class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {
+    fuelCapacity = 660 * FUEL_FACTOR;
+  };
+
+  class Truck_02_base_F: Truck_F {
+    fuelCapacity = 1100 * FUEL_FACTOR;
+  };
 
   // OPFOR Inheritance
-  class MRAP_02_base_F;
+  class MRAP_02_base_F: Car_F {
+    fuelCapacity = 500 * FUEL_FACTOR; // couldn't find any data for the punisher
+  };
   class MRAP_02_hmg_base_F: MRAP_02_base_F {};
   class MRAP_02_gmg_base_F: MRAP_02_hmg_base_F {};
-  class O_MBT_02_base_F;
-  class O_MBT_02_arty_base_F;
-  class O_APC_Wheeled_02_base_F;
-  class O_APC_Tracked_02_base_F;
-  class Truck_03_base_F;
+
+  class MBT_02_base_F: Tank_F {
+    fuelCapacity = 600 * FUEL_FACTOR; // again, couldn't find proper data
+  };
+  class O_MBT_02_base_F: MBT_02_base_F {};
+  class O_MBT_02_arty_base_F: MBT_02_base_F {};
+
+  class APC_Wheeled_02_base_F: Wheeled_APC_F {
+    fuelCapacity = 700 * FUEL_FACTOR;
+  };
+  class O_APC_Wheeled_02_base_F: APC_Wheeled_02_base_F {};
+
+  class APC_Tracked_02_base_F: Tank_F {
+    fuelCapacity = 600 * FUEL_FACTOR; // NO FUCKING DATA
+  };
+  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
+
+  class Truck_03_base_F: Truck_F {
+    fuelCapacity = 900 * FUEL_FACTOR; // NO. MUTHAFUCKING. DATA.
+  };
 
   ////////////////////////////////////
 
