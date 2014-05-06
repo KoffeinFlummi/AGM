@@ -29,7 +29,7 @@ class CfgPatches {
   };
 };
 
-#define FUEL_FACTOR 0.18
+#define FUEL_FACTOR 0.165
 // fuel capacity = range in km * FUEL_FACTOR
 
 class CfgVehicles {
@@ -154,15 +154,13 @@ class CfgVehicles {
     displayName = "Sholef";
   };
   class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {
-    displayName = "Seara";
-    // Fictional name, (probably wrong) hebrew translation of storm.
+    displayName = "Seara"; // Fictional name, (probably wrong) hebrew translation of storm.
   };
   class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
     displayName = "Namer";
   };
   class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
-    displayName = "Bardelas";
-    // Fictional name, (probably wrong) hebrew translation of cheetah.
+    displayName = "Bardelas"; // Fictional name, (probably wrong) hebrew translation of cheetah.
   };
   class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
     displayName = "Patria AMV";
@@ -241,10 +239,10 @@ class CfgVehicles {
   };
 
   class I_Truck_02_transport_F: Truck_02_base_F {
-    displayName = "Kamaz";
+    displayName = "Kamaz Transport";
   };
   class I_Truck_02_covered_F: Truck_02_base_F {
-    displayName = "Kamaz (Covered)";
+    displayName = "Kamaz Transport (Covered)";
   };
   class I_Truck_02_ammo_F: Truck_02_base_F {
     displayName = "Kamaz Ammo";
@@ -288,10 +286,10 @@ class CfgVehicles {
   };
 
   class O_Truck_02_transport_F: Truck_02_base_F {
-    displayName = "Kamaz";
+    displayName = "Kamaz Transport";
   };
   class O_Truck_02_covered_F: Truck_02_base_F {
-    displayName = "Kamaz (Covered)";
+    displayName = "Kamaz Transport (Covered)";
   };
   class O_Truck_02_Ammo_F: Truck_02_base_F {
     displayName = "Kamaz Ammo";
@@ -307,13 +305,13 @@ class CfgVehicles {
   };
 
   class O_Truck_03_transport_F: Truck_03_base_F {
-    displayName = "Typhoon";
+    displayName = "Typhoon Transport";
   };
   class O_Truck_03_covered_F: Truck_03_base_F {
-    displayName = "Typhoon (covered)";
+    displayName = "Typhoon Transport (covered)";
   };
   class O_Truck_03_device_F: Truck_03_base_F {
-    displayName = "Typhhon (Device)";
+    displayName = "Typhhon Device";
   };
   class O_Truck_03_ammo_F: Truck_03_base_F {
     displayName = "Typhoon Ammo";
