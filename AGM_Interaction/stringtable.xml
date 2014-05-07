@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BWRealism">
+  <Package name="Interaction">
+
+    <Key ID="STR_AGM_InteractionMenu">
+      <English>Interaction Menu</English>
+      <German>Interaktionsmenü</German>
+    </Key>
+    <Key ID="STR_AGM_InteractionMenuSelf">
+      <EnglisH>Interaction Menu (Self)</English>
+      <German>Interaktionsmenü (Selbst)</German>
+    </Key>
+
+    <Key ID="STR_AGM_JoinGroup">
+      <English>Join group</English>
+      <German>Gruppe beitreten</German>
+    </Key>
+    <Key ID="STR_AGM_LeaveGroup">
+      <English>Leave group</English>
+      <German>Gruppe verlassen</German>
+    </Key>
+    <Key ID="STR_AGM_BecomeLeader">
+      <English>Become Leader</English>
+      <German>Grp.-führung übern.</German>
+    </Key>
+    <Key ID="STR_AGM_Dance">
+      <English>DANCE!</English>
+      <German>TANZEN!</German>
+    </Key>
+    <Key ID="STR_AGM_StopDancing">
+      <English>Stop Dancing</English>
+      <German>Tanzen abbrechen</German>
+    </Key>
+
+    <Key ID="STR_AGM_Gestures">
+      <English>Gestures >></English>
+      <German>Gesten >></German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Attack">
+      <English>Attack</English>
+      <German>Angreifen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Advance">
+      <English>Advance</English>
+      <German>Vordringen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Go">
+      <English>Go</English>
+      <German>Los</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Follow">
+      <English>Follow</English>
+      <German>Folgen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Point">
+      <English>Point</English>
+      <German>Zeigen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Up">
+      <English>Up</English>
+      <German>Aufstehen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Cover">
+      <English>Cover</English>
+      <German>Deckung</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Cease_Fire">
+      <English>Cease Fire</English>
+      <German>Feuer einstellen</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Freeze">
+      <English>Freeze</English>
+      <German>Keine Bewegung</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Hi">
+      <English>Hi</English>
+      <German>Hallo</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_Yes">
+      <English>Yes</English>
+      <German>Ja</German>
+    </Key>
+    <Key ID="STR_AGM_Gestures_No">
+      <English>No</English>
+      <German>Nein</German>
+    </Key>
+
+    <Key ID="STR_AGM_WeaponOnBack">
+      <English>Put weapon on back</English>
+      <German>Waffe wegstecken</German>
+    </Key>
+    <Key ID="STR_AGM_TapShoulder">
+      <English>Tap shoulder</English>
+      <German>Auf Schulter klopfen</German>
+    </Key>
+
+    <Key ID="STR_AGM_BackpackVentralTake">
+      <English>Take (Ventral)</English>
+      <German>Aufnehmen (Ventral)</German>
+    </Key>
+    <Key ID="STR_AGM_BackpackVentralPut">
+      <English>Take Off Backpack</English>
+      <German>Rucksack ablegen</German>
+    </Key>
+
+  </Package>
+</Project>
