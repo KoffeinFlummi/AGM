@@ -50,8 +50,10 @@ class CfgVehicles {
     fuelCapacity = 500 * FUEL_FACTOR;
   };
   class B_MBT_01_base_F: MBT_01_base_F {};
-  class B_MBT_01_mlrs_base_F: MBT_01_base_F {};
-  class B_MBT_01_arty_base_F: MBT_01_base_F {};
+  class MBT_01_arty_base_F: MBT_01_base_F {};
+  class B_MBT_01_arty_base_F: MBT_01_arty_base_F {};
+  class MBT_01_mlrs_base_F: MBT_01_base_F {};
+  class B_MBT_01_mlrs_base_F: MBT_01_mlrs_base_F {};
 
   class APC_Wheeled_01_base_F: Wheeled_APC_F {
     fuelCapacity = 800 * FUEL_FACTOR;
@@ -115,7 +117,8 @@ class CfgVehicles {
     fuelCapacity = 600 * FUEL_FACTOR; // again, couldn't find proper data
   };
   class O_MBT_02_base_F: MBT_02_base_F {};
-  class O_MBT_02_arty_base_F: MBT_02_base_F {};
+  class MBT_02_arty_base_F: MBT_02_base_F {};
+  class O_MBT_02_arty_base_F: MBT_02_arty_base_F {};
 
   class APC_Wheeled_02_base_F: Wheeled_APC_F {
     fuelCapacity = 700 * FUEL_FACTOR;
