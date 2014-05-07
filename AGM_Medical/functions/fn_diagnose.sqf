@@ -1,14 +1,14 @@
 /*
-By: KoffeinFlummi
-
-Diagnoses a unit.
-
-Arguments:
-0: Unit that is diagnosed (Object)
-
-Return value:
-none
-*/
+ * By: KoffeinFlummi
+ * 
+ * Diagnoses a unit.
+ * 
+ * Arguments:
+ * 0: Unit that is diagnosed (Object)
+ * 
+ * Return value:
+ * none
+ */
 
 #define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDnon_medic1"
 

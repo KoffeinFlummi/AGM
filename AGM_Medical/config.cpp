@@ -4,8 +4,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    //requiredAddons[] = {AGM_Interaction, Extended_EventHandlers};
-    requiredAddons[] = {Extended_EventHandlers};
+    requiredAddons[] = {AGM_Core, AGM_Interaction, Extended_EventHandlers, A3_Anims_F, A3_Anims_F_Config_Sdr, A3_Weapons_F_Items};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -363,14 +362,14 @@ class CfgWeapons {
   class InventoryItem_Base_F;
 
   // ITEMS
-  class FirstAidKit {
+  class FirstAidKit: ItemCore {
     type = 0;
     class ItemInfo: InventoryItem_Base_F {
       mass = 4;
       type = 201;
     };
   };
-  class Medikit {
+  class Medikit: ItemCore {
     type = 0;
     class ItemInfo: InventoryItem_Base_F {
       mass = 60;
@@ -550,5 +549,97 @@ class CfgWeapons {
       armor = 8;
     };
   };
+};
+
+class CfgMovesBasic {
+  class Actions;
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class Actions: Actions {
+    class MoveWithInjuredMan;
+
+    class MoveWithInjuredManDragger: MoveWithInjuredMan {
+      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
+      WalkB        = "AcinPknlMwlkSrasWrflDb";
+      WalkLB       = "AcinPknlMwlkSrasWrflDb";
+      WalkRB       = "AcinPknlMwlkSrasWrflDb";
+      SlowB        = "AcinPknlMwlkSrasWrflDb";
+      SlowLB       = "AcinPknlMwlkSrasWrflDb";
+      SlowRB       = "AcinPknlMwlkSrasWrflDb";
+      TactB        = "AcinPknlMwlkSrasWrflDb";
+      TactLB       = "AcinPknlMwlkSrasWrflDb";
+      TactRB       = "AcinPknlMwlkSrasWrflDb";
+    };
+    class MoveWithInjuredManDraggerNon: MoveWithInjuredManDragger {
+      /*
+      PlayerTactB  = "AcinPknlMwlkSnonWnonDb";
+      PlayerTactLB = "AcinPknlMwlkSnonWnonDb";
+      PlayerTactRB = "AcinPknlMwlkSnonWnonDb";
+      TactB        = "AcinPknlMwlkSnonWnonDb";
+      TactLB       = "AcinPknlMwlkSnonWnonDb";
+      TactRB       = "AcinPknlMwlkSnonWnonDb";
+      */
+      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
+      WalkB        = "AcinPknlMwlkSrasWrflDb";
+      WalkLB       = "AcinPknlMwlkSrasWrflDb";
+      WalkRB       = "AcinPknlMwlkSrasWrflDb";
+      SlowB        = "AcinPknlMwlkSrasWrflDb";
+      SlowLB       = "AcinPknlMwlkSrasWrflDb";
+      SlowRB       = "AcinPknlMwlkSrasWrflDb";
+      TactB        = "AcinPknlMwlkSrasWrflDb";
+      TactLB       = "AcinPknlMwlkSrasWrflDb";
+      TactRB       = "AcinPknlMwlkSrasWrflDb";
+    };
+    class MoveWithInjuredManDraggerPst: MoveWithInjuredManDragger {
+      /*
+      PlayerTactB  = "AcinPknlMwlkSnonWpstDb";
+      PlayerTactLB = "AcinPknlMwlkSnonWpstDb";
+      PlayerTactRB = "AcinPknlMwlkSnonWpstDb";
+      TactB        = "AcinPknlMwlkSnonWpstDb";
+      TactLB       = "AcinPknlMwlkSnonWpstDb";
+      TactRB       = "AcinPknlMwlkSnonWpstDb";
+      */
+      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
+      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
+      WalkB        = "AcinPknlMwlkSrasWrflDb";
+      WalkLB       = "AcinPknlMwlkSrasWrflDb";
+      WalkRB       = "AcinPknlMwlkSrasWrflDb";
+      SlowB        = "AcinPknlMwlkSrasWrflDb";
+      SlowLB       = "AcinPknlMwlkSrasWrflDb";
+      SlowRB       = "AcinPknlMwlkSrasWrflDb";
+      TactB        = "AcinPknlMwlkSrasWrflDb";
+      TactLB       = "AcinPknlMwlkSrasWrflDb";
+      TactRB       = "AcinPknlMwlkSrasWrflDb";
+    };
+  };
+
+  /*
+  class States {
+  };
+  */
 
 };

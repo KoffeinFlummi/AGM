@@ -65,7 +65,6 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgVehicles {
-
   // PROVIDE DEFAULT VALUES FOR OTHER MODS
   class All;
   class AllVehicles: All {

@@ -33,7 +33,31 @@ _angle = _angleTarget;
 _posTargetX = (cos _angleTarget) * _distance;
 _posTargetY = (sin _angleTarget) * _distance;
 
+/*
 while {_angle <= _maxElev} do {
+  _posX = 0;
+  _posY = 0;
+  _velocityX = (cos _angle) * _initSpeed;
+  _velocityY = (sin _angle) * _initSpeed;
+
+  // trace the path of the bullet
+  for "_i" from 1 to ((floor (_timeToLive / _simulationStep)) + 1) do {
+    _posX = _posX + _velocityX * _simulationStep;
+    _posY = _posY + _velocityY * _simulationStep;
+    if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
+    _velocityMagnitude = sqrt (_velocityX^2 + _velocityY^2);
+    _velocityX = _velocityX + _velocityX * _velocityMagnitude * _airFriction * _simulationStep;
+    _velocityY = _velocityY + _velocityY * _velocityMagnitude * _airFriction * _simulationStep - 9.81 * _simulationStep;
+  };
+
+  if (_posX >= _posTargetX and _posY >= _posTargetY) exitWith {};
+  _angle = _angle + 0.05;
+};
+*/
+_min = _angle;
+_max = _maxElev;
+while {true} do {
+  
   _posX = 0;
   _posY = 0;
   _velocityX = (cos _angle) * _initSpeed;

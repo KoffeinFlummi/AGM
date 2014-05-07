@@ -10,7 +10,7 @@
  * none
  */
 
-#define DRAGGINGMOVE "AcinPknlMstpSrasWrflDnon"
+#define DRAGGINGACTION "grabDrag"
 #define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_still"
 
 _this spawn {
@@ -20,42 +20,18 @@ _this spawn {
   player setVariable ["AGM_Dragging", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
 
-  player playMoveNow DRAGGINGMOVE;
-  waitUntil {animationState player == DRAGGINGMOVE};
+  player playActionNow DRAGGINGACTION;
+
+  sleep 1.8;
 
   _unit attachTo [player, [0, 1.1, 0.092]];
   [-2, {
     _this setDir 180;
-  }, _unit] call CBA_fnc_globalExecute;
-  _unit setPos (getPos _unit); // force Arma to synchronize direction
-
-  [-2, {
+    _this setPos (getPos _this);
     _this switchMove DRAGGEDMOVE;
   }, _unit] call CBA_fnc_globalExecute;
 
   waitUntil {sleep 1; vehicle player != player or isNull (player getVariable "AGM_Dragging") or damage player >= 1 or damage _unit >= 1};
   if (isNull (player getVariable "AGM_Dragging")) exitWith {};
-
-  detach _unit;
-  [-2, {
-    _this switchMove "Unconscious";
-  }, _unit] call CBA_fnc_globalExecute;
-
-  if (vehicle player == player) then {
-    [-2, {
-      _this switchMove "";
-    }, player] call CBA_fnc_globalExecute;
-  };
-
-  _unit setVariable ["AGM_Treatable", true, true];
-
-  [-2, {
-    if (local _this) then {
-      0 spawn {
-        _this enableSimulation true;
-        sleep 3.8;
-        _this enableSimulation false;
-      };
-    };
-  }, _unit] call CBA_fnc_globalExecute;
+  [(player getVariable "AGM_Dragging")] call AGM_Medical_fnc_release;
 };
