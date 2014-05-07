@@ -1,5 +1,9 @@
 // by commy2
 
+#define THRESHOLD_1 0.5
+#define THRESHOLD_2 0.8
+#define THRESHOLD_3 1.0
+
 _unit = _this select 0;
 _weapon = _this select 1;
 _projectile = _this select 5;
@@ -25,31 +29,48 @@ _time = time;
 
 player setVariable [_string, [_temperature, _time], false];
 
-if (_temperature > 0.8) then {
-	_intensity = _temperature * 0.05 max 0.15;
-	_position = getPosATL _projectile;
-	drop [
-		["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
-		"",
-		"Billboard",
-		1,
-		1.2,
-		_position,
-		[0, 0, 0.25],
-		0,
-		1.275,
-		1,
-		0.025,
-		[0.28, 0.33, 0.37],
-		[[0.7, 0.7, 0.7, _intensity]],
-		[0.2],
-		1,
-		0.04,
-		"",
-		"",
-		""
+if (_temperature > THRESHOLD_1) then {
+	_velocity = velocity _projectile;
+	_velocityX = _velocity select 0;
+	_velocityY = _velocity select 1;
+	_velocityZ = _velocity select 2;
+
+	_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Dispersion");
+	_random = _dispersion * (_temperature - THRESHOLD_1);
+
+	_projectile setVelocity [
+		_velocityX * (1 - _random + 2 * random _random),
+		_velocityY * (1 - _random + 2 * random _random),
+		_velocityZ * (1 - _random + 2 * random _random)
 	];
-	if (_temperature > 1 + random 10) then {
-		[_weapon] spawn AGM_Overheat_weaponJamming;
+
+	if (_temperature > THRESHOLD_2) then {
+		_intensity = (_temperature - THRESHOLD_2) * 0.05 max 0.15;
+		_position = getPosATL _projectile;
+		drop [
+			["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
+			"",
+			"Billboard",
+			1,
+			1.2,
+			_position,
+			[0, 0, 0.25],
+			0,
+			1.275,
+			1,
+			0.025,
+			[0.28, 0.33, 0.37],
+			[[0.6, 0.6, 0.6, _intensity]],
+			[0.2],
+			1,
+			0.04,
+			"",
+			"",
+			""
+		];
+
+		if (_temperature > THRESHOLD_3 + random 10) then {
+			[_weapon] spawn AGM_Overheat_weaponJamming;
+		};
 	};
 };

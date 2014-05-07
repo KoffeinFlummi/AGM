@@ -25,6 +25,14 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_giveSpareBarrel {
+      Init = "_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1) then {for '_a' from 0 to 4 do {(_this select 0) addItem 'AGM_SpareBarrel'}}}"; 
+    };
+  };
+};
+
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheat {
@@ -45,50 +53,55 @@ class AGM_Core_Default_Keys {
   };
 };
 
-/*class CfgVehicles {
+class CfgVehicles {
   class Man;
-  class Land_CargoBox_V1_F;
-  class ReammoBox;
 
   class CAManBase: Man {
-    class AGM_Actions {
-      class AGM_JoinGroup {
-        displayName = "$STR_AGM_JoinGroup";
-        distance = 4;
-        condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
-        statement = "[player] joinSilent group AGM_Interaction_Target;";
-        showDisabled = 1;
-        priority = -1;
-      };
-      class AGM_TapShoulder {
-        displayName = "$STR_AGM_TapShoulder";
-        distance = 4;
-        condition = "playerSide == side AGM_Interaction_Target and alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
-        statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
-        showDisabled = 1;
-        priority = 0.1;
+    class AGM_SelfActions {
+      class AGM_SwapBarrel {
+        displayName = "Swap barrel";
+        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1}";
+        statement = "[currentWeapon player] spawn AGM_Overheat_swapBarrel";
+        showDisabled = 0;
+        priority = 4;
       };
     };
   };
-};*/
+};
 
 class CfgWeapons {
-  class PistolCore;
-  class RifleCore;
-  class MGunCore;
+  class Rifle;
 
-  class Pistol: PistolCore {
+  class HandGunBase: Rifle {
     AGM_Overheat_Increment = 0.03;
     AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.02;
   };
 
-  class Rifle: RifleCore {
+  class Rifle_Base_F: Rifle {
     AGM_Overheat_Increment = 0.012;
     AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.005;
   };
 
-  class MGun: MGunCore {
+  class Rifle_Long_Base_F: Rifle_Base_F {
+    AGM_Overheat_allowSwapBarrel = 1;
     AGM_Overheat_Increment = 0.01;
     AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.01;
+  };
+
+  class ItemCore;
+  class InventoryItem_Base_F;
+  class AGM_SpareBarrel: ItemCore {
+    displayname = "Spare barrel";
+    descriptionshort = "Use to swap barrel";
+    //model = "";
+    picture = "\AGM_Overheat\UI\spare_barrel_ca.paa";
+    scope = 2;
+    class ItemInfo: InventoryItem_Base_F {
+      mass = 5;
+      type = 201;
+    };
   };
 };
