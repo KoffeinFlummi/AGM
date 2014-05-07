@@ -5,7 +5,7 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     //requiredAddons[] = {AGM_Interaction, Extended_EventHandlers};
-    requiredAddons[] = {Extended_EventHandlers};
+    requiredAddons[] = {AGM_Core, AGM_Interaction, Extended_EventHandlers};
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
