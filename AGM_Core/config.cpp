@@ -46,6 +46,7 @@ class CfgFunctions {
       class isTurnedOut;
       class isInBuilding;
       class displayText;
+      class progressBar;
     };
   };
 };
@@ -65,3 +66,4 @@ class Extended_PostInit_EventHandlers {
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
+#include <ProgressScreen.hpp>

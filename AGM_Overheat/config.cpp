@@ -28,7 +28,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_giveSpareBarrel {
-      Init = "_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1) then {for '_a' from 0 to 4 do {(_this select 0) addItem 'AGM_SpareBarrel'}}}"; 
+      Init = "_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1) then {(_this select 0) addItem 'AGM_SpareBarrel'}}"; 
     };
   };
 };
@@ -61,7 +61,7 @@ class CfgVehicles {
       class AGM_SwapBarrel {
         displayName = "Swap barrel";
         condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1}";
-        statement = "[currentWeapon player] spawn AGM_Overheat_swapBarrel";
+        statement = "[currentWeapon player] call AGM_Overheat_swapBarrel";
         showDisabled = 0;
         priority = 4;
       };
