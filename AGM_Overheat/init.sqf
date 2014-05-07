@@ -1,3 +1,8 @@
+// by commy2
+
+AGM_Overheat_weaponJamming = compile preprocessFileLineNumbers "\AGM_overheat\scripts\weaponJamming.sqf";
+
+/*
 0 spawn {
   waitUntil {!isNull (findDisplay 46)};
   (findDisplay 46) displayAddEventHandler ["KeyDown", "[_this select 1, _this select 2, _this select 3] call AGM_Scripts_keyInput"];
@@ -67,3 +72,4 @@ AGM_weaponOverheat = {
 };
 
 player addEventHandler ["fired", "_this call AGM_weaponOverheat"];
+*/
