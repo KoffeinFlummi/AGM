@@ -17,13 +17,15 @@ _time = _overheat select 1;
 
 _temperature = _temperature + _increment - _cooldown * (time - _time) max _increment;
 
-hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
+if (AGM_Debug) then {
+	hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
+};
 
 _time = time;
 
 player setVariable [_string, [_temperature, _time], false];
 
-if (_temperature > 1) then {
+if (_temperature > 0.8) then {
 	_intensity = _temperature * 0.05 max 0.15;
 	_position = getPosATL _projectile;
 	drop [
@@ -39,7 +41,7 @@ if (_temperature > 1) then {
 		1,
 		0.025,
 		[0.28, 0.33, 0.37],
-		[[0.8, 0.8, 0.8, _intensity]],
+		[[0.7, 0.7, 0.7, _intensity]],
 		[0.2],
 		1,
 		0.04,
@@ -48,6 +50,6 @@ if (_temperature > 1) then {
 		""
 	];
 	if (_temperature > 1 + random 10) then {
-		0 spawn AGM_Overheat_weaponJamming;
+		[_weapon] spawn AGM_Overheat_weaponJamming;
 	};
 };

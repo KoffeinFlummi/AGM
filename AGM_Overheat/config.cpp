@@ -33,26 +33,17 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-/*class AGM_Core_Default_Keys {
-  class increaseNVGBrightness {
-    displayName = "Increase NVG Brightness";
-    condition = "true";
-    statement = "[_vehicle] call AGM_NightVision_fnc_increaseNVGBrightness";
-    key = 201;
-    shift = 0;
-    control = 1;
+class AGM_Core_Default_Keys {
+  class clearJam {
+    displayName = "Unjam weapon";
+    condition = "AGM_isWeaponJammed";
+    statement = "call AGM_Overheat_clearJam";
+    key = 19;
+    shift = 1;
+    control = 0;
     alt = 0;
   };
-  class decreaseNVGBrightness {
-    displayName = "Decrease NVG Brightness";
-    condition = "true";
-    statement = "[_vehicle] call AGM_NightVision_fnc_decreaseNVGBrightness";
-    key = 209;
-    shift = 0;
-    control = 1;
-    alt = 0;
-  };
-};*/
+};
 
 /*class CfgVehicles {
   class Man;
