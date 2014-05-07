@@ -76,14 +76,14 @@ class CfgWeapons {
     AGM_JamChance = 0.005;
     AGM_Overheat_Increment = 0.03;
     AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.02;
+    AGM_Overheat_Dispersion = 0.04;
   };
 
   class Rifle_Base_F: Rifle {
     AGM_JamChance = 0.001;
     AGM_Overheat_Increment = 0.012;
     AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.005;
+    AGM_Overheat_Dispersion = 0.01;
   };
 
   class Rifle_Long_Base_F: Rifle_Base_F {
@@ -91,7 +91,7 @@ class CfgWeapons {
     AGM_Overheat_allowSwapBarrel = 1;
     AGM_Overheat_Increment = 0.01;
     AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.01;
+    AGM_Overheat_Dispersion = 0.015;
   };
 
   class ItemCore;
