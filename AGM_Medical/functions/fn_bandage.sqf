@@ -19,8 +19,6 @@
 #define LEGDAMAGETHRESHOLD2 2
 #define ARMDAMAGETHRESHOLD 2
 
-player removeItem "AGM_Bandage";
-
 _this spawn {
   _unit = _this select 0;
   _selection = _this select 1;
@@ -37,6 +35,7 @@ _this spawn {
 
   // animation
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1";
+  player removeItem "AGM_Bandage";
 
   // countdown
   _i = _healtime;
@@ -44,15 +43,13 @@ _this spawn {
     hintSilent format ["Bandaging %1:\n%2", _selection, _i];
     _i = _i - 1;
     sleep 1;
+    if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
   };
   hintSilent format ["Bandaging %1:\nDone", _selection];
   sleep 1;
   hintSilent "";
 
   player setVariable ["AGM_CanTreat", true, false];
-
-  // is unit still in range?
-  if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
   // change damage of body part
   _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
@@ -76,6 +73,7 @@ _this spawn {
     _unit setDamage 0;
   };
 
+  /* temporarily disabled
   if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
     if (_unit == player) then {
       "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -83,4 +81,5 @@ _this spawn {
       "AGM_Medical" call AGM_Interaction_fnc_openMenu;
     }
   };
+  */
 };
