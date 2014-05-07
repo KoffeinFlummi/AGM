@@ -74,3 +74,9 @@ if (_temperature > THRESHOLD_1) then {
 		};
 	};
 };
+
+_jamChance = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_JamChance");
+
+if (_jamChance > random 1) then {
+	[_weapon] spawn AGM_Overheat_weaponJamming;
+};

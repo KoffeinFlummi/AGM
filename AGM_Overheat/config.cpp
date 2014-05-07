@@ -43,7 +43,7 @@ class Extended_Fired_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class clearJam {
-    displayName = "Unjam weapon";
+    displayName = "$STR_AGM_UnjamWeapon";
     condition = "AGM_isWeaponJammed";
     statement = "call AGM_Overheat_clearJam";
     key = 19;
@@ -59,7 +59,7 @@ class CfgVehicles {
   class CAManBase: Man {
     class AGM_SelfActions {
       class AGM_SwapBarrel {
-        displayName = "Swap barrel";
+        displayName = "$STR_AGM_SwapBarrel";
         condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheat_allowSwapBarrel') == 1}";
         statement = "[currentWeapon player] call AGM_Overheat_swapBarrel";
         showDisabled = 0;
@@ -73,18 +73,21 @@ class CfgWeapons {
   class Rifle;
 
   class HandGunBase: Rifle {
+    AGM_JamChance = 0.005;
     AGM_Overheat_Increment = 0.03;
     AGM_Overheat_Cooldown = 0.002;
     AGM_Overheat_Dispersion = 0.02;
   };
 
   class Rifle_Base_F: Rifle {
+    AGM_JamChance = 0.001;
     AGM_Overheat_Increment = 0.012;
     AGM_Overheat_Cooldown = 0.002;
     AGM_Overheat_Dispersion = 0.005;
   };
 
   class Rifle_Long_Base_F: Rifle_Base_F {
+    AGM_JamChance = 0.001;
     AGM_Overheat_allowSwapBarrel = 1;
     AGM_Overheat_Increment = 0.01;
     AGM_Overheat_Cooldown = 0.002;
@@ -94,8 +97,8 @@ class CfgWeapons {
   class ItemCore;
   class InventoryItem_Base_F;
   class AGM_SpareBarrel: ItemCore {
-    displayname = "Spare barrel";
-    descriptionshort = "Use to swap barrel";
+    displayname = "$STR_AGM_SpareBarrelName";
+    descriptionshort = "$STR_AGM_SpareBarrelDescription";
     //model = "";
     picture = "\AGM_Overheat\UI\spare_barrel_ca.paa";
     scope = 2;

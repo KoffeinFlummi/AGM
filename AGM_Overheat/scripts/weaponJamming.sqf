@@ -4,7 +4,7 @@ _jammedWeapon = _this select 0;
 
 AGM_isWeaponJammed = true;
 
-["Weapon jammed!"] call AGM_Core_fnc_displayText;
+[localize "STR_AGM_WeaponJammed"] call AGM_Core_fnc_displayText;
 
 waitUntil {
 	_weapon = currentWeapon player;

@@ -1,8 +1,4 @@
 
-#define HSPACE 0.05
-#define VSPACE 0.05
-#define BORDER 0.1
-
 class AGM_Core_ProgressBar_Dialog {
   idd = -1;
   movingEnable = false;

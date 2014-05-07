@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGMod">
+  <Package name="Overheat">
+
+    <Key ID="STR_AGM_SpareBarrelName">
+      <English>Spare barrel</English>
+      <German>Ersatzlauf</German>
+    </Key>
+    <Key ID="STR_AGM_SpareBarrelDescription">
+      <English>Use to swap barrel.</English>
+      <German>Benutzen, um Lauf zu wechseln.</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponJammed">
+      <English>Weapon jammed!</English>
+      <German>Ladehemmung!</German>
+    </Key>
+    <Key ID="STR_AGM_UnjamWeapon">
+      <English>Clear jam</English>
+      <German>Ladehemmung beheben</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponUnjammed">
+      <English>Jam cleared</English>
+      <German>Ladehemmung behoben</German>
+    </Key>
+    <Key ID="STR_AGM_SwapBarrel">
+      <English>Swap barrel</English>
+      <German>Lauf wechseln</German>
+    </Key>
+    <Key ID="STR_AGM_SwappingBarrel">
+      <English>Swapping barrel...</English>
+      <German>Lauf wird gewechselt...</German>
+    </Key>
+    <Key ID="STR_AGM_SwappedBarrel">
+      <English>Swapped barrel</English>
+      <German>Lauf gewechselt</German>
+    </Key>
+
+  </Package>
+</Project>

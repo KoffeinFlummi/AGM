@@ -4,6 +4,6 @@ _reloadAction = getText (configFile >> "CfgWeapons" >> currentWeapon player >> "
 
 player playActionNow _reloadAction;
 
-["Weapon unjammed"] call AGM_Core_fnc_displayText;
+[localize "STR_AGM_WeaponUnjammed"] call AGM_Core_fnc_displayText;
 
 AGM_isWeaponJammed = false;
