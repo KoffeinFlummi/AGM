@@ -14,38 +14,39 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
-      class execRemoteFnc {};
-      class getDirectionVector2 {};
-      class keyInput {};
-      class openInteractionMenu {};
-      class openSelfMenu {};
-      class openMenu {};
-      class toBin {};
-      class toHex {};
-      class addVector {};
-      class subtractVector {};
-      class scaleVector {};
-      class scalarProduct {};
-      class vectorProduct {};
-      class vectorLength {};
-      class getWindDirection {};
-      class setKeyDefault {};
-      class convertKeyCode {};
-      class revertKeyCodeLocalized {};
-      class binarizeNumber {};
-      class numberToDigits {};
-      class numberToDigitsString {};
-      class getDirection {};
-      class getPitch {};
-      class getBank {};
-      class setPitchBank {};
-      class getDirectionVector {};
-      class getTargetDistance {};
-      class getTurrets {};
-      class getTurretIndex {};
-      class isTurnedOut {};
-      class isInBuilding {};
-      class displayText {};
+      class execRemoteFnc;
+      class getDirectionVector2;
+      class keyInput;
+      class openInteractionMenu;
+      class openSelfMenu;
+      class openMenu;
+      class toBin;
+      class toHex;
+      class addVector;
+      class subtractVector;
+      class scaleVector;
+      class scalarProduct;
+      class vectorProduct;
+      class vectorLength;
+      class getWindDirection;
+      class setKeyDefault;
+      class convertKeyCode;
+      class revertKeyCodeLocalized;
+      class binarizeNumber;
+      class numberToDigits;
+      class numberToDigitsString;
+      class getDirection;
+      class getPitch;
+      class getBank;
+      class setPitchBank;
+      class getDirectionVector;
+      class getTargetDistance;
+      class getTurrets;
+      class getTurretIndex;
+      class isTurnedOut;
+      class isInBuilding;
+      class displayText;
+      class progressBar;
     };
   };
 };
@@ -65,3 +66,4 @@ class Extended_PostInit_EventHandlers {
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
+#include <ProgressScreen.hpp>

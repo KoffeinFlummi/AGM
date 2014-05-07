@@ -120,6 +120,7 @@ _this spawn {
 
   player setVariable ["AGM_CanTreat", true, false];
 
+  /*
   if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
     if (_unit == player) then {
       "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -127,4 +128,5 @@ _this spawn {
       "AGM_Medical" call AGM_Interaction_fnc_openMenu;
     }
   };
+  */
 };
