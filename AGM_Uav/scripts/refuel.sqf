@@ -9,8 +9,8 @@ if(fuel _target < 1) then {
 		_caller removeMagazine "Laserbatteries";
 		sleep 2;
 		hint format ["1%", fuel _target];
-	} else {hint "Du musst eine Laserbatterie in deinem Inventar haben."};
-} else {hint "Deine Drohne ist noch voll"};
+	} else {hint "You need a Laserbatterie to refuel."};
+} else {hint "Your drone is already full."};
 
 /*
 stringtable.xml is coming soon.
