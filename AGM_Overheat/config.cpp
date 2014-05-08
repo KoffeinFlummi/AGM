@@ -91,7 +91,7 @@ class CfgWeapons {
     AGM_Overheat_allowSwapBarrel = 1;
     AGM_Overheat_Increment = 0.01;
     AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.015;
+    AGM_Overheat_Dispersion = 0.008;
   };
 
   class ItemCore;

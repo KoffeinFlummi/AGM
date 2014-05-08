@@ -69,7 +69,7 @@ if (_temperature > THRESHOLD_1) then {
 			""
 		];
 
-		if (_temperature > THRESHOLD_3 + random 10) then {
+		if (_temperature > THRESHOLD_3 + random 100) then {
 			[_weapon] spawn AGM_Overheat_weaponJamming;
 		};
 	};

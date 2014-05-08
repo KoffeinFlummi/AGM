@@ -2,7 +2,9 @@
 
 _weapon = _this select 0;
 
-player playMoveNow "amovpknlmstpsraswrfldnon";
+if (stance player != "PRONE") then {
+	player playMoveNow "amovpknlmstpsraswrfldnon";
+};
 player playActionNow "GestureDismountMuzzle";
 player playAction "GestureMountMuzzle";
 
