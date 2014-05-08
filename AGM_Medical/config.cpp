@@ -4,7 +4,19 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core, AGM_Interaction, Extended_EventHandlers, A3_Anims_F, A3_Anims_F_Config_Sdr, A3_Weapons_F_Items};
+    requiredAddons[] = {
+      AGM_Core,
+      AGM_Interaction,
+      Extended_EventHandlers,
+      A3_Data_F,
+      A3_Anims_F,
+      A3_Anims_F_Config_Sdr,
+      A3_Anims_F_EPA,
+      A3_Anims_F_EPC,
+      A3_CargoPoses_F,
+      A3_Characters_F,
+      A3_Weapons_F_Items
+    };
     version = 1.0;
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
@@ -557,8 +569,18 @@ class CfgMovesBasic {
 
 class CfgMovesMaleSdr: CfgMovesBasic {
   class Actions: Actions {
-    class MoveWithInjuredMan;
+    class NoActions;
+    class PistolStandActions: NoActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
+    class LauncherKneelActions: NoActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
+    class CivilStandActions: NoActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
 
+    class MoveWithInjuredMan;
     class MoveWithInjuredManDragger: MoveWithInjuredMan {
       PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
       PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
@@ -580,14 +602,6 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       TactRB       = "AcinPknlMwlkSrasWrflDb";
     };
     class MoveWithInjuredManDraggerNon: MoveWithInjuredManDragger {
-      /*
-      PlayerTactB  = "AcinPknlMwlkSnonWnonDb";
-      PlayerTactLB = "AcinPknlMwlkSnonWnonDb";
-      PlayerTactRB = "AcinPknlMwlkSnonWnonDb";
-      TactB        = "AcinPknlMwlkSnonWnonDb";
-      TactLB       = "AcinPknlMwlkSnonWnonDb";
-      TactRB       = "AcinPknlMwlkSnonWnonDb";
-      */
       PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
       PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
       PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
@@ -608,14 +622,6 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       TactRB       = "AcinPknlMwlkSrasWrflDb";
     };
     class MoveWithInjuredManDraggerPst: MoveWithInjuredManDragger {
-      /*
-      PlayerTactB  = "AcinPknlMwlkSnonWpstDb";
-      PlayerTactLB = "AcinPknlMwlkSnonWpstDb";
-      PlayerTactRB = "AcinPknlMwlkSnonWpstDb";
-      TactB        = "AcinPknlMwlkSnonWpstDb";
-      TactLB       = "AcinPknlMwlkSnonWpstDb";
-      TactRB       = "AcinPknlMwlkSnonWpstDb";
-      */
       PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
       PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
       PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";

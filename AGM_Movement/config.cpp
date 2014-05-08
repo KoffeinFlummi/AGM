@@ -63,14 +63,6 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class RifleLowStandActionsRunFR: RifleLowStandActionsNoAdjust {
       getOver = "AovrPercMrunSrasWrflDf";
     };
-
-    // WEAPON LOWERED - WALKING
-    /*
-    class RifleLowStandActionsWlkF: RifleLowStandActionsNoAdjust {
-      PlayerWalkF = "AmovPercMwlkSlowWrflDf_v2";
-      WalkF = "AmovPercMwlkSlowWrflDf_v2";
-    };
-    */
   };
   class States {
     class AmovPercMstpSrasWrflDnon;

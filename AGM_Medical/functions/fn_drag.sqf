@@ -10,9 +10,6 @@
  * none
  */
 
-#define DRAGGINGACTION "grabDrag"
-#define DRAGGEDMOVE "AinjPpneMrunSnonWnonDb_still"
-
 _this spawn {
   _unit = _this select 0;
 
@@ -20,7 +17,7 @@ _this spawn {
   player setVariable ["AGM_Dragging", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
 
-  player playActionNow DRAGGINGACTION;
+  player playActionNow "grabDrag";
 
   sleep 1.8;
 
@@ -28,7 +25,7 @@ _this spawn {
   [-2, {
     _this setDir 180;
     _this setPos (getPos _this);
-    _this switchMove DRAGGEDMOVE;
+    _this switchMove "AinjPpneMrunSnonWnonDb_still";
   }, _unit] call CBA_fnc_globalExecute;
 
   waitUntil {sleep 1; vehicle player != player or isNull (player getVariable "AGM_Dragging") or damage player >= 1 or damage _unit >= 1};
