@@ -419,7 +419,6 @@ class CfgWeapons {
     picture = "\AGM_Medical\UI\AGM_bloodbag_ca.paa";
   };
 
-
   // VESTS
   // basically we are reducing the amount of shots a vest can take from something like 5 to 2.
   class Vest_Camo_Base: ItemCore {
@@ -569,7 +568,7 @@ class CfgMovesBasic {
 
 class CfgMovesMaleSdr: CfgMovesBasic {
   class Actions: Actions {
-    class NoActions;
+    /*class NoActions;
     class PistolStandActions: NoActions {
       grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
     };
@@ -578,7 +577,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
     class CivilStandActions: NoActions {
       grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
+    };*/
 
     class MoveWithInjuredMan;
     class MoveWithInjuredManDragger: MoveWithInjuredMan {
