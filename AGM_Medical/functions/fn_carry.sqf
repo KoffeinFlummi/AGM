@@ -25,7 +25,7 @@ _this spawn {
 
   player playMoveNow "AcinPercMstpSnonWnonDnon";
 
-  sleep 12;
+  sleep 10;
 
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   [-2, {

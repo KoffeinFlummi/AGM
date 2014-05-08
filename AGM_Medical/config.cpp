@@ -59,8 +59,6 @@ class Extended_Init_EventHandlers {
 
 class CfgVehicles {
   class Man;
-  class Land_CargoBox_V1_F;
-
   class CAManBase: Man {
     armor = 2.5;
     armorStructural = 5;
@@ -228,19 +226,6 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
       };
-
-      class AGM_Load {
-        displayName = "$STR_AGM_Load"
-        distance = 4;
-        condition = "!(cursorTarget isKindOf 'Man') and vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man' or (player getVariable 'AGM_Carrying') isKindOf 'Man') and cursorTarget distance player < 5 and cursorTarget emptyPositions 'cargo' > 0";
-        statement = "[cursorTarget] call AGM_Medical_fnc_loadIntoVehicle;";
-      };
-      class AGM_Unload {
-        displayName = "$STR_AGM_Unload"
-        distance = 4;
-        condition = "return = false; {if (_x getVariable 'AGM_Unconscious') exitWith {return = true;};} foreach (crew cursorTarget); return and vehicle player == player and (cursorTarget distance player < 5) and !(cursorTarget isKindOf 'Man')";
-        statement = "[cursorTarget] call AGM_Medical_fnc_unloadPatients;";
-      };
     };
 
     class AGM_SelfActions {
@@ -322,11 +307,24 @@ class CfgVehicles {
       };
     };
   };
-  /*
-  class AGM_CollisionHelper: Land_CargoBox_V1_F {
-    model = "\AGM_Medical\AGM_Medical_Helper.p3d";
+
+  class All;
+  class AllVehicles: All {
+    class AGM_Actions {
+      class AGM_Unload {
+        displayName = "$STR_AGM_Unload"
+        distance = 6;
+        condition = "return = false; {if (_x getVariable 'AGM_Unconscious') exitWith {return = true;};} foreach (crew AGM_Interaction_Target); return and vehicle player == player and !(AGM_Interaction_Target isKindOf 'Man')";
+        statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_unloadPatients;";
+      };
+      class AGM_Load {
+        displayName = "$STR_AGM_Load"
+        distance = 6;
+        condition = "!(AGM_Interaction_Target isKindOf 'Man') and vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man' or (player getVariable 'AGM_Carrying') isKindOf 'Man') and AGM_Interaction_Target emptyPositions 'cargo' > 0";
+        statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_loadIntoVehicle;";
+      };
+    };
   };
-  */
 
   class Box_NATO_Support_F;
 
@@ -589,86 +587,3 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
-
-/*
-class CfgMovesMaleSdr: CfgMovesBasic {
-  class Actions: Actions {
-    //class NoActions;
-    class PistolStandActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-    class LauncherKneelActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-    class CivilStandActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-
-    class MoveWithInjuredMan;
-    class MoveWithInjuredManDragger: MoveWithInjuredMan {
-      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
-      WalkB        = "AcinPknlMwlkSrasWrflDb";
-      WalkLB       = "AcinPknlMwlkSrasWrflDb";
-      WalkRB       = "AcinPknlMwlkSrasWrflDb";
-      SlowB        = "AcinPknlMwlkSrasWrflDb";
-      SlowLB       = "AcinPknlMwlkSrasWrflDb";
-      SlowRB       = "AcinPknlMwlkSrasWrflDb";
-      TactB        = "AcinPknlMwlkSrasWrflDb";
-      TactLB       = "AcinPknlMwlkSrasWrflDb";
-      TactRB       = "AcinPknlMwlkSrasWrflDb";
-    };
-    class MoveWithInjuredManDraggerNon: MoveWithInjuredManDragger {
-      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
-      WalkB        = "AcinPknlMwlkSrasWrflDb";
-      WalkLB       = "AcinPknlMwlkSrasWrflDb";
-      WalkRB       = "AcinPknlMwlkSrasWrflDb";
-      SlowB        = "AcinPknlMwlkSrasWrflDb";
-      SlowLB       = "AcinPknlMwlkSrasWrflDb";
-      SlowRB       = "AcinPknlMwlkSrasWrflDb";
-      TactB        = "AcinPknlMwlkSrasWrflDb";
-      TactLB       = "AcinPknlMwlkSrasWrflDb";
-      TactRB       = "AcinPknlMwlkSrasWrflDb";
-    };
-    class MoveWithInjuredManDraggerPst: MoveWithInjuredManDragger {
-      PlayerWalkB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerWalkRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerSlowRB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactB  = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactLB = "AcinPknlMwlkSrasWrflDb";
-      PlayerTactRB = "AcinPknlMwlkSrasWrflDb";
-      WalkB        = "AcinPknlMwlkSrasWrflDb";
-      WalkLB       = "AcinPknlMwlkSrasWrflDb";
-      WalkRB       = "AcinPknlMwlkSrasWrflDb";
-      SlowB        = "AcinPknlMwlkSrasWrflDb";
-      SlowLB       = "AcinPknlMwlkSrasWrflDb";
-      SlowRB       = "AcinPknlMwlkSrasWrflDb";
-      TactB        = "AcinPknlMwlkSrasWrflDb";
-      TactLB       = "AcinPknlMwlkSrasWrflDb";
-      TactRB       = "AcinPknlMwlkSrasWrflDb";
-    };
-  };
-
-  class States {
-  };
-
-};
-*/
