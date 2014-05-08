@@ -10,7 +10,7 @@
  * None.
  */
 
-if (player getVariable ["AGM_Unconscious", false]) exitWith {};
+if !(player getVariable ["AGM_CanTreat", true]) exitWith {};
 
 _weapons = weapons player - [handgunWeapon player] - [primaryWeapon player] - [secondaryWeapon player];
 _binocular = (

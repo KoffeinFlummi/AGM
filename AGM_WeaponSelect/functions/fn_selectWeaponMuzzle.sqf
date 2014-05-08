@@ -14,7 +14,7 @@ private ["_weapon", "_muzzles", "_count", "_index", "_muzzle"];
 
 _weapon = _this select 0;
 if (_weapon == "") exitWith {};
-if (player getVariable ["AGM_Unconscious", false]) exitWith {};
+if !(player getVariable ["AGM_CanTreat", true]) exitWith {};
 
 _muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
 
