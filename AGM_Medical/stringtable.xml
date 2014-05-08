@@ -26,27 +26,27 @@
       <English>Transfuse Blood</English>
       <German>Bluttransfusion</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_Head">
+    <Key ID="STR_AGM_Bandage_HitHead">
       <English>Bandage Head</English>
       <German>Kopf verbinden</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_Body">
+    <Key ID="STR_AGM_Bandage_HitBody">
       <English>Bandage Torso</English>
       <German>Torso verbinden</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_LeftArm">
+    <Key ID="STR_AGM_Bandage_HitLeftArm">
       <English>Bandage Left Arm</English>
 	  <German>Arm links verbinden</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_RightArm">
+    <Key ID="STR_AGM_Bandage_HitRightArm">
       <English>Bandage Right Arm</English>
       <German>Arm rechts verbinden</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_LeftLeg">
+    <Key ID="STR_AGM_Bandage_HitLeftLeg">
       <English>Bandage Left Leg</English>
       <German>Bein links verbinden</German>
     </Key>
-    <Key ID="STR_AGM_Bandage_RightLeg">
+    <Key ID="STR_AGM_Bandage_HitRightLeg">
       <English>Bandage Right Leg</English>
       <German>Bein rechts verbinden</German>
     </Key>
@@ -69,6 +69,47 @@
     <Key ID="STR_AGM_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
+    </Key>
+
+    <Key ID="STR_AGM_Diagnosing">
+      <English>Diagnosing ...</English>
+      <German>Diagnostizieren ...</German>
+    </Key>
+    <Key ID="STR_AGM_Injecting_Morphine">
+      <English>Injecting Morphine ...</English>
+      <German>Morphin injizieren ...</German>
+    </Key>
+    <Key ID="STR_AGM_Injecting_Epinephrine">
+      <English>Injecting Epinephrine ...</English>
+      <German>Epinephrine injizieren ...</German>
+    </Key>
+    <Key ID="STR_AGM_Transfusing_Blood">
+      <English>Transfusing Blood ...</English>
+      <German>Bluttransfusion ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitHead">
+      <English>Bandaging Head ...</English>
+      <German>Kopf verbinden ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitBody">
+      <English>Bandaging Torso ...</English>
+      <German>Torso verbinden ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitLeftArm">
+      <English>Bandaging Left Arm ...</English>
+    <German>Linken Arm verbinden ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitRightArm">
+      <English>Bandaging Right Arm ...</English>
+      <German>Rechten Arm verbinden ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitLeftLeg">
+      <English>Bandaging Left Leg ...</English>
+      <German>Linkes Bein verbinden ...</German>
+    </Key>
+    <Key ID="STR_AGM_Bandaging_HitRightLeg">
+      <English>Bandaging Right Leg ...</English>
+      <German>Rechtes Bein verbinden ...</German>
     </Key>
   </Package>
 </Project>

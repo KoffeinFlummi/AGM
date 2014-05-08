@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGMod">
+  <Package name="Grenade">
+
+    <Key ID="STR_AGM_Grenade">
+      <English>Spare barrel</English>
+      <German>Ersatzlauf</German>
+    </Key>
+
+  </Package>
+</Project>

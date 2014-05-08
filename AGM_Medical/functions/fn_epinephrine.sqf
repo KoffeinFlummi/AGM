@@ -21,34 +21,33 @@ _this spawn {
   _unit = _this select 0;
 
   player setVariable ["AGM_CanTreat", false, false];
+  EPINEPHRINETIME spawn {
+    sleep _this;
+    player setVariable ["AGM_CanTreat", true, false];
+  };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
-  player removeItem "AGM_Epipen";
 
-  // START COUNTDOWN RSC (this is just a placeholder)
-  _i = EPINEPHRINETIME;
-  while {_i > 0} do {
-    hintSilent format ["Injecting Epinephrine:\n%1", _i];
-    _i = _i - 1;
-    sleep 1;
-    if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
-  };
-  hintSilent "Injecting Epinephrine:\nDone.";
-  sleep 1;
-  hintSilent "";
-  // STOP COUNTDOWN RSC
-
-  player setVariable ["AGM_CanTreat", true, false];
+  BWA3_Medical_epinephrineCallback = {
+    _unit = _this select 0;
   
-  [_unit] call AGM_Medical_fnc_wakeUp;
+    if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-  /* temp disabled
-  if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
-    if (_unit == player) then {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
-    } else {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-    }
+    player removeItem "AGM_Epipen";
+
+    [_unit] call AGM_Medical_fnc_wakeUp;
+
+    /* temp disabled
+    if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+      if (_unit == player) then {
+        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+      } else {
+        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+      }
+    };
+    */
   };
-  */
+
+  [EPINEPHRINETIME, _this, "BWA3_Medical_epinephrineCallback", localize "STR_AGM_Injecting_Epinephrine"] call AGM_Core_fnc_progressBar;
+
 };
