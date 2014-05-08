@@ -563,12 +563,8 @@ class CfgWeapons {
 };
 
 class CfgMovesBasic {
-  class Actions;
-};
-
-class CfgMovesMaleSdr: CfgMovesBasic {
-  class Actions: Actions {
-    /*class NoActions;
+  class Actions {
+    class NoActions;
     class PistolStandActions: NoActions {
       grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
     };
@@ -577,7 +573,36 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
     class CivilStandActions: NoActions {
       grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };*/
+    };
+  };
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class States {
+    class AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1;
+
+    class AcinPknlMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
+      enableDirectControl = 1;
+    };
+    class AcinPknlMwlkSnonWnonDb: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
+      enableDirectControl = 1;
+    };
+  };
+};
+
+/*
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class Actions: Actions {
+    //class NoActions;
+    class PistolStandActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
+    class LauncherKneelActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
+    class CivilStandActions {
+      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+    };
 
     class MoveWithInjuredMan;
     class MoveWithInjuredManDragger: MoveWithInjuredMan {
@@ -642,9 +667,8 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 
-  /*
   class States {
   };
-  */
 
 };
+*/

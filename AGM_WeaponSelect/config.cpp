@@ -14,12 +14,12 @@ class CfgFunctions {
   class AGM_WeaponSelect {
     class AGM_WeaponSelect {
       file = "\AGM_weaponselect\functions";
-      class getWeaponModes {};
-      class getWeaponMuzzles {};
-      class selectWeaponMode {};
-      class selectWeaponMuzzle {};
-      class selectBinocular {};
-      class putWeaponAway {};
+      class getWeaponModes;
+      class getWeaponMuzzles;
+      class selectWeaponMode;
+      class selectWeaponMuzzle;
+      class selectBinocular;
+      class putWeaponAway;
     };
   };
 };

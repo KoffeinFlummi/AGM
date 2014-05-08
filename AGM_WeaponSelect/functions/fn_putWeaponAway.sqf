@@ -11,5 +11,6 @@
  */
 
 _vehicle = vehicle player;
+if (player getVariable ["AGM_Unconscious", false]) exitWith {};
 
 player action ["SwitchWeapon", _vehicle, _vehicle, 99];

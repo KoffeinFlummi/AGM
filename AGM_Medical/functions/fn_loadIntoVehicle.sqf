@@ -14,6 +14,7 @@
 
 _vehicle = _this select 0;
 
+_unit = objNull;
 if isNull (player getVariable "AGM_Carrying") then {
   _unit = player getVariable "AGM_Dragging";
   player setVariable ["AGM_Dragging", objNull, false];

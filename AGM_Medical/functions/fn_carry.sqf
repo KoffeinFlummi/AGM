@@ -10,9 +10,6 @@
  * none
  */
 
-#define CARRYINGMOVE "AcinPercMstpSnonWnonDnon"
-#define CARRIEDMOVE "AinjPfalMstpSnonWnonDf_carried_dead"
-
 _this spawn {
   _unit = _this select 0;
   
@@ -20,43 +17,24 @@ _this spawn {
   player setVariable ["AGM_Carrying", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
 
-  player playMoveNow CARRYINGMOVE;
-  waitUntil {animationState player == CARRYINGMOVE};
+  // Everything but the rifle animation is fucked
+  if (primaryWeapon player == "") then {
+    player addWeapon "AGM_FakePrimaryWeapon";
+  };
+  player selectWeapon (primaryWeapon player);
+
+  player playMoveNow "AcinPercMstpSnonWnonDnon";
+
+  sleep 12;
 
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   [-2, {
     _this setDir 15;
-  }, _unit] call CBA_fnc_globalExecute;
-  _unit setPos (getPos _unit); // force Arma to synchronize direction
-
-  [-2, {
-    _this switchMove CARRIEDMOVE;
+    _this setPos (getPos _this);
+    _this switchMove "AinjPfalMstpSnonWnonDf_carried_dead";
   }, _unit] call CBA_fnc_globalExecute;
 
-  waitUntil {sleep 1; vehicle player != player or isNull (player getVariable "AGM_Carrying") or damage player >= 1 or damage _unit >= 1};
+  waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Carrying") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious")};
   if (isNull (player getVariable "AGM_Carrying")) exitWith {};
-
-  detach _unit;
-  [-2, {
-    _this switchMove "Unconscious";
-  }, _unit] call CBA_fnc_globalExecute;
-
-  if (vehicle player == player) then {
-    [-2, {
-      _this switchMove "";
-    }, player] call CBA_fnc_globalExecute;
-  };
-
-  _unit setVariable ["AGM_Treatable", true, true];
-
-  [-2, {
-    if (local _this) then {
-      0 spawn {
-        _this enableSimulation true;
-        sleep 3.8;
-        _this enableSimulation false;
-      };
-    };
-  }, _unit] call CBA_fnc_globalExecute;
-  
+  [(player getVariable "AGM_Carrying")] call AGM_Medical_fnc_release;
 };

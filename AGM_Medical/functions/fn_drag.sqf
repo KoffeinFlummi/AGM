@@ -17,7 +17,13 @@ _this spawn {
   player setVariable ["AGM_Dragging", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
 
-  player playActionNow "grabDrag";
+  // Everything but the rifle animation is fucked
+  if (primaryWeapon player == "") then {
+    player addWeapon "AGM_FakePrimaryWeapon";
+  };
+  player selectWeapon (primaryWeapon player);
+
+  player playMoveNow "AcinPknlMstpSrasWrflDnon";
 
   sleep 1.8;
 
@@ -28,7 +34,7 @@ _this spawn {
     _this switchMove "AinjPpneMrunSnonWnonDb_still";
   }, _unit] call CBA_fnc_globalExecute;
 
-  waitUntil {sleep 1; vehicle player != player or isNull (player getVariable "AGM_Dragging") or damage player >= 1 or damage _unit >= 1};
+  waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Dragging") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious")};
   if (isNull (player getVariable "AGM_Dragging")) exitWith {};
   [(player getVariable "AGM_Dragging")] call AGM_Medical_fnc_release;
 };

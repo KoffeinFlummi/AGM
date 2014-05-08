@@ -16,6 +16,8 @@
 _this spawn {
   _unit = _this select 0;
 
+  player removeWeapon "AGM_FakePrimaryWeapon";
+
   if isNull (player getVariable "AGM_Carrying") then {
     _unit = player getVariable "AGM_Dragging";
 
