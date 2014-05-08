@@ -162,42 +162,42 @@ class CfgVehicles {
           priority = 0.7;
         };
         class AGM_Bandage_Head {
-          displayName = "$STR_AGM_Bandage_Head";
+          displayName = "$STR_AGM_Bandage_HitHead";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitHead' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitHead'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.6;
         };
         class AGM_Bandage_Body {
-          displayName = "$STR_AGM_Bandage_Body";
+          displayName = "$STR_AGM_Bandage_HitBody";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitBody' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.5;
         };
         class AGM_Bandage_LeftArm {
-          displayName = "$STR_AGM_Bandage_LeftArm";
+          displayName = "$STR_AGM_Bandage_HitLeftArm";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftArm' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.4;
         };
         class AGM_Bandage_RightArm {
-          displayName = "$STR_AGM_Bandage_RightArm";
+          displayName = "$STR_AGM_Bandage_HitRightArm";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightArm' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.3;
         };
         class AGM_Bandage_LeftLeg {
-          displayName = "$STR_AGM_Bandage_LeftLeg";
+          displayName = "$STR_AGM_Bandage_HitLeftLeg";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftLeg' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.2;
         };
         class AGM_Bandage_RightLeg {
-          displayName = "$STR_AGM_Bandage_RightLeg";
+          displayName = "$STR_AGM_Bandage_HitRightLeg";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightLeg' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
@@ -256,42 +256,42 @@ class CfgVehicles {
         };
 
         class AGM_Bandage_Head {
-          displayName = "$STR_AGM_Bandage_Head";
+          displayName = "$STR_AGM_Bandage_HitHead";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitHead' > 0.01)";
           statement = "[player, 'HitHead'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           showDisabled = 1;
         };
         class AGM_Bandage_Body {
-          displayName = "$STR_AGM_Bandage_Body";
+          displayName = "$STR_AGM_Bandage_HitBody";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitBody' > 0.01)";
           statement = "[player, 'HitBody'] call AGM_Medical_fnc_bandage;";
           priority = 0.5;
           showDisabled = 1;
         };
         class AGM_Bandage_LeftArm {
-          displayName = "$STR_AGM_Bandage_LeftArm";
+          displayName = "$STR_AGM_Bandage_HitLeftArm";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitLeftArm' > 0.01)";
           statement = "[player, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.4;
           showDisabled = 1;
         };
         class AGM_Bandage_RightArm {
-          displayName = "$STR_AGM_Bandage_RightArm";
+          displayName = "$STR_AGM_Bandage_HitRightArm";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitRightArm' > 0.01)";
           statement = "[player, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.3;
           showDisabled = 1;
         };
         class AGM_Bandage_LeftLeg {
-          displayName = "$STR_AGM_Bandage_LeftLeg";
+          displayName = "$STR_AGM_Bandage_HitLeftLeg";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitLeftLeg' > 0.01)";
           statement = "[player, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.2;
           showDisabled = 1;
         };
         class AGM_Bandage_RightLeg {
-          displayName = "$STR_AGM_Bandage_RightLeg";
+          displayName = "$STR_AGM_Bandage_HitRightLeg";
           condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player and 'AGM_Bandage' in itemsWithMagazines player and (player getHitPointDamage 'HitRightLeg' > 0.01)";
           statement = "[player, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.15;
