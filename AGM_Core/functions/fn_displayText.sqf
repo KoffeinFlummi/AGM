@@ -34,7 +34,7 @@ _this spawn {
 	_lastHintTime = AGM_Core_lastHint select 0;
 	_lastHintPriority = AGM_Core_lastHint select 1;
 
-	if (typeName _text != "STRING") then {_text = str _text};
+	if !(typeName _text in ["STRING", "TEXT"]) then {_text = str _text};
 	if (isNil "_sound") then {_sound = DEFAULT_PLAY_SOUND};
 	if (isNil "_delay") then {_delay = DEFAULT_DELAY};
 	if (isNil "_priority") then {_priority = DEFAULT_PRIORITY};

@@ -41,18 +41,6 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-class AGM_Core_Default_Keys {
-  class clearJam {
-    displayName = "$STR_AGM_UnjamWeapon";
-    condition = "AGM_isWeaponJammed";
-    statement = "call AGM_Overheat_clearJam";
-    key = 19;
-    shift = 1;
-    control = 0;
-    alt = 0;
-  };
-};
-
 class CfgVehicles {
   class Man;
 
@@ -70,32 +58,9 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class Rifle;
-
-  class HandGunBase: Rifle {
-    AGM_JamChance = 0.005;
-    AGM_Overheat_Increment = 0.03;
-    AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.004;
-  };
-
-  class Rifle_Base_F: Rifle {
-    AGM_JamChance = 0.001;
-    AGM_Overheat_Increment = 0.012;
-    AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.001;
-  };
-
-  class Rifle_Long_Base_F: Rifle_Base_F {
-    AGM_JamChance = 0.001;
-    AGM_Overheat_allowSwapBarrel = 1;
-    AGM_Overheat_Increment = 0.01;
-    AGM_Overheat_Cooldown = 0.002;
-    AGM_Overheat_Dispersion = 0.002;
-  };
-
   class ItemCore;
   class InventoryItem_Base_F;
+
   class AGM_SpareBarrel: ItemCore {
     displayname = "$STR_AGM_SpareBarrelName";
     descriptionshort = "$STR_AGM_SpareBarrelDescription";
@@ -103,8 +68,106 @@ class CfgWeapons {
     picture = "\AGM_Overheat\UI\spare_barrel_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
-      mass = 5;
+      mass = 10;
       type = 201;
     };
+  };
+
+  class Rifle_Base_F;
+  class Rifle_Long_Base_F;
+
+  class arifle_MX_Base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class arifle_MX_SW_F : arifle_MX_Base_F {
+    AGM_Overheat_Increment = 0.01;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class arifle_Katiba_Base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class mk20_base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class Tavor_base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class SDAR_base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class EBR_base_F : Rifle_Long_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class DMR_01_base_F : Rifle_Long_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class GM6_base_F : Rifle_Long_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class LRR_base_F : Rifle_Long_Base_F {
+    AGM_Overheat_Increment = 0.012;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.001;
+  };
+
+  class LMG_Mk200_F : Rifle_Long_Base_F {
+    AGM_Overheat_allowSwapBarrel = 1;
+    AGM_Overheat_Increment = 0.01;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.002;
+  };
+
+  /*class LMG_RCWS : MGun {
+  };*/
+
+  class LMG_Zafir_F : Rifle_Long_Base_F {
+    AGM_Overheat_allowSwapBarrel = 1;
+    AGM_Overheat_Increment = 0.01;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.002;
+  };
+
+  class SMG_01_Base : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.015;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.004;
+  };
+
+  class SMG_02_base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.015;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.004;
+  };
+
+  class pdw2000_base_F : Rifle_Base_F {
+    AGM_Overheat_Increment = 0.015;
+    AGM_Overheat_Cooldown = 0.002;
+    AGM_Overheat_Dispersion = 0.004;
   };
 };

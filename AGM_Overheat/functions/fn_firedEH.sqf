@@ -3,8 +3,8 @@
 #define THRESHOLD_1 0.5
 #define THRESHOLD_2 0.8
 #define THRESHOLD_3 1.0
+#define MAX_TEMPERATURE 3
 
-_unit = _this select 0;
 _weapon = _this select 1;
 _projectile = _this select 5;
 
@@ -19,7 +19,7 @@ _overheat = player getVariable [_string, [0, 0]];
 _temperature = _overheat select 0;
 _time = _overheat select 1;
 
-_temperature = _temperature + _increment - _cooldown * (time - _time) max _increment;
+_temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min MAX_TEMPERATURE;
 
 if (AGM_Debug) then {
 	hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
@@ -30,53 +30,50 @@ _time = time;
 player setVariable [_string, [_temperature, _time], false];
 
 if (_temperature > THRESHOLD_1) then {
-	_velocity = velocity _projectile;
-	_velocityX = _velocity select 0;
-	_velocityY = _velocity select 1;
-	_velocityZ = _velocity select 2;
-
-	_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Dispersion");
-	_random = _dispersion * (_temperature - THRESHOLD_1);
-
-	_projectile setVelocity [
-		_velocityX * (1 - _random + 2 * random _random),
-		_velocityY * (1 - _random + 2 * random _random),
-		_velocityZ * (1 - _random + 2 * random _random)
+	_intensity = 0.1 * (_temperature - THRESHOLD_1);
+	_position = getPosATL _projectile;
+	drop [
+		["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
+		"",
+		"Billboard",
+		1,
+		1.2,
+		_position,
+		[0, 0, 0.25],
+		0,
+		1.275,
+		1,
+		0.025,
+		[0.28, 0.33, 0.37],
+		[[0.6, 0.6, 0.6, _intensity]],
+		[0.2],
+		1,
+		0.04,
+		"",
+		"",
+		""
 	];
 
 	if (_temperature > THRESHOLD_2) then {
-		_intensity = (_temperature - THRESHOLD_2) * 0.05 max 0.15;
-		_position = getPosATL _projectile;
-		drop [
-			["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
-			"",
-			"Billboard",
-			1,
-			1.2,
-			_position,
-			[0, 0, 0.25],
-			0,
-			1.275,
-			1,
-			0.025,
-			[0.28, 0.33, 0.37],
-			[[0.6, 0.6, 0.6, _intensity]],
-			[0.2],
-			1,
-			0.04,
-			"",
-			"",
-			""
+		_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Dispersion");
+		_random = _dispersion * (_temperature - THRESHOLD_2);
+
+		_velocity = velocity _projectile;
+		_velocity = [
+			(_velocity select 0) * (1 - _random + 2 * random _random),
+			(_velocity select 1) * (1 - _random + 2 * random _random),
+			(_velocity select 2) * (1 - _random + 2 * random _random)
 		];
 
-		if (_temperature > THRESHOLD_3 + random 100) then {
-			[_weapon] spawn AGM_Overheat_weaponJamming;
+		if (_temperature > THRESHOLD_3) then {
+			_factor = 1 - 0.05 * (_temperature - THRESHOLD_3);
+
+			_velocity = [
+				_factor * (_velocity select 0),
+				_factor * (_velocity select 1),
+				_factor * (_velocity select 2)
+			];
 		};
+		_projectile setVelocity _velocity;
 	};
-};
-
-_jamChance = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_JamChance");
-
-if (_jamChance > random 1) then {
-	[_weapon] spawn AGM_Overheat_weaponJamming;
 };
