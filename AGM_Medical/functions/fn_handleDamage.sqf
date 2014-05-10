@@ -21,7 +21,7 @@
 #define ARMDAMAGETHRESHOLD 2
 
 #define PAINKILLERTHRESHOLD 0.1
-#define PAINLOSS 0.005
+#define PAINLOSS 0.0001
 
 #define BLOODTHRESHOLD1 0.35
 #define BLOODTHRESHOLD2 0
@@ -114,7 +114,7 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   */
 
   if (damage _unit * (_unit getVariable "AGM_Painkiller") > _unit getVariable "AGM_Pain") then {
-    _unit setVariable ["AGM_Pain", (damage _unit) * (_unit getVariable "AGM_Painkiller"), true];
+    _unit setVariable ["AGM_Pain", (damage _unit) * (_unit getVariable "AGM_Painkiller") * 2, true];
   };
 
   // Pain

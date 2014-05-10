@@ -172,7 +172,7 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    displayName = "A-12 Warthog";
+    displayName = "A-14 Warthog";
     lockDetectionSystem = 16;
   };
 
