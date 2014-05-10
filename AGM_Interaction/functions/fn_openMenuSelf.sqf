@@ -1,5 +1,7 @@
 // by commy2
 
+if (player getVariable ["AGM_Unconscious", false]) exitWith {};
+
 AGM_Interaction_Buttons = [];
 
 _actions = [];
