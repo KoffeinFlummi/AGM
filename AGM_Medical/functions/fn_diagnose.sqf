@@ -28,12 +28,7 @@ _this spawn {
       ["right leg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
     ];
 
-    _string = "";
-    if (name _unit != "Error: No unit") then {
-      _string = "Patient: " + (name _unit);
-    } else {
-      _string = "Patient: Unknown";
-    };
+    _string = format ["Patient: %1", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
       _string = _string + "<br/><br/>The patient is dead.";
