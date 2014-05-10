@@ -63,6 +63,6 @@ class CfgWeapons {
   class cannon_120mm: CannonCore {
     AGM_DangerZone_Angle = 90;
     AGM_DangerZone_Range = 50;
-    AGM_DangerZone_Damage = 2;
+    AGM_DangerZone_Damage = 1;
   };
 };
