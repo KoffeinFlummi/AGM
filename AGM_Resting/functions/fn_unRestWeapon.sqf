@@ -19,11 +19,13 @@ addCamShake CAMSHAKE;
 if (AGM_bipodDeployed) then {
   player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / BIPODRECOIL);
   player switchMove ([(animationState player), "_bwa3_deploy", ""] call CBA_fnc_replace);
-  ["Bipod undeployed.", false] call AGM_Core_fnc_displayText;
+  _picture = format ["<img size='2' color='#ffffff' image='%1'/>", getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture")];
+  [formatText ["%1%2%3", parseText _picture, lineBreak, localize "STR_AGM_BipodUndeployed"], false] call AGM_Core_fnc_displayText;
 } else {
   player setUnitRecoilCoefficient ((unitRecoilCoefficient player) / RESTEDRECOIL);
   player switchMove ([(animationState player), "_bwa3_rested", ""] call CBA_fnc_replace);
-  ["Weapon lifted.", false] call AGM_Core_fnc_displayText;
+  _picture = format ["<img size='2' color='#ffffff' image='%1'/>", getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture")];
+  [formatText ["%1%2%3", parseText _picture, lineBreak, localize "STR_AGM_WeaponLifted"], false] call AGM_Core_fnc_displayText;
 };
 
 AGM_weaponRested = false;

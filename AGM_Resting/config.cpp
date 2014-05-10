@@ -29,7 +29,7 @@ class Extended_PostInit_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class restWeapon {
-    displayName = "Waffe auflegen";
+    displayName = "$STR_AGM_RestWeapon";
     conditionUp = "!(player getVariable ['AGM_Unconscious', false])";
     statementUp = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
     key = 15;
