@@ -8,4 +8,4 @@ if (stance player != "PRONE") then {
 player playActionNow "GestureDismountMuzzle";
 player playAction "GestureMountMuzzle";
 
-[6, [_weapon], "AGM_Overheat_swapBarrelCallback", localize "STR_AGM_SwappingBarrel"] call AGM_Core_fnc_progressBar;
+[10, [_weapon], "AGM_Overheat_swapBarrelCallback", localize "STR_AGM_SwappingBarrel"] call AGM_Core_fnc_progressBar;

@@ -34,6 +34,7 @@ _this spawn {
 	_ctrlProgressBar ctrlCommit _time;
 
 	_ctrlProgressBarTitle ctrlSetText _title;
+	//_ctrlProgressBarTitle ctrlSetStructuredText _title;
 
 	_time = time + _time;
 	waitUntil {

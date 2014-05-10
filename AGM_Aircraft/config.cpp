@@ -23,6 +23,24 @@ class CfgPatches {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_Aircraft {
+    clientInit = "execVM '\AGM_aircraft\init.sqf'";
+  };
+};
+
+/*class AGM_Core_Default_Keys {
+  class autopilot {
+    displayName = "Autopilot";
+    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Plane'}";
+    statementUp = "[_vehicle] spawn AGM_Aircraft_autopilot";
+    key = 211;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+};*/
+
 class Mode_Burst;
 
 // Manual Switching Of Flare Mode

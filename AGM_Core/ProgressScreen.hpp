@@ -46,11 +46,22 @@ class AGM_Core_ProgressBar_Dialog {
 
     class Title_Bar : Progress_Bar {
       idc = 2;
+      //type = 13;
+      //size = 1;
       colorBackground[] = {0, 0, 0, 0};
       x = "safezoneX + 0.1 * safezoneW";
       y = "safezoneY + 0.1 * safezoneH";
       w = "0.8 * safezoneW";
       h = "0.05 * safezoneH";
+      /*class Attributes {
+        font = "TahomaB";
+        color = "#000000";
+        align = "center";
+        valign = "middle";
+        shadow = false;
+        shadowColor = "#ff0000";
+        size = "1";
+      };*/
     };
   };
 };
