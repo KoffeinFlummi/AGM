@@ -74,7 +74,7 @@ while {true} do {
   };
 
   if (_posX >= _posTargetX and _posY >= _posTargetY) exitWith {};
-  _angle = _angle + 0.05;
+  _angle = _angle + 0.005;
 };
 
 _angle - _angleTarget
