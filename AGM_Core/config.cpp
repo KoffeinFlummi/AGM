@@ -60,7 +60,7 @@ class CfgSounds {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
-    clientInit = "execVM '\AGM_Core\init.sqf'";
+    Init = "execVM '\AGM_Core\init.sqf'";
   };
 };
 

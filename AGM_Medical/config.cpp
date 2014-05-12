@@ -336,12 +336,7 @@ class CfgVehicles {
     maximumload = 2000;
 
     class TransportMagazines {};
-    class TransportWeapons {
-      class _xx_BWA3_Vector {
-        count = 4;
-        weapon = "BWA3_Vector";
-      };
-    };
+    class TransportWeapons {};
     class TransportItems {
       class _xx_AGM_Bandage {
         count = 64;

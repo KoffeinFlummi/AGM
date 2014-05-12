@@ -34,7 +34,7 @@ for "_index" from 0 to (_count - 1) do {
 
 if (_saveProfile) then {
 	saveProfileNamespace;
-	diag_log text "BWA3R: Encountered missing variable in profile namespace. Profile saved.";
+	diag_log text "AGM: Encountered missing variable in profile namespace. Profile saved.";
 } else {
-	diag_log text "BWA3R: No missing variables encountered in profile namespace.";
+	diag_log text "AGM: No missing variables encountered in profile namespace.";
 };
