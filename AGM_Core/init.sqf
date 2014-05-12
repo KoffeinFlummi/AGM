@@ -5,6 +5,8 @@
 	(_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
+if (isDedicated) exitWith {};
+
 AGM_Core_Menu_Button = [];
 
 AGM_Core_keyInput = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
