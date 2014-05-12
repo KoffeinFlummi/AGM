@@ -12,7 +12,7 @@
  * 
  * Return value:
  * Damage value to be inflicted (optional)
-*/
+ */
 
 #define UNCONSCIOUSNESSTHRESHOLD 0.5
 
