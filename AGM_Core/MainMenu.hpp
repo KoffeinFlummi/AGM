@@ -3,13 +3,13 @@ class AGM_Tile_Base {
 	class Attributes {
 		font = "PuristaMedium";
 		color = "#E5E5E5";
-		align = "left";
+		align = "center";
 		shadow = "true";
 	};
 	class AttributesImage {
 		font = "PuristaMedium";
 		color = "#E5E5E5";
-		align = "left";
+		align = "center";
 	};
 	class HitZone {
 		left = 0.0;
@@ -19,15 +19,15 @@ class AGM_Tile_Base {
 	};
 	class ShortcutPos {
 		left = 0;
-		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
-		w = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		h = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		top = 0;
+		w = 0;
+		h = 0;
 	};
 	class TextPos {
-		left = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
-		right = 0.005;
-		bottom = 0.0;
+		left = 0;
+		top = 0;
+		right = 0;
+		bottom = 0;
 	};
 	action = "(findDisplay 49) closeDisplay 0; 0 spawn AGM_Core_openMenu;";
 	animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
@@ -60,7 +60,7 @@ class AGM_Tile_Base {
 	soundEnter[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEnter",0.09,1};
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",0.09,1};
 	soundPush[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundPush",0.09,1};
-	style = "0x02 + 0xC0";
+	style = "0x00 + 0xC0";
 	text = "$STR_AGM_Core_Options"
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 	tooltip = "";
