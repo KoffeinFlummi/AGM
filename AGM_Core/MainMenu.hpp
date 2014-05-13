@@ -19,15 +19,15 @@ class AGM_Tile_Base {
 	};
 	class ShortcutPos {
 		left = 0;
-		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
-		w = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		h = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+		top = 0;
+		w = 0;
+		h = 0;
 	};
 	class TextPos {
-		left = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1) * (3/4)";
-		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 20) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
-		right = 0.005;
-		bottom = 0.0;
+		left = 0.01;
+		top = 0;
+		right = 0;
+		bottom = 0;
 	};
 	action = "(findDisplay 49) closeDisplay 0; 0 spawn AGM_Core_openMenu;";
 	animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
