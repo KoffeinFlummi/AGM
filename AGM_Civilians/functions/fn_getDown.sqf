@@ -8,7 +8,7 @@
  *
  * Return value:
  * none
-*/
+ */
 
 #define RADIUS 10
 
@@ -24,12 +24,9 @@ if (count (weapons player) > 0) then {
   _chance = 0.5;
 };
 
-AGM_getDown = {
-  _this setUnitPos "DOWN";
-};
-
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    [_x, "AGM_getDown", true, true] spawn BIS_fnc_MP;
-  };
+  [-2, {
+    _this setUnitPos "DOWN";
+  }, _x] call CBA_fnc_globalExecute;
 } foreach (_unit nearEntities ["Civilian", RADIUS]);

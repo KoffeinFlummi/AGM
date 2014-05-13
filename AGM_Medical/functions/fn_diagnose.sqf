@@ -20,11 +20,11 @@ _this spawn {
     _unit = _this select 0;
 
     _damages = [
-      ["head", floor ((_unit getHitPointDamage "HitHead") * 100) / 100],
-      ["torso", floor ((_unit getHitPointDamage "HitBody") * 100) / 100],
-      ["left arm", floor ((_unit getHitPointDamage "HitLeftArm") * 100) / 100],
+      ["head",      floor ((_unit getHitPointDamage "HitHead")     * 100) / 100],
+      ["torso",     floor ((_unit getHitPointDamage "HitBody")     * 100) / 100],
+      ["left arm",  floor ((_unit getHitPointDamage "HitLeftArm")  * 100) / 100],
       ["right arm", floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100],
-      ["left leg", floor ((_unit getHitPointDamage "HitLeftLeg") * 100) / 100],
+      ["left leg",  floor ((_unit getHitPointDamage "HitLeftLeg")  * 100) / 100],
       ["right leg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
     ];
 

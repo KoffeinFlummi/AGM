@@ -25,13 +25,11 @@ if (count (weapons player) > 0) then {
   _chance = 0.5;
 };
 
-AGM_sendAway = {
-  (_this select 0) setUnitPos "AUTO";
-  (_this select 0) doMove [(getPos (_this select 0) select 0) + DISTANCE * (eyeDirection (_this select 1) select 0), (getPos (_this select 0) select 1) + DISTANCE * (eyeDirection (_this select 1) select 1), 0];
-};
-
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-    [[_x, player], "AGM_sendAway", true, false] spawn BIS_fnc_MP;
+    [-2, {
+      (_this select 0) setUnitPos "AUTO";
+      (_this select 0) doMove [(getPos (_this select 0) select 0) + DISTANCE * (eyeDirection (_this select 1) select 0), (getPos (_this select 0) select 1) + DISTANCE * (eyeDirection (_this select 1) select 1), 0];
+    }, [_x, player]] call CBA_fnc_globalExecute;
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);
