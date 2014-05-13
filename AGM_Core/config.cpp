@@ -47,6 +47,7 @@ class CfgFunctions {
       class isInBuilding;
       class displayText;
       class progressBar;
+      class getWeaponType;
     };
   };
 };
