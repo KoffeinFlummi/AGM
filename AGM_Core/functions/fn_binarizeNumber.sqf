@@ -5,16 +5,26 @@
  * 
  * Argument:
  * 0: Decimal Number (Number)
+ * 1: Minimum length of the returned Array, note: returned array can be larger (Number, optional default 8)
  * 
  * Return value:
  * Booleans (Array)
  */
 
-private ["_number", "_array", "_index", "_rest"];
+private ["_number", "_minLength", "_array", "_index", "_rest"];
 
-_number = round _this;
+_number = round (_this select 0);
+_minLength = _this select 1;
 
-_array = [false, false, false, false, false, false, false, false];
+if (isNil "_minLength") then {_minLength = 8};
+
+_array = [];
+_array resize _minLength;
+
+for "_index" from 0 to (_minLength - 1) do {
+	_array set [_index, false];
+};
+
 _index = 0;
 
 while {_number > 0} do {
