@@ -33,8 +33,13 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
 
 [-2, {
   if (_this == player) then {
-    [1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
-    4209 cutText ["", "PLAIN", 0, false];
+    //[1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
+    AGM_UnconsciousCC ppEffectEnable false;
+    AGM_UnconsciousCC ppEffectCommit 1;
+    AGM_UnconsciousRB ppEffectEnable false;
+    AGM_UnconsciousRB ppEffectCommit 1;
+    3 fadeSound 1;
+    3 fadeSpeech 1;
   };
   if (local _this) then {
     _this enableSimulation true;

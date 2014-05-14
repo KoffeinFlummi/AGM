@@ -9,13 +9,19 @@ _unit = _this select 0;
 sleep 2;
 if !(local _unit) exitWith {};
 
+AGM_UnconsciousCC = -1;
+AGM_UnconsciousRB = -1;
+
 AGM_unitInit = {
   if (_this == player) then {
-    0 spawn {
-      sleep 1;
-      [1, "BLACK", 0.01, 1] call BIS_fnc_FadeEffect;
+    if (AGM_UnconsciousCC != -1) then {
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectCommit 1;
+      AGM_UnconsciousRB ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectCommit 1;
     };
-    4209 cutText ["", "PLAIN", 0, false];
+    0 fadeSound 1;
+    0 fadeSpeech 1;
   };
 
   _this setCaptive false;
@@ -58,9 +64,6 @@ AGM_itemCheck = {
     _this addItemToBackpack "AGM_Bloodbag";
   };
 };
-
-GC_bandageMenu = false;
-GC_bandageMenuSelf = false;
 
 _unit call AGM_unitInit;
 _unit call AGM_itemCheck;
