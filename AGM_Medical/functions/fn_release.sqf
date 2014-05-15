@@ -31,13 +31,14 @@ _this spawn {
   };
 
   detach _unit;
+  player setVariable ["AGM_CanTreat", true, false];
+
+  if (vehicle _unit != _unit) exitWith {};
 
   [-2, {
     (_this select 0) switchMove DRAGGINGMOVE;
     (_this select 1) switchMove DRAGGEDMOVE;
   }, [player, _unit]] call CBA_fnc_globalExecute;
-
-  player setVariable ["AGM_CanTreat", true, false];
 
   [-2, {
     if (local _this) then {
