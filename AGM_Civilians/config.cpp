@@ -16,7 +16,7 @@ class CfgFunctions {
       file = "AGM_Civilians\functions";
       class sendAway {};
       class getDown {};
-      class setCaptive {};
+      //class setCaptive {};
     };
   };
 };
@@ -42,6 +42,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = -2.6;
       };
+      /*
       class AGM_SetCaptive {
         displayName = "Take Prisoner";
         distance = 4;
@@ -50,6 +51,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = -2.7;
       };
+      */
     };
   };
 };

@@ -26,7 +26,8 @@ if (count (weapons player) > 0) then {
 
 {
   if (count (weapons _unit) == 0 and random 1 < _chance) then {
-  [-2, {
-    _this setUnitPos "DOWN";
-  }, _x] call CBA_fnc_globalExecute;
+    [-2, {
+      _this setUnitPos "DOWN";
+    }, _x] call CBA_fnc_globalExecute;
+  };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);

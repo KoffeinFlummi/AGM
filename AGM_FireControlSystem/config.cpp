@@ -52,8 +52,8 @@ class Extended_Init_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class laseTarget {
-    displayName = "Lase target";
-    condition = "!AGM_FCSEnabled";
+    displayName = "Lase Target";
+    condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
     conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";

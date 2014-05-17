@@ -24,7 +24,7 @@ class AGM_Tile_Base {
 		h = 0;
 	};
 	class TextPos {
-		left = 0.005;
+		left = 0.01;
 		top = 0;
 		right = 0;
 		bottom = 0;
