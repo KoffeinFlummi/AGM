@@ -48,6 +48,8 @@ class CfgFunctions {
       class displayText;
       class progressBar;
       class getWeaponType;
+      class codeToString;
+      class createUpdateLoop;
     };
   };
 };
