@@ -9,7 +9,7 @@
  * 2: The loop will sleep for this long. In seconds. (Number)
  * 3: Each time any of these functions change their return value, the function with the same index is called. (Array of Codes or Strings)
  * 4: Functions that are called, when the condition with the same index changes its value. (Array of Codes or Strings)
- * 5: Exit condition. If this returns false, the loop will exit and the exit code is called. (Code or String)
+ * 5: Exit condition. If this returns true, the loop will exit and the exit code is called. (Code or String)
  * 6: The code that is executed after the loop ends. (Code or String)
  * 
  * Return value:
