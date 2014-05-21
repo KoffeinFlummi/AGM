@@ -50,5 +50,9 @@ _this spawn {
     */
   };
 
-  [BLOODBAGTIME, _this, "BWA3_Medical_bloodbagCallback", localize "STR_AGM_Transfusing_Blood"] call AGM_Core_fnc_progressBar;
+  BWA3_Medical_bloodbagAbort = {
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+  };
+
+  [BLOODBAGTIME, _this, "BWA3_Medical_bloodbagCallback", localize "STR_AGM_Transfusing_Blood", "BWA3_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
 };

@@ -4,7 +4,7 @@
  * Draw progress bar and execute given function if succesful.
  * 
  * Argument:
- * 0: Time of the action (Number)
+ * 0: Duration of the action (Number)
  * 1: Arguments of the callback function (Array)
  * 2: Callback function name (String)
  * 3: Title of the loading bar (String)
