@@ -11,7 +11,7 @@
  */
 
 #define DIAGNOSETIME 8
-#define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDnon_medic1"
+#define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDr_medic4"
 
 _this spawn {
   _unit = _this select 0;
@@ -108,6 +108,10 @@ _this spawn {
     hintSilent parseText _string;
   };
 
+  AGM_Medical_diagnoseAbort = {
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+  };
+
   if (_unit != player) then {
     player playMoveNow DIAGNOSEMOVE;
 
@@ -117,7 +121,7 @@ _this spawn {
       player setVariable ["AGM_CanTreat", true, false];
     };
 
-    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Diagnosing"] call AGM_Core_fnc_progressBar;
+    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };

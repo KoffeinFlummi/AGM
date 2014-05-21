@@ -83,6 +83,10 @@ _this spawn {
     */
   };
 
-  [_morphinetime, (_this + [_painkillerOld]), "BWA3_Medical_morphineCallback", localize "STR_AGM_Injecting_Morphine"] call AGM_Core_fnc_progressBar;
+  BWA3_Medical_morphineAbort = {
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+  };
+
+  [_morphinetime, (_this + [_painkillerOld]), "BWA3_Medical_morphineCallback", localize "STR_AGM_Injecting_Morphine", "BWA3_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
 
 };

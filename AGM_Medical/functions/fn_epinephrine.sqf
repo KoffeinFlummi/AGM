@@ -48,6 +48,10 @@ _this spawn {
     */
   };
 
-  [EPINEPHRINETIME, _this, "BWA3_Medical_epinephrineCallback", localize "STR_AGM_Injecting_Epinephrine"] call AGM_Core_fnc_progressBar;
+  BWA3_Medical_epinephrineAbort = {
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+  };
+
+  [EPINEPHRINETIME, _this, "BWA3_Medical_epinephrineCallback", localize "STR_AGM_Injecting_Epinephrine", "BWA3_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;
 
 };
