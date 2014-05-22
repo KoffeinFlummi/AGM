@@ -22,10 +22,10 @@ _arguments = _this select 0;
 _function = call compile (_this select 1);
 _unit = _this select 2;
 
-if (isNil "_unit") exitWith {
+/*if (isNil "_unit") exitWith {
 	_arguments call _function;
 	publicVariable "AGM_Core_remoteFnc";
-};
+};*/
 
 if (local _unit) then {
 	_arguments call _function;
