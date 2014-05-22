@@ -94,7 +94,7 @@ _this spawn {
         };
       };
       if (_unit getVariable "AGM_Pain" > 0.4) then {
-        _string = _string + "and in heavy pain";
+        _string = _string + "and in heavy pain.";
       } else {
         if (_unit getVariable "AGM_Pain" > 0.1) then {
           _string = _string + "and in light pain.";
