@@ -111,5 +111,10 @@
       <English>Bandaging Right Leg ...</English>
       <German>Rechtes Bein verbinden ...</German>
     </Key>
+
+    <Key ID="STR_AGM_MedicalSupplies">
+      <English>Medical Supplies</English>
+      <German>Sanitätsmaterial</German>
+    </Key>
   </Package>
 </Project>

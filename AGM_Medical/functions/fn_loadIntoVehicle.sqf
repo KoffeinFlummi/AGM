@@ -32,11 +32,11 @@ detach _unit;
     if (local _unit) then {
       _unit moveInCargo _vehicle;
       _unit spawn {
-        sleep 1;
-        //player globalChat ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _this) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
-        _this playMoveNow ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _this) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
+        sleep 0.5;
+        _this enableSimulation false;
       };
     };
+    _unit playMoveNow ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
     _player switchMove "";
   }, _this] call CBA_fnc_globalExecute;
 };

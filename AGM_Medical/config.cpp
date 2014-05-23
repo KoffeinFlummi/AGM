@@ -330,7 +330,7 @@ class CfgVehicles {
 
   class AGM_Box_Medical: Box_NATO_Support_F {
     author = "AGM";
-    displayName = "Sanikiste";
+    displayName = "$STR_AGM_MedicalSupplies";
     transportmaxmagazines = 128;
     transportmaxbackpacks = 0;
     maximumload = 2000;
@@ -395,7 +395,7 @@ class CfgWeapons {
   };
   class AGM_Morphine: AGM_Bandage {
     displayName = "Morphine Injector";
-    descriptionShort = "Heavy Painkiller<br/>Usable on: Others & Self";
+    descriptionShort = "Heavy Painkiller<br/>Usable on: Others &amp; Self";
     model = "\A3\Structures_F_EPA\Items\Medical\PainKillers_F.p3d";
     picture = "\AGM_Medical\UI\AGM_morphine_ca.paa";
   };
