@@ -5,111 +5,138 @@
     <Key ID="STR_AGM_Treat">
       <English>Treat >></English>
       <German>Behandeln >></German>
+      <Spanish>Tratar</Spanish>
     </Key>
     <Key ID="STR_AGM_Treat_Self">
       <English>Self-treatment >></English>
       <German>Selbst behandeln >></German>
+      <Spanish>Tratarse</Spanish>
     </Key>
     <Key ID="STR_AGM_Diagnose">
       <English>Diagnose</English>
       <German>Diagnose</German>
+      <Spanish>Diagnosticar</Spanish>
     </Key>
     <Key ID="STR_AGM_Inject_Morphine">
       <English>Inject Morphine</English>
       <German>Morphin injizieren</German>
+      <Spanish>Inyectar Morfina</Spanish>
     </Key>
     <Key ID="STR_AGM_Inject_Epinephrine">
       <English>Inject Epinephrine</English>
       <German>Epinephrine injizieren</German>
+      <Spanish>Inyectar Epinefrina</Spanish>
     </Key>
     <Key ID="STR_AGM_Transfuse_Blood">
       <English>Transfuse Blood</English>
       <German>Bluttransfusion</German>
+      <Spanish>Transfundir Sangre</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitHead">
       <English>Bandage Head</English>
       <German>Kopf verbinden</German>
+      <Spanish>Vendar la Cabeza</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitBody">
       <English>Bandage Torso</English>
       <German>Torso verbinden</German>
+      <Spanish>Vendar el Torso</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitLeftArm">
       <English>Bandage Left Arm</English>
-	  <German>Arm links verbinden</German>
+      <German>Arm links verbinden</German>
+      <Spanish>Vendar el Brazo Izquierdo</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitRightArm">
       <English>Bandage Right Arm</English>
       <German>Arm rechts verbinden</German>
+      <Spanish>Vendar el Brazo Derecho</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitLeftLeg">
       <English>Bandage Left Leg</English>
       <German>Bein links verbinden</German>
+      <Spanish>Vendar la Pierna Izquierda</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandage_HitRightLeg">
       <English>Bandage Right Leg</English>
       <German>Bein rechts verbinden</German>
+      <Spanish>Vendar la Pierna Derecha</Spanish>
     </Key>
     <Key ID="STR_AGM_Drag">
       <English>Drag</English>
       <German>Ziehen</German>
+      <Spanish>Arrastrar</Spanish>
     </Key>
     <Key ID="STR_AGM_Carry">
       <English>Carry</English>
       <German>Tragen</German>
+      <Spanish>Cargar</Spanish>
     </Key>
     <Key ID="STR_AGM_Release">
       <English>Release</English>
       <German>Loslassen</German>
+      <Spanish>Soltar</Spanish>
     </Key>
     <Key ID="STR_AGM_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
+      <Spanish>Introducir al Paciente</Spanish>
     </Key>
     <Key ID="STR_AGM_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
+      <Spanish>Extraer al Paciente</Spanish>
     </Key>
 
     <Key ID="STR_AGM_Diagnosing">
       <English>Diagnosing ...</English>
       <German>Diagnostizieren ...</German>
+      <Spanish>Diagnosticando...</Spanish>
     </Key>
     <Key ID="STR_AGM_Injecting_Morphine">
       <English>Injecting Morphine ...</English>
       <German>Morphin injizieren ...</German>
+      <Spanish>Inyectando Morfina</Spanish>
     </Key>
     <Key ID="STR_AGM_Injecting_Epinephrine">
       <English>Injecting Epinephrine ...</English>
       <German>Epinephrine injizieren ...</German>
+      <Spanish>Inyectando Epinefrina</Spanish>
     </Key>
     <Key ID="STR_AGM_Transfusing_Blood">
       <English>Transfusing Blood ...</English>
       <German>Bluttransfusion ...</German>
+      <Spanish>Realizando Transfusión</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
       <German>Kopf verbinden ...</German>
+      <Spanish>Vendando la Cabeza...</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitBody">
       <English>Bandaging Torso ...</English>
       <German>Torso verbinden ...</German>
+      <Spanish>Vendando el Torso...</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitLeftArm">
       <English>Bandaging Left Arm ...</English>
-    <German>Linken Arm verbinden ...</German>
+      <German>Linken Arm verbinden ...</German>
+      <Spanish>Vendando el Brazo Izquierdo...</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitRightArm">
       <English>Bandaging Right Arm ...</English>
       <German>Rechten Arm verbinden ...</German>
+      <Spanish>Vendando el Brazo Derecho...</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitLeftLeg">
       <English>Bandaging Left Leg ...</English>
       <German>Linkes Bein verbinden ...</German>
+      <Spanish>Vendando la Pierna Izquierda...</Spanish>
     </Key>
     <Key ID="STR_AGM_Bandaging_HitRightLeg">
       <English>Bandaging Right Leg ...</English>
       <German>Rechtes Bein verbinden ...</German>
+      <Spanish>Vendando la Pierna Derecha...</Spanish>
     </Key>
   </Package>
 </Project>
