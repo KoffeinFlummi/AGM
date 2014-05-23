@@ -98,9 +98,5 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class AmovPercMwlkSlowWrflDr: AmovPercMwlkSlowWrflDf {
       leftHandIKCurve[] = {};
     };
-
-    class TestDance: AmovPercMstpSrasWrflDnon {
-      file = "\AGM_Movement\anim\agm_dancing.rtm";
-    };
   };
 };
