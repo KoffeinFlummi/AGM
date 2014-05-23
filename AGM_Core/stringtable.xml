@@ -5,26 +5,32 @@
     <Key ID="STR_AGM_Core_Save">
       <English>Save</English>
       <German>Speichern</German>
+      <Spanish>Salvar</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Cancel">
       <English>Cancel</English>
       <German>Abbrechen</German>
+      <Spanish>Cancelar</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Options">
       <English>AGM Options</English>
       <German>AGM Optionen</German>
+      <Spanish>Opciones AGM</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Shift">
       <English>Shift</English>
       <German>Umschalt</German>
+      <Spanish>Shift</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl">
       <English>Ctrl</English>
       <German>Strg</German>
+      <Spanish>Ctrl</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Alt">
       <English>Alt</English>
       <German>Alt</German>
+      <Spanish>Alt</Spanish>
     </Key>
 
   </Package>
