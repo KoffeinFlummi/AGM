@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Hearing">
+
+    <Key ID="STR_AGM_Earbuds_Name">
+      <English>Ear Plugs</English>
+      <German>Begrenzer</German>
+    </Key>
+    <Key ID="STR_AGM_Earbuds_Description">
+      <English>Protective Ear Buds used to enable the wearer to be near loud weaponry without damage to his hearing</English>
+      <German>Schützende Ohrstöpsel, die es dem Träger ermöglichen, sich in der Nähe lauter Waffen aufzuhalten.</German>
+    </Key>
+    <Key ID="STR_AGM_Earbuds_On">
+      <English>Earplugs in</English>
+      <German>Begrenzer an</German>
+    </Key>
+    <Key ID="STR_AGM_Earbuds_Off">
+      <English>Earplugs out</English>
+      <German>Begrenzer aus</German>
+    </Key>
+    <Key ID="STR_AGM_NoBuds">
+      <English>You have no ear plugs</English>
+      <German>Begrenzer aus</German>
+    </Key>
+    <Key ID="STR_AGM_Inventory_Full">
+      <English>Inventory is full; Cannot remove Ear Buds</English>
+      <German>Inventar ist voll; Begrenzer können nicht entfernt werden.</German>
+    </Key>
+
+  </Package>
+</Project>

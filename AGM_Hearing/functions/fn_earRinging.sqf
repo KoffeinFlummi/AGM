@@ -12,8 +12,7 @@
 
 _strength = _this select 0;
 
-_hasEarplugs = player getVariable "X39_MedSys_var_hasEarplugs";
-if (_hasEarplugs) then {
+if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
   _strength = _strength / 4;
 };
 
@@ -21,27 +20,27 @@ if (_strength > AGM_NewDeafness) then {
   AGM_NewDeafness = _strength;
 };
 
-if (_strength > 0.75 and !BWA3_EarRingingPlaying) exitWith {
+if (_strength > 0.75 and !AGM_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Heavy", true];
-  BWA3_EarRingingPlaying = true;
+  AGM_EarRingingPlaying = true;
   0 spawn {
     sleep 7;
-    BWA3_EarRingingPlaying = false;
+    AGM_EarRingingPlaying = false;
   };
 };
-if (_strength > 0.5 and !BWA3_EarRingingPlaying) exitWith {
+if (_strength > 0.5 and !AGM_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Medium", true];
-  BWA3_EarRingingPlaying = true;
+  AGM_EarRingingPlaying = true;
   0 spawn {
     sleep 5;
-    BWA3_EarRingingPlaying = false;
+    AGM_EarRingingPlaying = false;
   };
 };
-if (_strength > 0.2 and !BWA3_EarRingingPlaying) exitWith {
+if (_strength > 0.2 and !AGM_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Weak", true];
-  BWA3_EarRingingPlaying = true;
+  AGM_EarRingingPlaying = true;
   0 spawn {
     sleep 3;
-    BWA3_EarRingingPlaying = false;
+    AGM_EarRingingPlaying = false;
   };
 };
