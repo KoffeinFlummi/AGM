@@ -12,13 +12,13 @@
 
 _strength = _this select 0;
 
-0.5 fadeSound 0.1;
-0.5 fadeSpeech 0.1;
+_hasEarplugs = player getVariable "X39_MedSys_var_hasEarplugs";
+if (_hasEarplugs) then {
+  _strength = _strength / 4;
+};
 
-_strength spawn {
-  sleep (_this * 8);
-  (_this * 2) fadeSound 1;
-  (_this * 2) fadeSpeech 1;
+if (_strength > AGM_NewDeafness) then {
+  AGM_NewDeafness = _strength;
 };
 
 if (_strength > 0.75 and !BWA3_EarRingingPlaying) exitWith {
