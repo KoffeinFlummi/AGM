@@ -5,102 +5,126 @@
     <Key ID="STR_AGM_InteractionMenu">
       <English>Interaction Menu</English>
       <German>Interaktionsmenü</German>
+	  <Spanish>Menú de Interacción</Spanish>
     </Key>
     <Key ID="STR_AGM_InteractionMenuSelf">
       <EnglisH>Interaction Menu (Self)</English>
       <German>Interaktionsmenü (Selbst)</German>
+	  <Spanish>Menú de Interacción (Propia)</Spanish>
     </Key>
 
     <Key ID="STR_AGM_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
+	  <Spanish>Unirse al grupo</Spanish>
     </Key>
     <Key ID="STR_AGM_LeaveGroup">
       <English>Leave group</English>
       <German>Gruppe verlassen</German>
+	  <Spanish>Dejar grupo</Spanish>
     </Key>
     <Key ID="STR_AGM_BecomeLeader">
       <English>Become Leader</English>
       <German>Grp.-führung übern.</German>
+	  <Spanish>Tomar comando del grupo</Spanish>
     </Key>
     <Key ID="STR_AGM_Dance">
       <English>DANCE!</English>
       <German>TANZEN!</German>
+	  <Spanish>BAILAR!</Spanish>
     </Key>
     <Key ID="STR_AGM_StopDancing">
       <English>Stop Dancing</English>
       <German>Tanzen abbrechen</German>
+	  <Spanish>Dejar de bailar</Spanish>
     </Key>
 
     <Key ID="STR_AGM_Gestures">
       <English>Gestures >></English>
       <German>Gesten >></German>
+	  <Spanish>Gestos</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Attack">
       <English>Attack</English>
       <German>Angreifen</German>
+	  <Spanish>Atacar</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Advance">
       <English>Advance</English>
       <German>Vordringen</German>
+	  <Spanish>Avanzar</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Go">
       <English>Go</English>
       <German>Los</German>
+	  <Spanish>Adelante</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Follow">
       <English>Follow</English>
       <German>Folgen</German>
+	  <Spanish>Seguirme</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Point">
       <English>Point</English>
       <German>Zeigen</German>
+	  <Spanish>Señalar</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Up">
       <English>Up</English>
       <German>Aufstehen</German>
+	  <Spanish>Arriba</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Cover">
       <English>Cover</English>
       <German>Deckung</German>
+	  <Spanish>A cubierto</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Cease_Fire">
       <English>Cease Fire</English>
       <German>Feuer einstellen</German>
+	  <Spanish>Alto el fuego</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Freeze">
       <English>Freeze</English>
       <German>Keine Bewegung</German>
+	  <Spanish>Alto</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Hi">
       <English>Hi</English>
       <German>Hallo</German>
+	  <Spanish>Hola</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_Yes">
       <English>Yes</English>
       <German>Ja</German>
+	  <Spanish>Si</Spanish>
     </Key>
     <Key ID="STR_AGM_Gestures_No">
       <English>No</English>
       <German>Nein</German>
+	  <Spanish>No</Spanish>
     </Key>
 
     <Key ID="STR_AGM_WeaponOnBack">
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
+	  <Spanish>Poner el arma en la espalda</Spanish>
     </Key>
     <Key ID="STR_AGM_TapShoulder">
       <English>Tap shoulder</English>
       <German>Auf Schulter klopfen</German>
+	  <Spanish>Tocar el hombro</Spanish>
     </Key>
 
     <Key ID="STR_AGM_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
+	  <Spanish>Tomar (Ventral)</Spanish>
     </Key>
     <Key ID="STR_AGM_BackpackVentralPut">
       <English>Take Off Backpack</English>
       <German>Rucksack ablegen</German>
+	  <Spanish>Dejar (Ventral)</Spanish>
     </Key>
 
   </Package>
