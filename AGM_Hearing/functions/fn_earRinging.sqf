@@ -12,6 +12,11 @@
 
 _strength = _this select 0;
 
+_hasEarplugs = player getVariable "X39_MedSys_var_hasEarplugs";
+if (_hasEarplugs) then {
+  _strength = _strength / 4;
+};
+
 if (_strength > AGM_NewDeafness) then {
   AGM_NewDeafness = _strength;
 };
