@@ -5,7 +5,7 @@ class CfgPatches {
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = 0.7;
-    author[] = {"KoffeinFlummi", "esteldunedain", "HopeJ", "commy2"};
+    author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
