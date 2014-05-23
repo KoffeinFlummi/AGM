@@ -28,7 +28,6 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
   _unit setVariable ["tf_unable_to_use_radio", false, true];
-  _unit setVariable ["tf_voiceVolume", 1, true];
 };
 
 [-2, {

@@ -60,6 +60,7 @@ AGM_NewStrength = 0;
 
     0.1 fadeSound _volume;
     0.1 fadeSpeech _volume;
+    player setVariable ["tf_globalVolume", _volume];
 
     //hintSilent format ["AGM_CurrentDeafness, _Volume = %1, %2", AGM_CurrentDeafness, _volume];
 

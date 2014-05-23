@@ -29,7 +29,6 @@ _unit setVariable ["AGM_Group", _oldGroup, true];
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
   player setVariable ["tf_unable_to_use_radio", true, true];
-  player setVariable ["tf_voiceVolume", 0, true];
 };
 
 if (_unit == player) then {
