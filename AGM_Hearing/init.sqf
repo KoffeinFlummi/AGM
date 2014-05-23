@@ -13,21 +13,21 @@ player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];
 player addEventHandler ["explosion", {_this call AGM_Hearing_fnc_explosionEH}];
 
 AGM_CurrentDeafness = 0;
-AGM_NewDeafness = 0;
+AGM_NewStrength = 0;
 
 // Spawn volume updating process
 [] spawn {
   while {true} do {
 
     // Check if new noises increase deafness
-    if (AGM_NewDeafness * StrenghToDeafness > AGM_CurrentDeafness) then {
-      AGM_CurrentDeafness = AGM_NewDeafness * StrenghToDeafness;
+    if (AGM_NewStrength * StrenghToDeafness > AGM_CurrentDeafness) then {
+      AGM_CurrentDeafness = AGM_NewStrength * StrenghToDeafness;
 
       if (AGM_CurrentDeafness > MaxDeafness) then {
         AGM_CurrentDeafness = MaxDeafness;
       };
     };
-    AGM_NewDeafness = 0;
+    AGM_NewStrength = 0;
 
     // Recover rate is slower if deafness is severe
     _recoverRate = 0.01;
@@ -50,6 +50,14 @@ AGM_NewDeafness = 0;
       _clampedDeafness = 0
     };
     _volume = _clampedDeafness * _clampedDeafness;
+
+    // Earplugs reduce hearing 25%
+    if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
+      if (_volume > 0.75) then {
+        _volume = 0.75;
+      };
+    };
+
     0.1 fadeSound _volume;
     0.1 fadeSpeech _volume;
 

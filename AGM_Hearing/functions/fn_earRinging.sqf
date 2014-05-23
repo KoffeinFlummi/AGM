@@ -16,8 +16,8 @@ if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) 
   _strength = _strength / 4;
 };
 
-if (_strength > AGM_NewDeafness) then {
-  AGM_NewDeafness = _strength;
+if (_strength > AGM_NewStrength) then {
+  AGM_NewStrength = _strength;
 };
 
 if (_strength > 0.75 and !AGM_EarRingingPlaying) exitWith {

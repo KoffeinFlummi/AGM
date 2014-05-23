@@ -18,9 +18,6 @@ if (AGM_EarPlugsIn) exitWith {
   if (count items player > _count) then { // ear bugs fit into inventory
     [localize "STR_AGM_Earbuds_Off", true] call AGM_Core_fnc_displayText;
     AGM_EarPlugsIn = false;
-
-    0.5 fadeSound 1;
-    0.5 fadeSpeech 1;
   } else { // inventory full
     [localize "STR_AGM_Inventory_Full", true] call AGM_Core_fnc_displayText;
   };
@@ -32,9 +29,6 @@ if ("AGM_EarBuds" in items player) exitWith {
   
   [localize "STR_AGM_Earbuds_On", true] call AGM_Core_fnc_displayText;
   AGM_EarPlugsIn = true;
-
-  0.5 fadeSound 0.1;
-  0.5 fadeSpeech 0.1;
 };
 
 // No Ear Buds in inventory, telling user
