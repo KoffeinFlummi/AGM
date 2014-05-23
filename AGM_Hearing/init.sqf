@@ -51,10 +51,10 @@ AGM_NewStrength = 0;
     };
     _volume = _clampedDeafness * _clampedDeafness;
 
-    // Earplugs reduce hearing 25%
+    // Earplugs reduce hearing 50%
     if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
-      if (_volume > 0.75) then {
-        _volume = 0.75;
+      if (_volume > 0.50) then {
+        _volume = 0.50;
       };
     };
 

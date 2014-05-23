@@ -5,24 +5,29 @@
     <Key ID="STR_AGM_RestWeapon">
       <English>Rest weapon</English>
       <German>Waffe auflegen</German>
+      <Spanish>Apoyar el arma</Spanish>
     </Key>
 
     <Key ID="STR_AGM_BipodDeployed">
       <English>Bipod deployed</English>
       <German>Zweibein ausgeklappt</German>
+      <Spanish>Bípode desplegado</Spanish>
     </Key>
     <Key ID="STR_AGM_WeaponRested">
       <English>Weapon rested</English>
       <German>Waffe aufgelegt</German>
+      <Spanish>Arma apoyada</Spanish>
     </Key>
 
     <Key ID="STR_AGM_BipodUndeployed">
       <English>Bipod undeployed</English>
       <German>Zweibein eingeklappt</German>
+      <Spanish>Bípode plegado</Spanish>
     </Key>
     <Key ID="STR_AGM_WeaponLifted">
       <English>Weapon lifted</English>
       <German>Waffe gehoben</German>
+      <Spanish>Arma levantada</Spanish>
     </Key>
 
   </Package>
