@@ -191,4 +191,4 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
 
 };
 
-if (_newDamage > 0.9) exitWith {0.9}
+if (_newDamage > 0.9 and !INSTANTDEATH) exitWith {0.9}
