@@ -1,7 +1,9 @@
 // PATCH CONFIG
 class CfgPatches {
   class AGM_Medical {
-    units[] = {};
+    units[] = {
+      "AGM_Box_Medical"
+    };
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {

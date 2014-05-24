@@ -6,7 +6,7 @@ if (isDedicated) exitWith {};
 
 AGM_EarRingingPlaying = false;
 
-AGM_EarPlugsin = false;
+AGM_EarPlugsIn = false;
 AGM_hasEarBuds = false;
 
 player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];

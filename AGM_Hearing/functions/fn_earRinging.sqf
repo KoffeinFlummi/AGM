@@ -12,13 +12,11 @@
 
 _strength = _this select 0;
 
-if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
+if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsIn) then {
   _strength = _strength / 4;
 };
 
-if (_strength > AGM_NewStrength) then {
-  AGM_NewStrength = _strength;
-};
+AGM_NewStrength = AGM_NewStrength max _strength;
 
 if (_strength > 0.75 and !AGM_EarRingingPlaying) exitWith {
   playSound ["AGM_EarRinging_Heavy", true];
