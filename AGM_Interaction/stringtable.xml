@@ -5,126 +5,150 @@
     <Key ID="STR_AGM_InteractionMenu">
       <English>Interaction Menu</English>
       <German>Interaktionsmenü</German>
-	  <Spanish>Menú de Interacción</Spanish>
+      <Spanish>Menú de Interacción</Spanish>
+      <Polish>Menu Interakcji</Polish>
     </Key>
     <Key ID="STR_AGM_InteractionMenuSelf">
       <EnglisH>Interaction Menu (Self)</English>
       <German>Interaktionsmenü (Selbst)</German>
-	  <Spanish>Menú de Interacción (Propia)</Spanish>
+      <Spanish>Menú de Interacción (Propia)</Spanish>
+      <Polish>Menu Interakcji (Własne)</Polish>
     </Key>
 
     <Key ID="STR_AGM_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
-	  <Spanish>Unirse al grupo</Spanish>
+      <Spanish>Unirse al grupo</Spanish>
+      <Polish>Dołącz do grupy</Polish>
     </Key>
     <Key ID="STR_AGM_LeaveGroup">
       <English>Leave group</English>
       <German>Gruppe verlassen</German>
-	  <Spanish>Dejar grupo</Spanish>
+      <Spanish>Dejar grupo</Spanish>
+      <Polish>Opuść grupę</Polish>
     </Key>
     <Key ID="STR_AGM_BecomeLeader">
       <English>Become Leader</English>
       <German>Grp.-führung übern.</German>
-	  <Spanish>Tomar comando del grupo</Spanish>
+      <Spanish>Tomar comando del grupo</Spanish>
+      <Polish>Przejmij dowodzenie</Polish>
     </Key>
     <Key ID="STR_AGM_Dance">
       <English>DANCE!</English>
       <German>TANZEN!</German>
-	  <Spanish>BAILAR!</Spanish>
+      <Spanish>BAILAR!</Spanish>
+      <Polish>TAŃCZ!</Polish>
     </Key>
     <Key ID="STR_AGM_StopDancing">
       <English>Stop Dancing</English>
       <German>Tanzen abbrechen</German>
-	  <Spanish>Dejar de bailar</Spanish>
+      <Spanish>Dejar de bailar</Spanish>
+      <Polish>Przestań tańczyć</Polish>
     </Key>
 
     <Key ID="STR_AGM_Gestures">
       <English>Gestures >></English>
       <German>Gesten >></German>
-	  <Spanish>Gestos</Spanish>
+      <Spanish>Gestos</Spanish>
+      <Polish>Gesty</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Attack">
       <English>Attack</English>
       <German>Angreifen</German>
-	  <Spanish>Atacar</Spanish>
+      <Spanish>Atacar</Spanish>
+      <Polish>Do ataku</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Advance">
       <English>Advance</English>
       <German>Vordringen</German>
-	  <Spanish>Avanzar</Spanish>
+      <Spanish>Avanzar</Spanish>
+      <Polish>Naprzód</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Go">
       <English>Go</English>
       <German>Los</German>
-	  <Spanish>Adelante</Spanish>
+      <Spanish>Adelante</Spanish>
+      <Polish>Szybko</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Follow">
       <English>Follow</English>
       <German>Folgen</German>
-	  <Spanish>Seguirme</Spanish>
+      <Spanish>Seguirme</Spanish>
+      <Polish>Za mną</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Point">
       <English>Point</English>
       <German>Zeigen</German>
-	  <Spanish>Señalar</Spanish>
+      <Spanish>Señalar</Spanish>
+      <Polish>Wskazać</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Up">
       <English>Up</English>
       <German>Aufstehen</German>
-	  <Spanish>Arriba</Spanish>
+      <Spanish>Arriba</Spanish>
+      <Polish>Do góry</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Cover">
       <English>Cover</English>
       <German>Deckung</German>
-	  <Spanish>A cubierto</Spanish>
+      <Spanish>A cubierto</Spanish>
+      <Polish>Do osłony</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Cease_Fire">
       <English>Cease Fire</English>
       <German>Feuer einstellen</German>
-	  <Spanish>Alto el fuego</Spanish>
+      <Spanish>Alto el fuego</Spanish>
+      <Polish>Wstrzymać ogień</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Freeze">
       <English>Freeze</English>
       <German>Keine Bewegung</German>
-	  <Spanish>Alto</Spanish>
+      <Spanish>Alto</Spanish>
+      <Polish>Stać</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Hi">
       <English>Hi</English>
       <German>Hallo</German>
-	  <Spanish>Hola</Spanish>
+      <Spanish>Hola</Spanish>
+      <Polish>Witaj</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_Yes">
       <English>Yes</English>
       <German>Ja</German>
-	  <Spanish>Si</Spanish>
+      <Spanish>Si</Spanish>
+      <Polish>Tak</Polish>
     </Key>
     <Key ID="STR_AGM_Gestures_No">
       <English>No</English>
       <German>Nein</German>
-	  <Spanish>No</Spanish>
+      <Spanish>No</Spanish>
+      <Polish>Nie</Polish>
     </Key>
 
     <Key ID="STR_AGM_WeaponOnBack">
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
-	  <Spanish>Poner el arma en la espalda</Spanish>
+      <Spanish>Poner el arma en la espalda</Spanish>
+      <Polish>Umieść broń na plecach</Polish>
     </Key>
     <Key ID="STR_AGM_TapShoulder">
       <English>Tap shoulder</English>
       <German>Auf Schulter klopfen</German>
-	  <Spanish>Tocar el hombro</Spanish>
+      <Spanish>Tocar el hombro</Spanish>
+      <Polish>Klepnij w ramię</Polish>
     </Key>
 
     <Key ID="STR_AGM_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
-	  <Spanish>Tomar (Ventral)</Spanish>
+      <Spanish>Tomar (Ventral)</Spanish>
+      <Polish>Załóż (Brzuch)</Polish>
     </Key>
     <Key ID="STR_AGM_BackpackVentralPut">
       <English>Take Off Backpack</English>
       <German>Rucksack ablegen</German>
-	  <Spanish>Dejar (Ventral)</Spanish>
+      <Spanish>Dejar (Ventral)</Spanish>
+      <Polish>Zdejmij (Brzuch)</Polish>
     </Key>
 
   </Package>

@@ -61,7 +61,7 @@ class AGM_Tile_Base {
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundEscape",0.09,1};
 	soundPush[] = {"\A3\ui_f\data\sound\RscButtonMenu\soundPush",0.09,1};
 	style = "0x02 + 0xC0";
-	text = "$STR_AGM_Core_Options"
+	text = "$STR_AGM_Core_Options";
 	textureNoShortcut = "#(argb,8,8,3)color(0,0,0,0)";
 	tooltip = "";
 	tooltipColorBox[] = {1,1,1,1};

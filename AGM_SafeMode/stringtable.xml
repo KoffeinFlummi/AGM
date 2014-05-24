@@ -6,11 +6,13 @@
       <English>Weapon safe</English>
       <German>Waffe gesichert</German>
       <Spanish>Seguro colocado</Spanish>
+      <Polish>Broń zabezpieczona</Polish>
     </Key>
     <Key ID="STR_AGM_SafeModeLifted">
       <English>Safety catch released</English>
       <German>Waffe entsichert</German>
       <Spanish>Seguro liberado</Spanish>
+      <Polish>Broń odbezpieczona</Polish>
     </Key>
 
   </Package>
