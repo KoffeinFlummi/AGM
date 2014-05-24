@@ -103,7 +103,7 @@ class CfgVehicles {
         name = "body";
         passThrough = 1;
         radius = 0.15;
-        visual = "infury_body";
+        visual = "injury_body";
       };
       class HitLeftArm {
         armor = 2;
