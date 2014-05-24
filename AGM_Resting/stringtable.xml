@@ -6,28 +6,33 @@
       <English>Rest weapon</English>
       <German>Waffe auflegen</German>
       <Spanish>Apoyar el arma</Spanish>
+      <Polish>Oprzeć broń</Polish>
     </Key>
 
     <Key ID="STR_AGM_BipodDeployed">
       <English>Bipod deployed</English>
       <German>Zweibein ausgeklappt</German>
       <Spanish>Bípode desplegado</Spanish>
+      <Polish>Dwójnóg rozstawiony</Polish>
     </Key>
     <Key ID="STR_AGM_WeaponRested">
       <English>Weapon rested</English>
       <German>Waffe aufgelegt</German>
       <Spanish>Arma apoyada</Spanish>
+      <Polish>Broń oparta</Polish>
     </Key>
 
     <Key ID="STR_AGM_BipodUndeployed">
       <English>Bipod undeployed</English>
       <German>Zweibein eingeklappt</German>
       <Spanish>Bípode plegado</Spanish>
+      <Polish>Dwójnóg złożony</Polish>
     </Key>
     <Key ID="STR_AGM_WeaponLifted">
       <English>Weapon lifted</English>
       <German>Waffe gehoben</German>
       <Spanish>Arma levantada</Spanish>
+      <Polish>Broń podniesiona</Polish>
     </Key>
 
   </Package>

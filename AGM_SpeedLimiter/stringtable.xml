@@ -6,11 +6,13 @@
       <English>Speed Limiter on</English>
       <German>Begrenzer an</German>
       <Spanish>Limitador de Velocidad activado</Spanish>
+      <Polish>Ogranicznik prędkości włączony</Polish>
     </Key>
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
       <German>Begrenzer aus</German>
       <Spanish>Limitador de Velocidad desactivado</Spanish>
+      <Polish>Ogranicznik prędkości wyłączony</Polish>
     </Key>
 
   </Package>
