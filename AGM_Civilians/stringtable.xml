@@ -5,10 +5,14 @@
     <Key ID="STR_AGM_Civilians_SendAway">
       <English>Go Away!</English>
       <German>Geh Weg!</German>
+      <Spanish>Aléjate!</Spanish>
+      <Polish>Odejdź!</Polish>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
       <English>Get Down!</English>
       <German>Auf Den Boden!</German>
+      <Spanish>Al suelo!</Spanish>
+      <Polish>Padnij!</Polish>
     </Key>
 
   </Package>

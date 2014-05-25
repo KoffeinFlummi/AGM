@@ -5,10 +5,14 @@
     <Key ID="STR_AGM_FireControlSystem_LaseTarget">
       <English>Lase Target</English>
       <German>Ziel Anlasern</German>
+      <Spanish>Iluminar Objetivo</Spanish>
+      <Polish>Naświetl Cel</Polish>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
       <German>Haltepunkt</German>
+      <Spanish>Seteado a</Spanish>
+      <Polish>Wyzerowany na</Polish>
     </Key>
 
   </Package>

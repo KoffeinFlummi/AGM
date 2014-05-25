@@ -5,55 +5,81 @@
     <Key ID="STR_AGM_Aircraft_CMFlareLauncher_Burst_Name">
       <English>Burst</English>
       <German>Feuerstoß</German>
+      <Spanish>Ráfaga</Spanish>
+      <Polish>Seria</Polish>
     </Key>
 
     <Key ID="STR_AGM_Aircraft_Heli_Attack_01_Name">
       <English>RAH-66 Comanche</English>
       <German>RAH-66 Comanche</German>
+      <Spanish>RAH-66 Comanche</Spanish>
+      <Polish>RAH-66 Comanche</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_01_Name">
       <English>MH-6 Little Bird</English>
       <German>MH-6 Little Bird</German>
+      <Spanish>MH-6 Litte Bird</Spanish>
+      <Polish>MH-6 Little Bird</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_01_armed_Name">
       <English>AH-6 Little Bird</English>
       <German>AH-6 Little Bird</German>
+      <Spanish>AH-6 Little Bird</Spanish>
+      <Polish>AH-6 Little Bird</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_CAS_01_Name">
       <English>A-14 Warthog</English>
       <German>A-14 Warthog</German>
+      <Spanish>A-14 Warthog</Spanish>
+      <Polish>A-10 Warthog</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_light_03_Name">
       <English>AW159 Wildcat</English>
       <German>AW159 Wildcat</German>
+      <Spanish>AW159 Wildcat</Spanish>
+      <Polish>AW159 Wildcat</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_light_03_unarmed_Name">
       <English>AW159 Wildcat (unarmed)</English>
       <German>AW159 Wildcat (unbewaffnet)</German>
+      <Spanish>AW159 Wildcar (desarmado)</Spanish>
+      <Polish>AW159 Wildcat (nieuzbrojony)</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Transport_02_Name">
       <English>AW101 Merlin</English>
       <German>AW101 Merlin</German>
+      <Spanish>AW101 Merlin</Spanish>
+      <Polish>AW101 Merlin</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_Fighter_03_CAS_Name">
       <English>L-39 Albatros (CAS)</English>
       <German>L-39 Albatros (CAS)</German>
+      <Spanish>L-39 Albatros</Spanish>
+      <Polish>L-39 Albatros (CAS)</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_Fighter_03_AA_Name">
       <English>L-39 Albatros (AA)</English>
       <German>L-39 Albatros (AA)</English>
+      <Spanish>L-39 Albatros (AA)</Spanish>
+      <Polish>L-39 Albatros (AA)</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_02_Name">
       <English>Ka-60 Kasatka</English>
       <German>Ka-60 Kasatka</German>
+      <Spanish>Ka-60 Kasatka</Spanish>
+      <Polish>Ka-60 Kasatka</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_02_unarmed_Name">
       <English>Ka-60 Kasatka (unarmed)</English>
       <German>Ka-60 Kasatka (unbewaffnet)</German>
+      <Spanish>Ka-60 Kasatka (desarmado)</Spanish>
+      <Polish>Ka-60 Kasatka (nieuzbrojony)</Polish>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_CAS_02_Name">
       <English>Yak-130</English>
       <German>Yak-130</German>
+      <Spanish>Yak-130</Spanish>
+      <Polish>Yak-130</Polish>
     </Key>
 
   </Package>

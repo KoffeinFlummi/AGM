@@ -42,76 +42,112 @@
     <Key ID="STR_AGM_Core_ProfileSaved">
       <English>Profile Saved</English>
       <German>Profil Gespeichert</German>
+      <Spanish>Perfil Salvado</Spanish>
+      <Polish>Profil Zapisany</Polish>
     </Key>
     <Key ID="STR_AGM_Core_ProfileNotSaved">
       <English>Profile Not Saved</English>
       <German>Profil Nicht Gespeichert</German>
+      <Spanish>Perfil No Salvado</Spanish>
+      <Polish>Profil Niezapisany</Polish>
     </Key>
 
     <!-- These are cardinal directions, in case you didn't guess. -->
     <Key ID="STR_AGM_Core_N">
       <English>N</English>
       <German>N</German>
+      <Spanish>N</Spanish>
+      <Polish>N</Polish>
     </Key>
     <Key ID="STR_AGM_Core_NNE">
       <English>NNE</English>
       <German>NNO</German>
+      <Spanish>NNE</Spanish>
+      <Polish>NNE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_NE">
       <English>NE</English>
       <German>NO</German>
+      <Spanish>NE</Spanish>
+      <Polish>NE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_ENE">
       <English>ENE</English>
       <German>ONO</German>
+      <Spanish>ENE</Spanish>
+      <Polish>ENE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_E">
       <English>E</English>
       <German>O</German>
+      <Spanish>E</Spanish>
+      <Polish>E</Polish>
     </Key>
     <Key ID="STR_AGM_Core_ESE">
       <English>ESE</English>
       <German>OSO</German>
+      <Spanish>ESE</Spanish>
+      <Polish>ESE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_SE">
       <English>SE</English>
       <German>SO</German>
+      <Spanish>SE</Spanish>
+      <Polish>SE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_SSE">
       <English>SSE</English>
       <German>SSO</German>
+      <Spanish>SSE</Spanish>
+      <Polish>SSE</Polish>
     </Key>
     <Key ID="STR_AGM_Core_S">
       <English>S</English>
       <German>S</German>
+      <Spanish>S</Spanish>
+      <Polish>S</Polish>
     </Key>
     <Key ID="STR_AGM_Core_SSW">
       <English>SSW</English>
       <German>SSW</German>
+      <Spanish>SSW</Spanish>
+      <Polish>SSW</Polish>
     </Key>
     <Key ID="STR_AGM_Core_SW">
       <English>SW</English>
       <German>SW</German>
+      <Spanish>SW</Spanish>
+      <Polish>SW</Polish>
     </Key>
     <Key ID="STR_AGM_Core_WSW">
       <English>WSW</English>
       <German>WSW</German>
+      <Spanish>WSW</Spanish>
+      <Polish>WSW</Polish>
     </Key>
     <Key ID="STR_AGM_Core_W">
       <English>W</English>
       <German>W</German>
+      <Spanish>W</Spanish>
+      <Polish>W</Polish>
     </Key>
     <Key ID="STR_AGM_Core_WNW">
       <English>WNW</English>
       <German>WNW</German>
+      <Spanish>WNW</Spanish>
+      <Polish>WNW</Polish>
     </Key>
     <Key ID="STR_AGM_Core_NW">
       <English>NW</English>
       <German>NW</German>
+      <Spanish>NW</Spanish>
+      <Polish>NW</Polish>
     </Key>
     <Key ID="STR_AGM_Core_NNW">
       <English>NNW</English>
       <German>NNW</German>
+      <Spanish>NNW</Spanish>
+      <Polish>NNW</Polish>
     </Key>
 
   </Package>
