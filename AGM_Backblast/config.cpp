@@ -65,6 +65,11 @@ class CfgWeapons {
   class cannon_120mm: CannonCore {
     AGM_DangerZone_Angle = 90;
     AGM_DangerZone_Range = 50;
+    AGM_DangerZone_Damage = 0.8;
+  };
+  class mortar_155mm_AMOS: CannonCore {
+    AGM_DangerZone_Angle = 90;
+    AGM_DangerZone_Range = 60;
     AGM_DangerZone_Damage = 1;
   };
 };

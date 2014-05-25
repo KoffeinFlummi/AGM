@@ -45,7 +45,9 @@ _this spawn {
       _this spawn {
         _this enableSimulation true;
         sleep 3.8;
-        _this enableSimulation false;
+        if (_this getVariable "AGM_Unconscious") then {
+          _this enableSimulation false;
+        };
       };
     };
   }, _unit] call CBA_fnc_globalExecute;

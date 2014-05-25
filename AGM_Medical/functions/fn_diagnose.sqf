@@ -56,7 +56,7 @@ _this spawn {
       {
         if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
           if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
-          _lightinjuries = _lightinjuries + (_x select 0);
+          _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
         };
       } forEach _damages;
       if (_lightinjuries != "") then {
