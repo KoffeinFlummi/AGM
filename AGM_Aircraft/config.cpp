@@ -132,7 +132,6 @@ class CfgVehicles {
   // OPFOR Inheritance
   class Heli_Light_02_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
       class CopilotTurret: CopilotTurret {};
     };
   };
@@ -262,9 +261,6 @@ class CfgVehicles {
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
