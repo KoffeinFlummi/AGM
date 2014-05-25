@@ -175,139 +175,172 @@
     <Key ID="STR_AGM_Medical_Bandage_Name">
       <English>Bandage</English>
       <German>Bandage</German>
+      <Polish>Bandaż</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_Description">
       <English>Used to stop bleeding.</English>
       <German>Verwendet zum Stoppen von Blutungen</German>
+      <Polish>Używany do zatamowania krwawienia.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Morphine_Name">
       <English>Morphine Autoinjector</English>
       <German>Morphin-Autoinjektor</German>
+      <Polish>Autostrzykawka z Morfiną</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Morphine_Description">
       <English>Heavy Painkiller</English>
       <German>Schweres Schmerzmittel</German>
+      <Polish>Mocne Środki Przeciwbólowe</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Epinephrine_Name">
       <English>Epinephrine Autoinjector</English>
       <German>Epinephrin-Autoinjektor</German>
+      <Polish>Autostrzykawka z Epinefryną</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Epinephrine_Description">
       <English>Used to wake up unconscious units.</English>
       <German>Benutzt zum Aufwecken bewusstloser Patienten.</German>
+      <Polish>Używana aby ocucić nieprzytomnego pacjenta.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Bloodbag_Name">
       <English>Blood Bag</English>
       <German>Blutkonserve</German>
+      <Polish>Worek z Krwią</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Bloodbag_Description">
       <English>Used to compensate for heavy blood loss.</English>
       <German>Benutzt, um schweren Blutverlust zu kompensieren.</German>
+      <Polish>Stosowany w celu skompensowania dużej utraty krwi.</Polish>
     </Key>
 
     <Key ID="STR_AGM_Medical_HitHead">
       <English>Head</English>
       <German>Kopf</German>
+      <Polish>Głowa</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_HitBody">
       <English>Torso</English>
       <German>Torso</German>
+      <Polish>Tors</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_HitLeftArm">
       <English>Left Arm</English>
       <German>Linker Arm</German>
+      <Polish>Lewe Ramię</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_HitRightArm">
       <English>Right Arm</English>
       <German>Rechter Arm</German>
+      <Polish>Prawe Ramię</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_HitLeftLeg">
       <English>Left Leg</English>
       <German>Linkes Bein</German>
+      <Polish>Lewa Noga</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_HitRightLeg">
       <English>Right Leg</English>
       <German>Rechtes Bein</German>
+      <Polish>Prawa Noga</Polish>
     </Key>
 
     <Key ID="STR_AGM_Medical_Patient">
       <English>Patient</English>
       <German>Patient</German>
+      <Polish>Pacjent</Polish>
     </Key>
 
     <!-- Check AGM_Medical_fnc_diagnose for how the diagnose string is pieced together -->
     <Key ID="STR_AGM_Medical_PatientIsDead">
       <English>The patient is dead.</English>
       <German>Der Patient ist tot.</German>
+      <Polish>Pacjent jest martwy.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientIsUnconscious">
       <English>The patient is unconscious.</English>
       <German>Der Patient ist bewusstlos.</German>
+      <Polish>Pacjent jest nieprzytomny.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientIsAwake">
       <English>The patient is awake.</English>
       <German>Der Patient ist wach.</German>
+      <Polish>Pacjent jest przytomny.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
       <German>Der Patient hat schwere Verletzungen in:</German>
+      <Polish>Pacjent ma ciężkie obrażenia na:</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightInjuries">
       <English>The patient has light injuries in:</English>
       <German>Der Patient hat leichte Verletzungen in:</German>
+      <Polish>Pacjent ma lekkie obrażenia na:</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNotInjured">
       <English>The patient is not injured.</English>
       <German>Der Patient ist unverletzt.</German>
+      <Polish>Pacjent nie ma żadnych obrażeń.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientBleeding">
       <English>The patient is bleeding;</English>
       <German>Der Patient blutet;</German>
+      <Polish>Pacjent krwawi;</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNotBleeding">
       <English>The patient is not bleeding;</English>
       <German>Der Patient blutet nicht;</German>
+      <Polish>Pacjent nie krwawi;</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostBlood">
       <English>The patient has already lost a lot of blood.</English>
       <German>Der Patient hat bereits große Mengen Blut verloren.</German>
+      <Polish>Pacjent stracił już dużą ilość krwi.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostSomeBlood">
       <English>The patient has already lost some blood.</English>
       <German>Der Patient hat bereits etwas Blut verloren.</German>
+      <Polish>PAcjent stracił już trochę krwi.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostNoBlood">
       <English>The patient hasn't lost any blood.</English>
       <German>Der Patient hat noch kein Blut verloren.</German>
+      <Polish>Pacjent nie traci żadnej krwi.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientPainkillers">
       <English>The patient is on heavy painkillers </English>
       <German>Der Patient steht unter starkem Schmerzmitteleinfluss</German>
+      <Polish>Pacjent jest na silnych środkach przeciwbólowych</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientSomePainkillers">
       <English>The patient is on some morphine </English>
       <German>Der Patient steht unter schwachem Schmerzmitteleinfluss</German>
+      <Polish>Pacjent jest pod wpływem działania morfiny</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNoPainkillers">
       <English>The patient isn't on painkillers </English>
       <German>Der Patient steht nicht unter dem Einfluss von Schmerzmitteln</German>
+      <Polish>Pacjent nie przyjmował środków przeciwbólowych</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyPain">
       <English>and in heavy pain.</English>
       <German>und hat starke Schmerzen.</German>
+      <Polish>i odczuwa silny ból.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightPain">
       <English>and in light pain.</English>
       <German>und hat leichte Schmerzen.</German>
+      <Polish>i odczuwa lekki ból.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNoPain">
       <English>and not in pain.</English>
       <German>und hat keine Schmerzen.</German>
+      <Polish>i nie odczuwa żadnego bólu.</Polish>
     </Key>
 
     <Key ID="STR_AGM_Medical_NotTrained">
       <English>You are not trained to do that.</English>
       <German>Dazu bist du nicht ausgebildet.</German>
+      <Polish>Nie zostałeś przeszkolony aby to zrobić.</Polish>
     </Key>
 
   </Package>
