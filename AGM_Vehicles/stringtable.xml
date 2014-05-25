@@ -5,191 +5,237 @@
     <Key ID="STR_AGM_Vehicles_MRAP_01_Name">
       <English>M-ATV</English>
       <German>M-ATV</German>
+      <Polish>M-ATV</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_01_hmg_Name">
       <English>M-ATV (HMG)</English>
       <German>M-ATV (SMG)</German>
+      <Polish>M-ATV (CKM)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_01_gmg_Name">
       <English>M-ATV (GMG)</English>
       <German>M-ATV (GMW)</German>
+      <Polish>M-ATV (GMG)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_cannon_Name">
       <English>Merkava Mk IV</English>
       <German>Merkava Mk IV</German>
+      <Polish>Merkava Mk IV</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_TUSK_Name">
       <English>Merkava LIC</English>
       <German>Merkava LIC</German>
+      <Polish>Merkava LIC</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_arty_Name">
       <English>Sholef</English>
       <German>Sholef</German>
+      <Polish>Sholef</Polish>
     </Key>    
     <Key ID="STR_AGM_Vehicles_MBT_01_mlrs_Name">
       <English>Seara</English>
       <German>Seara</German>
+      <Polish>Seara</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_rcws_Name">
       <English>Namer</English>
       <German>Namer</German>
+      <Polish>Namer</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_AA_Name">
       <English>Bardelas</English>
       <German>Bardelas</German>
+      <Polish>Bardelas</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_cannon_Name">
       <English>Patria AMV</English>
       <German>Patria AMV</German>
+      <Polish>Patria AMV</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_CRV_Name">
       <English>Nemmera</English>
       <German>Nemmera</German>
+      <Polish>Nammera</Polish>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_01_transport_Name">
       <English>HEMTT Transport</English>
       <German>HEMTT Transport</German>
+      <Polish>HEMTT Transport</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_covered_Name">
       <English>HEMTT Transport (covered)</English>
       <German>HEMTT Transport (bedeckt)</German>
+      <Polish>HEMTT Transport (zakryty)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_mover_Name">
       <English>HEMTT</English>
       <German>HEMTT</German>
+      <Polish>HEMTT</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_box_Name">
       <English>HEMTT Container</English>
       <German>HEMTT Container</German>
+      <Polish>HEMTT Kontener</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_medical_Name">
       <English>HEMTT Medical</English>
       <German>HEMTT Sanitäter</German>
+      <Polish>HEMTT Sanitarny</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_ammo_Name">
       <English>HEMTT Ammo</English>
       <German>HEMTT Munition</German>
+      <Polish>HEMTT Amunicyjny</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_fuel_Name">
       <English>HEMTT Fuel</English>
       <German>HEMTT Treibstoff</German>
+      <Polish>HEMTT Cysterna</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_Repair_Name">
       <English>HEMTT Repair</English>
       <German>HEMTT Instandsetzung</German>
+      <Polish>HEMTT Naprawczy</Polish>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_MRAP_03_Name">
       <English>Fennek</English>
       <German>Fennek</German>
+      <Polish>Fennek</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_03_hmg_Name">
       <English>Fennek (HMG)</English>
       <German>Fennek (SMG)</German>
+      <Polish>Fennek (CKM)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_03_gmg_Name">
       <English>Fennek (GMG)</English>
       <German>Fennek (GMW)</German>
+      <Polish>Fennek (GMG)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_03_cannon_Name">
       <English>MBT Revolution</English>
       <German>MBT Revolution</German>
+      <Polish>MBT Revolution</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_tracked_03_cannon_Name">
       <English>FV510 Warrior</English>
       <German>FV510 Warrior</German>
+      <Polish>FV510 Warrior</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_03_cannon_Name">
       <English>Pandur II</English>
       <German>Pandur II</German>
+      <Polish>Pandur II</Polish>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_02_transport_Name">
       <English>Kamaz Transport</English>
       <German>Kamaz Transport</German>
+      <Polish>Kamaz Transport</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_covered_Name">
       <English>Kamaz Transport (covered)</English>
       <German>Kamaz Transport (bedeckt)</German>
+      <Polish>Kamaz Transport (zakryty)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_ammo_Name">
       <English>Kamaz Ammo</English>
       <German>Kamaz Munition</German>
+      <Polish>Kamaz Amunicyjny</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_fuel_Name">
       <English>Kamaz Fuel</English>
       <German>Kamaz Treibstoff</German>
+      <Polish>Kamaz Cysterna</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_box_Name">
       <English>Kamaz Repair</English>
       <German>Kamaz Instandsetzung</German>
+      <Polish>Kamaz Naprawczy</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_medical_Name">
       <English>Kamaz Medical</English>
       <German>Kamaz Sanitäter</German>
+      <Polish>Kamaz Sanitarny</Polish>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_MRAP_02_Name">
       <English>Punisher</English>
       <German>Punisher</German>
+      <Polish>Punisher</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_02_hmg_Name">
       <English>Punisher (HMG)</English>
       <German>Punisher (SMG)</German>
+      <Polish>Punisher (CKM)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_02_gmg_Name">
       <English>Punisher (GMG)</English>
       <German>Punisher (GMW)</German>
+      <Polish>Punisher (CKM)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_02_cannon_Name">
       <English>T100 Black Eagle</English>
       <German>T100 Black Eagle</German>
+      <Polish>T100 Black Eagle</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_02_arty_Name">
       <English>2S9 Sochor</English>
       <German>2S9 Sochor</German>
+      <Polish>259 Sochor</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_02_cannon_Name">
       <EnglisH>BMP-K Kamysh</English>
       <German>BMP-K Kamysh</German>
+      <Polish>BMP-K Kamysh</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_02_AA_Name">
       <EnglisH>ZSU-39 Tigris</English>
       <German>ZSU-39 Tigris</German>
+      <Polish>ZSU-39 Tigris</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_02_rcws_Name">
       <English>Arma</EnglisH>
       <German>Arma</German>
+      <Polish>Arma</Polish>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_03_transport_Name">
       <English>Typhoon Transport</English>
       <German>Typhoon Transport</German>
+      <Polish>Typhoon Transport</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_covered_Name">
       <English>Typhoon Transport (covered)</English>
       <German>Typhoon Transport (bedeckt)</German>
+      <Polish>Typhoon Transport (przykryty)</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_device_Name">
       <English>Typhoon Device</English>
       <German>Typhoon Gerät</German>
+      <Polish>Typhoon Device</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_ammo_Name">
       <English>Typhoon Ammo</English>
       <German>Typhoon Munition</German>
+      <Polish>Typhoon Amunicyjny</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_fuel_Name">
       <English>Typhoon Fuel</English>
       <German>Typhoon Treibstoff</German>
+      <Polish>Typhoon Cysterna</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_repair_Name">
       <English>Typhoon Repair</English>
       <German>Typhoon Instandsetzung</German>
+      <Polish>Typhoon Naprawczy</Polish>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
       <German>Typhoon Sanitäter</German>
+      <Polish>Typhoon Sanitarny</Polish>
     </Key>
 
   </Package>

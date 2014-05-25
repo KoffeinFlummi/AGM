@@ -17,6 +17,7 @@
     <Key ID="STR_AGM_Interaction_OpenDoor">
       <English>Open / Close Doors</English>
       <German>Türen Öffnen / Schließen</German>
+      <Polish>Otwórz / Zamknij Drzwi</Polish>
     </Key>
 
     <Key ID="STR_AGM_Interaction_JoinGroup">

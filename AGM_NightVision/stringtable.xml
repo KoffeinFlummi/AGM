@@ -12,10 +12,12 @@
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
       <English>Increase NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit erhöhen</German>
+      <Polish>Zwiększ Jasność Noktowizji</Polish>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit verringern</German>
+      <Polish>Zmniejsz Jasność Noktowizji</Polish>
     </Key>
 
   </Package>
