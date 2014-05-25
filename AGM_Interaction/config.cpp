@@ -34,8 +34,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
-    condition = "true";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    condition = "1 == 1";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu;} else {closeDialog 0;}";
     key = 221;
     shift = 0;
     control = 0;
@@ -43,8 +43,8 @@ class AGM_Core_Default_Keys {
   };
   class openInteractionMenuSelf {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
-    condition = "true";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    condition = "1 == 1";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf;} else {closeDialog 0;}";
     key = 221;
     shift = 0;
     control = 1;
