@@ -23,7 +23,9 @@ class CfgPatches {
       A3_Soft_F_TruckHeavy,
       A3_Soft_F_EPC_Truck_03
     };
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -131,77 +133,77 @@ class CfgVehicles {
   class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
 
   class Truck_03_base_F: Truck_F {
-    fuelCapacity = 900 * FUEL_FACTOR; // NO. MUTHAFUCKING. DATA.
+    fuelCapacity = 900 * FUEL_FACTOR; // NO. FUCKING. DATA.
   };
 
   ////////////////////////////////////
 
   // BLUFOR
   class B_MRAP_01_F: MRAP_01_base_F {
-    displayName = "M-ATV";
+    displayName = "$STR_AGM_Vehicles_MRAP_01_Name";
   };
   class B_MRAP_01_hmg_F: MRAP_01_hmg_base_F {
-    displayName = "M-ATV (HMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_01_hmg_Name";
   };
   class B_MRAP_01_gmg_F: MRAP_01_gmg_base_F {
-    displayName = "M-ATV (GMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_01_gmg_Name";
   };
 
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
-    displayName = "Merkava Mk IV";
+    displayName = "$STR_AGM_Vehicles_MBT_01_cannon_Name";
   };
   class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
-    displayName = "Merkava LIC";
+    displayName = "$STR_AGM_Vehicles_MBT_01_TUSK_Name";
   };
   class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
-    displayName = "Sholef";
+    displayName = "$STR_AGM_Vehicles_MBT_01_arty_Name";
   };
   class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {
-    displayName = "Seara"; // Fictional name, (probably wrong) hebrew translation of storm.
+    displayName = "$STR_AGM_Vehicles_MBT_01_mlrs_Name"; // Fictional name, (probably wrong) hebrew translation of storm.
   };
   class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
-    displayName = "Namer";
+    displayName = "$STR_AGM_Vehicles_APC_Tracked_01_rcws_Name";
   };
   class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
-    displayName = "Bardelas"; // Fictional name, (probably wrong) hebrew translation of cheetah.
+    displayName = "$STR_AGM_Vehicles_APC_Tracked_01_AA_Name"; // Fictional name, (probably wrong) hebrew translation of cheetah.
   };
   class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
-    displayName = "Patria AMV";
+    displayName = "$STR_AGM_Vehicles_APC_Wheeled_cannon_Name";
   };
   class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
-    displayName = "Nemmera";
+    displayName = "$STR_AGM_Vehicles_APC_Tracked_01_CRV_Name";
   };
 
   // WHY THE FUCK ARE THERE SO MANY OF THESE
   class B_Truck_01_transport_F: Truck_01_base_F {
-    displayName = "HEMTT Transport";
+    displayName = "$STR_AGM_Vehicles_Truck_01_transport_Name";
   };
   class B_Truck_01_covered_F: B_Truck_01_transport_F {
-    displayName = "HEMTT Transport (covered)";
+    displayName = "$STR_AGM_Vehicles_Truck_01_covered_Name";
   };
   class B_Truck_01_mover_F: B_Truck_01_transport_F {
-    displayName = "HEMTT";
+    displayName = "$STR_AGM_Vehicles_Truck_01_mover_Name";
   };
   class B_Truck_01_box_F: B_Truck_01_mover_F {
-    displayName = "HEMTT Container";
+    displayName = "$STR_AGM_Vehicles_Truck_01_box_Name";
   };
   class B_Truck_01_medical_F: B_Truck_01_transport_F {
-    displayName = "HEMTT Medical";
+    displayName = "$STR_AGM_Vehicles_Truck_01_medical_Name";
   };
   class B_Truck_01_ammo_F: B_Truck_01_mover_F {
-    displayName = "HEMTT Ammo";
+    displayName = "$STR_AGM_Vehicles_Truck_01_ammo_Name";
   };
   class B_Truck_01_fuel_F: B_Truck_01_mover_F {
-    displayName = "HEMTT Fuel";
+    displayName = "$STR_AGM_Vehicles_Truck_01_fuel_Name";
   };
   class B_Truck_01_Repair_F: B_Truck_01_mover_F {
-    displayName = "HEMTT Repair";
+    displayName = "$STR_AGM_Vehicles_Truck_01_Repair_Name";
   };
 
 
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
-    displayName = "Fennek";
+    displayName = "$STR_AGM_Vehicles_MRAP_03_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
@@ -211,7 +213,7 @@ class CfgVehicles {
     };
   };
   class I_MRAP_03_hmg_F: MRAP_03_hmg_base_F {
-    displayName = "Fennek (HMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_03_hmg_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
@@ -221,7 +223,7 @@ class CfgVehicles {
     };
   };
   class I_MRAP_03_gmg_F: MRAP_03_gmg_base_F {
-    displayName = "Fennek (GMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_03_gmg_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
@@ -232,100 +234,100 @@ class CfgVehicles {
   };
 
   class I_MBT_03_cannon_F: I_MBT_03_base_F {
-    displayName = "MBT Revolution";
+    displayName = "$STR_AGM_Vehicles_MBT_03_cannon_Name";
   };
   class I_APC_tracked_03_cannon_F: I_APC_tracked_03_base_F {
-    displayName = "FV510 Warrior";
+    displayName = "$STR_AGM_Vehicles_APC_tracked_03_cannon_Name";
   };
   class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
-    displayName = "Pandur II";
+    displayName = "$STR_AGM_Vehicles_APC_Wheeled_03_cannon_Name";
   };
 
   class I_Truck_02_transport_F: Truck_02_base_F {
-    displayName = "Kamaz Transport";
+    displayName = "$STR_AGM_Vehicles_Truck_02_transport_Name";
   };
   class I_Truck_02_covered_F: Truck_02_base_F {
-    displayName = "Kamaz Transport (Covered)";
+    displayName = "$STR_AGM_Vehicles_Truck_02_covered_Name";
   };
   class I_Truck_02_ammo_F: Truck_02_base_F {
-    displayName = "Kamaz Ammo";
+    displayName = "$STR_AGM_Vehicles_Truck_02_ammo_Name";
   };
   class I_Truck_02_fuel_F: Truck_02_base_F {
-    displayName = "Kamaz Fuel";
+    displayName = "$STR_AGM_Vehicles_Truck_02_fuel_Name";
   };
   class I_Truck_02_box_F: Truck_02_base_F {
-    displayName = "Kamaz Repair";
+    displayName = "$STR_AGM_Vehicles_Truck_02_box_Name";
   };
   class I_Truck_02_medical_F: I_Truck_02_box_F {
-    displayName = "Kamaz Medical";
+    displayName = "$STR_AGM_Vehicles_Truck_02_medical_Name";
   };
 
 
   //OPFOR
   class O_MRAP_02_F: MRAP_02_base_F {
-    displayName = "Punisher";
+    displayName = "$STR_AGM_Vehicles_MRAP_02_Name";
   };
   class O_MRAP_02_hmg_F: MRAP_02_hmg_base_F {
-    displayName = "Punisher (HMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_02_hmg_Name";
   };
   class O_MRAP_02_gmg_F: MRAP_02_gmg_base_F {
-    displayName = "Punisher (GMG)";
+    displayName = "$STR_AGM_Vehicles_MRAP_02_gmg_Name";
   };
 
   class O_MBT_02_cannon_F: O_MBT_02_base_F {
-    displayName = "T100 Black Eagle";
+    displayName = "$STR_AGM_Vehicles_MBT_02_cannon_Name";
   };
   class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
-    displayName = "2S9 Sochor";
+    displayName = "$STR_AGM_Vehicles_MBT_02_arty_Name";
   };
   class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
-    displayName = "BMP-K Kamysh";
+    displayName = "$STR_AGM_Vehicles_APC_Tracked_02_cannon_Name";
   };
   class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
-    displayName = "ZSU-39 Tigris";
+    displayName = "$STR_AGM_Vehicles_APC_Tracked_02_AA_Name";
   };
   class O_APC_Wheeled_02_rcws_F: O_APC_Wheeled_02_base_F {
-    displayName = "Arma";
+    displayName = "$STR_AGM_Vehicles_APC_Wheeled_02_rcws_Name";
   };
 
   class O_Truck_02_transport_F: Truck_02_base_F {
-    displayName = "Kamaz Transport";
+    displayName = "$STR_AGM_Vehicles_Truck_02_transport_Name";
   };
   class O_Truck_02_covered_F: Truck_02_base_F {
-    displayName = "Kamaz Transport (Covered)";
+    displayName = "$STR_AGM_Vehicles_Truck_02_covered_Name";
   };
-  class O_Truck_02_Ammo_F: Truck_02_base_F {
-    displayName = "Kamaz Ammo";
+  class O_Truck_02_ammo_F: Truck_02_base_F {
+    displayName = "$STR_AGM_Vehicles_Truck_02_ammo_Name";
   };
   class O_Truck_02_fuel_F: Truck_02_base_F {
-    displayName = "Kamaz Fuel";
+    displayName = "$STR_AGM_Vehicles_Truck_02_fuel_Name";
   };
   class O_Truck_02_box_F: Truck_02_base_F {
-    displayName = "Kamaz Repair";
+    displayName = "$STR_AGM_Vehicles_Truck_02_box_Name";
   };
-  class O_Truck_02_medical_F: O_Truck_02_box_F {
-    displayName = "Kamaz Medical";
+  class O_Truck_02_medical_F: I_Truck_02_box_F {
+    displayName = "$STR_AGM_Vehicles_Truck_02_medical_Name";
   };
 
   class O_Truck_03_transport_F: Truck_03_base_F {
-    displayName = "Typhoon Transport";
+    displayName = "$STR_AGM_Vehicles_Truck_03_transport_Name";
   };
   class O_Truck_03_covered_F: Truck_03_base_F {
-    displayName = "Typhoon Transport (covered)";
+    displayName = "$STR_AGM_Vehicles_Truck_03_covered_Name";
   };
   class O_Truck_03_device_F: Truck_03_base_F {
-    displayName = "Typhhon Device";
+    displayName = "$STR_AGM_Vehicles_Truck_03_device_Name";
   };
   class O_Truck_03_ammo_F: Truck_03_base_F {
-    displayName = "Typhoon Ammo";
+    displayName = "$STR_AGM_Vehicles_Truck_03_ammo_Name";
   };
   class O_Truck_03_fuel_F: Truck_03_base_F {
-    displayName = "Typhoon Fuel";
+    displayName = "$STR_AGM_Vehicles_Truck_03_fuel_Name";
   };
   class O_Truck_03_repair_F: Truck_03_base_F {
-    displayName = "Typhoon Repair";
+    displayName = "$STR_AGM_Vehicles_Truck_03_repair_Name";
   };
   class O_Truck_03_medical_F: Truck_03_base_F {
-    displayName = "Typhoon Medical";
+    displayName = "$STR_AGM_Vehicles_Truck_03_medical_Name";
   };
 };

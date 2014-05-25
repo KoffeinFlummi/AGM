@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -26,11 +28,11 @@ class CfgPatches {
 
 class CfgAISkill {
   aimingAccuracy[] = {0,0, 1,0.8};
-  aimingShake[] = {0,0, 1,0.6};
-  aimingSpeed[] = {0,0, 1,0.7};
-  commanding[] = {0,0, 1,0.8};
-  courage[] = {0,0, 1,0.7};
-  reloadSpeed[] = {0,0, 1,0.8};
-  spotDistance[] = {0,0, 1,0.9};
-  spotTime[] = {0,0, 1,0.7};
+  aimingShake[]    = {0,0, 1,0.6};
+  aimingSpeed[]    = {0,0, 1,0.7};
+  commanding[]     = {0,0, 1,0.8};
+  courage[]        = {0,0, 1,0.7};
+  reloadSpeed[]    = {0,0, 1,0.8};
+  spotDistance[]   = {0,0, 1,0.9};
+  spotTime[]       = {0,0, 1,0.7};
 };

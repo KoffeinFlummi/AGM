@@ -1,4 +1,4 @@
 // by commy2
 
 closeDialog 0;
-["Profile not saved", false] call AGM_Core_fnc_displayText;
+[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;

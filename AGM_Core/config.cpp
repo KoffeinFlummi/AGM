@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_UI_F};
-    version = 0.7;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -17,9 +19,6 @@ class CfgFunctions {
       class execRemoteFnc;
       class getDirectionVector2;
       class keyInput;
-      class openInteractionMenu;
-      class openSelfMenu;
-      class openMenu;
       class toBin;
       class toHex;
       class addVector;

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="WeaponSelect">
+
+    <Key ID="STR_AGM_WeaponSelect_SelectPistol">
+      <English>Select Pistol</English>
+      <German>Pistole Auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectRifle">
+      <English>Select Rifle</English>
+      <German>Gewehr Auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectLauncher">
+      <English>Select Launcher</English>
+      <German>Raketenwerfer Auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectRifleMuzzle">
+      <English>Select Grenade Launcher</English>
+      <German>Granatwerfer Auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
+      <English>Select Binoculars</English>
+      <German>Fernglas Auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_HolsterWeapon">
+      <English>Holster Weapon</English>
+      <German>Waffe Holstern</German>
+    </Key>
+
+  </Package>
+</Project>

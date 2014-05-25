@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Data_F, A3_Anims_F, A3_Anims_F_Config_Sdr};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };

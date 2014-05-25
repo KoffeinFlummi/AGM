@@ -35,7 +35,7 @@ _this spawn {
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
-  BWA3_Medical_morphineCallback = {
+  AGM_Medical_morphineCallback = {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
   
@@ -83,10 +83,10 @@ _this spawn {
     */
   };
 
-  BWA3_Medical_morphineAbort = {
+  AGM_Medical_morphineAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [_morphinetime, (_this + [_painkillerOld]), "BWA3_Medical_morphineCallback", localize "STR_AGM_Injecting_Morphine", "BWA3_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
+  [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
 
 };

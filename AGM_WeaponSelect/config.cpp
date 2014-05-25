@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -26,7 +28,7 @@ class CfgFunctions {
 
 class AGM_Core_Default_Keys {
   class selectPistol {
-    displayName = "Select Pistol";
+    displayName = "$STR_AGM_WeaponSelect_SelectPistol";
     condition = "player == _vehicle";
     statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 2;
@@ -35,7 +37,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };
   class selectRifle {
-    displayName = "Select Rifle";
+    displayName = "$STR_AGM_WeaponSelect_SelectRifle";
     condition = "player == _vehicle";
     statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 3;
@@ -44,7 +46,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };
   class selectLauncher {
-    displayName = "Select Launcher";
+    displayName = "$STR_AGM_WeaponSelect_SelectLauncher";
     condition = "player == _vehicle";
     statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 5;
@@ -63,7 +65,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };*/
   class selectRifleMuzzle {
-    displayName = "Select Grenade Launcher";
+    displayName = "$STR_AGM_WeaponSelect_SelectRifleMuzzle";
     condition = "player == _vehicle";
     statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     key = 4;
@@ -82,7 +84,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };*/
   class selectBinocular {
-    displayName = "Select Binocular";
+    displayName = "$STR_AGM_WeaponSelect_SelectBinocular";
     condition = "player == _vehicle";
     statement = "call AGM_WeaponSelect_fnc_selectBinocular";
     key = 6;
@@ -91,7 +93,7 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };
   class holsterWeapon {
-    displayName = "Put Weapon Away";
+    displayName = "$STR_AGM_WeaponSelect_HolsterWeapon";
     condition = "player == _vehicle";
     statement = "call AGM_WeaponSelect_fnc_putWeaponAway";
     key = 11;

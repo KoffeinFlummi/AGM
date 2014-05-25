@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Civilians">
+
+    <Key ID="STR_AGM_Civilians_SendAway">
+      <English>Go Away!</English>
+      <German>Geh Weg!</German>
+    </Key>
+    <Key ID="STR_AGM_Civilians_GetDown">
+      <English>Get Down!</English>
+      <German>Auf Den Boden!</German>
+    </Key>
+
+  </Package>
+</Project>

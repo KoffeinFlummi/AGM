@@ -8,12 +8,12 @@
 _weapon = _this select 1;
 _projectile = _this select 5;
 
-_increment = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Increment");
-_cooldown = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Cooldown");
+_increment = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Increment");
+_cooldown = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Cooldown");
 
 if (_increment == 0) exitWith {};
 
-_string = format ["AGM_Overheat_%1", _weapon];
+_string = format ["AGM_Overheating_%1", _weapon];
 
 _overheat = player getVariable [_string, [0, 0]];
 _temperature = _overheat select 0;
@@ -55,7 +55,7 @@ if (_temperature > THRESHOLD_1) then {
 	];
 
 	if (_temperature > THRESHOLD_2) then {
-		_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheat_Dispersion");
+		_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Dispersion");
 		_random = _dispersion * (_temperature - THRESHOLD_2);
 
 		_velocity = velocity _projectile;

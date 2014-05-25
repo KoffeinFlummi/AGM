@@ -4,14 +4,14 @@ _weapon = _this select 1;
 _projectile = _this select 5;
 
 if (_weapon != "Throw") exitWith {};
-if (AGM_Grenade_Mode == 0) exitWith {};
+if (AGM_Grenades_Mode == 0) exitWith {};
 
 _velocity = velocity _projectile;
 _velocityX = _velocity select 0;
 _velocityY = _velocity select 1;
 _velocityZ = _velocity select 2;
 
-switch (AGM_Grenade_Mode) do {
+switch (AGM_Grenades_Mode) do {
 	//high throw
 	case 1 : {
 		_velocity = [
