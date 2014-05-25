@@ -5,7 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {Extended_EventHandlers, AGM_Core};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -29,7 +31,7 @@ class Extended_PostInit_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class restWeapon {
-    displayName = "$STR_AGM_RestWeapon";
+    displayName = "$STR_AGM_Resting_RestWeapon";
     conditionUp = "!(player getVariable ['AGM_Unconscious', false])";
     statementUp = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
     key = 15;

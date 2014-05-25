@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Wind">
+
+    <Key ID="STR_AGM_Wind_NoMeasurableWind">
+      <English>No measurable wind</English>
+      <German>Kein messbarer Wind</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_NoMeasurable">
+      <English>No measurable</English>
+      <German>Kein messbarer</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_VeryLight">
+      <English>Very light</English>
+      <German>Sehr leichter</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_Light">
+      <English>Light</English>
+      <German>Leichter</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_Moderate"><
+      <English>Moderate</English>
+      <German>Mittelstarker</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_Strong">
+      <English>Strong</English>
+      <German>Starker</German>
+    </Key>
+    <Key ID="STR_AGM_Wind_WindFromThe">
+      <English>wind from the</English>
+      <German>Wind aus</German>
+    </Key>
+
+  </Package>
+</Project>

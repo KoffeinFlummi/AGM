@@ -6,7 +6,9 @@ class CfgPatches {
 		weapons[] = {};
 		requiredVersion = 0.60;
 		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
-		version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
 		author[] = {"TaoSensai"};
 		authorUrl = "https://github.com/Taosenai/tmr";
 	};
@@ -113,7 +115,7 @@ class CfgMagazines {
 	};
 
 	class 20Rnd_762x51_Mag: CA_Magazine {
-		descriptionshort = "Caliber: 7.62x51mm M118LR<br />Rounds: 20<br />Type: M14";
+		descriptionshort = "$STR_AGM_Ballistics_20Rnd_762x51_Mag_Description";
 		initSpeed = 792; // 18" M14 EBR barrel
 		ammo = "AGM_B_762x51_M118LR"; // Use M118LR
 	};

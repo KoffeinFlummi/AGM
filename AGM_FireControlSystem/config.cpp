@@ -17,7 +17,9 @@ class CfgPatches {
       A3_Armor_F_Slammer,
       A3_Armor_F_T100K
     };
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -52,7 +54,7 @@ class Extended_Init_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class laseTarget {
-    displayName = "Lase Target";
+    displayName = "$STR_AGM_FireControlSystem_LaseTarget";
     condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
     conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";

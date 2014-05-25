@@ -40,7 +40,7 @@ _this spawn {
   // animation
   player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
 
-  BWA3_Medical_bandageCallback = {
+  AGM_Medical_bandageCallback = {
     _unit = _this select 0;
     _selection = _this select 1;
   
@@ -81,9 +81,9 @@ _this spawn {
     */
   };
 
-  BWA3_Medical_bandageAbort = {
+  AGM_Medical_bandageAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [_healtime, _this, "BWA3_Medical_bandageCallback", localize (format ["STR_AGM_Bandaging_%1", _selection]), "BWA3_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
+  [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
 };

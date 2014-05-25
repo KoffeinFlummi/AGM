@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,7 +18,7 @@ class Extended_PostInit_EventHandlers {
     clientInit = "call compile preProcessFileLineNumbers '\BWA3_Misc\init.sqf'";
   };
 };
-*/
+
 class CfgMagazines {
   class CA_Magazine;
 
@@ -33,3 +35,4 @@ class CfgMagazines {
     displayNameShort = "IR Strobe";
   };
 };
+*/

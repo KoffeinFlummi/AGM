@@ -11,24 +11,23 @@ if !(isPlayer _unit) then {
   while {true} do {
     waitUntil {inputAction "Compass" > 0 or inputAction "CompassToggle" > 0};
     _windStrength = sqrt((wind select 0) ^ 2 + (wind select 1) ^ 2);
-    _windOrigin = (windDir + 180) % 360;
 
     _strengthString = "";
     _colorString = "";
     switch true do {
-      case (_windStrength <= 0.5) : {_strengthString = "No measurable"; _colorString = "FFFFFF";};
-      case (_windStrength <= 3) :   {_strengthString = "Very light"; _colorString = "CCFFFF";};
-      case (_windStrength <= 5) :   {_strengthString = "Light"; _colorString = "99FF99";};
-      case (_windStrength <= 7) :   {_strengthString = "Moderate"; _colorString = "99FF00";};
-      default                       {_strengthString = "Strong"; _colorString = "FF6600";};
+      case (_windStrength <= 0.5) : {_strengthString = localize "STR_AGM_Wind_NoMeasurable"; _colorString = "FFFFFF";};
+      case (_windStrength <= 3) :   {_strengthString = localize "STR_AGM_Wind_VeryLight"; _colorString = "CCFFFF";};
+      case (_windStrength <= 5) :   {_strengthString = localize "STR_AGM_Wind_Light"; _colorString = "99FF99";};
+      case (_windStrength <= 7) :   {_strengthString = localize "STR_AGM_Wind_Moderate"; _colorString = "99FF00";};
+      default                       {_strengthString = localize "STR_AGM_Wind_Strong"; _colorString = "FF6600";};
     };
 
-    _originString = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] select (round (_windOrigin / 45) % 8);
+    _originString = [] call AGM_Core_fnc_getWindDirection;
 
     if (_windStrength <= 0.5) then {
-      hintSilent "No measurable wind";
+      hintSilent localize "STR_AGM_Wind_NoMeasurableWind";
     } else {
-      hintSilent parseText format["<t color='#%1'>%2</t> wind from the %3", _colorString, _strengthString, _originString];
+      hintSilent parseText format["<t color='#%1'>%2</t> %3 %4", _colorString, _strengthString, localize "STR_AGM_Wind_WindFromThe", _originString];
     };
 
     sleep 0.1;
