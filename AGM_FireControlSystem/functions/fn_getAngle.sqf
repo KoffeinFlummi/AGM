@@ -55,7 +55,6 @@ AGM_FCS_traceBullet = {
   _velocityY = (sin _angle) * _initSpeed;
 
   // trace the path of the bullet
-  /*
   for "_i" from 1 to ((floor (_timeToLive / _simulationStep)) + 1) do {
     _velocityMagnitude = sqrt (_velocityX^2 + _velocityY^2);
     _velocityX = _velocityX + _simulationStep * (_velocityX * _velocityMagnitude * _airFriction);
@@ -64,14 +63,7 @@ AGM_FCS_traceBullet = {
     _posY = _posY + _velocityY * _simulationStep;
     if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
   };
-  */
-  for "_i" from 1 to ((floor (_timeToLive / _simulationStep)) + 1) do {
-    _velocityX = _velocityX + _simulationStep * (_velocityX * _velocityX * _airFriction);
-    _velocityY = _velocityY + _simulationStep * (_velocityY * _velocityY * _airFriction - 9.81);
-    _posX = _posX + _velocityX * _simulationStep;
-    _posY = _posY + _velocityY * _simulationStep;
-    if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
-  };
+
 
   _posY - _posTargetY
 };
