@@ -4,39 +4,45 @@
 
     <Key ID="STR_AGM_Hearing_Earbuds_Name">
       <English>Ear Plugs</English>
-      <German>Ohrenstöpsel</German>
+      <German>Begrenzer</German>
       <Spanish>Tapones para Oídos</Spanish>
       <Polish>Stopery do uszu</Polish>
+      <Czech>Špunty</Czech>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
-      <German>Schützende Ohrenstöpsel, die es dem Träger ermöglichen, sich in der Nähe lauter Waffen aufzuhalten.</German>
+      <German>Schützende Ohrstöpsel, die es dem Träger ermöglichen, sich in der Nähe lauter Waffen aufzuhalten.</German>
       <Spanish>Los Tapones para Oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
       <Polish>Stopery do uszu umożliwiają użytkownikowi przebywać w pobliżu głośnej broni bez poniesienia konsekwencji jaką jest utrata słuchu.</Polish>
+      <Czech>Ochranné špunty umožňují uživateli, aby neutrpěl zranění jeho sluchu v blízkosti hlasitých zbraní.</Czech>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
-      <German>Ohrenstöpsel an</German>
+      <German>Begrenzer an</German>
       <Spanish>Tapones colocados</Spanish>
       <Polish>Załóż stopery</Polish>
+      <Czech>Špunty v uších</Czech>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
-      <German>Ohrenstöpsel aus</German>
+      <German>Begrenzer aus</German>
       <Spanish>Tapones removidos</Spanish>
       <Polish>Zdejmij stopery</Polish>
+      <Czech>Špunty venku z uší</Czech>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
       <English>You have no ear plugs</English>
-      <German>Ohrenstöpsel aus</German>
+      <German>Begrenzer aus</German>
       <Spanish>No tienes tapones para oídos</Spanish>
       <Polish>Nie masz stoperów</Polish>
+      <Czech>Nemáš žádné špunty</Czech>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>Inventory is full; Cannot remove Ear Buds</English>
-      <German>Inventar ist voll; Ohrenstöpsel können nicht entfernt werden.</German>
+      <German>Inventar ist voll; Begrenzer können nicht entfernt werden.</German>
       <Spanish>El inventario está lleno; No pueden quitarse los tapones.</Spanish>
       <Polish>Ekwipunek jest pełny; Nie można zdjąć stoperów.</Polish>
+      <Czech>Inventář je plný; Špunty nelze vyndat</Czech>
     </Key>
 
   </Package>
