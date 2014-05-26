@@ -16,4 +16,7 @@ _strength = (_damage * 2) min 1;
 
 if (_strength < 0.01) exitWith {};
 
-[_strength] call AGM_Hearing_fnc_earRinging;
+_strength spawn {
+  sleep 0.2;
+  [_this] call AGM_Hearing_fnc_earRinging;
+};
