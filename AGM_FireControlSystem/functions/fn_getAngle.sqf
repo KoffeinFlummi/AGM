@@ -11,7 +11,7 @@
  * 4: airFriction of the projectile
  * 5: maximum timeToLive of the projectile
  * 6: simulationStep of the projectile
- * 
+ *
  * Return Value:
  * offset from the current angle necessary to hit the target
  */
@@ -55,10 +55,19 @@ AGM_FCS_traceBullet = {
   _velocityY = (sin _angle) * _initSpeed;
 
   // trace the path of the bullet
+  /*
   for "_i" from 1 to ((floor (_timeToLive / _simulationStep)) + 1) do {
     _velocityMagnitude = sqrt (_velocityX^2 + _velocityY^2);
     _velocityX = _velocityX + _simulationStep * (_velocityX * _velocityMagnitude * _airFriction);
     _velocityY = _velocityY + _simulationStep * (_velocityY * _velocityMagnitude * _airFriction - 9.81);
+    _posX = _posX + _velocityX * _simulationStep;
+    _posY = _posY + _velocityY * _simulationStep;
+    if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
+  };
+  */
+  for "_i" from 1 to ((floor (_timeToLive / _simulationStep)) + 1) do {
+    _velocityX = _velocityX + _simulationStep * (_velocityX * _velocityX * _airFriction);
+    _velocityY = _velocityY + _simulationStep * (_velocityY * _velocityY * _airFriction - 9.81);
     _posX = _posX + _velocityX * _simulationStep;
     _posY = _posY + _velocityY * _simulationStep;
     if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
@@ -70,10 +79,12 @@ AGM_FCS_traceBullet = {
 if ((_this + [_maxElev]) call AGM_FCS_traceBullet < 0) exitWith {_maxElev - _angleTarget};
 
 // FUCK YEAH, NEWTON!
+/*
 _min = _angleTarget;
 _max = _maxElev;
 _margin = 1;
 _angle = 0;
+_it1 = 0;
 while {_margin > PRECISION} do {
   _angle = (_max + _min) / 2;
   _margin = (_this + [_angle]) call AGM_FCS_traceBullet;
@@ -82,8 +93,24 @@ while {_margin > PRECISION} do {
   } else {
     _min = _angle;
   };
+  _it1 = _it1+1;
 };
+*/
+// Newton Method / Secand Method
+_angle1 = _angleTarget;
+_angle2 = _maxElev;
+_it2 = 0;
+_f1 = (_this + [_angle1]) call AGM_FCS_traceBullet;
 
+while {(abs _f1) > PRECISION} do {
+  _f2 = (_this + [_angle2]) call AGM_FCS_traceBullet;
+  _temp = _angle2-_f2*(_angle2-_angle1)/(_f2-_f1);
+  _angle1 = _angle2;
+  _angle2 = _temp;
+  _f1 = _f2;
+  _it2 = _it2+1;
+};
+//player globalChat format ["it1: %1 | _angle1: %2 | it2: %3 | _angle2: %4",_it1, _angle-_angleTarget, _it2, _angle2-_angleTarget];
 /*
 _angle = _angleTarget;
 while {_angle <= _maxElev} do {
@@ -91,5 +118,5 @@ while {_angle <= _maxElev} do {
   _angle = _angle + 0.05;
 };
 */
-
+_angle=_angle2;
 _angle - _angleTarget
