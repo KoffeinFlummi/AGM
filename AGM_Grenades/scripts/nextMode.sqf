@@ -8,6 +8,11 @@ if (_mode == 4) then {
   _mode = _mode + 1;
 };
 
+// ROLL GRENADE DOESN'T WORK RIGHT NOW
+if (_mode == 3) then {
+  _mode = 4;
+};
+
 _hint = [
   localize "STR_AGM_Grenades_NormalThrow",
   localize "STR_AGM_Grenades_HighThrow",
