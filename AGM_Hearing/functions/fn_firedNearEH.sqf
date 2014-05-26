@@ -26,4 +26,7 @@ _strength = _loudness - (_loudness/50 * _distance); // linear drop off
 
 if (_strength < 0.01) exitWith {};
 
-[_strength] call AGM_Hearing_fnc_earRinging;
+_strength spawn {
+  sleep 0.2;
+  [_this] call AGM_Hearing_fnc_earRinging;
+};

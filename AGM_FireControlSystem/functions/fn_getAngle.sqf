@@ -11,7 +11,7 @@
  * 4: airFriction of the projectile
  * 5: maximum timeToLive of the projectile
  * 6: simulationStep of the projectile
- * 
+ *
  * Return Value:
  * offset from the current angle necessary to hit the target
  */
@@ -64,32 +64,27 @@ AGM_FCS_traceBullet = {
     if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
   };
 
+
   _posY - _posTargetY
 };
 
 if ((_this + [_maxElev]) call AGM_FCS_traceBullet < 0) exitWith {_maxElev - _angleTarget};
+  
+// Newton Method / Secand Method
+_angle1 = _angleTarget;
+_angle2 = _maxElev;
+_it2 = 0;
+_f1 = (_this + [_angle1]) call AGM_FCS_traceBullet;
 
-// FUCK YEAH, NEWTON!
-_min = _angleTarget;
-_max = _maxElev;
-_margin = 1;
-_angle = 0;
-while {_margin > PRECISION} do {
-  _angle = (_max + _min) / 2;
-  _margin = (_this + [_angle]) call AGM_FCS_traceBullet;
-  if (_margin > 0) then {
-    _max = _angle;
-  } else {
-    _min = _angle;
-  };
+while {(abs _f1) > PRECISION} do {
+  _f2 = (_this + [_angle2]) call AGM_FCS_traceBullet;
+  _temp = _angle2-_f2*(_angle2-_angle1)/(_f2-_f1);
+  _angle1 = _angle2;
+  _angle2 = _temp;
+  _f1 = _f2;
+  _it2 = _it2+1;
 };
+//player globalChat format ["it1: %1 | _angle1: %2 | it2: %3 | _angle2: %4",_it1, _angle-_angleTarget, _it2, _angle2-_angleTarget];
 
-/*
-_angle = _angleTarget;
-while {_angle <= _maxElev} do {
-  if ((_this + [_angle]) call AGM_FCS_traceBullet > 0) exitWith {};
-  _angle = _angle + 0.05;
-};
-*/
-
+_angle=_angle2;
 _angle - _angleTarget

@@ -71,9 +71,9 @@ class CfgVehicles {
   class All;
   class AllVehicles: All {
     AGM_FCSEnabled = 0; // FCS defaults to off
-    AGM_FCSMinDistance = 0;
-    AGM_FCSMaxDistance = 5000;
-    AGM_FCSDistanceInterval = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
   };
   class Land: AllVehicles {};
   class LandVehicle: Land {};
