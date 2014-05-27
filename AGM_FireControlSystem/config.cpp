@@ -20,7 +20,7 @@ class CfgPatches {
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
