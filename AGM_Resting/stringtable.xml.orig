@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Resting">
+
+    <Key ID="STR_AGM_Resting_RestWeapon">
+      <English>Rest weapon</English>
+      <German>Waffe auflegen</German>
+      <Spanish>Apoyar el arma</Spanish>
+<<<<<<< HEAD
+      <Polish>Oprzeć broń</Polish>
+=======
+      <Polish>Oprzyj broń</Polish>
+      <Czech>Zapřít zbraň</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+
+    <Key ID="STR_AGM_Resting_BipodDeployed">
+      <English>Bipod deployed</English>
+      <German>Zweibein ausgeklappt</German>
+      <Spanish>Bípode desplegado</Spanish>
+      <Polish>Dwójnóg rozstawiony</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Dvojnožka rozložena</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Resting_WeaponRested">
+      <English>Weapon rested</English>
+      <German>Waffe aufgelegt</German>
+      <Spanish>Arma apoyada</Spanish>
+      <Polish>Broń oparta</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Zbraň zapřena</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+
+    <Key ID="STR_AGM_Resting_BipodUndeployed">
+      <English>Bipod undeployed</English>
+      <German>Zweibein eingeklappt</German>
+      <Spanish>Bípode plegado</Spanish>
+      <Polish>Dwójnóg złożony</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Dvojnožka rozložena</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Resting_WeaponLifted">
+      <English>Weapon lifted</English>
+      <German>Waffe gehoben</German>
+      <Spanish>Arma levantada</Spanish>
+      <Polish>Broń podniesiona</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Zbraň zdvyhnuta</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+
+  </Package>
+</Project>

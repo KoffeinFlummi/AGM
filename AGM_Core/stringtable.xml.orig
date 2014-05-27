@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Core">
+
+    <Key ID="STR_AGM_Core_Save">
+      <English>Save</English>
+      <German>Speichern</German>
+      <Spanish>Salvar</Spanish>
+      <Polish>Zapisz</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Uložit</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Core_Cancel">
+      <English>Cancel</English>
+      <German>Abbrechen</German>
+      <Spanish>Cancelar</Spanish>
+      <Polish>Anuluj</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Zrušit</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Core_Options">
+      <English>AGM Options</English>
+      <German>AGM Optionen</German>
+      <Spanish>Opciones AGM</Spanish>
+      <Polish>Opcje AGM</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>AGM Nastavení</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Core_Shift">
+      <English>Shift</English>
+      <German>Umschalt</German>
+      <Spanish>Shift</Spanish>
+      <Polish>Shift</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Shift</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Core_Ctrl">
+      <English>Ctrl</English>
+      <German>Strg</German>
+      <Spanish>Ctrl</Spanish>
+      <Polish>Ctrl</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Ctrl</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_Core_Alt">
+      <English>Alt</English>
+      <German>Alt</German>
+      <Spanish>Alt</Spanish>
+      <Polish>Alt</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Alt</Czech>
+    </Key>
+
+    <Key ID="STR_AGM_Core_ProfileSaved">
+      <English>Profile Saved</English>
+      <German>Profil Gespeichert</German>
+      <Spanish>Perfil Salvado</Spanish>
+      <Polish>Profil Zapisany</Polish>
+      <Czech>Profil uložen</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_ProfileNotSaved">
+      <English>Profile Not Saved</English>
+      <German>Profil Nicht Gespeichert</German>
+      <Spanish>Perfil No Salvado</Spanish>
+      <Polish>Profil Niezapisany</Polish>
+      <Czech>Profil neuložen</Czech>
+    </Key>
+
+    <!-- These are cardinal directions, in case you didn't guess. -->
+    <Key ID="STR_AGM_Core_N">
+      <English>N</English>
+      <German>N</German>
+      <Spanish>N</Spanish>
+      <Polish>N</Polish>
+      <Czech>N</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_NNE">
+      <English>NNE</English>
+      <German>NNO</German>
+      <Spanish>NNE</Spanish>
+      <Polish>NNE</Polish>
+      <Czech>NNE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_NE">
+      <English>NE</English>
+      <German>NO</German>
+      <Spanish>NE</Spanish>
+      <Polish>NE</Polish>
+      <Czech>NE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_ENE">
+      <English>ENE</English>
+      <German>ONO</German>
+      <Spanish>ENE</Spanish>
+      <Polish>ENE</Polish>
+      <Czech>ENE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_E">
+      <English>E</English>
+      <German>O</German>
+      <Spanish>E</Spanish>
+      <Polish>E</Polish>
+      <Czech>E</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_ESE">
+      <English>ESE</English>
+      <German>OSO</German>
+      <Spanish>ESE</Spanish>
+      <Polish>ESE</Polish>
+      <Czech>ESE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_SE">
+      <English>SE</English>
+      <German>SO</German>
+      <Spanish>SE</Spanish>
+      <Polish>SE</Polish>
+      <Czech>SE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_SSE">
+      <English>SSE</English>
+      <German>SSO</German>
+      <Spanish>SSE</Spanish>
+      <Polish>SSE</Polish>
+      <Czech>SSE</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_S">
+      <English>S</English>
+      <German>S</German>
+      <Spanish>S</Spanish>
+      <Polish>S</Polish>
+      <Czech>S</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_SSW">
+      <English>SSW</English>
+      <German>SSW</German>
+      <Spanish>SSW</Spanish>
+      <Polish>SSW</Polish>
+      <Czech>SSW</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_SW">
+      <English>SW</English>
+      <German>SW</German>
+      <Spanish>SW</Spanish>
+      <Polish>SW</Polish>
+      <Czech>SW</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_WSW">
+      <English>WSW</English>
+      <German>WSW</German>
+      <Spanish>WSW</Spanish>
+      <Polish>WSW</Polish>
+      <Czech>WSW</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_W">
+      <English>W</English>
+      <German>W</German>
+      <Spanish>W</Spanish>
+      <Polish>W</Polish>
+      <Czech>W</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_WNW">
+      <English>WNW</English>
+      <German>WNW</German>
+      <Spanish>WNW</Spanish>
+      <Polish>WNW</Polish>
+      <Czech>WNW</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_NW">
+      <English>NW</English>
+      <German>NW</German>
+      <Spanish>NW</Spanish>
+      <Polish>NW</Polish>
+      <Czech>NW</Czech>
+    </Key>
+    <Key ID="STR_AGM_Core_NNW">
+      <English>NNW</English>
+      <German>NNW</German>
+      <Spanish>NNW</Spanish>
+      <Polish>NNW</Polish>
+      <Czech>NNW</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+
+  </Package>
+</Project>

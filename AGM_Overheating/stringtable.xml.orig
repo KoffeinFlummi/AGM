@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGMod">
+  <Package name="Overheating">
+
+    <Key ID="STR_AGM_Overheating_SpareBarrelName">
+      <English>Spare barrel</English>
+      <German>Ersatzlauf</German>
+      <Spanish>Cañón de repuesto</Spanish>
+      <Polish>Zapasowa lufa</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Náhradní hlaveň</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
+      <English>Use to swap barrel.</English>
+      <German>Benutzen, um Lauf zu wechseln.</German>
+      <Spanish>Permite intercambiar el cañón</Spanish>
+      <Polish>Umożliwia wymianę lufy</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Používané k výměně hlavně</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_WeaponJammed">
+      <English>Weapon jammed!</English>
+      <German>Ladehemmung!</German>
+      <Spanish>Arma trabada!</Spanish>
+      <Polish>Broń się zacięła!</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Zbraň je zaseklá!</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_UnjamWeapon">
+      <English>Clear jam</English>
+      <German>Ladehemmung beheben</German>
+      <Spanish>Destrabar el arma</Spanish>
+      <Polish>Usuń zacięcie</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Odseknout zbraň</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_WeaponUnjammed">
+      <English>Jam cleared</English>
+      <German>Ladehemmung behoben</German>
+      <Spanish>Arma destrabada</Spanish>
+      <Polish>Zacięcie usunięte</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Zbraň odseklá</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_SwapBarrel">
+      <English>Swap barrel</English>
+      <German>Lauf wechseln</German>
+      <Spanish>Cambiar el cañón</Spanish>
+      <Polish>Wymień lufę</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Prohodit hlaveň</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_SwappingBarrel">
+      <English>Swapping barrel...</English>
+      <German>Lauf wird gewechselt...</German>
+      <Spanish>Cambiando el cañón...</Spanish>
+      <Polish>Wymienianie lufy...</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Prohazuji hlaveň ...</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+    <Key ID="STR_AGM_Overheating_SwappedBarrel">
+      <English>Swapped barrel</English>
+      <German>Lauf gewechselt</German>
+      <Spanish>Cañón cambiado</Spanish>
+      <Polish>Lufa wymieniona</Polish>
+<<<<<<< HEAD:AGM_Overheat/stringtable.xml
+=======
+      <Czech>Prohozená hlaveň</Czech>
+>>>>>>> koffeinflummi/master:AGM_Overheating/stringtable.xml
+    </Key>
+
+  </Package>
+</Project>

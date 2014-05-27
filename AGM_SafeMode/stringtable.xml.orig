@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="SafeMode">
+
+    <Key ID="STR_AGM_SafeMode">
+      <English>Weapon safe</English>
+      <German>Waffe gesichert</German>
+      <Spanish>Seguro colocado</Spanish>
+      <Polish>Broń zabezpieczona</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Zbraň zajištěná</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+    <Key ID="STR_AGM_SafeModeLifted">
+      <English>Safety catch released</English>
+      <German>Waffe entsichert</German>
+      <Spanish>Seguro liberado</Spanish>
+      <Polish>Broń odbezpieczona</Polish>
+<<<<<<< HEAD
+=======
+      <Czech>Zbraň odjištěná</Czech>
+>>>>>>> koffeinflummi/master
+    </Key>
+
+  </Package>
+</Project>
