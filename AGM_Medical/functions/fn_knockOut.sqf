@@ -1,11 +1,11 @@
 /*
  * By: KoffeinFlummi
- * 
+ *
  * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
- * 
+ *
  * Arguments:
  * 0: Unit to be knocked out (Object)
- * 
+ *
  * Return Values:
  * None
  */
@@ -23,12 +23,13 @@ _newGroup = createGroup side _unit;
 [_unit] joinSilent _newGroup;
 {
   _unit reveal _x;
-} 
+}
 forEach (units _oldGroup);
 _unit setVariable ["AGM_Group", _oldGroup, true];
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
   player setVariable ["tf_unable_to_use_radio", true, true];
+  player setVariable ["tf_voiceVolume", 0,true];
 };
 
 if (_unit == player) then {

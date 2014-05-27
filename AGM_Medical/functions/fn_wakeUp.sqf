@@ -1,11 +1,11 @@
 /*
  * By: KoffeinFlummi
- * 
+ *
  * Wakes an unconscious player up.
- * 
+ *
  * Arguments:
  * 0: Unconscious unit (Object)
- * 
+ *
  * Return Values:
  * None
  */
@@ -28,6 +28,7 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
   _unit setVariable ["tf_unable_to_use_radio", false, true];
+  player setVariable ["tf_voiceVolume", 1,true];
 };
 
 [-2, {
