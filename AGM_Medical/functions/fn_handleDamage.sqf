@@ -1,15 +1,15 @@
 /*
  * Author: KoffeinFlummi
- * 
+ *
  * Called when some dude gets shot. Or stabbed. Or blown up. Or pushed off a cliff. Or hit by a car. Or burnt. Or poisoned. Or gassed. Or cut. You get the idea.
- * 
+ *
  * Arguments:
  * 0: Unit that got hit (Object)
  * 1: Name of the selection that was hit (String); "" for structural damage
  * 2: Amount of damage inflicted (Number)
  * 3: Shooter (Object); Null for explosion damage, falling, fire etc.
  * 4: Projectile (Object)
- * 
+ *
  * Return value:
  * Damage value to be inflicted (optional)
  */
@@ -27,6 +27,8 @@
 #define BLOODTHRESHOLD2 0
 #define BLOODLOSSRATE 0.02
 
+#define INSTANTDEATH false // true: damage can cause death | false: damage can cause UNCONSCIOUSNESS only
+
 _unit = _this select 0;
 _selectionName = _this select 1;
 _damage = _this select 2;
@@ -35,6 +37,31 @@ _projectile = _this select 4;
 
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {_unit enableSimulation true;};
+
+_newDamage = 0;
+
+switch (_selectionName) do {
+    case "body": {
+      _newDamage = _unit getHitPointDamage "HitBody";
+      _newDamage = _newDamage + _damage;
+    };
+
+    case "head": {
+      _newDamage = _unit getHitPointDamage "HitHead";
+      _newDamage = _newDamage + _damage;
+    };
+
+    case "": {
+      _newDamage = damage _unit;
+      _newDamage = _newDamage + _damage;
+    };
+
+    default {
+    };
+};
+
+
+
 
 // Code to be executed AFTER damage was dealt
 null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
@@ -55,7 +82,7 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   if ((damage _unit > 0) and (_unit getHitPointDamage "HitHead" < 0.01) and (_unit getHitPointDamage "HitBody" < 0.01) and (_unit getHitPointDamage "HitLeftArm" < 0.01) and (_unit getHitPointDamage "HitRightArm" < 0.01) and (_unit getHitPointDamage "HitLeftLeg" < 0.01) and (_unit getHitPointDamage "HitRightLeg" < 0.01)) then {
     [_unit, "HitBody", (damage _unit)] call AGM_Medical_fnc_setHitPointDamage;
   };
-  
+
   // Handle death and unconsciousness
   if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and damage _unit < 1 and !(_unit getVariable "AGM_Unconscious")) then {
     [_unit] call AGM_Medical_fnc_knockOut;
@@ -130,7 +157,7 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
         "chromAberration" ppEffectAdjust [0.35 * (player getVariable "AGM_Pain"), 0.35 * (player getVariable "AGM_Pain"), false];
         "chromAberration" ppEffectCommit 1;
         sleep 0.15;
-        
+
         _pain = ((player getVariable "AGM_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
         player setVariable ["AGM_Pain", _pain, true];
         _time = time;
@@ -163,3 +190,5 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   };
 
 };
+
+if (_newDamage > 0.9 and !INSTANTDEATH) exitWith {0.9}
