@@ -159,11 +159,11 @@
       <Czech>Fennek (granátomet)</Czech>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_03_cannon_Name">
-      <English>MBT Revolution</English>
-      <German>MBT Revolution</German>
-      <Spanish>MBT Revolution</Spanish>
-      <Polish>MBT Revolution</Polish>
-      <Czech>MBT Revolution</Czech>
+      <English>Leopard 2SG</English>
+      <German>Leopard 2SG</German>
+      <Spanish>Leopard 2SG</Spanish>
+      <Polish>Leopard 2SG</Polish>
+      <Czech>Leopard 2SG</Czech>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_tracked_03_cannon_Name">
       <English>FV510 Warrior</English>
