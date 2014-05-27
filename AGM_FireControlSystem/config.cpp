@@ -20,7 +20,7 @@ class CfgPatches {
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
@@ -71,9 +71,9 @@ class CfgVehicles {
   class All;
   class AllVehicles: All {
     AGM_FCSEnabled = 0; // FCS defaults to off
-    AGM_FCSMinDistance = 0;
-    AGM_FCSMaxDistance = 5000;
-    AGM_FCSDistanceInterval = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
   };
   class Land: AllVehicles {};
   class LandVehicle: Land {};

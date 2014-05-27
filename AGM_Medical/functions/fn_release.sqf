@@ -37,7 +37,9 @@ _this spawn {
 
   [-2, {
     (_this select 0) switchMove DRAGGINGMOVE;
-    (_this select 1) switchMove DRAGGEDMOVE;
+    if ((_this select 1) getVariable "AGM_Unconscious") then {
+      (_this select 1) switchMove DRAGGEDMOVE;
+    };
   }, [player, _unit]] call CBA_fnc_globalExecute;
 
   [-2, {
@@ -45,7 +47,9 @@ _this spawn {
       _this spawn {
         _this enableSimulation true;
         sleep 3.8;
-        _this enableSimulation false;
+        if (_this getVariable "AGM_Unconscious") then {
+          _this enableSimulation false;
+        };
       };
     };
   }, _unit] call CBA_fnc_globalExecute;

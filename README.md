@@ -3,7 +3,7 @@ Authentic Gameplay Mod
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work.
 
-**BIF Thread:** http://forums.bistudio.com/showthread.php?177089-Authentic-Gameplay-Modification
+**BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
 
 ## Philosophy
@@ -34,3 +34,8 @@ https://github.com/KoffeinFlummi/AGM/wiki
 If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author array of any .pbo you might be editing.
 
 If you find a bug or want to request a feature, please use the Issue Tracker.
+
+
+
+"THE NEW HOTNESS FOR ARMA3"  
+~ An0n3

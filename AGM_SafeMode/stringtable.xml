@@ -7,12 +7,14 @@
       <German>Waffe gesichert</German>
       <Spanish>Seguro colocado</Spanish>
       <Polish>Broń zabezpieczona</Polish>
+      <Czech>Zbraň zajištěná</Czech>
     </Key>
     <Key ID="STR_AGM_SafeModeLifted">
       <English>Safety catch released</English>
       <German>Waffe entsichert</German>
       <Spanish>Seguro liberado</Spanish>
       <Polish>Broń odbezpieczona</Polish>
+      <Czech>Zbraň odjištěná</Czech>
     </Key>
 
   </Package>

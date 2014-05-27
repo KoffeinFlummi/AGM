@@ -34,7 +34,7 @@ _this spawn {
     _this switchMove "AinjPpneMrunSnonWnonDb_still";
   }, _unit] call CBA_fnc_globalExecute;
 
-  waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Dragging") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious")};
+  waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Dragging") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious") or !(_unit getVariable "AGM_Unconscious")};
   if (isNull (player getVariable "AGM_Dragging")) exitWith {};
   [(player getVariable "AGM_Dragging")] call AGM_Medical_fnc_release;
 };

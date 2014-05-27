@@ -35,8 +35,8 @@ class AGM_Core_Default_Keys {
     statement = "[_vehicle] call AGM_NightVision_fnc_increaseNVGBrightness";
     key = 201;
     shift = 0;
-    control = 1;
-    alt = 0;
+    control = 0;
+    alt = 1;
   };
   class decreaseNVGBrightness {
     displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
@@ -44,7 +44,7 @@ class AGM_Core_Default_Keys {
     statement = "[_vehicle] call AGM_NightVision_fnc_decreaseNVGBrightness";
     key = 209;
     shift = 0;
-    control = 1;
-    alt = 0;
+    control = 0;
+    alt = 1;
   };
 };

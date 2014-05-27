@@ -13,6 +13,10 @@ AGM_UnconsciousCC = -1;
 AGM_UnconsciousRB = -1;
 
 AGM_unitInit = {
+  if !(isNull (_this getVariable "AGM_Group")) then {
+    [_this] joinSilent (_this getVariable "AGM_Group");
+  };
+
   if (_this == player) then {
     if (AGM_UnconsciousCC != -1) then {
       AGM_UnconsciousCC ppEffectEnable false;
