@@ -15,7 +15,7 @@
 
 // DETERMINE IF UNIT IS MEDIC
 if !([player] call AGM_Medical_fnc_isMedic) exitWith {
-  hintSilent "You are not trained to do that.";
+  hintSilent localize "STR_AGM_Medical_NotTrained";
 };
 
 _this spawn {
@@ -29,7 +29,7 @@ _this spawn {
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
-  BWA3_Medical_bloodbagCallback = {
+  AGM_Medical_bloodbagCallback = {
     _unit = _this select 0;
   
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -50,9 +50,9 @@ _this spawn {
     */
   };
 
-  BWA3_Medical_bloodbagAbort = {
+  AGM_Medical_bloodbagAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [BLOODBAGTIME, _this, "BWA3_Medical_bloodbagCallback", localize "STR_AGM_Transfusing_Blood", "BWA3_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
+  [BLOODBAGTIME, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
 };

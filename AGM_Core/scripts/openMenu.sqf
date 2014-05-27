@@ -61,9 +61,9 @@ if (AGM_Core_keySave == 1) then {
 
 	if (_count > 0) then {
 		saveProfileNamespace;
-		["Profile saved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileSaved", false] call AGM_Core_fnc_displayText;
 	} else {
-		["Profile not saved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
 	};
 };
 

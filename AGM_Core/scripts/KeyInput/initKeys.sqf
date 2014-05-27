@@ -13,6 +13,7 @@ for "_index" from 0 to (_count - 1) do {
 
 	_keyName = configName _configFile;
 	_condition = getText (_configFile >> "condition");
+	if (_condition == "") then {_condition = "true";};
 	_statement = getText (_configFile >> "statement");
 
 	if (_statement != "") then {
@@ -21,6 +22,7 @@ for "_index" from 0 to (_count - 1) do {
 	};
 
 	_condition = getText (_configFile >> "conditionUp");
+	if (_condition == "") then {_condition = "true";};
 	_statement = getText (_configFile >> "statementUp");
 
 	if (_statement != "") then {

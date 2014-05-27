@@ -2,174 +2,441 @@
 <Project name="AGM">
   <Package name="Medical">
 
-    <Key ID="STR_AGM_Treat">
+    <Key ID="STR_AGM_Medical_Treat">
       <English>Treat >></English>
       <German>Behandeln >></German>
-      <Spanish>Tratar</Spanish>
-      <Polish>Opatrz</Polish>
+      <Spanish>Tratar >></Spanish>
+      <Polish>Opatrz >></Polish>
+      <Czech>Vyšetřit >></Czech>
     </Key>
-    <Key ID="STR_AGM_Treat_Self">
+    <Key ID="STR_AGM_Medical_Treat_Self">
       <English>Self-treatment >></English>
       <German>Selbst behandeln >></German>
-      <Spanish>Tratarse</Spanish>
-      <Polish>Opatrz siebie</Polish>
+      <Spanish>Tratarse >></Spanish>
+      <Polish>Opatrz siebie >></Polish>
+      <Czech>Vlastní vyšetření</Czech>
     </Key>
-    <Key ID="STR_AGM_Diagnose">
+    <Key ID="STR_AGM_Medical_Diagnose">
       <English>Diagnose</English>
       <German>Diagnose</German>
       <Spanish>Diagnosticar</Spanish>
       <Polish>Diagnozuj</Polish>
+      <Czech>Diagnostikovat</Czech>
     </Key>
-    <Key ID="STR_AGM_Inject_Morphine">
+    <Key ID="STR_AGM_Medical_Inject_Morphine">
       <English>Inject Morphine</English>
       <German>Morphin injizieren</German>
       <Spanish>Inyectar Morfina</Spanish>
       <Polish>Wstrzyknij Morfinę</Polish>
+      <Czech>Aplikovat Morfin</Czech>
     </Key>
-    <Key ID="STR_AGM_Inject_Epinephrine">
+    <Key ID="STR_AGM_Medical_Inject_Epinephrine">
       <English>Inject Epinephrine</English>
       <German>Epinephrine injizieren</German>
       <Spanish>Inyectar Epinefrina</Spanish>
       <Polish>Wtrzyknij Epinefrynę</Polish>
+      <Czech>Aplikovat Adrenalin</Czech>
     </Key>
-    <Key ID="STR_AGM_Transfuse_Blood">
+    <Key ID="STR_AGM_Medical_Transfuse_Blood">
       <English>Transfuse Blood</English>
       <German>Bluttransfusion</German>
       <Spanish>Transfundir Sangre</Spanish>
       <Polish>Przetocz Krew</Polish>
+      <Czech>Transfúze krve</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitHead">
+    <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
       <German>Kopf verbinden</German>
       <Spanish>Vendar la Cabeza</Spanish>
       <Polish>Bandażuj Głowę</Polish>
+      <Czech>Obvázat hlavu</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitBody">
+    <Key ID="STR_AGM_Medical_Bandage_HitBody">
       <English>Bandage Torso</English>
       <German>Torso verbinden</German>
       <Spanish>Vendar el Torso</Spanish>
       <Polish>Bandażuj Tors</Polish>
+      <Czech>Obvázat hruď</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitLeftArm">
+    <Key ID="STR_AGM_Medical_Bandage_HitLeftArm">
       <English>Bandage Left Arm</English>
       <German>Arm links verbinden</German>
       <Spanish>Vendar el Brazo Izquierdo</Spanish>
       <Polish>Bandażuj Lewe Ramię</Polish>
+      <Czech>Obvázat levou ruku</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitRightArm">
+    <Key ID="STR_AGM_Medical_Bandage_HitRightArm">
       <English>Bandage Right Arm</English>
       <German>Arm rechts verbinden</German>
       <Spanish>Vendar el Brazo Derecho</Spanish>
       <Polish>Bandażuj Prawe Ramię</Polish>
+      <Czech>Obvázat pravou ruku</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitLeftLeg">
+    <Key ID="STR_AGM_Medical_Bandage_HitLeftLeg">
       <English>Bandage Left Leg</English>
       <German>Bein links verbinden</German>
       <Spanish>Vendar la Pierna Izquierda</Spanish>
       <Polish>Bandażuj Lewą Nogę</Polish>
+      <Czech>Obvázat levou nohu</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandage_HitRightLeg">
+    <Key ID="STR_AGM_Medical_Bandage_HitRightLeg">
       <English>Bandage Right Leg</English>
       <German>Bein rechts verbinden</German>
       <Spanish>Vendar la Pierna Derecha</Spanish>
       <Polish>Bandażuj Prawą Nogę</Polish>
+      <Czech>Obvázat pravou nohu</Czech>
     </Key>
-    <Key ID="STR_AGM_Drag">
+    <Key ID="STR_AGM_Medical_Drag">
       <English>Drag</English>
       <German>Ziehen</German>
       <Spanish>Arrastrar</Spanish>
       <Polish>Ciągnij</Polish>
+      <Czech>Táhnout</Czech>
     </Key>
-    <Key ID="STR_AGM_Carry">
+    <Key ID="STR_AGM_Medical_Carry">
       <English>Carry</English>
       <German>Tragen</German>
       <Spanish>Cargar</Spanish>
       <Polish>Nieś</Polish>
+      <Czech>Nést</Czech>
     </Key>
-    <Key ID="STR_AGM_Release">
+    <Key ID="STR_AGM_Medical_Release">
       <English>Release</English>
       <German>Loslassen</German>
       <Spanish>Soltar</Spanish>
       <Polish>Połóż</Polish>
+      <Czech>Položit</Czech>
     </Key>
-    <Key ID="STR_AGM_Load">
+    <Key ID="STR_AGM_Medical_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
       <Spanish>Introducir al Paciente</Spanish>
       <Polish>Załaduj Pacjenta</Polish>
+      <Czech>Naložit pacianta do</Czech>
     </Key>
-    <Key ID="STR_AGM_Unload">
+    <Key ID="STR_AGM_Medical_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
       <Spanish>Extraer al Paciente</Spanish>
       <Polish>Wyładuj Pacjenta</Polish>
+      <Czech>Vyložit pacienta</Czech>
     </Key>
 
-    <Key ID="STR_AGM_Diagnosing">
+    <Key ID="STR_AGM_Medical_Diagnosing">
       <English>Diagnosing ...</English>
       <German>Diagnostizieren ...</German>
-      <Spanish>Diagnosticando...</Spanish>
-      <Polish>Diagnozowanie...</Polish>
+      <Spanish>Diagnosticando ...</Spanish>
+      <Polish>Diagnozowanie ...</Polish>
+      <Czech>Diagnostikuji ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Injecting_Morphine">
+    <Key ID="STR_AGM_Medical_Injecting_Morphine">
       <English>Injecting Morphine ...</English>
       <German>Morphin injizieren ...</German>
-      <Spanish>Inyectando Morfina</Spanish>
+      <Spanish>Inyectando Morfina ...</Spanish>
       <Polish>Wstrzykiwanie Morfiny ...</Polish>
+        <Czech>Aplikuju Morfin ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Injecting_Epinephrine">
+    <Key ID="STR_AGM_Medical_Injecting_Epinephrine">
       <English>Injecting Epinephrine ...</English>
       <German>Epinephrine injizieren ...</German>
-      <Spanish>Inyectando Epinefrina</Spanish>
+      <Spanish>Inyectando Epinefrina ...</Spanish>
       <Polish>Wstrzykiwanie Epinefryny ...</Polish>
+      <Czech>Aplikuju Adrenalin ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Transfusing_Blood">
+    <Key ID="STR_AGM_Medical_Transfusing_Blood">
       <English>Transfusing Blood ...</English>
       <German>Bluttransfusion ...</German>
-      <Spanish>Realizando Transfusión</Spanish>
+      <Spanish>Realizando Transfusión ...</Spanish>
       <Polish>Przetaczanie Krwi ...</Polish>
+      <Czech>Probíhá transfúze krve ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitHead">
+    <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
       <German>Kopf verbinden ...</German>
-      <Spanish>Vendando la Cabeza...</Spanish>
+      <Spanish>Vendando la Cabeza ...</Spanish>
       <Polish>Bandażowanie Głowy ...</Polish>
+      <Czech>Obvazuji hlavu ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitBody">
+    <Key ID="STR_AGM_Medical_Bandaging_HitBody">
       <English>Bandaging Torso ...</English>
       <German>Torso verbinden ...</German>
-      <Spanish>Vendando el Torso...</Spanish>
+      <Spanish>Vendando el Torso ...</Spanish>
       <Polish>Bandażowanie Torsu ...</Polish>
+      <Czech>Obvazuji hruď ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitLeftArm">
+    <Key ID="STR_AGM_Medical_Bandaging_HitLeftArm">
       <English>Bandaging Left Arm ...</English>
       <German>Linken Arm verbinden ...</German>
-      <Spanish>Vendando el Brazo Izquierdo...</Spanish>
+      <Spanish>Vendando el Brazo Izquierdo ...</Spanish>
       <Polish>Bandażowanie Lewego Ramienia ...</Polish>
+      <Czech>Obvazuji levou ruku ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitRightArm">
+    <Key ID="STR_AGM_Medical_Bandaging_HitRightArm">
       <English>Bandaging Right Arm ...</English>
       <German>Rechten Arm verbinden ...</German>
-      <Spanish>Vendando el Brazo Derecho...</Spanish>
+      <Spanish>Vendando el Brazo Derecho ...</Spanish>
       <Polish>Bandażowanie Prawego Ramienia ...</Polish>
+      <Czech>Obvazuji pravou ruku ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitLeftLeg">
+    <Key ID="STR_AGM_Medical_Bandaging_HitLeftLeg">
       <English>Bandaging Left Leg ...</English>
       <German>Linkes Bein verbinden ...</German>
-      <Spanish>Vendando la Pierna Izquierda...</Spanish>
+      <Spanish>Vendando la Pierna Izquierda ...</Spanish>
       <Polish>Bandażowanie Lewej Nogi ...</Polish>
+      <Czech>Obvazuji levou nohu ...</Czech>
     </Key>
-    <Key ID="STR_AGM_Bandaging_HitRightLeg">
+    <Key ID="STR_AGM_Medical_Bandaging_HitRightLeg">
       <English>Bandaging Right Leg ...</English>
       <German>Rechtes Bein verbinden ...</German>
-      <Spanish>Vendando la Pierna Derecha...</Spanish>
+      <Spanish>Vendando la Pierna Derecha ...</Spanish>
       <Polish>Bandażowanie Prawej Nogi ...</Polish>
+      <Czech>Obvazuji pravou nohu ...</Czech>
     </Key>
 
-    <Key ID="STR_AGM_MedicalSupplies">
+    <Key ID="STR_AGM_Medical_MedicalSupplies">
       <English>Medical Supplies</English>
       <German>Sanitätsmaterial</German>
-      <Polish>Medykamenty </Polish>
+      <Spanish>Suministros Médicos</Spanish>
+      <Polish>Medykamenty</Polish>
+      <Czech>Zdravotnické zásoby</Czech>
     </Key>
+
+    <Key ID="STR_AGM_Medical_Bandage_Name">
+      <English>Bandage</English>
+      <German>Bandage</German>
+      <Spanish>Venda</Spanish>
+      <Polish>Bandaż</Polish>
+      <Czech>Obvaz</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Bandage_Description">
+      <English>Used to stop bleeding.</English>
+      <German>Verwendet zum Stoppen von Blutungen</German>
+      <Spanish>Usada para detener el sangrado</Spanish>
+      <Polish>Używany do zatamowania krwawienia.</Polish>
+      <Czech>Používané k zastavení krvácení.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Morphine_Name">
+      <English>Morphine Autoinjector</English>
+      <German>Morphin-Autoinjektor</German>
+      <Spanish>Autoinyector de Morfina</Spanish>
+      <Polish>Autostrzykawka z Morfiną</Polish>
+      <Czech>Morfin</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Morphine_Description">
+      <English>Heavy Painkiller</English>
+      <German>Schweres Schmerzmittel</German>
+      <Spanish>Sedante Fuerte</Spanish>
+      <Polish>Mocne Środki Przeciwbólowe</Polish>
+      <Czech>Sedativa</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Epinephrine_Name">
+      <English>Epinephrine Autoinjector</English>
+      <German>Epinephrin-Autoinjektor</German>
+      <Spanish>Autoinyector de Epinefrina</Spanish>
+      <Polish>Autostrzykawka z Epinefryną</Polish>
+      <Czech>Adrenalin</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Epinephrine_Description">
+      <English>Used to wake up unconscious units.</English>
+      <German>Benutzt zum Aufwecken bewusstloser Patienten.</German>
+      <Spanish>Usado para despertar a pacientes inconscientes</Spanish>
+      <Polish>Używana aby ocucić nieprzytomnego pacjenta.</Polish>
+      <Czech>Používaný k probuzení člověka z bezvědomí</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Bloodbag_Name">
+      <English>Blood Bag</English>
+      <German>Blutkonserve</German>
+      <Spanish>Bolsa de Sangre</Spanish>
+      <Polish>Worek z Krwią</Polish>
+      <Czech>Krevní vak</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_Bloodbag_Description">
+      <English>Used to compensate for heavy blood loss.</English>
+      <German>Benutzt, um schweren Blutverlust zu kompensieren.</German>
+      <Spanish>Usada para compensar pérdidas de sangre severas.</Spanish>
+      <Polish>Stosowany w celu skompensowania dużej utraty krwi.</Polish>
+      <Czech>Používá se pro kompenzaci při těžké ztrátě krve.</Czech>
+    </Key>
+
+    <Key ID="STR_AGM_Medical_HitHead">
+      <English>Head</English>
+      <German>Kopf</German>
+      <Spanish>Cabeza</Spanish>
+      <Polish>Głowa</Polish>
+      <Czech>Hlava</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_HitBody">
+      <English>Torso</English>
+      <German>Torso</German>
+      <Spanish>Torso</Spanish>
+      <Polish>Tors</Polish>
+      <Czech>Hruď</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_HitLeftArm">
+      <English>Left Arm</English>
+      <German>Linker Arm</German>
+      <Spanish>Brazo Izquierdo</Spanish>
+      <Polish>Lewe Ramię</Polish>
+      <Czech>Levá ruka</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_HitRightArm">
+      <English>Right Arm</English>
+      <German>Rechter Arm</German>
+      <Spanish>Brazo Derecho</Spanish>
+      <Polish>Prawe Ramię</Polish>
+      <Czech>Pravá ruka</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_HitLeftLeg">
+      <English>Left Leg</English>
+      <German>Linkes Bein</German>
+      <Spanish>Pierna Izquierda</Spanish>
+      <Polish>Lewa Noga</Polish>
+      <Czech>Levá noha</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_HitRightLeg">
+      <English>Right Leg</English>
+      <German>Rechtes Bein</German>
+      <Spanish>Pierna Derecha</Spanish>
+      <Polish>Prawa Noga</Polish>
+      <Czech>Pravá noha</Czech>
+    </Key>
+
+    <Key ID="STR_AGM_Medical_Patient">
+      <English>Patient</English>
+      <German>Patient</German>
+      <Spanish>Paciente</Spanish>
+      <Polish>Pacjent</Polish>
+      <Czech>Pacient</Czech>
+    </Key>
+
+    <!-- Check AGM_Medical_fnc_diagnose for how the diagnose string is pieced together -->
+    <Key ID="STR_AGM_Medical_PatientIsDead">
+      <English>The patient is dead.</English>
+      <German>Der Patient ist tot.</German>
+      <Spanish>El paciente está muerto.</Spanish>
+      <Polish>Pacjent jest martwy.</Polish>
+      <Czech>Je mrtvý.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientIsUnconscious">
+      <English>The patient is unconscious.</English>
+      <German>Der Patient ist bewusstlos.</German>
+      <Spanish>El paciente está muerto.</Spanish>
+      <Polish>Pacjent jest nieprzytomny.</Polish>
+      <Czech>Pacient je v bezvědomí.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientIsAwake">
+      <English>The patient is awake.</English>
+      <German>Der Patient ist wach.</German>
+      <Spanish>El paciente está despierto.</Spanish>
+      <Polish>Pacjent jest przytomny.</Polish>
+      <Czech>Pacient je při vědomí.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
+      <English>The patient has heavy injuries in:</English>
+      <German>Der Patient hat schwere Verletzungen in:</German>
+      <Spanish>El paciente tiene heridas severas en:</Spanish>
+      <Polish>Pacjent ma ciężkie obrażenia na:</Polish>
+      <Czech>Pacient má těžká zranění na místech:</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLightInjuries">
+      <English>The patient has light injuries in:</English>
+      <German>Der Patient hat leichte Verletzungen in:</German>
+      <Spanish>El paciente tiene heridas leves en:</Spanish>
+      <Polish>Pacjent ma lekkie obrażenia na:</Polish>
+      <Czech>Pacient má lehká zranění na místech:</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientNotInjured">
+      <English>The patient is not injured.</English>
+      <German>Der Patient ist unverletzt.</German>
+      <Spanish>El paciente no está herido.</Spanish>
+      <Polish>Pacjent nie ma żadnych obrażeń.</Polish>
+      <Czech>Pacient neni zraněný.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientBleeding">
+      <English>The patient is bleeding;</English>
+      <German>Der Patient blutet;</German>
+      <Spanish>El paciente está sangrando.</Spanish>
+      <Polish>Pacjent krwawi;</Polish>
+      <Czech>Pacient krvácí;</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientNotBleeding">
+      <English>The patient is not bleeding;</English>
+      <German>Der Patient blutet nicht;</German>
+      <Spanish>El paciente no está sangrando.</Spanish>
+      <Polish>Pacjent nie krwawi;</Polish>
+      <Czech>Pacient nekrvácí;</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLostBlood">
+      <English>The patient has already lost a lot of blood.</English>
+      <German>Der Patient hat bereits große Mengen Blut verloren.</German>
+      <Spanish>El paciente ha perdido mucha sangre.</Spanish>
+      <Polish>Pacjent stracił już dużą ilość krwi.</Polish>
+      <Czech>Pacient stratil dost krve.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLostSomeBlood">
+      <English>The patient has already lost some blood.</English>
+      <German>Der Patient hat bereits etwas Blut verloren.</German>
+      <Spanish>El paciente ha perdido algo de sangre.</Spanish>
+      <Polish>PAcjent stracił już trochę krwi.</Polish>
+      <Czech>Pacient stratil málo krve.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLostNoBlood">
+      <English>The patient hasn't lost any blood.</English>
+      <German>Der Patient hat noch kein Blut verloren.</German>
+      <Spanish>El paciente no ha perdido sangre.</Spanish>
+      <Polish>Pacjent nie traci żadnej krwi.</Polish>
+      <Czech>Pacient nestratil žádnou krev.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientPainkillers">
+      <English>The patient is on heavy painkillers </English>
+      <German>Der Patient steht unter starkem Schmerzmitteleinfluss</German>
+      <Spanish>El paciente está fuertemente sedado.</Spanish>
+      <Polish>Pacjent jest na silnych środkach przeciwbólowych</Polish>
+      <Czech>Pacient je na těžkých sedativech </Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientSomePainkillers">
+      <English>The patient is on some morphine </English>
+      <German>Der Patient steht unter schwachem Schmerzmitteleinfluss</German>
+      <Spanish>El paciente está levemente sedado con morfina.</Spanish>
+      <Polish>Pacjent jest pod wpływem działania morfiny</Polish>
+      <Czech>Pacient má v sobě morfium </Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientNoPainkillers">
+      <English>The patient isn't on painkillers </English>
+      <German>Der Patient steht nicht unter dem Einfluss von Schmerzmitteln</German>
+      <Spanish>El paciente no está sedado.</Spanish>
+      <Polish>Pacjent nie przyjmował środków przeciwbólowych</Polish>
+      <Czech>Pacient není na sedativech </Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientHeavyPain">
+      <English>and in heavy pain.</English>
+      <German>und hat starke Schmerzen.</German>
+      <Spanish>y con dolor severo.</Spanish>
+      <Polish>i odczuwa silny ból.</Polish>
+      <Czech>a v těžkých bolestech.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLightPain">
+      <English>and in light pain.</English>
+      <German>und hat leichte Schmerzen.</German>
+      <Spanish>y con dolor leve.</Spanish>
+      <Polish>i odczuwa lekki ból.</Polish>
+      <Czech>a v lehkých bolestech.</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientNoPain">
+      <English>and not in pain.</English>
+      <German>und hat keine Schmerzen.</German>
+      <Spanish>y sin dolor.</Spanish>
+      <Polish>i nie odczuwa żadnego bólu.</Polish>
+      <Czech>a nemá bolesti.</Czech>
+    </Key>
+
+    <Key ID="STR_AGM_Medical_NotTrained">
+      <English>You are not trained to do that.</English>
+      <German>Dazu bist du nicht ausgebildet.</German>
+      <Spanish>No esta entrenado para hacer eso.</Spanish>
+      <Polish>Nie zostałeś przeszkolony aby to zrobić.</Polish>
+      <Czech>Na to nemáš dostatečné schopnosti.</Czech>
+    </Key>
+
   </Package>
 </Project>

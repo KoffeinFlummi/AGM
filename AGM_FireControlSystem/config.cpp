@@ -17,8 +17,10 @@ class CfgPatches {
       A3_Armor_F_Slammer,
       A3_Armor_F_T100K
     };
-    version = 1.0;
-    author[] = {"KoffeinFlummi"};
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
+    author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
@@ -52,7 +54,7 @@ class Extended_Init_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class laseTarget {
-    displayName = "Lase Target";
+    displayName = "$STR_AGM_FireControlSystem_LaseTarget";
     condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
     conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
@@ -69,9 +71,9 @@ class CfgVehicles {
   class All;
   class AllVehicles: All {
     AGM_FCSEnabled = 0; // FCS defaults to off
-    AGM_FCSMinDistance = 0;
-    AGM_FCSMaxDistance = 5000;
-    AGM_FCSDistanceInterval = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
   };
   class Land: AllVehicles {};
   class LandVehicle: Land {};

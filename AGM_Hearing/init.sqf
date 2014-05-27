@@ -6,7 +6,7 @@ if (isDedicated) exitWith {};
 
 AGM_EarRingingPlaying = false;
 
-AGM_EarPlugsin = false;
+AGM_EarPlugsIn = false;
 AGM_hasEarBuds = false;
 
 player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];
@@ -49,7 +49,9 @@ AGM_NewStrength = 0;
     if (_clampedDeafness < 0) then {
       _clampedDeafness = 0
     };
-    _volume = _clampedDeafness * _clampedDeafness;
+    
+    // needed until Bohemia fixes playSound to actually use the second argument
+    _volume = (_clampedDeafness * _clampedDeafness) max 0.1;
 
     // Earplugs reduce hearing 50%
     if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {

@@ -141,7 +141,7 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   */
 
   if (damage _unit * (_unit getVariable "AGM_Painkiller") > _unit getVariable "AGM_Pain") then {
-    _unit setVariable ["AGM_Pain", (damage _unit) * (_unit getVariable "AGM_Painkiller") * 2, true];
+    _unit setVariable ["AGM_Pain", (damage _unit) * (_unit getVariable "AGM_Painkiller"), true];
   };
 
   // Pain
@@ -151,10 +151,10 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
       _time = time;
       "chromAberration" ppEffectEnable true;
       while {(player getVariable "AGM_Pain") > 0} do {
-        "chromAberration" ppEffectAdjust [0.02 * (player getVariable "AGM_Pain"), 0.02 * (player getVariable "AGM_Pain"), false];
+        "chromAberration" ppEffectAdjust [0.035 * (player getVariable "AGM_Pain"), 0.035 * (player getVariable "AGM_Pain"), false];
         "chromAberration" ppEffectCommit 1;
         sleep (1.5 - (player getVariable "AGM_Pain"));
-        "chromAberration" ppEffectAdjust [0.2 * (player getVariable "AGM_Pain"), 0.2 * (player getVariable "AGM_Pain"), false];
+        "chromAberration" ppEffectAdjust [0.35 * (player getVariable "AGM_Pain"), 0.35 * (player getVariable "AGM_Pain"), false];
         "chromAberration" ppEffectCommit 1;
         sleep 0.15;
 

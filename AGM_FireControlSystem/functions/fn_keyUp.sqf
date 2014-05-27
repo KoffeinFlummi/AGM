@@ -13,7 +13,10 @@
 _vehicle = _this select 0;
 _magazines = magazines _vehicle;
 
-_distance = [5, 5000, 0] call AGM_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
+_distance = [
+  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSDistanceInterval")),
+  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSMaxDistance")),
+  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSMinDistance"))] call AGM_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
 _weaponDirection = _vehicle weaponDirection (currentWeapon _vehicle);
 _angleTarget = asin (_weaponDirection select 2);
 
@@ -134,4 +137,4 @@ _vehicle setVariable ["AGM_FCSAzimuth",   _FCSAzimuth,   true];
   _vehicle setVariable ["AGM_FCSElevation", _FCSElevation, true];
 };
 
-hintSilent format ["Zeroed To: %1", _distance];
+hintSilent format ["%1: %2", localize "STR_AGM_FireControlSystem_ZeroedTo", _distance];

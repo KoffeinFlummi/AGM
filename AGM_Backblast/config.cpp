@@ -4,7 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers};
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -63,6 +65,11 @@ class CfgWeapons {
   class cannon_120mm: CannonCore {
     AGM_DangerZone_Angle = 90;
     AGM_DangerZone_Range = 50;
+    AGM_DangerZone_Damage = 0.8;
+  };
+  class mortar_155mm_AMOS: CannonCore {
+    AGM_DangerZone_Angle = 90;
+    AGM_DangerZone_Range = 60;
     AGM_DangerZone_Damage = 1;
   };
 };

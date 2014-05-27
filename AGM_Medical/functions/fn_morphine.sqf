@@ -35,7 +35,7 @@ _this spawn {
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
-  BWA3_Medical_morphineCallback = {
+  AGM_Medical_morphineCallback = {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
   
@@ -45,7 +45,17 @@ _this spawn {
 
     if (_painkillerOld < 0.1) exitWith {
       if (_unit == player) then {
-        [0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
+        AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
+        AGM_UnconsciousCC ppEffectEnable true;
+        AGM_UnconsciousCC ppEffectForceInNVG true;
+        AGM_UnconsciousCC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[0.4,0.4,0,0,0,0.1,0.3]];
+        AGM_UnconsciousCC ppEffectCommit 0.15;
+
+        AGM_UnconsciousRB = ppEffectCreate ["RadialBlur", 4207];
+        AGM_UnconsciousRB ppEffectEnable true;
+        AGM_UnconsciousRB ppEffectForceInNVG true;
+        AGM_UnconsciousRB ppEffectAdjust [0.4, 0.4, 0, 0];
+        AGM_UnconsciousRB ppEffectCommit 0.5;
       };
       [-2, {
         _this switchMove "Unconscious";
@@ -83,10 +93,10 @@ _this spawn {
     */
   };
 
-  BWA3_Medical_morphineAbort = {
+  AGM_Medical_morphineAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [_morphinetime, (_this + [_painkillerOld]), "BWA3_Medical_morphineCallback", localize "STR_AGM_Injecting_Morphine", "BWA3_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
+  [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
 
 };

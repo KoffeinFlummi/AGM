@@ -68,7 +68,7 @@ if (_class == "") then {
 	};
 } else {
 	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenuSelf;";
-	_ctrlInteractionDialog ctrlSetText "<< Back";
+	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
 };
 
 for "_i" from 0 to 9 do {

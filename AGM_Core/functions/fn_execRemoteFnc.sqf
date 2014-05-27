@@ -20,6 +20,7 @@ _this resize 3;
 
 _arguments = _this select 0;
 _function = call compile (_this select 1);
+//missionNamespace setVariable ["_function", _this select 1];
 _unit = _this select 2;
 
 /*if (isNil "_unit") exitWith {

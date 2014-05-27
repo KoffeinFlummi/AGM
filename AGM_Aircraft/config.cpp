@@ -17,7 +17,9 @@ class CfgPatches {
       A3_Air_F_EPC_Plane_CAS_02,
       A3_Air_F_EPC_Plane_Fighter_03
     };
-    version = 1.0;
+    version = "0.9";
+    versionStr = "0.9";
+    versionAr[] = {0,9,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -50,7 +52,7 @@ class CfgWeapons {
   class CMFlareLauncher: SmokeLauncher {
     modes[] = {"Single", "Burst", "AIBurst"};
     class Burst: Mode_Burst {
-      displayName = "Burst";
+      displayName = "$STR_AGM_Aircraft_CMFlareLauncher_Burst_Name";
     };
   };
 };
@@ -130,7 +132,6 @@ class CfgVehicles {
   // OPFOR Inheritance
   class Heli_Light_02_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
       class CopilotTurret: CopilotTurret {};
     };
   };
@@ -145,7 +146,7 @@ class CfgVehicles {
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    displayName = "RAH-66 Comanche";
+    displayName = "$STR_AGM_Aircraft_Heli_Attack_01_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -170,7 +171,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    displayName = "MH-6 Little Bird";
+    displayName = "$STR_AGM_Aircraft_Heli_Light_01_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -180,7 +181,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    displayName = "AH-6 Little Bird";
+    displayName = "$STR_AGM_Aircraft_Heli_Light_01_armed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -190,13 +191,13 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    displayName = "A-14 Warthog";
+    displayName = "$STR_AGM_Aircraft_Plane_CAS_01_Name";
     lockDetectionSystem = 16;
   };
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
-    displayName = "AW159 Wildcat";
+    displayName = "$STR_AGM_Aircraft_Heli_light_03_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -206,7 +207,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    displayName = "AW159 Wildcat (unarmed)";
+    displayName = "$STR_AGM_Aircraft_Heli_light_03_unarmed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -216,7 +217,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    displayName = "AW101 Merlin";
+    displayName = "$STR_AGM_Aircraft_Heli_Transport_02_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -229,11 +230,11 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    displayName = "L-39 Albatros (CAS)";
+    displayName = "$STR_AGM_Aircraft_Plane_Fighter_03_CAS_Name";
     lockDetectionSystem = 16;
   };
   class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
-    displayName = "L-39 Albatros (AA)";
+    displayName = "$STR_AGM_Aircraft_Plane_Fighter_03_AA_Name";
   };
 
   // OPFOR
@@ -256,20 +257,17 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
-    displayName = "Ka-60 Kasatka";
+    displayName = "$STR_AGM_Aircraft_Heli_Light_02_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    displayName = "Ka-60 Kasatka (unarmed)";
+    displayName = "$STR_AGM_Aircraft_Heli_Light_02_unarmed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -282,7 +280,7 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    displayName = "Yak-130";
+    displayName = "$STR_AGM_Aircraft_Plane_CAS_02_Name";
     lockDetectionSystem = 16;
   };
 };

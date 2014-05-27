@@ -64,29 +64,12 @@ AGM_FCS_traceBullet = {
     if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
   };
 
+
   _posY - _posTargetY
 };
 
 if ((_this + [_maxElev]) call AGM_FCS_traceBullet < 0) exitWith {_maxElev - _angleTarget};
-
-// FUCK YEAH, NEWTON!
-/*
-_min = _angleTarget;
-_max = _maxElev;
-_margin = 1;
-_angle = 0;
-_it1 = 0;
-while {_margin > PRECISION} do {
-  _angle = (_max + _min) / 2;
-  _margin = (_this + [_angle]) call AGM_FCS_traceBullet;
-  if (_margin > 0) then {
-    _max = _angle;
-  } else {
-    _min = _angle;
-  };
-  _it1 = _it1+1;
-};
-*/
+  
 // Newton Method / Secand Method
 _angle1 = _angleTarget;
 _angle2 = _maxElev;
@@ -102,12 +85,6 @@ while {(abs _f1) > PRECISION} do {
   _it2 = _it2+1;
 };
 //player globalChat format ["it1: %1 | _angle1: %2 | it2: %3 | _angle2: %4",_it1, _angle-_angleTarget, _it2, _angle2-_angleTarget];
-/*
-_angle = _angleTarget;
-while {_angle <= _maxElev} do {
-  if ((_this + [_angle]) call AGM_FCS_traceBullet > 0) exitWith {};
-  _angle = _angle + 0.05;
-};
-*/
+
 _angle=_angle2;
 _angle - _angleTarget

@@ -20,24 +20,24 @@ _this spawn {
     _unit = _this select 0;
 
     _damages = [
-      ["head",      floor ((_unit getHitPointDamage "HitHead")     * 100) / 100],
-      ["torso",     floor ((_unit getHitPointDamage "HitBody")     * 100) / 100],
-      ["left arm",  floor ((_unit getHitPointDamage "HitLeftArm")  * 100) / 100],
-      ["right arm", floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100],
-      ["left leg",  floor ((_unit getHitPointDamage "HitLeftLeg")  * 100) / 100],
-      ["right leg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
+      ["HitHead",     floor ((_unit getHitPointDamage "HitHead")     * 100) / 100],
+      ["HitBody",     floor ((_unit getHitPointDamage "HitBody")     * 100) / 100],
+      ["HitLeftArm",  floor ((_unit getHitPointDamage "HitLeftArm")  * 100) / 100],
+      ["HitRightArm", floor ((_unit getHitPointDamage "HitRightArm") * 100) / 100],
+      ["HitLeftLeg",  floor ((_unit getHitPointDamage "HitLeftLeg")  * 100) / 100],
+      ["HitRightLeg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
     ];
 
-    _string = format ["Patient: %1", (_unit getVariable ["AGM_Name", (name _unit)])];
+    _string = format ["%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
-      _string = _string + "<br/><br/>The patient is dead.";
+      _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsDead";
     } else {
       // Consciousness
       if (_unit getVariable "AGM_Unconscious") then {
-        _string = _string + "<br/><br/>The patient is unconscious.";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsUnconscious";
       } else {
-        _string = _string + "<br/><br/>The patient is awake.";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsAwake";
       };
 
       // Injuries
@@ -45,61 +45,61 @@ _this spawn {
       {
         if ((_x select 1) >= 0.5) then {
           if (_heavyinjuries != "") then { _heavyinjuries = _heavyinjuries + ", "; };
-          _heavyinjuries = _heavyinjuries + (_x select 0);
+          _heavyinjuries = _heavyinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
         };
       } forEach _damages;
       if (_heavyinjuries != "") then {
-        _string = _string + "<br/><br/>The patient has heavy injuries in: " + _heavyinjuries;
+        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + " " + _heavyinjuries;
       };
 
       _lightinjuries = "";
       {
         if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
           if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
-          _lightinjuries = _lightinjuries + (_x select 0);
+          _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
         };
       } forEach _damages;
       if (_lightinjuries != "") then {
-        _string = _string + "<br/><br/>The patient has light injuries in: " + _lightinjuries;
+        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientLightInjuries") + " " + _lightinjuries;
       };
 
       if (_lightinjuries == "" and _heavyinjuries == "") then {
-        _string = _string + "<br/><br/>The patient is not injured.";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
       };
 
       // Blood
       if (_unit getVariable "AGM_Bleeding") then {
-        _string = _string + "<br/><br/>The patient is bleeding; ";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientBleeding" + " ";
       } else {
-        _string = _string + "<br/><br/>The patient is not bleeding at the moment; ";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";
       };
       if (_unit getVariable "AGM_Blood" < 0.4) then {
-        _string = _string + "The patient has already lost a lot of blood.";
+        _string = _string + localize "STR_AGM_Medical_PatientLostBlood";
       } else {
         if (_unit getVariable "AGM_Blood" < 1) then {
-          _string = _string + "The patient has already lost some blood.";
+          _string = _string + localize "STR_AGM_Medical_PatientLostSomeBlood";
         } else {
-          _string = _string + "The patient hasn't lost any blood.";
+          _string = _string + localize "STR_AGM_Medical_PatientLostNoBlood";
         };
       };
 
       // Pain
       if (_unit getVariable "AGM_Painkiller" < 0.4) then {
-        _string = _string + "<br/><br/>The patient is on heavy painkillers ";
+        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientPainkillers" + " ";
       } else {
         if (_unit getVariable "AGM_Painkiller" < 0.9) then {
-          _string = _string + "<br/><br/>The patient is on some morphine ";
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientSomePainkillers" + " ";
         } else {
-          _string = _string + "<br/><br/>The patient isn't on painkillers ";
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNoPainkillers" + " ";
         };
       };
       if (_unit getVariable "AGM_Pain" > 0.4) then {
-        _string = _string + "and in heavy pain.";
+        _string = _string + localize "STR_AGM_Medical_PatientHeavyPain";
       } else {
         if (_unit getVariable "AGM_Pain" > 0.1) then {
-          _string = _string + "and in light pain.";
+          _string = _string + localize "STR_AGM_Medical_PatientLightPain";
         } else {
-          _string = _string + "and not in pain.";
+          _string = _string + localize "STR_AGM_Medical_PatientNoPain";
         };
       };
 
@@ -121,7 +121,7 @@ _this spawn {
       player setVariable ["AGM_CanTreat", true, false];
     };
 
-    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };

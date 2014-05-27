@@ -3,7 +3,7 @@ private ["_unit", "_weaponType", "_ammoType", "_round", "_coefficient", "_humidi
 _unit = _this select 0;
 _weaponType = _this select 1;
 _ammoType = _this select 4;
-_round = _this select 6;
+_round = _this select 5;
 
 if (!local _unit) exitwith {};
 if (!isPlayer _unit) exitwith {};
