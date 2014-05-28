@@ -75,3 +75,15 @@ _unit call AGM_itemCheck;
 _unit addEventHandler ["HandleDamage", { _this call AGM_Medical_fnc_handleDamage; }];
 _unit addEventHandler ["Respawn", { (_this select 0) call AGM_unitInit; (_this select 0) call AGM_itemCheck; }];
 _unit addEventHandler ["Take", { (_this select 0) call AGM_itemCheck; }];
+
+_unit spawn {
+  while {true} do {
+    if ((_this == player) and {!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)}) then {
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectCommit 1;
+      AGM_UnconsciousRB ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectCommit 1;
+    };
+    sleep 1;
+  };
+};
