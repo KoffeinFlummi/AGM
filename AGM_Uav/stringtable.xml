@@ -7,22 +7,22 @@
       <German>Drohne ist voll</German>
     </Key>
     <Key ID="STR_AGM_NoBattery">
-      <English>You need a UAV-Batterie</English>
+      <English>You need a UAV-Battery</English>
       <German>Du brauchst eine UAV-Batterie</German>
     </Key>
 	<Key ID="STR_AGM_Refuel">
       <English>Refuel</English>
       <German>Aufladen</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Batterie_Name">
-      <English>UAV-Batterie</English>
+	<Key ID="STR_AGM_Uav_Battery_Name">
+      <English>UAV-Battery</English>
       <German>UAV-Batterie</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Batterie_Description">
+	<Key ID="STR_AGM_Uav_Battery_Description">
       <English>Used to refuel UAV's</English>
       <German>Verwendet zum Aufladen von UAV's</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Batterie_Refuel">
+	<Key ID="STR_AGM_Uav_Battery_Refuel">
       <English>Refueling...</English>
       <German>Aufladen...</German>
     </Key>

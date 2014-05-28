@@ -27,7 +27,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] execVM ""AGM_Uav\scripts\refuel.sqf"";";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -39,7 +39,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_Medical_fnc_bandage;";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -51,7 +51,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] execVM ""AGM_Uav\scripts\refuel.sqf"";";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -64,11 +64,11 @@ class CfgWeapons{
 	class InventoryItem_Base_F;
 	
 	//ITEMS
-	class AGM_UAV_Batterie: ItemCore {
-		displayName = "$STR_AGM_Uav_Batterie_Name";
-		descriptionShort = "$STR_AGM_Uav_Batterie_Description";
+	class AGM_UAV_Battery: ItemCore {
+		displayName = "$STR_AGM_Uav_Battery_Name";
+		descriptionShort = "$STR_AGM_Uav_Battery_Description";
 		model = "\A3\weapons_F\ammo\mag_univ.p3d";
-		picture = "\AGM_Uav\UI\AGM_batterie.paa";
+		picture = "\AGM_Uav\UI\AGM_battery.paa";
 		scope = 2;
 		class ItemInfo: InventoryItem_Base_F {
 		  mass = 20;
