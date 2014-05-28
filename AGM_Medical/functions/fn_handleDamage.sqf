@@ -145,15 +145,18 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
     _unit setVariable ["AGM_Bleeding", true, true];
     _unit spawn {
       while {_this getVariable "AGM_Blood" > 0 and (_this getVariable "AGM_Bleeding") and damage _this > 0 and damage _this < 1} do {
-        if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
-        _blood = _this getVariable "AGM_Blood";
-        _blood = _blood - BLOODLOSSRATE * (damage _this);
-        _this setVariable ["AGM_Blood", _blood, true];
-        if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
-          [_this] call AGM_Medical_fnc_knockOut;
-        };
-        if (_blood <= BLOODTHRESHOLD2) then {
-          _this setDamage 1;
+
+        if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
+          if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
+          _blood = _this getVariable "AGM_Blood";
+          _blood = _blood - BLOODLOSSRATE * (damage _this);
+          _this setVariable ["AGM_Blood", _blood, true];
+          if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
+            [_this] call AGM_Medical_fnc_knockOut;
+          };
+          if (_blood <= BLOODTHRESHOLD2) then {
+            _this setDamage 1;
+          };
         };
 
         sleep 10;

@@ -41,6 +41,7 @@ class CfgFunctions {
       class forceProne;
       class handleDamage;
       class init;
+      class isInMedicalVehicle;
       class isMedic;
       class knockOut;
       class loadIntoVehicle;
@@ -556,6 +557,39 @@ class CfgWeapons {
     class ItemInfo: ItemInfo {
       armor = 8;
     };
+  };
+};
+
+class CfgActions {
+  class HealSoldier {
+    hideOnUse = 1;
+    priority = 10;
+    shortcut = "";
+    show = 0;
+    showWindow = 0;
+    text = "Treat %1";
+    textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />";
+    textSimple = "";
+  };
+  class HealSoldierAuto {
+    hideOnUse = 1;
+    priority = 0;
+    shortcut = "";
+    show = 0;
+    showWindow = 0;
+    text = "Heal soldier";
+    textDefault = "";
+    textSimple = "";
+  };
+  class HealSoldierSelf {
+    hideOnUse = 1;
+    priority = 10;
+    shortcut = "";
+    show = 0;
+    showWindow = 0;
+    text = "Treat yourself";
+    textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />";
+    textSimple = "";
   };
 };
 
