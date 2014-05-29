@@ -19,6 +19,7 @@
     <Key ID="STR_AGM_Interaction_OpenDoor">
       <English>Open / Close Doors</English>
       <German>Türen Öffnen / Schließen</German>
+      <Spanish>Abrir / Cerrar Puerta</Spanish>
       <Polish>Otwórz / Zamknij Drzwi</Polish>
       <Czech>Otevřít / Zavřít dveře</Czech>
     </Key>
@@ -63,6 +64,7 @@
       <English>Back</English>
       <German>Zurück</German>
       <Spanish>Atrás</Spanish>
+      <Polish>Wstecz</Polish>
       <Czech>Zpět</Czech>
     </Key>
 
@@ -70,7 +72,7 @@
       <English>Gestures >></English>
       <German>Gesten >></German>
       <Spanish>Gestos</Spanish>
-      <Polish>Gesty</Polish>
+      <Polish>Gesty >></Polish>
       <Czech>Gesta >></Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Attack">
