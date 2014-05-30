@@ -32,11 +32,11 @@
       <Czech>AH-6 Little Bird</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_CAS_01_Name">
-      <English>A-14 Warthog</English>
-      <German>A-14 Warthog</German>
-      <Spanish>A-14 Warthog</Spanish>
-      <Polish>A-10 Warthog</Polish>
-      <Czech>A-10 Warthog</Czech>
+      <English>A-164 Spacehog</English>
+      <German>A-164 Spacehog</German>
+      <Spanish>A-164 Spacehog</Spanish>
+      <Polish>A-164 Spacehog</Polish>
+      <Czech>A-164 Spacehog</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_light_03_Name">
       <English>AW159 Wildcat</English>
@@ -60,18 +60,18 @@
       <Czech>AW101 Merlin</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_Fighter_03_CAS_Name">
-      <English>L-39 Albatros (CAS)</English>
-      <German>L-39 Albatros (CAS)</German>
-      <Spanish>L-39 Albatros</Spanish>
-      <Polish>L-39 Albatros (CAS)</Polish>
-      <Czech>L-39 Albatros (CAS)</Czech>
+      <English>L-159 Albatross (CAS)</English>
+      <German>L-159 Albatross (CAS)</German>
+      <Spanish>L-159 Albatross</Spanish>
+      <Polish>L-159 Albatross (CAS)</Polish>
+      <Czech>L-159 Albatross (CAS)</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_Fighter_03_AA_Name">
-      <English>L-39 Albatros (AA)</English>
-      <German>L-39 Albatros (AA)</German>
-      <Spanish>L-39 Albatros (AA)</Spanish>
-      <Polish>L-39 Albatros (AA)</Polish>
-      <Czech>L-39 Albatros (AA)</Czech>
+      <English>L-159 Albatross (AA)</English>
+      <German>L-159 Albatross (AA)</German>
+      <Spanish>L-159 Albatross (AA)</Spanish>
+      <Polish>L-159 Albatross (AA)</Polish>
+      <Czech>L-159 Albatross (AA)</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_02_Name">
       <English>Ka-60 Kasatka</English>
