@@ -27,10 +27,6 @@ _newGroup = createGroup side _unit;
 forEach (units _oldGroup);
 _unit setVariable ["AGM_Group", _oldGroup, true];
 
-if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
-  player setVariable ["tf_unable_to_use_radio", true, true];
-};
-
 if (_unit == player) then {
   //[0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
   AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
@@ -48,6 +44,8 @@ if (_unit == player) then {
   0.15 fadeSound 0.4;
   0.15 fadeSpeech 0.4;
   player setVariable ["tf_globalVolume", 0.4];
+  player setVariable ["tf_voiceVolume", 0, true];
+  player setVariable ["tf_unable_to_use_radio", true, true];
 };
 
 _unit setCaptive 213;
