@@ -47,6 +47,7 @@ if (_unit == player) then {
 
   0.15 fadeSound 0.4;
   0.15 fadeSpeech 0.4;
+  player setVariable ["tf_globalVolume", 0.4];
 };
 
 _unit setCaptive 213;

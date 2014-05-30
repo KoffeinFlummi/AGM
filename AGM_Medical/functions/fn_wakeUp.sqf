@@ -39,6 +39,7 @@ if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
     AGM_UnconsciousRB ppEffectCommit 1;
     3 fadeSound 1;
     3 fadeSpeech 1;
+    player setVariable ["tf_globalVolume", 1];
   };
   if (local _this) then {
     _this enableSimulation true;

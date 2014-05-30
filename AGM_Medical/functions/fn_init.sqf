@@ -26,6 +26,7 @@ AGM_unitInit = {
     };
     0 fadeSound 1;
     0 fadeSpeech 1;
+    player setVariable ["tf_globalVolume", 1];
   };
 
   _this setCaptive false;
