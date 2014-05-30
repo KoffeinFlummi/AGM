@@ -8,7 +8,7 @@ class CfgPatches {
     versionStr = "0.9";
     versionAr[] = {0,9,0};
     author[] = {"marc_book"};
-    authorUrl = "http://jgbtl14.bplaced.net/";
+    authorUrl = "https://github.com/MarcBook/";
   };
 };
 
