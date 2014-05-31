@@ -8,6 +8,7 @@
       <Spanish>Seguro colocado</Spanish>
       <Polish>Broń zabezpieczona</Polish>
       <Czech>Zbraň zajištěná</Czech>
+      <French>Cran de sûreté</French>
     </Key>
     <Key ID="STR_AGM_SafeModeLifted">
       <English>Safety catch released</English>
@@ -15,6 +16,7 @@
       <Spanish>Seguro liberado</Spanish>
       <Polish>Broń odbezpieczona</Polish>
       <Czech>Zbraň odjištěná</Czech>
+      <French>Cran de sûreté enlevé</French>
     </Key>
 
   </Package>
