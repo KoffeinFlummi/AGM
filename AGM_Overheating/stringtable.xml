@@ -8,6 +8,7 @@
       <Spanish>Cañón de repuesto</Spanish>
       <Polish>Zapasowa lufa</Polish>
       <Czech>Náhradní hlaveň</Czech>
+      <French>Canon de rechange</French>
     </Key>
     <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
       <English>Use to swap barrel.</English>
@@ -15,6 +16,7 @@
       <Spanish>Permite intercambiar el cañón</Spanish>
       <Polish>Umożliwia wymianę lufy</Polish>
       <Czech>Používané k výměně hlavně</Czech>
+      <French>Utiliser pour changer de canon.</French>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponJammed">
       <English>Weapon jammed!</English>
@@ -22,6 +24,7 @@
       <Spanish>Arma trabada!</Spanish>
       <Polish>Broń się zacięła!</Polish>
       <Czech>Zbraň je zaseklá!</Czech>
+      <French>Arme enrayer</French>
     </Key>
     <Key ID="STR_AGM_Overheating_UnjamWeapon">
       <English>Clear jam</English>
@@ -29,6 +32,7 @@
       <Spanish>Destrabar el arma</Spanish>
       <Polish>Usuń zacięcie</Polish>
       <Czech>Odseknout zbraň</Czech>
+      <French>Nettoyer le canon</French>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
       <English>Jam cleared</English>
@@ -36,6 +40,7 @@
       <Spanish>Arma destrabada</Spanish>
       <Polish>Zacięcie usunięte</Polish>
       <Czech>Zbraň odseklá</Czech>
+      <French>Canon nettoyé</French>
     </Key>
     <Key ID="STR_AGM_Overheating_SwapBarrel">
       <English>Swap barrel</English>
@@ -43,6 +48,7 @@
       <Spanish>Cambiar el cañón</Spanish>
       <Polish>Wymień lufę</Polish>
       <Czech>Prohodit hlaveň</Czech>
+      <French>Changer le canon</French>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappingBarrel">
       <English>Swapping barrel...</English>
@@ -50,6 +56,7 @@
       <Spanish>Cambiando el cañón...</Spanish>
       <Polish>Wymienianie lufy...</Polish>
       <Czech>Prohazuji hlaveň ...</Czech>
+      <French>Changement du canon...</French>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappedBarrel">
       <English>Swapped barrel</English>
@@ -57,6 +64,7 @@
       <Spanish>Cañón cambiado</Spanish>
       <Polish>Lufa wymieniona</Polish>
       <Czech>Prohozená hlaveň</Czech>
+      <French>Canon changé</French>
     </Key>
 
   </Package>
