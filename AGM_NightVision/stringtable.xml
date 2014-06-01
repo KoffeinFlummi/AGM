@@ -8,6 +8,7 @@
       <Spanish>Aumentar: %1</Spanish>
       <Polish>Zwiększ: %1</Polish>
       <Czech>Zvýšení: %1</Czech>
+      <French>luminosité : %1</French>
     </Key>
 
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
@@ -16,6 +17,7 @@
       <Spanish>Aumentar el Brillo de los NVG</Spanish>
       <Polish>Zwiększ Jasność Noktowizji</Polish>
       <Czech>Zvýšení jasnosti nektovizoru</Czech>
+      <French>Augmenter la luminosité des NVG</French>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -23,6 +25,7 @@
       <Spanish>Disminuir el Brillo de los NVG</Spanish>
       <Polish>Zmniejsz Jasność Noktowizji</Polish>
       <Czech>Snížení jasnosti nektovizoru</Czech>
+      <French>Baisser la luminosité des NVG</French>
     </Key>
 
   </Package>
