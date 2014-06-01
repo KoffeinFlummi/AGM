@@ -77,6 +77,7 @@ _unit addEventHandler ["Take", { (_this select 0) call AGM_Medical_itemCheck; }]
 
 _unit spawn {
   while {true} do {
+    sleep 1;
     _this call AGM_Medical_itemCheck;
     if ((_this == player) and {(!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)) or (damage _this == 1)}) then {
       AGM_UnconsciousCC ppEffectEnable false;
@@ -84,6 +85,5 @@ _unit spawn {
       AGM_UnconsciousRB ppEffectEnable false;
       AGM_UnconsciousRB ppEffectCommit 1;
     };
-    sleep 1;
   };
 };

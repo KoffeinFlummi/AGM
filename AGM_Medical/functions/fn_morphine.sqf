@@ -35,6 +35,14 @@ _this spawn {
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
+  if (_unit != player) then {
+    [-2, {
+      if (local (_this select 0)) then {
+        systemChat format ["%1 is giving you morphine.", name (_this select 1)];
+      };
+    }, [_unit, player]] call CBA_fnc_globalExecute;
+  };
+
   AGM_Medical_morphineCallback = {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
