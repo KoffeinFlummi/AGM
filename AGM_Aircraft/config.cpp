@@ -4,6 +4,7 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
+      AGM_Core, 
       A3_Air_F,
       A3_Air_F_Heli_Light_01,
       A3_Air_F_Heli_Light_02,

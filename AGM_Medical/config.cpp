@@ -415,6 +415,9 @@ class CfgWeapons {
     descriptionShort = "$STR_AGM_Medical_Bloodbag_Description";
     model = "\A3\Structures_F_EPA\Items\Medical\BloodBag_F.p3d";
     picture = "\AGM_Medical\UI\AGM_bloodbag_ca.paa";
+    class ItemInfo: ItemInfo {
+      mass = 21;
+    };
   };
 
   // VESTS

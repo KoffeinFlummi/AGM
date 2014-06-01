@@ -58,6 +58,7 @@ AGM_itemCheck = {
     _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Morphine";
+    _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Epipen";
     _this addItemToBackpack "AGM_Epipen";
     _this addItemToBackpack "AGM_Epipen";
