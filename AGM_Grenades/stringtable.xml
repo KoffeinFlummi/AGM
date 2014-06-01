@@ -8,7 +8,8 @@
       <Spanish>Cambiar Modo de Granadas</Spanish>
       <Polish>Tryb Rzutu Granatem</Polish>
       <Czech>Změnit styl hodu granátu</Czech>
-    </Key>
+      <Russian>Сменить режим броска гранаты</Russian>
+    </Key>	
 
     <Key ID="STR_AGM_Grenades_NormalThrow">
       <English>Normal Throw</English>
@@ -16,6 +17,7 @@
       <Spanish>Tiro Normal</Spanish>
       <Polish>Normalny</Polish>
       <Czech>Normální</Czech>
+      <Russian>Нормальный бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_HighThrow">
       <English>High Throw</English>
@@ -23,6 +25,7 @@
       <Spanish>Tiro Alto</Spanish>
       <Polish>Wysoki</Polish>
       <Czech>Vysoko</Czech>
+	  <Russian>Высокий бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_PreciseThrow">
       <English>Precise Throw</English>
@@ -30,6 +33,7 @@
       <Spanish>Tiro Preciso</Spanish>
       <Polish>Precyzyjny</Polish>
       <Czech>Přesně</Czech>
+	  <Russian>Точный бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_RollGrenade">
       <English>Roll Grenade</English>
@@ -37,6 +41,7 @@
       <Spanish>Rodar Granada</Spanish>
       <Polish>Po ziemi</Polish>
       <Czech>Po zemi</Czech>
+	  <Russian>Катить гранату</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
@@ -44,6 +49,7 @@
       <Spanish>Soltar Granada</Spanish>
       <Polish>Upuść Granat</Polish>
       <Czech>Upustit granát</Czech>
+	  <Russian>Бросить себе под ноги</Russian>
     </Key>
 
   </Package>

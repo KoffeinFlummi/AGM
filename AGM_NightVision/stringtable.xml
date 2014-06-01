@@ -9,6 +9,7 @@
       <Polish>Kontrast: %1</Polish>
       <Czech>Kontrast: %1</Czech>
       <French>Contraste : %1</French>
+	  <Russian>Контраст: </Russian>
     </Key>
 
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
@@ -18,6 +19,7 @@
       <Polish>Zwiększ Jasność Noktowizji</Polish>
       <Czech>Zvýšení jasnosti nektovizoru</Czech>
       <French>Augmenter la luminosité des NVG</French>
+	  <Russian>Увеличить яркость ПНВ</Russian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -26,6 +28,7 @@
       <Polish>Zmniejsz Jasność Noktowizji</Polish>
       <Czech>Snížení jasnosti nektovizoru</Czech>
       <French>Baisser la luminosité des NVG</French>
+	  <Russian>Уменьшить яркость ПНВ</Russian>
     </Key>
 
   </Package>

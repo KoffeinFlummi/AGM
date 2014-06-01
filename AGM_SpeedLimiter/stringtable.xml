@@ -9,6 +9,7 @@
       <Polish>Ogranicznik prędkości włączony</Polish>
       <Czech>Limit rychlosti zapnut</Czech>
       <French>Limiteur de vitesse Activé</French>
+	  <Russian>Ограничение скорости включено</Russian>
     </Key>
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
@@ -17,6 +18,7 @@
       <Polish>Ogranicznik prędkości wyłączony</Polish>
       <Czech>Limit rychlosti vypnut</Czech>
       <French>Limiteur de vitesse Désactivé</French>
+	  <Russian>Ограничение скорости выключено</Russian>
     </Key>
 
   </Package>

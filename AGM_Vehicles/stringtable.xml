@@ -9,6 +9,7 @@
       <Polish>M-ATV</Polish>
       <Czech>M-ATV</Czech>
       <French>M-ATV</French>
+	  <Russian>M-ATV</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_01_hmg_Name">
       <English>M-ATV (HMG)</English>
@@ -17,6 +18,7 @@
       <Polish>M-ATV (CKM)</Polish>
       <Czech>M-ATV (TK)</Czech>
       <French>M-ATV (HMG)</French>
+	  <Russian>M-ATV (Пулемет)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_01_gmg_Name">
       <English>M-ATV (GMG)</English>
@@ -25,6 +27,7 @@
       <Polish>M-ATV (GMG)</Polish>
       <Czech>M-ATV (Granátomet)</Czech>
       <French>M-ATV (GMG)</French>
+	  <Russian>M-ATV (Гранатомет)</Russian>	  
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_cannon_Name">
       <English>Merkava Mk IV</English>
@@ -33,6 +36,7 @@
       <Polish>Merkava Mk IV</Polish>
       <Czech>Merkava Mk IV</Czech>
       <French>Merkava Mk IV</French>
+	  <Russian>Меркава Mk IV</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_TUSK_Name">
       <English>Merkava LIC</English>
@@ -41,6 +45,7 @@
       <Polish>Merkava LIC</Polish>
       <Czech>Merkava LIC</Czech>
       <French>Merkava LIC</French>
+	  <Меркава>Merkava LIC</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_01_arty_Name">
       <English>Sholef</English>
@@ -49,6 +54,7 @@
       <Polish>Sholef</Polish>
       <Czech>Sholef</Czech>
       <French>Sholef</French>
+	  <Russian>Sholef</Russian>
     </Key>    
     <Key ID="STR_AGM_Vehicles_MBT_01_mlrs_Name">
       <English>Seara</English>
@@ -57,6 +63,7 @@
       <Polish>Seara</Polish>
       <Czech>Seara</Czech>
       <French>Seara</French>
+	  <Russian>Seara</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_rcws_Name">
       <English>Namer</English>
@@ -65,6 +72,7 @@
       <Polish>Namer</Polish>
       <Czech>Namer</Czech>
       <French>Namer</French>
+	  <Russian>Namer</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_AA_Name">
       <English>Bardelas</English>
@@ -73,6 +81,7 @@
       <Polish>Bardelas</Polish>
       <Czech>Bardelas</Czech>
       <French>Bardelas</French>
+	  <Russian>Bardelas</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_cannon_Name">
       <English>Patria AMV</English>
@@ -81,6 +90,7 @@
       <Polish>Patria AMV</Polish>
       <Czech>Patria AMV</Czech>
       <French>Patria AMV</French>
+	  <Russian>Patria AMV</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_01_CRV_Name">
       <English>Nemmera</English>
@@ -89,6 +99,7 @@
       <Polish>Nammera</Polish>
       <Czech>Nemmera</Czech>
       <French>Nemmera</French>
+	  <Russian>Nemmera</Russian>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_01_transport_Name">
@@ -98,6 +109,7 @@
       <Polish>HEMTT Transport</Polish>
       <Czech>HEMTT Valník</Czech>
       <French>HEMTT Transport</French>
+	  <Russian>HEMTT Транспортный</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_covered_Name">
       <English>HEMTT Transport (covered)</English>
@@ -106,6 +118,7 @@
       <Polish>HEMTT Transport (zakryty)</Polish>
       <Czech>HEMTT Valník (krytý)</Czech>
       <French>HEMTT Transport (Couvert)</French>
+	  <Russian>HEMTT Транспортный (крытый)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_mover_Name">
       <English>HEMTT</English>
@@ -114,6 +127,7 @@
       <Polish>HEMTT</Polish>
       <Czech>HEMTT</Czech>
       <French>HEMTT</French>
+	  <Russian>HEMTT</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_box_Name">
       <English>HEMTT Container</English>
@@ -122,6 +136,7 @@
       <Polish>HEMTT Kontener</Polish>
       <Czech>HEMTT Skříňový</Czech>
       <French>HEMTT Conteneur</French>
+	  <Russian>HEMTT Контейнер</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_medical_Name">
       <English>HEMTT Medical</English>
@@ -130,6 +145,7 @@
       <Polish>HEMTT Sanitarny</Polish>
       <Czech>HEMTT Zdravotnický</Czech>
       <French>HEMTT Médical</French>
+	  <Russian>HEMTT Медицинский</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_ammo_Name">
       <English>HEMTT Ammo</English>
@@ -138,6 +154,7 @@
       <Polish>HEMTT Amunicyjny</Polish>
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
+	  <Russian>HEMTT Боеприпасы</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_fuel_Name">
       <English>HEMTT Fuel</English>
@@ -146,6 +163,7 @@
       <Polish>HEMTT Cysterna</Polish>
       <Czech>HEMTT Cisterna</Czech>
       <French>HEMTT Citerne</French>
+	  <Russian>HEMTT Заправщик</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_01_Repair_Name">
       <English>HEMTT Repair</English>
@@ -154,6 +172,7 @@
       <Polish>HEMTT Naprawczy</Polish>
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
+	  <Russian>HEMTT Ремонт</Russian>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_MRAP_03_Name">
@@ -163,6 +182,7 @@
       <Polish>Fennek</Polish>
       <Czech>Fennek</Czech>
       <French>Fennek</French>
+	  <Russian>Fennek</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_03_hmg_Name">
       <English>Fennek (HMG)</English>
@@ -171,6 +191,7 @@
       <Polish>Fennek (CKM)</Polish>
       <Czech>Fennek (TK)</Czech>
       <French>Fennek (HMG)</French>
+	  <Russian>Fennek (Пулемет)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_03_gmg_Name">
       <English>Fennek (GMG)</English>
@@ -179,6 +200,7 @@
       <Polish>Fennek (GMG)</Polish>
       <Czech>Fennek (granátomet)</Czech>
       <French>Fennek (GMG)</French>
+	  <Russian>Fennek (Гранатомет)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_03_cannon_Name">
       <English>Leopard 2SG</English>
@@ -187,6 +209,7 @@
       <Polish>Leopard 2SG</Polish>
       <Czech>Leopard 2SG</Czech>
       <French>Leopard 2SG</French>
+	  <Russian>Leopard 2SG</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_tracked_03_cannon_Name">
       <English>FV510 Warrior</English>
@@ -195,6 +218,7 @@
       <Polish>FV510 Warrior</Polish>
       <Czech>FV510 Warrior</Czech>
       <French>FV510 Warrior</French>
+	  <Russian>FV510 Warrior</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_03_cannon_Name">
       <English>Pandur II</English>
@@ -203,6 +227,7 @@
       <Polish>Pandur II</Polish>
       <Czech>Pandur II</Czech>
       <French>Pandur II</French>
+	  <Russian>Pandur II</Russian>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_02_transport_Name">
@@ -212,6 +237,7 @@
       <Polish>Kamaz Transport</Polish>
       <Czech>Kamaz Valník</Czech>
       <French>Kamaz Transport</French>
+	  <Russian>Камаз Траспортный</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_covered_Name">
       <English>Kamaz Transport (covered)</English>
@@ -220,6 +246,7 @@
       <Polish>Kamaz Transport (zakryty)</Polish>
       <Czech>Kamaz Valník (krytý)</Czech>
       <French>kamaz Transport (Couvert)</French>
+	  <Russian>Камаз Траспортный (Крытый)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_ammo_Name">
       <English>Kamaz Ammo</English>
@@ -228,6 +255,7 @@
       <Polish>Kamaz Amunicyjny</Polish>
       <Czech>Kamaz Muniční</Czech>
       <French>Kamaz Munitions</French>
+	  <Russian>Камаз Боеприпасы</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_fuel_Name">
       <English>Kamaz Fuel</English>
@@ -236,6 +264,7 @@
       <Polish>Kamaz Cysterna</Polish>
       <Czech>Kamaz Cisterna</Czech>
       <French>Kamaz Citerne</French>
+	  <Russian>Камаз Заправщик</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_box_Name">
       <English>Kamaz Repair</English>
@@ -244,6 +273,7 @@
       <Polish>Kamaz Naprawczy</Polish>
       <Czech>Kamaz Opravárenský</Czech>
       <French>Kamaz Réparation</French>
+	  <Russian>Камаз Ремонтный</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_02_medical_Name">
       <English>Kamaz Medical</English>
@@ -252,6 +282,7 @@
       <Polish>Kamaz Sanitarny</Polish>
       <Czech>Kamaz Zdravotnický</Czech>
       <French>Kamaz Médical</French>
+	  <Russian>Камаз Медицинский</Russian>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_MRAP_02_Name">
@@ -261,6 +292,7 @@
       <Polish>Punisher</Polish>
       <Czech>Punisher</Czech>
       <French>Punisher</French>
+	  <Russian>Punisher</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_02_hmg_Name">
       <English>Punisher (HMG)</English>
@@ -269,6 +301,7 @@
       <Polish>Punisher (CKM)</Polish>
       <Czech>Punisher (TK)</Czech>
       <French>Punisher (HMG)</French>
+	  <Russian>Punisher (Пулемет)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MRAP_02_gmg_Name">
       <English>Punisher (GMG)</English>
@@ -277,6 +310,7 @@
       <Polish>Punisher (CKM)</Polish>
       <Czech>Punisher (granátomet)</Czech>
       <French>Punisher (GMG)</French>
+	  <Russian>Punisher (Гранатомет)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_02_cannon_Name">
       <English>T100 Black Eagle</English>
@@ -285,6 +319,7 @@
       <Polish>T100 Black Eagle</Polish>
       <Czech>T100 Black Eagle</Czech>
       <French>T100 Black Eagle</French>
+	  <Russian>T100 Черный Орел</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_MBT_02_arty_Name">
       <English>2S9 Sochor</English>
@@ -293,6 +328,7 @@
       <Polish>259 Sochor</Polish>
       <Czech>2S9 Sochor</Czech>
       <French>2S9 Sochor</French>
+	  <Russian>2S9 Сокор</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_02_cannon_Name">
       <English>BMP-K Kamysh</English>
@@ -301,6 +337,7 @@
       <Polish>BMP-K Kamysh</Polish>
       <Czech>BMP-K Kamysh</Czech>
       <French>BMP-K Kamysh</French>
+	  <Russian>БПМ-К Камыш</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Tracked_02_AA_Name">
       <English>ZSU-39 Tigris</English>
@@ -309,6 +346,7 @@
       <Polish>ZSU-39 Tigris</Polish>
       <Czech>ZSU-39 Tigris</Czech>
       <French>ZSU-39 Tigris</French>
+	  <Russian>ZSU-39 Tigris</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_APC_Wheeled_02_rcws_Name">
       <English>Arma</English>
@@ -317,6 +355,7 @@
       <Polish>Arma</Polish>
       <Czech>Arma</Czech>
       <French>Arma</French>
+	  <Russian>Arma</Russian>
     </Key>
 
     <Key ID="STR_AGM_Vehicles_Truck_03_transport_Name">
@@ -326,6 +365,7 @@
       <Polish>Typhoon Transport</Polish>
       <Czech>Typhoon Valník</Czech>
       <French>Typhoon Transport</French>
+	  <Russian>Typhoon Транспортный</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_covered_Name">
       <English>Typhoon Transport (covered)</English>
@@ -334,6 +374,7 @@
       <Polish>Typhoon Transport (przykryty)</Polish>
       <Czech>Typhoon Valník (krytý)</Czech>
       <French>Typhoon Transport (Couvert)</French>
+	  <Russian>Typhoon Транспортный (Крытый)</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_device_Name">
       <English>Typhoon Device</English>
@@ -342,6 +383,7 @@
       <Polish>Typhoon Device</Polish>
       <Czech>Typhoon (zařízení)</Czech>
       <French>Typhoon Appareil</French>
+	  <Russian>Typhoon Техника</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_ammo_Name">
       <English>Typhoon Ammo</English>
@@ -350,6 +392,7 @@
       <Polish>Typhoon Amunicyjny</Polish>
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
+	  <Russian>Typhoon Боеприпасы</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_fuel_Name">
       <English>Typhoon Fuel</English>
@@ -358,6 +401,7 @@
       <Polish>Typhoon Cysterna</Polish>
       <Czech>Typhoon Cisterna</Czech>
       <French>Typhoon Citerne</French>
+	  <Russian>Typhoon Заправщик</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_repair_Name">
       <English>Typhoon Repair</English>
@@ -366,6 +410,7 @@
       <Polish>Typhoon Naprawczy</Polish>
       <Czech>Typhoon Opravárenský</Czech>
       <French>Typhoon Réparation</French>
+	  <Russian>Typhoon Ремонтный</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicles_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
@@ -374,6 +419,7 @@
       <Polish>Typhoon Sanitarny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon médical</French>
+	  <Russian>Typhoon Медицинский</Russian>
     </Key>
 
   </Package>

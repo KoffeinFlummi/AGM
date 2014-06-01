@@ -9,6 +9,7 @@
       <Polish>Odejdź!</Polish>
       <Czech>Jděte pryč!</Czech>
       <French>Degagez!</French>
+	  <Russian>Уходите отсюда!</Russian>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
       <English>Get Down!</English>
@@ -17,6 +18,7 @@
       <Polish>Padnij!</Polish>
       <Czech>K zemi!</Czech>
       <French>A Terre!</French>
+	  <Russian>Пригнитесь!</Russian>
     </Key>
 
   </Package>
