@@ -10,5 +10,150 @@
       <Czech>Kalibr: 7.62x51mm M118LR&lt;br /&gt;Náboje: 20&lt;br /&gt;Typ: M14</Czech>
     </Key>
 
+
+    //MX
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimName">
+      <English>6.5mm 30Rnd Tracer IR-DIM Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort">
+      <English>6.5mm IR-DIM</English>
+      <German>6,5mm IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimDescription">
+      <English>Caliber: 6.5x39 mm Tracer IR-DIM&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: MX/C/M/SW/3GL</English>
+      <German>Kaliber: 6,5x39 mm Leuchtspur IR-DIM&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: MX/C/M/SW/3GL</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_SDName">
+      <English>6.5mm 30Rnd SD Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort">
+      <English>6.5mm SD</English>
+      <German>6,5mm SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_SDDescription">
+      <English>Caliber: 6.5x39 mm SD&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: MX/C/M/SW/3GL</English>
+      <German>Kaliber: 6,5x39 mm SD&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: MX/C/M/SW/3GL</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_APName">
+      <English>6.5mm 30Rnd AP Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_APNameShort">
+      <English>6.5mm AP</English>
+      <German>6,5mm AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_APDescription">
+      <English>Caliber: 6.5x39 mm AP&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: MX/C/M/SW/3GL</English>
+      <German>Kaliber: 6,5x39 mm AP&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: MX/C/M/SW/3GL</German>
+    </Key>
+
+
+    //KATIBA
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimName">
+      <English>6.5mm 30Rnd Tracer IR-DIM Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimNameShort">
+      <English>6.5mm IR-DIM</English>
+      <German>6,5mm IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimDescription">
+      <English>Caliber: 6.5x39 mm Tracer IR-DIM&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 6,5x39 mm Leuchtspur IR-DIM&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_SDName">
+      <English>6.5mm 30Rnd SD Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_SDNameShort">
+      <English>6.5mm SD</English>
+      <German>6,5mm SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_SDDescription">
+      <English>Caliber: 6.5x39 mm SD&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 6,5x39 mm SD&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_APName">
+      <English>6.5mm 30Rnd AP Mag</English>
+      <German>6,5 mm 30-Schuss-Magazin AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_APNameShort">
+      <English>6.5mm AP</English>
+      <German>6,5mm AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_APDescription">
+      <English>Caliber: 6.5x39 mm AP&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 6,5x39 mm AP&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+
+    //5.56x45mm
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_Tracer_DimName">
+      <English>5.56mm 30rnd Tracer IR-DIM Mag</English>
+      <German>5,56 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_Tracer_DimNameShort">
+      <English>5.56mm IR-DIM</English>
+      <German>5,56mm IR-DIM</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_Tracer_DimDescription">
+      <English>Caliber: 5.56x45 mm Tracer IR-DIM&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 5,56x45 mm Leuchtspur IR-DIM&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_SDName">
+      <English>5.56mm 30rnd SD Mag</English>
+      <German>5,56 mm 30-Schuss-Magazin SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_SDNameShort">
+      <English>5.56mm SD</English>
+      <German>5,56mm SD</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_SDDescription">
+      <English>Caliber: 5.56x45 mm SD&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 5,56x45 mm SD&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_APName">
+      <English>5.56mm 30rnd AP Mag</English>
+      <German>5,56 mm 30-Schuss-Magazin AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_APNameShort">
+      <English>5.56mm AP</English>
+      <German>5,56mm AP</German>
+    </Key>
+
+    <Key ID="STR_AGM_30Rnd_556x45_mag_APDescription">
+      <English>Caliber: 5.56x45 mm AP&lt;br /&gt;Rounds: 30&lt;br /&gt;Used in: Katiba</English>
+      <German>Kaliber: 5,56x45 mm AP&lt;br /&gt;Patronen: 30&lt;br /&gt;Eingesetzt von: Katiba</German>
+    </Key>
+
+
   </Package>
 </Project>

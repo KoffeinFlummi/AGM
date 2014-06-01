@@ -48,6 +48,6 @@ _this spawn {
 	if (time > _time) then {
 		_arguments call _function;
 	} else {
-		_arguments call _function2;
+		if (!isNil "_function2") then {_arguments call _function2};
 	};
 };

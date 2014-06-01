@@ -11,9 +11,13 @@ Return Value:
 A binary number, String
 */
 
-private ["_number", "_sign", "_bin", "_rest"];
+private ["_number", "_minLength", "_sign", "_bin", "_rest"];
 
-_number = _this;
+_number = _this select 0;
+_minLength = _this select 1;
+
+if (isNil "_minLength") then {_minLength = 1};
+
 _sign = if (_number < 0) then {"-"} else {""};
 
 _number = round abs _number;
@@ -25,4 +29,9 @@ while {_number > 0} do {
 
 	_bin = _rest + _bin;
 };
+
+while {count toArray _bin < _minLength} do {
+	_bin = "0" + _bin;
+};
+
 _sign + _bin
