@@ -9,7 +9,8 @@
       <Polish>Tryb Rzutu Granatem</Polish>
       <Czech>Změnit styl hodu granátu</Czech>
       <French>Changer type de lancer de grenade</French>
-    </Key>
+      <Russian>Сменить режим броска гранаты</Russian>
+    </Key>    
 
     <Key ID="STR_AGM_Grenades_NormalThrow">
       <English>Normal Throw</English>
@@ -18,6 +19,7 @@
       <Polish>Normalny</Polish>
       <Czech>Normální</Czech>
       <French>Lancer Normal</French>
+      <Russian>Нормальный бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_HighThrow">
       <English>High Throw</English>
@@ -26,6 +28,7 @@
       <Polish>Wysoki</Polish>
       <Czech>Vysoko</Czech>
       <French>Lancer Haut</French>
+      <Russian>Высокий бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_PreciseThrow">
       <English>Precise Throw</English>
@@ -34,6 +37,7 @@
       <Polish>Precyzyjny</Polish>
       <Czech>Přesně</Czech>
       <French>Lancer Précis</French>
+      <Russian>Точный бросок</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_RollGrenade">
       <English>Roll Grenade</English>
@@ -42,6 +46,7 @@
       <Polish>Po ziemi</Polish>
       <Czech>Po zemi</Czech>
       <French>Lancer rouler</French>
+      <Russian>Катить гранату</Russian>
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
@@ -50,6 +55,7 @@
       <Polish>Upuść Granat</Polish>
       <Czech>Upustit granát</Czech>
       <French>Lacher la grenade</French>
+      <Russian>Бросить себе под ноги</Russian>
     </Key>
 
   </Package>

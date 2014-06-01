@@ -9,6 +9,7 @@
       <Polish>Nie można zmierzyć Wiatru</Polish>
       <Czech>Žádný měřitelný vítr</Czech>
       <French>Pas de vent mesurable</French>
+      <Russian>Нет ветра</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_NoMeasurable">
       <English>No measurable</English>
@@ -17,6 +18,7 @@
       <Polish>Nie można zmierzyć</Polish>
       <Czech>Není možné změřit</Czech>
       <French>Non mesurable</French>
+      <Russian>Не заметный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_VeryLight">
       <English>Very light</English>
@@ -25,14 +27,16 @@
       <Polish>Bardzo słaby</Polish>
       <Czech>Velmi slabý</Czech>
       <French>Très léger</French>
+      <Russian>Очень слабый</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Light">
       <English>Light</English>
       <German>Leichter</German>
       <Spanish>Ligero</Spanish>
       <Polish>Słaby</Polish>
-      <Czech>Slabý</Czech>
+      <Czech>Slabý</Czech>      
       <French>Léger</French>
+      <Russian>Слабый</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Moderate">
       <English>Moderate</English>
@@ -41,6 +45,7 @@
       <Polish>Umiarkowany</Polish>
       <Czech>Mírný</Czech>
       <French>Moyen</French>
+      <Russian>Умеренный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Strong">
       <English>Strong</English>
@@ -49,6 +54,7 @@
       <Polish>Silny</Polish>
       <Czech>Silný</Czech>
       <French>Fort</French>
+      <Russian>Сильный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_WindFromThe">
       <English>wind from the</English>
@@ -57,6 +63,7 @@
       <Polish>Wiatr z</Polish>
       <Czech>vítr z</Czech>
       <French>Vent venant du</French>
+      <Russian>ветер с</Russian>
     </Key>
 
   </Package>
