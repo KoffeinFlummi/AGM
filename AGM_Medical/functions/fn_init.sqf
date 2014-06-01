@@ -26,6 +26,9 @@ AGM_unitInit = {
     };
     0 fadeSound 1;
     0 fadeSpeech 1;
+    player setVariable ["tf_globalVolume", 1];
+    player setVariable ["tf_voiceVolume", 1, true];
+    player setVariable ["tf_unable_to_use_radio", false, true];
   };
 
   _this setCaptive false;
@@ -41,11 +44,6 @@ AGM_unitInit = {
   _this setVariable ["AGM_Unconscious", false, true]; // figure it out
   _this setVariable ["AGM_Dragging", objNull];
   _this setVariable ["AGM_Carrying", objNull];
-  
-  if (isClass (configFile >> "CfgPatches" >> "task_force_radio")) then {
-    player setVariable ["tf_unable_to_use_radio", false, true];
-    player setVariable ["tf_voiceVolume", 1, true];
-  };
 };
 
 AGM_itemCheck = {
@@ -56,6 +54,7 @@ AGM_itemCheck = {
   };
   while {count (itemsWithMagazines _this) > count (itemsWithMagazines _this - ["Medikit"])} do {
     _this removeItem "Medikit";
+    _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Morphine";
     _this addItemToBackpack "AGM_Morphine";
@@ -75,3 +74,15 @@ _unit call AGM_itemCheck;
 _unit addEventHandler ["HandleDamage", { _this call AGM_Medical_fnc_handleDamage; }];
 _unit addEventHandler ["Respawn", { (_this select 0) call AGM_unitInit; (_this select 0) call AGM_itemCheck; }];
 _unit addEventHandler ["Take", { (_this select 0) call AGM_itemCheck; }];
+
+_unit spawn {
+  while {true} do {
+    if ((_this == player) and {(!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)) or (damage _this == 1)}) then {
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectCommit 1;
+      AGM_UnconsciousRB ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectCommit 1;
+    };
+    sleep 1;
+  };
+};

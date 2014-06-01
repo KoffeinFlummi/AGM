@@ -21,6 +21,7 @@
 private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosUp", "_checkPosDown"];
 
 if (currentWeapon player != primaryWeapon player or vehicle player != player) exitWith {};
+if !(player getVariable ["AGM_CanTreat", True]) exitWith {};
 
 // PREPARE INTERSECTS
 AGM_Resting_getIntersection = {

@@ -1,5 +1,7 @@
 // by commy2
 
+private "_weapon";
+
 _weapon = _this select 0;
 
 player removeItem "AGM_SpareBarrel";

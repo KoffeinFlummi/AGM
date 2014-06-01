@@ -8,6 +8,7 @@
       <Spanish>Tapones para Oídos</Spanish>
       <Polish>Stopery do uszu</Polish>
       <Czech>Špunty</Czech>
+      <Russian>Бируши</Russian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
@@ -15,6 +16,7 @@
       <Spanish>Los Tapones para Oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
       <Polish>Stopery do uszu umożliwiają użytkownikowi przebywać w pobliżu głośnej broni bez poniesienia konsekwencji jaką jest utrata słuchu.</Polish>
       <Czech>Ochranné špunty umožňují uživateli, aby neutrpěl zranění jeho sluchu v blízkosti hlasitých zbraní.</Czech>
+      <Russian>Бируши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
@@ -22,6 +24,7 @@
       <Spanish>Tapones colocados</Spanish>
       <Polish>Załóż stopery</Polish>
       <Czech>Špunty v uších</Czech>
+      <Russian>Беруши надеты</Russian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
@@ -29,13 +32,15 @@
       <Spanish>Tapones removidos</Spanish>
       <Polish>Zdejmij stopery</Polish>
       <Czech>Špunty venku z uší</Czech>
+      <Russian>Беруши сняты</Russian>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
       <English>You have no ear plugs</English>
-      <German>Ohrenstöpsel aus</German>
+      <German>Keine Ohrenstöpsel im Inventar</German>
       <Spanish>No tienes tapones para oídos</Spanish>
       <Polish>Nie masz stoperów</Polish>
       <Czech>Nemáš žádné špunty</Czech>
+      <Russian>У вас нет беруш</Russian>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>Inventory is full; Cannot remove Ear Buds</English>
@@ -43,6 +48,7 @@
       <Spanish>El inventario está lleno; No pueden quitarse los tapones.</Spanish>
       <Polish>Ekwipunek jest pełny; Nie można zdjąć stoperów.</Polish>
       <Czech>Inventář je plný; Špunty nelze vyndat</Czech>
+      <Russian>Инвентарь заполнен: нельзя снять беруши</Russian>
     </Key>
 
   </Package>

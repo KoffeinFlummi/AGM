@@ -1,9 +1,15 @@
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
 class CfgPatches {
   class AGM_Overheating {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
+    requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_EPA_Ammoboxes, A3_Weapons_F_EPB_Ammoboxes, Extended_EventHandlers, AGM_Core, AGM_Interaction};
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
@@ -43,6 +49,27 @@ class Extended_Fired_EventHandlers {
   };
 };
 
+class AGM_Core_Default_Keys {
+  class checkAmmo {
+    displayName = "$STR_AGM_Overheating_checkAmmo";
+    condition = "player == _vehicle";
+    statement = "[currentWeapon player] spawn AGM_Overheating_CheckAmmo";
+    key = 19;
+    shift = 1;
+    control = 0;
+    alt = 0;
+  };
+  class checkTemperature {
+    displayName = "$STR_AGM_Overheating_checkTemperature";
+    condition = "player == _vehicle";
+    statement = "[currentWeapon player] spawn AGM_Overheating_CheckTemperatureQuick";
+    key = 20;
+    shift = 1;
+    control = 0;
+    alt = 0;
+  };
+};
+
 class CfgVehicles {
   class Man;
 
@@ -53,8 +80,68 @@ class CfgVehicles {
         condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
         statement = "[currentWeapon player] call AGM_Overheating_swapBarrel";
         showDisabled = 0;
-        priority = 4;
+        priority = 4.1;
       };
+      /*class AGM_CheckTemperature {
+        displayName = "$STR_AGM_Overheating_checkTemperature";
+        condition = "";
+        statement = "[currentWeapon player] call AGM_Overheating_CheckTemperature";
+        showDisabled = 0;
+        priority = 4;
+      };*/
+    };
+  };
+
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+  class ReammoBox_F;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class B_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class O_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class I_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class IG_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class C_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,2)
     };
   };
 };
@@ -75,8 +162,18 @@ class CfgWeapons {
     };
   };
 
-  class Rifle_Base_F;
-  class Rifle_Long_Base_F;
+  class Rifle;
+  class Rifle_Base_F : Rifle {
+    AGM_Overheating_Increment = 0.012;
+    AGM_Overheating_Cooldown = 0.002;
+    AGM_Overheating_Dispersion = 0.001;
+  };
+
+  class Rifle_Long_Base_F : Rifle_Base_F {
+    AGM_Overheating_Increment = 0.01;
+    AGM_Overheating_Cooldown = 0.002;
+    AGM_Overheating_Dispersion = 0.002;
+  };
 
   class arifle_MX_Base_F : Rifle_Base_F {
     AGM_Overheating_Increment = 0.012;
@@ -85,9 +182,10 @@ class CfgWeapons {
   };
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
+    AGM_Overheating_allowSwapBarrel = 1;
     AGM_Overheating_Increment = 0.01;
     AGM_Overheating_Cooldown = 0.002;
-    AGM_Overheating_Dispersion = 0.001;
+    AGM_Overheating_Dispersion = 0.002;
   };
 
   class arifle_Katiba_Base_F : Rifle_Base_F {

@@ -3,11 +3,13 @@
   <Package name="NightVision">
 
     <Key ID="STR_AGM_NightVision_NVGBrightness">
-      <English>Contrast: %1</English>
-      <German>Kontrast: %1</German>
-      <Spanish>Contraste: %1</Spanish>
-      <Polish>Kontrast: %1</Polish>
-      <Czech>Kontrast: %1</Czech>
+      <English>Brightness: %1</English>
+      <German>Helligkeit: %1</German>
+      <Spanish>Aumentar: %1</Spanish>
+      <Polish>Zwiększ: %1</Polish>
+      <Czech>Zvýšení: %1</Czech>
+      <French>luminosité : %1</French>
+      <Russian>Контраст: </Russian>
     </Key>
 
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
@@ -16,6 +18,8 @@
       <Spanish>Aumentar el Brillo de los NVG</Spanish>
       <Polish>Zwiększ Jasność Noktowizji</Polish>
       <Czech>Zvýšení jasnosti nektovizoru</Czech>
+      <French>Augmenter la luminosité des NVG</French>
+      <Russian>Увеличить яркость ПНВ</Russian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -23,6 +27,8 @@
       <Spanish>Disminuir el Brillo de los NVG</Spanish>
       <Polish>Zmniejsz Jasność Noktowizji</Polish>
       <Czech>Snížení jasnosti nektovizoru</Czech>
+      <French>Baisser la luminosité des NVG</French>
+      <Russian>Уменьшить яркость ПНВ</Russian>
     </Key>
 
   </Package>

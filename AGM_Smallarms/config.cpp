@@ -208,7 +208,7 @@ class CfgWeapons {
   // MXs ////////////////////////////////////////////////////
 
   class arifle_MX_Base_F : Rifle_Base_F {
-    magazines[] = {"30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_mag_Tracer"};
+    //magazines[] = {"30Rnd_65x39_caseless_mag", "30Rnd_65x39_caseless_mag_Tracer", "100Rnd_65x39_caseless_mag", "100Rnd_65x39_caseless_mag_Tracer"};
 
     // http://www.bushmaster.com/acr/#/intro
     // 800 rpm (whatever, fictional lol)
