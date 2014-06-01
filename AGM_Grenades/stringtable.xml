@@ -8,7 +8,7 @@
       <Spanish>Cambiar Modo de Granadas</Spanish>
       <Polish>Tryb Rzutu Granatem</Polish>
       <Czech>Změnit styl hodu granátu</Czech>
-      <French>Changer type lancer de grenades</French>
+      <French>Changer type de lancer de grenade</French>
     </Key>
 
     <Key ID="STR_AGM_Grenades_NormalThrow">
@@ -41,7 +41,7 @@
       <Spanish>Rodar Granada</Spanish>
       <Polish>Po ziemi</Polish>
       <Czech>Po zemi</Czech>
-      <French>Lancer roulé</French>
+      <French>Lancer rouler</French>
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
@@ -49,7 +49,7 @@
       <Spanish>Soltar Granada</Spanish>
       <Polish>Upuść Granat</Polish>
       <Czech>Upustit granát</Czech>
-      <French>déposer Grenade</French>
+      <French>Lacher la grenade</French>
     </Key>
 
   </Package>
