@@ -8,6 +8,7 @@
       <Spanish>Aléjate!</Spanish>
       <Polish>Odejdź!</Polish>
       <Czech>Jděte pryč!</Czech>
+      <French>Degagez!</French>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
       <English>Get Down!</English>
@@ -15,6 +16,7 @@
       <Spanish>Al suelo!</Spanish>
       <Polish>Padnij!</Polish>
       <Czech>K zemi!</Czech>
+      <French>A Terre!</French>
     </Key>
 
   </Package>
