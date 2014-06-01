@@ -9,7 +9,7 @@
       <Polish>Zapasowa lufa</Polish>
       <Czech>Náhradní hlaveň</Czech>
       <French>Canon de rechange</French>
-	  <Russian>Запасной ствол</Russian>
+      <Russian>Запасной ствол</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
       <English>Use to swap barrel.</English>
@@ -18,7 +18,7 @@
       <Polish>Umożliwia wymianę lufy</Polish>
       <Czech>Používané k výměně hlavně</Czech>
       <French>Utiliser pour changer de canon.</French>
-	  <Russian>Используется для смены ствола.</Russian>
+      <Russian>Используется для смены ствола.</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponJammed">
       <English>Weapon jammed!</English>
@@ -27,7 +27,7 @@
       <Polish>Broń się zacięła!</Polish>
       <Czech>Zbraň je zaseklá!</Czech>
       <French>Arme enrayer</French>
-	  <Russian>Оружие заклинило!</Russian>
+      <Russian>Оружие заклинило!</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_UnjamWeapon">
       <English>Clear jam</English>
@@ -36,7 +36,7 @@
       <Polish>Usuń zacięcie</Polish>
       <Czech>Odseknout zbraň</Czech>
       <French>Nettoyer le canon</French>
-	  <Russian>Исправить клин оружия.</Russian>
+      <Russian>Исправить клин оружия.</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
       <English>Jam cleared</English>
@@ -45,7 +45,7 @@
       <Polish>Zacięcie usunięte</Polish>
       <Czech>Zbraň odseklá</Czech>
       <French>Canon nettoyé</French>
-	  <Russian>Оружие исправлено</Russian>
+      <Russian>Оружие исправлено</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwapBarrel">
       <English>Swap barrel</English>
@@ -54,7 +54,7 @@
       <Polish>Wymień lufę</Polish>
       <Czech>Prohodit hlaveň</Czech>
       <French>Changer le canon</French>
-	  <Russian>Сменить ствол</Russian>
+      <Russian>Сменить ствол</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappingBarrel">
       <English>Swapping barrel...</English>
@@ -63,7 +63,7 @@
       <Polish>Wymienianie lufy...</Polish>
       <Czech>Prohazuji hlaveň ...</Czech>
       <French>Changement du canon...</French>
-	  <Russian>Смена ствола...</Russian>
+      <Russian>Смена ствола...</Russian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappedBarrel">
       <English>Swapped barrel</English>
@@ -72,7 +72,7 @@
       <Polish>Lufa wymieniona</Polish>
       <Czech>Prohozená hlaveň</Czech>
       <French>Canon changé</French>
-	  <Russian>Ствол сменен</Russian>
+      <Russian>Ствол сменен</Russian>
     </Key>
 
   </Package>

@@ -9,7 +9,7 @@
       <Polish>Broń zabezpieczona</Polish>
       <Czech>Zbraň zajištěná</Czech>
       <French>Cran de sûreté</French>
-	  <Russian>Установить на предохранитель</Russian>
+      <Russian>Установить на предохранитель</Russian>
     </Key>
     <Key ID="STR_AGM_SafeModeLifted">
       <English>Safety catch released</English>
@@ -18,7 +18,7 @@
       <Polish>Broń odbezpieczona</Polish>
       <Czech>Zbraň odjištěná</Czech>
       <French>Cran de sûreté enlevé</French>
-	  <Russian>Предохранитель снят</Russian>
+      <Russian>Предохранитель снят</Russian>
     </Key>
 
   </Package>

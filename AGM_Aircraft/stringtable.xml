@@ -8,7 +8,7 @@
       <Spanish>Ráfaga</Spanish>
       <Polish>Seria</Polish>
       <Czech>Světlice</Czech>
-	  <Russian>Очередь</Russian>
+      <Russian>Очередь</Russian>
     </Key>
 
     <Key ID="STR_AGM_Aircraft_Heli_Attack_01_Name">
@@ -17,7 +17,7 @@
       <Spanish>RAH-66 Comanche</Spanish>
       <Polish>RAH-66 Comanche</Polish>
       <Czech>RAH-66 Comanche</Czech>
-	  <Russian>RAH-66 Comanche</Russian>
+      <Russian>RAH-66 Comanche</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_01_Name">
       <English>MH-6 Little Bird</English>
@@ -25,7 +25,7 @@
       <Spanish>MH-6 Litte Bird</Spanish>
       <Polish>MH-6 Little Bird</Polish>
       <Czech>MH-6 Little Bird</Czech>
-	  <Russian>MH-6 Little Bird</Russian>
+      <Russian>MH-6 Little Bird</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_01_armed_Name">
       <English>AH-6 Little Bird</English>
@@ -33,7 +33,7 @@
       <Spanish>AH-6 Little Bird</Spanish>
       <Polish>AH-6 Little Bird</Polish>
       <Czech>AH-6 Little Bird</Czech>
-	  <Russian>AH-6 Little Bird</Russian>
+      <Russian>AH-6 Little Bird</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_CAS_01_Name">
       <English>A-164 Spacehog</English>
@@ -41,7 +41,7 @@
       <Spanish>A-164 Spacehog</Spanish>
       <Polish>A-164 Spacehog</Polish>
       <Czech>A-164 Spacehog</Czech>
-	  <Russian>A-164 Spacehog</Russian>
+      <Russian>A-164 Spacehog</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_light_03_Name">
       <English>AW159 Wildcat</English>
@@ -49,7 +49,7 @@
       <Spanish>AW159 Wildcat</Spanish>
       <Polish>AW159 Wildcat</Polish>
       <Czech>AW159 Wildcat</Czech>
-	  <Russian>AW159 Wildcat</Russian>
+      <Russian>AW159 Wildcat</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_light_03_unarmed_Name">
       <English>AW159 Wildcat (unarmed)</English>
@@ -57,7 +57,7 @@
       <Spanish>AW159 Wildcat (desarmado)</Spanish>
       <Polish>AW159 Wildcat (nieuzbrojony)</Polish>
       <Czech>AW159 Wildcat (neozbrojený)</Czech>
-	  <Russian>AW159 Wildcat (невооруженный)</Russian>
+      <Russian>AW159 Wildcat (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Transport_02_Name">
       <English>AW101 Merlin</English>
@@ -73,7 +73,7 @@
       <Spanish>L-159 Albatross</Spanish>
       <Polish>L-159 Albatross (CAS)</Polish>
       <Czech>L-159 Albatross (CAS)</Czech>
-	  <Russian>L-159 Альбатрос (CAS)</Russian>
+      <Russian>L-159 Альбатрос (CAS)</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_Fighter_03_AA_Name">
       <English>L-159 Albatross (AA)</English>
@@ -81,7 +81,7 @@
       <Spanish>L-159 Albatross (AA)</Spanish>
       <Polish>L-159 Albatross (AA)</Polish>
       <Czech>L-159 Albatross (AA)</Czech>
-	  <Russian>L-159 Альбатрос (AA)</Russian>
+      <Russian>L-159 Альбатрос (AA)</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_02_Name">
       <English>Ka-60 Kasatka</English>
@@ -89,7 +89,7 @@
       <Spanish>Ka-60 Kasatka</Spanish>
       <Polish>Ka-60 Kasatka</Polish>
       <Czech>Ka-60 Kasatka</Czech>
-	  <Russian>Ka-60 Касатка</Russian>
+      <Russian>Ka-60 Касатка</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Heli_Light_02_unarmed_Name">
       <English>Ka-60 Kasatka (unarmed)</English>
@@ -97,7 +97,7 @@
       <Spanish>Ka-60 Kasatka (desarmado)</Spanish>
       <Polish>Ka-60 Kasatka (nieuzbrojony)</Polish>
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
-	  <Russian>Ka-60 Касатка (невооруженный)</Russian>
+      <Russian>Ka-60 Касатка (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_Plane_CAS_02_Name">
       <English>Yak-130</English>
@@ -105,7 +105,7 @@
       <Spanish>Yak-130</Spanish>
       <Polish>Yak-130</Polish>
       <Czech>Yak-130</Czech>
-	  <Russian>ЯК-130</Russian>
+      <Russian>ЯК-130</Russian>
     </Key>
 
   </Package>

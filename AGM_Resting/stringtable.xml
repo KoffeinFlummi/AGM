@@ -9,7 +9,7 @@
       <Polish>Oprzyj broń</Polish>
       <Czech>Zapřít zbraň</Czech>
       <French>Appuyer l'arme</French>
-	  <Russian>Зафиксировать оружие</Russian>
+      <Russian>Зафиксировать оружие</Russian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodDeployed">
@@ -19,7 +19,7 @@
       <Polish>Dwójnóg rozstawiony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
       <French>Bipied deployé</French>
-	  <Russian>Сошки установлены</Russian>
+      <Russian>Сошки установлены</Russian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponRested">
       <English>Weapon rested</English>
@@ -28,7 +28,7 @@
       <Polish>Broń oparta</Polish>
       <Czech>Zbraň zapřena</Czech>
       <French>Arme appuyé</French>
-	  <Russian>Оружие зафиксировано</Russian>
+      <Russian>Оружие зафиксировано</Russian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodUndeployed">
@@ -38,7 +38,7 @@
       <Polish>Dwójnóg złożony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
       <French>Bipied retracté</French>
-	  <Russian>Сошки убраны</Russian>
+      <Russian>Сошки убраны</Russian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponLifted">
       <English>Weapon lifted</English>
@@ -47,7 +47,7 @@
       <Polish>Broń podniesiona</Polish>
       <Czech>Zbraň zdvyhnuta</Czech>
       <French>Arme Non-appuyé</French>
-	  <Russian>Оружие не зафиксировано</Russian>
+      <Russian>Оружие не зафиксировано</Russian>
     </Key>
 
   </Package>
