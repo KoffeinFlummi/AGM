@@ -61,11 +61,16 @@ if (local _unit) exitWith {
     {
       _damageSumNew = _damageSumNew + _x;
     } forEach _damages;
-    _damageNew = _damageOld * (_damageSumNew / _damageSumOld);
 
-    _unit setDamage _damageNew;
-    {
-      _unit setHitPointDamage [_x, (_damages select _forEachIndex)];
-    } forEach _selections;
+    if (_damageSumNew != 0) then {
+      _damageNew = _damageOld * (_damageSumNew / _damageSumOld);
+
+      _unit setDamage _damageNew;
+      {
+        _unit setHitPointDamage [_x, (_damages select _forEachIndex)];
+      } forEach _selections;
+    } else {
+      _unit setDamage 0;
+    };
   };
 }, _this] call CBA_fnc_globalExecute;
