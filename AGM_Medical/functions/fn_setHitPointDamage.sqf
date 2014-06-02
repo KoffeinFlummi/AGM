@@ -36,6 +36,11 @@ if (local _unit) exitWith {
       "HitLeftLeg",
       "HitRightLeg"
     ];
+
+    if !(_selection in _selections) exitWith {
+      _unit setHitPointDamage [_selection, _damage];
+    };
+
     _damages = [
       (_unit getHitPointDamage "HitHead"), 
       (_unit getHitPointDamage "HitBody"),
@@ -50,6 +55,10 @@ if (local _unit) exitWith {
     {
       _damageSumOld = _damageSumOld + _x;
     } forEach _damages;
+    diag_log "DAMAGE OLD";
+    diag_log _damages;
+    diag_log _damageSumOld;
+    diag_log _damageOld;
 
     {
       if (_x == _selection) then {
@@ -61,16 +70,20 @@ if (local _unit) exitWith {
     {
       _damageSumNew = _damageSumNew + _x;
     } forEach _damages;
+    diag_log "DAMAGE NEW";
+    diag_log _damages;
+    diag_log _damageSumNew;
 
-    if (_damageSumNew != 0) then {
-      _damageNew = _damageOld * (_damageSumNew / _damageSumOld);
-
-      _unit setDamage _damageNew;
-      {
-        _unit setHitPointDamage [_x, (_damages select _forEachIndex)];
-      } forEach _selections;
-    } else {
+    if (_damageSumNew == 0) exitWith {
       _unit setDamage 0;
     };
+    
+    _damageNew = _damageOld * (_damageSumNew / _damageSumOld);
+    diag_log _damageNew;
+
+    _unit setDamage _damageNew;
+    {
+      _unit setHitPointDamage [_x, (_damages select _forEachIndex)];
+    } forEach _selections;
   };
 }, _this] call CBA_fnc_globalExecute;

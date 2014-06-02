@@ -48,7 +48,6 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
 
   // Reset "unused" hitpoints.
-  [_unit, "HitLegs", 0] call AGM_Medical_fnc_setHitPointDamage;
   [_unit, "HitHands", 0] call AGM_Medical_fnc_setHitPointDamage;
 
   // Account for unassigned structural damage, like when you crash into something with a vehicle
@@ -65,6 +64,8 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
     // lightly wounded, limit walking speed
     [_unit, "HitLegs", 1] call AGM_Medical_fnc_setHitPointDamage;
+  } else {
+    [_unit, "HitLegs", 0] call AGM_Medical_fnc_setHitPointDamage;
   };
   /* DEAL WITH THIS LATER
     if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
