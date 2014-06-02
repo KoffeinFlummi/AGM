@@ -12,7 +12,7 @@ if !(local _unit) exitWith {};
 AGM_UnconsciousCC = -1;
 AGM_UnconsciousRB = -1;
 
-AGM_unitInit = {
+AGM_Medical_unitInit = {
   if !(isNull (_this getVariable "AGM_Group")) then {
     [_this] joinSilent (_this getVariable "AGM_Group");
   };
@@ -46,7 +46,7 @@ AGM_unitInit = {
   _this setVariable ["AGM_Carrying", objNull];
 };
 
-AGM_itemCheck = {
+AGM_Medical_itemCheck = {
   while {count (itemsWithMagazines _this) > count (itemsWithMagazines _this - ["FirstAidKit"])} do {
     _this removeItem "FirstAidKit";
     _this addItem "AGM_Bandage";
@@ -68,21 +68,22 @@ AGM_itemCheck = {
   };
 };
 
-_unit call AGM_unitInit;
-_unit call AGM_itemCheck;
+_unit call AGM_Medical_unitInit;
+_unit call AGM_Medical_itemCheck;
 
 _unit addEventHandler ["HandleDamage", { _this call AGM_Medical_fnc_handleDamage; }];
-_unit addEventHandler ["Respawn", { (_this select 0) call AGM_unitInit; (_this select 0) call AGM_itemCheck; }];
-_unit addEventHandler ["Take", { (_this select 0) call AGM_itemCheck; }];
+_unit addEventHandler ["Respawn", { (_this select 0) call AGM_Medical_unitInit; (_this select 0) call AGM_Medical_itemCheck; }];
+_unit addEventHandler ["Take", { (_this select 0) call AGM_Medical_itemCheck; }];
 
 _unit spawn {
   while {true} do {
-    if ((_this == player) and {(!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)) or (damage _this == 1)}) then {
+    sleep 1;
+    _this call AGM_Medical_itemCheck;
+    if ((_this == player) and AGM_UnconsciousCC != -1 and {(!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)) or (damage _this == 1)}) then {
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousCC ppEffectCommit 1;
       AGM_UnconsciousRB ppEffectEnable false;
       AGM_UnconsciousRB ppEffectCommit 1;
     };
-    sleep 1;
   };
 };

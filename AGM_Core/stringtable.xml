@@ -9,6 +9,7 @@
       <Polish>Zapisz</Polish>
       <Czech>Uložit</Czech>
       <French>Sauvegarder</French>
+      <Russian>Сохранить</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Cancel">
       <English>Cancel</English>
@@ -17,6 +18,7 @@
       <Polish>Anuluj</Polish>
       <Czech>Zrušit</Czech>
       <French>Annuler</French>
+      <Russian>Отмена</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Options">
       <English>AGM Options</English>
@@ -25,6 +27,7 @@
       <Polish>Opcje AGM</Polish>
       <Czech>AGM Nastavení</Czech>
       <French>AGM Options</French>
+      <Russian>AGM Настройки</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Shift">
       <English>Shift</English>
@@ -33,6 +36,7 @@
       <Polish>Shift</Polish>
       <Czech>Shift</Czech>
       <French>Shift</French>
+      <Russian>Shift</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl">
       <English>Ctrl</English>
@@ -41,6 +45,7 @@
       <Polish>Ctrl</Polish>
       <Czech>Ctrl</Czech>
       <French>Ctrl</French>
+      <Russian>Ctrl</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Alt">
       <English>Alt</English>
@@ -49,6 +54,7 @@
       <Polish>Alt</Polish>
       <Czech>Alt</Czech>
       <French>Alt</French>
+      <Russian>Alt</Russian>
     </Key>
 
     <Key ID="STR_AGM_Core_ProfileSaved">
@@ -58,6 +64,7 @@
       <Polish>Profil Zapisany</Polish>
       <Czech>Profil uložen</Czech>
       <French>Profil sauvegarder</French>
+      <Russian>Профиль сохранен</Russian>
     </Key>
     <Key ID="STR_AGM_Core_ProfileNotSaved">
       <English>Profile Not Saved</English>
@@ -66,6 +73,7 @@
       <Polish>Profil Niezapisany</Polish>
       <Czech>Profil neuložen</Czech>
       <French>Profil non sauvegarder</French>
+      <Russian>Профиль не сохранен</Russian>
     </Key>
 
     <!-- These are cardinal directions, in case you didn't guess. -->
@@ -76,6 +84,7 @@
       <Polish>N</Polish>
       <Czech>N</Czech>
       <French>N</French>
+      <Russian>С</Russian>
     </Key>
     <Key ID="STR_AGM_Core_NNE">
       <English>NNE</English>
@@ -84,6 +93,7 @@
       <Polish>NNE</Polish>
       <Czech>NNE</Czech>
       <French>NNE</French>
+      <Russian>ССВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_NE">
       <English>NE</English>
@@ -92,6 +102,7 @@
       <Polish>NE</Polish>
       <Czech>NE</Czech>
       <French>NE</French>
+      <Russian>СВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_ENE">
       <English>ENE</English>
@@ -100,6 +111,7 @@
       <Polish>ENE</Polish>
       <Czech>ENE</Czech>
       <French>ENE</French>
+      <Russian>ВСВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_E">
       <English>E</English>
@@ -108,6 +120,7 @@
       <Polish>E</Polish>
       <Czech>E</Czech>
       <French>E</French>
+      <Russian>В</Russian>
     </Key>
     <Key ID="STR_AGM_Core_ESE">
       <English>ESE</English>
@@ -116,6 +129,7 @@
       <Polish>ESE</Polish>
       <Czech>ESE</Czech>
       <French>ESE</French>
+      <Russian>ВЮВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_SE">
       <English>SE</English>
@@ -124,6 +138,7 @@
       <Polish>SE</Polish>
       <Czech>SE</Czech>
       <French>SE</French>
+      <Russian>ЮВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_SSE">
       <English>SSE</English>
@@ -132,6 +147,7 @@
       <Polish>SSE</Polish>
       <Czech>SSE</Czech>
       <French>SSE</French>
+      <Russian>ЮЮВ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_S">
       <English>S</English>
@@ -140,6 +156,7 @@
       <Polish>S</Polish>
       <Czech>S</Czech>
       <French>S</French>
+      <Russian>Ю</Russian>
     </Key>
     <Key ID="STR_AGM_Core_SSW">
       <English>SSW</English>
@@ -148,6 +165,7 @@
       <Polish>SSW</Polish>
       <Czech>SSW</Czech>
       <French>SSO</French>
+      <Russian>ЮЮЗ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_SW">
       <English>SW</English>
@@ -156,6 +174,7 @@
       <Polish>SW</Polish>
       <Czech>SW</Czech>
       <French>SO</French>
+      <Russian>ЮЗ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_WSW">
       <English>WSW</English>
@@ -164,6 +183,7 @@
       <Polish>WSW</Polish>
       <Czech>WSW</Czech>
       <French>OSO</French>
+      <Russian>ЗЮЗ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_W">
       <English>W</English>
@@ -172,6 +192,7 @@
       <Polish>W</Polish>
       <Czech>W</Czech>
       <French>O</French>
+      <Russian>З</Russian>
     </Key>
     <Key ID="STR_AGM_Core_WNW">
       <English>WNW</English>
@@ -180,6 +201,7 @@
       <Polish>WNW</Polish>
       <Czech>WNW</Czech>
       <French>ONO</French>
+      <Russian>ЗСЗ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_NW">
       <English>NW</English>
@@ -188,6 +210,7 @@
       <Polish>NW</Polish>
       <Czech>NW</Czech>
       <French>NO</French>
+      <Russian>СЗ</Russian>
     </Key>
     <Key ID="STR_AGM_Core_NNW">
       <English>NNW</English>
@@ -196,6 +219,7 @@
       <Polish>NNW</Polish>
       <Czech>NNW</Czech>
       <French>NNO</French>
+      <Russian>ССЗ</Russian>
     </Key>
 
   </Package>
