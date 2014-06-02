@@ -38,7 +38,7 @@ _this spawn {
   if (_unit != player) then {
     [-2, {
       if (local (_this select 0)) then {
-        systemChat format ["%1 is giving you morphine.", name (_this select 1)];
+        systemChat format ["%1 %2", name (_this select 1), localize "STR_AGM_Medical_GivingYouMorphine"];
       };
     }, [_unit, player]] call CBA_fnc_globalExecute;
   };

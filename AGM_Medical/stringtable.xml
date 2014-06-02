@@ -560,5 +560,10 @@
       <French>Vous n'êtes pas entrainé pour faire ça.</French>
     </Key>
 
+    <Key ID="STR_AGM_Medical_GivingYouMorphine">
+      <English>is giving you morphine.</English>
+      <German>gibt dir Morphium.</German>
+    </Key>
+
   </Package>
 </Project>
