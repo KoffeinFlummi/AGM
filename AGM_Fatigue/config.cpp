@@ -31,16 +31,16 @@ class Extended_PostInit_EventHandlers {
 class CfgFatigue {
   MinValue1 = 0.1;
   MinValue2 = 0.8;
-  NormalRunSpeed = 17.2;
-  TiredRunSpeedLimit = 11;
+  NormalRunSpeed = 7.2;
+  TiredRunSpeedLimit = 0.5;
   FrequencyMin = 0.2;
   FrequencyMax = 1.0;
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
 };
-class CfgInventoryGlobalVariable {
-  maxSoldierLoad = 120;
-};
+/*class CfgInventoryGlobalVariable {
+  maxSoldierLoad = 1200;
+};*/
 
 
 //DEFAULT

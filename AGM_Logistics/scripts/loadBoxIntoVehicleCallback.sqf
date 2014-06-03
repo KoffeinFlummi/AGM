@@ -9,7 +9,9 @@ _count = count _loadedItems;
 if (_count < getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Vehicle_Cargo")) then {
 	_loadedItems set [_count, _item];
 	_vehicle setVariable ["AGM_Logistics_loadedItems", _loadedItems, true];
-	_item setPosASL [0, 0, 0];
+
+	0 spawn AGM_Logistics_dropItem;//
+	_item attachTo [AGM_Logistics_loadedItemsDummy, [0, 0, 0]];
 
 	_itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
