@@ -1,5 +1,6 @@
 // by commy2
 
+#define RECOVER_RATE_FACTOR 0.1
 #define THRESHOLD_1 0.8
 #define THRESHOLD_2 0.9
 #define THRESHOLD_3 0.99
@@ -35,5 +36,9 @@ waitUntil {
 	};
 
 	sleep 1;
+
+	_fatigueNew = getFatigue player;
+	player setFatigue (_fatigue - RECOVER_RATE_FACTOR * (_fatigue - _fatigueNew) max _fatigueNew);
+
 	false
 };

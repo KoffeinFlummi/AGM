@@ -15,4 +15,4 @@ sleep 0.2;
 
 _ppEffect ppEffectEnable false;
 ppEffectDestroy _ppEffect;
-sleep 3;
+sleep 2 + random 2;
