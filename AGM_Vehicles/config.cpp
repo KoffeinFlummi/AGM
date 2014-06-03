@@ -141,7 +141,6 @@ class CfgVehicles {
 
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
-    displayName = "$STR_AGM_Vehicles_MRAP_03_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
@@ -151,7 +150,6 @@ class CfgVehicles {
     };
   };
   class I_MRAP_03_hmg_F: MRAP_03_hmg_base_F {
-    displayName = "$STR_AGM_Vehicles_MRAP_03_hmg_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
@@ -161,7 +159,6 @@ class CfgVehicles {
     };
   };
   class I_MRAP_03_gmg_F: MRAP_03_gmg_base_F {
-    displayName = "$STR_AGM_Vehicles_MRAP_03_gmg_Name";
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {

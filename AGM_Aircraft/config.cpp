@@ -220,7 +220,6 @@ class CfgVehicles {
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Attack_01_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -245,7 +244,6 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Light_01_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -255,7 +253,6 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Light_01_armed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -265,13 +262,11 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    displayName = "$STR_AGM_Aircraft_Plane_CAS_01_Name";
     lockDetectionSystem = 16;
   };
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_light_03_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -281,7 +276,6 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_light_03_unarmed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -291,7 +285,6 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Transport_02_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -301,11 +294,7 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    displayName = "$STR_AGM_Aircraft_Plane_Fighter_03_CAS_Name";
     lockDetectionSystem = 16;
-  };
-  class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
-    displayName = "$STR_AGM_Aircraft_Plane_Fighter_03_AA_Name";
   };
 
   // OPFOR
@@ -328,7 +317,6 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Light_02_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -338,7 +326,6 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    displayName = "$STR_AGM_Aircraft_Heli_Light_02_unarmed_Name";
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -351,7 +338,6 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    displayName = "$STR_AGM_Aircraft_Plane_CAS_02_Name";
     lockDetectionSystem = 16;
   };
 };

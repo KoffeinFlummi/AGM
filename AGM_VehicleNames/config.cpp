@@ -47,6 +47,10 @@ class CfgVehicles {
   class B_APC_Wheeled_01_base_F;
   class B_APC_Tracked_01_base_F;
   class Truck_01_base_F;
+  class Heli_Attack_01_base_F;
+  class Heli_Light_01_base_F;
+  class Heli_Light_01_armed_base_F;
+  class Plane_CAS_01_base_F;
 
   // INDEP Inheritance
   class MRAP_03_base_F;
@@ -56,6 +60,10 @@ class CfgVehicles {
   class I_APC_Wheeled_03_base_F;
   class I_APC_tracked_03_base_F;
   class Truck_02_base_F;
+  class I_Heli_light_03_base_F;
+  class I_Heli_light_03_unarmed_base_F;
+  class Heli_Transport_02_base_F;
+  class Plane_Fighter_03_base_F;
 
   // OPFOR Inheritance
   class MRAP_02_base_F;
@@ -68,6 +76,8 @@ class CfgVehicles {
   class O_APC_Wheeled_02_base_F;
   class O_APC_Tracked_02_base_F;
   class Truck_03_base_F;
+  class Heli_Light_02_base_F;
+  class Plane_CAS_02_base_F;
 
   ////////////////////////////////////
 
@@ -107,7 +117,6 @@ class CfgVehicles {
     displayName = "$STR_AGM_VehicleNames_APC_Tracked_01_CRV_Name";
   };
 
-  // WHY THE FUCK ARE THERE SO MANY OF THESE
   class B_Truck_01_transport_F: Truck_01_base_F {
     displayName = "$STR_AGM_VehicleNames_Truck_01_transport_Name";
   };
@@ -131,6 +140,19 @@ class CfgVehicles {
   };
   class B_Truck_01_Repair_F: B_Truck_01_mover_F {
     displayName = "$STR_AGM_VehicleNames_Truck_01_Repair_Name";
+  };
+
+  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Attack_01_Name";
+  };
+  class B_Heli_Light_01_F: Heli_Light_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Light_01_Name";
+  };
+  class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Light_01_armed_Name";
+  };
+  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_Plane_CAS_01_Name";
   };
 
 
@@ -172,6 +194,22 @@ class CfgVehicles {
   };
   class I_Truck_02_medical_F: I_Truck_02_box_F {
     displayName = "$STR_AGM_VehicleNames_Truck_02_medical_Name";
+  };
+
+  class I_Heli_light_03_F: I_Heli_light_03_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_light_03_Name";
+  };
+  class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_light_03_unarmed_Name";
+  };
+  class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Transport_02_Name";
+  };
+  class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
+    displayName = "$STR_AGM_VehicleNames_Plane_Fighter_03_CAS_Name";
+  };
+  class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
+    displayName = "$STR_AGM_VehicleNames_Plane_Fighter_03_AA_Name";
   };
 
 
@@ -241,5 +279,15 @@ class CfgVehicles {
   };
   class O_Truck_03_medical_F: Truck_03_base_F {
     displayName = "$STR_AGM_VehicleNames_Truck_03_medical_Name";
+  };
+
+  class O_Heli_Light_02_F: Heli_Light_02_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Light_02_Name";
+  };
+  class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
+    displayName = "$STR_AGM_VehicleNames_Heli_Light_02_unarmed_Name";
+  };
+  class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
+    displayName = "$STR_AGM_VehicleNames_Plane_CAS_02_Name";
   };
 };
