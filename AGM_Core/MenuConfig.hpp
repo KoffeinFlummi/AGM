@@ -13,7 +13,7 @@ class AGM_Core_Interactive_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5) * safezoneX / safezoneXAbs";
+  sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   shadow = 2;
 
   x = 0;
@@ -73,7 +73,7 @@ class AGM_Core_Menu_Dialog {
       moving = 1;
       text = "HEADER";
       font = "PuristaMedium";
-      sizeEx = "1 / 40 / (getResolution select 5) * safezoneX / safezoneXAbs";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       lineSpacing = 0;
       access = 0;
       type = 0;
@@ -216,7 +216,7 @@ class AGM_Core_Interactive_Button_Base_noFlash {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5) * safezoneX / safezoneXAbs";
+  sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   shadow = 2;
 
   x = 0;
@@ -420,7 +420,7 @@ class AGM_Core_Text_Button_Base {
   moving = 0;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5) * safezoneX / safezoneXAbs";
+  sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   lineSpacing = 0;
   access = 0;
   type = 0;
@@ -466,7 +466,7 @@ class AGM_Core_OptionsMenu_Dialog {
       moving = 0;
       text = "$STR_AGM_Core_Options";
       font = "PuristaMedium";
-      sizeEx = "1 / 40 / (getResolution select 5) * safezoneX / safezoneXAbs";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       lineSpacing = 0;
       access = 0;
       type = 0;
