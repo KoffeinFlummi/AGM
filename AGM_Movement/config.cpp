@@ -14,7 +14,7 @@ class CfgPatches {
 
 
 // WHAT DO THESE VALUES EVEN DO?
-class CfgFatigue {
+/*class CfgFatigue {
   FrequencyMax = 1;
   FrequencyMin = 0.2;
   MaxDuty = 10;
@@ -23,7 +23,7 @@ class CfgFatigue {
   NormalRunSpeed = 7.2; // seems to have no effect
   TiredRunSpeedLimit = 1;
   TotalLoadCoef = 1.1; // seems to have no effect
-};
+};*/
 
 
 class CfgMovesBasic {

@@ -12,7 +12,8 @@ _magazines = [];
 } forEach _weapons;
 
 {
-	if !(_x in (magazines player + magazineCargo _vehicle)) then {
+	//if !(_x in (magazines player + magazineCargo _vehicle)) then {
+	if !(_x in magazines player) then {
 		_magazines = _magazines - [_x];
 	};
 } forEach _magazines;

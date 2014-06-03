@@ -31,8 +31,8 @@ class Extended_PostInit_EventHandlers {
 class CfgFatigue {
   MinValue1 = 0.1;
   MinValue2 = 0.8;
-  NormalRunSpeed = 17.2;
-  TiredRunSpeedLimit = 11;
+  NormalRunSpeed = 7.2;
+  TiredRunSpeedLimit = 0.1;
   FrequencyMin = 0.2;
   FrequencyMax = 1.0;
   TotalLoadCoef = 1.1;

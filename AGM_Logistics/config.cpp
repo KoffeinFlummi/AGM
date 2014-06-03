@@ -18,7 +18,7 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class CfgFunctions {
+/*class CfgFunctions {
   class AGM_Logistics {
     class AGM_Logistics {
       file = "\AGM_logistics\functions";
@@ -29,7 +29,7 @@ class CfgFunctions {
       class getWeaponsOfMagazine;
     };
   };
-};
+};*/
 
 class CfgVehicles {
   //Jerry Can
@@ -131,77 +131,77 @@ class CfgVehicles {
         displayName = "Magazines >>";
         distance = 6;
         condition = "true";
-        statement = "AGM_Logistics_loadableMagazines = [cursorTarget] call AGM_Logistics_fnc_getLoadableMagazines; AGM_Logistics_loadableMagazines resize 10; 'AGM_reloadMagazines' call AGM_Interaction_fnc_openMenu; [AGM_Logistics_loadableMagazines] call AGM_Logistics_fnc_applyMagazineNames";
+        statement = "AGM_Logistics_loadableMagazines = [cursorTarget] call AGM_Logistics_getLoadableMagazines; AGM_Logistics_loadableMagazines resize 10; 'AGM_reloadMagazines' call AGM_Interaction_fnc_openMenu; [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 1;
         priority = 1;
 
         class AGM_reloadMagazine0 {
           displayName = "Magazine 0";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 0] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 0] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 0] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 0] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 1;
         };
         class AGM_reloadMagazine1 {
           displayName = "Magazine 1";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 1] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 1] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 1] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 1] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.9;
         };
         class AGM_reloadMagazine2 {
           displayName = "Magazine 2";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 2] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 2] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 2] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 2] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.8;
         };
         class AGM_reloadMagazine3 {
           displayName = "Magazine 3";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 3] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 3] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 3] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 3] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.7;
         };
         class AGM_reloadMagazine4 {
           displayName = "Magazine 4";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 4] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 4] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 4] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 4] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.6;
         };
         class AGM_reloadMagazine5 {
           displayName = "Magazine 5";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 5] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 5] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 5] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 5] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.5;
         };
         class AGM_reloadMagazine6 {
           displayName = "Magazine 6";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 6] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 6] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 6] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 6] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.4;
         };
         class AGM_reloadMagazine7 {
           displayName = "Magazine 7";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 7] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 7] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 7] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 7] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.3;
         };
         class AGM_reloadMagazine8 {
           displayName = "Magazine 8";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 8] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 8] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 8] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 8] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.2;
         };
         class AGM_reloadMagazine9 {
           displayName = "Magazine 9";
-          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 9] call AGM_Logistics_fnc_canLoadMagazine";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 9] call AGM_Logistics_fnc_reloadMagazine";
+          condition = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 9] call AGM_Logistics_canLoadMagazine";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadableMagazines select 9] call AGM_Logistics_reloadMagazine";
           showDisabled = 1;
           priority = 0.1;
         };
