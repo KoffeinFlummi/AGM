@@ -75,6 +75,7 @@ class CfgVehicles {
   // INDEP Inheritance
   class MRAP_03_base_F: Car_F {
     fuelCapacity = 860 * FUEL_FACTOR;
+    class NewTurret;
     class Turrets {
       class CommanderTurret;
     };
@@ -82,11 +83,13 @@ class CfgVehicles {
   class MRAP_03_hmg_base_F: MRAP_03_base_F {
     class Turrets: Turrets {
       class CommanderTurret: CommanderTurret {};
+      class MainTurret;
     };
   };
   class MRAP_03_gmg_base_F: MRAP_03_hmg_base_F {
     class Turrets: Turrets {
       class CommanderTurret: CommanderTurret {};
+      class MainTurret: MainTurret {};
     };
   };
 
@@ -156,6 +159,7 @@ class CfgVehicles {
       class CommanderTurret: CommanderTurret {
         stabilizedInAxes = 3;
       };
+      class MainTurret: MainTurret {};
     };
   };
   class I_MRAP_03_gmg_F: MRAP_03_gmg_base_F {
@@ -165,6 +169,7 @@ class CfgVehicles {
       class CommanderTurret: CommanderTurret {
         stabilizedInAxes = 3;
       };
+      class MainTurret: MainTurret {};
     };
   };
 };
