@@ -106,30 +106,174 @@ class CfgVehicles {
     AGM_Vehicle_Cargo = 4;
     class AGM_Actions {
       class AGM_unloadBox {
-        displayName = "Unload Box";
-        distance = 99;
-        condition = "call AGM_Logistics_canUnload";
-        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_unloadBox";
+        displayName = "Unload Box >>";
+        distance = 8;
+        condition = "true";
+        //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
+        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;"// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 0;
         priority = 2.25;
+
+        class AGM_unloadBox0 {
+          displayName = "Box 0";
+          condition = "count AGM_Logistics_loadabledItems > 0";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 0] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 1;
+        };
+        class AGM_unloadBox1 {
+          displayName = "Box 1";
+          condition = "count AGM_Logistics_loadabledItems > 1";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 1] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.9;
+        };
+        class AGM_unloadBox2 {
+          displayName = "Box 2";
+          condition = "count AGM_Logistics_loadabledItems > 2";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 2] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.8;
+        };
+        class AGM_unloadBox3 {
+          displayName = "Box 3";
+          condition = "count AGM_Logistics_loadabledItems > 3";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 3] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.7;
+        };
+        class AGM_unloadBox4 {
+          displayName = "Box 4";
+          condition = "count AGM_Logistics_loadabledItems > 4";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 4] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.6;
+        };
+        class AGM_unloadBox5 {
+          displayName = "Box 5";
+          condition = "count AGM_Logistics_loadabledItems > 5";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 5] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        class AGM_unloadBox6 {
+          displayName = "Box 6";
+          condition = "count AGM_Logistics_loadabledItems > 6";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 6] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.4;
+        };
+        class AGM_unloadBox7 {
+          displayName = "Box 7";
+          condition = "count AGM_Logistics_loadabledItems > 7";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 7] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.3;
+        };
+        class AGM_unloadBox8 {
+          displayName = "Box 8";
+          condition = "count AGM_Logistics_loadabledItems > 8";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 8] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.2;
+        };
+        class AGM_unloadBox9 {
+          displayName = "Box 9";
+          condition = "count AGM_Logistics_loadabledItems > 9";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 9] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.1;
+        };
       };
     };
   };
   class Tank: LandVehicle {
-    AGM_Vehicle_Cargo = 8;
+    AGM_Vehicle_Cargo = 6;
     class AGM_Actions {
       class AGM_unloadBox {
-        displayName = "Unload Box";
-        distance = 99;
-        condition = "call AGM_Logistics_canUnload";
-        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_unloadBox";
+        displayName = "Unload Box >>";
+        distance = 8;
+        condition = "true";
+        //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
+        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;"// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 0;
         priority = 2.25;
+
+        class AGM_unloadBox0 {
+          displayName = "Box 0";
+          condition = "count AGM_Logistics_loadabledItems > 0";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 0] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 1;
+        };
+        class AGM_unloadBox1 {
+          displayName = "Box 1";
+          condition = "count AGM_Logistics_loadabledItems > 1";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 1] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.9;
+        };
+        class AGM_unloadBox2 {
+          displayName = "Box 2";
+          condition = "count AGM_Logistics_loadabledItems > 2";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 2] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.8;
+        };
+        class AGM_unloadBox3 {
+          displayName = "Box 3";
+          condition = "count AGM_Logistics_loadabledItems > 3";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 3] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.7;
+        };
+        class AGM_unloadBox4 {
+          displayName = "Box 4";
+          condition = "count AGM_Logistics_loadabledItems > 4";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 4] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.6;
+        };
+        class AGM_unloadBox5 {
+          displayName = "Box 5";
+          condition = "count AGM_Logistics_loadabledItems > 5";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 5] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        class AGM_unloadBox6 {
+          displayName = "Box 6";
+          condition = "count AGM_Logistics_loadabledItems > 6";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 6] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.4;
+        };
+        class AGM_unloadBox7 {
+          displayName = "Box 7";
+          condition = "count AGM_Logistics_loadabledItems > 7";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 7] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.3;
+        };
+        class AGM_unloadBox8 {
+          displayName = "Box 8";
+          condition = "count AGM_Logistics_loadabledItems > 8";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 8] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.2;
+        };
+        class AGM_unloadBox9 {
+          displayName = "Box 9";
+          condition = "count AGM_Logistics_loadabledItems > 9";
+          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 9] spawn AGM_Logistics_unloadBox;";
+          showDisabled = 0;
+          priority = 0.1;
+        };
       };
 
       class AGM_reloadMagazines {
         displayName = "Magazines >>";
-        distance = 6;
+        distance = 8;
         condition = "true";
         statement = "AGM_Logistics_loadableMagazines = [cursorTarget] call AGM_Logistics_getLoadableMagazines; AGM_Logistics_loadableMagazines resize 10; 'AGM_reloadMagazines' call AGM_Interaction_fnc_openMenu; [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 1;

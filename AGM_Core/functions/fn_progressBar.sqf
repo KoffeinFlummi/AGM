@@ -33,7 +33,7 @@ _this spawn {
 		0.8 * safezoneW,
 		0.01 * safezoneH
 	];
-	_ctrlProgressBar ctrlCommit _time;
+	_ctrlProgressBar ctrlCommit (_time / accTime);
 
 	_ctrlProgressBarTitle ctrlSetText _title;
 	//_ctrlProgressBarTitle ctrlSetStructuredText _title;
