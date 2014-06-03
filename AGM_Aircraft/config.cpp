@@ -16,7 +16,8 @@ class CfgPatches {
       A3_Air_F_Gamma_Plane_Fighter_03,
       A3_Air_F_EPC_Plane_CAS_01,
       A3_Air_F_EPC_Plane_CAS_02,
-      A3_Air_F_EPC_Plane_Fighter_03
+      A3_Air_F_EPC_Plane_Fighter_03,
+      A3_Weapons_F_NATO
     };
     version = "0.9";
     versionStr = "0.9";
@@ -44,20 +45,87 @@ class Extended_PostInit_EventHandlers {
   };
 };*/
 
-class Mode_Burst;
+class CfgAmmo {
+  class BulletBase;
+  class LaserBombCore;
+  class MissileBase;
+  class RocketBase;
+  class B_65x39_Caseless;
 
-// Manual Switching Of Flare Mode
+  class B_20mm: BulletBase {
+    deflecting = 3;
+  };
+  class B_65x39_Minigun_Caseless: B_65x39_Caseless {
+    hit = 10;
+    indirectHit = 0;
+    indirectHitRange = 0;
+    caliber = 1;
+    deflecting = 5;
+    typicalSpeed = 850;
+  };
+  
+};
+
+class Mode_Burst;
 class CfgWeapons {
   class SmokeLauncher;
+  class CannonCore;
 
+  // Manual Switching Of Flare Mode
   class CMFlareLauncher: SmokeLauncher {
     modes[] = {"Single", "Burst", "AIBurst"};
     class Burst: Mode_Burst {
       displayName = "$STR_AGM_Aircraft_CMFlareLauncher_Burst_Name";
     };
   };
+
+  class gatling_20mm: CannonCore {
+    class close;
+    class far;
+    class manual;
+    class medium;
+    class short;
+    magazines[] = {"2000Rnd_20mm_shells","1000Rnd_20mm_shells","300Rnd_20mm_shells","AGM_500Rnd_20mm_shells_Comanche"};
+  };
+
+  class AGM_gatling_20mm_Comanche: gatling_20mm {
+    displayName = "XM301";
+    class close: close {
+      reloadTime = 0.04;
+      dispersion = 0.0022;
+    };
+    class far: far {
+      reloadTime = 0.04;
+      dispersion = 0.0022;
+    };
+    class manual: manual {
+      reloadTime = 0.04;
+      dispersion = 0.0022;
+    };
+    class medium: medium {
+      reloadTime = 0.04;
+      dispersion = 0.0022;
+    };
+    class short: short {
+      reloadTime = 0.04;
+      dispersion = 0.0022;
+    };
+  };
 };
 
+class CfgMagazines {
+  class 300Rnd_20mm_shells;
+  class AGM_500Rnd_20mm_shells_Comanche: 300Rnd_20mm_shells {
+    displayName = "20mm";
+    displayNameShort = "20mm";
+    ammo = "B_20mm";
+    count = 500;
+    deflecting = 3;
+    initSpeed = 1030;
+    maxLeadSpeed = 300;
+    tracersEvery = 5;
+  };
+};
 
 class CfgVehicles {
   // Basic Inheritance
@@ -89,6 +157,7 @@ class CfgVehicles {
 
   // BLUFOR Inheritance
   class Heli_Attack_01_base_F: Helicopter_Base_F {
+    class AnimationSources;
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
@@ -222,9 +291,40 @@ class CfgVehicles {
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
     lockDetectionSystem = 16;
     driverCanEject = 1;
+    class AnimationSources: AnimationSources {
+      class HitGlass1 {
+        source = "Hit";
+        hitpoint = "HitGlass1";
+        raw = 1;
+      };
+      class HitGlass2: HitGlass1 {
+        hitpoint = "HitGlass2";
+      };
+      class HitGlass3: HitGlass1 {
+        hitpoint = "HitGlass3";
+      };
+      class HitGlass4: HitGlass1 {
+        hitpoint = "HitGlass4";
+      };
+      class Gatling {
+        source = "revolving";
+        weapon = "AGM_gatling_20mm_Comanche";
+      };
+      class Hide {
+        source = "user";
+        animPeriod = 0;
+        initPhase = 0;
+      };
+      class Muzzle_flash {
+        source = "ammorandom";
+        weapon = "AGM_gatling_20mm_Comanche";
+      };
+    };
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        weapons[] = {"AGM_gatling_20mm_Comanche","missiles_DAGR","missiles_ASRAAM"};
+        magazines[] = {"AGM_500Rnd_20mm_shells_Comanche","4Rnd_AAA_missiles","24Rnd_PG_missiles"};
       };
     };
   };
@@ -267,11 +367,21 @@ class CfgVehicles {
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
+    weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
+    magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
     lockDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        gunBeg = "commanderview";
+        gunEnd = "laserstart";
+        memoryPointGun = "laserstart";
+        stabilizedInAxes = 3;
+        weapons[] = {"Laserdesignator_mounted"};
+        soundServo[] = {"",0.01,1,30};
+        magazines[] = {"Laserbatteries"};
+        inGunnerMayFire = 1;
       };
     };
   };
@@ -281,6 +391,14 @@ class CfgVehicles {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        gunBeg = "commanderview";
+        gunEnd = "laserstart";
+        memoryPointGun = "laserstart";
+        stabilizedInAxes = 3;
+        weapons[] = {"Laserdesignator_mounted"};
+        soundServo[] = {"",0.01,1,30};
+        magazines[] = {"Laserbatteries"};
+        inGunnerMayFire = 1;
       };
     };
   };
