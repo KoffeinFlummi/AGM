@@ -1,17 +1,10 @@
 _target = _this select 0;
 _caller = _this select 1;
 
-hint format ["1%", _target];
-
 if(fuel _target < 1) then {
-	if((magazines _caller) find "Laserbatteries" > -1) then {
-		_target setFuel 1;
-		_caller removeMagazine "Laserbatteries";
-		sleep 2;
-		hint format ["1%", fuel _target];
-	} else {hint "You need a Laserbatterie to refuel."};
-} else {hint "Your drone is already full."};
-
-/*
-stringtable.xml is coming soon.
-*/
+	if((items _caller) find "AGM_UAV_Battery" > -1) then {
+		_caller removeItem "AGM_UAV_Battery";
+		player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+		[10,[_target], "AGM_UAV_refuelCallback", localize "STR_AGM_Uav_Battery_Refuel"] call AGM_Core_fnc_progressBar;
+	} else {hintSilent localize "STR_AGM_NoBattery"};
+} else {hintSilent localize "STR_AGM_Full"};
