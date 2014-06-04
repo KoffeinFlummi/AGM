@@ -44,6 +44,8 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
 
   sleep 0.001;
 
+  _unit setVariable ["AGM_Diagnosed", false, true];
+
   _armdamage = (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitRightArm");
   _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
 
@@ -125,10 +127,14 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
       _time = time;
       "chromAberration" ppEffectEnable true;
       while {(player getVariable "AGM_Pain") > 0} do {
-        "chromAberration" ppEffectAdjust [0.035 * (player getVariable "AGM_Pain"), 0.035 * (player getVariable "AGM_Pain"), false];
+        _strength = player getVariable "AGM_Pain";
+        if !(isNil "AGM_Medical_CoefBleeding") then {
+          _strength = _strength * AGM_Medical_CoefPain;
+        };
+        "chromAberration" ppEffectAdjust [0.035 * _strength, 0.035 * _strength, false];
         "chromAberration" ppEffectCommit 1;
         sleep (1.5 - (player getVariable "AGM_Pain"));
-        "chromAberration" ppEffectAdjust [0.35 * (player getVariable "AGM_Pain"), 0.35 * (player getVariable "AGM_Pain"), false];
+        "chromAberration" ppEffectAdjust [0.35 * _strength, 0.35 * _strength, false];
         "chromAberration" ppEffectCommit 1;
         sleep 0.15;
         
@@ -150,12 +156,17 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
         if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
           if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
           _blood = _this getVariable "AGM_Blood";
-          _blood = _blood - BLOODLOSSRATE * (damage _this);
+          if !(isNil "AGM_Medical_CoefBleeding") then {
+            _blood = _blood - BLOODLOSSRATE * AGM_Medical_CoefBleeding * (damage _this);
+          } else {
+            _blood = _blood - BLOODLOSSRATE * (damage _this);
+          };
+          _blood = _blood max 0;
           _this setVariable ["AGM_Blood", _blood, true];
           if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
             [_this] call AGM_Medical_fnc_knockOut;
           };
-          if (_blood <= BLOODTHRESHOLD2) then {
+          if (_blood <= BLOODTHRESHOLD2 and ((isNil "AGM_Medical_PreventDeathWhileUnconscious") or {!AGM_Medical_PreventDeathWhileUnconscious})) then {
             _this setDamage 1;
           };
         };
@@ -166,4 +177,14 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
     };
   };
 
+};
+
+if (_unit getVariable "AGM_Unconscious") then {
+  if (_damage > 0.9 and !(isNil "AGM_Medical_PreventDeathWhileUnconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) exitWith {
+    0.89
+  };
+} else {
+  if (_damage > 0.9 and !(isNil "AGM_Medical_PreventInstaDeath") and {AGM_Medical_PreventInstaDeath}) exitWith {
+    0.89
+  };
 };

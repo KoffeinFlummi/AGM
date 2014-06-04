@@ -10,19 +10,27 @@
  * none
  */
 
-#define BLOODBAGTIME 20
+#define BLOODBAGTIMEMEDIC 20
+#define BLOODBAGTIMENONMEDIC 30
 #define BLOODBAGHEAL 0.7
 
 // DETERMINE IF UNIT IS MEDIC
-if !([player] call AGM_Medical_fnc_isMedic) exitWith {
+if !(([player] call AGM_Medical_fnc_isMedic) or (!(isNil "AGM_Medical_AllowNonMedics") and {AGM_Medical_AllowNonMedics})) exitWith {
   hintSilent localize "STR_AGM_Medical_NotTrained";
 };
 
 _this spawn {
   _unit = _this select 0;
 
+  _bloodbagtime = 0;
+  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
+    _bloodbagtime = BLOODBAGTIMEMEDIC;
+  } else {
+    _bloodbagtime = BLOODBAGTIMENONMEDIC;
+  };
+
   player setVariable ["AGM_CanTreat", false, false];
-  BLOODBAGTIME spawn {
+  _bloodbagtime spawn {
     sleep _this;
     player setVariable ["AGM_CanTreat", true, false];
   };
@@ -54,5 +62,5 @@ _this spawn {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [BLOODBAGTIME, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
+  [_bloodbagtime, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
 };

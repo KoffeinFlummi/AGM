@@ -66,6 +66,14 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class CfgFactionClasses {
+  class AGM {
+    displayName = "AGM";
+    priority = 0.1;
+    side = 7;
+  };
+};
+
 class CfgWeapons {
   class Rifle_Base_F;
 

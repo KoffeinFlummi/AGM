@@ -10,18 +10,26 @@
  * none
  */
 
-#define EPINEPHRINETIME 8
+#define EPINEPHRINETIMEMEDIC 8
+#define EPINEPHRINETIMENONMEDIC 14
 
 // DETERMINE IF UNIT IS MEDIC
-if !([player] call AGM_Medical_fnc_isMedic) exitWith {
+if !(([player] call AGM_Medical_fnc_isMedic) or (!(isNil "AGM_Medical_AllowNonMedics") and {AGM_Medical_AllowNonMedics})) exitWith {
   hintSilent localize "STR_AGM_Medical_NotTrained";
 };
 
 _this spawn {
   _unit = _this select 0;
 
+  _epinephrinetime = 0;
+  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
+    _epinephrinetime = EPINEPHRINETIMEMEDIC;
+  } else {
+    _epinephrinetime = EPINEPHRINETIMENONMEDIC;
+  };
+
   player setVariable ["AGM_CanTreat", false, false];
-  EPINEPHRINETIME spawn {
+  _epinephrinetime spawn {
     sleep _this;
     player setVariable ["AGM_CanTreat", true, false];
   };
@@ -52,6 +60,6 @@ _this spawn {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
   };
 
-  [EPINEPHRINETIME, _this, "AGM_Medical_epinephrineCallback", localize "STR_AGM_Medical_Injecting_Epinephrine", "AGM_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;
+  [_epinephrinetime, _this, "AGM_Medical_epinephrineCallback", localize "STR_AGM_Medical_Injecting_Epinephrine", "AGM_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;
 
 };
