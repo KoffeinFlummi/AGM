@@ -11,9 +11,13 @@ Return Value:
 A hexadecimal number, String
 */
 
-private ["_number", "_sign", "_hex", "_rest"];
+private ["_number", "_minLength", "_sign", "_hex", "_rest"];
 
-_number = _this;
+_number = _this select 0;
+_minLength = _this select 1;
+
+if (isNil "_minLength") then {_minLength = 1};
+
 _sign = if (_number < 0) then {"-"} else {""};
 
 _number = round abs _number;
@@ -34,4 +38,9 @@ while {_number > 0} do {
 
 	_hex = _rest + _hex;
 };
+
+while {count toArray _hex < _minLength} do {
+	_hex = "0" + _hex;
+};
+
 _sign + _hex

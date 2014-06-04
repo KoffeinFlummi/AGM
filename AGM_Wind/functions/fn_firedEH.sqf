@@ -1,9 +1,9 @@
-private ["_unit", "_weaponType", "_ammoType", "_round", "_coefficient", "_humidity", "_velocity", "_velocityX", "_velocityY", "_velocityZ", "_velocityNewX", "_velocityNewY", "_velocityNewZ", "_deltaTime", "_time"];
+private ["_unit", "_weaponType", "_ammoType", "_round", "_coefficient", "_velocity", "_velocityX", "_velocityY", "_velocityZ", "_velocityNewX", "_velocityNewY", "_velocityNewZ", "_deltaTime", "_time"];
 
 _unit = _this select 0;
 _weaponType = _this select 1;
 _ammoType = _this select 4;
-_round = _this select 6;
+_round = _this select 5;
 
 if (!local _unit) exitwith {};
 if (!isPlayer _unit) exitwith {};
@@ -19,14 +19,13 @@ if (_round isKindOf "RocketCore") then {
 };
 
 // HUMIDITY
-_humidity = ((fogParams select 0) + rain) / 2;
 _velocity = velocity _round;
 _velocityX = _velocity select 0;
 _velocityY = _velocity select 1;
 _velocityZ = _velocity select 2;
-_velocityNewX = _velocityX - _velocityX * _humidity * 0.2;
-_velocityNewY = _velocityY - _velocityY * _humidity * 0.2;
-_velocityNewZ = _velocityZ - _velocityZ * _humidity * 0.2;
+_velocityNewX = _velocityX - _velocityX * humidity * 0.2;
+_velocityNewY = _velocityY - _velocityY * humidity * 0.2;
+_velocityNewZ = _velocityZ - _velocityZ * humidity * 0.2;
 _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
 
 // WIND

@@ -67,7 +67,7 @@ if (_class == "") then {
 		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf AGM_Interaction_Target) >> "displayName"));
 	};
 } else {
-	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenuSelf;";
+	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenu;";
 	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
 };
 

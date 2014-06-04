@@ -37,7 +37,9 @@ _this spawn {
 
   [-2, {
     (_this select 0) switchMove DRAGGINGMOVE;
-    (_this select 1) switchMove DRAGGEDMOVE;
+    if ((_this select 1) getVariable "AGM_Unconscious") then {
+      (_this select 1) switchMove DRAGGEDMOVE;
+    };
   }, [player, _unit]] call CBA_fnc_globalExecute;
 
   [-2, {

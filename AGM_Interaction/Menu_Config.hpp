@@ -12,7 +12,8 @@ class AGM_Interaction_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  sizeEx = "1 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
+  //sizeEx = "1 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
+  sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   shadow = 2;
 
   x = 0;
@@ -70,12 +71,13 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "Interaction Menu";
       idc = 2;
-      sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
+      //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
+      sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
       y = (0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY;
       w = 1.8 / 16 * safezoneW;
       h = 0.55 / 9 * safezoneH;
-    };    
+    };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 0; if (call (_action select 2)) then {call (_action select 1)};";
@@ -187,5 +189,86 @@ class AGM_Interaction_Dialog {
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
+
+    class Interaction_Icon0 : Interaction_Button0 {
+      idc = 20;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon1 : Interaction_Button1 {
+      idc = 21;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon2 : Interaction_Button2 {
+      idc = 22;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon3 : Interaction_Button3 {
+      idc = 23;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon4 : Interaction_Button4 {
+      idc = 24;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon5 : Interaction_Button5 {
+      idc = 25;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon6 : Interaction_Button6 {
+      idc = 26;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon7 : Interaction_Button7 {
+      idc = 27;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon8 : Interaction_Button8 {
+      idc = 28;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
+    class Interaction_Icon9 : Interaction_Button9 {
+      idc = 29;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      w = 0.3 / 16 * safezoneW;
+    };
+
   };
 };

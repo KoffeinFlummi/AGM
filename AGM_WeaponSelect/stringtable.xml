@@ -7,36 +7,54 @@
       <German>Pistole Auswählen</German>
       <Spanish>Seleccionar Pistola</Spanish>
       <Polish>Wybierz Pistolet</Polish>
+      <Czech>Zvolit Sekundární zbraň</Czech>
+      <Russian>Выбрать пистолет</Russian>
+      <French>Sélectionner Pistolet</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifle">
       <English>Select Rifle</English>
       <German>Gewehr Auswählen</German>
       <Spanish>Seleccionar Rifle</Spanish>
       <Polish>Wybierz Karabin</Polish>
+      <Czech>Zvolit Primární zbraň</Czech>
+      <Russian>Выбрать автомат</Russian>
+      <French>Sélectionner Fusil</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectLauncher">
       <English>Select Launcher</English>
       <German>Raketenwerfer Auswählen</German>
       <Spanish>Seleccionar Lanzador</Spanish>
       <Polish>Wybierz Wyrzutnię</Polish>
+      <Czech>Zvolit Raketomet</Czech>
+      <Russian>Выбрать гранатомет</Russian>
+      <French>Sélectionner Lanceur</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifleMuzzle">
       <English>Select Grenade Launcher</English>
       <German>Granatwerfer Auswählen</German>
       <Spanish>Seleccionar Lanzador de Granadas</Spanish>
       <Polish>Wybierz Granatnik</Polish>
+      <Czech>Zvolit Granátomet</Czech>
+      <Russian>Выбрать подствольный гранатомет</Russian>
+      <French>Sélectionner Lance-grenade</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
       <English>Select Binoculars</English>
       <German>Fernglas Auswählen</German>
       <Spanish>Seleccionar Binoculares</Spanish>
       <Polish>Wybierz Lornetkę</Polish>
+      <Czech>Zvolit Dalekohled</Czech>
+      <Russian>Выбрать бинокль</Russian>
+      <French>Sélectionner Jumelles</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_HolsterWeapon">
       <English>Holster Weapon</English>
       <German>Waffe Holstern</German>
       <Spanish>Enfundar el Arma</Spanish>
       <Polish>Schowaj Do Kabury</Polish>
+      <Czech>Schovat zbraň</Czech>
+      <Russian>Убрать оружие</Russian>
+      <French>Arme dans le dos</French>
     </Key>
 
   </Package>

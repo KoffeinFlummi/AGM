@@ -7,42 +7,63 @@
       <German>Kein messbarer Wind</German>
       <Spanish>Sin viento apreciable</Spanish>
       <Polish>Nie można zmierzyć Wiatru</Polish>
+      <Czech>Žádný měřitelný vítr</Czech>
+      <French>Pas de vent mesurable</French>
+      <Russian>Нет ветра</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_NoMeasurable">
       <English>No measurable</English>
       <German>Kein messbarer</German>
       <Spanish>No apreciable</Spanish>
       <Polish>Nie można zmierzyć</Polish>
+      <Czech>Není možné změřit</Czech>
+      <French>Non mesurable</French>
+      <Russian>Не заметный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_VeryLight">
       <English>Very light</English>
       <German>Sehr leichter</German>
       <Spanish>Muy ligero</Spanish>
       <Polish>Bardzo słaby</Polish>
+      <Czech>Velmi slabý</Czech>
+      <French>Très léger</French>
+      <Russian>Очень слабый</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Light">
       <English>Light</English>
       <German>Leichter</German>
       <Spanish>Ligero</Spanish>
       <Polish>Słaby</Polish>
+      <Czech>Slabý</Czech>      
+      <French>Léger</French>
+      <Russian>Слабый</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Moderate">
       <English>Moderate</English>
       <German>Mittelstarker</German>
       <Spanish>Moderado</Spanish>
       <Polish>Umiarkowany</Polish>
+      <Czech>Mírný</Czech>
+      <French>Moyen</French>
+      <Russian>Умеренный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_Strong">
       <English>Strong</English>
       <German>Starker</German>
       <Spanish>Fuerte</Spanish>
       <Polish>Silny</Polish>
+      <Czech>Silný</Czech>
+      <French>Fort</French>
+      <Russian>Сильный</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_WindFromThe">
       <English>wind from the</English>
       <German>Wind aus</German>
       <Spanish>Viento del</Spanish>
       <Polish>Wiatr z</Polish>
+      <Czech>vítr z</Czech>
+      <French>Vent venant du</French>
+      <Russian>ветер с</Russian>
     </Key>
 
   </Package>

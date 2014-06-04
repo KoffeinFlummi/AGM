@@ -8,7 +8,7 @@ class CfgPatches {
     versionStr = "0.9";
     versionAr[] = {0,9,0};
     author[] = {"marc_book"};
-    authorUrl = "http://jgbtl14.bplaced.net/";
+    authorUrl = "https://github.com/MarcBook/";
   };
 };
 
@@ -24,10 +24,10 @@ class CfgVehicles {
   class B_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "Refuel";
+        displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] execVM ""AGM_Uav\scripts\refuel.sqf"";";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -36,10 +36,10 @@ class CfgVehicles {
   class O_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "Refuel";
+        displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] execVM ""AGM_Uav\scripts\refuel.sqf"";";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -48,13 +48,31 @@ class CfgVehicles {
   class I_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "Refuel";
+        displayName = "$STR_AGM_Refuel";
         distance = 4;
         condition = "true";
-        statement = "[AGM_Interaction_Target, player] execVM ""AGM_Uav\scripts\refuel.sqf"";";
+        statement = "[AGM_Interaction_Target, player] call AGM_UAV_refuel;";
         showDisabled = 1;
         priority = -2.5;
       };
     };
   };
+};
+
+class CfgWeapons{
+	class ItemCore;
+	class InventoryItem_Base_F;
+	
+	//ITEMS
+	class AGM_UAV_Battery: ItemCore {
+		displayName = "$STR_AGM_Uav_Battery_Name";
+		descriptionShort = "$STR_AGM_Uav_Battery_Description";
+		model = "\A3\weapons_F\ammo\mag_univ.p3d";
+		picture = "\AGM_Uav\UI\AGM_battery.paa";
+		scope = 2;
+		class ItemInfo: InventoryItem_Base_F {
+		  mass = 20;
+		  type = 201;
+		};
+	};
 };

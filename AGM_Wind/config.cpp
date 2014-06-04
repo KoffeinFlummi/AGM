@@ -16,6 +16,7 @@ class CfgFunctions {
   class AGM_Wind {
     class AGM_Wind {
       file = "AGM_Wind\functions";
+      class checkForAutoWind;
       class firedEH;
       class init;
     };
@@ -30,10 +31,16 @@ class Extended_Init_EventHandlers {
   };
 };
 
-class Extended_FiredBIS_EventHandlers {
+class Extended_PostInit_EventHandlers {
+  class AGM_Wind {
+    Init = "[] call AGM_Wind_fnc_checkForAutoWind";
+  };
+};
+
+class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Wind {
-      clientFiredBISPlayer = "_this spawn AGM_Wind_fnc_firedEH";
+      clientFired = "_this spawn AGM_Wind_fnc_firedEH";
     };
   };
 };
