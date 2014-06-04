@@ -28,7 +28,6 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 [-2, {
   if (_this == player) then {
-    //[1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
     AGM_UnconsciousCC ppEffectEnable false;
     AGM_UnconsciousCC ppEffectCommit 1;
     AGM_UnconsciousRB ppEffectEnable false;
