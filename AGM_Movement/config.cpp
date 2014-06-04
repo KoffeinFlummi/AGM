@@ -12,7 +12,6 @@ class CfgPatches {
   };
 };
 
-
 class CfgMovesBasic {
   class Actions {
     class RifleStandActionsNoAdjust;

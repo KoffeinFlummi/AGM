@@ -25,6 +25,6 @@ _picture = if (isNil "_magazine") then {""} else {
 	format ["<img size='2' color='#%1%200' image='%3'/>", _red, _green, getText (configFile >> "CfgMagazines" >> _magazine >> "picture")];
 };
 
-_line = "<t color='#" + _red + _green + "00'>" + localize "STR_AGM_Overheating_Ammo" + "</t>";
+_line = "<t color='#" + _red + _green + "00'>" + localize "STR_AGM_Reload_Ammo" + "</t>";
 
 [formatText ["%1%2%3", parseText _picture, lineBreak, parseText _line]] call AGM_Core_fnc_displayText;

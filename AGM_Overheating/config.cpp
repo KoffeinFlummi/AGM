@@ -50,15 +50,6 @@ class Extended_Fired_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class checkAmmo {
-    displayName = "$STR_AGM_Overheating_checkAmmo";
-    condition = "player == _vehicle";
-    statement = "[currentWeapon player] spawn AGM_Overheating_CheckAmmo";
-    key = 19;
-    shift = 1;
-    control = 0;
-    alt = 0;
-  };
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
