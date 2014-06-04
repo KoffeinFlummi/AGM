@@ -76,19 +76,6 @@
     </Key>
 
 
-    <Key ID="STR_AGM_Overheating_checkAmmo">
-      <English>Check ammo</English>
-      <German>Munition prüfen</German>
-      <Polish>Sprawdź Amunicję</Polish>
-    </Key>
-
-    <Key ID="STR_AGM_Overheating_Ammo">
-      <English>Ammo</English>
-      <German>Munition</German>
-      <Polish>Amunicja</Polish>
-    </Key>
-
-
     <Key ID="STR_AGM_Overheating_CheckTemperature">
       <English>Check weapons temperature</English>
       <German>Temperatur der Waffe prüfen</German>

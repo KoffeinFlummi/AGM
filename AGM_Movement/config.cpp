@@ -12,8 +12,12 @@ class CfgPatches {
   };
 };
 
-
 class CfgMovesBasic {
+  // disable idle animations
+  class Default {
+    idle = "";
+  };
+
   class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGMod">
+  <Package name="Reload">
+
+    <Key ID="STR_AGM_Reload_checkAmmo">
+      <English>Check ammo</English>
+      <German>Munition prüfen</German>
+      <Polish>Sprawdź Amunicję</Polish>
+    </Key>
+
+    <Key ID="STR_AGM_Reload_Ammo">
+      <English>Ammo</English>
+      <German>Munition</German>
+      <Polish>Amunicja</Polish>
+    </Key>
+
+  </Package>
+</Project>

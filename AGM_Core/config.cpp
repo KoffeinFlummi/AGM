@@ -49,6 +49,7 @@ class CfgFunctions {
       class getWeaponType;
       class codeToString;
       class createUpdateLoop;
+      class getBinocular;
     };
   };
 };
