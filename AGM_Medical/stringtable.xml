@@ -563,6 +563,7 @@
     <Key ID="STR_AGM_Medical_GivingYouMorphine">
       <English>is giving you morphine.</English>
       <German>gibt dir Morphium.</German>
+      <French>vous donne de la morphine.</French>
     </Key>
 
   </Package>
