@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="AGM">
-  <Package name="Uav">
+  <Package name="UAVs">
 
-    <Key ID="STR_AGM_Full">
+    <Key ID="STR_AGM_UAVs_Full">
       <English>Drone is full</English>
       <German>Drohne ist voll</German>
     </Key>
-    <Key ID="STR_AGM_NoBattery">
+    <Key ID="STR_AGM_UAVs_NoBattery">
       <English>You need a UAV-Battery</English>
       <German>Du brauchst eine UAV-Batterie</German>
     </Key>
-	<Key ID="STR_AGM_Refuel">
-      <English>Refuel</English>
+	<Key ID="STR_AGM_UAVs_Recharge">
+      <English>Recharge</English>
       <German>Aufladen</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Battery_Name">
+	<Key ID="STR_AGM_UAVs_Battery_Name">
       <English>UAV-Battery</English>
       <German>UAV-Batterie</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Battery_Description">
+	<Key ID="STR_AGM_UAVs_Battery_Description">
       <English>Used to refuel UAV's</English>
       <German>Verwendet zum Aufladen von UAV's</German>
     </Key>
-	<Key ID="STR_AGM_Uav_Battery_Refuel">
-      <English>Refueling...</English>
-      <German>Aufladen...</German>
+	<Key ID="STR_AGM_UAVs_Battery_Recharge">
+      <English>Recharging ...</English>
+      <German>Aufladen ...</German>
     </Key>
     
   </Package>
