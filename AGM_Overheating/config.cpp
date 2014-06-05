@@ -25,6 +25,7 @@ class CfgFunctions {
       //class checkTemperature;
       //class checkTemperatureCallback;
       class checkTemperatureQuick;
+      class firedEH;
       class swapBarrel;
       class swapBarrelCallback;
     };

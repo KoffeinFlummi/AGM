@@ -14,18 +14,19 @@ class CfgPatches {
   };
 };
 
-// EVERYTHING BELOW BELONGS TO TAOSENSAI, PREFIXES EDITED FOR COMPATABILITY
-
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class AGM_Recoil {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Recoil\clientInit.sqf'";
+    class AGM_Recoil {
+      file = "\AGM_Recoil\functions";
+      class firedEH;
+    };
   };
 };
 
-class Extended_FiredBIS_EventHandlers {
+class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Recoil {
-      clientFiredBISPlayer = "_this call AGM_Recoil_fnc_firedEH";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_firedEH}";
     };
   };
 };
