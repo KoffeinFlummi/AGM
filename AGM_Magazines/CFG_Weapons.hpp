@@ -21,6 +21,7 @@ class CfgWeapons {
 		};
 	};
 
+	class arifle_MX_SW_Base_F;
 	class arifle_MX_SW_F : arifle_MX_SW_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",
@@ -33,6 +34,7 @@ class CfgWeapons {
 		};
 	};
 
+	class arifle_MXM_Base_F;
 	class arifle_MXM_F : arifle_MXM_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",
@@ -63,7 +65,7 @@ class CfgWeapons {
 
 	class LMG_Mk200_F;
 	class LMG_Zafir_F;
-	class Tavor_base_F {
+	class Tavor_base_F : Rifle_Base_F {
 		magazines[] = {
 			"20Rnd_556x45_UW_mag",
 			"30Rnd_556x45_Stanag",
@@ -75,7 +77,7 @@ class CfgWeapons {
 			"AGM_30Rnd_556x45_Stanag_AP"
 		};
 	};
-	class mk20_base_F {
+	class mk20_base_F : Rifle_Base_F {
 		magazines[] = {
 			"30Rnd_556x45_Stanag",
 			"30Rnd_556x45_Stanag_Tracer_Red",
@@ -86,7 +88,7 @@ class CfgWeapons {
 			"AGM_30Rnd_556x45_Stanag_AP"
 		};
 	};
-	class SDAR_base_F {
+	class SDAR_base_F : Rifle_Base_F {
 		magazines[] = {
 			"30Rnd_556x45_Stanag",
 			"30Rnd_556x45_Stanag_Tracer_Red",
