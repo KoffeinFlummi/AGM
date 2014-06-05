@@ -1,19 +1,4 @@
 
-// TMR Dispersion values.
-// Based on the general specifications of the corresponding real world weapon
-// plus a bit of inaccuracy to reflect that it's a service rifle,
-// not a finely tuned civilian weapon (except for Marksman rifles).
-
-// Full auto dispersion is increased even though fire mode 
-// obviously doesn't affect inherent accuracy.
-
-// What it does affect is trigger pull, and a sloppy full auto
-// trigger is easily worth the increase in dispersion here even
-// when firing single shots with Auto selected.
-// That's what I think.
-
-// Use Wolfram Alpha to convert radians to MOA easily.
-
 class Mode_SemiAuto;
 class Mode_FullAuto;
 
@@ -34,24 +19,6 @@ class CfgWeapons {
 			"100Rnd_65x39_caseless_mag",
 			"100Rnd_65x39_caseless_mag_Tracer"
 		};
-
-		class Single : Mode_SemiAuto {
-			dispersion = 0.000800; // radians. Equal to 2.75 MOA.
-			// Based on widely cited 2 MOA figure for new 5.56 ACR.
-		};
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
-	};
-
-	class arifle_MX_SW_Base_F : arifle_MX_Base_F {
-		class Single : Single {
-			dispersion = 0.000800; // radians. Equal to 2.75 MOA.
-			// Based on widely cited 2 MOA figure for new 5.56 ACR.
-		};
-		class manual : FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
 	};
 
 	class arifle_MX_SW_F : arifle_MX_SW_Base_F {
@@ -63,16 +30,6 @@ class CfgWeapons {
 			"AGM_30Rnd_65x39_caseless_mag_AP",
 			"100Rnd_65x39_caseless_mag",
 			"100Rnd_65x39_caseless_mag_Tracer"
-		};
-	};
-
-	class arifle_MXM_Base_F : arifle_MX_Base_F {
-		class Single : Single {
-			dispersion = 0.00029; // radians. Equal to 1 MOA.
-			// 6.5mm is easily capable of this in a half-tuned rifle.
-		};
-		class FullAuto : FullAuto {
-			dispersion = 0.000800; // radians. Equal to 2.75 MOA.
 		};
 	};
 
@@ -99,68 +56,48 @@ class CfgWeapons {
 			"AGM_30Rnd_65x39_caseless_green_mag_SD",
 			"AGM_30Rnd_65x39_caseless_green_mag_AP"
 		};
-
-		class Single : Mode_SemiAuto {
-			dispersion = 0.000800; // radians. Equal to 2.75 MOA.
-			// Based on widely cited 2 MOA figure for new 5.56 ACR?
-			// Use your imagination for fictional weapons!
-		};
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
 	};
 
 
 	/* Other */
 
-	class LMG_Mk200_F : Rifle_Long_Base_F {
-		class manual : Mode_FullAuto {
-			dispersion = 0.00175; // radians. Equal to 6 MOA.
+	class LMG_Mk200_F;
+	class LMG_Zafir_F;
+	class Tavor_base_F {
+		magazines[] = {
+			"20Rnd_556x45_UW_mag",
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_Stanag_Tracer_Red",
+			"30Rnd_556x45_Stanag_Tracer_Green",
+			"30Rnd_556x45_Stanag_Tracer_Yellow",
+			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+			"AGM_30Rnd_556x45_Stanag_SD",
+			"AGM_30Rnd_556x45_Stanag_AP"
 		};
-		class Single : manual {
-			dispersion = 0.00175; // radians. Equal to 6 MOA.
+	};
+	class mk20_base_F {
+		magazines[] = {
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_Stanag_Tracer_Red",
+			"30Rnd_556x45_Stanag_Tracer_Green",
+			"30Rnd_556x45_Stanag_Tracer_Yellow",
+			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+			"AGM_30Rnd_556x45_Stanag_SD",
+			"AGM_30Rnd_556x45_Stanag_AP"
+		};
+	};
+	class SDAR_base_F {
+		magazines[] = {
+			"30Rnd_556x45_Stanag",
+			"30Rnd_556x45_Stanag_Tracer_Red",
+			"30Rnd_556x45_Stanag_Tracer_Green",
+			"30Rnd_556x45_Stanag_Tracer_Yellow",
+			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+			"AGM_30Rnd_556x45_Stanag_SD",
+			"AGM_30Rnd_556x45_Stanag_AP"
 		};
 	};
 
-	class LMG_Zafir_F : Rifle_Long_Base_F {
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00175; // radians. Equal to 6 MOA.
-		};
-		class Single : Mode_SemiAuto {
-			dispersion = 0.00175; // radians. Equal to 6 MOA.
-		};
-	};
-
-	class Tavor_base_F : Rifle_Base_F {
-		class Single : Mode_SemiAuto {
-			dispersion = 0.000727; // radians. Equal to 2.5 MOA, about the limit of mass-produced M855.
-			// 
-		};
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
-	};
-
-	class mk20_base_F : Rifle_Base_F {
-		class Single : Mode_SemiAuto {
-			dispersion = 0.0008727; // radians. Equal to 3 MOA, about the limit of mass-produced M855 plus
-			// some extra for these worn out Greek Army service rifles.
-		};
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
-	};
-
-	class SDAR_base_F : Rifle_Base_F {
-		class Single : Mode_SemiAuto {
-			dispersion = 0.0008727; // radians. Equal to 3 MOA, about the limit of mass-produced M855 plus
-			// some extra because Kel-Tec.
-		};
-		class FullAuto : Mode_FullAuto {
-			dispersion = 0.00147; // radians. Equal to 5.1 MOA.
-		};
-	};
-		
 
 	/* Silencers */
 	class ItemCore;
