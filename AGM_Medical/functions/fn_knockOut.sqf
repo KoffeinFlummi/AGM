@@ -68,7 +68,6 @@ _unit spawn {
     waitUntil {isTouchingGround _this};
     sleep 1;
   };
-  _this setVariable ["AGM_Position", (getPosASL _this), true];
   _this enableSimulation false;
 };
 
