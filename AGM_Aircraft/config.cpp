@@ -110,6 +110,7 @@ class CfgWeapons {
     class manual: manual {
       reloadTime = 0.04;
       dispersion = 0.0022;
+      displayName = "XM301";
     };
     class medium: medium {
       reloadTime = 0.04;
