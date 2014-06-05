@@ -22,6 +22,7 @@ class CfgFunctions {
       class recoil;
       class stumble;
       class vision;
+      class module;
     };
   };
 };
@@ -66,3 +67,26 @@ FrequencyMax = 1.0;
 TotalLoadCoef = 1.1;
 MaxDuty = 10;
 */
+
+class CfgVehicles {
+  class Module_F;
+  class AGM_ModuleFatigue: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Fatigue System";
+    function = "AGM_Fatigue_fnc_module";
+    scope = 2;
+    class Arguments {
+      class CoefFatigue {
+        displayName = "Getting Tired Coef.";
+        description = "Multiplier for the rate of getting tired. Default: 1";
+        defaultValue = 1;
+      };
+      class CoefRecover {
+        displayName = "Recover Coef.";
+        description = "Multiplier for the time to rest after getting tired. Default: 1";
+        defaultValue = 1;
+      };
+    };
+  };
+};

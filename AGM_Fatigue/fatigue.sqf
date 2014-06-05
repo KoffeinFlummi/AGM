@@ -5,13 +5,14 @@
 #define THRESHOLD_2 0.9
 #define THRESHOLD_3 0.99
 
+_fatigue = getFatigue player;
+
 _handleRecoil = 0 spawn {};
 _handleBlinking = 0 spawn {};
 _handleHeartbeat = 0 spawn {};
 _handleStumble = 0 spawn {};
 
-waitUntil {
-	_fatigue = getFatigue player;
+while {true} do {
 	if (_fatigue > THRESHOLD_1) then {
 		if (scriptDone _handleHeartbeat) then {
 			_handleHeartbeat = call AGM_Fatigue_fnc_heartbeat;
@@ -29,10 +30,20 @@ waitUntil {
 		};
 	};
 
-	sleep 1;
+	sleep 0.5;
 
 	_fatigueNew = getFatigue player;
-	player setFatigue (_fatigue - RECOVER_RATE_FACTOR * (_fatigue - _fatigueNew) max _fatigueNew);
 
-	false
+	if (_fatigueNew > _fatigue) then {
+		_fatigue = _fatigueNew;
+		if !(isNil "AGM_Fatigue_CoefFatigue") then {
+			_fatigue = _fatigue * AGM_Fatigue_CoefFatigue;
+		};
+	} else {
+		_fatigue = _fatigue - RECOVER_RATE_FACTOR * (_fatigue - _fatigueNew);
+		if !(isNil "AGM_Fatigue_CoefRecover") then {
+			_fatigue = _fatigue * AGM_Fatigue_CoefRecover;
+		};
+	};
+	player setFatigue _fatigue;
 };

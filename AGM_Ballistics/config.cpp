@@ -5,7 +5,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F, A3_Weapons_F_EPA_Ammoboxes, A3_Weapons_F_EPB_Ammoboxes, AGM_Core};
+		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
@@ -15,15 +15,8 @@ class CfgPatches {
 };
 
 // EVERYTHING BELOW BELONGS TO TAOSENSAI
-// SOME THINGS MIGHT ALSO BE MADE BY ME - COMMY2
 
-#include <CFG_Ammo.hpp>
-#include <CFG_Magazines.hpp>
-#include <CFG_Weapons.hpp>
-#include <CFG_Vehicles.hpp>
-
-//@todo insert changes in ammo.hpp
-/*class CfgAmmo {
+class CfgAmmo {
   class BulletBase;
 
   class B_65x39_Caseless : BulletBase {
@@ -265,4 +258,4 @@ class CfgWeapons {
     };
   };
     
-};*/
+};
