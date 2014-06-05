@@ -51,7 +51,7 @@ class CfgWeapons {
   class AGM_launch_NLAW_Used_F: launch_NLAW_F {
     //displayName = "";       // @todo String table
     //descriptionShort = "";  // @todo String table
-    magazines[] = {"BWA3_UsedTube"};              // This will disable the used launcher class from being fired again.
+    magazines[] = {"AGM_UsedTube_F"};              // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
   };

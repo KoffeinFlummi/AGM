@@ -26,8 +26,8 @@ class CfgFunctions {
 
 class Extended_Init_EventHandlers {
   class CAManBase {
-    class AGM_giveSpareBarrel {
-      clientInit = "_this spawn {sleep 0.1; _ammo = getText (configFile >> 'CfgMagazines' >> currentMagazine player >> 'ammo'); if (getNumber (configFile >> 'CfgAmmo' >> _ammo >> 'audiblefire') > 8) then {(_this select 0) addItem 'AGM_EarBuds'}}"; 
+    class AGM_giveEarBuds {
+      clientInit = "if (_this select 0 != player) then {_this spawn {sleep 0.1; _ammo = getText (configFile >> 'CfgMagazines' >> currentMagazine player >> 'ammo'); if (getNumber (configFile >> 'CfgAmmo' >> _ammo >> 'audiblefire') > 8) then {player addItem 'AGM_EarBuds'}; systemChat 'hi'}}"; 
     };
   };
 };
