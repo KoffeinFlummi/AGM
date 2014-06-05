@@ -15,7 +15,7 @@ _position = eyePos _firer;
 _direction = _firer weaponDirection currentWeapon _firer;
 
 if (_unit == _firer) then {
-	_distance = [_position, _direction, _backblastRange] call AGM_Backblast_getDistance;
+	_distance = [_position, _direction, _backblastRange] call AGM_Backblast_fnc_getDistance;
 
 	if (_distance < _backblastRange) then {
 		_alpha = sqrt (1 - _distance / _backblastRange);
@@ -34,7 +34,7 @@ if (_unit == _firer) then {
 	_inclination = asin (_direction select 2);
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [_position, _relativePosition] call AGM_Backblast_getDirectionVector;
+	_relativeDirection = [_position, _relativePosition] call AGM_Backblast_fnc_getDirectionVector;
 
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);

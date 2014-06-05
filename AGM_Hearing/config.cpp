@@ -26,7 +26,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Hearing {
-    clientInit = "execVM '\AGM_Hearing\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Hearing\clientInit.sqf'";
   };
 };
 

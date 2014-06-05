@@ -18,7 +18,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Recoil {
-    clientInit = "call compile preProcessFileLineNumbers '\AGM_Recoil\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Recoil\clientInit.sqf'";
   };
 };
 

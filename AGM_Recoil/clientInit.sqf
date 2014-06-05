@@ -7,7 +7,7 @@ agm_recoil = false;
 // -------------------------------------------------------------------------------
 // Fired EH for rifles.
 // -------------------------------------------------------------------------------
-AGM_Recoil_fnc_firedEH = {
+AGM_Recoil_fnc_firedEH = {systemChat "test";
   _unit = _this select 0;
   _weaponType = _this select 1;
   _ammoType = _this select 5;

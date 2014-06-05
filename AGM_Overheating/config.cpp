@@ -21,15 +21,13 @@ class CfgPatches {
 class CfgFunctions {
   class AGM_Overheating {
     class AGM_Overheating {
-        file = "\AGM_Overheating\functions";
-      class firedEH {};
+      file = "\AGM_Overheating\functions";
+      //class checkTemperature;
+      //class checkTemperatureCallback;
+      class checkTemperatureQuick;
+      class swapBarrel;
+      class swapBarrelCallback;
     };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Overheating {
-    clientInit = "execVM '\AGM_Overheating\init.sqf'";
   };
 };
 
@@ -44,7 +42,7 @@ class Extended_Init_EventHandlers {
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheating {
-      clientFired = "if (player == (_this select 0)) then {_this call AGM_Overheating_fnc_firedEH}";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_firedEH}";
     };
   };
 };
@@ -53,7 +51,7 @@ class AGM_Core_Default_Keys {
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
-    statement = "[currentWeapon player] spawn AGM_Overheating_CheckTemperatureQuick";
+    statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperatureQuick";
     key = 20;
     shift = 1;
     control = 0;

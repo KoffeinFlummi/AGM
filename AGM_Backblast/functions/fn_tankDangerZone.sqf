@@ -21,7 +21,7 @@ if (_unit != _vehicle) then {
 	_inclination = asin (_direction select 2);
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [_position, _relativePosition] call AGM_Backblast_getDirectionVector;
+	_relativeDirection = [_position, _relativePosition] call AGM_Backblast_fnc_getDirectionVector;
 
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
