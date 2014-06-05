@@ -53,10 +53,10 @@ AGM_NewStrength = 0;
     // needed until Bohemia fixes playSound to actually use the second argument
     _volume = (_clampedDeafness * _clampedDeafness) max 0.1;
 
-    // Earplugs reduce hearing 50%
+    // Earplugs reduce hearing 20%
     if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
-      if (_volume > 0.50) then {
-        _volume = 0.50;
+      if (_volume > 0.8) then {
+        _volume = 0.8;
       };
     };
 
