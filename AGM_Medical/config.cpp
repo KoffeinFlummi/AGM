@@ -370,8 +370,8 @@ class CfgVehicles {
   class Module_F;
   class AGM_ModuleMedical: Module_F {
     author = "AGM Team";
-    category = "AGM"; // LEAVE ME ALONE
-    displayName = "Medical Module";
+    category = "AGM";
+    displayName = "Medical System";
     function = "AGM_Medical_fnc_module";
     scope = 2;
     class Arguments {
