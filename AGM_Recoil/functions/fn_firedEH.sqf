@@ -3,15 +3,15 @@
 // Edited prefixes for compatability in AGM_Realism by KoffeinFlummi
 // Edited by commy2
 
-#define BASE_POWER 0.35*2
-#define BASE_TIME 0.18*2
+#define BASE_POWER 0.35
+#define BASE_TIME 0.18
 #define BASE_FREQ 13
 
 _weapon = _this select 1;
 _projectile = _this select 5;
 _ammo = _this select 6;
 
-// add cam shake
+// add camshake
 if (_weapon == primaryWeapon player) then {
     _powerMod = [0, -0.1, -0.2, 0] select (["STAND", "CROUCH", "PRONE", "UNDEFINED"] find stance player);
     _timeMod = 0;
@@ -23,9 +23,9 @@ if (_weapon == primaryWeapon player) then {
     if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.1};
 
     addcamshake [
-        (_powerCoef * BASE_POWER + _powerMod) max 0,
-        (BASE_TIME + _timeMod) max 0,
-        (BASE_FREQ + _freqMod) max 0
+        _powerCoef * (BASE_POWER + _powerMod) max 0,
+        BASE_TIME + _timeMod max 0,
+        BASE_FREQ + _freqMod max 0
     ];
 };
 
