@@ -58,10 +58,17 @@ class Extended_Fired_EventHandlers {
 
  // 0.114 +AGM_RSD
 class CfgRecoils {
-  agm_recoil_single_mx[] =             {0, 0.014, 0.024+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0069+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_auto_mx[] =               {0, 0.014, 0.024+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0072+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_single_prone_mx[] =       {0, 0.014, 0.011+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0036+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_auto_prone_mx[] =         {0, 0.014, 0.011+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0038+AGM_RCT, 0.135+AGM_RSD, 0, 0};
+  /*
+  agm_recoil_single_mx[] =             {0,0.014,0.024+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0069+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_auto_mx[] =               {0,0.014,0.024+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0072+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_single_prone_mx[] =       {0,0.014,0.011+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0036+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_auto_prone_mx[] =         {0,0.014,0.011+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0038+AGM_RCT, 0.135+AGM_RSD,0,0};
+  */
+
+  agm_recoil_single_mx[] =             {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_auto_mx[] =               {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_single_prone_mx[] =       {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_auto_prone_mx[] =         {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
 
   agm_recoil_single_katiba[] =         {0, 0.014, 0.022+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.078+AGM_RSD, 0, -0.0068+AGM_RCT, 0.135+AGM_RSD, 0, 0};
   agm_recoil_auto_katiba[] =           {0, 0.014, 0.022+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.078+AGM_RSD, 0, -0.0071+AGM_RCT, 0.135+AGM_RSD, 0, 0};
