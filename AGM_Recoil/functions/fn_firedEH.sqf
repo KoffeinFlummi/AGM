@@ -3,11 +3,9 @@
 // Edited prefixes for compatability in AGM_Realism by KoffeinFlummi
 // Edited by commy2
 
-#define BASE_POWER 0.35
-#define BASE_TIME 0.18
+#define BASE_POWER 0.35*2
+#define BASE_TIME 0.18*2
 #define BASE_FREQ 13
-
-systemChat "test";
 
 _weapon = _this select 1;
 _projectile = _this select 5;
@@ -20,15 +18,14 @@ if (_weapon == primaryWeapon player) then {
     _freqMod = 0;
 
     _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
-    if (_powerCoef == 0) exitWith {};
 
     if (AGM_weaponRested) then {_powerMod = _powerMod - 0.1};
     if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.1};
 
     addcamshake [
-        _powerCoef * BASE_POWER + _powerMod,
-        BASE_TIME + _timeMod,
-        BASE_FREQ + _freqMod
+        (_powerCoef * BASE_POWER + _powerMod) max 0,
+        (BASE_TIME + _timeMod) max 0,
+        (BASE_FREQ + _freqMod) max 0
     ];
 };
 
