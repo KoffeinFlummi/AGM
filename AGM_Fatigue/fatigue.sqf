@@ -10,26 +10,20 @@ _handleBlinking = 0 spawn {};
 _handleHeartbeat = 0 spawn {};
 _handleStumble = 0 spawn {};
 
-/*
-if (scriptDone _handleRecoil) then {
-	_handleRecoil = [1.5, THRESHOLD_2 - 1] spawn AGM_Fatigue_recoil;
-};
-*/
-
 waitUntil {
 	_fatigue = getFatigue player;
 	if (_fatigue > THRESHOLD_1) then {
 		if (scriptDone _handleHeartbeat) then {
-			_handleHeartbeat = 0 spawn AGM_Fatigue_heartbeat;
+			_handleHeartbeat = call AGM_Fatigue_fnc_heartbeat;
 		};
 		if (_fatigue > THRESHOLD_2) then {
 			if (scriptDone _handleBlinking) then {
-				_handleBlinking = 0 spawn AGM_Fatigue_blinking;
+				_handleBlinking = call AGM_Fatigue_fnc_blinking;
 			};
 
 			if (_fatigue > THRESHOLD_3) then {
 				if (scriptDone _handleStumble) then {
-					_handleStumble = 0 spawn AGM_Fatigue_stumble;
+					_handleStumble = call AGM_Fatigue_fnc_stumble;
 				};
 			};
 		};
