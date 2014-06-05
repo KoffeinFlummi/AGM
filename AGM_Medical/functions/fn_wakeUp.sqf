@@ -23,6 +23,8 @@ _unit enableAI "FSM";
 _unit setVariable ["AGM_Unconscious", false, true];
 _unit setVariable ["AGM_CanTreat", true, true];
 
+_position = getPosASL _unit;
+
 [_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
 
 [-2, {
@@ -45,8 +47,10 @@ _unit setVariable ["AGM_CanTreat", true, true];
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 
-_unit spawn {
-  waitUntil {simulationEnabled _this};
-  _this setPosASL (_this getVariable "AGM_Position");
+[_unit, _position] spawn {
+  _unit = _this select 0;
+  _position = _this select 1;
+  waitUntil {simulationEnabled _unit};
+  _unit setPosASL _position;
 };
 _unit setCaptive false;
