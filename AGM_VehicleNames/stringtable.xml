@@ -349,13 +349,13 @@
       <Russian>ZSU-39 Tigris</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_APC_Wheeled_02_rcws_Name">
-      <English>Arma</English>
-      <German>Arma</German>
-      <Spanish>Arma</Spanish>
-      <Polish>Arma</Polish>
-      <Czech>Arma</Czech>
-      <French>Arma</French>
-      <Russian>Arma</Russian>
+      <English>ARMA</English>
+      <German>ARMA</German>
+      <Spanish>ARMA</Spanish>
+      <Polish>ARMA</Polish>
+      <Czech>ARMA</Czech>
+      <French>ARMA</French>
+      <Russian>ARMA</Russian>
     </Key>
 
     <Key ID="STR_AGM_VehicleNames_Truck_03_transport_Name">
