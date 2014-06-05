@@ -13,7 +13,6 @@
 private ["_unit", "_position"];
 
 _unit = _this select 0;
-_position = getPos _unit;
 
 _unit enableAI "MOVE";
 _unit enableAI "ANIM";
@@ -46,5 +45,8 @@ _unit setVariable ["AGM_CanTreat", true, true];
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 
-_unit setPos _position;
+_unit spawn {
+  waitUntil {simulationEnabled _this};
+  _this setPosASL (_this getVariable "AGM_Position");
+};
 _unit setCaptive false;

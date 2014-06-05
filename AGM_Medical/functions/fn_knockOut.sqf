@@ -64,8 +64,11 @@ if (vehicle _unit != _unit) then {
 
 _unit spawn {
   sleep 3.8;
-  waitUntil {isTouchingGround _this};
-  sleep 0.2;
+  if !(isTouchingGround _this) then {
+    waitUntil {isTouchingGround _this};
+    sleep 1;
+  };
+  _this setVariable ["AGM_Position", (getPosASL _this), true];
   _this enableSimulation false;
 };
 

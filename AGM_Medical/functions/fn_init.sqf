@@ -32,6 +32,7 @@ AGM_Medical_unitInit = {
   };
 
   _this setCaptive false;
+  _this setVariable ["AGM_Position", [0,0,0], false]; // Position where unit was incapacitated
   _this setVariable ["AGM_Diagnosed", false, true];   // Is the unit diagnosed?
   _this setVariable ["AGM_CanTreat", true, false];    // Can unit treat others?
   _this setVariable ["AGM_Treatable", true, true];    // Can unit be treated/diagnosed?
