@@ -63,7 +63,7 @@ class CfgSounds {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
-    Init = "execVM '\AGM_Core\init.sqf'";
+    Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
   };
 };
 

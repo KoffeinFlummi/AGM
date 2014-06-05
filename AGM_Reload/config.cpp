@@ -13,9 +13,12 @@ class CfgPatches {
   };
 };
 
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class AGM_Reload {
-    clientInit = "execVM '\AGM_Reload\init.sqf'";
+    class AGM_Reload {
+      file = "\AGM_Reload\functions";
+      class checkAmmo;
+    };
   };
 };
 
@@ -23,7 +26,7 @@ class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
     condition = "player == _vehicle";
-    statement = "[currentWeapon player] spawn AGM_Reload_CheckAmmo";
+    statement = "[currentWeapon player] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 1;
     control = 0;

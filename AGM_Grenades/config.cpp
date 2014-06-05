@@ -16,14 +16,15 @@ class CfgFunctions {
   class AGM_Grenades {
     class AGM_Grenades {
       file = "\AGM_Grenades\functions";
-      class firedEH {};
+      class firedEH;
+      class nextMode;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Grenades {
-    clientInit = "execVM '\AGM_Grenades\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Grenades\clientInit.sqf'";
   };
 };
 
@@ -39,7 +40,7 @@ class AGM_Core_Default_Keys {
   class switchGrenadeMode {
     displayName = "$STR_AGM_Grenades_SwitchGrenadeMode";
     condition = "player == vehicle player";
-    statement = "call AGM_Grenades_nextMode";
+    statement = "call AGM_Grenades_fnc_nextMode";
     key = 34;
     shift = 0;
     control = 0;

@@ -27,5 +27,7 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
 	};
 };
 
-sleep 1;
-player setVariable ["AGM_Name", (name player), true];
+0 spawn {
+	sleep 1;
+	player setVariable ["AGM_Name", name player, true];
+};

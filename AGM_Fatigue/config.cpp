@@ -13,18 +13,22 @@ class CfgPatches {
   };
 };
 
-/*class CfgFunctions {
+class CfgFunctions {
   class AGM_Fatigue {
     class AGM_Fatigue {
       file = "AGM_Fatigue\functions";
-      class bandage;
+      class blinking;
+      class heartbeat;
+      class recoil;
+      class stumble;
+      class vision;
     };
   };
-};*/
+};
 
 class Extended_PostInit_EventHandlers {
   class AGM_Fatigue {
-    clientInit = "execVM '\AGM_Fatigue\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Fatigue\clientInit.sqf'";
   };
 };
 

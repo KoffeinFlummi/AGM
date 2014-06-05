@@ -27,9 +27,18 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_Aircraft {
+    class AGM_Aircraft {
+      file = "AGM_Aircraft\functions";
+      class autopilot;
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_Aircraft {
-    clientInit = "execVM '\AGM_aircraft\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_aircraft\clientInit.sqf'";
   };
 };
 
@@ -37,7 +46,7 @@ class Extended_PostInit_EventHandlers {
   class autopilot {
     displayName = "Autopilot";
     conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Plane'}";
-    statementUp = "[_vehicle] spawn AGM_Aircraft_autopilot";
+    statementUp = "[_vehicle] call AGM_Aircraft_fnc_autopilot";
     key = 211;
     shift = 0;
     control = 0;

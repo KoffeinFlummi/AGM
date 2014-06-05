@@ -40,7 +40,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_FCS {
-    clientInit = "execVM '\AGM_FireControlSystem\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_FireControlSystem\clientInit.sqf'";
   };
 };
 
