@@ -25,7 +25,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_NightVision {
-    clientInit = "execVM '\AGM_nightvision\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_nightvision\clientInit.sqf'";
   };
 };
 

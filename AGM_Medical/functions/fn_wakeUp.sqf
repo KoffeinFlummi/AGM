@@ -13,7 +13,6 @@
 private ["_unit", "_position"];
 
 _unit = _this select 0;
-_position = getPos _unit;
 
 _unit enableAI "MOVE";
 _unit enableAI "ANIM";
@@ -24,11 +23,12 @@ _unit enableAI "FSM";
 _unit setVariable ["AGM_Unconscious", false, true];
 _unit setVariable ["AGM_CanTreat", true, true];
 
+_position = getPosASL _unit;
+
 [_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
 
 [-2, {
   if (_this == player) then {
-    //[1, "BLACK", 1, 1] call BIS_fnc_FadeEffect;
     AGM_UnconsciousCC ppEffectEnable false;
     AGM_UnconsciousCC ppEffectCommit 1;
     AGM_UnconsciousRB ppEffectEnable false;
@@ -47,5 +47,10 @@ _unit setVariable ["AGM_CanTreat", true, true];
   _this switchMove "amovppnemstpsnonwnondnon";
 }, _unit] call CBA_fnc_globalExecute;
 
-_unit setPos _position;
+[_unit, _position] spawn {
+  _unit = _this select 0;
+  _position = _this select 1;
+  waitUntil {simulationEnabled _unit};
+  _unit setPosASL _position;
+};
 _unit setCaptive false;

@@ -40,7 +40,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_FCS {
-    clientInit = "execVM '\AGM_FireControlSystem\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_FireControlSystem\clientInit.sqf'";
   };
 };
 
@@ -84,6 +84,7 @@ class CfgVehicles {
   class Car: LandVehicle {};
   class Car_F: Car {};
   class Wheeled_APC_F: Car_F {};
+  class Helicopter_Base_F;
 
   // REMOVE STANDARD ZEROING FOR AFFECTED VEHICLES
 
@@ -120,6 +121,11 @@ class CfgVehicles {
   };
   class B_MBT_01_mlrs_base_F;
   class B_MBT_01_arty_base_F;
+  class Heli_Attack_01_base_F: Helicopter_Base_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
 
   // Independent Inheritance
   class MBT_03_base_F: Tank_F {
@@ -175,6 +181,11 @@ class CfgVehicles {
     };
   };
   class O_MBT_02_arty_base_F;
+  class Heli_Attack_02_base_F: Helicopter_Base_F {
+    class Turrets {
+      class MainTurret;
+    };
+  };
 
   // BLUFOR
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
@@ -221,6 +232,18 @@ class CfgVehicles {
   };
   class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
     AGM_FCSEnabled = 0;
+  };
+  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
   };
 
   // Independent
@@ -278,5 +301,29 @@ class CfgVehicles {
   class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
     AGM_FCSEnabled = 0;
   };
-
+  class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  
 };

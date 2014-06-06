@@ -27,7 +27,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Interaction {
-    clientInit = "execVM '\AGM_Interaction\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Interaction\clientInit.sqf'";
   };
 };
 

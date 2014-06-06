@@ -23,7 +23,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Goggles {
-    clientInit = "execVM '\AGM_goggles\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_goggles\clientInit.sqf'";
   };
 };
 

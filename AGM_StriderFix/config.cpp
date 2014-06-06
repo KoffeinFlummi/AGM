@@ -12,9 +12,18 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_StriderFix {
+    class AGM_StriderFix {
+      file = "AGM_StriderFix\functions";
+      class displayAzimuth;
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_StriderFix {
-    clientInit = "execVM '\AGM_StriderFix\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_StriderFix\clientInit.sqf'";
   };
 };
 

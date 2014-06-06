@@ -24,9 +24,17 @@ class CfgFunctions {
   };
 };
 
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_giveEarBuds {
+      clientInit = "if (_this select 0 != player) then {_this spawn {sleep 0.1; _ammo = getText (configFile >> 'CfgMagazines' >> currentMagazine player >> 'ammo'); if (getNumber (configFile >> 'CfgAmmo' >> _ammo >> 'audiblefire') > 8) then {player addItem 'AGM_EarBuds'}}}"; 
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_Hearing {
-    clientInit = "execVM '\AGM_Hearing\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Hearing\clientInit.sqf'";
   };
 };
 

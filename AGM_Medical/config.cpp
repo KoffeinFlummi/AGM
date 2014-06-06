@@ -41,10 +41,12 @@ class CfgFunctions {
       class forceProne;
       class handleDamage;
       class init;
+      class isDiagnosed;
       class isInMedicalVehicle;
       class isMedic;
       class knockOut;
       class loadIntoVehicle;
+      class module;
       class morphine;
       class release;
       class setHitPointDamage;
@@ -156,63 +158,63 @@ class CfgVehicles {
         };
         class AGM_Morphine {
           displayName = "$STR_AGM_Medical_Inject_Morphine";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Morphine' in itemsWithMagazines player";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Morphine' in itemsWithMagazines player";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_morphine;";
           showDisabled = 1;
           priority = 0.9;
         };
         class AGM_Epipen {
           displayName = "$STR_AGM_Medical_Inject_Epinephrine";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Epipen' in itemsWithMagazines player and AGM_Interaction_Target getVariable 'AGM_Unconscious'";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Epipen' in itemsWithMagazines player and AGM_Interaction_Target getVariable 'AGM_Unconscious'";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_epinephrine;";
           showDisabled = 1;
           priority = 0.8;
         };
         class AGM_BloodBag {
           displayName = "$STR_AGM_Medical_Transfuse_Blood";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Bloodbag' in itemsWithMagazines player and (AGM_Interaction_Target getVariable 'AGM_Blood' < 0.7)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Bloodbag' in itemsWithMagazines player and (AGM_Interaction_Target getVariable 'AGM_Blood' < 0.7)";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_bloodbag;";
           showDisabled = 1;
           priority = 0.7;
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitHead' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitHead' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitHead'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.6;
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitBody' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitBody' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.5;
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftArm' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftArm' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.4;
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightArm' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightArm' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.3;
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftLeg' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitLeftLeg' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.2;
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
-          condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightLeg' > 0.01)";
+          condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and 'AGM_Bandage' in itemsWithMagazines player and alive AGM_Interaction_Target and AGM_Interaction_Target != player and (AGM_Interaction_Target getHitPointDamage 'HitRightLeg' > 0.01)";
           statement = "[AGM_Interaction_Target, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           showDisabled = 1;
           priority = 0.15;
@@ -332,7 +334,6 @@ class CfgVehicles {
   };
 
   class Box_NATO_Support_F;
-
   class AGM_Box_Medical: Box_NATO_Support_F {
     author = "AGM";
     displayName = "$STR_AGM_Medical_MedicalSupplies";
@@ -363,6 +364,108 @@ class CfgVehicles {
         count = 16;
         name = "AGM_Bloodbag";
       };
+    };
+  };
+
+  class Module_F;
+  class AGM_ModuleMedical: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Medical System";
+    function = "AGM_Medical_fnc_module";
+    scope = 2;
+    class Arguments {
+      class CoefBleeding {
+        displayName = "Bleeding Speed Coef.";
+        description = "Multiplier for the rate of bleeding. Default: 1 (obviously)";
+        defaultValue = 1;
+      };
+      class CoefPain {
+        displayName = "Pain Effect Coef.";
+        description = "Multiplier for the intensity of the pain PP effect. Default: 1 (obviously)";
+        defaultValue = 1;
+      };
+      class AllowNonmedics {
+        displayName = "Allow non-medics?";
+        description = "Allow non-medics to use epipens and bloodbags? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class PunishNonMedics {
+        displayName = "Punish non-medics?";
+        description = "Increase the time it takes to complete actions for non-medics? Default: Yes";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            default = 1;
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class RequireDiagnosis {
+        displayName = "Require diagnosis?";
+        description = "Require an unconscious patient to be diagnosed before allowing treatment? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class PreventInstaDeath {
+        displayName = "Prevent instant death?";
+        description = "Prevent instant death and always put players in unconscious state instead? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class PreventDeathWhileUnconscious {
+        displayName = "Prevent death while unconscious?";
+        description = "Make unconscious units invulnerable? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+
     };
   };
 };

@@ -14,18 +14,19 @@ class CfgPatches {
   };
 };
 
-// EVERYTHING BELOW BELONGS TO TAOSENSAI, PREFIXES EDITED FOR COMPATABILITY
-
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class AGM_Recoil {
-    clientInit = "call compile preProcessFileLineNumbers '\AGM_Recoil\init.sqf'";
+    class AGM_Recoil {
+      file = "\AGM_Recoil\functions";
+      class firedEH;
+    };
   };
 };
 
-class Extended_FiredBIS_EventHandlers {
+class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Recoil {
-      clientFiredBISPlayer = "_this call AGM_Recoil_fnc_firedEH";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_firedEH}";
     };
   };
 };
@@ -54,13 +55,19 @@ class Extended_FiredBIS_EventHandlers {
 // Global recovery downward muzzle movement.
 #define AGM_RCT -0.0028
 
-
  // 0.114 +AGM_RSD
 class CfgRecoils {
-  agm_recoil_single_mx[] =             {0, 0.014, 0.024+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0069+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_auto_mx[] =               {0, 0.014, 0.024+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0072+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_single_prone_mx[] =       {0, 0.014, 0.011+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0036+AGM_RCT, 0.135+AGM_RSD, 0, 0};
-  agm_recoil_auto_prone_mx[] =         {0, 0.014, 0.011+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.081+AGM_RSD, 0, -0.0038+AGM_RCT, 0.135+AGM_RSD, 0, 0};
+  /*
+  agm_recoil_single_mx[] =             {0,0.014,0.024+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0069+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_auto_mx[] =               {0,0.014,0.024+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0072+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_single_prone_mx[] =       {0,0.014,0.011+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0036+AGM_RCT, 0.135+AGM_RSD,0,0};
+  agm_recoil_auto_prone_mx[] =         {0,0.014,0.011+AGM_MC, 0.048+AGM_RSD,0,0, 0.081+AGM_RSD,0,-0.0038+AGM_RCT, 0.135+AGM_RSD,0,0};
+  */
+
+  agm_recoil_single_mx[] =             {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_auto_mx[] =               {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_single_prone_mx[] =       {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
+  agm_recoil_auto_prone_mx[] =         {0,0.07,0.01, 0.1,0,0, 0.15,-0.05,-0.005, 0.2,0,0};
 
   agm_recoil_single_katiba[] =         {0, 0.014, 0.022+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.078+AGM_RSD, 0, -0.0068+AGM_RCT, 0.135+AGM_RSD, 0, 0};
   agm_recoil_auto_katiba[] =           {0, 0.014, 0.022+AGM_MC, 0.048+AGM_RSD, 0, 0, 0.078+AGM_RSD, 0, -0.0071+AGM_RCT, 0.135+AGM_RSD, 0, 0};
@@ -111,7 +118,6 @@ class CfgCameraShake {
   // What does this do, really? It seems like the engine no longer respects it.
   defaultCaliberCoefWeaponFire = 0;
 };
-
 
 // Completely disable BI's camshake on fire.
 #define AGM_CAMSHAKEFIRE_BASE 0
@@ -184,6 +190,8 @@ class CfgMovesMaleSdr : CfgMovesBasic {
   };
 };
 
+#include <CamShakeConfig.hpp>
+
 class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
@@ -200,7 +208,7 @@ class CfgWeapons {
   class Rifle_Base_F;
 
   class arifle_MX_Base_F : Rifle_Base_F {        
-    agm_recoil_shakeMultiplier = 1;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
@@ -213,7 +221,7 @@ class CfgWeapons {
   };
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
-    agm_recoil_shakeMultiplier = 0.95;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX_SW;
     class Single : Single {
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
@@ -226,7 +234,7 @@ class CfgWeapons {
   };
 
   class arifle_katiba_Base_F : Rifle_Base_F {        
-    agm_recoil_shakeMultiplier = 1;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_KATIBA;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_katiba";
       recoilProne = "agm_recoil_single_prone_katiba";
@@ -239,7 +247,7 @@ class CfgWeapons {
   };
 
   class mk20_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -252,7 +260,7 @@ class CfgWeapons {
   };
 
   class arifle_Mk20C_F : mk20_base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20C;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -265,7 +273,7 @@ class CfgWeapons {
   };
 
   class Tavor_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_TAVOR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -278,7 +286,7 @@ class CfgWeapons {
   };
 
   class SDAR_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SDAR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -293,7 +301,7 @@ class CfgWeapons {
   ////////////////////////////////////////////////
 
   class SMG_01_Base : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_01;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_vermin";
       recoilProne = "agm_recoil_single_prone_vermin";
@@ -311,7 +319,7 @@ class CfgWeapons {
   };
 
   class SMG_02_Base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_02;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_scorpion";
       recoilProne = "agm_recoil_single_prone_scorpion";
@@ -329,7 +337,7 @@ class CfgWeapons {
   };
 
   class pdw2000_base_F: Rifle_Base_F {
-    agm_recoil_shakeMultiplier = 0.9;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_PDW_2000;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_scorpion";
       recoilProne = "agm_recoil_single_prone_scorpion";
@@ -346,7 +354,7 @@ class CfgWeapons {
   class Rifle_Long_Base_F;
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = 1.1;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_MK200;
     class manual : Mode_FullAuto {
       recoil = "agm_recoil_auto_mk200";
       recoilprone = "agm_recoil_auto_prone_mk200";
@@ -358,7 +366,7 @@ class CfgWeapons {
   };
 
   class LMG_Zafir_F: Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = 1.3;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_ZAFIR;
     class Single: Mode_SemiAuto {
       recoil = "agm_recoil_single_zafir";
       recoilprone = "agm_recoil_single_prone_zafir";
@@ -372,7 +380,7 @@ class CfgWeapons {
   ////////////////////////////////////////////////
 
   class EBR_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = 1.3;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_EBR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_ebr";
       recoilProne = "agm_recoil_single_prone_ebr";
@@ -385,7 +393,7 @@ class CfgWeapons {
   };
 
   class LRR_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = 2.3;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LRR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_lrr";
       recoilProne = "agm_recoil_single_prone_lrr";
@@ -393,7 +401,7 @@ class CfgWeapons {
   };
 
   class GM6_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = 2.3;
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_GM6;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_gm6";
       recoilProne = "agm_recoil_single_prone_gm6";

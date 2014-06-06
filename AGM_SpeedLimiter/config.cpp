@@ -12,9 +12,18 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_SpeedLimiter {
+    class AGM_SpeedLimiter {
+      file = "AGM_SpeedLimiter\functions";
+      class speedLimiter;
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_SpeedLimiter {
-    clientInit = "execVM '\AGM_speedLimiter\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_speedLimiter\clientInit.sqf'";
   };
 };
 
@@ -22,7 +31,7 @@ class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "Speed Limiter";
     conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statementUp = "[_vehicle] spawn AGM_SpeedLimiter_speedLimiter";
+    statementUp = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;

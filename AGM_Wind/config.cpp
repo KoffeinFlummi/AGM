@@ -40,7 +40,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Wind {
-      clientFired = "_this spawn AGM_Wind_fnc_firedEH";
+      clientFired = "_this call AGM_Wind_fnc_firedEH";
     };
   };
 };

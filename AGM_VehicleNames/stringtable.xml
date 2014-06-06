@@ -349,13 +349,13 @@
       <Russian>ZSU-39 Tigris</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_APC_Wheeled_02_rcws_Name">
-      <English>Arma</English>
-      <German>Arma</German>
-      <Spanish>Arma</Spanish>
-      <Polish>Arma</Polish>
-      <Czech>Arma</Czech>
-      <French>Arma</French>
-      <Russian>Arma</Russian>
+      <English>ARMA</English>
+      <German>ARMA</German>
+      <Spanish>ARMA</Spanish>
+      <Polish>ARMA</Polish>
+      <Czech>ARMA</Czech>
+      <French>ARMA</French>
+      <Russian>ARMA</Russian>
     </Key>
 
     <Key ID="STR_AGM_VehicleNames_Truck_03_transport_Name">
@@ -450,13 +450,13 @@
       <Russian>AH-6 Little Bird</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_Plane_CAS_01_Name">
-      <English>A-164 Spacehog</English>
-      <German>A-164 Spacehog</German>
-      <Spanish>A-164 Spacehog</Spanish>
-      <Polish>A-164 Spacehog</Polish>
-      <Czech>A-164 Spacehog</Czech>
-      <French>A-164 Spacehog</French>
-      <Russian>A-164 Spacehog</Russian>
+      <English>A-10D Thunderbolt II</English>
+      <German>A-10D Thunderbolt II</German>
+      <Spanish>A-10D Thunderbolt II</Spanish>
+      <Polish>A-10D Thunderbolt II</Polish>
+      <Czech>A-10D Thunderbolt II</Czech>
+      <French>A-10D Thunderbolt II</French>
+      <Russian>A-10D Thunderbolt II</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_Heli_light_03_Name">
       <English>AW159 Wildcat</English>

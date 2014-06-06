@@ -21,7 +21,24 @@ _ammo = _this select 6;
 if (_weapon in ["Throw", "Put"]) exitWith {};
 if (player != vehicle player and !([player] call AGM_Core_fnc_isTurnedOut)) exitWith {};
 
-_loudness = (getNumber (configFile >> "CfgAmmo" >> _ammo >> "audibleFire")) / 64;
+_silencer = switch (_weapon) do {
+	case (primaryWeapon player) : {primaryWeaponItems player select 0};
+	case (secondaryWeapon player) : {secondaryWeaponItems player select 0};
+	case (handgunWeapon player) : {handgunItems player select 0};
+	default {""};
+};
+
+_audibleFireCoef = 1;
+//_audibleFireTimeCoef = 1;
+if (_silencer != "") then {
+	_audibleFireCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFire");
+	//_audibleFireTimeCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFireTime");
+};
+
+_audibleFire = getNumber (configFile >> "CfgAmmo" >> _ammo >> "audibleFire");
+//_audibleFireTime = getNumber (configFile >> "CfgAmmo" >> _ammo >> "audibleFireTime");
+
+_loudness = _audibleFireCoef * _audibleFire / 64;
 _strength = _loudness - (_loudness/50 * _distance); // linear drop off
 
 if (_strength < 0.01) exitWith {};
