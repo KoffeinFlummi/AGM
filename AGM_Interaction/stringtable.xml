@@ -242,5 +242,9 @@
       <Russian>Снять рюкзак (передний)</Russian>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_YouWereTapped">
+        <English>You were tapped on the shoulder.</English>
+        <Spanish>Te tocaron el hombro.</Spanish>
+    </Key>
   </Package>
 </Project>
