@@ -374,6 +374,7 @@ class CfgVehicles {
     displayName = "Medical System";
     function = "AGM_Medical_fnc_module";
     scope = 2;
+    isGlobal = 1;
     class Arguments {
       class CoefBleeding {
         displayName = "Bleeding Speed Coef.";
