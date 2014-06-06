@@ -305,11 +305,11 @@ class CfgVehicles {
       class AGM_Release_Drag {
         displayName = "$STR_AGM_Medical_Release";
         distance = 4;
-        condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')"
+        condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
       };
       class AGM_Release_Carry: AGM_Release_Drag {
-        condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')"
+        condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
       };
     };
@@ -319,13 +319,13 @@ class CfgVehicles {
   class AllVehicles: All {
     class AGM_Actions {
       class AGM_Unload {
-        displayName = "$STR_AGM_Medical_Unload"
+        displayName = "$STR_AGM_Medical_Unload";
         distance = 6;
         condition = "return = false; {if (_x getVariable 'AGM_Unconscious') exitWith {return = true;};} foreach (crew AGM_Interaction_Target); return and vehicle player == player and !(AGM_Interaction_Target isKindOf 'Man')";
         statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
-        displayName = "$STR_AGM_Medical_Load"
+        displayName = "$STR_AGM_Medical_Load";
         distance = 6;
         condition = "!(AGM_Interaction_Target isKindOf 'Man') and vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man' or (player getVariable 'AGM_Carrying') isKindOf 'Man') and AGM_Interaction_Target emptyPositions 'cargo' > 0";
         statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_loadIntoVehicle;";
