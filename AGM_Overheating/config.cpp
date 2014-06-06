@@ -13,7 +13,7 @@ class CfgPatches {
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
-    author[] = {"commy2", "KoffeinFlummi"};
+    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
 };
