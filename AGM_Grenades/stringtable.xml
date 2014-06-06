@@ -4,7 +4,7 @@
 
     <Key ID="STR_AGM_Grenades_SwitchGrenadeMode">
       <English>Switch Grenade Mode</English>
-      <German>Granaten-Modus Wechseln</German>
+      <German>Granaten-Modus wechseln</German>
       <Spanish>Cambiar Modo de Granadas</Spanish>
       <Polish>Tryb Rzutu Granatem</Polish>
       <Czech>Změnit styl hodu granátu</Czech>
@@ -41,7 +41,7 @@
     </Key>
     <Key ID="STR_AGM_Grenades_RollGrenade">
       <English>Roll Grenade</English>
-      <German>Granate Rollen</German>
+      <German>Granate rollen</German>
       <Spanish>Rodar Granada</Spanish>
       <Polish>Po ziemi</Polish>
       <Czech>Po zemi</Czech>
@@ -50,7 +50,7 @@
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
-      <German>Granate Fallenlassen</German>
+      <German>Granate fallenlassen</German>
       <Spanish>Soltar Granada</Spanish>
       <Polish>Upuść Granat</Polish>
       <Czech>Upustit granát</Czech>

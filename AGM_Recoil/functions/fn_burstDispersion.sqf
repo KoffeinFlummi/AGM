@@ -3,33 +3,13 @@
 // Edited prefixes for compatability in AGM_Realism by KoffeinFlummi
 // Edited by commy2
 
-#define BASE_POWER 0.35*2
-#define BASE_TIME 0.18*2
-#define BASE_FREQ 13
+private ["_unit", "_weapon", "_projectile", "_ammo", "_lastFired", "_burst", "_startDisperse", "_vel", "_mag", "_vDir", "_elevAngle", "_travAngle", "_sightsBurst", "_maxBurst", "_x", "_y", "_z", "_upZ", "_k", "_upX", "_upY"];
 
+_unit = _this select 0;
 _weapon = _this select 1;
 _projectile = _this select 5;
 _ammo = _this select 6;
 
-// add cam shake
-if (_weapon == primaryWeapon player) then {
-    _powerMod = [0, -0.1, -0.2, 0] select (["STAND", "CROUCH", "PRONE", "UNDEFINED"] find stance player);
-    _timeMod = 0;
-    _freqMod = 0;
-
-    _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
-
-    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.1};
-    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.1};
-
-    addcamshake [
-        (_powerCoef * BASE_POWER + _powerMod) max 0,
-        (BASE_TIME + _timeMod) max 0,
-        (BASE_FREQ + _freqMod) max 0
-    ];
-};
-
-// add dispersion
 _lastFired = _unit getVariable ["AGM_Recoil_lastFired", -1];
 _burst = _unit getVariable ["AGM_Recoil_Burst", 0];
 
@@ -37,7 +17,7 @@ if (time - _lastFired < 0.45) then {
     _burst = _burst + 1;
     _unit setVariable ["AGM_Recoil_Burst", _burst, false];
 
-    _startDisperse = [3, 1] select (cameraView == "GUNNER");
+    _startDisperse = [1, 3] select (cameraView == "GUNNER");
 
     if (_burst > _startDisperse) then { 
         _vel = velocity _projectile;
@@ -46,13 +26,13 @@ if (time - _lastFired < 0.45) then {
 
         // Convert bullet vector to angles (deg)
         _elevAngle = (_vDir select 0) atan2 (_vDir select 1);
-        _travAngle = sqrt( (_vDir select 1)^2 + (_vDir select 0)^2 ) atan2 - (_vDir select 2);
+        _travAngle = sqrt ((_vDir select 1) ^ 2 + (_vDir select 0) ^ 2 ) atan2 - (_vDir select 2);
 
         // Reset burst size for calcs
         _burst = _burst - _startDisperse;
 
         // Increase dispersion cap if player is not using sights
-        _sightsBurst = [0, 30] select (cameraView == "GUNNER");
+        _sightsBurst = [30, 0] select (cameraView == "GUNNER");
 
         // Increase initial dispersion and cap if player is moving
         if (speed player > 0.5) then {
@@ -86,8 +66,8 @@ if (time - _lastFired < 0.45) then {
         _upX = _k * _x;
         _upY = _k * _y;
 
-        _round setVectorDirAndUp [_vDir, [_upX, _upY, _upZ]];
-        _round setVelocity _vel;
+        _projectile setVectorDirAndUp [_vDir, [_upX, _upY, _upZ]];
+        _projectile setVelocity _vel;
     };
 } else {
 
