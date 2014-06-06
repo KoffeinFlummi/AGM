@@ -5,6 +5,7 @@
 #define THRESHOLD_3 1.0
 #define MAX_TEMPERATURE 3
 
+
 _weapon = _this select 1;
 _projectile = _this select 5;
 
@@ -19,7 +20,7 @@ _overheat = player getVariable [_string, [0, 0]];
 _temperature = _overheat select 0;
 _time = _overheat select 1;
 
-_temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min MAX_TEMPERATURE;
+_temperature = ((_temperature + _increment - _cooldown * (time - _time)) max 0) min MAX_TEMPERATURE;
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
     hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
