@@ -291,23 +291,27 @@ class CfgWeapons {
   class gatling_30mm: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
-
   class autocannon_Base_F: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
   class autocannon_35mm: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
-
   class cannon_120mm: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
-
   class mortar_155mm_AMOS: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
-
   class mortar_82mm: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+
+  class MGunCore;
+  class MGun: MGunCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  class SmokeLauncher: MGun {
+    agm_recoil_shakeMultiplier = 0;
   };
 };

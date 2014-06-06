@@ -76,6 +76,7 @@ class CfgVehicles {
     displayName = "Fatigue System";
     function = "AGM_Fatigue_fnc_module";
     scope = 2;
+    isGlobal = 1;
     class Arguments {
       class CoefFatigue {
         displayName = "Getting Tired Coef.";
