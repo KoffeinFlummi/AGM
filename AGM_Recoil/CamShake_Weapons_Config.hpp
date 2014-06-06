@@ -282,15 +282,6 @@ class CfgWeapons {
   /////////////////////////////////////////////////
 
   class CannonCore;
-  class gatling_20mm: CannonCore {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
-  };
-  class gatling_25mm: CannonCore {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
-  };
-  class gatling_30mm: CannonCore {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
-  };
   class autocannon_Base_F: CannonCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
@@ -307,11 +298,32 @@ class CfgWeapons {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
 
+  // No camshake for gatlings
+  class gatling_20mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class gatling_25mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class gatling_30mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+
   class MGunCore;
   class MGun: MGunCore {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
   };
+  // No camshake for smoke launchers
   class SmokeLauncher: MGun {
+    agm_recoil_shakeMultiplier = 0;
+  };
+
+  // No camshake for coax machine guns
+  class LMG_RCWS;
+  class LMG_M200: LMG_RCWS {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class LMG_coax: LMG_RCWS {
     agm_recoil_shakeMultiplier = 0;
   };
 };
