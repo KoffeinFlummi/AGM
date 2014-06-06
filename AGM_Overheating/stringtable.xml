@@ -79,6 +79,7 @@
     <Key ID="STR_AGM_Overheating_CheckTemperature">
       <English>Check weapons temperature</English>
       <German>Temperatur der Waffe prüfen</German>
+      <Spanish>Verificar temperatura del arma</Spanish>
       <Polish>Sprawdź temperaturę broni</Polish>
       <French>Vérifier la température de l'arme</French>
     </Key>
@@ -86,6 +87,7 @@
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
       <English>Checking temperature ...</English>
       <German>Prüfe Temperatur ...</German>
+      <Spanish>Verificando temperatura ...</Spanish>
       <Polish>Sprawdzanie temperatury ...</Polish>
       <French>Vérification de la température ...</French>
     </Key>
@@ -93,6 +95,7 @@
     <Key ID="STR_AGM_Overheating_Temperature">
       <English>Temperature</English>
       <German>Temperatur</German>
+      <Spanish>Temperatura</Spanish>
       <Polish>Temperatura</Polish>
       <French>Température</French>
     </Key>
