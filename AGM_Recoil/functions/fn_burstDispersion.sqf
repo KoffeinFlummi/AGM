@@ -7,8 +7,8 @@ private ["_unit", "_weapon", "_projectile", "_ammo", "_lastFired", "_burst", "_s
 
 _unit = _this select 0;
 _weapon = _this select 1;
+_ammo = _this select 4;
 _projectile = _this select 5;
-_ammo = _this select 6;
 
 _lastFired = _unit getVariable ["AGM_Recoil_lastFired", -1];
 _burst = _unit getVariable ["AGM_Recoil_Burst", 0];

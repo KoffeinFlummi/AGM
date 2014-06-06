@@ -110,7 +110,7 @@ class CfgVehicles {
         distance = 8;
         condition = "true";
         //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
-        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;"// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
+        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;";// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 0;
         priority = 2.25;
 
@@ -195,7 +195,7 @@ class CfgVehicles {
         distance = 8;
         condition = "true";
         //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
-        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;"// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
+        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;";// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
         showDisabled = 0;
         priority = 2.25;
 

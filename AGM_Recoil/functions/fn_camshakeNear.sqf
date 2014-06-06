@@ -42,7 +42,7 @@ if (_weapon == primaryWeapon _unit) then {
 
     if (!isNil "AGM_Debug") then {
         systemChat str _camshake;
-        copyToClipboard text format ["addcamshake %1", _camshake];
+        copyToClipboard format ["addcamshake %1", _camshake];
     };
 
     addcamshake _camshake;

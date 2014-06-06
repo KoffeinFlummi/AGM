@@ -11,9 +11,10 @@ private ["_unit", "_weapon", "_ammo", "_powerMod", "_timeMod", "_freqMod", "_pow
 
 _unit = _this select 0;
 _weapon = _this select 1;
-_ammo = _this select 6;
+_ammo = _this select 4;
 
-if (_weapon == primaryWeapon _unit) then {
+//if (_weapon == primaryWeapon _unit) then {
+if (true) then {
     _powerMod = [0, -0.1, -0.2, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit);
     _timeMod = 0;
     _freqMod = 0;
@@ -34,7 +35,7 @@ if (_weapon == primaryWeapon _unit) then {
 
     if (!isNil "AGM_Debug") then {
         systemChat str _camshake;
-        copyToClipboard text format ["addcamshake %1", _camshake];
+        copyToClipboard format ["addcamshake %1", _camshake];
     };
 
     addcamshake _camshake;
