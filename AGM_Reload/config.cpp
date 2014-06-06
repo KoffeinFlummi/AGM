@@ -28,8 +28,8 @@ class AGM_Core_Default_Keys {
     condition = "player == _vehicle";
     statement = "[currentWeapon player] call AGM_Reload_fnc_checkAmmo";
     key = 19;
-    shift = 1;
-    control = 0;
+    shift = 0;
+    control = 1;
     alt = 0;
   };
 };
