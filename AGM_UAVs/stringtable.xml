@@ -5,31 +5,37 @@
     <Key ID="STR_AGM_UAVs_Full">
       <English>Drone is full</English>
       <German>Drohne ist voll</German>
+      <Spanish>El VANT está lleno</Spanish>
       <French>Le drone est plein</French>
     </Key>
     <Key ID="STR_AGM_UAVs_NoBattery">
       <English>You need a UAV-Battery</English>
       <German>Du brauchst eine UAV-Batterie</German>
+      <Spanish>Necesitas una batería para VANT</Spanish>
       <French>Vous avez besoin d'une Batterie-UAV</French>
     </Key>
-	<Key ID="STR_AGM_UAVs_Recharge">
+    <Key ID="STR_AGM_UAVs_Recharge">
       <English>Recharge</English>
       <German>Aufladen</German>
+      <Spanish>Recargar</Spanish>
       <French>Recharger</French>
     </Key>
-	<Key ID="STR_AGM_UAVs_Battery_Name">
+    <Key ID="STR_AGM_UAVs_Battery_Name">
       <English>UAV-Battery</English>
       <German>UAV-Batterie</German>
+      <Spanish>Batería para VANT</Spanish>
       <French>Batterie-UAV</French>
     </Key>
-	<Key ID="STR_AGM_UAVs_Battery_Description">
+    <Key ID="STR_AGM_UAVs_Battery_Description">
       <English>Used to refuel UAV's</English>
       <German>Verwendet zum Aufladen von UAV's</German>
+      <Spanish>Usada para reabastecer el VANT</Spanish>
       <French>Utiliser pour faire le plein de l'UAV</French>
     </Key>
-	<Key ID="STR_AGM_UAVs_Battery_Recharge">
+    <Key ID="STR_AGM_UAVs_Battery_Recharge">
       <English>Recharging ...</English>
       <German>Aufladen ...</German>
+      <Spanish>Recargando ...</Spanish>
       <French>Rechargement ...</French>
     </Key>
     
