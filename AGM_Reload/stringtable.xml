@@ -5,6 +5,7 @@
     <Key ID="STR_AGM_Reload_checkAmmo">
       <English>Check ammo</English>
       <German>Munition prüfen</German>
+      <Spanish>Verificar munición</Spanish>
       <Polish>Sprawdź Amunicję</Polish>
       <French>Vérifiez munitions</French>
     </Key>
@@ -12,6 +13,7 @@
     <Key ID="STR_AGM_Reload_Ammo">
       <English>Ammo</English>
       <German>Munition</German>
+      <Spanish>Munición</Spanish>
       <Polish>Amunicja</Polish>
       <French>Munitions</French>
     </Key>

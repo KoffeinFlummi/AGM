@@ -89,7 +89,7 @@
     <Key ID="STR_AGM_Interaction_Gestures">
       <English>Gestures >></English>
       <German>Gesten >></German>
-      <Spanish>Gestos</Spanish>
+      <Spanish>Gestos >></Spanish>
       <Polish>Gesty >></Polish>
       <Czech>Gesta >></Czech>
       <French>Gestes >></French>
@@ -207,7 +207,7 @@
     <Key ID="STR_AGM_Interaction_WeaponOnBack">
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
-      <Spanish>Poner el arma en la espalda</Spanish>
+      <Spanish>Arma a la espalda</Spanish>
       <Polish>Umieść broń na plecach</Polish>
       <Czech>Dát zbraň na záda</Czech>
       <French>Mettre l'arme dans le dos</French>
