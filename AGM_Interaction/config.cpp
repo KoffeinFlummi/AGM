@@ -66,7 +66,7 @@ class AGM_Core_Default_Keys {
     condition = "alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
     statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
     key = 20;
-    shift = 0;
+    shift = 1;
     control = 0;
     alt = 0;
   };
