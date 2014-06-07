@@ -4,8 +4,8 @@
 // Edited by commy2
 
 #define BASE_POWER 0.40
-#define BASE_TIME 0.25
-#define BASE_FREQ 23
+#define BASE_TIME 0.19
+#define BASE_FREQ 13
 
 private ["_unit", "_firer", "_distance", "_weapon", "_ammo", "_powerMod", "_timeMod", "_freqMod", "_powerCoef", "_distFactor", "_camshake"];
 
@@ -15,7 +15,7 @@ _distance = _this select 2;
 _weapon = _this select 3;
 _ammo = _this select 6;
 
-if (_unit == _firer) exitWith {systemChat "hi"};
+if (_unit == _firer) exitWith {};
 
 if (_weapon == primaryWeapon _unit) then {
     _powerMod = [0, -0.1, -0.2, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit);
@@ -29,10 +29,8 @@ if (_weapon == primaryWeapon _unit) then {
 
     _distFactor = 1 - _maxDistance / MAX_DISTANCE max 0;
 
-    if (_unit == vehicle _unit) then {
-        if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
-        if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
-    };
+    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
+    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
 
     _camshake = [
         _distFactor * _powerCoef * (BASE_POWER + _powerMod) max 0,
@@ -40,7 +38,7 @@ if (_weapon == primaryWeapon _unit) then {
         BASE_FREQ + _freqMod max 0
     ];
 
-    if (!isNil "AGM_Debug") then {
+    if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
         systemChat str _camshake;
         copyToClipboard format ["addcamshake %1", _camshake];
     };

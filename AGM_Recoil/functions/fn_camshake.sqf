@@ -22,10 +22,8 @@ if (true) then {
     _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
     _powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
 
-    if (_unit == vehicle _unit) then {
-        if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
-        if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
-    };
+    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
+    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
 
     _camshake = [
         _powerCoef * (BASE_POWER + _powerMod) max 0,
@@ -33,7 +31,7 @@ if (true) then {
         BASE_FREQ + _freqMod max 0
     ];
 
-    if (!isNil "AGM_Debug") then {
+    if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
         systemChat str _camshake;
         copyToClipboard format ["addcamshake %1", _camshake];
     };

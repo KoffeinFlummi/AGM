@@ -56,6 +56,11 @@ if (call _fnc_isTracer) then {
 _visibleFire = _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10;
 _visibleFireTime = _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10;
 
+if (!isNil "AGM_Debug" && {AGM_Debug == "NightVision"}) then {
+    systemChat format ["visibleFire: %1", _visibleFire];
+    systemChat format ["visibleFireTime: %1", _visibleFireTime];
+};
+
 AGM_NightVision_ppEffectMuzzleFlash ppEffectAdjust [1, 1, _visibleFire, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 1]];
 AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit 0;
 

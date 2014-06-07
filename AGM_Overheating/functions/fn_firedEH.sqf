@@ -21,8 +21,8 @@ _time = _overheat select 1;
 
 _temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min MAX_TEMPERATURE;
 
-if (AGM_Debug) then {
-	hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
+if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
+    hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
 };
 
 _time = time;
