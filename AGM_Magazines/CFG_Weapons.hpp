@@ -20,8 +20,6 @@ class CfgWeapons {
 			"100Rnd_65x39_caseless_mag_Tracer"
 		};
 	};
-
-	class arifle_MX_SW_Base_F;
 	class arifle_MX_SW_F : arifle_MX_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",
@@ -33,8 +31,6 @@ class CfgWeapons {
 			"100Rnd_65x39_caseless_mag_Tracer"
 		};
 	};
-
-	class arifle_MXM_Base_F;
 	class arifle_MXM_F : arifle_MX_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",

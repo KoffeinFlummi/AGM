@@ -1,9 +1,9 @@
 class CfgPatches {
-  class AGM_Movement {
+  class AGM_NoIdle {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Data_F, AGM_Movement};
+    requiredAddons[] = {A3_Data_F};
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
