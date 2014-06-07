@@ -57,7 +57,7 @@ class CfgWeapons {
   };
 };
 
-class CfgMagaziens {
+class CfgMagazines {
   class CA_LauncherMagazine;
   class NLAW_F: CA_LauncherMagazine {
     mass = 0;                                     // Unfortunately, the magazine has to have a mass of 0 until BIS adds a command to give a magazine to a weapon directly.
