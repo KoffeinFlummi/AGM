@@ -18,13 +18,23 @@ class CfgFunctions {
         file = "\AGM_nightvision\functions";
       class increaseNVGBrightness {};
       class decreaseNVGBrightness {};
+      class blending {};
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_NightVision {
-    clientInit = "execVM '\AGM_nightvision\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_nightvision\clientInit.sqf'";
+  };
+};
+
+class Extended_Fired_EventHandlers {
+  //class CAManBase {
+  class AllVehicles {
+    class AGM_NightVision_Blending {
+      clientFired = "if (vehicle player == _this select 0) then {_this call AGM_NightVision_fnc_blending}";
+    };
   };
 };
 

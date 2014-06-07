@@ -30,7 +30,7 @@ class AGM_Core_ProgressBar_Dialog {
       moving = 0;
       text = "";
       font = "PuristaMedium";
-      sizeEx = "1 / 40 / (getResolution select 5)";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       lineSpacing = 0;
       access = 0;
       type = 0;

@@ -49,6 +49,7 @@ class CfgFunctions {
       class getWeaponType;
       class codeToString;
       class createUpdateLoop;
+      class getBinocular;
     };
   };
 };
@@ -62,7 +63,15 @@ class CfgSounds {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
-    Init = "execVM '\AGM_Core\init.sqf'";
+    Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+  };
+};
+
+class CfgFactionClasses {
+  class AGM {
+    displayName = "AGM";
+    priority = 0.1;
+    side = 7;
   };
 };
 

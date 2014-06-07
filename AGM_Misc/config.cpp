@@ -15,7 +15,7 @@ class CfgPatches {
 /* deactivated temporarily, cause too lazy to fix bugs
 class Extended_PostInit_EventHandlers {
   class BWA3_Misc {
-    clientInit = "call compile preProcessFileLineNumbers '\BWA3_Misc\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\BWA3_Misc\clientInit.sqf'";
   };
 };
 

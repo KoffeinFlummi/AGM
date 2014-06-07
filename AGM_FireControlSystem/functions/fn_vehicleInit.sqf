@@ -19,10 +19,14 @@ if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "AGM_
   (_this select 0) setVariable ["AGM_FCSAzimuth",   0,   true];
 
   // calculate offset between gunner camera and muzzle position
-  _gunBeg = getText (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "gunBeg");
-  _gunnerView = getText (configFile >> "CfgVehicles" >>  (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "memoryPointGunnerOptics");
-  _gunBegPos = ((_this select 0) selectionPosition _gunBeg) select 0;
-  _gunnerViewPos = ((_this select 0) selectionPosition _gunnerView) select 0;
-  _viewDiff = _gunBegPos - _gunnerViewPos;
-  (_this select 0) setVariable ["AGM_FCSViewDiff", _viewDiff, true];
+  if !((_this select 0) isKindOf "Air") then {
+    _gunBeg = getText (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "gunBeg");
+    _gunnerView = getText (configFile >> "CfgVehicles" >>  (typeOf (_this select 0)) >> "Turrets" >> "MainTurret" >> "memoryPointGunnerOptics");
+    _gunBegPos = ((_this select 0) selectionPosition _gunBeg) select 0;
+    _gunnerViewPos = ((_this select 0) selectionPosition _gunnerView) select 0;
+    _viewDiff = _gunBegPos - _gunnerViewPos;
+    (_this select 0) setVariable ["AGM_FCSViewDiff", _viewDiff, true];
+  } else {
+    (_this select 0) setVariable ["AGM_FCSViewDiff", 0, true];
+  };
 };

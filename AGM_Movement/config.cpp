@@ -12,26 +12,8 @@ class CfgPatches {
   };
 };
 
-
-// WHAT DO THESE VALUES EVEN DO?
-class CfgFatigue {
-  FrequencyMax = 1;
-  FrequencyMin = 0.2;
-  MaxDuty = 10;
-  MinValue1 = 0.1;
-  MinValue2 = 0.8;
-  NormalRunSpeed = 7.2; // seems to have no effect
-  TiredRunSpeedLimit = 1;
-  TotalLoadCoef = 1.1; // seems to have no effect
-};
-
-
 class CfgMovesBasic {
-  class Actions;
-};
-
-class CfgMovesMaleSdr: CfgMovesBasic {
-  class Actions: Actions {
+  class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
 
@@ -66,6 +48,9 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       getOver = "AovrPercMrunSrasWrflDf";
     };
   };
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic {
   class States {
     class AmovPercMstpSrasWrflDnon;
     class AmovPercMstpSlowWrflDnon;

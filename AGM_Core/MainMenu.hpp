@@ -74,32 +74,30 @@ class AGM_Tile_Base {
 	h = "1 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 };
 
-class RscStandardDisplay {
-  class controls;
-};
+class RscStandardDisplay;
 
 /*class RscDisplayMain: RscStandardDisplay {
-	class controls: controls {
+	class controls {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };*/
 class RscDisplayMPInterrupt: RscStandardDisplay {
-	class controls: controls {
+	class controls {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };
 class RscDisplayInterrupt: RscStandardDisplay {
-	class controls: controls {
+	class controls {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };
 class RscDisplayInterruptEditor3D: RscStandardDisplay {
-	class controls: controls {
+	class controls {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };
 class RscDisplayInterruptEditorPreview: RscStandardDisplay {
-	class controls: controls {
+	class controls {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };

@@ -21,7 +21,7 @@ _this spawn {
 
   // DETERMINE IF PLAYER IS MEDIC
   _morphinetime = 0;
-  if ([player] call AGM_Medical_fnc_isMedic) then {
+  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
     _morphinetime = MORPHINETIMEMEDIC;
   } else {
     _morphinetime = MORPHINETIMENONMEDIC;
@@ -34,6 +34,14 @@ _this spawn {
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+
+  if (_unit != player) then {
+    [-2, {
+      if (local (_this select 0)) then {
+        systemChat format ["%1 %2", name (_this select 1), localize "STR_AGM_Medical_GivingYouMorphine"];
+      };
+    }, [_unit, player]] call CBA_fnc_globalExecute;
+  };
 
   AGM_Medical_morphineCallback = {
     _unit = _this select 0;

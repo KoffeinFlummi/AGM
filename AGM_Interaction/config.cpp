@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers};
+    requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
@@ -27,7 +27,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Interaction {
-    clientInit = "execVM '\AGM_Interaction\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Interaction\clientInit.sqf'";
   };
 };
 
@@ -60,6 +60,15 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+  };
+  class tapShoulder {
+    displayName = "$STR_AGM_Interaction_TapShoulder";
+    condition = "alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
+    statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+    key = 20;
+    shift = 1;
+    control = 0;
+    alt = 0;
   };
 };
 
