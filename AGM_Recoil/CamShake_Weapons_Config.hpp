@@ -34,154 +34,165 @@ class Mode_Burst;
 class Mode_FullAuto;
 
 class CfgWeapons {
-  class Rifle_Base_F;
+  class Pistol;
+  class Pistol_Base_F: Pistol {
+    recoil = "agm_pistolBase";
+    recoilProne = "agm_pistolBase";
+  };
 
-  class arifle_MX_Base_F : Rifle_Base_F {        
+  class Rifle;
+  class Rifle_Base_F: Rifle {
+    recoil = "agm_assaultRifleBase";
+    recoilProne = "agm_assaultRifleBase";
+  };
+
+  class Rifle_Long_Base_F: Rifle_Base_F {};
+
+// PISTOLS
+  class hgun_P07_F : Pistol_Base_F {
+    recoil = "agm_recoil_pistol_light";
+    recoilProne = "agm_recoil_prone_pistol_light";
+  };
+  class hgun_Rook40_F : Pistol_Base_F {
+    recoil = "agm_recoil_pistol_light";
+    recoilProne = "agm_recoil_prone_pistol_light";
+  };
+  class hgun_ACPC2_F : Pistol_Base_F {
+    recoil = "agm_recoil_pistol_heavy";
+    recoilProne = "agm_recoil_prone_pistol_heavy";
+  };
+  class hgun_Pistol_heavy_01_F : Pistol_Base_F {
+    recoil = "agm_recoil_pistol_heavy";
+    recoilProne = "agm_recoil_prone_pistol_heavy";
+  };
+  class hgun_Pistol_heavy_02_F : Pistol_Base_F {
+    recoil = "agm_recoil_pistol_heavy";
+    recoilProne = "agm_recoil_prone_pistol_heavy";
+  };
+
+// SUBMACHINE GUNS
+  class SMG_01_Base : Rifle_Base_F {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_01;
+    class Single : Mode_SemiAuto {
+      recoil = "agm_recoil_single_smg_01";
+      recoilProne = "agm_recoil_single_prone_smg_01";
+    };
+    class Burst : Mode_Burst {
+      recoil = "agm_recoil_burst_smg_01";
+      recoilProne = "agm_recoil_burst_smg_01";
+    };
+    class FullAuto : Mode_FullAuto {
+      recoil = "agm_recoil_auto_smg_01";
+      recoilProne = "agm_recoil_auto_prone_smg_01";
+    };
+  };
+  class SMG_02_Base_F : Rifle_Base_F {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_02;
+    class Single : Mode_SemiAuto {
+      recoil = "agm_recoil_single_smg_02";
+      recoilProne = "agm_recoil_single_prone_smg_02";
+    };
+    class Burst : Mode_Burst {
+      recoil = "agm_recoil_burst_smg_02";
+      recoilProne = "agm_recoil_burst_smg_02";
+    };
+    class FullAuto : Mode_FullAuto {
+      recoil = "agm_recoil_auto_smg_02";
+      recoilProne = "agm_recoil_auto_prone_smg_02";
+    };
+  };
+  class pdw2000_base_F: Rifle_Base_F {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_PDW_2000;
+    class Single : Mode_SemiAuto {
+      recoil = "agm_recoil_single_pdw";
+      recoilProne = "agm_recoil_single_prone_pdw";
+    };
+    class FullAuto : Mode_FullAuto {
+      recoil = "agm_recoil_auto_pdw";
+      recoilProne = "agm_recoil_auto_prone_pdw";
+    };
+  };
+
+// ASSAULT RIFLE
+  class arifle_MX_Base_F : Rifle_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
     };
-    
     class FullAuto : Mode_FullAuto {
       recoil = "agm_recoil_auto_mx";
       recoilProne = "agm_recoil_auto_prone_mx";
     };
   };
-
   class arifle_MX_SW_F : arifle_MX_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX_SW;
     class Single : Single {
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
     };
-    
     class manual : FullAuto {
       recoil = "agm_recoil_auto_mx";
       recoilProne = "agm_recoil_auto_prone_mx";
     };
   };
-
-  class arifle_katiba_Base_F : Rifle_Base_F {        
+  class arifle_katiba_Base_F : Rifle_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_KATIBA;
     class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_katiba";
-      recoilProne = "agm_recoil_single_prone_katiba";
+      recoil = "agm_recoil_single_ktb";
+      recoilProne = "agm_recoil_single_prone_ktb";
     };
-    
     class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_katiba";
-      recoilProne = "agm_recoil_auto_prone_katiba";
+      recoil = "agm_recoil_auto_ktb";
+      recoilProne = "agm_recoil_auto_prone_ktb";
     };
   };
-
   class mk20_base_F : Rifle_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
     };
-    
     class FullAuto : Mode_FullAuto {
       recoil = "agm_recoil_auto_mk20";
       recoilProne = "agm_recoil_auto_prone_mk20";
     };
   };
-
   class arifle_Mk20C_F : mk20_base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20C;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
     };
-    
     class FullAuto : Mode_FullAuto {
       recoil = "agm_recoil_auto_mk20";
       recoilProne = "agm_recoil_auto_prone_mk20";
     };
   };
-
   class Tavor_base_F : Rifle_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_TAVOR;
     class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_mk20";
-      recoilProne = "agm_recoil_single_prone_mk20";
+      recoil = "agm_recoil_single_trg";
+      recoilProne = "agm_recoil_single_prone_trg";
     };
-    
     class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_mk20";
-      recoilProne = "agm_recoil_auto_prone_mk20";
+      recoil = "agm_recoil_auto_trg";
+      recoilProne = "agm_recoil_auto_prone_trg";
     };
   };
-
   class SDAR_base_F : Rifle_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SDAR;
     class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_mk20";
-      recoilProne = "agm_recoil_single_prone_mk20";
+      recoil = "agm_recoil_single_sdar";
+      recoilProne = "agm_recoil_single_prone_sdar";
     };
-    
     class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_mk20";
-      recoilProne = "agm_recoil_auto_prone_mk20";
+      recoil = "agm_recoil_auto_sdar";
+      recoilProne = "agm_recoil_auto_prone_sdar";
     };
   };
 
-  ////////////////////////////////////////////////
-
-  class SMG_01_Base : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_01;
-    class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_vermin";
-      recoilProne = "agm_recoil_single_prone_vermin";
-    };
-
-    class Burst : Mode_Burst {
-      recoil = "agm_recoil_auto_vermin";
-      recoilProne = "agm_recoil_auto_vermin";
-    };
-    
-    class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_vermin";
-      recoilProne = "agm_recoil_auto_prone_vermin";
-    };
-  };
-
-  class SMG_02_Base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_02;
-    class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_scorpion";
-      recoilProne = "agm_recoil_single_prone_scorpion";
-    };
-
-    class Burst : Mode_Burst {
-      recoil = "agm_recoil_auto_scorpion";
-      recoilProne = "agm_recoil_auto_scorpion";
-    };
-    
-    class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_scorpion";
-      recoilProne = "agm_recoil_auto_prone_scorpion";
-    };
-  };
-
-  class pdw2000_base_F: Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_PDW_2000;
-    class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_scorpion";
-      recoilProne = "agm_recoil_single_prone_scorpion";
-    };
-    
-    class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_scorpion";
-      recoilProne = "agm_recoil_auto_prone_scorpion";
-    };
-  };
-
-  ////////////////////////////////////////////////
-
-  class Rifle_Long_Base_F;
-
+// MACHINE GUNS
   class LMG_Mk200_F : Rifle_Long_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_MK200;
     class manual : Mode_FullAuto {
@@ -193,7 +204,6 @@ class CfgWeapons {
       recoilprone = "agm_recoil_single_prone_mk200";
     };
   };
-
   class LMG_Zafir_F: Rifle_Long_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_ZAFIR;
     class Single: Mode_SemiAuto {
@@ -206,77 +216,42 @@ class CfgWeapons {
     };
   };
 
-  ////////////////////////////////////////////////
-
+// PRECISION RIFLES
+  class DMR_01_base_F : Rifle_Long_Base_F {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_DMR_01;
+    class Single : Mode_SemiAuto {
+      recoil = "agm_recoil_single_dmr";
+      recoilProne = "agm_recoil_single_prone_dmr";
+    };
+    class FullAuto : Mode_FullAuto {
+      recoil = "agm_recoil_auto_dmr";
+      recoilProne = "agm_recoil_auto_prone_dmr";
+    };
+  };
   class EBR_base_F : Rifle_Long_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_EBR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_ebr";
       recoilProne = "agm_recoil_single_prone_ebr";
     };
-    
     class FullAuto : Mode_FullAuto {
       recoil = "agm_recoil_auto_ebr";
       recoilProne = "agm_recoil_auto_prone_ebr";
     };
   };
-
   class LRR_base_F : Rifle_Long_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LRR;
     class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_lrr";
-      recoilProne = "agm_recoil_single_prone_lrr";
+      recoil = "agm_recoil_single_gm6";
+      recoilProne = "agm_recoil_single_prone_gm6";
     };
   };
-
   class GM6_base_F : Rifle_Long_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_GM6;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_gm6";
       recoilProne = "agm_recoil_single_prone_gm6";
     };
-  };
-
-  class DMR_01_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_DMR_01;
-    class Single : Mode_SemiAuto {
-      recoil = "agm_recoil_single_ebr";
-      recoilProne = "agm_recoil_single_prone_ebr";
-    };
-    
-    class FullAuto : Mode_FullAuto {
-      recoil = "agm_recoil_auto_ebr";
-      recoilProne = "agm_recoil_auto_prone_ebr";
-    };
-  };
-
-  /////////////////////////////////////////////////
-
-  class Pistol_Base_F;
-  class hgun_P07_F : Pistol_Base_F {
-    recoil = "agm_recoil_single_pistol9mm";
-    recoilProne = "agm_recoil_single_pistol9mm";
-  };
-
-  class hgun_Rook40_F : Pistol_Base_F {
-    recoil = "agm_recoil_single_pistol9mm";
-    recoilProne = "agm_recoil_single_pistol9mm";
-  };
-
-  class hgun_ACPC2_F : Pistol_Base_F {
-    recoil = "agm_recoil_single_pistol45";
-    recoilProne = "agm_recoil_single_pistol45";
-  };
-
-  class hgun_Pistol_heavy_01_F : Pistol_Base_F {
-    recoil = "agm_recoil_single_pistol45";
-    recoilProne = "agm_recoil_single_pistol45";
-  };
-
-  class hgun_Pistol_heavy_02_F : Pistol_Base_F {
-    // Use 9mm recoil due to low centerline
-    recoil = "agm_recoil_single_pistol9mm";
-    recoilProne = "agm_recoil_single_pistol9mm";
   };
 
   /////////////////////////////////////////////////
