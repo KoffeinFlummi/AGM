@@ -71,13 +71,13 @@ class Extended_Fired_EventHandlers {
 };
 
 //FiredNear EH
-class Extended_FiredNear_EventHandlers {
+/*class Extended_FiredNear_EventHandlers {
   class CAManBase {
     class AGM_Camshake {
-      clientFired = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_camshakeNear}";
+      clientFiredNear = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_camshakeNear}";
     };
   };
-};
+};*/
 
 // DOC: http://forums.bistudio.com/showthread.php?94464-explaining-the-cfgRecoils-array
 class CfgRecoils {
