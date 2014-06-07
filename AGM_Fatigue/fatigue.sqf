@@ -1,6 +1,6 @@
 // by commy2
 
-#define GETTING_TIRED_FACTOR 0.5
+#define GETTING_TIRED_FACTOR 0.25
 #define RECOVER_RATE_FACTOR 0.1
 #define THRESHOLD_1 0.8
 #define THRESHOLD_2 0.9
