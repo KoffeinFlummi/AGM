@@ -400,7 +400,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
     };
     class AdvePercMstpSnonWnonDnon;
-    class AdvePercMstpSnonWnonDnon_AdvePercMstpSnonWrflDnon : AdvePercMstpSnonWrflDnon {
+    class AdvePercMstpSnonWnonDnon_AdvePercMstpSnonWrflDnon : AdvePercMstpSnonWrflDnon {//AdvePercMstpSnonWrflDnon {
       aimPrecision = TMR_SWAY_07;
 
     };

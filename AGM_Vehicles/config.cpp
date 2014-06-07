@@ -37,7 +37,10 @@ class CfgPatches {
 
 class CfgVehicles {
   // Inheritance
-  class Car_F;
+  class Car;
+  class Car_F: Car {
+    class Turrets;
+  };
   class Wheeled_APC_F: Car_F {};
   class Truck_F: Car_F {};
   class Tank_F;
@@ -46,8 +49,8 @@ class CfgVehicles {
   class MRAP_01_base_F: Car_F {
     fuelCapacity = 510 * FUEL_FACTOR;
   };
-  class MRAP_01_hmg_base_F: MRAP_01_base_F {};
-  class MRAP_01_gmg_base_F: MRAP_01_hmg_base_F {};
+  class MRAP_01_gmg_base_F: MRAP_01_base_F {};
+  class MRAP_01_hmg_base_F: MRAP_01_gmg_base_F {};
 
   class MBT_01_base_F: Tank_F {
     fuelCapacity = 500 * FUEL_FACTOR;
@@ -76,7 +79,7 @@ class CfgVehicles {
   class MRAP_03_base_F: Car_F {
     fuelCapacity = 860 * FUEL_FACTOR;
     class NewTurret;
-    class Turrets {
+    class Turrets: Turrets {
       class CommanderTurret;
     };
   };

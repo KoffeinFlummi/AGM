@@ -17,7 +17,8 @@ class CfgPatches {
       A3_Anims_F_EPC,
       A3_CargoPoses_F,
       A3_Characters_F,
-      A3_Weapons_F_Items
+      A3_Weapons_F_Items,
+      A3_UI_F
     };
     version = "0.9";
     versionStr = "0.9";
@@ -474,18 +475,21 @@ class CfgVehicles {
 class CfgWeapons {
   class ItemCore;
   class InventoryItem_Base_F;
+  class InventoryFirstAidKitItem_Base_F;
+  class MedikitItem;
+  class VestItem;
 
   // ITEMS
   class FirstAidKit: ItemCore {
     type = 0;
-    class ItemInfo: InventoryItem_Base_F {
+    class ItemInfo: InventoryFirstAidKitItem_Base_F {
       mass = 4;
       type = 201;
     };
   };
   class Medikit: ItemCore {
     type = 0;
-    class ItemInfo: InventoryItem_Base_F {
+    class ItemInfo: MedikitItem {
       mass = 60;
       type = 201;
     };
@@ -583,19 +587,19 @@ class CfgWeapons {
     };
   };
   class V_PlateCarrierIA1_dgtl: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
+    class ItemInfo: VestItem {
       armor = 8;
       passThrough = 0.75;
     };
   };
   class V_PlateCarrierIA2_dgtl: V_PlateCarrierIA1_dgtl {
-    class ItemInfo: ItemInfo {
+    class ItemInfo: VestItem {
       armor = 12;
       passThrough = 0.6;
     };
   };
   class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl {
-    class ItemInfo: ItemInfo {
+    class ItemInfo: VestItem {
       armor = 20;
       passThrough = 0.75;
     };
@@ -661,14 +665,15 @@ class CfgWeapons {
     };
   };
   class V_TacVestCamo_khk: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
+    class ItemInfo: VestItem {
       armor = 8;
     };
   };
 };
 
 class CfgActions {
-  class HealSoldier {
+  class None;
+  class HealSoldier: None {
     hideOnUse = 1;
     priority = 10;
     shortcut = "";
@@ -678,7 +683,7 @@ class CfgActions {
     textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />";
     textSimple = "";
   };
-  class HealSoldierAuto {
+  class HealSoldierAuto: None {
     hideOnUse = 1;
     priority = 0;
     shortcut = "";
@@ -688,7 +693,7 @@ class CfgActions {
     textDefault = "";
     textSimple = "";
   };
-  class HealSoldierSelf {
+  class HealSoldierSelf: None {
     hideOnUse = 1;
     priority = 10;
     shortcut = "";

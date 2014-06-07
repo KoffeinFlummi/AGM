@@ -53,8 +53,8 @@ if (call _fnc_isTracer) then {
 	_visibleFireTime = _visibleFireTime + 2;
 };
 
-_visibleFire = _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10;
-_visibleFireTime = _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10;
+_visibleFire = _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10 min 1;
+_visibleFireTime = _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10 min 0.5;
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "NightVision"}) then {
     systemChat format ["visibleFire: %1", _visibleFire];

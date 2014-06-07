@@ -50,7 +50,7 @@ class CfgVehicles {
 		};
 	};
 
-	class Box_East_WpsSpecial_F: NATO_Box_Base {
+	class Box_East_WpsSpecial_F: EAST_Box_Base {
 		class TransportMagazines {
 			MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim,2)
 			MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,1)

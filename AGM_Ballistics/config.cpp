@@ -131,14 +131,12 @@ class CfgMagazines {
     // Why is it so low, lower than a Glock? I'm not sure, but I have no choice but to believe them...!
     // Maybe they are shooting some heavier bullet and not saying.
   };
-
-  class 16Rnd_9x21_Mag : CA_Magazine {
+  class 16Rnd_9x21_Mag : 30Rnd_9x21_Mag {
     ammo = "B_9x19_Ball";
     // M9 initial MV. Close enough for horseshoes and handguns.
     initSpeed = 381;
   };
-
-  class 30Rnd_45ACP_Mag_SMG_01 : CA_Magazine {
+  class 30Rnd_45ACP_Mag_SMG_01 : 30Rnd_9x21_Mag {
     initSpeed = 259; // From Vector manual (5.5" barrel)
   };
 

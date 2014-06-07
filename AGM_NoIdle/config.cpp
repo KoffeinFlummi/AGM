@@ -1,5 +1,5 @@
 class CfgPatches {
-  class AGM_Movement {
+  class AGM_NoIdle {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;

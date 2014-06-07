@@ -13,7 +13,7 @@ class CfgPatches {
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
-    author[] = {"commy2", "KoffeinFlummi"};
+    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -35,7 +35,7 @@ class CfgFunctions {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_giveSpareBarrel {
-      clientInit = "if (_this select 0 != player) then {_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1) then {(_this select 0) addItem 'AGM_SpareBarrel'}}}"; 
+      clientInit = "if (player == _this select 0) then {_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1) then {(_this select 0) addItem 'AGM_SpareBarrel'}}}"; 
     };
   };
 };
