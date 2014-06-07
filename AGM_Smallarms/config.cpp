@@ -226,8 +226,8 @@ class CfgWeapons {
   class arifle_MX_SW_F : arifle_MX_Base_F {
     modes[] = {"Single", "manual", "close", "short", "medium", "far_optic1", "far_optic2"};
 
-    class Single : Single {};
-    class manual : FullAuto {};
+    //class Single : Single {};
+    //class manual : FullAuto {};
   };
 
   // Katibas ////////////////////////////////////////////////////

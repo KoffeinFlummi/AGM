@@ -22,7 +22,7 @@ class CfgWeapons {
 	};
 
 	class arifle_MX_SW_Base_F;
-	class arifle_MX_SW_F : arifle_MX_SW_Base_F {
+	class arifle_MX_SW_F : arifle_MX_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",
 			"30Rnd_65x39_caseless_mag_Tracer",
@@ -35,7 +35,7 @@ class CfgWeapons {
 	};
 
 	class arifle_MXM_Base_F;
-	class arifle_MXM_F : arifle_MXM_Base_F {
+	class arifle_MXM_F : arifle_MX_Base_F {
 		magazines[] = {
 			"30Rnd_65x39_caseless_mag",
 			"30Rnd_65x39_caseless_mag_Tracer",
@@ -125,7 +125,7 @@ class CfgWeapons {
 	};
 
 	class muzzle_snds_L: muzzle_snds_H {
-		class ItemInfo: InventoryMuzzleItem_Base_F {
+		class ItemInfo: ItemInfo {
 			class MagazineCoef {
 				initSpeed = 1.0;
 			};
@@ -144,7 +144,7 @@ class CfgWeapons {
 	};
 
 	class muzzle_snds_M: muzzle_snds_H {
-		class ItemInfo: InventoryMuzzleItem_Base_F {
+		class ItemInfo: ItemInfo {
 			class MagazineCoef {
 				initSpeed = 1.0;
 			};
@@ -163,7 +163,7 @@ class CfgWeapons {
 	};
 
 	class muzzle_snds_B: muzzle_snds_H {
-		class ItemInfo: InventoryMuzzleItem_Base_F {
+		class ItemInfo: ItemInfo {
 			class MagazineCoef {
 				initSpeed = 1.0;
 			};
@@ -182,7 +182,7 @@ class CfgWeapons {
 	};
 
 	class muzzle_snds_H_MG: muzzle_snds_H {
-		class ItemInfo: InventoryMuzzleItem_Base_F {
+		class ItemInfo: ItemInfo {
 			class MagazineCoef {
 				initSpeed = 1.0;
 			};
@@ -201,7 +201,7 @@ class CfgWeapons {
 	};
 
 	class muzzle_snds_H_SW: muzzle_snds_H_MG {
-		class ItemInfo: InventoryMuzzleItem_Base_F {
+		class ItemInfo: ItemInfo {
 			class MagazineCoef {
 				initSpeed = 1.0;
 			};

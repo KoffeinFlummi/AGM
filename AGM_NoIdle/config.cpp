@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Data_F};
+    requiredAddons[] = {A3_Data_F, AGM_Movement};
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};

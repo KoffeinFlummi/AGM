@@ -36,8 +36,8 @@ class CfgVehicles {
 
   // BLUFOR Inheritance
   class MRAP_01_base_F;
-  class MRAP_01_hmg_base_F: MRAP_01_base_F {};
-  class MRAP_01_gmg_base_F: MRAP_01_hmg_base_F {};
+  class MRAP_01_gmg_base_F: MRAP_01_base_F {};
+  class MRAP_01_hmg_base_F: MRAP_01_gmg_base_F {};
   class MBT_01_base_F;
   class B_MBT_01_base_F: MBT_01_base_F {};
   class MBT_01_arty_base_F: MBT_01_base_F {};
@@ -255,7 +255,7 @@ class CfgVehicles {
   class O_Truck_02_box_F: Truck_02_base_F {
     displayName = "$STR_AGM_VehicleNames_Truck_02_box_Name";
   };
-  class O_Truck_02_medical_F: I_Truck_02_box_F {
+  class O_Truck_02_medical_F: O_Truck_02_box_F {
     displayName = "$STR_AGM_VehicleNames_Truck_02_medical_Name";
   };
 

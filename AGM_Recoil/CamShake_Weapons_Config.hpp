@@ -51,7 +51,7 @@ class CfgWeapons {
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX_SW;
-    class Single : Single {
+    class Single : Mode_SemiAuto {//Single
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
     };
@@ -90,12 +90,12 @@ class CfgWeapons {
 
   class arifle_Mk20C_F : mk20_base_F {
     agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20C;
-    class Single : Mode_SemiAuto {
+    class Single : Single {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
     };
     
-    class FullAuto : Mode_FullAuto {
+    class FullAuto : FullAuto {
       recoil = "agm_recoil_auto_mk20";
       recoilProne = "agm_recoil_auto_prone_mk20";
     };
@@ -324,6 +324,9 @@ class CfgWeapons {
     agm_recoil_shakeMultiplier = 0;
   };
   class LMG_coax: LMG_RCWS {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class LMG_Minigun: LMG_RCWS {
     agm_recoil_shakeMultiplier = 0;
   };
 };
