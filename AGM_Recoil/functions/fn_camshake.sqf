@@ -22,8 +22,8 @@ if (true) then {
     _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
     _powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
 
-    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
-    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
+    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.07};
+    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.11};
 
     _camshake = [
         _powerCoef * (BASE_POWER + _powerMod) max 0,
