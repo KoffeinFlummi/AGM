@@ -6,23 +6,23 @@
 // 2. Set the shake multiplier. This determines the camshake for the weapon.
 //     Ex: agm_recoil_shakeMultiplier = 1;
 
-#define SHAKEMULTIPLIER_BASE            1
-#define SHAKEMULTIPLIER_MX              1
-#define SHAKEMULTIPLIER_MX_SW           0.95
-#define SHAKEMULTIPLIER_KATIBA          1
-#define SHAKEMULTIPLIER_MK20            0.9
-#define SHAKEMULTIPLIER_MK20C           0.9
-#define SHAKEMULTIPLIER_TAVOR           0.9
-#define SHAKEMULTIPLIER_SDAR            0.9
-#define SHAKEMULTIPLIER_SMG_01          0.85
-#define SHAKEMULTIPLIER_SMG_02          0.85
-#define SHAKEMULTIPLIER_PDW_2000        0.85
-#define SHAKEMULTIPLIER_LMG_MK200       1.1
-#define SHAKEMULTIPLIER_LMG_ZAFIR       1.3
-#define SHAKEMULTIPLIER_EBR             1.3
-#define SHAKEMULTIPLIER_LRR             2.3
-#define SHAKEMULTIPLIER_GM6             2.3
-#define SHAKEMULTIPLIER_DMR_01          1.4
+#define SHAKEMULTIPLIER_BASE            5
+#define SHAKEMULTIPLIER_MX              5
+#define SHAKEMULTIPLIER_MX_SW           4
+#define SHAKEMULTIPLIER_KATIBA          5
+#define SHAKEMULTIPLIER_MK20            4.5
+#define SHAKEMULTIPLIER_MK20C           4.5
+#define SHAKEMULTIPLIER_TAVOR           4.5
+#define SHAKEMULTIPLIER_SDAR            4.5
+#define SHAKEMULTIPLIER_SMG_01          4.1
+#define SHAKEMULTIPLIER_SMG_02          4.1
+#define SHAKEMULTIPLIER_PDW_2000        4.1
+#define SHAKEMULTIPLIER_LMG_MK200       5.5
+#define SHAKEMULTIPLIER_LMG_ZAFIR       5.8
+#define SHAKEMULTIPLIER_EBR             5.8
+#define SHAKEMULTIPLIER_LRR             8
+#define SHAKEMULTIPLIER_GM6             8
+#define SHAKEMULTIPLIER_DMR_01          6
 #define SHAKEMULTIPLIER_P07             0
 #define SHAKEMULTIPLIER_ROOK40          0
 #define SHAKEMULTIPLIER_ACPC2           0
