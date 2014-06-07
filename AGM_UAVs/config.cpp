@@ -28,7 +28,7 @@ class CfgVehicles {
   class B_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "$STR_AGM_Recharge";
+        displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
         condition = "true";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
@@ -40,7 +40,7 @@ class CfgVehicles {
   class O_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "$STR_AGM_Recharge";
+        displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
         condition = "true";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
@@ -52,7 +52,7 @@ class CfgVehicles {
   class I_UAV_01_F: UAV_01_base_F {
     class AGM_Actions {
       class AGM_Refuel {
-        displayName = "$STR_AGM_Recharge";
+        displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
         condition = "true";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
