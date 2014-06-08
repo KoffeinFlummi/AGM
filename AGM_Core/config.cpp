@@ -37,6 +37,7 @@ class CfgFunctions {
       class getTurrets;
       class getWeaponType;
       class getWindDirection;
+      class isAutoWind;
       class isInBuilding;
       class isTurnedOut;
       class keyInput;

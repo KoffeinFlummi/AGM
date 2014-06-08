@@ -16,7 +16,6 @@ class CfgFunctions {
   class AGM_Wind {
     class AGM_Wind {
       file = "AGM_Wind\functions";
-      class checkForAutoWind;
       class firedEH;
       class init;
     };
@@ -33,7 +32,7 @@ class Extended_Init_EventHandlers {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Wind {
-    Init = "[] call AGM_Wind_fnc_checkForAutoWind";
+    Init = "if (isServer && {call AGM_Core_fnc_isAutoWind}) then {setWind [wind select 0, wind select 1, true]};";
   };
 };
 
