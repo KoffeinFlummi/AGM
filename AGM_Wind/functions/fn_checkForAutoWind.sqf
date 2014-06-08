@@ -22,7 +22,7 @@ if !(isServer) exitWith {};
     sleep 1;
   };
 
-  if (_windDirSum > 10) then {
+  if (_windDirSum > 6) then {
     setWind [(wind select 0), (wind select 1), true];
   };
 };
