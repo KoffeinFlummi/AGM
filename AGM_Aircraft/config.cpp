@@ -4,7 +4,7 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
-      AGM_Core, 
+      AGM_Core,
       A3_Air_F,
       A3_Air_F_Heli_Light_01,
       A3_Air_F_Heli_Light_02,
@@ -59,12 +59,12 @@ class CfgAmmo {
   class LaserBombCore;
   class MissileBase;
   class RocketBase;
-  class B_65x39_Caseless;
+  class SubmunitionBullet;
 
   class B_20mm: BulletBase {
     deflecting = 3;
   };
-  class B_65x39_Minigun_Caseless: B_65x39_Caseless {
+  class B_65x39_Minigun_Caseless: SubmunitionBullet {
     hit = 10;
     indirectHit = 0;
     indirectHitRange = 0;
@@ -72,7 +72,7 @@ class CfgAmmo {
     deflecting = 5;
     typicalSpeed = 850;
   };
-  
+
 };
 
 class Mode_Burst;
@@ -142,16 +142,14 @@ class CfgVehicles {
   class AllVehicles;
   class Air: AllVehicles {
     class AnimationSources;
-    class Turrets;
   };
   class Helicopter: Air {
     class AnimationSources: AnimationSources {};
-    class Turrets: Turrets {
+    class Turrets {
       class MainTurret;
     };
   };
   class Helicopter_Base_F: Helicopter {
-    class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
@@ -159,8 +157,7 @@ class CfgVehicles {
   class Helicopter_Base_H: Helicopter_Base_F {
     class AnimationSources: AnimationSources {};
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-      class CopilotTurret;
+      class CopilotTurret: MainTurret {};
     };
   };
   class Plane_Base_F;
