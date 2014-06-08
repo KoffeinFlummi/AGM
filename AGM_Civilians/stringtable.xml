@@ -3,23 +3,27 @@
   <Package name="Civilians">
 
     <Key ID="STR_AGM_Civilians_SendAway">
-      <English>Go Away!</English>
-      <German>Geh Weg!</German>
-      <Spanish>Aléjate!</Spanish>
-      <Polish>Odejdź!</Polish>
-      <Czech>Jděte pryč!</Czech>
-      <French>Degagez!</French>
-      <Russian>Уходите отсюда!</Russian>
+		<English>Go Away!</English>
+		<German>Geh Weg!</German>
+		<Spanish>Aléjate!</Spanish>
+		<Polish>Odejdź!</Polish>
+		<Czech>Jděte pryč!</Czech>
+		<French>Degagez!</French>
+		<Russian>Уходите отсюда!</Russian>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
-      <English>Get Down!</English>
-      <German>Auf Den Boden!</German>
-      <Spanish>Al suelo!</Spanish>
-      <Polish>Padnij!</Polish>
-      <Czech>K zemi!</Czech>
-      <French>A Terre!</French>
-      <Russian>Пригнитесь!</Russian>
+		<English>Get Down!</English>
+		<German>Auf Den Boden!</German>
+		<Spanish>Al suelo!</Spanish>
+		<Polish>Padnij!</Polish>
+		<Czech>K zemi!</Czech>
+		<French>A Terre!</French>
+		<Russian>Пригнитесь!</Russian>
     </Key>
-
+	<Key ID="STR_AGM_Civilian_SetCaptive">
+		<English>Take Prisoner</English>
+		<German>Gefangen nehmen</German>
+		<French>prendre en captivité</French>
+	</Key>
   </Package>
 </Project>
