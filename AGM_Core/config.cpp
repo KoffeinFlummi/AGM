@@ -40,6 +40,7 @@ class CfgFunctions {
       class setPitchBank;
       class getDirectionVector;
       class getTargetDistance;
+      class getTargetDistanceDebug;
       class getTurrets;
       class getTurretIndex;
       class isTurnedOut;
@@ -50,6 +51,8 @@ class CfgFunctions {
       class codeToString;
       class createUpdateLoop;
       class getBinocular;
+      class findStringInString;
+      class getEntryFromMissionSQM;
     };
   };
 };
