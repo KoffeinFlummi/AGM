@@ -61,7 +61,7 @@ _addons = [];
     };
 
     [-2, {
-      if (serverCommandAvailable) then {
+      if (serverCommandAvailable "#kick") then {
         serverCommand format["#kick %1", _this];
       };
     }, (name player)] call CBA_fnc_globalExecute;
