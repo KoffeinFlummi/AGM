@@ -10,7 +10,7 @@
  * Value of the entry (Number)
  */
 
-private ["_path", "_mission", "_index0", "_index1", "_array1", "_a"];
+private ["_path", "_mission", "_a", "_class", "_index", "_array", "_b", "_entry"];
 
 _path = _this;
 
@@ -29,24 +29,24 @@ for "_a" from 0 to (count _path - 2) do {
 
 	_index = [_class, _mission] call AGM_Core_fnc_findStringInString;
 
-	_array1 = toArray _mission;
+	_array = toArray _mission;
 	for "_b" from 0 to (_index + count toArray _class - 1) do {
-		_array1 set [_b, -1];
+		_array set [_b, -1];
 	};
-	_array1 = _array1 - [-1];
+	_array = _array - [-1];
 
-	_mission = toString _array1;
+	_mission = toString _array;
 };
 
 _entry = format ["%1=", _path select (count _path - 1)];
 _index = [_entry, _mission] call AGM_Core_fnc_findStringInString;
 if (_index == -1) exitWith {0};
 
-_array1 = toArray _mission;
+_array = toArray _mission;
 for "_b" from 0 to (_index + count toArray _entry - 1) do {
-	_array1 set [_b, -1];
+	_array set [_b, -1];
 };
-_mission = toString (_array1 - [-1]);
+_mission = toString (_array - [-1]);
 
 _index = [";", _mission] call AGM_Core_fnc_findStringInString;
 
