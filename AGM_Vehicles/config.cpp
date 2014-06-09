@@ -54,8 +54,18 @@ class CfgVehicles {
 
   class MBT_01_base_F: Tank_F {
     fuelCapacity = 500 * FUEL_FACTOR;
+    class Turrets {
+      class MainTurret;
+    };
   };
-  class B_MBT_01_base_F: MBT_01_base_F {};
+  class B_MBT_01_base_F: MBT_01_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"cannon_120mm","AGM_LMG_coax_MBT_01"};
+        magazines[] = {"32Rnd_120mm_APFSDS_shells_Tracer_Red","16Rnd_120mm_HE_shells_Tracer_Red","2000Rnd_762x51_Belt_Green","2000Rnd_762x51_Belt_Green"};
+      };
+    };
+  };
   class MBT_01_arty_base_F: MBT_01_base_F {};
   class B_MBT_01_arty_base_F: MBT_01_arty_base_F {};
   class MBT_01_mlrs_base_F: MBT_01_base_F {};
@@ -63,6 +73,9 @@ class CfgVehicles {
 
   class APC_Wheeled_01_base_F: Wheeled_APC_F {
     fuelCapacity = 800 * FUEL_FACTOR;
+    class Turrets {
+      class MainTurret;
+    };
   };
   class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
 
@@ -96,10 +109,13 @@ class CfgVehicles {
     };
   };
 
-  class MBT_03_base_F;
-  class I_MBT_03_base_F: MBT_03_base_F {
+  class MBT_03_base_F: Tank_F {
     fuelCapacity = 550 * FUEL_FACTOR;
+    class Turrets {
+      class MainTurret;
+    };
   };
+  class I_MBT_03_base_F: MBT_03_base_F {};
 
   class APC_Wheeled_03_base_F;
   class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {
@@ -145,6 +161,25 @@ class CfgVehicles {
 
   ////////////////////////////////////
 
+  // BLUFOR
+  class B_MBT_01_cannon_F: B_MBT_01_base_F {};
+  class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"cannon_105mm","AGM_LMG_coax_MBT_01"};
+        magazines[] = {"40Rnd_105mm_APFSDS_T_Red","20Rnd_105mm_HEAT_MP_T_Red","2000Rnd_762x51_Belt_Green","2000Rnd_762x51_Belt_Green"};
+      };
+    };
+  };
+  class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"autocannon_40mm_CTWS","AGM_LMG_coax_MBT_01"};
+        magazines[] = {"60Rnd_40mm_GPR_Tracer_Red_shells","40Rnd_40mm_APFSDS_Tracer_Red_shells","2000Rnd_762x51_Belt_Green"};
+      };
+    };
+  };
+
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
     smokeLauncherGrenadeCount = 3;
@@ -175,4 +210,17 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+  class I_MBT_03_cannon_F: I_MBT_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"cannon_120mm_long","AGM_LMG_coax_MBT_01"};
+        magazines[] = {"28Rnd_120mm_APFSDS_shells_Tracer_Yellow","14Rnd_120mm_HE_shells_Tracer_Yellow","2000Rnd_762x51_Belt_Yellow","2000Rnd_762x51_Belt_Yellow"};
+      };
+    };
+  };
+};
+
+class CfgWeapons {
+  class LMG_coax;
+  class AGM_LMG_coax_MBT_01: LMG_coax {};
 };

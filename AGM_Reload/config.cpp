@@ -22,11 +22,17 @@ class CfgFunctions {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_Reload {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Reload\clientInit.sqf'";
+  };
+};
+
 class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
     condition = "player == _vehicle";
-    statement = "[currentWeapon player] call AGM_Reload_fnc_checkAmmo";
+    statement = "[currentWeapon player, false] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 0;
     control = 1;

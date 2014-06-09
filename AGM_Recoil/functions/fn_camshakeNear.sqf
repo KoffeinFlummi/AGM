@@ -17,31 +17,29 @@ _ammo = _this select 6;
 
 if (_unit == _firer) exitWith {};
 
-if (_weapon == primaryWeapon _unit) then {
-    _powerMod = [0, -0.1, -0.2, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit);
-    _timeMod = 0;
-    _freqMod = 0;
+_powerMod = [0, -0.1, -0.2, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit);
+_timeMod = 0;
+_freqMod = 0;
 
-    _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
-    _powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
+_powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
+_powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
 
-    _maxDistance = 30;
+_maxDistance = 30;
 
-    _distFactor = 1 - _maxDistance / MAX_DISTANCE max 0;
+_distFactor = 1 - _distance / _maxDistance max 0;
 
-    if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
-    if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
+if (AGM_weaponRested) then {_powerMod = _powerMod - 0.13};
+if (AGM_bipodDeployed) then {_powerMod = _powerMod - 0.21};
 
-    _camshake = [
-        _distFactor * _powerCoef * (BASE_POWER + _powerMod) max 0,
-        BASE_TIME + _timeMod max 0,
-        BASE_FREQ + _freqMod max 0
-    ];
+_camshake = [
+    _distFactor * _powerCoef * (BASE_POWER + _powerMod) max 0,
+    BASE_TIME + _timeMod max 0,
+    BASE_FREQ + _freqMod max 0
+];
 
-    if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
-        systemChat str _camshake;
-        copyToClipboard format ["addcamshake %1", _camshake];
-    };
-
-    addcamshake _camshake;
+if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
+    systemChat str _camshake;
+    copyToClipboard format ["addcamshake %1", _camshake];
 };
+
+addcamshake _camshake;

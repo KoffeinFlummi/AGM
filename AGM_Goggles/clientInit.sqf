@@ -8,4 +8,9 @@ player addEventHandler ["Respawn", {call AGM_Goggles_fnc_gogglesEffect}];
 player addEventHandler ["Put", {call AGM_Goggles_fnc_gogglesEffect}];
 player addEventHandler ["Take", {call AGM_Goggles_fnc_gogglesEffect}];
 
-call AGM_Goggles_fnc_gogglesEffect;
+AGM_Goggles = goggles player;
+
+0 spawn {
+	sleep 0.1;
+	call AGM_Goggles_fnc_gogglesEffect;
+};

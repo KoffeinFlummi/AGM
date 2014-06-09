@@ -16,40 +16,46 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
-      class execRemoteFnc;
-      class getDirectionVector2;
-      class keyInput;
-      class toBin;
-      class toHex;
       class addVector;
-      class subtractVector;
-      class scaleVector;
-      class scalarProduct;
-      class vectorProduct;
-      class vectorLength;
-      class getWindDirection;
-      class setKeyDefault;
-      class convertKeyCode;
-      class revertKeyCodeLocalized;
       class binarizeNumber;
+      class codeToString;
+      class convertKeyCode;
+      class createUpdateLoop;
+      class displayText;
+      class execRemoteFnc;
+      class findStringInString;
+      class getBank;
+      class getBinocular;
+      class getDirection;
+      class getDirectionVector;
+      class getDirectionVector2;
+      class getEntryFromMissionSQM;
+      class getPitch;
+      class getTargetDistance;
+      class getTargetDistanceDebug;
+      class getTurretIndex;
+      class getTurrets;
+      class getWeaponType;
+      class getWindDirection;
+      class isAutoWind;
+      class isInBuilding;
+      class isTurnedOut;
+      class keyInput;
+      class moduleCheckPBOs;
       class numberToDigits;
       class numberToDigitsString;
-      class getDirection;
-      class getPitch;
-      class getBank;
-      class setPitchBank;
-      class getDirectionVector;
-      class getTargetDistance;
-      class getTurrets;
-      class getTurretIndex;
-      class isTurnedOut;
-      class isInBuilding;
-      class displayText;
       class progressBar;
-      class getWeaponType;
-      class codeToString;
-      class createUpdateLoop;
-      class getBinocular;
+      class revertKeyCodeLocalized;
+      class scalarProduct;
+      class scaleVector;
+      class setKeyDefault;
+      class setPitchBank;
+      class subString;
+      class subtractVector;
+      class toBin;
+      class toHex;
+      class vectorLength;
+      class vectorProduct;
     };
   };
 };
@@ -72,6 +78,39 @@ class CfgFactionClasses {
     displayName = "AGM";
     priority = 0.1;
     side = 7;
+  };
+};
+
+class CfgVehicles {
+  class Module_F;
+  class AGM_ModuleCheckPBOs: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Check PBOs";
+    function = "AGM_Core_fnc_moduleCheckPBOs";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
+      class Action {
+        displayName = "Action";
+        description = "What to do with people who do not have the right PBOs?";
+        class values {
+          class WarnOnce {
+            default = 1;
+            name = "Warn Once";
+            value = 1;
+          };
+          class WarnRepeatedly {
+            name = "Warn Repeatedly (Annoying)";
+            value = 2;
+          };
+          class Kick {
+            name = "Kick";
+            value = 3;
+          };
+        };
+      };
+    };
   };
 };
 
