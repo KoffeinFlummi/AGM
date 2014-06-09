@@ -3,8 +3,13 @@
 private ["_unit"];
 
 _unit = _this select 0;
-_unit setCaptive 1;
-_unit setVariable ["AGM_isCaptive", true, true];
-while {_unit getVariable "AGM_isCaptive";} do {
-	_unit playMove "AmovPercMstpSnonWnonDnon_Ease";
+if (captive _unit) then {
+	_unit setCaptive 0;
+	_unit playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
+}
+else {
+	_unit setCaptive 1;
+	while {captive _unit;} do {
+		_unit playMove "AmovPercMstpSnonWnonDnon_Ease";
+	};
 };

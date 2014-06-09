@@ -23,7 +23,7 @@
     <Key ID="STR_AGM_Civilian_SetCaptive">
       <English>Take Prisoner</English>
 	  <German>Gefangen nehmen</German>
-	  <French>prendre en captivité</French>
+	  <French>Prendre en captivité</French>
     </Key>
   </Package>
 </Project>
