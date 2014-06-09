@@ -25,17 +25,29 @@ _this spawn {
 	player setVariable [_string, [_temperature, _time], false];
 
 	// Play animation and report temperature
-	_animation = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+	/*_animation = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
 
-	player playActionNow _animation;
+	player playActionNow _animation;*/
+	player playActionNow "Gear";
 
-	sleep 2.5;
+	sleep 2;
 
 	_red = [255 * (2 * _temperature / MAX_TEMPERATURE min 1), 2] call AGM_Core_fnc_toHex;
 	_green = [255 * (2 * (MAX_TEMPERATURE - _temperature) / MAX_TEMPERATURE min 1), 2] call AGM_Core_fnc_toHex;
 
 	_picture = format ["<img size='2' color='#%1%200' image='%3'/>", _red, _green, getText (configFile >> "CfgWeapons" >> _weapon >> "picture")];
-	_line = "<t color='#" + _red + _green + "00'>" + localize "STR_AGM_Overheating_Temperature" + "</t>";
+	//_line = "<t color='#" + _red + _green + "00'>" + localize "STR_AGM_Overheating_Temperature" + "</t>";
+
+	_count = 2 + round (10 * _temperature / MAX_TEMPERATURE);
+	_line = "<t color='#" + _red + _green + "00'>";
+	for "_a" from 1 to _count do {
+		_line = _line + "|";
+	};
+	_line = _line + "</t><t color='#555555'>";
+	for "_a" from (_count + 1) to 12 do {
+		_line = _line + "|";
+	};
+	_line = _line + "</t>";
 
 	[formatText ["%1%2%3", parseText _picture, lineBreak, parseText _line]] call AGM_Core_fnc_displayText;
 };
