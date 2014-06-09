@@ -7,27 +7,6 @@
 //     Ex: agm_recoil_shakeMultiplier = 1;
 
 #define SHAKEMULTIPLIER_BASE            5
-#define SHAKEMULTIPLIER_MX              5
-#define SHAKEMULTIPLIER_MX_SW           4
-#define SHAKEMULTIPLIER_KATIBA          5
-#define SHAKEMULTIPLIER_MK20            4.5
-#define SHAKEMULTIPLIER_MK20C           4.5
-#define SHAKEMULTIPLIER_TAVOR           4.5
-#define SHAKEMULTIPLIER_SDAR            4.5
-#define SHAKEMULTIPLIER_SMG_01          4.1
-#define SHAKEMULTIPLIER_SMG_02          4.1
-#define SHAKEMULTIPLIER_PDW_2000        4.1
-#define SHAKEMULTIPLIER_LMG_MK200       5.5
-#define SHAKEMULTIPLIER_LMG_ZAFIR       5.8
-#define SHAKEMULTIPLIER_EBR             5.8
-#define SHAKEMULTIPLIER_LRR             8
-#define SHAKEMULTIPLIER_GM6             8
-#define SHAKEMULTIPLIER_DMR_01          6
-#define SHAKEMULTIPLIER_P07             0
-#define SHAKEMULTIPLIER_ROOK40          0
-#define SHAKEMULTIPLIER_ACPC2           0
-#define SHAKEMULTIPLIER_PISTOL_HEAVY_01 0
-#define SHAKEMULTIPLIER_PISTOL_HEAVY_02 0
 
 class Mode_SemiAuto;
 class Mode_Burst;
@@ -72,7 +51,6 @@ class CfgWeapons {
 
 // SUBMACHINE GUNS
   class SMG_01_Base : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_01;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_smg_01";
       recoilProne = "agm_recoil_single_prone_smg_01";
@@ -87,7 +65,6 @@ class CfgWeapons {
     };
   };
   class SMG_02_Base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SMG_02;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_smg_02";
       recoilProne = "agm_recoil_single_prone_smg_02";
@@ -102,7 +79,6 @@ class CfgWeapons {
     };
   };
   class pdw2000_base_F: Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_PDW_2000;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_pdw";
       recoilProne = "agm_recoil_single_prone_pdw";
@@ -115,7 +91,6 @@ class CfgWeapons {
 
 // ASSAULT RIFLE
   class arifle_MX_Base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
@@ -126,7 +101,6 @@ class CfgWeapons {
     };
   };
   class arifle_MX_SW_F : arifle_MX_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MX_SW;
     class Single : Mode_SemiAuto {//Single
       recoil = "agm_recoil_single_mx";
       recoilProne = "agm_recoil_single_prone_mx";
@@ -137,7 +111,6 @@ class CfgWeapons {
     };
   };
   class arifle_katiba_Base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_KATIBA;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_ktb";
       recoilProne = "agm_recoil_single_prone_ktb";
@@ -148,7 +121,6 @@ class CfgWeapons {
     };
   };
   class mk20_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -159,7 +131,6 @@ class CfgWeapons {
     };
   };
   class arifle_Mk20C_F : mk20_base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_MK20C;
     class Single : Single {
       recoil = "agm_recoil_single_mk20";
       recoilProne = "agm_recoil_single_prone_mk20";
@@ -170,7 +141,6 @@ class CfgWeapons {
     };
   };
   class Tavor_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_TAVOR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_trg";
       recoilProne = "agm_recoil_single_prone_trg";
@@ -181,7 +151,6 @@ class CfgWeapons {
     };
   };
   class SDAR_base_F : Rifle_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_SDAR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_sdar";
       recoilProne = "agm_recoil_single_prone_sdar";
@@ -194,7 +163,6 @@ class CfgWeapons {
 
 // MACHINE GUNS
   class LMG_Mk200_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_MK200;
     class manual : Mode_FullAuto {
       recoil = "agm_recoil_auto_mk200";
       recoilprone = "agm_recoil_auto_prone_mk200";
@@ -205,7 +173,6 @@ class CfgWeapons {
     };
   };
   class LMG_Zafir_F: Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LMG_ZAFIR;
     class Single: Mode_SemiAuto {
       recoil = "agm_recoil_single_zafir";
       recoilprone = "agm_recoil_single_prone_zafir";
@@ -218,7 +185,6 @@ class CfgWeapons {
 
 // PRECISION RIFLES
   class DMR_01_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_DMR_01;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_dmr";
       recoilProne = "agm_recoil_single_prone_dmr";
@@ -229,7 +195,6 @@ class CfgWeapons {
     };
   };
   class EBR_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_EBR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_ebr";
       recoilProne = "agm_recoil_single_prone_ebr";
@@ -240,14 +205,12 @@ class CfgWeapons {
     };
   };
   class LRR_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_LRR;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_gm6";
       recoilProne = "agm_recoil_single_prone_gm6";
     };
   };
   class GM6_base_F : Rifle_Long_Base_F {
-    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_GM6;
     class Single : Mode_SemiAuto {
       recoil = "agm_recoil_single_gm6";
       recoilProne = "agm_recoil_single_prone_gm6";

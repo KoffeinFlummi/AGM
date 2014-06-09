@@ -19,7 +19,7 @@ if (time - _lastFired < 0.45) then {
 
     _startDisperse = [1, 3] select (cameraView == "GUNNER");
 
-    if (_burst > _startDisperse) then { 
+    if (_burst > _startDisperse) then {
         _vel = velocity _projectile;
         _mag = _vel call BIS_fnc_magnitude;
         _vDir = vectorDir _projectile;
@@ -43,8 +43,8 @@ if (time - _lastFired < 0.45) then {
         // Maximum possible dispersion (without _sightsBurst mod)
         _maxBurst = 50;
 
-        if (AGM_weaponRested) then {_maxBurst = 25};
-        if (AGM_bipodDeployed) then {_maxBurst = 18};
+        if (!(isNil "AGM_weaponRested") and {AGM_weaponRested}) then {_maxBurst = 25};
+        if (!(isNil "AGM_bipodDeployed") and {AGM_bipodDeployed}) then {_maxBurst = 18};
 
         // Cap the dispersion
         _burst = (_burst min _maxBurst) + _sightsBurst;
