@@ -117,15 +117,21 @@ class CfgVehicles {
   };
   class I_MBT_03_base_F: MBT_03_base_F {};
 
-  class APC_Wheeled_03_base_F;
-  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {
+  class APC_Wheeled_03_base_F: Wheeled_APC_F {
     fuelCapacity = 700 * FUEL_FACTOR;
+    class Turrets {
+      class MainTurret;
+    };
   };
+  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {};
 
-  class APC_Tracked_03_base_F;
-  class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {
+  class APC_Tracked_03_base_F: Tank_F {
     fuelCapacity = 660 * FUEL_FACTOR;
+    class Turrets {
+      class MainTurret;
+    };
   };
+  class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {};
 
   class Truck_02_base_F: Truck_F {
     fuelCapacity = 1100 * FUEL_FACTOR;
@@ -152,6 +158,9 @@ class CfgVehicles {
 
   class APC_Tracked_02_base_F: Tank_F {
     fuelCapacity = 600 * FUEL_FACTOR; // NO FUCKING DATA
+    class Turrets {
+      class MainTurret;
+    };
   };
   class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
 
@@ -210,6 +219,22 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+  class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"autocannon_30mm_CTWS","AGM_LMG_coax_MBT_01","missiles_titan"};
+        magazines[] = {"140Rnd_30mm_MP_shells_Tracer_Yellow","60Rnd_30mm_APFSDS_shells_Tracer_Yellow","2000Rnd_762x51_Belt_Yellow","2Rnd_GAT_missiles"};
+      };
+    };
+  };
+  class I_APC_tracked_03_cannon_F: I_APC_tracked_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"autocannon_30mm","AGM_LMG_coax_APC_Tracked_03"};
+        magazines[] = {"140Rnd_30mm_MP_shells_Tracer_Yellow","60Rnd_30mm_APFSDS_shells_Tracer_Yellow","1000Rnd_762x51_Belt_Yellow","1000Rnd_762x51_Belt_Yellow"};
+      };
+    };
+  };
   class I_MBT_03_cannon_F: I_MBT_03_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -218,9 +243,25 @@ class CfgVehicles {
       };
     };
   };
+
+  // OPFOR
+  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        weapons[] = {"autocannon_30mm_CTWS","AGM_LMG_coax_MBT_01","missiles_titan"};
+        magazines[] = {"140Rnd_30mm_MP_shells_Tracer_Green","60Rnd_30mm_APFSDS_shells_Tracer_Green","2000Rnd_762x51_Belt_Green","2Rnd_GAT_missiles"};
+      };
+    };
+  };
 };
 
 class CfgWeapons {
   class LMG_coax;
   class AGM_LMG_coax_MBT_01: LMG_coax {};
+  class AGM_LMG_coax_APC_Tracked_03: LMG_coax {};
+
+  /*
+  class autocannon_30mm;
+  class AGM_autocannon_30mm_APC_Tracked_03: autocannon_30mm {};
+  */
 };
