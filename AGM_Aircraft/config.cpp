@@ -607,6 +607,7 @@ class CfgWeapons {
   };
 
   class LMG_Minigun: LMG_RCWS {
+    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow"};
     class manual: MGun {
       reloadTime = 0.015;
       dispersion = 0.006;
@@ -979,12 +980,14 @@ class CfgVehicles {
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
         canEject = 1;
       };
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
       class RightDoorGun: RightDoorGun {
+        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
         canEject = 1;
       };
     };
@@ -1081,8 +1084,9 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
-    lockDetectionSystem = 16;
     driverCanEject = 1;
+    lockDetectionSystem = 16;
+    magazines[] = {"2000Rnd_762x51_Belt_T_Green"};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;

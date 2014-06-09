@@ -45,6 +45,14 @@ class CfgVehicles {
   class Truck_F: Car_F {};
   class Tank_F;
 
+  class Boat_Armed_01_base_F;
+  class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
+    class Turrets {
+      class FrontTurret;
+      class RearTurret;
+    };
+  };
+
   // BLUFOR Inheritance
   class MRAP_01_base_F: Car_F {
     fuelCapacity = 510 * FUEL_FACTOR;
@@ -188,6 +196,14 @@ class CfgVehicles {
       };
     };
   };
+  class B_Boat_Armed_01_minigun_F: Boat_Armed_01_minigun_base_F {
+    class Turrets: Turrets {
+      class FrontTurret: FrontTurret {};
+      class RearTurret: RearTurret {
+        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
+      };
+    };
+  };
 
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
@@ -243,6 +259,14 @@ class CfgVehicles {
       };
     };
   };
+  class I_Boat_Armed_01_minigun_F: Boat_Armed_01_minigun_base_F {
+    class Turrets: Turrets {
+      class FrontTurret: FrontTurret {};
+      class RearTurret: RearTurret {
+        magazines[] = {"2000Rnd_762x51_Belt_T_Yellow"};
+      };
+    };
+  };
 
   // OPFOR
   class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
@@ -256,6 +280,9 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
+  class MGunCore;
+  class MGun: MGunCore {};
+  class LMG_RCWS: MGun {};
   class LMG_coax;
   class AGM_LMG_coax_MBT_01: LMG_coax {};
   class AGM_LMG_coax_APC_Tracked_03: LMG_coax {};
@@ -264,4 +291,16 @@ class CfgWeapons {
   class autocannon_30mm;
   class AGM_autocannon_30mm_APC_Tracked_03: autocannon_30mm {};
   */
+
+  class LMG_Minigun: LMG_RCWS {
+    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow"};
+    class manual: MGun {
+      reloadTime = 0.015;
+      dispersion = 0.006;
+    };
+    class close: manual{};
+    class short: close{};
+    class medium: close{};
+    class far: close{};
+  };
 };

@@ -247,7 +247,9 @@ class CfgWeapons {
         displayName = "M2";
       };
     };
-    class HMG_01: HMG_127 {};
+    class HMG_01: HMG_127 {
+      displayName = "XM312";
+    };
     class HMG_M2: HMG_01 {
       displayName = "M2";
     };
@@ -255,6 +257,12 @@ class CfgWeapons {
       displayName = "NSVT";
       class manual: manual {
         displayName = "NSVT";
+      };
+    };
+    class GMG_20mm: GMG_F {
+      displayName = "XM307";
+      class manual: GMG_F {
+        displayName = "XM307";
       };
     };
     class GMG_40mm: GMG_F {
@@ -645,5 +653,12 @@ class CfgMagazines {
   };
   class 60Rnd_30mm_APFSDS_shells_Tracer_Yellow: 60Rnd_30mm_APFSDS_shells {
     displayNameShort = "30mm AP-T";
+  };
+
+  class 200Rnd_20mm_G_belt: VehicleMagazine {
+    displayNameShort = "20mm HE";
+  };
+  class 40Rnd_20mm_G_belt: 200Rnd_20mm_G_belt {
+    displayNameShort = "20mm HE";
   };
 };
