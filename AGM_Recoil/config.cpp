@@ -6,29 +6,26 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
-      "AGM_Core",
-      "AGM_Smallarms",
-      "AGM_Resting",
-      "AGM_Smallarms",
-      "AGM_Resting",
-      "A3_Weapons_F",
-      "A3_Weapons_F_NATO",
-      "A3_Weapons_F_CSAT",
-      "A3_Weapons_F_AAF",
-      "A3_weapons_F_FIA",
-      "A3_Weapons_F_ItemHolders",
-      "A3_Weapons_F_Headgear",
-      "A3_Weapons_F_Uniforms",
-      "A3_Weapons_F_Vests",
-      "A3_Anims_F"
+      AGM_Core,
+      A3_Weapons_F,
+      A3_Weapons_F_NATO,
+      A3_Weapons_F_CSAT,
+      A3_Weapons_F_AAF,
+      A3_weapons_F_FIA,
+      A3_Weapons_F_ItemHolders,
+      A3_Weapons_F_Headgear,
+      A3_Weapons_F_Uniforms,
+      A3_Weapons_F_Vests,
+      A3_Anims_F
     };
     version = "0.9";
     versionStr = "0.9";
     versionAr[] = {0,9,0};
-    author[] = {"TaoSensai"};
+    author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
 };
+
 
 class CfgFunctions {
   class AGM_Recoil {
@@ -36,10 +33,10 @@ class CfgFunctions {
       file = "\AGM_Recoil\functions";
       class burstDispersion;
       class camshake;
-      class camshakeNear;
     };
   };
 };
+
 
 // Fired EH
 class Extended_Fired_EventHandlers {
@@ -70,14 +67,6 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-//FiredNear EH
-/*class Extended_FiredNear_EventHandlers {
-  class CAManBase {
-    class AGM_Camshake {
-      clientFiredNear = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_camshakeNear}";
-    };
-  };
-};*/
 
 // DOC: http://forums.bistudio.com/showthread.php?94464-explaining-the-cfgRecoils-array
 class CfgRecoils {
@@ -255,6 +244,6 @@ class CfgMovesMaleSdr : CfgMovesBasic {
   };
 };
 
-#include <CamShake_Ammo_Config.hpp>
-#include <CamShake_Vehicles_Config.hpp>
-#include <CamShake_Weapons_Config.hpp>
+#include <Ammo_Config.hpp>
+#include <Vehicles_Config.hpp>
+#include <Weapons_Config.hpp>
