@@ -33,6 +33,11 @@ class CfgPatches {
 };
 
 class CfgVehicles {
+  // Global Inheritance
+  class StaticMGWeapon;
+  class GMG_TriPod;
+  class AT_01_base_F;
+  class AA_01_base_F;
 
   // BLUFOR Inheritance
   class MRAP_01_base_F;
@@ -80,6 +85,26 @@ class CfgVehicles {
   class Plane_CAS_02_base_F;
 
   ////////////////////////////////////
+
+  // Global
+  class HMG_01_base_F: StaticMGWeapon {
+    displayName = "$STR_AGM_VehicleNames_HMG_01_Name";
+  };
+  class HMG_01_A_base_F: HMG_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_HMG_01_A_Name";
+  };
+  class HMG_01_high_base_F: HMG_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_HMG_01_high_Name";
+  };
+  class GMG_01_base_F: GMG_TriPod {
+    displayName = "$STR_AGM_VehicleNames_GMG_01_Name";
+  };
+  class GMG_01_A_base_F: GMG_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_GMG_01_A_Name";
+  };
+  class GMG_01_high_base_F: GMG_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_GMG_01_high_Name";
+  };
 
   // BLUFOR
   class B_MRAP_01_F: MRAP_01_base_F {
@@ -155,6 +180,13 @@ class CfgVehicles {
     displayName = "$STR_AGM_VehicleNames_Plane_CAS_01_Name";
   };
 
+  class B_static_AT_F: AT_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AT_Name";
+  };
+  class B_static_AA_F: AA_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AA_Name";
+  };
+
 
   // INDEP
   class I_MRAP_03_F: MRAP_03_base_F {
@@ -210,6 +242,13 @@ class CfgVehicles {
   };
   class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
     displayName = "$STR_AGM_VehicleNames_Plane_Fighter_03_AA_Name";
+  };
+
+  class I_static_AT_F: AT_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AT_Name";
+  };
+  class I_static_AA_F: AA_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AA_Name";
   };
 
 
@@ -289,5 +328,12 @@ class CfgVehicles {
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
     displayName = "$STR_AGM_VehicleNames_Plane_CAS_02_Name";
+  };
+
+  class O_static_AT_F: AT_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AT_Name";
+  };
+  class O_static_AA_F: AA_01_base_F {
+    displayName = "$STR_AGM_VehicleNames_static_AA_Name";
   };
 };

@@ -2,6 +2,39 @@
 <Project name="AGM">
   <Package name="VehicleNames">
 
+    <Key ID="STR_AGM_VehicleNames_HMG_01_Name">
+      <English>XM312</English>
+      <German>XM312</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_HMG_01_A_Name">
+      <English>XM312A</English>
+      <German>XM312A</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_HMG_01_high_Name">
+      <English>XM312 (High)</English>
+      <German>XM312 (Hoch)</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_GMG_01_Name">
+      <English>XM307</English>
+      <German>XM307</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_GMG_01_A_Name">
+      <English>XM307A</English>
+      <German>XM307A</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_GMG_01_high_Name">
+      <English>XM307 (High)</English>
+      <German>XM307 (Hoch)</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_static_AT_Name">
+      <English>Mini-Spike Launcher (AT)</English>
+      <German>Mini-Spike Lenkflugkörper (AT)</German>
+    </Key>
+    <Key ID="STR_AGM_VehicleNames_static_AA_Name">
+      <English>Mini-Spike Launcher (AA)</English>
+      <German>Mini-Spike Lenkflugkörper (AA)</German>
+    </Key>
+
     <Key ID="STR_AGM_VehicleNames_MRAP_01_Name">
       <English>M-ATV</English>
       <German>M-ATV</German>
@@ -27,7 +60,7 @@
       <Polish>M-ATV (GMG)</Polish>
       <Czech>M-ATV (Granátomet)</Czech>
       <French>M-ATV (GMG)</French>
-      <Russian>M-ATV (Гранатомет)</Russian>      
+      <Russian>M-ATV (Гранатомет)</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_MBT_01_cannon_Name">
       <English>Merkava Mk IV</English>
@@ -55,7 +88,7 @@
       <Czech>Sholef</Czech>
       <French>Sholef</French>
       <Russian>Sholef</Russian>
-    </Key>    
+    </Key>
     <Key ID="STR_AGM_VehicleNames_MBT_01_mlrs_Name">
       <English>Seara</English>
       <German>Seara</German>
@@ -340,13 +373,13 @@
       <Russian>БПМ-К Камыш</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_APC_Tracked_02_AA_Name">
-      <English>ZSU-39 Tigris</English>
-      <German>ZSU-39 Tigris</German>
-      <Spanish>ZSU-39 Tigris</Spanish>
-      <Polish>ZSU-39 Tigris</Polish>
-      <Czech>ZSU-39 Tigris</Czech>
-      <French>ZSU-39 Tigris</French>
-      <Russian>ZSU-39 Tigris</Russian>
+      <English>ZSU-35 Tigris</English>
+      <German>ZSU-35 Tigris</German>
+      <Spanish>ZSU-35 Tigris</Spanish>
+      <Polish>ZSU-35 Tigris</Polish>
+      <Czech>ZSU-35 Tigris</Czech>
+      <French>ZSU-35 Tigris</French>
+      <Russian>ZSU-35 Tigris</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_APC_Wheeled_02_rcws_Name">
       <English>ARMA</English>
@@ -486,21 +519,21 @@
       <Russian>AW101 Мерлин</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_Plane_Fighter_03_CAS_Name">
-      <English>L-159 Albatross (CAS)</English>
-      <German>L-159 Albatross (CAS)</German>
-      <Spanish>L-159 Albatross</Spanish>
-      <Polish>L-159 Albatross (CAS)</Polish>
-      <Czech>L-159 Albatross (CAS)</Czech>
-      <French>L-159 Albatross (CAS)</French>
+      <English>L-159 ALCA (CAS)</English>
+      <German>L-159 ALCA (CAS)</German>
+      <Spanish>L-159 ALCA</Spanish>
+      <Polish>L-159 ALCA (CAS)</Polish>
+      <Czech>L-159 ALCA (CAS)</Czech>
+      <French>L-159 ALCA (CAS)</French>
       <Russian>L-159 Альбатрос (CAS)</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_Plane_Fighter_03_AA_Name">
-      <English>L-159 Albatross (AA)</English>
-      <German>L-159 Albatross (AA)</German>
-      <Spanish>L-159 Albatross (AA)</Spanish>
-      <Polish>L-159 Albatross (AA)</Polish>
-      <Czech>L-159 Albatross (AA)</Czech>
-      <French>L-159 Albatross (AA)</French>
+      <English>L-159 ALCA (AA)</English>
+      <German>L-159 ALCA (AA)</German>
+      <Spanish>L-159 ALCA (AA)</Spanish>
+      <Polish>L-159 ALCA (AA)</Polish>
+      <Czech>L-159 ALCA (AA)</Czech>
+      <French>L-159 ALCA (AA)</French>
       <Russian>L-159 Альбатрос (AA)</Russian>
     </Key>
     <Key ID="STR_AGM_VehicleNames_Heli_Light_02_Name">
