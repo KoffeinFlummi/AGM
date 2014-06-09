@@ -12,7 +12,7 @@
 
 private ["_path", "_mission", "_index0", "_index1", "_array1", "_a"];
 
-_path = ["Mission","Intel","windForced"];
+_path = _this;
 
 _mission = toArray toLower loadFile "mission.sqm";
 {
