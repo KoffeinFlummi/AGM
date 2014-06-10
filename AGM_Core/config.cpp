@@ -16,7 +16,6 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
-      class addVector;
       class binarizeNumber;
       class codeToString;
       class convertKeyCode;
@@ -24,13 +23,11 @@ class CfgFunctions {
       class displayText;
       class execRemoteFnc;
       class findStringInString;
-      class getBank;
       class getBinocular;
-      class getDirection;
       class getDirectionVector;
       class getDirectionVector2;
-      class getEntryFromMissionSQM;
-      class getPitch;
+      class getStringFromMissionSQM;
+      class getNumberFromMissionSQM;
       class getTargetDistance;
       class getTargetDistanceDebug;
       class getTurretIndex;
@@ -46,16 +43,10 @@ class CfgFunctions {
       class numberToDigitsString;
       class progressBar;
       class revertKeyCodeLocalized;
-      class scalarProduct;
-      class scaleVector;
       class setKeyDefault;
-      class setPitchBank;
       class subString;
-      class subtractVector;
       class toBin;
       class toHex;
-      class vectorLength;
-      class vectorProduct;
     };
   };
 };

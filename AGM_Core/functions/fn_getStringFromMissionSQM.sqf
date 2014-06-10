@@ -1,13 +1,13 @@
 /*
  * Author: commy2
  *
- * Get an entry from the mission.sqm file. Caution: this function sucks and is really slow.
+ * Get a string from the mission.sqm file. Mission has to be saved in the Editor.
  * 
  * Argument:
  * 0: Path of the entry in the mission.sqm (Array)
  * 
  * Return value:
- * Value of the entry (Number)
+ * Value of the entry (String)
  */
 
 private ["_path", "_mission", "_a", "_class", "_index", "_array", "_b", "_entry"];
@@ -52,4 +52,4 @@ _index = [";", _mission] call AGM_Core_fnc_findStringInString;
 
 _mission = toArray _mission;
 _mission resize _index;
-parseNumber toString _mission;
+toString _mission;

@@ -10,4 +10,4 @@
  * This mission has automatic wind? (Bool)
  */
 
-["Mission", "Intel", "windForced"] call AGM_Core_fnc_getEntryFromMissionSQM != 1
+["Mission", "Intel", "windForced"] call AGM_Core_fnc_getNumberFromMissionSQM != 1
