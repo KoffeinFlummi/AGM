@@ -24,12 +24,11 @@ class CfgFunctions {
       class execRemoteFnc;
       class findStringInString;
       class getBinocular;
-      class getDirectionVector;
       class getDirectionVector2;
-      class getStringFromMissionSQM;
+      class getDirectionVector;
       class getNumberFromMissionSQM;
+      class getStringFromMissionSQM;
       class getTargetDistance;
-      class getTargetDistanceDebug;
       class getTurretIndex;
       class getTurrets;
       class getWeaponType;
