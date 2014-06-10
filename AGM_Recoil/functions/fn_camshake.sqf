@@ -39,7 +39,7 @@ if (vehicle player != player) then {
     _powerCoef = (getArray (configFile >> "CfgRecoils" >> _recoil)) select 1;
   };
 
-  _powerCoef = (call compile _powerCoef) * RECOIL_COEF;
+  _powerCoef = (call compile (format ["%1", _powerCoef])) * RECOIL_COEF;
 };
 
 if (!(isNil "AGM_weaponRested") and {AGM_weaponRested}) then {_powerMod = _powerMod - 0.07};
