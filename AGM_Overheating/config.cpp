@@ -22,9 +22,7 @@ class CfgFunctions {
   class AGM_Overheating {
     class AGM_Overheating {
       file = "\AGM_Overheating\functions";
-      //class checkTemperature;
-      //class checkTemperatureCallback;
-      class checkTemperatureQuick;
+      class checkTemperature;
       class firedEH;
       class swapBarrel;
       class swapBarrelCallback;
@@ -52,7 +50,7 @@ class AGM_Core_Default_Keys {
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
-    statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperatureQuick";
+    statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
     key = 20;
     shift = 0;
     control = 1;
