@@ -1,7 +1,7 @@
 /*
  * Author: commy2
  *
- * Get binary equivalent of a decimal number.
+ * Get a binary equivalent of a decimal number.
  * 
  * Argument:
  * 0: Decimal Number (Number)

@@ -25,7 +25,6 @@ class CfgFunctions {
       class findStringInString;
       class getBinocular;
       class getDirectionVector;
-      class getDirectionVector2;
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
       class getTargetDistance;

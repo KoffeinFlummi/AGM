@@ -60,7 +60,7 @@ class CfgFunctions {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_Medical {
-      init = "_this spawn AGM_Medical_fnc_init";
+      init = "_this call AGM_Medical_fnc_init";
     };
   };
 };
