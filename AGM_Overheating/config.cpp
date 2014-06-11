@@ -30,11 +30,9 @@ class CfgFunctions {
   };
 };
 
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_giveSpareBarrel {
-      clientInit = "if (player == _this select 0) then {_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1) then {(_this select 0) addItem 'AGM_SpareBarrel'}}}"; 
-    };
+class Extended_PostInit_EventHandlers {
+  class AGM_Overheating {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Overheating\clientInit.sqf'";
   };
 };
 

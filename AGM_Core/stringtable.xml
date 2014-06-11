@@ -222,5 +222,10 @@
       <Russian>ССЗ</Russian>
     </Key>
 
+    <Key ID="STR_AGM_Core_ActionAborted">
+      <English>Action cancelled.</English>
+      <German>Aktion abgebrochen.</German>
+    </Key>
+
   </Package>
 </Project>

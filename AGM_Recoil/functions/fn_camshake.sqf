@@ -16,7 +16,7 @@ _ammo = _this select 4;
 
 if (_weapon == handgunWeapon _unit) exitWith {};
 
-_powerMod = [0, -0.1, -0.1, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit);
+_powerMod = ([0, -0.1, -0.1, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit)) + ([0, -1, 0, -1] select (["INTERNAL", "EXTERNAL", "GUNNER", "GROUP"] find cameraView));
 _timeMod = 0;
 _freqMod = 0;
 

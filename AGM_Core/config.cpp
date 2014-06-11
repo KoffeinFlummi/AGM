@@ -24,10 +24,9 @@ class CfgFunctions {
       class execRemoteFnc;
       class findStringInString;
       class getBinocular;
-      class getDirectionVector2;
-      class getDirectionVector;
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
+      class getTargetAzimuthAndInclination;
       class getTargetDistance;
       class getTurretIndex;
       class getTurrets;

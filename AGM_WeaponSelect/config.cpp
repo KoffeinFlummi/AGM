@@ -26,10 +26,14 @@ class CfgFunctions {
   };
 };
 
+
+
+
+
 class AGM_Core_Default_Keys {
   class selectPistol {
     displayName = "$STR_AGM_WeaponSelect_SelectPistol";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 2;
     shift = 0;
@@ -38,7 +42,7 @@ class AGM_Core_Default_Keys {
   };
   class selectRifle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifle";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 3;
     shift = 0;
@@ -47,7 +51,7 @@ class AGM_Core_Default_Keys {
   };
   class selectLauncher {
     displayName = "$STR_AGM_WeaponSelect_SelectLauncher";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     key = 5;
     shift = 0;
@@ -56,7 +60,7 @@ class AGM_Core_Default_Keys {
   };
   /*class selectPistolMuzzle {
     displayName = "Select Pistol Muzzle";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     disabled = 1;
     key = 7;
@@ -66,7 +70,7 @@ class AGM_Core_Default_Keys {
   };*/
   class selectRifleMuzzle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifleMuzzle";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     key = 4;
     shift = 0;
@@ -75,7 +79,7 @@ class AGM_Core_Default_Keys {
   };
   /*class selectLauncherMuzzle {
     displayName = "Select Launcher Muzzle";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     disabled = 1;
     key = 8;
@@ -85,7 +89,7 @@ class AGM_Core_Default_Keys {
   };*/
   class selectBinocular {
     displayName = "$STR_AGM_WeaponSelect_SelectBinocular";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "call AGM_WeaponSelect_fnc_selectBinocular";
     key = 6;
     shift = 0;
@@ -94,7 +98,7 @@ class AGM_Core_Default_Keys {
   };
   class holsterWeapon {
     displayName = "$STR_AGM_WeaponSelect_HolsterWeapon";
-    condition = "player == _vehicle";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "call AGM_WeaponSelect_fnc_putWeaponAway";
     key = 11;
     shift = 0;
