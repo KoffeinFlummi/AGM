@@ -18,6 +18,8 @@ import os
 import sys
 import subprocess
 import winreg
+import threading
+import time
 
 privatekey = "" # if set to anything other that "" it will sign the addons
 modfolder  = "@AGM_dev"
@@ -104,13 +106,19 @@ except:
 
 print("\n######################################################")
 print("# Tools found, starting binarization.                #")
-print("######################################################")
+print("######################################################\n")
+
+threads = []
 
 for module in modules:
-  print("\n######################################################")
-  print("# Binarizing:  " + module + (38-len(module))*" " + "#")
-  print("######################################################\n")
-  binarize(module)
+  print("# Binarizing: " + module)
+  thread = threading.Thread(target=binarize, args=[module])
+  thread.start()
+  threads.append(thread)
+  time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
+
+for thread in threads:
+  thread.join()
 
 print("\n######################################################")
 print("# Binarization complete.                             #")
