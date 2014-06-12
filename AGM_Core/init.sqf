@@ -18,7 +18,7 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
 
 0 spawn {
 	while {true} do {
-		waitUntil {!isNull (findDisplay 46)}; sleep 0.1;
+		waitUntil {!isNull (findDisplay 46)}; sleep 1;
 		(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
 		(findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 		waitUntil {isNull (findDisplay 46)};
