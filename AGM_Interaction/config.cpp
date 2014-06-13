@@ -63,8 +63,8 @@ class AGM_Core_Default_Keys {
   };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
-    condition = "alive AGM_Interaction_Target and {!(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])}";
-    statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+    condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
+    statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', cursorTarget] call AGM_Core_fnc_execRemoteFnc";
     key = 20;
     shift = 1;
     control = 0;
