@@ -225,6 +225,8 @@
     <Key ID="STR_AGM_Core_ActionAborted">
       <English>Action cancelled.</English>
       <German>Aktion abgebrochen.</German>
+      <Spanish>Acción cancelada.</Spanish>
+      <French>Action annulée.</French>
     </Key>
 
   </Package>
