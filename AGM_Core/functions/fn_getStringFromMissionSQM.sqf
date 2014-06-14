@@ -14,6 +14,7 @@ private ["_path", "_mission", "_a", "_class", "_index", "_array", "_b", "_entry"
 
 _path = _this;
 
+if (missionName == "") exitWith {""};
 _mission = toArray toLower loadFile "mission.sqm";
 {
 	if (_x < 33) then {
