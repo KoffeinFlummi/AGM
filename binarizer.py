@@ -81,7 +81,7 @@ def binarize(module_name):
     args.append("-sign="+privatekey)
     #args.append("-dssignfile="+signfile_path)
 
-  return subprocess.call(args, shell=True)
+  return subprocess.call(args)
 
 try:
   path = get_arma_path()
