@@ -18,9 +18,9 @@ class CfgPatches {
       A3_Weapons_F_Vests,
       A3_Anims_F
     };
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };

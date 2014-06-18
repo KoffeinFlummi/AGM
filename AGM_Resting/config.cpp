@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {Extended_EventHandlers, AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -377,7 +377,7 @@ class CfgMovesBasic {
   };
 };
 
-class CfgMovesMaleSdr : CfgMovesBasic { 
+class CfgMovesMaleSdr : CfgMovesBasic {
   class States {
     class AmovPercMstpSrasWrflDnon;
     class AmovPercMstpSrasWrflDnon_bwa3_deploy : AmovPercMstpSrasWrflDnon {

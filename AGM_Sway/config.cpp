@@ -6,9 +6,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -40,7 +40,7 @@ class CfgMovesBasic {
     aimPrecision = TMR_SWAY_10;
   };
 };
-class CfgMovesMaleSdr : CfgMovesBasic { 
+class CfgMovesMaleSdr : CfgMovesBasic {
   class States {
     class AidlPercMstpSrasWrflDnon_G0S;
     class AmovPercMstpSrasWrflDnon_turnL : AidlPercMstpSrasWrflDnon_G0S {
