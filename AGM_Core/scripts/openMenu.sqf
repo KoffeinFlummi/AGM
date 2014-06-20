@@ -10,6 +10,7 @@ AGM_Core_keyNew = [];
 AGM_Core_keySet = -1;
 AGM_Core_keySave = 0;
 AGM_Core_keyNames = [];
+AGM_Core_MenuPage = 0;
 
 disableSerialization;
 _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
@@ -17,7 +18,10 @@ _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
 _config = configFile >> "AGM_Core_Default_Keys";
 _count = count _config;
 
-for "_index" from 0 to (_count - 1) do {
+_countPages = ceil (_count / 20);
+(_dlgMenuDialog displayCtrl 14) ctrlSetText format ["%1/%2", AGM_Core_MenuPage + 1, _countPages];
+
+for "_index" from 0 to (_count - 1 min 19) do {
 	_configFile = _config select _index;
 	_keyName = configName _configFile;
 	_displayName = getText (_configFile >> "displayName");
@@ -65,7 +69,10 @@ if (AGM_Core_keySave == 1) then {
 	} else {
 		[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
 	};
+} else {
+	[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
 };
 
 AGM_Core_keyNewTemp = nil;
 AGM_Core_keyNames = nil;
+AGM_Core_MenuPage = nil;

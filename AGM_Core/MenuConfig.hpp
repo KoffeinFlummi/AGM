@@ -574,5 +574,33 @@ class AGM_Core_OptionsMenu_Dialog {
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
+
+    class Interactive_ButtonA : AGM_Core_Interactive_Button_Base {
+      action = "false call AGM_Core_nextKeys";
+      text = "$STR_AGM_Core_Prev";
+      idc = 12;
+      style = 2 + 0x800;
+      x = (HSPACE2 + 3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 0.5 * 0.04) * safezoneH + safezoneY;
+      w = 1.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interactive_ButtonB : Interactive_ButtonA {
+      action = "true call AGM_Core_nextKeys";
+      text = "$STR_AGM_Core_Next";
+      idc = 13;
+      x = (HSPACE2 + 3 * 0.1 + 2.0 / 16) * safezoneW + safezoneX;
+    };
+
+    class Interactive_ButtonC : AGM_Core_Text_Button_Base {
+      text = "";
+      idc = 14;
+      style = 2 + 0x800;
+      x = (HSPACE2 + 3 * 0.1 + 1.25 / 16) * safezoneW + safezoneX;
+      y = (VSPACE2 + 0.5 * 0.04) * safezoneH + safezoneY;
+      w = 0.5 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
   };
 };

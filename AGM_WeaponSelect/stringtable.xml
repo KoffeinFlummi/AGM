@@ -57,5 +57,28 @@
       <French>Arme dans le dos</French>
     </Key>
 
+    <Key ID="STR_AGM_WeaponSelect_EngineOn">
+      <English>Engine on</English>
+      <German>Motor an</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_EngineOff">
+      <English>Engine off</English>
+      <German>Motor aus</German>
+    </Key>
+
+    <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
+      <English>Select main gun</English>
+      <German>Hauptgeschütz auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
+      <English>Select machine gun</English>
+      <German>Maschinengewehr auswählen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
+      <English>Select missiles</English>
+      <German>Raketen auswählen</German>
+    </Key>
+
+
   </Package>
 </Project>

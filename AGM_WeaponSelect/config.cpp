@@ -22,13 +22,11 @@ class CfgFunctions {
       class selectWeaponMuzzle;
       class selectBinocular;
       class putWeaponAway;
+      class selectWeaponVehicle;
+      class selectMagazineVehicle;
     };
   };
 };
-
-
-
-
 
 class AGM_Core_Default_Keys {
   class selectPistol {
@@ -101,6 +99,53 @@ class AGM_Core_Default_Keys {
     condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
     statement = "call AGM_WeaponSelect_fnc_putWeaponAway";
     key = 11;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+
+  class engineOn {
+    displayName = "$STR_AGM_WeaponSelect_EngineOn";
+    condition = "player != _vehicle && {player == driver _vehicle} && {!isEngineOn _vehicle}";
+    statement = "_vehicle engineOn true";
+    key = 3;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class engineOff {
+    displayName = "$STR_AGM_WeaponSelect_EngineOff";
+    condition = "player != _vehicle && {player == driver _vehicle} && {isEngineOn _vehicle}";
+    statement = "_vehicle engineOn false";
+    key = 2;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+
+  class selectMaingun {
+    displayName = "$STR_AGM_WeaponSelect_SelectMainGun";
+    condition = "player != _vehicle";
+    statement = "[_vehicle, 0] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
+    key = 3;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class selectMachineGun {
+    displayName = "$STR_AGM_WeaponSelect_SelectMachineGun";
+    condition = "player != _vehicle";
+    statement = "[_vehicle, 1] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
+    key = 4;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class selectMissile {
+    displayName = "$STR_AGM_WeaponSelect_SelectMissiles";
+    condition = "player != _vehicle";
+    statement = "[_vehicle, 2] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
+    key = 5;
     shift = 0;
     control = 0;
     alt = 0;
