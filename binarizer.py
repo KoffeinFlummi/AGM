@@ -88,7 +88,8 @@ def binarize(module_name):
     args.append("-sign="+privatekey)
     #args.append("-dssignfile="+signfile_path)
 
-  job = subprocess.Popen(args)
+  job = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  out, error = job.communicate()
 
   if movemanually:
     job.wait()
