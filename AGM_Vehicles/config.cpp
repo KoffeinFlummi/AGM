@@ -24,9 +24,9 @@ class CfgPatches {
       A3_Soft_F_TruckHeavy,
       A3_Soft_F_EPC_Truck_03
     };
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };

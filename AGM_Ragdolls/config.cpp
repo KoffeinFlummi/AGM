@@ -4,15 +4,15 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Characters_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi", "Opticalsnare"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
-/* 
+/*
  * BASED ON OPTICALSNARE'S WORK
  * He gave permission to use his code here:
  * http://forums.bistudio.com/showthread.php?171771-Flying-bodies-Physics-Mod&p=2603042#post2603042
@@ -55,20 +55,20 @@ class RagDollDefaultSpring {
 
 class RagDollSphericalJoint {
   class TwistLimitLow : RagDollDefaultLimit {};
-  
+
   class TwistLimitHigh : RagDollDefaultLimit {};
-  
+
   class SwingLimit : RagDollDefaultLimit {};
-  
+
   class TwistSpring : RagDollDefaultSpring {
     enabled = 1;
   };
-  
+
   class SwingSpring : RagDollDefaultSpring {
     enabled = 1;
     damper = 2;
   };
-  
+
   class JointSpring : RagDollDefaultSpring {
     enabled = 0;
   };
@@ -80,9 +80,9 @@ class RagDollSphericalJoint {
 
 class RagDollRevoluteJoint {
   class LimitLow : RagDollDefaultLimit {};
-  
+
   class LimitHigh : RagDollDefaultLimit {};
-  
+
   class Spring : RagDollDefaultSpring {
     enabled = 0;
   };
@@ -140,7 +140,7 @@ class CfgRagDollSkeletons {
     recoveryDistLimit = "0.7f";
     animBlendTime = "0.0f";
   };
-  
+
   class Soldier : BaseRagdoll {
     primaryWeaponBone = "weapon";
     secondaryWeaponBone = "launcher";
@@ -149,49 +149,49 @@ class CfgRagDollSkeletons {
     draggingMask = "dragging";
     hitMask = "hit";
     hitMaskUnderwater = "hitUnderwater";
-    
+
     class WeaponLinkBones {
       class LinkBone1 {
         bone = "leftHand";
         canBeDropped = 1;
         prefference = "1.0f";
       };
-      
+
       class LinkBone2 {
         bone = "rightHand";
         canBeDropped = 1;
         prefference = "2.0f";
       };
-      
+
       class LinkBone3 {
         bone = "chest";
         canBeDropped = 1;
         prefference = "1.0f";
       };
     };
-    
+
     class Masks {
       class DraggingMask {
         name = "dragging";
         mask[] = {{"pelvis", 0, 1}, {"chest", 0, 1}, {"head", "0.6f", 0}, {"leftArm", 1, 0}, {"leftForeArm", 1, 0}, {"leftHand", 1, 0}, {"rightArm", 1, 0}, {"rightForeArm", 1, 0}, {"rightHand", 1, 0}, {"leftUpLeg", 1, 0}, {"leftLeg", 1, 0}, {"leftFoot", 1, 0}, {"rightUpLeg", 1, 0}, {"rightLeg", 1, 0}, {"rightFoot", 1, 0}, {"weapon", 0, 1}, {"launcher", 0, 1}};
       };
-      
+
       class HitMask {
         name = "hit";
         mask[] = {{"pelvis", 1, 0}, {"chest", 1, 0}, {"head", 1, 0}, {"leftArm", 1, 0}, {"leftForeArm", 1, 0}, {"leftHand", 1, 0}, {"rightArm", 1, 0}, {"rightForeArm", 1, 0}, {"rightHand", 1, 0}, {"leftUpLeg", 1, 0}, {"leftLeg", 1, 0}, {"leftFoot", 1, 1}, {"rightUpLeg", 1, 0}, {"rightLeg", 1, 0}, {"rightFoot", 1, 1}, {"weapon", 1, 0}, {"launcher", 1, 0}};
       };
-      
+
       class HitMaskUnderwater {
         name = "hitUnderwater";
         mask[] = {{"pelvis", 1, 1}, {"chest", 1, 1}, {"head", 1, 0}, {"leftArm", 1, 0}, {"leftForeArm", 1, 0}, {"leftHand", 1, 0}, {"rightArm", 1, 0}, {"rightForeArm", 1, 0}, {"rightHand", 1, 0}, {"leftUpLeg", 1, 0}, {"leftLeg", 1, 0}, {"leftFoot", 1, 0}, {"rightUpLeg", 1, 0}, {"rightLeg", 1, 0}, {"rightFoot", 1, 0}, {"weapon", 1, 0}, {"launcher", 1, 0}};
       };
     };
-    
+
     class BaseRagdollBone {
       material = "Ragdoll";
       childrenUseStartTrans = 1;
     };
-    
+
     class Bones {
       class Pelvis : BaseRagdollBone {
         name = "pelvis";
@@ -202,7 +202,7 @@ class CfgRagDollSkeletons {
         radius = 0.12;
         networkType = "root";
       };
-      
+
       class Chest : BaseRagdollBone {
         name = "chest";
         type = "capsule";
@@ -211,7 +211,7 @@ class CfgRagDollSkeletons {
         radius = 0.16;
         mass = 15;
       };
-      
+
       class Head : BaseRagdollBone {
         name = "head";
         type = "sphere";
@@ -219,7 +219,7 @@ class CfgRagDollSkeletons {
         mass = 8;
         radius = 0.16;
       };
-      
+
       class LeftArm : BaseRagdollBone {
         name = "leftArm";
         type = "capsule";
@@ -227,7 +227,7 @@ class CfgRagDollSkeletons {
         endBone = "leftForeArm";
         mass = 8;
       };
-      
+
       class LeftForeArm : BaseRagdollBone {
         name = "leftForeArm";
         type = "capsule";
@@ -235,7 +235,7 @@ class CfgRagDollSkeletons {
         endBone = "leftHand";
         mass = 6;
       };
-      
+
       class LeftHand : BaseRagdollBone {
         name = "leftHand";
         type = "sphere";
@@ -245,7 +245,7 @@ class CfgRagDollSkeletons {
         childrenUseStartTrans = 0;
         networkType = "leftHand";
       };
-      
+
       class RightArm : BaseRagdollBone {
         name = "rightArm";
         type = "capsule";
@@ -253,7 +253,7 @@ class CfgRagDollSkeletons {
         endBone = "rightForeArm";
         mass = 8;
       };
-      
+
       class RightForeArm : BaseRagdollBone {
         name = "rightForeArm";
         type = "capsule";
@@ -261,7 +261,7 @@ class CfgRagDollSkeletons {
         endBone = "rightHand";
         mass = 6;
       };
-      
+
       class RightHand : BaseRagdollBone {
         name = "rightHand";
         type = "sphere";
@@ -271,7 +271,7 @@ class CfgRagDollSkeletons {
         childrenUseStartTrans = 0;
         networkType = "rightHand";
       };
-      
+
       class LeftUpLeg : BaseRagdollBone {
         name = "leftUpLeg";
         type = "capsule";
@@ -279,7 +279,7 @@ class CfgRagDollSkeletons {
         endBone = "leftLeg";
         mass = 15;
       };
-      
+
       class LeftLeg : BaseRagdollBone {
         name = "leftLeg";
         type = "capsule";
@@ -287,7 +287,7 @@ class CfgRagDollSkeletons {
         endBone = "leftFoot";
         mass = 10;
       };
-      
+
       class LeftFoot : BaseRagdollBone {
         name = "leftFoot";
         type = "box";
@@ -296,7 +296,7 @@ class CfgRagDollSkeletons {
         mass = 8;
         networkType = "leftFoot";
       };
-      
+
       class RightUpLeg : BaseRagdollBone {
         name = "rightUpLeg";
         type = "capsule";
@@ -304,7 +304,7 @@ class CfgRagDollSkeletons {
         endBone = "rightLeg";
         mass = 15;
       };
-      
+
       class RightLeg : BaseRagdollBone {
         name = "rightLeg";
         type = "capsule";
@@ -312,7 +312,7 @@ class CfgRagDollSkeletons {
         endBone = "rightFoot";
         mass = 10;
       };
-      
+
       class RightFoot : BaseRagdollBone {
         name = "rightFoot";
         type = "box";
@@ -321,7 +321,7 @@ class CfgRagDollSkeletons {
         mass = 8;
         networkType = "rightFoot";
       };
-      
+
       class Weapon : BaseRagdollBone {
         name = "weapon";
         type = "weapon";
@@ -329,7 +329,7 @@ class CfgRagDollSkeletons {
         endPosRelToStart[] = {0.0, 1.0, 0.0};
         mass = 3;
       };
-      
+
       class Launcher : BaseRagdollBone {
         name = "launcher";
         type = "weapon";
@@ -338,252 +338,252 @@ class CfgRagDollSkeletons {
         mass = 3;
       };
     };
-    
+
     class JointsPX2 {
       class Pelvis_Chest_PX2 : RagDollSphericalJoint {
         name = "pelvis_chest";
         bone1 = "pelvis";
         bone2 = "chest";
         axis[] = {0, 1, 0.3};
-        
+
         class SwingLimit : SwingLimit {
           value = 25;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -15;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 25;
         };
       };
-      
+
       class Chest_Head_PX2 : RagDollSphericalJoint {
         name = "chest_head";
         bone1 = "chest";
         bone2 = "head";
-        
+
         class SwingLimit : SwingLimit {
           value = 20;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -15;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 15;
         };
       };
-      
+
       class Chest_LeftArm_PX2 : RagDollSphericalJoint {
         name = "chest_leftArm";
         bone1 = "chest";
         bone2 = "leftArm";
         axis[] = {-1, 0.0, 0.5};
         enableCollision = 1;
-        
+
         class SwingLimit : SwingLimit {
           value = 60;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -20;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 20;
         };
       };
-      
+
       class LeftArm_LeftForeArm_PX2 : RagDollRevoluteJoint {
         name = "leftArm_leftForeArm";
         bone1 = "leftArm";
         bone2 = "leftForeArm";
         axis[] = {1, -1, 0.2};
-        
+
         class LimitLow : LimitLow {
           value = -2;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 60;
         };
       };
-      
+
       class LeftForeArm_LeftHand_PX2 : RagDollSphericalJoint {
         name = "leftForeArm_leftHand";
         bone1 = "leftForeArm";
         bone2 = "leftHand";
-        
+
         class SwingLimit : SwingLimit {
           value = 20;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -5;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 5;
         };
       };
-      
+
       class Chest_RightArm_PX2 : RagDollSphericalJoint {
         name = "chest_rightArm";
         bone1 = "chest";
         bone2 = "rightArm";
         axis[] = {1, 0.0, 0.5};
         enableCollision = 1;
-        
+
         class SwingLimit : SwingLimit {
           value = 60;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -20;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 20;
         };
       };
-      
+
       class RightArm_RightForeArm_PX2 : RagDollRevoluteJoint {
         name = "rightArm_rightForeArm";
         bone1 = "rightArm";
         bone2 = "rightForeArm";
         axis[] = {1, 1, -0.2};
-        
+
         class LimitLow : LimitLow {
           value = -2;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 60;
         };
       };
-      
+
       class RightForeArm_RightHand_PX2 : RagDollSphericalJoint {
         name = "rightForeArm_rightHand";
         bone1 = "rightForeArm";
         bone2 = "rightHand";
-        
+
         class SwingLimit : SwingLimit {
           value = 20;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -5;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 5;
         };
       };
-      
+
       class Pelvis_LeftUpLeg_PX2 : RagDollSphericalJoint {
         name = "pelvis_leftUpLeg";
         bone1 = "pelvis";
         bone2 = "leftUpLeg";
         axis[] = {-1.5, -1.1, 2};
         enableCollision = 1;
-        
+
         class SwingLimit : SwingLimit {
           value = 45;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -10;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 20;
         };
       };
-      
+
       class LeftUpLeg_LeftLeg_PX2 : RagDollRevoluteJoint {
         name = "leftUpLeg_leftLeg";
         bone1 = "leftUpLeg";
         bone2 = "leftLeg";
         axis[] = {-1, 0, 0};
-        
+
         class LimitLow : LimitLow {
           value = -5;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 110;
         };
       };
-      
+
       class LeftLeg_LeftFoot_PX2 : RagDollRevoluteJoint {
         name = "leftLeg_leftFoot";
         bone1 = "leftLeg";
         bone2 = "leftFoot";
         axis[] = {-1, 0, 0};
-        
+
         class LimitLow : LimitLow {
           value = -15;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 45;
         };
       };
-      
+
       class Pelvis_RightUpLeg_PX2 : RagDollSphericalJoint {
         name = "pelvis_rightUpLeg";
         bone1 = "pelvis";
         bone2 = "rightUpLeg";
         axis[] = {1.5, -1.1, 2};
         enableCollision = 1;
-        
+
         class SwingLimit : SwingLimit {
           value = 45;
         };
-        
+
         class TwistLimitLow : TwistLimitLow {
           value = -10;
         };
-        
+
         class TwistLimitHigh : TwistLimitHigh {
           value = 20;
         };
       };
-      
+
       class RightUpLeg_RightLeg_PX2 : RagDollRevoluteJoint {
         name = "rightUpLeg_rightLeg";
         bone1 = "rightUpLeg";
         bone2 = "rightLeg";
         axis[] = {-1, 0, 0};
-        
+
         class LimitLow : LimitLow {
           value = -5;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 110;
         };
       };
-      
+
       class RightLeg_RightFoot_PX2 : RagDollRevoluteJoint {
         name = "rightLeg_rightFoot";
         bone1 = "rightLeg";
         bone2 = "rightFoot";
         axis[] = {-1, 0, 0};
-        
+
         class LimitLow : LimitLow {
           value = -15;
         };
-        
+
         class LimitHigh : LimitHigh {
           value = 45;
         };
       };
     };
-    
+
     class JointsPX3 {
       class Pelvis_Chest_PX3 : RagDollD6Joint_PX3 {
         name = "pelvis_chest";
@@ -600,7 +600,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 5;
         driveDampingWater = 5;
       };
-      
+
       class Chest_Head_PX3 : RagDollD6Joint_PX3 {
         name = "chest_head";
         bone1 = "chest";
@@ -616,7 +616,7 @@ class CfgRagDollSkeletons {
         twistSpring = 15.0;
         twistDamping = 30.0;
       };
-      
+
       class Chest_LeftArm_PX3 : RagDollD6Joint_PX3 {
         name = "chest_leftArm";
         bone1 = "chest";
@@ -631,7 +631,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 3;
         driveDampingWater = 3;
       };
-      
+
       class LeftArm_LeftForeArm_PX3 : RagDollD6Joint_PX3 {
         name = "leftArm_leftForeArm";
         bone1 = "leftArm";
@@ -646,7 +646,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 1;
         driveDampingWater = 1;
       };
-      
+
       class LeftForeArm_LeftHand_PX3 : RagDollD6Joint_PX3 {
         name = "leftForeArm_leftHand";
         bone1 = "leftForeArm";
@@ -660,7 +660,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 1;
         driveDampingWater = 1;
       };
-      
+
       class Chest_RightArm_PX3 : RagDollD6Joint_PX3 {
         name = "chest_rightArm";
         bone1 = "chest";
@@ -675,7 +675,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 3;
         driveDampingWater = 3;
       };
-      
+
       class RightArm_RightForeArm_PX3 : RagDollD6Joint_PX3 {
         name = "rightArm_rightForeArm";
         bone1 = "rightArm";
@@ -690,7 +690,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 1;
         driveDampingWater = 1;
       };
-      
+
       class RightForeArm_RightHand_PX3 : RagDollD6Joint_PX3 {
         name = "rightForeArm_rightHand";
         bone1 = "rightForeArm";
@@ -704,7 +704,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 1;
         driveDampingWater = 1;
       };
-      
+
       class Pelvis_LeftUpLeg_PX3 : RagDollD6Joint_PX3 {
         name = "pelvis_leftUpLeg";
         bone1 = "pelvis";
@@ -720,7 +720,7 @@ class CfgRagDollSkeletons {
         driveDampingWater = 3;
         twistDamping = 30.0;
       };
-      
+
       class LeftUpLeg_LeftLeg_PX3 : RagDollD6Joint_PX3 {
         name = "leftUpLeg_leftLeg";
         bone1 = "leftUpLeg";
@@ -735,7 +735,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 2;
         driveDampingWater = 2;
       };
-      
+
       class LeftLeg_LeftFoot_PX3 : RagDollD6Joint_PX3 {
         name = "leftLeg_leftFoot";
         bone1 = "leftLeg";
@@ -750,7 +750,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 2;
         driveDampingWater = 2;
       };
-      
+
       class Pelvis_RightUpLeg_PX3 : RagDollD6Joint_PX3 {
         name = "pelvis_rightUpLeg";
         bone1 = "pelvis";
@@ -766,7 +766,7 @@ class CfgRagDollSkeletons {
         driveDampingWater = 3;
         twistDamping = 30.0;
       };
-      
+
       class RightUpLeg_RightLeg_PX3 : RagDollD6Joint_PX3 {
         name = "rightUpLeg_rightLeg";
         bone1 = "rightUpLeg";
@@ -781,7 +781,7 @@ class CfgRagDollSkeletons {
         driveSpringWater = 2;
         driveDampingWater = 2;
       };
-      
+
       class RightLeg_RightFoot_PX3 : RagDollD6Joint_PX3 {
         name = "rightLeg_rightFoot";
         bone1 = "rightLeg";

@@ -16,6 +16,7 @@
 
 import os
 import sys
+import shutil
 import subprocess
 import winreg
 import threading
@@ -23,6 +24,10 @@ import time
 
 privatekey = "" # if set to anything other that "" it will sign the addons
 modfolder  = "@AGM_dev"
+tempfolder = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
+
+# set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
+movemanually = True
 
 def get_arma_path():
   """ Get the installation directory of Arma 3 """
@@ -47,12 +52,14 @@ def get_modules():
 
 def binarize(module_name):
   """ Binarizes the given module """
-  global modfolder, privatekey
+  global modfolder, privatekey, tempfolder, movemanually
 
   addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder.exe")
   source_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name)
   destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
   include_path      = os.path.join(os.path.dirname(os.path.realpath(__file__)), "include.txt")
+  temp_path         = os.path.join(tempfolder, module_name+".pbo")
+  final_path        = os.path.join(destination_path, module_name+".pbo")
 
   binarize_path     = os.path.join(get_armatools_path(), "Binarize", "binarize.exe")
   convert_path      = os.path.join(get_armatools_path(), "CfgConvert", "CfgConvert.exe")
@@ -81,7 +88,26 @@ def binarize(module_name):
     args.append("-sign="+privatekey)
     #args.append("-dssignfile="+signfile_path)
 
-  return subprocess.call(args)
+  job = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  out, error = job.communicate()
+
+  if movemanually:
+    job.wait()
+    print("# Binarization of "+module_name+" complete; moving to destination.")
+
+    # Delete previous pbo at that location
+    try:
+      os.remove(final_path)
+    except:
+      pass
+
+    # Try to move the file
+    try:
+      shutil.move(temp_path, final_path)
+    except:
+      print("# Failed to move "+module_name+".")
+    else:
+      print("# "+module_name+" moved successfully.")
 
 try:
   path = get_arma_path()

@@ -4,18 +4,18 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
-/* 
+/*
  * Documentation:
  * https://community.bistudio.com/wiki/AI_Sub-skills
- * 
+ *
  * The idea here is to reduce the AI's godlike aiming
  * capabilties while retaining it's high intelligence.
  * The AI should be smart enough to move through a town,
