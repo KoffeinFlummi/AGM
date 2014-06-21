@@ -30,7 +30,7 @@ class CfgVehicles {
       class AGM_Refuel {
         displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
-        condition = "true";
+        condition = "('AGM_UAVBattery' in items player) and (fuel AGM_Interaction_Target < 1)";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
         showDisabled = 1;
         priority = -2.5;
@@ -42,7 +42,7 @@ class CfgVehicles {
       class AGM_Refuel {
         displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
-        condition = "true";
+        condition = "('AGM_UAVBattery' in items player) and (fuel AGM_Interaction_Target < 1)";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
         showDisabled = 1;
         priority = -2.5;
@@ -54,7 +54,7 @@ class CfgVehicles {
       class AGM_Refuel {
         displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
-        condition = "true";
+        condition = "('AGM_UAVBattery' in items player) and (fuel AGM_Interaction_Target < 1)";
         statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
         showDisabled = 1;
         priority = -2.5;
