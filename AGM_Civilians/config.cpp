@@ -19,6 +19,7 @@ class CfgFunctions {
       class sendAway {};
       class getDown {};
       class setCaptive {};
+	  class escortCaptive {};
     };
   };
 };
@@ -53,6 +54,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = -2.7;
       };
+	  
+	  class AGM_EscortCaptive {
+	    displayName = "$STR_AGM_Civilan_EscortCaptive"
     };
   };
 };

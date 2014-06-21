@@ -25,5 +25,9 @@
 	  <German>Gefangen nehmen</German>
 	  <French>Prendre en captivité</French>
     </Key>
+	<Key ID="STR_AGM_Civilan_EscortCaptive">
+	  <English>Escort Prisoner</English>
+	  <German>Gefangenen eskortieren</German>
+	</Key>
   </Package>
 </Project>
