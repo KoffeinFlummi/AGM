@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -25,7 +25,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_NightVision {
-    clientInit = "execVM '\AGM_nightvision\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_nightvision\clientInit.sqf'";
   };
 };
 

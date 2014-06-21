@@ -10,10 +10,10 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_EPA_Ammoboxes, A3_Weapons_F_EPB_Ammoboxes, Extended_EventHandlers, AGM_Core, AGM_Interaction};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
-    author[] = {"commy2", "KoffeinFlummi"};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
+    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -21,51 +21,37 @@ class CfgPatches {
 class CfgFunctions {
   class AGM_Overheating {
     class AGM_Overheating {
-        file = "\AGM_Overheating\functions";
-      class firedEH {};
+      file = "\AGM_Overheating\functions";
+      class checkTemperature;
+      class firedEH;
+      class swapBarrel;
+      class swapBarrelCallback;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Overheating {
-    clientInit = "execVM '\AGM_Overheating\init.sqf'";
-  };
-};
-
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_giveSpareBarrel {
-      Init = "_this spawn {sleep 0.1; if (getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1) then {(_this select 0) addItem 'AGM_SpareBarrel'}}"; 
-    };
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Overheating\clientInit.sqf'";
   };
 };
 
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheating {
-      clientFired = "if (player == (_this select 0)) then {_this call AGM_Overheating_fnc_firedEH}";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_firedEH}";
     };
   };
 };
 
 class AGM_Core_Default_Keys {
-  class checkAmmo {
-    displayName = "$STR_AGM_Overheating_checkAmmo";
-    condition = "player == _vehicle";
-    statement = "[currentWeapon player] spawn AGM_Overheating_CheckAmmo";
-    key = 19;
-    shift = 1;
-    control = 0;
-    alt = 0;
-  };
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
-    statement = "[currentWeapon player] spawn AGM_Overheating_CheckTemperatureQuick";
+    statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
     key = 20;
-    shift = 1;
-    control = 0;
+    shift = 0;
+    control = 1;
     alt = 0;
   };
 };
@@ -78,7 +64,7 @@ class CfgVehicles {
       class AGM_SwapBarrel {
         displayName = "$STR_AGM_Overheating_SwapBarrel";
         condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
-        statement = "[currentWeapon player] call AGM_Overheating_swapBarrel";
+        statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
         showDisabled = 0;
         priority = 4.1;
       };

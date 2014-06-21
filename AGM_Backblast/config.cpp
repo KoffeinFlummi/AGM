@@ -4,27 +4,33 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, A3_Weapons_F, Extended_EventHandlers};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
 };
 
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class AGM_Backblast {
-    Init = "execVM '\AGM_Backblast\init.sqf'";
+    class AGM_Backblast {
+      file = "\AGM_Backblast\functions";
+      class getDirectionVector;
+      class getDistance;
+      class launcherBackblast;
+      class tankDangerZone;
+    };
   };
 };
 
 class Extended_FiredNear_EventHandlers {
   class CAManBase {
     class AGM_FiredNear_LauncherBackblast {
-      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'AGM_Backblast_Damage') > 0}) then {_this call AGM_Backblast_launcherBackblast}";
+      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> _this select 3 >> 'AGM_Backblast_Damage') > 0}) then {_this call AGM_Backblast_fnc_launcherBackblast}";
     };
     class AGM_FiredNear_TankDangerZone {
-      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> (_this select 3) >> 'AGM_DangerZone_Damage') > 0}) then {_this call AGM_Backblast_tankDangerZone}";
+      FiredNear = "if (local (_this select 0) && {getNumber (configfile >> 'CfgWeapons' >> _this select 3 >> 'AGM_DangerZone_Damage') > 0}) then {_this call AGM_Backblast_fnc_tankDangerZone}";
     };
   };
 };

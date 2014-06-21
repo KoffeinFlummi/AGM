@@ -22,7 +22,7 @@
     </Key>
     <Key ID="STR_AGM_Interaction_OpenDoor">
       <English>Open / Close Doors</English>
-      <German>Türen Öffnen / Schließen</German>
+      <German>Türen öffnen / schließen</German>
       <Spanish>Abrir / Cerrar Puerta</Spanish>
       <Polish>Otwórz / Zamknij Drzwi</Polish>
       <Czech>Otevřít / Zavřít dveře</Czech>
@@ -89,7 +89,7 @@
     <Key ID="STR_AGM_Interaction_Gestures">
       <English>Gestures >></English>
       <German>Gesten >></German>
-      <Spanish>Gestos</Spanish>
+      <Spanish>Gestos >></Spanish>
       <Polish>Gesty >></Polish>
       <Czech>Gesta >></Czech>
       <French>Gestes >></French>
@@ -207,7 +207,7 @@
     <Key ID="STR_AGM_Interaction_WeaponOnBack">
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
-      <Spanish>Poner el arma en la espalda</Spanish>
+      <Spanish>Arma a la espalda</Spanish>
       <Polish>Umieść broń na plecach</Polish>
       <Czech>Dát zbraň na záda</Czech>
       <French>Mettre l'arme dans le dos</French>
@@ -220,7 +220,7 @@
       <Polish>Klepnij w ramię</Polish>
       <Czech>Poklepat na rameno</Czech>
       <French>Taper sur l'épaule</French>
-      <Russian>Постучать по плечу</Russian>
+      <Russian>Похлопать по плечу</Russian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
@@ -241,6 +241,19 @@
       <French>Enlever le sac</French>
       <Russian>Снять рюкзак (передний)</Russian>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_YouWereTapped">
+        <English>You were tapped on the shoulder.</English>
+        <German>Dir wurde auf die Schulter geklopft</German>
+        <Spanish>Te tocaron el hombro.</Spanish>
+        <French>Ont vous tape à l'épaule.</French>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_ShowPlayerNames">
+        <English>Show player names</English>
+        <German>Spielernamen anzeigen</German>
+    </Key>
+
 
   </Package>
 </Project>

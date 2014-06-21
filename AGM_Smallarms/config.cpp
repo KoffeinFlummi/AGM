@@ -6,9 +6,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_gamma, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"TaoSensai", "KoffeinFlummi"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -223,34 +223,11 @@ class CfgWeapons {
     };
   };
 
-  class arifle_MX_F : arifle_MX_Base_F {
-    displayName = "MX";
-  };
-
-  class arifle_MXC_F : arifle_MX_Base_F {
-    displayName = "MXC";
-  };
-
-
-  class arifle_MX_GL_F : arifle_MX_Base_F {
-    displayName = "MX 3GL";
-
-    // class GL_3GL_F : UGL_F {
-    //   displayName = "3GL";
-    // };
-  };
-
   class arifle_MX_SW_F : arifle_MX_Base_F {
-    displayName = "MX LSW";
-
     modes[] = {"Single", "manual", "close", "short", "medium", "far_optic1", "far_optic2"};
 
-    class Single : Single {};
-    class manual : FullAuto {};
-  };
-
-  class arifle_MXM_F : arifle_MX_Base_F {
-    displayName = "MXM";
+    //class Single : Single {};
+    //class manual : FullAuto {};
   };
 
   // Katibas ////////////////////////////////////////////////////
@@ -268,31 +245,10 @@ class CfgWeapons {
     };
   };
 
-  class arifle_Katiba_F : arifle_katiba_Base_F {
-    displayName = "KT2002 Katiba";
-  };
-
-  class arifle_Katiba_GL_F : arifle_katiba_Base_F {
-    displayName = "KT2002 Katiba KGL";
-
-    //class EGLM : UGL_F {
-    //  displayName = "KGL";
-    //};
-  };
-
-  class arifle_Katiba_C_F : arifle_katiba_Base_F {
-    displayName = "KT2002C Katiba";
-  };
-
   // SDAR //////////////////////////////////////////////////
 
   class SDAR_base_F : Rifle_Base_F {
     modes[] = {"Single", "FullAuto"}; // Leave in the imaginary full-auto mode because, whatever.
-  };
-
-  class arifle_SDAR_F : SDAR_base_F {
-    displayName = "CFB SDAR";
-
   };
 
   // Tavor TRG ////////////////////////////////////////////////
@@ -309,22 +265,6 @@ class CfgWeapons {
     };
   };
 
-  class arifle_TRG21_F : Tavor_base_F {
-    displayName = "TAR-21";
-  };
-
-  class arifle_TRG21_GL_F : arifle_TRG21_F {
-    displayName = "TAR-21 EGLM";
-
-    // class EGLM : UGL_F {
-    //   displayName = "EGLM";
-    // };
-  };
-
-  class arifle_TRG20_F : Tavor_base_F {
-    displayName = "CTAR-21";
-  };
-
   // Mk20 (F2000) //////////////////////////////////////////////////
 
   class mk20_base_F : Rifle_Base_F {
@@ -339,27 +279,9 @@ class CfgWeapons {
     };
   };
 
-  class arifle_Mk20_F : mk20_base_F {
-    displayName = "F2000A";
-  };
-
-  class arifle_Mk20C_F : mk20_base_F {
-    displayName = "F2000A Tactical";
-  };
-
-  class arifle_Mk20_GL_F : mk20_base_F {
-    displayName = "F2000A EGLM";
-
-    // class EGLM : UGL_F {
-    //   displayName = "EGLM";
-    // };
-  };
-
   // SMG Vermin ////////////////////////////////////////////////////
 
   class SMG_01_Base : Rifle_Base_F {
-    displayName = "Vector SMG";
-
     // http://kriss-usa.com/pdf/operatormanual/
     // 1200 rpm
     class Single : Mode_SemiAuto {
@@ -374,11 +296,6 @@ class CfgWeapons {
     class FullAuto: Mode_FullAuto {
       reloadTime = 0.05;
     };
-  };
-
-  class SMG_01_F : SMG_01_Base {
-    displayName = "Vector SMG";
-    
   };
 
   // SMG Scorpion ////////////////////////////////////////////////////
@@ -400,10 +317,6 @@ class CfgWeapons {
     class FullAuto: Mode_FullAuto {
       reloadTime = 0.052;
     };
-  };  
-
-  class SMG_02_F : SMG_02_base_F {
-    displayName = "Scorpion Evo 3A1";
   };
 
   // SMG PDW2000 ///////////////////////////////////////////////////
@@ -423,25 +336,16 @@ class CfgWeapons {
       reloadTime = 0.06;
     };
   };
-  class hgun_pdw2000_F : pdw2000_base_F {
-    displayName = "CPW-CZ";
-  };
 
   // Pistols //////////////////////////////////////////////
 
   class Pistol_Base_F;
   class hgun_P07_F : Pistol_Base_F {
-    displayName = "P99G";
     magazines[] = {"16Rnd_9x21_Mag"};
   };
 
   class hgun_Rook40_F : Pistol_Base_F {
-    displayName = "MP-443G";
     magazines[] = {"16Rnd_9x21_Mag"};
-  };
-
-  class hgun_ACPC2_F : Pistol_Base_F {
-    displayName = "ACP-C2";
   };
 
   // LMGs //////////////////////////////////////////////
@@ -449,8 +353,6 @@ class CfgWeapons {
   class Rifle_Long_Base_F;
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
-    displayName = "Mk200 LMG";
-
     modes[] = {"manual", "Single", "close", "short", "medium", "far_optic1", "far_optic2"};
 
     class manual : Mode_FullAuto {
@@ -473,8 +375,6 @@ class CfgWeapons {
   };
 
   class LMG_Zafir_F: Rifle_Long_Base_F {
-    displayName = "Negev NG7";
-
     modes[] = {"FullAuto", "Single",  "close", "short", "medium", "far_optic1", "far_optic2"};
 
     class FullAuto : Mode_FullAuto {
@@ -490,16 +390,8 @@ class CfgWeapons {
     cursor = "arifle";
   };
 
-  class srifle_EBR_F : EBR_base_F {
-    displayName = "Mk14 Mod 1 EBR";
-  };
-
   class LRR_base_F : Rifle_Long_Base_F {
     cursor = "arifle";
-  };
-
-  class srifle_LRR_F : LRR_base_F {
-    displayName = "M200 Intervention";
   };
 
   class GM6_base_F : Rifle_Long_Base_F {
@@ -510,10 +402,6 @@ class CfgWeapons {
       // 250 rpm is probably the limit of the finger on a heavy bullpup trigger like this thing must have.
       reloadTime = 0.24;
     };
-  };
-
-  class srifle_GM6_F : GM6_base_F {
-    displayName = "GM6 Lynx";
   };
 
   ///////////////////////////////////////////////////////////////////////////////

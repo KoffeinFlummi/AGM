@@ -10,9 +10,10 @@
  * None.
  */
 
+_saveProfile = false;
+
 _config = configFile >> "AGM_Core_Default_Keys";
 _count = count _config;
-_saveProfile = false;
 
 for "_index" from 0 to (_count - 1) do {
 	_configFile = _config select _index;
@@ -28,6 +29,22 @@ for "_index" from 0 to (_count - 1) do {
 		_keyCode = [_key, _shft, _ctrl, _alt] call AGM_Core_fnc_convertKeyCode;
 
 		profileNamespace setVariable [_name, _keyCode];
+		_saveProfile = true;
+	};
+};
+
+_config = configFile >> "AGM_Core_Options";
+_count = count _config;
+
+for "_index" from 0 to (_count - 1) do {
+	_configFile = _config select _index;
+	_name = format ["AGM_%1", configName _configFile];
+	_state = profileNamespace getVariable _name;
+
+	if (isNil "_state") then {
+		_state = getNumber (_configFile >> "default") == 1;
+
+		profileNamespace setVariable [_name, _state];
 		_saveProfile = true;
 	};
 };

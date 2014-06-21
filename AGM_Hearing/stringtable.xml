@@ -8,7 +8,8 @@
       <Spanish>Tapones para Oídos</Spanish>
       <Polish>Stopery do uszu</Polish>
       <Czech>Špunty</Czech>
-      <Russian>Бируши</Russian>
+      <Russian>Беруши</Russian>
+      <French>Bouchons d'oreilles</French>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
@@ -16,7 +17,8 @@
       <Spanish>Los Tapones para Oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
       <Polish>Stopery do uszu umożliwiają użytkownikowi przebywać w pobliżu głośnej broni bez poniesienia konsekwencji jaką jest utrata słuchu.</Polish>
       <Czech>Ochranné špunty umožňují uživateli, aby neutrpěl zranění jeho sluchu v blízkosti hlasitých zbraní.</Czech>
-      <Russian>Бируши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
+      <Russian>Беруши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
+      <French>Bouchons d'oreilles permettant à l'utilisateur de se trouver à proximité des armes sans endommager son audition.</French>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
@@ -25,6 +27,7 @@
       <Polish>Załóż stopery</Polish>
       <Czech>Špunty v uších</Czech>
       <Russian>Беруши надеты</Russian>
+      <French>Bouchons mis</French>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
@@ -33,6 +36,7 @@
       <Polish>Zdejmij stopery</Polish>
       <Czech>Špunty venku z uší</Czech>
       <Russian>Беруши сняты</Russian>
+      <French>Bouchons enlever</French>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
       <English>You have no ear plugs</English>
@@ -41,6 +45,7 @@
       <Polish>Nie masz stoperów</Polish>
       <Czech>Nemáš žádné špunty</Czech>
       <Russian>У вас нет беруш</Russian>
+      <French>Vous n'avez pas de bouchons d'oreilles</French>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>Inventory is full; Cannot remove Ear Buds</English>
@@ -49,6 +54,7 @@
       <Polish>Ekwipunek jest pełny; Nie można zdjąć stoperów.</Polish>
       <Czech>Inventář je plný; Špunty nelze vyndat</Czech>
       <Russian>Инвентарь заполнен: нельзя снять беруши</Russian>
+      <French>Inventaire plein; Impossible d'enlever les bouchons</French>
     </Key>
 
   </Package>

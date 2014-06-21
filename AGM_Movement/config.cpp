@@ -4,34 +4,16 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Data_F, A3_Anims_F, A3_Anims_F_Config_Sdr};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
-
-// WHAT DO THESE VALUES EVEN DO?
-class CfgFatigue {
-  FrequencyMax = 1;
-  FrequencyMin = 0.2;
-  MaxDuty = 10;
-  MinValue1 = 0.1;
-  MinValue2 = 0.8;
-  NormalRunSpeed = 7.2; // seems to have no effect
-  TiredRunSpeedLimit = 1;
-  TotalLoadCoef = 1.1; // seems to have no effect
-};
-
-
 class CfgMovesBasic {
-  class Actions;
-};
-
-class CfgMovesMaleSdr: CfgMovesBasic {
-  class Actions: Actions {
+  class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
 
@@ -66,11 +48,14 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       getOver = "AovrPercMrunSrasWrflDf";
     };
   };
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic {
   class States {
     class AmovPercMstpSrasWrflDnon;
     class AmovPercMstpSlowWrflDnon;
 
-    class AmovPercMrunSrasWrflDf: AmovPercMstpSrasWrflDnon { 
+    class AmovPercMrunSrasWrflDf: AmovPercMstpSrasWrflDnon {
       InterpolateTo[] = {"AovrPercMrunSrasWrflDf",0.22,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMwlkSrasWrflDf",0.025,"AmovPknlMrunSrasWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"Unconscious",0.01,"AmovPercMtacSrasWrflDf",0.02,"AmovPercMrunSrasWrflDfl",0.02,"AmovPercMrunSrasWrflDfl_ldst",0.02,"AmovPercMrunSrasWrflDfr",0.02,"AmovPercMrunSrasWrflDfr_ldst",0.02,"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSrasWrflDl",0.02,"AmovPercMrunSrasWrflDbl",0.02,"AmovPercMrunSrasWrflDb",0.02,"AmovPercMrunSrasWrflDbr",0.02,"AmovPercMrunSrasWrflDr",0.02,"AmovPknlMstpSlowWrflDnon_relax",0.1,"AmovPercMrunSrasWrflDf_ldst",0.02,"AmovPercMrunSrasWrflDf",0.02};
     };
 

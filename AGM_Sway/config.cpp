@@ -6,9 +6,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -16,32 +16,31 @@ class CfgPatches {
 
 // EVERYTHING BELOW BELONGS TO TAOSENSAI
 
-#define TMR_SWAY_005 0.048
-#define TMR_SWAY_01 0.09
-#define TMR_SWAY_03 0.28
-#define TMR_SWAY_05 0.47
-#define TMR_SWAY_055 0.53
-#define TMR_SWAY_07 0.67
-#define TMR_SWAY_10 1.02
-#define TMR_SWAY_105 1.07
-#define TMR_SWAY_12 1.13
-#define TMR_SWAY_15 1.43
-#define TMR_SWAY_165 1.5
-#define TMR_SWAY_17 1.6
-#define TMR_SWAY_20 1.8
-#define TMR_SWAY_25 2.2
-#define TMR_SWAY_30 3.1
-#define TMR_SWAY_40 3.8
-#define TMR_SWAY_50 4.8
-#define TMR_SWAY_70 6.8
-
+#define TMR_SWAY_005  0.048
+#define TMR_SWAY_01   0.09
+#define TMR_SWAY_03   0.28
+#define TMR_SWAY_05   0.47
+#define TMR_SWAY_055  0.53
+#define TMR_SWAY_07   0.67
+#define TMR_SWAY_10   1.02
+#define TMR_SWAY_105  1.07
+#define TMR_SWAY_12   1.13
+#define TMR_SWAY_15   1.43
+#define TMR_SWAY_165  1.5
+#define TMR_SWAY_17   1.6
+#define TMR_SWAY_20   1.8
+#define TMR_SWAY_25   2.2
+#define TMR_SWAY_30   3.1
+#define TMR_SWAY_40   3.8
+#define TMR_SWAY_50   4.8
+#define TMR_SWAY_70   6.8
 
 class CfgMovesBasic {
   class Default {
     aimPrecision = TMR_SWAY_10;
   };
 };
-class CfgMovesMaleSdr : CfgMovesBasic { 
+class CfgMovesMaleSdr : CfgMovesBasic {
   class States {
     class AidlPercMstpSrasWrflDnon_G0S;
     class AmovPercMstpSrasWrflDnon_turnL : AidlPercMstpSrasWrflDnon_G0S {
@@ -99,6 +98,11 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       aimPrecision = TMR_SWAY_03;
 
     };
+    //class AgonyBaseRfl;
+    //class AmovPpneMstpSrasWrflDnon_injured : AgonyBaseRfl {
+    //  aimPrecision = TMR_SWAY_20;
+
+    //};
     class AmovPpneMstpSrasWrflDnon_turnL : AidlPpneMstpSrasWrflDnon_G0S {
       aimPrecision = TMR_SWAY_40;
 
@@ -396,7 +400,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
     };
     class AdvePercMstpSnonWnonDnon;
-    class AdvePercMstpSnonWnonDnon_AdvePercMstpSnonWrflDnon : AdvePercMstpSnonWnonDnon {
+    class AdvePercMstpSnonWnonDnon_AdvePercMstpSnonWrflDnon : AdvePercMstpSnonWrflDnon {//AdvePercMstpSnonWrflDnon {
       aimPrecision = TMR_SWAY_07;
 
     };
@@ -523,6 +527,16 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       aimPrecision = TMR_SWAY_30;
 
     };
+    // class AgonyBase;
+    // class AmovPpneMstpSnonWnonDnon_injured : AgonyBase {
+    //  aimPrecision = TMR_SWAY_20;
+
+    // };
+    // class InjuredMovedBase;
+    // class AcinPercMrunSnonWnonDf : InjuredMovedBase {
+    //  aimPrecision = TMR_SWAY_50;
+
+    // };
     class AcinPknlMstpSnonWnonDnon_AcinPercMrunSnonWnonDnon;
     class AcinPercMstpSnonWnonDnon : AcinPknlMstpSnonWnonDnon_AcinPercMrunSnonWnonDnon {
       aimPrecision = TMR_SWAY_50;

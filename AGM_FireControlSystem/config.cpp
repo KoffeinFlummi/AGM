@@ -6,20 +6,21 @@ class CfgPatches {
     requiredAddons[] = {
       AGM_Core,
       A3_Armor_F,
-      A3_Armor_F_AMV,
-      A3_Armor_F_APC_Wheeled_03,
       A3_armor_f_beta,
-      A3_armor_f_beta_APC_Tracked_02,
-      A3_armor_F_EPB_APC_tracked_03,
-      A3_Armor_F_EPB_MBT_03,
-      A3_Armor_F_Marid,
       A3_Armor_F_Panther,
+      A3_armor_f_beta_APC_Tracked_02,
+      A3_Armor_F_AMV,
+      A3_Armor_F_Marid,
+      A3_Armor_F_EPB_APC_tracked_03,
+      A3_Armor_F_EPB_MBT_03,
+      A3_Armor_F_EPC_MBT_01,
+      A3_Armor_F_APC_Wheeled_03,
       A3_Armor_F_Slammer,
       A3_Armor_F_T100K
     };
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -40,7 +41,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_FCS {
-    clientInit = "execVM '\AGM_FireControlSystem\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_FireControlSystem\clientInit.sqf'";
   };
 };
 
@@ -70,6 +71,7 @@ class CfgVehicles {
   // PROVIDE DEFAULT VALUES FOR OTHER MODS
   class All;
   class AllVehicles: All {
+    class NewTurret;
     AGM_FCSEnabled = 0; // FCS defaults to off
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
@@ -80,17 +82,27 @@ class CfgVehicles {
   class Tank: LandVehicle {
     AGM_FCSEnabled = 1; // all tracked vehicles get one by default
   };
-  class Tank_F: Tank {};
+  class Tank_F: Tank {
+    class Turrets {
+      class MainTurret: NewTurret {};
+    };
+  };
   class Car: LandVehicle {};
   class Car_F: Car {};
-  class Wheeled_APC_F: Car_F {};
+  class Wheeled_APC_F: Car_F {
+    class Turrets;
+  };
+  class Helicopter;
+  class Helicopter_Base_F: Helicopter {
+    class Turrets;
+  };
 
   // REMOVE STANDARD ZEROING FOR AFFECTED VEHICLES
 
   // BLUFOR Inheritance
   class MBT_01_base_F: Tank_F {
-    class Turrets {
-      class MainTurret;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
     };
   };
   class B_MBT_01_base_F: MBT_01_base_F {
@@ -98,9 +110,12 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+  class B_MBT_01_mlrs_base_F;
+  class B_MBT_01_arty_base_F;
+
   class APC_Tracked_01_base_F: Tank_F {
-    class Turrets {
-      class MainTurret;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
     };
   };
   class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
@@ -108,23 +123,24 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+
   class APC_Wheeled_01_base_F: Wheeled_APC_F {
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
-  class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {
+  class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
+
+  class Heli_Attack_01_base_F: Helicopter_Base_F {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
+      class MainTurret;
     };
   };
-  class B_MBT_01_mlrs_base_F;
-  class B_MBT_01_arty_base_F;
 
   // Independent Inheritance
   class MBT_03_base_F: Tank_F {
-    class Turrets {
-      class MainTurret;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
     };
   };
   class I_MBT_03_base_F: MBT_03_base_F {
@@ -132,19 +148,17 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+
   class APC_Wheeled_03_base_F: Wheeled_APC_F {
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
-  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {
+  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {};
+
+  class APC_Tracked_03_base_F: Tank_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
-  };
-  class APC_Tracked_03_base_F: Tank_F {
-    class Turrets {
-      class MainTurret;
     };
   };
   class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {
@@ -155,8 +169,8 @@ class CfgVehicles {
 
   // OPFOR Inheritance
   class MBT_02_base_F: Tank_F {
-    class Turrets {
-      class MainTurret;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
     };
   };
   class O_MBT_02_base_F: MBT_02_base_F {
@@ -164,17 +178,23 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };
   };
+  class O_MBT_02_arty_base_F;
+
   class APC_Tracked_02_base_F: Tank_F {
-    class Turrets {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
+
+  class Heli_Attack_02_base_F: Helicopter_Base_F {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
-  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-    };
-  };
-  class O_MBT_02_arty_base_F;
 
   // BLUFOR
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
@@ -222,6 +242,18 @@ class CfgVehicles {
   class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
     AGM_FCSEnabled = 0;
   };
+  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
 
   // Independent
   class I_MBT_03_cannon_F: I_MBT_03_base_F {
@@ -259,6 +291,7 @@ class CfgVehicles {
       };
     };
   };
+  /*
   class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -266,8 +299,17 @@ class CfgVehicles {
         discreteDistanceInitIndex = 0;
       };
     };
+  };*/
+  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {};
+  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {};
+  class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
+    AGM_FCSEnabled = 0;
   };
-  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
+  class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
@@ -275,8 +317,17 @@ class CfgVehicles {
       };
     };
   };
-  class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
-    AGM_FCSEnabled = 0;
+  class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
+    AGM_FCSEnabled = 1;
+    AGM_FCSMinDistance = 200;
+    AGM_FCSMaxDistance = 9990;
+    AGM_FCSDistanceInterval = 5;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
   };
 
 };

@@ -28,6 +28,8 @@ _this spawn {
       ["HitRightLeg", floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
     ];
 
+    _unit setVariable ["AGM_Diagnosed", true, false];
+
     _string = format ["%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {

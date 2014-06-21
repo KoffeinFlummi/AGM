@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -15,7 +15,7 @@ class CfgPatches {
 /* deactivated temporarily, cause too lazy to fix bugs
 class Extended_PostInit_EventHandlers {
   class BWA3_Misc {
-    clientInit = "call compile preProcessFileLineNumbers '\BWA3_Misc\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\BWA3_Misc\clientInit.sqf'";
   };
 };
 

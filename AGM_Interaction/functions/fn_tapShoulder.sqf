@@ -10,6 +10,6 @@ enableCamShake true;
 addCamShake [4, 0.5, 5];
 
 //_message = format ["%1 tapped you on your shoulder.", name _unit];
-_message = "You were tapped on the shoulder.";
+_message = localize "STR_AGM_Interaction_YouWereTapped";
 
 [_message] call AGM_Core_fnc_displayText;

@@ -1,10 +1,10 @@
 /*
  * Author: commy2
  *
- * Compiles a loop that executes pieces of code when the corresponding conditions change their return value. The loop will exit when the exit condition is true.
+ * Compiles a loop that executes pieces of code when the corresponding conditions change their return value. The loop will exit when the exit condition is true. Note: Don't use it. It's still WIP.
  * 
  * Argument:
- * 0: The script name (String)
+ * 0: The scripts name (String)
  * 1: The code that is executed before the loop begins. (Code or String)
  * 2: The loop will sleep for this long. In seconds. (Number)
  * 3: Each time any of these functions change their return value, the function with the same index is called. (Array of Codes or Strings)

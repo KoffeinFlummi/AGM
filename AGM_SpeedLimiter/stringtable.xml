@@ -21,5 +21,15 @@
       <Russian>Ограничение скорости выключено</Russian>
     </Key>
 
+    <Key ID="STR_AGM_SpeedLimiter">
+      <English>Speed Limiter</English>
+      <German>Begrenzer</German>
+      <Spanish>Limitador de Velocidad</Spanish>
+      <Polish>Ogranicznik prędkości</Polish>
+      <Czech>Limit rychlosti</Czech>
+      <French>Limiteur de vitesse</French>
+      <Russian>Ограничение скорости</Russian>
+    </Key>
+
   </Package>
 </Project>

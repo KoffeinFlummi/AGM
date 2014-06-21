@@ -25,7 +25,7 @@ _this spawn {
 
   // determine if unit is medic
   _healtime = 0;
-  if ([player] call AGM_Medical_fnc_isMedic) then {
+  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
     _healtime = BANDAGETIMEMEDIC;
   } else {
     _healtime = BANDAGETIMENONMEDIC;

@@ -8,5 +8,5 @@ _count = count _loadedItems;
 
 if (_count < getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Vehicle_Cargo")) then {
 	detach _item;
-	[10, [_item, _vehicle], "AGM_Logistics_loadBoxIntoVehicleCallback", "Loading"] call AGM_Core_fnc_progressBar;
+	[10, [_item, _vehicle], "AGM_Logistics_loadBoxIntoVehicleCallback", "Loading ..."] call AGM_Core_fnc_progressBar;
 };

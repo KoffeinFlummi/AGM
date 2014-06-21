@@ -4,17 +4,26 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {Extended_EventHandlers, AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
 };
 
+class CfgFunctions {
+  class AGM_StriderFix {
+    class AGM_StriderFix {
+      file = "AGM_StriderFix\functions";
+      class displayAzimuth;
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_StriderFix {
-    clientInit = "execVM '\AGM_StriderFix\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_StriderFix\clientInit.sqf'";
   };
 };
 

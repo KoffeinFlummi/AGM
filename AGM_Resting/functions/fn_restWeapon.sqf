@@ -84,7 +84,7 @@ if (true in _intersects and (speed player) < 1 and currentWeapon player == prima
 
   // REST THE WEAPON
   addCamShake CAMSHAKE;
-  if (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1 and (_intersects select 3)) then {
+  if (((getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1) or (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "tmr_autorest_deployable") == 1)) and (_intersects select 3)) then {
     AGM_bipodDeployed = true;
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_deploy", (animationState player)];

@@ -80,7 +80,10 @@ AGM_FCSTime = -1;
 
 // CALCULATE AZIMUTH CORRECTION
 _viewDiff = _vehicle getVariable "AGM_FCSViewDiff";
-_FCSAzimuth = (atan (_distance / _viewDiff) - (abs _viewDiff / _viewDiff) * 90) + _movingAzimuth;
+_FCSAzimuth = _movingAzimuth;
+if (_viewDiff != 0) then {
+  _FCSAzimuth = (atan (_distance / _viewDiff) - (abs _viewDiff / _viewDiff) * 90) + _movingAzimuth;
+};
 
 // CALCULATE OFFSET FOR CURRENT WEAPON
 _FCSMagazines = [];
