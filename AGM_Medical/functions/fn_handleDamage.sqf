@@ -210,3 +210,5 @@ if (_unit getVariable "AGM_Unconscious") then {
     };
   };
 };
+
+_damage

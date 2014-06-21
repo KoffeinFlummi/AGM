@@ -23,7 +23,12 @@ if (_unit == _firer) then {
 
 		_damage = 2 * _alpha * _beta * _backblastDamage;
 		[_damage * 100] call BIS_fnc_bloodEffect;
-		_unit setDamage (damage _unit + _damage);
+
+		if (isClass (configFile >> "CfgPatches" >> "AGM_Medical")) then {
+			[_unit, "HitBody", ([_unit, "", ((_unit getHitPointDamage "HitBody") + _damage), objNull, objNull] call AGM_Medical_fnc_handleDamage)] call AGM_Medical_fnc_setHitPointDamage;
+		} else {
+			_unit setDamage (damage _unit + _damage);
+		};
 	};
 } else {
 	_direction set [0, - (_direction select 0)];
@@ -53,6 +58,15 @@ if (_unit == _firer) then {
 
 		_damage = 2 * _alpha * _beta * _backblastDamage;
 		if (_unit == player) then {[_damage * 100] call BIS_fnc_bloodEffect};
-		_unit setDamage (damage _unit + _damage);
+
+		if (isClass (configFile >> "CfgPatches" >> "AGM_Medical")) then {
+			[_unit, "HitBody", ([_unit, "", ((_unit getHitPointDamage "HitBody") + _damage), objNull, objNull] call AGM_Medical_fnc_handleDamage)] call AGM_Medical_fnc_setHitPointDamage;
+			_unit spawn {
+				sleep 0.5;
+				[_this, "", 0, objNull, objNull] call AGM_Medical_fnc_handleDamage;
+			};
+		} else {
+			_unit setDamage (damage _unit + _damage);
+		};
 	};
 };
