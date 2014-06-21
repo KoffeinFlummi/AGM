@@ -51,7 +51,7 @@
       <English>Holster Weapon</English>
       <German>Waffe holstern</German>
       <Spanish>Enfundar el Arma</Spanish>
-      <Polish>Schowaj Do Kabury</Polish>
+      <Polish>Schowaj broń</Polish>
       <Czech>Schovat zbraň</Czech>
       <Russian>Убрать оружие</Russian>
       <French>Arme dans le dos</French>
@@ -60,28 +60,34 @@
     <Key ID="STR_AGM_WeaponSelect_EngineOn">
       <English>Engine on</English>
       <German>Motor an</German>
+      <Polish>Włącz silnik</Polish>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
       <English>Engine off</English>
       <German>Motor aus</German>
+      <Polish>Wyłącz silnik</Polish>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
       <English>Select main gun</English>
       <German>Hauptgeschütz auswählen</German>
+      <Polish>Wybierz główne działo</Polish>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
       <English>Select machine gun</English>
       <German>Maschinengewehr auswählen</German>
+      <Polish>Wybierz karabin maszynowy</Polish>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
       <English>Select missiles</English>
       <German>Raketen auswählen</German>
+      <Polish>Wybierz rakiety</Polish>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
         <English>Enable quick select</English>
         <German>Schnellauswahl einschalten</German>
+        <Polish>Włącz szybki wybór</Polish>
     </Key>
 
 
