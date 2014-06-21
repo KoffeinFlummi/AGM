@@ -11,7 +11,7 @@ _this spawn {
 			_ctrlAzimuth = uiNamespace getVariable "AGM_ctrlStrider";
 
 			waitUntil {
-				_dir = round (call AGM_Core_fnc_getDirectionVector select 0);
+				_dir = round (call AGM_Core_fnc_getTargetAzimuthAndInclination select 0);
 				if (_dir == 360) then {_dir = 0};
 
 				_dir = [_dir, 3] call AGM_Core_fnc_numberToDigitsString;

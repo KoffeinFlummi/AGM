@@ -12,14 +12,16 @@
  * Measured distance in meters. Can return maximal or minimal distance (Number)
  */
 
-private ["_interval", "_maxDistance", "_minDistance", "_position", "_line", "_distance", "_iteration"];
+private ["_interval", "_maxDistance", "_minDistance", "_position", "_laser", "_line", "_distance", "_iteration"];
 
 _interval = _this select 0;
 _maxDistance = _this select 1;
 _minDistance = _this select 2;
 
-_position = ATLtoASL positionCameraToWorld [0, 0, 0];
-_line = [_position, _position];
+_position = positionCameraToWorld [0, 0, 0];
+if (!surfaceIsWater _position) then {_position = ATLtoASL _position};
+_laser = + _position;
+_line = [_position, _laser];
 
 _distance = _maxDistance;
 _iteration = _distance;
@@ -29,7 +31,9 @@ while {
 } do {
 	_iteration = _iteration / 2;
 
-	_line set [1, ATLtoASL positionCameraToWorld [0, 0, _distance]];
+	_laser = positionCameraToWorld [0, 0, _distance];
+	if (!surfaceIsWater _laser) then {_laser = ATLtoASL _laser};
+	_line set [1, _laser];
 
 	_distance = _distance + (([1, -1] select (lineIntersects (_line + [vehicle player]) || {terrainIntersectASL _line})) * _iteration);
 };

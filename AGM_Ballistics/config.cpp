@@ -6,9 +6,9 @@ class CfgPatches {
 		weapons[] = {};
 		requiredVersion = 0.60;
 		requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -91,7 +91,7 @@ class CfgAmmo {
 
 class CfgMagazines {
   class CA_Magazine;
-  
+
   class 30Rnd_65x39_caseless_mag : CA_Magazine {
     initSpeed = 724; // initial MV for 14.5in barrel
   };
@@ -150,7 +150,7 @@ class CfgMagazines {
 // plus a bit of inaccuracy to reflect that it's a service rifle,
 // not a finely tuned civilian weapon (except for Marksman rifles).
 
-// Full auto dispersion is increased even though fire mode 
+// Full auto dispersion is increased even though fire mode
 // obviously doesn't affect inherent accuracy.
 
 // What it does affect is trigger pull, and a sloppy full auto
@@ -229,7 +229,7 @@ class CfgWeapons {
   class Tavor_base_F : Rifle_Base_F {
     class Single : Mode_SemiAuto {
       dispersion = 0.000727; // radians. Equal to 2.5 MOA, about the limit of mass-produced M855.
-      // 
+      //
     };
     class FullAuto : Mode_FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
@@ -255,5 +255,5 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
   };
-    
+
 };

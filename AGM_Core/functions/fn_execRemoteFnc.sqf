@@ -6,7 +6,7 @@
  * Argument:
  * 0: Function arguments (Array)
  * 1: Function to execute, has to be defined on the remote machine first (String)
- * 2: The function will be executed where this unit is local. If none then execute on all machines. (optional, Object)
+ * 2: The function will be executed where this unit is local. If none then execute on all machines. (Object)
  * 
  * Return value:
  * Nothing
@@ -20,7 +20,6 @@ _this resize 3;
 
 _arguments = _this select 0;
 _function = call compile (_this select 1);
-//missionNamespace setVariable ["_function", _this select 1];
 _unit = _this select 2;
 
 /*if (isNil "_unit") exitWith {

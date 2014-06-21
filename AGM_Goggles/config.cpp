@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -95,6 +95,6 @@ class CfgGlasses {
     AGM_gogglesEffect = "[1, 1, -0.15, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
   };
   class G_Tactical_Clear: None {
-    AGM_gogglesEffect = "[1, 1, -0.08, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
+    AGM_gogglesEffect = "[1, 1, -0.02, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
   };
 };

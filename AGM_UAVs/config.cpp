@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Air_F_Gamma_UAV_01, AGM_Core, AGM_Interaction};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"marc_book", "KoffeinFlummi"};
     authorUrl = "https://github.com/MarcBook/";
   };
@@ -23,39 +23,15 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class UAV_01_base_F;
-  
-  class B_UAV_01_F: UAV_01_base_F {
+  class Helicopter_Base_F;
+
+  class UAV_01_base_F: Helicopter_Base_F {
     class AGM_Actions {
       class AGM_Refuel {
         displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
-        showDisabled = 1;
-        priority = -2.5;
-      };
-    };
-  };
-  class O_UAV_01_F: UAV_01_base_F {
-    class AGM_Actions {
-      class AGM_Refuel {
-        displayName = "$STR_AGM_UAVs_Recharge";
-        distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
-        showDisabled = 1;
-        priority = -2.5;
-      };
-    };
-  };
-  class I_UAV_01_F: UAV_01_base_F {
-    class AGM_Actions {
-      class AGM_Refuel {
-        displayName = "$STR_AGM_UAVs_Recharge";
-        distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
+        condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}";
+        statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
         showDisabled = 1;
         priority = -2.5;
       };
@@ -66,7 +42,7 @@ class CfgVehicles {
 class CfgWeapons{
   class ItemCore;
   class InventoryItem_Base_F;
-  
+
   //ITEMS
   class AGM_UAVBattery: ItemCore {
     displayName = "$STR_AGM_UAVs_Battery_Name";

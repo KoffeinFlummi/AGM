@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Vehicles, AGM_Aircraft, A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_gamma, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi";
   };
@@ -247,9 +247,23 @@ class CfgWeapons {
         displayName = "M2";
       };
     };
-    class HMG_01: HMG_127 {};
+    class HMG_01: HMG_127 {
+      displayName = "XM312";
+    };
     class HMG_M2: HMG_01 {
       displayName = "M2";
+    };
+    class HMG_NSVT: HMG_127 {
+      displayName = "NSVT";
+      class manual: manual {
+        displayName = "NSVT";
+      };
+    };
+    class GMG_20mm: GMG_F {
+      displayName = "XM307";
+      class manual: GMG_F {
+        displayName = "XM307";
+      };
     };
     class GMG_40mm: GMG_F {
       displayName = "Mk 19";
@@ -287,9 +301,17 @@ class CfgWeapons {
         displayName = "M68";
       };
     };
-    class LMG_coax;
+    class cannon_125mm: cannon_120mm {
+      displayName = "2A46";
+    };
+    class LMG_coax: LMG_RCWS {
+      displayName = "PKT";
+    };
     class AGM_LMG_coax_MBT_01: LMG_coax {
       displayName = "MAG 58";
+    };
+    class AGM_LMG_coax_APC_Tracked_03: LMG_coax {
+      displayName = "L94A1";
     };
     class autocannon_40mm_CTWS: autocannon_Base_F {
       displayName = "Mk44 Bushmaster II";
@@ -298,6 +320,24 @@ class CfgWeapons {
       };
       class HE: autocannon_Base_F {
         displayName = "Mk44 Bushmaster II";
+      };
+    };
+    class autocannon_30mm_CTWS: autocannon_Base_F {
+      displayName = "Mk44 Bushmaster II";
+      class AP: autocannon_Base_F {
+        displayName = "Mk44 Bushmaster II";
+      };
+      class HE: autocannon_Base_F {
+        displayName = "Mk44 Bushmaster II";
+      };
+    };
+    class autocannon_30mm: autocannon_30mm_CTWS {
+      displayName = "L21A1 RARDEN";
+      class AP: AP {
+        displayName = "L21A1 RARDEN";
+      };
+      class HE: HE {
+        displayName = "L21A1 RARDEN";
       };
     };
 };
@@ -491,8 +531,52 @@ class CfgMagazines {
     displayNameShort = "7.62mm";
   };
 
-  class 12Rnd_125mm_HEAT;
-  class 24Rnd_125mm_APFSDS;
+  class 16Rnd_120mm_HE_shells;
+  class 16Rnd_120mm_HE_shells_Tracer_Red;
+  class 16Rnd_120mm_HE_shells_Tracer_Green;
+  class 16Rnd_120mm_HE_shells_Tracer_Yellow;
+  class 12Rnd_125mm_HE: 16Rnd_120mm_HE_shells {
+    displayNameShort = "125mm HE";
+  };
+  class 12Rnd_125mm_HE_T_Red: 16Rnd_120mm_HE_shells_Tracer_Red {
+    displayNameShort = "125mm HE-T";
+  };
+  class 12Rnd_125mm_HE_T_Green: 16Rnd_120mm_HE_shells_Tracer_Green {
+    displayNameShort = "125mm HE-T";
+  };
+  class 12Rnd_125mm_HE_T_Yellow: 16Rnd_120mm_HE_shells_Tracer_Yellow {
+    displayNameShort = "125mm HE-T";
+  };
+
+  class 12Rnd_125mm_HEAT: 12Rnd_125mm_HE {
+    displayNameShort = "125mm MP";
+  };
+  class 12Rnd_125mm_HEAT_T_Red: 12Rnd_125mm_HEAT {
+    displayNameShort = "125mm MP-T";
+  };
+  class 12Rnd_125mm_HEAT_T_Green: 12Rnd_125mm_HEAT {
+    displayNameShort = "125mm MP-T";
+  };
+  class 12Rnd_125mm_HEAT_T_Yellow: 12Rnd_125mm_HEAT {
+    displayNameShort = "125mm MP-T";
+  };
+
+  class 32Rnd_120mm_APFSDS_shells;
+  class 32Rnd_120mm_APFSDS_shells_Tracer_Red;
+  class 32Rnd_120mm_APFSDS_shells_Tracer_Green;
+  class 32Rnd_120mm_APFSDS_shells_Tracer_Yellow;
+  class 24Rnd_125mm_APFSDS: 32Rnd_120mm_APFSDS_shells {
+    displayNameShort = "125mm AP";
+  };
+  class 24Rnd_125mm_APFSDS_T_Red: 32Rnd_120mm_APFSDS_shells_Tracer_Red {
+    displayNameShort = "125mm AP-T";
+  };
+  class 24Rnd_125mm_APFSDS_T_Green: 32Rnd_120mm_APFSDS_shells_Tracer_Green {
+    displayNameShort = "125mm AP-T";
+  };
+  class 24Rnd_125mm_APFSDS_T_Yellow: 32Rnd_120mm_APFSDS_shells_Tracer_Yellow {
+    displayNameShort = "125mm AP-T";
+  };
 
   class 20Rnd_105mm_HEAT_MP: 12Rnd_125mm_HEAT {
     displayNameShort = "105mm MP";
@@ -541,5 +625,40 @@ class CfgMagazines {
   };
   class 40Rnd_40mm_APFSDS_Tracer_Yellow_shells: 40Rnd_40mm_APFSDS_shells {
     displayNameShort = "40mm AP-T";
+  };
+  class 450Rnd_127x108_Ball: VehicleMagazine {
+    displayNameShort = "12.7mm";
+  };
+
+  class 140Rnd_30mm_MP_shells: 250Rnd_30mm_HE_shells {
+    displayNameShort = "30mm MP";
+  };
+  class 140Rnd_30mm_MP_shells_Tracer_Red: 140Rnd_30mm_MP_shells {
+    displayNameShort = "30mm MP-T";
+  };
+  class 140Rnd_30mm_MP_shells_Tracer_Green: 140Rnd_30mm_MP_shells_Tracer_Red {
+    displayNameShort = "30mm MP-T";
+  };
+  class 140Rnd_30mm_MP_shells_Tracer_Yellow: 140Rnd_30mm_MP_shells_Tracer_Red {
+    displayNameShort = "30mm MP-T";
+  };
+  class 60Rnd_30mm_APFSDS_shells: 250Rnd_30mm_HE_shells {
+    displayNameShort = "30mm AP";
+  };
+  class 60Rnd_30mm_APFSDS_shells_Tracer_Red: 60Rnd_30mm_APFSDS_shells {
+    displayNameShort = "30mm AP-T";
+  };
+  class 60Rnd_30mm_APFSDS_shells_Tracer_Green: 60Rnd_30mm_APFSDS_shells {
+    displayNameShort = "30mm AP-T";
+  };
+  class 60Rnd_30mm_APFSDS_shells_Tracer_Yellow: 60Rnd_30mm_APFSDS_shells {
+    displayNameShort = "30mm AP-T";
+  };
+
+  class 200Rnd_20mm_G_belt: VehicleMagazine {
+    displayNameShort = "20mm HE";
+  };
+  class 40Rnd_20mm_G_belt: 200Rnd_20mm_G_belt {
+    displayNameShort = "20mm HE";
   };
 };

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_UI_F};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,7 +16,6 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
-      class addVector;
       class binarizeNumber;
       class codeToString;
       class convertKeyCode;
@@ -24,15 +23,11 @@ class CfgFunctions {
       class displayText;
       class execRemoteFnc;
       class findStringInString;
-      class getBank;
       class getBinocular;
-      class getDirection;
-      class getDirectionVector;
-      class getDirectionVector2;
-      class getEntryFromMissionSQM;
-      class getPitch;
+      class getNumberFromMissionSQM;
+      class getStringFromMissionSQM;
+      class getTargetAzimuthAndInclination;
       class getTargetDistance;
-      class getTargetDistanceDebug;
       class getTurretIndex;
       class getTurrets;
       class getWeaponType;
@@ -46,16 +41,10 @@ class CfgFunctions {
       class numberToDigitsString;
       class progressBar;
       class revertKeyCodeLocalized;
-      class scalarProduct;
-      class scaleVector;
       class setKeyDefault;
-      class setPitchBank;
       class subString;
-      class subtractVector;
       class toBin;
       class toHex;
-      class vectorLength;
-      class vectorProduct;
     };
   };
 };

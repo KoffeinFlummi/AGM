@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.9";
-    versionStr = "0.9";
-    versionAr[] = {0,9,0};
+    version = "0.91";
+    versionStr = "0.91";
+    versionAr[] = {0,91,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -20,14 +20,6 @@ class CfgFunctions {
       class explosionEH;
       class firedNearEH;
       class earplugs;
-    };
-  };
-};
-
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_giveEarBuds {
-      clientInit = "if (player == _this select 0) then {_this spawn {sleep 0.1; _ammo = getText (configFile >> 'CfgMagazines' >> currentMagazine player >> 'ammo'); if (getNumber (configFile >> 'CfgAmmo' >> _ammo >> 'audiblefire') > 8) then {player addItem 'AGM_EarBuds'}}}"; 
     };
   };
 };

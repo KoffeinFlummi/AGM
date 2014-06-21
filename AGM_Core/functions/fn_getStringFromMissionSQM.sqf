@@ -1,19 +1,20 @@
 /*
  * Author: commy2
  *
- * Get an entry from the mission.sqm file. Caution: this function sucks and is really slow.
+ * Get a string from the mission.sqm file. Mission has to be saved in the Editor. The string cannot contain the ; character.
  * 
  * Argument:
  * 0: Path of the entry in the mission.sqm (Array)
  * 
  * Return value:
- * Value of the entry (Number)
+ * Value of the entry. Note: If the entry does not exist, it might return an empty string or an entry with the same name of another class! (String)
  */
 
 private ["_path", "_mission", "_a", "_class", "_index", "_array", "_b", "_entry"];
 
 _path = _this;
 
+if (missionName == "") exitWith {""};
 _mission = toArray toLower loadFile "mission.sqm";
 {
 	if (_x < 33) then {
@@ -40,7 +41,7 @@ for "_a" from 0 to (count _path - 2) do {
 
 _entry = format ["%1=", _path select (count _path - 1)];
 _index = [_entry, _mission] call AGM_Core_fnc_findStringInString;
-if (_index == -1) exitWith {0};
+if (_index == -1) exitWith {""};
 
 _array = toArray _mission;
 for "_b" from 0 to (_index + count toArray _entry - 1) do {
@@ -52,4 +53,4 @@ _index = [";", _mission] call AGM_Core_fnc_findStringInString;
 
 _mission = toArray _mission;
 _mission resize _index;
-parseNumber toString _mission;
+format ["%1", toString _mission];

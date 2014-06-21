@@ -12,5 +12,7 @@ AGM_NightVision_ppEffectNVGBrightness ppEffectCommit 0;
 AGM_NightVision_ppEffectMuzzleFlash = ppEffectCreate ["ColorCorrections", 1237];
 AGM_NightVision_ppEffectMuzzleFlash ppEffectEnable true;
 AGM_NightVision_ppEffectMuzzleFlash ppEffectForceInNVG true;
+AGM_NightVision_ppEffectMuzzleFlash ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 1]];
+AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit 0;
 
 0 spawn compile preprocessFileLineNumbers "\AGM_NightVision\nightVision.sqf";
