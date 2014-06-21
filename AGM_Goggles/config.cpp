@@ -95,6 +95,6 @@ class CfgGlasses {
     AGM_gogglesEffect = "[1, 1, -0.15, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
   };
   class G_Tactical_Clear: None {
-    AGM_gogglesEffect = "[1, 1, -0.08, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
+    AGM_gogglesEffect = "[1, 1, -0.02, [0,0,0,0], [0,0,0,1], [0,0,0,1]]";
   };
 };
