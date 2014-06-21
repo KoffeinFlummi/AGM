@@ -244,8 +244,18 @@
 
     <Key ID="STR_AGM_Interaction_YouWereTapped">
         <English>You were tapped on the shoulder.</English>
+        <German>Dir wurde auf die Schulter geklopft</German>
         <Spanish>Te tocaron el hombro.</Spanish>
         <French>Ont vous tape à l'épaule.</French>
+        <Polish>Zostałeś klepnięty po ramieniu</Polish>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_ShowPlayerNames">
+        <English>Show player names</English>
+        <German>Spielernamen anzeigen</German>
+        <Polish>Pokaż nazwy graczy</Polish>
+    </Key>
+
+
   </Package>
 </Project>

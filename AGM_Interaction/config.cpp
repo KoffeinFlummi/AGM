@@ -72,6 +72,13 @@ class AGM_Core_Default_Keys {
   };
 };
 
+class AGM_Core_Options {
+  class showPlayerNames {
+    displayName = "$STR_AGM_Interaction_ShowPlayerNames";
+    default = 1;
+  };
+};
+
 class CfgVehicles {
   class Man;
 
