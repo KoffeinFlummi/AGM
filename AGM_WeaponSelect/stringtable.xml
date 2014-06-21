@@ -79,6 +79,11 @@
       <German>Raketen auswählen</German>
     </Key>
 
+    <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
+        <English>Enable quick select</English>
+        <German>Schnellauswahl einschalten</German>
+    </Key>
+
 
   </Package>
 </Project>

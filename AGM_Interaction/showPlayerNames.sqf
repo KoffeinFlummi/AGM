@@ -5,8 +5,11 @@
 
 _rscLayer = ["AGM_showPlayerNames"] call BIS_fnc_rscLayer;
 
+AGM_showPlayerNames = profileNamespace getVariable ["AGM_showPlayerNames", true];
+
 while {true} do {
 	sleep DELAY;
+	waitUntil {AGM_showPlayerNames};
 	_cursorTarget = cursorTarget;
 	_visibleName = false;
 	if (vehicle player == player && {isPlayer _cursorTarget} && {player distance _cursorTarget < DISTANCE}) then {

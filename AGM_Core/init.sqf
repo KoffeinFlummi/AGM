@@ -12,6 +12,7 @@ AGM_Core_editKey   = compile preprocessFileLineNumbers "\AGM_core\scripts\editKe
 AGM_Core_openMenu  = compile preprocessFileLineNumbers "\AGM_core\scripts\openMenu.sqf";
 AGM_Core_closeMenu = compile preprocessFileLineNumbers "\AGM_core\scripts\closeMenu.sqf";
 AGM_Core_nextKeys = compile preprocessFileLineNumbers "\AGM_core\scripts\nextKeys.sqf";
+AGM_Core_toggleState = compile preprocessFileLineNumbers "\AGM_core\scripts\toggleState.sqf";
 
 call AGM_Core_fnc_setKeyDefault;
 

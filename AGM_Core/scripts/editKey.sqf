@@ -21,8 +21,8 @@ _action = AGM_Core_keyNames select (_this select 0);
 (_dlgMenuDialog displayCtrl 22) ctrlSetTextColor GRAY;
 (_dlgMenuDialog displayCtrl 23) ctrlSetTextColor GRAY;
 
-for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow true};
-for '_a' from 10 to 13 do {(_dlgMenuDialog displayCtrl _a) ctrlEnable false};
+for "_index" from 20 to 26 do {(_dlgMenuDialog displayCtrl _index) ctrlShow true};
+for "_index" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index) ctrlEnable false};
 
 _description = ctrlText _ctrlMenuDialog;
 //_ctrlMenuDialog ctrlSetText "..";
@@ -45,8 +45,8 @@ waitUntil {
 	{!dialog}
 };
 
-for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false};
-for '_a' from 10 to 13 do {(_dlgMenuDialog displayCtrl _a) ctrlEnable true};
+for "_index" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index) ctrlEnable true};
+for "_index" from 20 to 26 do {(_dlgMenuDialog displayCtrl _index) ctrlShow false};
 
 _dlgMenuDialog displayRemoveEventHandler ["KeyDown", _ehid_keydown];
 
