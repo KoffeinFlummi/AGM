@@ -234,11 +234,13 @@
       <English>&lt; Prev</English>
       <German>&lt; Zurück</German>
       <Polish>&lt; Poprzedni</Polish>
+      <French>&lt; Prec</French>
     </Key>
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
       <German>Weiter &gt;</German>
       <Polish>Następny &gt;</Polish>
+      <French>Suivant &gt;</French>
     </Key>
 
   </Package>
