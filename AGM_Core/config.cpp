@@ -45,6 +45,7 @@ class CfgFunctions {
       class subString;
       class toBin;
       class toHex;
+      class disableUserInput;
     };
   };
 };
