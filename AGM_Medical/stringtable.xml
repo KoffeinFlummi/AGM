@@ -408,7 +408,7 @@
     <Key ID="STR_AGM_Medical_PatientIsUnconscious">
       <English>The patient is unconscious.</English>
       <German>Der Patient ist bewusstlos.</German>
-      <Spanish>El paciente está muerto.</Spanish>
+      <Spanish>El paciente está inconsciente.</Spanish>
       <Polish>Pacjent jest nieprzytomny.</Polish>
       <Czech>Pacient je v bezvědomí.</Czech>
       <Russian>Пациент без сознания.</Russian>
