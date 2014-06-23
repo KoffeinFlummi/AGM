@@ -484,14 +484,14 @@ class CfgWeapons {
     type = 0;
     class ItemInfo: InventoryFirstAidKitItem_Base_F {
       mass = 4;
-      type = 201;
+      type = 401;
     };
   };
   class Medikit: ItemCore {
     type = 0;
     class ItemInfo: MedikitItem {
       mass = 60;
-      type = 201;
+      type = 401;
     };
   };
 
@@ -503,7 +503,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
-      type = 201;
+      type = 401;
     };
   };
   class AGM_Morphine: AGM_Bandage {

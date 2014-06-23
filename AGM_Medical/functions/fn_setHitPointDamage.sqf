@@ -8,6 +8,7 @@
  * 0: unit
  * 1: selection
  * 2: damage
+ * 4: disable overall damage adjustment (optional)
  *
  * Return Value:
  * -
@@ -22,6 +23,10 @@ if !(local _unit) exitWith {
   [_this, "AGM_Medical_fnc_setHitPointDamage", _unit] call AGM_Core_fnc_execRemoteFnc;
 };
 
+// Check if overall damage adjustment is disabled
+if (count _this > 3 && {_this select 3}) exitWith {
+  _unit setHitPointDamage [_selection, _damage];
+};
 
 _selections = [
   "HitHead",
@@ -32,7 +37,7 @@ _selections = [
   "HitRightLeg"
 ];
 
-if !(_selection in _selections) exitWith {
+if (!(_selection in _selections) or (count _this > 3)) exitWith {
   _unit setHitPointDamage [_selection, _damage];
 };
 
