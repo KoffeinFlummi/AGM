@@ -22,7 +22,15 @@ import winreg
 import threading
 import time
 
-privatekey = "" # if set to anything other that "" it will sign the addons
+""" 
+Configuration for those that moved their ArmA directories (i.e. Steam) to an external storage. 
+Note: Set variables to "" if you haven't moved anything.
+"""
+arma = "D:\Games\Steam\steamapps\common\Arma 3"
+armatools = "D:\Games\Steam\steamapps\common\Arma 3 Tools\AddonBuilder"
+moddir = "D:\Games\Arma 3 Mods\Arma 3 Alpha"
+
+privatekey = "" # if set to anything other than "", it will sign the addons
 modfolder  = "@AGM_dev"
 tempfolder = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
 
@@ -31,15 +39,33 @@ movemanually = True
 
 def get_arma_path():
   """ Get the installation directory of Arma 3 """
-  reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-  key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\arma 3")
-  return winreg.EnumValue(key,1)[1]
+  global arma
+  
+  """ 
+  Registry isn't always perfect, funfortunately. Exception is thrown if the key doesn't 
+  exist, regardless if directory exists. 
+  """
+  if bool(arma):
+    return arma
+  else:
+    reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+    key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\arma 3")
+    return winreg.EnumValue(key,1)[1]
 
 def get_armatools_path():
   """ Get the installation directory of the Arma 3 Tools """
-  reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-  key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
-  return winreg.EnumValue(key,0)[1]
+  global armatools
+  
+  """ 
+  Registry isn't always perfect, funfortunately. Exception is thrown if the key doesn't 
+  exist, regardless if directory exists. 
+  """
+  if bool(armatools):
+    return armatools
+  else:
+    reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+    key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
+    return winreg.EnumValue(key,0)[1]
 
 def get_modules():
   """ Get all the folders that need binarization """
@@ -52,11 +78,12 @@ def get_modules():
 
 def binarize(module_name):
   """ Binarizes the given module """
-  global modfolder, privatekey, tempfolder, movemanually
+  global modfolder, privatekey, tempfolder, movemanually, moddir
 
+  mods_path         = moddir if bool(moddir) else get_arma_path()
   addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder.exe")
   source_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name)
-  destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
+  destination_path  = os.path.join(mods_path, modfolder, "Addons")
   include_path      = os.path.join(os.path.dirname(os.path.realpath(__file__)), "include.txt")
   temp_path         = os.path.join(tempfolder, module_name+".pbo")
   final_path        = os.path.join(destination_path, module_name+".pbo")
@@ -74,6 +101,8 @@ def binarize(module_name):
     "-project="+os.path.dirname(os.path.realpath(__file__)),
     "-include="+include_path
   ]
+  
+  print(''.join(args))
 
   """
   These seem to be bugged, so you will just have to copy Binarize, CfgConvert, FileBank and DSSignFile
@@ -129,6 +158,14 @@ except:
   print("ERROR: Failed to read modules.")
   sys.exit(1)
 
+try:
+  path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+  if not os.path.exists(path):
+    print("# Folder '" + modfolder + "' created.")
+    os.makedirs(path) # in case the mod directory doesn't exist
+except:
+  print("ERROR: Failed to get mod path.")
+  sys.exit(1)
 
 print("\n######################################################")
 print("# Tools found, starting binarization.                #")
@@ -144,7 +181,10 @@ for module in modules:
   time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
 
 for thread in threads:
-  thread.join()
+  try:
+    thread.join()
+  except:
+    print("DEBUG: Deadlock!")
 
 print("\n######################################################")
 print("# Binarization complete.                             #")
