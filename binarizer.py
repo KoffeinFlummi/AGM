@@ -26,9 +26,9 @@ import time
 Configuration for those that moved their ArmA directories (i.e. Steam) to an external storage. 
 Note: Set variables to "" if you haven't moved anything.
 """
-arma = "D:\Games\Steam\steamapps\common\Arma 3"
-armatools = "D:\Games\Steam\steamapps\common\Arma 3 Tools\AddonBuilder"
-moddir = "D:\Games\Arma 3 Mods\Arma 3 Alpha"
+arma = "\path\to\arma" # self-explanatory
+armatools = "\path\to\armatools" # don't have them? install from steam lib (steam > lib > tools)
+moddir = "\path\to\mods" # for custom mod dirs
 
 privatekey = "" # if set to anything other than "", it will sign the addons
 modfolder  = "@AGM_dev"
@@ -101,8 +101,6 @@ def binarize(module_name):
     "-project="+os.path.dirname(os.path.realpath(__file__)),
     "-include="+include_path
   ]
-  
-  print(''.join(args))
 
   """
   These seem to be bugged, so you will just have to copy Binarize, CfgConvert, FileBank and DSSignFile
@@ -181,10 +179,8 @@ for module in modules:
   time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
 
 for thread in threads:
-  try:
+    # normally, I'd make a comment about deadlocking prevention.. but, fuck it
     thread.join()
-  except:
-    print("DEBUG: Deadlock!")
 
 print("\n######################################################")
 print("# Binarization complete.                             #")
