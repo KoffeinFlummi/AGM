@@ -30,7 +30,7 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-/*class AGM_Core_Default_Keys {
+class AGM_Core_Default_Keys {
   class Earplugs {
     displayName = "$STR_AGM_Hearing_Earbuds_On";
     condition = "true";
@@ -40,7 +40,7 @@ class Extended_PostInit_EventHandlers {
     control = 0;
     alt = 1;
   };
-};*/
+};
 
 class CfgVehicles {
   class Man;

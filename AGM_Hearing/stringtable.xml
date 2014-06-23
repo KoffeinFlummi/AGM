@@ -22,7 +22,7 @@
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
-      <German>Ohrenstöpsel an</German>
+      <German>Ohrenstöpsel drinnen</German>
       <Spanish>Tapones colocados</Spanish>
       <Polish>Załóż stopery</Polish>
       <Czech>Špunty v uších</Czech>
@@ -31,7 +31,7 @@
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
-      <German>Ohrenstöpsel aus</German>
+      <German>Ohrenstöpsel raus</German>
       <Spanish>Tapones removidos</Spanish>
       <Polish>Zdejmij stopery</Polish>
       <Czech>Špunty venku z uší</Czech>
