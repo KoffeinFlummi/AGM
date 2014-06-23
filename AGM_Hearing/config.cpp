@@ -30,7 +30,7 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class AGM_Core_Default_Keys {
+/*class AGM_Core_Default_Keys {
   class Earplugs {
     displayName = "$STR_AGM_Hearing_Earbuds_On";
     condition = "true";
@@ -39,6 +39,22 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+  };
+};*/
+
+class CfgVehicles {
+  class Man;
+
+  class CAManBase: Man {
+    class AGM_SelfActions {
+      class AGM_Earplugs {
+        displayName = "$STR_AGM_Hearing_Earbuds_On";
+        condition = "AGM_EarPlugsIn || {player canAdd 'AGM_EarBuds'}";
+        statement = "[] call AGM_Hearing_fnc_Earplugs";
+        showDisabled = 0;
+        priority = -0.9;
+      };
+    };
   };
 };
 

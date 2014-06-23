@@ -58,19 +58,19 @@
     </Key>
 
     <Key ID="STR_AGM_Core_ProfileSaved">
-      <English>Profile Saved</English>
-      <German>Profil Gespeichert</German>
-      <Spanish>Perfil Salvado</Spanish>
-      <Polish>Profil Zapisany</Polish>
+      <English>Profile saved</English>
+      <German>Profil gespeichert</German>
+      <Spanish>Perfil salvado</Spanish>
+      <Polish>Profil zapisany</Polish>
       <Czech>Profil uložen</Czech>
       <French>Profil sauvegarder</French>
       <Russian>Профиль сохранен</Russian>
     </Key>
     <Key ID="STR_AGM_Core_ProfileNotSaved">
-      <English>Profile Not Saved</English>
-      <German>Profil Nicht Gespeichert</German>
-      <Spanish>Perfil No Salvado</Spanish>
-      <Polish>Profil Niezapisany</Polish>
+      <English>Profile not saved</English>
+      <German>Profil nicht gespeichert</German>
+      <Spanish>Perfil no salvado</Spanish>
+      <Polish>Profil niezapisany</Polish>
       <Czech>Profil neuložen</Czech>
       <French>Profil non sauvegarder</French>
       <Russian>Профиль не сохранен</Russian>
