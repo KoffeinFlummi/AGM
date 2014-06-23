@@ -1,33 +1,56 @@
 // by commy2
 
-if (player getVariable ["AGM_Unconscious", false]) exitWith {};
-
 AGM_Interaction_Buttons = [];
 
 _actions = [];
 _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
-
 _object = AGM_Interaction_Target;
+
+// search add-on config file
 _config = configfile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions";
 if (_class != "") then {_config = _config >> _this};
 
 _count = count _config;
-if (_count == 0) exitWith {};
+if (_count > 0) then {
+	for "_a" from 0 to (_count - 1) do {
+		_action = _config select _a;
 
-for "_a" from 0 to (_count - 1) do {
-	_action = _config select _a;
+		if (count _action > 0) then {
+			_displayName = getText (_action >> "displayName");
+			_distance = getNumber (_action >> "distance");
+			_condition = compile getText (_action >> "condition");
+			_statement = compile getText (_action >> "statement");
+			_showDisabled = getNumber (_action >> "showDisabled") == 1;
+			_priority = getNumber (_action >> "priority");
 
-	if (count _action > 0) then {
-		_displayName = getText (_action >> "displayName");
-		_distance = getNumber (_action >> "distance");
-		_condition = compile getText (_action >> "condition");
-		_statement = compile getText (_action >> "statement");
-		_showDisabled = getNumber (_action >> "showDisabled") == 1;
-		_priority = getNumber (_action >> "priority");
+			if ((_showDisabled || {call _condition}) && {player distance _object < _distance || {_distance == 0}}) then {
+				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+			};
+		};
+	};
+};
 
-		if ((_showDisabled || {call _condition}) && {player distance _object < _distance || {_distance == 0}}) then {
-			_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+// search mission config file
+_config = missionConfigFile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions";
+if (_class != "") then {_config = _config >> _this};
+
+_count = count _config;
+if (_count > 0) then {
+	for "_a" from 0 to (_count - 1) do {
+		_action = _config select _a;
+
+		if (count _action > 0) then {
+			_displayName = getText (_action >> "displayName");
+			_distance = getNumber (_action >> "distance");
+			_condition = compile getText (_action >> "condition");
+			_statement = compile getText (_action >> "statement");
+			_showDisabled = getNumber (_action >> "showDisabled") == 1;
+			_priority = getNumber (_action >> "priority");
+
+			if ((_showDisabled || {call _condition}) && {player distance _object < _distance || {_distance == 0}}) then {
+				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+			};
 		};
 	};
 };
