@@ -442,7 +442,7 @@
     <Key ID="STR_AGM_Medical_PatientIsDead">
       <English>The patient is dead.</English>
       <German>Der Patient ist tot.</German>
-      <Spanish>El paciente está inconsciente.</Spanish>
+      <Spanish>El paciente está muerto.</Spanish>
       <Polish>Pacjent jest martwy.</Polish>
       <Czech>Je mrtvý.</Czech>
       <Russian>Пациент мертв.</Russian>
@@ -452,7 +452,7 @@
     <Key ID="STR_AGM_Medical_PatientIsUnconscious">
       <English>The patient is unconscious.</English>
       <German>Der Patient ist bewusstlos.</German>
-      <Spanish>El paciente está muerto.</Spanish>
+      <Spanish>El paciente está inconsciente.</Spanish>
       <Polish>Pacjent jest nieprzytomny.</Polish>
       <Czech>Pacient je v bezvědomí.</Czech>
       <Russian>Пациент без сознания.</Russian>
