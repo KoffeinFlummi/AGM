@@ -13,19 +13,6 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-/*  class AGM {
-    class AGM_functions {
-      class CoreInit {
-        file = "AGM_Core\init.sqf";
-        postInit = 1;
-        preInit = 1;
-      };
-    };
-  };
-
-};
-class empty {*/
-
   class AGM_Core {
     class AGM_Core_init {
       class AGM_Core {
@@ -41,6 +28,8 @@ class empty {*/
       class createUpdateLoop;
       class disableUserInput;
       class displayText;
+      class displayTextPicture;
+      class displayTextStructured;
       class execRemoteFnc;
       class findStringInString;
       class getBinocular;
@@ -62,6 +51,7 @@ class empty {*/
       class progressBar;
       class revertKeyCodeLocalized;
       class setKeyDefault;
+      class stringToColoredText;
       class subString;
       class toBin;
       class toHex;
@@ -150,3 +140,4 @@ class CfgMagazines {
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
+#include <HintConfig.hpp>

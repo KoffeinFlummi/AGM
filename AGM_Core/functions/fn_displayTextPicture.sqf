@@ -1,0 +1,31 @@
+/*
+ * Author: commy2
+ *
+ * Display a structured text with image.
+ * 
+ * Argument:
+ * 0: Text (Anything)
+ * 1: Image (String)
+ * 
+ * Return value:
+ * Nothing
+ */
+
+private ["_text", "_image"];
+
+_text = _this select 0;
+_image = _this select 1;
+
+_text = switch (typeName _text) do {
+	case "STRING" : {text _text};
+	case "TEXT" : {_text};
+	default {text str _text};
+};
+
+_text = composeText [
+	parseText format ["<img size='2.5' align='center' color='#ffffff' image='%1'/>", _image],
+	lineBreak,
+	_text
+];
+
+[_text] call AGM_Core_fnc_displayTextStructured;
