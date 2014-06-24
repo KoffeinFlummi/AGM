@@ -10,6 +10,7 @@
       <Czech>Označit cíl</Czech>
       <French>Cible Laser</French>
       <Russian>Установить зероинг</Russian>
+      <Hungarian>Cél jelölése</Hungarian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
@@ -19,6 +20,7 @@
       <Czech>Nastaveno na</Czech>
       <French>Mettre à zéro sur</French>
       <Russian>Зероинг</Russian>
+      <Hungarian>Zérózás</Hungarian>
     </Key>
 
   </Package>
