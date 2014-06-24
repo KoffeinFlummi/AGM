@@ -3,8 +3,39 @@
 AGM_Interaction_Buttons = [];
 
 _actions = [];
+_patches = [];
 _class = _this;
+
 _object = vehicle player;
+
+// search mission config file
+_parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
+{
+	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	if (_class != "") then {_config = _config >> _this};
+
+	_count = count _config;
+	if (_count > 0) then {
+		for "_a" from 0 to (_count - 1) do {
+			_action = _config select _a;
+
+			if (count _action > 0) then {
+				_configName = configName _action;
+				_displayName = getText (_action >> "displayName");
+
+				_condition = compile getText (_action >> "condition");
+				_statement = compile getText (_action >> "statement");
+				_showDisabled = getNumber (_action >> "showDisabled") == 1;
+				_priority = getNumber (_action >> "priority");
+
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_patches set [count _patches, _configName];
+				};
+			};
+		};
+	};
+} forEach _parents;
 
 // search add-on config file
 _config = configfile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
@@ -16,37 +47,17 @@ if (_count > 0) then {
 		_action = _config select _a;
 
 		if (count _action > 0) then {
+			_configName = configName _action;
 			_displayName = getText (_action >> "displayName");
+			
 			_condition = compile getText (_action >> "condition");
 			_statement = compile getText (_action >> "statement");
 			_showDisabled = getNumber (_action >> "showDisabled") == 1;
 			_priority = getNumber (_action >> "priority");
 
-			if (_showDisabled || {call _condition}) then {
+			if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
 				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
-			};
-		};
-	};
-};
-
-// search mission config file
-_config = missionConfigFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
-if (_class != "") then {_config = _config >> _this};
-
-_count = count _config;
-if (_count > 0) then {
-	for "_a" from 0 to (_count - 1) do {
-		_action = _config select _a;
-
-		if (count _action > 0) then {
-			_displayName = getText (_action >> "displayName");
-			_condition = compile getText (_action >> "condition");
-			_statement = compile getText (_action >> "statement");
-			_showDisabled = getNumber (_action >> "showDisabled") == 1;
-			_priority = getNumber (_action >> "priority");
-
-			if (_showDisabled || {call _condition}) then {
-				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+				_patches set [count _patches, _configName];
 			};
 		};
 	};
