@@ -10,6 +10,7 @@
       <Czech>Menu interakce</Czech>
       <French>Menu d'interaction</French>
       <Russian>Меню взаимодействия</Russian>
+      <Hungarian>Interakció</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_InteractionMenuSelf">
       <English>Interaction Menu (Self)</English>
@@ -19,6 +20,7 @@
       <Czech>Menu interakce (vlastní)</Czech>
       <French>Menu d'interaction (Soi-même)</French>
       <Russian>Меню взаимодействия (с собой)</Russian>
+      <Hungarian>Interakció (saját) </Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_OpenDoor">
       <English>Open / Close Doors</English>
@@ -28,6 +30,7 @@
       <Czech>Otevřít / Zavřít dveře</Czech>
       <French>Ouvrir / Fermer Portes</French>
       <Russian>Открыть / Закрыть двери</Russian>
+      <Hungarian>Ajtó nyitás / zárás</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_JoinGroup">
@@ -38,6 +41,7 @@
       <Czech>Přidat se do skupiny</Czech>
       <French>Rejoindre Groupe</French>
       <Russian>Вступить в группу</Russian>
+      <Hungarian>Csatlakozás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LeaveGroup">
       <English>Leave group</English>
@@ -47,6 +51,7 @@
       <Czech>Odejít ze skupiny</Czech>
       <French>Quitter Groupe</French>
       <Russian>Выйти из группы</Russian>
+      <Hungarian>Csoport elhagyása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_BecomeLeader">
       <English>Become Leader</English>
@@ -56,6 +61,7 @@
       <Czech>Stát se velitelem</Czech>
       <French>Devenir Leader</French>
       <Russian>Стать лидером</Russian>
+      <Hungarian>Vezetés átvétele</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Dance">
       <English>DANCE!</English>
@@ -65,6 +71,7 @@
       <Czech>TANČIT!</Czech>
       <French>Danse!</French>
       <Russian>ТАНЦЕВАТЬ!</Russian>
+      <Hungarian>TÁNC!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_StopDancing">
       <English>Stop Dancing</English>
@@ -74,6 +81,7 @@
       <Czech>Přestat tancovat</Czech>
       <French>Arreter la danse</French>
       <Russian>Прекратить танцевать</Russian>
+      <Hungarian>Tánc abbahagyása</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_Back">
@@ -84,6 +92,7 @@
       <Czech>Zpět</Czech>
       <French>Retour</French>
       <Russian>Назад</Russian>
+      <Hungarian>Vissza</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_Gestures">
@@ -94,6 +103,7 @@
       <Czech>Gesta >></Czech>
       <French>Gestes >></French>
       <Russian>Жесты >></Russian>
+      <Hungarian>Kézjelek >></Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Attack">
       <English>Attack</English>
@@ -103,6 +113,7 @@
       <Czech>Zaútočit</Czech>
       <French>Attaquer</French>
       <Russian>Атаковать</Russian>
+      <Hungarian>Támadás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Advance">
       <English>Advance</English>
@@ -112,6 +123,7 @@
       <Czech>Postoupit</Czech>
       <French>Avancer</French>
       <Russian>Продвигаться</Russian>
+      <Hungarian>Előre</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Go">
       <English>Go</English>
@@ -121,6 +133,7 @@
       <Czech>Jít</Czech>
       <French>Aller</French>
       <Russian>Идти</Russian>
+      <Hungarian>Mozgás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Follow">
       <English>Follow</English>
@@ -130,6 +143,7 @@
       <Czech>Následovat</Czech>
       <French>Suivre</French>
       <Russian>Следовать</Russian>
+      <Hungarian>Utánam</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Point">
       <English>Point</English>
@@ -139,6 +153,7 @@
       <Czech>Ukázat</Czech>
       <French>Point</French>
       <Russian>Точка</Russian>
+      <Hungarian>Mutat</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Up">
       <English>Up</English>
@@ -148,6 +163,7 @@
       <Czech>Vztyk</Czech>
       <French>Debout</French>
       <Russian>Вверх</Russian>
+      <Hungarian>Fel</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Cover">
       <English>Cover</English>
@@ -157,6 +173,7 @@
       <Czech>Krýt se</Czech>
       <French>Couvert</French>
       <Russian>Укрыться</Russian>
+      <Hungarian>Fedezékbe</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Cease_Fire">
       <English>Cease Fire</English>
@@ -166,6 +183,7 @@
       <Czech>Zastavit palbu</Czech>
       <French>Cesser le feu</French>
       <Russian>Прекратить огонь</Russian>
+      <Hungarian>Tüzet szüntess</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Freeze">
       <English>Freeze</English>
@@ -175,6 +193,7 @@
       <Czech>Stát</Czech>
       <French>Halt</French>
       <Russian>Замереть</Russian>
+      <Hungarian>Állj</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Hi">
       <English>Hi</English>
@@ -184,6 +203,7 @@
       <Czech>Ahoj</Czech>
       <French>Salut</French>
       <Russian>Привет</Russian>
+      <Hungarian>Szeva</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Yes">
       <English>Yes</English>
@@ -193,6 +213,7 @@
       <Czech>Ano</Czech>
       <French>Oui</French>
       <Russian>Да</Russian>
+      <Hungarian>Igen</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_No">
       <English>No</English>
@@ -202,6 +223,7 @@
       <Czech>Ne</Czech>
       <French>Non</French>
       <Russian>Нет</Russian>
+      <Hungarian>Nem</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_WeaponOnBack">
@@ -212,6 +234,7 @@
       <Czech>Dát zbraň na záda</Czech>
       <French>Mettre l'arme dans le dos</French>
       <Russian>Повесить оружие на спину</Russian>
+      <Hungarian>Fegyvert hátra</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TapShoulder">
       <English>Tap shoulder</English>
@@ -221,6 +244,7 @@
       <Czech>Poklepat na rameno</Czech>
       <French>Taper sur l'épaule</French>
       <Russian>Похлопать по плечу</Russian>
+      <Hungarian>Vállveregetés</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
@@ -231,6 +255,7 @@
       <Czech>Vzít (ventrální)</Czech>
       <French>Prendre (Ventral)</French>
       <Russian>Взять рюкзак (передний)</Russian>
+      <Hungarian>Felvétel (előre)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_BackpackVentralPut">
       <English>Take Off Backpack</English>
@@ -240,21 +265,24 @@
       <Czech>Odložit batoh</Czech>
       <French>Enlever le sac</French>
       <Russian>Снять рюкзак (передний)</Russian>
+      <Hungarian>Táska levétele</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_YouWereTapped">
-        <English>You were tapped on the shoulder.</English>
-        <German>Dir wurde auf die Schulter geklopft</German>
-        <Spanish>Te tocaron el hombro.</Spanish>
-        <French>Ont vous tape à l'épaule.</French>
-        <Polish>Zostałeś klepnięty po ramieniu</Polish>
+      <English>You were tapped on the shoulder.</English>
+      <German>Dir wurde auf die Schulter geklopft</German>
+      <Spanish>Te tocaron el hombro.</Spanish>
+      <French>Ont vous tape à l'épaule.</French>
+      <Polish>Zostałeś klepnięty po ramieniu</Polish>
+      <Hungarian>Vállonveregettek</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Interaction_ShowPlayerNames">
-        <English>Show player names</English>
-        <German>Spielernamen anzeigen</German>
-        <Polish>Pokaż nazwy graczy</Polish>
-        <French>Afficher nom des joueurs</French>
+      <English>Show player names</English>
+      <German>Spielernamen anzeigen</German>
+      <Polish>Pokaż nazwy graczy</Polish>
+      <French>Afficher nom des joueurs</French>
+      <Hungarian>Játékosnevek mutatása</Hungarian>
     </Key>
 
 
