@@ -36,10 +36,10 @@ class CfgFunctions {
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
-      class getTargetAzimuthAndInclinationWeapon;
       class getTargetDistance;
       class getTurretIndex;
       class getTurrets;
+      class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
       class isAutoWind;
