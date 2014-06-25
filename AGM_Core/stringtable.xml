@@ -270,5 +270,10 @@
       <Hungarian>Következő &gt;</Hungarian>
     </Key>
 
+    <Key ID="STR_AGM_Core_MiscItems">
+      <English>[AGM] Miscellaneous Items</English>
+      <German>[AGM] Verschiedenes</German>
+    </Key>
+
   </Package>
 </Project>

@@ -24,7 +24,6 @@ class CfgFunctions {
 
 class CfgVehicles {
   class Helicopter_Base_F;
-
   class UAV_01_base_F: Helicopter_Base_F {
     class AGM_Actions {
       class AGM_Refuel {
@@ -34,6 +33,16 @@ class CfgVehicles {
         statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
         showDisabled = 1;
         priority = -2.5;
+      };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      class _xx_AGM_UAVBattery {
+        count = 24;
+        name = "AGM_UAVBattery";
       };
     };
   };
