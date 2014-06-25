@@ -16,10 +16,8 @@ private ["_text", "_image"];
 _text = _this select 0;
 _image = _this select 1;
 
-_text = switch (typeName _text) do {
-	case "STRING" : {text _text};
-	case "TEXT" : {_text};
-	default {text str _text};
+if (typeName _text != "TEXT") then {
+	_text = parseText format ["<t align='center'>%1</t>", _text];
 };
 
 _text = composeText [

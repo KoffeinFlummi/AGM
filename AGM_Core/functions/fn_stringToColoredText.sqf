@@ -24,4 +24,4 @@ _color = (
 	[255 * (_color select 2), 2] call AGM_Core_fnc_toHex
 );
 
-parseText format ["<t align='center' color='#%2' >%1</t>", text _string, _color];
+parseText format ["<t align='center' color='#%2' >%1</t>", _string, _color];

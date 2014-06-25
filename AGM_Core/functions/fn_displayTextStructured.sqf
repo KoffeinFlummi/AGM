@@ -14,10 +14,8 @@ private ["_text", "_ctrlHint"];
 
 _text = _this select 0;
 
-_text = switch (typeName _text) do {
-	case "STRING" : {text _text};
-	case "TEXT" : {_text};
-	default {text str _text};
+if (typeName _text != "TEXT") then {
+	_text = composeText [lineBreak, parseText format ["<t align='center'>%1</t>", _text]];
 };
 
 ("AGM_RscHint" call BIS_fnc_rscLayer) cutRsc ["AGM_RscHint", "PLAIN", 0, true];

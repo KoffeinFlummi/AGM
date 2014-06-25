@@ -35,7 +35,7 @@ switch (AGM_Grenades_Mode) do {
 	};
 	//roll grande
 	case 3 : {
-		_direction = ["Throw"] call AGM_Core_fnc_getTargetAzimuthAndInclinationWeapon select 0;
+		_direction = [_weapon] call AGM_Core_fnc_getTargetAzimuthAndInclinationWeapon select 0;
 
 		_speed = speed _projectile / 3.6;
 
