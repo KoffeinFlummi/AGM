@@ -16,9 +16,9 @@ class CfgFunctions {
   class AGM_NightVision {
     class AGM_NightVision {
         file = "\AGM_nightvision\functions";
-      class increaseNVGBrightness {};
-      class decreaseNVGBrightness {};
-      class blending {};
+      class decreaseNVGBrightness;
+      class increaseNVGBrightness;
+      class blending;
     };
   };
 };
