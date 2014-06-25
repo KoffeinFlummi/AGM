@@ -48,7 +48,7 @@ _this spawn {
 	if (time > _time) then {
 		_arguments call _function;
 	} else {
-		[localize "STR_AGM_Core_ActionAborted"] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ActionAborted"] call AGM_Core_fnc_displayTextStructured;
 		if (!isNil "_function2") then {_arguments call _function2};
 	};
 };

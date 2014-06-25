@@ -7,7 +7,7 @@ class RscTitles {
 		idd = -1;
 		onLoad = "uiNamespace setVariable ['AGM_ctrlHint', (_this select 0) displayCtrl 1];";
 		movingEnable = false;
-		duration = 10;
+		duration = 4;
 		fadeIn = 0.2;
 		fadeOut = 0.2;
 		name = "AGM_RscHint";

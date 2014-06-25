@@ -77,12 +77,12 @@ if (AGM_Core_keySave == 1) then {
 
 	if (_count0 > 0 || {_count1 > 0}) then {
 		saveProfileNamespace;
-		[localize "STR_AGM_Core_ProfileSaved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileSaved"] call AGM_Core_fnc_displayTextStructured;
 	} else {
-		[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileNotSaved"] call AGM_Core_fnc_displayTextStructured;
 	};
 } else {
-	[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
+	[localize "STR_AGM_Core_ProfileNotSaved"] call AGM_Core_fnc_displayTextStructured;
 };
 
 AGM_Core_keyNewTemp = nil;

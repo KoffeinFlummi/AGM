@@ -4,11 +4,13 @@ _this spawn {
 	_vehicle = _this select 0;
 
 	if (AGM_isSpeedLimiter) exitWith {
-		[localize "STR_AGM_SpeedLimiter_Off", true] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_SpeedLimiter_Off"] call AGM_Core_fnc_displayTextStructured;
+		playSound "AGM_Sound_Click";
 		AGM_isSpeedLimiter = false;
 	};
 
-	[localize "STR_AGM_SpeedLimiter_On", true] call AGM_Core_fnc_displayText;
+	[localize "STR_AGM_SpeedLimiter_On"] call AGM_Core_fnc_displayTextStructured;
+	playSound "AGM_Sound_Click";
 	AGM_isSpeedLimiter = true;
 
 	_maxSpeed = speed _vehicle;
