@@ -23,7 +23,7 @@ switch (AGM_Grenades_Mode) do {
 	//precise throw
 	case 2 : {
 		_position = positionCameraToWorld [0,0,0];
-		_direction = positionCameraToWorld [0,0,1];
+		_direction = _position vectorAdd (player weaponDirection _weapon);
 
 		_speed = speed _projectile / 3.6;
 
@@ -35,7 +35,7 @@ switch (AGM_Grenades_Mode) do {
 	};
 	//roll grande
 	case 3 : {
-		_direction = call AGM_Core_fnc_getDirectionVector select 0;
+		_direction = ["Throw"] call AGM_Core_fnc_getTargetAzimuthAndInclinationWeapon select 0;
 
 		_speed = speed _projectile / 3.6;
 
