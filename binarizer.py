@@ -26,9 +26,9 @@ import time
 Configuration for those that moved their ArmA directories (i.e. Steam) to an external storage. 
 Note: Set variables to "" if you haven't moved anything.
 """
-arma = "\path\to\arma" # self-explanatory
-armatools = "\path\to\armatools" # don't have them? install from steam lib (steam > lib > tools)
-moddir = "\path\to\mods" # for custom mod dirs
+arma = "" # self-explanatory
+armatools = "" # don't have them? install from steam lib (steam > lib > tools)
+moddir = "" # for custom mod dirs
 
 privatekey = "" # if set to anything other than "", it will sign the addons
 modfolder  = "@AGM_dev"
