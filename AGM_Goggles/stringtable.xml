@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Goggles">
+
+    <Key ID="STR_AGM_Goggles_ShowInThirdPerson">
+      <English>Show Goggle Effects in Third Person</English>
+      <German>Show Goggle Effects in Third Person</German>
+      <Spanish>Show Goggle Effects in Third Person</Spanish>
+      <Polish>Show Goggle Effects in Third Person</Polish>
+      <Czech>Show Goggle Effects in Third Person</Czech>
+      <French>Show Goggle Effects in Third Person</French>
+      <Russian>Show Goggle Effects in Third Person</Russian>
+      <Hungarian>Show Goggle Effects in Third Person</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Goggles_WipeGlasses">
+      <English>Wipe Goggles</English>
+      <German>Wipe Goggles</German>
+      <Spanish>Wipe Goggles</Spanish>
+      <Polish>Wipe Goggles</Polish>
+      <Czech>Wipe Goggles</Czech>
+      <French>Wipe Goggles</French>
+      <Russian>Wipe Goggles</Russian>
+      <Hungarian>Wipe Goggles</Hungarian>
+    </Key>
+  </Package>
+</Project>
