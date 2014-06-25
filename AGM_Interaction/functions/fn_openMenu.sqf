@@ -28,7 +28,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {player distance _object < _distance || {_distance == 0}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -55,7 +55,7 @@ if (_count > 0) then {
 			_showDisabled = getNumber (_action >> "showDisabled") == 1;
 			_priority = getNumber (_action >> "priority");
 
-			if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {player distance _object < _distance || {_distance == 0}}) then {
+			if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 				_patches set [count _patches, _configName];
 			};

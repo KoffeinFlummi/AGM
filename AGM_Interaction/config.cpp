@@ -16,11 +16,12 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
+      class isInRange;
+      class openDoor;
       class openMenu;
       class openMenuSelf;
       class sortOptionsByPriority;
       class tapShoulder;
-      class openDoor;
     };
   };
 };
