@@ -68,6 +68,10 @@ def get_armatools_path():
     return winreg.EnumValue(key,0)[1]
 
 def get_modules():
+  """ Command line """
+  if len(sys.argv) > 1:
+    return sys.argv[1:]
+  
   """ Get all the folders that need binarization """
   root = os.path.dirname(os.path.realpath(__file__))
   modules = []
