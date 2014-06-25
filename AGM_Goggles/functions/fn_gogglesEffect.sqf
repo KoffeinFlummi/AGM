@@ -17,5 +17,8 @@ AGM_Goggles = _goggles;
 AGM_Goggles_ppEffectGoggles ppEffectAdjust _ppEffect;
 AGM_Goggles_ppEffectGoggles ppEffectCommit 0;
 
+/*
+// No fading.
 AGM_Goggles_ppEffectGoggles ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 1]];
 AGM_Goggles_ppEffectGoggles ppEffectCommit 30;
+*/
