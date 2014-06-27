@@ -43,3 +43,41 @@ class Extended_Fired_EventHandlers {
     };
   };
 };
+
+class RscText;
+class RscTitles
+{
+  class AGM_Wind_Arrow
+  {
+    idd = -1;
+    movingEnable=0;
+    duration=0.5;
+    fadeIn=0;
+    fadeOut=0.25;
+    onLoad = "with uiNameSpace do { AGM_Wind_Arrow = _this select 0 };";
+    controls[] = {"AGM_Wind_Arrow_BG","AGM_Wind_Arrow_FW"};
+    class AGM_Wind_Arrow_BG : RscText
+    {
+      idc = -1;
+      type = 0;
+      style = 128;
+      colorBackground[] = {0,0,0,0};
+      colorText[] = {0,0,0,0};
+      text = "";
+      sizeEx = 0.027;
+      x = "SafeZoneX + 0.001";
+      y = "SafeZoneY + 0.05";
+      w = 0.25;
+      h = 0.25;
+      size = 0.034;
+    };
+    class AGM_Wind_Arrow_FW : AGM_Wind_Arrow_BG
+    {
+      idc = 185185;
+      style = 48;
+      colorText[] = {1,1,1,1};
+      sizeEx = 0.03;
+      text = "";
+    };
+  };
+};
