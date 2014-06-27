@@ -15,7 +15,7 @@
 
 // DETERMINE IF UNIT IS MEDIC
 if !(([player] call AGM_Medical_fnc_isMedic) or (!(isNil "AGM_Medical_AllowNonMedics") and {AGM_Medical_AllowNonMedics})) exitWith {
-  hintSilent localize "STR_AGM_Medical_NotTrained";
+  [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
 };
 
 _this spawn {
