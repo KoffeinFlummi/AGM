@@ -41,13 +41,22 @@ class CfgVehicles {
   class Car_F: Car {
     class Turrets;
   };
-  class Wheeled_APC_F: Car_F {};
+  class Wheeled_APC_F: Car_F {
+    class Turrets;
+  };
   class Truck_F: Car_F {};
-  class Tank_F;
 
-  class Boat_Armed_01_base_F;
+  class Tank;
+  class Tank_F: Tank {
+    class Turrets;
+  };
+
+  class Boat_F;
+  class Boat_Armed_01_base_F: Boat_F {
+    class Turrets;
+  };
   class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
-    class Turrets {
+    class Turrets: Turrets {
       class FrontTurret;
       class RearTurret;
     };
@@ -62,7 +71,7 @@ class CfgVehicles {
 
   class MBT_01_base_F: Tank_F {
     fuelCapacity = 500 * FUEL_FACTOR;
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
@@ -81,7 +90,7 @@ class CfgVehicles {
 
   class APC_Wheeled_01_base_F: Wheeled_APC_F {
     fuelCapacity = 800 * FUEL_FACTOR;
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
@@ -119,7 +128,7 @@ class CfgVehicles {
 
   class MBT_03_base_F: Tank_F {
     fuelCapacity = 550 * FUEL_FACTOR;
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
@@ -127,7 +136,7 @@ class CfgVehicles {
 
   class APC_Wheeled_03_base_F: Wheeled_APC_F {
     fuelCapacity = 700 * FUEL_FACTOR;
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
@@ -135,7 +144,7 @@ class CfgVehicles {
 
   class APC_Tracked_03_base_F: Tank_F {
     fuelCapacity = 660 * FUEL_FACTOR;
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
@@ -166,7 +175,7 @@ class CfgVehicles {
 
   class APC_Tracked_02_base_F: Tank_F {
     fuelCapacity = 600 * FUEL_FACTOR; // NO FUCKING DATA
-    class Turrets {
+    class Turrets: Turrets {
       class MainTurret;
     };
   };
