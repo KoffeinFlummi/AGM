@@ -90,13 +90,13 @@ if (true in _intersects and (speed player) < 1 and currentWeapon player == prima
     player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_deploy", (animationState player)];
     _picture = format ["<img size='2' color='#ffffff' image='%1'/>", getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture")];
-    [formatText ["%1%2%3", parseText _picture, lineBreak, localize "STR_AGM_Resting_BipodDeployed"]] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Resting_BipodDeployed", _picture] call AGM_Core_fnc_displayTextStructured;
   } else {
     AGM_bipodDeployed = false;
     player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
     player switchMove format ["%1_bwa3_rested", (animationState player)];
     _picture = format ["<img size='2' color='#ffffff' image='%1'/>", getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture")];
-    [formatText ["%1%2%3", parseText _picture, lineBreak, localize "STR_AGM_Resting_WeaponRested"]] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Resting_WeaponRested", _picture] call AGM_Core_fnc_displayTextStructured;
   };
 
   // CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC
