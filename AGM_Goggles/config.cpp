@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {"A3_Weapons_F", "CBA_Main", "AGM_Core"};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"Garth 'L-H' de Wet"};
     authorUrl = "https://github.com/CorruptedHeart";
   };
@@ -25,122 +25,122 @@ class CfgGlasses {
 		AGM_Goggles_CrackRating = 1;
 		AGM_Goggles_EyeProtection = 0;
 	};
-	
+
 	class G_Combat:None {
 		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa";
 		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa";
 		AGM_Goggles_CrackRating = 2;
 		AGM_Goggles_EyeProtection = 1;
 	};
-	
+
 	class G_Diving:None {
 		AGM_Goggles_Image="AGM_Goggles\textures\HUD\DivingGoggles.paa";
 		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
 		AGM_Goggles_CrackRating = 2;
 		AGM_Goggles_EyeProtection = 1;
 	};
-	
+
 	class G_Lowprofile:None {
 		AGM_TintAmount=COLOUR*2;
 		AGM_Goggles_CrackRating = 2;
 		AGM_Goggles_EyeProtection = 1;
 	};
-	
+
 	class G_Shades_Black:None {
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Shades_Blue:None{
 		AGM_Goggles_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Shades_Green:None{
 		AGM_Goggles_Color[] = {0,1,0};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Shades_Red:None{
 		AGM_Goggles_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Spectacles:None{
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Spectacles_Tinted:None{
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Sport_Blackred:None{
 		AGM_Goggles_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Sport_BlackWhite:None{
 		AGM_Goggles_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Sport_Blackyellow:None{
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Sport_Checkered:None{
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Sport_Greenblack:None{
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Sport_Red:None{
 		AGM_TintAmount=COLOUR*2;
 		AGM_Goggles_Color[] = {0,0,0};
 	};
-	
+
 	class G_Squares:None{
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Squares_Tinted:None{
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Tactical_Black:None{
 		AGM_TintAmount=COLOUR;
 		AGM_Goggles_Color[] = {0,0,-1.5};
 	};
-	
+
 	class G_Tactical_Clear:None{
 		AGM_TintAmount=COLOUR;
 		AGM_Goggles_Color[] = {0,0,-1};
 	};
-	
+
 	class G_Aviator:None{
 		AGM_Goggles_Color[] = {0,0,-1};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Lady_Blue:None{
 		AGM_Goggles_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Lady_Red:None{
 		AGM_Goggles_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class G_Lady_Dark:None{
 		AGM_TintAmount=COLOUR*2;
 	};
-	
+
 	class G_Lady_Mirror:None{
 		AGM_TintAmount=COLOUR;
 	};
-	
+
 	class AV_ESS_blk:None{
 		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa";
 		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa";
@@ -174,7 +174,7 @@ class CfgGesturesMale
 
 class CfgWeapons{
 	class H_HelmetB;
-	
+
 	class H_CrewHelmetHeli_B:H_HelmetB {
 		AGM_Goggles_EyeProtection = 1;
 	};
