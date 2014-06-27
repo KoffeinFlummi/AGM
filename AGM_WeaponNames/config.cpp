@@ -32,16 +32,31 @@ class CfgWeapons {
     class arifle_MX_F : arifle_MX_Base_F {
       displayName = "MX";
     };
+    class arifle_MX_Black_F: arifle_MX_F {
+      displayName = "MX";
+    };
     class arifle_MXC_F : arifle_MX_Base_F {
+      displayName = "MXC";
+    };
+    class arifle_MXC_Black_F: arifle_MXC_F {
       displayName = "MXC";
     };
     class arifle_MX_GL_F : arifle_MX_Base_F {
       displayName = "MX 3GL";
     };
+    class arifle_MX_GL_Black_F : arifle_MX_GL_F {
+      displayName = "MX 3GL";
+    };
     class arifle_MX_SW_F : arifle_MX_Base_F {
       displayName = "MX LSW";
     };
+    class arifle_MX_SW_Black_F : arifle_MX_SW_F {
+      displayName = "MX LSW";
+    };
     class arifle_MXM_F : arifle_MX_Base_F {
+      displayName = "MXM";
+    };
+    class arifle_MXM_Black_F : arifle_MXM_F {
       displayName = "MXM";
     };
 
@@ -76,10 +91,19 @@ class CfgWeapons {
     class arifle_Mk20_F : mk20_base_F {
       displayName = "F2000A";
     };
+    class arifle_Mk20_plain_F : arifle_Mk20_F {
+      displayName = "F2000A";
+    };
     class arifle_Mk20C_F : mk20_base_F {
       displayName = "F2000A Tactical";
     };
+    class arifle_Mk20C_plain_F : arifle_Mk20C_F {
+      displayName = "F2000A Tactical";
+    };
     class arifle_Mk20_GL_F : mk20_base_F {
+      displayName = "F2000A EGLM";
+    };
+    class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
       displayName = "F2000A EGLM";
     };
 

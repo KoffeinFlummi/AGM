@@ -1,11 +1,11 @@
 /*
  * By: KoffeinFlummi
- * 
+ *
  * Diagnoses a unit.
- * 
+ *
  * Arguments:
  * 0: Unit that is diagnosed (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -108,6 +108,14 @@ _this spawn {
     };
 
     hintSilent parseText _string;
+
+    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
+      if (_unit == player) then {
+        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+      } else {
+        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+      }
+    };
   };
 
   AGM_Medical_diagnoseAbort = {

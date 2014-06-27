@@ -203,3 +203,17 @@ class RscDisplayServerGetReady: RscDisplayGetReady {
   };
 };
 
+// MARKERS
+class CfgMarkers {
+  class Flag;
+
+  class hd_objective: Flag {
+    name = "$STR_CFG_MARKERS_dot";
+    icon = "\A3\ui_f\data\map\markers\handdrawn\dot_CA.paa";
+  };
+
+  class hd_dot: hd_objective {
+    name = "$STR_CFG_MARKERS_FLAG";
+    icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";
+  };
+};
