@@ -1,11 +1,11 @@
 /*
  * By: KoffeinFlummi
- * 
+ *
  * Wakes an unconscious player up.
- * 
+ *
  * Arguments:
  * 0: Unconscious unit (Object)
- * 
+ *
  * Return Values:
  * None
  */
@@ -38,6 +38,9 @@ _position = getPosASL _unit;
     player setVariable ["tf_globalVolume", 1];
     player setVariable ["tf_voiceVolume", 1, true];
     player setVariable ["tf_unable_to_use_radio", false, true];
+
+    player setVariable ["acre_sys_core_isDisabled", false, true];
+    player setVariable ["acre_sys_core_globalVolume", 1];
   };
   if (local _this) then {
     _this enableSimulation true;

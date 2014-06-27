@@ -58,7 +58,7 @@ AGM_NewStrength = 0;
     if (_clampedDeafness < 0) then {
       _clampedDeafness = 0
     };
-    
+
     // needed until Bohemia fixes playSound to actually use the second argument
     _volume = (_clampedDeafness * _clampedDeafness) max 0.1;
 
@@ -72,6 +72,7 @@ AGM_NewStrength = 0;
     0.1 fadeSound _volume;
     0.1 fadeSpeech _volume;
     player setVariable ["tf_globalVolume", _volume];
+    player setVariable ["acre_sys_core_globalVolume", _volume];
 
     //hintSilent format ["AGM_CurrentDeafness, _Volume = %1, %2", AGM_CurrentDeafness, _volume];
 
