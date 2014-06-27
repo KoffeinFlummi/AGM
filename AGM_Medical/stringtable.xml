@@ -275,14 +275,14 @@
     </Key>
 
     <Key ID="STR_AGM_Medical_MedicalSupplies">
-      <English>Medical Supplies</English>
-      <German>Sanitätsmaterial</German>
-      <Spanish>Suministros Médicos</Spanish>
-      <Polish>Medykamenty</Polish>
-      <Czech>Zdravotnické zásoby</Czech>
-      <Russian>Медикаменты</Russian>
-      <French>Fournitures médicales</French>
-      <Hungarian>Elsősegély felszerelés</Hungarian>
+      <English>[AGM] Medical Supplies</English>
+      <German>[AGM] Sanitätsmaterial</German>
+      <Spanish>[AGM] Suministros Médicos</Spanish>
+      <Polish>[AGM] Medykamenty</Polish>
+      <Czech>[AGM] Zdravotnické zásoby</Czech>
+      <Russian>[AGM] Медикаменты</Russian>
+      <French>[AGM] Fournitures médicales</French>
+      <Hungarian>[AGM] Elsősegély felszerelés</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Medical_Bandage_Name">

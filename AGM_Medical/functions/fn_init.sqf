@@ -30,6 +30,9 @@ _this spawn {
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];
       player setVariable ["tf_unable_to_use_radio", false, true];
+
+      player setVariable ["acre_sys_core_isDisabled", false, true];
+      player setVariable ["acre_sys_core_globalVolume", 1];
     };
 
     _this setCaptive false;

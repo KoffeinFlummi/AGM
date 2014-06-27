@@ -44,7 +44,6 @@ class AGM_Core_Default_Keys {
 
 class CfgVehicles {
   class Man;
-
   class CAManBase: Man {
     class AGM_SelfActions {
       class AGM_Earplugs {
@@ -53,6 +52,16 @@ class CfgVehicles {
         statement = "[] call AGM_Hearing_fnc_Earplugs";
         showDisabled = 0;
         priority = -0.9;
+      };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      class _xx_AGM_EarBuds {
+        count = 24;
+        name = "AGM_EarBuds";
       };
     };
   };
