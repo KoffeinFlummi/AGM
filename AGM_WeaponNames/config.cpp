@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core, AGM_Vehicles, AGM_Aircraft, A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_gamma, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Characters_F};
+    requiredAddons[] = {AGM_Core, AGM_Vehicles, AGM_Aircraft, A3_Weapons_F, A3_Weapons_F_beta, A3_Weapons_F_gamma, A3_Weapons_F_Acc, A3_Weapons_F_Beta_Acc, A3_Weapons_F_EPA, A3_Weapons_F_EPB, A3_Weapons_F_EPC, A3_Characters_F};
     version = "0.91";
     versionStr = "0.91";
     versionAr[] = {0,91,0};
@@ -620,10 +620,10 @@ class CfgMagazines {
   class 40Rnd_40mm_APFSDS_Tracer_Red_shells: 40Rnd_40mm_APFSDS_shells {
     displayNameShort = "40mm AP-T";
   };
-  class 40Rnd_40mm_APFSDS_Tracer_Green_shells: 40Rnd_40mm_APFSDS_shells {
+  class 40Rnd_40mm_APFSDS_Tracer_Green_shells: 40Rnd_40mm_APFSDS_Tracer_Red_shells {
     displayNameShort = "40mm AP-T";
   };
-  class 40Rnd_40mm_APFSDS_Tracer_Yellow_shells: 40Rnd_40mm_APFSDS_shells {
+  class 40Rnd_40mm_APFSDS_Tracer_Yellow_shells: 40Rnd_40mm_APFSDS_Tracer_Red_shells {
     displayNameShort = "40mm AP-T";
   };
   class 450Rnd_127x108_Ball: VehicleMagazine {
