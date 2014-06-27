@@ -107,7 +107,7 @@ _this spawn {
 
     };
     _string = _string + "</t>";
-    [_string, 3] call AGM_Core_fnc_displayTextStructured;
+    [composeText [lineBreak, parseText _string]] call AGM_Medical_fnc_displayText;
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {

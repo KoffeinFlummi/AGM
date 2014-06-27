@@ -36,6 +36,7 @@ class CfgFunctions {
       class bloodbag;
       class carry;
       class diagnose;
+      class displayText;
       class drag;
       class dropWeapon;
       class epinephrine;
@@ -739,3 +740,5 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
+
+#include <HintConfig.hpp>
