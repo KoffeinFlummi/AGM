@@ -293,7 +293,7 @@ class CfgWeapons {
   */
 
   class LMG_Minigun: LMG_RCWS {
-    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow"};
+    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow", "200Rnd_65x39_belt", "200Rnd_65x39_belt_Tracer_Red", "200Rnd_65x39_belt_Tracer_Green", "200Rnd_65x39_belt_Tracer_Yellow", "2000Rnd_65x39_belt", "2000Rnd_65x39_belt_Tracer_Red", "2000Rnd_65x39_belt_Tracer_Green", "2000Rnd_65x39_belt_Tracer_Yellow", "1000Rnd_65x39_belt", "1000Rnd_65x39_belt_Tracer_Red", "1000Rnd_65x39_belt_Tracer_Green", "1000Rnd_65x39_belt_Tracer_Yellow"};
     class manual: MGun {
       reloadTime = 0.015;
       dispersion = 0.006;
