@@ -2,11 +2,11 @@
  * Author: KoffeinFlummi
  *
  * Bandage the given unit.
- * 
+ *
  * Argument:
  * 0: Unit to be bandaged (Object)
  * 1: HitPoint to be healed (String; Example: "HitLeftShoulder")
- * 
+ *
  * Return value:
  * none
  */
@@ -43,9 +43,9 @@ _this spawn {
   AGM_Medical_bandageCallback = {
     _unit = _this select 0;
     _selection = _this select 1;
-  
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
-    
+
     player removeItem "AGM_Bandage";
 
     // change damage of body part
@@ -70,15 +70,13 @@ _this spawn {
       _unit setDamage 0;
     };
 
-    /* temporarily disabled
-    if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
       } else {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+      };
     };
-    */
   };
 
   AGM_Medical_bandageAbort = {

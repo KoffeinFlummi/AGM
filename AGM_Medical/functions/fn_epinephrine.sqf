@@ -2,10 +2,10 @@
  * Author: KoffeinFlummi
  *
  * Administers the unit epinephrine, waking it up.
- * 
+ *
  * Argument:
  * 0: Unit to be treated (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -38,22 +38,16 @@ _this spawn {
 
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
-  
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
     player removeItem "AGM_Epipen";
 
     [_unit] call AGM_Medical_fnc_wakeUp;
 
-    /* temp disabled
-    if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
-      if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
-      } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
+      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
     };
-    */
   };
 
   AGM_Medical_epinephrineAbort = {

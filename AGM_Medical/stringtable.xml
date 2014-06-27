@@ -630,5 +630,10 @@
       <Hungarian>morfiumot ad neked.</Hungarian>
     </Key>
 
+    <Key ID="STR_AGM_Medical_keepMenuOpen">
+      <English>Reopen medical menu after treatment</English>
+      <German>Sanitätsmenü nach Behandlung öffnen</German>
+    </Key>
+
   </Package>
 </Project>

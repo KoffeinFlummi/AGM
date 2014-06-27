@@ -65,6 +65,13 @@ class Extended_Init_EventHandlers {
   };
 };
 
+class AGM_Core_Options {
+  class keepMedicalMenuOpen {
+    displayName = "$STR_AGM_Medical_keepMenuOpen";
+    default = 0;
+  };
+};
+
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
