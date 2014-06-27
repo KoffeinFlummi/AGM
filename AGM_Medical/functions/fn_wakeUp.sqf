@@ -41,6 +41,8 @@ _position = getPosASL _unit;
 
     player setVariable ["acre_sys_core_isDisabled", false, true];
     player setVariable ["acre_sys_core_globalVolume", 1];
+
+    [false] call AGM_Core_fnc_disableUserInput;
   };
   if (local _this) then {
     _this enableSimulation true;
