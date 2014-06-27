@@ -14,13 +14,13 @@ class CfgPatches {
 
 class CfgFunctions {
   class AGM_Core {
-    class AGM_Core_init {
+    /*class AGM_Core_init {
       class AGM_Core {
         file = "AGM_Core\init.sqf";
         postInit = 1;
       };
-    };
-    class AGM_Core_functions {
+    };*/
+    class AGM_Core {//_functions {
       file = "AGM_Core\functions";
       class binarizeNumber;
       class codeToString;
@@ -67,11 +67,11 @@ class CfgSounds {
   };
 };
 
-/*class Extended_PostInit_EventHandlers {
+class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
   };
-};*/
+};
 
 class CfgFactionClasses {
   class AGM {
