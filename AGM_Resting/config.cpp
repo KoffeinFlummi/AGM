@@ -32,7 +32,7 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "$STR_AGM_Resting_RestWeapon";
-    conditionUp = "!(player getVariable ['AGM_Unconscious', false]) && {inputAction 'reloadMagazine' == 0}";
+    conditionUp = "player == vehicle player && {!(player getVariable ['AGM_Unconscious', false])} && {inputAction 'reloadMagazine' == 0}";
     statementUp = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
     key = 15;
     shift = 0;

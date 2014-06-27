@@ -30,7 +30,7 @@ _this spawn {
 
     _unit setVariable ["AGM_Diagnosed", true, false];
 
-    _string = format ["<t align='center'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
+    _string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
       _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsDead";
@@ -107,7 +107,7 @@ _this spawn {
 
     };
     _string = _string + "</t>";
-    [_string] call AGM_Core_fnc_displayTextStructured;
+    [_string, 3] call AGM_Core_fnc_displayTextStructured;
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
