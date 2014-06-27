@@ -4,7 +4,7 @@
 
     <Key ID="STR_AGM_Goggles_ShowInThirdPerson">
       <English>Show Goggle Effects in Third Person</English>
-      <German>Show Goggle Effects in Third Person</German>
+      <German>Brilleneffekt in dritter Person anzeigen</German>
       <Spanish>Show Goggle Effects in Third Person</Spanish>
       <Polish>Show Goggle Effects in Third Person</Polish>
       <Czech>Show Goggle Effects in Third Person</Czech>
@@ -14,7 +14,7 @@
     </Key>
     <Key ID="STR_AGM_Goggles_WipeGlasses">
       <English>Wipe Goggles</English>
-      <German>Wipe Goggles</German>
+      <German>Brille abwischen</German>
       <Spanish>Wipe Goggles</Spanish>
       <Polish>Wipe Goggles</Polish>
       <Czech>Wipe Goggles</Czech>
