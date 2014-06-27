@@ -936,7 +936,8 @@ class CfgVehicles {
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class AnimationSources: AnimationSources {
       class HitGlass1 {
@@ -976,7 +977,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Transport_01_F: Heli_Transport_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -993,7 +995,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1002,7 +1005,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1011,14 +1015,16 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1035,7 +1041,8 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1052,7 +1059,8 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1061,12 +1069,14 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 
   // OPFOR
   class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1075,7 +1085,8 @@ class CfgVehicles {
     };
   };
   class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1085,7 +1096,8 @@ class CfgVehicles {
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
     driverCanEject = 1;
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     magazines[] = {"2000Rnd_762x51_Belt_T_Green"};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1094,7 +1106,8 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1106,6 +1119,7 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 };
