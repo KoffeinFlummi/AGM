@@ -450,7 +450,7 @@ class CfgMagazines {
     scope = 2;
     displayNameShort = "";
     ammo = "Gatling_30mm_HE_Plane_CAS_01_F";
-    count = 1150;
+    count = 1170;
     //initSpeed = 3852;
     maxLeadSpeed = 300;
     nameSound = "cannon";
@@ -646,14 +646,17 @@ class CfgWeapons {
   class Gatling_30mm_Plane_CAS_01_F: CannonCore {
     autoFire = 1;
     burst = 1;
-    reloadTime = 0.0143;
+    reloadTime = 0.0154;
     class LowROF: Mode_FullAuto {
-      reloadTime = 0.0143;
-      sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
+      autoFire = 0;
+      burst = 65;
+      reloadTime = 0.0154;
+      //sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
+      sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,[25704,32159]};
       weaponSoundEffect = "DefaultRifle";
       dispersion = 0.005;
-      soundContinuous = 0;
-      burst = 1;
+      soundContinuous = 1;
+      textureType = "burst";
     };
     class close: LowROF{};
     class near: close{};
