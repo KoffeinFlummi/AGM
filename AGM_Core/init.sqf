@@ -14,7 +14,7 @@ AGM_Core_closeMenu = compile preprocessFileLineNumbers "\AGM_core\scripts\closeM
 AGM_Core_nextKeys = compile preprocessFileLineNumbers "\AGM_core\scripts\nextKeys.sqf";
 AGM_Core_toggleState = compile preprocessFileLineNumbers "\AGM_core\scripts\toggleState.sqf";
 
-call AGM_Core_fnc_setKeyDefault;
+[false] call AGM_Core_fnc_setKeyDefault;
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
 
