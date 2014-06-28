@@ -49,6 +49,8 @@ if (_unit == player) then {
 
   player setVariable ["acre_sys_core_isDisabled", true, true];
   player setVariable ["acre_sys_core_globalVolume", 0.4];
+
+  [true, true] call AGM_Core_fnc_disableUserInput;
 };
 
 _unit setCaptive 213;

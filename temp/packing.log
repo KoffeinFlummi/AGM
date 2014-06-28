@@ -1,0 +1,227 @@
+Building entries:...
+config.cpp //forcing arma raP
+class CfgPatches {
+class AGM_Wind {
+units[] = {};
+weapons[] = {};
+requiredVersion = 0.60;
+requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
+version = "0.91";
+versionStr = "0.91";
+versionAr[] = {0,91,0};
+author[] = {"KoffeinFlummi"};
+authorUrl = "https://github.com/KoffeinFlummi/";
+};
+};
+class CfgFunctions {
+class AGM_Wind {
+class AGM_Wind {
+file = "AGM_Wind\functions";
+class firedEH;
+class init;
+};
+};
+};
+class Extended_Init_EventHandlers {
+class CAManBase {
+class AGM_Wind {
+init = "_this call AGM_Wind_fnc_init";
+};
+};
+};
+class Extended_PostInit_EventHandlers {
+class AGM_Wind {
+Init = "if (isServer && {call AGM_Core_fnc_isAutoWind}) then {setWind [wind select 0, wind select 1, true]};";
+};
+};
+class Extended_Fired_EventHandlers {
+class CAManBase {
+class AGM_Wind {
+clientFired = "_this call AGM_Wind_fnc_firedEH";
+};
+};
+};
+class RscText;
+class RscTitles
+{
+class AGM_Wind_Arrow
+{
+idd = -1;
+movingEnable=0;
+duration=0.5;
+fadeIn=0;
+fadeOut=0.25;
+onLoad = "with uiNameSpace do { AGM_Wind_Arrow = _this select 0 };";
+controls[] = {"AGM_Wind_Arrow_BG","AGM_Wind_Arrow_FW"};
+class AGM_Wind_Arrow_BG : RscText
+{
+idc = -1;
+type = 0;
+style = 128;
+colorBackground[] = {0,0,0,0};
+colorText[] = {0,0,0,0};
+text = "";
+sizeEx = 0.027;
+x = "SafeZoneX + 0.001";
+y = "SafeZoneY + 0.05";
+w = 0.25;
+h = 0.25;
+size = 0.034;
+};
+class AGM_Wind_Arrow_FW : AGM_Wind_Arrow_BG
+{
+idc = 185185;
+style = 48;
+colorText[] = {1,1,1,1};
+sizeEx = 0.03;
+text = "";
+};
+};
+};
+
+fn_firedEH.sqf 
+fn_init.sqf 
+LICENSE.txt 
+stringtable.xml 
+texHeaders.bin 
+AGM_noWind.paa 
+AGM_WindLight-01.paa 
+AGM_WindLight-02.paa 
+AGM_WindLight-03.paa 
+AGM_WindLight-04.paa 
+AGM_WindLight-05.paa 
+AGM_WindLight-06.paa 
+AGM_WindLight-07.paa 
+AGM_WindLight-08.paa 
+AGM_WindLight-09.paa 
+AGM_WindLight-10.paa 
+AGM_WindLight-11.paa 
+AGM_WindLight-12.paa 
+AGM_WindLight-13.paa 
+AGM_WindLight-14.paa 
+AGM_WindLight-15.paa 
+AGM_WindLight-16.paa 
+AGM_WindModerate-01.paa 
+AGM_WindModerate-02.paa 
+AGM_WindModerate-03.paa 
+AGM_WindModerate-04.paa 
+AGM_WindModerate-05.paa 
+AGM_WindModerate-06.paa 
+AGM_WindModerate-07.paa 
+AGM_WindModerate-08.paa 
+AGM_WindModerate-09.paa 
+AGM_WindModerate-10.paa 
+AGM_WindModerate-11.paa 
+AGM_WindModerate-12.paa 
+AGM_WindModerate-13.paa 
+AGM_WindModerate-14.paa 
+AGM_WindModerate-15.paa 
+AGM_WindModerate-16.paa 
+AGM_WindStrong-01.paa 
+AGM_WindStrong-02.paa 
+AGM_WindStrong-03.paa 
+AGM_WindStrong-04.paa 
+AGM_WindStrong-05.paa 
+AGM_WindStrong-06.paa 
+AGM_WindStrong-07.paa 
+AGM_WindStrong-08.paa 
+AGM_WindStrong-09.paa 
+AGM_WindStrong-10.paa 
+AGM_WindStrong-11.paa 
+AGM_WindStrong-12.paa 
+AGM_WindStrong-13.paa 
+AGM_WindStrong-14.paa 
+AGM_WindStrong-15.paa 
+AGM_WindStrong-16.paa 
+AGM_WindVeryLight-01.paa 
+AGM_WindVeryLight-02.paa 
+AGM_WindVeryLight-03.paa 
+AGM_WindVeryLight-04.paa 
+AGM_WindVeryLight-05.paa 
+AGM_WindVeryLight-06.paa 
+AGM_WindVeryLight-07.paa 
+AGM_WindVeryLight-08.paa 
+AGM_WindVeryLight-09.paa 
+AGM_WindVeryLight-10.paa 
+AGM_WindVeryLight-11.paa 
+AGM_WindVeryLight-12.paa 
+AGM_WindVeryLight-13.paa 
+AGM_WindVeryLight-14.paa 
+AGM_WindVeryLight-15.paa 
+AGM_WindVeryLight-16.paa 
+/*Creating ArmA style pbo:*/
+Prefix = AGM_Wind
+config.bin
+functions\fn_firedEH.sqf
+functions\fn_init.sqf
+LICENSE.txt
+stringtable.xml
+texHeaders.bin
+ui\AGM_noWind.paa
+ui\AGM_WindLight-01.paa
+ui\AGM_WindLight-02.paa
+ui\AGM_WindLight-03.paa
+ui\AGM_WindLight-04.paa
+ui\AGM_WindLight-05.paa
+ui\AGM_WindLight-06.paa
+ui\AGM_WindLight-07.paa
+ui\AGM_WindLight-08.paa
+ui\AGM_WindLight-09.paa
+ui\AGM_WindLight-10.paa
+ui\AGM_WindLight-11.paa
+ui\AGM_WindLight-12.paa
+ui\AGM_WindLight-13.paa
+ui\AGM_WindLight-14.paa
+ui\AGM_WindLight-15.paa
+ui\AGM_WindLight-16.paa
+ui\AGM_WindModerate-01.paa
+ui\AGM_WindModerate-02.paa
+ui\AGM_WindModerate-03.paa
+ui\AGM_WindModerate-04.paa
+ui\AGM_WindModerate-05.paa
+ui\AGM_WindModerate-06.paa
+ui\AGM_WindModerate-07.paa
+ui\AGM_WindModerate-08.paa
+ui\AGM_WindModerate-09.paa
+ui\AGM_WindModerate-10.paa
+ui\AGM_WindModerate-11.paa
+ui\AGM_WindModerate-12.paa
+ui\AGM_WindModerate-13.paa
+ui\AGM_WindModerate-14.paa
+ui\AGM_WindModerate-15.paa
+ui\AGM_WindModerate-16.paa
+ui\AGM_WindStrong-01.paa
+ui\AGM_WindStrong-02.paa
+ui\AGM_WindStrong-03.paa
+ui\AGM_WindStrong-04.paa
+ui\AGM_WindStrong-05.paa
+ui\AGM_WindStrong-06.paa
+ui\AGM_WindStrong-07.paa
+ui\AGM_WindStrong-08.paa
+ui\AGM_WindStrong-09.paa
+ui\AGM_WindStrong-10.paa
+ui\AGM_WindStrong-11.paa
+ui\AGM_WindStrong-12.paa
+ui\AGM_WindStrong-13.paa
+ui\AGM_WindStrong-14.paa
+ui\AGM_WindStrong-15.paa
+ui\AGM_WindStrong-16.paa
+ui\AGM_WindVeryLight-01.paa
+ui\AGM_WindVeryLight-02.paa
+ui\AGM_WindVeryLight-03.paa
+ui\AGM_WindVeryLight-04.paa
+ui\AGM_WindVeryLight-05.paa
+ui\AGM_WindVeryLight-06.paa
+ui\AGM_WindVeryLight-07.paa
+ui\AGM_WindVeryLight-08.paa
+ui\AGM_WindVeryLight-09.paa
+ui\AGM_WindVeryLight-10.paa
+ui\AGM_WindVeryLight-11.paa
+ui\AGM_WindVeryLight-12.paa
+ui\AGM_WindVeryLight-13.paa
+ui\AGM_WindVeryLight-14.paa
+ui\AGM_WindVeryLight-15.paa
+ui\AGM_WindVeryLight-16.paa
+Writing data blocks: .......................................................................
+Writing sha '46B13193EF597BD6D404F999C585E290B82EE38F'
+

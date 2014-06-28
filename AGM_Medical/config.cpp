@@ -20,9 +20,9 @@ class CfgPatches {
       A3_Weapons_F_Items,
       A3_UI_F
     };
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -36,6 +36,7 @@ class CfgFunctions {
       class bloodbag;
       class carry;
       class diagnose;
+      class displayText;
       class drag;
       class dropWeapon;
       class epinephrine;
@@ -739,3 +740,5 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
+
+#include <HintConfig.hpp>

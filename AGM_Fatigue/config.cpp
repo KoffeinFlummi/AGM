@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.10;
     requiredAddons[] = {"A3_Misc_F", "A3_Data_F", "AGM_Core"};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
