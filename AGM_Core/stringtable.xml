@@ -258,6 +258,7 @@
     <Key ID="STR_AGM_Core_Prev">
       <English>&lt; Prev</English>
       <German>&lt; Zurück</German>
+      <Spanish>&lt; Anterior.</Spanish>
       <Polish>&lt; Poprzedni</Polish>
       <French>&lt; Prec</French>
       <Hungarian>&lt; Előző</Hungarian>
@@ -265,6 +266,7 @@
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
       <German>Weiter &gt;</German>
+      <Spanish>Siguiente &gt;</Spanish>
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
@@ -273,6 +275,7 @@
     <Key ID="STR_AGM_Core_MiscItems">
       <English>[AGM] Miscellaneous Items</English>
       <German>[AGM] Verschiedenes</German>
+      <Spanish>[AGM] Miscelaneos</Spanish>
     </Key>
 
   </Package>

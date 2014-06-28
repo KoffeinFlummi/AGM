@@ -279,6 +279,7 @@
 
     <Key ID="STR_AGM_Interaction_ShowPlayerNames">
       <English>Show player names</English>
+      <Spanish>Mostrar nombres de jugadores</Spanish>
       <German>Spielernamen anzeigen</German>
       <Polish>Pokaż nazwy graczy</Polish>
       <French>Afficher nom des joueurs</French>

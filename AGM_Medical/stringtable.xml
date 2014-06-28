@@ -633,6 +633,7 @@
     <Key ID="STR_AGM_Medical_keepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
+      <Spanish>Reabrir el menú médico luego de tratar</Spanish>
     </Key>
 
   </Package>
