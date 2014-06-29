@@ -14,9 +14,9 @@ for "_index" from 0 to (ARRAY_SIZE - 1) do {
 	AGM_KeyX_inputMods set [_index, 0];
 };
 
-AGM_KeyX_fnc_getMods = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\getMods.sqf";
-AGM_KeyX_fnc_keyDownEH = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\keyDown.sqf";
-AGM_KeyX_fnc_keyUpEH = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\keyUp.sqf";
+AGM_KeyX_fnc_getMods = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\functions\getMods.sqf";
+AGM_KeyX_fnc_keyDownEH = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\functions\keyDown.sqf";
+AGM_KeyX_fnc_keyUpEH = compile preprocessFileLineNumbers "\AGM_Core\scripts\KeyX\functions\keyUp.sqf";
 
 if (isNil "AGM_KeyX_keyInputHandle") then {
 	AGM_KeyX_keyInputHandle = 0 spawn {
