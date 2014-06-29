@@ -202,8 +202,8 @@ class AGM_Core_Default_Keys {
 		condition = "!(player getVariable['AGM_Unconscious', false])";
 		statement = "call AGM_Goggles_fnc_ClearGlasses;";
 		key = 20; // T
-		shift = 0;
-		ctrl = 1;
+		shift = 1;
+		control = 1;
 		alt = 0;
 	};
 };
