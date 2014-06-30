@@ -7,6 +7,7 @@ _header = "_keyCode = [_this select 1, _this select 2, _this select 3, _this sel
 
 _handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_keyIndex == _keyCode}) then {_keyCode = _keyIndex + 0.8};";
 _handleHold = "if (AGM_Core_keyStates select _keyIndex > 1) exitWith {false}; if (AGM_Core_keyStates select _keyIndex > 0) then {_keyCode = _keyIndex + 0.9};";
+_handleHoldUp = "if (AGM_Core_keyStates select _keyIndex > 1) then {_keyCode = _keyIndex + 0.9};";
 
 _debug = "if (!isNil 'AGM_Debug') then {systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex))};";
 
@@ -45,7 +46,7 @@ _repeat = format ["if (!_isInput && {_keyCode mod 1 > 0} && {_keyCode mod 1 < 0.
 _repeatUp = format ["if (!_isInput && {_keyCode mod 1 > 0} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; %1};", _onKeyUp];
 
 _onKeyDown = _header + _handleDoubleTap + _handleHold + _onKeyDown + _halt + _repeat + _return;
-_onKeyUp = _header + _onKeyUp + _haltUp + _repeatUp;
+_onKeyUp = _header + _handleHoldUp + _onKeyUp + _haltUp + _repeatUp;
 
 AGM_Core_onKeyDown = compile _onKeyDown;
 AGM_Core_onKeyUp = compile _onKeyUp;
