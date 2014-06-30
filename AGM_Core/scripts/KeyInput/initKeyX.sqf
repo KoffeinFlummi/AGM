@@ -5,8 +5,8 @@ _count = count _config;
 
 _header = "_keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call AGM_Core_fnc_convertKeyCode; _keyIndex = floor _keyCode; _time = time; _vehicle = vehicle player; _isInput = false;";
 
-_handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5) then {_keyCode = _keyIndex + 0.8};";
-_handleHold = "if (AGM_Core_keyStates select _keyIndex > 1) exitWith {false}; if (AGM_Core_keyStates select _keyIndex > 0) then {_keyCode = _keyIndex + 0.9};";
+_handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_keyIndex == _keyCode}) then {_keyCode = _keyIndex + 0.8};";
+_handleHold = "if (AGM_Core_keyStates select _keyIndex > 1) exitWith {false}; if (AGM_Core_keyStates select _keyIndex > 0 && {_keyIndex == _keyCode}) then {_keyCode = _keyIndex + 0.9};";
 
 _debug = "systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex));";
 

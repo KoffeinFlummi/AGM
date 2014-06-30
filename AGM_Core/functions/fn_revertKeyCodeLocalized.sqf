@@ -24,9 +24,9 @@ switch (_keyCode) do {
 	default {
 		_keyCode = toArray ([_keyCode, 3] call AGM_Core_fnc_toBin);
 
-		_shift = "1" == toString [_keyCode select 0];
+		_alt = "1" == toString [_keyCode select 0];
 		_ctrl = "1" == toString [_keyCode select 1];
-		_alt = "1" == toString [_keyCode select 2];
+		_shift = "1" == toString [_keyCode select 2];
 
 		format ["%1%2%3%4",
 			["", format ["%1 + ", localize "STR_AGM_Core_Alt"]] select _alt,
