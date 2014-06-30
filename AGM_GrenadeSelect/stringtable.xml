@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="GrenadeSelect">
+
+    <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeFrag">
+      <English>Select Fragmentary Grenade</English>
+      <Spanish>Seleccionar Granada Fragmentaria</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeOther">
+      <English>Select Non-Fragmentary Grenade</English>
+      <Spanish>Seleccionar Granada No Fragmentaria</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_GrenadeSelect_ThrowGrenade">
+      <English>Throw Selected Grenade</English>
+      <Spanish>Arrojar Granada Seleccionada</Spanish>
+    </Key>
+
+  </Package>
+</Project>
