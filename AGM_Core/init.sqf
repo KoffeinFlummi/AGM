@@ -16,7 +16,15 @@ AGM_Core_toggleState = compile preprocessFileLineNumbers "\AGM_core\scripts\togg
 
 [false] call AGM_Core_fnc_setKeyDefault;
 
+AGM_Core_keyStates = [];
+AGM_Core_keyTimes = [];
+for "_index" from 0 to 300 do {
+	AGM_Core_keyStates set [_index, 0];
+	AGM_Core_keyTimes set [_index, -1];
+};
+
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+//call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeyX.sqf";
 
 0 spawn {
 	while {true} do {

@@ -1,11 +1,15 @@
 // by commy2
 
+hint str time;
+
 _config = configFile >> "AGM_Core_Default_Keys";
 _count = count _config;
 
 _header = "_keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call AGM_Core_fnc_convertKeyCode; _vehicle = vehicle player; _isInput = false;";
 
-_onKeyDown = _header;
+_prefix = "if (AGM_Core_keyStates select floor _keyCode) exitWith {false};";
+
+_onKeyDown = _header + _prefix;
 _onKeyUp = _header;
 
 for "_index" from 0 to (_count - 1) do {
@@ -31,10 +35,15 @@ for "_index" from 0 to (_count - 1) do {
 	};
 };
 
+_repeat = "if (!_isInput && {_keyCode % 1 > 0}) exitWith {[false, floor _keyCode, false, false, false] call AGM_Core_onKeyDown};";
+_repeatUp = "if (!_isInput && {_keyCode % 1 > 0}) exitWith {[false, floor _keyCode, false, false, false] call AGM_Core_onKeyUp};";
 _return = "_isInput";
 
-_onKeyDown = _onKeyDown + _return;
-_onKeyUp = _onKeyUp;
+_halt = "AGM_Core_keyStates set [floor _keyCode, true];";
+_haltUp = "AGM_Core_keyStates set [floor _keyCode, false];";
 
-AGM_Core_onKeyDown = compileFinal _onKeyDown;
-AGM_Core_onKeyUp = compileFinal _onKeyUp;
+_onKeyDown = _onKeyDown + _repeat + _halt + _return;
+_onKeyUp = _onKeyUp + _repeatUp + _haltUp;
+
+AGM_Core_onKeyDown = compile _onKeyDown;
+AGM_Core_onKeyUp = compile _onKeyUp;
