@@ -45,7 +45,6 @@ class CfgFunctions {
       class isAutoWind;
       class isInBuilding;
       class isTurnedOut;
-      class keyInput;
       class moduleCheckPBOs;
       class numberToDigits;
       class numberToDigitsString;
