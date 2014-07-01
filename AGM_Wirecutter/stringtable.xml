@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Wirecutter">
+
+    <Key ID="STR_AGM_CutFence">
+      <English>Cut Fence</English>
+      <German>Zaun schneiden</German>
+    </Key>
+    <Key ID="STR_AGM_CuttingFence">
+      <English>Cutting fences / Wires...</English>
+      <German>Zaun / Draht schneiden...</German>
+    </Key>
+    <Key ID="STR_AGM_CuttingFenceChat">
+      <English>Cutting fences!</English>
+      <German>Schneide Zaun!</German>
+    </Key>
+
+    <Key ID="STR_AGM_FenceCut">
+      <English>Fence cut</English>
+      <German>Zaun geschnitten</German>
+    </Key>
+
+  </Package>
+</Project>
