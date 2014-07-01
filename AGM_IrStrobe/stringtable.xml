@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="IrStrobe">
+
+    <Key ID="STR_AGM_IrStrobe_Name">
+      <English>IR Strobe</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_Description">
+      <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_On">
+      <English>IR Strobe ON</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_Off">
+      <English>IR Strobe OFF</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_NoItem">
+      <English>You don't have an IR Strobe</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_NotAvailable">
+      <English>IR Strobe is not available In vehicle or during daytime</English>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_Inventory_Full">
+      <English>Inventory is full; Cannot remove IR Strobe</English>
+    </Key>
+  </Package>
+</Project>
