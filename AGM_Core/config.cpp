@@ -31,6 +31,7 @@ class CfgFunctions {
       class displayTextPicture;
       class displayTextStructured;
       class execRemoteFnc;
+      class filter;
       class findStringInString;
       class getBinocular;
       class getNumberFromMissionSQM;
@@ -46,6 +47,7 @@ class CfgFunctions {
       class isInBuilding;
       class isTurnedOut;
       class keyInput;
+      class map;
       class moduleCheckPBOs;
       class numberToDigits;
       class numberToDigitsString;
