@@ -27,4 +27,4 @@ _direction = _direction vectorMultiply (_distance / (vectorMagnitude _direction)
 _position0 = eyePos player;
 _position1 = _position0 vectorAdd _direction;
 
-_vehicle in lineIntersectsWith [_position0, _position1];
+_vehicle in lineIntersectsWith [_position0, _position1] || {player distance _vehicle < _distance}
