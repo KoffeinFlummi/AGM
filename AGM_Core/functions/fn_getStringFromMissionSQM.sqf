@@ -16,6 +16,7 @@ _path = _this;
 
 if (missionName == "") exitWith {""};
 _mission = toArray toLower loadFile "mission.sqm";
+_mission resize 10000;
 {
 	if (_x < 33) then {
 		_mission set [_forEachIndex, -1];

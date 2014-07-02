@@ -36,5 +36,5 @@ _return = "_isInput";
 _onKeyDown = _onKeyDown + _return;
 _onKeyUp = _onKeyUp;
 
-AGM_Core_onKeyDown = compileFinal _onKeyDown;
-AGM_Core_onKeyUp = compileFinal _onKeyUp;
+AGM_Core_onKeyDown = compile _onKeyDown;
+AGM_Core_onKeyUp = compile _onKeyUp;

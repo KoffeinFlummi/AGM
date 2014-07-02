@@ -7,16 +7,26 @@
 
 if (isDedicated) exitWith {};
 
-AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
+//AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
+AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInputX.sqf";
+AGM_Core_keyRelease  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyRelease.sqf";
 AGM_Core_editKey   = compile preprocessFileLineNumbers "\AGM_core\scripts\editKey.sqf";
 AGM_Core_openMenu  = compile preprocessFileLineNumbers "\AGM_core\scripts\openMenu.sqf";
 AGM_Core_closeMenu = compile preprocessFileLineNumbers "\AGM_core\scripts\closeMenu.sqf";
 AGM_Core_nextKeys = compile preprocessFileLineNumbers "\AGM_core\scripts\nextKeys.sqf";
 AGM_Core_toggleState = compile preprocessFileLineNumbers "\AGM_core\scripts\toggleState.sqf";
 
-call AGM_Core_fnc_setKeyDefault;
+[false] call AGM_Core_fnc_setKeyDefault;
 
-call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+AGM_Core_keyStates = [];
+AGM_Core_keyTimes = [];
+for "_index" from 0 to 300 do {
+	AGM_Core_keyStates set [_index, 0];
+	AGM_Core_keyTimes set [_index, -1];
+};
+
+//call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeyX.sqf";
 
 0 spawn {
 	while {true} do {

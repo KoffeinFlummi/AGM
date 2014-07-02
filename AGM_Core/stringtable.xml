@@ -62,6 +62,37 @@
       <Russian>Alt</Russian>
       <Hungarian>Alt</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Core_Shift_Right">
+      <English>Shift right</English>
+      <German>Umschalt rechts</German>
+    </Key>
+    <Key ID="STR_AGM_Core_Ctrl_Right">
+      <English>Ctrl right</English>
+      <German>Strg rechts</German>
+    </Key>
+    <Key ID="STR_AGM_Core_Alt_Right">
+      <English>Alt right</English>
+      <German>Alt Gr</German>
+    </Key>
+
+    <Key ID="STR_AGM_Core_KeyDefault">
+      <English>Default</English>
+      <German>Standard</German>
+    </Key>
+    <Key ID="STR_AGM_Core_KeyNone">
+      <English>None</English>
+      <German>Keiner</German>
+    </Key>
+
+    <Key ID="STR_AGM_Core_DoubleTapKey">
+      <English>2x %1</English>
+      <German>2x %1</German>
+    </Key>
+    <Key ID="STR_AGM_Core_HoldKey">
+      <English>Hold %1</English>
+      <German>%1 halten</German>
+    </Key>
+
 
     <Key ID="STR_AGM_Core_ProfileSaved">
       <English>Profile saved</English>
@@ -258,6 +289,7 @@
     <Key ID="STR_AGM_Core_Prev">
       <English>&lt; Prev</English>
       <German>&lt; Zurück</German>
+      <Spanish>&lt; Anterior.</Spanish>
       <Polish>&lt; Poprzedni</Polish>
       <French>&lt; Prec</French>
       <Hungarian>&lt; Előző</Hungarian>
@@ -265,6 +297,7 @@
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
       <German>Weiter &gt;</German>
+      <Spanish>Siguiente &gt;</Spanish>
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
@@ -273,6 +306,7 @@
     <Key ID="STR_AGM_Core_MiscItems">
       <English>[AGM] Miscellaneous Items</English>
       <German>[AGM] Verschiedenes</German>
+      <Spanish>[AGM] Miscelaneos</Spanish>
     </Key>
 
   </Package>

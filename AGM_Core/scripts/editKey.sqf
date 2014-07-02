@@ -16,39 +16,65 @@ _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
 _ctrlMenuDialog = _dlgMenuDialog displayCtrl (OFFSET_2 + (_this select 0));
 _action = AGM_Core_keyNames select (_this select 0);
 
-(_dlgMenuDialog displayCtrl 24) ctrlSetText "";
-(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor GRAY;
+_keyCode = profileNamespace getVariable [format ["AGM_Key_%1", _action], 0];//
+(_dlgMenuDialog displayCtrl 24) ctrlSetText ([_keyCode] call AGM_Core_fnc_revertKeyCodeLocalized);//"";
+/*(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor GRAY;
 (_dlgMenuDialog displayCtrl 22) ctrlSetTextColor GRAY;
-(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor GRAY;
+(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor GRAY;*/
 
-for "_index" from 20 to 26 do {(_dlgMenuDialog displayCtrl _index) ctrlShow true};
-for "_index" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index) ctrlEnable false};
+for "_index1" from 20 to 32 do {(_dlgMenuDialog displayCtrl _index1) ctrlShow true};
+for "_index1" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index1) ctrlEnable false};
 
 _description = ctrlText _ctrlMenuDialog;
 //_ctrlMenuDialog ctrlSetText "..";
 
 _ehid_keydown = _dlgMenuDialog displayAddEventHandler ["KeyDown", "_this call AGM_Core_keyInput"];
+_ehid_keyup = _dlgMenuDialog displayAddEventHandler ["KeyUp", "_this call AGM_Core_keyRelease"];
 
 waitUntil {
 	if (count AGM_Core_keyNewTemp > 0) then {
 		_key = AGM_Core_keyNewTemp select 0;
 		_keyModifier = AGM_Core_keyNewTemp select 1;
+		//_keyCode = round (10 * ((AGM_Core_keyNewTemp select 2) % 1));
+		_keyCode = AGM_Core_keyNewTemp select 2;
 
-		_key = toString (toArray (keyName _key) - [34]);
-		(_dlgMenuDialog displayCtrl 24) ctrlSetText _key;
+		(_dlgMenuDialog displayCtrl 24) ctrlSetText ([_keyCode] call AGM_Core_fnc_revertKeyCodeLocalized);
 
-		(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor (if (_keyModifier select 0) then {WHITE} else {GRAY});
-		(_dlgMenuDialog displayCtrl 22) ctrlSetTextColor (if (_keyModifier select 1) then {WHITE} else {GRAY});
-		(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor (if (_keyModifier select 2) then {WHITE} else {GRAY});
+		/*_key = toString (toArray (keyName _key) - [34]);
+
+		switch (_keyCode) do {
+			case 8 : {
+				(_dlgMenuDialog displayCtrl 24) ctrlSetText format [localize "STR_AGM_Core_DoubleTapKey", _key];
+
+				(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor GRAY;
+				(_dlgMenuDialog displayCtrl 22) ctrlSetTextColor GRAY;
+				(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor GRAY;
+			};
+			case 9 : {
+				(_dlgMenuDialog displayCtrl 24) ctrlSetText format [localize "STR_AGM_Core_HoldKey", _key];
+
+				(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor GRAY;
+				(_dlgMenuDialog displayCtrl 22) ctrlSetTextColor GRAY;
+				(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor GRAY;
+			};
+			default {
+				(_dlgMenuDialog displayCtrl 24) ctrlSetText _key;
+
+				(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor ([GRAY, WHITE] select (_keyModifier select 0));
+				(_dlgMenuDialog displayCtrl 22) ctrlSetTextColor ([GRAY, WHITE] select (_keyModifier select 1));
+				(_dlgMenuDialog displayCtrl 23) ctrlSetTextColor ([GRAY, WHITE] select (_keyModifier select 2));
+			};
+		};*/
 	};
 	AGM_Core_keySet != 0 ||
 	{!dialog}
 };
 
-for "_index" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index) ctrlEnable true};
-for "_index" from 20 to 26 do {(_dlgMenuDialog displayCtrl _index) ctrlShow false};
+for "_index1" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index1) ctrlEnable true};
+for "_index1" from 20 to 32 do {(_dlgMenuDialog displayCtrl _index1) ctrlShow false};
 
 _dlgMenuDialog displayRemoveEventHandler ["KeyDown", _ehid_keydown];
+_dlgMenuDialog displayRemoveEventHandler ["KeyUp", _ehid_keyup];
 
 if (AGM_Core_keySet == 1 && {count AGM_Core_keyNewTemp > 0}) then {
 	_keyCode = AGM_Core_keyNewTemp select 2;
