@@ -43,8 +43,8 @@ if (_numberOfMagazines > 0) then {
   // There is a no muzzle with magazines --> select nothing
   AGM_CurrentMuzzleOther = "";
   
-  _text = ["No misc. grenades left", [1,0,0]] call AGM_Core_fnc_stringToColoredText;
-  [_text] call AGM_Core_fnc_displayTextStructured;
+  _text = [localize "STR_AGM_GrenadeSelect_NoMiscGrenadeLeft", [1,0,0]] call AGM_Core_fnc_stringToColoredText;
+  [composeText [lineBreak, _text]] call AGM_Core_fnc_displayTextStructured;
   
   AGM_GrenadeSelectPopUp = false;
 };

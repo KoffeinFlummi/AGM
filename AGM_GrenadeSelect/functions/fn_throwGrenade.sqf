@@ -17,8 +17,8 @@ _muzzle = if (AGM_CurrentMuzzleIsFrag) then {AGM_CurrentMuzzleFrag} else {AGM_Cu
 
 // Check if a muzzle is selected
 if (_muzzle == "") exitWith {
-  _text = ["No grenade selected", [1,1,1]] call AGM_Core_fnc_stringToColoredText;
-  [_text] call AGM_Core_fnc_displayTextStructured;
+  _text = [localize "STR_AGM_GrenadeSelect_NoGrenadeSelected", [1,1,1]] call AGM_Core_fnc_stringToColoredText;
+  [composeText [lineBreak, _text]] call AGM_Core_fnc_displayTextStructured;
 };
 
 // Check if there is enough ammo
