@@ -62,6 +62,27 @@
       <Russian>Alt</Russian>
       <Hungarian>Alt</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Core_Shift_Right">
+      <English>Shift right</English>
+      <German>Umschalt rechts</German>
+    </Key>
+    <Key ID="STR_AGM_Core_Ctrl_Right">
+      <English>Ctrl right</English>
+      <German>Strg rechts</German>
+    </Key>
+    <Key ID="STR_AGM_Core_Alt_Right">
+      <English>Alt right</English>
+      <German>Alt Gr</German>
+    </Key>
+
+    <Key ID="STR_AGM_Core_KeyDefault">
+      <English>Default</English>
+      <German>Standard</German>
+    </Key>
+    <Key ID="STR_AGM_Core_KeyNone">
+      <English>None</English>
+      <German>Keiner</German>
+    </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
       <English>2x %1</English>
