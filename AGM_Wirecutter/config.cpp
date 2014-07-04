@@ -176,7 +176,8 @@ class CfgVehicles {
       };
     };
   };
-  class Land_Razorwire_F: Wall_F {
+  class NonStrategic;
+  class Land_Razorwire_F: NonStrategic {
     class AGM_Actions {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
