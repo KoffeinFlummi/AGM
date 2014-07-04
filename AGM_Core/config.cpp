@@ -53,6 +53,7 @@ class CfgFunctions {
       class numberToDigitsString;
       class progressBar;
       class revertKeyCodeLocalized;
+      class sanitizeString;
       class setKeyDefault;
       class stringToColoredText;
       class subString;

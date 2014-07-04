@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_Core_Save">
       <English>Save</English>
       <German>Speichern</German>
-      <Spanish>Salvar</Spanish>
+      <Spanish>Guardar</Spanish>
       <Polish>Zapisz</Polish>
       <Czech>Uložit</Czech>
       <French>Sauvegarder</French>
@@ -65,39 +65,46 @@
     <Key ID="STR_AGM_Core_Shift_Right">
       <English>Shift right</English>
       <German>Umschalt rechts</German>
+      <Spanish>Shift derecho</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl_Right">
       <English>Ctrl right</English>
       <German>Strg rechts</German>
+      <Spanish>Ctrl derecho</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_Alt_Right">
       <English>Alt right</English>
       <German>Alt Gr</German>
+      <Spanish>Alt derecho</Spanish>
     </Key>
 
     <Key ID="STR_AGM_Core_KeyDefault">
       <English>Default</English>
       <German>Standard</German>
+      <Spanish>Por defecto</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
       <German>Keiner</German>
+      <Spanish>Ninguna</Spanish>
     </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
       <English>2x %1</English>
       <German>2x %1</German>
+      <Spanish>2x %1</Spanish>
     </Key>
     <Key ID="STR_AGM_Core_HoldKey">
       <English>Hold %1</English>
       <German>%1 halten</German>
+      <Spanish>Mantener %1</Spanish>
     </Key>
 
 
     <Key ID="STR_AGM_Core_ProfileSaved">
       <English>Profile saved</English>
       <German>Profil gespeichert</German>
-      <Spanish>Perfil salvado</Spanish>
+      <Spanish>Perfil guardado</Spanish>
       <Polish>Profil zapisany</Polish>
       <Czech>Profil uložen</Czech>
       <French>Profil sauvegarder</French>
@@ -107,7 +114,7 @@
     <Key ID="STR_AGM_Core_ProfileNotSaved">
       <English>Profile not saved</English>
       <German>Profil nicht gespeichert</German>
-      <Spanish>Perfil no salvado</Spanish>
+      <Spanish>Perfil no guardado</Spanish>
       <Polish>Profil niezapisany</Polish>
       <Czech>Profil neuložen</Czech>
       <French>Profil non sauvegarder</French>
@@ -209,7 +216,7 @@
     <Key ID="STR_AGM_Core_SSW">
       <English>SSW</English>
       <German>SSW</German>
-      <Spanish>SSW</Spanish>
+      <Spanish>SSO</Spanish>
       <Polish>SSW</Polish>
       <Czech>SSW</Czech>
       <French>SSO</French>
@@ -219,7 +226,7 @@
     <Key ID="STR_AGM_Core_SW">
       <English>SW</English>
       <German>SW</German>
-      <Spanish>SW</Spanish>
+      <Spanish>SO</Spanish>
       <Polish>SW</Polish>
       <Czech>SW</Czech>
       <French>SO</French>
@@ -229,7 +236,7 @@
     <Key ID="STR_AGM_Core_WSW">
       <English>WSW</English>
       <German>WSW</German>
-      <Spanish>WSW</Spanish>
+      <Spanish>OSO</Spanish>
       <Polish>WSW</Polish>
       <Czech>WSW</Czech>
       <French>OSO</French>
@@ -239,7 +246,7 @@
     <Key ID="STR_AGM_Core_W">
       <English>W</English>
       <German>W</German>
-      <Spanish>W</Spanish>
+      <Spanish>O</Spanish>
       <Polish>W</Polish>
       <Czech>W</Czech>
       <French>O</French>
@@ -249,7 +256,7 @@
     <Key ID="STR_AGM_Core_WNW">
       <English>WNW</English>
       <German>WNW</German>
-      <Spanish>WNW</Spanish>
+      <Spanish>ONO</Spanish>
       <Polish>WNW</Polish>
       <Czech>WNW</Czech>
       <French>ONO</French>
@@ -259,7 +266,7 @@
     <Key ID="STR_AGM_Core_NW">
       <English>NW</English>
       <German>NW</German>
-      <Spanish>NW</Spanish>
+      <Spanish>NO</Spanish>
       <Polish>NW</Polish>
       <Czech>NW</Czech>
       <French>NO</French>
@@ -269,7 +276,7 @@
     <Key ID="STR_AGM_Core_NNW">
       <English>NNW</English>
       <German>NNW</German>
-      <Spanish>NNW</Spanish>
+      <Spanish>NNO</Spanish>
       <Polish>NNW</Polish>
       <Czech>NNW</Czech>
       <French>NNO</French>
@@ -306,7 +313,7 @@
     <Key ID="STR_AGM_Core_MiscItems">
       <English>[AGM] Miscellaneous Items</English>
       <German>[AGM] Verschiedenes</German>
-      <Spanish>[AGM] Miscelaneos</Spanish>
+      <Spanish>[AGM] Objetos varios</Spanish>
     </Key>
 
   </Package>
