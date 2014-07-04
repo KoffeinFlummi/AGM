@@ -2,8 +2,6 @@
 #define StrenghToDeafness 3
 #define MaxDeafness 1.1
 
-if (isDedicated) exitWith {};
-
 AGM_EarRingingPlaying = false;
 
 AGM_EarPlugsIn = false;

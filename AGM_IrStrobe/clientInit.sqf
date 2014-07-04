@@ -1,5 +1,4 @@
 //Author: eRazeri
-if (isDedicated) exitWith {};
 
 //default variable values
 AGM_IR_Strobe_ON = false;
