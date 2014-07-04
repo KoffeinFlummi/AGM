@@ -92,7 +92,7 @@ for "_a" from 0 to (_count - 1) do {
 _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 if (_class == "") then {
 	AGM_Interaction_MainButton = "closeDialog 0;";
-	_ctrlInteractionDialog ctrlSetText name player;
+	_ctrlInteractionDialog ctrlSetText ((name player) call AGM_Core_fnc_sanitizeString);
 } else {
 	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenuSelf;";
 	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
