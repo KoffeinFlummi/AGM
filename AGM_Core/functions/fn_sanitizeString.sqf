@@ -11,6 +11,8 @@
  * Sanitized string
  */
 
+ private ["_string", "_removeTags", "_array", "_arrayNew"];
+
 _string = _this select 0;
 _removeTags = _this select 1;
 if (isNil "_removeTags") then {_removeTags = false};
