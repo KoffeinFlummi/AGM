@@ -15,8 +15,14 @@ disableSerialization;
 _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
 _ctrlMenuDialog = _dlgMenuDialog displayCtrl (OFFSET_2 + (_this select 0));
 _action = AGM_Core_keyNames select (_this select 0);
+_displayName = getText (configFile >> "AGM_Core_Default_Keys" >> _action >> "displayName");
 
 _keyCode = profileNamespace getVariable [format ["AGM_Key_%1", _action], 0];//
+for "_index1" from 0 to (count AGM_Core_keyNew - 1) do {
+	if (_action == (AGM_Core_keyNew select _index1) select 0) then {
+		_keyCode = (AGM_Core_keyNew select _index1) select 1;
+	}
+};
 (_dlgMenuDialog displayCtrl 24) ctrlSetText ([_keyCode] call AGM_Core_fnc_revertKeyCodeLocalized);//"";
 /*(_dlgMenuDialog displayCtrl 21) ctrlSetTextColor GRAY;
 (_dlgMenuDialog displayCtrl 22) ctrlSetTextColor GRAY;
@@ -24,6 +30,21 @@ _keyCode = profileNamespace getVariable [format ["AGM_Key_%1", _action], 0];//
 
 for "_index1" from 20 to 32 do {(_dlgMenuDialog displayCtrl _index1) ctrlShow true};
 for "_index1" from 10 to 13 do {(_dlgMenuDialog displayCtrl _index1) ctrlEnable false};
+
+(_dlgMenuDialog displayCtrl 30) ctrlSetText _displayName;
+
+AGM_Core_keysetDefault = compile format [
+	"_configFile = configFile >> 'AGM_Core_Default_Keys' >> '%1';
+	_key = getNumber (_configFile >> 'Key');
+	_shft = getNumber (_configFile >> 'Shift') == 1;
+	_ctrl = getNumber (_configFile >> 'Control') == 1;
+	_alt = getNumber (_configFile >> 'Alt') == 1;
+
+	_keyCode = [_key, _shft, _ctrl, _alt] call AGM_Core_fnc_convertKeyCode;
+
+	AGM_Core_keyNewTemp = [_key, [_shft, _ctrl, _alt], _keyCode];",
+	_action
+];
 
 _description = ctrlText _ctrlMenuDialog;
 //_ctrlMenuDialog ctrlSetText "..";
@@ -88,3 +109,4 @@ if (AGM_Core_keySet == 1 && {count AGM_Core_keyNewTemp > 0}) then {
 
 AGM_Core_keySet = -1;
 AGM_Core_keyNewTemp = nil;
+AGM_Core_keysetDefault = nil;

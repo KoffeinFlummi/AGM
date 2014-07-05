@@ -7,8 +7,7 @@
 
 if (!hasInterface) exitWith {};
 
-//AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
-AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInputX.sqf";
+AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
 AGM_Core_keyRelease  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyRelease.sqf";
 AGM_Core_editKey   = compile preprocessFileLineNumbers "\AGM_core\scripts\editKey.sqf";
 AGM_Core_openMenu  = compile preprocessFileLineNumbers "\AGM_core\scripts\openMenu.sqf";
@@ -25,8 +24,7 @@ for "_index" from 0 to 300 do {
 	AGM_Core_keyTimes set [_index, -1];
 };
 
-//call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
-call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeyX.sqf";
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
 
 0 spawn {
 	while {true} do {
