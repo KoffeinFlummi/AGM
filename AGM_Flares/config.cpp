@@ -55,8 +55,9 @@ class CfgAmmo {
 
 class CfgMagazines {
   class HandGrenade;
+  class AGM_HandFlare_Base: HandGrenade {};
 
-  class AGM_HandFlare_White: HandGrenade {
+  class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
     displayname = "Hand Flare (White)";
     descriptionshort = "White Hand Flare";
@@ -64,7 +65,7 @@ class CfgMagazines {
     model = "\A3\weapons_f\ammo\flare_white";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_white_ca.paa";
   };
-  class AGM_HandFlare_Red: HandGrenade {
+  class AGM_HandFlare_Red: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Red";
     displayname = "Hand Flare (Red)";
     descriptionshort = "Red Hand Flare";
@@ -72,7 +73,7 @@ class CfgMagazines {
     model = "\A3\weapons_f\ammo\flare_red";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_red_ca.paa";
   };
-  class AGM_HandFlare_Green: HandGrenade {
+  class AGM_HandFlare_Green: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Green";
     displayname = "Hand Flare (Green)";
     descriptionshort = "Green Hand Flare";
@@ -80,7 +81,7 @@ class CfgMagazines {
     model = "\A3\weapons_f\ammo\flare_green";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_green_ca.paa";
   };
-  class AGM_HandFlare_Yellow: HandGrenade {
+  class AGM_HandFlare_Yellow: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Yellow";
     displayname = "Hand Flare (Yellow)";
     descriptionshort = "Yellow Hand Flare";
