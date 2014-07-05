@@ -18,14 +18,15 @@ class CfgFunctions
 		class Drag {
 			file="AGM_Drag\functions";
 			class initialise{postInit = 1;};
-			class InitialiseDragable{};
-			class dragObject{};
-			class releaseObject{};
-			class isDraggingObject{};
-			class handleScrollWheel{};
-			class setupDragObject{};
-			class isDraggable{};
-			class GetWeight{};
+			class makeDraggable;
+			class makeUndraggable;
+			class dragObject;
+			class releaseObject;
+			class isDraggingObject;
+			class handleScrollWheel;
+			class setupDragObject;
+			class isDraggable;
+			class GetWeight;
 		};
 	};
 };
