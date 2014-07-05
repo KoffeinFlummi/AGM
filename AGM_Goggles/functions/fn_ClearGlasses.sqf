@@ -29,7 +29,9 @@ if ((stance player) != "PRONE") then {
 
 null = [] spawn {
 	sleep 0.3;
-	addCamShake [5, 1.75, 2];
+	if (cameraView == "INTERNAL") then {
+		addCamShake [5, 1.75, 2];
+	};
 };
 
 call AGM_Goggles_fnc_RemoveDirtEffect;
