@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Goggles">
+
+    <Key ID="STR_AGM_Goggles_ShowInThirdPerson">
+      <English>Show Goggle Effects in Third Person</English>
+      <German>Brilleneffekt in dritter Person anzeigen</German>
+      <Spanish>Mostrar Efecto de las Gafas en Tercera Persona</Spanish>
+      <Polish>Show Goggle Effects in Third Person</Polish>
+      <Czech>Zobrazit účinky brýlí v třetí osobě</Czech>
+      <French>Show Goggle Effects in Third Person</French>
+      <Russian>Show Goggle Effects in Third Person</Russian>
+      <Hungarian>Szemüveg effekt mutatása külső nézetből</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Goggles_WipeGlasses">
+      <English>Wipe Goggles</English>
+      <German>Brille abwischen</German>
+      <Spanish>Limpiar las Gafas</Spanish>
+      <Polish>Wipe Goggles</Polish>
+      <Czech>Vyčistit brýle</Czech>
+      <French>Wipe Goggles</French>
+      <Russian>Wipe Goggles</Russian>
+      <Hungarian>Szemüveg törlése</Hungarian>
+    </Key>
+  </Package>
+</Project>

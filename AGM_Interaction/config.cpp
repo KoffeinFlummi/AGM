@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -16,11 +16,16 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
+      class addInteraction;
+      class addInteractionSelf;
+      class isInRange;
+      class openDoor;
       class openMenu;
       class openMenuSelf;
+      class removeInteraction;
+      class removeInteractionSelf;
       class sortOptionsByPriority;
       class tapShoulder;
-      class openDoor;
     };
   };
 };

@@ -10,6 +10,7 @@
       <Czech>Jděte pryč!</Czech>
       <French>Partez!</French>
       <Russian>Уходите отсюда!</Russian>
+      <Hungarian>Tűnés!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
       <English>Get Down!</English>
@@ -17,8 +18,7 @@
       <Spanish>Al suelo!</Spanish>
       <Polish>Padnij!</Polish>
       <Czech>K zemi!</Czech>
-	  <French>A Terre!</French>
-	  <Russian>Пригнитесь!</Russian>
+      <Hungarian>A földre!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Civilian_SetCaptive">
       <English>Take Prisoner</English>

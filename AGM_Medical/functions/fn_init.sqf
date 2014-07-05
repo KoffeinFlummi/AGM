@@ -30,6 +30,9 @@ _this spawn {
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];
       player setVariable ["tf_unable_to_use_radio", false, true];
+
+      player setVariable ["acre_sys_core_isDisabled", false, true];
+      player setVariable ["acre_sys_core_globalVolume", 1];
     };
 
     _this setCaptive false;
@@ -46,6 +49,8 @@ _this spawn {
     _this setVariable ["AGM_Unconscious", false, true]; // figure it out
     _this setVariable ["AGM_Dragging", objNull];
     _this setVariable ["AGM_Carrying", objNull];
+
+    [false] call AGM_Core_fnc_disableUserInput;
   };
 
   AGM_Medical_itemCheck = {

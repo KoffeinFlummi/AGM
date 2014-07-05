@@ -2,10 +2,10 @@
  * Author: KoffeinFlummi
  *
  * Administers the unit morphine.
- * 
+ *
  * Argument:
  * 0: Unit to be treated (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -37,7 +37,7 @@ _this spawn {
 
   if (_unit != player) then {
     [-2, {
-      if (local (_this select 0)) then {
+      if (!(isPlayer (_this select 0)) and {player == (_this select 0)}) then {
         systemChat format ["%1 %2", name (_this select 1), localize "STR_AGM_Medical_GivingYouMorphine"];
       };
     }, [_unit, player]] call CBA_fnc_globalExecute;
@@ -46,7 +46,7 @@ _this spawn {
   AGM_Medical_morphineCallback = {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
-  
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
     player removeItem "AGM_Morphine";
@@ -90,15 +90,13 @@ _this spawn {
       };
     };
 
-    /* temp disabled
-    if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
       } else {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+      };
     };
-    */
   };
 
   AGM_Medical_morphineAbort = {

@@ -19,9 +19,9 @@ class CfgPatches {
       A3_Air_F_EPC_Plane_Fighter_03,
       A3_Weapons_F_NATO
     };
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi", "Crusty"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -450,7 +450,7 @@ class CfgMagazines {
     scope = 2;
     displayNameShort = "";
     ammo = "Gatling_30mm_HE_Plane_CAS_01_F";
-    count = 1150;
+    count = 1170;
     //initSpeed = 3852;
     maxLeadSpeed = 300;
     nameSound = "cannon";
@@ -607,7 +607,7 @@ class CfgWeapons {
   };
 
   class LMG_Minigun: LMG_RCWS {
-    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow"};
+    magazines[] = {"5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Yellow", "200Rnd_65x39_belt", "200Rnd_65x39_belt_Tracer_Red", "200Rnd_65x39_belt_Tracer_Green", "200Rnd_65x39_belt_Tracer_Yellow", "2000Rnd_65x39_belt", "2000Rnd_65x39_belt_Tracer_Red", "2000Rnd_65x39_belt_Tracer_Green", "2000Rnd_65x39_belt_Tracer_Yellow", "1000Rnd_65x39_belt", "1000Rnd_65x39_belt_Tracer_Red", "1000Rnd_65x39_belt_Tracer_Green", "1000Rnd_65x39_belt_Tracer_Yellow"};
     class manual: MGun {
       reloadTime = 0.015;
       dispersion = 0.006;
@@ -646,14 +646,17 @@ class CfgWeapons {
   class Gatling_30mm_Plane_CAS_01_F: CannonCore {
     autoFire = 1;
     burst = 1;
-    reloadTime = 0.0143;
+    reloadTime = 0.0154;
     class LowROF: Mode_FullAuto {
-      reloadTime = 0.0143;
-      sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
+      autoFire = 0;
+      burst = 65;
+      reloadTime = 0.0154;
+      //sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
+      sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,[25704,32159]};
       weaponSoundEffect = "DefaultRifle";
       dispersion = 0.005;
-      soundContinuous = 0;
-      burst = 1;
+      soundContinuous = 1;
+      textureType = "burst";
     };
     class close: LowROF{};
     class near: close{};
@@ -936,7 +939,8 @@ class CfgVehicles {
 
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class AnimationSources: AnimationSources {
       class HitGlass1 {
@@ -976,7 +980,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Transport_01_F: Heli_Transport_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -993,7 +998,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1002,7 +1008,8 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1011,14 +1018,16 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 
   // INDEP
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1035,7 +1044,8 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1052,7 +1062,8 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1061,12 +1072,14 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 
   // OPFOR
   class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1075,7 +1088,8 @@ class CfgVehicles {
     };
   };
   class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1085,7 +1099,8 @@ class CfgVehicles {
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
     driverCanEject = 1;
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     magazines[] = {"2000Rnd_762x51_Belt_T_Green"};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
@@ -1094,7 +1109,8 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
@@ -1106,6 +1122,7 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    lockDetectionSystem = 16;
+    lockDetectionSystem = 15;
+    incomingMissileDetectionSystem = 16;
   };
 };

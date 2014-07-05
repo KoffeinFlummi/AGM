@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="GrenadeSelect">
+
+    <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeFrag">
+      <English>Select Fragmentary Grenade</English>
+      <German>Explosive Granate auswählen</German>
+      <Spanish>Seleccionar Granada Fragmentaria</Spanish>
+    </Key>
+    <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeOther">
+      <English>Select Non-Fragmentary Grenade</English>
+      <German>Nichtexplosive Granate auswählen</German>
+      <Spanish>Seleccionar Granada No Fragmentaria</Spanish>
+    </Key>
+    <Key ID="STR_AGM_GrenadeSelect_ThrowGrenade">
+      <English>Throw Selected Grenade</English>
+      <German>Gewählte Granate werfen</German>
+      <Spanish>Arrojar Granada Seleccionada</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_GrenadeSelect_NoFragsLeft">
+      <English>No frags left</English>
+      <German>Keine explosive Granate übrig</German>
+    </Key>
+    <Key ID="STR_AGM_GrenadeSelect_NoMiscGrenadeLeft">
+      <English>No misc. grenades left</English>
+      <German>Keine nichtexplosive Granate übrig</German>
+    </Key>
+    <Key ID="STR_AGM_GrenadeSelect_NoGrenadeSelected">
+      <English>No grenade selected</English>
+      <German>Keine Granate ausgewählt</German>
+    </Key>
+  </Package>
+</Project>

@@ -5,38 +5,42 @@
     <Key ID="STR_AGM_Hearing_Earbuds_Name">
       <English>Ear Plugs</English>
       <German>Ohrenstöpsel</German>
-      <Spanish>Tapones para Oídos</Spanish>
+      <Spanish>Tapones para oídos</Spanish>
       <Polish>Stopery do uszu</Polish>
       <Czech>Špunty</Czech>
       <Russian>Беруши</Russian>
       <French>Bouchons d'oreilles</French>
+      <Hungarian>Füldugó</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
       <German>Schützende Ohrenstöpsel, die es dem Träger ermöglichen, sich in der Nähe lauter Waffen aufzuhalten.</German>
-      <Spanish>Los Tapones para Oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
+      <Spanish>Los tapones para oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
       <Polish>Stopery do uszu umożliwiają użytkownikowi przebywać w pobliżu głośnej broni bez poniesienia konsekwencji jaką jest utrata słuchu.</Polish>
       <Czech>Ochranné špunty umožňují uživateli, aby neutrpěl zranění jeho sluchu v blízkosti hlasitých zbraní.</Czech>
       <Russian>Беруши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
       <French>Bouchons d'oreilles permettant à l'utilisateur de se trouver à proximité des armes sans endommager son audition.</French>
+      <Hungarian>Erősebb hanghatásoktól védő füldugó, megakadályozza a nagy hanggal járó fegyverzettől való halláskárosodást.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
-      <German>Ohrenstöpsel an</German>
+      <German>Ohrenstöpsel drinnen</German>
       <Spanish>Tapones colocados</Spanish>
       <Polish>Załóż stopery</Polish>
       <Czech>Špunty v uších</Czech>
       <Russian>Беруши надеты</Russian>
       <French>Bouchons mis</French>
+      <Hungarian>Füldugó berakva</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
-      <German>Ohrenstöpsel aus</German>
-      <Spanish>Tapones removidos</Spanish>
+      <German>Ohrenstöpsel raus</German>
+      <Spanish>Tapones quitados</Spanish>
       <Polish>Zdejmij stopery</Polish>
       <Czech>Špunty venku z uší</Czech>
       <Russian>Беруши сняты</Russian>
       <French>Bouchons enlever</French>
+      <Hungarian>Füldugó kivéve</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
       <English>You have no ear plugs</English>
@@ -46,6 +50,7 @@
       <Czech>Nemáš žádné špunty</Czech>
       <Russian>У вас нет беруш</Russian>
       <French>Vous n'avez pas de bouchons d'oreilles</French>
+      <Hungarian>Nincs füldugód</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>Inventory is full; Cannot remove Ear Buds</English>
@@ -55,6 +60,7 @@
       <Czech>Inventář je plný; Špunty nelze vyndat</Czech>
       <Russian>Инвентарь заполнен: нельзя снять беруши</Russian>
       <French>Inventaire plein; Impossible d'enlever les bouchons</French>
+      <Hungarian>Felszerelés tele: nem lehet kivenni a füldugót</Hungarian>
     </Key>
 
   </Package>

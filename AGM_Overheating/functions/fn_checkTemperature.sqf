@@ -29,22 +29,30 @@ _this spawn {
 
 	sleep 1;
 
-	_red = [255 * (2 * _temperature / MAX_TEMPERATURE min 1), 2] call AGM_Core_fnc_toHex;
-	_green = [255 * (2 * (MAX_TEMPERATURE - _temperature) / MAX_TEMPERATURE min 1), 2] call AGM_Core_fnc_toHex;
-
-	_picture = format ["<img size='2' color='#%1%200' image='%3'/>", _red, _green, getText (configFile >> "CfgWeapons" >> _weapon >> "picture")];
-	//_line = "<t color='#" + _red + _green + "00'>" + localize "STR_AGM_Overheating_Temperature" + "</t>";
+	_color = [
+		2 * _temperature / MAX_TEMPERATURE min 1,
+		2 * (MAX_TEMPERATURE - _temperature) / MAX_TEMPERATURE min 1,
+		00
+	];
 
 	_count = 2 + round (10 * _temperature / MAX_TEMPERATURE);
-	_line = "<t color='#" + _red + _green + "00'>";
+	_string = "";
 	for "_a" from 1 to _count do {
-		_line = _line + "|";
+		_string = _string + "|";
 	};
-	_line = _line + "</t><t color='#555555'>";
-	for "_a" from (_count + 1) to 12 do {
-		_line = _line + "|";
-	};
-	_line = _line + "</t>";
+	_text = [_string, _color] call AGM_Core_fnc_stringToColoredText;
 
-	[formatText ["%1%2%3", parseText _picture, lineBreak, parseText _line]] call AGM_Core_fnc_displayText;
+	_string = "";
+	for "_a" from (_count + 1) to 12 do {
+		_string = _string + "|";
+	};
+
+	_text = composeText [
+		_text,
+		[_string, [0.5, 0.5, 0.5]] call AGM_Core_fnc_stringToColoredText
+	];
+
+	_picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+
+	[_text, _picture] call AGM_Core_fnc_displayTextPicture;
 };

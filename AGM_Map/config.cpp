@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_UI_F, A3_Misc_F};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -203,3 +203,17 @@ class RscDisplayServerGetReady: RscDisplayGetReady {
   };
 };
 
+// MARKERS
+class CfgMarkers {
+  class Flag;
+
+  class hd_objective: Flag {
+    name = "$STR_CFG_MARKERS_dot";
+    icon = "\A3\ui_f\data\map\markers\handdrawn\dot_CA.paa";
+  };
+
+  class hd_dot: hd_objective {
+    name = "$STR_CFG_MARKERS_FLAG";
+    icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";
+  };
+};

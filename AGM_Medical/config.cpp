@@ -20,9 +20,9 @@ class CfgPatches {
       A3_Weapons_F_Items,
       A3_UI_F
     };
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -36,6 +36,7 @@ class CfgFunctions {
       class bloodbag;
       class carry;
       class diagnose;
+      class displayText;
       class drag;
       class dropWeapon;
       class epinephrine;
@@ -62,6 +63,13 @@ class Extended_Init_EventHandlers {
     class AGM_Medical {
       init = "_this call AGM_Medical_fnc_init";
     };
+  };
+};
+
+class AGM_Core_Options {
+  class keepMedicalMenuOpen {
+    displayName = "$STR_AGM_Medical_keepMenuOpen";
+    default = 0;
   };
 };
 
@@ -484,14 +492,14 @@ class CfgWeapons {
     type = 0;
     class ItemInfo: InventoryFirstAidKitItem_Base_F {
       mass = 4;
-      type = 201;
+      type = 401;
     };
   };
   class Medikit: ItemCore {
     type = 0;
     class ItemInfo: MedikitItem {
       mass = 60;
-      type = 201;
+      type = 401;
     };
   };
 
@@ -503,7 +511,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
-      type = 201;
+      type = 401;
     };
   };
   class AGM_Morphine: AGM_Bandage {
@@ -515,7 +523,7 @@ class CfgWeapons {
   class AGM_Epipen: AGM_Bandage {
     displayName = "$STR_AGM_Medical_Epinephrine_Name";
     descriptionShort = "$STR_AGM_Medical_Epinephrine_Description";
-    model = "\A3\Weapons_F\Items\FirstAidkit";
+    model = "\AGM_Medical\agm_epipen.p3d";
     picture = "\AGM_Medical\UI\AGM_epipen_ca.paa";
   };
   class AGM_Bloodbag: AGM_Bandage {
@@ -732,3 +740,5 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
+
+#include <HintConfig.hpp>
