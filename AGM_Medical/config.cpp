@@ -523,7 +523,7 @@ class CfgWeapons {
   class AGM_Epipen: AGM_Bandage {
     displayName = "$STR_AGM_Medical_Epinephrine_Name";
     descriptionShort = "$STR_AGM_Medical_Epinephrine_Description";
-    model = "\A3\Weapons_F\Items\FirstAidkit";
+    model = "\AGM_Medical\agm_epipen.p3d";
     picture = "\AGM_Medical\UI\AGM_epipen_ca.paa";
   };
   class AGM_Bloodbag: AGM_Bandage {
