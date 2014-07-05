@@ -12,9 +12,14 @@ class CfgPatches {
   };
 };
 
-class Extended_PostInit_EventHandlers {
+class CfgFunctions {
   class AGM_Wirecutter {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Wirecutter\clientInit.sqf'";
+    class AGM_Wirecutter {
+      file = "AGM_Wirecutter\functions";
+      class cutDownFence;
+      class cutDownFenceAbort;
+      class cutDownFenceCallback;
+    };
   };
 };
 
@@ -25,8 +30,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -37,8 +42,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -49,8 +54,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -61,8 +66,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -73,8 +78,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -85,8 +90,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -97,8 +102,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -109,8 +114,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -121,8 +126,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -133,8 +138,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -145,8 +150,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -157,8 +162,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[10, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -169,8 +174,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
@@ -182,8 +187,8 @@ class CfgVehicles {
       class AGM_Wirecutter_cut {
         displayName = "$STR_AGM_CutFence";
         distance = 4;
-        condition = "!AGM_Wirecutter_isCutting && {'ToolKit' in items player} && {damage AGM_Interaction_Target < 1}";
-        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_CutdownFence";
+        condition = "'ToolKit' in items player && {damage AGM_Interaction_Target < 1}";
+        statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence";
         showDisabled = 1;
         priority = 2.1;
       };
