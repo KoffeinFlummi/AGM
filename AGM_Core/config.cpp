@@ -43,6 +43,7 @@ class CfgFunctions {
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
+      class hadamardProduct;
       class isAutoWind;
       class isInBuilding;
       class isTurnedOut;
