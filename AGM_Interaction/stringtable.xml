@@ -275,6 +275,7 @@
       <French>Ont vous tape à l'épaule.</French>
       <Polish>Zostałeś klepnięty po ramieniu</Polish>
       <Hungarian>Vállonveregettek</Hungarian>
+      <Czech>Někdo tě poklepal na rameno.</Czech>
     </Key>
 
     <Key ID="STR_AGM_Interaction_ShowPlayerNames">
@@ -284,6 +285,7 @@
       <Polish>Pokaż nazwy graczy</Polish>
       <French>Afficher nom des joueurs</French>
       <Hungarian>Játékosnevek mutatása</Hungarian>
+      <Czech>Zobrazit jména hráčů</Czech>
     </Key>
 
 

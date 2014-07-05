@@ -87,6 +87,7 @@
       <Polish>Wybierz główne działo</Polish>
       <French>Sélectionnez l'arme principale</French>
       <Hungarian>Főfegyver kiválasztása</Hungarian>
+      <Czech>Zvolit hlavní zbraň</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
       <English>Select machine gun</English>
@@ -95,6 +96,7 @@
       <Polish>Wybierz karabin maszynowy</Polish>
       <French>Sélectionnez mitrailleuse</French>
       <Hungarian>Géppuska kiválasztása</Hungarian>
+      <Czech>Zvolit kulomet</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
       <English>Select missiles</English>
@@ -103,6 +105,7 @@
       <Polish>Wybierz rakiety</Polish>
       <French>Sélectionnez missiles</French>
       <Hungarian>Rakéta kiválasztása</Hungarian>
+      <Czech>Zvolit rakety</Czech>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
@@ -112,6 +115,7 @@
       <Polish>Włącz szybki wybór</Polish>
       <French>Activer la sélection rapide</French>
       <Hungarian>Gyorsváltás bekapcsolása</Hungarian>
+      <Czech>Povolit rychlou volbu zbraní</Czech>
     </Key>
 
 

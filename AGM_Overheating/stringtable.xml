@@ -91,6 +91,7 @@
       <Polish>Sprawdź temperaturę broni</Polish>
       <French>Vérifier la température de l'arme</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
+      <Czech>Zjistit teplotu zbraně</Czech>
     </Key>
 
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
@@ -100,6 +101,7 @@
       <Polish>Sprawdzanie temperatury ...</Polish>
       <French>Vérification de la température ...</French>
       <Hungarian>Hőmérséklet ellenőrzése...</Hungarian>
+      <Czech>Zjišťuju teplotu ...</Czech>
     </Key>
 
     <Key ID="STR_AGM_Overheating_Temperature">
@@ -109,6 +111,7 @@
       <Polish>Temperatura</Polish>
       <French>Température</French>
       <Hungarian>Hőmérséklet</Hungarian>
+      <Czech>Teplota</Czech>
     </Key>
 
   </Package>

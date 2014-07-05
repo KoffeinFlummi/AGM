@@ -7,20 +7,20 @@
       <German>Brilleneffekt in dritter Person anzeigen</German>
       <Spanish>Mostrar Efecto de las Gafas en Tercera Persona</Spanish>
       <Polish>Show Goggle Effects in Third Person</Polish>
-      <Czech>Show Goggle Effects in Third Person</Czech>
+      <Czech>Zobrazit účinky brýlí v třetí osobě</Czech>
       <French>Show Goggle Effects in Third Person</French>
       <Russian>Show Goggle Effects in Third Person</Russian>
-      <Hungarian>Show Goggle Effects in Third Person</Hungarian>
+      <Hungarian>Szemüveg effekt mutatása külső nézetből</Hungarian>
     </Key>
     <Key ID="STR_AGM_Goggles_WipeGlasses">
       <English>Wipe Goggles</English>
       <German>Brille abwischen</German>
       <Spanish>Limpiar las Gafas</Spanish>
       <Polish>Wipe Goggles</Polish>
-      <Czech>Wipe Goggles</Czech>
+      <Czech>Vyčistit brýle</Czech>
       <French>Wipe Goggles</French>
       <Russian>Wipe Goggles</Russian>
-      <Hungarian>Wipe Goggles</Hungarian>
+      <Hungarian>Szemüveg törlése</Hungarian>
     </Key>
   </Package>
 </Project>

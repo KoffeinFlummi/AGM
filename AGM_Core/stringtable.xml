@@ -291,6 +291,7 @@
       <French>Action annulée.</French>
       <Polish>Akcja anulowana</Polish>
       <Hungarian>Cselekvés befejezve</Hungarian>
+      <Czech>Akce přerušena</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_Prev">
@@ -300,6 +301,7 @@
       <Polish>&lt; Poprzedni</Polish>
       <French>&lt; Prec</French>
       <Hungarian>&lt; Előző</Hungarian>
+      <Czech>&lt; Předchozí</Czech>
     </Key>
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
@@ -308,12 +310,14 @@
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
+      <Czech>Další</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_MiscItems">
       <English>[AGM] Miscellaneous Items</English>
       <German>[AGM] Verschiedenes</German>
       <Spanish>[AGM] Objetos varios</Spanish>
+      <Czech>[AGM] Ostatní předměty</Czech>
     </Key>
 
   </Package>

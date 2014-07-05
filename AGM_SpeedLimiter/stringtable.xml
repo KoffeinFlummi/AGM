@@ -10,7 +10,7 @@
       <Czech>Limit rychlosti zapnut</Czech>
       <French>Limiteur de vitesse Activé</French>
       <Russian>Ограничение скорости включено</Russian>
-      <Hungarian>Tempomat bekapcsolva</Hungarian>
+      <Hungarian>Sebességkorlát bekapcsolva</Hungarian>
     </Key>
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
@@ -20,7 +20,7 @@
       <Czech>Limit rychlosti vypnut</Czech>
       <French>Limiteur de vitesse Désactivé</French>
       <Russian>Ограничение скорости выключено</Russian>
-      <Hungarian>Tempomat kikapcsolva</Hungarian>
+      <Hungarian>Sebességkorlát kikapcsolva</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_SpeedLimiter">
@@ -31,7 +31,7 @@
       <Czech>Limit rychlosti</Czech>
       <French>Limiteur de vitesse</French>
       <Russian>Ограничение скорости</Russian>
-      <Hungarian>Tempomat</Hungarian>
+      <Hungarian>Sebességkorlát</Hungarian>
     </Key>
 
   </Package>
