@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="AGM">
   <Package name="Repair">
-
+	<Key ID="STR_AGM_Repair_Object">
+      <English>Vehicle</English>
+      <German>Fahrzeug</German>
+    </Key>
     <Key ID="STR_AGM_Repair_Nothing">
       <English>Everything is OK!</English>
       <German>Alles OK!</German>

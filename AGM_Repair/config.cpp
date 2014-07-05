@@ -328,3 +328,16 @@ class CfgVehicles {
   };
 };
 
+/*class CfgWeapons {						//Removes the ability to repair vehicles and disarm explosives. If you want to use this function, remove the "/*" and "* /".
+  class ItemCore;
+  class InventoryItem_Base_F;
+  
+  class ToolKit: ItemCore {
+	class ItemInfo: InventoryItem_Base_F {
+      mass = 80;
+      type = 401;
+    };
+  };
+};
+*/
+
