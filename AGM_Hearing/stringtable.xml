@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_Hearing_Earbuds_Name">
       <English>Ear Plugs</English>
       <German>Ohrenstöpsel</German>
-      <Spanish>Tapones para Oídos</Spanish>
+      <Spanish>Tapones para oídos</Spanish>
       <Polish>Stopery do uszu</Polish>
       <Czech>Špunty</Czech>
       <Russian>Беруши</Russian>
@@ -15,7 +15,7 @@
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
       <German>Schützende Ohrenstöpsel, die es dem Träger ermöglichen, sich in der Nähe lauter Waffen aufzuhalten.</German>
-      <Spanish>Los Tapones para Oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
+      <Spanish>Los tapones para oídos permiten al usuario operar armamento ruidoso sin sufrir pérdida de audición.</Spanish>
       <Polish>Stopery do uszu umożliwiają użytkownikowi przebywać w pobliżu głośnej broni bez poniesienia konsekwencji jaką jest utrata słuchu.</Polish>
       <Czech>Ochranné špunty umožňují uživateli, aby neutrpěl zranění jeho sluchu v blízkosti hlasitých zbraní.</Czech>
       <Russian>Беруши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
@@ -35,7 +35,7 @@
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
       <German>Ohrenstöpsel raus</German>
-      <Spanish>Tapones removidos</Spanish>
+      <Spanish>Tapones quitados</Spanish>
       <Polish>Zdejmij stopery</Polish>
       <Czech>Špunty venku z uší</Czech>
       <Russian>Беруши сняты</Russian>

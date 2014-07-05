@@ -29,7 +29,7 @@ class CfgFunctions {
 class AGM_Core_Default_Keys {
   class selectGrenadeFrag {
     displayName = "$STR_AGM_GrenadeSelect_SelectGrenadeFrag";
-    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]} && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "call AGM_GrenadeSelect_fnc_selectGrenadeFrag";
     key = 7;
     shift = 0;
@@ -38,7 +38,7 @@ class AGM_Core_Default_Keys {
   };
   class selectGrenadeOther {
     displayName = "$STR_AGM_GrenadeSelect_SelectGrenadeOther";
-    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]} && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "call AGM_GrenadeSelect_fnc_selectGrenadeOther";
     key = 8;
     shift = 0;
@@ -47,7 +47,7 @@ class AGM_Core_Default_Keys {
   };
   class throwGrenade {
     displayName = "$STR_AGM_GrenadeSelect_ThrowGrenade";
-    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]}";
+    condition = "player == _vehicle && {player getVariable ['AGM_CanTreat', true]} && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "call AGM_GrenadeSelect_fnc_throwGrenade";
     key = 34;
     shift = 0;
