@@ -56,7 +56,13 @@ class CfgVehicles {
       };
 	  
 	  class AGM_EscortCaptive {
-	    displayName = "$STR_AGM_Civilan_EscortCaptive"
+	    displayName = "$STR_AGM_Civilian_EscortCaptive";
+		distance = 4;
+		condition = "AGM_Interaction_Target isKindOf 'Civilian' and alive AGM_Interaction_Target && {AGM_Interaction_Target != player} && {count (weapons AGM_Interaction_Target) == 0}";
+		statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_escortCaptive";
+		showDisabled = 0;
+		priority = -2.8;
+	  };
     };
   };
 };
