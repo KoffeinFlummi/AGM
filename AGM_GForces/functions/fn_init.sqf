@@ -53,8 +53,6 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _average = _sum / (count AGM_GForces);
     };
 
-    systemChat str _average;
-
     _upTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef") * getNumber (configFile >> "CfgWeapons" >> (uniform player) >> "AGM_GForceCoef");
     _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef");
 
