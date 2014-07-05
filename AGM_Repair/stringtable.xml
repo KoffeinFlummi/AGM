@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Repair">
+	<Key ID="STR_AGM_Repair_Object">
+      <English>Vehicle</English>
+      <German>Fahrzeug</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_Nothing">
+      <English>Everything is OK!</English>
+      <German>Alles OK!</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_LFWheel_check">
+      <English>LF Wheel is damaged</English>
+      <German>Reifen LV ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_RFWheel_check">
+      <English>RF Wheel is damaged</English>
+      <German>Reifen RV ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_LBWheel_check">
+      <English>LB Wheel is damaged</English>
+      <German>Reifen LH ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_RBWheel_check">
+      <English>RB Wheel is damaged</English>
+      <German>Reifen RH ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Engine_check">
+      <English>Engine is damaged</English>
+      <German>Motor ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Fuel_check">
+      <English>Fuel tank is damaged</English>
+      <German>Tank ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Body_check">
+      <English>Karoserie is damaged</English>
+      <German>Karoserie ist beschädigt</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_LFWheel">
+      <English>Repair LF Wheel</English>
+      <German>Reifen LV reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_RFWheel">
+      <English>Repair RF Wheel</English>
+      <German>Reifen RV reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_LBWheel">
+      <English>Repair LB Wheel</English>
+      <German>Reifen LH reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_RBWheel">
+      <English>Repair RB Wheel</English>
+      <German>Reifen RH reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Engine">
+      <English>Repair Engine</English>
+      <German>Motor reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Fuel">
+      <English>Repair Fuel tank</English>
+      <German>Tank reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Body">
+      <English>Repair Karoserie</English>
+      <German>Karoserie reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_Repairing">
+      <English>Repairing...</English>
+      <German>Reparieren...</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_checkVehicle">
+      <English>check Vehicle</English>
+      <German>Fahrzeug überprüfen</German>
+    </Key>
+	<Key ID="STR_AGM_Drag_StartDrag">
+	  <Original>Drag</Original>
+	  <Russian>Тащить</Russian>
+	  <Spanish>Arrastrar</Spanish>
+	</Key>
+	<Key ID="STR_AGM_Drag_EndDrag">
+	  <Original>Release</Original>
+	  <Russian>Отпустить</Russian>
+	  <Spanish>Soltar</Spanish>
+	</Key>
+    
+  </Package>
+</Project>
