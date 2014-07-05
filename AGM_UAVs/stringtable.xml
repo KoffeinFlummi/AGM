@@ -9,6 +9,7 @@
       <French>Le drone est plein</French>
       <Polish>Dron jest pełny</Polish>
       <Hungarian>Drón tele</Hungarian>
+      <Czech>Dron je nabitý</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_NoBattery">
       <English>You need a UAV-Battery</English>
@@ -17,6 +18,7 @@
       <French>Vous avez besoin d'une Batterie-UAV</French>
       <Polish>Potrzebujesz baterii UAV</Polish>
       <Hungarian>UAV-Akkumulátor szükséges</Hungarian>
+      <Czech>Potřebuješ UAV-Baterii</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_Recharge">
       <English>Recharge</English>
@@ -25,6 +27,7 @@
       <French>Recharger</French>
       <Polish>Naładuj</Polish>
       <Hungarian>Újratöltés</Hungarian>
+      <Czech>Nabít</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Name">
       <English>UAV-Battery</English>
@@ -33,6 +36,7 @@
       <French>Batterie-UAV</French>
       <Polish>Bateria UAV</Polish>
       <Hungarian>UAV-Akkumulátor</Hungarian>
+      <Czech>UAV-Baterie</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Description">
       <English>Used to refuel UAV's</English>
@@ -41,6 +45,7 @@
       <French>Utiliser pour faire le plein de l'UAV</French>
       <Polish>Używana do naładowania UAV</Polish>
       <Hungarian>UAV újratöltéséhez</Hungarian>
+      <Czech>Používané k nabíjení UAV</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Recharge">
       <English>Recharging ...</English>
@@ -49,6 +54,7 @@
       <French>Rechargement ...</French>
       <Polish>Ładowanie ...</Polish>
       <Hungarian>Újratöltés...</Hungarian>
+      <Czech>Nabíjení ...</Czech>
     </Key>
 
   </Package>

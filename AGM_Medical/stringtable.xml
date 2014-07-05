@@ -10,7 +10,7 @@
       <Czech>Vyšetřit >></Czech>
       <Russian>Лечение >></Russian>
       <French>Soigner >></French>
-      <Hungarian>Ellátás</Hungarian>
+      <Hungarian>Ellátás >></Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_Treat_Self">
       <English>Self-treatment >></English>
@@ -20,7 +20,7 @@
       <Czech>Vlastní vyšetření</Czech>
       <Russian>Самолечение >></Russian>
       <French>Se soigner >></French>
-      <Hungarian>Önellátás</Hungarian>
+      <Hungarian>Önellátás >></Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_Diagnose">
       <English>Diagnose</English>
@@ -628,6 +628,7 @@
       <French>vous injecte de la morphine.</French>
       <Polish>podaje Tobie morfinę.</Polish>
       <Hungarian>morfiumot ad neked.</Hungarian>
+      <Czech>ti dává morfin.</Czech>
     </Key>
 
     <Key ID="STR_AGM_Medical_keepMenuOpen">
@@ -635,6 +636,7 @@
       <German>Sanitätsmenü nach Behandlung öffnen</German>
       <Spanish>Reabrir el menú médico luego de tratar</Spanish>
       <Hungarian>Orvosi menü újranyitása ellátás után</Hungarian>
+      <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
     </Key>
 
   </Package>

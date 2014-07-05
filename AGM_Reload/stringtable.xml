@@ -9,6 +9,7 @@
       <Polish>Sprawdź Amunicję</Polish>
       <French>Vérifiez munitions</French>
       <Hungarian>Lőszerellenőrzés</Hungarian>
+      <Czech>Zkontrolovat munici</Czech>
     </Key>
 
     <Key ID="STR_AGM_Reload_Ammo">
@@ -18,6 +19,7 @@
       <Polish>Amunicja</Polish>
       <French>Munitions</French>
       <Hungarian>Lőszer</Hungarian>
+      <Czech>Munice</Czech>
     </Key>
 
   </Package>
