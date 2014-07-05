@@ -119,7 +119,7 @@ def binarize(module_name):
 
   packonly_path     = os.path.join(source_path, ".PACKONLY")
   if os.path.exists(packonly_path):
-    temp_path       = os.path.dirname(os.path.realpath(__file__))
+    temp_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name+".pbo")
   else:
     temp_path       = os.path.join(tempfolder, module_name+".pbo")
 
