@@ -236,7 +236,7 @@ class AGM_Core_OptionsMenu_Dialog {
 
     class Interactive_Button0 : AGM_Core_Interactive_Button_Base {
       action = "AGM_Core_keySet = -1; [0] spawn AGM_Core_editKey";
-      sizeEx = "0.7 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 200;
       style = 2 + 0x800;
       x = (HSPACE2 + 3 * 0.1) * safezoneW + safezoneX;
@@ -762,6 +762,7 @@ class AGM_Core_OptionsMenu_Dialog {
     class TextBox_Key_Shift : Interactive_Button0 {
       action = "AGM_Core_keyNewTemp = [42, [false, false, false], 42];";
       text = "$STR_AGM_Core_Shift";
+      sizeEx = "0.7 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 21;
       colorText[] = {1,1,1,1};
       colorBackground[] = {0,0,0,0};
@@ -812,7 +813,7 @@ class AGM_Core_OptionsMenu_Dialog {
     };
 
     class TextBox_Action : TextBox_KeyChange {
-      text = "ACTION NAME";
+      text = "";
       idc = 30;
       colorText[] = {1,1,1,1};
       colorBackground[] = {0,0,0,0};
@@ -824,7 +825,7 @@ class AGM_Core_OptionsMenu_Dialog {
     };
 
     class TextBox_Key_Default : TextBox_Key_Shift {
-      action = "_key = 0; AGM_Core_keyNewTemp = [_key, [false, false, false], _key];";
+      action = "call AGM_Core_keysetDefault";
       text = "$STR_AGM_Core_KeyDefault";
       idc = 31;
       x = (3 / 4 * HSPACE2 + 8.25 * 0.1) * safezoneW + safezoneX;
@@ -845,9 +846,9 @@ class AGM_Core_OptionsMenu_Dialog {
       colorText[] = {1,1,1,1};
       colorBackground[] = {0,0,0,0};
       sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
-      x = (3 / 4 * HSPACE2 + 6.75 * 0.1) * safezoneW + safezoneX;
+      x = (3 / 4 * HSPACE2 + 6.75 * 0.1 - 2.0 / 16) * safezoneW + safezoneX;
       y = (VSPACE2 + 8.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
+      w = 6.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
 
