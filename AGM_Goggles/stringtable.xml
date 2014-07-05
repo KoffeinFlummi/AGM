@@ -10,7 +10,7 @@
       <Czech>Show Goggle Effects in Third Person</Czech>
       <French>Show Goggle Effects in Third Person</French>
       <Russian>Show Goggle Effects in Third Person</Russian>
-      <Hungarian>Show Goggle Effects in Third Person</Hungarian>
+      <Hungarian>Szemüveg effekt mutatása külső nézetből</Hungarian>
     </Key>
     <Key ID="STR_AGM_Goggles_WipeGlasses">
       <English>Wipe Goggles</English>
@@ -20,7 +20,7 @@
       <Czech>Wipe Goggles</Czech>
       <French>Wipe Goggles</French>
       <Russian>Wipe Goggles</Russian>
-      <Hungarian>Wipe Goggles</Hungarian>
+      <Hungarian>Szemüveg törlése</Hungarian>
     </Key>
   </Package>
 </Project>
