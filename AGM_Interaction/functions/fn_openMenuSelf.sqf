@@ -63,6 +63,21 @@ if (_count > 0) then {
 	};
 };
 
+// search vehicle namespace
+_customActions = player getVariable ["AGM_InteractionsSelf", []];
+for "_index" from 0 to (count _customActions - 1) do {
+	_customAction = _customActions select _index;
+	_displayName = _customAction select 0;
+	_condition = _customAction select 1;
+	_statement = _customAction select 2;
+	_showDisabled = _customAction select 3;
+	_priority = _customAction select 4;
+
+	if (_showDisabled || {call _condition}) then {
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+	};
+};
+
 _count = count _actions;
 if (_count == 0) exitWith {};
 

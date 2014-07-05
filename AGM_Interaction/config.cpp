@@ -16,10 +16,14 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
+      class addInteraction;
+      class addInteractionSelf;
       class isInRange;
       class openDoor;
       class openMenu;
       class openMenuSelf;
+      class removeInteraction;
+      class removeInteractionSelf;
       class sortOptionsByPriority;
       class tapShoulder;
     };

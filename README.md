@@ -1,12 +1,15 @@
 Authentic Gameplay Mod
 ======================
 
+<p align="center">
+  <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
+</p>
+
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
-This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version.
-
+This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version.  
 It is **built modularly**; Every PBO (with some exceptions) can be removed, so that groups can maintain their own configurations of AGM, excluding components that they don't like, or that might clash with other addons.
 The components themselves, like the medical system, also include various customization options, allowing mission designers to tweak the experience.
 

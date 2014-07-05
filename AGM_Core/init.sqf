@@ -5,7 +5,7 @@
 	(_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
-if (isDedicated) exitWith {};
+if (!hasInterface) exitWith {};
 
 //AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInputX.sqf";
