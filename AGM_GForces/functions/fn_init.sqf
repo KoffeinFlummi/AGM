@@ -65,7 +65,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
         _strength = 2 - (((_average * _upTolerance) min 3.5) / 3.5) * 1.6;
         AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
       } else {
-        _strength = 2 - (((_average * _downTolerance) min 2.5) / 2.5) * 1.3;
+        _strength = 2 - (((_average * _downTolerance) min 2.5) / 2.5) * 1.6;
         AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,0.5],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
       };
     } else {
