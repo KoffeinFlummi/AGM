@@ -63,6 +63,22 @@ if (_count > 0) then {
 	};
 };
 
+// search vehicle namespace
+_customActions = _object getVariable ["AGM_Interactions", []];
+for "_index" from 0 to (count _customActions - 1) do {
+	_customAction = _customActions select _index;
+	_displayName = _customAction select 0;
+	_distance = _customAction select 1;
+	_condition = _customAction select 2;
+	_statement = _customAction select 3;
+	_showDisabled = _customAction select 4;
+	_priority = _customAction select 5;
+
+	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+	};
+};
+
 _count = count _actions;
 if (_count == 0) exitWith {};
 
