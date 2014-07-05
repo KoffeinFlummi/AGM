@@ -24,7 +24,6 @@ class CfgFunctions
 			class releaseObject;
 			class isDraggingObject;
 			class handleScrollWheel;
-			class setupDragObject;
 			class isDraggable;
 			class GetWeight;
 		};
