@@ -9,6 +9,7 @@ _this spawn {
 		case (secondaryWeapon player) : {secondaryWeaponMagazine player select 0};
 		case (handgunWeapon player) : {handgunMagazine player select 0};
 	};
+	if (isNil "_magazine") exitWith {};
 
 	_ammo = if (isNil "_magazine") then {0} else {
 		(player ammo _weapon) / getNumber (configFile >> "CfgMagazines" >> _magazine >> "count");
