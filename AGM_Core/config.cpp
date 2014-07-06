@@ -109,19 +109,19 @@ class CfgVehicles {
         displayName = "Action";
         description = "What to do with people who do not have the right PBOs?";
         class values {
-          class WarnOnce {
+          class Warn {
             default = 1;
-            name = "Warn Once";
+            name = "Warn";
             value = 1;
           };
-          class WarnRepeatedly {
-            name = "Warn Repeatedly (Annoying)";
+          class Freeze {
+            name = "Freeze";
             value = 2;
           };
-          class Kick {
+          /*class Kick {
             name = "Kick";
             value = 3;
-          };
+          };*/
         };
       };
     };

@@ -64,6 +64,39 @@ if (isServer) then {
 			};
 		} forEach _serverFiles;
 
-		//TBC
+		_missingAddonServer = false;
+		{
+			_index = _serverFiles find _x;
+			if (_index == -1) then {
+				_missingAddonServer = true;
+				diag_log text format ["AGM Client: ERROR addon %1 is missing on server.", _x];
+			}
+		} forEach _files;
+
+		// Display error message.
+		if (_missingAddon || {_missingAddonServer} || {_oldVersionClient} || {_oldVersionServer}) then {
+			_text = "AGM Error:<br/><br/>";
+
+			if (_missingAddon) then {
+				_text = _text + "Detected missing addon on client<br/>";
+			};
+			if (_missingAddonServer) then {
+				_text = _text + "Detected missing addon on server<br/>";
+			};
+			if (_oldVersionClient) then {
+				_text = _text + "Detected old client version<br/>";
+			};
+			if (_oldVersionServer) then {
+				_text = _text + "Detected old server version<br/>";
+			};
+
+			_text = composeText [lineBreak, parseText format ["<t align='center'>%1</t>", _text]];
+
+			("AGM_RscErrorHint" call BIS_fnc_rscLayer) cutRsc ["AGM_RscErrorHint", "PLAIN", 0, true];
+
+			disableSerialization;
+			_ctrlHint = uiNamespace getVariable "AGM_ctrlErrorHint";
+			_ctrlHint ctrlSetStructuredText _text;
+		};
 	};
 };
