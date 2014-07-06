@@ -2,11 +2,16 @@
 
 private ["_unit", "_message"];
 
-_unit = _this select 0;
+_tapper = _this select 0;
+_target = _this select 1;
 
-if (_unit == player) exitWith {};
+if (_target != player) exitWith {
+  addCamShake [4, 0.5, 5];
+  if !(local _target) then {
+    [[_tapper, _target], 'AGM_Interaction_fnc_tapShoulder', _target] call AGM_Core_fnc_execRemoteFnc
+  };
+};
 
-enableCamShake true;
 addCamShake [4, 0.5, 5];
 
 //_message = format ["%1 tapped you on your shoulder.", name _unit];

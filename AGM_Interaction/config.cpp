@@ -69,7 +69,7 @@ class AGM_Core_Default_Keys {
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
     condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
-    statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', cursorTarget] call AGM_Core_fnc_execRemoteFnc";
+    statement = "[player, cursorTarget] call AGM_Interaction_fnc_tapShoulder";
     key = 20;
     shift = 1;
     control = 0;
@@ -101,7 +101,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Interaction_TapShoulder";
         distance = 4;
         condition = "alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
-        statement = "[[player], 'AGM_Interaction_fnc_tapShoulder', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_tapShoulder";
         showDisabled = 1;
         priority = 0.1;
       };

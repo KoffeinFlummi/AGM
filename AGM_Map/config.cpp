@@ -12,6 +12,34 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_Map {
+    class AGM_Map {
+      file = "AGM_Map\functions";
+      class blueForceTracking;
+    };
+  };
+};
+
+class CfgVehicles {
+  class Module_F;
+  class AGM_ModuleBlueForceTracking: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Blue Force Tracking";
+    function = "AGM_Map_fnc_blueForceTracking";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
+      class Interval {
+        displayName = "Interval";
+        description = "How often the markers should be refreshed (in seconds)";
+        defaultValue = 1;
+      };
+    };
+  };
+};
+
 class RscControlsGroup;
 class RscActiveText;
 class RscPicture;

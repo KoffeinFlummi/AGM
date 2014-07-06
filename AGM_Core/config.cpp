@@ -34,6 +34,7 @@ class CfgFunctions {
       class filter;
       class findStringInString;
       class getBinocular;
+      class getMarkerType;
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;

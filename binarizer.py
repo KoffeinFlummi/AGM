@@ -16,6 +16,9 @@
 # binarization are binarized. You can also start the script  #
 # with the PBOs you want to binarized as arguments.          #
 # e.g.: python binarizer.py AGM_Core AGM_Resting             #
+#                                                            #
+# To only pack a certain addon, place an empty file called   #
+# ".PACKONLY" inside of the respective addon folder.         #
 ##############################################################
 
 
@@ -112,8 +115,13 @@ def binarize(module_name):
   source_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name)
   destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
   include_path      = os.path.join(os.path.dirname(os.path.realpath(__file__)), "include.txt")
-  temp_path         = os.path.join(tempfolder, module_name+".pbo")
   final_path        = os.path.join(destination_path, module_name+".pbo")
+
+  packonly_path     = os.path.join(source_path, ".PACKONLY")
+  if os.path.exists(packonly_path):
+    temp_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name+".pbo")
+  else:
+    temp_path       = os.path.join(tempfolder, module_name+".pbo")
 
   binarize_path     = os.path.join(get_armatools_path(), "Binarize", "binarize.exe")
   convert_path      = os.path.join(get_armatools_path(), "CfgConvert", "CfgConvert.exe")
@@ -128,6 +136,10 @@ def binarize(module_name):
     "-project="+os.path.dirname(os.path.realpath(__file__)),
     "-include="+include_path
   ]
+
+  if os.path.exists(packonly_path):
+    args.append("-packonly")
+    print("  (.PACKONLY detected, copying directly.)")
 
   """
   These seem to be bugged, so you will just have to copy Binarize, CfgConvert, FileBank and DSSignFile
