@@ -7,7 +7,13 @@ _this spawn {
 
 	if (!alive _unit) exitWith {};
 
-	_rank = ["Pvt.", "Cpl.", "Sgt.", "Lt.", "Cpt.", "Maj.", "Col."] select (["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _unit);
+	_faction = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "faction");
+	_ranks = getArray (configFile >> "CfgFactionClasses" >> _faction >> "AGM_Ranks");
+	if (count _ranks < 7) then {
+		_ranks = ["Pvt.", "Cpl.", "Sgt.", "Lt.", "Cpt.", "Maj.", "Col."];
+	};
+
+	_rank = _ranks select (["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _unit);
 	_name = name _unit;
 
 	if (_unit == player) then {
