@@ -14,8 +14,8 @@ private ["_text", "_ctrlHint"];
 
 _text = _this select 0;
 
-("AGM_Medical_RscHint" call BIS_fnc_rscLayer) cutRsc ["AGM_Medical_RscHint", "PLAIN", 0, true];
+("AGM_RscHint" call BIS_fnc_rscLayer) cutRsc ["AGM_Medical_RscHint", "PLAIN", 0, true];
 
 disableSerialization;
-_ctrlHint = uiNamespace getVariable "AGM_Medical_ctrlHint";
+_ctrlHint = uiNamespace getVariable "AGM_ctrlHint";
 _ctrlHint ctrlSetStructuredText _text;

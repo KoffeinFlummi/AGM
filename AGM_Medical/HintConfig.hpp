@@ -5,7 +5,7 @@ class RscStructuredText;
 class RscTitles {
 	class AGM_Medical_RscHint {
 		idd = -1;
-		onLoad = "uiNamespace setVariable ['AGM_Medical_ctrlHint', (_this select 0) displayCtrl 1];";
+		onLoad = "uiNamespace setVariable ['AGM_ctrlHint', (_this select 0) displayCtrl 1];";
 		movingEnable = false;
 		duration = 10;
 		fadeIn = 0.2;
