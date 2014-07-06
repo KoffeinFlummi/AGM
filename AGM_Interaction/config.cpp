@@ -24,6 +24,7 @@ class CfgFunctions {
       class openMenuSelf;
       class removeInteraction;
       class removeInteractionSelf;
+      class removeTag;
       class sortOptionsByPriority;
       class tapShoulder;
     };
