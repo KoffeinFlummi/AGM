@@ -36,9 +36,4 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
   };
 };
 
-0 spawn {
-  sleep 1;
-  player setVariable ["AGM_Name",[name player, true] call AGM_Core_fnc_sanitizeString, true];
-};
-
 enableCamShake true;
