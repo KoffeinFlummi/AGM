@@ -1,11 +1,11 @@
 /*
  * By: KoffeinFlummi
- * 
+ *
  * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
- * 
+ *
  * Arguments:
  * 0: Unit to be knocked out (Object)
- * 
+ *
  * Return Values:
  * None
  */
@@ -23,7 +23,7 @@ _newGroup = createGroup side _unit;
 [_unit] joinSilent _newGroup;
 {
   _unit reveal _x;
-} 
+}
 forEach (units _oldGroup);
 _unit setVariable ["AGM_Group", _oldGroup, true];
 
@@ -46,6 +46,11 @@ if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
   player setVariable ["tf_voiceVolume", 0, true];
   player setVariable ["tf_unable_to_use_radio", true, true];
+
+  player setVariable ["acre_sys_core_isDisabled", true, true];
+  player setVariable ["acre_sys_core_globalVolume", 0.4];
+
+  [true, true] call AGM_Core_fnc_disableUserInput;
 };
 
 _unit setCaptive 213;

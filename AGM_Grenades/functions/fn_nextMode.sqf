@@ -21,6 +21,6 @@ _hint = [
   localize "STR_AGM_Grenades_DropGrenade"
 ] select _mode;
 
-[_hint] call AGM_Core_fnc_displayText;
+[_hint] call AGM_Core_fnc_displayTextStructured;
 
 AGM_Grenades_Mode = _mode;

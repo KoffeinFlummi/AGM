@@ -10,7 +10,7 @@
  * Slot index of the given class name, 1: primary, 2: secondary, 3: handgun, else: -1 (Number)
  */
 
-private ["_weapon", "_type"];
+private ["_weapon", "_type", "_index"];
 
 _weapon = _this select 0;
 

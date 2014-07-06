@@ -20,9 +20,9 @@ class CfgPatches {
       A3_Weapons_F_Items,
       A3_UI_F
     };
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -36,6 +36,7 @@ class CfgFunctions {
       class bloodbag;
       class carry;
       class diagnose;
+      class displayText;
       class drag;
       class dropWeapon;
       class epinephrine;
@@ -62,6 +63,13 @@ class Extended_Init_EventHandlers {
     class AGM_Medical {
       init = "_this call AGM_Medical_fnc_init";
     };
+  };
+};
+
+class AGM_Core_Options {
+  class keepMedicalMenuOpen {
+    displayName = "$STR_AGM_Medical_keepMenuOpen";
+    default = 0;
   };
 };
 
@@ -477,21 +485,20 @@ class CfgWeapons {
   class InventoryItem_Base_F;
   class InventoryFirstAidKitItem_Base_F;
   class MedikitItem;
-  class VestItem;
 
   // ITEMS
   class FirstAidKit: ItemCore {
     type = 0;
     class ItemInfo: InventoryFirstAidKitItem_Base_F {
       mass = 4;
-      type = 201;
+      type = 401;
     };
   };
   class Medikit: ItemCore {
     type = 0;
     class ItemInfo: MedikitItem {
       mass = 60;
-      type = 201;
+      type = 401;
     };
   };
 
@@ -503,7 +510,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
-      type = 201;
+      type = 401;
     };
   };
   class AGM_Morphine: AGM_Bandage {
@@ -515,7 +522,7 @@ class CfgWeapons {
   class AGM_Epipen: AGM_Bandage {
     displayName = "$STR_AGM_Medical_Epinephrine_Name";
     descriptionShort = "$STR_AGM_Medical_Epinephrine_Description";
-    model = "\A3\Weapons_F\Items\FirstAidkit";
+    model = "\AGM_Medical\agm_epipen.p3d";
     picture = "\AGM_Medical\UI\AGM_epipen_ca.paa";
   };
   class AGM_Bloodbag: AGM_Bandage {
@@ -525,148 +532,6 @@ class CfgWeapons {
     picture = "\AGM_Medical\UI\AGM_bloodbag_ca.paa";
     class ItemInfo: ItemInfo {
       mass = 21;
-    };
-  };
-
-  // VESTS
-  // basically we are reducing the amount of shots a vest can take from something like 5 to 2.
-  class Vest_Camo_Base: ItemCore {
-    class ItemInfo;
-  };
-  class Vest_NoCamo_Base: ItemCore {
-    class ItemInfo;
-  };
-
-  // plate carriers
-  class V_PlateCarrier1_blk: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier1_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier2_rgr: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierL_CTRG: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier3_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier_Kerry: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierGL_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 24;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierH_CTRG: V_PlateCarrier2_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierIA1_dgtl: Vest_NoCamo_Base {
-    class ItemInfo: VestItem {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierIA2_dgtl: V_PlateCarrierIA1_dgtl {
-    class ItemInfo: VestItem {
-      armor = 12;
-      passThrough = 0.6;
-    };
-  };
-  class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl {
-    class ItemInfo: VestItem {
-      armor = 20;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierSpec_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 16;
-      passThrough = 0.45;
-    };
-  };
-
-  // rebreathers (WHY ARE THESE ARMOURED ANYWAYS?!)
-  class V_RebreatherB: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-  class V_RebreatherIA: V_RebreatherB {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-  class V_RebreatherIR: V_RebreatherB {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-
-  // tac vests
-  class V_TacVest_camo: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_khk: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_brn: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_oli: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_blk: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_blk_POLICE: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_RU: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVestCamo_khk: Vest_Camo_Base {
-    class ItemInfo: VestItem {
-      armor = 8;
     };
   };
 };
@@ -705,6 +570,7 @@ class CfgActions {
   };
 };
 
+// ANIMATIONS
 class CfgMovesBasic {
   class Actions {
     class NoActions;
@@ -732,3 +598,144 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
+
+// BLOOD MIST EFFECTS
+/*
+class CfgCloudlets {
+  class Default;
+  class Blood;
+  class BloodMist: Blood {
+    particleShape = "\A3\data_f\ParticleEffects\Universal\Universal_02";
+    particleFSNtieth = 8;
+    particleFSIndex = 4;
+    particleFSFrameCount = 1;
+    particleFSLoop = 0;
+    lifeTime = 2.0;
+    size[] = {"(hit/50 + 0.5)","2*(hit/50 + 0.5)"};
+    color[] = {{ 1,0,0,0.1 },{ 1,0,0,0.05 }};
+    randomDirectionPeriod = 0.3;
+    randomDirectionIntensity = 0.3;
+    weight = 0.127;
+  };
+  class Blood2: Default {
+    lifeTime = 120;
+    weight = 20.0;
+    size[] = {2.0};
+    destroyOnWaterSurface = 0;
+  };
+  class Blood3: Default {
+    lifeTime = 60;
+    weight = 2.0;
+    size[] = {0.75};
+    destroyOnWaterSurface = 0;
+  };
+  class Blood4: Blood3 {
+    lifeTime = 60;
+    weight = 2.0;
+    size[] = {0.05};
+    destroyOnWaterSurface = 0;
+  };
+  class Blood5: Blood4 {
+    lifeTime = 60;
+    weight = 2.0;
+    size[] = {0.125};
+    destroyOnWaterSurface = 0;
+  };
+};
+
+class ImpactEffectsBlood {
+  class BloodMist {
+    simulation = "particles";
+    type = "BloodMist";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 1;
+    MoveVelocityVar[] = {0,0,0};
+  };
+  class Blood {
+    simulation = "particles";
+    type = "Blood";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 0.2;
+    MoveVelocityVar[] = {2,2,2};
+  };
+  class Blood1 {
+    simulation = "particles";
+    type = "Blood1";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 0.65;
+  };
+  class Blood2 {
+    simulation = "particles";
+    type = "Blood2";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 0.4;
+  };
+  class Blood3 {
+    simulation = "particles";
+    type = "Blood3";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 0.4;
+  };
+  class Blood4 {
+    simulation = "particles";
+    type = "Blood4";
+    position[] = {0,0,0};
+    intensity = 0.5;
+    interval = 1;
+    lifeTime = 0.65;
+  };
+  class Blood5 {
+    simulation = "particles";
+    type = "Blood5";
+    position[] = {0,0,0};
+    intensity = 0.5;
+    interval = 1;
+    lifeTime = 0.4;
+  };
+  class BloodUnderwater1 {
+    simulation = "particles";
+    type = "BloodUnderwater1";
+    position[] = {0,0,0};
+    intensity = 1;
+    interval = 1;
+    lifeTime = 0.4;
+  };
+};
+*/
+
+class CfgCloudlets {
+  class Blood;
+  class AGM_BloodMist: Blood {
+    particleShape = "\A3\data_f\ParticleEffects\Universal\Universal_02";
+    particleFSNtieth = 8;
+    particleFSIndex = 4;
+    lifeTime = 2.3;
+    size[] = {"((hit + 5) max 30) / 30", "((hit + 5) max 30) / 60", "((hit + 5) max 30) / 120"};
+    color[] = {{1,0.1,0.1,0.14}, {1,0.1,0.1,0.07}, {1,0.1,0.1,0.035}};
+    randomDirectionPeriod = 0.5;
+    randomDirectionIntensity = 0.5;
+  };
+};
+
+class ImpactEffectsBlood {
+  class AGM_BloodMist {
+    intensity = 1;
+    interval = 1;
+    lifeTime = 1;
+    position[] = {0,0,0};
+    simulation = "particles";
+    type = "AGM_BloodMist";
+  };
+};
+
+#include <HintConfig.hpp>

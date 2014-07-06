@@ -50,11 +50,11 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
 
   // Reset "unused" hitpoints.
-  [_unit, "HitHands", 0] call AGM_Medical_fnc_setHitPointDamage;
+  [_unit, "HitHands", 0, true] call AGM_Medical_fnc_setHitPointDamage;
 
   // Account for unassigned structural damage, like when you crash into something with a vehicle
   if ((damage _unit > 0) and (_unit getHitPointDamage "HitHead" < 0.01) and (_unit getHitPointDamage "HitBody" < 0.01) and (_unit getHitPointDamage "HitLeftArm" < 0.01) and (_unit getHitPointDamage "HitRightArm" < 0.01) and (_unit getHitPointDamage "HitLeftLeg" < 0.01) and (_unit getHitPointDamage "HitRightLeg" < 0.01)) then {
-    [_unit, "HitBody", (damage _unit)] call AGM_Medical_fnc_setHitPointDamage;
+    [_unit, "HitBody", (damage _unit), true] call AGM_Medical_fnc_setHitPointDamage;
   };
 
   // Handle death and unconsciousness
@@ -65,9 +65,9 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
   // Handle leg damage symptoms
   if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
     // lightly wounded, limit walking speed
-    [_unit, "HitLegs", 1] call AGM_Medical_fnc_setHitPointDamage;
+    [_unit, "HitLegs", 1, true] call AGM_Medical_fnc_setHitPointDamage;
   } else {
-    [_unit, "HitLegs", 0] call AGM_Medical_fnc_setHitPointDamage;
+    [_unit, "HitLegs", 0, true] call AGM_Medical_fnc_setHitPointDamage;
   };
   /* DEAL WITH THIS LATER
     if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
@@ -179,34 +179,36 @@ null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
 
 };
 
-if (_unit getVariable "AGM_Unconscious") then {
-  if (_damage > 0.9 and !(isNil "AGM_Medical_PreventDeathWhileUnconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) exitWith {
-    if (vehicle _unit != _unit and damage (vehicle _unit) >= 1) then {
-      _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
-      [_unit, "HitBody", 0.89] call AGM_Medical_fnc_setHitPointDamage;
-      [_unit] call AGM_Medical_fnc_knockOut;
-      _unit allowDamage false;
-      _unit spawn {
-        sleep 1;
-        _this allowDamage true;
-      };
-    } else {
-      0.89
+// Prevent death while unconscious
+if (_unit getVariable "AGM_Unconscious" and {_damage > 0.9 and !(isNil "AGM_Medical_PreventDeathWhileUnconscious") and {AGM_Medical_PreventDeathWhileUnconscious}}) exitWith {
+  if (vehicle _unit != _unit and damage (vehicle _unit) >= 1) then {
+    _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
+    [_unit, "HitBody", 0.89, true] call AGM_Medical_fnc_setHitPointDamage;
+    [_unit] call AGM_Medical_fnc_knockOut;
+    _unit allowDamage false;
+    _unit spawn {
+      sleep 1;
+      _this allowDamage true;
     };
-  };
-} else {
-  if (_damage > 0.9 and !(isNil "AGM_Medical_PreventInstaDeath") and {AGM_Medical_PreventInstaDeath}) exitWith {
-    if (vehicle _unit != _unit and damage (vehicle _unit) >= 1) then {
-      _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
-      [_unit, "HitBody", 0.89] call AGM_Medical_fnc_setHitPointDamage;
-      [_unit] call AGM_Medical_fnc_knockOut;
-      _unit allowDamage false;
-      _unit spawn {
-        sleep 1;
-        _this allowDamage true;
-      };
-    } else {
-      0.89
-    };
+  } else {
+    0.89
   };
 };
+
+// Prevent instant death
+if (!(_unit getVariable "AGM_Unconscious") and {_damage > 0.9 and !(isNil "AGM_Medical_PreventInstaDeath") and {AGM_Medical_PreventInstaDeath}}) exitWith {
+  if (vehicle _unit != _unit and damage (vehicle _unit) >= 1) then {
+    _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
+    [_unit, "HitBody", 0.89, true] call AGM_Medical_fnc_setHitPointDamage;
+    [_unit] call AGM_Medical_fnc_knockOut;
+    _unit allowDamage false;
+    _unit spawn {
+      sleep 1;
+      _this allowDamage true;
+    };
+  } else {
+    0.89
+  };
+};
+
+_damage

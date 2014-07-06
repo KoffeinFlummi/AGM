@@ -58,8 +58,8 @@ waitUntil {!dialog};
 if (AGM_Core_keySave == 1) then {
 	_count0 = count AGM_Core_keyNew;
 
-	for "_a" from 0 to (_count0 - 1) do {
-		_key = AGM_Core_keyNew select _a;
+	for "_index" from 0 to (_count0 - 1) do {
+		_key = AGM_Core_keyNew select _index;
 		_keyName = _key select 0;
 		_keyCode = _key select 1;
 
@@ -68,21 +68,21 @@ if (AGM_Core_keySave == 1) then {
 
 	_count1 = count AGM_Core_OptionNamesNew;
 
-	for "_a" from 0 to (_count1 - 1) do {
-		_name = AGM_Core_OptionNamesNew select _a;
-		_state = AGM_Core_OptionStatesNew select _a;
+	for "_index" from 0 to (_count1 - 1) do {
+		_name = AGM_Core_OptionNamesNew select _index;
+		_state = AGM_Core_OptionStatesNew select _index;
 
 		profileNamespace setVariable [_name, _state];
 	};
 
 	if (_count0 > 0 || {_count1 > 0}) then {
 		saveProfileNamespace;
-		[localize "STR_AGM_Core_ProfileSaved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileSaved"] call AGM_Core_fnc_displayTextStructured;
 	} else {
-		[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
+		[localize "STR_AGM_Core_ProfileNotSaved"] call AGM_Core_fnc_displayTextStructured;
 	};
 } else {
-	[localize "STR_AGM_Core_ProfileNotSaved", false] call AGM_Core_fnc_displayText;
+	[localize "STR_AGM_Core_ProfileNotSaved"] call AGM_Core_fnc_displayTextStructured;
 };
 
 AGM_Core_keyNewTemp = nil;

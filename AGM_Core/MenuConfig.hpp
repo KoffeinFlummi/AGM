@@ -68,7 +68,7 @@ class AGM_Core_Text_Button_Base {
 class AGM_Core_OptionsMenu_Dialog {
   idd = -1;
   movingEnable = true;
-  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 26 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 100 to 119 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 200 to 219 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 300 to 319 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 400 to 419 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 500 to 519 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];";
+  onLoad = "_dlgMenuDialog = _this select 0; for '_a' from 20 to 32 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 100 to 119 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 200 to 219 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 300 to 319 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 400 to 419 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; for '_a' from 500 to 519 do {(_dlgMenuDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Core_MenuDialog', _dlgMenuDialog];";
   objects[] = {};
 
   class controlsBackground {
@@ -236,6 +236,7 @@ class AGM_Core_OptionsMenu_Dialog {
 
     class Interactive_Button0 : AGM_Core_Interactive_Button_Base {
       action = "AGM_Core_keySet = -1; [0] spawn AGM_Core_editKey";
+      sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 200;
       style = 2 + 0x800;
       x = (HSPACE2 + 3 * 0.1) * safezoneW + safezoneX;
@@ -375,19 +376,19 @@ class AGM_Core_OptionsMenu_Dialog {
     };
 
     class Interactive_Checkbox1 : Interactive_Checkbox0 {
-      action = "hint '1'";
+      action = "";
       idc = 301;
       y = (VSPACE2 + 3 * 0.04) * safezoneH + safezoneY;
     };
 
     class Interactive_Checkbox2 : Interactive_Checkbox0 {
-      action = "hint '2'";
+      action = "";
       idc = 302;
       y = (VSPACE2 + 4 * 0.04) * safezoneH + safezoneY;
     };
 
     class Interactive_Checkbox3 : Interactive_Checkbox0 {
-      action = "hint '3'";
+      action = "";
       idc = 303;
       y = (VSPACE2 + 5 * 0.04) * safezoneH + safezoneY;
     };
@@ -733,7 +734,7 @@ class AGM_Core_OptionsMenu_Dialog {
       h = (3.0 / 9 - VSPACE2 / 2) * safezoneH;
     };
 
-    class TextBox_Key_Shift : TextBox_KeyChange {
+    /*class TextBox_Key_Shift : TextBox_KeyChange {
       text = "$STR_AGM_Core_Shift";
       idc = 21;
       colorText[] = {0.25,0.25,0.25,1};
@@ -756,20 +757,105 @@ class AGM_Core_OptionsMenu_Dialog {
       idc = 23;
       x = (3 / 4 * HSPACE2 + 7.75 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE2 + 10 * 0.04) * safezoneH + safezoneY;
+    };*/
+
+    class TextBox_Key_Shift : Interactive_Button0 {
+      action = "AGM_Core_keyNewTemp = [42, [false, false, false], 42];";
+      text = "$STR_AGM_Core_Shift";
+      sizeEx = "0.7 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      idc = 21;
+      colorText[] = {1,1,1,1};
+      colorBackground[] = {0,0,0,0};
+      x = (3 / 4 * HSPACE2 + 6 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 10 * 0.04) * safezoneH + safezoneY;
+      w = 1.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
     };
- 
-    class TextBox_Key : TextBox_Key_Shift {
+
+    class TextBox_Key_Control : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [29, [false, false, false], 29];";
+      text = "$STR_AGM_Core_Ctrl";
+      idc = 22;
+      x = (3 / 4 * HSPACE2 + 6.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 10 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_Alt : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [56, [false, false, false], 56];";
+      text = "$STR_AGM_Core_Alt";
+      idc = 23;
+      x = (3 / 4 * HSPACE2 + 7.5 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 10 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_Shift_Right : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [54, [false, false, false], 54];";
+      text = "$STR_AGM_Core_Shift_Right";
+      idc = 27;
+      x = (3 / 4 * HSPACE2 + 6 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 11 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_Control_Right : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [157, [false, false, false], 157];";
+      text = "$STR_AGM_Core_Ctrl_Right";
+      idc = 28;
+      x = (3 / 4 * HSPACE2 + 6.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 11 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_Alt_Right : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [184, [false, false, false], 184];";
+      text = "$STR_AGM_Core_Alt_Right";
+      idc = 29;
+      x = (3 / 4 * HSPACE2 + 7.5 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 11 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Action : TextBox_KeyChange {
+      text = "";
+      idc = 30;
+      colorText[] = {1,1,1,1};
+      colorBackground[] = {0,0,0,0};
+      sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      x = (3 / 4 * HSPACE2 + 6.75 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 7 * 0.04) * safezoneH + safezoneY;
+      w = 2.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
+    };
+
+    class TextBox_Key_Default : TextBox_Key_Shift {
+      action = "call AGM_Core_keysetDefault";
+      text = "$STR_AGM_Core_KeyDefault";
+      idc = 31;
+      x = (3 / 4 * HSPACE2 + 8.25 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 10 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key_None : TextBox_Key_Shift {
+      action = "AGM_Core_keyNewTemp = [0, [false, false, false], 0];";
+      text = "$STR_AGM_Core_KeyNone";
+      idc = 32;
+      x = (3 / 4 * HSPACE2 + 8.25 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE2 + 11 * 0.04) * safezoneH + safezoneY;
+    };
+
+    class TextBox_Key : TextBox_KeyChange {
       text = "";
       idc = 24;
       colorText[] = {1,1,1,1};
       colorBackground[] = {0,0,0,0};
-      x = (3 / 4 * HSPACE2 + 6.75 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE2 + 8 * 0.04) * safezoneH + safezoneY;
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      x = (3 / 4 * HSPACE2 + 6.75 * 0.1 - 2.0 / 16) * safezoneW + safezoneX;
+      y = (VSPACE2 + 8.5 * 0.04) * safezoneH + safezoneY;
+      w = 6.0 / 16 * safezoneW;
+      h = 0.3 / 9 * safezoneH;
     };
 
     class Interactive_ButtonV : Interactive_Button0 {
       action = "AGM_Core_keySet = 1";
       text = "$STR_AGM_Core_Save";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 25;
       colorBackground[] = {0,0,0,0};
       x = (HSPACE2 + 6 * 0.1) * safezoneW + safezoneX;
@@ -791,6 +877,7 @@ class AGM_Core_OptionsMenu_Dialog {
     class Interactive_ButtonX : Interactive_Button0 {
       action = "AGM_Core_keySave = 1; closeDialog 0";
       text = "$STR_AGM_Core_Save";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 10;
       x = ((1 - 2 * HSPACE2 / 2) - (HSPACE2 + 2.5 * 0.1)) * safezoneW + safezoneX;
       y = (VSPACE2 + 21 * 0.04) * safezoneH + safezoneY;
@@ -801,6 +888,7 @@ class AGM_Core_OptionsMenu_Dialog {
     class Interactive_ButtonY : Interactive_Button0 {
       action = "AGM_Core_keySave = -1; closeDialog 0";
       text = "$STR_AGM_Core_Cancel";
+      sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       idc = 11;
       x = ((1 - 2 * HSPACE2 / 2) - (HSPACE2 + 1 * 0.1)) * safezoneW + safezoneX;
       y = (VSPACE2 + 21 * 0.04) * safezoneH + safezoneY;

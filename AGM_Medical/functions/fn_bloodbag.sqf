@@ -2,10 +2,10 @@
  * Author: KoffeinFlummi
  *
  * Transfuses blood to compensate for heavy blood loss.
- * 
+ *
  * Argument:
  * 0: Unit to be treated (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -16,7 +16,7 @@
 
 // DETERMINE IF UNIT IS MEDIC
 if !(([player] call AGM_Medical_fnc_isMedic) or (!(isNil "AGM_Medical_AllowNonMedics") and {AGM_Medical_AllowNonMedics})) exitWith {
-  hintSilent localize "STR_AGM_Medical_NotTrained";
+  [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
 };
 
 _this spawn {
@@ -39,23 +39,21 @@ _this spawn {
 
   AGM_Medical_bloodbagCallback = {
     _unit = _this select 0;
-  
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
-    
+
     player removeItem "AGM_Bloodbag";
 
     _blood = ((_unit getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
     _unit setVariable ["AGM_Blood", _blood, true];
 
-    /* temp disabled
-    if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
+    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
       } else {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+      };
     };
-    */
   };
 
   AGM_Medical_bloodbagAbort = {

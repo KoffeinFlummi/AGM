@@ -1,34 +1,81 @@
 // by commy2
 
-if (player getVariable ["AGM_Unconscious", false]) exitWith {};
-
 AGM_Interaction_Buttons = [];
 
 _actions = [];
+_patches = [];
 _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
-
 _object = AGM_Interaction_Target;
+
+// search mission config file
+_parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
+{
+	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_Actions";
+	if (_class != "") then {_config = _config >> _this};
+
+	_count = count _config;
+	if (_count > 0) then {
+		for "_a" from 0 to (_count - 1) do {
+			_action = _config select _a;
+
+			if (count _action > 0) then {
+				_configName = configName _action;
+				_displayName = getText (_action >> "displayName");
+				_distance = getNumber (_action >> "distance");
+				_condition = compile getText (_action >> "condition");
+				_statement = compile getText (_action >> "statement");
+				_showDisabled = getNumber (_action >> "showDisabled") == 1;
+				_priority = getNumber (_action >> "priority");
+
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_patches set [count _patches, _configName];
+				};
+			};
+		};
+	};
+} forEach _parents;
+
+// search add-on config file
 _config = configfile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions";
 if (_class != "") then {_config = _config >> _this};
 
 _count = count _config;
-if (_count == 0) exitWith {};
+if (_count > 0) then {
+	for "_a" from 0 to (_count - 1) do {
+		_action = _config select _a;
 
-for "_a" from 0 to (_count - 1) do {
-	_action = _config select _a;
+		if (count _action > 0) then {
+			_configName = configName _action;
+			_displayName = getText (_action >> "displayName");
+			_distance = getNumber (_action >> "distance");
+			_condition = compile getText (_action >> "condition");
+			_statement = compile getText (_action >> "statement");
+			_showDisabled = getNumber (_action >> "showDisabled") == 1;
+			_priority = getNumber (_action >> "priority");
 
-	if (count _action > 0) then {
-		_displayName = getText (_action >> "displayName");
-		_distance = getNumber (_action >> "distance");
-		_condition = compile getText (_action >> "condition");
-		_statement = compile getText (_action >> "statement");
-		_showDisabled = getNumber (_action >> "showDisabled") == 1;
-		_priority = getNumber (_action >> "priority");
-
-		if ((_showDisabled || {call _condition}) && {player distance _object < _distance || {_distance == 0}}) then {
-			_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+			if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+				_patches set [count _patches, _configName];
+			};
 		};
+	};
+};
+
+// search vehicle namespace
+_customActions = _object getVariable ["AGM_Interactions", []];
+for "_index" from 0 to (count _customActions - 1) do {
+	_customAction = _customActions select _index;
+	_displayName = _customAction select 0;
+	_distance = _customAction select 1;
+	_condition = _customAction select 2;
+	_statement = _customAction select 3;
+	_showDisabled = _customAction select 4;
+	_priority = _customAction select 5;
+
+	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 	};
 };
 

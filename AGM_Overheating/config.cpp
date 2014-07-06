@@ -10,9 +10,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_EPA_Ammoboxes, A3_Weapons_F_EPB_Ammoboxes, Extended_EventHandlers, AGM_Core, AGM_Interaction};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -53,6 +53,13 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 1;
     alt = 0;
+  };
+};
+
+class CfgSounds {
+  class AGM_BarrelSwap {
+    sound[] = {"\AGM_Overheating\sounds\barrelswap.ogg", 5, 1, 200};
+    titles[] = {};
   };
 };
 
@@ -144,7 +151,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 10;
-      type = 201;
+      type = 401;
     };
   };
 

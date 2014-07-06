@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -42,6 +42,31 @@ class AGM_Core_Default_Keys {
   };
 };
 
+class CfgVehicles {
+  class Man;
+  class CAManBase: Man {
+    class AGM_SelfActions {
+      class AGM_Earplugs {
+        displayName = "$STR_AGM_Hearing_Earbuds_On";
+        condition = "AGM_EarPlugsIn || {player canAdd 'AGM_EarBuds'}";
+        statement = "[] call AGM_Hearing_fnc_Earplugs";
+        showDisabled = 0;
+        priority = -0.9;
+      };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      class _xx_AGM_EarBuds {
+        count = 24;
+        name = "AGM_EarBuds";
+      };
+    };
+  };
+};
+
 class CfgSounds {
   class AGM_EarRinging_Weak {
     sound[] = {"\AGM_Hearing\sounds\agm_earringing_weak.wav",8,1.7};
@@ -69,7 +94,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
+      type = 401;
     };
   };
 };

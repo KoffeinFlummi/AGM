@@ -18,9 +18,9 @@ class CfgPatches {
       A3_Weapons_F_Vests,
       A3_Anims_F
     };
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -77,95 +77,95 @@ class CfgRecoils {
   #define MUZZLERECOVERY -0.004
 
 // BASE RECOILS
-  agm_pistolBase[]                 = {0,0.8*KICKBACK,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
-  agm_subMachineGunBase[]          = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_assaultRifleBase[]           = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_machinegunBase[]             = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_launcherBase[]               = {0,0,0};
+  pistolBase[]                 = {0,0.8*KICKBACK,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
+  subMachineGunBase[]          = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  assaultRifleBase[]           = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  machinegunBase[]             = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  launcherBase[]               = {0,0,0};
 
 // PISTOLS
-  agm_recoil_pistol_light[]        = {0,0.8*KICKBACK,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_pistol_heavy[]        = {0,1.1*KICKBACK,1.4*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.4*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_prone_pistol_light[]  = {0,0.8*KICKBACKPRONE,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_prone_pistol_heavy[]  = {0,1.1*KICKBACKPRONE,1.4*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.4*MUZZLERECOVERY, 0.3,0,0};
+  recoil_pistol_light[]        = {0,0.8*KICKBACK,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
+  recoil_pistol_heavy[]        = {0,1.1*KICKBACK,1.4*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.4*MUZZLERECOVERY, 0.3,0,0};
+  recoil_prone_pistol_light[]  = {0,0.8*KICKBACKPRONE,0.9*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.9*MUZZLERECOVERY, 0.3,0,0};
+  recoil_prone_pistol_heavy[]  = {0,1.1*KICKBACKPRONE,1.4*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.4*MUZZLERECOVERY, 0.3,0,0};
 
 // SUBMACHINE GUNS
-  agm_recoil_single_smg_01[]       = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_smg_01[]        = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_smg_01[]         = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_smg_01[] = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_prone_smg_01[]  = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_smg_01[]   = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_smg_01[]       = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_smg_01[]        = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_smg_01[]         = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_smg_01[] = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_prone_smg_01[]  = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_smg_01[]   = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_smg_02[]       = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_smg_02[]        = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_smg_02[]         = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_smg_02[] = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_prone_smg_02[]  = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_smg_02[]   = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_smg_02[]       = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_smg_02[]        = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_smg_02[]         = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_smg_02[] = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_prone_smg_02[]  = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_smg_02[]   = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_pdw[]          = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_pdw[]           = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_pdw[]            = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_pdw[]    = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_burst_prone_pdw[]     = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_pdw[]      = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_pdw[]          = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_pdw[]           = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_pdw[]            = {0,0.5*KICKBACK,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_pdw[]    = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_burst_prone_pdw[]     = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_pdw[]      = {0,0.5*KICKBACKPRONE,0.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.5*MUZZLERECOVERY, 0.3,0,0};
 
 // ASSAULT RIFLES
-  agm_recoil_single_mx[]           = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_mx[]             = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_mx[]     = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_mx[]       = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_mx[]           = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_mx[]             = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_mx[]     = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_mx[]       = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_ktb[]          = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_ktb[]            = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_ktb[]    = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_ktb[]      = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_ktb[]          = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_ktb[]            = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_ktb[]    = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_ktb[]      = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_mk20[]         = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_mk20[]           = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_mk20[]   = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_mk20[]     = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_mk20[]         = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_mk20[]           = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_mk20[]   = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_mk20[]     = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_trg[]          = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_trg[]            = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_trg[]    = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_trg[]      = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_trg[]          = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_trg[]            = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_trg[]    = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_trg[]      = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_sdar[]         = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_sdar[]           = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_sdar[]   = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_sdar[]     = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_sdar[]         = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_sdar[]           = {0,0.8*KICKBACK,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_sdar[]   = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_sdar[]     = {0,0.8*KICKBACKPRONE,0.8*MUZZLECLIMB, 0.12,0,0, 0.15,0,0.8*MUZZLERECOVERY, 0.3,0,0};
 
 // MACHINE GUNS
-  agm_recoil_single_mk200[]        = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_mk200[]          = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_mk200[]  = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_mk200[]    = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_mk200[]        = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_mk200[]          = {0,1*KICKBACK,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_mk200[]  = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_mk200[]    = {0,1*KICKBACKPRONE,1*MUZZLECLIMB, 0.12,0,0, 0.15,0,1*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_zafir[]        = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_zafir[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_zafir[]  = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_zafir[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_zafir[]        = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_zafir[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_zafir[]  = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_zafir[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
 
 // PRECISION RIFLES
-  agm_recoil_single_dmr[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_dmr[]            = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_dmr[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_dmr[]      = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_dmr[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_dmr[]            = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_dmr[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_dmr[]      = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_ebr[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_ebr[]            = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_ebr[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_auto_prone_ebr[]      = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_ebr[]          = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_ebr[]            = {0,1.5*KICKBACK,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_ebr[]    = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_auto_prone_ebr[]      = {0,1.5*KICKBACKPRONE,1.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,1.5*MUZZLERECOVERY, 0.3,0,0};
 
-  agm_recoil_single_gm6[]          = {0,2.5*KICKBACK,2.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,2.5*MUZZLERECOVERY, 0.3,0,0};
-  agm_recoil_single_prone_gm6[]    = {0,2.5*KICKBACKPRONE,2.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,2.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_gm6[]          = {0,2.5*KICKBACK,2.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,2.5*MUZZLERECOVERY, 0.3,0,0};
+  recoil_single_prone_gm6[]    = {0,2.5*KICKBACKPRONE,2.5*MUZZLECLIMB, 0.12,0,0, 0.15,0,2.5*MUZZLERECOVERY, 0.3,0,0};
 
 // LAUNCHERS
-  agm_recoil_single_law[]          = {0,0,0};
-  agm_recoil_single_nlaw[]         = {0,0,0};
-  agm_recoil_single_titan[]        = {0,0,0};
+  recoil_single_law[]          = {0,0,0};
+  recoil_single_nlaw[]         = {0,0,0};
+  recoil_single_titan[]        = {0,0,0};
 };
 
 class CfgCameraShake {

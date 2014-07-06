@@ -10,6 +10,7 @@
       <Czech>Zvolit Sekundární zbraň</Czech>
       <Russian>Выбрать пистолет</Russian>
       <French>Sélectionner Pistolet</French>
+      <Hungarian>Pisztoly kiválsztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifle">
       <English>Select Rifle</English>
@@ -19,6 +20,7 @@
       <Czech>Zvolit Primární zbraň</Czech>
       <Russian>Выбрать автомат</Russian>
       <French>Sélectionner Fusil</French>
+      <Hungarian>Puska kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectLauncher">
       <English>Select Launcher</English>
@@ -28,6 +30,7 @@
       <Czech>Zvolit Raketomet</Czech>
       <Russian>Выбрать гранатомет</Russian>
       <French>Sélectionner Lanceur</French>
+      <Hungarian>Rakétavető kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifleMuzzle">
       <English>Select Grenade Launcher</English>
@@ -37,6 +40,7 @@
       <Czech>Zvolit Granátomet</Czech>
       <Russian>Выбрать подствольный гранатомет</Russian>
       <French>Sélectionner Lance-grenade</French>
+      <Hungarian>Gránátvető kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
       <English>Select Binoculars</English>
@@ -46,6 +50,7 @@
       <Czech>Zvolit Dalekohled</Czech>
       <Russian>Выбрать бинокль</Russian>
       <French>Sélectionner Jumelles</French>
+      <Hungarian>Távcső kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_HolsterWeapon">
       <English>Holster Weapon</English>
@@ -55,39 +60,62 @@
       <Czech>Schovat zbraň</Czech>
       <Russian>Убрать оружие</Russian>
       <French>Arme dans le dos</French>
+      <Hungarian>Fegyvert tokba</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_EngineOn">
       <English>Engine on</English>
       <German>Motor an</German>
+      <Spanish>Prender Motor</Spanish>
       <Polish>Włącz silnik</Polish>
+      <French>Moteur Allumer</French>
+      <Hungarian>Motor indít</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
       <English>Engine off</English>
       <German>Motor aus</German>
+      <Spanish>Apagar motor</Spanish>
       <Polish>Wyłącz silnik</Polish>
+      <French>Moteur éteint</French>
+      <Hungarian>Motor leállít</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
       <English>Select main gun</English>
       <German>Hauptgeschütz auswählen</German>
+      <Spanish>Seleccionar arma principal</Spanish>
       <Polish>Wybierz główne działo</Polish>
+      <French>Sélectionnez l'arme principale</French>
+      <Hungarian>Főfegyver kiválasztása</Hungarian>
+      <Czech>Zvolit hlavní zbraň</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
       <English>Select machine gun</English>
       <German>Maschinengewehr auswählen</German>
+      <Spanish>Seleccionar ametralladora</Spanish>
       <Polish>Wybierz karabin maszynowy</Polish>
+      <French>Sélectionnez mitrailleuse</French>
+      <Hungarian>Géppuska kiválasztása</Hungarian>
+      <Czech>Zvolit kulomet</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
       <English>Select missiles</English>
       <German>Raketen auswählen</German>
+      <Spanish>Seleccionar misiles</Spanish>
       <Polish>Wybierz rakiety</Polish>
+      <French>Sélectionnez missiles</French>
+      <Hungarian>Rakéta kiválasztása</Hungarian>
+      <Czech>Zvolit rakety</Czech>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
-        <English>Enable quick select</English>
-        <German>Schnellauswahl einschalten</German>
-        <Polish>Włącz szybki wybór</Polish>
+      <English>Enable quick select</English>
+      <German>Schnellauswahl einschalten</German>
+      <Spanish>Activar selección rápida</Spanish>
+      <Polish>Włącz szybki wybór</Polish>
+      <French>Activer la sélection rapide</French>
+      <Hungarian>Gyorsváltás bekapcsolása</Hungarian>
+      <Czech>Povolit rychlou volbu zbraní</Czech>
     </Key>
 
 

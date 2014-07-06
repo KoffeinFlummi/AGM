@@ -17,7 +17,7 @@ _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
 _turrets = [];
 _fnc_addTurret = {
-	private ["_config", "_path", "_count", "_index"];
+	private ["_config", "_path", "_count", "_index", "_path2"];
 
 	_config = _this select 0;
 	_path = _this select 1;
@@ -26,8 +26,9 @@ _fnc_addTurret = {
 	_count = count _config;
 
 	for "_index" from 0 to (_count - 1) do {
-		_turrets set [count _turrets, _path + [_index]];
-		[_config select _index, _path + [_index]] call _fnc_addTurret;
+		_path2 = _path + [_index];
+		_turrets set [count _turrets, _path2];
+		[_config select _index, _path2] call _fnc_addTurret;
 	};
 };
 

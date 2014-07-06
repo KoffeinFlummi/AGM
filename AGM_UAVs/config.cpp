@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {A3_Air_F_Gamma_UAV_01, AGM_Core, AGM_Interaction};
-    version = "0.91";
-    versionStr = "0.91";
-    versionAr[] = {0,91,0};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
     author[] = {"marc_book", "KoffeinFlummi"};
     authorUrl = "https://github.com/MarcBook/";
   };
@@ -23,41 +23,26 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class UAV_01_base_F;
+  class Helicopter_Base_F;
+  class UAV_01_base_F: Helicopter_Base_F {
+    class AGM_Actions {
+      class AGM_Refuel {
+        displayName = "$STR_AGM_UAVs_Recharge";
+        distance = 4;
+        condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}";
+        statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
+        showDisabled = 1;
+        priority = -2.5;
+      };
+    };
+  };
 
-  class B_UAV_01_F: UAV_01_base_F {
-    class AGM_Actions {
-      class AGM_Refuel {
-        displayName = "$STR_AGM_UAVs_Recharge";
-        distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
-        showDisabled = 1;
-        priority = -2.5;
-      };
-    };
-  };
-  class O_UAV_01_F: UAV_01_base_F {
-    class AGM_Actions {
-      class AGM_Refuel {
-        displayName = "$STR_AGM_UAVs_Recharge";
-        distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
-        showDisabled = 1;
-        priority = -2.5;
-      };
-    };
-  };
-  class I_UAV_01_F: UAV_01_base_F {
-    class AGM_Actions {
-      class AGM_Refuel {
-        displayName = "$STR_AGM_UAVs_Recharge";
-        distance = 4;
-        condition = "true";
-        statement = "[AGM_Interaction_Target, player] call AGM_UAVs_fnc_refuel;";
-        showDisabled = 1;
-        priority = -2.5;
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      class _xx_AGM_UAVBattery {
+        count = 24;
+        name = "AGM_UAVBattery";
       };
     };
   };
@@ -76,7 +61,7 @@ class CfgWeapons{
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 20;
-      type = 201;
+      type = 401;
     };
   };
 };
