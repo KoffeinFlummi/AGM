@@ -1,5 +1,5 @@
 class CfgPatches {
-  class BWA3_Misc {
+  class AGM_Misc {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;

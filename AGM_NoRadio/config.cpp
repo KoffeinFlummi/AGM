@@ -12,6 +12,13 @@ class CfgPatches {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_NoRadio {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
+  };
+};
+
+/*
 class CfgVoice {
   class Base;
   class ENG: Base {
@@ -27,3 +34,4 @@ class CfgVoice {
     protocol = "";
   };
 };
+*/
