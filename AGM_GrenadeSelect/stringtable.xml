@@ -3,12 +3,12 @@
   <Package name="GrenadeSelect">
 
     <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeFrag">
-      <English>Select Fragmentary Grenade</English>
+      <English>Select Frag Grenade</English>
       <German>Explosive Granate auswählen</German>
       <Spanish>Seleccionar Granada Fragmentaria</Spanish>
     </Key>
     <Key ID="STR_AGM_GrenadeSelect_SelectGrenadeOther">
-      <English>Select Non-Fragmentary Grenade</English>
+      <English>Select Non-Frag Grenade</English>
       <German>Nichtexplosive Granate auswählen</German>
       <Spanish>Seleccionar Granada No Fragmentaria</Spanish>
     </Key>
