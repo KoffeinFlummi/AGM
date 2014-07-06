@@ -2,7 +2,7 @@
 // (C) 2013 KoffeinFlummi. See LICENSE.
 
 "AGM_Core_remoteFnc" addPublicVariableEventHandler {
-	(_this select 1) call AGM_Core_fnc_execRemoteFnc;
+  (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
 if (!hasInterface) exitWith {};
@@ -20,22 +20,23 @@ AGM_Core_toggleState = compile preprocessFileLineNumbers "\AGM_core\scripts\togg
 AGM_Core_keyStates = [];
 AGM_Core_keyTimes = [];
 for "_index" from 0 to 300 do {
-	AGM_Core_keyStates set [_index, 0];
-	AGM_Core_keyTimes set [_index, -1];
+  AGM_Core_keyStates set [_index, 0];
+  AGM_Core_keyTimes set [_index, -1];
 };
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
 
 0 spawn {
-	while {true} do {
-		waitUntil {!isNull (findDisplay 46)}; sleep 1;
-		(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-		(findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-		waitUntil {isNull (findDisplay 46)};
-	};
+  while {true} do {
+    waitUntil {!isNull (findDisplay 46)}; sleep 1;
+    (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+    (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+    [false] call AGM_Core_fnc_disableUserInput;
+    waitUntil {isNull (findDisplay 46)};
+  };
 };
 
 0 spawn {
-	sleep 1;
-	player setVariable ["AGM_Name",[name player, true] call AGM_Core_fnc_sanitizeString, true];
+  sleep 1;
+  player setVariable ["AGM_Name",[name player, true] call AGM_Core_fnc_sanitizeString, true];
 };
