@@ -8,7 +8,7 @@ addMissionEventHandler ["Draw3D", {
 	if (!isNil "_target" && {profileNamespace getVariable ["AGM_showPlayerNames", true]} && {side _target == side player}) then {
 		_name = _target getVariable ["AGM_Name", ""];
 
-		_height = [1.25, 0.75, 0.25, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
+		_height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
 
 		_position = visiblePosition _target;
 		_position = _position vectorAdd [0, 0, _height];
