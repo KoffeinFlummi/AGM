@@ -12,6 +12,9 @@
 				<Spanish>
 					Arrastrar
 				</Spanish>
+				<Polish>
+					Ciągnij	
+				</Polish>
 			</Key>
 			<Key ID="STR_AGM_Drag_EndDrag">
 				<Original>
@@ -23,6 +26,9 @@
 				<Spanish>
 					Soltar
 				</Spanish>
+				<Polish>
+					Puść
+				</Polish>
 			</Key>
 			<Key ID="STR_AGM_Drag_UnableToDrag">
 				<Original>
@@ -34,6 +40,9 @@
 				<Spanish>
 					No se puede arrastrar el objeto debido a su peso
 				</Spanish>
+				<Polish>
+					Nie można ciągnąć tego przedmiotu z powodu jego wagi
+				</Polish>
 			</Key>
 		</Container>
 	</Package>
