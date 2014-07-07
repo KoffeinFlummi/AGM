@@ -197,20 +197,26 @@ class SniperCloud {
 };
 
 class AGM_Core_Default_Keys {
-	class wipeGlasses {
-		displayName = $STR_AGM_Goggles_WipeGlasses;
-		condition = "!(player getVariable['AGM_Unconscious', false])";
-		statement = "call AGM_Goggles_fnc_ClearGlasses;";
-		key = 20; // T
-		shift = 1;
-		control = 1;
-		alt = 0;
+	class AGM_Goggles {
+		displayName = "AGM Goggles";
+		class wipeGlasses {
+			displayName = $STR_AGM_Goggles_WipeGlasses;
+			condition = "!(player getVariable['AGM_Unconscious', false])";
+			statement = "call AGM_Goggles_fnc_ClearGlasses;";
+			key = 20; // T
+			shift = 1;
+			control = 1;
+			alt = 0;
+		};
 	};
 };
 
 class AGM_Core_Options {
-	class showInThirdPerson {
-		displayName = $STR_AGM_Goggles_ShowInThirdPerson;
-		default = 0;
+	class AGM_Goggles {
+		displayName = "AGM Goggles";
+		class showInThirdPerson {
+			displayName = $STR_AGM_Goggles_ShowInThirdPerson;
+			default = 0;
+		};
 	};
 };

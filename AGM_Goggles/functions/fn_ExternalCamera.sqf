@@ -15,5 +15,5 @@
 	Example:
 	call AGM_Goggles_fnc_ExternalCamera;
 */
-if (profileNamespace getVariable ["AGM_showInThirdPerson", false]) exitWith { false };
+if (["AGM_Goggles", "showInThirdPerson"] call AGM_Core_fnc_getOption) exitWith { false };
 (cameraView == "External")
