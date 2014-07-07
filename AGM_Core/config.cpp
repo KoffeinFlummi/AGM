@@ -22,6 +22,7 @@ class CfgFunctions {
     };*/
     class AGM_Core {//_functions {
       file = "AGM_Core\functions";
+      class adminKick;
       class binarizeNumber;
       class codeToString;
       class convertKeyCode;
@@ -109,19 +110,19 @@ class CfgVehicles {
         displayName = "Action";
         description = "What to do with people who do not have the right PBOs?";
         class values {
-          class Warn {
+          class WarnOnce {
             default = 1;
-            name = "Warn";
+            name = "Warn once";
             value = 1;
           };
-          class Freeze {
-            name = "Freeze";
+          class Warn {
+            name = "Warn (permanent)";
             value = 2;
           };
-          /*class Kick {
+          class Kick {
             name = "Kick";
             value = 3;
-          };*/
+          };
         };
       };
     };
