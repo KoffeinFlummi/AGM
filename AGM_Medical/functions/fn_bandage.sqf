@@ -31,14 +31,9 @@ _this spawn {
     _healtime = BANDAGETIMENONMEDIC;
   };
 
-  player setVariable ["AGM_CanTreat", false, false];
-  _healtime spawn {
-    sleep _this;
-    player setVariable ["AGM_CanTreat", true, false];
-  };
-
   // animation
   player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+  player setVariable ["AGM_CanTreat", false, false];
 
   AGM_Medical_bandageCallback = {
     _unit = _this select 0;
@@ -77,10 +72,13 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
+
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_bandageAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;

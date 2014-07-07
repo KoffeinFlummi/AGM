@@ -28,13 +28,8 @@ _this spawn {
     _epinephrinetime = EPINEPHRINETIMENONMEDIC;
   };
 
-  player setVariable ["AGM_CanTreat", false, false];
-  _epinephrinetime spawn {
-    sleep _this;
-    player setVariable ["AGM_CanTreat", true, false];
-  };
-
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+  player setVariable ["AGM_CanTreat", false, false];
 
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
@@ -48,10 +43,13 @@ _this spawn {
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       "AGM_Medical" call AGM_Interaction_fnc_openMenu;
     };
+
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_epinephrineAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   [_epinephrinetime, _this, "AGM_Medical_epinephrineCallback", localize "STR_AGM_Medical_Injecting_Epinephrine", "AGM_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;

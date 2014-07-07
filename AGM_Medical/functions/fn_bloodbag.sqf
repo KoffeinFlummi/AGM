@@ -29,13 +29,8 @@ _this spawn {
     _bloodbagtime = BLOODBAGTIMENONMEDIC;
   };
 
-  player setVariable ["AGM_CanTreat", false, false];
-  _bloodbagtime spawn {
-    sleep _this;
-    player setVariable ["AGM_CanTreat", true, false];
-  };
-
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+  player setVariable ["AGM_CanTreat", false, false];
 
   AGM_Medical_bloodbagCallback = {
     _unit = _this select 0;
@@ -54,10 +49,13 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
+
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_bloodbagAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   [_bloodbagtime, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;

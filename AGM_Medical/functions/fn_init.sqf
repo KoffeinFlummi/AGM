@@ -95,3 +95,14 @@ _this spawn {
     };
   };
 };
+
+// Bloodloss effect
+/*
+_this spawn {
+  AGM_Bloodloss_CC = ppEffectCreate ["ColorCorrections", 4210];
+  AGM_Bloodloss_CC ppEffectEnable true;
+  AGM_Bloodloss_CC ppEffectForceInNVG true;
+  AGM_Bloodloss_CC ppEffectAdjust [1,1,0,[0,0,0,0],[1,1,1,1],[0,0,0,0]];
+  AGM_Bloodloss_CC ppEffectCommit 0.01;
+};
+*/
