@@ -111,7 +111,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Repair_HitLTrack";
         distance = 4;
         condition = "(AGM_Interaction_Target getHitPointDamage 'HitLTrack' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitLTrack', 'track_l_hit', player] call AGM_Repair_fnc_repairWheel;";
+        statement = "[AGM_Interaction_Target, 'HitLTrack', 'track_l_hit', player] call AGM_Repair_fnc_repairTrack;";
         showDisabled = 1;
         priority = 0.1;
       };
@@ -120,7 +120,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Repair_HitRTrack";
         distance = 4;
         condition = "(AGM_Interaction_Target getHitPointDamage 'HitRTrack' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitRTrack', 'track_r_hit'] call AGM_Repair_fnc_repairWheel;";
+        statement = "[AGM_Interaction_Target, 'HitRTrack', 'track_r_hit'] call AGM_Repair_fnc_repairTrack;";
         showDisabled = 1;
         priority = 0.2;
       };
