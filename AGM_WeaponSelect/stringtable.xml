@@ -7,7 +7,7 @@
       <German>Pistole auswählen</German>
       <Spanish>Seleccionar Pistola</Spanish>
       <Polish>Wybierz Pistolet</Polish>
-      <Czech>Zvolit Sekundární zbraň</Czech>
+      <Czech>Zvolit příruční zbraň</Czech>
       <Russian>Выбрать пистолет</Russian>
       <French>Sélectionner Pistolet</French>
       <Hungarian>Pisztoly kiválsztása</Hungarian>
@@ -17,7 +17,7 @@
       <German>Gewehr auswählen</German>
       <Spanish>Seleccionar Rifle</Spanish>
       <Polish>Wybierz Karabin</Polish>
-      <Czech>Zvolit Primární zbraň</Czech>
+      <Czech>Zvolit hlavní zbraň</Czech>
       <Russian>Выбрать автомат</Russian>
       <French>Sélectionner Fusil</French>
       <Hungarian>Puska kiválasztása</Hungarian>
@@ -70,6 +70,7 @@
       <Polish>Włącz silnik</Polish>
       <French>Moteur Allumer</French>
       <Hungarian>Motor indít</Hungarian>
+      <Czech>Zapnout motor</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
       <English>Engine off</English>
@@ -78,6 +79,7 @@
       <Polish>Wyłącz silnik</Polish>
       <French>Moteur éteint</French>
       <Hungarian>Motor leállít</Hungarian>
+      <Czech>Vypnout motor</Czech>
     </Key>
 
     <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
