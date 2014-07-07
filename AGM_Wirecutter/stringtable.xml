@@ -6,22 +6,27 @@
       <English>Cut Fence</English>
       <German>Zaun schneiden</German>
       <Spanish>Cortar alambrado</Spanish>
+      <Polish>Przetnij Płot</Polish>
     </Key>
     <Key ID="STR_AGM_CuttingFence">
       <English>Cutting fences / Wires...</English>
       <German>Zaun / Draht schneiden...</German>
       <Spanish>Cortando alambrado...</Spanish>
+      <Polish>Przecinanie Płotu / Drutów...</Polish>
+      <Polish></Polish>
     </Key>
     <Key ID="STR_AGM_CuttingFenceChat">
       <English>Cutting fences!</English>
       <German>Schneide Zaun!</German>
       <Spanish>Cortando alambrado!</Spanish>
+      <Polish>Przecinanie płotu!</Polish>
     </Key>
 
     <Key ID="STR_AGM_FenceCut">
       <English>Fence cut</English>
       <German>Zaun geschnitten</German>
       <Spanish>Alambrado cortando</Spanish>
+      <Polish>Płot przecięty</Polish>
     </Key>
 
   </Package>

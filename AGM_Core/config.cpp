@@ -57,6 +57,7 @@ class CfgFunctions {
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
+      class setName;
       class stringToColoredText;
       class subString;
       class toBin;
@@ -75,6 +76,14 @@ class CfgSounds {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_SetName {
+      Init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+    };
   };
 };
 
@@ -100,19 +109,19 @@ class CfgVehicles {
         displayName = "Action";
         description = "What to do with people who do not have the right PBOs?";
         class values {
-          class WarnOnce {
+          class Warn {
             default = 1;
-            name = "Warn Once";
+            name = "Warn";
             value = 1;
           };
-          class WarnRepeatedly {
-            name = "Warn Repeatedly (Annoying)";
+          class Freeze {
+            name = "Freeze";
             value = 2;
           };
-          class Kick {
+          /*class Kick {
             name = "Kick";
             value = 3;
-          };
+          };*/
         };
       };
     };
