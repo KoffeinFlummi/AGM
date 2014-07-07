@@ -125,6 +125,6 @@ class CfgAmmo {
 	/* Other */
 
 	class B_9x21_Ball;
-	class B_9x19_Ball;
+	//class B_9x19_Ball;
 	class B_45ACP_Ball;
 };
