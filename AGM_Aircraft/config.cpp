@@ -3,22 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      A3_Air_F,
-      A3_Air_F_Heli_Light_01,
-      A3_Air_F_Heli_Light_02,
-      A3_Air_F_Beta,
-      A3_Air_F_Beta_Heli_attack_01,
-      A3_Air_F_Beta_Heli_Attack_02,
-      A3_Air_F_Beta_Heli_Transport_01,
-      A3_Air_F_Beta_Heli_Transport_02,
-      A3_Air_F_Gamma_Plane_Fighter_03,
-      A3_Air_F_EPC_Plane_CAS_01,
-      A3_Air_F_EPC_Plane_CAS_02,
-      A3_Air_F_EPC_Plane_Fighter_03,
-      A3_Weapons_F_NATO
-    };
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};

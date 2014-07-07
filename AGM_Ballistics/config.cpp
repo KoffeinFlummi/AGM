@@ -6,165 +6,79 @@ class CfgPatches {
 		weapons[] = {};
 		requiredVersion = 0.60;
 		requiredAddons[] = {
-      AGM_Core,
-      A3_Weapons_F,
-      A3_Weapons_F_Items,
-      A3_Weapons_F_beta,
-      A3_Weapons_F_Acc,
-      A3_Weapons_F_Beta_Acc,
-      A3_Characters_F
+      "a3_weapons_f_gamma_items",
+      "a3_weapons_f_acc",
+      "a3_weapons_f_ammoboxes",
+      "a3_weapons_f",
+      "a3_weapons_f_dummyweapons",
+      "a3_weapons_f_explosives",
+      "a3_weapons_f_items",
+      "a3_weapons_f_launchers_nlaw",
+      "a3_weapons_f_launchers_law",
+      "a3_weapons_f_ebr",
+      "a3_weapons_f_longrangerifles_gm6",
+      "a3_weapons_f_longrangerifles_m320",
+      "a3_weapons_f_machineguns_m200",
+      "a3_weapons_f_pistols_p07",
+      "a3_weapons_f_pistols_rook40",
+      "a3_weapons_f_rifles_khaybar",
+      "a3_weapons_f_rifles_mx",
+      "a3_weapons_f_rifles_sdar",
+      "a3_weapons_f_rifles_trg20",
+      "a3_weapons_f_beta_acc",
+      "a3_weapons_f_beta_ammoboxes",
+      "a3_weapons_f_beta",
+      "a3_weapons_f_launchers_titan",
+      "a3_weapons_f_beta_ebr",
+      "a3_weapons_f_machineguns_zafir",
+      "a3_weapons_f_pistols_acpc2",
+      "a3_weapons_f_beta_rifles_khaybar",
+      "a3_weapons_f_rifles_mk20",
+      "a3_weapons_f_beta_rifles_mx",
+      "a3_weapons_f_beta_rifles_trg20",
+      "a3_weapons_f_rifles_vector",
+      "a3_weapons_f_rifles_smg_02",
+      "a3_weapons_f_gamma_acc",
+      "a3_weapons_f_gamma_ammoboxes",
+      "a3_weapons_f_gamma",
+      "a3_weapons_f_pistols_pdw2000",
+      "a3_weapons_f_nato",
+      "a3_weapons_f_csat",
+      "a3_weapons_f_aaf",
+      "a3_weapons_f_fia",
+      "a3_weapons_f_itemholders",
+      "a3_weapons_f_headgear",
+      "a3_weapons_f_uniforms",
+      "a3_weapons_f_vests",
+      "a3_weapons_f_epa",
+      "a3_weapons_f_epa_acc",
+      "a3_weapons_f_epa_ammoboxes",
+      "a3_weapons_f_epa_longrangerifles_dmr_01",
+      "a3_weapons_f_epa_ebr",
+      "a3_weapons_f_epa_longrangerifles_gm6",
+      "a3_weapons_f_pistols_pistol_heavy_01",
+      "a3_weapons_f_pistols_pistol_heavy_02",
+      "a3_weapons_f_epa_rifles_mx",
+      "a3_weapons_f_epb",
+      "a3_weapons_f_epb_acc",
+      "a3_weapons_f_epb_ammoboxes",
+      "a3_weapons_f_epb_longrangerifles_gm3",
+      "a3_weapons_f_epb_longrangerifles_m320",
+      "a3_weapons_f_epb_rifles_mx_black",
+      "a3_weapons_f_epc",
+      "a3_weapons_f_bootcamp",
+      "a3_weapons_f_bootcamp_ammoboxes",
+      "a3_weapons_f_bootcamp_longrangerifles_gm6",
+      "a3_weapons_f_bootcamp_longrangerifles_m320",
+      "a3_weapons_f_kart",
+      "a3_weapons_f_kart_pistols_pistol_signal_f",
+      "AGM_Core"
     };
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
     author[] = {"TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
-  };
-};
-
-class CfgWeapons {
-  class ItemCore;
-  class VestItem;
-
-  // basically we are reducing the amount of shots a vest can take from something like 5 to 2.
-  class Vest_Camo_Base: ItemCore {
-    class ItemInfo;
-  };
-  class Vest_NoCamo_Base: ItemCore {
-    class ItemInfo;
-  };
-
-  // plate carriers
-  class V_PlateCarrier1_blk: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier1_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier2_rgr: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierL_CTRG: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier3_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrier_Kerry: V_PlateCarrier1_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierGL_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 24;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierH_CTRG: V_PlateCarrier2_rgr {
-    class ItemInfo: ItemInfo {
-      armor = 12;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierIA1_dgtl: Vest_NoCamo_Base {
-    class ItemInfo: VestItem {
-      armor = 8;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierIA2_dgtl: V_PlateCarrierIA1_dgtl {
-    class ItemInfo: VestItem {
-      armor = 12;
-      passThrough = 0.6;
-    };
-  };
-  class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl {
-    class ItemInfo: VestItem {
-      armor = 20;
-      passThrough = 0.75;
-    };
-  };
-  class V_PlateCarrierSpec_rgr: Vest_NoCamo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 16;
-      passThrough = 0.45;
-    };
-  };
-
-  // rebreathers (WHY ARE THESE ARMOURED ANYWAYS?!)
-  class V_RebreatherB: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-  class V_RebreatherIA: V_RebreatherB {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-  class V_RebreatherIR: V_RebreatherB {
-    class ItemInfo: ItemInfo {
-      armor = 0;
-    };
-  };
-
-  // tac vests
-  class V_TacVest_camo: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_khk: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_brn: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_oli: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_blk: V_TacVest_khk {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_blk_POLICE: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVest_RU: Vest_Camo_Base {
-    class ItemInfo: ItemInfo {
-      armor = 8;
-    };
-  };
-  class V_TacVestCamo_khk: Vest_Camo_Base {
-    class ItemInfo: VestItem {
-      armor = 8;
-    };
   };
 };
 
