@@ -289,6 +289,29 @@ class CfgWeapons {
     class far: close{};
   };
 
+  class HMG_127: LMG_RCWS {
+    class manual: MGun {};
+  };
+
+  class HMG_01: HMG_127 {
+    reloadTime = 0.23;
+    class manual: manual {
+      reloadTime = 0.23;
+    };
+    class close: manual {
+      reloadTime = 0.23;
+    };
+    class short: close {
+      reloadTime = 0.23;
+    };
+    class medium: close {
+      reloadTime = 0.23;
+    };
+    class far: close {
+      reloadTime = 0.23;
+    };
+  };
+
   class autocannon_30mm_CTWS: autocannon_Base_F {
     class AP: autocannon_Base_F {
       magazines[] = {"60Rnd_30mm_APFSDS_shells","60Rnd_30mm_APFSDS_shells_Tracer_Red","60Rnd_30mm_APFSDS_shells_Tracer_Green","60Rnd_30mm_APFSDS_shells_Tracer_Yellow","140Rnd_30mm_MP_shells","140Rnd_30mm_MP_shells_Tracer_Red","140Rnd_30mm_MP_shells_Tracer_Green","140Rnd_30mm_MP_shells_Tracer_Yellow"};
