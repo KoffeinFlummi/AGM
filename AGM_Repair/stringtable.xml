@@ -9,21 +9,37 @@
       <English>Everything is OK!</English>
       <German>Alles OK!</German>
     </Key>
-	<Key ID="STR_AGM_Repair_LFWheel_check">
-      <English>LF Wheel is damaged</English>
-      <German>Reifen LV ist beschädigt</German>
+	<Key ID="STR_AGM_Repair_L1Wheel_check">
+      <English>L1 Wheel is damaged</English>
+      <German>Reifen L1 ist beschädigt</German>
     </Key>
-	<Key ID="STR_AGM_Repair_RFWheel_check">
-      <English>RF Wheel is damaged</English>
-      <German>Reifen RV ist beschädigt</German>
+	<Key ID="STR_AGM_Repair_R1Wheel_check">
+      <English>R1 Wheel is damaged</English>
+      <German>Reifen R1 ist beschädigt</German>
     </Key>
-	<Key ID="STR_AGM_Repair_LBWheel_check">
-      <English>LB Wheel is damaged</English>
-      <German>Reifen LH ist beschädigt</German>
+	<Key ID="STR_AGM_Repair_L2Wheel_check">
+      <English>L2 Wheel is damaged</English>
+      <German>Reifen L2 ist beschädigt</German>
     </Key>
-	<Key ID="STR_AGM_Repair_RBWheel_check">
-      <English>RB Wheel is damaged</English>
-      <German>Reifen RH ist beschädigt</German>
+	<Key ID="STR_AGM_Repair_R2Wheel_check">
+      <English>R2 Wheel is damaged</English>
+      <German>Reifen R2 ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_L3Wheel_check">
+      <English>L3 Wheel is damaged</English>
+      <German>Reifen L3 ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R3Wheel_check">
+      <English>R3 Wheel is damaged</English>
+      <German>Reifen R3 ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_L4Wheel_check">
+      <English>L4 Wheel is damaged</English>
+      <German>Reifen L4 ist beschädigt</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R4Wheel_check">
+      <English>R4 Wheel is damaged</English>
+      <German>Reifen R4 ist beschädigt</German>
     </Key>
 	<Key ID="STR_AGM_Repair_Engine_check">
       <English>Engine is damaged</English>
@@ -37,21 +53,49 @@
       <English>Karoserie is damaged</English>
       <German>Karoserie ist beschädigt</German>
     </Key>
-    <Key ID="STR_AGM_Repair_LFWheel">
-      <English>Repair LF Wheel</English>
-      <German>Reifen LV reparieren</German>
+	<Key ID="STR_AGM_Repair_LTrack_check">
+      <English>Left track is damaged</English>
+      <German>Linke Kette ist beschädigt</German>
     </Key>
-	<Key ID="STR_AGM_Repair_RFWheel">
-      <English>Repair RF Wheel</English>
-      <German>Reifen RV reparieren</German>
+	<Key ID="STR_AGM_Repair_RTrack_check">
+      <English>Right track is damaged</English>
+      <German>Rechte Kette ist beschädigt</German>
     </Key>
-	<Key ID="STR_AGM_Repair_LBWheel">
-      <English>Repair LB Wheel</English>
-      <German>Reifen LH reparieren</German>
+	<Key ID="STR_AGM_Repair_Wheels">
+      <English>Wheels >></English>
+      <German>Reifen >></German>
     </Key>
-	<Key ID="STR_AGM_Repair_RBWheel">
-      <English>Repair RB Wheel</English>
-      <German>Reifen RH reparieren</German>
+    <Key ID="STR_AGM_Repair_L1Wheel">
+      <English>Repair L1 Wheel</English>
+      <German>Reifen L1 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R1Wheel">
+      <English>Repair R1 Wheel</English>
+      <German>Reifen R1 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_L2Wheel">
+      <English>Repair L2 Wheel</English>
+      <German>Reifen L2 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R2Wheel">
+      <English>Repair R2 Wheel</English>
+      <German>Reifen R2 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_L3Wheel">
+      <English>Repair L3 Wheel</English>
+      <German>Reifen L3 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R3Wheel">
+      <English>Repair R3 Wheel</English>
+      <German>Reifen R3 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_L4Wheel">
+      <English>Repair L4 Wheel</English>
+      <German>Reifen L4 reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_R4Wheel">
+      <English>Repair R4 Wheel</English>
+      <German>Reifen R4 reparieren</German>
     </Key>
 	<Key ID="STR_AGM_Repair_Engine">
       <English>Repair Engine</English>
@@ -64,6 +108,14 @@
 	<Key ID="STR_AGM_Repair_Body">
       <English>Repair Karoserie</English>
       <German>Karoserie reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_HitLTrack">
+      <English>Repair left track</English>
+      <German>Linke Kette reparieren</German>
+    </Key>
+	<Key ID="STR_AGM_Repair_HitRTrack">
+      <English>Repair right track</English>
+      <German>Rechte Kette reparieren</German>
     </Key>
 	<Key ID="STR_AGM_Repair_Repairing">
       <English>Repairing...</English>
@@ -83,6 +135,5 @@
 	  <Russian>Отпустить</Russian>
 	  <Spanish>Soltar</Spanish>
 	</Key>
-    
   </Package>
 </Project>
