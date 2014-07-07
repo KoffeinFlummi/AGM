@@ -15,6 +15,9 @@
 				<Polish>
 					Ciągnij	
 				</Polish>
+				<Czech>
+					Táhnout
+				</Czech>
 			</Key>
 			<Key ID="STR_AGM_Drag_EndDrag">
 				<Original>
@@ -29,6 +32,9 @@
 				<Polish>
 					Puść
 				</Polish>
+				<Czech>
+					Pustit
+				</Czech>
 			</Key>
 			<Key ID="STR_AGM_Drag_UnableToDrag">
 				<Original>
@@ -43,6 +49,9 @@
 				<Polish>
 					Nie można ciągnąć tego przedmiotu z powodu jego wagi
 				</Polish>
+				<Czech>
+					Nelze táhnout z důvodu přílišné váhy
+				</Czech>
 			</Key>
 		</Container>
 	</Package>
