@@ -28,10 +28,6 @@ _this spawn {
   };
 
   player setVariable ["AGM_CanTreat", false, false];
-  _morphinetime spawn {
-    sleep _this;
-    player setVariable ["AGM_CanTreat", true, false];
-  };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
@@ -97,10 +93,13 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
+
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_morphineAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;

@@ -116,20 +116,19 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       }
     };
+
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_diagnoseAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   if (_unit != player) then {
     player playMoveNow DIAGNOSEMOVE;
 
     player setVariable ["AGM_CanTreat", false, false];
-    DIAGNOSETIME spawn {
-      sleep _this;
-      player setVariable ["AGM_CanTreat", true, false];
-    };
 
     [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
   } else {
