@@ -1,8 +1,5 @@
 // by commy2
-
-_config = configFile >> "AGM_Core_Default_Keys";
-_count = count _config;
-
+private ["_header", "_handleDoubleTap", "_handleHold", "_handleHoldUp", "_debug", "_onKeyDown", "_onKeyUp", "_keys", "_config"];
 _header = "_keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call AGM_Core_fnc_convertKeyCode; _keyIndex = floor _keyCode; if (_keyIndex == 0) exitWith {false}; _time = time; _vehicle = vehicle player; _isInput = false;";
 
 _handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_keyIndex == _keyCode}) then {_keyCode = _keyIndex + 0.8};";
@@ -14,16 +11,21 @@ _debug = "if (!isNil 'AGM_Debug') then {systemChat (str _keyCode + ' ' + str (AG
 _onKeyDown = "" + _debug;
 _onKeyUp = "" + _debug;
 
-for "_index" from 0 to (_count - 1) do {
-	_configFile = _config select _index;
-
-	_keyName = configName _configFile;
+_keys = call AGM_Core_fnc_getAllKeys;
+_config = ConfigFile >> "AGM_Core_Default_Keys";
+{
+	private ["_configFile", "_condition", "_statement", "_entry", "_keyName"];
+	
+	_keyName = (_x select 1);
+	_addonConfig = (_x select 2);
+	_configFile = _config >> _addonConfig >> _keyName;
+	
 	_condition = getText (_configFile >> "condition");
 	if (_condition == "") then {_condition = "true";};
 	_statement = getText (_configFile >> "statement");
 
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2}) then {%3; _isInput = true;};", _keyName, _condition, _statement];
+		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1_%2' && {%3}) then {%4; _isInput = true;};", _addonConfig, _keyName, _condition, _statement];
 		_onKeyDown = _onKeyDown + _entry;
 	};
 
@@ -32,10 +34,10 @@ for "_index" from 0 to (_count - 1) do {
 	_statement = getText (_configFile >> "statementUp");
 
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2}) then {%3; _isInput = true;};", _keyName, _condition, _statement];
+		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1_%2' && {%3}) then {%4; _isInput = true;};", _addonConfig, _keyName, _condition, _statement];
 		_onKeyUp = _onKeyUp + _entry;
 	};
-};
+} count _keys;
 
 _halt = "AGM_Core_keyStates set [_keyIndex, (AGM_Core_keyStates select _keyIndex) + 1]; AGM_Core_keyTimes set [_keyIndex, _time];";
 _haltUp = "AGM_Core_keyStates set [_keyIndex, 0];";

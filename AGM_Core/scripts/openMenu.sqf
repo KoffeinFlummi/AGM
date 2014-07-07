@@ -18,19 +18,21 @@ AGM_Core_OptionStatesNew = [];
 disableSerialization;
 _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
 
-_config = configFile >> "AGM_Core_Default_Keys";
-_count = count _config;
+
+_config = ConfigFile >> "AGM_Core_Default_Keys";
+_keys = call AGM_Core_fnc_getAllKeys;
+_count = count _keys;
 
 _countPages = ceil (_count / 20) + 1;
 (_dlgMenuDialog displayCtrl 14) ctrlSetText format ["%1/%2", AGM_Core_MenuPage + 1, _countPages];
 
 for "_index" from 0 to (_count - 1 min 19) do {
-	_configFile = _config select _index;
-	_keyName = configName _configFile;
+	_configFile = _config >> (_keys select 2) >> (_keys select 1);
+	_keyName = (_keys select 1);
 	_displayName = getText (_configFile >> "displayName");
 	_isDisabled = getNumber (_configFile >> "disabled") == 1;
 
-	_keyCode = profileNamespace getVariable format ["AGM_Key_%1", _keyName];
+	_keyCode = _keys select 0;
 	_description = [_keyCode] call AGM_Core_fnc_revertKeyCodeLocalized;
 
 	_control1 = _dlgMenuDialog displayCtrl (OFFSET_1 + _index);
@@ -42,7 +44,7 @@ for "_index" from 0 to (_count - 1 min 19) do {
 	_control1 ctrlShow true;
 	_control2 ctrlShow true;
 
-	AGM_Core_keyNames set [_index, _keyName];
+	AGM_Core_keyNames set [_index, format ["%1_%2", (_keys select 2),_keyName]];
 };
 
 for "_index" from _count to 19 do {
