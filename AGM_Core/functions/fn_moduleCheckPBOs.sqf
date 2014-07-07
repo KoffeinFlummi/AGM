@@ -18,7 +18,7 @@ if !(_activated) exitWith {};
 
 _mode = parseNumber (_logic getVariable "Action");
 
-if (isServer) then {
+if (!isServer) then {
 	_mode spawn {
 		_mode = _this;
 
