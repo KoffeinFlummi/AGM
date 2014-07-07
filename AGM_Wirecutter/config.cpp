@@ -3,7 +3,7 @@ class CfgPatches {
   units[] = {};
   weapons[] = {};
   requiredVersion = 0.60;
-  requiredAddons[] = {A3_Functions_F, Extended_Eventhandlers, AGM_Core, AGM_Interaction};
+  requiredAddons[] = {AGM_Core, AGM_Interaction};
   version = "0.9";
   versionStr = "0.9";
   versionAr[] = {0,9,0};

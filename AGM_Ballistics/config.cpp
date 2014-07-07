@@ -5,15 +5,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {
-      AGM_Core,
-      A3_Weapons_F,
-      A3_Weapons_F_Items,
-      A3_Weapons_F_beta,
-      A3_Weapons_F_Acc,
-      A3_Weapons_F_Beta_Acc,
-      A3_Characters_F
-    };
+		requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};

@@ -3,27 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      A3_Armor_F,
-      A3_Armor_F_AMV,
-      A3_Armor_F_APC_Wheeled_03,
-      A3_armor_f_beta,
-      A3_armor_f_beta_APC_Tracked_02,
-      A3_armor_F_EPB_APC_tracked_03,
-      A3_Armor_F_EPB_MBT_03,
-      A3_Armor_F_Marid,
-      A3_Armor_F_Panther,
-      A3_Armor_F_Slammer,
-      A3_Armor_F_T100K,
-      A3_Soft_F,
-      A3_Soft_F_MRAP_01,
-      A3_Soft_F_MRAP_02,
-      A3_Soft_F_MRAP_03,
-      A3_Soft_F_HEMTT,
-      A3_Soft_F_TruckHeavy,
-      A3_Soft_F_EPC_Truck_03
-    };
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};

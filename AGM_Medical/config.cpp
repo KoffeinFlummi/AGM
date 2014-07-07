@@ -6,20 +6,7 @@ class CfgPatches {
     };
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      AGM_Interaction,
-      Extended_EventHandlers,
-      A3_Data_F,
-      A3_Anims_F,
-      A3_Anims_F_Config_Sdr,
-      A3_Anims_F_EPA,
-      A3_Anims_F_EPC,
-      A3_CargoPoses_F,
-      A3_Characters_F,
-      A3_Weapons_F_Items,
-      A3_UI_F
-    };
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
