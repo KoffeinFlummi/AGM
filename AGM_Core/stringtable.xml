@@ -67,18 +67,21 @@
       <German>Umschalt rechts</German>
       <Spanish>Shift derecho</Spanish>
       <Polish>Prawy Shift</Polish>
+      <French>Shift Droite</French>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl_Right">
       <English>Ctrl right</English>
       <German>Strg rechts</German>
       <Spanish>Ctrl derecho</Spanish>
       <Polish>Prawy Ctrl</Polish>
+      <French>Ctrl Droite</French>
     </Key>
     <Key ID="STR_AGM_Core_Alt_Right">
       <English>Alt right</English>
       <German>Alt Gr</German>
       <Spanish>Alt derecho</Spanish>
       <Polish>Prawy Alt</Polish>
+      <French>Alt Droite</French>
     </Key>
 
     <Key ID="STR_AGM_Core_KeyDefault">
@@ -86,12 +89,14 @@
       <German>Standard</German>
       <Spanish>Por defecto</Spanish>
       <Polish>Domyślnie</Polish>
+      <French>Défaut</French>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
       <German>Keiner</German>
       <Spanish>Ninguna</Spanish>
       <Polish>Żaden</Polish>
+      <French>Aucun</French>
     </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
@@ -99,12 +104,14 @@
       <German>2x %1</German>
       <Spanish>2x %1</Spanish>
       <Polish>2x %1</Polish>
+      <French>2x %1</French>
     </Key>
     <Key ID="STR_AGM_Core_HoldKey">
       <English>Hold %1</English>
       <German>%1 halten</German>
       <Spanish>Mantener %1</Spanish>
       <Polish>Przytrzymać %1</Polish>
+      <French>Tenir %1</French>
     </Key>
 
 
@@ -326,6 +333,7 @@
       <Spanish>[AGM] Objetos varios</Spanish>
       <Czech>[AGM] Ostatní předměty</Czech>
       <Polish>[AGM] Różne Przedmioty</Polish>
+      <French>[AGM] Objets divers</French>
     </Key>
 
   </Package>
