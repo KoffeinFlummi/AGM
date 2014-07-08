@@ -206,6 +206,8 @@ class CfgFunctions {
       class getTargetDistance;
       class getTurretIndex;
       class getTurrets;
+      class getTurretCommander;
+      class getTurretGunner;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;

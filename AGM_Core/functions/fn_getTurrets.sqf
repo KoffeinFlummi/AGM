@@ -4,7 +4,7 @@
  * Get all turret indicies of a vehicle.
  * 
  * Argument:
- * 0: Vehicle (Object)
+ * 0: Vehicle type (String)
  * 
  * Return value:
  * All turret index arrays of the vehicle. E.g: [[0], [0,0]] (Array)
@@ -13,7 +13,7 @@
 private ["_vehicle", "_config", "_turrets", "_fnc_addTurret"];
 
 _vehicle = _this select 0;
-_config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+_config = configFile >> "CfgVehicles" >> _vehicle;
 
 _turrets = [];
 _fnc_addTurret = {
