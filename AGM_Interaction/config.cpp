@@ -19,6 +19,7 @@ class CfgFunctions {
       class addInteraction;
       class addInteractionSelf;
       class isInRange;
+      class module;
       class openDoor;
       class openMenu;
       class openMenuSelf;
@@ -240,6 +241,23 @@ class CfgVehicles {
         statement = "player action ['SwitchWeapon', vehicle player, vehicle player, 99];";
         showDisabled = 0;
         priority = -2;
+      };
+    };
+  };
+
+  class Module_F;
+  class AGM_ModuleInteraction: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Interaction";
+    function = "AGM_Interaction_fnc_module";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
+      class PlayerNamesViewDistance {
+        displayName = "Player Names View Dist.";
+        description = "Distance in meters at which player names are shown. Default: 5";
+        defaultValue = 5;
       };
     };
   };
