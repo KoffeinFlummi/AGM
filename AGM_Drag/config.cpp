@@ -107,4 +107,9 @@ class CfgVehicles {
 	class Box_IND_AmmoVeh_F:IND_Box_Base{
 		AGM_NoDragSupport
 	};
+
+	class Helicopter_Base_F;
+	class UAV_01_base_F: Helicopter_Base_F {
+		AGM_DragSupport
+	};
 };
