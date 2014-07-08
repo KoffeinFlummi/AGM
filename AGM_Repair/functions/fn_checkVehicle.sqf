@@ -19,7 +19,7 @@ if((_vehicle getHitPointDamage "HitLFWheel") > 0.1) then {
 };
 
  if ((_vehicle getHitPointDamage "HitRFWheel") > 0.1) then {
-	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_R1Wheel_check";
+ 	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_R1Wheel_check";
 	_height = _height + 0.5;
 };
 
@@ -63,6 +63,11 @@ if ((_vehicle getHitPointDamage "HitBody") > 0.1) then {
 	_height = _height + 0.5;
 };
 
+if ((_vehicle getHitPointDamage "HitHull") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_Body_check";
+	_height = _height + 0.5;
+};
+
 if ((_vehicle getHitPointDamage "HitLTrack") > 0.1) then {
 	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_LTrack_check";
 	_height = _height + 0.5;
@@ -70,6 +75,16 @@ if ((_vehicle getHitPointDamage "HitLTrack") > 0.1) then {
 
 if ((_vehicle getHitPointDamage "HitRTrack") > 0.1) then {
 	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_RTrack_check";
+	_height = _height + 0.5;
+};
+
+if ((_vehicle getHitPointDamage "HitTurret") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_Turret_check";
+	_height = _height + 0.5;
+};
+
+if ((_vehicle getHitPointDamage "HitGun") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_Gun_check";
 	_height = _height + 0.5;
 };
 
