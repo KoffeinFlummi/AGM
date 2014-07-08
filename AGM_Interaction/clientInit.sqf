@@ -5,7 +5,7 @@ AGM_Dancing = false;
 
 addMissionEventHandler ["Draw3D", {
 	_target = cursorTarget;
-	if (!isNil "_target" && {profileNamespace getVariable ["AGM_showPlayerNames", true]} && {side _target == side player}) then {
+	if (!isNil "_target" && {["AGM_Interaction", "showPlayerNames"] call AGM_Core_fnc_getOption} && {side _target == side player}) then {
 		_name = _target getVariable ["AGM_Name", ""];
 
 		_height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);

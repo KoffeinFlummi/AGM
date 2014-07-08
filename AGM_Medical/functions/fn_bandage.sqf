@@ -65,7 +65,7 @@ _this spawn {
       _unit setDamage 0;
     };
 
-    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
+    if (["AGM_Medical", "keepMedicalMenuOpen"] call AGM_Core_fnc_getOption) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
       } else {

@@ -39,22 +39,25 @@ class Extended_Fired_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class increaseNVGBrightness {
-    displayName = "$STR_AGM_NightVision_IncreaseNVGBrightness";
-    condition = "true";
-    statement = "[_vehicle] call AGM_NightVision_fnc_increaseNVGBrightness";
-    key = 201;
-    shift = 0;
-    control = 0;
-    alt = 1;
-  };
-  class decreaseNVGBrightness {
-    displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
-    condition = "true";
-    statement = "[_vehicle] call AGM_NightVision_fnc_decreaseNVGBrightness";
-    key = 209;
-    shift = 0;
-    control = 0;
-    alt = 1;
-  };
+	class AGM_NightVision {
+		displayName = "AGM Night Vision";
+		class increaseNVGBrightness {
+			displayName = "$STR_AGM_NightVision_IncreaseNVGBrightness";
+			condition = "true";
+			statement = "[_vehicle] call AGM_NightVision_fnc_increaseNVGBrightness";
+			key = 201;
+			shift = 0;
+			control = 0;
+			alt = 1;
+		};
+		class decreaseNVGBrightness {
+			displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
+			condition = "true";
+			statement = "[_vehicle] call AGM_NightVision_fnc_decreaseNVGBrightness";
+			key = 209;
+			shift = 0;
+			control = 0;
+			alt = 1;
+		};
+	};
 };

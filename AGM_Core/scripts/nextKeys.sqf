@@ -6,8 +6,8 @@
 #define OFFSET_4 400
 #define OFFSET_5 500
 
-_config = configFile >> "AGM_Core_Default_Keys";
-_count = count _config;
+_config = configFile >> "AGM_Core_Default_keys";
+_count = count AGM_Core_allKeys;
 
 _countPages = ceil (_count / 20) + 1;
 
@@ -26,15 +26,16 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 	for "_index" from OFFSET_2 to (OFFSET_2 + 19) do {(_dlgMenuDialog displayCtrl _index) ctrlShow false};
 
 	_config = configFile >> "AGM_Core_Options";
-	_count = count _config;
+	_options = call AGM_core_fnc_getAllOptions;
+	_count = count _options;
 
 	_offset = 0;
 
 	for "_index" from 0 to (_count - 1 min 19) do {
-		_configFile = _config select _index + _offset;
-		_configName = configName _configFile;
-		_displayName = getText (_configFile >> "displayName");
-		_state = profileNamespace getVariable format ["AGM_%1", _configName];
+		_option = _options select (_index + _offset);
+		_configName = format ["%1_%2", (_option select 2), _option select 1];
+		_displayName = getText (_config >> _option select 2 >> _option select 1 >> "displayName");
+		_state = _option select 0;
 
 		_control1 = _dlgMenuDialog displayCtrl (OFFSET_3 + _index);
 		_control2 = _dlgMenuDialog displayCtrl (OFFSET_4 + _index);
@@ -73,7 +74,7 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 	_updateNames = [];
 	_updateKeys = [];
 	{
-		_keyName = _x select 0;
+		_keyName = _x select 2;
 		_keyInput = _x select 1;
 
 		_index = _updateNames find _keyName;
@@ -81,17 +82,18 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 
 		_updateNames set [_index, _keyName];
 		_updateKeys set [_index, _keyInput];
-	} forEach AGM_Core_keyNew;
+	} count AGM_Core_keyNew;
 
 	for "_index" from 0 to (_count - 1 min 19) do {
-		_configFile = _config select _index + _offset;
-		_keyName = configName _configFile;
+		_key = AGM_Core_allKeys select (_index + _offset);
+		_keyName = format ["%1_%2", _key select 2,_key select 1];
+		_configFile = _config >> _key select 2 >> _key select 1;
 		_displayName = getText (_configFile >> "displayName");
 		_isDisabled = getNumber (_configFile >> "disabled") == 1;
 
 		_indexUpdate = _updateNames find _keyName;
 		_keyCode = if (_indexUpdate == -1) then {
-			profileNamespace getVariable format ["AGM_Key_%1", _keyName];
+			_key select 0;
 		} else {
 			_updateKeys select _indexUpdate;
 		};
@@ -107,7 +109,7 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 		_control1 ctrlShow true;
 		_control2 ctrlShow true;
 
-		AGM_Core_keyNames set [_index, _keyName];
+		AGM_Core_keyNames set [_index, [_key select 2,_key select 1, _keyName]];
 	};
 
 	for "_index" from _count to (_count + 19) do {
@@ -118,5 +120,5 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 		_control2 ctrlShow false;
 	};
 
-	AGM_Core_keySet = -1;
+	AGM_CoreAGM_Core_allKeyset = -1;
 };

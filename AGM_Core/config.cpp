@@ -198,9 +198,12 @@ class CfgFunctions {
       class execRemoteFnc;
       class filter;
       class findStringInString;
+	  class getAllKeys;
+	  class getAllOptions;
       class getBinocular;
       class getMarkerType;
       class getNumberFromMissionSQM;
+	  class getOption;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
@@ -213,6 +216,7 @@ class CfgFunctions {
       class isAutoWind;
       class isInBuilding;
       class isTurnedOut;
+	  class iterateConfig;
       class map;
       class moduleCheckPBOs;
       class numberToDigits;

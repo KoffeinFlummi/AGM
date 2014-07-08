@@ -29,15 +29,18 @@ class Extended_PostInit_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class IrStrobe {
-    displayName = "$STR_AGM_IrStrobe_On";
-    condition = "true";
-    statement = "[] call AGM_IrStrobe_fnc_irstrobe";
-    key = 23;//I
-    shift = 0;
-    control = 1;
-    alt = 0;
-  };
+	class AGM_IrStrobe {
+		displayName = "AGM IR Strobe";
+		class IrStrobe {
+			displayName = "$STR_AGM_IrStrobe_On";
+			condition = "true";
+			statement = "[] call AGM_IrStrobe_fnc_irstrobe";
+			key = 23;//I
+			shift = 0;
+			control = 1;
+			alt = 0;
+		};
+	};
 };
 
 class CfgWeapons {

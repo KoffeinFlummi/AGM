@@ -41,17 +41,20 @@ class Extended_Init_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class laseTarget {
-    displayName = "$STR_AGM_FireControlSystem_LaseTarget";
-    condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
-    statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
-    conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
-    statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
-    key = 15;
-    shift = 0;
-    control = 0;
-    alt = 0;
-  };
+	class AGM_FireControlSystem {
+		displayName = "AGM FCS";
+		class laseTarget {
+			displayName = "$STR_AGM_FireControlSystem_LaseTarget";
+			condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+			statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
+			conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+			statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
+			key = 15;
+			shift = 0;
+			control = 0;
+			alt = 0;
+		};
+	};
 };
 
 class CfgVehicles {

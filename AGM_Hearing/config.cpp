@@ -31,15 +31,18 @@ class Extended_PostInit_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class Earplugs {
-    displayName = "$STR_AGM_Hearing_Earbuds_On";
-    condition = "true";
-    statement = "[] call AGM_Hearing_fnc_Earplugs";
-    key = 18;
-    shift = 0;
-    control = 0;
-    alt = 1;
-  };
+	class AGM_Hearing {
+		displayName = "AGM Hearing";
+		class Earplugs {
+			displayName = "$STR_AGM_Hearing_Earbuds_On";
+			condition = "true";
+			statement = "[] call AGM_Hearing_fnc_Earplugs";
+			key = 18;
+			shift = 0;
+			control = 0;
+			alt = 1;
+		};
+	};
 };
 
 class CfgVehicles {

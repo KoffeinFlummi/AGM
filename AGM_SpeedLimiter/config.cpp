@@ -28,13 +28,16 @@ class Extended_PostInit_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class speedLimiter {
-    displayName = "$STR_AGM_SpeedLimiter";
-    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statementUp = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
-    key = 211;
-    shift = 0;
-    control = 0;
-    alt = 0;
-  };
+	class AGM_SpeedLimiter {
+		displayName = "AGM Speed Limiter";
+		class speedLimiter {
+			displayName = "$STR_AGM_SpeedLimiter";
+			conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+			statementUp = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
+			key = 211;
+			shift = 0;
+			control = 0;
+			alt = 0;
+		};
+	};
 };

@@ -38,51 +38,57 @@ class Extended_PostInit_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class openInteractionMenu {
-    displayName = "$STR_AGM_Interaction_InteractionMenu";
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
-    key = 221;
-    shift = 0;
-    control = 0;
-    alt = 0;
-  };
-  class openInteractionMenuSelf {
-    displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
-    key = 221;
-    shift = 0;
-    control = 1;
-    alt = 0;
-  };
-  class openDoor {
-    displayName = "$STR_AGM_Interaction_OpenDoor";
-    condition = "!AGM_Interaction_isOpeningDoor";
-    statement = "call AGM_Interaction_fnc_openDoor";
-    conditionUp = "AGM_Interaction_isOpeningDoor";
-    statementUp = "AGM_Interaction_isOpeningDoor = false";
-    key = 20;
-    shift = 0;
-    control = 0;
-    alt = 1;
-  };
-  class tapShoulder {
-    displayName = "$STR_AGM_Interaction_TapShoulder";
-    condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
-    statement = "[player, cursorTarget] call AGM_Interaction_fnc_tapShoulder";
-    key = 20;
-    shift = 1;
-    control = 0;
-    alt = 0;
-  };
+	class AGM_Interaction {
+		displayName = "AGM Interaction";
+		class openInteractionMenu {
+			displayName = "$STR_AGM_Interaction_InteractionMenu";
+			condition = "!(player getVariable ['AGM_Unconscious', false])";
+			statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+			key = 221;
+			shift = 0;
+			control = 0;
+			alt = 0;
+		};
+		class openInteractionMenuSelf {
+			displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
+			condition = "!(player getVariable ['AGM_Unconscious', false])";
+			statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+			key = 221;
+			shift = 0;
+			control = 1;
+			alt = 0;
+		};
+		class openDoor {
+			displayName = "$STR_AGM_Interaction_OpenDoor";
+			condition = "!AGM_Interaction_isOpeningDoor";
+			statement = "call AGM_Interaction_fnc_openDoor";
+			conditionUp = "AGM_Interaction_isOpeningDoor";
+			statementUp = "AGM_Interaction_isOpeningDoor = false";
+			key = 20;
+			shift = 0;
+			control = 0;
+			alt = 1;
+		};
+		class tapShoulder {
+			displayName = "$STR_AGM_Interaction_TapShoulder";
+			condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
+			statement = "[player, cursorTarget] call AGM_Interaction_fnc_tapShoulder";
+			key = 20;
+			shift = 1;
+			control = 0;
+			alt = 0;
+		};
+	};
 };
 
 class AGM_Core_Options {
-  class showPlayerNames {
-    displayName = "$STR_AGM_Interaction_ShowPlayerNames";
-    default = 1;
-  };
+	class AGM_Interaction {
+		displayName = "AGM Interaction";
+		class showPlayerNames {
+			displayName = "$STR_AGM_Interaction_ShowPlayerNames";
+			default = 1;
+		};
+	};
 };
 
 class CfgVehicles {

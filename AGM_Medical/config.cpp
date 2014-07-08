@@ -60,10 +60,13 @@ class Extended_PostInit_EventHandlers {
 };
 
 class AGM_Core_Options {
-  class keepMedicalMenuOpen {
-    displayName = "$STR_AGM_Medical_keepMenuOpen";
-    default = 0;
-  };
+	class AGM_Medical {
+		displayName = "AGM Medical";
+		class keepMedicalMenuOpen {
+			displayName = "$STR_AGM_Medical_keepMenuOpen";
+			default = 0;
+		};
+	};
 };
 
 class CfgVehicles {

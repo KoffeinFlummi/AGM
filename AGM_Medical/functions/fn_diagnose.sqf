@@ -109,7 +109,7 @@ _this spawn {
     _string = _string + "</t>";
     [composeText [lineBreak, parseText _string]] call AGM_Medical_fnc_displayText;
 
-    if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
+    if (["AGM_Medical", "keepMedicalMenuOpen"] call AGM_Core_fnc_getOption) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
       } else {

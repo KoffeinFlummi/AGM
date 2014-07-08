@@ -45,15 +45,18 @@ class Extended_Fired_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class checkTemperature {
-    displayName = "$STR_AGM_Overheating_checkTemperature";
-    condition = "player == _vehicle";
-    statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
-    key = 20;
-    shift = 0;
-    control = 1;
-    alt = 0;
-  };
+	class AGM_Overheating {
+		displayName = "AGM Overheating";
+		class checkTemperature {
+			displayName = "$STR_AGM_Overheating_checkTemperature";
+			condition = "player == _vehicle";
+			statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
+			key = 20;
+			shift = 0;
+			control = 1;
+			alt = 0;
+		};
+	};
 };
 
 class CfgSounds {
