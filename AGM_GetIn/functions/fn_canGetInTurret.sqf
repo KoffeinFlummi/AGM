@@ -1,6 +1,8 @@
 // by commy2
 
+private ["_vehicle", "_turret"];
+
 _vehicle = _this select 0;
 _turret = _this select 1;
 
-isNull (AGM_Interaction_Target turretUnit _turret)
+_turret in ([typeOf _vehicle] call AGM_Core_fnc_getTurrets) && {isNull (_vehicle turretUnit _turret)} && {!(_vehicle lockedTurret _turret)}

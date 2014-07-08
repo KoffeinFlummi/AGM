@@ -22,7 +22,6 @@ _turret = [];
 
 	for "_index" from 0 to (count _x - 1) do {
 		_config = (_config >> "Turrets") select (_x select _index);
-		systemChat str _config;
 	};
 
 	if (getNumber (_config >> "primaryObserver") == 1) exitWith {
