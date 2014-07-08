@@ -53,6 +53,12 @@ class Extended_Init_EventHandlers {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_Medical {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
+  };
+};
+
 class AGM_Core_Options {
   class keepMedicalMenuOpen {
     displayName = "$STR_AGM_Medical_keepMenuOpen";
