@@ -28,21 +28,6 @@ forEach (units _oldGroup);
 _unit setVariable ["AGM_Group", _oldGroup, true];
 
 if (_unit == player) then {
-  //[0, "BLACK", 0.15, 1] spawn BIS_fnc_FadeEffect;
-  AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
-  AGM_UnconsciousCC ppEffectEnable true;
-  AGM_UnconsciousCC ppEffectForceInNVG true;
-  AGM_UnconsciousCC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[0.4,0.4,0,0,0,0.1,0.3]];
-  AGM_UnconsciousCC ppEffectCommit 0.15;
-
-  AGM_UnconsciousRB = ppEffectCreate ["RadialBlur", 4207];
-  AGM_UnconsciousRB ppEffectEnable true;
-  AGM_UnconsciousRB ppEffectForceInNVG true;
-  AGM_UnconsciousRB ppEffectAdjust [0.4, 0.4, 0, 0];
-  AGM_UnconsciousRB ppEffectCommit 0.5;
-
-  0.15 fadeSound 0.4;
-  0.15 fadeSpeech 0.4;
   player setVariable ["tf_globalVolume", 0.4];
   player setVariable ["tf_voiceVolume", 0, true];
   player setVariable ["tf_unable_to_use_radio", true, true];

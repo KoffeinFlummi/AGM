@@ -67,6 +67,13 @@ AGM_NewStrength = 0;
       };
     };
 
+    // Reduce volume if player is unconscious
+    if (player getVariable ["AGM_Unconscious", false]) then {
+      if (_volume > 0.4) then {
+        _volume = 0.4;
+      };
+    };
+
     0.1 fadeSound _volume;
     0.1 fadeSpeech _volume;
     player setVariable ["tf_globalVolume", _volume];
