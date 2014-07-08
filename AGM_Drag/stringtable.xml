@@ -18,6 +18,9 @@
 				<Czech>
 					Táhnout
 				</Czech>
+				<French>
+					Tirer
+				</French>
 			</Key>
 			<Key ID="STR_AGM_Drag_EndDrag">
 				<Original>
@@ -35,6 +38,9 @@
 				<Czech>
 					Pustit
 				</Czech>
+				<French>
+					Lacher
+				</French>
 			</Key>
 			<Key ID="STR_AGM_Drag_UnableToDrag">
 				<Original>
@@ -52,6 +58,9 @@
 				<Czech>
 					Nelze táhnout z důvodu přílišné váhy
 				</Czech>
+				<French>
+					Impossible de tirer cet objet à cause de son poid
+				</French>
 			</Key>
 		</Container>
 	</Package>
