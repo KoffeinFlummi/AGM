@@ -6,9 +6,8 @@
 #define OFFSET_4 400
 #define OFFSET_5 500
 
-_config = configFile >> "AGM_Core_Default_Keys";
-_keys = call AGM_Core_fnc_getAllKeys;
-_count = count _keys;
+_config = configFile >> "AGM_Core_Default_keys";
+_count = count AGM_Core_allKeys;
 
 _countPages = ceil (_count / 20) + 1;
 
@@ -75,7 +74,7 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 	_updateNames = [];
 	_updateKeys = [];
 	{
-		_keyName = _x select 0;
+		_keyName = _x select 2;
 		_keyInput = _x select 1;
 
 		_index = _updateNames find _keyName;
@@ -86,7 +85,7 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 	} count AGM_Core_keyNew;
 
 	for "_index" from 0 to (_count - 1 min 19) do {
-		_key = _keys select (_index + _offset);
+		_key = AGM_Core_allKeys select (_index + _offset);
 		_keyName = format ["%1_%2", _key select 2,_key select 1];
 		_configFile = _config >> _key select 2 >> _key select 1;
 		_displayName = getText (_configFile >> "displayName");
@@ -110,7 +109,7 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 		_control1 ctrlShow true;
 		_control2 ctrlShow true;
 
-		AGM_Core_keyNames set [_index, _keyName];
+		AGM_Core_keyNames set [_index, [_key select 2,_key select 1, _keyName]];
 	};
 
 	for "_index" from _count to (_count + 19) do {
@@ -121,5 +120,5 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 		_control2 ctrlShow false;
 	};
 
-	AGM_Core_keySet = -1;
+	AGM_CoreAGM_Core_allKeyset = -1;
 };

@@ -2,7 +2,7 @@
 
 _index = _this select 0;
 
-_name = format ["AGM_%1", AGM_Core_OptionNames select _index];
+_name = AGM_Core_OptionNames select _index;
 
 _index1 = AGM_Core_OptionNamesNew find _name;
 _state = if (_index1 == -1) then {_index1 = count AGM_Core_OptionNamesNew; !(profileNamespace getVariable _name)} else {!(AGM_Core_OptionStatesNew select _index1)};

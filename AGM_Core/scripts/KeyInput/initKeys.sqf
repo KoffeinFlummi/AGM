@@ -1,5 +1,5 @@
 // by commy2
-private ["_header", "_handleDoubleTap", "_handleHold", "_handleHoldUp", "_debug", "_onKeyDown", "_onKeyUp", "_keys", "_config"];
+private ["_header", "_handleDoubleTap", "_handleHold", "_handleHoldUp", "_debug", "_onKeyDown", "_onKeyUp", "_config", "_keys"];
 _header = "_keyCode = [_this select 1, _this select 2, _this select 3, _this select 4] call AGM_Core_fnc_convertKeyCode; _keyIndex = floor _keyCode; if (_keyIndex == 0) exitWith {false}; _time = time; _vehicle = vehicle player; _isInput = false;";
 
 _handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_keyIndex == _keyCode}) then {_keyCode = _keyIndex + 0.8};";
