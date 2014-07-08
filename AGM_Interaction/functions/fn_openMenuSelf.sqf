@@ -49,7 +49,7 @@ if (_count > 0) then {
 		if (count _action > 0) then {
 			_configName = configName _action;
 			_displayName = getText (_action >> "displayName");
-			
+
 			_condition = compile getText (_action >> "condition");
 			_statement = compile getText (_action >> "statement");
 			_showDisabled = getNumber (_action >> "showDisabled") == 1;
@@ -107,7 +107,11 @@ for "_a" from 0 to (_count - 1) do {
 _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 if (_class == "") then {
 	AGM_Interaction_MainButton = "closeDialog 0;";
-	_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
+	if ((vehicle player) isKindOf "Man") then {
+		_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
+	} else {
+		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf (vehicle player)) >> "displayName"));
+	};
 } else {
 	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenuSelf;";
 	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";

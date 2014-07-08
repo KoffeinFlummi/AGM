@@ -20,6 +20,7 @@ class CfgFunctions {
       class getAngle;
       class keyDown;
       class keyUp;
+      class reset;
       class vehicleInit;
     };
   };
@@ -62,6 +63,15 @@ class CfgVehicles {
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+    class AGM_SelfActions {
+      class AGM_LeaveGroup {
+        displayName = "$STR_AGM_FireControlSystem_ResetFCS";
+        condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
+        statement = "[vehicle player] call AGM_FCS_fnc_reset;";
+        showDisabled = 0;
+        priority = -1;
+      };
+    };
   };
   class Land: AllVehicles {};
   class LandVehicle: Land {};
