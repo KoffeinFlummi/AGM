@@ -8,6 +8,7 @@
       <Spanish>Cortar alambrado</Spanish>
       <Polish>Przetnij Płot</Polish>
       <Czech>Přestřihnout plot</Czech>
+      <French>Couper la clôture</French>
     </Key>
     <Key ID="STR_AGM_CuttingFence">
       <English>Cutting fences / Wires...</English>
@@ -15,6 +16,7 @@
       <Spanish>Cortando alambrado...</Spanish>
       <Polish>Przecinanie Płotu / Drutów...</Polish>
       <Czech>Přestřihnout plot / dráty</Czech>
+      <French>Coupe la clôture / barbelée...</French>
     </Key>
     <Key ID="STR_AGM_CuttingFenceChat">
       <English>Cutting fences!</English>
@@ -22,6 +24,7 @@
       <Spanish>Cortando alambrado!</Spanish>
       <Polish>Przecinanie płotu!</Polish>
       <Czech>Stříhání plotu!</Czech>
+      <French>Couper la clôture</French>
     </Key>
 
     <Key ID="STR_AGM_FenceCut">
@@ -30,6 +33,7 @@
       <Spanish>Alambrado cortando</Spanish>
       <Polish>Płot przecięty</Polish>
       <Czech>Plot přestřižen</Czech>
+      <French>Clôture coupée</French>
     </Key>
 
   </Package>
