@@ -64,9 +64,11 @@ AGM_GForces_CC ppEffectCommit 0.4;
       if (_average > 0) then {
         _strength = 2 - (((_average * _upTolerance) min 3.5) / 3.5) * 1.6;
         AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
+        addCamShake [((abs _average) - 2) / 3, 1, 15];
       } else {
         _strength = 2 - (((_average * _downTolerance) min 2.5) / 2.5) * 1.6;
-        AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,0.5],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
+        AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
+        addCamShake [((abs _average) - 2) / 5, 1, 15];
       };
     } else {
       AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
