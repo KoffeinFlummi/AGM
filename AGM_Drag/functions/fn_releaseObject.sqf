@@ -17,6 +17,7 @@
 		player call AGM_Drag_fnc_releaseObject;
 */
 private "_draggedObject";
+_this removeWeapon "AGM_FakePrimaryWeapon";
 _draggedObject = _this getVariable ["AGM_carriedItem", objNull];
 if (_this == (vehicle _this)) then { // if the unit is the vehicle of the passed unit (avoids bugs with players entering vehicles while dragging
 	_this playAction "released";
