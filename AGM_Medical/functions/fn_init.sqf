@@ -16,8 +16,6 @@ _this spawn {
     };
 
     if (_this == player) then {
-      0 fadeSound 1;
-      0 fadeSpeech 1;
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];
       player setVariable ["tf_unable_to_use_radio", false, true];
