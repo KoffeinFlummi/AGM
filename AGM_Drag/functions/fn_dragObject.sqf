@@ -33,6 +33,11 @@ if ((typeOf _draggedObject) isKindOf "StaticWeapon") then {
 	};
 };
 if (!_ableToDrag) exitWith { [localize "STR_AGM_Drag_UnableToDrag"] call AGM_Core_fnc_displayTextStructured;};
+if (primaryWeapon _unit == "") then {
+	_unit addWeapon "AGM_FakePrimaryWeapon";
+};
+_unit selectWeapon (primaryWeapon _unit);
+
 _unit playActionNow "grabDrag";
 _attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
 _draggedObject attachTo [_unit, _attachPoint];
