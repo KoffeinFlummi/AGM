@@ -24,6 +24,7 @@ call AGM_Goggles_fnc_CheckGlasses;
 while {alive player} do {
 	sleep 1;
 	if (true) then {
+		call AGM_Goggles_fnc_CheckGlasses;
 		if !(player call AGM_Goggles_fnc_isGogglesVisible) exitWith {
 			if (AGM_Goggles_EffectsActive) then {
 				call AGM_Goggles_fnc_RemoveGlassesEffect;
