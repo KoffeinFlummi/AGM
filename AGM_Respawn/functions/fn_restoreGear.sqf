@@ -1,10 +1,3 @@
-/**
-*
-* Restores previously saved gear
-* RestoreGear.sqf
-*
-*/
-
 /*
 Author: jodav
 
@@ -31,9 +24,9 @@ removeHeadgear _unit;
 removeVest _unit;
 removeUniform _unit;
 removeAllAssignedItems _unit;
+clearAllItemsFromBackpack _unit;
 removeBackpack _unit;
 
-// save the array content in their own variables
 _headgear = _allGear select 0;
 _goggles = _allGear select 1;
 _uniform = _allGear select 2;
@@ -57,12 +50,8 @@ _assigneditems = _allGear select 17;
 // start restoring the items
 _unit addHeadgear _headgear;
 _unit addUniform _uniform;
-_unit addGoggles _goggles;
 _unit addVest _vest;
-_unit addweapon _primaryweapon;
-_unit addweapon _secondaryweapon;
-_unit addweapon _handgunweapon;
-
+_unit addGoggles _goggles;
 
 {
     _unit addItemToUniform _x;
@@ -72,38 +61,52 @@ _unit addweapon _handgunweapon;
     _unit addItemToVest _x;
 }foreach _vestitems;
 
+
 if(format["%1", _backpack] != "") then {
     _unit addbackpack _backpack;
     {
         _unit addItemToBackpack _x;
-    } foreach _backpackitemps;
+    } foreach _backpackitems;
 };
 
+
+// primaryWeapon
 {
     _unit addMagazine _x;
 } foreach _primaryweaponmagazine;
+
+_unit addweapon _primaryweapon;
 
 {
     _unit addPrimaryWeaponItem _x;
 } foreach _primaryweaponitems;
 
+
+// secondaryWeapon
 {
     _unit addMagazine _x;
 } foreach _secondaryweaponmagazine;
+
+_unit addweapon _secondaryweapon;
 
 {
     _unit addSecondaryWeaponItem _x;
 } foreach _secondaryweaponitems;
 
 
+// handgun
 {
     _unit addMagazine _x;
 } foreach _handgunweaponmagazine;
+
+_unit addweapon _handgunweapon;
 
 {
     _unit addHandgunItem _x;
 } foreach _handgunweaponitems;
 
+
+// items
 {
     _unit linkItem _x;
 } foreach _assigneditems;
