@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="GetIn">
+
+    <Key ID="STR_AGM_GetInVehicle">
+      <English>Get in</English>
+      <German>Einsteigen</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsDriver">
+      <English>Get in as driver</English>
+      <German>Einsteigen als Fahrer</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsGunner">
+      <English>Get in as gunner</English>
+      <German>Einsteigen als Schütze</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsCommander">
+      <English>Get in as commander</English>
+      <German>Einsteigen als Kommandant</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsLoader">
+      <English>Get in as loader</English>
+      <German>Einsteigen als Ladeschütze</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsPilot">
+      <English>Get in as pilot</English>
+      <German>Einsteigen als Pilot</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsDoorGunnerLeft">
+      <English>Get in as door gunner (left)</English>
+      <German>Einsteigen als Doorgunner (links)</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
+      <English>Get in as door gunner (right)</English>
+      <German>Einsteigen als Doorgunner (rechts)</German>
+    </Key>
+
+  </Package>
+</Project>
