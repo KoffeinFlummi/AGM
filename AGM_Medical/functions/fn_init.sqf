@@ -10,21 +10,12 @@ _this spawn {
   sleep 2;
   if !(local _unit) exitWith {};
 
-  AGM_UnconsciousCC = -1;
-  AGM_UnconsciousRB = -1;
-
   AGM_Medical_unitInit = {
     if !(isNull (_this getVariable "AGM_Group")) then {
       [_this] joinSilent (_this getVariable "AGM_Group");
     };
 
     if (_this == player) then {
-      if (AGM_UnconsciousCC != -1) then {
-        AGM_UnconsciousCC ppEffectEnable false;
-        AGM_UnconsciousCC ppEffectCommit 1;
-        AGM_UnconsciousRB ppEffectEnable false;
-        AGM_UnconsciousRB ppEffectCommit 1;
-      };
       0 fadeSound 1;
       0 fadeSpeech 1;
       player setVariable ["tf_globalVolume", 1];
@@ -86,12 +77,6 @@ _this spawn {
     while {true} do {
       sleep 1;
       _this call AGM_Medical_itemCheck;
-      if ((_this == player) and AGM_UnconsciousCC != -1 and {(!(player getVariable "AGM_Unconscious") and (ppEffectCommitted AGM_UnconsciousCC)) or (damage _this == 1)}) then {
-        AGM_UnconsciousCC ppEffectEnable false;
-        AGM_UnconsciousCC ppEffectCommit 1;
-        AGM_UnconsciousRB ppEffectEnable false;
-        AGM_UnconsciousRB ppEffectCommit 1;
-      };
     };
   };
 };
