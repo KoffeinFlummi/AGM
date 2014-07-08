@@ -2,14 +2,15 @@
 
 _this spawn {
 	_weapon = _this select 0;
-	_skipDelay = _this select 1;
+	_vehicle = _this select 1;
+	_skipDelay = _this select 2;
 
 	_magazine = switch (_weapon) do {
 		case (primaryWeapon player) : {primaryWeaponMagazine player select 0};
 		case (secondaryWeapon player) : {secondaryWeaponMagazine player select 0};
 		case (handgunWeapon player) : {handgunMagazine player select 0};
+		default {currentMagazine _vehicle};
 	};
-	if (isNil "_magazine") exitWith {};
 
 	_ammo = if (isNil "_magazine") then {0} else {
 		(player ammo _weapon) / getNumber (configFile >> "CfgMagazines" >> _magazine >> "count");

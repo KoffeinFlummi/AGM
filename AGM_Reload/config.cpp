@@ -31,8 +31,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
-    condition = "player == _vehicle";
-    statement = "[currentWeapon player, false] call AGM_Reload_fnc_checkAmmo";
+    condition = "player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}";
+    statement = "[currentWeapon _vehicle, _vehicle, false] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 0;
     control = 1;
