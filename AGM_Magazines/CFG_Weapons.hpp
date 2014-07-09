@@ -10,9 +10,7 @@ class CfgWeapons {
 	/* MX */
 
 	class arifle_MX_Base_F : Rifle_Base_F {
-		magazines[] = {
-			"30Rnd_65x39_caseless_mag",
-			"30Rnd_65x39_caseless_mag_Tracer",
+		magazines[] += {
 			"AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
 			"AGM_30Rnd_65x39_caseless_mag_SD",
 			"AGM_30Rnd_65x39_caseless_mag_AP",
@@ -21,20 +19,14 @@ class CfgWeapons {
 		};
 	};
 	class arifle_MX_SW_F : arifle_MX_Base_F {
-		magazines[] = {
-			"30Rnd_65x39_caseless_mag",
-			"30Rnd_65x39_caseless_mag_Tracer",
+		magazines[] += {
 			"AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
 			"AGM_30Rnd_65x39_caseless_mag_SD",
-			"AGM_30Rnd_65x39_caseless_mag_AP",
-			"100Rnd_65x39_caseless_mag",
-			"100Rnd_65x39_caseless_mag_Tracer"
+			"AGM_30Rnd_65x39_caseless_mag_AP"
 		};
 	};
 	class arifle_MXM_F : arifle_MX_Base_F {
-		magazines[] = {
-			"30Rnd_65x39_caseless_mag",
-			"30Rnd_65x39_caseless_mag_Tracer",
+		magazines[] += {
 			"AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
 			"AGM_30Rnd_65x39_caseless_mag_SD",
 			"AGM_30Rnd_65x39_caseless_mag_AP",
@@ -47,9 +39,7 @@ class CfgWeapons {
 	/* Katiba */
 
 	class arifle_katiba_Base_F : Rifle_Base_F {
-		magazines[] = {
-			"30Rnd_65x39_caseless_green",
-			"30Rnd_65x39_caseless_green_mag_Tracer",
+		magazines[] += {
 			"AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim",
 			"AGM_30Rnd_65x39_caseless_green_mag_SD",
 			"AGM_30Rnd_65x39_caseless_green_mag_AP"
@@ -62,34 +52,21 @@ class CfgWeapons {
 	class LMG_Mk200_F;
 	class LMG_Zafir_F;
 	class Tavor_base_F : Rifle_Base_F {
-		magazines[] = {
-			"20Rnd_556x45_UW_mag",
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag_Tracer_Red",
-			"30Rnd_556x45_Stanag_Tracer_Green",
-			"30Rnd_556x45_Stanag_Tracer_Yellow",
+		magazines[] += {
 			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
 			"AGM_30Rnd_556x45_Stanag_SD",
 			"AGM_30Rnd_556x45_Stanag_AP"
 		};
 	};
 	class mk20_base_F : Rifle_Base_F {
-		magazines[] = {
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag_Tracer_Red",
-			"30Rnd_556x45_Stanag_Tracer_Green",
-			"30Rnd_556x45_Stanag_Tracer_Yellow",
+		magazines[] += {
 			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
 			"AGM_30Rnd_556x45_Stanag_SD",
 			"AGM_30Rnd_556x45_Stanag_AP"
 		};
 	};
 	class SDAR_base_F : Rifle_Base_F {
-		magazines[] = {
-			"30Rnd_556x45_Stanag",
-			"30Rnd_556x45_Stanag_Tracer_Red",
-			"30Rnd_556x45_Stanag_Tracer_Green",
-			"30Rnd_556x45_Stanag_Tracer_Yellow",
+		magazines[] += {
 			"AGM_30Rnd_556x45_Stanag_Tracer_Dim",
 			"AGM_30Rnd_556x45_Stanag_SD",
 			"AGM_30Rnd_556x45_Stanag_AP"

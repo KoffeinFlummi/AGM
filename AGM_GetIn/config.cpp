@@ -12,13 +12,25 @@ class CfgPatches {
 	};
 };
 
-/*class CfgFunctions {
+class CfgFunctions {
 	class AGM_GetIn {
 		class AGM_GetIn {
 			file = "AGM_GetIn\functions";
+			class canGetInDriver;
+			class canGetInGunner;
+			class canGetInCommander;
+			class canGetInPilot;
+			class canGetInTurret;
+			class canGetInCargo;
+			class getInDriver;
+			class getInGunner;
+			class getInCommander;
+			class getInPilot;
+			class getInTurret;
+			class getInCargo;
 		};
 	};
-};*/
+};
 
 class CfgVehicles {
 	class LandVehicle;
@@ -55,24 +67,24 @@ class CfgVehicles {
 			class AGM_GetInDriver {
 				displayName = "$STR_AGM_GetInVehicleAsDriver";
 				distance = 4;
-				condition = "isNull (driver AGM_Interaction_Target)";
-				statement = "player moveInDriver AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
 			};
 			class AGM_GetInGunner {
 				displayName = "$STR_AGM_GetInVehicleAsGunner";
 				distance = 4;
-				condition = "isNull (gunner AGM_Interaction_Target)";
-				statement = "player moveInGunner AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
 			};
 			class AGM_GetInCommander {
 				displayName = "$STR_AGM_GetInVehicleAsCommander";
 				distance = 4;
-				condition = "isNull (commander AGM_Interaction_Target)";
-				statement = "player moveInCommander AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCommander";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
 			};
@@ -84,24 +96,24 @@ class CfgVehicles {
 			class AGM_GetInDriver {
 				displayName = "$STR_AGM_GetInVehicleAsDriver";
 				distance = 4;
-				condition = "isNull (driver AGM_Interaction_Target)";
-				statement = "player moveInDriver AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
 			};
 			class AGM_GetInGunner {
 				displayName = "$STR_AGM_GetInVehicleAsGunner";
 				distance = 4;
-				condition = "isNull (gunner AGM_Interaction_Target)";
-				statement = "player moveInGunner AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
 			};
 			class AGM_GetInCommander {
 				displayName = "$STR_AGM_GetInVehicleAsCommander";
 				distance = 4;
-				condition = "isNull (commander AGM_Interaction_Target)";
-				statement = "player moveInCommander AGM_Interaction_Target";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCommander";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
 			};

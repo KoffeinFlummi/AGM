@@ -40,6 +40,7 @@ class CfgFunctions {
       class release;
       class setDamage;
       class setHitPointDamage;
+      class takeItem;
       class unloadPatients;
       class wakeUp;
     };
