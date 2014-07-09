@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {"AGM_Item_ItemKestrel"};
 		weapons[] = {"AGM_ItemKestrel"};
 		requiredVersion = 0.60;
-		requiredAddons[] = {AGM_Core};
+		requiredAddons[] = {AGM_Core, AGM_Interaction};
 		version = "0.92";
 		versionStr = "0.92";
 		versionAr[] = {0,92,0};
