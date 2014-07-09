@@ -4,12 +4,14 @@
 
     <Key ID="STR_AGM_IrStrobe_Name">
       <English>IR Strobe</English>
+      <German>IR-Stroboskop</German>
       <Polish>Stroboskop IR</Polish>
       <Czech>IR Stroboskop</Czech>
       <French>Strobe IR</French>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Description">
       <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
+      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit Nachtsichtgerät zu erkennen ist.</German>
       <Polish>Stroboskop światła podczerwieni umożliwia na oznaczenie swojej pozycji pulsacyjnym światłem widocznym tyko przez optykę noktowizyjną.</Polish>
       <Czech>Infračerveně zářící stroboskop umožňuje signalizaci vaší pozice díky blikajícímu světlu, které je vidět pouze při užití noktovizoru.</Czech>
       <French>Le strobe Infra-rouge vous permet de signaler votre position, grâce à un clignotement visible uniquement via les NVG.</French>
@@ -22,24 +24,28 @@
     </Key>
     <Key ID="STR_AGM_IrStrobe_Off">
       <English>IR Strobe OFF</English>
+      <German>IR-Stroboskop</German>
       <Polish>Stroboskop IR Wyłączony</Polish>
       <Czech>Vypnout IR Stroboskop</Czech>
       <French>Strobe IR arreté</French>
     </Key>
     <Key ID="STR_AGM_IrStrobe_NoItem">
       <English>You don't have an IR Strobe</English>
+      <German>Du hast kein IR-Stroboskop</German>
       <Polish>Nie masz stroboskopu IR</Polish>
       <Czech>Nemáte IR Stroboskop</Czech>
       <French>Vous n'avez pas de strobe IR</French>
     </Key>
     <Key ID="STR_AGM_IrStrobe_NotAvailable">
       <English>IR Strobe is not available In vehicle or during daytime</English>
+      <German>Das IR-Stroboskop ist nicht in Fahrzeugen oder am Tag verfügbar</German>
       <Polish>Stroboskop IR nie jest dostępny w pojeździe lub w świetle dziennym</Polish>
       <Czech>IR Stroboskop není dostupný ve vozidle a za denního světla.</Czech>
       <French>Les Strobes IR ne sont pas disponible dans les véhicules ou durant la journée.</French>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Inventory_Full">
       <English>Inventory is full; Cannot remove IR Strobe</English>
+      <German>Dein Inventar ist voll; das IR-Stroboskop konnte nicht entfernt werden</German>
       <Polish>Ekwipunek jest pełny; Nie można zdjąć stroboskopu IR</Polish>
       <Czech>Inventář je plný; Nelze odebrat IR Stroboskop</Czech>
       <French>Inventaire plein, impossible d'enlever le Strobe IR</French>
