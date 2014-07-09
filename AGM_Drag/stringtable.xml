@@ -21,6 +21,9 @@
 				<French>
 					Tirer
 				</French>
+				<German>
+					Ziehen
+				</German>
 			</Key>
 			<Key ID="STR_AGM_Drag_EndDrag">
 				<Original>
@@ -41,6 +44,9 @@
 				<French>
 					Lacher
 				</French>
+				<German>
+					Loslassen
+				</German>
 			</Key>
 			<Key ID="STR_AGM_Drag_UnableToDrag">
 				<Original>
@@ -61,6 +67,9 @@
 				<French>
 					Impossible de tirer cet objet à cause de son poid
 				</French>
+				<German>
+					Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.
+				</German>
 			</Key>
 		</Container>
 	</Package>
