@@ -332,6 +332,40 @@ class CfgMagazines {
   };
 };
 
+class AGM_Rsc_Display_Base {
+  idd = -1;
+  type = 0;
+  style = 48;
+  name = "";
+  duration = 999999;
+  fadeIn = 0;
+  fadeOut = 0;
+  font = "TahomaB";
+  size = 1;
+  colorBackground[] = {1, 1, 1, 0};
+  colorText[] = {1, 1, 1, 1};
+};
+
+class AGM_Rsc_Control_Base {
+  idc = 1;
+  type = 0;
+  style = 48;
+  access = 0;
+  lineSpacing = 0;
+  moving = 1;
+  text = "";
+  size = 1;
+  sizeEx = 0;
+  font = "TahomaB";
+  colorBackground[] = {1, 1, 1, 0};
+  colorText[] = {1, 1, 1, 1};
+  x = 0;
+  y = 0;
+  w = 0;
+  h = 0;
+};
+
+
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
