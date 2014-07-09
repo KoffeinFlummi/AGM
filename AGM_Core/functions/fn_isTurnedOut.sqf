@@ -10,7 +10,7 @@
  * Is the unit turned out or not? Will return false if there is no option to turn out in the first place. (Bool)
  */
 
-private ["_unit", "_vehicle", "_config", "_animation", "_action", "_inAction", "_turretIndex", "_count", "_index"];
+private ["_unit", "_vehicle", "_config", "_animation", "_action", "_inAction", "_turretIndex"];
 
 _unit = _this select 0;
 _vehicle = vehicle _unit;
@@ -23,12 +23,7 @@ if (_unit == driver _vehicle) then {
 } else {
 	_turretIndex = [_unit] call AGM_Core_fnc_getTurretIndex;
 
-	_count = count _turretIndex;
-
-	for "_index" from 0 to (_count - 1) do {
-		_config = _config >> "Turrets";
-		_config = _config select (_turretIndex select _index);
-	};
+	_config = [_config, _turretIndex] call AGM_Core_fnc_getTurretConfigPath;
 
 	_action = getText (_config >> "gunnerAction");
 	_inAction = getText (_config >> "gunnerInAction");
