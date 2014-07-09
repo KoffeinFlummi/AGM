@@ -38,6 +38,7 @@ class CfgFunctions {
       class module;
       class morphine;
       class release;
+      class setDamage;
       class setHitPointDamage;
       class unloadPatients;
       class wakeUp;

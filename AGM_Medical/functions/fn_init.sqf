@@ -4,6 +4,9 @@ Author: KoffeinFlummi
 Do I really need to explain what this does?!
 */
 
+AGM_Medical_Hits = [];
+AGM_Medical_IsFalling = false;
+
 _this spawn {
   _unit = _this select 0;
 
