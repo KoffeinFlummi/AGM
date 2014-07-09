@@ -1,5 +1,5 @@
 class CfgPatches {
-  class AGM_IrStrobe {
+  class AGM_Attach {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
@@ -13,9 +13,9 @@ class CfgPatches {
 };
 
 class CfgFunctions {
-  class AGM_IrStrobe {
-    class AGM_IrStrobe {
-      file = "AGM_IrStrobe\functions";
+  class AGM_Attach {
+    class AGM_Attach {
+      file = "AGM_Attach\functions";
       class condition;
       class irstrobe;
     };
@@ -23,8 +23,8 @@ class CfgFunctions {
 };
 
 class Extended_PostInit_EventHandlers {
-  class AGM_IrStrobe {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_IrStrobe\clientInit.sqf'";
+  class AGM_Attach {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Attach\clientInit.sqf'";
   };
 };
 
@@ -32,7 +32,7 @@ class AGM_Core_Default_Keys {
   class IrStrobe {
     displayName = "$STR_AGM_IrStrobe_On";
     condition = "true";
-    statement = "[] call AGM_IrStrobe_fnc_irstrobe";
+    statement = "[] call AGM_Attach_fnc_irstrobe";
     key = 23;//I
     shift = 0;
     control = 1;
@@ -48,7 +48,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_IrStrobe_Name";
     descriptionShort = "$STR_AGM_IrStrobe_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
-    picture = "\AGM_IrStrobe\UI\irstrobe_item.paa";
+    picture = "\AGM_Attach\UI\irstrobe_item.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
