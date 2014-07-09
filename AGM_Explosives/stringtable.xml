@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ID="Arma3">
+	<Package ID="AGM">
+		<Container ID="AGM_Explosives">
+			<Key ID="STR_AGM_Explosives_Menu">
+				<Original>
+					Explosives >>
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Place">
+				<Original>
+					Place >>
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Detonate">
+				<Original>
+					Detonate >>
+				</Original>
+			</Key>
+
+			<Key ID="STR_AGM_Explosives_DetonateCode">
+				<Original>
+					Explosive code: %1
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Place">
+				<Original>
+					&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Cancel">
+				<Original>
+					&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_AttachTo">
+				<Original>
+					&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Clacker_Remaining">
+				<Original>
+					%1 Explosive(s) left on clacker
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Jammer_TurnOn">
+				<Original>
+					Turn On Thor III
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Jammer_TurnOff">
+				<Original>
+					Turn Off Thor III
+				</Original>
+			</Key>
+		</Container>
+	</Package>
+</Project>
