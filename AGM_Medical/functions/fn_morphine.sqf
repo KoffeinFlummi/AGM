@@ -45,7 +45,7 @@ _this spawn {
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    player removeItem "AGM_Morphine";
+    if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
 
     if (_painkillerOld < 0.1) exitWith {
       if (_unit == player) then {

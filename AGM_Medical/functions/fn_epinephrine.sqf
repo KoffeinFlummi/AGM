@@ -36,7 +36,7 @@ _this spawn {
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    player removeItem "AGM_Epipen";
+    if !([_unit, "AGM_Epipen"] call AGM_Medical_fnc_takeItem) exitWith {};
 
     [_unit] call AGM_Medical_fnc_wakeUp;
 
