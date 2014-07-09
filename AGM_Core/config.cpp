@@ -239,6 +239,12 @@ class CfgSounds {
   };
 };
 
+class Extended_PreInit_EventHandlers {
+  class AGM_Core {
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";

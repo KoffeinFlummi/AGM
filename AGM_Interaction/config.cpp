@@ -86,6 +86,10 @@ class AGM_Core_Options {
   };
 };
 
+class AGM_Parameters {
+  AGM_Interaction_PlayerNamesViewDistance = 5;
+};
+
 class CfgVehicles {
   class Man;
 
