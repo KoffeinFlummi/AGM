@@ -35,5 +35,34 @@
       <German>Einsteigen als Doorgunner (rechts)</German>
     </Key>
 
+    <Key ID="STR_AGM_MoveToDriver">
+      <English>Move to driver</English>
+      <German>Zum Fahrersitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToGunner">
+      <English>Move to gunner</English>
+      <German>Zum Schützensitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToCommander">
+      <English>Move to commander</English>
+      <German>Zum Kommandantensitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToLoader">
+      <English>Move to loader</English>
+      <German>Zum Ladeschützensitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToPilot">
+      <English>Move to pilot</English>
+      <German>Zum Pilotensitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToDoorGunnerLeft">
+      <English>Move to door gunner (left)</English>
+      <German>Zum Doorgunnersitz (links)</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToDoorGunnerRight">
+      <English>Move to door gunner (right)</English>
+      <German>Zum Doorgunnersitz (rechts)</German>
+    </Key>
+
   </Package>
 </Project>

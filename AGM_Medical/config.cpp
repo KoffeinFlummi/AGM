@@ -38,7 +38,9 @@ class CfgFunctions {
       class module;
       class morphine;
       class release;
+      class setDamage;
       class setHitPointDamage;
+      class takeItem;
       class unloadPatients;
       class wakeUp;
     };
@@ -855,9 +857,9 @@ class CfgCloudlets {
     particleShape = "\A3\data_f\ParticleEffects\Universal\Universal_02";
     particleFSNtieth = 8;
     particleFSIndex = 4;
-    lifeTime = 2.3;
-    size[] = {"((hit + 5) max 30) / 30", "((hit + 5) max 30) / 60", "((hit + 5) max 30) / 120"};
-    color[] = {{1,0.1,0.1,0.14}, {1,0.1,0.1,0.07}, {1,0.1,0.1,0.035}};
+    lifeTime = 1.8;
+    size[] = {"((hit + 5) max 30) / 40", "((hit + 5) max 30) / 80", "((hit + 5) max 30) / 150"};
+    color[] = {{1,0.1,0.1,0.10}, {1,0.1,0.1,0.05}, {1,0.1,0.1,0.025}};
     randomDirectionPeriod = 0.5;
     randomDirectionIntensity = 0.5;
   };

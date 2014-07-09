@@ -37,7 +37,7 @@ _this spawn {
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    player removeItem "AGM_Bloodbag";
+    if !([_unit, "AGM_Bloodbag"] call AGM_Medical_fnc_takeItem) exitWith {};
 
     _blood = ((_unit getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
     _unit setVariable ["AGM_Blood", _blood, true];
