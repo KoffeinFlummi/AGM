@@ -41,7 +41,7 @@ _this spawn {
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    player removeItem "AGM_Bandage";
+    if !([_unit, "AGM_Bandage"] call AGM_Medical_fnc_takeItem) exitWith {};
 
     // change damage of body part
     _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;

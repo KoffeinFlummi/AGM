@@ -39,6 +39,7 @@ class CfgFunctions {
       class morphine;
       class release;
       class setHitPointDamage;
+      class takeItem;
       class unloadPatients;
       class wakeUp;
     };
