@@ -3,12 +3,15 @@
   <Package name="IrStrobe">
     <Key ID="STR_AGM_Attach_AttachDetach">
       <English>Attach item >></English>
+      <German>Gegenstand befestigen</German>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
+      <German>Gegenstand entfernen</German>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_IrStrobe">
       <English>Attach IR Strobe</English>
+      <German>IR-Stroboskop befestigen</German>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
@@ -24,13 +27,14 @@
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_On">
       <English>IR Strobe ON</English>
+      <German>IR-Stroboskop eingeschaltet</German>
       <Polish>Stoboskop IR Włączony</Polish>
       <Czech>Zapnout IR Stroboskop</Czech>
       <French>Strobe IR Activé</French>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Off">
       <English>IR Strobe OFF</English>
-      <German>IR-Stroboskop</German>
+      <German>IR-Stroboskop ausgeschaltet</German>
       <Polish>Stroboskop IR Wyłączony</Polish>
       <Czech>Vypnout IR Stroboskop</Czech>
       <French>Strobe IR arreté</French>
