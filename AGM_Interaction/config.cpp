@@ -19,7 +19,7 @@ class CfgFunctions {
       class addInteraction;
       class addInteractionSelf;
       class isInRange;
-      class module;
+      //class module;
       class openDoor;
       class openMenu;
       class openMenuSelf;

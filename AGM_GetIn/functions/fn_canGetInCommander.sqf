@@ -1,9 +1,21 @@
 // by commy2
 
-private ["_vehicle", "_turret"];
+private ["_vehicle", "_config", "_turret", "_configTurret", "_memoryPointGunner", "_distance"];
 
 _vehicle = _this select 0;
 
-_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
+_config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
-!(_turret isEqualTo []) && {isNull (commander _vehicle)} && {!(_vehicle lockedTurret _turret)} && {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
+_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
+_configTurret = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+
+if (_turret isEqualTo []) exitWith {false};
+
+_memoryPointGunner = getText (_configTurret >> "memoryPointsGetInGunner");
+
+_distance = getNumber (_config >> "getInRadius");
+
+isNull (commander _vehicle) &&
+{!(_vehicle lockedTurret _turret)} &&
+{getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1} &&
+{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointGunner)) < _distance || {vehicle player == _vehicle}}

@@ -16,12 +16,14 @@ class CfgFunctions {
 	class AGM_GetIn {
 		class AGM_GetIn {
 			file = "AGM_GetIn\functions";
+			class canGetInCoDriver;
 			class canGetInDriver;
 			class canGetInGunner;
 			class canGetInCommander;
 			class canGetInPilot;
 			class canGetInTurret;
 			class canGetInCargo;
+			class getInCoDriver;
 			class getInDriver;
 			class getInGunner;
 			class getInCommander;
@@ -88,6 +90,14 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_GetInCoDriver {
+				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
+				distance = 4;
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 		};
 		class AGM_SelfActions {
 			class AGM_MoveToDriver {
@@ -110,6 +120,13 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+			};
+			class AGM_MoveToCoDriver {
+				displayName = "$STR_AGM_MoveToCoDriver";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				showDisabled = 0;
+				priority = -1.93;
 			};
 		};
 	};
@@ -140,6 +157,14 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_GetInCoDriver {
+				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
+				distance = 4;
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 		};
 		class AGM_SelfActions {
 			class AGM_MoveToDriver {
@@ -162,6 +187,13 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+			};
+			class AGM_MoveToCoDriver {
+				displayName = "$STR_AGM_MoveToCoDriver";
+				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				showDisabled = 0;
+				priority = -1.93;
 			};
 		};
 	};
