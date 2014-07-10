@@ -19,9 +19,9 @@ _itemName = _unit getVariable ["AGM_AttachedItemName", ""];
 if (_itemName == "") exitWith {};
 
 // Add item to inventory
-_count = count items _unit;
+_count = (count items _unit) + (count magazines _unit);
 _unit addItem _itemName;
-if ((count items _unit) <= _count) exitWith {
+if ((count items _unit) + (count magazines _unit) <= _count) exitWith {
   [localize "STR_AGM_Attach_Inventory_Full"] call AGM_Core_fnc_displayTextStructured;
 };
 
@@ -33,9 +33,12 @@ _unit setVariable ["AGM_AttachedItemName","", true];
 _unit setVariable ["AGM_AttachedItem",nil, true];
 
 // Display message
-switch (_itemName) do {
-  case "AGM_IR_Strobe_Item" : {
+switch true do {
+  case (_itemName == "_itemNameAGM_IR_Strobe_Item") : {
     [localize "STR_AGM_Attach_IrStrobe_Off"] call AGM_Core_fnc_displayTextStructured;
+  };
+  case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}) : {
+    [localize "STR_AGM_Attach_Chemlight_Detached"] call AGM_Core_fnc_displayTextStructured;
   };
   default {
     if (true) exitWith {};

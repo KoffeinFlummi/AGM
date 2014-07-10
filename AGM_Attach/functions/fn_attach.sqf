@@ -20,14 +20,20 @@ _itemName = _this select 1;
 if (_unit getVariable ["AGM_AttachedItemName", ""] != "") exitWith {};
 
 // Check if the unit still has the item
-if !(_itemName in items _unit ) exitWith {};
+if !((_itemName in items _unit) or (_itemName in magazines _unit)) exitWith {};
 
 // Attach item
-switch (_itemName) do {
-  case "AGM_IR_Strobe_Item" : {
+switch true do {
+  case (_itemName == "AGM_IR_Strobe_Item") : {
     _attachedItem = "AGM_IR_Strobe_Effect" createVehicle [0,0,0];
-    _attachedItem attachTo [_unit,[0,-0.07,0.22],"neck"];//0,-0.05,0.19 looks good without helmet, 0,-0.07,0.22 looks good with helmet
+    //_attachedItem attachTo [_unit,[0,-0.07,0.22],"neck"];
+    _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
     [localize "STR_AGM_Attach_IrStrobe_On"] call AGM_Core_fnc_displayTextStructured;
+  };
+  case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}) : {
+    _attachedItem = _itemName createVehicle [0,0,0];
+    _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
+    [localize "STR_AGM_Attach_Chemlight_Attached"] call AGM_Core_fnc_displayTextStructured;
   };
   default {
     if (true) exitWith {};

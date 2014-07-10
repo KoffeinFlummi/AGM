@@ -7,8 +7,20 @@
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
     </Key>
-    <Key ID="STR_AGM_Attach_AttachIrStrobe">
+    <Key ID="STR_AGM_Attach_Attach_IrStrobe">
       <English>Attach IR Strobe</English>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
+      <English>Attach Blue Chemlight</English>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_green">
+      <English>Attach Green Chemlight</English>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_red">
+      <English>Attach Red Chemlight</English>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_yellow">
+      <English>Attach Yellow Chemlight</English>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_On">
       <English>IR Strobe ON</English>
@@ -22,6 +34,12 @@
       <Polish>Stroboskop IR Wyłączony</Polish>
       <Czech>Vypnout IR Stroboskop</Czech>
       <French>Strobe IR arreté</French>
+    </Key>
+    <Key ID="STR_AGM_Attach_Chemlight_Attached">
+      <English>Chemlight Attached</English>
+    </Key>
+    <Key ID="STR_AGM_Attach_Chemlight_Detached">
+      <English>Chemlight Detached</English>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
       <English>Inventory is full; Cannot remove IR Strobe</English>
