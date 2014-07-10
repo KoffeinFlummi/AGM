@@ -4,68 +4,53 @@
     <Key ID="STR_AGM_Attach_AttachDetach">
       <English>Attach item >></English>
       <German>Gegenstand befestigen</German>
+      <Spanish>Colocar objeto >></Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
       <German>Gegenstand entfernen</German>
+      <Spanish>Remover objeto</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_IrStrobe">
       <English>Attach IR Strobe</English>
       <German>IR-Stroboskop befestigen</German>
+      <Spanish>Colocar Marcador IR</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
+      <Spanish>Colocar Barra de Luz Azul</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_green">
       <English>Attach Green Chemlight</English>
+      <Spanish>Colocar Barra de Luz Verde</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_red">
       <English>Attach Red Chemlight</English>
+      <Spanish>Colocar Barra de Luz Roja</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_yellow">
       <English>Attach Yellow Chemlight</English>
+      <Spanish>Colocar Barra de Luz Amarilla</Spanish>
     </Key>
-    <Key ID="STR_AGM_Attach_IrStrobe_On">
-      <English>IR Strobe ON</English>
-      <German>IR-Stroboskop eingeschaltet</German>
-      <Polish>Stoboskop IR Włączony</Polish>
-      <Czech>Zapnout IR Stroboskop</Czech>
-      <French>Strobe IR Activé</French>
+    <Key ID="STR_AGM_Attach_IrStrobe_Attached">
+      <English>IR Strobe Attached</English>
+      <Spanish>Marcador IR colocado</Spanish>
     </Key>
-    <Key ID="STR_AGM_Attach_IrStrobe_Off">
-      <English>IR Strobe OFF</English>
-      <German>IR-Stroboskop ausgeschaltet</German>
-      <Polish>Stroboskop IR Wyłączony</Polish>
-      <Czech>Vypnout IR Stroboskop</Czech>
-      <French>Strobe IR arreté</French>
+    <Key ID="STR_AGM_Attach_IrStrobe_Detached">
+      <English>IR Strobe Detached</English>
+      <Spanish>Marcador IR removido</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>
+      <Spanish>Barra de Luz colocada</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Detached">
       <English>Chemlight Detached</English>
+      <Spanish>Barra de Luz removida</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
-      <English>Inventory is full; Cannot remove IR Strobe</English>
-      <German>Dein Inventar ist voll; das IR-Stroboskop konnte nicht entfernt werden</German>
-      <Polish>Ekwipunek jest pełny; Nie można zdjąć stroboskopu IR</Polish>
-      <Czech>Inventář je plný; Nelze odebrat IR Stroboskop</Czech>
-      <French>Inventaire plein, impossible d'enlever le Strobe IR</French>
-    </Key>
-
-    <Key ID="STR_AGM_IrStrobe_Name">
-      <English>IR Strobe</English>
-      <German>IR-Stroboskop</German>
-      <Polish>Stroboskop IR</Polish>
-      <Czech>IR Stroboskop</Czech>
-      <French>Strobe IR</French>
-    </Key>
-    <Key ID="STR_AGM_IrStrobe_Description">
-      <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
-      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit Nachtsichtgerät zu erkennen ist.</German>
-      <Polish>Stroboskop światła podczerwieni umożliwia na oznaczenie swojej pozycji pulsacyjnym światłem widocznym tyko przez optykę noktowizyjną.</Polish>
-      <Czech>Infračerveně zářící stroboskop umožňuje signalizaci vaší pozice díky blikajícímu světlu, které je vidět pouze při užití noktovizoru.</Czech>
-      <French>Le strobe Infra-rouge vous permet de signaler votre position, grâce à un clignotement visible uniquement via les NVG.</French>
+      <English>Inventory is full; Cannot detach item</English>
+      <Spanish>El inventario está lleno; No puede removerse el objeto</Spanish>
     </Key>
   </Package>
 </Project>
