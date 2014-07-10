@@ -24,7 +24,8 @@ if (_index != -1) then {
 
 _crew = _crew - [objNull];	//_vehicle emptyPositions "Cargo";
 
-_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
+//_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
+_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo");
 
 _distance = getNumber (_config >> "getInRadius");
 

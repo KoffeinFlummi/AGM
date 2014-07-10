@@ -5,6 +5,12 @@
         <English>Vehicle</English>
         <German>Fahrzeug</German>
     </Key>
+
+    <Key ID="STR_AGM_Repair">
+        <English>Repair >></English>
+        <German>Reparieren >></German>
+    </Key>
+
     <Key ID="STR_AGM_Repair_Nothing">
         <English>Everything is OK!</English>
         <German>Alles OK!</German>
