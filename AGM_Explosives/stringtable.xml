@@ -53,6 +53,61 @@
 					Turn Off Thor III
 				</Original>
 			</Key>
+			<Key ID="STR_AGM_Explosives_cellphone_displayName">
+				<Original>
+					Cellphone
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_cellphone_description">
+				<Original>
+					Used to trigger explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_clacker_displayName">
+				<Original>
+					Clacker
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_clacker_description">
+				<Original>
+					Used to trigger explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusalKit_displayName">
+				<Original>
+					Defusal Kit
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusalKit_description">
+				<Original>
+					Allows defusing of explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_AddToSpeedDial">
+				<Original>
+					Add to Speed Dial
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Clear">
+				<Original>
+					Clear
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Dial">
+				<Original>
+					Dial
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Up">
+				<Original>
+					Up
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Down">
+				<Original>
+					Down
+				</Original>
+			</Key>
 		</Container>
 	</Package>
 </Project>

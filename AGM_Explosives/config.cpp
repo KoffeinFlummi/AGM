@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {AGM_Core, AGM_Interaction};
+		requiredAddons[] = {A3_Weapons_F_Explosives, AGM_Interaction};
 		version = "0.92";
 		versionStr = "0.92";
 		versionAr[] = {0,92,0};
@@ -54,12 +54,12 @@ class CfgVehicles {
 				condition = "true";
 				statement = "AGM_Interaction_Target=player;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 0.25;
 				
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
-					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives";
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
 					priority = 2;
@@ -71,9 +71,35 @@ class CfgVehicles {
 					showDisabled = 1;
 					priority = 1;
 				};
+				class AGM_Cellphone {
+					displayName = $STR_AGM_Explosives_cellphone_displayName;
+					condition = "('AGM_Cellphone' in (items player))";
+					statement = "closeDialog 0;createDialog 'RscAGM_PhoneInterface';";
+					showDisabled = 0;
+					priority = 0.8;
+				};
+			};
+			
+			class AGM_ExplosiveJammerOn {
+				displayName = $STR_AGM_Explosives_Jammer_TurnOn;
+				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and !((unitBackpack player) getVariable ['AGM_JammerEnabled', false])}";
+				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', true, true];";
+				showDisabled = 0;
+				priority = 0.1;
+			};
+			class AGM_ExplosiveJammerOff {
+				displayName = $STR_AGM_Explosives_Jammer_TurnOff;
+				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and (unitBackpack player) getVariable ['AGM_JammerEnabled', false]}";
+				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', false, true];";
+				showDisabled = 0;
+				priority = 0.1;
 			};
 		};
 	};
 };
+
+#include "CfgAmmo.hpp"
+#include "CfgMagazines.hpp"
+#include "CfgWeapons.hpp"
 
 #include "ExplosivesUI.hpp"
