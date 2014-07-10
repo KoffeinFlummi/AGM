@@ -21,6 +21,9 @@ _unit = _this select 0;
 createDialog "RscAGM_SelectAnItem";
 
 buttonSetAction [8860, "[player, lbData [8866, lbCurSel 8866]] call AGM_Explosives_fnc_SetupExplosive;closeDialog 0;"];
+ctrlSetText [8860, localize "STR_AGM_Explosives_Place"];
+ctrlSetText [8870, localize "STR_AGM_Explosives_PlaceMenu"];
+
 lbClear 8866;
 _mags = magazines _unit;
 {

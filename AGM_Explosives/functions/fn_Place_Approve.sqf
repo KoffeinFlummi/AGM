@@ -17,6 +17,7 @@
 */
 if (AGM_Explosives_pfeh_running) then {
 	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+	AGM_Explosives_pfeh_running = false;
 };
 private "_explosive";
 _explosive = AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""];
@@ -32,7 +33,8 @@ if (_explosive != "") then {
 		_pos = (GetPosATL AGM_Explosives_Setup) select 2;
 		_limiter = _limiter + 0.1;
 	};
-	// Position, AMMO Class, code
+	sleep getNumber(ConfigFile >> "CfgMagazines" >> _explosive >> "AGM_DelayTime");
+	// Position, Mag Class, code
 	[GetPosATL AGM_Explosives_Setup, _explosive, AGM_Explosives_Setup getVariable "AGM_DetonateCode", 180 + (getDir AGM_Explosives_Setup)] call AGM_Explosives_fnc_PlaceExplosive;
 	player RemoveMagazineGlobal _explosive;
 };

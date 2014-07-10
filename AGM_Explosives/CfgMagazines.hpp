@@ -8,6 +8,7 @@ class CfgMagazines {
 		AGM_FuseTime = 0; // time of the fuse.
 		AGM_MaxDistance = 100; // max distance before clacker/cellphone won't detonate explosive.
 		AGM_Explosive_Type = 0;
+		AGM_DelayTime = 2.5;
 	};
 	/*class APERSBoundingMine_Range_Mag:ATMine_Range_Mag{
 	};
@@ -21,9 +22,10 @@ class CfgMagazines {
 		useAction = 0;
 		AGM_OnCreate = "";
 		AGM_SetupObject = "Land_MultiMeter_F"; // CfgVehicle class for setup object.
-		AGM_FuseTime = 0; // time of the fuse.
+		AGM_FuseTime = 0.5; // time of the fuse.
 		AGM_MaxDistance = 100; // max distance before clacker/cellphone won't detonate explosive.
 		AGM_Explosive_Type = 0;
+		AGM_DelayTime = 1.5;
 	};
 	
 	class SatchelCharge_Remote_Mag:CA_Magazine{
@@ -34,6 +36,7 @@ class CfgMagazines {
 		AGM_FuseTime = 0.5; // time of the fuse.
 		AGM_MaxDistance = 100; // max distance before clacker/cellphone won't detonate explosive.
 		AGM_Explosive_Type = 2; // 1 = cellphone, 2 = clacker
+		AGM_DelayTime = 1;
 	};
 	/*class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{
 	};

@@ -5,7 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Initialises the Insurgency mod.
+		Initialises explosive behaviour.
 	
 	Parameters:
 		None
@@ -21,10 +21,13 @@ if (isServer) then {
 		AGM_Explosives_List = [];
 		publicVariable "AGM_Explosives_List";
 	};
+	/*
+		All Jammer code is disabled for now.
 	if (isNil "AGM_Explosives_Jammers") then {
 		AGM_Explosives_Jammers = [];
 		publicVariable "AGM_Explosives_Jammers";
 	};
+	*/
 };
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
@@ -40,8 +43,8 @@ AGM_Explosives_null= [] spawn {
 	(findDisplay 46) displayAddEventHandler ["KeyUp", "AGM_Explosives_ShiftDown = false;"];
 	
 	player addAction [localize "STR_AGM_Explosives_AttachTo", "cursorTarget call AGM_Explosives_fnc_Place_AttachTo;", nil, 22, false, true, "","!isNull(AGM_Explosives_Setup) AND {cursorTarget isKindOf 'Car'} AND {(cursorTarget distance AGM_Explosives_Setup) < 2.5}"];
-	player addAction [localize "STR_AGM_Explosives_Place", "[] spawn AGM_Explosives_fnc_Place_Approve;", nil, 21, false, true, "","!isNull(AGM_Explosives_Setup)"];
-	player addAction [localize "STR_AGM_Explosives_Cancel", "call AGM_Explosives_fnc_Place_Cancel;", nil, 20, false, true, "","!isNull(AGM_Explosives_Setup)"];
+	player addAction [localize "STR_AGM_Explosives_PlaceAction", "[] spawn AGM_Explosives_fnc_Place_Approve;", nil, 21, false, true, "","!isNull(AGM_Explosives_Setup)"];
+	player addAction [localize "STR_AGM_Explosives_CancelAction", "call AGM_Explosives_fnc_Place_Cancel;", nil, 20, false, true, "","!isNull(AGM_Explosives_Setup)"];
 
 	player SetVariable ["AGM_Clacker", [], true];
 	player addEventHandler ["Killed", {
@@ -55,27 +58,40 @@ AGM_Explosives_null= [] spawn {
 	}];
 
 	player addEventHandler ["Take", {
-		if ((_this select 2) == "AGM_Clacker") then {
-			private ["_clacker1"];
-			_clacker1 = (_this select 1) getVariable ["AGM_Clacker", []];
-			(_this select 0) SetVariable ["AGM_Clacker", ((_this select 0) getVariable ["AGM_Clacker", []]) + _clacker1, true];
-			if !("AGM_Clacker" in items (_this select 1)) then {
-				(_this select 1) setVariable ["AGM_Clacker", [], true];
+		private ["_item", "_getter", "_giver"];
+		_item = _this select 2;
+		_getter = _this select 0;
+		_giver = _this select 1;
+		if (_item == "AGM_Clacker") then {
+			private ["_clackerItems"];
+			_clackerItems = _giver getVariable ["AGM_Clacker", []];
+			_getter SetVariable ["AGM_Clacker", (_getter getVariable ["AGM_Clacker", []]) + _clackerItems, true];
+			if !("AGM_Clacker" in items _giver) then {
+				_giver setVariable ["AGM_Clacker", [], true];
 			};
 		};
+		/*
+			Explosive Jammer code
 		if (isClass (configFile >> "CfgVehicles" >> (_this select 2)) and {getNumber(configFile >> "CfgVehicles" >> (_this select 2) >> "AGM_JammerRange") > 0}) then {
 			[(_this select 0),unitBackpack (_this select 0)] call AGM_Explosives_fnc_JammerInit;
 		};
+		*/
 	}];
 	player addEventHandler ["Put", {
-		if ((_this select 2) == "AGM_Clacker") then {
-			private ["_clacker1"];
-			_clacker1 = (_this select 0) getVariable ["AGM_Clacker", []];
-			(_this select 1) SetVariable ["AGM_Clacker", ((_this select 1) getVariable ["AGM_Clacker", []]) + _clacker1, true];
-			if !("AGM_Clacker" in items (_this select 0)) then {
-				(_this select 0) setVariable ["AGM_Clacker", [], true];
+		private ["_item", "_getter", "_giver"];
+		_item = _this select 2;
+		_getter = _this select 1;
+		_giver = _this select 0;
+		if (_item == "AGM_Clacker") then {
+			private ["_clackerItems"];
+			_clackerItems = _giver getVariable ["AGM_Clacker", []];
+			_getter SetVariable ["AGM_Clacker", (_getter getVariable ["AGM_Clacker", []]) + _clackerItems, true];
+			if !("AGM_Clacker" in items _giver) then {
+				_giver setVariable ["AGM_Clacker", [], true];
 			};
 		};
+		/*
+			Explosive Jammer code
 		if (isClass (configFile >> "CfgVehicles" >> (_this select 2)) and {getNumber(configFile >> "CfgVehicles" >> (_this select 2) >> "AGM_JammerRange") > 0}) then {
 			{
 				if ((_x select 0) == (_this select 0)) exitWith	{
@@ -84,5 +100,6 @@ AGM_Explosives_null= [] spawn {
 			} count AGM_Explosives_Jammers;
 			publicVariable "AGM_Explosives_Jammers";
 		};
+		*/
 	}];
 };

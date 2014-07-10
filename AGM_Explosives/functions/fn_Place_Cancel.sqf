@@ -17,6 +17,7 @@
 */
 if (AGM_Explosives_pfeh_running) then {
 	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+	AGM_Explosives_pfeh_running = false;
 };
 if (!isNull (AGM_Explosives_Setup)) then {
 	deleteVehicle AGM_Explosives_Setup;

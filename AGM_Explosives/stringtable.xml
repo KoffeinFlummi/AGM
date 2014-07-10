@@ -23,12 +23,12 @@
 					Explosive code: %1
 				</Original>
 			</Key>
-			<Key ID="STR_AGM_Explosives_Place">
+			<Key ID="STR_AGM_Explosives_PlaceAction">
 				<Original>
 					&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;
 				</Original>
 			</Key>
-			<Key ID="STR_AGM_Explosives_Cancel">
+			<Key ID="STR_AGM_Explosives_CancelAction">
 				<Original>
 					&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;
 				</Original>
@@ -106,6 +106,21 @@
 			<Key ID="STR_AGM_Explosives_Phone_Down">
 				<Original>
 					Down
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Cancel">
+				<Original>
+					Cancel
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DetonateMenu">
+				<Original>
+					Detonate Menu
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_PlaceMenu">
+				<Original>
+					Place Menu
 				</Original>
 			</Key>
 		</Container>

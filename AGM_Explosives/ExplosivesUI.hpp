@@ -52,37 +52,47 @@ class RscStructuredText;
 
 #include "Interfaces\PhoneInterface.hpp"
 
+#define X_OFFSET 0.2
+
 class RscAGM_SelectAnItem
 {
 	idd = 8854;
 	movingEnable = 0;
 	class controls {
 		class back:IGUIBack {
-			x = 0;
+			x = X_OFFSET;
 			y = 0;
 			w = 0.4;
-			h = 0.655;
+			h = 0.71;
+		};
+		class header: RscText{
+			idc = 8870;
+			x = X_OFFSET + 0.005;
+			y = 0.005;
+			w = 0.39;
+			h = 0.05;
+			text = "";
 		};
 		class itemList:RscListBox {
 			idc = 8866;
-			x = 0.005;
+			x = X_OFFSET + 0.005;
 			w = 0.39;
 			h = 0.54;
-			y = 0.005;
+			y = 0.06;
 		};
 		class cancelBtn: RscButton {
 			idc = 8855;
-			x = 0.005;
+			x = X_OFFSET + 0.005;
 			w = 0.15;
 			h = 0.1;
-			y = 0.55;
-			text = "Cancel";
+			y = 0.605;
+			text = $STR_AGM_Explosives_Cancel;
 			action = "closeDialog 0;";
 		};
 		class approveBtn: RscButton {
 			idc = 8860;
-			x = 0.245;
-			y = 0.55;
+			x = X_OFFSET + 0.245;
+			y = 0.605;
 			h = 0.1;
 			w = 0.15;
 			text = "Approve";

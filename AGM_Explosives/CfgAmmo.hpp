@@ -1,5 +1,7 @@
 class CfgAmmo {
-	/*class Default;
+	/*
+	// All explosive based Ammo classes. Theses are all listed in case they are required.
+	class Default;
 	class TimeBombCore:Default;
 	class BoundingMineCore:TimeBombCore;
 	class BoundingMineBase:BoundingMineCore;
@@ -28,10 +30,14 @@ class CfgAmmo {
 	class PipeBombBase;
 	class DemoCharge_Remote_Ammo:PipeBombBase{
 		AGM_Explosive = "DemoCharge_Remote_Ammo_Scripted";
+		soundActivation[] = {"",0,0,0};
+		soundDeactivation[] = {"",0,0,0};
 	};
 	//class DemoCharge_Remote_Ammo_Scripted:DemoCharge_Remote_Ammo;
 	class SatchelCharge_Remote_Ammo:PipeBombBase{
 		AGM_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
+		soundActivation[] = {"",0,0,0};
+		soundDeactivation[] = {"",0,0,0};
 	};
 	/*class SatchelCharge_Remote_Ammo_Scripted:SatchelCharge_Remote_Ammo;
 	

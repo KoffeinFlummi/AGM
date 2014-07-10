@@ -6,7 +6,7 @@ class CfgWeapons {
 		allowedSlots[] = {801,701,901};
 		type = 620;
 	};
-
+	/*
 	class AGM_Cellphone:ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_cellphone_displayName;
@@ -21,7 +21,7 @@ class CfgWeapons {
 			mass = 5;
 			uniformModel = "\A3\Structures_F\Items\Electronics\MobilePhone_old_F.p3d";
 		};
-	};
+	};*/
 
 	class AGM_Clacker:ItemCore {
 		scope = 2;
@@ -35,7 +35,7 @@ class CfgWeapons {
 			uniformModel = "\A3\Structures_F\Items\Tools\MultiMeter_F.p3d";
 		};
 	};
-	
+	/*
 	class AGM_DefusalKit: ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_DefusalKit_displayName;
@@ -47,5 +47,5 @@ class CfgWeapons {
 			mass = 5;
 			uniformModel = "\A3\Structures_F\Items\Tools\Pliers_F.p3d";
 		};
-	};
+	};*/
 };

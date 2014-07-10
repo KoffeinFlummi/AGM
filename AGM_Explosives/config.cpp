@@ -27,7 +27,7 @@ class CfgFunctions
 			class hasPlacedExplosives;
 			
 			class initialise{postInit=1;};
-			class JammerInit;
+			//class JammerInit;
 			
 			class openDetonateUI;
 			class openPlaceUI;
@@ -71,6 +71,7 @@ class CfgVehicles {
 					showDisabled = 1;
 					priority = 1;
 				};
+				/*
 				class AGM_Cellphone {
 					displayName = $STR_AGM_Explosives_cellphone_displayName;
 					condition = "('AGM_Cellphone' in (items player))";
@@ -78,8 +79,9 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.8;
 				};
+				*/
 			};
-			
+			/*
 			class AGM_ExplosiveJammerOn {
 				displayName = $STR_AGM_Explosives_Jammer_TurnOn;
 				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and !((unitBackpack player) getVariable ['AGM_JammerEnabled', false])}";
@@ -94,6 +96,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = 0.1;
 			};
+			*/
 		};
 	};
 };
