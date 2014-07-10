@@ -809,8 +809,8 @@ class CfgVehicles {
   };
   class Heli_Transport_01_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
       class CopilotTurret: CopilotTurret {};
+      class MainTurret: MainTurret {};
       class RightDoorGun;
     };
   };
@@ -969,11 +969,11 @@ class CfgVehicles {
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
+      class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      class CopilotTurret: CopilotTurret {
+      class MainTurret: MainTurret {
+        magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
         canEject = 1;
       };
       class RightDoorGun: RightDoorGun {
