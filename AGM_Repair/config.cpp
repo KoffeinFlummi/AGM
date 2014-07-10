@@ -18,6 +18,18 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class CfgAddons {
+  class AGM_Repair_Track {
+    list[] = {"AGM"};
+  };
+};
+
+class CfgVehicleClasses {
+  class AGM_Repair_Track {
+    displayName = "AGM";
+  };
+};
+
 class CfgVehicles {
   class Car;
   class Tank;
@@ -290,24 +302,55 @@ class CfgVehicles {
   
   class thingX;
   class Land_Tyre_F: thingX {
-	class AGM_Actions {
-	  class AGM_DragItem {
-		displayName = "$STR_AGM_Drag_StartDrag";
-		distance = 4;
-		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
-		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
-		showDisabled = 1;
-		priority = 2.2;
-	  };
-	  class AGM_ReleaseItem {
-		displayName = "$STR_AGM_Drag_EndDrag";
-		distance = 4;
-		condition = "(player call AGM_Drag_fnc_isDraggingObject)";
-		statement = "player call AGM_Drag_fnc_releaseObject;";
-		showDisabled = 0;
-		priority = 2.1;
-	  };
-	};
+  	class AGM_Actions {
+  	  class AGM_DragItem {
+  		displayName = "$STR_AGM_Drag_StartDrag";
+  		distance = 4;
+  		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
+  		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
+  		showDisabled = 1;
+  		priority = 2.2;
+  	  };
+  	  class AGM_ReleaseItem {
+  		displayName = "$STR_AGM_Drag_EndDrag";
+  		distance = 4;
+  		condition = "(player call AGM_Drag_fnc_isDraggingObject)";
+  		statement = "player call AGM_Drag_fnc_releaseObject;";
+  		showDisabled = 0;
+  		priority = 2.1;
+  	  };
+  	};
+  };
+  
+  class Thing;
+  class AGM_Repair_Track: Thing {
+    scope = 2;
+    model = "\AGM_Repair\track.p3d";
+    icon = "iconObject_circle";
+    displayName = "Track";
+    mapSize = 0.7;
+    accuracy = 0.2;
+    vehicleClass = "AGM_Repair_Track";
+    destrType = "DesturctNo";
+
+    class AGM_Actions {
+      class AGM_DragItem {
+      displayName = "$STR_AGM_Drag_StartDrag";
+      distance = 4;
+      condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
+      statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
+      showDisabled = 1;
+      priority = 2.2;
+      };
+      class AGM_ReleaseItem {
+      displayName = "$STR_AGM_Drag_EndDrag";
+      distance = 4;
+      condition = "(player call AGM_Drag_fnc_isDraggingObject)";
+      statement = "player call AGM_Drag_fnc_releaseObject;";
+      showDisabled = 0;
+      priority = 2.1;
+      };
+    };
   };
 };
 

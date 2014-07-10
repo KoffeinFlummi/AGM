@@ -6,7 +6,7 @@ _repairSelection = _this select 1;
 _repairSelectionName = _this select 2;
 _caller = _this select 3;
 
-_wheels = nearestObjects [player, ["Land_Tyre_F"], 4];
+_wheels = nearestObjects [player, ["AGM_Repair_Track"], 4];
 
 if((damage player < 1) && (speed _vehicle == 0) && (count _wheels > 0)) then {
 	player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
