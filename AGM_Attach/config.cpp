@@ -48,6 +48,20 @@ class CfgVehicles {
           showDisabled = 0;
           priority = 9;
         };
+        class AGM_Attach_IrStrobeB {
+          displayName = "$STR_AGM_Attach_Attach_IrStrobe";
+          condition = "canStand player && {alive player} && {player getVariable ['AGM_AttachedItemName', ''] == ''} && {'B_IR_Grenade' in magazines player}";
+          statement = "[player, 'B_IR_Grenade'] call AGM_Attach_fnc_attach;";
+          showDisabled = 0;
+          priority = 9;
+        };
+        class AGM_Attach_IrStrobeO {
+          displayName = "$STR_AGM_Attach_Attach_IrStrobe";
+          condition = "canStand player && {alive player} && {player getVariable ['AGM_AttachedItemName', ''] == ''} && {'O_IR_Grenade' in magazines player} && {!('B_IR_Grenade' in magazines player)}";
+          statement = "[player, 'O_IR_Grenade'] call AGM_Attach_fnc_attach;";
+          showDisabled = 0;
+          priority = 9;
+        };
         class AGM_Attach_Chemlight_blue {
           displayName = "$STR_AGM_Attach_Attach_Chemlight_blue";
           condition = "canStand player && {alive player} && {player getVariable ['AGM_AttachedItemName', ''] == ''} && {'Chemlight_blue' in magazines player}";
