@@ -18,7 +18,8 @@ class CfgFunctions {
       file = "AGM_Civilians\functions";
       class sendAway {};
       class getDown {};
-      //class setCaptive {};
+      class setCaptive {};
+	  class escortCaptive {};
     };
   };
 };
@@ -44,16 +45,24 @@ class CfgVehicles {
         showDisabled = 0;
         priority = -2.6;
       };
-      /*
+ 
       class AGM_SetCaptive {
-        displayName = "Take Prisoner";
+        displayName = "$STR_AGM_Civilian_SetCaptive";
         distance = 4;
         condition = "AGM_Interaction_Target isKindOf 'Civilian' and alive AGM_Interaction_Target && {AGM_Interaction_Target != player} && {count (weapons AGM_Interaction_Target) == 0}";
-        statement = "[[AGM_Interaction_Target, [0.5, 0.8] select (count weapons player > 0)], 'AGM_Civilians_fnc_setCaptive', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_setCaptive";
         showDisabled = 0;
         priority = -2.7;
       };
-      */
+	  
+	  class AGM_EscortCaptive {
+	    displayName = "$STR_AGM_Civilian_EscortCaptive";
+		distance = 4;
+		condition = "AGM_Interaction_Target isKindOf 'Civilian' and alive AGM_Interaction_Target && {AGM_Interaction_Target != player} && {count (weapons AGM_Interaction_Target) == 0}";
+		statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_escortCaptive";
+		showDisabled = 0;
+		priority = -2.8;
+	  };
     };
   };
 };
