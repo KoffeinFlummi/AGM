@@ -35,7 +35,7 @@ _unit setVariable ["AGM_AttachedItem",nil, true];
 // Display message
 switch true do {
   case (_itemName == "B_IR_Grenade" or _itemName == "O_IR_Grenade") : {
-    [localize "STR_AGM_Attach_IrStrobe_Off"] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Attach_IrStrobe_Detached"] call AGM_Core_fnc_displayTextStructured;
   };
   case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}) : {
     [localize "STR_AGM_Attach_Chemlight_Detached"] call AGM_Core_fnc_displayTextStructured;
