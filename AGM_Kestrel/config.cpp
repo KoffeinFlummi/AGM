@@ -85,6 +85,8 @@ class CfgVehicles {
 	};
 };
 
+class AGM_Rsc_Control_Base;
+class AGM_Rsc_Display_Base;
 class RscTitles {
 	titles[] = {AGM_Kestrel, AGM_KestrelWheel};
 	class AGM_Kestrel {
@@ -213,36 +215,10 @@ class RscTitles {
 		};
 	};
 
-	class AGM_KestrelWheel_Preload {
-		idd = -1;
-		type = 0;
-		style = 48;
-		name = "";
-		duration = 999999;
-		fadeIn = 0;
-		fadeOut = 0;
-		font = "TahomaB";
-		size = 1;
-		colorBackground[] = {1, 1, 1, 0};
-		colorText[] = {1, 1, 1, 1};
+	class AGM_KestrelWheel_Preload: AGM_Rsc_Display_Base {
 		class controlsBackground {
-			class Preload_0 {
-				idc = 1;
-				type = 0;
-				style = 48;
-				access = 0;
-				lineSpacing = 0;
-				moving = 1;
+			class Preload_0: AGM_Rsc_Control_Base {
 				text = "\AGM_kestrel\textures\kestrel_0.paa";
-				size = 1;
-				sizeEx = 0;
-				font = "TahomaB";
-				colorBackground[] = {1, 1, 1, 0};
-				colorText[] = {1, 1, 1, 1};
-				x = 0;
-				y = 0;
-				w = 0;
-				h = 0;
 			};
 			class Preload_1: Preload_0 {
 				text = "\AGM_kestrel\textures\kestrel_1.paa";

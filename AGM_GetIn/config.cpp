@@ -63,7 +63,6 @@ class CfgVehicles {
 		};
 	};
 
-	class LandVehicle;
 	class Car: LandVehicle {
 		class AGM_Actions {
 			class AGM_GetInDriver {
