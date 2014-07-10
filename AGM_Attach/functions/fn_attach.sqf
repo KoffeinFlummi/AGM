@@ -24,12 +24,6 @@ if !((_itemName in items _unit) or (_itemName in magazines _unit)) exitWith {};
 
 // Attach item
 switch true do {
-  case (_itemName == "AGM_IR_Strobe_Item") : {
-    _attachedItem = "AGM_IR_Strobe_Effect" createVehicle [0,0,0];
-    //_attachedItem attachTo [_unit,[0,-0.07,0.22],"neck"];
-    _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
-    [localize "STR_AGM_Attach_IrStrobe_On"] call AGM_Core_fnc_displayTextStructured;
-  };
   case (_itemName == "B_IR_Grenade") : {
     _attachedItem = "B_IRStrobe" createVehicle [0,0,0];
     _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
