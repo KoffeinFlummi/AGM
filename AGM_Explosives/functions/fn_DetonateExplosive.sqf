@@ -31,7 +31,7 @@ private ["_item","_result", "_ignoreRange", "_ignoreJammer", "_unit"];
 _unit = (_this select 0);
 _item = (_this select 1);
 _ignoreRange = (_this select 2);
-_ignoreJammer = (_this select 3);
+_ignoreJammer = true;//(_this select 3);
 _result = true;
 if ((typeName _item) == "ARRAY") then {
 	if (!_ignoreRange) then {
@@ -40,12 +40,22 @@ if ((typeName _item) == "ARRAY") then {
 	if (!_result) exitWith{};
 	if (!_ignoreJammer) then {
 		{
-			if (((_x select 2) getVariable ["AGM_Explosives_JammerEnabled",false]) and {(_x select 0) distance (_item select 0) <= (_x select 1)}) exitWith {
+			if (((_x select 2) getVariable ["AGM_JammerEnabled",false]) and {(_x select 0) distance (_item select 0) <= (_x select 1)}) exitWith {
 				_result = false;
 			};
 		} count AGM_Explosives_Jammers;
 	};
 	if (!_result) exitWith{};
+	if (getNumber (ConfigFile >> "CfgAmmo" >> typeof (_item select 0) >> "TriggerWhenDestroyed") == 0) then {
+		private ["_exp", "_previousExp"];
+		_previousExp = _item select 0;
+		_exp = getText (ConfigFile >> "CfgAmmo" >> typeof (_previousExp) >> "AGM_Explosive");
+		if (_exp != "") then {
+			_exp = createVehicle [_exp, getPos _previousExp, [], 0, "NONE"];
+			_item set [0, _exp];
+			deleteVehicle _previousExp;
+		};
+	};
 	_item spawn {
 		sleep (_this select 1);
 		(_this select 0) setDamage 1;
@@ -68,7 +78,7 @@ if ((typeName _item) == "ARRAY") then {
 			if (!_result) exitWith{};
 			if (!_ignoreJammer) then {
 				{
-					if (((_x select 2) getVariable ["AGM_Explosives_JammerEnabled",false]) and {(_x select 0) distance _explosive <= (_x select 1)}) exitWith {
+					if (((_x select 2) getVariable ["AGM_JammerEnabled",false]) and {(_x select 0) distance _explosive <= (_x select 1)}) exitWith {
 						_result = false;
 					};
 				} count AGM_Explosives_Jammers;

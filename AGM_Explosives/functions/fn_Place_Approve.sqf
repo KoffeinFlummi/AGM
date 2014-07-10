@@ -15,8 +15,12 @@
 	Example:
 		spawn AGM_Explosives_fnc_Place_Approve;
 */
-["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
-if (AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""] != "") then {
+if (AGM_Explosives_pfeh_running) then {
+	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+};
+private "_explosive";
+_explosive = AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""];
+if (_explosive != "") then {
 	private ["_pos", "_oldPos", "_limiter"];
 	_pos = -5;
 	_oldPos = -1;
@@ -29,7 +33,8 @@ if (AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""] != "") then {
 		_limiter = _limiter + 0.1;
 	};
 	// Position, AMMO Class, code
-	[GetPosATL AGM_Explosives_Setup, AGM_Explosives_Setup getVariable "AGM_ExplosiveClass", AGM_Explosives_Setup getVariable "AGM_DetonateCode", 180 + (getDir AGM_Explosives_Setup)] call AGM_Explosives_fnc_PlaceExplosive;
-	deleteVehicle AGM_Explosives_Setup;
+	[GetPosATL AGM_Explosives_Setup, _explosive, AGM_Explosives_Setup getVariable "AGM_DetonateCode", 180 + (getDir AGM_Explosives_Setup)] call AGM_Explosives_fnc_PlaceExplosive;
+	player RemoveMagazineGlobal _explosive;
 };
+deleteVehicle AGM_Explosives_Setup;
 AGM_Explosives_Setup = objNull;

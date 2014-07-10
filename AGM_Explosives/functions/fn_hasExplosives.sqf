@@ -20,7 +20,7 @@ _result = false;
 _unit = _this select 0;
 _magazines = magazines _unit;
 {
-	if (getNumber (ConfigFile >> "Magazines" >> _x >> "AGM_Placeable") == 1) exitWith {
+	if (getNumber (ConfigFile >> "CfgMagazines" >> _x >> "AGM_Placeable") == 1) exitWith {
 		_result = true;
 	};
 } count _magazines;

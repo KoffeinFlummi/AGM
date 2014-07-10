@@ -31,12 +31,12 @@ if (isClass (configFile >> "CfgVehicles" >> (typeof (_this select 1))) and {getN
 	};
 	publicVariable "AGM_Explosives_Jammers";
 	private "_check";
-	_check = (_this select 1) getVariable "AGM_Explosives_JammerCharge";
+	_check = (_this select 1) getVariable "AGM_JammerCharge";
 	if (isNil "_check") then {
-		(_this select 1) setVariable ["AGM_Explosives_JammerCharge", getNumber(configFile >> "CfgVehicles" >> (typeof (_this select 1)) >> "AGM_Explosives_JammerMaxCharge"), true];
+		(_this select 1) setVariable ["AGM_JammerCharge", getNumber(configFile >> "CfgVehicles" >> (typeof (_this select 1)) >> "AGM_JammerMaxCharge"), true];
 	};
-	_check = (_this select 1) getVariable "AGM_Explosives_JammerEnabled";
+	_check = (_this select 1) getVariable "AGM_JammerEnabled";
 	if (isNil "_check") then {
-		(_this select 1) setVariable ["AGM_Explosives_JammerEnabled", false, true];
+		(_this select 1) setVariable ["AGM_JammerEnabled", false, true];
 	};
 };

@@ -15,6 +15,10 @@
 	Example:
 		call AGM_Explosives_fnc_Place_Cancel;
 */
-["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
-deleteVehicle AGM_Explosives_Setup;
+if (AGM_Explosives_pfeh_running) then {
+	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+};
+if (!isNull (AGM_Explosives_Setup)) then {
+	deleteVehicle AGM_Explosives_Setup;
+};
 AGM_Explosives_Setup = objNull;

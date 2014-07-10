@@ -15,7 +15,7 @@
 		Nothing
 	
 	Example:
-		[player, "AGM_Explosives_Remote_Mag"] call AGM_Explosives_fnc_SetupExplosive;
+		[player, "SatchelCharge_Remote_Mag"] call AGM_Explosives_fnc_SetupExplosive;
 */
 _this spawn {
 	private ["_explosiveClass", "_code", "_unit", "_count"];
@@ -28,13 +28,15 @@ _this spawn {
 		_code = "0" + _code;
 		_count = _count - 1;
 	};
-
+	
 	AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _explosiveClass >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
+	
 	AGM_Explosives_Setup enableSimulation false;
 	AGM_Explosives_Setup setVariable ["AGM_ExplosiveClass", _explosiveClass];
 	AGM_Explosives_Setup setVariable ["AGM_DetonateCode", _code];
 
 	["AGM_Explosives_Placement","OnEachFrame", {
+		AGM_Explosives_pfeh_running = true;
 		AGM_Explosives_Setup setPos (positionCameraToWorld [0,0,1]);
 	}] call BIS_fnc_addStackedEventHandler;
 };

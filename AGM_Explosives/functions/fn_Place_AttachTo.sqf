@@ -15,7 +15,9 @@
 	Example:
 		cursorTarget call AGM_Explosives_fnc_Place_AttachTo;
 */
-["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+if (AGM_Explosives_pfeh_running) then {
+	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
+};
 if(AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""] != "") then {
 	private "_explosive";
 	_explosive = [getPosATL AGM_Explosives_Setup, AGM_Explosives_Setup getVariable "AGM_ExplosiveClass", AGM_Explosives_Setup getVariable "AGM_DetonateCode", 180 + (getDir AGM_Explosives_Setup)] call AGM_Explosives_fnc_PlaceExplosive;
