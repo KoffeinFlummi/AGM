@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project ID="Arma3">
+	<Package ID="AGM">
+		<Container ID="AGM_Explosives">
+			<Key ID="STR_AGM_Explosives_Menu">
+				<Original>
+					Explosives >>
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Place">
+				<Original>
+					Place >>
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Detonate">
+				<Original>
+					Detonate >>
+				</Original>
+			</Key>
+
+			<Key ID="STR_AGM_Explosives_DetonateCode">
+				<Original>
+					Explosive code: %1
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_PlaceAction">
+				<Original>
+					&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_CancelAction">
+				<Original>
+					&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_AttachTo">
+				<Original>
+					&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Jammer_TurnOn">
+				<Original>
+					Turn On Thor III
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Jammer_TurnOff">
+				<Original>
+					Turn Off Thor III
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_cellphone_displayName">
+				<Original>
+					Cellphone
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_cellphone_description">
+				<Original>
+					Used to remotely trigger explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_clacker_displayName">
+				<Original>
+					M57 Firing Device
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_clacker_description">
+				<Original>
+					Used to remotely trigger explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusalKit_displayName">
+				<Original>
+					Defusal Kit
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusalKit_description">
+				<Original>
+					Allows defusing of explosives
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_AddToSpeedDial">
+				<Original>
+					Add to Speed Dial
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Clear">
+				<Original>
+					Clear
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Dial">
+				<Original>
+					Dial
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Up">
+				<Original>
+					Up
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Phone_Down">
+				<Original>
+					Down
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Cancel">
+				<Original>
+					Cancel
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DetonateMenu">
+				<Original>
+					Detonate Menu
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_PlaceMenu">
+				<Original>
+					Place Menu
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Defuse">
+				<Original>
+					Defuse
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusingExplosive">
+				<Original>
+					Defusing Explosive...
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_timerName">
+				<Original>
+					Timer
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_TimerMenu">
+				<Original>
+					Time: %1m %2s
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_SetTime">
+				<Original>
+					Set Time
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_TriggerMenu">
+				<Original>
+					Select a Trigger
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_SelectTrigger">
+				<Original>
+					Select
+				</Original>
+			</Key>
+		</Container>
+	</Package>
+</Project>

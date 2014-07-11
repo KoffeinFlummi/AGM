@@ -16,6 +16,10 @@
       <German>IR-Stroboskop befestigen</German>
       <Spanish>Colocar Marcador IR</Spanish>
     </Key>
+    <Key ID="STR_AGM_Attach_Attach_IrGrenade">
+      <English>Attach IR Grenade</English>
+      <Spanish>Colocar Granada IR</Spanish>
+    </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
       <German>Blauen Leuchtstab befestigen</German>
@@ -46,6 +50,14 @@
       <German>IR-Stroboskop entfernt</German>
       <Spanish>Marcador IR removido</Spanish>
     </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Attached">
+      <English>IR Grenade Attached</English>
+      <Spanish>Granada IR colocada</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Detached">
+      <English>IR Grenade Detached</English>
+      <Spanish>Granada IR removida</Spanish>
+    </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>
       <German>Leuchtstab befestigt</German>
@@ -61,5 +73,22 @@
       <German>Das Inventar ist voll; der Gegenstand konnte nicht entfernt werden</German>
       <Spanish>El inventario está lleno; No puede removerse el objeto</Spanish>
     </Key>
+
+    <Key ID="STR_AGM_IrStrobe_Name">
+      <English>IR Strobe</English>
+      <German>IR-Stroboskop</German>
+      <Spanish>Marcador IR</Spanish>
+      <Polish>Stroboskop IR</Polish>
+      <Czech>IR Stroboskop</Czech>
+      <French>Strobe IR</French>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_Description">
+      <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
+      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit NachtsichtgerÃ¤t zu erkennen ist.</German>
+      <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna.</Spanish>
+      <Polish>Stroboskop Å›wiatÅ‚a podczerwieni umoÅ¼liwia na oznaczenie swojej pozycji pulsacyjnym Å›wiatÅ‚em widocznym tyko przez optykÄ™ noktowizyjnÄ….</Polish>
+      <Czech>InfraÄervenÄ› zÃ¡Å™Ã­cÃ­ stroboskop umoÅ¾Åˆuje signalizaci vaÅ¡Ã­ pozice dÃ­ky blikajÃ­cÃ­mu svÄ›tlu, kterÃ© je vidÄ›t pouze pÅ™i uÅ¾itÃ­ noktovizoru.</Czech>
+      <French>Le strobe Infra-rouge vous permet de signaler votre position, grÃ¢ce Ã  un clignotement visible uniquement via les NVG.</French>
+     </Key>
   </Package>
 </Project>
