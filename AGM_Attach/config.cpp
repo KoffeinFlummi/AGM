@@ -110,13 +110,13 @@ class CfgVehicles {
 		simulation = "nvmarker";
 		class NVGMarker
 		{
-			diffuse[] = {0,0,0};
-			ambient[] = {0,0,0};
-			brightness = 0.01;
+      diffuse[] = {0.01, 0.01, 0.01, 1};
+      ambient[] = {0.005, 0.005, 0.005, 1};
+			brightness = 0.2;
 			name = "pozicni blik";
 			drawLight = 1;
-			drawLightSize = 0.001;
-			drawLightCenterSize = 0.001;
+			drawLightSize = 0.2;
+			drawLightCenterSize = 0.2;
 			activeLight = 0;
 			blinking=1;//doesnt effect, maybe because of simulation
       blinkingStartsOn=1;//doesnt effect, maybe because of simulation
@@ -136,7 +136,7 @@ class CfgVehicles {
 		magazines[] = {};
 		nvTarget = 1;
 		destrType = "DestructEngine";
-		brightness = 0.02;
+		brightness = 20;
     blinking=1;//doesnt effect, maybe because of simulation
     blinkingStartsOn=1;//doesnt effect, maybe because of simulation
     blinkingPattern[] = {2,2};//doesnt effect, maybe because of simulation
