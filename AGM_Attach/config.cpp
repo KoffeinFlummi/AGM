@@ -103,45 +103,45 @@ class CfgVehicles {
 
   class All;
   class AGM_IR_Strobe_Effect: All
-	{
-		scope = 1;
+  {
+    scope = 1;
     displayName = "IR Strobe";
-		model = "\A3\Weapons_F\empty.p3d";
-		simulation = "nvmarker";
-		class NVGMarker
-		{
+    model = "\A3\Weapons_F\empty.p3d";
+    simulation = "nvmarker";
+    class NVGMarker
+    {
       diffuse[] = {0.01, 0.01, 0.01, 1};
       ambient[] = {0.005, 0.005, 0.005, 1};
-			brightness = 0.2;
-			name = "pozicni blik";
-			drawLight = 1;
-			drawLightSize = 0.2;
-			drawLightCenterSize = 0.2;
-			activeLight = 0;
-			blinking=1;//doesnt effect, maybe because of simulation
+      brightness = 0.2;
+      name = "pozicni blik";
+      drawLight = 1;
+      drawLightSize = 0.2;
+      drawLightCenterSize = 0.2;
+      activeLight = 0;
+      blinking=1;//doesnt effect, maybe because of simulation
       blinkingStartsOn=1;//doesnt effect, maybe because of simulation
       blinkingPattern[] = {2,2};//doesnt effect, maybe because of simulation
       blinkingPatternGuarantee = false;//doesnt effect, maybe because of simulation
-			dayLight = 0;
-			onlyInNvg = 1;
-			useFlare = 0;
-		};
+      dayLight = 0;
+      onlyInNvg = 1;
+      useFlare = 0;
+    };
     side = -1;//-1=noside,3=civ,4=neutral
-		accuracy = 0.01;
-		cost = 1;
-		armor = 500;
-		threat[] = {0,0,0};
+    accuracy = 0.01;
+    cost = 1;
+    armor = 500;
+    threat[] = {0,0,0};
     type = 0;
-		weapons[] = {};
-		magazines[] = {};
-		nvTarget = 1;
-		destrType = "DestructEngine";
-		brightness = 20;
+    weapons[] = {};
+    magazines[] = {};
+    nvTarget = 1;
+    destrType = "DestructEngine";
+    brightness = 20;
     blinking=1;//doesnt effect, maybe because of simulation
     blinkingStartsOn=1;//doesnt effect, maybe because of simulation
     blinkingPattern[] = {2,2};//doesnt effect, maybe because of simulation
     blinkingPatternGuarantee = false;//doesnt effect, maybe because of simulation
-	};
+  };
 
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
