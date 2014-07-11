@@ -111,3 +111,27 @@ class CfgWeapons {
     };
   };
 };
+
+class CfgVehicles {
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      class _xx_AGM_HandFlare_White {
+        count = 24;
+        name = "AGM_HandFlare_White";
+      };
+      class _xx_AGM_HandFlare_Red {
+        count = 24;
+        name = "AGM_HandFlare_Red";
+      };
+      class _xx_AGM_HandFlare_Green {
+        count = 24;
+        name = "AGM_HandFlare_Green";
+      };
+      class _xx_AGM_HandFlare_Yellow {
+        count = 24;
+        name = "AGM_HandFlare_Yellow";
+      };
+    };
+  };
+};
