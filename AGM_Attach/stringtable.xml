@@ -16,6 +16,10 @@
       <German>IR-Stroboskop befestigen</German>
       <Spanish>Colocar Marcador IR</Spanish>
     </Key>
+    <Key ID="STR_AGM_Attach_Attach_IrGrenade">
+      <English>Attach IR Strobe</English>
+      <Spanish>Colocar Granada IR</Spanish>
+    </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
       <German>Blauen Leuchtstab befestigen</German>
@@ -45,6 +49,14 @@
       <English>IR Strobe Detached</English>
       <German>IR-Stroboskop entfernt</German>
       <Spanish>Marcador IR removido</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Attached">
+      <English>IR Grenade Attached</English>
+      <Spanish>Granada IR colocada</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Detached">
+      <English>IR Grenade Detached</English>
+      <Spanish>Granada IR removida</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>

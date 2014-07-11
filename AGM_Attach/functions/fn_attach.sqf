@@ -33,17 +33,17 @@ switch true do {
   case (_itemName == "B_IR_Grenade") : {
     _attachedItem = "B_IRStrobe" createVehicle [0,0,0];
     _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
-    [localize "STR_AGM_Attach_IrStrobe_Attached"] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Attach_IrGrenade_Attached"] call AGM_Core_fnc_displayTextStructured;
   };
   case (_itemName == "O_IR_Grenade") : {
     _attachedItem = "O_IRStrobe" createVehicle [0,0,0];
     _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
-    [localize "STR_AGM_Attach_IrStrobe_Attached"] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Attach_IrGrenade_Attached"] call AGM_Core_fnc_displayTextStructured;
   };
   case (_itemName == "I_IR_Grenade") : {
     _attachedItem = "I_IRStrobe" createVehicle [0,0,0];
     _attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
-    [localize "STR_AGM_Attach_IrStrobe_Attached"] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_Attach_IrGrenade_Attached"] call AGM_Core_fnc_displayTextStructured;
   };
   case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}) : {
     _attachedItem = _itemName createVehicle [0,0,0];
