@@ -81,7 +81,7 @@ class CfgVehicles {
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
 					condition = "(vehicle player == player) and ('AGM_DefusalKit' in items player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
-					statement = "[getNumber(ConfigFile >> 'CfgAmmo' >> typeOf (AGM_Interaction_Target) >> 'AGM_DefuseTime'), [player,AGM_Interaction_Target], 'AGM_Explosives_fnc_DefuseExplosive', localize 'STR_AGM_Explosives_DefusingExplosive'] call AGM_Core_fnc_progressBar;"
+					statement = "[getNumber(ConfigFile >> 'CfgAmmo' >> typeOf (AGM_Interaction_Target) >> 'AGM_DefuseTime'), [player,AGM_Interaction_Target], 'AGM_Explosives_fnc_DefuseExplosive', localize 'STR_AGM_Explosives_DefusingExplosive'] call AGM_Core_fnc_progressBar;";
 					showDisabled = 0;
 					priority = 0.8;
 				};
