@@ -3,155 +3,124 @@
 	<Package ID="AGM">
 		<Container ID="AGM_Explosives">
 			<Key ID="STR_AGM_Explosives_Menu">
-				<Original>
-					Explosives >>
-				</Original>
+				<English>Explosives >></English>
+				<German>Sprengstoffe >></German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Place">
-				<Original>
-					Place >>
-				</Original>
+				<English>Place >></English>
+				<German>Platzieren >></German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Detonate">
-				<Original>
-					Detonate >>
-				</Original>
+				<English>Detonate >></English>
+				<German>Zünden >></German>
 			</Key>
-
 			<Key ID="STR_AGM_Explosives_DetonateCode">
-				<Original>
-					Explosive code: %1
-				</Original>
+				<English>Explosive code: %1</English>
+				<German>Sprengstoffcode: %1</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_PlaceAction">
-				<Original>
-					&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;
-				</Original>
+				<English>&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;</English>
+				<German>&lt;t color=&apos;#00ff00&apos; &gt;Platzieren&lt;/t&gt;</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_CancelAction">
-				<Original>
-					&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;
-				</Original>
+				<English>&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;</English>
+				<German>&lt;t color=&apos;#ff0000&apos; &gt;Abbrechen&lt;/t&gt;</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_AttachTo">
-				<Original>
-					&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;
-				</Original>
+				<English>&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;</English>
+				<German>&lt;t color=&apos;#008888&apos; &gt;USBV befestigen&lt;/t&gt;</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Jammer_TurnOn">
-				<Original>
-					Turn On Thor III
-				</Original>
+				<English>Turn On Thor III</English>
+				<German>Thor III aktivieren</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Jammer_TurnOff">
-				<Original>
-					Turn Off Thor III
-				</Original>
+				<English>Turn Off Thor III</English>
+				<German>Thor III deaktivieren</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_cellphone_displayName">
-				<Original>
-					Cellphone
-				</Original>
+				<English>Cellphone</English>
+				<German>Mobiltelefon</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_cellphone_description">
-				<Original>
-					Used to remotely trigger explosives
-				</Original>
+				<English>Used to remotely trigger explosives</English>
+				<German>Wird benutzt um Sprengstoffe fernzuzünden</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_clacker_displayName">
-				<Original>
-					M57 Firing Device
-				</Original>
+				<English>M57 Firing Device</English>
+				<German>M57 Zündvorrichtung</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_clacker_description">
-				<Original>
-					Used to remotely trigger explosives
-				</Original>
+				<English>Used to remotely trigger explosives</English>
+				<German>Wird benutzt um Sprengstoffe fernzuzünden</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_DefusalKit_displayName">
-				<Original>
-					Defusal Kit
-				</Original>
+				<English>Defusal Kit</English>
+				<German>Entschärfungskit</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_DefusalKit_description">
-				<Original>
-					Allows defusing of explosives
-				</Original>
+				<English>Allows defusing of explosives</English>
+				<German>Erlaubt die Entschärfung von Sprengstoffen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Phone_AddToSpeedDial">
-				<Original>
-					Add to Speed Dial
-				</Original>
+				<English>Add to Speed Dial</English>
+				<German>Zur Schnellauswahl hinzufügen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Clear">
-				<Original>
-					Clear
-				</Original>
+				<English>Clear</English>
+				<German>Löschen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Phone_Dial">
-				<Original>
-					Dial
-				</Original>
+				<English>Dial</English>
+				<German>Wählen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Phone_Up">
-				<Original>
-					Up
-				</Original>
+				<English>Up</English>
+				<German>Hoch</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Phone_Down">
-				<Original>
-					Down
-				</Original>
+				<English>Down</English>
+				<German>Runter</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Cancel">
-				<Original>
-					Cancel
-				</Original>
+				<English>Cancel</English>
+				<German>Abbrechen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_DetonateMenu">
-				<Original>
-					Detonate Menu
-				</Original>
+				<English>Detonate Menu</English>
+				<German>"Zünden"-Menu</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_PlaceMenu">
-				<Original>
-					Place Menu
-				</Original>
+				<English>Place Menu</English>
+				<German>"Platzieren"-Menu</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Defuse">
-				<Original>
-					Defuse
-				</Original>
+				<English>Defuse</English>
+				<German>Entschärfen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_DefusingExplosive">
-				<Original>
-					Defusing Explosive...
-				</Original>
+				<English>Defusing Explosive...</English>
+				<German>Entschärfe Sprengstoff...</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_timerName">
-				<Original>
-					Timer
-				</Original>
+				<English>Timer</English>
+				<German>Zeitzünder</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_TimerMenu">
-				<Original>
-					Time: %1m %2s
-				</Original>
+				<English>Time: %1m %2s</English>
+				<German>Zeit: %1m %2s</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_SetTime">
-				<Original>
-					Set Time
-				</Original>
+				<English>Set Time</English>
+				<German>Zeit einstellen</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_TriggerMenu">
-				<Original>
-					Select a Trigger
-				</Original>
+				<English>Select a Trigger</English>
+				<German>Wähle einen Zünder</German>
 			</Key>
 			<Key ID="STR_AGM_Explosives_SelectTrigger">
-				<Original>
-					Select
-				</Original>
+				<English>Select</English>
+				<German>Wählen</German>
 			</Key>
 		</Container>
 	</Package>
