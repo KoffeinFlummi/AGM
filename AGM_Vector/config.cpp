@@ -1,20 +1,20 @@
-// PATCH CONFIG
 class CfgPatches {
   class AGM_Vector {
-    units[] = {
-      "AGM_Item_Vector"
-    };
-    weapons[] = {
-      "AGM_Vector"
-    };
+    units[] = {"AGM_Item_Vector"};
+    weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
+    version = "0.92";
+    versionStr = "0.92";
+    versionAr[] = {0,92,0};
+    author[] = {"Ghost", "Hamburger SV", "commy2"};
+    authorUrl = "https://github.com/commy2/";
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Vector {
-    clientInit = "execVM '\AGM_Vector\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Vector\clientInit.sqf'";
   };
 };
 
@@ -270,40 +270,19 @@ class RscTitles {
     };
   };
 
-/*
-  class AGM_KestrelWheel_Preload : AGM_Rsc_Display_Base {
+  class AGM_Debug_Crosshair : AGM_Rsc_Display_Base {
+    name = "AGM_Debug_Crosshair";
+    onLoad = "uiNamespace setVariable ['AGM_ctrlDebugCrosshair', (_this select 0) displayCtrl 1];";
+
     class controlsBackground {
-      class Preload_0 : AGM_Rsc_Control_Base {
-        text = "\agm_kestrel\texturen\kestrel_0.paa";
-      };
-      class Preload_1 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_1.paa";
-      };
-      class Preload_2 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_2.paa";
-      };
-      class Preload_3 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_3.paa";
-      };
-      class Preload_4 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_4.paa";
-      };
-      class Preload_5 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_5.paa";
-      };
-      class Preload_6 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_6.paa";
-      };
-      class Preload_7 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_7.paa";
-      };
-      class Preload_8 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_8.paa";
-      };
-      class Preload_9 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_9.paa";
+      class Debug_Crosshair : AGM_Rsc_Control_Base {
+        text = "\AGM_Vector\rsc\debug_crosshair.paa";
+        colorText[] = {1, 0, 0, 0.5};
+        x = 0.490938 * safezoneW + safezoneX;
+        y = 0.4838 * safezoneH + safezoneY;
+        w = 0.3 / 16 * safezoneW;
+        h = 0.3 / 9 * safezoneH;
       };
     };
   };
-*/
 };
