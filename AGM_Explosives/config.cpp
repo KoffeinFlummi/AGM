@@ -71,6 +71,20 @@ class CfgVehicles {
 					showDisabled = 1;
 					priority = 1;
 				};
+				class AGM_Defuse {
+					displayName = $STR_AGM_Explosives_Defuse;
+					condition = "(vehicle player == player) and ('AGM_DefusalKit' in items player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
+					statement = "player action ['Deactivate', player, AGM_Interaction_Target];";
+					showDisabled = 0;
+					priority = 0.8;
+				};
+				class AGM_AddTimer {
+					displayName = $STR_AGM_Explosives_Add30Seconds;
+					condition = "(vehicle player == player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
+					statement = "player action ['SetTimer', player, AGM_Interaction_Target];";
+					showDisabled = 0;
+					priority = 0.8;
+				};
 				/*
 				class AGM_Cellphone {
 					displayName = $STR_AGM_Explosives_cellphone_displayName;

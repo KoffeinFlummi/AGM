@@ -123,6 +123,16 @@
 					Place Menu
 				</Original>
 			</Key>
+			<Key ID="STR_AGM_Explosives_Add30Seconds">
+				<Original>
+					+30 Second
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_Defuse">
+				<Original>
+					Defuse
+				</Original>
+			</Key>
 		</Container>
 	</Package>
 </Project>

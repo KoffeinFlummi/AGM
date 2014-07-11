@@ -35,17 +35,16 @@ class CfgWeapons {
 			uniformModel = "\A3\Structures_F\Items\Tools\MultiMeter_F.p3d";
 		};
 	};
-	/*
 	class AGM_DefusalKit: ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_DefusalKit_displayName;
 		descriptionShort = $STR_AGM_Explosives_DefusalKit_description;
-		picture = "\AGM_Explosives\Data\UI\Cellphone_UI.paa";
+		picture = "\AGM_Explosives\Data\UI\pliers.paa";
 		model = "\A3\Structures_F\Items\Tools\Pliers_F.p3d";
 		
 		class ItemInfo: AGM_ExplosiveItem {
 			mass = 5;
 			uniformModel = "\A3\Structures_F\Items\Tools\Pliers_F.p3d";
 		};
-	};*/
+	};
 };
