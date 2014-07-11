@@ -101,29 +101,29 @@ class CfgVehicles {
 		class AGM_SelfActions {
 			class AGM_MoveToDriver {
 				displayName = "$STR_AGM_MoveToDriver";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInDriver";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInDriver";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInGunner";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCommander";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCommander";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.93;
 			};
@@ -168,29 +168,29 @@ class CfgVehicles {
 		class AGM_SelfActions {
 			class AGM_MoveToDriver {
 				displayName = "$STR_AGM_MoveToDriver";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInDriver";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInDriver";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInGunner";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCommander";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCommander";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
-				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
-				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
+				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCoDriver";
+				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.93;
 			};

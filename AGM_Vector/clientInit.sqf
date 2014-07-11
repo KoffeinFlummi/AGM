@@ -27,5 +27,7 @@ AGM_Vector_modeRelativeDistanceHeight = compile preprocessFileLineNumbers "\AGM_
 AGM_Vector_modeRelativeAzimuthDistance = compile preprocessFileLineNumbers "\AGM_Vector\scripts\modeRelativeAzimuthDistance.sqf";
 AGM_Vector_modeFallOfShort = compile preprocessFileLineNumbers "\AGM_Vector\scripts\modeFallOfShort.sqf";
 
-waitUntil {preloadTitleRsc ["AGM_Digit_Preload", "PLAIN"]};
-waitUntil {preloadTitleRsc ["AGM_Debug_Crosshair", "PLAIN"]};
+0 spawn {
+	waitUntil {preloadTitleRsc ["AGM_Digit_Preload", "PLAIN"]};
+	waitUntil {preloadTitleRsc ["AGM_Debug_Crosshair", "PLAIN"]};
+};
