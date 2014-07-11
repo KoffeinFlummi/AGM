@@ -19,6 +19,7 @@ class CfgFunctions
 			file="AGM_Explosives\functions";
 			
 			class AddCodeToSpeedDial;
+			class DefuseExplosive;
 			class DetonateExplosive;
 			class DialPhone;
 			class HandleScrollWheel;
@@ -31,6 +32,8 @@ class CfgFunctions
 			
 			class openDetonateUI;
 			class openPlaceUI;
+			class openTimerSetUI;
+			class openTriggerSelectionUI;
 			
 			class Place_Approve;
 			class Place_AttachTo;
@@ -38,8 +41,12 @@ class CfgFunctions
 			class PlaceExplosive;
 			
 			class RemoveCodeFromSpeedDial;
+			class SelectTrigger;
 			class SetupExplosive;
 			class SetSpeedDial;
+			class StartTimer;
+			
+			class TriggerType;
 		};
 	};
 };
@@ -74,19 +81,11 @@ class CfgVehicles {
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
 					condition = "(vehicle player == player) and ('AGM_DefusalKit' in items player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
-					statement = "player action ['Deactivate', player, AGM_Interaction_Target];";
+					statement = "[getNumber(ConfigFile >> 'CfgAmmo' >> typeOf (AGM_Interaction_Target) >> 'AGM_DefuseTime'), [player,AGM_Interaction_Target], 'AGM_Explosives_fnc_DefuseExplosive', localize 'STR_AGM_Explosives_DefusingExplosive'] call AGM_Core_fnc_progressBar;"
 					showDisabled = 0;
 					priority = 0.8;
 				};
-				class AGM_AddTimer {
-					displayName = $STR_AGM_Explosives_Add30Seconds;
-					condition = "(vehicle player == player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
-					statement = "player action ['SetTimer', player, AGM_Interaction_Target];";
-					showDisabled = 0;
-					priority = 0.8;
-				};
-				/*
-				class AGM_Cellphone {
+/*				class AGM_Cellphone {
 					displayName = $STR_AGM_Explosives_cellphone_displayName;
 					condition = "('AGM_Cellphone' in (items player))";
 					statement = "closeDialog 0;createDialog 'RscAGM_PhoneInterface';";

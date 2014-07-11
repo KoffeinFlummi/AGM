@@ -30,8 +30,10 @@ lbClear 8866;
 {
 	if (!isNull(_x select 0)) then {
 		_item = ConfigFile >> "CfgMagazines" >> (_x select 4);
-		_index = lbAdd [8866, "E: " + str(_x select 3)];// + getText(_item >> "displayName")];
+		_index = lbAdd [8866, _x select 3];
 		lbSetData [8866, _index, str(_foreachIndex)];
 		lbSetPicture [8866, _index, getText(_item >> "picture")];
 	};
 } foreach _result;
+
+lbSetCurSel [8866, 0];

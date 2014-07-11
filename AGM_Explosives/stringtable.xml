@@ -38,11 +38,6 @@
 					&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;
 				</Original>
 			</Key>
-			<Key ID="STR_AGM_Explosives_Clacker_Remaining">
-				<Original>
-					%1 Explosive(s) left on clacker
-				</Original>
-			</Key>
 			<Key ID="STR_AGM_Explosives_Jammer_TurnOn">
 				<Original>
 					Turn On Thor III
@@ -123,14 +118,39 @@
 					Place Menu
 				</Original>
 			</Key>
-			<Key ID="STR_AGM_Explosives_Add30Seconds">
-				<Original>
-					+30 Second
-				</Original>
-			</Key>
 			<Key ID="STR_AGM_Explosives_Defuse">
 				<Original>
 					Defuse
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_DefusingExplosive">
+				<Original>
+					Defusing Explosive...
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_timerName">
+				<Original>
+					Timer
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_TimerMenu">
+				<Original>
+					Time: %1m %2s
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_SetTime">
+				<Original>
+					Set Time
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_TriggerMenu">
+				<Original>
+					Select a Trigger
+				</Original>
+			</Key>
+			<Key ID="STR_AGM_Explosives_SelectTrigger">
+				<Original>
+					Select
 				</Original>
 			</Key>
 		</Container>
