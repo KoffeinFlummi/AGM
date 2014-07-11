@@ -4,7 +4,7 @@
 	Author: Garth de Wet (LH)
 	
 	Description:
-		Opens the UI for explosive placement selection
+		Selects a trigger for an explosive.
 	
 	Parameters: 
 		0: String - Magazine

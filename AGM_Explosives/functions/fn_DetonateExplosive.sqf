@@ -52,6 +52,7 @@ if ((typeName _item) == "ARRAY") then {
 		_exp = getText (ConfigFile >> "CfgAmmo" >> typeof (_previousExp) >> "AGM_Explosive");
 		if (_exp != "") then {
 			_exp = createVehicle [_exp, getPos _previousExp, [], 0, "NONE"];
+			_exp setDir (getDir _previousExp);
 			_item set [0, _exp];
 			deleteVehicle _previousExp;
 		};

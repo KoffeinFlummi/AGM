@@ -112,6 +112,8 @@ class CfgVehicles {
 			*/
 		};
 	};
+	
+	#include "CfgVehicles.hpp"
 };
 
 #include "CfgAmmo.hpp"

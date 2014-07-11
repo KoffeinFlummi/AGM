@@ -55,17 +55,17 @@
 			</Key>
 			<Key ID="STR_AGM_Explosives_cellphone_description">
 				<Original>
-					Used to trigger explosives
+					Used to remotely trigger explosives
 				</Original>
 			</Key>
 			<Key ID="STR_AGM_Explosives_clacker_displayName">
 				<Original>
-					Clacker
+					M57 Firing Device
 				</Original>
 			</Key>
 			<Key ID="STR_AGM_Explosives_clacker_description">
 				<Original>
-					Used to trigger explosives
+					Used to remotely trigger explosives
 				</Original>
 			</Key>
 			<Key ID="STR_AGM_Explosives_DefusalKit_displayName">

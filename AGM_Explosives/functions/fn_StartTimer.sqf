@@ -5,7 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Gets the types of triggers associated with the explosive
+		Starts a timer for an explosive.
 	
 	Parameters:
 		0: OBJECT - Explosive

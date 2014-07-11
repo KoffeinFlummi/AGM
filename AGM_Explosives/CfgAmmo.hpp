@@ -1,7 +1,7 @@
 class CfgAmmo {
 	// All explosive based Ammo classes. Theses are all listed in case they are required.
 	class Default{
-		AGM_DefuseTime = 2.5;
+		AGM_DefuseTime = 5;
 	};
 	/*
 	class TimeBombCore:Default;
@@ -32,7 +32,6 @@ class CfgAmmo {
 		AGM_Explosive = "ClaymoreDirectionalMine_Remote_Ammo_Scripted";
 		soundActivation[] = {"",0,0,0};
 		soundDeactivation[] = {"",0,0,0};
-		AGM_DefuseTime = 5;
 	};
 	//class ClaymoreDirectionalMine_Remote_Ammo_Scripted:ClaymoreDirectionalMine_Remote_Ammo;
 	
@@ -41,14 +40,12 @@ class CfgAmmo {
 		AGM_Explosive = "DemoCharge_Remote_Ammo_Scripted";
 		soundActivation[] = {"",0,0,0};
 		soundDeactivation[] = {"",0,0,0};
-		AGM_DefuseTime = 5;
 	};
 	//class DemoCharge_Remote_Ammo_Scripted:DemoCharge_Remote_Ammo;
 	class SatchelCharge_Remote_Ammo:PipeBombBase{
 		AGM_Explosive = "SatchelCharge_Remote_Ammo_Scripted";
 		soundActivation[] = {"",0,0,0};
 		soundDeactivation[] = {"",0,0,0};
-		AGM_DefuseTime = 5;
 	};
 	/*class SatchelCharge_Remote_Ammo_Scripted:SatchelCharge_Remote_Ammo;
 	
