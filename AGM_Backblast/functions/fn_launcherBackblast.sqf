@@ -31,25 +31,20 @@ if (_unit == _firer) then {
 		};
 	};
 } else {
-	_direction set [0, - (_direction select 0)];
-	_direction set [1, - (_direction select 1)];
-	_direction set [2, - (_direction select 2)];
+	_direction = [0, 0, 0] vectorDiff _direction;
 
 	_azimuth = (_direction select 0) atan2 (_direction select 1);
 	_inclination = asin (_direction select 2);
 
 	_relativePosition = eyePos _unit;
-	_relativeDirection = [_position, _relativePosition] call AGM_Backblast_fnc_getDirectionVector;
+	_relativeDirection = _relativePosition vectorDiff _position;
 
 	_relativeAzimuth = (_relativeDirection select 0) atan2 (_relativeDirection select 1);
 	_relativeInclination = asin (_relativeDirection select 2);
 
 	_angle = sqrt ((_relativeAzimuth - _azimuth) ^ 2 + (_relativeInclination - _inclination) ^ 2);
-	_distance = sqrt (
-		((_position select 0) - (_relativePosition select 0)) ^ 2 +
-		((_position select 1) - (_relativePosition select 1)) ^ 2 +
-		((_position select 2) - (_relativePosition select 2)) ^ 2
-	);
+	_distance = vectorMagnitude _relativeDirection;
+
 	_line = [_position, _relativePosition];
 
 	if (_angle < _backblastAngle && {_distance < _backblastRange} && {!lineIntersects _line} && {!terrainIntersectASL _line}) then {

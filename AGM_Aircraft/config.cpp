@@ -39,11 +39,6 @@ class Extended_PostInit_EventHandlers {
   };
 };*/
 
-class Mode_SemiAuto;
-class Mode_Burst;
-class Mode_FullAuto;
-
-
 class CfgAmmo {
   class BulletBase;
   class LaserBombCore;
@@ -172,10 +167,10 @@ class CfgAmmo {
     soundHit4[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_4",3.16228,1,1600};
     soundHit5[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_5",3.16228,1,1600};
     soundHit6[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_6",3.16228,1,1600};
-    class CamShakeExplode{};
-    class CamShakeHit{};
-    class CamShakeFire{};
-    class CamShakePlayerFire{};
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
   };
 
   class Cannon_30mm_HE_Plane_CAS_02_F: Gatling_30mm_HE_Plane_CAS_01_F {
@@ -220,10 +215,10 @@ class CfgAmmo {
     explosionEffects = "AAMissileExplosion";
     muzzleEffect = "BIS_fnc_effectFiredHeliRocket";
     whistleDist = 20;
-    class CamShakeExplode {  };
-    class CamShakeHit {  };
-    class CamShakeFire {  };
-    class CamShakePlayerFire {  };
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
   };
 
   class Bomb_04_F: LaserBombCore {
@@ -279,10 +274,10 @@ class CfgAmmo {
     timeToLive = 60;
     effectsMissileInit = "MissileDAR1";
     whistleDist = 30;
-    class CamShakeExplode {  };
-    class CamShakeHit {  };
-    class CamShakeFire {  };
-    class CamShakePlayerFire {  };
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
   };
 
   class Rocket_04_AP_F: Rocket_04_HE_F {
@@ -535,8 +530,11 @@ class CfgMagazines {
   };
 };
 
+class Mode_SemiAuto;
+class Mode_Burst;
+class Mode_FullAuto;
+
 class CfgWeapons {
-  class Default;
   class MissileLauncher;
   class RocketPods;
   class SmokeLauncher;
