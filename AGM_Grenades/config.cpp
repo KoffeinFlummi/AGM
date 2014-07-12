@@ -47,3 +47,10 @@ class AGM_Core_Default_Keys {
     alt = 1;
   };
 };
+
+class CfgAmmo {
+  class GrenadeHand;
+  class SmokeShell : GrenadeHand {
+    timeToLive = 80;
+  };
+};
