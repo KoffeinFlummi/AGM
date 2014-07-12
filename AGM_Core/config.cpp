@@ -212,6 +212,7 @@ class CfgFunctions {
       class isTurnedOut;
       class map;
       class moduleCheckPBOs;
+      class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
       class progressBar;
@@ -300,6 +301,17 @@ class CfgVehicles {
           };
         };
       };
+    };
+  };
+
+  class AGM_ModuleLSDVehicles: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "LSD Vehicles";
+    function = "AGM_Core_fnc_moduleLSDVehicles";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
     };
   };
 

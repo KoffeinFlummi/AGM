@@ -31,6 +31,8 @@ _this spawn {
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
 
+  if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
+
   if (_unit != player) then {
     [-2, {
       if (!(isPlayer (_this select 0)) and {player == (_this select 0)}) then {
@@ -44,8 +46,6 @@ _this spawn {
     _painkillerOld = _this select 1;
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
-
-    if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
 
     if (_painkillerOld < 0.1) exitWith {
       if (_unit == player) then {
@@ -86,6 +86,8 @@ _this spawn {
       };
     };
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -93,8 +95,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_morphineAbort = {
