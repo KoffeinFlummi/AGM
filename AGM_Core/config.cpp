@@ -258,7 +258,7 @@ class Extended_Init_EventHandlers {
 class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      Local = "_this call AGM_Core_fnc_setName";
+      serverLocal = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };

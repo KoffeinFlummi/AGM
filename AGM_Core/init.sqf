@@ -39,3 +39,5 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
 call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
 enableCamShake true;
+
+[player] call AGM_Core_fnc_setName;
