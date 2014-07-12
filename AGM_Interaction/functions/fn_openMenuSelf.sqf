@@ -23,7 +23,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_configName = configName _action;
 				_displayName = getText (_action >> "displayName");
 
-				_condition = compile getText (_action >> "condition");
+				_condition = getText (_action >> "condition");
+				if (_condition == "") then {_condition = "true";};
+				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
@@ -51,7 +53,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_configName = configName _action;
 				_displayName = getText (_action >> "displayName");
 
-				_condition = compile getText (_action >> "condition");
+				_condition = getText (_action >> "condition");
+				if (_condition == "") then {_condition = "true";};
+				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
