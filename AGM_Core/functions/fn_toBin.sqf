@@ -18,10 +18,10 @@ _minLength = _this select 1;
 
 if (isNil "_minLength") then {_minLength = 1};
 
-_sign = if (_number < 0) then {"-"} else {""};
+_sign = ["", "-"] select (_number < 0);
 
 _number = round abs _number;
-_bin = if (_number == 0) then {"0"} else {""};
+_bin = ["", "0"] select (_number == 0);
 
 while {_number > 0} do {
 	_rest = str (_number mod 2);

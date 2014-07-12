@@ -4,8 +4,4 @@ private "_name";
 
 _name = name (_this select 0);
 
-[-2, {
-	if (serverCommandAvailable "#kick") then {
-		serverCommand format["#kick %1", _this];
-	};
-}, _name] call CBA_fnc_globalExecute;
+[_name, "{if (serverCommandAvailable '#kick') then {serverCommand format['#kick %1', _this]}}"] call AGM_Core_fnc_execRemoteFnc;
