@@ -37,7 +37,6 @@ _projectile = _this select 4;
 
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {_unit enableSimulation true;};
-if (_selectionName == "?") exitWith {0};
 
 _hitSelections = [
   "head",
@@ -56,9 +55,12 @@ _hitPoints = [
   "HitRightLeg"
 ];
 
+// If the damage is being weird, we just tell it fuck off.
+if !((_selectionName in _hitSelections) or (_selectionName == "")) exitWith {0};
+
 // Calculate change in damage.
 _newDamage = _damage - (damage _unit);
-if (_selectionName != "") then {
+if (_selectionName in _hitSelections) then {
   _newDamage = _damage - (_unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName)));
 };
 
@@ -67,7 +69,11 @@ if (((velocity _unit) select 2 < -10) and (vehicle player == player)) then {
   AGM_Medical_IsFalling = true;
 };
 if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitWith {
-  _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))
+  if (_selectionName in _hitSelections) then {
+    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))
+  } else {
+    0
+  };
 };
 if (AGM_Medical_IsFalling and (_selectionName == "")) then {
   _damage = (_damage - _newDamage) + (_newDamage / 2); // half structural fall damage

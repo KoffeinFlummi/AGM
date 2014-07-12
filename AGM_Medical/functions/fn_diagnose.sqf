@@ -109,6 +109,8 @@ _this spawn {
     _string = _string + "</t>";
     [composeText [lineBreak, parseText _string]] call AGM_Medical_fnc_displayText;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -116,8 +118,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       }
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_diagnoseAbort = {

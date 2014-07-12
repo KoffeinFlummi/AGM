@@ -61,7 +61,7 @@ _unit spawn {
   _this enableSimulation false;
 };
 
-_unit spawn {
+AGM_WakeUp_Timer = _unit spawn {
   if (random 1 > 0.2) then {
     sleep (60 * (1 + (random 8)) * ((damage _this) max 0.3));
     if (_this getVariable "AGM_Unconscious") then {
