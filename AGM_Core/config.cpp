@@ -178,13 +178,7 @@ class CfgPatches {
 
 class CfgFunctions {
   class AGM_Core {
-    /*class AGM_Core_init {
-      class AGM_Core {
-        file = "AGM_Core\init.sqf";
-        postInit = 1;
-      };
-    };*/
-    class AGM_Core {//_functions {
+    class AGM_Core {
       file = "AGM_Core\functions";
       class adminKick;
       class binarizeNumber;
@@ -241,9 +235,16 @@ class CfgSounds {
   };
 };
 
+class Extended_PreInit_EventHandlers {
+  class AGM_Core {
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    disableModuload = true;
   };
 };
 
@@ -251,6 +252,14 @@ class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
       Init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+    };
+  };
+};
+
+class Extended_Local_EventHandlers {
+  class CAManBase {
+    class AGM_SetName {
+      serverLocal = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };

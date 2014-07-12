@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="IrStrobe">
+    <Key ID="STR_AGM_Attach_AttachDetach">
+      <English>Attach item >></English>
+      <German>Gegenstand befestigen</German>
+      <Spanish>Colocar objeto >></Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Detach">
+      <English>Detach item</English>
+      <German>Gegenstand entfernen</German>
+      <Spanish>Remover objeto</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_IrStrobe">
+      <English>Attach IR Strobe</English>
+      <German>IR-Stroboskop befestigen</German>
+      <Spanish>Colocar Marcador IR</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_IrGrenade">
+      <English>Attach IR Grenade</English>
+      <Spanish>Colocar Granada IR</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
+      <English>Attach Blue Chemlight</English>
+      <German>Blauen Leuchtstab befestigen</German>
+      <Spanish>Colocar Barra de Luz Azul</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_green">
+      <English>Attach Green Chemlight</English>
+      <German>Grünen Leuchtstab befestigen</German>
+      <Spanish>Colocar Barra de Luz Verde</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_red">
+      <English>Attach Red Chemlight</English>
+      <German>Roten Leuchtstab befestigen</German>
+      <Spanish>Colocar Barra de Luz Roja</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Attach_Chemlight_yellow">
+      <English>Attach Yellow Chemlight</English>
+      <German>Gelben Leuchtstab befestigen</German>
+      <Spanish>Colocar Barra de Luz Amarilla</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrStrobe_Attached">
+      <English>IR Strobe Attached</English>
+      <German>IR-Stroboskop befestigt</German>
+      <Spanish>Marcador IR colocado</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrStrobe_Detached">
+      <English>IR Strobe Detached</English>
+      <German>IR-Stroboskop entfernt</German>
+      <Spanish>Marcador IR removido</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Attached">
+      <English>IR Grenade Attached</English>
+      <Spanish>Granada IR colocada</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_IrGrenade_Detached">
+      <English>IR Grenade Detached</English>
+      <Spanish>Granada IR removida</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Chemlight_Attached">
+      <English>Chemlight Attached</English>
+      <German>Leuchtstab befestigt</German>
+      <Spanish>Barra de Luz colocada</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Chemlight_Detached">
+      <English>Chemlight Detached</English>
+      <German>Leuchtstab entfernt</German>
+      <Spanish>Barra de Luz removida</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Attach_Inventory_Full">
+      <English>Inventory is full; Cannot detach item</English>
+      <German>Das Inventar ist voll; der Gegenstand konnte nicht entfernt werden</German>
+      <Spanish>El inventario está lleno; No puede removerse el objeto</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_IrStrobe_Name">
+      <English>IR Strobe</English>
+      <German>IR-Stroboskop</German>
+      <Spanish>Marcador IR</Spanish>
+      <Polish>Stroboskop IR</Polish>
+      <Czech>IR Stroboskop</Czech>
+      <French>Strobe IR</French>
+    </Key>
+    <Key ID="STR_AGM_IrStrobe_Description">
+      <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
+      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit NachtsichtgerÃ¤t zu erkennen ist.</German>
+      <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna.</Spanish>
+      <Polish>Stroboskop Å›wiatÅ‚a podczerwieni umoÅ¼liwia na oznaczenie swojej pozycji pulsacyjnym Å›wiatÅ‚em widocznym tyko przez optykÄ™ noktowizyjnÄ….</Polish>
+      <Czech>InfraÄervenÄ› zÃ¡Å™Ã­cÃ­ stroboskop umoÅ¾Åˆuje signalizaci vaÅ¡Ã­ pozice dÃ­ky blikajÃ­cÃ­mu svÄ›tlu, kterÃ© je vidÄ›t pouze pÅ™i uÅ¾itÃ­ noktovizoru.</Czech>
+      <French>Le strobe Infra-rouge vous permet de signaler votre position, grÃ¢ce Ã  un clignotement visible uniquement via les NVG.</French>
+     </Key>
+  </Package>
+</Project>

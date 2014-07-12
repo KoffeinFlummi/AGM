@@ -1,5 +1,7 @@
 // by commy2
 
+if (!hasInterface) exitWith {};
+
 AGM_Interaction_isOpeningDoor = false;
 AGM_Dancing = false;
 
@@ -13,7 +15,7 @@ addMissionEventHandler ["Draw3D", {
 		_position = visiblePosition _target;
 		_position = _position vectorAdd [0, 0, _height];
 
-		_alpha = 5 - (player distance _target);
+		_alpha = (missionNamespace getVariable "AGM_Interaction_PlayerNamesViewDistance") - (player distance _target);
 		_color = [1, 1, 1, _alpha];
 
 		drawIcon3D [

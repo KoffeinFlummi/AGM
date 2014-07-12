@@ -18,6 +18,9 @@ AGM_Core_OptionStatesNew = [];
 disableSerialization;
 _dlgMenuDialog = uiNamespace getVariable "AGM_Core_MenuDialog";
 
+_ehid_keydown = _dlgMenuDialog displayAddEventHandler ["KeyDown", "_this select 1 > 1"];
+_ehid_keyup = _dlgMenuDialog displayAddEventHandler ["KeyUp", "_this select 1 > 1"];
+
 _config = configFile >> "AGM_Core_Default_Keys";
 _count = count _config;
 
@@ -54,6 +57,9 @@ for "_index" from _count to 19 do {
 };
 
 waitUntil {!dialog};
+
+_dlgMenuDialog displayRemoveEventHandler ["KeyDown", _ehid_keydown];
+_dlgMenuDialog displayRemoveEventHandler ["KeyUp", _ehid_keyup];
 
 if (AGM_Core_keySave == 1) then {
 	_count0 = count AGM_Core_keyNew;

@@ -1,11 +1,15 @@
-// by commy2
-
-private ["_unit", "_chance"];
+// by commy2, Nic547
+// Makes a civilian unable to move
+private ["_unit"];
 
 _unit = _this select 0;
-_chance = _this select 1;
-
-if (random 1 < _chance) then {
+if (captive _unit) then {
+	_unit setCaptive 0;
+	_unit playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
+}
+else {
 	_unit setCaptive 1;
-	_unit playMoveNow "AmovPercMstpSsurWnonDnon";
+	while {captive _unit;} do {
+		_unit playMove "AmovPercMstpSnonWnonDnon_Ease";
+	};
 };

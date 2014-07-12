@@ -29,15 +29,15 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
 0 spawn {
   while {true} do {
     waitUntil {!isNull (findDisplay 46)}; sleep 1;
-    if (isNil "AGM_Core_KeyDown_ehid") then {AGM_Core_KeyDown_ehid = (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"]};
-    if (isNil "AGM_Core_KeyUp_ehid") then {AGM_Core_KeyUp_ehid = (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"]};
+    findDisplay 46 displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+    findDisplay 46 displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
     [false] call AGM_Core_fnc_disableUserInput;
     waitUntil {isNull (findDisplay 46)};
-    AGM_Core_KeyDown_ehid = nil;
-    AGM_Core_KeyUp_ehid = nil;
   };
 };
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
 enableCamShake true;
+
+[player] call AGM_Core_fnc_setName;

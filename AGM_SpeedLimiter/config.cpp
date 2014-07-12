@@ -30,8 +30,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "$STR_AGM_SpeedLimiter";
-    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statementUp = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
+    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;

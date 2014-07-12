@@ -30,31 +30,31 @@ class Extended_PostInit_EventHandlers {
 };
 
 class CfgVehicles {
-    class Module_F;
-    class AGM_ModuleRespawn: Module_F {
-        author = "AGM Team";
-        category = "AGM";
-        displayName = "Respawn System";
-        function = "AGM_Respawn_fnc_module";
-        scope = 2;
-        isGlobal = 1;
-        class Arguments {
-            class SavePreDeathGear {
-            displayName = "Save Gear?";
-            description = "Respawn with the gear a soldier had just before his death?";
-            typeName = "BOOL";
-            class values {
-              class Yes {
-                name = "Yes";
-                value = 1;
-              };
-              class No {
-                default = 1;
-                name = "No";
-                value = 0;
-              };
+  class Module_F;
+  class AGM_ModuleRespawn: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Respawn System";
+    function = "AGM_Respawn_fnc_module";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
+      class SavePreDeathGear {
+        displayName = "Save Gear?";
+        description = "Respawn with the gear a soldier had just before his death?";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
           };
         };
       };
     };
-}
+  };
+};
