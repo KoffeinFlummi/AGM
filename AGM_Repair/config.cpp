@@ -19,19 +19,20 @@ class Extended_PostInit_EventHandlers {
 };
 
 class CfgAddons {
-  class AGM_Repair_Track {
-    list[] = {"AGM"};
+  class AGM_Repair_Items {
+    list[] = {"AGM_Repair_Track", "AGM_Repair_Wheel"};
   };
 };
 
 class CfgVehicleClasses {
-  class AGM_Repair_Track {
+  class AGM_Repair_Items {
     displayName = "AGM";
   };
 };
 
 class CfgVehicles {
   class LandVehicle;
+  class Air;
 
   class Car: LandVehicle {
     class AGM_Actions;
@@ -321,9 +322,98 @@ class CfgVehicles {
       };
     };
   };
+  
+  class Helicopter: Air {
+    class AGM_Actions {
+      class AGM_Repair_checkVehicle {
+        displayName = "$STR_AGM_Repair_checkVehicle";
+        distance = 4;
+        condition = "damage AGM_Interaction_Target < 1";
+        statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
+        showDisabled = 1;
+        priority = 1.0;
+      };
 
-  class thingX;
-  class Land_Tyre_F: thingX {
+      class AGM_Repair_Hull {
+        displayName = "$STR_AGM_Repair_Body";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHull' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitHull', 'hull_hit'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.5;
+      };
+
+      class AGM_Repair_Engine {
+        displayName = "$STR_AGM_Repair_Engine";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitEngine' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitEngine', 'engine_hit'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.9;
+      };
+
+      class AGM_Repair_Avionics {
+        displayName = "$STR_AGM_Repair_Avionics";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitAvionics' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitAvionics', 'avionics_hit'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.4;
+      };
+
+      class AGM_Repair_HRotor {
+        displayName = "$STR_AGM_Repair_HRotor";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHRotor' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitHRotor', 'main_rotor_hit'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.4;
+      };
+
+      class AGM_Repair_VRotor {
+        displayName = "$STR_AGM_Repair_VRotor";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitVRotor' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitVRotor', 'tail_rotor_hit'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.4;
+      };
+    };
+  };
+
+  class Plane: Air {
+    class AGM_Actions {
+      class AGM_Repair_checkVehicle {
+        displayName = "$STR_AGM_Repair_checkVehicle";
+        distance = 4;
+        condition = "damage AGM_Interaction_Target < 1";
+        statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
+        showDisabled = 1;
+        priority = 1.0;
+      };
+
+      class AGM_Repair_Hull {
+        displayName = "$STR_AGM_Repair_Body";
+        distance = 4;
+        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHull' > 0.1) && (damage AGM_Interaction_Target < 1)";
+        statement = "[AGM_Interaction_Target, 'HitHull', 'Hull'] call AGM_Repair_fnc_Vehicle;";
+        showDisabled = 1;
+        priority = 0.5;
+      };
+    };
+  };
+
+  class Thing;
+  class AGM_Repair_Track: Thing {
+    scope = 2;
+    model = "\AGM_Repair\track.p3d";
+    icon = "iconObject_circle";
+    displayName = "Track";
+    mapSize = 0.7;
+    accuracy = 0.2;
+    vehicleClass = "AGM_Repair_Items";
+    destrType = "DesturctNo";
+
     class AGM_Actions {
       class AGM_DragItem {
       displayName = "$STR_AGM_Drag_StartDrag";
@@ -343,16 +433,15 @@ class CfgVehicles {
       };
     };
   };
-  
-  class Thing;
-  class AGM_Repair_Track: Thing {
+
+  class AGM_Repair_Wheel: Thing {
     scope = 2;
-    model = "\AGM_Repair\track.p3d";
+    model = "\AGM_Repair\wheel.p3d";
     icon = "iconObject_circle";
-    displayName = "Track";
+    displayName = "Wheel";
     mapSize = 0.7;
     accuracy = 0.2;
-    vehicleClass = "AGM_Repair_Track";
+    vehicleClass = "AGM_Repair_Items";
     destrType = "DesturctNo";
 
     class AGM_Actions {
