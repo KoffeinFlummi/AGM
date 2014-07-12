@@ -114,6 +114,20 @@ class CfgVehicles {
 	};
 	
 	#include "CfgVehicles.hpp"
+
+	class Box_NATO_Support_F;
+	class AGM_Box_Misc: Box_NATO_Support_F {
+		class TransportItems {
+			class _xx_AGM_Clacker {
+				count = 24;
+				name = "AGM_Clacker";
+			};
+			class _xx_AGM_DefusalKit {
+				count = 24;
+				name = "AGM_DefusalKit";
+			};
+		};
+	};
 };
 
 #include "CfgAmmo.hpp"
