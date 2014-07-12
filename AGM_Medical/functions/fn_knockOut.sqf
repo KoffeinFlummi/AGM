@@ -13,7 +13,7 @@
 private ["_unit", "_newGroup"];
 
 _unit = _this select 0;
-if !(isPlayer _unit) exitWith {_unit setDamage 1;};
+if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {_unit setDamage 1;};
 
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
