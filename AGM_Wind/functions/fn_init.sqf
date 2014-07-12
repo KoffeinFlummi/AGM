@@ -9,7 +9,7 @@ if !(isPlayer _unit) exitWith {
 // Wind Reading
 0 spawn {
   while {true} do {
-    waitUntil {(inputAction "Compass" > 0 or inputAction "CompassToggle" > 0) and (vehicle player == player)};
+    waitUntil {sleep 0.1; visibleCompass};
 
     _windStrength = sqrt((wind select 0) ^ 2 + (wind select 1) ^ 2);
 
