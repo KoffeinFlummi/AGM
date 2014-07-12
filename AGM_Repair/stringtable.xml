@@ -5,6 +5,12 @@
         <English>Vehicle</English>
         <German>Fahrzeug</German>
     </Key>
+
+    <Key ID="STR_AGM_Repair">
+        <English>Repair >></English>
+        <German>Reparieren >></German>
+    </Key>
+
     <Key ID="STR_AGM_Repair_Nothing">
         <English>Everything is OK!</English>
         <German>Alles OK!</German>
@@ -69,6 +75,18 @@
         <English>Turret is damaged</English>
         <German>Turm ist beschädigt</German>
     </Key>
+    <Key ID="STR_AGM_Repair_Avionics_check">
+        <English>Avionics are damaged</English>
+        <German>Instrumente sind beschädigt</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_HRotor_check">
+        <English>Main rotor is damaged</English>
+        <German>Hauptrotor ist beschädigt</German>
+    </Key>s
+    <Key ID="STR_AGM_Repair_VRotor_check">
+        <English>Tail rotor is damaged</English>
+        <German>Heckrotor ist beschädigt</German>
+    </Key>
   	<Key ID="STR_AGM_Repair_Wheels">
         <English>Wheels >></English>
         <German>Reifen >></German>
@@ -132,6 +150,18 @@
     <Key ID="STR_AGM_Repair_Gun">
         <English>Repair Gun</English>
         <German>Rohr reparieren</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_Avionics">
+        <English>Repair Avionics</English>
+        <German>Instrumente reparieren</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_HRotor_check">
+        <English>Repair Main rotor</English>
+        <German>Hauptrotor reparieren</German>
+    </Key>s
+    <Key ID="STR_AGM_Repair_VRotor_check">
+        <English>Repair Tail rotor</English>
+        <German>Heckrotor reparieren</German>
     </Key>
   	<Key ID="STR_AGM_Repair_Repairing">
         <English>Repairing...</English>

@@ -88,6 +88,21 @@ if ((_vehicle getHitPointDamage "HitGun") > 0.1) then {
 	_height = _height + 0.5;
 };
 
+if ((_vehicle getHitPointDamage "HitAvionics") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_Avionics_check";
+	_height = _height + 0.5;
+};
+
+if ((_vehicle getHitPointDamage "HitHRotor") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_HRotor_check";
+	_height = _height + 0.5;
+};
+
+if ((_vehicle getHitPointDamage "HitVRotor") > 0.1) then {
+	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_VRotor_check";
+	_height = _height + 0.5;
+};
+
 if (_string == format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Repair_Object", getText (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]) then {
 	_string = _string + "<br/><br/>" + localize "STR_AGM_Repair_Nothing";
 	_height = 1.5;
