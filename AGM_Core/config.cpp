@@ -255,6 +255,14 @@ class Extended_Init_EventHandlers {
   };
 };
 
+class Extended_Local_EventHandlers {
+  class CAManBase {
+    class AGM_SetName {
+      Local = "_this call AGM_Core_fnc_setName";
+    };
+  };
+};
+
 class CfgFactionClasses {
   class AGM {
     displayName = "AGM";
