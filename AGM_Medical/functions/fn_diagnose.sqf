@@ -30,6 +30,16 @@ _this spawn {
 
     _unit setVariable ["AGM_Diagnosed", true, false];
 
+    // Tell bystanders what's up if necessary
+    if (!(isNil "AGM_Medical_RequireDiagnosis") and {AGM_Medical_RequireDiagnosis}) then {
+      _bystanders = nearestObjects [player, ["Man"], 10];
+      [-1, {
+        if (player in (_this select 1)) then {
+          (_this select 0) setVariable ["AGM_Diagnosed", true, false];
+        };
+      }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
+    };
+
     _string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
