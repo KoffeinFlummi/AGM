@@ -1,3 +1,47 @@
+// NEW CLASSES
+/*
+
+// CFGAmmo
+
+AGM_B_65x39_Caseless_Tracer_Dim
+AGM_B_65x39_Caseless_SD
+AGM_B_65x39_Caseless_AP
+
+AGM_B_65x39_Case_Tracer_Dim
+AGM_B_65x39_Case_SD
+AGM_B_65x39_Case_AP
+
+AGM_B_556x45_Ball_Tracer_Dim
+AGM_B_556x45_Ball_SD
+AGM_B_556x45_Ball_AP
+
+AGM_B_762x51_Tracer_Dim
+AGM_B_762x51_Ball_SD
+AGM_B_762x51_Ball_AP
+AGM_B_762x51_M118LR
+
+
+// CFGMagazines
+
+AGM_30Rnd_65x39_caseless_mag_Tracer_Dim
+AGM_30Rnd_65x39_caseless_mag_SD
+AGM_30Rnd_65x39_caseless_mag_AP
+
+AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim
+AGM_30Rnd_65x39_caseless_green_mag_SD
+AGM_30Rnd_65x39_caseless_green_mag_AP
+
+AGM_30Rnd_556x45_Stanag_Tracer_Dim
+AGM_30Rnd_556x45_Stanag_SD
+AGM_30Rnd_556x45_Stanag_AP
+
+AGM_20Rnd_762x51_Mag_Tracer
+AGM_20Rnd_762x51_Mag_Tracer_Dim
+AGM_20Rnd_762x51_Mag_SD
+AGM_20Rnd_762x51_Mag_AP
+*/
+
+
 // SEE LICENSE.TXT FOR LICENSING INFORMATION
 
 class CfgPatches {
@@ -19,72 +63,134 @@ class CfgPatches {
 class CfgAmmo {
   class BulletBase;
 
+
+  /* 6.5x39mm Grendel */
+
   class B_65x39_Caseless : BulletBase {
-    // Nosler 120gr Ballistic Tip
-    // http://www.nosler.com/ballistic-tip/
-    // 0.264 bullet diameter
-    // BC 0.458
-    // SD 0.246
-    // Fired from 14.5 in barrel
-    // Ref data calculated by Shooter Android app at alt: 0ft, hg: 29.92, temp 80 F, 0% humidity
-
-    // Pretend MX has 1:7.5 twist barrel
     typicalSpeed = 724;
-
-    // Determining experimentally with arma_bal.py (best match to subsonic using Shooter)
     airFriction = -0.000915;
   };
 
+  // IR Dim
+  class B_65x39_Caseless_yellow;
+  class AGM_B_65x39_Caseless_Tracer_Dim : B_65x39_Caseless_yellow {
+    nvgOnly = 1;
+  };
+  class B_65x39_Case_yellow;
+  class AGM_B_65x39_Case_Tracer_Dim : B_65x39_Case_yellow {
+    nvgOnly = 1;
+  };
+
+  // sub sonic
+  class AGM_B_65x39_Caseless_SD : B_65x39_Caseless {
+    airFriction = -0.00054;
+    hit = 8.75;
+    supersonicCrackFar[] = {};
+    supersonicCrackNear[] = {};
+    typicalSpeed = 320;
+    audibleFire = 0.8;
+    visibleFire = 2.5;
+  };
+  class B_65x39_Case;
+  class AGM_B_65x39_Case_SD : B_65x39_Case {
+    airFriction = -0.00054;
+    hit = 8.75;
+    supersonicCrackFar[] = {};
+    supersonicCrackNear[] = {};
+    typicalSpeed = 320;
+    audibleFire = 0.8;
+    visibleFire = 2.5;
+  };
+
+  // armor piercing
+  class AGM_B_65x39_Caseless_AP : B_65x39_Caseless {
+    caliber = 1.8;
+    hit = 10.5;
+  };
+  class AGM_B_65x39_Case_AP : B_65x39_Case {
+    caliber = 1.8;
+    hit = 10.5;
+  };
+
+
+  /* 5.56x45mm NATO */
+
   class B_556x45_Ball : BulletBase {
-    // SS109 bullet steel core light penetrator
-    // M855 load data
-    // Muzzle velocity based on 16" barrel (standard for F2000)
-    typicalSpeed = 911; // http://counterstrikefox.freeservers.com/mv.htm
+    typicalSpeed = 911;
     airFriction = -0.001335;
   };
 
-  class B_762x51_Ball: BulletBase {
-    typicalSpeed = 853; // Typical muzzle velocity of M240
-
-    // TODO: Correct airfriction for 7.62x51mm M80
+  // IR Dim
+  class B_556x45_Ball_Tracer_Red;
+  class AGM_B_556x45_Ball_Tracer_Dim : B_556x45_Ball_Tracer_Red {
+    nvgOnly = 1;
   };
 
+  // sub sonic
+  class AGM_B_556x45_Ball_SD : B_556x45_Ball {
+    airFriction = -0.0006;
+    hit = 7;
+    supersonicCrackFar[] = {};
+    supersonicCrackNear[] = {};
+    typicalSpeed = 320;
+    audibleFire = 0.6;
+    visibleFire = 2.0;
+  };
+
+  // armor piercing
+  class AGM_B_556x45_Ball_AP : B_556x45_Ball {
+    caliber = 1.4;
+    hit = 8.4;
+  };
+
+
+  /* 7.62x51mm NATO */
+
+  class B_762x51_Ball: BulletBase {
+    typicalSpeed = 853;
+    //airfriction = 
+  };
+
+  // IR Dim
+  class B_762x51_Tracer_Red;
+  class AGM_B_762x51_Tracer_Dim : B_762x51_Tracer_Red {
+    nvgOnly = 1;
+  };
+
+  // sub sonic
+  class AGM_B_762x51_Ball_SD : B_762x51_Ball {
+    airFriction = -0.00048;
+    hit = 10.5;
+    supersonicCrackFar[] = {};
+    supersonicCrackNear[] = {};
+    typicalSpeed = 320;
+    audibleFire = 0.9;
+    visibleFire = 3.0;
+  };
+
+  // armor piercing
+  class AGM_B_762x51_Ball_AP : B_762x51_Ball {
+    caliber = 2.4;
+    hit = 12.6;
+  };
+
+  // M118 LR
   class AGM_B_762x51_M118LR : B_762x51_Ball {
-    // http://www.snipercentral.com/m118.phtml
-    // 175gr Sierra HPBT MatchKing
-    // 1:12" rifling twist (probably, some civilian shooters like 1:10" for heavies)
-    // Mk14 Mod 1 barrel velocity of about 2600fps (18")
-    // http://www.militaryfactory.com/smallarms/detail.asp?smallarms_id=377
-
     typicalspeed = 792;
-
-    // Determining experimentally with arma_bal.py (close match at 500m to ballistic calc data)
     airfriction = -0.0008577;
   };
 
-  // I will never understand WTF BI was thinking when they did this 9x21mm IMI bullshit.
+
+  /* Other */
+
   class B_9x21_Ball;
   class B_9x19_Ball : B_9x21_Ball {
-    // Cartridge: 9mm US M882 ball
-    // Bullet weight: 124 grains
-    // Bullet velocity: 1251fps +/- 25
-    // BC 0.160 123 gr round nose FMJ
-
     typicalSpeed = 381;
-
-    // Determined with armabal.py (close ballistic match at 100 meters)
     airfriction = -0.00213;
   };
 
   class B_45ACP_Ball: BulletBase {
-    // 230 gr (15 g) US Army Ball FMJ  830 ft/s (250 m/s)
-
-    // 230gr round nose FMJ
-    // Ballistic Coefficient (G1)  0.184
-    // Sectional Density  0.162
     typicalSpeed = 250;
-
-    // Determined with armabal.py (close ballistic match at 100 meters)
     airfriction = -0.0009;
   };
 };
@@ -92,73 +198,158 @@ class CfgAmmo {
 class CfgMagazines {
   class CA_Magazine;
 
+
+  /* 6.5x39mm Grendel - MX */
+
   class 30Rnd_65x39_caseless_mag : CA_Magazine {
-    initSpeed = 724; // initial MV for 14.5in barrel
+    initSpeed = 724;
   };
+  class 30Rnd_65x39_caseless_mag_Tracer;
+  class 100Rnd_65x39_caseless_mag : CA_Magazine {
+    initSpeed = 724;
+  };
+
+  class AGM_30Rnd_65x39_caseless_mag_Tracer_Dim : 30Rnd_65x39_caseless_mag_Tracer {
+    ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimDescription";
+    picture = "\A3\weapons_f\data\ui\m_30stanag_caseless_yellow_CA.paa";
+  };
+  class AGM_30Rnd_65x39_caseless_mag_SD : 30Rnd_65x39_caseless_mag {
+    ammo = "AGM_B_65x39_Caseless_SD";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_SDName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_mag_SDDescription";
+    picture = "\A3\weapons_f\data\ui\m_30stanag_caseless_green_CA.paa";
+    initSpeed = 320;
+  };
+  class AGM_30Rnd_65x39_caseless_mag_AP : 30Rnd_65x39_caseless_mag {
+    ammo = "AGM_B_65x39_Caseless_AP";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_APName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_APNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_mag_APDescription";
+  };
+
+
+  /* 6.5x39mm Grendel - Katiba */
 
   class 30Rnd_65x39_caseless_green : 30Rnd_65x39_caseless_mag {
-    initSpeed = 724; // initial MV for 14.5in barrel
+    initSpeed = 724;
   };
-
-  class 100Rnd_65x39_caseless_mag : CA_Magazine {
-    initSpeed = 724; // initial MV for 14.5in barrel
-    // TODO: the MX SW has a longer barrel so should have a higher initial MV
-  };
-
+  class 30Rnd_65x39_caseless_green_mag_Tracer;
   class 200Rnd_65x39_cased_Box : 100Rnd_65x39_caseless_mag {
-    initSpeed = 691; // initial MV for 12.5in barrel (estimated)
+    initSpeed = 691;
   };
+
+  class AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim : 30Rnd_65x39_caseless_green_mag_Tracer {
+    ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimDescription";
+  };
+  class AGM_30Rnd_65x39_caseless_green_mag_SD : 30Rnd_65x39_caseless_green {
+    ammo = "AGM_B_65x39_Caseless_SD";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDDescription";
+    initSpeed = 320;
+  };
+  class AGM_30Rnd_65x39_caseless_green_mag_AP : 30Rnd_65x39_caseless_green {
+    ammo = "AGM_B_65x39_Caseless_AP";
+    displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APName";
+    displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APDescription";
+  };
+
+
+  /* 5.56x45mm NATO */
 
   class 30Rnd_556x45_Stanag : CA_Magazine {
-    initSpeed = 911; // Initial MV for a 16" barrel
+    initSpeed = 911;
   };
+  class 30Rnd_556x45_Stanag_Tracer_Red; //picture = "\A3\weapons_f\data\ui\m_30stanag_red_ca.paa";
+
+  class AGM_30Rnd_556x45_Stanag_Tracer_Dim : 30Rnd_556x45_Stanag_Tracer_Red {
+    ammo = "AGM_B_556x45_Ball_Tracer_Dim";
+    displayName = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimName";
+    displayNameShort = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimDescription";
+    picture = "\A3\weapons_f\data\ui\m_30stanag_yellow_ca.paa";
+  };
+  class AGM_30Rnd_556x45_Stanag_SD : 30Rnd_556x45_Stanag {
+    ammo = "AGM_B_556x45_Ball_SD";
+    displayName = "$STR_AGM_30Rnd_556x45_mag_SDName";
+    displayNameShort = "$STR_AGM_30Rnd_556x45_mag_SDNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_556x45_mag_SDDescription";
+    initSpeed = 320;
+    picture = "\A3\weapons_f\data\ui\m_30stanag_green_ca.paa";
+  };
+  class AGM_30Rnd_556x45_Stanag_AP : 30Rnd_556x45_Stanag {
+    ammo = "AGM_B_556x45_Ball_AP";
+    displayName = "$STR_AGM_30Rnd_556x45_mag_APName";
+    displayNameShort = "$STR_AGM_30Rnd_556x45_mag_APNameShort";
+    descriptionShort = "$STR_AGM_30Rnd_556x45_mag_APDescription";
+  };
+
+
+  /* 7.62x51mm NATO */
 
   class 20Rnd_762x51_Mag: CA_Magazine {
     descriptionshort = "$STR_AGM_Ballistics_20Rnd_762x51_Mag_Description";
     initSpeed = 792; // 18" M14 EBR barrel
     ammo = "AGM_B_762x51_M118LR"; // Use M118LR
   };
-
   class 150Rnd_762x51_Box : CA_Magazine {
     ammo = "B_762x51_Ball";
     initSpeed = 853; // Typical MV for M240
   };
 
-  // Override the 9x21 mags to have 9x19 in them. Banish 9x21 to hell.
+  class AGM_20Rnd_762x51_Mag_Tracer : 20Rnd_762x51_Mag {  //@todo Green tracers for opfor and yellow tracers for independent
+    ammo = "B_762x51_Tracer_Red";
+    displayName = "$STR_AGM_20Rnd_762x51_mag_TracerName";
+    displayNameShort = "$STR_AGM_20Rnd_762x51_mag_TracerNameShort";
+    descriptionShort = "$STR_AGM_20Rnd_762x51_mag_TracerDescription";
+    tracersEvery = 1;
+  };
+  class AGM_20Rnd_762x51_Mag_Tracer_Dim : AGM_20Rnd_762x51_Mag_Tracer {
+    ammo = "AGM_B_762x51_Tracer_Dim";
+    displayName = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimName";
+    displayNameShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimNameShort";
+    descriptionShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimDescription";
+  };
+  class AGM_20Rnd_762x51_Mag_SD : 20Rnd_762x51_Mag {
+    ammo = "AGM_B_762x51_Ball_SD";
+    displayName = "$STR_AGM_20Rnd_762x51_mag_SDName";
+    displayNameShort = "$STR_AGM_20Rnd_762x51_mag_SDNameShort";
+    descriptionShort = "$STR_AGM_20Rnd_762x51_mag_SDDescription";
+    initSpeed = 320;
+  };
+  class AGM_20Rnd_762x51_Mag_AP : 20Rnd_762x51_Mag {
+    ammo = "AGM_B_762x51_Ball_AP";
+    displayName = "$STR_AGM_20Rnd_762x51_mag_APName";
+    displayNameShort = "$STR_AGM_20Rnd_762x51_mag_APNameShort";
+    descriptionShort = "$STR_AGM_20Rnd_762x51_mag_APDescription";
+  };
+
+
+  /* Other */
+
   class 30Rnd_9x21_Mag : CA_Magazine {
     ammo = "B_9x19_Ball";
-    initSpeed = 370; // Scorpion Evo 3A1 muzzle velocity according to CZ's manual
-    // Why is it so low, lower than a Glock? I'm not sure, but I have no choice but to believe them...!
-    // Maybe they are shooting some heavier bullet and not saying.
+    initSpeed = 370;
   };
   class 16Rnd_9x21_Mag : 30Rnd_9x21_Mag {
     ammo = "B_9x19_Ball";
-    // M9 initial MV. Close enough for horseshoes and handguns.
     initSpeed = 381;
   };
   class 30Rnd_45ACP_Mag_SMG_01 : 30Rnd_9x21_Mag {
-    initSpeed = 259; // From Vector manual (5.5" barrel)
+    initSpeed = 259;
   };
-
   class 9Rnd_45ACP_Mag : 30Rnd_45ACP_Mag_SMG_01 {
-    initSpeed = 250; // 1911
+    initSpeed = 250;
   };
 };
-
-// TMR Dispersion values.
-// Based on the general specifications of the corresponding real world weapon
-// plus a bit of inaccuracy to reflect that it's a service rifle,
-// not a finely tuned civilian weapon (except for Marksman rifles).
-
-// Full auto dispersion is increased even though fire mode
-// obviously doesn't affect inherent accuracy.
-
-// What it does affect is trigger pull, and a sloppy full auto
-// trigger is easily worth the increase in dispersion here even
-// when firing single shots with Auto selected.
-// That's what I think.
-
-// Use Wolfram Alpha to convert radians to MOA easily.
 
 class Mode_SemiAuto;
 class Mode_FullAuto;
@@ -167,7 +358,17 @@ class CfgWeapons {
   class Rifle_Base_F;
   class Rifle_Long_Base_F;
 
+
+  /* MX */
+
   class arifle_MX_Base_F : Rifle_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
+      "AGM_30Rnd_65x39_caseless_mag_SD",
+      "AGM_30Rnd_65x39_caseless_mag_AP",
+      "100Rnd_65x39_caseless_mag",
+      "100Rnd_65x39_caseless_mag_Tracer"
+    };
     class Single : Mode_SemiAuto {
       dispersion = 0.000800; // radians. Equal to 2.75 MOA.
       // Based on widely cited 2 MOA figure for new 5.56 ACR.
@@ -176,9 +377,13 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
   };
-
-  class arifle_MX_SW_Base_F : arifle_MX_Base_F {
-    class Single : Single {
+  class arifle_MX_SW_F : arifle_MX_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
+      "AGM_30Rnd_65x39_caseless_mag_SD",
+      "AGM_30Rnd_65x39_caseless_mag_AP"
+    };
+    class Single : Mode_SemiAuto {
       dispersion = 0.000800; // radians. Equal to 2.75 MOA.
       // Based on widely cited 2 MOA figure for new 5.56 ACR.
     };
@@ -186,8 +391,14 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
   };
-
-  class arifle_MXM_Base_F : arifle_MX_Base_F {
+  class arifle_MXM_F : arifle_MX_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
+      "AGM_30Rnd_65x39_caseless_mag_SD",
+      "AGM_30Rnd_65x39_caseless_mag_AP",
+      "100Rnd_65x39_caseless_mag",
+      "100Rnd_65x39_caseless_mag_Tracer"
+    };
     class Single : Single {
       dispersion = 0.00029; // radians. Equal to 1 MOA.
       // 6.5mm is easily capable of this in a half-tuned rifle.
@@ -197,7 +408,15 @@ class CfgWeapons {
     };
   };
 
+
+  /* Katiba */
+
   class arifle_katiba_Base_F : Rifle_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim",
+      "AGM_30Rnd_65x39_caseless_green_mag_SD",
+      "AGM_30Rnd_65x39_caseless_green_mag_AP"
+    };
     class Single : Mode_SemiAuto {
       dispersion = 0.000800; // radians. Equal to 2.75 MOA.
       // Based on widely cited 2 MOA figure for new 5.56 ACR?
@@ -207,6 +426,9 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
   };
+
+
+  /* Other */
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
     class manual : Mode_FullAuto {
@@ -227,6 +449,11 @@ class CfgWeapons {
   };
 
   class Tavor_base_F : Rifle_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+      "AGM_30Rnd_556x45_Stanag_SD",
+      "AGM_30Rnd_556x45_Stanag_AP"
+    };
     class Single : Mode_SemiAuto {
       dispersion = 0.000727; // radians. Equal to 2.5 MOA, about the limit of mass-produced M855.
       //
@@ -237,6 +464,11 @@ class CfgWeapons {
   };
 
   class mk20_base_F : Rifle_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+      "AGM_30Rnd_556x45_Stanag_SD",
+      "AGM_30Rnd_556x45_Stanag_AP"
+    };
     class Single : Mode_SemiAuto {
       dispersion = 0.0008727; // radians. Equal to 3 MOA, about the limit of mass-produced M855 plus
       // some extra for these worn out Greek Army service rifles.
@@ -247,6 +479,11 @@ class CfgWeapons {
   };
 
   class SDAR_base_F : Rifle_Base_F {
+    magazines[] += {
+      "AGM_30Rnd_556x45_Stanag_Tracer_Dim",
+      "AGM_30Rnd_556x45_Stanag_SD",
+      "AGM_30Rnd_556x45_Stanag_AP"
+    };
     class Single : Mode_SemiAuto {
       dispersion = 0.0008727; // radians. Equal to 3 MOA, about the limit of mass-produced M855 plus
       // some extra because Kel-Tec.
@@ -256,11 +493,130 @@ class CfgWeapons {
     };
   };
 
-  // VESTS
-  class ItemCore;
-  class VestItem;
 
-  // basically we are reducing the amount of shots a vest can take from something like 5 to 2.
+  /* Silencers */
+
+  class ItemCore;
+  class InventoryMuzzleItem_Base_F;
+
+  class muzzle_snds_H: ItemCore {
+    class ItemInfo: InventoryMuzzleItem_Base_F {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+  class muzzle_snds_L: muzzle_snds_H {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+  class muzzle_snds_M: muzzle_snds_H {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+  class muzzle_snds_B: muzzle_snds_H {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+  class muzzle_snds_H_MG: muzzle_snds_H {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+  class muzzle_snds_H_SW: muzzle_snds_H_MG {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+    };
+  };
+
+
+  /* Vests */
+
+  class VestItem;
   class Vest_Camo_Base: ItemCore {
     class ItemInfo;
   };
@@ -398,6 +754,133 @@ class CfgWeapons {
   class V_TacVestCamo_khk: Vest_Camo_Base {
     class ItemInfo: VestItem {
       armor = 8;
+    };
+  };
+};
+
+
+#define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
+  magazine = #MAGAZINE; \
+  count = COUNT; \
+};
+
+class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+  class ReammoBox_F;
+
+  class Box_NATO_Wps_F: NATO_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_AP,2)
+    };
+  };
+
+  class Box_NATO_WpsSpecial_F: NATO_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,1)
+    };
+  };
+
+  class Box_NATO_Ammo_F: NATO_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,2)
+    };
+  };
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,6)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,3)
+    };
+  };
+
+  class B_supplyCrate_F: ReammoBox_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,2)
+    };
+  };
+
+  class Box_East_Wps_F: EAST_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+    };
+  };
+
+  class Box_East_WpsSpecial_F: EAST_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,1)
+    };
+  };
+
+  class Box_East_Ammo_F: EAST_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,2)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,6)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,3)
+    };
+  };
+
+  class O_supplyCrate_F: B_supplyCrate_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,2)
+    };
+  };
+
+  class Box_IND_Wps_F: IND_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+    };
+  };
+
+  class Box_IND_WpsSpecial_F: IND_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,2)
+    };
+  };
+
+  class Box_IND_Ammo_F: IND_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,6)
+    };
+  };
+
+  class I_supplyCrate_F: B_supplyCrate_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+    };
+  };
+
+  class IG_supplyCrate_F: ReammoBox_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+    };
+  };
+
+  class C_supplyCrate_F: ReammoBox_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
     };
   };
 };
