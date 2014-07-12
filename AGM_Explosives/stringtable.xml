@@ -50,7 +50,7 @@
 			<Key ID="STR_AGM_Explosives_cellphone_displayName">
 				<English>Cellphone</English>
 				<German>Mobiltelefon</German>
-				<Spanish>Télefono Celular</Spanish>
+				<Spanish>Télefono móvil</Spanish>
 			</Key>
 			<Key ID="STR_AGM_Explosives_cellphone_description">
 				<English>Used to remotely trigger explosives</English>
@@ -90,7 +90,7 @@
 			<Key ID="STR_AGM_Explosives_Phone_Dial">
 				<English>Dial</English>
 				<German>Wählen</German>
-				<Spanish>Discar</Spanish>
+				<Spanish>Marcar</Spanish>
 			</Key>
 			<Key ID="STR_AGM_Explosives_Phone_Up">
 				<English>Up</English>

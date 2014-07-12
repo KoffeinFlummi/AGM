@@ -16,7 +16,6 @@ class CfgFunctions {
   class AGM_Backblast {
     class AGM_Backblast {
       file = "\AGM_Backblast\functions";
-      class getDirectionVector;
       class getDistance;
       class launcherBackblast;
       class tankDangerZone;
@@ -37,7 +36,6 @@ class Extended_FiredNear_EventHandlers {
 
 class CfgWeapons {
   class Launcher;
-
   class Launcher_Base_F: Launcher {
     AGM_Backblast_Angle = 60;
     AGM_Backblast_Range = 10;
@@ -67,7 +65,6 @@ class CfgWeapons {
   };
 
   class CannonCore;
-
   class cannon_120mm: CannonCore {
     AGM_DangerZone_Angle = 90;
     AGM_DangerZone_Range = 50;
