@@ -89,7 +89,7 @@ class CfgWeapons {
   class AGM_EarBuds: ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
-    model = "\A3\weapons_F\ammo\mag_univ.p3d";
+    model = "\AGM_Hearing\earplugs.p3d";
     picture = "\AGM_Hearing\UI\bwa3_earplugs_x_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
