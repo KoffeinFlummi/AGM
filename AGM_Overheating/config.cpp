@@ -1,9 +1,3 @@
-
-#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-  name = #ITEM; \
-  count = COUNT; \
-};
-
 class CfgPatches {
   class AGM_Overheating {
     units[] = {};
@@ -23,7 +17,7 @@ class CfgFunctions {
     class AGM_Overheating {
       file = "\AGM_Overheating\functions";
       class checkTemperature;
-      class firedEH;
+      class overheat;
       class swapBarrel;
       class swapBarrelCallback;
     };
@@ -39,7 +33,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheating {
-      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_firedEH}";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_overheat}";
     };
   };
 };
@@ -61,6 +55,12 @@ class CfgSounds {
     sound[] = {"\AGM_Overheating\sounds\barrelswap.ogg", 5, 1, 200};
     titles[] = {};
   };
+};
+
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {

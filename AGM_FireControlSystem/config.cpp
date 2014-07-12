@@ -55,14 +55,14 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgVehicles {
-  // PROVIDE DEFAULT VALUES FOR OTHER MODS
   class All;
   class AllVehicles: All {
     class NewTurret;
-    AGM_FCSEnabled = 0; // FCS defaults to off
+    AGM_FCSEnabled = 0;
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+
     class AGM_SelfActions {
       class AGM_LeaveGroup {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
@@ -73,6 +73,7 @@ class CfgVehicles {
       };
     };
   };
+
   class Land: AllVehicles {};
   class LandVehicle: Land {};
   class Tank: LandVehicle {
@@ -325,5 +326,4 @@ class CfgVehicles {
       };
     };
   };
-
 };

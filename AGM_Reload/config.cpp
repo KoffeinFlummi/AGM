@@ -1,4 +1,3 @@
-
 class CfgPatches {
   class AGM_Reload {
     units[] = {};
