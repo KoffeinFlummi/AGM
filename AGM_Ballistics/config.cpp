@@ -256,4 +256,148 @@ class CfgWeapons {
     };
   };
 
+  // VESTS
+  class ItemCore;
+  class VestItem;
+
+  // basically we are reducing the amount of shots a vest can take from something like 5 to 2.
+  class Vest_Camo_Base: ItemCore {
+    class ItemInfo;
+  };
+  class Vest_NoCamo_Base: ItemCore {
+    class ItemInfo;
+  };
+
+  // plate carriers
+  class V_PlateCarrier1_blk: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrier1_rgr: Vest_NoCamo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrier2_rgr: V_PlateCarrier1_rgr {
+    class ItemInfo: ItemInfo {
+      armor = 12;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierL_CTRG: V_PlateCarrier1_rgr {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrier3_rgr: Vest_NoCamo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 12;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrier_Kerry: V_PlateCarrier1_rgr {
+    class ItemInfo: ItemInfo {
+      armor = 12;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierGL_rgr: Vest_NoCamo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 24;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierH_CTRG: V_PlateCarrier2_rgr {
+    class ItemInfo: ItemInfo {
+      armor = 12;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierIA1_dgtl: Vest_NoCamo_Base {
+    class ItemInfo: VestItem {
+      armor = 8;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierIA2_dgtl: V_PlateCarrierIA1_dgtl {
+    class ItemInfo: VestItem {
+      armor = 12;
+      passThrough = 0.6;
+    };
+  };
+  class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl {
+    class ItemInfo: VestItem {
+      armor = 20;
+      passThrough = 0.75;
+    };
+  };
+  class V_PlateCarrierSpec_rgr: Vest_NoCamo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 16;
+      passThrough = 0.45;
+    };
+  };
+
+  // rebreathers (WHY ARE THESE ARMOURED ANYWAYS?!)
+  class V_RebreatherB: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 0;
+    };
+  };
+  class V_RebreatherIA: V_RebreatherB {
+    class ItemInfo: ItemInfo {
+      armor = 0;
+    };
+  };
+  class V_RebreatherIR: V_RebreatherB {
+    class ItemInfo: ItemInfo {
+      armor = 0;
+    };
+  };
+
+  // tac vests
+  class V_TacVest_camo: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_khk: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_brn: V_TacVest_khk {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_oli: V_TacVest_khk {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_blk: V_TacVest_khk {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_blk_POLICE: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVest_RU: Vest_Camo_Base {
+    class ItemInfo: ItemInfo {
+      armor = 8;
+    };
+  };
+  class V_TacVestCamo_khk: Vest_Camo_Base {
+    class ItemInfo: VestItem {
+      armor = 8;
+    };
+  };
 };

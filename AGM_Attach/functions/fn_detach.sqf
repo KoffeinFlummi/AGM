@@ -10,9 +10,9 @@ Return Value:
 none
 */
 
-private ["_unit", "_itemName", "_count"];
+private ["_unit", "_itemName", "_count", "_attachedItem"];
 
-_unit = _this;
+_unit = _this select 0;
 _itemName = _unit getVariable ["AGM_AttachedItemName", ""];
 
 // Check if unit has an attached item
