@@ -31,20 +31,20 @@ _this spawn {
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
   player setVariable ["AGM_CanTreat", false, false];
 
+  if !([_unit, "AGM_Epipen"] call AGM_Medical_fnc_takeItem) exitWith {};
+
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    if !([_unit, "AGM_Epipen"] call AGM_Medical_fnc_takeItem) exitWith {};
-
     [_unit] call AGM_Medical_fnc_wakeUp;
+
+    player setVariable ["AGM_CanTreat", true, false];
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       "AGM_Medical" call AGM_Interaction_fnc_openMenu;
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_epinephrineAbort = {

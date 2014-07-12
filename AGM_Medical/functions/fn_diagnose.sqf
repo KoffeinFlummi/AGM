@@ -30,6 +30,16 @@ _this spawn {
 
     _unit setVariable ["AGM_Diagnosed", true, false];
 
+    // Tell bystanders what's up if necessary
+    if (!(isNil "AGM_Medical_RequireDiagnosis") and {AGM_Medical_RequireDiagnosis}) then {
+      _bystanders = nearestObjects [player, ["Man"], 10];
+      [-1, {
+        if (player in (_this select 1)) then {
+          (_this select 0) setVariable ["AGM_Diagnosed", true, false];
+        };
+      }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
+    };
+
     _string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
@@ -109,6 +119,8 @@ _this spawn {
     _string = _string + "</t>";
     [composeText [lineBreak, parseText _string]] call AGM_Medical_fnc_displayText;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -116,8 +128,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       }
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_diagnoseAbort = {
