@@ -14,7 +14,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Repair {
-    clientInit = "call compile preprocessFileLineNumbers 'AGM_Repair\clientInit.sqf'";
+    clientInit = "execVM 'AGM_Repair\init.sqf'";
   };
 };
 
@@ -466,7 +466,7 @@ class CfgVehicles {
 };
 
 /*
-class CfgWeapons {						//Removes the ability to repair vehicles and disarm explosives. If you want to use this function, remove the "/ *" and "* /".
+class CfgWeapons {						//Removes the ability to repair vehicles and disarm explosives. If you want to use this function, remove the "/*" and "* /".
   class ItemCore;
   class InventoryItem_Base_F;
   
