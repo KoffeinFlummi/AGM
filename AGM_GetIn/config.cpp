@@ -89,13 +89,21 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_GetInCargo {
+				displayName = "$STR_AGM_GetInVehicleAsCargo";
+				distance = 4;
+				condition = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_canGetInCargo";
+				statement = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 			class AGM_GetInCoDriver {
 				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
 				distance = 4;
 				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
-				priority = -1.93;
+				priority = -1.94;
 			};
 		};
 		class AGM_SelfActions {
@@ -120,12 +128,19 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_MoveToCargo {
+				displayName = "$STR_AGM_MoveToCargo";
+				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
+				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
 				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCoDriver";
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
-				priority = -1.93;
+				priority = -1.94;
 			};
 		};
 	};
@@ -156,13 +171,21 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_GetInCargo {
+				displayName = "$STR_AGM_GetInVehicleAsCargo";
+				distance = 4;
+				condition = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_canGetInCargo";
+				statement = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 			class AGM_GetInCoDriver {
 				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
 				distance = 4;
 				condition = "[AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCoDriver";
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
-				priority = -1.93;
+				priority = -1.94;
 			};
 		};
 		class AGM_SelfActions {
@@ -187,12 +210,19 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
+			class AGM_MoveToCargo {
+				displayName = "$STR_AGM_MoveToCargo";
+				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
+				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
+				showDisabled = 0;
+				priority = -1.93;
+			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
 				condition = "[vehicle player] call AGM_GetIn_fnc_canGetInCoDriver";
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
-				priority = -1.93;
+				priority = -1.94;
 			};
 		};
 	};

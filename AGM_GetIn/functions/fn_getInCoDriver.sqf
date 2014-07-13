@@ -9,7 +9,7 @@ _coDrivers = getArray (_config >> "cargoIsCoDriver");
 _countCoDrivers = {_x == 1} count _coDrivers;
 
 if (isNil "_index") then {
-	_index = _countCoDrivers;
+	_index = _countCoDrivers - 1;
 };
 
 player action [

@@ -24,8 +24,8 @@ if (_index != -1) then {
 
 _crew = _crew - [objNull];	//_vehicle emptyPositions "Cargo";
 
-//_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
-_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo");
+_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
+//_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo");
 
 _distance = getNumber (_config >> "getInRadius");
 
@@ -42,6 +42,7 @@ _isLocked = false;
 } forEach _coDrivers;
 
 count _crew < _countCrew &&
+{alive _vehicle} &&
 {!_isLocked} &&
 {getNumber (_config >> "isUav") != 1} &&
 {player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle player == _vehicle}}

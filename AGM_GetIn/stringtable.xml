@@ -7,69 +7,77 @@
       <German>Einsteigen</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDriver">
-      <English>Get in as driver</English>
+      <English>Get in as Driver</English>
       <German>Einsteigen als Fahrer</German>
     </Key>
-    <Key ID="STR_AGM_GetInVehicleAsCoDriver">
-      <English>Get in as co driver</English>
-      <German>Einsteigen als Beifahrer</German>
-    </Key>
     <Key ID="STR_AGM_GetInVehicleAsGunner">
-      <English>Get in as gunner</English>
+      <English>Get in as Gunner</English>
       <German>Einsteigen als Schütze</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsCommander">
-      <English>Get in as commander</English>
+      <English>Get in as Commander</English>
       <German>Einsteigen als Kommandant</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsLoader">
-      <English>Get in as loader</English>
+      <English>Get in as Loader</English>
       <German>Einsteigen als Ladeschütze</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsPilot">
-      <English>Get in as pilot</English>
+      <English>Get in as Pilot</English>
       <German>Einsteigen als Pilot</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerLeft">
-      <English>Get in as door gunner (left)</English>
+      <English>Get in as Door gunner (left)</English>
       <German>Einsteigen als Doorgunner (links)</German>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
-      <English>Get in as door gunner (right)</English>
+      <English>Get in as Door gunner (right)</English>
       <German>Einsteigen als Doorgunner (rechts)</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsCargo">
+      <English>Get in as Cargo</English>
+      <German>Einsteigen als Besatzung</German>
+    </Key>
+    <Key ID="STR_AGM_GetInVehicleAsCoDriver">
+      <English>Get in as Co-driver</English>
+      <German>Einsteigen als Beifahrer</German>
     </Key>
 
     <Key ID="STR_AGM_MoveToDriver">
-      <English>Move to driver</English>
+      <English>Move to Driver</English>
       <German>Zum Fahrersitz</German>
     </Key>
-    <Key ID="STR_AGM_MoveToCoDriver">
-      <English>Move to co driver</English>
-      <German>Zum Beifahrersitz</German>
-    </Key>
     <Key ID="STR_AGM_MoveToGunner">
-      <English>Move to gunner</English>
+      <English>Move to Gunner</English>
       <German>Zum Schützensitz</German>
     </Key>
     <Key ID="STR_AGM_MoveToCommander">
-      <English>Move to commander</English>
+      <English>Move to Commander</English>
       <German>Zum Kommandantensitz</German>
     </Key>
     <Key ID="STR_AGM_MoveToLoader">
-      <English>Move to loader</English>
+      <English>Move to Loader</English>
       <German>Zum Ladeschützensitz</German>
     </Key>
     <Key ID="STR_AGM_MoveToPilot">
-      <English>Move to pilot</English>
+      <English>Move to Pilot</English>
       <German>Zum Pilotensitz</German>
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerLeft">
-      <English>Move to door gunner (left)</English>
+      <English>Move to Door gunner (left)</English>
       <German>Zum Doorgunnersitz (links)</German>
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerRight">
-      <English>Move to door gunner (right)</English>
+      <English>Move to Door gunner (right)</English>
       <German>Zum Doorgunnersitz (rechts)</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToCargo">
+      <English>Move to Cargo</English>
+      <German>Zum Besatzungssitz</German>
+    </Key>
+    <Key ID="STR_AGM_MoveToCoDriver">
+      <English>Move to Co-driver</English>
+      <German>Zum Beifahrersitz</German>
     </Key>
 
   </Package>
