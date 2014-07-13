@@ -14,7 +14,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Repair {
-    clientInit = "execVM 'AGM_Repair\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers 'AGM_Repair\clientInit.sqf'";
   };
 };
 
