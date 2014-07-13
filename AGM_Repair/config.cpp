@@ -4,8 +4,8 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction, AGM_Drag};
-    version = "0.93";
-    versionStr = "0.93";
+    version = "0.92";
+    versionStr = "0.92";
     versionAr[] = {0,9,0};
     author[] = {"marc_book"};
     authorUrl = "https://github.com/MarcBook/";

@@ -15,7 +15,7 @@ addMissionEventHandler ["Draw3D", {
 		_position = visiblePosition _target;
 		_position = _position vectorAdd [0, 0, _height];
 
-		_alpha = (missionNamespace getVariable "AGM_Interaction_PlayerNamesViewDistance") - (player distance _target);
+		_alpha = (missionNamespace getVariable ["AGM_Interaction_PlayerNamesViewDistance", 5]) - (player distance _target);
 		_color = [1, 1, 1, _alpha];
 
 		drawIcon3D [

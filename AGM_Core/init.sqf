@@ -5,6 +5,8 @@
   (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+
 if (!hasInterface) exitWith {};
 
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
@@ -35,8 +37,6 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
     waitUntil {isNull (findDisplay 46)};
   };
 };
-
-call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
 enableCamShake true;
 
