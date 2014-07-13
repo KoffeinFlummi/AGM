@@ -1,25 +1,34 @@
 #!/usr/bin/env python
 
 
-##############################################################
-# Authors: KoffeinFlummi, sutt0n                             #
-#                                                            #
-# Build script for binarizing the entirety of a multi-PBO    #
-# project without the mind-numbing chore of comfirming 20    #
-# fucking things.                                            #
-#                                                            #
-# This thing is WIP and for now you need to copy some        #
-# folders from Arma 3 Tools to Arma 3 for it to work         #
-# (CfgConvert, FileBank, Binarize, DSSignFile).              #
-#                                                            #
-# By default all PBOs that have modifications since the last #
-# binarization are binarized. You can also start the script  #
-# with the PBOs you want to binarized as arguments.          #
-# e.g.: python binarizer.py AGM_Core AGM_Resting             #
-#                                                            #
-# To only pack a certain addon, place an empty file called   #
-# ".PACKONLY" inside of the respective addon folder.         #
-##############################################################
+# AGM BINARIZER
+# Authors: KoffeinFlummi, sutt0n
+
+# DESCRIPTION
+# Build script for binarizing the entirety of a multi-PBO
+# project without the mind-numbing chore of confirming 20
+# different things.
+
+# PREPARATION
+# This thing is WIP and for now you need to copy some
+# folders from Arma 3 Tools to Arma 3 for it to work
+# (CfgConvert, FileBank, DSSignFile).
+
+# SELECTING PBOs
+# By default all PBOs that have modifications since the last
+# binarization are binarized. You can also start the script
+# with the PBOs you want to binarized as arguments.
+# e.g.: python binarizer.py AGM_Core AGM_Resting
+
+# PACKING / BINARIZING
+# To only pack a certain addon, place an empty file called
+# ".PACKONLY" inside of the respective addon folder.
+
+# CREATING THE EXE
+# The .exe is created using cx_Freeze, which can be found here:
+# http://cx-freeze.sourceforge.net/
+# All those files are a bit ugly, but cx_Freeze doesn't support
+# single-exe creation.
 
 
 import os
@@ -30,20 +39,56 @@ import winreg
 import threading
 import time
 
-# Path to .biprivatekey file. If not set, addon will not be signed.
-privatekey   = ""#D:\\Programme\\Steam\\SteamApps\\common\\Arma 3 Tools\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
+if getattr(sys, 'frozen', False):
+    scriptpath = sys.executable
+else:
+    scriptpath = os.path.realpath(__file__)
 
-# Path to Arma installation. If not set, registry values will be used.
-arma         = ""
+if getattr(sys, 'frozen', False): # script is run as .exe, ask the user for these values.
+  print("###################################")
+  print("#          AGM Binarizer          #")
+  print("# Authors: KoffeinFlummi, sutt0n  #")
+  print("###################################")
 
-# Path to Arma tools. If not set, registry values will be used.
-armatools    = ""
+  print("\n# PATH TO PRIVATE KEY")
+  print("(If you don't enter anything, the PBOs will not be signed.)")
+  privatekey = input("> ")
 
-# Path to mod storage. If not set, Arma 3 directory will be used. Not including modfolder.
-moddir       = ""
+  print("\n# ARMA INSTALLATION PATH")
+  print("(If you don't enter anything, the path will be read from the registry.)")
+  arma = input("> ")
 
-# Name of the mod folder. REQUIRED!
-modfolder    = "@AGM_dev"
+  print("\n# ARMA TOOLS INSTALLATION PATH")
+  print("(If you don't enter anything, the path will be read from the registry.)")
+  armatools = input("> ")
+
+  print("\n# MOD DIRECTORY")
+  print("(If you don't enter anything, the Arma installation directory will be used.)")
+  moddir = input("> ")
+
+  print("\n# MOD FOLDER (including @)")
+  print("(If you don't enter anything, '@AGM_dev' will be used.)")
+  modfolder = input("> ")
+  if modfolder == "":
+    modfolder = "@AGM_dev"
+
+  print("")
+
+else:
+  # Path to .biprivatekey file. If not set, addon will not be signed.
+  privatekey   = ""#D:\\Programme\\Steam\\SteamApps\\common\\Arma 3 Tools\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
+
+  # Path to Arma installation. If not set, registry values will be used.
+  arma         = ""
+
+  # Path to Arma tools. If not set, registry values will be used.
+  armatools    = ""
+
+  # Path to mod storage. If not set, Arma 3 directory will be used. Not including modfolder.
+  moddir       = ""
+
+  # Name of the mod folder. REQUIRED!
+  modfolder    = "@AGM_dev"
 
 # set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
 movemanually = True
@@ -68,7 +113,8 @@ def get_armatools_path():
   # This might throw an exception, but those will be caught outside of this function.
   reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
   key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
-  return winreg.EnumValue(key,0)[1]
+
+  return os.path.dirname(winreg.EnumValue(key,0)[1])
 
 def folder_mod_time(path):
   """ Recursively gets the latest modification date for any file in a folder and it's subfolders. """
@@ -85,7 +131,7 @@ def check_for_changes(module_name):
   """ Checks if a folder had modifications after the last binarization. """
   try:
     pbo_path     = os.path.join(get_arma_path(), modfolder, "Addons", module_name+".pbo")
-    project_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name)
+    project_path = os.path.join(os.path.dirname(scriptpath), module_name)
     return folder_mod_time(project_path) > os.path.getmtime(pbo_path)
   except: # File not found or some other weirdness
     return True
@@ -98,11 +144,12 @@ def get_modules():
     return sys.argv[1:]
 
   # Nothing was specifed, binarize all new PBOs.
-  root = os.path.dirname(os.path.realpath(__file__))
+  root = os.path.dirname(scriptpath)
   modules = []
   for module in os.listdir(root):
     if module[0] != "." and os.path.isdir(os.path.join(root, module)) and check_for_changes(module):
       modules.append(module)
+
   return modules
 
 def binarize(module_name):
@@ -111,15 +158,15 @@ def binarize(module_name):
 
   tempfolder        = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
 
-  addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder.exe")
-  source_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name)
+  addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder", "AddonBuilder.exe")
+  source_path       = os.path.join(os.path.dirname(scriptpath), module_name)
   destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
-  include_path      = os.path.join(os.path.dirname(os.path.realpath(__file__)), "include.txt")
+  include_path      = os.path.join(os.path.dirname(scriptpath), "include.txt")
   final_path        = os.path.join(destination_path, module_name+".pbo")
 
   packonly_path     = os.path.join(source_path, ".PACKONLY")
   if os.path.exists(packonly_path):
-    temp_path       = os.path.join(os.path.dirname(os.path.realpath(__file__)), module_name+".pbo")
+    temp_path       = os.path.join(os.path.dirname(scriptpath), module_name+".pbo")
   else:
     temp_path       = os.path.join(tempfolder, module_name+".pbo")
 
@@ -133,8 +180,9 @@ def binarize(module_name):
     source_path,
     destination_path,
     "-prefix=",
-    "-project="+os.path.dirname(os.path.realpath(__file__)),
-    "-include="+include_path
+    "-project="+os.path.dirname(scriptpath),
+    "-include="+include_path,
+    "-binarize="+binarize_path
   ]
 
   if os.path.exists(packonly_path):
@@ -142,11 +190,10 @@ def binarize(module_name):
     print("  (.PACKONLY detected, copying directly.)")
 
   """
-  These seem to be bugged, so you will just have to copy Binarize, CfgConvert, FileBank and DSSignFile
+  These seem to be bugged, so you will just have to copy CfgConvert, FileBank and DSSignFile
   to your Arma 3 root directory.
 
   "-cfgconvert="+convert_path,
-  "-binarize="+binarize_path,
   "-filebank="+filebank_path
   """
 
@@ -183,6 +230,8 @@ try:
   assert(path != "")
 except:
   print("ERROR: Failed to get Arma installation path.\n")
+  if getattr(sys, 'frozen', False):
+    quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
 try:
@@ -190,12 +239,16 @@ try:
   assert(path != "")
 except:
   print("ERROR: Failed to get Addon Builder installation path.\n")
+  if getattr(sys, 'frozen', False):
+    quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
 try:
   modules = get_modules()
 except:
   print("ERROR: Failed to read modules.\n")
+  if getattr(sys, 'frozen', False):
+    quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
 try:
@@ -205,7 +258,46 @@ try:
     os.makedirs(path)
 except:
   print("ERROR: Failed to get/create mod path.")
+  if getattr(sys, 'frozen', False):
+    quit = input("\nPress any key to exit ...")
   sys.exit(1)
+
+# Copy FileBank, CfgConvert and DSSignFile if necessary
+if getattr(sys, 'frozen', False):
+  convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
+  filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
+  signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
+  if not (os.path.exists(convert_path) and os.path.exists(filebank_path) and os.path.exists(signfile_path)):
+    print("# SETUP")
+    print("This seems to be the first time you're running this. We need to copy some folders (CfgConvert, FileBank, DSSignFile) from 'Arma 3 Tools' to 'Arma 3' to make this work. Are you ok with that? (y/n)")
+    if (input("> ").lower() == "y"):
+      if not os.path.exists(convert_path):
+        try:
+          shutil.copytree(os.path.join(get_armatools_path(), "CfgConvert"), os.path.join(get_arma_path(), "CfgConvert"))
+        except:
+          print("ERROR: Failed to copy CfgConvert from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+          print("\nPress any key to exit ...")
+          sys.exit(1)
+      if not os.path.exists(filebank_path):
+        try:
+          shutil.copytree(os.path.join(get_armatools_path(), "FileBank"), os.path.join(get_arma_path(), "FileBank"))
+        except:
+          print("ERROR: Failed to copy FileBank from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+          print("\nPress any key to exit ...")
+          sys.exit(1)
+      if not os.path.exists(signfile_path):
+        try:
+          shutil.copytree(os.path.join(get_armatools_path(), "DSSignFile"), os.path.join(get_arma_path(), "DSSignFile"))
+        except:
+          print("ERROR: Failed to copy DSSignFile from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+          print("\nPress any key to exit ...")
+          sys.exit(1)
+
+      print("All folders moved successfully.")
+      print("")
+    else:
+      quit = input("\nPress any key to exit ...")
+      sys.exit(1)
 
 
 # Binarize stuff.
@@ -236,3 +328,6 @@ for thread in threads:
 print("\n######################################################")
 print("# Binarization complete.                             #")
 print("######################################################")
+
+if getattr(sys, 'frozen', False):
+  quit = input("\nPress any key to exit ...")
