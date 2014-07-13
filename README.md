@@ -45,9 +45,7 @@ You are a content creator and want to know how to make your weapons or vehicles 
 
 If you want to help development by testing and reporting bugs, feel free to download the current version of this repository either using git (if you know what you're doing) or using the download button on the right.
 
-To binarize the addon you can either use the `binarizer.py` script in the main folder (requires Python 3.x to be installed) or manually binarize every PBO using Addon Builder. Both methods require the Arma 3 Tools to be installed, which can be found on Steam.
-
-I will also add a batch file soon, which X39 was gracious enough to provide, once I find the time to make it work with AGM.
+To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
 
 ## Donations
 
