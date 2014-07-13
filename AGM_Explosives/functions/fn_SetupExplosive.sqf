@@ -45,6 +45,7 @@ _this spawn {
 	["AGM_Explosives_Placement","OnEachFrame", {
 		AGM_Explosives_pfeh_running = true;
 		AGM_Explosives_Setup setPos (positionCameraToWorld [0,0,1]);
+		AGM_Explosives_Setup setDir (getDir player);
 	}] call BIS_fnc_addStackedEventHandler;
 };
 true
