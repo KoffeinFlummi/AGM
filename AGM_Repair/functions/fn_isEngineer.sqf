@@ -2,9 +2,6 @@
 * Author: marc_book
 * Doesn't have any function now.
 * Coming soon.
-*
-* the config entry you were looking for is 'engineer' - commy2
-*
 */
 private ["_unit"];
 
