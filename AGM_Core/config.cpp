@@ -289,15 +289,15 @@ class CfgVehicles {
           class WarnOnce {
             default = 1;
             name = "Warn once";
-            value = 1;
+            value = 0;
           };
           class Warn {
             name = "Warn (permanent)";
-            value = 2;
+            value = 1;
           };
           class Kick {
             name = "Kick";
-            value = 3;
+            value = 2;
           };
         };
       };
