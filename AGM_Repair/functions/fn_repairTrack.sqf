@@ -1,6 +1,9 @@
 /*
 * Author: marc_book
 */
+#define REPAIRTIMEENGINEER 7
+#define REPAIRTIMENOENGINEER 10
+
 _vehicle = _this select 0;
 _repairSelection = _this select 1;
 _repairSelectionName = _this select 2;
@@ -10,6 +13,14 @@ _wheels = nearestObjects [player, ["AGM_Repair_Track"], 4];
 
 AGM_Repair_TrackAbort = {
 	player playMoveNow "AmovPknlMstpSrasWrflDnon";
+};
+
+_repairtime = 0;
+if(([player] call AGM_Repair_fnc_isEngineer)) then {
+	hint "Is Engineer";
+	_repairtime = REPAIRTIMEENGINEER;
+} else {
+	_repairtime = REPAIRTIMENOENGINEER;
 };
 
 if((damage player < 1) && (speed _vehicle == 0) && (count _wheels > 0)) then {
