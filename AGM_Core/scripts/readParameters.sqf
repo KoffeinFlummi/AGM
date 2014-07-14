@@ -8,8 +8,7 @@ for "_index" from 0 to (_count - 1) do {
 
   _name = configName _x;
   _value = _x call bis_fnc_getcfgdata;
-  missionNamespace setVariable [_name, _value];
-  publicVariable _name;
+  [_name, _value] call AGM_Core_fnc_setParameter;
 };
 
 // Read AGM_Parameters from mission and set them on the mission namespace, replacing defaults if necesary
@@ -20,6 +19,5 @@ for "_index" from 0 to (_count - 1) do {
 
   _name = configName _x;
   _value = _x call bis_fnc_getcfgdata;
-  missionNamespace setVariable [_name, _value];
-  publicVariable _name;
+  [_name, _value] call AGM_Core_fnc_setParameter;
 };
