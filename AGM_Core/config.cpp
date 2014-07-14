@@ -220,6 +220,7 @@ class CfgFunctions {
       class sanitizeString;
       class setKeyDefault;
       class setName;
+      class setParameter;
       class stringToColoredText;
       class subString;
       class toBin;
