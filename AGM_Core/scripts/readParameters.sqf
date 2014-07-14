@@ -8,6 +8,8 @@ for "_index" from 0 to (_count - 1) do {
 
   _name = configName _x;
   _value = _x call bis_fnc_getcfgdata;
+  if (_value == "true") then {_value = true];
+  if (_value == "false") then {_value = false];
   [_name, _value] call AGM_Core_fnc_setParameter;
 };
 
@@ -19,5 +21,7 @@ for "_index" from 0 to (_count - 1) do {
 
   _name = configName _x;
   _value = _x call bis_fnc_getcfgdata;
+  if (_value == "true") then {_value = true];
+  if (_value == "false") then {_value = false];
   [_name, _value] call AGM_Core_fnc_setParameter;
 };
