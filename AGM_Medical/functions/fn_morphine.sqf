@@ -21,7 +21,7 @@ _this spawn {
 
   // DETERMINE IF PLAYER IS MEDIC
   _morphinetime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
+  if (([player] call AGM_Medical_fnc_isMedic) or {!AGM_Medical_PunishNonMedics}) then {
     _morphinetime = MORPHINETIMEMEDIC;
   } else {
     _morphinetime = MORPHINETIMENONMEDIC;

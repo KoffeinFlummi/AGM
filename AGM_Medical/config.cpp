@@ -731,4 +731,13 @@ class ImpactEffectsBlood {
   };
 };
 
+class AGM_Parameters {
+  AGM_Medical_CoefBleeding = 1;
+  AGM_Medical_CoefPain = 1;
+  AGM_Medical_AllowNonMedics = "false";
+  AGM_Medical_PunishNonMedics = "false";
+  AGM_Medical_RequireDiagnosis = "false";
+  AGM_Medical_PreventInstaDeath = "false";
+  AGM_Medical_PreventDeathWhileUnconscious = "false";
+};
 #include <HintConfig.hpp>

@@ -107,10 +107,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     sleep 0.00001;
 
     _preventDeath = false;
-    if (!(_unit getVariable "AGM_Unconscious") and !(isNil "AGM_Medical_PreventInstaDeath") and {AGM_Medical_PreventInstaDeath}) then {
+    if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath}) then {
       _preventDeath = true;
     };
-    if ((_unit getVariable "AGM_Unconscious") and !(isNil "AGM_Medical_PreventDeathWhileUnconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
+    if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
       _preventDeath = true;
     };
 
@@ -214,9 +214,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
         "chromAberration" ppEffectEnable true;
         while {(player getVariable "AGM_Pain") > 0} do {
           _strength = player getVariable "AGM_Pain";
-          if !(isNil "AGM_Medical_CoefBleeding") then {
-            _strength = _strength * AGM_Medical_CoefPain;
-          };
+          _strength = _strength * AGM_Medical_CoefPain;
           "chromAberration" ppEffectAdjust [0.035 * _strength, 0.035 * _strength, false];
           "chromAberration" ppEffectCommit 1;
           sleep (1.5 - (player getVariable "AGM_Pain"));
@@ -242,17 +240,13 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
             if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
             _blood = _this getVariable "AGM_Blood";
-            if !(isNil "AGM_Medical_CoefBleeding") then {
-              _blood = _blood - BLOODLOSSRATE * AGM_Medical_CoefBleeding * (damage _this);
-            } else {
-              _blood = _blood - BLOODLOSSRATE * (damage _this);
-            };
+            _blood = _blood - BLOODLOSSRATE * AGM_Medical_CoefBleeding * (damage _this);
             _blood = _blood max 0;
             _this setVariable ["AGM_Blood", _blood, true];
             if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
               [_this] call AGM_Medical_fnc_knockOut;
             };
-            if (_blood <= BLOODTHRESHOLD2 and ((isNil "AGM_Medical_PreventDeathWhileUnconscious") or {!AGM_Medical_PreventDeathWhileUnconscious})) then {
+            if (_blood <= BLOODTHRESHOLD2 and {!AGM_Medical_PreventDeathWhileUnconscious}) then {
               _this setDamage 1;
             };
           };
@@ -267,10 +261,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 };
 
 _preventDeath = false;
-if (!(_unit getVariable "AGM_Unconscious") and !(isNil "AGM_Medical_PreventInstaDeath") and {AGM_Medical_PreventInstaDeath}) then {
+if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath}) then {
   _preventDeath = true;
 };
-if ((_unit getVariable "AGM_Unconscious") and !(isNil "AGM_Medical_PreventDeathWhileUnconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
+if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
   _preventDeath = true;
 };
 

@@ -15,7 +15,7 @@
 #define BLOODBAGHEAL 0.7
 
 // DETERMINE IF UNIT IS MEDIC
-if !(([player] call AGM_Medical_fnc_isMedic) or (!(isNil "AGM_Medical_AllowNonMedics") and {AGM_Medical_AllowNonMedics})) exitWith {
+if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics}) exitWith {
   [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
 };
 
@@ -23,7 +23,7 @@ _this spawn {
   _unit = _this select 0;
 
   _bloodbagtime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
+  if (([player] call AGM_Medical_fnc_isMedic) or {!AGM_Medical_PunishNonMedics}) then {
     _bloodbagtime = BLOODBAGTIMEMEDIC;
   } else {
     _bloodbagtime = BLOODBAGTIMENONMEDIC;
