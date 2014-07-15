@@ -163,6 +163,14 @@
         <English>Repair Tail rotor</English>
         <German>Heckrotor reparieren</German>
     </Key>
+    <Key ID="STR_AGM_Repair_noTrack">
+        <English>There's no track!</English>
+        <German>Es ist keine Kette in der Nähe!</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_noTrack">
+        <English>There's no wheel!</English>
+        <German>Es ist kein Reifen in der Nähe!</German>
+    </Key>
   	<Key ID="STR_AGM_Repair_Repairing">
         <English>Repairing...</English>
         <German>Reparieren...</German>
