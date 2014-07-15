@@ -1,6 +1,6 @@
 class CfgPatches {
   class AGM_Core {
-    units[] = {};
+    units[] = {"AGM_Box_Misc"};
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
