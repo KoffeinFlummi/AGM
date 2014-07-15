@@ -70,6 +70,7 @@ class RscAGM_SelectTimeUI
 			y = 0;
 			w = 0.5;
 			h = 0.2;
+			colorBackground[] = {0, 0, 0, 0.5};
 		};
 		class header: RscText{
 			idc = 8870;

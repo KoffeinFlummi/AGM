@@ -287,6 +287,7 @@ class RscAGM_SelectAnItem {
 			y = 0;
 			w = 0.4;
 			h = 0.71;
+			colorBackground[] = {0, 0, 0, 0.5};
 		};
 		class header: RscText{
 			idc = 8870;
