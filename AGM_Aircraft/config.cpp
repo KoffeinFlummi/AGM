@@ -546,6 +546,9 @@ class CfgWeapons {
   // Manual Switching Of Flare Mode
   class CMFlareLauncher: SmokeLauncher {
     modes[] = {"Single", "Burst", "AIBurst"};
+    class Single: Mode_SemiAuto {
+      reloadTime = 0.1;
+    };
     class Burst: Mode_Burst {
       displayName = "$STR_AGM_Aircraft_CMFlareLauncher_Burst_Name";
     };
