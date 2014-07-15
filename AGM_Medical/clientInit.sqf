@@ -19,7 +19,7 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
 [] spawn {
   while {true} do {
     // TODO: Detect if curator interface is open and disable effects
-    
+
     // Blood level
     _currentBlood = player getVariable ["AGM_Blood", 1];
     if (_currentBlood > 0.99) then {
@@ -30,11 +30,11 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
       AGM_BloodLevel_CC ppEffectCommit 0;
     };
 
-    // TODO: Bleeding effect?    
+    // TODO: Bleeding effect?
     // TODO: Pain effect ?
 
     // Unconciousness effect
-    if (player getVariable ["AGM_Unconscious", false]) then {
+    if (player getVariable ["AGM_Unconscious", false] or player getVariable ["AGM_Overdosing", false]) then {
       AGM_UnconsciousCC ppEffectEnable true;
       AGM_UnconsciousRB ppEffectEnable true;
       if (isNil "AGM_Core_disableUserInput_ehid") then {
