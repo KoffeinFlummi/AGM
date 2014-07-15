@@ -21,7 +21,7 @@ if(([player] call AGM_Repair_fnc_isEngineer)) then {
 	_repairtime = REPAIRTIMENOENGINEER;
 };
 
-if(('ToolKit' in items player) && (damage player < 1) && (speed _vehicle == 0)) then {
+if((('ToolKit' in items player) or ('ToolKit' in itemCargo _vehicle)) && (damage player < 1) && (speed _vehicle == 0)) then {
 	player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
 	[_repairtime, [_vehicle, _repairSelectionName], "AGM_Repair_fnc_repairCallback", localize "STR_AGM_Repair_Repairing", "AGM_Repair_VehicleAbort"] call AGM_Core_fnc_progressBar;
 };
