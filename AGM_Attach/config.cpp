@@ -24,6 +24,11 @@ class CfgFunctions {
   };
 };
 
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
@@ -152,13 +157,31 @@ class CfgVehicles {
     blinkingPatternGuarantee = false;//doesnt effect, maybe because of simulation
   };
 
-  class Box_NATO_Support_F;
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,12)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,12)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,12)
+    };
+  };
+
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      class _xx_AGM_IR_Strobe_Item {
-        count = 24;
-        name = "AGM_IR_Strobe_Item";
-      };
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,24)
     };
   };
 };
