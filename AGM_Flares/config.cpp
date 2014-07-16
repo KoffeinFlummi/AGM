@@ -88,7 +88,6 @@ class CfgAmmo {
 class CfgMagazines {
   class HandGrenade;
   class AGM_HandFlare_Base: HandGrenade {};
-
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
     displayname = "Hand Flare (White)";
@@ -120,6 +119,16 @@ class CfgMagazines {
     displayNameShort = "Yellow Flare";
     model = "\A3\weapons_f\ammo\flare_yellow";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_yellow_ca.paa";
+  };
+
+  class 3Rnd_UGL_FlareGreen_F;
+  class 6Rnd_GreenSignal_F: 3Rnd_UGL_FlareGreen_F {
+    ammo = "F_40mm_Green";
+    initSpeed = 120;
+  };
+  class 6Rnd_RedSignal_F: 6Rnd_GreenSignal_F {
+    ammo = "F_40mm_Red";
+    initSpeed = 120;
   };
 };
 
