@@ -272,3 +272,56 @@ class AGM_Interaction_Dialog {
 
   };
 };
+
+class RscListbox;
+class IGUIBack;
+class RscText;
+#define X_OFFSET 0.3
+
+class RscAGM_SelectAnItem {
+	idd = 8854;
+	movingEnable = 0;
+	class controls {
+		class back:IGUIBack {
+			x = X_OFFSET;
+			y = 0;
+			w = 0.4;
+			h = 0.71;
+			colorBackground[] = {0, 0, 0, 0.5};
+		};
+		class header: RscText{
+			idc = 8870;
+			x = X_OFFSET + 0.005;
+			y = 0.005;
+			w = 0.39;
+			h = 0.05;
+			style = 0x02;
+			text = "";
+		};
+		class itemList:RscListBox {
+			idc = 8866;
+			x = X_OFFSET + 0.005;
+			w = 0.39;
+			h = 0.54;
+			y = 0.06;
+		};
+		class cancelBtn: AGM_Interaction_Button_Base {
+			idc = 8855;
+			x = X_OFFSET + 0.005;
+			w = 0.15;
+			h = 0.1;
+			y = 0.605;
+			text = $STR_AGM_Interaction_CancelSelection;
+			action = "closeDialog 0;";
+		};
+		class approveBtn: AGM_Interaction_Button_Base {
+			idc = 8860;
+			x = X_OFFSET + 0.245;
+			y = 0.605;
+			h = 0.1;
+			w = 0.15;
+			text = $STR_AGM_Interaction_MakeSelection;
+			action = "closeDialog 0;";
+		};
+	};
+};

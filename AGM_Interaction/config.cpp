@@ -23,6 +23,7 @@ class CfgFunctions {
       class openDoor;
       class openMenu;
       class openMenuSelf;
+	  class openSelectMenu;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
