@@ -287,7 +287,15 @@
       <Hungarian>Játékosnevek mutatása</Hungarian>
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
-
-
+	<Key ID="STR_AGM_Interaction_CancelSelection">
+		<English>Cancel</English>
+		<German>Abbrechen</German>
+		<Spanish>Cancelar</Spanish>
+	</Key>
+	<Key ID="STR_AGM_Interaction_MakeSelection">
+		<English>Select</English>
+		<German>Wählen</German>
+		<Spanish>Seleccionar</Spanish>
+	</Key>
   </Package>
 </Project>
