@@ -43,7 +43,7 @@ class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 0;
@@ -52,7 +52,7 @@ class AGM_Core_Default_Keys {
   class openInteractionMenuSelf {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 1;
@@ -64,10 +64,10 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_Interaction_fnc_openDoor";
     conditionUp = "AGM_Interaction_isOpeningDoor";
     statementUp = "AGM_Interaction_isOpeningDoor = false";
-    key = 20;
+    key = 57;
     shift = 0;
-    control = 0;
-    alt = 1;
+    control = 1;
+    alt = 0;
   };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
