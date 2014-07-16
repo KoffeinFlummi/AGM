@@ -71,7 +71,7 @@ class AGM_Core_Default_Keys {
   };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
-    condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
+    condition = "[player, cursorTarget] call AGM_Interaction_fnc_canTapShoulder";
     statement = "[player, cursorTarget] call AGM_Interaction_fnc_tapShoulder";
     key = 20;
     shift = 1;
@@ -93,28 +93,29 @@ class AGM_Parameters {
 
 class CfgVehicles {
   class Man;
-
   class CAManBase: Man {
     class AGM_Actions {
+
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";
         distance = 4;
         condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
         statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 1;
-        priority = -1;
+        priority = -2.4;
       };
       class AGM_TapShoulder {
         displayName = "$STR_AGM_Interaction_TapShoulder";
         distance = 4;
-        condition = "alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canTapShoulder";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_tapShoulder";
         showDisabled = 1;
-        priority = 0.1;
+        priority = -2.2;
       };
     };
 
     class AGM_SelfActions {
+
       class AGM_LeaveGroup {
         displayName = "$STR_AGM_Interaction_LeaveGroup";
         condition = "count (units group player) > 1";

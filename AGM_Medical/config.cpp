@@ -223,17 +223,19 @@ class CfgVehicles {
         };
       };
 
-      class AGM_Drag {
+      class AGM_Medical_Drag {
         displayName = "$STR_AGM_Medical_Drag";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
+        priority = 2.1;
       };
-      class AGM_Carry {
+      class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
+        priority = 2.0;
       };
     };
 
@@ -243,7 +245,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";

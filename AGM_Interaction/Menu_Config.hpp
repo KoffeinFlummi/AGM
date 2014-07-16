@@ -13,7 +13,7 @@ class AGM_Interaction_Button_Base {
   text = "";
   font = "PuristaMedium";
   //sizeEx = "1 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
-  sizeEx = "1 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+  sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   shadow = 2;
 
   x = 0;
@@ -44,8 +44,8 @@ class AGM_Interaction_Button_Base {
 
 class AGM_Interaction_Dialog {
   idd = -1;
-  enableSimulation = true;
-  movingEnable = false;
+  enableSimulation = 1;
+  movingEnable = 0;
   onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
   objects[] = {};
 
@@ -72,7 +72,7 @@ class AGM_Interaction_Dialog {
       text = "Interaction Menu";
       idc = 2;
       //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
-      sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
       y = (0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY;
       w = 1.8 / 16 * safezoneW;
