@@ -61,7 +61,7 @@ class CfgVehicles {
 				condition = "true";
 				statement = "AGM_Interaction_Target=player;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 0.25;
+				priority = 4;
 				
 				//Sub-menu items
 				class AGM_Detonate {

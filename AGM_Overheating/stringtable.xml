@@ -94,6 +94,16 @@
       <Czech>Zjistit teplotu zbraně</Czech>
     </Key>
 
+    <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
+      <English>Check temperature</English>
+      <German>Temperatur prüfen</German>
+      <Spanish>Verificar temperatura</Spanish>
+      <Polish>Sprawdź temperaturę</Polish>
+      <French>Vérifier la température</French>
+      <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
+      <Czech>Zjistit teplotu</Czech>
+    </Key>
+
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
       <English>Checking temperature ...</English>
       <German>Prüfe Temperatur ...</German>

@@ -149,7 +149,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";

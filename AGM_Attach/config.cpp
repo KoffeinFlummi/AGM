@@ -34,63 +34,70 @@ class CfgVehicles {
         condition = "[''] call AGM_Attach_fnc_canAttach";
         statement = "'AGM_Attach' call AGM_Interaction_fnc_openMenuSelf";
         showDisabled = 0;
-        priority = -10;
+        priority = 5;
 
         class AGM_Attach_IrStrobe {
           displayName = "$STR_AGM_Attach_Attach_IrStrobe";
           condition = "['AGM_IR_Strobe_Item'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'AGM_IR_Strobe_Item'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 9;
+          priority = 3;
         };
         class AGM_Attach_IrStrobeB {
           displayName = "$STR_AGM_Attach_Attach_IrGrenade";
           condition = "['B_IR_Grenade'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'B_IR_Grenade'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 8;
+          priority = 2;
         };
         class AGM_Attach_IrStrobeO {
           displayName = "$STR_AGM_Attach_Attach_IrGrenade";
           condition = "['O_IR_Grenade'] call AGM_Attach_fnc_canAttach && {!('B_IR_Grenade' in magazines player)}";
           statement = "[player, 'O_IR_Grenade'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 8;
+          priority = 2;
         };
         class AGM_Attach_IrStrobeI {
           displayName = "$STR_AGM_Attach_Attach_IrGrenade";
           condition = "['I_IR_Grenade'] call AGM_Attach_fnc_canAttach && {!('B_IR_Grenade' in magazines player)} && {!('O_IR_Grenade' in magazines player)}";
           statement = "[player, 'I_IR_Grenade'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 8;
+          priority = 2;
         };
         class AGM_Attach_Chemlight_blue {
           displayName = "$STR_AGM_Attach_Attach_Chemlight_blue";
           condition = "['Chemlight_blue'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'Chemlight_blue'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 7;
+          priority = 1;
         };
         class AGM_Attach_Chemlight_green {
           displayName = "$STR_AGM_Attach_Attach_Chemlight_green";
           condition = "['Chemlight_green'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'Chemlight_green'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 7;
+          priority = 1;
         };
         class AGM_Attach_Chemlight_red {
           displayName = "$STR_AGM_Attach_Attach_Chemlight_red";
           condition = "['Chemlight_red'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'Chemlight_red'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 7;
+          priority = 1;
         };
         class AGM_Attach_Chemlight_yellow {
           displayName = "$STR_AGM_Attach_Attach_Chemlight_yellow";
           condition = "['Chemlight_yellow'] call AGM_Attach_fnc_canAttach";
           statement = "[player, 'Chemlight_yellow'] call AGM_Attach_fnc_attach";
           showDisabled = 0;
-          priority = 7;
+          priority = 1;
+        };
+        class AGM_OpenUIDummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -9;
         };
       };
 
@@ -99,7 +106,7 @@ class CfgVehicles {
         condition = "call AGM_Attach_fnc_canDetach";
         statement = "[player] call AGM_Attach_fnc_detach";
         showDisabled = 0;
-        priority = -10;
+        priority = 5;
       };
     };
   };

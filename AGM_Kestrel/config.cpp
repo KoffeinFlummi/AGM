@@ -57,14 +57,14 @@ class CfgVehicles {
 				condition = "'AGM_ItemKestrel' in items player && {!underwater player} && {cameraView != 'Gunner'} && {!AGM_isKestrel}";
 				statement = "call AGM_Kestrel_fnc_openKestrel";
 				showDisabled = 0;
-				priority = -2.5;
+				priority = 2;
 			};
 			class AGM_CloseKestrel {
 				displayName = "$STR_AGM_Kestrel_CloseKestrel";
 				condition = "AGM_isKestrel";
 				statement = "AGM_isKestrel = false";
 				showDisabled = 0;
-				priority = -2.5;
+				priority = 2;
 			};
 		};
 	};

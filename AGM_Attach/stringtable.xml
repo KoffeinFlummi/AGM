@@ -18,6 +18,7 @@
     </Key>
     <Key ID="STR_AGM_Attach_Attach_IrGrenade">
       <English>Attach IR Grenade</English>
+      <German>IR-Granate befestigen</German>
       <Spanish>Colocar Granada IR</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
@@ -52,10 +53,12 @@
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Attached">
       <English>IR Grenade Attached</English>
+      <German>IR-Granate befestigt</German>
       <Spanish>Granada IR colocada</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Detached">
       <English>IR Grenade Detached</English>
+      <German>IR-Granate entfernt</German>
       <Spanish>Granada IR removida</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
@@ -69,9 +72,8 @@
       <Spanish>Barra de Luz removida</Spanish>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
-      <English>Inventory is full; Cannot detach item</English>
-      <German>Das Inventar ist voll; der Gegenstand konnte nicht entfernt werden</German>
-      <Spanish>El inventario está lleno; No puede removerse el objeto</Spanish>
+      <English>No inventory space</English>
+      <German>Kein Platz im Inventar</German>
     </Key>
 
     <Key ID="STR_AGM_IrStrobe_Name">

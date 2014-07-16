@@ -23,7 +23,7 @@ class CfgFunctions {
       class openDoor;
       class openMenu;
       class openMenuSelf;
-	  class openSelectMenu;
+      class openSelectMenu;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
@@ -120,14 +120,14 @@ class CfgVehicles {
         condition = "count (units group player) > 1";
         statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
         showDisabled = 1;
-        priority = -1;
+        priority = -1.5;
       };
       class AGM_BecomeLeader {
         displayName = "$STR_AGM_Interaction_BecomeLeader";
         condition = "count (units group player) > 1 && {leader group player != player}";
         statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
         showDisabled = 1;
-        priority = -1;
+        priority = -1.6;
       };
 
       /* DANCE ANIMATION DOESN'T WORK :(
@@ -136,14 +136,14 @@ class CfgVehicles {
         condition = "isClass (configFile >> 'CfgPatches' >> 'AGM_Movement') and !AGM_Dancing";
         statement = "AGM_Dancing = true; [-2, {_this switchMove 'TestDance';}, player] call CBA_fnc_globalExecute;";
         showDisabled = 0;
-        priority = -1;
+        priority = -1.2;
       };
       class AGM_StopDancing {
         displayName = "$STR_AGM_Interaction_StopDancing";
         condition = "AGM_Dancing";
         statement = "AGM_Dancing = false; [-2, {_this switchMove '';}, player] call CBA_fnc_globalExecute;";
         showDisabled = 0;
-        priority = -1;
+        priority = -1.2;
       };
       */
 
@@ -152,7 +152,7 @@ class CfgVehicles {
         condition = "canStand player && {alive player} && {isNull (player getVariable ['AGM_carriedItem', objNull])}";
         statement = "'AGM_Gestures' call AGM_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
-        priority = 0;
+        priority = 3.5;
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";
