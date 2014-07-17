@@ -5,98 +5,117 @@
         <English>Vehicle</English>
         <German>Fahrzeug</German>
         <Spanish>Vehículo</Spanish>
+        <French>Vehicle</French>
     </Key>
 
     <Key ID="STR_AGM_Repair">
         <English>Repair >></English>
         <German>Reparieren >></German>
         <Spanish>Reparación >></Spanish>
+        <French>Réparer >></French>
     </Key>
 
     <Key ID="STR_AGM_Repair_Nothing">
         <English>Everything is OK!</English>
         <German>Alles OK!</German>
         <Spanish>Todo está correcto!</Spanish>
+        <French>Tout est OK!</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L1Wheel_check">
         <English>L1 Wheel is damaged</English>
         <German>Reifen L1 ist beschädigt</German>
         <Spanish>Rueda I1 está dañada</Spanish>
+        <French>Roue G1 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R1Wheel_check">
         <English>R1 Wheel is damaged</English>
         <German>Reifen R1 ist beschädigt</German>
         <Spanish>Rueda D1 está dañada</Spanish>
+        <French>Roue D1 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L2Wheel_check">
         <English>L2 Wheel is damaged</English>
         <German>Reifen L2 ist beschädigt</German>
         <Spanish>Rueda I2 está dañada</Spanish>
+        <French>Roue G1 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R2Wheel_check">
         <English>R2 Wheel is damaged</English>
         <German>Reifen R2 ist beschädigt</German>
         <Spanish>Rueda D2 está dañada</Spanish>
+        <French>Roue D2 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L3Wheel_check">
         <English>L3 Wheel is damaged</English>
         <German>Reifen L3 ist beschädigt</German>
         <Spanish>Rueda I3 está dañada</Spanish>
+        <French>Roue G3 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R3Wheel_check">
         <English>R3 Wheel is damaged</English>
         <German>Reifen R3 ist beschädigt</German>
         <Spanish>Rueda D3 está dañada</Spanish>
+        <French>Roue D3 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L4Wheel_check">
         <English>L4 Wheel is damaged</English>
         <German>Reifen L4 ist beschädigt</German>
         <Spanish>Rueda I4 está dañada</Spanish>
+        <French>Roue G4 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R4Wheel_check">
         <English>R4 Wheel is damaged</English>
         <German>Reifen R4 ist beschädigt</German>
         <Spanish>Rueda D4 está dañada</Spanish>
+        <French>Roue D4 endommagée</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Engine_check">
         <English>Engine is damaged</English>
         <German>Motor ist beschädigt</German>
         <Spanish>El motor esta dañado</Spanish>
+        <French>Moteur endommagé</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Fuel_check">
         <English>Fuel tank is damaged</English>
         <German>Tank ist beschädigt</German>
         <Spanish>El depósito está dañado</Spanish>
+        <French>Réservoir endommagé</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Body_check">
         <English>Karoserie is damaged</English>
         <German>Karoserie ist beschädigt</German>
         <Spanish>La carrocería está dañada</Spanish>
+        <French>Carrosserie endommagé</French>
     </Key>
   	<Key ID="STR_AGM_Repair_LTrack_check">
         <English>Left track is damaged</English>
         <German>Linke Kette ist beschädigt</German>
         <Spanish>La pista izquierda está dañada</Spanish>
+        <French>Chenille gauche endommagée</French>
       </Key>
   	<Key ID="STR_AGM_Repair_RTrack_check">
         <English>Right track is damaged</English>
         <German>Rechte Kette ist beschädigt</German>
         <Spanish>La pista derecha está dañada</Spanish>
+        <French>Chenille droite endommagée</French>
     </Key>
     <Key ID="STR_AGM_Repair_Gun_check">
         <English>Gun is damaged</English>
         <German>Rohr ist beschädigt</German>
         <Spanish>El arma está dañada</Spanish>
+        <French>Canon endommagé</French>
     </Key>
     <Key ID="STR_AGM_Repair_Turret_check">
         <English>Turret is damaged</English>
         <German>Turm ist beschädigt</German>
         <Spanish>La torreta está dañada</Spanish>
+        <French>Tourelle endommagée</French>
     </Key>
     <Key ID="STR_AGM_Repair_Avionics_check">
         <English>Avionics are damaged</English>
         <German>Instrumente sind beschädigt</German>
         <Spanish>La aviónica está dañada</Spanish>
+        <French>Avionique gauche endommagée</French>
     </Key>
     <Key ID="STR_AGM_Repair_HRotor_check">
         <English>Main rotor is damaged</English>
@@ -107,91 +126,114 @@
         <English>Tail rotor is damaged</English>
         <German>Heckrotor ist beschädigt</German>
         <Spanish>El rotor trasero está dañado</Spanish>
+        <French>Rotor principal endommagé</French>
+    </Key>s
+    <Key ID="STR_AGM_Repair_VRotor_check">
+        <English>Tail rotor is damaged</English>
+        <German>Heckrotor ist beschädigt</German>
+        <French>Rotor anticouple endommagé</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Wheels">
         <English>Wheels >></English>
         <German>Reifen >></German>
         <Spanish>Ruedas >></Spanish>
+        <French>Roues >></French>
     </Key>
       <Key ID="STR_AGM_Repair_L1Wheel">
         <English>Repair L1 Wheel</English>
         <German>Reifen L1 reparieren</German>
         <Spanish>Reparar rueda I1</Spanish>
+        <French>Réparer la roue G1</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R1Wheel">
         <English>Repair R1 Wheel</English>
         <German>Reifen R1 reparieren</German>
         <Spanish>Reparar rueda D1</Spanish>
+        <French>Réparer la roue D1</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L2Wheel">
         <English>Repair L2 Wheel</English>
         <German>Reifen L2 reparieren</German>
         <Spanish>Reparar rueda I2</Spanish>
+        <French>Réparer la roue G2</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R2Wheel">
         <English>Repair R2 Wheel</English>
         <German>Reifen R2 reparieren</German>
         <Spanish>Reparar rueda D2</Spanish>
+        <French>Réparer la roue D2</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L3Wheel">
         <English>Repair L3 Wheel</English>
         <German>Reifen L3 reparieren</German>
         <Spanish>Reparar rueda I3</Spanish>
+        <French>Réparer la roue G3</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R3Wheel">
         <English>Repair R3 Wheel</English>
         <German>Reifen R3 reparieren</German>
         <Spanish>Reparar rueda D3</Spanish>
+        <French>Réparer la roue D3</French>
     </Key>
   	<Key ID="STR_AGM_Repair_L4Wheel">
         <English>Repair L4 Wheel</English>
         <German>Reifen L4 reparieren</German>
         <Spanish>Reparar rueda I4</Spanish>
+        <French>Réparer la roue G4</French>
     </Key>
   	<Key ID="STR_AGM_Repair_R4Wheel">
         <English>Repair R4 Wheel</English>
         <German>Reifen R4 reparieren</German>
         <Spanish>Reparar rueda D4</Spanish>
+        <French>Réparer la roue D4</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Engine">
         <English>Repair Engine</English>
         <German>Motor reparieren</German>
         <Spanish>Reparar motor</Spanish>
+        <French>Réparer le moteur</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Fuel">
         <English>Repair Fuel tank</English>
         <German>Tank reparieren</German>
         <Spanish>Reparar depósito</Spanish>
+        <French>Réparer le réservoir</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Body">
         <English>Repair Karoserie</English>
         <German>Karoserie reparieren</German>
         <Spanish>Reparar carrocería</Spanish>
+        <French>Réparer la carrosserie</French>
     </Key>
   	<Key ID="STR_AGM_Repair_HitLTrack">
         <English>Repair left track</English>
         <German>Linke Kette reparieren</German>
         <Spanish>Reparar pista izquierda</Spanish>
+        <French>Réparer la chenille gauche</French>
     </Key>
   	<Key ID="STR_AGM_Repair_HitRTrack">
         <English>Repair right track</English>
         <German>Rechte Kette reparieren</German>
         <Spanish>Reparar pista derecha</Spanish>
+        <French>Réparer la chenille droite</French>
     </Key>
     <Key ID="STR_AGM_Repair_Turret">
         <English>Repair Turret</English>
         <German>Turm reparieren</German>
         <Spanish>Reparar torreta</Spanish>
+        <French>Réparer la tourelle</French>
     </Key>
     <Key ID="STR_AGM_Repair_Gun">
         <English>Repair Gun</English>
         <German>Rohr reparieren</German>
         <Spanish>Reparar arma</Spanish>
+        <French>Réparer le canon</French>
     </Key>
     <Key ID="STR_AGM_Repair_Avionics">
         <English>Repair Avionics</English>
         <German>Instrumente reparieren</German>
         <Spanish>Reparar aviónica</Spanish>
+        <French>Réparer l'avionique</French>
     </Key>
     <Key ID="STR_AGM_Repair_HRotor_check">
         <English>Repair Main rotor</English>
@@ -202,36 +244,48 @@
         <English>Repair Tail rotor</English>
         <German>Heckrotor reparieren</German>
         <Spanish>Reparar rotor trasero</Spanish>
+        <French>Réparer le rotor principal</French>
+    </Key>s
+    <Key ID="STR_AGM_Repair_VRotor_check">
+        <English>Repair Tail rotor</English>
+        <German>Heckrotor reparieren</German>
+        <French>Réparer le rotor anticouple</French>
     </Key>
     <Key ID="STR_AGM_Repair_noTrack">
         <English>There's no track!</English>
         <German>Es ist keine Kette in der Nähe!</German>
         <Spanish>No hay ninguna pista!</Spanish>
+        <French>Il n'y a pas de chenilles!</French>
     </Key>
     <Key ID="STR_AGM_Repair_noTrack">
         <English>There's no wheel!</English>
         <German>Es ist kein Reifen in der Nähe!</German>
         <Spanish>No hay ninguna rueda!</Spanish>
+        <French>Il n'y a pas de roues!</French>
     </Key>
   	<Key ID="STR_AGM_Repair_Repairing">
         <English>Repairing...</English>
         <German>Reparieren...</German>
         <Spanish>Reparando...</Spanish>
+        <French>Réparation...</French>
     </Key>
   	<Key ID="STR_AGM_Repair_checkVehicle">
         <English>Check Vehicle</English>
         <German>Fahrzeug überprüfen</German>
         <Spanish>Comprobando vehículo</Spanish>
+        <French>Vérifier le véhicule</French>
     </Key>
   	<Key ID="STR_AGM_Drag_StartDrag">
   	  <Original>Drag</Original>
   	  <Russian>Тащить</Russian>
   	  <Spanish>Arrastrar</Spanish>
+  	  <French>Tirer</French>
   	</Key>
   	<Key ID="STR_AGM_Drag_EndDrag">
   	  <Original>Release</Original>
   	  <Russian>Отпустить</Russian>
   	  <Spanish>Soltar</Spanish>
+  	  <French>Relacher</French>
   	</Key>
   </Package>
 </Project>

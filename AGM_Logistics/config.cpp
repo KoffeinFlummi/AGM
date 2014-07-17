@@ -59,22 +59,6 @@ class CfgVehicles {
   class thingX;
   class ReammoBox_F: thingX {
     class AGM_Actions {
-      class AGM_CarryBox {
-        displayName = "Carry Box";
-        distance = 4;
-        condition = "isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryItem";
-        showDisabled = 1;
-        priority = 2.2;
-      };
-      class AGM_DropBox {
-        displayName = "Drop Box";
-        distance = 4;
-        condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "0 spawn AGM_Logistics_dropItem";
-        showDisabled = 0;
-        priority = 2.1;
-      };
       class AGM_loadBoxIntoVehicle {
         displayName = "Load Box";
         distance = 4;
@@ -87,18 +71,11 @@ class CfgVehicles {
   };
 
   //Men
-  class Man;
+  /*class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_DropBoxSelf {
-        displayName = "Drop Item";
-        condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "0 spawn AGM_Logistics_dropItem";
-        showDisabled = 0;
-        priority = -2.1;
-      };
     };
-  };
+  };*/
 
   //Vehicles
   class LandVehicle;
