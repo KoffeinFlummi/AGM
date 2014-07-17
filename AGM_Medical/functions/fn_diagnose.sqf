@@ -31,7 +31,7 @@ _this spawn {
     _unit setVariable ["AGM_Diagnosed", true, false];
 
     // Tell bystanders what's up if necessary
-    if (AGM_Medical_RequireDiagnosis == 0) then {
+    if (AGM_Medical_RequireDiagnosis > 0) then {
       _bystanders = nearestObjects [player, ["Man"], 10];
       [-1, {
         if (player in (_this select 1)) then {
