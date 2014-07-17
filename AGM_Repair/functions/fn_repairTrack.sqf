@@ -8,11 +8,22 @@ _vehicle = _this select 0;
 _repairSelection = _this select 1;
 _repairSelectionName = _this select 2;
 _caller = _this select 3;
+_height = 0;
+_error = "";
 
 _wheels = nearestObjects [player, ["AGM_Repair_Track"], 4];
 
 AGM_Repair_TrackAbort = {
 	player playMoveNow "AmovPknlMstpSrasWrflDnon";
+};
+
+if(count _wheels <= 0) then {
+	_error = _error + "<br/><br/>" + localize "STR_AGM_Repair_noTrack";
+	_height = _height + 1;
+};
+
+if(_error != "") exitWith {
+	[composeText [lineBreak, parseText _error], _height] call AGM_Core_fnc_displayTextStructured;
 };
 
 _repairtime = 0;

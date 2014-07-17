@@ -30,30 +30,13 @@ class CfgVehicles {
   class CAManBase: Man {
     class AGM_Actions {
 
-      class AGM_SendAway {
-        displayName = "$STR_AGM_Civilians_SendAway";
-        distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
-        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_sendAway";
-        showDisabled = 0;
-        priority = -2.5;
-      };
       class AGM_GetDown {
         displayName = "$STR_AGM_Civilians_GetDown";
         distance = 4;
         condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
         statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_getDown";
         showDisabled = 0;
-        priority = -2.6;
-      };
- 
-      class AGM_SetCaptive {
-        displayName = "$STR_AGM_Civilian_SetCaptive";
-        distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
-        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_setCaptive";
-        showDisabled = 0;
-        priority = -2.7;
+        priority = 2.2;
       };
 
       class AGM_EscortCaptive {
@@ -62,7 +45,25 @@ class CfgVehicles {
         condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
         statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_escortCaptive";
         showDisabled = 0;
-        priority = -2.8;
+        priority = 2.3;
+      };
+
+      class AGM_SetCaptive {
+        displayName = "$STR_AGM_Civilian_SetCaptive";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
+        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_setCaptive";
+        showDisabled = 0;
+        priority = 2.3;
+      };
+
+      class AGM_SendAway {
+        displayName = "$STR_AGM_Civilians_SendAway";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Civilians_fnc_canInteractWith";
+        statement = "[AGM_Interaction_Target] call AGM_Civilians_fnc_sendAway";
+        showDisabled = 0;
+        priority = 2.4;
       };
     };
   };

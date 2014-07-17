@@ -38,7 +38,7 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-class AGM_Core_Default_Keys {
+/*class AGM_Core_Default_Keys {
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
@@ -48,7 +48,7 @@ class AGM_Core_Default_Keys {
     control = 1;
     alt = 0;
   };
-};
+};*/
 
 class CfgSounds {
   class AGM_BarrelSwap {
@@ -73,15 +73,15 @@ class CfgVehicles {
         condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1} && {isNull (player getVariable ['AGM_carriedItem', objNull])}";
         statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
         showDisabled = 0;
-        priority = 4.1;
+        priority = 3;
       };
-      /*class AGM_CheckTemperature {
-        displayName = "$STR_AGM_Overheating_checkTemperature";
-        condition = "";
-        statement = "[currentWeapon player] call AGM_Overheating_CheckTemperature";
+      class AGM_CheckTemperature {
+        displayName = "$STR_AGM_Overheating_CheckTemperatureShort";
+        condition = "true";
+        statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
         showDisabled = 0;
-        priority = 4;
-      };*/
+        priority = 3.1;
+      };
     };
   };
 

@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_UAVs {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";

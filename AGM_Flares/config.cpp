@@ -88,7 +88,6 @@ class CfgAmmo {
 class CfgMagazines {
   class HandGrenade;
   class AGM_HandFlare_Base: HandGrenade {};
-
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
     displayname = "Hand Flare (White)";
@@ -121,6 +120,16 @@ class CfgMagazines {
     model = "\A3\weapons_f\ammo\flare_yellow";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_yellow_ca.paa";
   };
+
+  class 3Rnd_UGL_FlareGreen_F;
+  class 6Rnd_GreenSignal_F: 3Rnd_UGL_FlareGreen_F {
+    ammo = "F_40mm_Green";
+    initSpeed = 120;
+  };
+  class 6Rnd_RedSignal_F: 6Rnd_GreenSignal_F {
+    ammo = "F_40mm_Red";
+    initSpeed = 120;
+  };
 };
 
 class CfgWeapons {
@@ -144,26 +153,44 @@ class CfgWeapons {
   };
 };
 
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
 class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
   class Box_NATO_Support_F;
+
+  class Box_NATO_Grenades_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_HandFlare_White,12)
+      MACRO_ADDITEM(AGM_HandFlare_Green,12)
+    };
+  };
+
+  class Box_East_Grenades_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
+      MACRO_ADDITEM(AGM_HandFlare_Red,12)
+    };
+  };
+
+  class Box_IND_Grenades_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
+      MACRO_ADDITEM(AGM_HandFlare_Green,12)
+    };
+  };
+
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      class _xx_AGM_HandFlare_White {
-        count = 24;
-        name = "AGM_HandFlare_White";
-      };
-      class _xx_AGM_HandFlare_Red {
-        count = 24;
-        name = "AGM_HandFlare_Red";
-      };
-      class _xx_AGM_HandFlare_Green {
-        count = 24;
-        name = "AGM_HandFlare_Green";
-      };
-      class _xx_AGM_HandFlare_Yellow {
-        count = 24;
-        name = "AGM_HandFlare_Yellow";
-      };
+      MACRO_ADDITEM(AGM_HandFlare_White,24)
+      MACRO_ADDITEM(AGM_HandFlare_Red,24)
+      MACRO_ADDITEM(AGM_HandFlare_Green,24)
+      MACRO_ADDITEM(AGM_HandFlare_Yellow,24)
     };
   };
 };

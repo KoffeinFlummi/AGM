@@ -39,6 +39,7 @@ _this spawn {
     _this setVariable ["AGM_NoLegs", false, true];      // Is the unit able to walk?
     _this setVariable ["AGM_NoArms", false, true];      // Is the unit able to hold a gun?
     _this setVariable ["AGM_Unconscious", false, true]; // figure it out
+    _this setVariable ["AGM_Overdosing", false];
     _this setVariable ["AGM_Dragging", objNull];
     _this setVariable ["AGM_Carrying", objNull];
 

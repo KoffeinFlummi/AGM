@@ -23,6 +23,7 @@ class CfgFunctions {
       class openDoor;
       class openMenu;
       class openMenuSelf;
+      class openSelectMenu;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
@@ -42,7 +43,7 @@ class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 0;
@@ -51,7 +52,7 @@ class AGM_Core_Default_Keys {
   class openInteractionMenuSelf {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if !dialog then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
     key = 221;
     shift = 0;
     control = 1;
@@ -63,14 +64,14 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_Interaction_fnc_openDoor";
     conditionUp = "AGM_Interaction_isOpeningDoor";
     statementUp = "AGM_Interaction_isOpeningDoor = false";
-    key = 20;
+    key = 57;
     shift = 0;
-    control = 0;
-    alt = 1;
+    control = 1;
+    alt = 0;
   };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
-    condition = "(cursorTarget isKindOf ""CAManBase"") and (player distance cursorTarget < 2) and (alive cursorTarget) and !(cursorTarget getVariable ['AGM_Unconscious', false])";
+    condition = "[player, cursorTarget] call AGM_Interaction_fnc_canTapShoulder";
     statement = "[player, cursorTarget] call AGM_Interaction_fnc_tapShoulder";
     key = 20;
     shift = 1;
@@ -92,41 +93,42 @@ class AGM_Parameters {
 
 class CfgVehicles {
   class Man;
-
   class CAManBase: Man {
     class AGM_Actions {
+
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";
         distance = 4;
         condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
         statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 1;
-        priority = -1;
+        priority = -2.4;
       };
       class AGM_TapShoulder {
         displayName = "$STR_AGM_Interaction_TapShoulder";
         distance = 4;
-        condition = "alive AGM_Interaction_Target and !(AGM_Interaction_Target getVariable ['AGM_Unconscious', false])";
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canTapShoulder";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_tapShoulder";
         showDisabled = 1;
-        priority = 0.1;
+        priority = -2.2;
       };
     };
 
     class AGM_SelfActions {
+
       class AGM_LeaveGroup {
         displayName = "$STR_AGM_Interaction_LeaveGroup";
         condition = "count (units group player) > 1";
         statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
         showDisabled = 1;
-        priority = -1;
+        priority = -1.5;
       };
       class AGM_BecomeLeader {
         displayName = "$STR_AGM_Interaction_BecomeLeader";
         condition = "count (units group player) > 1 && {leader group player != player}";
         statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
         showDisabled = 1;
-        priority = -1;
+        priority = -1.6;
       };
 
       /* DANCE ANIMATION DOESN'T WORK :(
@@ -135,14 +137,14 @@ class CfgVehicles {
         condition = "isClass (configFile >> 'CfgPatches' >> 'AGM_Movement') and !AGM_Dancing";
         statement = "AGM_Dancing = true; [-2, {_this switchMove 'TestDance';}, player] call CBA_fnc_globalExecute;";
         showDisabled = 0;
-        priority = -1;
+        priority = -1.2;
       };
       class AGM_StopDancing {
         displayName = "$STR_AGM_Interaction_StopDancing";
         condition = "AGM_Dancing";
         statement = "AGM_Dancing = false; [-2, {_this switchMove '';}, player] call CBA_fnc_globalExecute;";
         showDisabled = 0;
-        priority = -1;
+        priority = -1.2;
       };
       */
 
@@ -151,7 +153,7 @@ class CfgVehicles {
         condition = "canStand player && {alive player} && {isNull (player getVariable ['AGM_carriedItem', objNull])}";
         statement = "'AGM_Gestures' call AGM_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
-        priority = 0;
+        priority = 3.5;
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";

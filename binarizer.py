@@ -91,7 +91,7 @@ else:
   modfolder    = "@AGM_dev"
 
 # set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
-movemanually = True
+movemanually = False
 
 def get_arma_path():
   """ Get the installation directory of Arma 3 """

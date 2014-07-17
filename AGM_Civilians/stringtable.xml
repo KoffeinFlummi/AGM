@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="AGM">
   <Package name="Civilians">
-
     <Key ID="STR_AGM_Civilians_SendAway">
       <English>Go Away!</English>
       <German>Geh Weg!</German>
@@ -22,16 +21,19 @@
     </Key>
     <Key ID="STR_AGM_Civilian_SetCaptive">
       <English>Take Prisoner</English>
-	  <German>Gefangen nehmen</German>
-	  <French>Prendre en captivité</French>
+      <German>Gefangen nehmen</German>
+      <French>Prendre en captivité</French>
+      <Spanish>Hacer prisionero</Spanish>
     </Key>
-	<Key ID="STR_AGM_Civilian_EscortCaptive">
-	  <English>Escort Prisoner</English>
-	  <German>Gefangenen eskortieren</German>
+    <Key ID="STR_AGM_Civilian_EscortCaptive">
+      <English>Escort Prisoner</English>
+      <German>Gefangenen eskortieren</German>
+      <Spanish>Escoltar prisionero</Spanish>
 	</Key>
-	<Key ID="STR_AGM_Civilian_NoCaptive">
+    <Key ID="STR_AGM_Civilian_NoCaptive">
       <English>You need you take him as prisoner first!</English>
-	  <German>Du must ihn zuerst gefangen nehmen.</German>
-	</Key>
+      <German>Du must ihn zuerst gefangen nehmen.</German>
+      <Spanish>Necesitas hacerle prisionero primero!</Spanish>
+    </Key>
   </Package>
 </Project>
