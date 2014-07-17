@@ -17,7 +17,7 @@
 		1.2 call AGM_Explosives_fnc_HandleScrollWheel;
 */
 private ["_obj"];
-if (isNull(AGM_Explosives_Setup) || {!AGM_Explosives_ShiftDown}) exitWith {false};
+if (isNull(AGM_Explosives_Setup) || {!AGM_Explosives_ShiftDown} || !AGM_Explosives_pfeh_running) exitWith {false};
 
 AGM_Explosives_Setup setDir ((getDir AGM_Explosives_Setup) + (_this*5));
 AGM_Explosives_TweakedAngle = AGM_Explosives_TweakedAngle + _this*5;
