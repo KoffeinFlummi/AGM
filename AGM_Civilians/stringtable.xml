@@ -24,16 +24,19 @@
 	<German>Gefangen nehmen</German>
 	<French>Prendre en captivité</French>
 	<Spanish>Hacer prisionero</Spanish>
+	<Polish>Weź Więźnia</Polish>
     </Key>
     <Key ID="STR_AGM_Civilian_EscortCaptive">
 	<English>Escort Prisoner</English>
 	<German>Gefangenen eskortieren</German>
 	<Spanish>Escoltar prisionero</Spanish>
+	<Polish>Eskortuj Więźnia</Polish>
 	</Key>
     <Key ID="STR_AGM_Civilian_NoCaptive">
 	<English>You need you take him as prisoner first!</English>
 	<German>Du must ihn zuerst gefangen nehmen.</German>
 	<Spanish>Necesitas hacerle prisionero primero!</Spanish>
+	<Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
     </Key>
   </Package>
 </Project>
