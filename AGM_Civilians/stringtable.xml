@@ -2,38 +2,38 @@
 <Project name="AGM">
   <Package name="Civilians">
     <Key ID="STR_AGM_Civilians_SendAway">
-    	<English>Go Away!</English>
-	<German>Geh Weg!</German>
-	<Spanish>Aléjate!</Spanish>
-	<Polish>Odejdź!</Polish>
-	<Czech>Jděte pryč!</Czech>
-	<French>Partez!</French>
-	<Russian>Уходите отсюда!</Russian>
-	<Hungarian>Tűnés!</Hungarian>
+      <English>Go Away!</English>
+      <German>Geh Weg!</German>
+      <Spanish>Aléjate!</Spanish>
+      <Polish>Odejdź!</Polish>
+      <Czech>Jděte pryč!</Czech>
+      <French>Partez!</French>
+      <Russian>Уходите отсюда!</Russian>
+      <Hungarian>Tűnés!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Civilians_GetDown">
-	<English>Get Down!</English>
-	<German>Auf Den Boden!</German>
-	<Spanish>Al suelo!</Spanish>
-	<Polish>Padnij!</Polish>
-	<Czech>K zemi!</Czech>
-	<Hungarian>A földre!</Hungarian>
+      <English>Get Down!</English>
+      <German>Auf Den Boden!</German>
+      <Spanish>Al suelo!</Spanish>
+      <Polish>Padnij!</Polish>
+      <Czech>K zemi!</Czech>
+      <Hungarian>A földre!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Civilian_SetCaptive">
-	<English>Take Prisoner</English>
-	<German>Gefangen nehmen</German>
-	<French>Prendre en captivité</French>
-	<Spanish>Hacer prisionero</Spanish>
+      <English>Take Prisoner</English>
+      <German>Gefangen nehmen</German>
+      <French>Prendre en captivité</French>
+      <Spanish>Hacer prisionero</Spanish>
     </Key>
     <Key ID="STR_AGM_Civilian_EscortCaptive">
-	<English>Escort Prisoner</English>
-	<German>Gefangenen eskortieren</German>
-	<Spanish>Escoltar prisionero</Spanish>
+      <English>Escort Prisoner</English>
+      <German>Gefangenen eskortieren</German>
+      <Spanish>Escoltar prisionero</Spanish>
 	</Key>
     <Key ID="STR_AGM_Civilian_NoCaptive">
-	<English>You need you take him as prisoner first!</English>
-	<German>Du must ihn zuerst gefangen nehmen.</German>
-	<Spanish>Necesitas hacerle prisionero primero!</Spanish>
+      <English>You need you take him as prisoner first!</English>
+      <German>Du must ihn zuerst gefangen nehmen.</German>
+      <Spanish>Necesitas hacerle prisionero primero!</Spanish>
     </Key>
   </Package>
 </Project>
