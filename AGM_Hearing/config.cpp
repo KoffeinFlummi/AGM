@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Hearing {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.92";
@@ -19,7 +19,8 @@ class CfgFunctions {
       class earRinging;
       class explosionEH;
       class firedNearEH;
-      class earplugs;
+      class putInEarplugs;
+      class removeEarplugs;
     };
   };
 };
@@ -30,7 +31,7 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class AGM_Core_Default_Keys {
+/*class AGM_Core_Default_Keys {
   class Earplugs {
     displayName = "$STR_AGM_Hearing_Earbuds_On";
     condition = "true";
@@ -40,29 +41,90 @@ class AGM_Core_Default_Keys {
     control = 0;
     alt = 1;
   };
+};*/
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_Earplugs {
+      class AGM_PutInEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "AGM_EarPlugsIn || {player canAdd 'AGM_EarBuds'}";
-        statement = "[] call AGM_Hearing_fnc_Earplugs";
+        condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player}";
+        statement = "call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
-        priority = -0.9;
+        priority = 2.5;
+      };
+      class AGM_RemoveEarplugs {
+        displayName = "$STR_AGM_Hearing_Earbuds_Off";
+        condition = "AGM_EarPlugsIn";
+        statement = "call AGM_Hearing_fnc_removeEarplugs";
+        showDisabled = 0;
+        priority = 2.5;
       };
     };
   };
 
-  class Box_NATO_Support_F;
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+  class ReammoBox_F;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class B_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class O_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class I_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class IG_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class C_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      class _xx_AGM_EarBuds {
-        count = 24;
-        name = "AGM_EarBuds";
-      };
+      MACRO_ADDITEM(AGM_EarBuds,24)
     };
   };
 };

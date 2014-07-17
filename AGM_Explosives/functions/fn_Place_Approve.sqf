@@ -26,6 +26,12 @@ if (_explosive != "") then {
 	_pos = -5;
 	_oldPos = -1;
 	_limiter = 0;
+	_dir = (getDir AGM_Explosives_Setup);
+	if (_dir > 180) then {
+		_dir = _dir - 180;
+	} else {
+		_dir = 180 + _dir;
+	};
 	AGM_Explosives_Setup enableSimulation true;
 	while {_pos != _oldPos AND _limiter < 10} do {
 		sleep 0.1;
@@ -35,7 +41,7 @@ if (_explosive != "") then {
 	};
 	sleep getNumber(ConfigFile >> "CfgMagazines" >> _explosive >> "AGM_DelayTime");
 	// Position, Mag Class, code
-	[GetPosATL AGM_Explosives_Setup, _explosive, AGM_Explosives_Setup getVariable "AGM_DetonateCode", 180 + (getDir AGM_Explosives_Setup),AGM_Explosives_Setup getVariable "AGM_Timer"] call AGM_Explosives_fnc_PlaceExplosive;
+	[GetPosATL AGM_Explosives_Setup, _explosive, AGM_Explosives_Setup getVariable "AGM_DetonateCode", _dir,AGM_Explosives_Setup getVariable "AGM_Timer"] call AGM_Explosives_fnc_PlaceExplosive;
 	player RemoveMagazineGlobal _explosive;
 };
 deleteVehicle AGM_Explosives_Setup;

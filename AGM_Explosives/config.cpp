@@ -1,7 +1,7 @@
 class CfgPatches {
 	class AGM_Explosives {
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {A3_Weapons_F_Explosives, AGM_Interaction};
 		version = "0.92";
@@ -51,6 +51,11 @@ class CfgFunctions
 	};
 };
 
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
 class CfgVehicles {
 	class Man;
 
@@ -61,7 +66,7 @@ class CfgVehicles {
 				condition = "true";
 				statement = "AGM_Interaction_Target=player;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 0.25;
+				priority = 4;
 				
 				//Sub-menu items
 				class AGM_Detonate {
@@ -115,17 +120,36 @@ class CfgVehicles {
 	
 	#include "CfgVehicles.hpp"
 
+	class NATO_Box_Base;
+	class EAST_Box_Base;
+	class IND_Box_Base;
 	class Box_NATO_Support_F;
+
+	class Box_NATO_AmmoOrd_F: NATO_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_East_AmmoOrd_F: EAST_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_IND_AmmoOrd_F: IND_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
 	class AGM_Box_Misc: Box_NATO_Support_F {
 		class TransportItems {
-			class _xx_AGM_Clacker {
-				count = 24;
-				name = "AGM_Clacker";
-			};
-			class _xx_AGM_DefusalKit {
-				count = 24;
-				name = "AGM_DefusalKit";
-			};
+			MACRO_ADDITEM(AGM_Clacker,24)
+			MACRO_ADDITEM(AGM_DefusalKit,24)
 		};
 	};
 };

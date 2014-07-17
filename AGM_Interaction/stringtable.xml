@@ -237,7 +237,7 @@
       <Hungarian>Fegyvert hátra</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TapShoulder">
-      <English>Tap shoulder</English>
+      <English>Tap Shoulder</English>
       <German>Auf Schulter klopfen</German>
       <Spanish>Tocar el hombro</Spanish>
       <Polish>Klepnij w ramię</Polish>
@@ -287,15 +287,15 @@
       <Hungarian>Játékosnevek mutatása</Hungarian>
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
-	<Key ID="STR_AGM_Interaction_CancelSelection">
-		<English>Cancel</English>
-		<German>Abbrechen</German>
-		<Spanish>Cancelar</Spanish>
-	</Key>
-	<Key ID="STR_AGM_Interaction_MakeSelection">
-		<English>Select</English>
-		<German>Wählen</German>
-		<Spanish>Seleccionar</Spanish>
-	</Key>
+    <Key ID="STR_AGM_Interaction_CancelSelection">
+      <English>Cancel</English>
+      <German>Abbrechen</German>
+      <Spanish>Cancelar</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Interaction_MakeSelection">
+      <English>Select</English>
+      <German>Wählen</German>
+      <Spanish>Seleccionar</Spanish>
+    </Key>
   </Package>
 </Project>
