@@ -1,25 +1,10 @@
 // PATCH CONFIG
 class CfgPatches {
   class AGM_Medical {
-    units[] = {
-      "AGM_Box_Medical"
-    };
+    units[] = {"AGM_Box_Medical"};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      AGM_Interaction,
-      Extended_EventHandlers,
-      A3_Data_F,
-      A3_Anims_F,
-      A3_Anims_F_Config_Sdr,
-      A3_Anims_F_EPA,
-      A3_Anims_F_EPC,
-      A3_CargoPoses_F,
-      A3_Characters_F,
-      A3_Weapons_F_Items,
-      A3_UI_F
-    };
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -51,7 +36,9 @@ class CfgFunctions {
       class module;
       class morphine;
       class release;
+      class setDamage;
       class setHitPointDamage;
+      class takeItem;
       class unloadPatients;
       class wakeUp;
     };
@@ -63,6 +50,12 @@ class Extended_Init_EventHandlers {
     class AGM_Medical {
       init = "_this call AGM_Medical_fnc_init";
     };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_Medical {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
   };
 };
 
@@ -156,7 +149,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -230,17 +223,19 @@ class CfgVehicles {
         };
       };
 
-      class AGM_Drag {
+      class AGM_Medical_Drag {
         displayName = "$STR_AGM_Medical_Drag";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
+        priority = 2.1;
       };
-      class AGM_Carry {
+      class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
+        priority = 2.0;
       };
     };
 
@@ -250,7 +245,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -719,9 +714,9 @@ class CfgCloudlets {
     particleShape = "\A3\data_f\ParticleEffects\Universal\Universal_02";
     particleFSNtieth = 8;
     particleFSIndex = 4;
-    lifeTime = 2.3;
-    size[] = {"((hit + 5) max 30) / 30", "((hit + 5) max 30) / 60", "((hit + 5) max 30) / 120"};
-    color[] = {{1,0.1,0.1,0.14}, {1,0.1,0.1,0.07}, {1,0.1,0.1,0.035}};
+    lifeTime = 1.8;
+    size[] = {"((hit + 5) max 30) / 40", "((hit + 5) max 30) / 80", "((hit + 5) max 30) / 150"};
+    color[] = {{1,0.1,0.1,0.10}, {1,0.1,0.1,0.05}, {1,0.1,0.1,0.025}};
     randomDirectionPeriod = 0.5;
     randomDirectionIntensity = 0.5;
   };

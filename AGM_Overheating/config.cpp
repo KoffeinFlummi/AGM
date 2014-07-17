@@ -1,15 +1,9 @@
-
-#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-  name = #ITEM; \
-  count = COUNT; \
-};
-
 class CfgPatches {
   class AGM_Overheating {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, A3_Weapons_F_EPA_Ammoboxes, A3_Weapons_F_EPB_Ammoboxes, Extended_EventHandlers, AGM_Core, AGM_Interaction};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -23,7 +17,7 @@ class CfgFunctions {
     class AGM_Overheating {
       file = "\AGM_Overheating\functions";
       class checkTemperature;
-      class firedEH;
+      class overheat;
       class swapBarrel;
       class swapBarrelCallback;
     };
@@ -39,12 +33,12 @@ class Extended_PostInit_EventHandlers {
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheating {
-      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_firedEH}";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_overheat}";
     };
   };
 };
 
-class AGM_Core_Default_Keys {
+/*class AGM_Core_Default_Keys {
   class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
@@ -54,13 +48,19 @@ class AGM_Core_Default_Keys {
     control = 1;
     alt = 0;
   };
-};
+};*/
 
 class CfgSounds {
   class AGM_BarrelSwap {
     sound[] = {"\AGM_Overheating\sounds\barrelswap.ogg", 5, 1, 200};
     titles[] = {};
   };
+};
+
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {
@@ -70,18 +70,18 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_SwapBarrel {
         displayName = "$STR_AGM_Overheating_SwapBarrel";
-        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
+        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1} && {isNull (player getVariable ['AGM_carriedItem', objNull])}";
         statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
         showDisabled = 0;
-        priority = 4.1;
+        priority = 3;
       };
-      /*class AGM_CheckTemperature {
-        displayName = "$STR_AGM_Overheating_checkTemperature";
-        condition = "";
-        statement = "[currentWeapon player] call AGM_Overheating_CheckTemperature";
+      class AGM_CheckTemperature {
+        displayName = "$STR_AGM_Overheating_CheckTemperatureShort";
+        condition = "true";
+        statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
         showDisabled = 0;
-        priority = 4;
-      };*/
+        priority = 3.1;
+      };
     };
   };
 

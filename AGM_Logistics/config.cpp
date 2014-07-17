@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core, AGM_Interaction};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -42,7 +42,7 @@ class CfgVehicles {
         condition = "isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
         statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
         showDisabled = 1;
-        priority = 2.2;
+        priority = 1.5;
       };
       class AGM_DropJerryCan {
         displayName = "Drop jerry can";
@@ -50,7 +50,7 @@ class CfgVehicles {
         condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
         statement = "0 spawn AGM_Logistics_dropJerryCan";
         showDisabled = 0;
-        priority = 2.1;
+        priority = 1.5;
       };
     };
   };

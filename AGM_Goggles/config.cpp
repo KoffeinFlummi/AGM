@@ -4,7 +4,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {"A3_Weapons_F", "CBA_Main", "AGM_Core"};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -14,6 +14,10 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
+#define COMBAT_GOGGLES 		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa"; \
+		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa"; \
+		AGM_Goggles_CrackRating = 2; \
+		AGM_Goggles_EyeProtection = 1;
 
 class CfgGlasses {
 	class None {
@@ -27,10 +31,7 @@ class CfgGlasses {
 	};
 
 	class G_Combat:None {
-		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa";
-		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa";
-		AGM_Goggles_CrackRating = 2;
-		AGM_Goggles_EyeProtection = 1;
+		COMBAT_GOGGLES
 	};
 
 	class G_Diving:None {
@@ -142,9 +143,37 @@ class CfgGlasses {
 	};
 
 	class AV_ESS_blk:None{
-		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa";
-		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa";
+		COMBAT_GOGGLES
+	};
+	
+	class G_Balaclava_blk;
+	
+	class G_Balaclava_combat:G_Balaclava_blk {
+		COMBAT_GOGGLES
+	};
+	
+	class G_Balaclava_lowprofile:G_Balaclava_blk {
+		AGM_TintAmount=COLOUR*2;
 		AGM_Goggles_CrackRating = 2;
+		AGM_Goggles_EyeProtection = 1;
+	};
+	
+	class G_Bandanna_blk;
+	class G_Bandanna_shades:G_Bandanna_blk {
+		AGM_TintAmount=COLOUR*2;
+		AGM_Goggles_CrackRating = 1;
+		AGM_Goggles_EyeProtection = 1;
+	};
+	class G_Bandanna_sport:G_Bandanna_blk {
+		AGM_Goggles_Color[] = {1,0,0};
+		AGM_TintAmount=COLOUR;
+		AGM_Goggles_CrackRating = 1;
+		AGM_Goggles_EyeProtection = 1;
+	};
+	class G_Bandanna_aviator:G_Bandanna_blk {
+		AGM_Goggles_Color[] = {0,0,-1};
+		AGM_TintAmount=COLOUR;
+		AGM_Goggles_CrackRating = 1;
 		AGM_Goggles_EyeProtection = 1;
 	};
 };

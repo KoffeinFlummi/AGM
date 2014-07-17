@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Vector">
+
+    <Key ID="STR_AGM_Vector_VectorName">
+      <English>Vector IV</English>
+      <German>Vector IV</German>
+    </Key>
+    <Key ID="STR_AGM_Vector_VectorDescription">
+      <English>Rangefinder</English>
+      <German>Laserentfernungsmesser</German>
+    </Key>
+    <Key ID="STR_AGM_Vector_AzimuthKey">
+      <English>Vector - Azimuth Key</English>
+      <German>Vector - Azimuth-Taste</German>
+    </Key>
+    <Key ID="STR_AGM_Vector_DistanceKey">
+      <English>Vector - Distance Key</English>
+      <German>Vector - Entfernungs-Taste</German>
+    </Key>
+
+  </Package>
+</Project>

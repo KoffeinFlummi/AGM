@@ -3,21 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      A3_Armor_F,
-      A3_armor_f_beta,
-      A3_Armor_F_Panther,
-      A3_armor_f_beta_APC_Tracked_02,
-      A3_Armor_F_AMV,
-      A3_Armor_F_Marid,
-      A3_Armor_F_EPB_APC_tracked_03,
-      A3_Armor_F_EPB_MBT_03,
-      A3_Armor_F_EPC_MBT_01,
-      A3_Armor_F_APC_Wheeled_03,
-      A3_Armor_F_Slammer,
-      A3_Armor_F_T100K
-    };
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -34,6 +20,7 @@ class CfgFunctions {
       class getAngle;
       class keyDown;
       class keyUp;
+      class reset;
       class vehicleInit;
     };
   };
@@ -68,15 +55,25 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgVehicles {
-  // PROVIDE DEFAULT VALUES FOR OTHER MODS
   class All;
   class AllVehicles: All {
     class NewTurret;
-    AGM_FCSEnabled = 0; // FCS defaults to off
+    AGM_FCSEnabled = 0;
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+
+    class AGM_SelfActions {
+      class AGM_LeaveGroup {
+        displayName = "$STR_AGM_FireControlSystem_ResetFCS";
+        condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
+        statement = "[vehicle player] call AGM_FCS_fnc_reset;";
+        showDisabled = 0;
+        priority = -1;
+      };
+    };
   };
+
   class Land: AllVehicles {};
   class LandVehicle: Land {};
   class Tank: LandVehicle {
@@ -329,5 +326,4 @@ class CfgVehicles {
       };
     };
   };
-
 };

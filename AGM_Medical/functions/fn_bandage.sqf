@@ -31,22 +31,17 @@ _this spawn {
     _healtime = BANDAGETIMENONMEDIC;
   };
 
-  player setVariable ["AGM_CanTreat", false, false];
-  _healtime spawn {
-    sleep _this;
-    player setVariable ["AGM_CanTreat", true, false];
-  };
-
   // animation
   player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+  player setVariable ["AGM_CanTreat", false, false];
+
+  if !([_unit, "AGM_Bandage"] call AGM_Medical_fnc_takeItem) exitWith {};
 
   AGM_Medical_bandageCallback = {
     _unit = _this select 0;
     _selection = _this select 1;
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
-
-    player removeItem "AGM_Bandage";
 
     // change damage of body part
     _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
@@ -70,6 +65,8 @@ _this spawn {
       _unit setDamage 0;
     };
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -81,6 +78,7 @@ _this spawn {
 
   AGM_Medical_bandageAbort = {
     player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
   };
 
   [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;

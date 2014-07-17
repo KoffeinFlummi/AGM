@@ -1,10 +1,9 @@
-
 class CfgPatches {
   class AGM_Reload {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_UI_F, Extended_EventHandlers, AGM_Core, AGM_Interaction};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -31,8 +30,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
-    condition = "player == _vehicle";
-    statement = "[currentWeapon player, false] call AGM_Reload_fnc_checkAmmo";
+    condition = "player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}";
+    statement = "[currentWeapon _vehicle, _vehicle, false] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 0;
     control = 1;

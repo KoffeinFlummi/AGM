@@ -3,7 +3,7 @@
   <Package name="Resting">
 
     <Key ID="STR_AGM_Resting_RestWeapon">
-      <English>Rest weapon</English>
+      <English>Rest Weapon</English>
       <German>Waffe auflegen</German>
       <Spanish>Apoyar el arma</Spanish>
       <Polish>Oprzyj broń</Polish>
@@ -49,7 +49,7 @@
       <German>Waffe gehoben</German>
       <Spanish>Arma levantada</Spanish>
       <Polish>Broń podniesiona</Polish>
-      <Czech>Zbraň zdvyhnuta</Czech>
+      <Czech>Zbraň zdvihnuta</Czech>
       <French>Arme Non-appuyé</French>
       <Russian>Оружие не зафиксировано</Russian>
       <Hungarian>Fegyver nincs támasztva</Hungarian>

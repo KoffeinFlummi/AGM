@@ -15,6 +15,15 @@
 				<Polish>
 					Ciągnij	
 				</Polish>
+				<Czech>
+					Táhnout
+				</Czech>
+				<French>
+					Tirer
+				</French>
+				<German>
+					Ziehen
+				</German>
 			</Key>
 			<Key ID="STR_AGM_Drag_EndDrag">
 				<Original>
@@ -29,6 +38,15 @@
 				<Polish>
 					Puść
 				</Polish>
+				<Czech>
+					Pustit
+				</Czech>
+				<French>
+					Lacher
+				</French>
+				<German>
+					Loslassen
+				</German>
 			</Key>
 			<Key ID="STR_AGM_Drag_UnableToDrag">
 				<Original>
@@ -43,6 +61,15 @@
 				<Polish>
 					Nie można ciągnąć tego przedmiotu z powodu jego wagi
 				</Polish>
+				<Czech>
+					Nelze táhnout z důvodu přílišné váhy
+				</Czech>
+				<French>
+					Impossible de tirer cet objet à cause de son poid
+				</French>
+				<German>
+					Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.
+				</German>
 			</Key>
 		</Container>
 	</Package>

@@ -5,6 +5,8 @@
   (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+
 if (!hasInterface) exitWith {};
 
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
@@ -29,16 +31,13 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf"
 0 spawn {
   while {true} do {
     waitUntil {!isNull (findDisplay 46)}; sleep 1;
-    (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-    (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+    findDisplay 46 displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+    findDisplay 46 displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
     [false] call AGM_Core_fnc_disableUserInput;
     waitUntil {isNull (findDisplay 46)};
   };
 };
 
-0 spawn {
-  sleep 1;
-  player setVariable ["AGM_Name",[name player, true] call AGM_Core_fnc_sanitizeString, true];
-};
-
 enableCamShake true;
+
+[player] call AGM_Core_fnc_setName;

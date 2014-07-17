@@ -4,7 +4,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {Extended_EventHandlers, AGM_Core};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -32,8 +32,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "$STR_AGM_Resting_RestWeapon";
-    conditionUp = "player == vehicle player && {!(player getVariable ['AGM_Unconscious', false])} && {inputAction 'reloadMagazine' == 0}";
-    statementUp = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
+    condition = "player == vehicle player && {!(player getVariable ['AGM_Unconscious', false])} && {inputAction 'reloadMagazine' == 0}";
+    statement = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
     key = 15;
     shift = 0;
     control = 0;

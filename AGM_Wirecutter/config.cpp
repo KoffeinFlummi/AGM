@@ -3,9 +3,9 @@ class CfgPatches {
   units[] = {};
   weapons[] = {};
   requiredVersion = 0.60;
-  requiredAddons[] = {A3_Functions_F, Extended_Eventhandlers, AGM_Core, AGM_Interaction};
-  version = "0.9";
-  versionStr = "0.9";
+  requiredAddons[] = {AGM_Core, AGM_Interaction};
+  version = "0.92";
+  versionStr = "0.92";
   versionAr[] = {0,9,0};
   author[] = {"gpgpgpgp"};
   authorUrl = "https://github.com/KoffeinFlummi/";

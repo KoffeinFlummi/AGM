@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Kestrel">
+
+    <Key ID="STR_AGM_Kestrel_Name">
+      <English>Kestrel 4500NV</English>
+      <German>Kestrel 4500NV</German>
+    </Key>
+    <Key ID="STR_AGM_Kestrel_Description">
+      <English>Applied Ballistics Meter</English>
+      <German>Applied Ballistics Meter</German>
+    </Key>
+    <Key ID="STR_AGM_Kestrel_OpenKestrel">
+      <English>Open Kestrel</English>
+      <German>Kestrel öffnen</German>
+    </Key>
+    <Key ID="STR_AGM_Kestrel_CloseKestrel">
+      <English>Close Kestrel</English>
+      <German>Kestrel schließen</German>
+    </Key>
+
+  </Package>
+</Project>

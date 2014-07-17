@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.60;
-		requiredAddons[] = {AGM_Core, AGM_Interaction, A3_Weapons_F_Ammoboxes};
+		requiredAddons[] = {AGM_Core, AGM_Interaction};
 		version = "0.92";
 		versionStr = "0.92";
 		versionAr[] = {0,92,0};
@@ -37,7 +37,7 @@ class CfgFunctions
 				condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
 				statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;"; \
 				showDisabled = 1; \
-				priority = 2.2; \
+				priority = 1.5; \
 			}; \
 			class AGM_ReleaseItem { \
 				displayName = $STR_AGM_Drag_EndDrag; \
@@ -45,7 +45,7 @@ class CfgFunctions
 				condition = "(player call AGM_Drag_fnc_isDraggingObject)"; \
 				statement = "player call AGM_Drag_fnc_releaseObject;"; \
 				showDisabled = 0; \
-				priority = 2.1; \
+				priority = 1.5; \
 			}; \
 		};
 		
@@ -106,5 +106,10 @@ class CfgVehicles {
 	};
 	class Box_IND_AmmoVeh_F:IND_Box_Base{
 		AGM_NoDragSupport
+	};
+
+	class Helicopter_Base_F;
+	class UAV_01_base_F: Helicopter_Base_F {
+		AGM_DragSupport
 	};
 };

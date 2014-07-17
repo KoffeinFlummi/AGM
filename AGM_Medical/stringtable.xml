@@ -17,7 +17,7 @@
       <German>Selbst behandeln >></German>
       <Spanish>Tratarse >></Spanish>
       <Polish>Opatrz siebie >></Polish>
-      <Czech>Vlastní vyšetření</Czech>
+      <Czech>Vyšetřit sebe</Czech>
       <Russian>Самолечение >></Russian>
       <French>Se soigner >></French>
       <Hungarian>Önellátás >></Hungarian>
@@ -638,6 +638,24 @@
       <Hungarian>Orvosi menü újranyitása ellátás után</Hungarian>
       <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
       <Polish>Otwórz ponownie menu medyczne po zakończeniu akcji leczenia</Polish>
+      <French>Réouvrir le menu médical après les soins</French>
+    </Key>
+
+    <Key ID="STR_AGM_Medical_NoItem">
+      <English>You don't have the required item anymore.</English>
+      <German>Du hast das benötigte Material nicht mehr.</German>
+    </Key>
+    <Key ID="STR_AGM_Medical_TakingItemPatient">
+      <English>Taking the patient's %1...</English>
+      <German>%1 des Patienten wird benutzt...</German>
+    </Key>
+    <Key ID="STR_AGM_Medical_TakingYourItem">
+      <English>%1 is using your %2...</English>
+      <German>%1 benutzt dein(e) %2...</German>
+    </Key>
+    <Key ID="STR_AGM_Medical_TakingItemSelf">
+      <English>Patient has no %1, using yours...</English>
+      <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt...</German>
     </Key>
 
   </Package>

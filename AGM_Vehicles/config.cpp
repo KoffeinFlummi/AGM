@@ -3,27 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {
-      AGM_Core,
-      A3_Armor_F,
-      A3_Armor_F_AMV,
-      A3_Armor_F_APC_Wheeled_03,
-      A3_armor_f_beta,
-      A3_armor_f_beta_APC_Tracked_02,
-      A3_armor_F_EPB_APC_tracked_03,
-      A3_Armor_F_EPB_MBT_03,
-      A3_Armor_F_Marid,
-      A3_Armor_F_Panther,
-      A3_Armor_F_Slammer,
-      A3_Armor_F_T100K,
-      A3_Soft_F,
-      A3_Soft_F_MRAP_01,
-      A3_Soft_F_MRAP_02,
-      A3_Soft_F_MRAP_03,
-      A3_Soft_F_HEMTT,
-      A3_Soft_F_TruckHeavy,
-      A3_Soft_F_EPC_Truck_03
-    };
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -309,6 +289,29 @@ class CfgWeapons {
     class far: close{};
   };
 
+  class HMG_127: LMG_RCWS {
+    class manual: MGun {};
+  };
+
+  class HMG_01: HMG_127 {
+    reloadTime = 0.23;
+    class manual: manual {
+      reloadTime = 0.23;
+    };
+    class close: manual {
+      reloadTime = 0.23;
+    };
+    class short: close {
+      reloadTime = 0.23;
+    };
+    class medium: close {
+      reloadTime = 0.23;
+    };
+    class far: close {
+      reloadTime = 0.23;
+    };
+  };
+
   class autocannon_30mm_CTWS: autocannon_Base_F {
     class AP: autocannon_Base_F {
       magazines[] = {"60Rnd_30mm_APFSDS_shells","60Rnd_30mm_APFSDS_shells_Tracer_Red","60Rnd_30mm_APFSDS_shells_Tracer_Green","60Rnd_30mm_APFSDS_shells_Tracer_Yellow","140Rnd_30mm_MP_shells","140Rnd_30mm_MP_shells_Tracer_Red","140Rnd_30mm_MP_shells_Tracer_Green","140Rnd_30mm_MP_shells_Tracer_Yellow"};
@@ -322,5 +325,27 @@ class CfgWeapons {
       magazineReloadTime = 0;
     };
     muzzles[] = {"AP"};
+  };
+};
+
+class CfgAmmo {
+  class MissileBase;
+
+  class M_Mo_120mm_AT: MissileBase {
+    cost = 400000; // Stop it from aiming at FUCKING RABBITS.
+    weaponLockSystem = 2;
+  };
+  class M_Mo_120mm_AT_LG: M_Mo_120mm_AT {
+    cost = 400000;
+    weaponLockSystem = 4;
+  };
+
+  class M_Mo_82mm_AT: MissileBase {
+    cost = 400000;
+    weaponLockSystem = 2;
+  };
+  class M_Mo_82mm_AT_LG: M_Mo_82mm_AT {
+    cost = 400000;
+    weaponLockSystem = 4;
   };
 };

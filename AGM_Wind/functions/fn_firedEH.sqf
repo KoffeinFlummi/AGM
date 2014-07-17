@@ -4,8 +4,8 @@ _this spawn {
   _ammoType = _this select 4;
   _round = _this select 5;
 
-  if (!local _unit) exitwith {};
-  if (!isPlayer _unit) exitwith {};
+  if !(local _unit) exitwith {};
+  if !(isPlayer _unit) exitwith {};
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
@@ -18,30 +18,21 @@ _this spawn {
   };
 
   // HUMIDITY
-  _velocity = velocity _round;
-  _velocityX = _velocity select 0;
-  _velocityY = _velocity select 1;
-  _velocityZ = _velocity select 2;
-  _velocityNewX = _velocityX - _velocityX * humidity * 0.2;
-  _velocityNewY = _velocityY - _velocityY * humidity * 0.2;
-  _velocityNewZ = _velocityZ - _velocityZ * humidity * 0.2;
-  _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
+  _round setVelocity ([velocity _round, {_this - _this * humidity * 0.2}] call AGM_Core_fnc_map);
 
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
-    _velocity = velocity _round;
-    _velocityX = _velocity select 0;
-    _velocityY = _velocity select 1;
-    _velocityZ = _velocity select 2;
-    
     // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
 
-    _velocityNewX = _velocityX + _coefficient * (wind select 0) * _deltaTime;
-    _velocityNewY = _velocityY + _coefficient * (wind select 1) * _deltaTime;
+    _velocityNew = [
+      ((velocity _round) select 0) + _coefficient * (wind select 0) * _deltaTime,
+      ((velocity _round) select 1) + _coefficient * (wind select 1) * _deltaTime,
+      ((velocity _round) select 2)
+    ];
 
-    _round setVelocity [_velocityNewX, _velocityNewY, _velocityZ];
+    _round setVelocity _velocityNew;
 
     _time = time;
     sleep 0.05;

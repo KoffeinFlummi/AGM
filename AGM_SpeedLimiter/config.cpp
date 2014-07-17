@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {Extended_EventHandlers, AGM_Core};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -30,8 +30,8 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "$STR_AGM_SpeedLimiter";
-    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statementUp = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
+    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_vehicle] call AGM_SpeedLimiter_fnc_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;

@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, Extended_EventHandlers, AGM_Core};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -45,5 +45,12 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+  };
+};
+
+class CfgAmmo {
+  class GrenadeHand;
+  class SmokeShell : GrenadeHand {
+    timeToLive = 80;
   };
 };

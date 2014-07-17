@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Dubbing_Radio_F};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -12,6 +12,13 @@ class CfgPatches {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_NoRadio {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
+  };
+};
+
+/*
 class CfgVoice {
   class Base;
   class ENG: Base {
@@ -27,3 +34,4 @@ class CfgVoice {
     protocol = "";
   };
 };
+*/

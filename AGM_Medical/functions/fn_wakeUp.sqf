@@ -29,12 +29,6 @@ _position = getPosASL _unit;
 
 [-2, {
   if (_this == player) then {
-    AGM_UnconsciousCC ppEffectEnable false;
-    AGM_UnconsciousCC ppEffectCommit 1;
-    AGM_UnconsciousRB ppEffectEnable false;
-    AGM_UnconsciousRB ppEffectCommit 1;
-    3 fadeSound 1;
-    3 fadeSpeech 1;
     player setVariable ["tf_globalVolume", 1];
     player setVariable ["tf_voiceVolume", 1, true];
     player setVariable ["tf_unable_to_use_radio", false, true];

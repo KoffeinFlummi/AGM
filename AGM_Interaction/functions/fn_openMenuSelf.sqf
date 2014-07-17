@@ -16,14 +16,16 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 	_count = count _config;
 	if (_count > 0) then {
-		for "_a" from 0 to (_count - 1) do {
-			_action = _config select _a;
+		for "_index" from 0 to (_count - 1) do {
+			_action = _config select _index;
 
 			if (count _action > 0) then {
 				_configName = configName _action;
 				_displayName = getText (_action >> "displayName");
 
-				_condition = compile getText (_action >> "condition");
+				_condition = getText (_action >> "condition");
+				if (_condition == "") then {_condition = "true";};
+				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
@@ -38,30 +40,34 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 } forEach _parents;
 
 // search add-on config file
-_config = configfile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
-if (_class != "") then {_config = _config >> _this};
+{
+	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	if (_class != "") then {_config = _config >> _this};
 
-_count = count _config;
-if (_count > 0) then {
-	for "_a" from 0 to (_count - 1) do {
-		_action = _config select _a;
+	_count = count _config;
+	if (_count > 0) then {
+		for "_index" from 0 to (_count - 1) do {
+			_action = _config select _index;
 
-		if (count _action > 0) then {
-			_configName = configName _action;
-			_displayName = getText (_action >> "displayName");
-			
-			_condition = compile getText (_action >> "condition");
-			_statement = compile getText (_action >> "statement");
-			_showDisabled = getNumber (_action >> "showDisabled") == 1;
-			_priority = getNumber (_action >> "priority");
+			if (count _action > 0) then {
+				_configName = configName _action;
+				_displayName = getText (_action >> "displayName");
 
-			if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-				_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
-				_patches set [count _patches, _configName];
+				_condition = getText (_action >> "condition");
+				if (_condition == "") then {_condition = "true";};
+				_condition = compile _condition;
+				_statement = compile getText (_action >> "statement");
+				_showDisabled = getNumber (_action >> "showDisabled") == 1;
+				_priority = getNumber (_action >> "priority");
+
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_patches set [count _patches, _configName];
+				};
 			};
 		};
 	};
-};
+} forEach _parents;
 
 // search vehicle namespace
 _customActions = player getVariable ["AGM_InteractionsSelf", []];
@@ -107,7 +113,11 @@ for "_a" from 0 to (_count - 1) do {
 _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 if (_class == "") then {
 	AGM_Interaction_MainButton = "closeDialog 0;";
-	_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
+	if ((vehicle player) isKindOf "Man") then {
+		_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
+	} else {
+		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf (vehicle player)) >> "displayName"));
+	};
 } else {
 	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenuSelf;";
 	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";

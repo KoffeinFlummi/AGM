@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {A3_Weapons_F, A3_Anims_F};
+    requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
@@ -22,17 +22,18 @@ class CfgFunctions {
   };
 };
 
-class Extended_Init_EventHandlers {
+class Extended_PostInit_EventHandlers {
+  class AGM_Wind {
+    serverInit = "if (isServer && {call AGM_Core_fnc_isAutoWind}) then {setWind [wind select 0, wind select 1, true]};";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Wind\clientInit.sqf'";
+  };
+};
+
+class Extended_InitPost_EventHandlers {
   class CAManBase {
     class AGM_Wind {
       init = "_this call AGM_Wind_fnc_init";
     };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Wind {
-    Init = "if (isServer && {call AGM_Core_fnc_isAutoWind}) then {setWind [wind select 0, wind select 1, true]};";
   };
 };
 

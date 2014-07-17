@@ -27,7 +27,7 @@
       <German>Ladehemmung!</German>
       <Spanish>Arma trabada!</Spanish>
       <Polish>Broń się zacięła!</Polish>
-      <Czech>Zbraň je zaseklá!</Czech>
+      <Czech>Zbraň se zasekla!</Czech>
       <French>Arme enrayer</French>
       <Russian>Оружие заклинило!</Russian>
       <Hungarian>Elakadt a fegyver!</Hungarian>
@@ -37,7 +37,7 @@
       <German>Ladehemmung beheben</German>
       <Spanish>Destrabar el arma</Spanish>
       <Polish>Usuń zacięcie</Polish>
-      <Czech>Odseknout zbraň</Czech>
+      <Czech>Uvolnit zbraň</Czech>
       <French>Nettoyer le canon</French>
       <Russian>Исправить клин оружия.</Russian>
       <Hungarian>Hárítsd el az akadályt!</Hungarian>
@@ -47,7 +47,7 @@
       <German>Ladehemmung behoben</German>
       <Spanish>Arma destrabada</Spanish>
       <Polish>Zacięcie usunięte</Polish>
-      <Czech>Zbraň odseklá</Czech>
+      <Czech>Zbraň uvolněna</Czech>
       <French>Canon nettoyé</French>
       <Russian>Оружие исправлено</Russian>
       <Hungarian>Akadály elhárítva!</Hungarian>
@@ -57,7 +57,7 @@
       <German>Lauf wechseln</German>
       <Spanish>Cambiar el cañón</Spanish>
       <Polish>Wymień lufę</Polish>
-      <Czech>Prohodit hlaveň</Czech>
+      <Czech>Vyměnit hlaveň</Czech>
       <French>Changer le canon</French>
       <Russian>Сменить ствол</Russian>
       <Hungarian>Cserélj csövet!</Hungarian>
@@ -67,7 +67,7 @@
       <German>Lauf wird gewechselt...</German>
       <Spanish>Cambiando el cañón...</Spanish>
       <Polish>Wymienianie lufy...</Polish>
-      <Czech>Prohazuji hlaveň ...</Czech>
+      <Czech>Vyměňuji hlaveň ...</Czech>
       <French>Changement du canon...</French>
       <Russian>Смена ствола...</Russian>
       <Hungarian>Cső cserélése...</Hungarian>
@@ -77,7 +77,7 @@
       <German>Lauf gewechselt</German>
       <Spanish>Cañón cambiado</Spanish>
       <Polish>Lufa wymieniona</Polish>
-      <Czech>Prohozená hlaveň</Czech>
+      <Czech>Hlaveň vyměněna</Czech>
       <French>Canon changé</French>
       <Russian>Ствол сменен</Russian>
       <Hungarian>Cső kicserélve!</Hungarian>
@@ -92,6 +92,16 @@
       <French>Vérifier la température de l'arme</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu zbraně</Czech>
+    </Key>
+
+    <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
+      <English>Check temperature</English>
+      <German>Temperatur prüfen</German>
+      <Spanish>Verificar temperatura</Spanish>
+      <Polish>Sprawdź temperaturę</Polish>
+      <French>Vérifier la température</French>
+      <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
+      <Czech>Zjistit teplotu</Czech>
     </Key>
 
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
