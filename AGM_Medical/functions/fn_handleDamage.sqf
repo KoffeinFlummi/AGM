@@ -107,10 +107,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     sleep 0.00001;
 
     _preventDeath = false;
-    if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath}) then {
+    if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
       _preventDeath = true;
     };
-    if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
+    if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
       _preventDeath = true;
     };
 
@@ -246,7 +246,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
             if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
               [_this] call AGM_Medical_fnc_knockOut;
             };
-            if (_blood <= BLOODTHRESHOLD2 and {!AGM_Medical_PreventDeathWhileUnconscious}) then {
+            if (_blood <= BLOODTHRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
               _this setDamage 1;
             };
           };
@@ -261,10 +261,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 };
 
 _preventDeath = false;
-if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath}) then {
+if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
   _preventDeath = true;
 };
-if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious}) then {
+if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
   _preventDeath = true;
 };
 
