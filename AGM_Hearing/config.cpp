@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Hearing {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.92";

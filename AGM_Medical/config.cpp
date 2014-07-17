@@ -2,7 +2,7 @@
 class CfgPatches {
   class AGM_Medical {
     units[] = {"AGM_Box_Medical"};
-    weapons[] = {};
+    weapons[] = {"AGM_Bandage", "AGM_Morphine", "AGM_Epipen", "AGM_Bloodbag"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";

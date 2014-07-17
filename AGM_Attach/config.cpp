@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Attach {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
