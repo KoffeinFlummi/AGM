@@ -125,11 +125,6 @@
       <German>Heckrotor ist beschädigt</German>
       <Spanish>El rotor trasero está dañado</Spanish>
       <French>Rotor principal endommagé</French>
-    </Key>s
-    <Key ID="STR_AGM_Repair_VRotor_check">
-      <English>Tail rotor is damaged</English>
-      <German>Heckrotor ist beschädigt</German>
-      <French>Rotor anticouple endommagé</French>
     </Key>
     <Key ID="STR_AGM_Repair_Wheels">
       <English>Wheels >></English>
@@ -233,21 +228,16 @@
       <Spanish>Reparar aviónica</Spanish>
       <French>Réparer l'avionique</French>
     </Key>
-    <Key ID="STR_AGM_Repair_HRotor_check">
+    <Key ID="STR_AGM_Repair_HRotor_repair">
       <English>Repair Main rotor</English>
       <German>Hauptrotor reparieren</German>
       <Spanish>Reparar rotor principal</Spanish>
     </Key>
-    <Key ID="STR_AGM_Repair_VRotor_check">
+    <Key ID="STR_AGM_Repair_VRotor_repair">
       <English>Repair Tail rotor</English>
       <German>Heckrotor reparieren</German>
       <Spanish>Reparar rotor trasero</Spanish>
       <French>Réparer le rotor principal</French>
-    </Key>s
-    <Key ID="STR_AGM_Repair_VRotor_check">
-      <English>Repair Tail rotor</English>
-      <German>Heckrotor reparieren</German>
-      <French>Réparer le rotor anticouple</French>
     </Key>
     <Key ID="STR_AGM_Repair_noTrack">
       <English>There's no track!</English>
@@ -255,7 +245,7 @@
       <Spanish>No hay ninguna pista!</Spanish>
       <French>Il n'y a pas de chenilles!</French>
     </Key>
-    <Key ID="STR_AGM_Repair_noTrack">
+    <Key ID="STR_AGM_Repair_noWheel">
       <English>There's no wheel!</English>
       <German>Es ist kein Reifen in der Nähe!</German>
       <Spanish>No hay ninguna rueda!</Spanish>
