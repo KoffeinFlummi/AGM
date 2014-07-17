@@ -291,11 +291,13 @@
       <English>Cancel</English>
       <German>Abbrechen</German>
       <Spanish>Cancelar</Spanish>
+      <Polish>Anuluj</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_MakeSelection">
       <English>Select</English>
       <German>Wählen</German>
       <Spanish>Seleccionar</Spanish>
+      <Polish>Wybierz</Polish>
     </Key>
   </Package>
 </Project>
