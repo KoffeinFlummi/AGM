@@ -12,7 +12,7 @@
       <Czech>Dron je zaplňený</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_NoBattery">
-      <English>You need a UAV-Battery</English>
+      <English>You need a UAV Battery</English>
       <German>Du brauchst eine UAV-Batterie</German>
       <Spanish>Necesitas una batería para VANT</Spanish>
       <French>Vous avez besoin d'une Batterie-UAV</French>
@@ -39,8 +39,8 @@
       <Czech>UAV-Baterie</Czech>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Description">
-      <English>Used to refuel UAV's</English>
-      <German>Verwendet zum Aufladen von UAV's</German>
+      <English>Used to refuel Carried UAV's</English>
+      <German>Verwendet zum Aufladen von dragbaren UAV's</German>
       <Spanish>Usada para reabastecer el VANT</Spanish>
       <French>Utiliser pour faire le plein de l'UAV</French>
       <Polish>Używana do naładowania UAV</Polish>
