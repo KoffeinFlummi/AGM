@@ -1,13 +1,13 @@
 class CfgPatches {
   class AGM_Map {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
@@ -17,11 +17,71 @@ class CfgFunctions {
     class AGM_Map {
       file = "AGM_Map\functions";
       class blueForceTracking;
+      class handleMouseButton;
+      class handleMouseMove;
+      class isInsideMapTool;
+      class updateMapToolMarkers;
     };
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_Map {
+    clientInit = "call compile preprocessFileLineNumbers 'AGM_Map\clientInit.sqf'";
+  };
+};
+
+class CfgWeapons {
+  class ItemCore;
+  class InventoryItem_Base_F;
+
+  class AGM_MapTools: ItemCore {
+    displayName = "$STR_AGM_MapTools_Name";
+    descriptionShort = "$STR_AGM_MapTools_Description";
+    model = "\A3\weapons_F\ammo\mag_univ.p3d";
+    picture = "\AGM_Map\UI\maptool_item.paa";
+    scope = 2;
+    class ItemInfo: InventoryItem_Base_F {
+      mass = 1;
+      type = 401;
+    };
+  };
+};
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
 class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTools,12)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTools,12)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTools,12)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTools,24)
+    };
+  };
+
   class Module_F;
   class AGM_ModuleBlueForceTracking: Module_F {
     author = "AGM Team";
@@ -243,5 +303,21 @@ class CfgMarkers {
   class hd_dot: hd_objective {
     name = "$STR_CFG_MARKERS_FLAG";
     icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";
+  };
+
+  class MapToolFixed {
+    name = "MapToolFixed";
+    icon = "\AGM_Map\data\mapToolFixed.paa";
+    scope = 0;
+    color[] = {1,1,1,1};
+    size = 32;
+  };
+
+  class MapToolRotating {
+    name = "MapToolRotating";
+    icon = "\AGM_Map\data\mapToolRotating.paa";
+    scope = 0;
+    color[] = {1,1,1,1};
+    size = 32;
   };
 };
