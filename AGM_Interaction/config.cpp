@@ -251,6 +251,129 @@ class CfgVehicles {
     };
   };
 
+
+  // BLUFOR Uniforms
+  class SoldierWB: CAManBase {};
+  class B_Soldier_base_F: SoldierWB {
+    modelSides[] = {3,2,1,0};
+    // allowedUniformSides = {3,2,1,0}; this doesn't seem to do anything (or i'm doing it wrong)
+  };
+  class B_Helipilot_F: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_helicrew_F: B_Helipilot_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Pilot_F: B_Helipilot_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_RangeMaster_F: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Soldier_02_f: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Soldier_03_f: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Soldier_04_f: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Soldier_05_f: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_soldier_survival_F: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Story_Protagonist_F: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Story_SF_Captain_F: B_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class B_Soldier_diver_base_F: B_Soldier_base_F {};
+  class B_diver_F: B_Soldier_diver_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+
+  // INDEP / FIA Uniforms
+  class SoldierGB: CAManBase {};
+  class I_Soldier_base_F: SoldierGB {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_officer_F: I_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_Soldier_03_f: I_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_Soldier_04_f: I_Soldier_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_Soldier_diver_base_F: I_Soldier_base_F {};
+  class I_diver_F: I_Soldier_diver_base_F {
+    modelSides[] = {3,2,1,0};
+  };
+
+  class I_G_Soldier_base_F: SoldierGB {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_engineer_F: I_G_Soldier_base_F {}; // WHY BOHEMIA? WHY?
+  class B_G_engineer_F: I_G_engineer_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_medic_F: I_G_Soldier_base_F {};
+  class B_G_medic_F: I_G_medic_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_officer_F: I_G_Soldier_base_F {};
+  class B_G_officer_F: I_G_officer_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_A_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_A_F: I_G_Soldier_A_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_AR_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_AR_F: I_G_Soldier_AR_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_exp_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_exp_F: I_G_Soldier_exp_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_F: I_G_Soldier_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Story_SF_Captain_F: B_G_Soldier_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_GL_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_GL_F: I_G_Soldier_GL_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_LAT_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_LAT_F: I_G_Soldier_LAT_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_lite_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_lite_F: I_G_Soldier_lite_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_M_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_M_F: I_G_Soldier_M_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_SL_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_SL_F: I_G_Soldier_SL_F {
+    modelSides[] = {3,2,1,0};
+  };
+  class I_G_Soldier_TL_F: I_G_Soldier_base_F {};
+  class B_G_Soldier_TL_F: I_G_Soldier_TL_F {
+    modelSides[] = {3,2,1,0};
+  };
+
   class LandVehicle;
   class StaticWeapon: LandVehicle {
     class AGM_Actions {};
