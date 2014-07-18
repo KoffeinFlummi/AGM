@@ -1,6 +1,19 @@
 // by commy2
 
-//WIP copy from LJH for now
+//WIP copy from L/H for now
+
+"HitLFWheel",
+"HitLBWheel",
+"HitLMWheel",
+"HitLF2Wheel",
+"HitRFWheel",
+"HitRBWheel",
+"HitRMWheel",
+"HitRF2Wheel"
+
+
+
+
 
 private ["_unit","_mags", "_item", "_index", "_listIDC"];
 _unit = _this select 0;
