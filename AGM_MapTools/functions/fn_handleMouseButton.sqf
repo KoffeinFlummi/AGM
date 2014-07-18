@@ -13,6 +13,9 @@
 
 private ["_dir", "_params", "_control", "_button", "_screenPos", "_shiftKey", "_ctrlKey", "_handled", "_pos"];
 
+// If no map tool marker then exit
+if (isNil "AGM_MapTools_mapToolFixed") exitWith {};
+
 _dir       = _this select 0;
 _params    = _this select 1;
 _control   = _params select 0;

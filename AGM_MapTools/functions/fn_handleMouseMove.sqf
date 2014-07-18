@@ -13,6 +13,9 @@
 
 private ["_control", "_pos"];
 
+// If no map tool marker then exit
+if (isNil "AGM_MapTools_mapToolFixed") exitWith {};
+
 _control = _this select 0;
 _pos = [_this select 1, _this select 2];
 
