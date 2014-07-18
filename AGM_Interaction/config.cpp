@@ -18,6 +18,7 @@ class CfgFunctions {
       file = "\AGM_interaction\functions";
       class addInteraction;
       class addInteractionSelf;
+      class canTapShoulder;
       class isInRange;
       class module;
       class openDoor;
