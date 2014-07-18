@@ -19,6 +19,7 @@ class CfgFunctions
 			file="AGM_Explosives\functions";
 			
 			class AddCodeToSpeedDial;
+			class CanDefuse;
 			class DefuseExplosive;
 			class DetonateExplosive;
 			class DialPhone;
@@ -44,6 +45,7 @@ class CfgFunctions
 			class SelectTrigger;
 			class SetupExplosive;
 			class SetSpeedDial;
+			class StartDefuse;
 			class StartTimer;
 			
 			class TriggerType;
@@ -64,7 +66,7 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "true";
-				statement = "AGM_Interaction_Target=player;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
 				priority = 4;
 				
@@ -85,8 +87,8 @@ class CfgVehicles {
 				};
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
-					condition = "(vehicle player == player) and ('AGM_DefusalKit' in items player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
-					statement = "[getNumber(ConfigFile >> 'CfgAmmo' >> typeOf (AGM_Interaction_Target) >> 'AGM_DefuseTime'), [player,AGM_Interaction_Target], 'AGM_Explosives_fnc_DefuseExplosive', localize 'STR_AGM_Explosives_DefusingExplosive'] call AGM_Core_fnc_progressBar;";
+					condition = "[player] call AGM_Explosives_fnc_CanDefuse;";
+					statement = "[AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
 					priority = 0.8;
 				};

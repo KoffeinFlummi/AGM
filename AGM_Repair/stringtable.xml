@@ -239,6 +239,7 @@
       <Spanish>Reparar rotor trasero</Spanish>
       <French>Réparer le rotor principal</French>
     </Key>
+
     <Key ID="STR_AGM_Repair_noTrack">
       <English>There's no track!</English>
       <German>Es ist keine Kette in der Nähe!</German>
@@ -251,29 +252,25 @@
       <Spanish>No hay ninguna rueda!</Spanish>
       <French>Il n'y a pas de roues!</French>
     </Key>
+
     <Key ID="STR_AGM_Repair_Repairing">
-      <English>Repairing...</English>
-      <German>Reparieren...</German>
-      <Spanish>Reparando...</Spanish>
-      <French>Réparation...</French>
+      <English>Repairing %1 ...</English>
+      <German>Reparieren %1 ...</German>
+      <Spanish>Reparando %1 ...</Spanish>
+      <French>Réparation %1 ...</French>
     </Key>
+    <Key ID="STR_AGM_Repair_Repaired">
+      <English>Repaired %1</English>
+      <German>%1 repariert</German>
+    </Key>
+
     <Key ID="STR_AGM_Repair_checkVehicle">
       <English>Check Vehicle</English>
       <German>Fahrzeug überprüfen</German>
       <Spanish>Comprobando vehículo</Spanish>
       <French>Vérifier le véhicule</French>
     </Key>
-    <Key ID="STR_AGM_Drag_StartDrag">
-      <English>Drag</English>
-      <Russian>Тащить</Russian>
-      <Spanish>Arrastrar</Spanish>
-      <French>Tirer</French>
-    </Key>
-    <Key ID="STR_AGM_Drag_EndDrag">
-      <English>Release</English>
-      <Russian>Отпустить</Russian>
-      <Spanish>Soltar</Spanish>
-      <French>Relacher</French>
-    </Key>
+
+
   </Package>
 </Project>
