@@ -16,20 +16,14 @@ class CfgFunctions {
   class AGM_MapTools {
     class AGM_MapTools {
       file = "AGM_MapTools\functions";
-      //class handleKeyPress;
       class handleMouseButton;
       class handleMouseMove;
-      class updateMapToolMarkers;
       class isInsideMapTool;
+      class updateMapToolMarkers;
     };
   };
 };
 
-/*class Extended_PreInit_EventHandlers {
-  class AGM_MapTools {
-    init = "call compile preprocessFileLineNumbers '\AGM_MapTools\preInit.sqf'";
-  };
-};*/
 class Extended_PostInit_EventHandlers {
   class AGM_MapTools {
     clientInit = "call compile preprocessFileLineNumbers 'AGM_MapTools\clientInit.sqf'";
@@ -38,7 +32,7 @@ class Extended_PostInit_EventHandlers {
 
 // MARKERS
 class CfgMarkers {
-  //class Flag;
+
   class MapToolFixed {
     name = "MapToolFixed";
     icon = "\AGM_MapTools\data\mapToolFixed.paa";

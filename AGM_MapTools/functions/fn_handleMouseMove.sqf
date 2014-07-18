@@ -1,4 +1,15 @@
-// by CAA-Picard
+/*
+ * Author: CAA-Picard
+ *
+ * Handle mouse movement over the map tool.
+ *
+ * Argument:
+ * 0: Map Control
+ * 1: Mouse position on screen coordinates
+ *
+ * Return value:
+ * Boolean, true if event was handled
+ */
 
 private ["_control", "_pos"];
 
@@ -11,8 +22,8 @@ AGM_MapTools_mousePos = _control ctrlMapScreenToWorld _pos;
 if (AGM_MapTools_dragging) exitWith {
   AGM_MapTools_pos set [0, (AGM_MapTools_startPos select 0) + (AGM_MapTools_mousePos select 0) - (AGM_MapTools_startDragPos select 0)];
   AGM_MapTools_pos set [1, (AGM_MapTools_startPos select 1) + (AGM_MapTools_mousePos select 1) - (AGM_MapTools_startDragPos select 1)];
-  // Update the size and rotation
-  
+
+  // Update the size and rotation of the maptool
   [] call AGM_MapTools_fnc_updateMapToolMarkers;
   true
 };
@@ -23,7 +34,7 @@ if (AGM_MapTools_rotating) exitWith {
   _angle =  (180 + ((AGM_MapTools_mousePos select 0) - (AGM_MapTools_startPos select 0)) atan2 ((AGM_MapTools_mousePos select 1) - (AGM_MapTools_startPos select 1)) mod 360);
   AGM_MapTools_angle = AGM_MapTools_startAngle + _angle - AGM_MapTools_startDragAngle;
 
-  hint format ["  AGM_MapTools_angle= %1", AGM_MapTools_angle];
+  // Update the size and rotation of the maptool
   [] call AGM_MapTools_fnc_updateMapToolMarkers;
   true
 };
