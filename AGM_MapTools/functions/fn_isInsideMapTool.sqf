@@ -12,9 +12,9 @@
  */
 
 #define TEXTURE_WIDTH_IN_M           6205
-#define DIST_BOTTOM_TO_CENTER_PERC  -0.32
-#define DIST_TOP_TO_CENTER_PERC      0.66
-#define DIST_LEFT_TO_CENTER_PERC     0.32
+#define DIST_BOTTOM_TO_CENTER_PERC  -0.33
+#define DIST_TOP_TO_CENTER_PERC      0.65
+#define DIST_LEFT_TO_CENTER_PERC     0.30
 
 _pos = [_this select 0, _this select 1, 0];
 _relPos = _pos vectorDiff [AGM_MapTools_pos select 0, AGM_MapTools_pos select 1, 0];

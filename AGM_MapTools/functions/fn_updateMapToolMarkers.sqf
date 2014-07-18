@@ -11,7 +11,7 @@
  */
 
 #define TEXTURE_WIDTH_IN_M    6205
-#define CENTER_OFFSET_Y_PERC  0.1689
+#define CENTER_OFFSET_Y_PERC  0.1606
 #define CONSTANT_SCALE        0.2
 
 if !("AGM_MapTool_Item" in items player) exitWith {
