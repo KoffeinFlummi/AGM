@@ -20,15 +20,8 @@ if (!hasInterface) exitWith{};
   // Init variables
   AGM_MapTools_pos = [1000,1000];
   AGM_MapTools_angle = 0;
-
   AGM_MapTools_dragging = false;
   AGM_MapTools_rotating = false;
-
-  // Create the markers
-  AGM_MapTools_mapToolFixed = createMarkerLocal ["MapToolFixed", AGM_MapTools_pos];
-  "MapToolFixed" setMarkerType "MapToolFixed";
-  AGM_MapTools_mapToolRotating = createMarkerLocal ["MapToolRotating", AGM_MapTools_pos];
-  "MapToolRotating" setMarkerType "MapToolRotating";
 
   // Update the size and rotation
   [] call AGM_MapTools_fnc_updateMapToolMarkers;

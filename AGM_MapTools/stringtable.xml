@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="MapTools">
+    <Key ID="STR_AGM_MapTool_Name">
+      <English>Map Tool</English>
+    </Key>
+    <Key ID="STR_AGM_MapTool_Description">
+      <English>The Map Tool allow you to measure distances and angles on the map.</English>
+    </Key>
+  </Package>
+</Project>

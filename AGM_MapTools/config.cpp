@@ -49,3 +49,55 @@ class CfgMarkers {
     size = 32;
   };
 };
+
+class CfgWeapons {
+  class ItemCore;
+  class InventoryItem_Base_F;
+
+  class AGM_MapTool_Item: ItemCore {
+    displayName = "$STR_AGM_MapTool_Name";
+    descriptionShort = "$STR_AGM_MapTool_Description";
+    model = "\A3\weapons_F\ammo\mag_univ.p3d";
+    picture = "\AGM_MapTools\UI\maptool_item.paa";
+    scope = 2;
+    class ItemInfo: InventoryItem_Base_F {
+      mass = 1;
+      type = 401;
+    };
+  };
+};
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
+class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTool_Item,12)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTool_Item,12)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTool_Item,12)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_MapTool_Item,24)
+    };
+  };
+};

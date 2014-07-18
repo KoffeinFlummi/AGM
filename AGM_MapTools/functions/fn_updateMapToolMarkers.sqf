@@ -14,6 +14,26 @@
 #define CENTER_OFFSET_Y_PERC  0.1689
 #define CONSTANT_SCALE        0.2
 
+if !("AGM_MapTool_Item" in items player) exitWith {
+  // If markers exist, delete them
+  if (!isNil "AGM_MapTools_mapToolFixed") then {
+    deleteMarkerLocal "MapToolFixed";
+    deleteMarkerLocal "MapToolRotating";
+    deleteMarkerLocal "MapToolFixed";
+    AGM_MapTools_mapToolFixed = nil;
+    AGM_MapTools_mapToolRotating = nil;
+  };
+};
+
+// If markers don't exist, create them
+if (isNil "AGM_MapTools_mapToolFixed") then {
+  // Create the markers
+  AGM_MapTools_mapToolFixed = createMarkerLocal ["MapToolFixed", AGM_MapTools_pos];
+  AGM_MapTools_mapToolRotating = createMarkerLocal ["MapToolRotating", AGM_MapTools_pos];
+  "MapToolFixed" setMarkerType "MapToolFixed";
+  "MapToolRotating" setMarkerType "MapToolRotating";
+};
+
 // Update scale of both parts
 _pos          = ((finddisplay 12) displayctrl 51) ctrlMapScreenToWorld [0.5, 0.5];
 _screenOffset = ((finddisplay 12) displayctrl 51) posWorldToScreen [(_pos select 0) + 100, (_pos select 1)];
