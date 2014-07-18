@@ -85,6 +85,12 @@
       <Spanish>La carrocería está dañada</Spanish>
       <French>Carrosserie endommagé</French>
     </Key>
+
+    <Key ID="STR_AGM_Repair_Tracks">
+      <English>Tracks >></English>
+      <German>Ketten >></German>
+    </Key>
+
     <Key ID="STR_AGM_Repair_LTrack_check">
       <English>Left track is damaged</English>
       <German>Linke Kette ist beschädigt</German>
@@ -97,6 +103,7 @@
       <Spanish>La pista derecha está dañada</Spanish>
       <French>Chenille droite endommagée</French>
     </Key>
+
     <Key ID="STR_AGM_Repair_Gun_check">
       <English>Gun is damaged</English>
       <German>Rohr ist beschädigt</German>
@@ -126,12 +133,14 @@
       <Spanish>El rotor trasero está dañado</Spanish>
       <French>Rotor principal endommagé</French>
     </Key>
+
     <Key ID="STR_AGM_Repair_Wheels">
       <English>Wheels >></English>
       <German>Reifen >></German>
       <Spanish>Ruedas >></Spanish>
       <French>Roues >></French>
     </Key>
+
     <Key ID="STR_AGM_Repair_L1Wheel">
       <English>Repair L1 Wheel</English>
       <German>Reifen L1 reparieren</German>
@@ -198,13 +207,13 @@
       <Spanish>Reparar carrocería</Spanish>
       <French>Réparer la carrosserie</French>
     </Key>
-    <Key ID="STR_AGM_Repair_HitLTrack">
+    <Key ID="STR_AGM_Repair_LTrack">
       <English>Repair left track</English>
       <German>Linke Kette reparieren</German>
       <Spanish>Reparar pista izquierda</Spanish>
       <French>Réparer la chenille gauche</French>
     </Key>
-    <Key ID="STR_AGM_Repair_HitRTrack">
+    <Key ID="STR_AGM_Repair_RTrack">
       <English>Repair right track</English>
       <German>Rechte Kette reparieren</German>
       <Spanish>Reparar pista derecha</Spanish>
@@ -251,6 +260,16 @@
       <German>Es ist kein Reifen in der Nähe!</German>
       <Spanish>No hay ninguna rueda!</Spanish>
       <French>Il n'y a pas de roues!</French>
+    </Key>
+
+
+    <Key ID="STR_AGM_Repair_SelectWheelMenu">
+      <English>Select Wheel Menu</English>
+      <German>Reifen wählen Menu</German>
+    </Key>
+    <Key ID="STR_AGM_Repair_SelectWheel">
+      <English>Change Wheel</English>
+      <German>Reifen wechseln</German>
     </Key>
 
     <Key ID="STR_AGM_Repair_Repairing">
