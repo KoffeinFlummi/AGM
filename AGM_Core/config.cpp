@@ -193,6 +193,8 @@ class CfgFunctions {
       class filter;
       class findStringInString;
       class getBinocular;
+      class getConfigCommander;
+      class getConfigGunner;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
@@ -208,7 +210,9 @@ class CfgFunctions {
       class getWindDirection;
       class hadamardProduct;
       class isAutoWind;
+      class isEngineer;
       class isInBuilding;
+      class isMedic;
       class isTurnedOut;
       class map;
       class moduleCheckPBOs;
