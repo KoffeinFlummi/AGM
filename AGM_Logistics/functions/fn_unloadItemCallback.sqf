@@ -1,5 +1,4 @@
 // by commy2
-
 _vehicle = _this select 0;
 _item = _this select 1;
 _itemHolder = _this select 2;
@@ -10,7 +9,7 @@ _vehicle setVariable [_itemHolder, _loadedItems, true];
 
 player allowDamage false;
 detach _item;
-_item setVehiclePosition [getPosASL player, [], 1];
+_item setVehiclePosition [getPosASL player, [], 2];
 player allowDamage true;
 
 _itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");

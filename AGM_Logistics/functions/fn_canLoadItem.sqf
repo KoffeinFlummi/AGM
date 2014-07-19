@@ -38,16 +38,21 @@ _distance = MAX_DISTANCE;
 } count _distances;
 
 if (_distance == MAX_DISTANCE) exitWith {false};
+_result = false;
 
 AGM_Logistics_targetVehicle = _nearestVehicles select (_distances find _distance);
-_attachPoints = AGM_Logistics_targetVehicle call AGM_Logistics_fnc_getLoadPoints;
 _size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_this select 0) >> "AGM_Size");
-
-_result = false;
-{
-    if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) exitWith {
+if (isClass (configFile >> "CfgVehicles" >> typeOf(AGM_Logistics_targetVehicle) >> "AGM_Load")) then {
+	_attachPoints = AGM_Logistics_targetVehicle call AGM_Logistics_fnc_getLoadPoints;
+	{
+		if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) exitWith {
+			_result = true;
+		};
+	} count _attachPoints;
+} else {
+	_loadedItems = AGM_Logistics_targetVehicle getVariable ["AGM_Logistics_loadedItems", []];
+	if ([getNumber (configFile >> "CfgVehicles" >> typeOf AGM_Logistics_targetVehicle >> "AGM_Vehicle_Cargo"), _loadedItems] call AGM_Logistics_fnc_remainingSpace >= _size) then {
 		_result = true;
-    };
-} count _attachPoints;
-
+	};
+};
 _result
