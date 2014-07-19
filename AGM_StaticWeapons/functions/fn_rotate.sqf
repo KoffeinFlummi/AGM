@@ -9,4 +9,5 @@ _this spawn {
 	sleep 1;
 
 	_vehicle setDir getDir _vehicle + ([-22.5, 22.5] select _isClockwise);
+	_vehicle setVectorUp (surfaceNormal getPosASL _vehicle);
 };
