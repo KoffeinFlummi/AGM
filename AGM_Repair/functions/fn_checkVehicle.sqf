@@ -26,13 +26,13 @@ _height = 1;
 	if (!isNil "_damage" && {_damage > 0}) then {
 		_name = [_x] call AGM_Repair_fnc_getHitPointName;
 		_string = _string + format [localize (["STR_AGM_Repair_HitPointDamaged", "STR_AGM_Repair_HitPointDamagedHeavy", "STR_AGM_Repair_HitPointDestroyed"] select (_damage - 1)), _name] + "<br/>";
-		_height = _height + 0.5;
+		_height = _height + 0.25;
 	};
 } forEach ALL_HITPOINTS;
 
 if (_height == 1) then {
 	_string = _string + localize "STR_AGM_Repair_Nothing";
-	_height = 1.5;
+	_height = 1.25;
 };
 
 _string = _string + "</t>";
