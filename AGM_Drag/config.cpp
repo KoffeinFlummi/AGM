@@ -37,7 +37,7 @@ class CfgFunctions
 				condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
 				statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;"; \
 				showDisabled = 1; \
-				priority = 1.5; \
+				priority = 3; \
 			}; \
 			class AGM_ReleaseItem { \
 				displayName = $STR_AGM_Drag_EndDrag; \
@@ -45,7 +45,7 @@ class CfgFunctions
 				condition = "(player call AGM_Drag_fnc_isDraggingObject)"; \
 				statement = "player call AGM_Drag_fnc_releaseObject;"; \
 				showDisabled = 0; \
-				priority = 1.5; \
+				priority = 3; \
 			}; \
 		};
 		
