@@ -19,12 +19,12 @@ AGM_Logistics_reloadMagazineCallback = compile preprocessFileLineNumbers "\AGM_L
 
 AGM_Logistics_carryItem = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\carryItem.sqf";
 AGM_Logistics_dropItem = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\dropItem.sqf";
-AGM_Logistics_loadBoxIntoVehicle = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\loadBoxIntoVehicle.sqf";
-AGM_Logistics_loadBoxIntoVehicleCallback = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\loadBoxIntoVehicleCallback.sqf";
-AGM_Logistics_unloadBox = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\unloadBox.sqf";
-AGM_Logistics_unloadBoxCallback = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\unloadBoxCallback.sqf";
-AGM_Logistics_canLoadInto = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\canLoadInto.sqf";
-AGM_Logistics_canUnload = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\canUnload.sqf";
+//AGM_Logistics_loadBoxIntoVehicle = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\loadBoxIntoVehicle.sqf";
+//AGM_Logistics_loadBoxIntoVehicleCallback = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\loadBoxIntoVehicleCallback.sqf";
+//AGM_Logistics_unloadBox = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\unloadBox.sqf";
+//AGM_Logistics_unloadBoxCallback = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\unloadBoxCallback.sqf";
+//AGM_Logistics_canLoadInto = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\canLoadInto.sqf";
+//AGM_Logistics_canUnload = compile preprocessFileLineNumbers "\AGM_Logistics\scripts\canUnload.sqf";
 
 
 // Jerry Can

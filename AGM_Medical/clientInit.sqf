@@ -18,7 +18,16 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
 // Spawn a thread to handle graphical effects for player, regardless of which unit he's controlling
 [] spawn {
   while {true} do {
-    // TODO: Detect if curator interface is open and disable effects
+
+    // Detect if curator interface is open and disable effects
+    if (!isNull(findDisplay 312)) then {
+      AGM_BloodLevel_CC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectEnable false;
+      while {!isNull(findDisplay 312)} do {
+        sleep 1;
+      };
+    };
 
     // Blood level
     _currentBlood = player getVariable ["AGM_Blood", 1];

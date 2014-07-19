@@ -7,8 +7,26 @@ class CfgPatches {
     version = "0.93";
     versionStr = "0.93";
     versionAr[] = {0,9,0};
-    author[] = {"marc_book"};
+    author[] = {"marc_book", "commy2"};
     authorUrl = "https://github.com/MarcBook/";
+  };
+};
+
+class CfgFunctions {
+  class AGM_Repair {
+    class AGM_Repair {
+      file = "AGM_Repair\functions";
+      class canRepair;
+      class canRepairTrackWheel;
+      class checkVehicle;
+      class getHitPointName;
+      class openSelectWheelUI;
+      class repair;
+      class repairAbort;
+      class repairCallback;
+      /*class repairTrack;
+      class repairWheel;*/
+    };
   };
 };
 
@@ -43,84 +61,77 @@ class CfgVehicles {
 
   class Car_F: Car {
     class AGM_Actions: AGM_Actions {
+
       class AGM_Repair {
         displayName = "$STR_AGM_Repair";
         distance = 4;
-        condition = "vehicle player == player";
+        condition = "alive AGM_Interaction_Target";
         statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
         priority = 1;
 
-        class AGM_Repair_L1Wheel {
-          displayName = "$STR_AGM_Repair_L1Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitLFWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitLFWheel', 'wheel_1_1_steering', player] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.9;
-        };
-
-        class AGM_Repair_L2Wheel {
-          displayName = "$STR_AGM_Repair_L2Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitLF2Wheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitLF2Wheel', 'wheel_1_2_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.8;
-        };
-
-        class AGM_Repair_R1Wheel {
-          displayName = "$STR_AGM_Repair_R1Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitRFWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitRFWheel', 'wheel_2_1_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.7;
-        };
-
-        class AGM_Repair_R2Wheel {
-          displayName = "$STR_AGM_Repair_R2Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitRF2Wheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitRF2Wheel', 'wheel_2_2_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.6;
-        };
-
-        class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitEngine' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitEngine', 'motor'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.5;
-        };
-
-        class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitFuel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitFuel', 'palivo'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.4;
-        };
-
-        class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitBody' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitBody', 'karoserie'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.3;
-        };
-
         class AGM_Repair_checkVehicle {
           displayName = "$STR_AGM_Repair_checkVehicle";
           distance = 4;
-          condition = "damage AGM_Interaction_Target < 1";
-          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
+          condition = "alive AGM_Interaction_Target";
+          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
           showDisabled = 1;
-          priority = 1.0;
+          priority = 1;
+        };
+        class AGM_Repair_Wheels {
+          displayName = "$STR_AGM_Repair_Wheels";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRepairTrackWheel";
+          statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
+          showDisabled = 0;
+          priority = 0.9;
+        };
+        class AGM_Repair_Body {
+          displayName = "$STR_AGM_Repair_HitBody";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        class AGM_Repair_Engine {
+          displayName = "$STR_AGM_Repair_HitEngine";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.4;
+        };
+        class AGM_Repair_Fuel {
+          displayName = "$STR_AGM_Repair_HitFuel";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.3;
+        };
+        class AGM_Repair_Gun {
+          displayName = "$STR_AGM_Repair_HitGun";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.2;
+        };
+        class AGM_Repair_Turret {
+          displayName = "$STR_AGM_Repair_HitTurret";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.1;
+        };
+        class AGM_OpenUIDummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -9;
         };
       };
     };
@@ -128,265 +139,232 @@ class CfgVehicles {
 
   class Tank_F: Tank {
     class AGM_Actions: AGM_Actions {
+
       class AGM_Repair {
         displayName = "$STR_AGM_Repair";
         distance = 4;
-        condition = "vehicle player == player";
+        condition = "alive AGM_Interaction_Target";
         statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
         priority = 1;
 
-        class AGM_Repair_HitLTrack {
+        class AGM_Repair_checkVehicle {
+          displayName = "$STR_AGM_Repair_checkVehicle";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target";
+          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
+          showDisabled = 1;
+          priority = 1;
+        };
+        class AGM_Repair_Body {
+          displayName = "$STR_AGM_Repair_HitBody";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        class AGM_Repair_LTrack {
           displayName = "$STR_AGM_Repair_HitLTrack";
           distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitLTrack' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitLTrack', 'track_l_hit', player] call AGM_Repair_fnc_repairTrack;";
-          showDisabled = 1;
-          priority = 0.1;
+          condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.42;
         };
-
-        class AGM_Repair_HitRTrack {
+        class AGM_Repair_RTrack {
           displayName = "$STR_AGM_Repair_HitRTrack";
           distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitRTrack' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitRTrack', 'track_r_hit'] call AGM_Repair_fnc_repairTrack;";
-          showDisabled = 1;
-          priority = 0.2;
+          condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.41;
         };
-
         class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
+          displayName = "$STR_AGM_Repair_HitEngine";
           distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitEngine' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitEngine', 'engine_hit'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.3;
-        };
-
-        class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitHull' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitHull', 'hull_hit'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
+          condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
           priority = 0.4;
         };
-
-        class AGM_Repair_Turret {
-          displayName = "$STR_AGM_Repair_Turret";
+        class AGM_Repair_Fuel {
+          displayName = "$STR_AGM_Repair_HitFuel";
           distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitTurret' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitTurret', 'main_turret_hit'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.5;
+          condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.3;
         };
-
         class AGM_Repair_Gun {
-          displayName = "$STR_AGM_Repair_Gun";
+          displayName = "$STR_AGM_Repair_HitGun";
           distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitGun' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitGun', 'main_gun_hit'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.6;
+          condition = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.2;
         };
-
-        class AGM_Repair_checkVehicle {
-          displayName = "$STR_AGM_Repair_checkVehicle";
+        class AGM_Repair_Turret {
+          displayName = "$STR_AGM_Repair_HitTurret";
           distance = 4;
-          condition = "damage AGM_Interaction_Target < 1";
-          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
+          condition = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.1;
+        };
+        class AGM_OpenUIDummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
           showDisabled = 1;
-          priority = 1.0;
+          priority = -9;
         };
       };
     };
   };
-  
-  class Truck_F: Car_F {
-    class AGM_Actions: AGM_Actions {
-      class AGM_Repair_Wheelsshow {
-          displayName = "$STR_AGM_Repair_Wheels";
-          distance = 4;
-          condition = "false";
-          statement = "'AGM_Repair_Wheels' call AGM_Interaction_fnc_openMenu;";
-          showDisabled = 0;
-          priority = 1;
 
-        class AGM_Repair_L3Wheel {
-          displayName = "$STR_AGM_Repair_L3Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitLMWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitLMWheel', 'wheel_1_3_steering', player] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.6;
-        };
-
-        class AGM_Repair_R3Wheel {
-          displayName = "$STR_AGM_Repair_R3Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitRMWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitRMWheel', 'wheel_2_3_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.5;
-        };
-
-        class AGM_Repair_L4Wheel {
-          displayName = "$STR_AGM_Repair_L4Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitLBWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitLBWheel', 'wheel_1_4_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.4;
-        };
-    
-        class AGM_Repair_R4Wheel {
-          displayName = "$STR_AGM_Repair_R4Wheel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitRBWheel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitRBWheel', 'wheel_2_4_steering'] call AGM_Repair_fnc_repairWheel;";
-          showDisabled = 1;
-          priority = 0.3;
-        };
-      };
+  class Helicopter: Air {
+    class AGM_Actions {
 
       class AGM_Repair {
         displayName = "$STR_AGM_Repair";
         distance = 4;
-        condition = "vehicle player == player";
+        condition = "alive AGM_Interaction_Target";
         statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
         priority = 1;
 
-        class AGM_Repair_Wheels {
-          displayName = "$STR_AGM_Repair_Wheels";
-          distance = 4;
-          condition = "vehicle player == player";
-          statement = "'AGM_Repair_Wheelsshow' call AGM_Interaction_fnc_openMenu;";
-          showDisabled = 1;
-          priority = 0.9;
-        };
-
-        class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitEngine' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitEngine', 'motor'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.5;
-        };
-    
-        class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitFuel' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitFuel', 'palivo'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.4;
-        };
-    
-        class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
-          distance = 4;
-          condition = "(AGM_Interaction_Target getHitPointDamage 'HitBody' > 0.1) && (damage AGM_Interaction_Target < 1)";
-          statement = "[AGM_Interaction_Target, 'HitBody', 'karoserie'] call AGM_Repair_fnc_Vehicle;";
-          showDisabled = 1;
-          priority = 0.3;
-        };
-
         class AGM_Repair_checkVehicle {
           displayName = "$STR_AGM_Repair_checkVehicle";
           distance = 4;
-          condition = "damage AGM_Interaction_Target < 1";
-          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
+          condition = "alive AGM_Interaction_Target";
+          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
           showDisabled = 1;
-          priority = 1.0;
+          priority = 1;
         };
-      };
-    };
-  };
-  
-  class Helicopter: Air {
-    class AGM_Actions {
-      class AGM_Repair_checkVehicle {
-        displayName = "$STR_AGM_Repair_checkVehicle";
-        distance = 4;
-        condition = "damage AGM_Interaction_Target < 1";
-        statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
-        showDisabled = 1;
-        priority = 1.0;
-      };
-
-      class AGM_Repair_Hull {
-        displayName = "$STR_AGM_Repair_Body";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHull' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitHull', 'hull_hit'] call AGM_Repair_fnc_Vehicle;";
-        showDisabled = 1;
-        priority = 0.5;
-      };
-
-      class AGM_Repair_Engine {
-        displayName = "$STR_AGM_Repair_Engine";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitEngine' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitEngine', 'engine_hit'] call AGM_Repair_fnc_Vehicle;";
-        showDisabled = 1;
-        priority = 0.9;
-      };
-
-      class AGM_Repair_Avionics {
-        displayName = "$STR_AGM_Repair_Avionics";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitAvionics' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitAvionics', 'avionics_hit'] call AGM_Repair_fnc_Vehicle;";
-        showDisabled = 1;
-        priority = 0.4;
-      };
-
-      class AGM_Repair_HRotor {
-        displayName = "$STR_AGM_Repair_HRotor";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHRotor' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitHRotor', 'main_rotor_hit'] call AGM_Repair_fnc_Vehicle;";
-        showDisabled = 1;
-        priority = 0.4;
-      };
-
-      class AGM_Repair_VRotor {
-        displayName = "$STR_AGM_Repair_VRotor";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitVRotor' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitVRotor', 'tail_rotor_hit'] call AGM_Repair_fnc_Vehicle;";
-        showDisabled = 1;
-        priority = 0.4;
+        class AGM_Repair_Body {
+          displayName = "$STR_AGM_Repair_HitBody";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        class AGM_Repair_Engine {
+          displayName = "$STR_AGM_Repair_HitEngine";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.4;
+        };
+        class AGM_Repair_Fuel {
+          displayName = "$STR_AGM_Repair_HitFuel";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.3;
+        };
+        class AGM_Repair_Avionics {
+          displayName = "$STR_AGM_Repair_HitAvionics";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.2;
+        };
+        class AGM_Repair_HRotor {
+          displayName = "$STR_AGM_Repair_HitHRotor";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitHRotor'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitHRotor'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.15;
+        };
+        class AGM_Repair_VRotor {
+          displayName = "$STR_AGM_Repair_HitVRotor";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitVRotor'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitVRotor'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.1;
+        };
+        class AGM_OpenUIDummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -9;
+        };
       };
     };
   };
 
   class Plane: Air {
     class AGM_Actions {
-      class AGM_Repair_checkVehicle {
-        displayName = "$STR_AGM_Repair_checkVehicle";
-        distance = 4;
-        condition = "damage AGM_Interaction_Target < 1";
-        statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle;";
-        showDisabled = 1;
-        priority = 1.0;
-      };
 
-      class AGM_Repair_Hull {
-        displayName = "$STR_AGM_Repair_Body";
+      class AGM_Repair {
+        displayName = "$STR_AGM_Repair";
         distance = 4;
-        condition = "(AGM_Interaction_Target getHitPointDamage 'HitHull' > 0.1) && (damage AGM_Interaction_Target < 1)";
-        statement = "[AGM_Interaction_Target, 'HitHull', 'Hull'] call AGM_Repair_fnc_Vehicle;";
+        condition = "alive AGM_Interaction_Target";
+        statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
-        priority = 0.5;
+        priority = 1;
+
+        class AGM_Repair_checkVehicle {
+          displayName = "$STR_AGM_Repair_checkVehicle";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target";
+          statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
+          showDisabled = 1;
+          priority = 1;
+        };
+        class AGM_Repair_Body {
+          displayName = "$STR_AGM_Repair_HitBody";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.5;
+        };
+        /*class AGM_Repair_Engine {
+          displayName = "$STR_AGM_Repair_HitEngine";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.4;
+        };
+        class AGM_Repair_Fuel {
+          displayName = "$STR_AGM_Repair_HitFuel";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.3;
+        };
+        class AGM_Repair_Avionics {
+          displayName = "$STR_AGM_Repair_HitAvionics";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.2;
+        };*/
+        class AGM_OpenUIDummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -9;
+        };
       };
     };
   };
 
-  class Thing;
-  class AGM_Repair_Track: Thing {
+  class ThingX;
+  class AGM_Repair_Track: ThingX {
     scope = 2;
     model = "\AGM_Repair\track.p3d";
     icon = "iconObject_circle";
@@ -416,7 +394,7 @@ class CfgVehicles {
     };
   };
 
-  class AGM_Repair_Wheel: Thing {
+  class AGM_Repair_Wheel: ThingX {
     scope = 2;
     model = "\AGM_Repair\wheel.p3d";
     icon = "iconObject_circle";

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="AGM">
-  <Package name="IrStrobe">
+  <Package name="Attach">
     <Key ID="STR_AGM_Attach_AttachDetach">
       <English>Attach item >></English>
       <German>Gegenstand befestigen</German>

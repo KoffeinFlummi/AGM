@@ -1,10 +1,11 @@
 class CfgAmmo {
 	// All explosive based Ammo classes. Theses are all listed in case they are required.
-	class Default{
+	class Default;
+	
+	class TimeBombCore:Default {
 		AGM_DefuseTime = 5;
 	};
 	/*
-	class TimeBombCore:Default;
 	class BoundingMineCore:TimeBombCore;
 	class BoundingMineBase:BoundingMineCore;
 	class APERSBoundingMine_Range_Ammo:BoundingMineBase;

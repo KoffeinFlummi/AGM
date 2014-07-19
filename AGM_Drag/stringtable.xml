@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Project ID="Arma3">
-  <Package ID="AGM">
-    <Container ID="AGM_Drag">
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Drag">
       <Key ID="STR_AGM_Drag_StartDrag">
         <English>Drag</English>
         <Russian>Тащить</Russian>
@@ -29,6 +28,5 @@
         <French>Impossible de tirer cet objet à cause de son poid</French>
         <German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
       </Key>
-    </Container>
   </Package>
 </Project>

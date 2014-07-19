@@ -18,6 +18,29 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+
+class CfgFunctions {
+	class AGM_Logistics {
+		class AGM_Logistics {
+			file = "\AGM_logistics\functions";
+			
+			class canLoadItem;
+			class hasLoadedItems;
+			class getLoadPoints;
+			class loadItem;
+			class loadItemCallback;
+			
+			class openLoadUI;
+			class openUnloadUI;
+			
+			class remainingSpace;
+			
+			class unloadItem;
+			class unloadItemCallback;
+		};
+	};
+};
+
 /*class CfgFunctions {
   class AGM_Logistics {
     class AGM_Logistics {
@@ -31,44 +54,49 @@ class Extended_PostInit_EventHandlers {
   };
 };*/
 
-class CfgVehicles {
-  //Jerry Can
-  class Items_base_F;
-  class Land_CanisterFuel_F: Items_base_F {
-    class AGM_Actions {
-      class AGM_CarryJerryCan {
-        displayName = "Carry jerry can";
-        distance = 4;
-        condition = "isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
-        showDisabled = 1;
-        priority = 1.5;
-      };
-      class AGM_DropJerryCan {
-        displayName = "Drop jerry can";
-        distance = 4;
-        condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-        statement = "0 spawn AGM_Logistics_dropJerryCan";
-        showDisabled = 0;
-        priority = 1.5;
-      };
-    };
-  };
+#define MACRO_LOADABLE class AGM_loadItem { \
+				displayName = "Load Item"; \
+				distance = 4; \
+				condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItem"; \
+				statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI;"; \
+				showDisabled = 1; \
+				priority = 2.26; \
+			};
 
-  //Crates
-  class thingX;
-  class ReammoBox_F: thingX {
-    class AGM_Actions {
-      class AGM_loadBoxIntoVehicle {
-        displayName = "Load Box";
-        distance = 4;
-        condition = "call AGM_Logistics_canLoadInto";
-        statement = "[AGM_Interaction_Target] spawn AGM_Logistics_loadBoxIntoVehicle";
-        showDisabled = 0;
-        priority = 2.26;
-      };
-    };
-  };
+class CfgVehicles {
+	//Jerry Can
+	class Items_base_F;
+	class Land_CanisterFuel_F: Items_base_F {
+		class AGM_Actions {
+			MACRO_LOADABLE
+			class AGM_CarryJerryCan {
+				displayName = "Carry jerry can";
+				distance = 4;
+				condition = "isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
+				statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
+				showDisabled = 1;
+				priority = 1.5;
+			};
+			class AGM_DropJerryCan {
+				displayName = "Drop jerry can";
+				distance = 4;
+				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
+				statement = "0 spawn AGM_Logistics_dropJerryCan";
+				showDisabled = 0;
+				priority = 1.5;
+			};
+		};
+	};
+
+	//Crates
+	class thingX;
+	class ReammoBox_F: thingX {
+		AGM_Size = 2; // 1 = small, 2 = large
+		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
+		class AGM_Actions {
+			MACRO_LOADABLE
+		};
+	};
 
   //Men
   /*class Man;
@@ -78,176 +106,34 @@ class CfgVehicles {
   };*/
 
   //Vehicles
-  class LandVehicle;
-  class Car: LandVehicle {
-    AGM_Vehicle_Cargo = 4;
-    class AGM_Actions {
-      class AGM_unloadBox {
-        displayName = "Unload Box >>";
-        distance = 8;
-        condition = "true";
-        //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
-        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;";// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
-        showDisabled = 0;
-        priority = 2.25;
-
-        class AGM_unloadBox0 {
-          displayName = "Box 0";
-          condition = "count AGM_Logistics_loadabledItems > 0";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 0] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_unloadBox1 {
-          displayName = "Box 1";
-          condition = "count AGM_Logistics_loadabledItems > 1";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 1] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.9;
-        };
-        class AGM_unloadBox2 {
-          displayName = "Box 2";
-          condition = "count AGM_Logistics_loadabledItems > 2";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 2] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.8;
-        };
-        class AGM_unloadBox3 {
-          displayName = "Box 3";
-          condition = "count AGM_Logistics_loadabledItems > 3";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 3] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.7;
-        };
-        class AGM_unloadBox4 {
-          displayName = "Box 4";
-          condition = "count AGM_Logistics_loadabledItems > 4";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 4] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.6;
-        };
-        class AGM_unloadBox5 {
-          displayName = "Box 5";
-          condition = "count AGM_Logistics_loadabledItems > 5";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 5] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.5;
-        };
-        class AGM_unloadBox6 {
-          displayName = "Box 6";
-          condition = "count AGM_Logistics_loadabledItems > 6";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 6] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.4;
-        };
-        class AGM_unloadBox7 {
-          displayName = "Box 7";
-          condition = "count AGM_Logistics_loadabledItems > 7";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 7] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.3;
-        };
-        class AGM_unloadBox8 {
-          displayName = "Box 8";
-          condition = "count AGM_Logistics_loadabledItems > 8";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 8] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.2;
-        };
-        class AGM_unloadBox9 {
-          displayName = "Box 9";
-          condition = "count AGM_Logistics_loadabledItems > 9";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 9] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.1;
-        };
-      };
-    };
-  };
+	class Truck_01_base_F;
+	class B_Truck_01_transport_F:Truck_01_base_F {
+		class AGM_Load {
+			class MidLoad {
+				displayName = "Middle of truck";
+				loadSize = 2; // Size of object, 1 = small, 2 = large
+				LoadPosition[]={0.05,-4,-0.6}; // Offset when attaching.
+				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
+			};
+			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
+		};
+	};
+	class AllVehicles;
+	class LandVehicle:AllVehicles {
+		AGM_Vehicle_Cargo = 2;
+		class AGM_Actions {
+			class AGM_unloadBox {
+				displayName = "Unload >>";
+				distance = 8;
+				condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems";
+				statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI;";
+				showDisabled = 1;
+				priority = 2.25;
+			};
+		};
+	};
   class Tank: LandVehicle {
-    AGM_Vehicle_Cargo = 6;
     class AGM_Actions {
-      class AGM_unloadBox {
-        displayName = "Unload Box >>";
-        distance = 8;
-        condition = "true";
-        //condition = "count (AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]) > 0";
-        statement = "AGM_Logistics_loadabledItems = AGM_Interaction_Target getVariable ['AGM_Logistics_loadedItems', []]; AGM_Logistics_loadabledItems resize 10; 'AGM_unloadBox' call AGM_Interaction_fnc_openMenu;";// [AGM_Logistics_loadableMagazines] call AGM_Logistics_applyMagazineNames";
-        showDisabled = 0;
-        priority = 2.25;
-
-        class AGM_unloadBox0 {
-          displayName = "Box 0";
-          condition = "count AGM_Logistics_loadabledItems > 0";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 0] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_unloadBox1 {
-          displayName = "Box 1";
-          condition = "count AGM_Logistics_loadabledItems > 1";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 1] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.9;
-        };
-        class AGM_unloadBox2 {
-          displayName = "Box 2";
-          condition = "count AGM_Logistics_loadabledItems > 2";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 2] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.8;
-        };
-        class AGM_unloadBox3 {
-          displayName = "Box 3";
-          condition = "count AGM_Logistics_loadabledItems > 3";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 3] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.7;
-        };
-        class AGM_unloadBox4 {
-          displayName = "Box 4";
-          condition = "count AGM_Logistics_loadabledItems > 4";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 4] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.6;
-        };
-        class AGM_unloadBox5 {
-          displayName = "Box 5";
-          condition = "count AGM_Logistics_loadabledItems > 5";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 5] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.5;
-        };
-        class AGM_unloadBox6 {
-          displayName = "Box 6";
-          condition = "count AGM_Logistics_loadabledItems > 6";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 6] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.4;
-        };
-        class AGM_unloadBox7 {
-          displayName = "Box 7";
-          condition = "count AGM_Logistics_loadabledItems > 7";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 7] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.3;
-        };
-        class AGM_unloadBox8 {
-          displayName = "Box 8";
-          condition = "count AGM_Logistics_loadabledItems > 8";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 8] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.2;
-        };
-        class AGM_unloadBox9 {
-          displayName = "Box 9";
-          condition = "count AGM_Logistics_loadabledItems > 9";
-          statement = "[AGM_Interaction_Target, AGM_Logistics_loadabledItems select 9] spawn AGM_Logistics_unloadBox;";
-          showDisabled = 0;
-          priority = 0.1;
-        };
-      };
-
       class AGM_reloadMagazines {
         displayName = "Magazines >>";
         distance = 8;

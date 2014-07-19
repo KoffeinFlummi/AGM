@@ -49,11 +49,6 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgAmmo {
-  class GrenadeHand;
-  class SmokeShell : GrenadeHand {
-    timeToLive = 80;
-  };
-
   class FlareCore;
   class FlareBase: FlareCore {
     intensity = 20000;
@@ -128,7 +123,9 @@ class CfgAmmo {
 
 class CfgMagazines {
   class HandGrenade;
-  class AGM_HandFlare_Base: HandGrenade {};
+  class AGM_HandFlare_Base: HandGrenade {
+    mass = 4;
+  };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
     displayname = "Hand Flare (White)";
