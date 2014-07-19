@@ -16,16 +16,16 @@ _handleStumble = 0 spawn {};
 while {true} do {
 	if (_fatigue > THRESHOLD_1) then {
 		if (scriptDone _handleHeartbeat) then {
-			_handleHeartbeat = call AGM_Fatigue_fnc_heartbeat;
+			_handleHeartbeat = call AGM_Movement_fnc_heartbeat;
 		};
 		if (_fatigue > THRESHOLD_2) then {
 			if (scriptDone _handleBlinking) then {
-				_handleBlinking = call AGM_Fatigue_fnc_blinking;
+				_handleBlinking = call AGM_Movement_fnc_blinking;
 			};
 
 			if (_fatigue > THRESHOLD_3) then {
 				if (scriptDone _handleStumble) then {
-					_handleStumble = call AGM_Fatigue_fnc_stumble;
+					_handleStumble = call AGM_Movement_fnc_stumble;
 				};
 			};
 		};

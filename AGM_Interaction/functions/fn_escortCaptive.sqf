@@ -3,7 +3,7 @@
 private ["_unit","_message"];
 
 _unit = _this select 0;
-_message = localize "STR_AGM_Civilian_NoCaptive" ;
+_message = localize "STR_AGM_Interaction_NoCaptive" ;
 
 if (captive _unit) then {
   if (attachedTo _unit == player) then {
