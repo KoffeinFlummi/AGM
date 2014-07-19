@@ -87,7 +87,9 @@ class CfgAmmo {
 
 class CfgMagazines {
   class HandGrenade;
-  class AGM_HandFlare_Base: HandGrenade {};
+  class AGM_HandFlare_Base: HandGrenade {
+    mass = 4;
+  };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
     displayname = "Hand Flare (White)";
