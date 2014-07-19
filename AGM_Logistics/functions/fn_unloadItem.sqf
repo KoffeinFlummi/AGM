@@ -22,8 +22,12 @@
 		[AGM_Interaction_Target, AGM_Logistics_targetVehicle, ["AGM_Load_MidLoad", 1]] spawn AGM_Logistics_fnc_loadItem;
 */
 _vehicle = _this select 0;
-_item = (_vehicle getVariable ((_this select 1) select 0)) select ((_this select 1) select 1);
+_variableName = (_this select 1) select 0;
+_varIndex = (_this select 1) select 1;
+_item = (_vehicle getVariable _variableName) select _varIndex;
+
+_size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
 
 if (!isNull(_item)) then {
-	[10, [_vehicle, _item, (_this select 1) select 0], "AGM_Logistics_fnc_unloadItemCallback", "Unloading ..."] call AGM_Core_fnc_progressBar;
+	[_size * 5, [_vehicle, _item, _variableName], "AGM_Logistics_fnc_unloadItemCallback", "Unloading ..."] call AGM_Core_fnc_progressBar;
 };
