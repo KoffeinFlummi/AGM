@@ -11,9 +11,9 @@
  */
 
 #define ALL_REASONS [ \
-	"AGM_CannotTreat" \
-	"AGM_Unconscious" \
-	"AGM_Overdosing" \
+	"AGM_CannotTreat", \
+	"AGM_Unconscious", \
+	"AGM_Overdosing", \
 	"AGM_isDragging" \
 ]
 
@@ -30,7 +30,7 @@ _canInteract = true;
 {
 	_variable = player getVariable [_x, false];
 
-	_canInteract = !_variable && {!(_variable in _exceptions)}
+	_canInteract = !_variable && {!(_variable in _exceptions)};
 
 	if !(_canInteract) exitWith {};
 } forEach ALL_REASONS;
