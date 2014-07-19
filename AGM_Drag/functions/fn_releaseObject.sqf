@@ -29,7 +29,6 @@ detach _draggedObject;
 _draggedObject setDamage (damage _draggedObject);
 _draggedObject lock (_draggedObject getVariable ["AGM_lockStatus", 1]);
 
-// Set U
 _position = getPosATL _draggedObject;
 if (_position select 2 < 0) then {
 	_position set [2, 0];

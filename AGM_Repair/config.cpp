@@ -19,6 +19,7 @@ class CfgFunctions {
       class canRepair;
       class canRepairTrackWheel;
       class checkVehicle;
+      class getHitPointName;
       class openSelectWheelUI;
       class repair;
       class repairAbort;
@@ -46,17 +47,6 @@ class CfgVehicleClasses {
     displayName = "AGM";
   };
 };
-
-/*
-HitBody
-HitEngine
-HitFuel
-HitTurret
-HitGun
-HitAvionics
-HitHRotor
-HitVRotor
-*/
 
 class CfgVehicles {
   class LandVehicle;
@@ -97,7 +87,7 @@ class CfgVehicles {
           priority = 0.9;
         };
         class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
+          displayName = "$STR_AGM_Repair_HitBody";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
@@ -105,7 +95,7 @@ class CfgVehicles {
           priority = 0.5;
         };
         class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
+          displayName = "$STR_AGM_Repair_HitEngine";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
@@ -113,7 +103,7 @@ class CfgVehicles {
           priority = 0.4;
         };
         class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
+          displayName = "$STR_AGM_Repair_HitFuel";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
@@ -121,7 +111,7 @@ class CfgVehicles {
           priority = 0.3;
         };
         class AGM_Repair_Gun {
-          displayName = "$STR_AGM_Repair_Gun";
+          displayName = "$STR_AGM_Repair_HitGun";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
@@ -129,7 +119,7 @@ class CfgVehicles {
           priority = 0.2;
         };
         class AGM_Repair_Turret {
-          displayName = "$STR_AGM_Repair_Turret";
+          displayName = "$STR_AGM_Repair_HitTurret";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
@@ -167,7 +157,7 @@ class CfgVehicles {
           priority = 1;
         };
         class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
+          displayName = "$STR_AGM_Repair_HitBody";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
@@ -175,7 +165,7 @@ class CfgVehicles {
           priority = 0.5;
         };
         class AGM_Repair_LTrack {
-          displayName = "$STR_AGM_Repair_LTrack";
+          displayName = "$STR_AGM_Repair_HitLTrack";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repair";
@@ -183,7 +173,7 @@ class CfgVehicles {
           priority = 0.42;
         };
         class AGM_Repair_RTrack {
-          displayName = "$STR_AGM_Repair_RTrack";
+          displayName = "$STR_AGM_Repair_HitRTrack";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repair";
@@ -191,7 +181,7 @@ class CfgVehicles {
           priority = 0.41;
         };
         class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
+          displayName = "$STR_AGM_Repair_HitEngine";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
@@ -199,7 +189,7 @@ class CfgVehicles {
           priority = 0.4;
         };
         class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
+          displayName = "$STR_AGM_Repair_HitFuel";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
@@ -207,7 +197,7 @@ class CfgVehicles {
           priority = 0.3;
         };
         class AGM_Repair_Gun {
-          displayName = "$STR_AGM_Repair_Gun";
+          displayName = "$STR_AGM_Repair_HitGun";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
@@ -215,7 +205,7 @@ class CfgVehicles {
           priority = 0.2;
         };
         class AGM_Repair_Turret {
-          displayName = "$STR_AGM_Repair_Turret";
+          displayName = "$STR_AGM_Repair_HitTurret";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
@@ -253,7 +243,7 @@ class CfgVehicles {
           priority = 1;
         };
         class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
+          displayName = "$STR_AGM_Repair_HitBody";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
@@ -261,7 +251,7 @@ class CfgVehicles {
           priority = 0.5;
         };
         class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
+          displayName = "$STR_AGM_Repair_HitEngine";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
@@ -269,7 +259,7 @@ class CfgVehicles {
           priority = 0.4;
         };
         class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
+          displayName = "$STR_AGM_Repair_HitFuel";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
@@ -277,7 +267,7 @@ class CfgVehicles {
           priority = 0.3;
         };
         class AGM_Repair_Avionics {
-          displayName = "$STR_AGM_Repair_Avionics";
+          displayName = "$STR_AGM_Repair_HitAvionics";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
@@ -285,7 +275,7 @@ class CfgVehicles {
           priority = 0.2;
         };
         class AGM_Repair_HRotor {
-          displayName = "$STR_AGM_Repair_HRotor";
+          displayName = "$STR_AGM_Repair_HitHRotor";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitHRotor'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitHRotor'] call AGM_Repair_fnc_repair";
@@ -293,7 +283,7 @@ class CfgVehicles {
           priority = 0.15;
         };
         class AGM_Repair_VRotor {
-          displayName = "$STR_AGM_Repair_VRotor";
+          displayName = "$STR_AGM_Repair_HitVRotor";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitVRotor'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitVRotor'] call AGM_Repair_fnc_repair";
@@ -331,7 +321,7 @@ class CfgVehicles {
           priority = 1;
         };
         class AGM_Repair_Body {
-          displayName = "$STR_AGM_Repair_Body";
+          displayName = "$STR_AGM_Repair_HitBody";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
@@ -339,7 +329,7 @@ class CfgVehicles {
           priority = 0.5;
         };
         /*class AGM_Repair_Engine {
-          displayName = "$STR_AGM_Repair_Engine";
+          displayName = "$STR_AGM_Repair_HitEngine";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
@@ -347,7 +337,7 @@ class CfgVehicles {
           priority = 0.4;
         };
         class AGM_Repair_Fuel {
-          displayName = "$STR_AGM_Repair_Fuel";
+          displayName = "$STR_AGM_Repair_HitFuel";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
@@ -355,7 +345,7 @@ class CfgVehicles {
           priority = 0.3;
         };
         class AGM_Repair_Avionics {
-          displayName = "$STR_AGM_Repair_Avionics";
+          displayName = "$STR_AGM_Repair_HitAvionics";
           distance = 4;
           condition = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_canRepair";
           statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
@@ -373,8 +363,8 @@ class CfgVehicles {
     };
   };
 
-  class Thing;
-  class AGM_Repair_Track: Thing {
+  class ThingX;
+  class AGM_Repair_Track: ThingX {
     scope = 2;
     model = "\AGM_Repair\track.p3d";
     icon = "iconObject_circle";
@@ -404,7 +394,7 @@ class CfgVehicles {
     };
   };
 
-  class AGM_Repair_Wheel: Thing {
+  class AGM_Repair_Wheel: ThingX {
     scope = 2;
     model = "\AGM_Repair\wheel.p3d";
     icon = "iconObject_circle";
