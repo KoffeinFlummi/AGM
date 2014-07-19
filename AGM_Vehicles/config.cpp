@@ -7,10 +7,37 @@ class CfgPatches {
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
+class CfgFunctions {
+  class AGM_Vehicles {
+    class AGM_Vehicles {
+      file = "AGM_Vehicles\functions";
+      class speedLimiter;
+    };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_Vehicles {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Vehicles\clientInit.sqf'";
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class speedLimiter {
+    displayName = "$STR_AGM_Vehicles";
+    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_vehicle] call AGM_Vehicles_fnc_speedLimiter";
+    key = 211;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+};
+
 
 #define FUEL_FACTOR 0.165
 // fuel capacity = range in km * FUEL_FACTOR

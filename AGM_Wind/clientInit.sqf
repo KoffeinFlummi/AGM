@@ -2,6 +2,16 @@
 
 if !(hasInterface) exitWith {};
 
+// Kesrel Stuff
+AGM_isKestrel = false;
+AGM_isKestrelWheel = false;
+
+0 spawn {
+  waitUntil {preloadTitleRsc ["AGM_Kestrel", "PLAIN"]};
+  waitUntil {preloadTitleRsc ["AGM_KestrelWheel", "PLAIN"]};
+  waitUntil {preloadTitleRsc ["AGM_KestrelWheel_Preload", "PLAIN"]};
+};
+
 // Wind Reading
 0 spawn {
   while {true} do {
