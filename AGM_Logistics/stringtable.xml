@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+	<Package name="Logistics">
+		<Key ID="STR_AGM_Logistics_LoadMenu">
+			<English>Load Menu</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_LoadItem">
+			<English>Load Item</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_UnloadMenu">
+			<English>Unload Menu</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_UnloadItem">
+			<English>Unload Item</English>
+		</Key>
+	</Package>
+</Project>
