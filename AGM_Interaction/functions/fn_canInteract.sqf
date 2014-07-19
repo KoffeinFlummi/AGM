@@ -14,6 +14,7 @@
 	"AGM_CannotTreat" \
 	"AGM_Unconscious" \
 	"AGM_Overdosing" \
+	"AGM_isDragging" \
 ]
 
 private ["_exceptions", "_canInteract", "_variable"];

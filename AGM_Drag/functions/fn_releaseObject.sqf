@@ -23,6 +23,7 @@ if (_this == (vehicle _this)) then { // if the unit is the vehicle of the passed
 	_this playAction "released";
 };
 if (isNull _draggedObject) exitWith {};  // If there is no dragged object exit now.
+_this setVariable ["AGM_isDragging", false];
 _this setVariable ["AGM_carriedItem", objNull, true];
 _draggedObject setVariable ["AGM_inUse", false, true];
 detach _draggedObject;
