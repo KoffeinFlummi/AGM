@@ -120,7 +120,7 @@ class CfgVehicles {
 	};
 	class AllVehicles;
 	class LandVehicle:AllVehicles {
-		AGM_Vehicle_Cargo = 4;
+		AGM_Vehicle_Cargo = 2;
 		class AGM_Actions {
 			class AGM_unloadBox {
 				displayName = "Unload >>";
