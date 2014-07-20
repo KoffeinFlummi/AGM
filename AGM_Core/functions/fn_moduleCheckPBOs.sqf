@@ -27,8 +27,6 @@ if (!isServer) then {
 			!isNil "AGM_Version_ClientErrors"
 		};
 
-		AGM_Version_Errors = [_missingAddon, _missingAddonServer, _oldVersionClient, _oldVersionServer];
-
 		_missingAddon = _this select 0;
 		_missingAddonServer = _this select 1;
 		_oldVersionClient = _this select 2;
