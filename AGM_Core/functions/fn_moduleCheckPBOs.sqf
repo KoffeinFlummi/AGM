@@ -24,7 +24,7 @@ if (!isServer) then {
 
 		waitUntil {
 			sleep 1;
-			!isNil "AGM_Version_ClientErrors"}
+			!isNil "AGM_Version_ClientErrors"
 		};
 
 		AGM_Version_Errors = [_missingAddon, _missingAddonServer, _oldVersionClient, _oldVersionServer];

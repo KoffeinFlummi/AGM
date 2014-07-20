@@ -34,7 +34,7 @@ class CfgFunctions
 			class AGM_DragItem { \
 				displayName = $STR_AGM_Drag_StartDrag; \
 				distance = 4; \
-				condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
+				condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable} && {call AGM_Interaction_fnc_canInteract}"; \
 				statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;"; \
 				showDisabled = 1; \
 				priority = 3; \
@@ -42,7 +42,7 @@ class CfgFunctions
 			class AGM_ReleaseItem { \
 				displayName = $STR_AGM_Drag_EndDrag; \
 				distance = 4; \
-				condition = "(player call AGM_Drag_fnc_isDraggingObject)"; \
+				condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}"; \
 				statement = "player call AGM_Drag_fnc_releaseObject;"; \
 				showDisabled = 0; \
 				priority = 3; \
@@ -65,7 +65,7 @@ class CfgVehicles {
 			// Adding a self option to release will fix this.
 			class AGM_ReleaseItem {
 				displayName = $STR_AGM_Drag_EndDrag;
-				condition = "(player call AGM_Drag_fnc_isDraggingObject)";
+				condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}";
 				statement = "player call AGM_Drag_fnc_releaseObject;";
 				showDisabled = 0;
 				priority = 2.1;

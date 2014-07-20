@@ -19,18 +19,18 @@
 
 private ["_exceptions", "_canInteract", "_variable"];
 
-_exceptions = + _this;
+_exceptions = _this;
 
-if (isNil "_exceptions") then {_exceptions = []};
+if (isNil "_exceptions" || {typeName _exceptions != "ARRAY"}) then {_exceptions = []};
 
-if (!alive _unit) exitWith {false};
+if (!alive player) exitWith {false};
 
 _canInteract = true;
 
 {
 	_variable = player getVariable [_x, false];
 
-	_canInteract = !_variable && {!(_variable in _exceptions)};
+	_canInteract = !_variable || {_x in _exceptions};
 
 	if !(_canInteract) exitWith {};
 } forEach ALL_REASONS;

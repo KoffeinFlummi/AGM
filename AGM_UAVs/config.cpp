@@ -29,7 +29,7 @@ class CfgVehicles {
       class AGM_Refuel {
         displayName = "$STR_AGM_UAVs_Recharge";
         distance = 4;
-        condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}";
+        condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1} && {call AGM_Interaction_fnc_canInteract}";
         statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
         showDisabled = 1;
         priority = -2.5;

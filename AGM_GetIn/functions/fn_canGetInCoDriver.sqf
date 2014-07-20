@@ -45,4 +45,5 @@ count _crew < _countCrew &&
 {alive _vehicle} &&
 {!_isLocked} &&
 {getNumber (_config >> "isUav") != 1} &&
-{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle player == _vehicle}}
+{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle player == _vehicle}} &&
+{call AGM_Interaction_fnc_canInteract}

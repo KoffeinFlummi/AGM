@@ -17,7 +17,7 @@ class CfgFunctions {
     class AGM_Repair {
       file = "AGM_Repair\functions";
       class canRepair;
-      class canRepairTrackWheel;
+      class canRepairWheel;
       class checkVehicle;
       class getHitPointName;
       class openSelectWheelUI;
@@ -65,7 +65,7 @@ class CfgVehicles {
       class AGM_Repair {
         displayName = "$STR_AGM_Repair";
         distance = 4;
-        condition = "alive AGM_Interaction_Target";
+        condition = "alive AGM_Interaction_Target && {call AGM_Interaction_fnc_canInteract}";
         statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
         priority = 1;
@@ -73,7 +73,7 @@ class CfgVehicles {
         class AGM_Repair_checkVehicle {
           displayName = "$STR_AGM_Repair_checkVehicle";
           distance = 4;
-          condition = "alive AGM_Interaction_Target";
+          condition = "alive AGM_Interaction_Target && {call AGM_Interaction_fnc_canInteract}";
           statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
           showDisabled = 1;
           priority = 1;
@@ -81,7 +81,7 @@ class CfgVehicles {
         class AGM_Repair_Wheels {
           displayName = "$STR_AGM_Repair_Wheels";
           distance = 4;
-          condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRepairTrackWheel";
+          condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRepairWheel";
           statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
           showDisabled = 0;
           priority = 0.9;

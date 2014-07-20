@@ -6,6 +6,5 @@ _unit = _this select 0;
 
 _unit isKindOf "Civilian" &&
 {alive _unit} &&
-{alive player} &&
-{player getVariable ["AGM_AttachedItemName", ""] == ""} &&
-{count (weapons _unit) == 0}
+{count (weapons _unit) == 0} &&
+{call AGM_Interaction_fnc_canInteract}

@@ -15,4 +15,5 @@ _vehicle emptyPositions "Cargo" > 0 &&
 {alive _vehicle} &&
 {!(_vehicle lockedCargo _index)} &&
 //{getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1} &&
-{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCargo)) < _distance || {vehicle player == _vehicle}}
+{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCargo)) < _distance || {vehicle player == _vehicle}} &&
+{call AGM_Interaction_fnc_canInteract}

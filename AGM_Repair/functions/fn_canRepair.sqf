@@ -5,7 +5,7 @@ private ["_vehicle", "_part"];
 _vehicle = _this select 0;
 _part = _this select 1;
 
-alive player &&
-{alive _vehicle} &&
+alive _vehicle &&
 {speed _vehicle == 0} &&
-{floor (3 * (_vehicle getHitPointDamage _part)) > 0}
+{floor (3 * (_vehicle getHitPointDamage _part)) > 0} &&
+{call AGM_Interaction_fnc_canInteract}

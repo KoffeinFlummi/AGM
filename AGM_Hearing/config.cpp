@@ -34,7 +34,7 @@ class Extended_PostInit_EventHandlers {
 /*class AGM_Core_Default_Keys {
   class Earplugs {
     displayName = "$STR_AGM_Hearing_Earbuds_On";
-    condition = "true";
+    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "[] call AGM_Hearing_fnc_Earplugs";
     key = 18;
     shift = 0;
@@ -54,14 +54,14 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_PutInEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player}";
+        condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player} && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
         statement = "call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
       };
       class AGM_RemoveEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_Off";
-        condition = "AGM_EarPlugsIn";
+        condition = "AGM_EarPlugsIn && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
         statement = "call AGM_Hearing_fnc_removeEarplugs";
         showDisabled = 0;
         priority = 2.5;

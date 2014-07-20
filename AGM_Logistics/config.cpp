@@ -72,7 +72,7 @@ class CfgVehicles {
 			class AGM_CarryJerryCan {
 				displayName = "Carry jerry can";
 				distance = 4;
-				condition = "isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
+				condition = "call AGM_Interaction_fnc_canInteract";
 				statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
 				showDisabled = 1;
 				priority = 1.5;
@@ -80,7 +80,7 @@ class CfgVehicles {
 			class AGM_DropJerryCan {
 				displayName = "Drop jerry can";
 				distance = 4;
-				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
+				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'} && {call AGM_Interaction_fnc_canInteract}";
 				statement = "0 spawn AGM_Logistics_dropJerryCan";
 				showDisabled = 0;
 				priority = 1.5;
