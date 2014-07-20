@@ -11,6 +11,8 @@ _files = [];
 	};
 } forEach activatedAddons;
 
+_versionMain = parseNumber getText (configFile >> "CfgPatches" >> "AGM_Core" >> "version");
+
 _versions = [];
 {
 	_version = parseNumber getText (configFile >> "CfgPatches" >> _x >> "version");
@@ -19,14 +21,20 @@ _versions = [];
 
 if (isServer) then {
 	{
-		diag_log text format ["AGM Server: %1 is Version %2.", _x, _versions select _forEachIndex];
+		_version = _versions select _forEachIndex;
+		if (_version != _versionMain) then {
+			diag_log text format ["AGM Server: %1 is Version %2.", _x, _version];
+		};
 	} forEach _files;
 
 	AGM_Version_ServerVersions = [_files, _versions];
 	publicVariable "AGM_Version_ServerVersions";
 } else {
 	{
-		diag_log text format ["AGM Client: %1 is Version %2.", _x, _versions select _forEachIndex];
+		_version = _versions select _forEachIndex;
+		if (_version != _versionMain) then {
+			diag_log text format ["AGM Client: %1 is Version %2.", _x, _version];
+		};
 	} forEach _files;
 
 	AGM_Version_ClientVersions = [_files, _versions];
