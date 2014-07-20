@@ -439,3 +439,4 @@ class CfgWeapons {						//Removes the ability to repair vehicles and disarm expl
 };
 */
 
+#include <DiagnoseDialog.hpp>

@@ -23,50 +23,16 @@ if (!isServer) then {
 		_mode = _this;
 
 		waitUntil {
-			sleep 5;
-			!isNil "AGM_Version_ClientVersions" && {!isNil "AGM_Version_ServerVersions"}
+			sleep 1;
+			!isNil "AGM_Version_ClientErrors"}
 		};
 
-		_files = AGM_Version_ClientVersions select 0;
-		_versions = AGM_Version_ClientVersions select 1;
+		AGM_Version_Errors = [_missingAddon, _missingAddonServer, _oldVersionClient, _oldVersionServer];
 
-		_serverFiles = AGM_Version_ServerVersions select 0;
-		_serverVersions = AGM_Version_ServerVersions select 1;
-
-		_missingAddon = false;
-		_oldVersionClient = false;
-		_oldVersionServer = false;
-		{
-			_serverVersion = _serverVersions select _forEachIndex;
-
-			_index = _files find _x;
-			if (_index == -1) then {
-				_missingAddon = true;
-				diag_log text format ["AGM Client: ERROR addon %1 is missing.", _x];
-			} else {
-
-				_clientVersion = _versions select _index;
-
-				if (_clientVersion < _serverVersion) then {
-					_oldVersionClient = true;
-					diag_log text format ["AGM Client: ERROR addon %1 is outdated. Server: %2, Client: %3", _x, _serverVersion, _clientVersion];
-				};
-
-				if (_clientVersion > _serverVersion) then {
-					_oldVersionServer = true;
-					diag_log text format ["AGM Client: ERROR addon %1 is newer than server addon. Server: %2, Client: %3", _x, _serverVersion, _clientVersion];
-				};
-			};
-		} forEach _serverFiles;
-
-		_missingAddonServer = false;
-		{
-			_index = _serverFiles find _x;
-			if (_index == -1) then {
-				_missingAddonServer = true;
-				diag_log text format ["AGM Client: ERROR addon %1 is missing on server.", _x];
-			}
-		} forEach _files;
+		_missingAddon = _this select 0;
+		_missingAddonServer = _this select 1;
+		_oldVersionClient = _this select 2;
+		_oldVersionServer = _this select 3;
 
 		// Display error message.
 		if (_missingAddon || {_missingAddonServer} || {_oldVersionClient} || {_oldVersionServer}) then {
