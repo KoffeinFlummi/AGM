@@ -20,6 +20,7 @@ class CfgFunctions {
       class addInteractionSelf;
       class canInteract;
       class canTapShoulder;
+      class getCaptivityStatus;
       class isInRange;
       class module;
       class openDoor;
@@ -36,6 +37,7 @@ class CfgFunctions {
       class getDown;
       class sendAway;
       class setCaptive;
+      class setCaptivityStatus;
     };
   };
 };

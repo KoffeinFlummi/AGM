@@ -228,6 +228,7 @@ class CfgFunctions {
       class stringToColoredText;
       class subString;
       class toBin;
+      class toBitmask;
       class toHex;
     };
   };
