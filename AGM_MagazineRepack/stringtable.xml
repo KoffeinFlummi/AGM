@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="MagazineRepack">
+
+    <Key ID="STR_AGM_MagazineRepack_RepackMagazines">
+      <English>Repack Magazines</English>
+    </Key>
+    <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
+      <English>Select Magazine Menu</English>
+    </Key>
+    <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
+      <English>Select Mag</English>
+    </Key>
+    <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
+      <English>Repacking Magazines ...</English>
+    </Key>
+    <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
+      <English>Repacked Magazines</English>
+    </Key>
+    <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
+      <English>%1 full mag(s) and %2 extra round(s)</English>
+    </Key>
+
+
+  </Package>
+</Project>
