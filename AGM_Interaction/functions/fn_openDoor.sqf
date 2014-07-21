@@ -45,12 +45,22 @@ AGM_Interaction_isOpeningDoor = true;
 	_phase = _house animationPhase _animation;
 	_position = getPosASL player;
 
+	_usedMouseWheel = false;
 	waitUntil {
+		if (inputAction "PrevAction" > 0 || {inputAction "NextAction" > 0}) then {
+			_usedMouseWheel = true;
+		};
+
 		_phase = _phase + (inputAction "PrevAction" / 12) min 1;
 		_phase = _phase - (inputAction "NextAction" / 12) max 0;
 
 		_house animate [_animation, _phase];
 		!AGM_Interaction_isOpeningDoor || {getPosASL player distance _position > 1}
+	};
+
+	if !(_usedMouseWheel) then {
+		_phase = [0, 1] select (_house animationPhase _animation < 0.5);
+		_house animate [_animation, _phase];
 	};
 
 	AGM_Interaction_isOpeningDoor = false;
