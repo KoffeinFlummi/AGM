@@ -13,5 +13,8 @@
 		<Key ID="STR_AGM_Logistics_UnloadItem">
 			<English>Unload Item</English>
 		</Key>
+		<Key ID="STR_AGM_Logistics_MagazineMenu">
+			<English>Magazines</English>
+		</Key>
 	</Package>
 </Project>
