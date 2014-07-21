@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core, AGM_Interaction, AGM_Drag};
+    requiredAddons[] = {AGM_Core, AGM_Interaction, AGM_Drag, AGM_Logistics};
     version = "0.93";
     versionStr = "0.93";
     versionAr[] = {0,9,0};
@@ -47,6 +47,15 @@ class CfgVehicleClasses {
     displayName = "AGM";
   };
 };
+
+#define MACRO_LOADABLE class AGM_loadItem { \
+        displayName = "Load Item"; \
+        distance = 4; \
+        condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItem"; \
+        statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI;"; \
+        showDisabled = 1; \
+        priority = 2.26; \
+      };
 
 class CfgVehicles {
   class LandVehicle;
@@ -375,21 +384,22 @@ class CfgVehicles {
     destrType = "DesturctNo";
 
     class AGM_Actions {
+      MACRO_LOADABLE
       class AGM_DragItem {
-      displayName = "$STR_AGM_Drag_StartDrag";
-      distance = 4;
-      condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
-      statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
-      showDisabled = 1;
-      priority = 2.2;
+        displayName = "$STR_AGM_Drag_StartDrag";
+        distance = 4;
+        condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
+        statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
+        showDisabled = 1;
+        priority = 2.2;
       };
       class AGM_ReleaseItem {
-      displayName = "$STR_AGM_Drag_EndDrag";
-      distance = 4;
-      condition = "(player call AGM_Drag_fnc_isDraggingObject)";
-      statement = "player call AGM_Drag_fnc_releaseObject;";
-      showDisabled = 0;
-      priority = 2.1;
+        displayName = "$STR_AGM_Drag_EndDrag";
+        distance = 4;
+        condition = "(player call AGM_Drag_fnc_isDraggingObject)";
+        statement = "player call AGM_Drag_fnc_releaseObject;";
+        showDisabled = 0;
+        priority = 2.1;
       };
     };
   };
@@ -405,21 +415,22 @@ class CfgVehicles {
     destrType = "DesturctNo";
 
     class AGM_Actions {
+      MACRO_LOADABLE
       class AGM_DragItem {
-      displayName = "$STR_AGM_Drag_StartDrag";
-      distance = 4;
-      condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
-      statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
-      showDisabled = 1;
-      priority = 2.2;
+        displayName = "$STR_AGM_Drag_StartDrag";
+        distance = 4;
+        condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}";
+        statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;";
+        showDisabled = 1;
+        priority = 2.2;
       };
       class AGM_ReleaseItem {
-      displayName = "$STR_AGM_Drag_EndDrag";
-      distance = 4;
-      condition = "(player call AGM_Drag_fnc_isDraggingObject)";
-      statement = "player call AGM_Drag_fnc_releaseObject;";
-      showDisabled = 0;
-      priority = 2.1;
+        displayName = "$STR_AGM_Drag_EndDrag";
+        distance = 4;
+        condition = "(player call AGM_Drag_fnc_isDraggingObject)";
+        statement = "player call AGM_Drag_fnc_releaseObject;";
+        showDisabled = 0;
+        priority = 2.1;
       };
     };
   };
