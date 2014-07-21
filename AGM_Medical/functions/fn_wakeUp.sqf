@@ -43,13 +43,14 @@ _position = getPosASL _unit;
     _this setCaptive false;
   };
   _this switchMove "";
-  _this switchMove "amovppnemstpsnonwnondnon";
+  _this switchMove (_this getVariable "AGM_OriginalAnim");
 }, _unit] call CBA_fnc_globalExecute;
 
-[_unit, _position] spawn {
-  _unit = _this select 0;
-  _position = _this select 1;
-  waitUntil {simulationEnabled _unit};
-  _unit setPosASL _position;
+if (vehicle _unit == _unit) then {
+  [_unit, _position] spawn {
+    _unit = _this select 0;
+    _position = _this select 1;
+    waitUntil {simulationEnabled _unit};
+    _unit setPosASL _position;
+  };
 };
-_unit setCaptive false;
