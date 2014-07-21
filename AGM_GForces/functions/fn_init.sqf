@@ -40,17 +40,19 @@ AGM_GForces_CC ppEffectCommit 0.4;
   };
 };
 
-/*
-source: http://en.wikipedia.org/wiki/G-LOC
-untrained persons without gsuit will fall unconscious between 4 and 6G
-pilots in gsuits will sustain up to 9G
-a person is for average 12 seconds unconscious
-after being unconscious, a person is unable to do simple tasks for average 15 seconds
 
-_upTolerance converts the effective 9G of a pilot to virtual 5.4G (= 0.8*0.75*9G)
-pilots with gsuit will get unconscious at an _average of 9G
-normal men without gsuit will get unconscious at an _average of 5.4G
-*/
+/*
+ * source: http://en.wikipedia.org/wiki/G-LOC
+ * untrained persons without gsuit will fall unconscious between 4 and 6G
+ * pilots in gsuits will sustain up to 9G
+ * a person is for average 12 seconds unconscious
+ * after being unconscious, a person is unable to do simple tasks for average 15 seconds
+ *
+ * _upTolerance converts the effective 9G of a pilot to virtual 5.4G (= 0.8*0.75*9G)
+ * pilots with gsuit will get unconscious at an _average of 9G
+ * normal men without gsuit will get unconscious at an _average of 5.4G
+ */
+
 0 spawn {
   _maxVirtualG = 5.4;
   while {True} do {
@@ -69,16 +71,7 @@ normal men without gsuit will get unconscious at an _average of 5.4G
     _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef");
 
     if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical")}) then {
-      //[player] call AGM_Medical_fnc_knockOut;//dont use
-      [true] call AGM_Core_fnc_disableUserInput;//TODO make vehicle uncontrollable
-      titlecut ["","black out",2];
-      sleep 12-2+floor(random 5);//unconscious time
-      AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
-      AGM_GForces_CC ppEffectCommit 0;
-      //[player] call AGM_Medical_fnc_wakeUp;//dont use: forces player out of vehicle
-      titlecut ["","black in",2];
-      sleep 15-2+floor(random 5);//uncontrollable time
-      [false] call AGM_Core_fnc_disableUserInput;
+      [player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 
     if ((abs _average > 2) and !(player getVariable ["AGM_Unconscious", false])) then {
@@ -94,7 +87,7 @@ normal men without gsuit will get unconscious at an _average of 5.4G
     } else {
       AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
     };
-    
+
     AGM_GForces_CC ppEffectCommit 0.25;
   };
 };
