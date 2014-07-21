@@ -14,10 +14,6 @@ _this spawn {
   if !(local _unit) exitWith {};
 
   AGM_Medical_unitInit = {
-    if !(isNull (_this getVariable "AGM_Group")) then {
-      [_this] joinSilent (_this getVariable "AGM_Group");
-    };
-
     if (_this == player) then {
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];

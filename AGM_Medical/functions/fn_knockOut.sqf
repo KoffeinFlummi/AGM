@@ -22,15 +22,6 @@ if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWi
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
 
-_oldGroup = group _unit;
-_newGroup = createGroup side _unit;
-[_unit] joinSilent _newGroup;
-{
-  _unit reveal _x;
-}
-forEach (units _oldGroup);
-_unit setVariable ["AGM_Group", _oldGroup, true];
-
 if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
   player setVariable ["tf_voiceVolume", 0, true];
