@@ -124,7 +124,11 @@ class CfgAmmo {
 class CfgMagazines {
   class HandGrenade;
   class AGM_HandFlare_Base: HandGrenade {
+    value = 2;
+    nameSoundWeapon = "smokeshell";
+    nameSound = "smokeshell";
     mass = 4;
+    initSpeed = 22;
   };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
