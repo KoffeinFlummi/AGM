@@ -25,8 +25,6 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 _position = getPosASL _unit;
 
-[_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
-
 [-2, {
   if (_this == player) then {
     player setVariable ["tf_globalVolume", 1];
