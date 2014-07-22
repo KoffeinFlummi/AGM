@@ -5,5 +5,4 @@ private "_vehicle";
 _vehicle = _this select 0;
 
 player != _vehicle &&
-{profileNamespace getVariable ['AGM_enableQuickSelect', true]} &&
-{call AGM_Interaction_fnc_canInteract}
+{profileNamespace getVariable ['AGM_enableQuickSelect', true]}

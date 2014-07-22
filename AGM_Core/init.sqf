@@ -26,6 +26,7 @@ for "_index" from 0 to 300 do {
   AGM_Core_keyTimes set [_index, -1];
 };
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractFunction.sqf";
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
 
 0 spawn {

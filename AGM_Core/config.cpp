@@ -393,6 +393,7 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
+class AGM_Core_canInteractConditions {};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>

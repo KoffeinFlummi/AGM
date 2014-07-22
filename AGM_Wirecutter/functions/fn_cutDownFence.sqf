@@ -1,11 +1,19 @@
-// by gpgpgpgp
+// by gpgpgpgp, edited by commy2
 
 private ["_fence", "_t"];
 
 _t = _this select 0;
 _fence = _this select 1;
 
-if (cadetMode) then {player groupChat localize "STR_AGM_CuttingFenceChat"};
+if (cadetMode) then {
+	{
+		[player, "{_this groupChat localize 'STR_AGM_CuttingFenceChat'}", _x] call AGM_Core_fnc_execRemoteFnc;
+	} forEach units group player;
+};
+
+if !([player] call AGM_Core_fnc_isEngineer) then {
+	_t = _t + 5;
+};
 
 player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
 

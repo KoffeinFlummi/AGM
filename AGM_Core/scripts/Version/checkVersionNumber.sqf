@@ -20,7 +20,7 @@ _versions = [];
 } forEach _files;
 
 if (isServer) then {
-	diag_log text format ["AGM Server: AGM_Core is Version %1.", _version];
+	diag_log text format ["AGM Server: AGM_Core is Version %1.", _versionMain];
 
 	{
 		_version = _versions select _forEachIndex;

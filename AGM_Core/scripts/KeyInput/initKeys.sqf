@@ -20,16 +20,21 @@ for "_index" from 0 to (_count - 1) do {
 
 	_keyName = configName _configFile;
 	_condition = getText (_configFile >> "condition");
-	if (_condition == "") then {_condition = "true";};
+	if (_condition == "") then {_condition = "true"};
+
 	_statement = getText (_configFile >> "statement");
 
+	_exceptions = getArray (_configFile >> "exceptions");
+	_canInteract = format ["%1 call AGM_Core_canInteract", _exceptions];
+
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2}) then {%3; _isInput = true;};", _keyName, _condition, _statement];
+		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2} && {%4}) then {%3; _isInput = true;};", _keyName, _condition, _statement, _canInteract];
 		_onKeyDown = _onKeyDown + _entry;
 	};
 
 	_condition = getText (_configFile >> "conditionUp");
-	if (_condition == "") then {_condition = "true";};
+	if (_condition == "") then {_condition = "true"};
+
 	_statement = getText (_configFile >> "statementUp");
 
 	if (_statement != "") then {

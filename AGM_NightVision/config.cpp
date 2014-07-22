@@ -41,7 +41,7 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class increaseNVGBrightness {
     displayName = "$STR_AGM_NightVision_IncreaseNVGBrightness";
-    condition = "call AGM_Interaction_fnc_canInteract";
+    condition = "true";
     statement = "[_vehicle] call AGM_NightVision_fnc_increaseNVGBrightness";
     key = 201;
     shift = 0;
@@ -50,7 +50,7 @@ class AGM_Core_Default_Keys {
   };
   class decreaseNVGBrightness {
     displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
-    condition = "call AGM_Interaction_fnc_canInteract";
+    condition = "true";
     statement = "[_vehicle] call AGM_NightVision_fnc_decreaseNVGBrightness";
     key = 209;
     shift = 0;

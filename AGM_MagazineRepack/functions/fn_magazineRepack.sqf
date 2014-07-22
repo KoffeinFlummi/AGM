@@ -13,21 +13,27 @@ _isValidArray = [];
 
 	_count = getNumber (configfile >> "CfgMagazines" >> _magazine >> "count");
 
-	if !(_magazine in _magazines && _ammo != _count) then {
-		_index = count _magazines;
-		_magazines set [_index, _magazine];
-		_ammoTotal set [_index, _ammo];
+	if (_ammo != _count && {_count > 1}) then {		// additional checks here
+		if !(_magazine in _magazines) then {
+			_index = count _magazines;
+			_magazines set [_index, _magazine];
+			_ammoTotal set [_index, _ammo];
 
-		_isValidArray set [_index, false];
-	} else {
-		_index = _magazines find _magazine;
-		_ammoTotal set [_index, (_ammoTotal select _index) + _ammo];
+			_isValidArray set [_index, false];
+		} else {
+			_index = _magazines find _magazine;
+			_ammoTotal set [_index, (_ammoTotal select _index) + _ammo];
 
-		if !(_isValidArray select _index) then {
-			_isValidArray set [_index, _count > 1];	// additional checks here
+			_isValidArray set [_index, true];
 		};
 	};
 } forEach magazinesAmmoFull player;
+
+if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
+	systemChat str _magazines;
+	systemChat str _ammoTotal;
+	systemChat str _isValidArray;
+};
 
 // Remove invalid magazines
 {

@@ -3,7 +3,7 @@
 _this spawn {
   _vehicle = _this select 0;
 
-  if (AGM_isSpeedLimiter) exitWith {
+  if (missionNamespace getVariable ["AGM_isSpeedLimiter", false]) exitWith {
     [localize "STR_AGM_SpeedLimiter_Off"] call AGM_Core_fnc_displayTextStructured;
     playSound "AGM_Sound_Click";
     AGM_isSpeedLimiter = false;

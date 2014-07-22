@@ -53,6 +53,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    exceptions[] = {"AGM_Drag_isNotDragging"};
     key = 221;
     shift = 0;
     control = 0;
@@ -62,6 +63,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    exceptions[] = {"AGM_Drag_isNotDragging"};
     key = 221;
     shift = 0;
     control = 1;
@@ -69,7 +71,7 @@ class AGM_Core_Default_Keys {
   };
   class openDoor {
     displayName = "$STR_AGM_Interaction_OpenDoor";
-    condition = "!AGM_Interaction_isOpeningDoor && {call AGM_Interaction_fnc_canInteract}";
+    condition = "!AGM_Interaction_isOpeningDoor";
     statement = "call AGM_Interaction_fnc_openDoor";
     conditionUp = "AGM_Interaction_isOpeningDoor";
     statementUp = "AGM_Interaction_isOpeningDoor = false";

@@ -11,18 +11,13 @@ class CfgPatches {
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
+
 class CfgFunctions {
   class AGM_Vehicles {
     class AGM_Vehicles {
       file = "AGM_Vehicles\functions";
       class speedLimiter;
     };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Vehicles {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Vehicles\clientInit.sqf'";
   };
 };
 

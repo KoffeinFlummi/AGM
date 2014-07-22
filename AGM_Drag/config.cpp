@@ -12,8 +12,7 @@ class CfgPatches {
 	};
 };
 
-class CfgFunctions
-{
+class CfgFunctions {
 	class AGM_Drag {
 		class Drag {
 			file="AGM_Drag\functions";
@@ -28,6 +27,15 @@ class CfgFunctions
 			class GetWeight;
 		};
 	};
+};
+
+// Drop carried item if unit enters a vehicle
+class Extended_GetIn_EventHandlers {
+  class AllVehicles {
+    class AGM_GetIn {
+      clientGetIn = "(_this select 2) call AGM_Drag_fnc_releaseObject";
+    };
+  };
 };
 
 #define AGM_DragSupport 		class AGM_Actions { \
@@ -112,4 +120,10 @@ class CfgVehicles {
 	class UAV_01_base_F: Helicopter_Base_F {
 		AGM_DragSupport
 	};
+};
+
+class AGM_Core_canInteractConditions {
+  class AGM_Drag_isNotDragging {
+    condition = "!(player getVariable ['AGM_isDragging', false])";
+  };
 };
