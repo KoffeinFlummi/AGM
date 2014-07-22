@@ -38,7 +38,7 @@ if ((typeName _this) == "ARRAY") then {
 };
 _nilTest = _object getVariable "AGM_dragActionID";
 if ((isNil "_nilTest") OR {_id == -1}) then {
-	_object setVariable ["AGM_inUse", false, true];
+	_object setVariable ["AGM_isUsedBy", objNull, true];
 	_object setVariable ["AGM_useWeight", _weightAccount, true];
 	_object setVariable ["AGM_disableDrag", false, true];
 	_id = [_object, localize "STR_AGM_Drag_StartDrag", 4, {!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}}, {[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;}, true, 2.2] call AGM_Interaction_fnc_addInteraction;

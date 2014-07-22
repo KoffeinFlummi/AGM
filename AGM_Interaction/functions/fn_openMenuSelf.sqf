@@ -24,13 +24,15 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
+				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -54,13 +56,15 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
+				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};

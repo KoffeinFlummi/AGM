@@ -42,7 +42,7 @@ _unit playActionNow "grabDrag";
 _attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
 _draggedObject attachTo [_unit, _attachPoint];
 
-_draggedObject setVariable ["AGM_inUse", true, true];
+_draggedObject setVariable ["AGM_isUsedBy", _unit, true];
 _unit setVariable ["AGM_isDragging", true];
 _unit setVariable ["AGM_carriedItem", _draggedObject, true];
 _draggedObject setOwner (owner _unit);

@@ -4,6 +4,10 @@ _item = _this select 1;
 _itemHolder = _this select 2;
 
 _loadedItems = _vehicle getVariable [_itemHolder, []];
+
+// exit here if the item was unloaded by someone else
+if !(_item in _loadedItems) exitWith {};
+
 _loadedItems = _loadedItems - [_item];
 _vehicle setVariable [_itemHolder, _loadedItems, true];
 

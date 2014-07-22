@@ -22,16 +22,18 @@
 _item = _this select 0;
 _vehicle = _this select 1;
 
+_item setVariable ["AGM_isUsedBy", player, true];
+
 _size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
 if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exitWith {
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;
 	{
 		if ((_x select 4) == (_this select 2)) exitWith {
 			if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) then {
-				[5 * _size, [_item, _vehicle, _x select 4, false], "AGM_Logistics_fnc_loadItemCallback", "Loading ..."] call AGM_Core_fnc_progressBar;
+				[5 * _size, [_item, _vehicle, _x select 4, false], "AGM_Logistics_fnc_loadItemCallback", "Loading ...", "AGM_Logistics_fnc_loadItemAbort"] call AGM_Core_fnc_progressBar;
 			};
 		};
 	} count _attachPoints;
 };
 // Fallback to magic menu
-[5 * _size, [_item, _vehicle, "", true], "AGM_Logistics_fnc_loadItemCallback", "Loading ..."] call AGM_Core_fnc_progressBar;
+[5 * _size, [_item, _vehicle, "", true], "AGM_Logistics_fnc_loadItemCallback", "Loading ...", "AGM_Logistics_fnc_loadItemAbort"] call AGM_Core_fnc_progressBar;

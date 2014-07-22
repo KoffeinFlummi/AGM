@@ -400,6 +400,7 @@ class CfgVehicles {
         distance = 4;
         condition = "(player call AGM_Drag_fnc_isDraggingObject)";
         statement = "player call AGM_Drag_fnc_releaseObject;";
+        exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 2.1;
       };
@@ -433,6 +434,7 @@ class CfgVehicles {
         distance = 4;
         condition = "(player call AGM_Drag_fnc_isDraggingObject)";
         statement = "player call AGM_Drag_fnc_releaseObject;";
+        exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 2.1;
       };

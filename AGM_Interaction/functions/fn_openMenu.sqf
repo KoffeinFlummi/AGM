@@ -6,7 +6,7 @@ _actions = [];
 _patches = [];
 _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
-_object = AGM_Interaction_Target;
+_object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_canInteractWith) exitWith {};
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
@@ -24,13 +24,15 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
+				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -54,13 +56,15 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
+				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};

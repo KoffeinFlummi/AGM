@@ -25,7 +25,7 @@ if (_this == (vehicle _this)) then { // if the unit is the vehicle of the passed
 if (isNull _draggedObject) exitWith {};  // If there is no dragged object exit now.
 _this setVariable ["AGM_isDragging", false];
 _this setVariable ["AGM_carriedItem", objNull, true];
-_draggedObject setVariable ["AGM_inUse", false, true];
+_draggedObject setVariable ["AGM_isUsedBy", objNull, true];
 detach _draggedObject;
 _draggedObject setDamage (damage _draggedObject);
 _draggedObject lock (_draggedObject getVariable ["AGM_lockStatus", 1]);

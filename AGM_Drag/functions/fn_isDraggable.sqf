@@ -23,7 +23,7 @@ _unit = _this select 1;
 
 if (_unit != (vehicle _unit)) exitWith {false};
 if (_targetObject getVariable ["AGM_disableDrag", false]) exitWith {false};
-if (_targetObject getVariable ["AGM_inUse", false]) exitWith {false};
+//if (_targetObject getVariable ["AGM_inUse", false]) exitWith {false};
 
 if ((typeOf _targetObject) isKindOf "StaticWeapon") then {
 	_result = isNull(gunner _targetObject);

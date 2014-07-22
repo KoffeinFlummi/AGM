@@ -43,3 +43,5 @@ if (_Loaded) then {
 
 	[format ["%1 loaded into %2", _itemName, _vehicleName]] call AGM_Core_fnc_displayTextStructured;
 };
+
+_item setVariable ["AGM_isUsedBy", objNull, true];

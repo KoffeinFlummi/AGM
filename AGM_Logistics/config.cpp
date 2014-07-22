@@ -28,6 +28,7 @@ class CfgFunctions {
 			class hasLoadedItems;
 			class getLoadPoints;
 			class loadItem;
+      class loadItemAbort;
 			class loadItemCallback;
 			
 			class openLoadUI;

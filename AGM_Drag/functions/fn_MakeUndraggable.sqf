@@ -26,7 +26,7 @@ if (_object getVariable ["AGM_inUse", false]) then {
 	if (!isNull _parentObject AND {_parentObject call AGM_Drag_fnc_isDraggingObject}) then {
 		_parentObject call AGM_Drag_fnc_releaseObject;
 	} else {
-		_object setVariable ["AGM_inUse", false, true];
+		_object setVariable ["AGM_isUsedBy", objNull, true];
 	};
 };
 _object setVariable ["AGM_disableDrag", true, true];

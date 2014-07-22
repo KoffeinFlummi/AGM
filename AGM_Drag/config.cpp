@@ -52,11 +52,12 @@ class Extended_GetIn_EventHandlers {
 				distance = 4; \
 				condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}"; \
 				statement = "player call AGM_Drag_fnc_releaseObject;"; \
+				exceptions[] = {"AGM_Drag_isNotDragging"}; \
 				showDisabled = 0; \
 				priority = 3; \
 			}; \
 		};
-		
+
 #define AGM_NoDragSupport 		class AGM_Actions { \
 			class AGM_DragItem { \
 				condition = "false"; \
