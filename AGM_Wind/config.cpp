@@ -73,14 +73,14 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_OpenKestrel {
         displayName = "$STR_AGM_Wind_OpenKestrel";
-        condition = "'AGM_ItemKestrel' in items player && {!underwater player} && {cameraView != 'Gunner'} && {!AGM_isKestrel} && {call AGM_Interaction_fnc_canInteract}";
+        condition = "'AGM_ItemKestrel' in items player && {!underwater player} && {cameraView != 'Gunner'} && {!AGM_isKestrel}";
         statement = "call AGM_Wind_fnc_openKestrel";
         showDisabled = 0;
         priority = 2;
       };
       class AGM_CloseKestrel {
         displayName = "$STR_AGM_Wind_CloseKestrel";
-        condition = "AGM_isKestrel && {call AGM_Interaction_fnc_canInteract}";
+        condition = "AGM_isKestrel";
         statement = "AGM_isKestrel = false";
         showDisabled = 0;
         priority = 2;

@@ -70,14 +70,14 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_SwapBarrel {
         displayName = "$STR_AGM_Overheating_SwapBarrel";
-        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1} && {call AGM_Interaction_fnc_canInteract}";
+        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
         statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
         showDisabled = 0;
         priority = 3;
       };
       class AGM_CheckTemperature {
         displayName = "$STR_AGM_Overheating_CheckTemperatureShort";
-        condition = "!(currentWeapon player in ['', ([player] call AGM_Core_fnc_getBinocular)]) && {call AGM_Interaction_fnc_canInteract}";
+        condition = "!(currentWeapon player in ['', ([player] call AGM_Core_fnc_getBinocular)])";
         statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
         showDisabled = 0;
         priority = 3.1;

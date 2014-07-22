@@ -12,33 +12,6 @@ class CfgPatches {
   };
 };
 
-class CfgFunctions {
-  class AGM_Aircraft {
-    class AGM_Aircraft {
-      file = "AGM_Aircraft\functions";
-      class autopilot;
-    };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Aircraft {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_aircraft\clientInit.sqf'";
-  };
-};
-
-/*class AGM_Core_Default_Keys {
-  class autopilot {
-    displayName = "Autopilot";
-    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Plane'}";
-    statementUp = "{_vehicle} call AGM_Aircraft_fnc_autopilot";
-    key = 211;
-    shift = 0;
-    control = 0;
-    alt = 0;
-  };
-};*/
-
 class CfgAmmo {
   class BulletBase;
   class LaserBombCore;

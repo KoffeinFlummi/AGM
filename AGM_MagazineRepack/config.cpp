@@ -30,7 +30,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_RepackMagazines {
         displayName = "$STR_AGM_MagazineRepack_RepackMagazines";
-        condition = "call AGM_Interaction_fnc_canInteract";
+        condition = "true";
         statement = "call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;

@@ -14,5 +14,4 @@ isNull (driver _vehicle) &&
 {alive _vehicle} &&
 {!lockedDriver _vehicle} &&
 {getNumber (_config >> "isUav") != 1} &&
-{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointDriver)) < _distance || {vehicle player == _vehicle}} &&
-{call AGM_Interaction_fnc_canInteract}
+{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointDriver)) < _distance || {vehicle player == _vehicle}}

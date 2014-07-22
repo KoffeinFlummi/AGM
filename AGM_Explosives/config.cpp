@@ -73,14 +73,14 @@ class CfgVehicles {
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
-					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))} && {call AGM_Interaction_fnc_canInteract}";
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
 					priority = 2;
 				};
 				class AGM_Place {
 					displayName = $STR_AGM_Explosives_Place;
-					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives} && {call AGM_Interaction_fnc_canInteract}";
+					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
 					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
 					showDisabled = 1;
 					priority = 1;

@@ -7,4 +7,4 @@ _turret = _this select 1;
 
 //WIP
 
-_turret in ([typeOf _vehicle] call AGM_Core_fnc_getTurrets) && {isNull (_vehicle turretUnit _turret)} && {!(_vehicle lockedTurret _turret)} && {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1} && {call AGM_Interaction_fnc_canInteract}
+_turret in ([typeOf _vehicle] call AGM_Core_fnc_getTurrets) && {isNull (_vehicle turretUnit _turret)} && {!(_vehicle lockedTurret _turret)} && {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}

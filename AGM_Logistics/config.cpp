@@ -158,6 +158,7 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Drag_EndDrag";
 				condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}";
 				statement = "player call AGM_Drag_fnc_releaseObject;";
+				exceptions[] = {"AGM_Drag_isNotDragging"};
 				showDisabled = 0;
 				priority = 2.1;
 			};
@@ -214,7 +215,7 @@ class CfgVehicles {
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
-				condition = "alive AGM_Interaction_Target && {call AGM_Interaction_fnc_canInteract}";
+				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
 				priority = 1;
@@ -222,7 +223,7 @@ class CfgVehicles {
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
 					distance = 4;
-					condition = "alive AGM_Interaction_Target && {call AGM_Interaction_fnc_canInteract}";
+					condition = "alive AGM_Interaction_Target";
 					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
 					showDisabled = 1;
 					priority = 1;
@@ -236,10 +237,10 @@ class CfgVehicles {
 					priority = 0.9;
 				};
 				class AGM_Repair_Body {
-					displayName = "$STR_AGM_Repair_HitBody";
+					displayName = "$STR_AGM_Repair_HitHull";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
 				};
@@ -306,10 +307,10 @@ class CfgVehicles {
 					priority = 1;
 				};
 				class AGM_Repair_Body {
-					displayName = "$STR_AGM_Repair_HitBody";
+					displayName = "$STR_AGM_Repair_HitHull";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
 				};
@@ -393,10 +394,10 @@ class CfgVehicles {
 					priority = 1;
 				};
 				class AGM_Repair_Body {
-					displayName = "$STR_AGM_Repair_HitBody";
+					displayName = "$STR_AGM_Repair_HitHull";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
 				};
@@ -471,10 +472,10 @@ class CfgVehicles {
 					priority = 1;
 				};
 				class AGM_Repair_Body {
-					displayName = "$STR_AGM_Repair_HitBody";
+					displayName = "$STR_AGM_Repair_HitHull";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
 				};
@@ -582,7 +583,7 @@ class CfgVehicles {
 			class AGM_Refuel {
 				displayName = "$STR_AGM_UAVs_Recharge";
 				distance = 4;
-				condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1} && {call AGM_Interaction_fnc_canInteract}";
+				condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}";
 				statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
 				showDisabled = 1;
 				priority = -2.5;
@@ -606,7 +607,7 @@ class CfgVehicles {
 			class AGM_DropJerryCan {
 				displayName = "Drop jerry can";
 				distance = 4;
-				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'} && {call AGM_Interaction_fnc_canInteract}";
+				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
 				statement = "0 spawn AGM_Logistics_dropJerryCan";
 				showDisabled = 0;
 				priority = 1.5;

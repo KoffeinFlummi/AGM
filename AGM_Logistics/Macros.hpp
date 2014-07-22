@@ -13,7 +13,7 @@
 	class AGM_DragItem { \
 		displayName = $STR_AGM_Drag_StartDrag; \
 		distance = 4; \
-		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable} && {call AGM_Interaction_fnc_canInteract}"; \
+		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;"; \
 		showDisabled = 1; \
 		priority = 3; \
@@ -63,7 +63,7 @@
 	class AGM_Wirecutter_cut { \
 		displayName = "$STR_AGM_CutFence"; \
 		distance = 4; \
-		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target} && {call AGM_Interaction_fnc_canInteract}"; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target}"; \
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
@@ -73,7 +73,7 @@
 	class AGM_Wirecutter_cut { \
 		displayName = "$STR_AGM_CutFence"; \
 		distance = 4; \
-		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target} && {call AGM_Interaction_fnc_canInteract}"; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target}"; \
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \

@@ -22,4 +22,4 @@ if (vehicle player != player || {!("AGM_DefusalKit" in (items player))}) exitWit
 AGM_Interaction_Target = nearestObject [_unit, "TimeBombCore"];
 if (isNull(AGM_Interaction_Target)) exitWith {false};
 
-(player distance AGM_Interaction_Target < 4) && {call AGM_Interaction_fnc_canInteract}
+player distance AGM_Interaction_Target < 4

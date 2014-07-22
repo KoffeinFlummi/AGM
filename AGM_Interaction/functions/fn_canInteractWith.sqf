@@ -6,5 +6,4 @@ _unit = _this select 0;
 
 _unit isKindOf "Civilian" &&
 {alive _unit} &&
-{count (weapons _unit) == 0} &&
-{call AGM_Interaction_fnc_canInteract}
+{count (weapons _unit) == 0}

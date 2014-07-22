@@ -55,4 +55,4 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(AGM_Logistics_targetVehicle) 
 		_result = true;
 	};
 };
-_result && {call AGM_Interaction_fnc_canInteract}
+_result
