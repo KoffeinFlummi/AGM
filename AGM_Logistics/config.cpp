@@ -14,7 +14,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Logistics {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Logistics\clientInit.sqf'";
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Logistics\serverInit.sqf'";
   };
 };
 
@@ -120,7 +120,7 @@ class CfgVehicles {
 	};
 	class AllVehicles;
 	class LandVehicle:AllVehicles {
-		AGM_Vehicle_Cargo = 2;
+		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			class AGM_unloadBox {
 				displayName = "Unload >>";

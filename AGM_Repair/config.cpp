@@ -374,6 +374,8 @@ class CfgVehicles {
 
   class ThingX;
   class AGM_Repair_Track: ThingX {
+    AGM_Size = 1; // 1 = small, 2 = large
+    AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
     scope = 2;
     model = "\AGM_Repair\track.p3d";
     icon = "iconObject_circle";
@@ -405,6 +407,8 @@ class CfgVehicles {
   };
 
   class AGM_Repair_Wheel: ThingX {
+    AGM_Size = 1; // 1 = small, 2 = large
+    AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
     scope = 2;
     model = "\AGM_Repair\wheel.p3d";
     icon = "iconObject_circle";

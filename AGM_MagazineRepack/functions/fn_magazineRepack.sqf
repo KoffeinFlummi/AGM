@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_magazines", "_ammoTotal", "_isValidArray", "_magazine", "_ammo", "_index"];
+private ["_magazines", "_ammoTotal", "_isValidArray", "_magazine", "_ammo", "_count", "_index"];
 
 _magazines = [];
 _ammoTotal = [];
@@ -11,7 +11,9 @@ _isValidArray = [];
 	_magazine = _x select 0;
 	_ammo = _x select 1;
 
-	if !(_magazine in _magazines) then {
+	_count = getNumber (configfile >> "CfgMagazines" >> _magazine >> "count");
+
+	if !(_magazine in _magazines && _ammo != _count) then {
 		_index = count _magazines;
 		_magazines set [_index, _magazine];
 		_ammoTotal set [_index, _ammo];
@@ -21,7 +23,9 @@ _isValidArray = [];
 		_index = _magazines find _magazine;
 		_ammoTotal set [_index, (_ammoTotal select _index) + _ammo];
 
-		_isValidArray set [_index, getNumber (configfile >> "CfgMagazines" >> _magazine >> "count") > 1];			// additional checks here
+		if !(_isValidArray select _index) then {
+			_isValidArray set [_index, _count > 1];	// additional checks here
+		};
 	};
 } forEach magazinesAmmoFull player;
 

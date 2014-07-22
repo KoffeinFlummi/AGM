@@ -35,4 +35,4 @@ if (_position select 2 < 0) then {
 	_position set [2, 0];
 	_draggedObject setPosATL _position;
 };
-_draggedObject setVectorUp (surfaceNormal _position);
+[_draggedObject, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _draggedObject] call AGM_Core_fnc_execRemoteFnc;
