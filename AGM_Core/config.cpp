@@ -185,7 +185,6 @@ class CfgFunctions {
       class closeDialogIfTargetMoves;
       class codeToString;
       class convertKeyCode;
-      class createUpdateLoop;
       class disableUserInput;
       class displayText;
       class displayTextPicture;

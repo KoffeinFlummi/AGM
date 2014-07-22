@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Convert an array of booleans into a number.
+ * 
+ * Argument:
+ * 0: Booleans (Array of Booleans)
+ * 
+ * Return value:
+ * Bitmask (Number)
+ */
 
 private ["_array", "_result"];
 

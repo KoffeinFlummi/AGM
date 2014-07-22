@@ -17,6 +17,7 @@ class CfgFunctions {
     class AGM_Vehicles {
       file = "AGM_Vehicles\functions";
       class speedLimiter;
+      class startEngine;
     };
   };
 };
@@ -33,6 +34,13 @@ class AGM_Core_Default_Keys {
   };
 };
 
+class Extended_Engine_EventHandlers {
+  class Car {
+    class AGM_EngineStartDelay {
+      clientEngine = "_this call AGM_Vehicles_fnc_startEngine";
+    };
+  };
+};
 
 #define FUEL_FACTOR 0.165
 // fuel capacity = range in km * FUEL_FACTOR

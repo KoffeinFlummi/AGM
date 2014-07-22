@@ -1,10 +1,10 @@
 /*
  * Author: commy2
  *
- * Abhocken! Player goes kneeling if not prone already and lowers weapon. Try, throw, catch because I'm bored.
+ * Abhocken! Unit goes kneeling if not prone already and lowers weapon. Try, throw, catch because I'm bored.
  * 
  * Argument:
- * None.
+ * 0: Unit (Object)
  * 
  * Return value:
  * None.

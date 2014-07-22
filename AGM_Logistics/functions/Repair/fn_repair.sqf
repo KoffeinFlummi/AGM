@@ -17,3 +17,4 @@ _name = [_part] call AGM_Repair_fnc_getHitPointName;
 _string = format [localize "STR_AGM_Repair_Repairing", _name];
 
 [_time, [_vehicle, _part], "AGM_Repair_fnc_repairCallback", _string, "AGM_Repair_fnc_repairAbort"] call AGM_Core_fnc_progressBar;
+[_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
