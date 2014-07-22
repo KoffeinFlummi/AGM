@@ -4,7 +4,7 @@
 		displayName = "Load Item"; \
 		distance = 4; \
 		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItem"; \
-		statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI;"; \
+		statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI"; \
 		showDisabled = 1; \
 		priority = 2.26; \
 	};
@@ -14,15 +14,15 @@
 		displayName = $STR_AGM_Drag_StartDrag; \
 		distance = 4; \
 		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
-		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject;"; \
+		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
 		showDisabled = 1; \
 		priority = 3; \
 	}; \
 	class AGM_ReleaseItem { \
 		displayName = $STR_AGM_Drag_EndDrag; \
 		distance = 4; \
-		condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}"; \
-		statement = "player call AGM_Drag_fnc_releaseObject;"; \
+		condition = "player call AGM_Drag_fnc_isDraggingObject"; \
+		statement = "player call AGM_Drag_fnc_releaseObject"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \

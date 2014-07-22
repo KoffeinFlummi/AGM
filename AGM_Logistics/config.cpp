@@ -156,8 +156,8 @@ class CfgVehicles {
 			// Adding a self option to release will fix this.
 			class AGM_ReleaseItemSelf {
 				displayName = "$STR_AGM_Drag_EndDrag";
-				condition = "(player call AGM_Drag_fnc_isDraggingObject) && {['AGM_isDragging'] call AGM_Interaction_fnc_canInteract}";
-				statement = "player call AGM_Drag_fnc_releaseObject;";
+				condition = "player call AGM_Drag_fnc_isDraggingObject";
+				statement = "player call AGM_Drag_fnc_releaseObject";
 				exceptions[] = {"AGM_Drag_isNotDragging"};
 				showDisabled = 0;
 				priority = 2.1;
@@ -599,7 +599,7 @@ class CfgVehicles {
 			class AGM_CarryJerryCan {
 				displayName = "Carry jerry can";
 				distance = 4;
-				condition = "call AGM_Interaction_fnc_canInteract";
+				condition = "true";
 				statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
 				showDisabled = 1;
 				priority = 1.5;
