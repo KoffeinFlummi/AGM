@@ -58,3 +58,23 @@
 		showDisabled = 1; \
 		priority = 2; \
 	};
+
+#define MACRO_CUTWIRE \
+	class AGM_Wirecutter_cut { \
+		displayName = "$STR_AGM_CutFence"; \
+		distance = 4; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target} && {call AGM_Interaction_fnc_canInteract}"; \
+		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
+		showDisabled = 1; \
+		priority = 2.1; \
+	};
+
+#define MACRO_CUTWIRE_LONG \
+	class AGM_Wirecutter_cut { \
+		displayName = "$STR_AGM_CutFence"; \
+		distance = 4; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target} && {call AGM_Interaction_fnc_canInteract}"; \
+		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
+		showDisabled = 1; \
+		priority = 2.1; \
+	};

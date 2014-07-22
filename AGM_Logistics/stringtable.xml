@@ -249,4 +249,97 @@
 		</Key>
 	</Package>
 
+	<Package name="UAVs">
+		<Key ID="STR_AGM_UAVs_Full">
+			<English>Drone is full</English>
+			<German>Drohne ist voll</German>
+			<Spanish>El VANT está lleno</Spanish>
+			<French>Le drone est plein</French>
+			<Polish>Dron jest pełny</Polish>
+			<Hungarian>Drón tele</Hungarian>
+			<Czech>Dron je zaplňený</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_NoBattery">
+			<English>You need a UAV Battery</English>
+			<German>Du brauchst eine UAV-Batterie</German>
+			<Spanish>Necesitas una batería para VANT</Spanish>
+			<French>Vous avez besoin d'une Batterie-UAV</French>
+			<Polish>Potrzebujesz baterii UAV</Polish>
+			<Hungarian>UAV-Akkumulátor szükséges</Hungarian>
+			<Czech>Potřebuješ UAV-Baterii</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Recharge">
+			<English>Recharge</English>
+			<German>Aufladen</German>
+			<Spanish>Recargar</Spanish>
+			<French>Recharger</French>
+			<Polish>Naładuj</Polish>
+			<Hungarian>Újratöltés</Hungarian>
+			<Czech>Dobít</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Name">
+			<English>UAV Battery</English>
+			<German>UAV-Batterie</German>
+			<Spanish>Batería para VANT</Spanish>
+			<French>Batterie-UAV</French>
+			<Polish>Bateria UAV</Polish>
+			<Hungarian>UAV-Akkumulátor</Hungarian>
+			<Czech>UAV-Baterie</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Description">
+			<English>Used to refuel Carried UAV's</English>
+			<German>Verwendet zum Aufladen von dragbaren UAV's</German>
+			<Spanish>Usada para reabastecer el VANT</Spanish>
+			<French>Utiliser pour faire le plein de l'UAV</French>
+			<Polish>Używana do naładowania UAV</Polish>
+			<Hungarian>UAV újratöltéséhez</Hungarian>
+			<Czech>Používané k dobíjení UAV</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Recharge">
+			<English>Recharging ...</English>
+			<German>Aufladen ...</German>
+			<Spanish>Recargando ...</Spanish>
+			<French>Rechargement ...</French>
+			<Polish>Ładowanie ...</Polish>
+			<Hungarian>Újratöltés...</Hungarian>
+			<Czech>Dobíjení ...</Czech>
+		</Key>
+	</Package>
+
+	<Package name="Wirecutter">
+		<Key ID="STR_AGM_CutFence">
+			<English>Cut Fence</English>
+			<German>Zaun schneiden</German>
+			<Spanish>Cortar alambrado</Spanish>
+			<Polish>Przetnij Płot</Polish>
+			<Czech>Přestřihnout plot</Czech>
+			<French>Couper la clôture</French>
+		</Key>
+		<Key ID="STR_AGM_CuttingFence">
+			<English>Cutting Fences / Wires ...</English>
+			<German>Zaun / Draht schneiden ...</German>
+			<Spanish>Cortando alambrado ...</Spanish>
+			<Polish>Przecinanie Płotu / Drutów ...</Polish>
+			<Czech>Přestřihnout plot / dráty ...</Czech>
+			<French>Coupe la clôture / barbelée ...</French>
+		</Key>
+		<Key ID="STR_AGM_CuttingFenceChat">
+			<English>Cutting Fences!</English>
+			<German>Schneide Zaun!</German>
+			<Spanish>Cortando alambrado!</Spanish>
+			<Polish>Przecinanie płotu!</Polish>
+			<Czech>Stříhání plotu!</Czech>
+			<French>Couper la clôture</French>
+		</Key>
+		<Key ID="STR_AGM_FenceCut">
+			<English>Fence cut</English>
+			<German>Zaun geschnitten</German>
+			<Spanish>Alambrado cortando</Spanish>
+			<Polish>Płot przecięty</Polish>
+			<Czech>Plot přestřižen</Czech>
+			<French>Clôture coupée</French>
+		</Key>
+	</Package>
+
+
 </Project>

@@ -1,16 +1,24 @@
 class CfgPatches {
   class AGM_Logistics {
-    units[] = {};
-    weapons[] = {};
+    units[] = {"AGM_Repair_Track", "AGM_Repair_Wheel"};
+    weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet"};
+    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
 };
+
+/*
+	Drag, Logistics: by Garth 'L-H' de Wet
+	UAVs, Repair: by marc_book
+	Wirecutter: by gpgpgpgp
+	StaticWeapons: by commy2
+	Something: by KoffeinFlummi
+*/
 
 class CfgFunctions {
 	class AGM_Logistics {
@@ -50,15 +58,6 @@ class CfgFunctions {
 			class GetWeight;
 		};
 	};
-	class AGM_StaticWeapons {
-		class AGM_StaticWeapons {
-			file = "\AGM_Logistics\functions\StaticWeapons";
-			class canGetIn;
-			class canRotate;
-			class getIn;
-			class rotate;
-		};
-	};
 	class AGM_Repair {
 		class AGM_Repair {
 			file = "\AGM_Logistics\functions\Repair";
@@ -72,6 +71,30 @@ class CfgFunctions {
 			class repairCallback;
 			/*class repairTrack;
 			class repairWheel;*/
+		};
+	};
+	class AGM_StaticWeapons {
+		class AGM_StaticWeapons {
+			file = "\AGM_Logistics\functions\StaticWeapons";
+			class canGetIn;
+			class canRotate;
+			class getIn;
+			class rotate;
+		};
+	};
+	class AGM_UAVs {
+		class AGM_UAVs {
+			file = "\AGM_Logistics\functions\UAVs";
+			class refuel;
+			class refuelCallback;
+		};
+	};
+	class AGM_Wirecutter {
+		class AGM_Wirecutter {
+			file = "\AGM_Logistics\functions\Wirecutter";
+			class cutDownFence;
+			class cutDownFenceAbort;
+			class cutDownFenceCallback;
 		};
 	};
 };
@@ -100,6 +123,19 @@ class AGM_Core_canInteractConditions {
 class CfgAddons {
 	class AGM_Repair_Items {
 		list[] = {"AGM_Repair_Track", "AGM_Repair_Wheel"};
+	};
+};
+
+class CfgSounds {
+	class AGM_Wirecutter_sound {
+		name = "AGM_wirecutter_sound";
+		sound[] = {"AGM_Logistics\sound\wire_cut.ogg", "db-0", 1};
+		titles[] = {};
+	};
+	class AGM_Wirecutter_sound_long {
+		name = "AGM_wirecutter_sound_long";
+		sound[] = {"AGM_Logistics\sound\wire_cut_long.ogg", "db-0", 1};
+		titles[] = {};
 	};
 };
 
@@ -543,11 +579,18 @@ class CfgVehicles {
 	class UAV_01_base_F: Helicopter_Base_F {
 		class AGM_Actions {
 			MACRO_DRAGABLE
+			class AGM_Refuel {
+				displayName = "$STR_AGM_UAVs_Recharge";
+				distance = 4;
+				condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1} && {call AGM_Interaction_fnc_canInteract}";
+				statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
+				showDisabled = 1;
+				priority = -2.5;
+			};
 		};
 	};
 
-
-	//Jerry Can
+	// New Items
 	class Items_base_F;
 	class Land_CanisterFuel_F: Items_base_F {
 		class AGM_Actions {
@@ -575,7 +618,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Repair\track.p3d";
+		model = "\AGM_Logistics\track.p3d";
 		icon = "iconObject_circle";
 		displayName = "Track";
 		mapSize = 0.7;
@@ -593,7 +636,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Repair\wheel.p3d";
+		model = "\AGM_Logistics\wheel.p3d";
 		icon = "iconObject_circle";
 		displayName = "Wheel";
 		mapSize = 0.7;
@@ -606,26 +649,112 @@ class CfgVehicles {
 			MACRO_LOADABLE
 		};
 	};
+
+	// Misc box content
+	class Box_NATO_Support_F;
+	class AGM_Box_Misc: Box_NATO_Support_F {
+		class TransportItems {
+			class _xx_AGM_UAVBattery {
+				count = 24;
+				name = "AGM_UAVBattery";
+			};
+		};
+	};
+
+	// wire cutter
+	class Wall_F;
+	class Land_Net_Fence_4m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_Net_Fence_8m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE_LONG
+		};
+	};
+	class Land_Net_FenceD_8m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_New_WiredFence_5m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_New_WiredFence_10m_Dam_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_New_WiredFence_10m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE_LONG
+		};
+	};
+	class Land_Pipe_fence_4m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_Pipe_fence_4mNoLC_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_SportGround_fence_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_Wired_Fence_4m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_Wired_Fence_4mD_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+	class Land_Wired_Fence_8m_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE_LONG
+		};
+	};
+	class Land_Wired_Fence_8mD_F: Wall_F {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
+
+	class NonStrategic;
+	class Land_Razorwire_F: NonStrategic {
+		class AGM_Actions {
+			MACRO_CUTWIRE
+		};
+	};
 };
 
 // Handle vehicle magazines
 class CfgMagazines {
 	class CA_LauncherMagazine;
-	class Titan_AA : CA_LauncherMagazine {
+	class Titan_AA: CA_LauncherMagazine {
 		AGM_LoadTime = 10;
 		AGM_MagazineReloadType = 1;
 	};
 
-	class Titan_AP : Titan_AA {
+	class Titan_AP: Titan_AA {
 	};
 
-	class Titan_AT : Titan_AA {
+	class Titan_AT: Titan_AA {
 	};
 };
 
 class CfgWeapons {
 	class MissileLauncher;
-	class missiles_titan : MissileLauncher {
+	class missiles_titan: MissileLauncher {
 		AGM_Magazines[] = {"Titan_AA"};
 	};
 
@@ -635,6 +764,18 @@ class CfgWeapons {
 	class ToolKit: ItemCore {
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 80;
+			type = 401;
+		};
+	};
+
+	class AGM_UAVBattery: ItemCore {
+		scope = 2;
+		displayName = "$STR_AGM_UAVs_Battery_Name";
+		descriptionShort = "$STR_AGM_UAVs_Battery_Description";
+		model = "\A3\weapons_F\ammo\mag_univ.p3d";
+		picture = "\AGM_Logistics\ui\AGM_battery.paa";
+		class ItemInfo: InventoryItem_Base_F {
+			mass = 20;
 			type = 401;
 		};
 	};
