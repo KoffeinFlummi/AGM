@@ -1,11 +1,13 @@
 // by commy2
 
+#define POST_REPAIR_DAMAGE 0
+
 private ["_vehicle", "_part", "_name", "_string"];
 
 _vehicle = _this select 0;
 _part = _this select 1;
 
-[[_vehicle, _part], "{(_this select 0) setHitPointDamage [_this select 1, 0]}", _vehicle] call AGM_Core_fnc_execRemoteFnc;
+[_vehicle, _part, POST_REPAIR_DAMAGE] call AGM_Repair_fnc_setHitPointDamage;
 
 player playMoveNow "AmovPknlMstpSrasWrflDnon";
 

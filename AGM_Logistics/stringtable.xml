@@ -103,6 +103,10 @@
 		</Key>
 
 		<Key ID="STR_AGM_Repair_HitBody">
+			<English>Body</English>
+			<German>Karosserie</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitHull">
 			<English>Hull</English>
 			<German>Wanne</German>
 		</Key>
@@ -111,7 +115,7 @@
 			<German>Motor</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitFuel">
-			<English>Fuel tank</English>
+			<English>Fuel Tank</English>
 			<German>Tank</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitTurret">
@@ -123,43 +127,43 @@
 			<German>Kanone</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLTrack">
-			<English>Left track</English>
+			<English>Left Track</English>
 			<German>Linke Kette</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRTrack">
-			<English>Right track</English>
+			<English>Right Track</English>
 			<German>Rechte Kette</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLFWheel">
-			<English>Left front wheel</English>
+			<English>Left Front Wheel</English>
 			<German>Linkes Vorderrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRFWheel">
-			<English>Right front wheel</English>
+			<English>Right Front Wheel</English>
 			<German>Rechtes Vorderrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLF2Wheel">
-			<English>Second left front wheel</English>
+			<English>Second Left Front Wheel</English>
 			<German>Zweites linkes Vorderrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRF2Wheel">
-			<English>Second right front wheel</English>
+			<English>Second Right Front Wheel</English>
 			<German>Zweites rechtes Vorderrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLMWheel">
-			<English>Left middle wheel</English>
+			<English>Left Middle Wheel</English>
 			<German>Linkes mittleres Rad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRMWheel">
-			<English>Right middle wheel</English>
+			<English>Right Middle Wheel</English>
 			<German>Rechtes mittleres Rad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLBWheel">
-			<English>Left rear wheel</English>
+			<English>Left Rear Wheel</English>
 			<German>Linkes Hinterrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRBWheel">
-			<English>Right rear wheel</English>
+			<English>Right Rear Wheel</English>
 			<German>Rechtes Hinterrad</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitAvionics">
@@ -167,11 +171,11 @@
 			<German>Avionik</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitHRotor">
-			<English>Main rotor</English>
+			<English>Main Rotor</English>
 			<German>Hauptrotor</German>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitVRotor">
-			<English>Tail rotor</English>
+			<English>Tail Rotor</English>
 			<German>Heckrotor</German>
 		</Key>
 
