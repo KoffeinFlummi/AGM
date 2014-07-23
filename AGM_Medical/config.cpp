@@ -750,7 +750,7 @@ class AGM_Parameters {
   AGM_Medical_CoefPain = 1.0;
   // Boolean Parameters (0/1)
   AGM_Medical_AllowNonMedics = 0;
-  AGM_Medical_PunishNonMedics = 0;
+  AGM_Medical_PunishNonMedics = 1;
   AGM_Medical_RequireDiagnosis = 0;
   AGM_Medical_PreventInstaDeath = 0;
   AGM_Medical_PreventDeathWhileUnconscious = 0;
