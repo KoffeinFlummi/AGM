@@ -22,3 +22,5 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
     AGM_MuzzlesFrags = AGM_MuzzlesFrags + [_muzzleName];
   };  
 } forEach _throwMuzzleNames;
+
+"" call AGM_GrenadeSelect_fnc_setNextGrenadeMuzzle;

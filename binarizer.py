@@ -27,8 +27,8 @@
 # CREATING THE EXE
 # The .exe is created using cx_Freeze, which can be found here:
 # http://cx-freeze.sourceforge.net/
-# All those files are a bit ugly, but cx_Freeze doesn't support
-# single-exe creation.
+# The files are then packed into a single self-extracting exe
+# using Windows' IExpress.
 
 
 import os
