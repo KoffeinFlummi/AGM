@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"commy2"};
+    author[] = {"commy2", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -37,4 +37,8 @@ class CfgVehicles {
       };
     };
   };
+};
+
+class AGM_Parameters {
+  AGM_MagazineRepack_TimePerAmmo = 1.5;
 };
