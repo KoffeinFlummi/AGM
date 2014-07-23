@@ -2,10 +2,10 @@
  * Author: CAA-Picard
  *
  * Cycle through frags.
- * 
+ *
  * Argument:
  * None
- * 
+ *
  * Return value:
  * None
  */
@@ -24,7 +24,7 @@ _firstMagazine = "";
 while  {(_numberChecked < count AGM_MuzzlesFrags) and _numberOfMagazines == 0} do {
   _nextIndex = _nextIndex + 1;
   if (_nextIndex >= count AGM_MuzzlesFrags) then {_nextIndex = 0};
-  
+
   // Count if player has any magazines from this muzzle
   _result = (AGM_MuzzlesFrags select _nextIndex) call AGM_GrenadeSelect_fnc_countMagazinesForGrenadeMuzzle;
   _numberOfMagazines = _result select 0;
@@ -38,9 +38,14 @@ if (_numberOfMagazines > 0) then {
   AGM_CurrentMuzzleFrag = AGM_MuzzlesFrags select _nextIndex;
   [_firstMagazine, _numberOfMagazines] call AGM_GrenadeSelect_fnc_displayGrenadeTypeAndNumber;
   AGM_GrenadeSelectPopUp = false;
+
+  // Select the correct muzzle
+  AGM_CurrentMuzzleFrag call AGM_GrenadeSelect_fnc_setNextGrenadeMuzzle;
+
 } else {
   // There is a no muzzle with magazines --> select nothing
   AGM_CurrentMuzzleFrag = "";
+  AGM_CurrentMuzzleFrag call AGM_GrenadeSelect_fnc_setNextGrenadeMuzzle;
 
   _text = [localize "STR_AGM_GrenadeSelect_NoFragsLeft", [1,0,0]] call AGM_Core_fnc_stringToColoredText;
   [composeText [lineBreak, _text]] call AGM_Core_fnc_displayTextStructured;
