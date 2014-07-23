@@ -541,17 +541,17 @@ class CfgVehicles {
 	};
 
 	class EAST_Box_Base: ReammoBox_F {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_DRAGABLE
 		};
 	};
 	class IND_Box_Base: ReammoBox_F {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_DRAGABLE
 		};
 	};
 	class NATO_Box_Base: ReammoBox_F {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_DRAGABLE
 		};
 	};
@@ -561,17 +561,17 @@ class CfgVehicles {
 	// in order to move the bigger ones. Currently simply remove support.
 	// I believe these crates are currently broken (hitbox doesn't work or something) in 1.22 (2014-07-04)
 	class Box_East_AmmoVeh_F: EAST_Box_Base {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_NATO_AmmoVeh_F: NATO_Box_Base {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_IND_AmmoVeh_F: IND_Box_Base {
-		class AGM_Actions {
+		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};

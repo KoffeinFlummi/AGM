@@ -26,13 +26,13 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
-				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -58,13 +58,13 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
-				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};

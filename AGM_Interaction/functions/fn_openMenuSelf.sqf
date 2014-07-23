@@ -26,13 +26,13 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
-				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -58,13 +58,13 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
-				_exceptions = getArray (_action >> "exceptions");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition && {_exceptions call AGM_Core_canInteract}}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
 					_patches set [count _patches, _configName];
 				};
@@ -78,6 +78,7 @@ _customActions = player getVariable ["AGM_InteractionsSelf", []];
 for "_index" from 0 to (count _customActions - 1) do {
 	_customAction = _customActions select _index;
 	_displayName = _customAction select 0;
+
 	_condition = _customAction select 1;
 	_statement = _customAction select 2;
 	_showDisabled = _customAction select 3;

@@ -3,8 +3,8 @@
   <Package name="Movement">
 
     <Key ID="STR_AGM_Movement_UseImperial">
-      <English>Use Imperial units</English>
-      <German>Verwende Imperiales Maßsystem</German>
+      <English>Show weight in lb</English>
+      <German>Zeige Gewicht in Pfund</German>
     </Key>
     <Key ID="STR_AGM_Movement_Weight">
       <English>Weight:</English>
