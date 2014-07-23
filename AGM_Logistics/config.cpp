@@ -71,6 +71,8 @@ class CfgFunctions {
 			class repairCallback;
 			/*class repairTrack;
 			class repairWheel;*/
+			class setDamage;
+			class setHitPointDamage;
 		};
 	};
 	class AGM_StaticWeapons {
