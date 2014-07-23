@@ -20,6 +20,7 @@ class CfgFunctions {
       class blinking;
       class fatigueModule;
       class heartbeat;
+      class getWeight;
       class recoil;
       class stumble;
       class vision;
@@ -53,6 +54,13 @@ class CfgSounds {
     name = "AGM_Heartbeat";
     sound[] = {"AGM_Movement\sounds\heartbeat.ogg",1,1};
     titles[] = {};
+  };
+};
+
+class AGM_Core_Options {
+  class useImperial {
+    displayName = "$STR_AGM_Movement_UseImperial";
+    default = 0;
   };
 };
 
