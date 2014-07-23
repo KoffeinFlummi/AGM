@@ -16,6 +16,28 @@
 		<Key ID="STR_AGM_Logistics_MagazineMenu">
 			<English>Magazines</English>
 		</Key>
+
+		<Key ID="STR_AGM_Logistics_Unload">
+			<English>Unload >></English>
+			<German>Entladen >></German>
+		</Key>
+		<Key ID="STR_AGM_Logistics_ReloadMagazines">
+			<English>Magazines >></English>
+			<German>Magazine >></German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_JerryCan">
+			<English>Jerry Can</English>
+			<German>Kanister</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareTrack">
+			<English>Spare Track</English>
+			<German>Ersatzkette</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareWheel">
+			<English>Spare Wheel</English>
+			<German>Ersatzreifen</German>
+		</Key>
 	</Package>
 
 	<Package name="Drag">
@@ -45,6 +67,20 @@
 			<Czech>Nelze táhnout z důvodu přílišné váhy</Czech>
 			<French>Impossible de tirer cet objet à cause de son poid</French>
 			<German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
+		</Key>
+
+		<Key ID="STR_AGM_Drag_StartCarry">
+			<English>Carry</English>
+			<German>Tragen</German>
+		</Key>
+		<Key ID="STR_AGM_Drag_EndCarry">
+			<English>Release</English>
+			<Russian>Отпустить</Russian>
+			<Spanish>Soltar</Spanish>
+			<Polish>Puść</Polish>
+			<Czech>Pustit</Czech>
+			<French>Lacher</French>
+			<German>Loslassen</German>
 		</Key>
 	</Package>
 

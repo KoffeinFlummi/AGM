@@ -27,6 +27,7 @@ _this setVariable ["AGM_isDragging", false];
 _this setVariable ["AGM_carriedItem", objNull, true];
 _draggedObject setVariable ["AGM_isUsedBy", objNull, true];
 detach _draggedObject;
+_this forceWalk false;
 _draggedObject setDamage (damage _draggedObject);
 _draggedObject lock (_draggedObject getVariable ["AGM_lockStatus", 1]);
 

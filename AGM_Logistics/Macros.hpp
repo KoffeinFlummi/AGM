@@ -9,9 +9,34 @@
 		priority = 2.26; \
 	};
 
+#define MACRO_NOT_LOADABLE \
+	class AGM_loadItem { \
+		condition = "false"; \
+	};
+
+#define MACRO_UNLOAD \
+	class AGM_unloadBox { \
+		displayName = "$STR_AGM_Logistics_Unload"; \
+		distance = 8; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems"; \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI"; \
+		showDisabled = 1; \
+		priority = 2.25; \
+	};
+
+#define MACRO_RELOAD_MAGS \
+	class AGM_reloadMagazines { \
+		displayName = "$STR_AGM_Logistics_ReloadMagazines"; \
+		distance = 8; \
+		condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0"; \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu" \
+		showDisabled = 1; \
+		priority = 1; \
+	};
+
 #define MACRO_DRAGABLE \
 	class AGM_DragItem { \
-		displayName = $STR_AGM_Drag_StartDrag; \
+		displayName = "$STR_AGM_Drag_StartDrag"; \
 		distance = 4; \
 		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
@@ -19,7 +44,7 @@
 		priority = 3; \
 	}; \
 	class AGM_ReleaseItem { \
-		displayName = $STR_AGM_Drag_EndDrag; \
+		displayName = "$STR_AGM_Drag_EndDrag"; \
 		distance = 4; \
 		condition = "player call AGM_Drag_fnc_isDraggingObject"; \
 		statement = "player call AGM_Drag_fnc_releaseObject"; \
@@ -77,4 +102,33 @@
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+	};
+
+#define MACRO_CARRYJERRYCAN \
+	class AGM_CarryJerrycan { \
+		displayName = "$STR_AGM_Drag_StartCarry"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_isCarryable"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_carryJerrycan"; \
+		showDisabled = 1; \
+		priority = 3; \
+	}; \
+	class AGM_DropJerrycan { \
+		displayName = "$STR_AGM_Drag_EndCarry"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_isCarryingObject"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_dropJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	};
+
+#define MACRO_REFUEL_UAV \
+	class AGM_Refuel { \
+		displayName = "$STR_AGM_UAVs_Recharge"; \
+		distance = 4; \
+		condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}"; \
+		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
+		showDisabled = 1; \
+		priority = -2.5; \
 	};

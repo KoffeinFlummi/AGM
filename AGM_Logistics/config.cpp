@@ -1,6 +1,6 @@
 class CfgPatches {
   class AGM_Logistics {
-    units[] = {"AGM_Repair_Track", "AGM_Repair_Wheel"};
+    units[] = {"AGM_JerryCan", "AGM_SpareTrack", "AGM_SpareWheel"};
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
@@ -56,6 +56,10 @@ class CfgFunctions {
 			class handleScrollWheel;
 			class isDraggable;
 			class GetWeight;
+			class isCarryable;
+			class isCarryingObject;
+			class carryJerrycan;
+			class dropJerrycan;
 		};
 	};
 	class AGM_Repair {
@@ -181,33 +185,18 @@ class CfgVehicles {
 		};
 	};
 
-	class AllVehicles;
-	class LandVehicle: AllVehicles {
+	class LandVehicle;
+	class Car: LandVehicle {
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
-			class AGM_unloadBox {
-				displayName = "Unload >>";
-				distance = 8;
-				condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems";
-				statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI;";
-				showDisabled = 1;
-				priority = 2.25;
-			};
+			MACRO_UNLOAD
 		};
 	};
-	class Car: LandVehicle {
-		class AGM_Actions;
-	};
 	class Tank: LandVehicle {
-		class AGM_Actions: AGM_Actions {
-			class AGM_reloadMagazines {
-				displayName = "Magazines >>";
-				distance = 8;
-				condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0";
-				statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu;"
-				showDisabled = 1;
-				priority = 1;
-			};
+		AGM_Vehicle_Cargo = 4;
+		class AGM_Actions {
+			MACRO_UNLOAD
+			MACRO_RELOAD_MAGS
 		};
 	};
 
@@ -378,7 +367,10 @@ class CfgVehicles {
 	// Repair helicopters
 	class Air;
 	class Helicopter: Air {
+		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
+			MACRO_UNLOAD
+			MACRO_RELOAD_MAGS
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
@@ -456,7 +448,10 @@ class CfgVehicles {
 
 	// Repair fixed wing aircraft
 	class Plane: Air {
+		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
+			MACRO_UNLOAD
+			MACRO_RELOAD_MAGS
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
@@ -518,17 +513,21 @@ class CfgVehicles {
 
 	// Static weapons
 	class StaticWeapon: LandVehicle {
+		AGM_Size = 2; // 1 = small, 2 = large
 		class AGM_Actions {
 			MACRO_DRAGABLE
 			MACRO_GETIN_STATIC
+			MACRO_LOADABLE
 		};
 	};
 
 	class StaticMortar;
 	class Mortar_01_base_F: StaticMortar {
+		AGM_Size = 2; // 1 = small, 2 = large
 		class AGM_Actions {
 			MACRO_DRAGABLE
 			MACRO_GETIN_STATIC
+			MACRO_LOADABLE
 		};
 	};
 
@@ -582,48 +581,33 @@ class CfgVehicles {
 	class UAV_01_base_F: Helicopter_Base_F {
 		class AGM_Actions {
 			MACRO_DRAGABLE
-			class AGM_Refuel {
-				displayName = "$STR_AGM_UAVs_Recharge";
-				distance = 4;
-				condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}";
-				statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel";
-				showDisabled = 1;
-				priority = -2.5;
-			};
+			MACRO_REFUEL_UAV
 		};
 	};
 
 	// New Items
-	class Items_base_F;
-	class Land_CanisterFuel_F: Items_base_F {
+	class Land_CanisterFuel_F;
+	class AGM_JerryCan: Land_CanisterFuel_F {
+		AGM_Size = 1; // 1 = small, 2 = large
 		class AGM_Actions {
 			MACRO_LOADABLE
-			class AGM_CarryJerryCan {
-				displayName = "Carry jerry can";
-				distance = 4;
-				condition = "true";
-				statement = "[AGM_Interaction_Target] spawn AGM_Logistics_carryJerryCan";
-				showDisabled = 1;
-				priority = 1.5;
-			};
-			class AGM_DropJerryCan {
-				displayName = "Drop jerry can";
-				distance = 4;
-				condition = "!isNil {player getVariable 'AGM_Logisitcs_carriedItem'}";
-				statement = "0 spawn AGM_Logistics_dropJerryCan";
-				showDisabled = 0;
-				priority = 1.5;
-			};
+			MACRO_CARRYJERRYCAN
 		};
+		icon = "iconObject_circle";
+		displayName = "$STR_AGM_Repair_JerryCan";
+		mapSize = 0.7;
+		accuracy = 0.2;
+		vehicleClass = "AGM_Repair_Items";
+		destrType = "DesturctNo";
 	};
 
-	class AGM_Repair_Track: ThingX {
+	class AGM_SpareTrack: ThingX {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
 		model = "\AGM_Logistics\track.p3d";
 		icon = "iconObject_circle";
-		displayName = "Track";
+		displayName = "$STR_AGM_Repair_SpareTrack";
 		mapSize = 0.7;
 		accuracy = 0.2;
 		vehicleClass = "AGM_Repair_Items";
@@ -635,13 +619,13 @@ class CfgVehicles {
 		};
 	};
 
-	class AGM_Repair_Wheel: ThingX {
+	class AGM_SpareWheel: ThingX {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
 		model = "\AGM_Logistics\wheel.p3d";
 		icon = "iconObject_circle";
-		displayName = "Wheel";
+		displayName = "$STR_AGM_Repair_SpareWheel";
 		mapSize = 0.7;
 		accuracy = 0.2;
 		vehicleClass = "AGM_Repair_Items";
