@@ -3,7 +3,6 @@
 private ["_magazine", "_ammo", "_ammoCount", "_fullMagazinesCount", "_restAmmo", "_isLoaded", "_weapon", "_reloadAction", "_text", "_picture"];
 
 _magazine = _this select 0;
-//_ammo = _this select 1;	// amount of ammo can change! E.g. if someone accessed the backpack while repacking
 
 // exit if the last magazine of this type was taken out of the backpack
 if !(_magazine in magazines player) exitWith {};
