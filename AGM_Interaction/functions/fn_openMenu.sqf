@@ -26,7 +26,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
@@ -58,7 +58,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
