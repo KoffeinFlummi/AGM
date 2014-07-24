@@ -382,11 +382,19 @@
 	</Package>
 
 	<Package name="Resupply">
-		<Key ID="STR_AGM_Resupply_AmountOfFuelLeft">
+		<Key ID="STR_AGM_Resupply_CheckFuel">
+			<English>Checking Fuel</English>
+			<German>Prüfe Treibstoff</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckingFuel">
+			<English>Checking Fuel ...</English>
+			<German>Prüfe Treibstoff ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckedFuel">
 			<English>Jerrycan has %1 litre(s) left</English>
 			<German>Kanister hat %1 Liter übrig</German>
 		</Key>
-		<Key ID="STR_AGM_Resupply_AmountOfFuelLeftVehicle">
+		<Key ID="STR_AGM_Resupply_CheckedFuelVehicle">
 			<English>Vehicle has %1 litre(s) left</English>
 			<German>Fahrzeug hat %1 Liter übrig</German>
 		</Key>

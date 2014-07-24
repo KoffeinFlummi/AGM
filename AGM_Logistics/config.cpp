@@ -107,6 +107,7 @@ class CfgFunctions {
 		class AGM_Resupply {
 			file = "\AGM_Logistics\functions\Resupply";
 			class getFuelAmount;
+			class getFuelAmountCallback;
 			class getFuelAmountJerrycan;
 			class canDrainFuel;
 			class canDrainFuelCargo;

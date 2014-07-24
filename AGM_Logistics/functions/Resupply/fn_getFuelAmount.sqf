@@ -1,13 +1,11 @@
 // by commy2
 
-private ["_vehicle", "_capacity", "_fuel", "_text"];
+private ["_unit", "_vehicle"];
 
-_vehicle = _this select 0;
+_unit = _this select 0;
+_vehicle = _this select 1;
 
-_capacity = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "fuelCapacity");
+player playActionNow "Gear";
 
-_fuel = fuel _vehicle * _capacity;
-_fuel = (round (10 * _fuel)) / 10;
-
-_text = format [localize "STR_AGM_Resupply_AmountOfFuelLeftVehicle", _fuel];
-[_text] call AGM_Core_fnc_displayTextStructured;
+[5, [_vehicle], "AGM_Resupply_fnc_getFuelAmountCallback", localize "STR_AGM_Resupply_CheckingFuel"] call AGM_Core_fnc_progressBar;
+[_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;

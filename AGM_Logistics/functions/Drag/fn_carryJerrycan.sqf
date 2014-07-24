@@ -16,6 +16,9 @@ _this spawn {
 	_unit playMove ANIM_CARRY;
 	waitUntil {animationState _unit == ANIM_CARRY};
 
+	// exit here if the player releases the jerry can before the animation is finished
+	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {};
+
 	_target attachTo [_unit, ATTACH_POINT, "RightHand"];
 	_target setDir 273;
 	_target setPosASL getPosASL _target;

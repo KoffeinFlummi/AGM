@@ -125,8 +125,8 @@
 
 #define MACRO_CHECKFUEL \
 	class AGM_CheckFuelSelf { \
-		displayName = "$STR_AGM_Resupply_AmountOfFuelLeft"; \
-		condition = "true"; \
+		displayName = "$STR_AGM_Resupply_CheckFuel"; \
+		condition = "(player getVariable ['AGM_carriedItem', objNull]) isKindOf 'AGM_JerryCan'"; \
 		statement = "[player] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
@@ -142,7 +142,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = -2.5; \
-	};
+	}; \
 	class AGM_DrainFuel { \
 		displayName = "$STR_AGM_Resupply_DrainFuel"; \
 		distance = 4; \
@@ -153,9 +153,9 @@
 		priority = -2.6; \
 	}; \
 	class AGM_CheckFuel { \
-		displayName = "$STR_AGM_Resupply_AmountOfFuelLeftVehicle"; \
+		displayName = "$STR_AGM_Resupply_CheckFuel"; \
 		distance = 4; \
-		condition = "true"; \
+		condition = "alive AGM_Interaction_Target && {speed AGM_Interaction_Target == 0}"; \
 		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmount"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \

@@ -10,5 +10,7 @@ if (isNil "_item") exitWith {};
 _fuel = _item getVariable ["AGM_amountFuel", 20];
 _fuel = (round (10 * _fuel)) / 10;
 
-_text = format [localize "STR_AGM_Resupply_AmountOfFuelLeft", _fuel];
+_unit playActionNow "Gear";
+
+_text = format [localize "STR_AGM_Resupply_CheckedFuel", _fuel];
 [_text] call AGM_Core_fnc_displayTextStructured;
