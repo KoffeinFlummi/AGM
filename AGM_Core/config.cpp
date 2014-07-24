@@ -182,6 +182,8 @@ class CfgFunctions {
       file = "AGM_Core\functions";
       class adminKick;
       class binarizeNumber;
+      class canInteractWith;
+      class claim;
       class closeDialogIfTargetMoves;
       class codeToString;
       class convertKeyCode;

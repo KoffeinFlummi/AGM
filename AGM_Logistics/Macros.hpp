@@ -123,12 +123,51 @@
 		priority = 3; \
 	};
 
-#define MACRO_REFUEL_UAV \
+#define MACRO_CHECKFUEL \
+	class AGM_CheckFuelSelf { \
+		displayName = "$STR_AGM_Resupply_AmountOfFuelLeft"; \
+		condition = "true"; \
+		statement = "[player] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	};
+
+#define MACRO_REFUEL \
 	class AGM_Refuel { \
+		displayName = "$STR_AGM_Resupply_RefuelVehicle"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canRefuel"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_refuelVehicle"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.5; \
+	};
+	class AGM_DrainFuel { \
+		displayName = "$STR_AGM_Resupply_DrainFuel"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canDrainFuel"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_drainFuel"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.6; \
+	}; \
+	class AGM_CheckFuel { \
+		displayName = "$STR_AGM_Resupply_AmountOfFuelLeftVehicle"; \
+		distance = 4; \
+		condition = "true"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmount"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.7; \
+	};
+
+#define MACRO_REFUEL_UAV \
+	class AGM_RefuelUAV { \
 		displayName = "$STR_AGM_UAVs_Recharge"; \
 		distance = 4; \
 		condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}"; \
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
-		showDisabled = 1; \
+		showDisabled = 0; \
 		priority = -2.5; \
 	};

@@ -17,9 +17,7 @@
 		// Called by ArmA via Function Library
 		call AGM_Drag_fnc_Initialise;
 */
-player addEventHandler ["WeaponAssembled", {[(_this select 1),true,false] call AGM_Drag_fnc_InitialiseDragable;}];
-player addEventHandler ["WeaponDisassembled", {(_this select 0) call AGM_Drag_fnc_releaseObject;}];
-player addEventHandler ["Killed", {(_this select 0) call AGM_Drag_fnc_releaseObject;}];
+
 AGM_Drag_ShiftDown = false;
 AGM_Drag_CurrentHeightChange = 0;
 

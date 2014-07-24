@@ -16,7 +16,7 @@ class CfgPatches {
 	Drag, Logistics: by Garth 'L-H' de Wet
 	UAVs, Repair: by marc_book
 	Wirecutter: by gpgpgpgp
-	StaticWeapons: by commy2
+	StaticWeapons, Resupply: by commy2
 	Something: by KoffeinFlummi
 */
 
@@ -103,6 +103,20 @@ class CfgFunctions {
 			class cutDownFenceCallback;
 		};
 	};
+	class AGM_Resupply {
+		class AGM_Resupply {
+			file = "\AGM_Logistics\functions\Resupply";
+			class getFuelAmount;
+			class getFuelAmountJerrycan;
+			class canDrainFuel;
+			class canDrainFuelCargo;
+			class canRefuel;
+			class drainFuel;
+			class drainFuelCallback;
+			class refuelVehicle;
+			class refuelVehicleCallback;
+		};
+	};
 };
 
 class Extended_PostInit_EventHandlers {
@@ -111,11 +125,32 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-// Drop carried item if unit enters a vehicle
+// Drop carried item if the unit enters a vehicle, dies or assembles or disassembels a weapon
 class Extended_GetIn_EventHandlers {
   class AllVehicles {
-    class AGM_GetIn {
-      clientGetIn = "(_this select 2) call AGM_Drag_fnc_releaseObject";
+    class AGM_DropItem {
+      clientGetIn = "if (player == _this select 2) then {(_this select 2) call AGM_Drag_fnc_releaseObject}";
+    };
+  };
+};
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_DropItem {
+      clientKilled = "if (player == _this select 0) then {(_this select 0) call AGM_Drag_fnc_releaseObject}";
+    };
+  };
+};
+class Extended_WeaponAssembled_EventHandlers {
+  class CAManBase {
+    class AGM_DropItem {
+      clientWeaponAssembled = "if (player == _this select 0) then {(_this select 0) call AGM_Drag_fnc_releaseObject}";
+    };
+  };
+};
+class Extended_WeaponDisassembled_EventHandlers {
+  class CAManBase {
+    class AGM_DropItem {
+      clientWeaponDisassembled = "if (player == _this select 0) then {(_this select 0) call AGM_Drag_fnc_releaseObject}";
     };
   };
 };
@@ -168,6 +203,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = 2.1;
 			};
+			MACRO_CHECKFUEL
 		};
 	};
 
@@ -190,12 +226,14 @@ class CfgVehicles {
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
+			MACRO_REFUEL
 		};
 	};
 	class Tank: LandVehicle {
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
+			MACRO_REFUEL
 			MACRO_RELOAD_MAGS
 		};
 	};
@@ -370,6 +408,7 @@ class CfgVehicles {
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
+			MACRO_REFUEL
 			MACRO_RELOAD_MAGS
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
@@ -451,6 +490,7 @@ class CfgVehicles {
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
+			MACRO_REFUEL
 			MACRO_RELOAD_MAGS
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";

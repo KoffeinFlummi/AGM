@@ -381,5 +381,51 @@
 		</Key>
 	</Package>
 
+	<Package name="Resupply">
+		<Key ID="STR_AGM_Resupply_AmountOfFuelLeft">
+			<English>Jerrycan has %1 litre(s) left</English>
+			<German>Kanister hat %1 Liter übrig</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_AmountOfFuelLeftVehicle">
+			<English>Vehicle has %1 litre(s) left</English>
+			<German>Fahrzeug hat %1 Liter übrig</German>
+		</Key>
+
+		<Key ID="STR_AGM_Resupply_RefuelVehicle">
+			<English>Refuel Vehicle</English>
+			<German>Fahrzeug betanken</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainFuel">
+			<English>Drain Fuel</English>
+			<German>Benzin ablassen</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
+			<English>Refueling ...</English>
+			<German>Betanke ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainFuel">
+			<English>Draining Fuel ...</English>
+			<German>Benzin ablassen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
+			<English>Refueling ...</English>
+			<German>Betanke ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainFuel">
+			<English>Draining Fuel ...</English>
+			<German>Benzin ablassen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefueledVehicle">
+			<English>Refueled Vehicle</English>
+			<German>Fahrzeug betankt</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainedFuel">
+			<English>Drained Fuel</English>
+			<German>Benzin abgelassen</German>
+		</Key>
+
+
+	</Package>
+
 
 </Project>

@@ -6,7 +6,7 @@ _actions = [];
 _patches = [];
 _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
-_object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_canInteractWith) exitWith {};
+_object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
