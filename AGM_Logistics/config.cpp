@@ -113,15 +113,19 @@ class CfgFunctions {
 			class getFuelAmountCargo;
 			class getFuelAmountCargoCallback;
 			class getFuelAmountJerrycan;
+			class getNearestRefueler;
 			class canDrainFuel;
 			class canDrainFuelCargo;
 			class canRefuel;
+			class canRefuelCargo;
 			class drainFuel;
 			class drainFuelCallback;
 			class drainFuelCargo;
 			class drainFuelCargoCallback;
 			class refuelVehicle;
 			class refuelVehicleCallback;
+			class refuelVehicleCargo;
+			class refuelVehicleCargoCallback;
 		};
 	};
 };
@@ -661,6 +665,7 @@ class CfgVehicles {
 	// New Items
 	class Land_CanisterFuel_F;
 	class AGM_JerryCan: Land_CanisterFuel_F {
+		author = "commy2";
 		AGM_Size = 1; // 1 = small, 2 = large
 		class AGM_Actions {
 			MACRO_LOADABLE
@@ -675,6 +680,7 @@ class CfgVehicles {
 	};
 
 	class AGM_SpareTrack: ThingX {
+		author = "Hawkins";
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
@@ -693,6 +699,7 @@ class CfgVehicles {
 	};
 
 	class AGM_SpareWheel: ThingX {
+		author = "marc_book";
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;

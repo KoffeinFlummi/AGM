@@ -79,7 +79,7 @@ if getattr(sys, "frozen", False): # script is run as .exe, ask the user for thes
 
 else:
   # Path to .biprivatekey file. If not set, addon will not be signed.
-  privatekey   = ""#D:\\Programme\\Steam\\SteamApps\\common\\Arma 3 Tools\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
+  privatekey   = ""#C:\\Programme\\Steam\\SteamApps\\common\\Arma 3 Tools\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
 
   # Path to Arma installation. If not set, registry values will be used.
   arma         = ""

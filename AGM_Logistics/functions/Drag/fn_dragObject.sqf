@@ -17,36 +17,44 @@
  	Example:
 		[StaticWeapon3, player] call AGM_Drag_fnc_dragObject;
 */
-private ["_draggedObject", "_unit", "_attachPoint", "_ableToDrag"];
-_draggedObject = _this select 0;
-_unit = _this select 1;
-if (_draggedObject getVariable ["AGM_disableDrag", false]) exitWith {};
-_ableToDrag = true;
 
-if ((typeOf _draggedObject) isKindOf "StaticWeapon") then {
-	if !(isNull(gunner _draggedObject) AND {!alive (gunner _draggedObject)}) then {
-		(gunner _draggedObject) setPosATL (GetPosATL(gunner _draggedObject));
+#define ANIM_CARRY "amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2"
+
+_this spawn {
+	_draggedObject = _this select 0;
+	_unit = _this select 1;
+	if (_draggedObject getVariable ["AGM_disableDrag", false]) exitWith {};
+	_ableToDrag = true;
+
+	if ((typeOf _draggedObject) isKindOf "StaticWeapon") then {
+		if !(isNull(gunner _draggedObject) AND {!alive (gunner _draggedObject)}) then {
+			(gunner _draggedObject) setPosATL (GetPosATL(gunner _draggedObject));
+		};
+	} else { // Crate handling
+		if (_draggedObject getVariable ["AGM_useWeight", true]) then {
+			_ableToDrag = ((_draggedObject call AGM_Drag_fnc_GetWeight) <= AGM_Drag_MaxWeight);
+		};
 	};
-} else { // Crate handling
-	if (_draggedObject getVariable ["AGM_useWeight", true]) then {
-		_ableToDrag = ((_draggedObject call AGM_Drag_fnc_GetWeight) <= AGM_Drag_MaxWeight);
+	if (!_ableToDrag) exitWith { [localize "STR_AGM_Drag_UnableToDrag"] call AGM_Core_fnc_displayTextStructured;};
+	if (primaryWeapon _unit == "") then {
+		_unit addWeapon "AGM_FakePrimaryWeapon";
 	};
-};
-if (!_ableToDrag) exitWith { [localize "STR_AGM_Drag_UnableToDrag"] call AGM_Core_fnc_displayTextStructured;};
-if (primaryWeapon _unit == "") then {
-	_unit addWeapon "AGM_FakePrimaryWeapon";
-};
-_unit selectWeapon (primaryWeapon _unit);
+	_unit selectWeapon (primaryWeapon _unit);
 
-_unit playActionNow "grabDrag";
-_attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
-_draggedObject attachTo [_unit, _attachPoint];
+	_unit playActionNow "grabDrag";
+	waitUntil {animationState _unit == ANIM_CARRY};
 
-_draggedObject setVariable ["AGM_isUsedBy", _unit, true];
-_unit setVariable ["AGM_isDragging", true];
-_unit setVariable ["AGM_carriedItem", _draggedObject, true];
-_draggedObject setOwner (owner _unit);
-_draggedObject setVariable ["AGM_lockStatus", locked _draggedObject, true];
-_draggedObject lock true;
+	// exit here if the player releases the jerry can before the animation is finished
+	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {};
 
-AGM_Drag_CurrentHeightChange = 0;
+	_attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
+	_draggedObject attachTo [_unit, _attachPoint];
+
+	_draggedObject setVariable ["AGM_isUsedBy", _unit, true];
+	_unit setVariable ["AGM_isDragging", true];
+	_unit setVariable ["AGM_carriedItem", _draggedObject, true];
+	_draggedObject setOwner (owner _unit);
+	_draggedObject setVariable ["AGM_lockStatus", locked _draggedObject, true];
+	_draggedObject lock true;
+
+	AGM_Drag_CurrentHeightChange = 0;

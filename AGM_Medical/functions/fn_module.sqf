@@ -27,4 +27,4 @@ AGM_Medical_Module = true;
 ["AGM_Medical_PreventInstaDeath",           if (_logic getVariable "PreventInstaDeath") then {1} else {0}]            call AGM_Core_fnc_setParameter;
 ["AGM_Medical_PreventDeathWhileUnconscious",if (_logic getVariable "PreventDeathWhileUnconscious") then {1} else {0}] call AGM_Core_fnc_setParameter;
 
-diag_log text "AGM: Medical Module Initialized.";
+diag_log text "[AGM]: Medical Module Initialized.";

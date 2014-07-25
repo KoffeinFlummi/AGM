@@ -55,7 +55,7 @@
 	class AGM_ReleaseItem { \
 		displayName = "$STR_AGM_Drag_EndDrag"; \
 		distance = 4; \
-		condition = "player call AGM_Drag_fnc_isDraggingObject"; \
+		condition = "player call AGM_Drag_fnc_isDraggingObject && {AGM_Interaction_Target == player getVariable ['AGM_carriedItem', objNull]}"; \
 		statement = "player call AGM_Drag_fnc_releaseObject"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
@@ -151,6 +151,14 @@
 	};
 
 #define MACRO_REFUEL \
+	class AGM_RefuelCargo { \
+		displayName = "$STR_AGM_Resupply_RefuelVehicleCargo"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target] call AGM_Resupply_fnc_canRefuelCargo"; \
+		statement = "[AGM_Interaction_Target] call AGM_Resupply_fnc_refuelVehicleCargo"; \
+		showDisabled = 0; \
+		priority = -2.5; \
+	}; \
 	class AGM_Refuel { \
 		displayName = "$STR_AGM_Resupply_RefuelVehicle"; \
 		distance = 4; \
