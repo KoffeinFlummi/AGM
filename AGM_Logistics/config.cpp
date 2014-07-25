@@ -71,12 +71,16 @@ class CfgFunctions {
 			class checkVehicle;
 			class checkVehicleCallback;
 			class getHitPointName;
+			class getNearestTrack;
+			class getNearestWheel;
 			class openSelectWheelUI;
 			class repair;
 			class repairAbort;
 			class repairCallback;
-			/*class repairTrack;
-			class repairWheel;*/
+			/*class repairTrack;*/
+			class repairWheel;
+			class repairWheelAbort;
+			class repairWheelCallback;
 			class setDamage;
 			class setHitPointDamage;
 		};

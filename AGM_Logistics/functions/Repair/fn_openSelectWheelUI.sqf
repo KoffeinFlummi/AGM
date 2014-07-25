@@ -8,7 +8,7 @@ _wheels = _this select 1;
 _wheels = [_wheels, {AGM_Interaction_Target getHitPointDamage _this > 0}] call AGM_Core_fnc_filter;
 _count = count _wheels;
 
-_listIDC = [localize "STR_AGM_Repair_SelectWheelMenu", localize "STR_AGM_Repair_SelectWheel", "_vehicle = AGM_Interaction_Target; _wheel = lbData [8866, lbCurSel 8866]; closeDialog 0; [_vehicle, _wheel] call AGM_Repair_fnc_repair;"] call AGM_Interaction_fnc_openSelectMenu;
+_listIDC = [localize "STR_AGM_Repair_SelectWheelMenu", localize "STR_AGM_Repair_SelectWheel", "_vehicle = AGM_Interaction_Target; _wheel = lbData [8866, lbCurSel 8866]; closeDialog 0; [_vehicle, _wheel] call AGM_Repair_fnc_repairWheel;"] call AGM_Interaction_fnc_openSelectMenu;
 
 for "_index" from 0 to (_count - 1) do {
 	_wheel = _wheels select _index;

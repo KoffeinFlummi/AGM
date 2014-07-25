@@ -42,7 +42,7 @@ _this spawn {
 	_unit selectWeapon (primaryWeapon _unit);
 
 	_unit playActionNow "grabDrag";
-	waitUntil {animationState _unit == ANIM_CARRY};
+	//waitUntil {animationState _unit == ANIM_CARRY};
 
 	// exit here if the player releases the jerry can before the animation is finished
 	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {};
@@ -58,3 +58,4 @@ _this spawn {
 	_draggedObject lock true;
 
 	AGM_Drag_CurrentHeightChange = 0;
+};
