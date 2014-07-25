@@ -96,7 +96,6 @@ if (!isServer) then {
 		} forEach _files;
 
 		// display and log error messages
-
 		_fnc_cutComma = {
 			_string = _this;
 			_string = toArray _string;
@@ -155,13 +154,13 @@ if (!isServer) then {
 		};
 
 		_oldVersionServer = false;
-		if (count _missingAddons > 0) then {
+		if (count _oldVersionsServer > 0) then {
 			_oldVersionServer = true;
 
 			_error = format ["[AGM] %1: ERROR outdated server addon(s): ", _client];
 			{
 				_error = _error + format ["%1 (client: %2, server: %3), ", _x select 0, _x select 1, _x select 2];
-			} forEach _missingAddons;
+			} forEach _oldVersionsServer;
 
 			_error = _error call _fnc_cutComma;
 
