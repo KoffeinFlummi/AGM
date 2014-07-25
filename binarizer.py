@@ -17,7 +17,7 @@
 # SELECTING PBOs
 # By default all PBOs that have modifications since the last
 # binarization are binarized. You can also start the script
-# with the PBOs you want to binarized as arguments.
+# with the PBOs you want to binarize as arguments.
 # e.g.: python binarizer.py AGM_Core AGM_Resting
 
 # PACKING / BINARIZING
@@ -27,8 +27,11 @@
 # CREATING THE EXE
 # The .exe is created using cx_Freeze, which can be found here:
 # http://cx-freeze.sourceforge.net/
+#
+# python cxfreeze --target-dir dist P:\path\to\agm\binarizer.py
+#
 # The files are then packed into a single self-extracting exe
-# using Windows' IExpress.
+# using WinRAR.
 
 
 import os
@@ -39,12 +42,12 @@ import winreg
 import threading
 import time
 
-if getattr(sys, 'frozen', False):
-    scriptpath = sys.executable
+if getattr(sys, "frozen", False):
+    scriptpath = os.path.dirname(sys.executable) # go one up from temp extracting folder
 else:
     scriptpath = os.path.realpath(__file__)
 
-if getattr(sys, 'frozen', False): # script is run as .exe, ask the user for these values.
+if getattr(sys, "frozen", False): # script is run as .exe, ask the user for these values.
   print("###################################")
   print("#          AGM Binarizer          #")
   print("# Authors: KoffeinFlummi, sutt0n  #")
@@ -147,7 +150,7 @@ def get_modules():
   root = os.path.dirname(scriptpath)
   modules = []
   for module in os.listdir(root):
-    if module[0] != "." and os.path.isdir(os.path.join(root, module)) and check_for_changes(module):
+    if module[0] != "." and module != "temp" and os.path.isdir(os.path.join(root, module)) and check_for_changes(module):
       modules.append(module)
 
   return modules
@@ -230,7 +233,7 @@ try:
   assert(path != "")
 except:
   print("ERROR: Failed to get Arma installation path.\n")
-  if getattr(sys, 'frozen', False):
+  if getattr(sys, "frozen", False):
     quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
@@ -239,7 +242,7 @@ try:
   assert(path != "")
 except:
   print("ERROR: Failed to get Addon Builder installation path.\n")
-  if getattr(sys, 'frozen', False):
+  if getattr(sys, "frozen", False):
     quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
@@ -247,7 +250,7 @@ try:
   modules = get_modules()
 except:
   print("ERROR: Failed to read modules.\n")
-  if getattr(sys, 'frozen', False):
+  if getattr(sys, "frozen", False):
     quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
@@ -258,12 +261,12 @@ try:
     os.makedirs(path)
 except:
   print("ERROR: Failed to get/create mod path.")
-  if getattr(sys, 'frozen', False):
+  if getattr(sys, "frozen", False):
     quit = input("\nPress any key to exit ...")
   sys.exit(1)
 
 # Copy FileBank, CfgConvert and DSSignFile if necessary
-if getattr(sys, 'frozen', False):
+if getattr(sys, "frozen", False):
   convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
   filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
   signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
@@ -329,5 +332,5 @@ print("\n######################################################")
 print("# Binarization complete.                             #")
 print("######################################################")
 
-if getattr(sys, 'frozen', False):
+if getattr(sys, "frozen", False):
   quit = input("\nPress any key to exit ...")
