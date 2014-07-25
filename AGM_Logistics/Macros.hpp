@@ -15,6 +15,15 @@
 	};
 
 #define MACRO_UNLOAD \
+	class AGM_loadItemCarried { \
+		displayName = "Load Item"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItemCarried"; \
+		statement = "[player getVariable 'AGM_carriedItem', AGM_Interaction_Target] call AGM_Logistics_fnc_openLoadUI"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 2.25; \
+	}; \
 	class AGM_unloadBox { \
 		displayName = "$STR_AGM_Logistics_Unload"; \
 		distance = 8; \
@@ -121,11 +130,19 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
+	}; \
+	class AGM_CheckFuelJerrycan { \
+		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
+		condition = "alive AGM_Interaction_Target"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
 	};
 
 #define MACRO_CHECKFUEL \
 	class AGM_CheckFuelSelf { \
-		displayName = "$STR_AGM_Resupply_CheckFuel"; \
+		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
 		condition = "(player getVariable ['AGM_carriedItem', objNull]) isKindOf 'AGM_JerryCan'"; \
 		statement = "[player] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
@@ -157,6 +174,26 @@
 		distance = 4; \
 		condition = "alive AGM_Interaction_Target && {speed AGM_Interaction_Target == 0}"; \
 		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmount"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.7; \
+	};
+
+#define MACRO_REFUELCARGO \
+	class AGM_DrainFuelCargo { \
+		displayName = "$STR_AGM_Resupply_DrainFuelCargo"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canDrainFuelCargo"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_drainFuelCargo"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.6; \
+	}; \
+	class AGM_CheckFuelCargo { \
+		displayName = "$STR_AGM_Resupply_CheckFuelCargo"; \
+		distance = 4; \
+		condition = "alive AGM_Interaction_Target && {speed AGM_Interaction_Target == 0}"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmountCargo"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = -2.7; \

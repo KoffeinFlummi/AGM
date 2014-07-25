@@ -6,7 +6,7 @@ _this spawn {
 	_position = getPosASL _target;
 
 	waitUntil {
-		if (getPosASL _target distanceSqr _position > 1) then {
+		if (getPosASL _target distanceSqr _position > 1 || {!alive _target}) then {
 			closeDialog 0;
 		};
 		!dialog

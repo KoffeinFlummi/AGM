@@ -9,6 +9,10 @@ _attachPos = [0,0,0];
 _loaded = false;
 _dummy = objNull;
 
+if (_item == player getVariable ["AGM_carriedItem", objNull]) then {
+	player call AGM_Drag_fnc_releaseObject;
+};
+
 _size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
 if (!_magicMenu) then {
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;

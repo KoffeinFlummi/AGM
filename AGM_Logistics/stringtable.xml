@@ -287,6 +287,10 @@
 			<Spanish>Comprobando vehículo</Spanish>
 			<French>Vérifier le véhicule</French>
 		</Key>
+		<Key ID="STR_AGM_Repair_checkingVehicle">
+			<English>Checking Vehicle ...</English>
+			<German>Fahrzeug überprüfen ...</German>
+		</Key>
 	</Package>
 
 	<Package name="UAVs">
@@ -386,6 +390,14 @@
 			<English>Checking Fuel</English>
 			<German>Prüfe Treibstoff</German>
 		</Key>
+		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
+			<English>Checking Fuel Cargo</English>
+			<German>Prüfe Treibstoffvorrat</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
+			<English>Checking Jerrycan</English>
+			<German>Prüfe Kanister</German>
+		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuel">
 			<English>Checking Fuel ...</English>
 			<German>Prüfe Treibstoff ...</German>
@@ -398,6 +410,10 @@
 			<English>Vehicle has %1 litre(s) left</English>
 			<German>Fahrzeug hat %1 Liter übrig</German>
 		</Key>
+		<Key ID="STR_AGM_Resupply_CheckedFuelVehicleCargo">
+			<English>Vehicle has %1 litre(s) left in Cargo</English>
+			<German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
+		</Key>
 
 		<Key ID="STR_AGM_Resupply_RefuelVehicle">
 			<English>Refuel Vehicle</English>
@@ -407,29 +423,33 @@
 			<English>Drain Fuel</English>
 			<German>Benzin ablassen</German>
 		</Key>
-		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
-			<English>Refueling ...</English>
-			<German>Betanke ...</German>
-		</Key>
-		<Key ID="STR_AGM_Resupply_DrainFuel">
-			<English>Draining Fuel ...</English>
-			<German>Benzin ablassen ...</German>
+		<Key ID="STR_AGM_Resupply_DrainFuelCargo">
+			<English>Drain Fuel Cargo</English>
+			<German>Benzinvorrat ablassen</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
 			<English>Refueling ...</English>
 			<German>Betanke ...</German>
 		</Key>
-		<Key ID="STR_AGM_Resupply_DrainFuel">
+		<Key ID="STR_AGM_Resupply_DrainingFuel">
 			<English>Draining Fuel ...</English>
 			<German>Benzin ablassen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainingFuelCargo">
+			<English>Draining Fuel Cargo ...</English>
+			<German>Benzinvorrat ablassen ...</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefueledVehicle">
-			<English>Refueled Vehicle</English>
-			<German>Fahrzeug betankt</German>
+			<English>Refueled %1</English>
+			<German>%1 betankt</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainedFuel">
 			<English>Drained Fuel</English>
 			<German>Benzin abgelassen</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainedFuelCargo">
+			<English>Drained Fuel Cargo</English>
+			<German>Benzinvorrat abgelassen</German>
 		</Key>
 
 
