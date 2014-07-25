@@ -20,24 +20,24 @@ _versions = [];
 } forEach _files;
 
 if (isServer) then {
-	diag_log text format ["AGM Server: agm_core is Version %1.", _versionMain];
+	diag_log text format ["[AGM] Server: agm_core is Version %1.", _versionMain];
 
 	{
 		_version = _versions select _forEachIndex;
 		if (_version != _versionMain) then {
-			diag_log text format ["AGM Server: %1 is Version %2.", _x, _version];
+			diag_log text format ["[AGM] Server: %1 is Version %2.", _x, _version];
 		};
 	} forEach _files;
 
 	AGM_Version_ServerVersions = [_files, _versions];
 	publicVariable "AGM_Version_ServerVersions";
 } else {
-	diag_log text format ["AGM Client: AGM_Core is Version %1.", _version];
+	diag_log text format ["[AGM] Client: AGM_Core is Version %1.", _versionMain];
 
 	{
 		_version = _versions select _forEachIndex;
 		if (_version != _versionMain) then {
-			diag_log text format ["AGM Client: %1 is Version %2.", _x, _version];
+			diag_log text format ["[AGM] Client: %1 is Version %2.", _x, _version];
 		};
 	} forEach _files;
 
@@ -53,6 +53,8 @@ if (!isServer) then {
 			sleep 1;
 			!isNil "AGM_Version_ClientVersions" && {!isNil "AGM_Version_ServerVersions"}
 		};
+
+		_client = profileName;
 
 		_files = AGM_Version_ClientVersions select 0;
 		_versions = AGM_Version_ClientVersions select 1;
@@ -94,14 +96,29 @@ if (!isServer) then {
 		} forEach _files;
 
 		// display and log error messages
+
+		_fnc_cutComma = {
+			_string = _this;
+			_string = toArray _string;
+
+			_count = count _string;
+			_string set [_count - 2, toArray "." select 0];
+			_string set [_count - 1, -1];
+			_string = _string - [-1];
+
+			toString _string;
+		};
+
 		_missingAddon = false;
 		if (count _missingAddons > 0) then {
 			_missingAddon = true;
 
-			_error = "AGM Client: ERROR missing addon(s): ";
+			_error = format ["[AGM] %1: ERROR missing addon(s): ", _client];
 			{
 				_error = _error + format ["%1, ", _x];
 			} forEach _missingAddons;
+
+			_error = _error call _fnc_cutComma;
 
 			diag_log text _error;
 			[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
@@ -111,10 +128,12 @@ if (!isServer) then {
 		if (count _missingAddonsServer > 0) then {
 			_missingAddonServer = true;
 
-			_error = "AGM Client: ERROR missing server addon(s): ";
+			_error = format ["[AGM] %1: ERROR missing server addon(s): ", _client];
 			{
 				_error = _error + format ["%1, ", _x];
 			} forEach _missingAddonsServer;
+
+			_error = _error call _fnc_cutComma;
 
 			diag_log text _error;
 			[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
@@ -124,10 +143,12 @@ if (!isServer) then {
 		if (count _oldVersionsClient > 0) then {
 			_oldVersionClient = true;
 
-			_error = "AGM Client: ERROR outdated addon(s): ";
+			_error = format ["[AGM] %1: ERROR outdated addon(s): ", _client];
 			{
 				_error = _error + format ["%1 (client: %2, server: %3), ", _x select 0, _x select 1, _x select 2];
 			} forEach _oldVersionsClient;
+
+			_error = _error call _fnc_cutComma;
 
 			diag_log text _error;
 			[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
@@ -137,10 +158,12 @@ if (!isServer) then {
 		if (count _missingAddons > 0) then {
 			_oldVersionServer = true;
 
-			_error = "AGM Client: ERROR outdated server addon(s): ";
+			_error = format ["[AGM] %1: ERROR outdated server addon(s): ", _client];
 			{
 				_error = _error + format ["%1 (client: %2, server: %3), ", _x select 0, _x select 1, _x select 2];
 			} forEach _missingAddons;
+
+			_error = _error call _fnc_cutComma;
 
 			diag_log text _error;
 			[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
