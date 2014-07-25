@@ -7,8 +7,38 @@ class CfgPatches {
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
+  };
+};
+
+class CfgFunctions {
+  class AGM_Vehicles {
+    class AGM_Vehicles {
+      file = "AGM_Vehicles\functions";
+      class speedLimiter;
+      class startEngine;
+    };
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class speedLimiter {
+    displayName = "$STR_AGM_SpeedLimiter";
+    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_vehicle] call AGM_Vehicles_fnc_speedLimiter";
+    key = 211;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+};
+
+class Extended_Engine_EventHandlers {
+  class Car {
+    class AGM_EngineStartDelay {
+      clientEngine = "_this call AGM_Vehicles_fnc_startEngine";
+    };
   };
 };
 

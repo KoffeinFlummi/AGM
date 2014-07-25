@@ -35,6 +35,12 @@ while {alive player} do {
 				call AGM_Goggles_fnc_RemoveGlassesEffect;
 			};
 		};
+		// Detect if curator interface is open and disable effects
+		if (!isNull(findDisplay 312)) exitWith {
+			if (AGM_Goggles_EffectsActive) then {
+				call AGM_Goggles_fnc_RemoveGlassesEffect;
+			};
+		};
 		// Check rain
 		if (GETRAINT(RTIME) <= time - (RAINCHECK + GETRAINT(RAMOUNT)*RAINCHECK)) then {
 			SETLRAIN(RTIME, time);

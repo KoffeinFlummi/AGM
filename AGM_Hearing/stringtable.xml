@@ -53,14 +53,9 @@
       <Hungarian>Nincs füldugód</Hungarian>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
-      <English>Inventory is full; Cannot remove Ear Buds</English>
-      <German>Inventar ist voll; Ohrenstöpsel können nicht entfernt werden.</German>
-      <Spanish>El inventario está lleno; No pueden quitarse los tapones.</Spanish>
-      <Polish>Ekwipunek jest pełny; Nie można zdjąć stoperów.</Polish>
-      <Czech>Inventář je plný; Špunty nelze vyndat</Czech>
-      <Russian>Инвентарь заполнен: нельзя снять беруши</Russian>
-      <French>Inventaire plein; Impossible d'enlever les bouchons</French>
-      <Hungarian>Felszerelés tele: nem lehet kivenni a füldugót</Hungarian>
+      <English>No inventory space</English>
+      <German>Kein Platz im Inventar</German>
+      <Polish>Brak miejsca w ekwipunku</Polish>
     </Key>
 
   </Package>

@@ -31,6 +31,7 @@ detach _unit;
     _player = _this select 2;
     if (local _unit) then {
       _unit moveInCargo _vehicle;
+      _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
       _unit spawn {
         sleep 0.5;
         _this enableSimulation false;

@@ -21,7 +21,7 @@ _this spawn {
 
   // DETERMINE IF PLAYER IS MEDIC
   _morphinetime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
+  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _morphinetime = MORPHINETIMEMEDIC;
   } else {
     _morphinetime = MORPHINETIMENONMEDIC;
@@ -49,6 +49,7 @@ _this spawn {
 
     if (_painkillerOld < 0.1) exitWith {
       if (_unit == player) then {
+        _unit setVariable ["AGM_Overdosing", true];
         AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
         AGM_UnconsciousCC ppEffectEnable true;
         AGM_UnconsciousCC ppEffectForceInNVG true;
@@ -67,7 +68,7 @@ _this spawn {
       }, _unit] call CBA_fnc_globalExecute;
       _unit spawn {
         sleep 20;
-        [_this, "HitHead", 1] call AGM_Medical_fnc_setHitPointDamage;
+        [_this, "HitHead", 1, true] call AGM_Medical_fnc_setHitPointDamage;
       };
     };
 

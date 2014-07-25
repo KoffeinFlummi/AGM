@@ -237,7 +237,7 @@
       <Hungarian>Fegyvert hátra</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TapShoulder">
-      <English>Tap shoulder</English>
+      <English>Tap Shoulder</English>
       <German>Auf Schulter klopfen</German>
       <Spanish>Tocar el hombro</Spanish>
       <Polish>Klepnij w ramię</Polish>
@@ -287,7 +287,55 @@
       <Hungarian>Játékosnevek mutatása</Hungarian>
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
+    <Key ID="STR_AGM_Interaction_CancelSelection">
+      <English>Cancel</English>
+      <German>Abbrechen</German>
+      <Spanish>Cancelar</Spanish>
+      <Polish>Anuluj</Polish>
+    </Key>
+    <Key ID="STR_AGM_Interaction_MakeSelection">
+      <English>Select</English>
+      <German>Wählen</German>
+      <Spanish>Seleccionar</Spanish>
+      <Polish>Wybierz</Polish>
+    </Key>
 
-
+    <Key ID="STR_AGM_Interaction_SendAway">
+      <English>Go Away!</English>
+      <German>Geh Weg!</German>
+      <Spanish>Aléjate!</Spanish>
+      <Polish>Odejdź!</Polish>
+      <Czech>Jděte pryč!</Czech>
+      <French>Partez!</French>
+      <Russian>Уходите отсюда!</Russian>
+      <Hungarian>Tűnés!</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_GetDown">
+      <English>Get Down!</English>
+      <German>Auf Den Boden!</German>
+      <Spanish>Al suelo!</Spanish>
+      <Polish>Padnij!</Polish>
+      <Czech>K zemi!</Czech>
+      <Hungarian>A földre!</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_SetCaptive">
+      <English>Take Prisoner</English>
+      <German>Gefangen nehmen</German>
+      <French>Prendre en captivité</French>
+      <Spanish>Hacer prisionero</Spanish>
+      <Polish>Weź Więźnia</Polish>
+    </Key>
+    <Key ID="STR_AGM_Interaction_EscortCaptive">
+      <English>Escort Prisoner</English>
+      <German>Gefangenen eskortieren</German>
+      <Spanish>Escoltar prisionero</Spanish>
+      <Polish>Eskortuj Więźnia</Polish>
+    </Key>
+    <Key ID="STR_AGM_Interaction_NoCaptive">
+      <English>You need you take him as prisoner first!</English>
+      <German>Du must ihn zuerst gefangen nehmen.</German>
+      <Spanish>Necesitas hacerle prisionero primero!</Spanish>
+      <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
+    </Key>
   </Package>
 </Project>

@@ -33,23 +33,35 @@ _door = "";
 
 if (_door == "") exitWith {};
 
-_animation = _door + "_rot";
+playSound "AGM_Sound_Click";
 
+_animation = _door + "_rot";
 AGM_Interaction_isOpeningDoor = true;
 
-/*
 [_house, _animation] spawn {
 	_house = _this select 0;
 	_animation = _this select 1;
-	_increment = [-0.1, 0.1] select (_house animationPhase _animation < 0.5);
 
-	while {AGM_Interaction_isOpeningDoor} do {
-		_phase = (_house animationPhase _animation) + _increment;
+	_phase = _house animationPhase _animation;
+	_position = getPosASL player;
+
+	_usedMouseWheel = false;
+	waitUntil {
+		if (inputAction "PrevAction" > 0 || {inputAction "NextAction" > 0}) then {
+			_usedMouseWheel = true;
+		};
+
+		_phase = _phase + (inputAction "PrevAction" / 12) min 1;
+		_phase = _phase - (inputAction "NextAction" / 12) max 0;
+
 		_house animate [_animation, _phase];
-		waitUntil {_house animationPhase _animation == _phase || {!AGM_Interaction_isOpeningDoor}};
+		!AGM_Interaction_isOpeningDoor || {getPosASL player distance _position > 1}
 	};
-};
-*/
 
-_phase = [0, 1] select (_house animationPhase _animation < 0.5);
-_house animate [_animation, _phase];
+	if !(_usedMouseWheel) then {
+		_phase = [0, 1] select (_house animationPhase _animation < 0.5);
+		_house animate [_animation, _phase];
+	};
+
+	AGM_Interaction_isOpeningDoor = false;
+};

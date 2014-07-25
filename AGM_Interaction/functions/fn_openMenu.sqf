@@ -6,7 +6,7 @@ _actions = [];
 _patches = [];
 _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
-_object = AGM_Interaction_Target;
+_object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
@@ -24,7 +24,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
@@ -54,7 +56,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_displayName = getText (_action >> "displayName");
 				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true";};
+				if (_condition == "") then {_condition = "true"};
+
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;

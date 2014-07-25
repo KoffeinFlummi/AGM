@@ -14,10 +14,6 @@ _this spawn {
   if !(local _unit) exitWith {};
 
   AGM_Medical_unitInit = {
-    if !(isNull (_this getVariable "AGM_Group")) then {
-      [_this] joinSilent (_this getVariable "AGM_Group");
-    };
-
     if (_this == player) then {
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];
@@ -39,6 +35,7 @@ _this spawn {
     _this setVariable ["AGM_NoLegs", false, true];      // Is the unit able to walk?
     _this setVariable ["AGM_NoArms", false, true];      // Is the unit able to hold a gun?
     _this setVariable ["AGM_Unconscious", false, true]; // figure it out
+    _this setVariable ["AGM_Overdosing", false];
     _this setVariable ["AGM_Dragging", objNull];
     _this setVariable ["AGM_Carrying", objNull];
 

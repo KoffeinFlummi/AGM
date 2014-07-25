@@ -27,6 +27,7 @@ _vehicle = _this select 0;
         };
       };
       _unit switchMove "Unconscious";
+      _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
     }, [_x, player]] call CBA_fnc_globalExecute;
   };
 } forEach crew _vehicle;

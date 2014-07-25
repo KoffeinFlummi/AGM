@@ -46,61 +46,11 @@ class RscAGM_HiddenButton:RscButton
 	shadow = 0;
 };
 
-class RscListbox;
-class IGUIBack;
-class RscStructuredText;
-
 #include "Interfaces\PhoneInterface.hpp"
+#define X_OFFSET 0.25
 
-#define X_OFFSET 0.2
-
-class RscAGM_SelectAnItem
-{
-	idd = 8854;
-	movingEnable = 0;
-	class controls {
-		class back:IGUIBack {
-			x = X_OFFSET;
-			y = 0;
-			w = 0.4;
-			h = 0.71;
-		};
-		class header: RscText{
-			idc = 8870;
-			x = X_OFFSET + 0.005;
-			y = 0.005;
-			w = 0.39;
-			h = 0.05;
-			text = "";
-		};
-		class itemList:RscListBox {
-			idc = 8866;
-			x = X_OFFSET + 0.005;
-			w = 0.39;
-			h = 0.54;
-			y = 0.06;
-		};
-		class cancelBtn: RscButton {
-			idc = 8855;
-			x = X_OFFSET + 0.005;
-			w = 0.15;
-			h = 0.1;
-			y = 0.605;
-			text = $STR_AGM_Explosives_Cancel;
-			action = "closeDialog 0;";
-		};
-		class approveBtn: RscButton {
-			idc = 8860;
-			x = X_OFFSET + 0.245;
-			y = 0.605;
-			h = 0.1;
-			w = 0.15;
-			text = "Approve";
-			action = "closeDialog 0;";
-		};
-	};
-};
 class RscXSliderH;
+class IGUIBack;
 
 class Rsc_AGM_Timer_Slider:RscXSliderH{
     x = 0.4; 
@@ -120,6 +70,7 @@ class RscAGM_SelectTimeUI
 			y = 0;
 			w = 0.5;
 			h = 0.2;
+			colorBackground[] = {0, 0, 0, 0.5};
 		};
 		class header: RscText{
 			idc = 8870;
@@ -127,6 +78,7 @@ class RscAGM_SelectTimeUI
 			y = 0.005;
 			w = 0.49;
 			h = 0.05;
+			style = ST_CENTER;
 			text = "";
 		};
 		class slider: Rsc_AGM_Timer_Slider {

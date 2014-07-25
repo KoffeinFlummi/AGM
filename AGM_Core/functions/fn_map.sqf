@@ -14,6 +14,8 @@
  * [["2", "gobblecock", "25"], {parseNumber _this}] call AGM_Core_fnc_map ==> [2, 0, 25]
  */
 
+private ["_array", "_code"];
+
 _array = _this select 0;
 _code = _this select 1;
 

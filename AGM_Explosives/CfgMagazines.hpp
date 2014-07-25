@@ -34,7 +34,7 @@ class CfgMagazines {
 	};
 	class APERSTripMine_Wire_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSTripwireMine";
-		AGM_OnCreate = "_this setDir (180 - getDir _this);";
+		AGM_OnCreate = "";
 	};
 	
 	class ClaymoreDirectionalMine_Remote_Mag:CA_Magazine{

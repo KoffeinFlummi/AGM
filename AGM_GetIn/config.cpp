@@ -36,7 +36,7 @@ class CfgFunctions {
 
 class CfgVehicles {
 	class LandVehicle;
-	class StaticWeapon: LandVehicle {
+	/*class StaticWeapon: LandVehicle {
 		class AGM_Actions {
 			class AGM_GetIn {
 				displayName = "$STR_AGM_GetInVehicle";
@@ -61,7 +61,7 @@ class CfgVehicles {
 				priority = -1.91;
 			};
 		};
-	};
+	};*/
 
 	class Car: LandVehicle {
 		class AGM_Actions {
@@ -128,7 +128,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
-			class AGM_MoveToCargo {
+			/*class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
 				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
@@ -141,7 +141,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
-			};
+			};*/
 		};
 	};
 
@@ -210,7 +210,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 			};
-			class AGM_MoveToCargo {
+			/*class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
 				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
@@ -223,7 +223,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
-			};
+			};*/
 		};
 	};
 };

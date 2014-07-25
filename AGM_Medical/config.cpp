@@ -2,7 +2,7 @@
 class CfgPatches {
   class AGM_Medical {
     units[] = {"AGM_Box_Medical"};
-    weapons[] = {};
+    weapons[] = {"AGM_Bandage", "AGM_Morphine", "AGM_Epipen", "AGM_Bloodbag"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.92";
@@ -56,6 +56,18 @@ class Extended_Init_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
+  };
+};
+
+class AGM_Core_canInteractConditions {
+  class AGM_Medical_canTreat {
+    condition = "player getVariable ['AGM_CanTreat', true]";
+  };
+  class AGM_Medical_isConscious {
+    condition = "!(player getVariable ['AGM_Unconscious', false])";
+  };
+  class AGM_Medical_isNotOverdosing {
+    condition = "!(player getVariable ['AGM_Overdosing', false])";
   };
 };
 
@@ -149,7 +161,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenu;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -223,17 +235,19 @@ class CfgVehicles {
         };
       };
 
-      class AGM_Drag {
+      class AGM_Medical_Drag {
         displayName = "$STR_AGM_Medical_Drag";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
+        priority = 2.1;
       };
-      class AGM_Carry {
+      class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
         distance = 4;
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
+        priority = 2.0;
       };
     };
 
@@ -243,7 +257,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenuSelf;";
         showDisabled = 1;
-        priority = 1;
+        priority = 6;
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -593,119 +607,6 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 };
 
 // BLOOD MIST EFFECTS
-/*
-class CfgCloudlets {
-  class Default;
-  class Blood;
-  class BloodMist: Blood {
-    particleShape = "\A3\data_f\ParticleEffects\Universal\Universal_02";
-    particleFSNtieth = 8;
-    particleFSIndex = 4;
-    particleFSFrameCount = 1;
-    particleFSLoop = 0;
-    lifeTime = 2.0;
-    size[] = {"(hit/50 + 0.5)","2*(hit/50 + 0.5)"};
-    color[] = {{ 1,0,0,0.1 },{ 1,0,0,0.05 }};
-    randomDirectionPeriod = 0.3;
-    randomDirectionIntensity = 0.3;
-    weight = 0.127;
-  };
-  class Blood2: Default {
-    lifeTime = 120;
-    weight = 20.0;
-    size[] = {2.0};
-    destroyOnWaterSurface = 0;
-  };
-  class Blood3: Default {
-    lifeTime = 60;
-    weight = 2.0;
-    size[] = {0.75};
-    destroyOnWaterSurface = 0;
-  };
-  class Blood4: Blood3 {
-    lifeTime = 60;
-    weight = 2.0;
-    size[] = {0.05};
-    destroyOnWaterSurface = 0;
-  };
-  class Blood5: Blood4 {
-    lifeTime = 60;
-    weight = 2.0;
-    size[] = {0.125};
-    destroyOnWaterSurface = 0;
-  };
-};
-
-class ImpactEffectsBlood {
-  class BloodMist {
-    simulation = "particles";
-    type = "BloodMist";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 1;
-    MoveVelocityVar[] = {0,0,0};
-  };
-  class Blood {
-    simulation = "particles";
-    type = "Blood";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 0.2;
-    MoveVelocityVar[] = {2,2,2};
-  };
-  class Blood1 {
-    simulation = "particles";
-    type = "Blood1";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 0.65;
-  };
-  class Blood2 {
-    simulation = "particles";
-    type = "Blood2";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 0.4;
-  };
-  class Blood3 {
-    simulation = "particles";
-    type = "Blood3";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 0.4;
-  };
-  class Blood4 {
-    simulation = "particles";
-    type = "Blood4";
-    position[] = {0,0,0};
-    intensity = 0.5;
-    interval = 1;
-    lifeTime = 0.65;
-  };
-  class Blood5 {
-    simulation = "particles";
-    type = "Blood5";
-    position[] = {0,0,0};
-    intensity = 0.5;
-    interval = 1;
-    lifeTime = 0.4;
-  };
-  class BloodUnderwater1 {
-    simulation = "particles";
-    type = "BloodUnderwater1";
-    position[] = {0,0,0};
-    intensity = 1;
-    interval = 1;
-    lifeTime = 0.4;
-  };
-};
-*/
-
 class CfgCloudlets {
   class Blood;
   class AGM_BloodMist: Blood {
@@ -731,4 +632,14 @@ class ImpactEffectsBlood {
   };
 };
 
+class AGM_Parameters {
+  AGM_Medical_CoefBleeding = 1.0;
+  AGM_Medical_CoefPain = 1.0;
+  // Boolean Parameters (0/1)
+  AGM_Medical_AllowNonMedics = 0;
+  AGM_Medical_PunishNonMedics = 1;
+  AGM_Medical_RequireDiagnosis = 0;
+  AGM_Medical_PreventInstaDeath = 0;
+  AGM_Medical_PreventDeathWhileUnconscious = 0;
+};
 #include <HintConfig.hpp>

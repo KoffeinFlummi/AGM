@@ -60,9 +60,10 @@ class CfgWeapons {
 class CfgVehicles {
   class Item_Base_F;
   class AGM_Item_Vector: Item_Base_F {
+    author = "Ghost, Hamburger SV";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_VectorName";
+    displayName = "$STR_AGM_Vector_VectorName";
     vehicleClass = "Items";
     class TransportWeapons {
       class AGM_Vector {

@@ -13,19 +13,14 @@
 private ["_unit", "_newGroup"];
 
 _unit = _this select 0;
-if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {_unit setDamage 1;};
+_duration = -1;
+if (count _this > 1) then {
+  _duration = _this select 1;
+};
+if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {_unit setDamage 1;};
 
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
-
-_oldGroup = group _unit;
-_newGroup = createGroup side _unit;
-[_unit] joinSilent _newGroup;
-{
-  _unit reveal _x;
-}
-forEach (units _oldGroup);
-_unit setVariable ["AGM_Group", _oldGroup, true];
 
 if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
@@ -47,8 +42,10 @@ _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 
 if (vehicle _unit != _unit) then {
+  _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
   _unit playMoveNow (((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0);
 } else {
+  _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
   _unit playMoveNow "Unconscious";
 };
 
@@ -61,11 +58,17 @@ _unit spawn {
   _this enableSimulation false;
 };
 
-AGM_WakeUp_Timer = _unit spawn {
-  if (random 1 > 0.2) then {
-    sleep (60 * (1 + (random 8)) * ((damage _this) max 0.3));
-    if (_this getVariable "AGM_Unconscious") then {
-      [_this] call AGM_Medical_fnc_wakeUp;
+AGM_Medical_WakeUpTimer = [_unit, _duration] spawn {
+  _unit = _this select 0;
+  _duration = _this select 1;
+  if (random 1 > 0.2 or _duration != -1) then {
+    if (_duration != -1) then {
+      sleep _duration;
+    } else {
+      sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.3));
+    };
+    if (_unit getVariable "AGM_Unconscious") then {
+      [_unit] call AGM_Medical_fnc_wakeUp;
     };
   };
 };

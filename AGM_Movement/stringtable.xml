@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Movement">
+
+    <Key ID="STR_AGM_Movement_UseImperial">
+      <English>Show weight in lb</English>
+      <German>Zeige Gewicht in Pfund</German>
+    </Key>
+    <Key ID="STR_AGM_Movement_Weight">
+      <English>Weight:</English>
+      <German>Gewicht:</German>
+    </Key>
+
+
+  </Package>
+</Project>

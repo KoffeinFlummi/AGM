@@ -1,6 +1,6 @@
 class CfgPatches {
   class AGM_Core {
-    units[] = {};
+    units[] = {"AGM_Box_Misc"};
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {
@@ -52,11 +52,11 @@ class CfgPatches {
       "a3_characters_f_epb",
       "a3_characters_f_epb_heads",
       "a3_characters_f_epc",
-      /*"a3_characters_f_bootcamp",
-      "a3_characters_f_bootcamp_common",*/
+      "a3_characters_f_bootcamp",
+      "a3_characters_f_bootcamp_common",
       "a3_data_f",
       "a3_data_f_particleeffects",
-      //"a3_data_f_bootcamp",
+      "a3_data_f_bootcamp",
       "a3_data_f_curator",
       "a3_data_f_curator_characters",
       "a3_data_f_curator_intel",
@@ -88,14 +88,14 @@ class CfgPatches {
       "a3_soft_f_gamma_truckheavy",
       "a3_soft_f_truck",
       "a3_soft_f_epc_truck_03",
-      /*"a3_soft_f_bootcamp_offroad_01",
+      "a3_soft_f_bootcamp_offroad_01",
       "a3_soft_f_bootcamp_quadbike",
-      "a3_soft_f_bootcamp_truck",*/
+      "a3_soft_f_bootcamp_truck",
       "a3_soft_f_kart_kart_01",
       "a3_uav_f_characters_f_gamma",
       "a3_uav_f_weapons_f_gamma_ammoboxes",
       "a3_ui_f",
-      //"a3_ui_f_bootcamp",
+      "a3_ui_f_bootcamp",
       "a3_ui_f_curator",
       "a3_ui_f_kart",
       "a3_weapons_f_gamma_items",
@@ -158,10 +158,10 @@ class CfgPatches {
       "a3_weapons_f_epb_longrangerifles_m320",
       "a3_weapons_f_epb_rifles_mx_black",
       "a3_weapons_f_epc",
-      /*"a3_weapons_f_bootcamp",
+      "a3_weapons_f_bootcamp",
       "a3_weapons_f_bootcamp_ammoboxes",
       "a3_weapons_f_bootcamp_longrangerifles_gm6",
-      "a3_weapons_f_bootcamp_longrangerifles_m320",*/
+      "a3_weapons_f_bootcamp_longrangerifles_m320",
       "a3_weapons_f_kart",
       "a3_weapons_f_kart_pistols_pistol_signal_f",
       "cba_xeh",
@@ -182,9 +182,11 @@ class CfgFunctions {
       file = "AGM_Core\functions";
       class adminKick;
       class binarizeNumber;
+      class canInteractWith;
+      class claim;
+      class closeDialogIfTargetMoves;
       class codeToString;
       class convertKeyCode;
-      class createUpdateLoop;
       class disableUserInput;
       class displayText;
       class displayTextPicture;
@@ -193,6 +195,8 @@ class CfgFunctions {
       class filter;
       class findStringInString;
       class getBinocular;
+      class getConfigCommander;
+      class getConfigGunner;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getStringFromMissionSQM;
@@ -206,9 +210,12 @@ class CfgFunctions {
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
+      class goKneeling;
       class hadamardProduct;
       class isAutoWind;
+      class isEngineer;
       class isInBuilding;
+      class isMedic;
       class isTurnedOut;
       class map;
       class moduleCheckPBOs;
@@ -224,6 +231,7 @@ class CfgFunctions {
       class stringToColoredText;
       class subString;
       class toBin;
+      class toBitmask;
       class toHex;
     };
   };
@@ -387,6 +395,7 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
+class AGM_Core_canInteractConditions {};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>

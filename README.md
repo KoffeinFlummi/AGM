@@ -5,11 +5,14 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
+[![](http://img.shields.io/badge/current_version-v0.92-green.svg)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-3.6_MB-blue.svg)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.92/AGM_v0-92.rar) [![](http://img.shields.io/badge/license-GPL-red.svg)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg)](https://github.com/KoffeinFlummi/AGM/issues)
+
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
-This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version.  
+This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
+
 It is **built modularly**; Every PBO (with some exceptions) can be removed, so that groups can maintain their own configurations of AGM, excluding components that they don't like, or that might clash with other addons.
 The components themselves, like the medical system, also include various customization options, allowing mission designers to tweak the experience.
 
@@ -39,7 +42,7 @@ If you want to help out by fixing a bug or adding a feature, fork this repo and 
 
 If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out this page.
+You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out [this](https://github.com/KoffeinFlummi/AGM/wiki/Compatibility) page.
 
 ## Testing & Building
 

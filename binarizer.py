@@ -27,8 +27,8 @@
 # CREATING THE EXE
 # The .exe is created using cx_Freeze, which can be found here:
 # http://cx-freeze.sourceforge.net/
-# All those files are a bit ugly, but cx_Freeze doesn't support
-# single-exe creation.
+# The files are then packed into a single self-extracting exe
+# using Windows' IExpress.
 
 
 import os
@@ -91,7 +91,7 @@ else:
   modfolder    = "@AGM_dev"
 
 # set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
-movemanually = True
+movemanually = False
 
 def get_arma_path():
   """ Get the installation directory of Arma 3 """

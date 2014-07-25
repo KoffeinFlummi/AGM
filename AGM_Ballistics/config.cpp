@@ -148,7 +148,7 @@ class CfgAmmo {
 
   class B_762x51_Ball: BulletBase {
     typicalSpeed = 853;
-    //airfriction = 
+    //airfriction =
   };
 
   // IR Dim
@@ -718,42 +718,42 @@ class CfgWeapons {
   // tac vests
   class V_TacVest_camo: Vest_Camo_Base {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_khk: Vest_Camo_Base {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_brn: V_TacVest_khk {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_oli: V_TacVest_khk {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_blk: V_TacVest_khk {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_blk_POLICE: Vest_Camo_Base {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVest_RU: Vest_Camo_Base {
     class ItemInfo: ItemInfo {
-      armor = 8;
+      armor = 4;
     };
   };
   class V_TacVestCamo_khk: Vest_Camo_Base {
     class ItemInfo: VestItem {
-      armor = 8;
+      armor = 4;
     };
   };
 };

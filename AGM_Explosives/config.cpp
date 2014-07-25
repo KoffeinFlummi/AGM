@@ -1,7 +1,7 @@
 class CfgPatches {
 	class AGM_Explosives {
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {A3_Weapons_F_Explosives, AGM_Interaction};
 		version = "0.92";
@@ -19,6 +19,7 @@ class CfgFunctions
 			file="AGM_Explosives\functions";
 			
 			class AddCodeToSpeedDial;
+			class CanDefuse;
 			class DefuseExplosive;
 			class DetonateExplosive;
 			class DialPhone;
@@ -44,11 +45,17 @@ class CfgFunctions
 			class SelectTrigger;
 			class SetupExplosive;
 			class SetSpeedDial;
+			class StartDefuse;
 			class StartTimer;
 			
 			class TriggerType;
 		};
 	};
+};
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {
@@ -59,9 +66,9 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "true";
-				statement = "AGM_Interaction_Target=player;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 0.25;
+				priority = 4;
 				
 				//Sub-menu items
 				class AGM_Detonate {
@@ -80,8 +87,8 @@ class CfgVehicles {
 				};
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
-					condition = "(vehicle player == player) and ('AGM_DefusalKit' in items player) and {AGM_Interaction_Target = nearestObject [player, 'TimeBombCore'];!isNull(AGM_Interaction_Target) and player distance AGM_Interaction_Target < 4}";
-					statement = "[getNumber(ConfigFile >> 'CfgAmmo' >> typeOf (AGM_Interaction_Target) >> 'AGM_DefuseTime'), [player,AGM_Interaction_Target], 'AGM_Explosives_fnc_DefuseExplosive', localize 'STR_AGM_Explosives_DefusingExplosive'] call AGM_Core_fnc_progressBar;";
+					condition = "[player] call AGM_Explosives_fnc_CanDefuse;";
+					statement = "[AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
 					priority = 0.8;
 				};
@@ -115,17 +122,36 @@ class CfgVehicles {
 	
 	#include "CfgVehicles.hpp"
 
+	class NATO_Box_Base;
+	class EAST_Box_Base;
+	class IND_Box_Base;
 	class Box_NATO_Support_F;
+
+	class Box_NATO_AmmoOrd_F: NATO_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_East_AmmoOrd_F: EAST_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_IND_AmmoOrd_F: IND_Box_Base {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
 	class AGM_Box_Misc: Box_NATO_Support_F {
 		class TransportItems {
-			class _xx_AGM_Clacker {
-				count = 24;
-				name = "AGM_Clacker";
-			};
-			class _xx_AGM_DefusalKit {
-				count = 24;
-				name = "AGM_DefusalKit";
-			};
+			MACRO_ADDITEM(AGM_Clacker,24)
+			MACRO_ADDITEM(AGM_DefusalKit,24)
 		};
 	};
 };
