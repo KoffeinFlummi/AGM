@@ -1,0 +1,210 @@
+
+#define MACRO_LOADABLE \
+	class AGM_loadItem { \
+		displayName = "Load Item"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItem"; \
+		statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI"; \
+		showDisabled = 1; \
+		priority = 2.26; \
+	};
+
+#define MACRO_NOT_LOADABLE \
+	class AGM_loadItem { \
+		condition = "false"; \
+	};
+
+#define MACRO_UNLOAD \
+	class AGM_loadItemCarried { \
+		displayName = "Load Item"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_canLoadItemCarried"; \
+		statement = "[player getVariable 'AGM_carriedItem', AGM_Interaction_Target] call AGM_Logistics_fnc_openLoadUI"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 2.25; \
+	}; \
+	class AGM_unloadBox { \
+		displayName = "$STR_AGM_Logistics_Unload"; \
+		distance = 8; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems"; \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI"; \
+		showDisabled = 1; \
+		priority = 2.25; \
+	};
+
+#define MACRO_RELOAD_MAGS \
+	class AGM_reloadMagazines { \
+		displayName = "$STR_AGM_Logistics_ReloadMagazines"; \
+		distance = 8; \
+		condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0"; \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu" \
+		showDisabled = 1; \
+		priority = 1; \
+	};
+
+#define MACRO_DRAGABLE \
+	class AGM_DragItem { \
+		displayName = "$STR_AGM_Drag_StartDrag"; \
+		distance = 4; \
+		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
+		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
+		showDisabled = 1; \
+		priority = 3; \
+	}; \
+	class AGM_ReleaseItem { \
+		displayName = "$STR_AGM_Drag_EndDrag"; \
+		distance = 4; \
+		condition = "player call AGM_Drag_fnc_isDraggingObject"; \
+		statement = "player call AGM_Drag_fnc_releaseObject"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	};
+
+#define MACRO_NOT_DRAGABLE \
+	class AGM_DragItem { \
+		condition = "false"; \
+	};
+
+#define MACRO_GETIN_STATIC \
+	class AGM_GetIn { \
+		displayName = "$STR_AGM_StaticWeapons_GetIn"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target] call AGM_StaticWeapons_fnc_canGetIn"; \
+		statement = "[AGM_Interaction_Target] call AGM_StaticWeapons_fnc_getIn"; \
+		showDisabled = 0; \
+		priority = 1; \
+	}; \
+	class AGM_RotateClockwise { \
+		displayName = "$STR_AGM_StaticWeapons_RotateClockwise"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target, true] call AGM_StaticWeapons_fnc_canRotate"; \
+		statement = "[AGM_Interaction_Target, true] call AGM_StaticWeapons_fnc_rotate"; \
+		showDisabled = 1; \
+		priority = 2.1; \
+	}; \
+	class AGM_RotateCounterclockwise { \
+		displayName = "$STR_AGM_StaticWeapons_RotateCounterclockwise"; \
+		distance = 4; \
+		condition = "[AGM_Interaction_Target, false] call AGM_StaticWeapons_fnc_canRotate"; \
+		statement = "[AGM_Interaction_Target, false] call AGM_StaticWeapons_fnc_rotate"; \
+		showDisabled = 1; \
+		priority = 2; \
+	};
+
+#define MACRO_CUTWIRE \
+	class AGM_Wirecutter_cut { \
+		displayName = "$STR_AGM_CutFence"; \
+		distance = 4; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target}"; \
+		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
+		showDisabled = 1; \
+		priority = 2.1; \
+	};
+
+#define MACRO_CUTWIRE_LONG \
+	class AGM_Wirecutter_cut { \
+		displayName = "$STR_AGM_CutFence"; \
+		distance = 4; \
+		condition = "'ToolKit' in items player && {alive AGM_Interaction_Target}"; \
+		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
+		showDisabled = 1; \
+		priority = 2.1; \
+	};
+
+#define MACRO_CARRYJERRYCAN \
+	class AGM_CarryJerrycan { \
+		displayName = "$STR_AGM_Drag_StartCarry"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_isCarryable"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_carryJerrycan"; \
+		showDisabled = 1; \
+		priority = 3; \
+	}; \
+	class AGM_DropJerrycan { \
+		displayName = "$STR_AGM_Drag_EndCarry"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_isCarryingObject"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_dropJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	}; \
+	class AGM_CheckFuelJerrycan { \
+		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
+		condition = "alive AGM_Interaction_Target"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	};
+
+#define MACRO_CHECKFUEL \
+	class AGM_CheckFuelSelf { \
+		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
+		condition = "(player getVariable ['AGM_carriedItem', objNull]) isKindOf 'AGM_JerryCan'"; \
+		statement = "[player] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = 3; \
+	};
+
+#define MACRO_REFUEL \
+	class AGM_Refuel { \
+		displayName = "$STR_AGM_Resupply_RefuelVehicle"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canRefuel"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_refuelVehicle"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.5; \
+	}; \
+	class AGM_DrainFuel { \
+		displayName = "$STR_AGM_Resupply_DrainFuel"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canDrainFuel"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_drainFuel"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.6; \
+	}; \
+	class AGM_CheckFuel { \
+		displayName = "$STR_AGM_Resupply_CheckFuel"; \
+		distance = 4; \
+		condition = "alive AGM_Interaction_Target && {speed AGM_Interaction_Target == 0}"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmount"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.7; \
+	};
+
+#define MACRO_REFUELCARGO \
+	class AGM_DrainFuelCargo { \
+		displayName = "$STR_AGM_Resupply_DrainFuelCargo"; \
+		distance = 4; \
+		condition = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_canDrainFuelCargo"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_drainFuelCargo"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.6; \
+	}; \
+	class AGM_CheckFuelCargo { \
+		displayName = "$STR_AGM_Resupply_CheckFuelCargo"; \
+		distance = 4; \
+		condition = "alive AGM_Interaction_Target && {speed AGM_Interaction_Target == 0}"; \
+		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmountCargo"; \
+		exceptions[] = {"AGM_Drag_isNotDragging"}; \
+		showDisabled = 0; \
+		priority = -2.7; \
+	};
+
+#define MACRO_REFUEL_UAV \
+	class AGM_RefuelUAV { \
+		displayName = "$STR_AGM_UAVs_Recharge"; \
+		distance = 4; \
+		condition = "'AGM_UAVBattery' in items player && {fuel cursorTarget < 1}"; \
+		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
+		showDisabled = 0; \
+		priority = -2.5; \
+	};

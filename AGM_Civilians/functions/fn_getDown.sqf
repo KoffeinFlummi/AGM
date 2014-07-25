@@ -16,7 +16,7 @@ private ["_unit", "_chance", "_x"];
 
 _unit = _this select 0;
 
-player playActionNow "GestureCeaseFire";
+player playActionNow "GestureGo"; // put something else here.
 
 if (count (weapons player) > 0) then {
   _chance = 0.8;

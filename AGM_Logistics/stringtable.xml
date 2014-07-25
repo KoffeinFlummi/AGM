@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+	<Package name="Logistics">
+		<Key ID="STR_AGM_Logistics_LoadMenu">
+			<English>Load Menu</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_LoadItem">
+			<English>Load Item</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_UnloadMenu">
+			<English>Unload Menu</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_UnloadItem">
+			<English>Unload Item</English>
+		</Key>
+		<Key ID="STR_AGM_Logistics_MagazineMenu">
+			<English>Magazines</English>
+		</Key>
+
+		<Key ID="STR_AGM_Logistics_Unload">
+			<English>Unload >></English>
+			<German>Entladen >></German>
+		</Key>
+		<Key ID="STR_AGM_Logistics_ReloadMagazines">
+			<English>Magazines >></English>
+			<German>Magazine >></German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_JerryCan">
+			<English>Jerry Can</English>
+			<German>Kanister</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareTrack">
+			<English>Spare Track</English>
+			<German>Ersatzkette</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareWheel">
+			<English>Spare Wheel</English>
+			<German>Ersatzreifen</German>
+		</Key>
+	</Package>
+
+	<Package name="Drag">
+		<Key ID="STR_AGM_Drag_StartDrag">
+			<English>Drag</English>
+			<Russian>Тащить</Russian>
+			<Spanish>Arrastrar</Spanish>
+			<Polish>Ciągnij</Polish>
+			<Czech>Táhnout</Czech>
+			<French>Tirer</French>
+			<German>Ziehen</German>
+		</Key>
+		<Key ID="STR_AGM_Drag_EndDrag">
+			<English>Release</English>
+			<Russian>Отпустить</Russian>
+			<Spanish>Soltar</Spanish>
+			<Polish>Puść</Polish>
+			<Czech>Pustit</Czech>
+			<French>Lacher</French>
+			<German>Loslassen</German>
+		</Key>
+		<Key ID="STR_AGM_Drag_UnableToDrag">
+			<English>Unable to drag item due to weight</English>
+			<Russian>Слишком тяжелый предмет</Russian>
+			<Spanish>No se puede arrastrar el objeto debido a su peso</Spanish>
+			<Polish>Nie można ciągnąć tego przedmiotu z powodu jego wagi</Polish>
+			<Czech>Nelze táhnout z důvodu přílišné váhy</Czech>
+			<French>Impossible de tirer cet objet à cause de son poid</French>
+			<German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
+		</Key>
+
+		<Key ID="STR_AGM_Drag_StartCarry">
+			<English>Carry</English>
+			<German>Tragen</German>
+		</Key>
+		<Key ID="STR_AGM_Drag_EndCarry">
+			<English>Release</English>
+			<Russian>Отпустить</Russian>
+			<Spanish>Soltar</Spanish>
+			<Polish>Puść</Polish>
+			<Czech>Pustit</Czech>
+			<French>Lacher</French>
+			<German>Loslassen</German>
+		</Key>
+	</Package>
+
+	<Package name="StaticWeapons">
+		<Key ID="STR_AGM_StaticWeapons_GetIn">
+			<English>Get in</English>
+			<German>Einsteigen</German>
+		</Key>
+		<Key ID="STR_AGM_StaticWeapons_RotateClockwise">
+			<English>Rotate weapon (CW)</English>
+			<German>Waffe drehen (rechts)</German>
+		</Key>
+		<Key ID="STR_AGM_StaticWeapons_RotateCounterclockwise">
+			<English>Rotate weapon (CCW)</English>
+			<German>Waffe drehen (links)</German>
+		</Key>
+	</Package>
+
+	<Package name="Repair">
+		<Key ID="STR_AGM_Repair_VehicleName">
+			<English>Vehicle: %1</English>
+			<German>Fahrzeug: %1</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_Nothing">
+			<English>Vehicle is undamaged</English>
+			<German>Fahrzeug ist unbeschädigt</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitPointDamaged">
+			<English>%1 is damaged</English>
+			<German>%1 ist beschädigt</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitPointDamagedHeavy">
+			<English>%1 is heavily damaged</English>
+			<German>%1 ist schwer beschädigt</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitPointDestroyed">
+			<English>%1 is destroyed</English>
+			<German>%1 ist zerstört</German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair">
+			<English>Repair >></English>
+			<German>Reparieren >></German>
+			<Spanish>Reparación >></Spanish>
+			<French>Réparer >></French>
+		</Key>
+		<Key ID="STR_AGM_Repair_Tracks">
+			<English>Tracks >></English>
+			<German>Ketten >></German>
+		</Key>
+		<Key ID="STR_AGM_Repair_Wheels">
+			<English>Wheels >></English>
+			<German>Reifen >></German>
+			<Spanish>Ruedas >></Spanish>
+			<French>Roues >></French>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_HitBody">
+			<English>Body</English>
+			<German>Karosserie</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitHull">
+			<English>Hull</English>
+			<German>Wanne</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitEngine">
+			<English>Engine</English>
+			<German>Motor</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitFuel">
+			<English>Fuel Tank</English>
+			<German>Tank</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitTurret">
+			<English>Main Turret</English>
+			<German>Turm</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGun">
+			<English>Gun</English>
+			<German>Kanone</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLTrack">
+			<English>Left Track</English>
+			<German>Linke Kette</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitRTrack">
+			<English>Right Track</English>
+			<German>Rechte Kette</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLFWheel">
+			<English>Left Front Wheel</English>
+			<German>Linkes Vorderrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitRFWheel">
+			<English>Right Front Wheel</English>
+			<German>Rechtes Vorderrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLF2Wheel">
+			<English>Second Left Front Wheel</English>
+			<German>Zweites linkes Vorderrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitRF2Wheel">
+			<English>Second Right Front Wheel</English>
+			<German>Zweites rechtes Vorderrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLMWheel">
+			<English>Left Middle Wheel</English>
+			<German>Linkes mittleres Rad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitRMWheel">
+			<English>Right Middle Wheel</English>
+			<German>Rechtes mittleres Rad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLBWheel">
+			<English>Left Rear Wheel</English>
+			<German>Linkes Hinterrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitRBWheel">
+			<English>Right Rear Wheel</English>
+			<German>Rechtes Hinterrad</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitAvionics">
+			<English>Avionics</English>
+			<German>Avionik</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitHRotor">
+			<English>Main Rotor</English>
+			<German>Hauptrotor</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitVRotor">
+			<English>Tail Rotor</English>
+			<German>Heckrotor</German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_HitRGlass">
+			<English>Glass (right)</English>
+			<German>Scheibe (rechts)</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitLGlass">
+			<English>Glass (left)</English>
+			<German>Scheibe (links)</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass1">
+			<English>Glass 1</English>
+			<German>Scheibe 1</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass2">
+			<English>Glass 2</English>
+			<German>Scheibe 2</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass3">
+			<English>Glass 3</English>
+			<German>Scheibe 3</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass4">
+			<English>Glass 4</English>
+			<German>Scheibe 4</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass5">
+			<English>Glass 5</English>
+			<German>Scheibe 5</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_HitGlass6">
+			<English>Glass 6</English>
+			<German>Scheibe 6</German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_noTrack">
+			<English>There's no track!</English>
+			<German>Es ist keine Kette in der Nähe!</German>
+			<Spanish>No hay ninguna pista!</Spanish>
+			<French>Il n'y a pas de chenilles!</French>
+		</Key>
+		<Key ID="STR_AGM_Repair_noWheel">
+			<English>There's no wheel!</English>
+			<German>Es ist kein Reifen in der Nähe!</German>
+			<Spanish>No hay ninguna rueda!</Spanish>
+			<French>Il n'y a pas de roues!</French>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_SelectWheelMenu">
+			<English>Select Wheel Menu</English>
+			<German>Reifen wählen Menu</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_SelectWheel">
+			<English>Change Wheel</English>
+			<German>Reifen wechseln</German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_Repairing">
+			<English>Repairing %1 ...</English>
+			<German>Reparieren %1 ...</German>
+			<Spanish>Reparando %1 ...</Spanish>
+			<French>Réparation %1 ...</French>
+		</Key>
+		<Key ID="STR_AGM_Repair_Repaired">
+			<English>Repaired %1</English>
+			<German>%1 repariert</German>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_checkVehicle">
+			<English>Check Vehicle</English>
+			<German>Fahrzeug überprüfen</German>
+			<Spanish>Comprobando vehículo</Spanish>
+			<French>Vérifier le véhicule</French>
+		</Key>
+		<Key ID="STR_AGM_Repair_checkingVehicle">
+			<English>Checking Vehicle ...</English>
+			<German>Fahrzeug überprüfen ...</German>
+		</Key>
+	</Package>
+
+	<Package name="UAVs">
+		<Key ID="STR_AGM_UAVs_Full">
+			<English>Drone is full</English>
+			<German>Drohne ist voll</German>
+			<Spanish>El VANT está lleno</Spanish>
+			<French>Le drone est plein</French>
+			<Polish>Dron jest pełny</Polish>
+			<Hungarian>Drón tele</Hungarian>
+			<Czech>Dron je zaplňený</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_NoBattery">
+			<English>You need a UAV Battery</English>
+			<German>Du brauchst eine UAV-Batterie</German>
+			<Spanish>Necesitas una batería para VANT</Spanish>
+			<French>Vous avez besoin d'une Batterie-UAV</French>
+			<Polish>Potrzebujesz baterii UAV</Polish>
+			<Hungarian>UAV-Akkumulátor szükséges</Hungarian>
+			<Czech>Potřebuješ UAV-Baterii</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Recharge">
+			<English>Recharge</English>
+			<German>Aufladen</German>
+			<Spanish>Recargar</Spanish>
+			<French>Recharger</French>
+			<Polish>Naładuj</Polish>
+			<Hungarian>Újratöltés</Hungarian>
+			<Czech>Dobít</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Name">
+			<English>UAV Battery</English>
+			<German>UAV-Batterie</German>
+			<Spanish>Batería para VANT</Spanish>
+			<French>Batterie-UAV</French>
+			<Polish>Bateria UAV</Polish>
+			<Hungarian>UAV-Akkumulátor</Hungarian>
+			<Czech>UAV-Baterie</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Description">
+			<English>Used to refuel Carried UAV's</English>
+			<German>Verwendet zum Aufladen von dragbaren UAV's</German>
+			<Spanish>Usada para reabastecer el VANT</Spanish>
+			<French>Utiliser pour faire le plein de l'UAV</French>
+			<Polish>Używana do naładowania UAV</Polish>
+			<Hungarian>UAV újratöltéséhez</Hungarian>
+			<Czech>Používané k dobíjení UAV</Czech>
+		</Key>
+		<Key ID="STR_AGM_UAVs_Battery_Recharge">
+			<English>Recharging ...</English>
+			<German>Aufladen ...</German>
+			<Spanish>Recargando ...</Spanish>
+			<French>Rechargement ...</French>
+			<Polish>Ładowanie ...</Polish>
+			<Hungarian>Újratöltés...</Hungarian>
+			<Czech>Dobíjení ...</Czech>
+		</Key>
+	</Package>
+
+	<Package name="Wirecutter">
+		<Key ID="STR_AGM_CutFence">
+			<English>Cut Fence</English>
+			<German>Zaun schneiden</German>
+			<Spanish>Cortar alambrado</Spanish>
+			<Polish>Przetnij Płot</Polish>
+			<Czech>Přestřihnout plot</Czech>
+			<French>Couper la clôture</French>
+		</Key>
+		<Key ID="STR_AGM_CuttingFence">
+			<English>Cutting Fences / Wires ...</English>
+			<German>Zaun / Draht schneiden ...</German>
+			<Spanish>Cortando alambrado ...</Spanish>
+			<Polish>Przecinanie Płotu / Drutów ...</Polish>
+			<Czech>Přestřihnout plot / dráty ...</Czech>
+			<French>Coupe la clôture / barbelée ...</French>
+		</Key>
+		<Key ID="STR_AGM_CuttingFenceChat">
+			<English>Cutting Fences!</English>
+			<German>Schneide Zaun!</German>
+			<Spanish>Cortando alambrado!</Spanish>
+			<Polish>Przecinanie płotu!</Polish>
+			<Czech>Stříhání plotu!</Czech>
+			<French>Couper la clôture</French>
+		</Key>
+		<Key ID="STR_AGM_FenceCut">
+			<English>Fence cut</English>
+			<German>Zaun geschnitten</German>
+			<Spanish>Alambrado cortando</Spanish>
+			<Polish>Płot przecięty</Polish>
+			<Czech>Plot přestřižen</Czech>
+			<French>Clôture coupée</French>
+		</Key>
+	</Package>
+
+	<Package name="Resupply">
+		<Key ID="STR_AGM_Resupply_CheckFuel">
+			<English>Checking Fuel</English>
+			<German>Prüfe Treibstoff</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
+			<English>Checking Fuel Cargo</English>
+			<German>Prüfe Treibstoffvorrat</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
+			<English>Checking Jerrycan</English>
+			<German>Prüfe Kanister</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckingFuel">
+			<English>Checking Fuel ...</English>
+			<German>Prüfe Treibstoff ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckedFuel">
+			<English>Jerrycan has %1 litre(s) left</English>
+			<German>Kanister hat %1 Liter übrig</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckedFuelVehicle">
+			<English>Vehicle has %1 litre(s) left</English>
+			<German>Fahrzeug hat %1 Liter übrig</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_CheckedFuelVehicleCargo">
+			<English>Vehicle has %1 litre(s) left in Cargo</English>
+			<German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
+		</Key>
+
+		<Key ID="STR_AGM_Resupply_RefuelVehicle">
+			<English>Refuel Vehicle</English>
+			<German>Fahrzeug betanken</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainFuel">
+			<English>Drain Fuel</English>
+			<German>Benzin ablassen</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainFuelCargo">
+			<English>Drain Fuel Cargo</English>
+			<German>Benzinvorrat ablassen</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
+			<English>Refueling ...</English>
+			<German>Betanke ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainingFuel">
+			<English>Draining Fuel ...</English>
+			<German>Benzin ablassen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainingFuelCargo">
+			<English>Draining Fuel Cargo ...</English>
+			<German>Benzinvorrat ablassen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefueledVehicle">
+			<English>Refueled %1</English>
+			<German>%1 betankt</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainedFuel">
+			<English>Drained Fuel</English>
+			<German>Benzin abgelassen</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_DrainedFuelCargo">
+			<English>Drained Fuel Cargo</English>
+			<German>Benzinvorrat abgelassen</German>
+		</Key>
+
+
+	</Package>
+
+
+</Project>
