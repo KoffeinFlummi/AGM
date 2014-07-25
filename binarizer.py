@@ -17,7 +17,7 @@
 # SELECTING PBOs
 # By default all PBOs that have modifications since the last
 # binarization are binarized. You can also start the script
-# with the PBOs you want to binarized as arguments.
+# with the PBOs you want to binarize as arguments.
 # e.g.: python binarizer.py AGM_Core AGM_Resting
 
 # PACKING / BINARIZING
