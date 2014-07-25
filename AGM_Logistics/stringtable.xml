@@ -402,6 +402,10 @@
 			<English>Checking Fuel ...</English>
 			<German>Prüfe Treibstoff ...</German>
 		</Key>
+		<Key ID="STR_AGM_Resupply_CheckingFuelCargo">
+			<English>Checking Fuel Cargo ...</English>
+			<German>Prüfe Treibstoffvorrat ...</German>
+		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuel">
 			<English>Jerrycan has %1 litre(s) left</English>
 			<German>Kanister hat %1 Liter übrig</German>
@@ -416,6 +420,10 @@
 		</Key>
 
 		<Key ID="STR_AGM_Resupply_RefuelVehicle">
+			<English>Refuel Vehicle</English>
+			<German>Fahrzeug betanken</German>
+		</Key>
+		<Key ID="STR_AGM_Resupply_RefuelVehicleCargo">
 			<English>Refuel Vehicle</English>
 			<German>Fahrzeug betanken</German>
 		</Key>
