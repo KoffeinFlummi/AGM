@@ -10,4 +10,6 @@ _wheels = [_wheels, {floor (3 * (_vehicle getHitPointDamage _this)) > 0}] call A
 _spareWheel = [player] call AGM_Repair_fnc_getNearestWheel;
 
 count _wheels > 0
+&& {alive _vehicle}
+&& {speed _vehicle == 0}
 && {!isNull _spareWheel}

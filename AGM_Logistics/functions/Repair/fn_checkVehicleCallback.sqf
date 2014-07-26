@@ -2,7 +2,7 @@
  * Author: marc_book, commy2
  */
 
-#include <Macros.sqf>
+#include <Macros.hqf>
 
 private ["_vehicle", "_displayName", "_string", "_height", "_damage", "_name"];
 

@@ -2,15 +2,16 @@
 
 #define POST_REPAIR_DAMAGE 0
 
-private ["_vehicle", "_part", "_spareWheel", "_name", "_string"];
+private ["_vehicle", "_part", "_spareWheel", "_damage", "_name", "_string"];
 
 _vehicle = _this select 0;
 _part = _this select 1;
 _spareWheel = _this select 2;
 
+_damage = damage _spareWheel;
 deleteVehicle _spareWheel;
 
-[_vehicle, _part, POST_REPAIR_DAMAGE] call AGM_Repair_fnc_setHitPointDamage;
+[_vehicle, _part, _damage] call AGM_Repair_fnc_setHitPointDamage;
 
 player playMoveNow "AmovPknlMstpSrasWrflDnon";
 

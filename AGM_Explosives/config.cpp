@@ -87,7 +87,7 @@ class CfgVehicles {
 				};
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
-					condition = "[player] call AGM_Explosives_fnc_CanDefuse;";
+					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
 					statement = "[AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
 					priority = 0.8;

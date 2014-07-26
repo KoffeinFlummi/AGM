@@ -28,6 +28,7 @@ class CfgFunctions {
 			class canLoadItemCarried;
 			class canLoadMagazine;
 			class hasLoadedItems;
+			class initLoadedObject;
 			class getLoadableMagazines;
 			class getLoadPoints;
 			class getWeaponsOfMagazine;
@@ -43,6 +44,7 @@ class CfgFunctions {
 			class remainingSpace;
 			class unloadItem;
 			class unloadItemCallback;
+			class spawnObject;
 		};
 	};
 	class AGM_Drag {
@@ -173,11 +175,16 @@ class Extended_WeaponDisassembled_EventHandlers {
   };
 };
 
-// Start with jerry can
+// Start with jerry can and spare wheel / track
 class Extended_Init_EventHandlers {
   class Car_F {
     class AGM_CreateJerryCan {
-      init = "if (local (_this select 0)) then {_item = 'AGM_JerryCan' createVehicle [-1000, -1000, 1000]; [_item, _this select 0, "", true] call AGM_Logistics_fnc_loadItemCallback}";
+      init = "if (local (_this select 0)) then {_item = ['AGM_JerryCan', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject; _item = ['AGM_SpareWheel', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject;}";
+    };
+  };
+  class Tank_F {
+    class AGM_CreateJerryCan {
+      init = "if (local (_this select 0)) then {_item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject; _item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject;}";
     };
   };
 };

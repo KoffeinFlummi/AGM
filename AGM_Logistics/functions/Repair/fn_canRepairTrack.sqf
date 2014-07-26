@@ -7,7 +7,8 @@ _part = _this select 1;
 
 _spareTrack = [player] call AGM_Repair_fnc_getNearestTrack;
 
-alive _vehicle
+"ToolKit" in items player
+&& {alive _vehicle}
 && {speed _vehicle == 0}
 && {!isNull _spareTrack}
 && {floor (3 * (_vehicle getHitPointDamage _part)) > 0}
