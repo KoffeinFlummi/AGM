@@ -2,17 +2,17 @@
  * Author: KoffeinFlummi
  *
  * Start carrying the given unit.
- * 
+ *
  * Argument:
  * 0: Unit to be carried (Object)
- * 
+ *
  * Return value:
  * none
  */
 
 _this spawn {
   _unit = _this select 0;
-  
+
   _unit setVariable ["AGM_Treatable", false, true];
   player setVariable ["AGM_Carrying", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
@@ -36,5 +36,5 @@ _this spawn {
 
   waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Carrying") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious") or !(_unit getVariable "AGM_Unconscious")};
   if (isNull (player getVariable "AGM_Carrying")) exitWith {};
-  [(player getVariable "AGM_Carrying")] call AGM_Medical_fnc_release;
+  [player getVariable "AGM_Carrying"] call AGM_Medical_fnc_release;
 };

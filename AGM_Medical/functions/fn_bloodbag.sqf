@@ -22,11 +22,9 @@ if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}
 _this spawn {
   _unit = _this select 0;
 
-  _bloodbagtime = 0;
+  _bloodbagtime = BLOODBAGTIMENONMEDIC;
   if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _bloodbagtime = BLOODBAGTIMEMEDIC;
-  } else {
-    _bloodbagtime = BLOODBAGTIMENONMEDIC;
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
