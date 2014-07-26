@@ -5,30 +5,61 @@
  *
  * Argument:
  * 0: True to disable key inputs, false to re-enable them (Bool)
- * 1: Allow Zeus and Team Switch? (Optional; default: no)
+ * 1: Allow Zeus and Team Switch? (Optional; default: no)	!OBSOLETE
  *
  * Return value:
  * Nothing
  */
 
-if (_this select 0) then {
-if (count _this > 1 and {_this select 1}) then {
-    if (isNil "AGM_Core_disableUserInput_ehid") then {
-      AGM_Core_disableUserInput_ehid = [];
-      AGM_Core_disableUserInput_ehid set [0, findDisplay 46 displayAddEventHandler ["KeyDown", {(_this select 1 > 1) and (inputAction "TeamSwitch" == 0) and (inputAction "CuratorInterface" == 0)}]];
-      AGM_Core_disableUserInput_ehid set [1, findDisplay 46 displayAddEventHandler ["KeyUp", {(_this select 1 > 1) and (inputAction "TeamSwitch" == 0) and (inputAction "CuratorInterface" == 0)}]];
-    };
-  } else {
-    if (isNil "AGM_Core_disableUserInput_ehid") then {
-      AGM_Core_disableUserInput_ehid = [];
-      AGM_Core_disableUserInput_ehid set [0, findDisplay 46 displayAddEventHandler ["KeyDown", {_this select 1 > 1}]];
-      AGM_Core_disableUserInput_ehid set [1, findDisplay 46 displayAddEventHandler ["KeyUp", {_this select 1 > 1}]];
-    };
-  };
+private ["_state", "_allowTeamSwitch"];
+
+_state = _this select 0;
+_allowTeamSwitch = _this select 1;
+
+if (_state) then {
+	createDialog "AGM_Core_DisableMouse_Dialog";
+
+	disableSerialization;
+	_dlg = uiNamespace getVariable "AGM_Core_dlgDisableMouse";
+
+	if (isNil "AGM_Core_disableUserInput_KeydownEH") then {
+		AGM_Core_disableUserInput_KeydownEH = {
+			_key = _this select 1;
+
+			if (_key == 1) then {
+				createDialog (["RscDisplayInterrupt", "RscDisplayMPInterrupt"] select isMultiplayer);
+
+				disableSerialization;
+				_dlg = finddisplay 49;
+				for "_index" from 100 to 2000 do {
+					(_dlg displayCtrl _index) ctrlEnable false;
+				};
+
+				_ctrlRespawn = _dlg displayctrl 104;
+				_ctrlRespawn ctrlSetEventHandler ["buttonClick", "closeDialog 0; forceRespawn player; [false] call AGM_Core_fnc_disableUserInput;"];
+				_ctrlRespawn ctrlEnable true;
+				_ctrlRespawn ctrlSetText "RESPAWN";
+			};
+
+			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {teamSwitch};
+			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
+
+			_key > 0
+		};
+	};
+
+	_dlg displayAddEventHandler ["KeyDown", AGM_Core_disableUserInput_KeydownEH];
+	_dlg displayAddEventHandler ["KeyUp", {true}];
+
+	hintSilent systemChat "[AGM] Debug: User Input disabled";
 } else {
-if (!isNil "AGM_Core_disableUserInput_ehid") then {
-    findDisplay 46 displayRemoveEventHandler ["KeyDown", AGM_Core_disableUserInput_ehid select 0];
-    findDisplay 46 displayRemoveEventHandler ["KeyUp", AGM_Core_disableUserInput_ehid select 1];
-AGM_Core_disableUserInput_ehid = nil;
-};
+	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
+		0 spawn {
+			waitUntil {
+				closeDialog 0;
+				isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])
+			};
+			systemChat "[AGM] Debug: User Input enabled";
+		};
+	};
 };

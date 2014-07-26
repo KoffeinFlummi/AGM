@@ -5,50 +5,30 @@
  *
  * Argument:
  * 0: True to disable key inputs, false to re-enable them (Bool)
- * 1: Allow Zeus and Team Switch? (Optional; default: no)	!OBSOLETE
+ * 1: Allow Zeus and Team Switch? (Optional; default: no)
  *
  * Return value:
  * Nothing
  */
 
-private ["_state", "_allowTeamSwitch"];
-
-_state = _this select 0;
-_allowTeamSwitch = _this select 1;
-
-if (_state) then {
-	createDialog "AGM_Core_DisableMouse_Dialog";
-
-	disableSerialization;
-	_dlg = uiNamespace getVariable "AGM_Core_dlgDisableMouse";
-
-	if (isNil "AGM_Core_disableUserInput_KeydownEH") then {
-		AGM_Core_disableUserInput_KeydownEH = {
-			_key = _this select 1;
-
-			if (_key == 1) then {
-				createDialog (["RscDisplayInterrupt", "RscDisplayMPInterrupt"] select isMultiplayer);
-			};
-
-			if (inputAction "TeamSwitch" > 0 && {teamSwitchEnabled}) then {teamSwitch};
-			if (inputAction "CuratorInterface" > 0 && {player in allCurators}) then {openCuratorInterface};
-
-			_this select 1 > 0
-		};
-	};
-
-	_dlg displayAddEventHandler ["KeyDown", AGM_Core_disableUserInput_KeydownEH];
-	_dlg displayAddEventHandler ["KeyUp", {true}];
-
-	hintSilent systemChat "[AGM] Debug: User Input disabled";
+if (_this select 0) then {
+  if (count _this > 1 and {_this select 1}) then {
+    if (isNil "AGM_Core_disableUserInput_ehid") then {
+      AGM_Core_disableUserInput_ehid = [];
+      AGM_Core_disableUserInput_ehid set [0, findDisplay 46 displayAddEventHandler ["KeyDown", {(_this select 1 > 1) and (inputAction "TeamSwitch" == 0) and (inputAction "CuratorInterface" == 0)}]];
+      AGM_Core_disableUserInput_ehid set [1, findDisplay 46 displayAddEventHandler ["KeyUp", {(_this select 1 > 1) and (inputAction "TeamSwitch" == 0) and (inputAction "CuratorInterface" == 0)}]];
+    };
+  } else {
+    if (isNil "AGM_Core_disableUserInput_ehid") then {
+      AGM_Core_disableUserInput_ehid = [];
+      AGM_Core_disableUserInput_ehid set [0, findDisplay 46 displayAddEventHandler ["KeyDown", {_this select 1 > 1}]];
+      AGM_Core_disableUserInput_ehid set [1, findDisplay 46 displayAddEventHandler ["KeyUp", {_this select 1 > 1}]];
+    };
+  };
 } else {
-	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
-		0 spawn {
-			waitUntil {
-				closeDialog 0;
-				isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])
-			};
-			systemChat "[AGM] Debug: User Input enabled";
-		};
-	};
+  if (!isNil "AGM_Core_disableUserInput_ehid") then {
+    findDisplay 46 displayRemoveEventHandler ["KeyDown", AGM_Core_disableUserInput_ehid select 0];
+    findDisplay 46 displayRemoveEventHandler ["KeyUp", AGM_Core_disableUserInput_ehid select 1];
+    AGM_Core_disableUserInput_ehid = nil;
+  };
 };
