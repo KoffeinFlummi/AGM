@@ -23,9 +23,12 @@ if (_this == (vehicle _this)) then { // if the unit is the vehicle of the passed
 	_this playAction "released";
 };
 if (isNull _draggedObject) exitWith {};  // If there is no dragged object exit now.
+
+[objNull, _draggedObject] call AGM_Core_fnc_claim;
+
 _this setVariable ["AGM_isDragging", false];
 _this setVariable ["AGM_carriedItem", objNull, true];
-_draggedObject setVariable ["AGM_isUsedBy", objNull, true];
+
 detach _draggedObject;
 _this forceWalk false;
 _draggedObject setDamage (damage _draggedObject);

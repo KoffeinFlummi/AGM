@@ -337,5 +337,59 @@
       <Spanish>Necesitas hacerle prisionero primero!</Spanish>
       <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_TeamManagement">
+      <English>Team Management >></English>
+      <German>Team Management >></German>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_TeamRED">
+      <English>Red</English>
+      <German>Rot</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_TeamGREEN">
+      <English>Green</English>
+      <German>Grün</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_TeamBLUE">
+      <English>Blue</English>
+      <German>Blau</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_TeamYELLOW">
+      <English>Yellow</English>
+      <German>Gelb</German>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_JoinTeamRed">
+      <English>Join Team Red</English>
+      <German>Team Rot beitreten</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_JoinTeamGreen">
+      <English>Join Team Green</English>
+      <German>Team Grün beitreten</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_JoinTeamBlue">
+      <English>Join Team Blue</English>
+      <German>Team Blau beitreten</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_JoinTeamYellow">
+      <English>Join Team Yellow</English>
+      <German>Team Gelb beitreten</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_JoinedTeam">
+      <English>You joined Team %1</English>
+      <German>Du bist Team %1 beigetreten</German>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_LeaveTeam">
+      <English>Leave Team</English>
+      <German>Team verlassen</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_LeftTeam">
+      <English>You left the Team</English>
+      <German>Du hast das Team verlassen</German>
+    </Key>
+
+
   </Package>
 </Project>

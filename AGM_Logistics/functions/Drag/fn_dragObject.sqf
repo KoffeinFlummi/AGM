@@ -18,7 +18,7 @@
 		[StaticWeapon3, player] call AGM_Drag_fnc_dragObject;
 */
 
-#define ANIM_CARRY "amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2"
+#define ANIM_CARRY ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "acinpknlmstpsraswrfldnon"]
 
 _this spawn {
 	_draggedObject = _this select 0;
@@ -41,21 +41,24 @@ _this spawn {
 	};
 	_unit selectWeapon (primaryWeapon _unit);
 
+	[_unit, _draggedObject] call AGM_Core_fnc_claim;
+
+	_unit setVariable ["AGM_isDragging", true];
+	_unit setVariable ["AGM_carriedItem", _draggedObject, true];
+
+	_draggedObject setVariable ["AGM_lockStatus", locked _draggedObject, true];
+	_draggedObject lock true;
+
 	_unit playActionNow "grabDrag";
-	//waitUntil {animationState _unit == ANIM_CARRY};
+	waitUntil {animationState _unit in ANIM_CARRY};
 
 	// exit here if the player releases the jerry can before the animation is finished
-	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {};
+	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {
+		_unit playAction "released";
+	};
 
 	_attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
 	_draggedObject attachTo [_unit, _attachPoint];
-
-	_draggedObject setVariable ["AGM_isUsedBy", _unit, true];
-	_unit setVariable ["AGM_isDragging", true];
-	_unit setVariable ["AGM_carriedItem", _draggedObject, true];
-	_draggedObject setOwner (owner _unit);
-	_draggedObject setVariable ["AGM_lockStatus", locked _draggedObject, true];
-	_draggedObject lock true;
 
 	AGM_Drag_CurrentHeightChange = 0;
 };

@@ -67,6 +67,7 @@ class CfgFunctions {
 		class AGM_Repair {
 			file = "\AGM_Logistics\functions\Repair";
 			class canRepair;
+			class canRepairTrack;
 			class canRepairWheel;
 			class checkVehicle;
 			class checkVehicleCallback;
@@ -77,7 +78,9 @@ class CfgFunctions {
 			class repair;
 			class repairAbort;
 			class repairCallback;
-			/*class repairTrack;*/
+			class repairTrack;
+			class repairTrackAbort;
+			class repairTrackCallback;
 			class repairWheel;
 			class repairWheelAbort;
 			class repairWheelCallback;
@@ -380,16 +383,16 @@ class CfgVehicles {
 				class AGM_Repair_LTrack {
 					displayName = "$STR_AGM_Repair_HitLTrack";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepairTrack";
+					statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.42;
 				};
 				class AGM_Repair_RTrack {
 					displayName = "$STR_AGM_Repair_HitRTrack";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepairTrack";
+					statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.41;
 				};
