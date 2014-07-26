@@ -2,10 +2,10 @@
  * Author: KoffeinFlummi
  *
  * Start dragging the given unit.
- * 
+ *
  * Argument:
  * 0: Unit to be dragged (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -36,5 +36,5 @@ _this spawn {
 
   waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Dragging") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious") or !(_unit getVariable "AGM_Unconscious")};
   if (isNull (player getVariable "AGM_Dragging")) exitWith {};
-  [(player getVariable "AGM_Dragging")] call AGM_Medical_fnc_release;
+  [player getVariable "AGM_Dragging"] call AGM_Medical_fnc_release;
 };
