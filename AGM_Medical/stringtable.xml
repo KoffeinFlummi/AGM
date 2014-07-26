@@ -645,21 +645,25 @@
       <English>You don't have the required item anymore.</English>
       <German>Du hast das benötigte Material nicht mehr.</German>
       <Polish>Już nie posiadasz wymaganego elementu</Polish>
+      <French>Vous n'avez pas les objets nécessaire</French>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
       <English>Taking the patient's %1...</English>
       <German>%1 des Patienten wird benutzt...</German>
       <Polish>Pobrano od pacjenta: %1...</Polish>
+      <French>Prendre le patient %1...</French>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
       <English>%1 is using your %2...</English>
       <German>%1 benutzt dein(e) %2...</German>
       <Polish>%1 pobrał od Ciebie %2...</Polish>
+      <French>%1 utilise votre %2...</French>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
       <English>Patient has no %1, using yours...</English>
       <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt...</German>
       <Polish>%1 nie znajduje się w ekwipunku pacjenta, użwywanie własnych zasobów...</Polish>
+      <French>Le patient n'a pas de %1, utilisation de votre matériel...</French>
     </Key>
 
   </Package>
