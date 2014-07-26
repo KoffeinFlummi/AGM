@@ -141,6 +141,7 @@ _this spawn {
     player setVariable ["AGM_CanTreat", false, false];
 
     [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };

@@ -53,5 +53,5 @@ _this spawn {
   };
 
   [_epinephrinetime, _this, "AGM_Medical_epinephrineCallback", localize "STR_AGM_Medical_Injecting_Epinephrine", "AGM_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;
-
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
