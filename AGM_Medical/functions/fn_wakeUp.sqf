@@ -38,7 +38,7 @@ _position = getPosASL _unit;
   };
 
   if (local _this) then {
-    [this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
+    [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
   };
 
   _this switchMove "";
