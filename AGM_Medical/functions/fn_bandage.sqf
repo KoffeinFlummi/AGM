@@ -24,11 +24,9 @@ _this spawn {
   _selection = _this select 1;
 
   // determine if unit is medic
-  _healtime = 0;
+  _healtime = BANDAGETIMENONMEDIC;
   if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _healtime = BANDAGETIMEMEDIC;
-  } else {
-    _healtime = BANDAGETIMENONMEDIC;
   };
 
   // animation
@@ -56,11 +54,11 @@ _this spawn {
       [_unit, "HitLegs", 0] call AGM_Medical_fnc_setHitPointDamage;
     };
 
-    // remove extremely small wounds
+    // reset structural damage if unit is fully healed
     _fullyHealed = true;
     {
       if ((_unit getHitPointDamage _x) > 0.02) exitWith {_fullyHealed = false;};
-    } forEach ["HitHead","HitBody","HitLeftArm","HitRightArm","HitLeftLeg","HitRightLeg"];
+    } count ["HitHead","HitBody","HitLeftArm","HitRightArm","HitLeftLeg","HitRightLeg"];
     if (_fullyHealed) then {
       _unit setDamage 0;
     };

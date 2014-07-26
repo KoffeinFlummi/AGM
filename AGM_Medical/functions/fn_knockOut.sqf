@@ -33,7 +33,7 @@ if (_unit == player) then {
   [true, true] call AGM_Core_fnc_disableUserInput;
 };
 
-_unit setCaptive 213;
+[this, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";
@@ -46,17 +46,7 @@ if (vehicle _unit != _unit && {animationState _unit != "Unconscious"}) then {   
   [player, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
 } else {
   _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
-  //_unit playMoveNow "Unconscious";
 };
-
-/*_unit spawn {
-  sleep 3.8;
-  if !(isTouchingGround _this) then {
-    waitUntil {isTouchingGround _this};
-    sleep 1;
-  };
-  _this enableSimulation false;
-};*/
 
 _unit spawn {
   waitUntil {isTouchingGround _this};
@@ -78,45 +68,3 @@ AGM_Medical_WakeUpTimer = [_unit, _duration] spawn {
     };
   };
 };
-
-/*
-if (_unit == player) then {
-  [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
-};
-
-// Not possible to ragdollize on command, so we slam a 'vehicle' in his face.
-_unit setCaptive 213;
-_unit allowDamage false;
-
-_unit disableAI "MOVE";
-_unit disableAI "ANIM";
-_unit disableAI "TARGET";
-_unit disableAI "AUTOTARGET";
-_unit disableAI "FSM";
-//_eh = _unit addEventHandler ["EpeContactStart", {(_this select 0) setVariable ["AGM_Collision", (_this select 1)];}];
-
-
-_helper = "AGM_CollisionHelper" createVehicle [0,0,0];
-_helper setPosATL [(getPos _unit select 0), (getPos _unit select 1), 1.8];
-_helper setVectorUp [0,0,1];
-
-{
-  if (_x != _unit) then {
-    _helper disableCollisionWith _x;
-  };
-} foreach (_unit nearEntities 5);
-
-sleep 0.7;
-
-deleteVehicle _helper;
-
-player globalChat "Helper deleted.";
-
-_unit allowDamage true;
-
-sleep 2;
-_unit enableSimulation false;
-_unit switchMove "unconscious";
-
-player globalChat "done.";
-*/
