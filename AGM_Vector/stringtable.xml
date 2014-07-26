@@ -5,18 +5,22 @@
     <Key ID="STR_AGM_Vector_VectorName">
       <English>Vector IV</English>
       <German>Vector IV</German>
+      <French>Vector IV</French>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
       <German>Laserentfernungsmesser</German>
+      <French>Télémetre</French>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
       <English>Vector - Azimuth Key</English>
       <German>Vector - Azimuth-Taste</German>
+      <French>Vector - Azimuth touche</French>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
       <German>Vector - Entfernungs-Taste</German>
+      <French>Vector - Distance touche</French>
     </Key>
 
   </Package>
