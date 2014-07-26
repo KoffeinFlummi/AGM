@@ -45,7 +45,7 @@ if (_state) then {
 				_ctrlRespawn ctrlSetText "RESPAWN";
 			};
 
-			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {teamSwitch; setAccTime 1};
+			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
 			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
 			_key > 0

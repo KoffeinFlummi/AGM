@@ -213,6 +213,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
       class isInBuilding;

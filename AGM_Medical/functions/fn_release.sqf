@@ -42,7 +42,7 @@ _this spawn {
     };
   }, [player, _unit]] call CBA_fnc_globalExecute;
 
-  [-2, {
+  /*[-2, {
     if (local _this) then {
       _this spawn {
         _this enableSimulation true;
@@ -52,5 +52,5 @@ _this spawn {
         };
       };
     };
-  }, _unit] call CBA_fnc_globalExecute;
+  }, _unit] call CBA_fnc_globalExecute;*/
 };

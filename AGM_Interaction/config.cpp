@@ -53,7 +53,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
-    exceptions[] = {"AGM_Drag_isNotDragging"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat"};
     key = 221;
     shift = 0;
     control = 0;
@@ -63,7 +63,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
-    exceptions[] = {"AGM_Drag_isNotDragging"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat"};
     key = 221;
     shift = 0;
     control = 1;

@@ -37,7 +37,7 @@ _position = getPosASL _unit;
     [false] call AGM_Core_fnc_disableUserInput;
   };
   if (local _this) then {
-    _this enableSimulation true;
+    //_this enableSimulation true;
     _this setCaptive false;
   };
   _this switchMove "";

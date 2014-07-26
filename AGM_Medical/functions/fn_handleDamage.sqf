@@ -35,8 +35,8 @@ _projectile = _this select 4;
 
 //diag_log ([time] + [velocity _unit] + _this);
 
-// Prevent unnecessary processing
-if (damage _unit == 1) exitWith {_unit enableSimulation true;};
+//// Prevent unnecessary processing
+//if (damage _unit == 1) exitWith {_unit enableSimulation true;};
 
 _hitSelections = [
   "head",

@@ -340,10 +340,12 @@ class CfgVehicles {
         distance = 4;
         condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
+        exceptions[] = {"AGM_Medical_canTreat"};
       };
       class AGM_Release_Carry: AGM_Release_Drag {
         condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
+        exceptions[] = {"AGM_Medical_canTreat"};
       };
     };
   };

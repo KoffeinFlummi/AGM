@@ -35,10 +35,10 @@ detach _unit;
     if (local _unit) then {
       _unit moveInCargo _vehicle;
       _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
-      _unit spawn {
+      /*_unit spawn {
         sleep 0.5;
         _this enableSimulation false;
-      };
+      };*/
     };
     _player switchMove "";
   }, _this] call CBA_fnc_globalExecute;
