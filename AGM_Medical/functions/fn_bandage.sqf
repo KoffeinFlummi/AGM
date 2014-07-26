@@ -82,4 +82,5 @@ _this spawn {
   };
 
   [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

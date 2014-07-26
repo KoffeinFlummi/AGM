@@ -43,7 +43,7 @@ _unit disableAI "FSM";
 
 if (vehicle _unit != _unit) then {
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
-  _unit playMoveNow (((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0);
+  [player, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
 } else {
   _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
   _unit playMoveNow "Unconscious";
