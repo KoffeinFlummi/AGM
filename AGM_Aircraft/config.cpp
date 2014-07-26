@@ -1325,7 +1325,7 @@ class CfgVehicles {
     driverCanEject = 1;
     lockDetectionSystem = 15;
     incomingMissileDetectionSystem = 16;
-    magazines[] = {"2000Rnd_762x51_Belt_T_Green"};
+    magazines[] = {"2000Rnd_762x51_Belt_T_Green", "12Rnd_PG_missiles", "168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
