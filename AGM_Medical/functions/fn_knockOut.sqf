@@ -33,7 +33,7 @@ if (_unit == player) then {
   [true, true] call AGM_Core_fnc_disableUserInput;
 };
 
-[this, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;
+[_unit, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";

@@ -23,7 +23,7 @@ _this spawn {
       player setVariable ["acre_sys_core_globalVolume", 1];
     };
 
-    [this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
+    [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
     _this setVariable ["AGM_Diagnosed", false, true];   // Is the unit diagnosed?
     _this setVariable ["AGM_CanTreat", true, false];    // Can unit treat others?
     _this setVariable ["AGM_Treatable", true, true];    // Can unit be treated/diagnosed?
