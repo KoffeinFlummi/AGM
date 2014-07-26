@@ -17,9 +17,13 @@ _state = _this select 0;
 _allowTeamSwitch = _this select 1;
 
 if (_state) then {
+	disableSerialization;
+
+	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) exitWith {};
+
+	closeDialog 0;
 	createDialog "AGM_Core_DisableMouse_Dialog";
 
-	disableSerialization;
 	_dlg = uiNamespace getVariable "AGM_Core_dlgDisableMouse";
 
 	if (isNil "AGM_Core_disableUserInput_KeydownEH") then {
@@ -41,7 +45,7 @@ if (_state) then {
 				_ctrlRespawn ctrlSetText "RESPAWN";
 			};
 
-			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {teamSwitch};
+			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {teamSwitch; setAccTime 1};
 			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
 			_key > 0
@@ -59,6 +63,8 @@ if (_state) then {
 				closeDialog 0;
 				isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])
 			};
+
+			uiNamespace setVariable ["AGM_Core_dlgDisableMouse", displayNull];
 			systemChat "[AGM] Debug: User Input enabled";
 		};
 	};
