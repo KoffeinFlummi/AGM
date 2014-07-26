@@ -3,9 +3,11 @@
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
       <English>Map Tools</English>
+      <French>Outils de cartographie</French>
     </Key>
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
+      <French>Les outils de cartographie vous permettent de mesurer des distances et des angles sur la carte.</French>
     </Key>
   </Package>
 </Project>

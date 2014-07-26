@@ -23,8 +23,11 @@ addMissionEventHandler ["Draw3D", {
 		_position = visiblePosition _target;
 		_position = _position vectorAdd [0, 0, _height];
 
-		_alpha = AGM_Interaction_PlayerNamesViewDistance - (player distance _target);
-		_color = [1, 1, 1, _alpha];
+		_alpha = AGM_Interaction_PlayerNamesViewDistance - (player distance _target) min 0.9;
+
+		_color = if !(group _target == group player) then {[0.8, 0.8, 0.8, _alpha]} else {
+			[[1, 1, 1, _alpha], [1, 0, 0, _alpha], [0, 1, 0, _alpha], [0, 0, 1, _alpha], [1, 1, 0, _alpha]] select (["MAIN", "RED", "GREEN", "BLUE", "YELLOW"] find assignedTeam _target) max 0
+		};
 
 		drawIcon3D [
 			"",
@@ -36,7 +39,7 @@ addMissionEventHandler ["Draw3D", {
 			_name,
 			1,
 			0.03,
-			"TahomaB"
+			"PuristaMedium"
 		];
 	};
 }];

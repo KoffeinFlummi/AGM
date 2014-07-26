@@ -22,6 +22,7 @@ class CfgFunctions {
       class canTapShoulder;
       class getCaptivityStatus;
       class isInRange;
+      class joinTeam;
       class module;
       class openDoor;
       class openMenu;
@@ -105,6 +106,56 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_Actions {
+      class AGM_TeamManagement {
+        displayName = "$STR_AGM_Interaction_TeamManagement";
+        distance = 4;
+        condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
+        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenu;";
+        showDisabled = 0;
+        priority = 3.2;
+
+        class AGM_JoinTeamRed {
+          displayName = "$STR_AGM_Interaction_JoinTeamRed";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
+          statement = "[AGM_Interaction_Target, 'RED'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.4;
+        };
+        class AGM_JoinTeamGreen {
+          displayName = "$STR_AGM_Interaction_JoinTeamGreen";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
+          statement = "[AGM_Interaction_Target, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.3;
+        };
+        class AGM_JoinTeamBlue {
+          displayName = "$STR_AGM_Interaction_JoinTeamBlue";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
+          statement = "[AGM_Interaction_Target, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.2;
+        };
+        class AGM_JoinTeamYellow {
+          displayName = "$STR_AGM_Interaction_JoinTeamYellow";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
+          statement = "[AGM_Interaction_Target, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.1;
+        };
+
+        class AGM_LeaveTeam {
+          displayName = "$STR_AGM_Interaction_LeaveTeam";
+          distance = 4;
+          condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player} && {assignedTeam player != 'MAIN'}";
+          statement = "[AGM_Interaction_Target, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.5;
+        };
+      };
 
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";
@@ -157,22 +208,65 @@ class CfgVehicles {
       };
     };
 
-
     class AGM_SelfActions {
+      class AGM_TeamManagement {
+        displayName = "$STR_AGM_Interaction_TeamManagement";
+        condition = "true";
+        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenuSelf;";
+        showDisabled = 1;
+        priority = 3.2;
 
-      class AGM_LeaveGroup {
-        displayName = "$STR_AGM_Interaction_LeaveGroup";
-        condition = "count (units group player) > 1";
-        statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
-        showDisabled = 1;
-        priority = -1.5;
-      };
-      class AGM_BecomeLeader {
-        displayName = "$STR_AGM_Interaction_BecomeLeader";
-        condition = "count (units group player) > 1 && {leader group player != player}";
-        statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
-        showDisabled = 1;
-        priority = -1.6;
+        class AGM_JoinTeamRed {
+          displayName = "$STR_AGM_Interaction_JoinTeamRed";
+          condition = "true";
+          statement = "[player, 'RED'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.4;
+        };
+        class AGM_JoinTeamGreen {
+          displayName = "$STR_AGM_Interaction_JoinTeamGreen";
+          condition = "true";
+          statement = "[player, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.3;
+        };
+        class AGM_JoinTeamBlue {
+          displayName = "$STR_AGM_Interaction_JoinTeamBlue";
+          condition = "true";
+          statement = "[player, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.2;
+        };
+        class AGM_JoinTeamYellow {
+          displayName = "$STR_AGM_Interaction_JoinTeamYellow";
+          condition = "true";
+          statement = "[player, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.1;
+        };
+
+        class AGM_LeaveTeam {
+          displayName = "$STR_AGM_Interaction_LeaveTeam";
+          condition = "assignedTeam player != 'MAIN'";
+          statement = "[player, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
+          showDisabled = 1;
+          priority = 2.5;
+        };
+
+        class AGM_BecomeLeader {
+          displayName = "$STR_AGM_Interaction_BecomeLeader";
+          condition = "count (units group player) > 1 && {leader group player != player}";
+          statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
+          showDisabled = 1;
+          priority = 1.0;
+        };
+        class AGM_LeaveGroup {
+          displayName = "$STR_AGM_Interaction_LeaveGroup";
+          condition = "count (units group player) > 1";
+          statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
+          showDisabled = 1;
+          priority = 1.2;
+        };
       };
 
       /* DANCE ANIMATION DOESN'T WORK :(
