@@ -18,7 +18,7 @@
 		[StaticWeapon3, player] call AGM_Drag_fnc_dragObject;
 */
 
-#define ANIM_CARRY ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "acinpknlmstpsraswrfldnon"]
+#define ANIM_CARRY ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "amovpercmstpsraswpstdnon_acinpknlmwlksnonwpstdb_2", "amovpercmstpsnonwnondnon_acinpknlmwlksnonwnondb_2", "acinpknlmstpsraswrfldnon", "acinpknlmstpsnonwpstdnon", "acinpknlmstpsnonwnondnon"];
 
 _this spawn {
 	_draggedObject = _this select 0;
@@ -39,7 +39,7 @@ _this spawn {
 	if (primaryWeapon _unit == "") then {
 		_unit addWeapon "AGM_FakePrimaryWeapon";
 	};
-	_unit selectWeapon (primaryWeapon _unit);
+	//_unit selectWeapon (primaryWeapon _unit);
 
 	[_unit, _draggedObject] call AGM_Core_fnc_claim;
 
