@@ -3,40 +3,50 @@
 	<Package name="Logistics">
 		<Key ID="STR_AGM_Logistics_LoadMenu">
 			<English>Load Menu</English>
+			<French>Menu de chargement</French>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadItem">
 			<English>Load Item</English>
+			<French>Charger objet</French>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadMenu">
 			<English>Unload Menu</English>
+			<French>Menu de déchargement</French>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadItem">
 			<English>Unload Item</English>
+			<French>Décharger Objet</French>
 		</Key>
 		<Key ID="STR_AGM_Logistics_MagazineMenu">
 			<English>Magazines</English>
+			<French>Chargeurs</French>
 		</Key>
 
 		<Key ID="STR_AGM_Logistics_Unload">
 			<English>Unload >></English>
 			<German>Entladen >></German>
+			<French>Décharger >></French>
 		</Key>
 		<Key ID="STR_AGM_Logistics_ReloadMagazines">
 			<English>Magazines >></English>
 			<German>Magazine >></German>
+			<French>Chargeurs >></French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_JerryCan">
 			<English>Jerry Can</English>
 			<German>Kanister</German>
+			<French>Jerrican</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_SpareTrack">
 			<English>Spare Track</English>
 			<German>Ersatzkette</German>
+			<French>Chenille de secours</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_SpareWheel">
 			<English>Spare Wheel</English>
 			<German>Ersatzreifen</German>
+			<French>roue de secours</French>
 		</Key>
 	</Package>
 
@@ -88,14 +98,17 @@
 		<Key ID="STR_AGM_StaticWeapons_GetIn">
 			<English>Get in</English>
 			<German>Einsteigen</German>
+			<French>Entrer</French>
 		</Key>
 		<Key ID="STR_AGM_StaticWeapons_RotateClockwise">
 			<English>Rotate weapon (CW)</English>
 			<German>Waffe drehen (rechts)</German>
+			<French>Tourner l'arme (CW)</French>
 		</Key>
 		<Key ID="STR_AGM_StaticWeapons_RotateCounterclockwise">
 			<English>Rotate weapon (CCW)</English>
 			<German>Waffe drehen (links)</German>
+			<French>Tourner l'arme (CCW)</French>
 		</Key>
 	</Package>
 
@@ -103,22 +116,27 @@
 		<Key ID="STR_AGM_Repair_VehicleName">
 			<English>Vehicle: %1</English>
 			<German>Fahrzeug: %1</German>
+			<French>Véhicule: %1</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_Nothing">
 			<English>Vehicle is undamaged</English>
 			<German>Fahrzeug ist unbeschädigt</German>
+			<French>Le véhicule n'est pas endommager</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitPointDamaged">
 			<English>%1 is damaged</English>
 			<German>%1 ist beschädigt</German>
+			<French>%1 est endommager</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitPointDamagedHeavy">
 			<English>%1 is heavily damaged</English>
 			<German>%1 ist schwer beschädigt</German>
+			<French>%1 est lourdement endommager</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitPointDestroyed">
 			<English>%1 is destroyed</English>
 			<German>%1 ist zerstört</German>
+			<French>%1 est détruit</French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair">
@@ -130,6 +148,7 @@
 		<Key ID="STR_AGM_Repair_Tracks">
 			<English>Tracks >></English>
 			<German>Ketten >></German>
+			<French>Chenilles >></French>
 		</Key>
 		<Key ID="STR_AGM_Repair_Wheels">
 			<English>Wheels >></English>
@@ -141,111 +160,138 @@
 		<Key ID="STR_AGM_Repair_HitBody">
 			<English>Body</English>
 			<German>Karosserie</German>
+			<French>carrosserie</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitHull">
 			<English>Hull</English>
 			<German>Wanne</German>
+			<French>Hull</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitEngine">
 			<English>Engine</English>
 			<German>Motor</German>
+			<French>Moteur</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitFuel">
 			<English>Fuel Tank</English>
 			<German>Tank</German>
+			<French>Réservoir</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitTurret">
 			<English>Main Turret</English>
 			<German>Turm</German>
+			<French>Tourelle principale</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGun">
 			<English>Gun</English>
 			<German>Kanone</German>
+			<French>Canon</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLTrack">
 			<English>Left Track</English>
 			<German>Linke Kette</German>
+			<French>Chenille gauche</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRTrack">
 			<English>Right Track</English>
 			<German>Rechte Kette</German>
+			<French>Chenille droite</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLFWheel">
 			<English>Left Front Wheel</English>
 			<German>Linkes Vorderrad</German>
+			<French>Roue avant gauche</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRFWheel">
 			<English>Right Front Wheel</English>
 			<German>Rechtes Vorderrad</German>
+			<French>Roue avant droite</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLF2Wheel">
 			<English>Second Left Front Wheel</English>
 			<German>Zweites linkes Vorderrad</German>
+			<French>Deuxième roue avant gauche</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRF2Wheel">
 			<English>Second Right Front Wheel</English>
 			<German>Zweites rechtes Vorderrad</German>
+			<French>Deuxième roue avant droite</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLMWheel">
 			<English>Left Middle Wheel</English>
 			<German>Linkes mittleres Rad</German>
+			<French>Roue millieu gauche</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRMWheel">
 			<English>Right Middle Wheel</English>
 			<German>Rechtes mittleres Rad</German>
+			<French>Roue millieu droite</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLBWheel">
 			<English>Left Rear Wheel</English>
 			<German>Linkes Hinterrad</German>
+			<French>Roue arrière gauche</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRBWheel">
 			<English>Right Rear Wheel</English>
 			<German>Rechtes Hinterrad</German>
+			<French>Roue arrière droite</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitAvionics">
 			<English>Avionics</English>
 			<German>Avionik</German>
+			<French>Instruments</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitHRotor">
 			<English>Main Rotor</English>
 			<German>Hauptrotor</German>
+			<French>Rotor principal</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitVRotor">
 			<English>Tail Rotor</English>
 			<German>Heckrotor</German>
+			<French>rotor de queue</French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_HitRGlass">
 			<English>Glass (right)</English>
 			<German>Scheibe (rechts)</German>
+			<French>Vitre (Droite)</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLGlass">
 			<English>Glass (left)</English>
 			<German>Scheibe (links)</German>
+			<French>Vitre (Gauche)</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass1">
 			<English>Glass 1</English>
 			<German>Scheibe 1</German>
+			<French>Vitre 1</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass2">
 			<English>Glass 2</English>
 			<German>Scheibe 2</German>
+			<French>Vitre 2</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass3">
 			<English>Glass 3</English>
 			<German>Scheibe 3</German>
+			<French>Vitre 3</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass4">
 			<English>Glass 4</English>
 			<German>Scheibe 4</German>
+			<French>Vitre 4</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass5">
 			<English>Glass 5</English>
 			<German>Scheibe 5</German>
+			<French>Vitre 5</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitGlass6">
 			<English>Glass 6</English>
 			<German>Scheibe 6</German>
+			<French>Vitre 6</French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_noTrack">
@@ -264,10 +310,12 @@
 		<Key ID="STR_AGM_Repair_SelectWheelMenu">
 			<English>Select Wheel Menu</English>
 			<German>Reifen wählen Menu</German>
+			<French>Selectionner menu roues</French>
 		</Key>
 		<Key ID="STR_AGM_Repair_SelectWheel">
 			<English>Change Wheel</English>
 			<German>Reifen wechseln</German>
+			<French>Changer roue</French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_Repairing">
@@ -279,6 +327,7 @@
 		<Key ID="STR_AGM_Repair_Repaired">
 			<English>Repaired %1</English>
 			<German>%1 repariert</German>
+			<French>%1 Réparé</French>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_checkVehicle">
@@ -290,6 +339,7 @@
 		<Key ID="STR_AGM_Repair_checkingVehicle">
 			<English>Checking Vehicle ...</English>
 			<German>Fahrzeug überprüfen ...</German>
+			<French>Vérification du véhicule ...</French>
 		</Key>
 	</Package>
 
@@ -389,75 +439,93 @@
 		<Key ID="STR_AGM_Resupply_CheckFuel">
 			<English>Checking Fuel</English>
 			<German>Prüfe Treibstoff</German>
+			<French>Vérifier le carburant</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
 			<English>Checking Fuel Cargo</English>
 			<German>Prüfe Treibstoffvorrat</German>
+			<French>Vérifier l'alimentation en carburant</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
 			<English>Checking Jerrycan</English>
 			<German>Prüfe Kanister</German>
+			<French>Vérifier Jerrican</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuel">
 			<English>Checking Fuel ...</English>
 			<German>Prüfe Treibstoff ...</German>
+			<French>Vérification carburant ...</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuelCargo">
 			<English>Checking Fuel Cargo ...</English>
 			<German>Prüfe Treibstoffvorrat ...</German>
+			<French>Vérification alimentation en carburant ...</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuel">
 			<English>Jerrycan has %1 litre(s) left</English>
 			<German>Kanister hat %1 Liter übrig</German>
+			<French>Il reste %1 litre(s) de carburant dans le jerrican</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuelVehicle">
 			<English>Vehicle has %1 litre(s) left</English>
 			<German>Fahrzeug hat %1 Liter übrig</German>
+			<French>Il reste %1 litre(s) dans le véhicule</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuelVehicleCargo">
 			<English>Vehicle has %1 litre(s) left in Cargo</English>
 			<German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
+			<French>Le véhicule à %1 litre(s) en stock</French>
 		</Key>
 
 		<Key ID="STR_AGM_Resupply_RefuelVehicle">
 			<English>Refuel Vehicle</English>
 			<German>Fahrzeug betanken</German>
+			<French>Faire le plein du véhicule</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefuelVehicleCargo">
 			<English>Refuel Vehicle</English>
 			<German>Fahrzeug betanken</German>
+			<French>Faire le plein du véhicule</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainFuel">
 			<English>Drain Fuel</English>
 			<German>Benzin ablassen</German>
+			<French>Fuite de carburant</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainFuelCargo">
 			<English>Drain Fuel Cargo</English>
 			<German>Benzinvorrat ablassen</German>
+			<French>Vidanger</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
 			<English>Refueling ...</English>
 			<German>Betanke ...</German>
+			<French>Ravitaillement ...</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainingFuel">
 			<English>Draining Fuel ...</English>
 			<German>Benzin ablassen ...</German>
+			<French>Vidange du carburant ...</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainingFuelCargo">
 			<English>Draining Fuel Cargo ...</English>
 			<German>Benzinvorrat ablassen ...</German>
+			<French>Vidange du carburant ...</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefueledVehicle">
 			<English>Refueled %1</English>
 			<German>%1 betankt</German>
+			<French>%1 ravitaillé</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainedFuel">
 			<English>Drained Fuel</English>
 			<German>Benzin abgelassen</German>
+			<French>Vidange du carburant effectué</French>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainedFuelCargo">
 			<English>Drained Fuel Cargo</English>
 			<German>Benzinvorrat abgelassen</German>
+			<French>Vidange effectuer</French>
 		</Key>
 
 
