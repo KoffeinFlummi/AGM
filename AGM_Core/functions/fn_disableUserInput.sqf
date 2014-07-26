@@ -12,7 +12,7 @@
  */
 
 if (_this select 0) then {
-	if (count _this > 1 and {_this select 1}) then {
+if (count _this > 1 and {_this select 1}) then {
     if (isNil "AGM_Core_disableUserInput_ehid") then {
       AGM_Core_disableUserInput_ehid = [];
       AGM_Core_disableUserInput_ehid set [0, findDisplay 46 displayAddEventHandler ["KeyDown", {(_this select 1 > 1) and (inputAction "TeamSwitch" == 0) and (inputAction "CuratorInterface" == 0)}]];
@@ -26,9 +26,9 @@ if (_this select 0) then {
     };
   };
 } else {
-	if (!isNil "AGM_Core_disableUserInput_ehid") then {
+if (!isNil "AGM_Core_disableUserInput_ehid") then {
     findDisplay 46 displayRemoveEventHandler ["KeyDown", AGM_Core_disableUserInput_ehid select 0];
     findDisplay 46 displayRemoveEventHandler ["KeyUp", AGM_Core_disableUserInput_ehid select 1];
-		AGM_Core_disableUserInput_ehid = nil;
-	};
+AGM_Core_disableUserInput_ehid = nil;
+};
 };

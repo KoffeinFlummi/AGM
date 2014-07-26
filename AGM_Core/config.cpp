@@ -188,6 +188,7 @@ class CfgFunctions {
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
+      class disableUserInput2;
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
@@ -235,6 +236,12 @@ class CfgFunctions {
       class toHex;
     };
   };
+  class AGM_Debug {
+    class AGM_Debug {
+      file = "AGM_Core\functions\Debug";
+      class showUser;
+    };
+  };
 };
 
 class CfgSounds {
@@ -260,7 +267,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      Init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };
@@ -268,7 +275,7 @@ class Extended_Init_EventHandlers {
 class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      serverLocal = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
+      local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };

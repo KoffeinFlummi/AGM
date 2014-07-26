@@ -190,7 +190,7 @@ class AGM_Interaction_Dialog {
       h = 0.3 / 9 * safezoneH;
     };
 
-    class Interaction_Icon0 : Interaction_Button0 {
+    /*class Interaction_Icon0 : Interaction_Button0 {
       idc = 20;
       type = 0;
       style = 48;
@@ -268,7 +268,7 @@ class AGM_Interaction_Dialog {
       style = 48;
       colorBackground[] = {0,0,0,0};
       w = 0.3 / 16 * safezoneW;
-    };
+    };*/
 
   };
 };
