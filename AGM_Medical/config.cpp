@@ -85,12 +85,9 @@ class CfgMovesMaleSdr: CfgMovesBasic {
   //class Default: Default;
   class States {
     class Unconscious: Default {
-      forceAim = 1; //0;
-      head = "headNo";  //"headDefault";
-      limitGunMovement = 1; // 0.3
-      showWeaponAim = 1; //0
-      static = 1; //0;
-      weaponLowered = 0; // 1
+      //forceAim = 1; //0;
+      head = "headNo";
+      static = 1;
     };
   };
 };

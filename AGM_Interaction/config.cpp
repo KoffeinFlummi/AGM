@@ -102,6 +102,32 @@ class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
 };
 
+class CfgMovesBasic;
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class States {
+    class CutSceneAnimationBase;
+    class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
+      //forceAim = 1; //0;
+      head = "headDefault";
+      static = 1; //0;
+      disableWeapons = 0;
+      forceAim = 0;
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
+      //forceAim = 1; //0;
+      //head = "headNo";  //"headDefault";
+      looped = 0;
+      InterpolateTo[] = {"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
+      //forceAim = 1; //0;
+      //head = "headNo";  //"headDefault";
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
+    };
+  };
+};
+
 class CfgVehicles {
   class Man;
   class CAManBase: Man {

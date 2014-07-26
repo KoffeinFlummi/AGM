@@ -928,10 +928,11 @@ class CfgWeapons {
 
 	class ItemCore;
 	class InventoryItem_Base_F;
+	class ToolKitItem;
 
 	// disable default arma repair
 	class ToolKit: ItemCore {
-		class ItemInfo: InventoryItem_Base_F {
+		class ItemInfo: ToolKitItem {
 			mass = 80;
 			type = 401;
 		};
