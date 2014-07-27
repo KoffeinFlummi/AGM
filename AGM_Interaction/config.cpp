@@ -38,6 +38,7 @@ class CfgFunctions {
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
+      class surrender;
     };
   };
 };
@@ -53,7 +54,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
-    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
     control = 0;
@@ -63,7 +64,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "!(player getVariable ['AGM_Unconscious', false])";
     statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
-    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
     control = 1;
@@ -100,6 +101,12 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
+};
+
+class AGM_Core_canInteractConditions {
+  class AGM_Interaction_isNotEscorting {
+    condition = "!(player getVariable ['AGM_isEscorting', false])";
+  };
 };
 
 class CfgMovesBasic;
@@ -208,21 +215,40 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.2;
       };
-      class AGM_EscortCaptive {
-        displayName = "$STR_AGM_Interaction_EscortCaptive";
-        distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith";
-        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_escortCaptive";
-        showDisabled = 0;
-        priority = 2.3;
-      };
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith";
-        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_setCaptive";
+        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
-        priority = 2.3;
+        priority = -1;
+      };
+      class AGM_ReleaseCaptive {
+        displayName = "$STR_AGM_Interaction_ReleaseCaptive";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_setCaptive";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = -1;
+      };
+      class AGM_EscortCaptive {
+        displayName = "$STR_AGM_Interaction_EscortCaptive";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = -1.1;
+      };
+      class AGM_StopEscorting {
+        displayName = "$STR_AGM_Interaction_StopEscorting";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {AGM_Interaction_Target in attachedObjects player}";
+        statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = -1.1;
       };
       class AGM_SendAway {
         displayName = "$STR_AGM_Interaction_SendAway";
