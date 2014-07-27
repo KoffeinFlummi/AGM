@@ -53,30 +53,42 @@ _this spawn {
       };
 
       // Injuries
-      _heavyinjuries = "";
-      {
-        if ((_x select 1) >= 0.5) then {
-          if (_heavyinjuries != "") then { _heavyinjuries = _heavyinjuries + ", "; };
-          _heavyinjuries = _heavyinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+      if (AGM_Medical_SingleBandage > 0) then {
+        if (damage _unit >= 0.5) then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientHeavilyInjured";
         };
-      } forEach _damages;
-      if (_heavyinjuries != "") then {
-        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + " " + _heavyinjuries;
-      };
-
-      _lightinjuries = "";
-      {
-        if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
-          if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
-          _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+        if (damage _unit < 0.5 and damage _unit > 0) then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientLightlyInjured";
         };
-      } forEach _damages;
-      if (_lightinjuries != "") then {
-        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientLightInjuries") + " " + _lightinjuries;
-      };
+        if (damage _unit == 0) then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        };
+      } else {
+        _heavyinjuries = "";
+        {
+          if ((_x select 1) >= 0.5) then {
+            if (_heavyinjuries != "") then { _heavyinjuries = _heavyinjuries + ", "; };
+            _heavyinjuries = _heavyinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+          };
+        } forEach _damages;
+        if (_heavyinjuries != "") then {
+          _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + " " + _heavyinjuries;
+        };
 
-      if (_lightinjuries == "" and _heavyinjuries == "") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        _lightinjuries = "";
+        {
+          if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
+            if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
+            _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+          };
+        } forEach _damages;
+        if (_lightinjuries != "") then {
+          _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientLightInjuries") + " " + _lightinjuries;
+        };
+
+        if (_lightinjuries == "" and _heavyinjuries == "") then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        };
       };
 
       // Blood

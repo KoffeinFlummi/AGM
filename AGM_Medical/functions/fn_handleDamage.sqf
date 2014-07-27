@@ -33,10 +33,8 @@ _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
 
-//diag_log ([time] + [velocity _unit] + _this);
-
-//// Prevent unnecessary processing
-//if (damage _unit == 1) exitWith {_unit enableSimulation true;};
+// Prevent unnecessary processing
+if (damage _unit == 1) exitWith {};
 
 _hitSelections = [
   "head",
@@ -94,8 +92,6 @@ if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
     AGM_Medical_Hits = AGM_Medical_Hits + [[(_hitPoints select (_hitSelections find _selectionName)), _newDamage, _projectile]];
   };
 };
-
-diag_log AGM_Medical_Hits;
 
 // Code to be executed AFTER damage was dealt
 if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == "")) then {

@@ -27,6 +27,17 @@ _this spawn {
 
   sleep 10;
 
+  // Patient woke up while picking up, abandon ship.
+  if !(_unit getVariable "AGM_Unconscious") exitWith {
+    _unit setVariable ["AGM_Treatable", true, true];
+    player setVariable ["AGM_Carrying", objNull, false];
+    player setVariable ["AGM_CanTreat", true, false];
+    player removeWeapon "AGM_FakePrimaryWeapon";
+    [-2, {
+      (_this select 0) switchMove "";
+    }, [player]] call CBA_fnc_globalExecute;
+  };
+
   _unit attachTo [player, [0.1, -0.1, -1.25], "LeftShoulder"];
   [-2, {
     _this setDir 15;
