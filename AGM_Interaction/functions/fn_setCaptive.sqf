@@ -27,6 +27,8 @@ if (_state) then {
 		};
 		if !(_this getVariable ["AGM_Unconscious", false]) then {
 			_this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
+		} else {
+			_this playMoveNow "unconscious";
 		};
 
 		[_this, "AGM_Handcuffed", false] call AGM_Interaction_fnc_setCaptivityStatus;
