@@ -30,6 +30,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
+				if (isText (_action >> "conditionShow")) then {
+					_showDisabled = call compile getText (_action >> "conditionShow");
+				};
 				_priority = getNumber (_action >> "priority");
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
@@ -62,6 +65,9 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
+				if (isText (_action >> "conditionShow")) then {
+					_showDisabled = call compile getText (_action >> "conditionShow");
+				};
 				_priority = getNumber (_action >> "priority");
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
