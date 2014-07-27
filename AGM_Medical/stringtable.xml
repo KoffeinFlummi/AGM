@@ -477,6 +477,14 @@
       <French>Le Patient est éveillé</French>
       <Hungarian>Ébren van.</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Medical_PatientHeavilyInjured">
+      <English>The patient is heavily injured.</English>
+      <German>Der Patient ist schwer verletzt.</German>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLightlyInjured">
+      <English>The patient is lightly injured.</English>
+      <German>Der Patient ist leicht verletzt.</German>
+    </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
       <German>Der Patient hat schwere Verletzungen in:</German>
