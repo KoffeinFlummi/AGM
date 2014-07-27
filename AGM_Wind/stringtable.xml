@@ -77,21 +77,25 @@
       <English>Kestrel 4500NV</English>
       <German>Kestrel 4500NV</German>
       <French>Kestrel 4500NV</French>
+      <Polish>Kestrel 4500NV</Polish>
     </Key>
     <Key ID="STR_AGM_Kestrel_Description">
       <English>Applied Ballistics Meter</English>
       <German>Applied Ballistics Meter</German>
       <French>Applied Ballistics Meter</French>
+      <Polish>Urządzenie do monitorowania pogody</Polish>
     </Key>
     <Key ID="STR_AGM_Wind_OpenKestrel">
       <English>Open Kestrel</English>
       <German>Kestrel öffnen</German>
       <French>Ouvrir Kestrel</French>
+      <Polish>Otwórz Kestrel</Polish>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
       <German>Kestrel schließen</German>
       <French>Fermer Kestrel</French>
+      <Polish>Zamknij Kestrel</Polish>
     </Key>
 
   </Package>
