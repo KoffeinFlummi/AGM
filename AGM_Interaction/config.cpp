@@ -192,21 +192,21 @@ class CfgVehicles {
         };
       };
 
-      class AGM_JoinGroup {
-        displayName = "$STR_AGM_Interaction_JoinGroup";
-        distance = 4;
-        condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
-        statement = "[player] joinSilent group AGM_Interaction_Target;";
-        showDisabled = 1;
-        priority = -2.4;
-      };
       class AGM_TapShoulder {
         displayName = "$STR_AGM_Interaction_TapShoulder";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canTapShoulder";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_tapShoulder";
         showDisabled = 1;
-        priority = -2.2;
+        priority = 2.8;
+      };
+      class AGM_JoinGroup {
+        displayName = "$STR_AGM_Interaction_JoinGroup";
+        distance = 4;
+        condition = "playerSide == side AGM_Interaction_Target && {group player != group AGM_Interaction_Target}";
+        statement = "[player] joinSilent group AGM_Interaction_Target;";
+        showDisabled = 0;
+        priority = 2.6;
       };
 
       class AGM_GetDown {
@@ -217,13 +217,22 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.2;
       };
+      class AGM_SendAway {
+        displayName = "$STR_AGM_Interaction_SendAway";
+        distance = 4;
+        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith";
+        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_sendAway";
+        showDisabled = 0;
+        priority = 2.0;
+      };
+
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])} && {!(AGM_Interaction_Target getVariable ['AGM_isSurrender', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
-        priority = -1;
+        priority = 2.4;
       };
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Interaction_ReleaseCaptive";
@@ -232,7 +241,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_setCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-        priority = -1;
+        priority = 2.4;
       };
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Interaction_EscortCaptive";
@@ -241,7 +250,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-        priority = -1.1;
+        priority = 2.3;
       };
       class AGM_StopEscorting {
         displayName = "$STR_AGM_Interaction_StopEscorting";
@@ -250,15 +259,16 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-        priority = -1.1;
+        priority = 2.3;
       };
-      class AGM_SendAway {
-        displayName = "$STR_AGM_Interaction_SendAway";
+
+      class AGM_Rehab {
+        displayName = "$STR_AGM_Interaction_Rehab";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith";
-        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_sendAway";
+        condition = "rating AGM_Interaction_Target < -2000 && {alive AGM_Interaction_Target} && {playerSide == side group AGM_Interaction_Target}";
+        statement = "[AGM_Interaction_Target, '{_this addRating -rating _this}', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 0;
-        priority = 2.4;
+        priority = 2.5;
       };
     };
 

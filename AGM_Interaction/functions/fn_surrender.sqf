@@ -15,7 +15,7 @@ if (_state) then {
 
 	_unit spawn {
 		// fix for lowered rifle animation glitch
-		if (currentWeapon _this == primaryWeapon _this && {weaponLowered _this} && {stance _this == "STAND"}) then {
+		if (currentWeapon _this != "" && {currentWeapon _this == primaryWeapon _this} && {weaponLowered _this} && {stance _this == "STAND"}) then {
 			_this playMove "amovpercmstpsraswrfldnon";
 		};
 

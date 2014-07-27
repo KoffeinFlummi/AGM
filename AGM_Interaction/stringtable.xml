@@ -415,6 +415,10 @@
       <French>Vous avez quitter l'équipe</French>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_Rehab">
+      <English>Rehabilitate</English>
+      <German>Rehabilitieren</German>
+    </Key>
 
   </Package>
 </Project>

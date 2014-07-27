@@ -14,7 +14,7 @@ private "_vehicle";
 
 _vehicle = vehicle player;
 
-if (currentWeapon player == primaryWeapon player && {weaponLowered player} && {stance player == "STAND"}) then {
+if (currentWeapon _this != "" && {currentWeapon _this == primaryWeapon _this} && {weaponLowered player} && {stance player == "STAND"}) then {
 	player playMove "amovpercmstpsraswrfldnon";
 };
 
