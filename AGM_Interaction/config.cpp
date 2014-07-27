@@ -111,25 +111,27 @@ class AGM_Core_canInteractConditions {
 
 class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
+  /*class Actions {     // This is ReadOnlyVerified
+    class RifleStandSaluteActions;
+    class AGM_RifleStandSaluteActions: RifleStandSaluteActions {
+      getOver = "";
+    };
+  };*/
   class States {
     class CutSceneAnimationBase;
     class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
-      //forceAim = 1; //0;
+      //actions = "AGM_RifleStandSaluteActions";
       head = "headDefault";
-      static = 1; //0;
+      static = 1;
       disableWeapons = 0;
       forceAim = 0;
       InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
     };
     class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
-      //forceAim = 1; //0;
-      //head = "headNo";  //"headDefault";
       looped = 0;
       InterpolateTo[] = {"Unconscious",0.1};
     };
     class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
-      //forceAim = 1; //0;
-      //head = "headNo";  //"headDefault";
       InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
     };
   };
@@ -218,7 +220,7 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = -1;
@@ -226,7 +228,7 @@ class CfgVehicles {
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Interaction_ReleaseCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_setCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -235,7 +237,7 @@ class CfgVehicles {
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Interaction_EscortCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -244,7 +246,7 @@ class CfgVehicles {
       class AGM_StopEscorting {
         displayName = "$STR_AGM_Interaction_StopEscorting";
         distance = 4;
-        condition = "[AGM_Interaction_Target] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {AGM_Interaction_Target in attachedObjects player}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {AGM_Interaction_Target in attachedObjects player}";
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
