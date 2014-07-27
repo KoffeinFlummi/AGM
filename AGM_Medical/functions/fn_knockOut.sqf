@@ -54,7 +54,7 @@ _unit spawn {
   _this playMoveNow "Unconscious";
 };
 
-AGM_Medical_WakeUpTimer = [_unit, _duration] spawn {
+_wakeUpTimer = [_unit, _duration] spawn {
   _unit = _this select 0;
   _duration = _this select 1;
   if (random 1 > 0.2 or _duration != -1) then {
@@ -63,8 +63,18 @@ AGM_Medical_WakeUpTimer = [_unit, _duration] spawn {
     } else {
       sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.3));
     };
-    if (_unit getVariable "AGM_Unconscious") then {
-      [_unit] call AGM_Medical_fnc_wakeUp;
-    };
+    [_unit] call AGM_Medical_fnc_wakeUp;
   };
 };
+_unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
+
+_unconsciousnessTimer = [_unit] spawn {
+  if (AGM_Medical_MaxUnconsciousnessTime >= 0) then {
+    sleep AGM_Medical_MaxUnconsciousnessTime;
+    if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {
+      terminate (_this getVariable "AGM_WakeUpTimer");
+    };
+    _this setDamage 1;
+  }; 
+};
+_unit setVariable ["AGM_UnconsciousnessTimer", _unconsciousnessTimer];

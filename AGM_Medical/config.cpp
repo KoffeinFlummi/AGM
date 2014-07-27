@@ -418,6 +418,11 @@ class CfgVehicles {
         description = "Multiplier for the intensity of the pain PP effect. Default: 1 (obviously)";
         defaultValue = 1;
       };
+      class MaxUnconsciousnessTime {
+        displayName = "Max Unconsc. Time"
+        description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this."
+        defaultValue = -1;
+      };
       class AllowNonmedics {
         displayName = "Allow non-medics?";
         description = "Allow non-medics to use epipens and bloodbags? Default: No";
@@ -651,6 +656,7 @@ class ImpactEffectsBlood {
 class AGM_Parameters {
   AGM_Medical_CoefBleeding = 1.0;
   AGM_Medical_CoefPain = 1.0;
+  AGM_Medical_MaxUnconsciousnessTime = -1;
   // Boolean Parameters (0/1)
   AGM_Medical_AllowNonMedics = 0;
   AGM_Medical_PunishNonMedics = 1;
