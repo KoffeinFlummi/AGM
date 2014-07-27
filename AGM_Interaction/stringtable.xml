@@ -327,6 +327,10 @@
       <Spanish>Hacer prisionero</Spanish>
       <Polish>Weź Więźnia</Polish>
     </Key>
+    <Key ID="STR_AGM_Interaction_ReleaseCaptive">
+      <English>Free Prisoner</English>
+      <German>Gefangen freilassen</German>
+    </Key>
     <Key ID="STR_AGM_Interaction_EscortCaptive">
       <English>Escort Prisoner</English>
       <German>Gefangenen eskortieren</German>
@@ -334,6 +338,11 @@
       <Polish>Eskortuj Więźnia</Polish>
       <French>Escorter le prisonnier</French>
     </Key>
+    <Key ID="STR_AGM_Interaction_StopEscorting">
+      <English>Release Prisoner</English>
+      <German>Gefangenen loslassen</German>
+    </Key>
+
     <Key ID="STR_AGM_Interaction_NoCaptive">
       <English>You need you take him as prisoner first!</English>
       <German>Du must ihn zuerst gefangen nehmen.</German>
