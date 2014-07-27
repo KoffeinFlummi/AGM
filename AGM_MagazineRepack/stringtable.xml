@@ -5,26 +5,32 @@
     <Key ID="STR_AGM_MagazineRepack_RepackMagazines">
       <English>Repack Magazines</English>
       <French>Repack chargeur</French>
+      <Polish>Przeładuj Magazynki</Polish>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
       <English>Select Magazine Menu</English>
       <French>Selectionner menu des chargeurs</French>
+      <Polish>Wybierz Menu Magazynków</Polish>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
       <English>Select Mag</English>
       <French>Selectionner Chargeur</French>
+      <Polish>Wybierz Magazynek</Polish>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
       <French>Repacking Chargeurs ...</French>
+      <Polish>Przeładowywanie Magazynków ...</Polish>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
       <French>Chargeur repacker</French>
+      <Polish>Magazynki Przeładowane</Polish>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
       <French>%1 chargeur(s) pleins et %2 balle(s) en plus</French>
+      <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
     </Key>
 
 
