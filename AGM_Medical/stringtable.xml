@@ -65,6 +65,7 @@
     <Key ID="STR_AGM_Medical_Bandage">
       <English>Bandage</English>
       <German>Verbinden</German>
+      <Polish>Bandaż</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
@@ -220,6 +221,7 @@
     <Key ID="STR_AGM_Medical_Bandaging">
       <English>Bandaging ...</English>
       <German>Verbinden ...</German>
+      <Polish>Bandażowanie ...</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
