@@ -62,6 +62,10 @@
       <French>Transfusion sanguine</French>
       <Hungarian>Infúzió</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Medical_Bandage">
+      <English>Bandage</English>
+      <German>Verbinden</German>
+    </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
       <German>Kopf verbinden</German>
@@ -212,6 +216,10 @@
       <Russian>Переливание крови...</Russian>
       <French>Transfusion Sanguine ...</French>
       <Hungarian>Infúzió...</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Medical_Bandaging">
+      <English>Bandaging ...</English>
+      <German>Verbinden ...</German>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
