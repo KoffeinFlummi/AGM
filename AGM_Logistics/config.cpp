@@ -68,6 +68,7 @@ class CfgFunctions {
 	class AGM_Repair {
 		class AGM_Repair {
 			file = "\AGM_Logistics\functions\Repair";
+			class canRemoveWheel;
 			class canRepair;
 			class canRepairTrack;
 			class canRepairWheel;
@@ -78,6 +79,10 @@ class CfgFunctions {
 			class getNearestTrack;
 			class getNearestWheel;
 			class openSelectWheelUI;
+			class openSelectWheelUI_Salvage;
+			class removeWheel;
+			class removeWheelAbort;
+			class removeWheelCallback;
 			class repair;
 			class repairAbort;
 			class repairCallback;
@@ -284,7 +289,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.9;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -301,6 +306,14 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
 					showDisabled = 0;
 					priority = 0.9;
+				};
+				class AGM_Remove_Wheels {
+					displayName = "$STR_AGM_Repair_RemoveWheel";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRemoveWheel";
+					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI_Salvage";
+					showDisabled = 0;
+					priority = 0.8;
 				};
 				class AGM_Repair_Body {
 					displayName = "$STR_AGM_Repair_HitBody";
@@ -370,7 +383,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.9;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -462,7 +475,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.9;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -545,7 +558,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.9;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
