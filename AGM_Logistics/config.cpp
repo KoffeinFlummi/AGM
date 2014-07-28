@@ -247,21 +247,6 @@ class CfgVehicles {
 		};
 	};
 
-	//Vehicles
-	class Truck_01_base_F;
-	class B_Truck_01_transport_F: Truck_01_base_F {
-		class AGM_Actions;
-		class AGM_Load {
-			class MidLoad {
-				displayName = "Middle of truck";
-				loadSize = 2; // Size of object, 1 = small, 2 = large
-				LoadPosition[]={0.05,-4,-0.6}; // Offset when attaching.
-				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
-			};
-			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
-		};
-	};
-
 	class LandVehicle;
 	class Car: LandVehicle {
 		AGM_Vehicle_Cargo = 4;
@@ -281,6 +266,7 @@ class CfgVehicles {
 
 	// Repair wheeled vehicles
 	class Car_F: Car {
+		KEY_WHEEL_4X4
 		AGM_fuelCapacity = 60;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
@@ -289,7 +275,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1.9;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -300,11 +286,11 @@ class CfgVehicles {
 					priority = 1;
 				};
 				class AGM_Repair_Wheels {
-					displayName = "$STR_AGM_Repair_Wheels";
+					displayName = "$STR_AGM_Repair_RepairWheel";
 					distance = 4;
 					condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRepairWheel";
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
-					showDisabled = 0;
+					showDisabled = 1;
 					priority = 0.9;
 				};
 				class AGM_Remove_Wheels {
@@ -312,7 +298,7 @@ class CfgVehicles {
 					distance = 4;
 					condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRemoveWheel";
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI_Salvage";
-					showDisabled = 0;
+					showDisabled = 1;
 					priority = 0.8;
 				};
 				class AGM_Repair_Body {
@@ -365,11 +351,14 @@ class CfgVehicles {
 			};
 		};
 	};
+
 	class Truck_F: Car_F {
+		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 		class AGM_Actions;
 	};
 	class Wheeled_APC_F: Car_F {
+		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 600;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 	};
 
@@ -867,9 +856,22 @@ class CfgVehicles {
 	};
 
 	// Trucks BLU
-	class B_Truck_01_mover_F: B_Truck_01_transport_F {
-		class AGM_Actions: AGM_Actions {};
+	class Truck_01_base_F: Truck_F {
+		KEY_WHEEL_8X8
+		class AGM_Actions;
 	};
+	class B_Truck_01_transport_F: Truck_01_base_F {
+		class AGM_Load {
+			class MidLoad {
+				displayName = "Middle of truck";
+				loadSize = 2; // Size of object, 1 = small, 2 = large
+				LoadPosition[]={0.05,-4,-0.6}; // Offset when attaching.
+				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
+			};
+			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
+		};
+	};
+	class B_Truck_01_mover_F: B_Truck_01_transport_F {};
 	class B_Truck_01_Repair_F: B_Truck_01_mover_F {
 		AGM_canRepair = 1;
 		transportRepair = 0;
@@ -887,6 +889,7 @@ class CfgVehicles {
 
 	// Trucks INDEP
 	class Truck_02_base_F: Truck_F {
+		KEY_WHEEL_6X6_REAR
 		class AGM_Actions: AGM_Actions {};
 	};
 	class O_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
@@ -926,6 +929,7 @@ class CfgVehicles {
 
 	// Trucks RED
 	class Truck_03_base_F: Truck_F {
+		KEY_WHEEL_6X6_FRONT
 		class AGM_Actions: AGM_Actions {};
 	};
 	class O_Truck_03_repair_F: Truck_03_base_F {
@@ -945,6 +949,7 @@ class CfgVehicles {
 
 	// Trucks CIV
 	class Van_01_base_F: Truck_F {
+		KEY_WHEEL_4X4
 		class AGM_Actions: AGM_Actions {};
 	};
 	class I_G_Van_01_fuel_F: Van_01_base_F {

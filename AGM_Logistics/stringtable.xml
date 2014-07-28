@@ -404,6 +404,10 @@
 			<Polish>Naprawiono %1</Polish>
 		</Key>
 
+		<Key ID="STR_AGM_Repair_RepairWheel">
+			<English>Repair Wheel >></English>
+			<German>Reifen aufziehen >></German>
+		</Key>
 		<Key ID="STR_AGM_Repair_RemoveWheel">
 			<English>Remove Wheel >></English>
 			<German>Reifen entfernen >></German>
