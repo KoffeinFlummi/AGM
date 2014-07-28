@@ -372,7 +372,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1.9;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -464,7 +464,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1.9;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -547,7 +547,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1.9;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";

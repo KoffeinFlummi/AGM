@@ -8,8 +8,8 @@
 	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
 
 #define KEY_WHEEL_6X6_REAR \
-	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLBWheel", "HitRBWheel", "HitLBWheel", "HitRBWheel"}; \
-	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
+	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
 
 #define KEY_WHEEL_8X8 \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
@@ -43,7 +43,7 @@
 	}; \
 	class AGM_unloadBox { \
 		displayName = "$STR_AGM_Logistics_Unload"; \
-		distance = 8; \
+		distance = 4; \
 		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems"; \
 		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI"; \
 		showDisabled = 1; \
@@ -53,7 +53,7 @@
 #define MACRO_RELOAD_MAGS \
 	class AGM_reloadMagazines { \
 		displayName = "$STR_AGM_Logistics_ReloadMagazines"; \
-		distance = 8; \
+		distance = 4; \
 		condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0"; \
 		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu" \
 		showDisabled = 1; \
