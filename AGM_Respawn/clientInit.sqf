@@ -18,15 +18,19 @@ player addEventHandler ["Killed", {
 player addEventHandler ["Respawn", {
 
     if (!(isNil "AGM_Respawn_SavePreDeathGear") and {AGM_Respawn_SavePreDeathGear}) then {
-
-        _respawnedUnit = _this select 0;
-        [_respawnedUnit, unitGear] call AGM_Respawn_fnc_restoreGear;
+        
+        _corpse = _this select 1;
+        [_corpse] call AGM_Respawn_fnc_hideBody;
+        
+        hint "called hide body";
         
         // just to be save
-        _corpse = _this select 1;
         _corpse removeAllEventHandlers "Killed";
         _corpse removeAllEventHandlers "Respawn";
         
+        
+        _respawnedUnit = _this select 0;
+        [_respawnedUnit, unitGear] call AGM_Respawn_fnc_restoreGear;
     };
     
 }];

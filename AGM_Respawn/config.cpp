@@ -17,6 +17,7 @@ class CfgFunctions {
     class AGM_Respawn {
       file = "AGM_Respawn\functions";
       class getAllGear;
+      class hideBody;
       class module;
       class restoreGear;
     };
