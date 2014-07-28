@@ -20,11 +20,9 @@ _this spawn {
   _painkillerOld = _unit getVariable "AGM_Painkiller";
 
   // DETERMINE IF PLAYER IS MEDIC
-  _morphinetime = 0;
+  _morphinetime = MORPHINETIMENONMEDIC;
   if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _morphinetime = MORPHINETIMEMEDIC;
-  } else {
-    _morphinetime = MORPHINETIMENONMEDIC;
   };
 
   player setVariable ["AGM_CanTreat", false, false];
