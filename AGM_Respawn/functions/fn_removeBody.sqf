@@ -10,25 +10,25 @@
  * None
  */
 
-private ["_body", "_forceRemove"];
+private ["_body", "_forceRemove", "_bodyRemoveTimer"];
 
 _body = _this select 0;
 _forceRemove = _this select 1;
 
-bodyRemoveTimer = 90;
+_bodyRemoveTimer = 90;
 
 if (AGM_Respawn_BodyRemoveTimer > 0) then {
-  bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer;
+  _bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer;
 };
 
 // could be used for SpecOps missions.
 if (_forceRemove) then {
-  bodyRemoveTimer = 2;
+  _bodyRemoveTimer = 2;
 };
 
-_body spawn {
-  sleep bodyRemoveTimer;
+[_body, _bodyRemoveTimer] spawn {
+  sleep (_this select 1);
   // hideBody takes ~20s till body is fully underground
   // a better hideBody would make this more aesthetic
-  deleteVehicle _this;
+  deleteVehicle (_this select 0);
 };
