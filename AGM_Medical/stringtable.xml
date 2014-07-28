@@ -482,10 +482,12 @@
     <Key ID="STR_AGM_Medical_PatientHeavilyInjured">
       <English>The patient is heavily injured.</English>
       <German>Der Patient ist schwer verletzt.</German>
+      <Polish>Pacjent jest ciężko ranny.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightlyInjured">
       <English>The patient is lightly injured.</English>
       <German>Der Patient ist leicht verletzt.</German>
+      <Polish>Pacjent jest lekko ranny.</Polish>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
