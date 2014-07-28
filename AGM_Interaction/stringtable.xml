@@ -432,6 +432,7 @@
     <Key ID="STR_AGM_Interaction_Rehab">
       <English>Rehabilitate</English>
       <German>Rehabilitieren</German>
+      <Polish>Zrehabilituj</Polish>
     </Key>
 
   </Package>

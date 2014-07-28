@@ -22,7 +22,7 @@ if ((_unit == player) and (_item in items player)) exitWith {
 
 if (_item in (items _unit)) exitWith {
   systemChat format [localize "STR_AGM_Medical_TakingItemPatient", _displayName];
-  if !(local _unit) then {
+  if (!(local _unit) and isPlayer _unit) then {
     [-2, {
       if (local (_this select 3)) then {
         (_this select 0) removeItem (_this select 1);
