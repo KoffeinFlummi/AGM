@@ -20,4 +20,7 @@ AGM_Respawn_Module = true;
 
 AGM_Respawn_SavePreDeathGear = _logic getVariable "SavePreDeathGear";
 
+// It's already a number
+AGM_Respawn_BodyRemoveTimer = _logic getVariable "BodyRemoveTimer";
+
 diag_log text "AGM: Respawn Module Initialized.";

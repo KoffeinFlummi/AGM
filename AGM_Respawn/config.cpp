@@ -18,6 +18,7 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class getAllGear;
       class module;
+      class removeBody;
       class restoreGear;
     };
   };
@@ -54,6 +55,12 @@ class CfgVehicles {
             value = 0;
           };
         };
+      };
+      class BodyRemoveTimer {
+        displayName = "Time to remove bodies.";
+        description = "The amount of time (in seconds) after that a unit's body gets removed. Default: 90";
+        typeName = "NUMBER";
+        defaultValue = 90;
       };
     };
   };
