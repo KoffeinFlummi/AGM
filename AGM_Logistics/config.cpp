@@ -74,6 +74,7 @@ class CfgFunctions {
 			class checkVehicle;
 			class checkVehicleCallback;
 			class getHitPointName;
+			class getNearestRepairer;
 			class getNearestTrack;
 			class getNearestWheel;
 			class openSelectWheelUI;
@@ -653,16 +654,19 @@ class CfgVehicles {
 	// in order to move the bigger ones. Currently simply remove support.
 	// I believe these crates are currently broken (hitbox doesn't work or something) in 1.22 (2014-07-04)
 	class Box_East_AmmoVeh_F: EAST_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_NATO_AmmoVeh_F: NATO_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_IND_AmmoVeh_F: IND_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
@@ -817,7 +821,7 @@ class CfgVehicles {
 		};
 	};
 
-	// disable default arma refueling
+	// disable default arma refueling and repair
 	class House_Small_F;
 	class Land_FuelStation_Feed_F: House_Small_F {
 		class AGM_Actions {
@@ -834,6 +838,7 @@ class CfgVehicles {
 		transportFuel = 0;
 	};
 
+	// ARV
 	class APC_Tracked_01_base_F;
 	class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
 		class AGM_Actions;
@@ -842,12 +847,19 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 3000;//@todo
+		AGM_canRepair = 1;
+		AGM_fuelCapacityCargo = 1500;
+		transportRepair = 0;
 		transportFuel = 0;
 	};
 
+	// Trucks BLU
 	class B_Truck_01_mover_F: B_Truck_01_transport_F {
 		class AGM_Actions: AGM_Actions {};
+	};
+	class B_Truck_01_Repair_F: B_Truck_01_mover_F {
+		AGM_canRepair = 1;
+		transportRepair = 0;
 	};
 	class B_Truck_01_fuel_F: B_Truck_01_mover_F {
 		class AGM_Actions: AGM_Actions {
@@ -856,9 +868,20 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = 3000;
 		transportFuel = 0;
 	};
+	/*class B_Truck_01_ammo_F: B_Truck_01_mover_F {
+		transportAmmo = 30000;
+	};*/
 
+	// Trucks INDEP
 	class Truck_02_base_F: Truck_F {
 		class AGM_Actions: AGM_Actions {};
+	};
+	class O_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class O_Truck_02_medical_F: O_Truck_02_box_F {	// medic inherits from repairer
+		AGM_canRepair = 0;
 	};
 	class O_Truck_02_fuel_F: Truck_02_base_F {
 		class AGM_Actions: AGM_Actions {
@@ -867,6 +890,16 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = 3000;
 		transportFuel = 0;
 	};
+	/*class O_Truck_02_ammo_F: Truck_02_base_F {
+		transportAmmo = 30000;
+	};*/
+	class I_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class I_Truck_02_medical_F: I_Truck_02_box_F {	// medic inherits from repairer
+		AGM_canRepair = 0;
+	};
 	class I_Truck_02_fuel_F: Truck_02_base_F {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
@@ -874,9 +907,17 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = 3000;
 		transportFuel = 0;
 	};
+	/*class I_Truck_02_ammo_F: Truck_02_base_F {
+		transportAmmo = 30000;
+	};*/
 
+	// Trucks RED
 	class Truck_03_base_F: Truck_F {
 		class AGM_Actions: AGM_Actions {};
+	};
+	class O_Truck_03_repair_F: Truck_03_base_F {
+		AGM_canRepair = 1;
+		transportRepair = 0;
 	};
 	class O_Truck_03_fuel_F: Truck_03_base_F {
 		class AGM_Actions: AGM_Actions {
@@ -885,7 +926,11 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = 3000;
 		transportFuel = 0;
 	};
+	/*class O_Truck_03_ammo_F: Truck_03_base_F {
+		transportAmmo = 30000;
+	};*/
 
+	// Trucks CIV
 	class Van_01_base_F: Truck_F {
 		class AGM_Actions: AGM_Actions {};
 	};

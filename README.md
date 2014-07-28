@@ -5,7 +5,7 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
-[![](http://img.shields.io/badge/current_version-v0.92-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-3.6_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.92/AGM_v0-92.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.png)](https://github.com/KoffeinFlummi/AGM/issues)
+[![](http://img.shields.io/badge/current_version-v0.92-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-3.6_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.92/AGM_v0-92.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 

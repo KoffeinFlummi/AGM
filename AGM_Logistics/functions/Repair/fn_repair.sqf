@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_vehicle", "_part", "_isEngineer", "_time", "_name", "_string"];
+private ["_vehicle", "_part", "_isEngineer", "_time", "_name", "_string", "_repairer"];
 
 _vehicle = _this select 0;
 _part = _this select 1;
@@ -18,3 +18,8 @@ _string = format [localize "STR_AGM_Repair_Repairing", _name];
 
 [_time, [_vehicle, _part], "AGM_Repair_fnc_repairCallback", _string, "AGM_Repair_fnc_repairAbort"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
+
+_repairer = [_vehicle] call AGM_Repair_fnc_getNearestRepairer;
+if ("ToolKit" in items player && {!isNull _repairer}) then {
+	[_repairer] call AGM_Core_fnc_closeDialogIfTargetMoves;
+};

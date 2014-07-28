@@ -429,6 +429,10 @@
       <Polish>Opuściłeś Drużynę</Polish>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_Rehab">
+      <English>Rehabilitate</English>
+      <German>Rehabilitieren</German>
+    </Key>
 
   </Package>
 </Project>
