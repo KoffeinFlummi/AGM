@@ -53,7 +53,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_GetIn_EventHandlers {
   class AllVehicles {
     class AGM_DetachCaptive {
-      clientGetIn = "if (player == _this select 2 && {!(player getVariable ['AGM_isEscorting', false])}) then {player setVariable ['AGM_isEscorting', false, true]}";
+      clientGetIn = "if (player == _this select 2 && {player getVariable ['AGM_isEscorting', false]}) then {player setVariable ['AGM_isEscorting', false, true]}";
     };
   };
 };
