@@ -8,11 +8,15 @@ _class = _this;
 
 _object = vehicle player;
 
+// fix inheritance
+_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
+if (_class != "") then {_configClass = _configClass >> _class};
+
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 {
 	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
-	if (_class != "") then {_config = _config >> _this};
+	if (_class != "") then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -47,12 +51,12 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 // search add-on config file
 {
 	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
-	if (_class != "") then {_config = _config >> _this};
+	if (_class != "") then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
 		for "_index" from 0 to (_count - 1) do {
-			_action = _config select _index;
+			_action = _configClass >> configName (_config select _index);
 
 			if (count _action > 0) then {
 				_configName = configName _action;

@@ -14,7 +14,16 @@ if (_state) then {
 	_unit setVariable ["AGM_isCaptive", true, true];
 	[_unit, "AGM_Handcuffed", true] call AGM_Interaction_fnc_setCaptivityStatus;
 
+	if (_unit getVariable ["AGM_isSurrender", false]) then {
+		_unit setVariable ["AGM_isSurrender", false, true];
+	};
+
 	_unit spawn {
+		// fix for lowered rifle animation glitch
+		if (currentWeapon _this != "" && {currentWeapon _this == primaryWeapon _this} && {weaponLowered _this} && {stance _this == "STAND"}) then {
+			_this playMove "amovpercmstpsraswrfldnon";
+		};
+
 		while {_this getVariable ["AGM_isCaptive", false]} do {
 			sleep 0.001; //sleep in UI
 			_this playMove "AmovPercMstpSnonWnonDnon_Ease";
