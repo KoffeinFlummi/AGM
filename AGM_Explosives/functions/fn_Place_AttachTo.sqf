@@ -5,6 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
+		Attaches the explosive to the passed vehicle
 	
 	Parameters:
 		OBJECT: Object to attach to.

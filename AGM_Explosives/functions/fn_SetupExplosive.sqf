@@ -5,11 +5,11 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Starts the setup process for the passed IED.
+		Starts the setup process for the passed explosive.
 	
 	Parameters:
-		0: OBJECT - Unit placing IED.
-		1: STRING - Classname of IED to place. (CfgMagazine class)
+		0: OBJECT - Unit placing explosive.
+		1: STRING - Classname of explosive to place. (CfgMagazine class)
 		2: NUMBER - (optional) timer
 	
 	Returns:
@@ -22,6 +22,9 @@ _this spawn {
 	private ["_explosiveClass", "_code", "_unit", "_count", "_timer"];
 	_explosiveClass = _this select 1;
 	_unit = _this select 0;
+	// Commented out due to the fact there is a distinction between who can deactivate mines and who can plant them in standard configs.
+	// Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
+	//if (AGM_Explosives_RequireSpecialist && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {};
 	sleep 0.03;
 	
 	_code = str(round (random 9999));

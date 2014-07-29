@@ -5,7 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Adds an IED code to the speed dial of the player.
+		Adds an explosive code to the speed dial of the player.
 	
 	Parameters:
 		0: STRING - Name of speed dial
