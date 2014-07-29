@@ -29,6 +29,7 @@ class CfgFunctions
 			class hasPlacedExplosives;
 			
 			class initialise{postInit=1;};
+			class isSpecialist;
 			//class JammerInit;
 			
 			class openDetonateUI;
@@ -88,7 +89,7 @@ class CfgVehicles {
 				class AGM_Defuse {
 					displayName = $STR_AGM_Explosives_Defuse;
 					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
-					statement = "[AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
+					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
 					priority = 0.8;
 				};
@@ -154,6 +155,8 @@ class CfgVehicles {
 			MACRO_ADDITEM(AGM_DefusalKit,24)
 		};
 	};
+	
+	#include "Module.hpp"
 };
 
 #include "CfgAmmo.hpp"
@@ -161,3 +164,13 @@ class CfgVehicles {
 #include "CfgWeapons.hpp"
 
 #include "ExplosivesUI.hpp"
+
+class CfgActions {
+	class None;
+	class Deactivate:None {
+		show = 0;
+	};
+	class DeactivateMine:None {
+		show = 0;
+	};
+};
