@@ -621,6 +621,7 @@ class CfgVehicles {
     function = "AGM_Interaction_fnc_module";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Interaction\UI\IconInteraction_ca.paa";
     class Arguments {
       class PlayerNamesViewDistance {
         displayName = "Player Names View Dist.";

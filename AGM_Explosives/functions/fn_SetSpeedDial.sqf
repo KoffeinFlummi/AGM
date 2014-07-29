@@ -5,7 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
-		
+		Enables cycling through the speed dial of the player.
 	
 	Parameters:
 		NUMBER - Whether to increase or decrease speed dial

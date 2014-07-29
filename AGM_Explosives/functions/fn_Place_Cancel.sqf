@@ -5,6 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
+		Cancels placement of the explosive
 	
 	Parameters:
 		Nothing

@@ -85,6 +85,7 @@ class CfgVehicles {
     function = "AGM_Movement_fnc_fatigueModule";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Movement\UI\IconFatigue_ca.paa";
     class Arguments {
       class CoefFatigue {
         displayName = "Getting Tired Coef.";

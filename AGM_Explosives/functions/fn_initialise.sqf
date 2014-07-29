@@ -28,12 +28,18 @@ if (isServer) then {
 		publicVariable "AGM_Explosives_Jammers";
 	};
 	*/
+	if (isNil "AGM_Explosives_RequireSpecialist") then {
+		["AGM_Explosives_RequireSpecialist", false] call AGM_Core_fnc_setParameter;
+	};
+	if (isNil "AGM_Explosives_PunishNonSpecialists") then {
+		["AGM_Explosives_PunishNonSpecialists", true] call AGM_Core_fnc_setParameter;
+	};
 };
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
 AGM_Explosives_Setup = objNull;
-AGM_Explosives_CurrentSpeedDial=-1;
-AGM_Explosives_Phone_SpeedDial = [];
+//AGM_Explosives_CurrentSpeedDial=-1;
+//AGM_Explosives_Phone_SpeedDial = [];
 AGM_Explosives_ShiftDown = false;
 AGM_Explosives_pfeh_running = false;
 AGM_Explosives_null= [] spawn {
@@ -52,8 +58,8 @@ AGM_Explosives_null= [] spawn {
 	}];
 	player addEventHandler ["Respawn", {
 		AGM_Explosives_PlacedCount = 0;
-		AGM_Explosives_CurrentSpeedDial=-1;
-		AGM_Explosives_Phone_SpeedDial = [];
+		//AGM_Explosives_CurrentSpeedDial=-1;
+		//AGM_Explosives_Phone_SpeedDial = [];
 		player setVariable ["AGM_Clacker", [], true];
 	}];
 

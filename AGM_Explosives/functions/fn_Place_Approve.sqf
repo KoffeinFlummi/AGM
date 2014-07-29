@@ -5,6 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
+		Approves placement of the explosive, releases the placement object for it to settle in a location suitable for the explosive to be created.
 	
 	Parameters:
 		Nothing

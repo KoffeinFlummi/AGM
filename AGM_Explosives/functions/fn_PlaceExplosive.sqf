@@ -5,17 +5,17 @@
 		Garth de Wet (LH)
 	
 	Description:
-		
+		Places an explosive at the requested position
 	
 	Parameters:
-		0: POSITION - Position to place IED
+		0: POSITION - Position to place explosive
 		1: STRING - Magazine class
-		2: STRING - Code for remote Explosives
+		2: STRING - Code for remote Explosives (only used for cellphone based explosives)
 		3: NUMBER - Rotation
 		4: NUMBER - (OPTIONAL) timer
 	
 	Returns:
-		OBJECT: Placed IED
+		OBJECT: Placed explosive
 	
 	Example:
 		_explosive = [player modelToWorld [0,0.5, 0.1], "SatchelCharge_Remote_Mag", "", 134] call AGM_Explosives_fnc_PlaceExplosive;
