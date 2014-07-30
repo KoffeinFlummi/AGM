@@ -19,5 +19,9 @@ if !(_activated) exitWith {};
 AGM_Respawn_Module = true;
 
 AGM_Respawn_SavePreDeathGear = _logic getVariable "SavePreDeathGear";
+AGM_Respawn_RemoveDeadBodies = _logic getVariable "RemoveDeadBodies";
 
-diag_log text "AGM: Respawn Module Initialized.";
+// It's already a number
+AGM_Respawn_BodyRemoveTimer = _logic getVariable "BodyRemoveTimer";
+
+diag_log text "[AGM]: Respawn Module Initialized.";

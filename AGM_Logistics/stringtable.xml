@@ -11,6 +11,14 @@
 			<French>Charger objet</French>
 			<Polish>Załaduj Obiekt</Polish>
 		</Key>
+		<Key ID="STR_AGM_Logistics_LoadingItem">
+			<English>Loading ...</English>
+			<German>Einladen ...</German>
+		</Key>
+		<Key ID="STR_AGM_Logistics_LoadedItem">
+			<English>%1 loaded into %2</English>
+			<German>%1 in %2 eingeladen</German>
+		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadMenu">
 			<English>Unload Menu</English>
 			<French>Menu de déchargement</French>
@@ -38,25 +46,6 @@
 			<German>Magazine >></German>
 			<French>Chargeurs >></French>
 			<Polish>MAgazynki >></Polish>
-		</Key>
-
-		<Key ID="STR_AGM_Repair_JerryCan">
-			<English>Jerry Can</English>
-			<German>Kanister</German>
-			<French>Jerrican</French>
-			<Polish>Kanister</Polish>
-		</Key>
-		<Key ID="STR_AGM_Repair_SpareTrack">
-			<English>Spare Track</English>
-			<German>Ersatzkette</German>
-			<French>Chenille de secours</French>
-			<Polish>Zapasowa Gąsienica</Polish>
-		</Key>
-		<Key ID="STR_AGM_Repair_SpareWheel">
-			<English>Spare Wheel</English>
-			<German>Ersatzreifen</German>
-			<French>roue de secours</French>
-			<Polish>Zapasowe Koło</Polish>
 		</Key>
 	</Package>
 
@@ -127,6 +116,25 @@
 	</Package>
 
 	<Package name="Repair">
+		<Key ID="STR_AGM_Repair_JerryCan">
+			<English>Jerry Can</English>
+			<German>Kanister</German>
+			<French>Jerrican</French>
+			<Polish>Kanister</Polish>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareTrack">
+			<English>Spare Track</English>
+			<German>Ersatzkette</German>
+			<French>Chenille de secours</French>
+			<Polish>Zapasowa Gąsienica</Polish>
+		</Key>
+		<Key ID="STR_AGM_Repair_SpareWheel">
+			<English>Spare Wheel</English>
+			<German>Ersatzreifen</German>
+			<French>roue de secours</French>
+			<Polish>Zapasowe Koło</Polish>
+		</Key>
+
 		<Key ID="STR_AGM_Repair_VehicleName">
 			<English>Vehicle: %1</English>
 			<German>Fahrzeug: %1</German>
@@ -371,6 +379,17 @@
 			<Polish>Wymień Koło</Polish>
 		</Key>
 
+		<Key ID="STR_AGM_Repair_SelectWheelMenu_Salvage">
+			<English>Select Wheel Menu</English>
+			<German>Reifen wählen Menu</German>
+			<French>Selectionner menu roues</French>
+			<Polish>Wybierz menu Kół</Polish>
+		</Key>
+		<Key ID="STR_AGM_Repair_SelectWheel_Salvage">
+			<English>Remove Wheel</English>
+			<German>Reifen entf.</German>
+		</Key>
+
 		<Key ID="STR_AGM_Repair_Repairing">
 			<English>Repairing %1 ...</English>
 			<German>Reparieren %1 ...</German>
@@ -383,6 +402,23 @@
 			<German>%1 repariert</German>
 			<French>%1 Réparé</French>
 			<Polish>Naprawiono %1</Polish>
+		</Key>
+
+		<Key ID="STR_AGM_Repair_RepairWheel">
+			<English>Repair Wheel >></English>
+			<German>Reifen aufziehen >></German>
+		</Key>
+		<Key ID="STR_AGM_Repair_RemoveWheel">
+			<English>Remove Wheel >></English>
+			<German>Reifen entfernen >></German>
+		</Key>
+		<Key ID="STR_AGM_Repair_RemovingWheel">
+			<English>Removing %1 ...</English>
+			<German>Entferne %1 ...</German>
+		</Key>
+		<Key ID="STR_AGM_Repair_RemovedWheel">
+			<English>%1 removed</English>
+			<German>%1 entfernt</German>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_checkVehicle">

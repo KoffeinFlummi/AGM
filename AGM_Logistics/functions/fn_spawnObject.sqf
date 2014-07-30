@@ -8,7 +8,7 @@ _damage = _this select 2;
 
 if (isNil "_damage") then {_damage = 0};
 
-_position = _position findEmptyPosition [0, 4, _item];
+_position = _position findEmptyPosition [0, 2, _item];
 if (count _position == 0) then {_position = _this select 1};
 _position set [2, 0];
 

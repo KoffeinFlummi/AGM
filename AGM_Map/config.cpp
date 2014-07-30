@@ -90,6 +90,7 @@ class CfgVehicles {
     function = "AGM_Map_fnc_blueForceTracking";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Map\UI\IconBFTracking_ca.paa";
     class Arguments {
       class Interval {
         displayName = "Interval";

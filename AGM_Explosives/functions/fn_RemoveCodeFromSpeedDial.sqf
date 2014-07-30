@@ -5,7 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Removes an IED code from the speed dial of the player.
+		Removes an explosive code from the speed dial of the player.
 	
 	Parameters:
 		STRING - Name of speed dial
@@ -14,7 +14,7 @@
 		Nothing
 	
 	Example:
-		"IED 1" call AGM_Explosives_fnc_RemoveCodeFromSpeedDial;
+		"explosive 1" call AGM_Explosives_fnc_RemoveCodeFromSpeedDial;
 */
 if (isNil "AGM_Explosives_Phone_SpeedDial") exitWith{};
 {
