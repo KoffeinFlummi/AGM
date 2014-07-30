@@ -181,20 +181,6 @@ class Extended_WeaponDisassembled_EventHandlers {
   };
 };
 
-// Start with jerry can and spare wheel / track
-class Extended_Init_EventHandlers {
-  class Car_F {
-    class AGM_CreateJerryCan {
-      init = "if (local (_this select 0)) then {_item = ['AGM_JerryCan', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject; _item = ['AGM_SpareWheel', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject;}";
-    };
-  };
-  class Tank_F {
-    class AGM_CreateJerryCan {
-      init = "if (local (_this select 0)) then {_item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject; _item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject; [_this select 0, _item] call AGM_Logistics_fnc_initLoadedObject;}";
-    };
-  };
-};
-
 class AGM_Core_canInteractConditions {
   class AGM_Drag_isNotDragging {
     condition = "!(player getVariable ['AGM_isDragging', false])";
