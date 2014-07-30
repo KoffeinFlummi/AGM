@@ -19,6 +19,19 @@
 _result = false;
 _vehicle = _this select 0;
 
+// add default items
+_items = _vehicle getVariable "AGM_Logistics_loadedItems";
+if (isNil "_items") then {
+	switch (true) do {
+		case (_vehicle isKindOf "Car_F") : {
+			[_vehicle] call compile preprocessFileLineNumbers "\AGM_Logistics\scripts\itemsCar.sqf";
+		};
+		case (_vehicle isKindOf "Tank_F") : {
+			[_vehicle] call compile preprocessFileLineNumbers "\AGM_Logistics\scripts\itemsTank.sqf";
+		};
+	};
+};
+
 if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) then {
 	_attachPoints = (_vehicle) call AGM_Logistics_fnc_getLoadPoints;
 	{
