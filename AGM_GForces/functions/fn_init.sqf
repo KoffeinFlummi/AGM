@@ -1,6 +1,8 @@
 #define AVERAGEDURATION 6
 #define INTERVAL 0.25
 
+if !(hasInterface) exitWith {};
+
 AGM_GForces = [];
 AGM_GForces_Index = 0;
 
