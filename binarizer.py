@@ -150,7 +150,7 @@ def get_modules():
   root = os.path.dirname(scriptpath)
   modules = []
   for module in os.listdir(root):
-    if module[0] != "." and module != "temp" and os.path.isdir(os.path.join(root, module)) and check_for_changes(module):
+    if module[0] != "." and os.path.isdir(os.path.join(root, module)) and check_for_changes(module) and not os.path.exists(os.path.join(root, module, ".DONTPACK")):
       modules.append(module)
 
   return modules
