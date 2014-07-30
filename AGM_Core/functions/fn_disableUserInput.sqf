@@ -55,7 +55,7 @@ if (_state) then {
 	_dlg displayAddEventHandler ["KeyDown", AGM_Core_disableUserInput_KeydownEH];
 	_dlg displayAddEventHandler ["KeyUp", {true}];
 
-	diag_log text "[AGM] Debug: User Input disabled";
+	// diag_log text "[AGM] Debug: User Input disabled";
 } else {
 	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
 		0 spawn {
