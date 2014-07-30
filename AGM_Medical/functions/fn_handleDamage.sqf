@@ -53,7 +53,7 @@ _hitPoints = [
   "HitRightLeg"
 ];
 
-// If the damage is being weird, we just tell it fuck off.
+// If the damage is being weird, we just tell it to fuck off.
 if !((_selectionName in _hitSelections) or (_selectionName == "")) exitWith {0};
 
 // Calculate change in damage.
