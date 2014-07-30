@@ -118,8 +118,6 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           _unit setHitPointDamage [(_x select 0), (_x select 1)];
         };
       } count AGM_Medical_Hits;
-
-
     };
 
     // reset things.
