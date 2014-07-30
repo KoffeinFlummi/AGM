@@ -468,7 +468,7 @@ class CfgVehicles {
     };
   };
 
-
+  /*
   // BLUFOR Uniforms
   class SoldierWB: CAManBase {};
   class B_Soldier_base_F: SoldierWB {
@@ -590,6 +590,7 @@ class CfgVehicles {
   class B_G_Soldier_TL_F: I_G_Soldier_TL_F {
     modelSides[] = {3,2,1,0};
   };
+  */
 
   class LandVehicle;
   class StaticWeapon: LandVehicle {
