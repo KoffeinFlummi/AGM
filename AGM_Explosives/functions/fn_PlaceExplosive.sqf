@@ -41,7 +41,7 @@ if (!isNil "_triggerSupport") exitWith {
 // Set up trigger types for explosive.
 _triggerSupport = [(_this select 1)] call AGM_Explosives_fnc_TriggerType;
 // clacker enabled
-if (_triggerSupport select 0) then {
+if (_triggerSupport select 0 && {"AGM_Clacker" in (items player)}) then {
 	private "_clacker";
 	_clacker = player getVariable ["AGM_Clacker", []];
 	AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
@@ -51,11 +51,11 @@ if (_triggerSupport select 0) then {
 };
 // Cellphone enabled
 if (_triggerSupport select 2) then {
-		AGM_Explosives_List set [count AGM_Explosives_List, [_explosive,_code,getNumber(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_FuseTime"),getNumber (configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_MaxDistance")]];
-		publicVariable "AGM_Explosives_List";
-		AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
-		[format ["E: %1", AGM_Explosives_PlacedCount],_code] call AGM_Explosives_fnc_AddCodeToSpeedDial;
-		player sideChat format [localize "STR_AGM_Explosives_DetonateCode", _code];
+	AGM_Explosives_List set [count AGM_Explosives_List, [_explosive,_code,getNumber(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_FuseTime"),getNumber (configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_MaxDistance")]];
+	publicVariable "AGM_Explosives_List";
+	AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
+	[format ["E: %1", AGM_Explosives_PlacedCount],_code] call AGM_Explosives_fnc_AddCodeToSpeedDial;
+	player sideChat format [localize "STR_AGM_Explosives_DetonateCode", _code];
 };
 
 _explosive
