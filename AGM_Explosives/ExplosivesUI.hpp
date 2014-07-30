@@ -46,7 +46,7 @@ class RscAGM_HiddenButton:RscButton
 	shadow = 0;
 };
 
-#include "Interfaces\PhoneInterface.hpp"
+#include "UI\PhoneInterface.hpp"
 #define X_OFFSET 0.25
 
 class RscXSliderH;

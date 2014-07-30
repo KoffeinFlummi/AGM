@@ -6,6 +6,7 @@ class AGM_ModuleExplosive: Module_F {
 	function = "AGM_Explosive_fnc_module";
 	scope = 2;
 	isGlobal = 1;
+    icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
 	class Arguments {
 		class RequireExplosive {
 			displayName = "Require explosive specialists?";
