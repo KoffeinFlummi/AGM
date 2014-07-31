@@ -18,10 +18,10 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class getAllGear;
       class module;
-      class moveRallypoint;
+      //class moveRallypoint;
       class removeBody;
       class restoreGear;
-      class teleportToRallypoint;
+      //class teleportToRallypoint;
     };
   };
 };
