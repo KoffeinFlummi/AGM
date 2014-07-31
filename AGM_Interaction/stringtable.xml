@@ -288,8 +288,8 @@
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
-      <English>Show player ranks</English>
-      <German>Spielerränge anzeigen</German>
+      <English>Show player ranks (requires player names)</English>
+      <German>Spielerränge anzeigen (benötig Spielernamen)</German>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>

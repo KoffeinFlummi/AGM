@@ -26,7 +26,8 @@ addMissionEventHandler ["Draw3D", {
 			_target getVariable ["AGM_Name", ""]
 		};
 
-		_rank = ["", TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1)] select (profileNamespace getVariable ["AGM_showPlayerRanks", true]);
+		_rank = TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1);
+		_size = [0, 1] select (profileNamespace getVariable ["AGM_showPlayerRanks", true]);
 
 		_height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
 
@@ -43,8 +44,8 @@ addMissionEventHandler ["Draw3D", {
 			_rank,
 			_color,
 			_position,
-			1,
-			1,
+			_size,
+			_size,
 			0,
 			_name,
 			2,
