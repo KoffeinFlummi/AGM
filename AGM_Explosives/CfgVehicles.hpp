@@ -14,7 +14,7 @@ class AGM_Explosives_Place: Items_base_F {
 
 class AGM_Explosives_Place_DemoCharge:AGM_Explosives_Place {
 	displayName = "Demo Charge";
-	model = "\A3\Weapons_F\explosives\c4_charge_small";
+	model = "\A3\Weapons_F\explosives\c4_charge_small_d";
 };
 class AGM_Explosives_Place_APERSBoundingMine:AGM_Explosives_Place {
 	displayName = "APERS Bounding Mine";
