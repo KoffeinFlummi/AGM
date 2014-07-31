@@ -277,8 +277,8 @@ class CfgVehicles {
         priority = 2.3;
       };
 
-      class AGM_Rehab {
-        displayName = "$STR_AGM_Interaction_Rehab";
+      class AGM_Pardon {
+        displayName = "$STR_AGM_Interaction_Pardon";
         distance = 4;
         condition = "rating AGM_Interaction_Target < -2000 && {alive AGM_Interaction_Target} && {playerSide == side group AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, '{_this addRating -rating _this}', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";

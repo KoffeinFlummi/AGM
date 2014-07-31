@@ -170,7 +170,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_transport_Name">
       <English>HEMTT Transport</English>
       <German>HEMTT Transport</German>
-      <Spanish>HEMTT de Transporte</Spanish>
+      <Spanish>HEMTT de transporte</Spanish>
       <Polish>HEMTT Transport</Polish>
       <Czech>HEMTT Valník</Czech>
       <French>HEMTT Transport</French>
@@ -179,7 +179,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_covered_Name">
       <English>HEMTT Transport (covered)</English>
       <German>HEMTT Transport (bedeckt)</German>
-      <Spanish>HEMTT de Transporte (cubierto)</Spanish>
+      <Spanish>HEMTT de transporte (cubierto)</Spanish>
       <Polish>HEMTT Transport (zakryty)</Polish>
       <Czech>HEMTT Valník (krytý)</Czech>
       <French>HEMTT Transport (Couvert)</French>
@@ -197,7 +197,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_box_Name">
       <English>HEMTT Container</English>
       <German>HEMTT Container</German>
-      <Spanish>HEMTT Contenedores</Spanish>
+      <Spanish>HEMTT de contenedor</Spanish>
       <Polish>HEMTT Kontener</Polish>
       <Czech>HEMTT Skříňový</Czech>
       <French>HEMTT Conteneur</French>
@@ -206,7 +206,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_medical_Name">
       <English>HEMTT Medical</English>
       <German>HEMTT Sanitäter</German>
-      <Spanish>HEMTT Médico</Spanish>
+      <Spanish>HEMTT médico</Spanish>
       <Polish>HEMTT Sanitarny</Polish>
       <Czech>HEMTT Zdravotnický</Czech>
       <French>HEMTT Médical</French>
@@ -215,7 +215,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_ammo_Name">
       <English>HEMTT Ammo</English>
       <German>HEMTT Munition</German>
-      <Spanish>HEMTT Munición</Spanish>
+      <Spanish>HEMTT de munición</Spanish>
       <Polish>HEMTT Amunicyjny</Polish>
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
@@ -224,7 +224,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_fuel_Name">
       <English>HEMTT Fuel</English>
       <German>HEMTT Treibstoff</German>
-      <Spanish>HEMTT Combustible</Spanish>
+      <Spanish>HEMTT de combustible</Spanish>
       <Polish>HEMTT Cysterna</Polish>
       <Czech>HEMTT Cisterna</Czech>
       <French>HEMTT Citerne</French>
@@ -233,7 +233,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_01_Repair_Name">
       <English>HEMTT Repair</English>
       <German>HEMTT Instandsetzung</German>
-      <Spanish>HEMTT Reparación</Spanish>
+      <Spanish>HEMTT de reparación</Spanish>
       <Polish>HEMTT Naprawczy</Polish>
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
@@ -307,7 +307,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_covered_Name">
       <English>Kamaz Transport (covered)</English>
       <German>Kamaz Transport (bedeckt)</German>
-      <Spanish>Kamaz Transporte (cubierto)</Spanish>
+      <Spanish>Kamaz de transporte (cubierto)</Spanish>
       <Polish>Kamaz Transport (zakryty)</Polish>
       <Czech>Kamaz Valník (krytý)</Czech>
       <French>kamaz Transport (Couvert)</French>
@@ -316,7 +316,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
       <English>Kamaz Ammo</English>
       <German>Kamaz Munition</German>
-      <Spanish>Kamaz Munición</Spanish>
+      <Spanish>Kamaz de munición</Spanish>
       <Polish>Kamaz Amunicyjny</Polish>
       <Czech>Kamaz Muniční</Czech>
       <French>Kamaz Munitions</French>
@@ -325,7 +325,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_fuel_Name">
       <English>Kamaz Fuel</English>
       <German>Kamaz Treibstoff</German>
-      <Spanish>Kamaz Combustible</Spanish>
+      <Spanish>Kamaz de combustible</Spanish>
       <Polish>Kamaz Cysterna</Polish>
       <Czech>Kamaz Cisterna</Czech>
       <French>Kamaz Citerne</French>
@@ -334,7 +334,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_box_Name">
       <English>Kamaz Repair</English>
       <German>Kamaz Instandsetzung</German>
-      <Spanish>Kamaz Reparación</Spanish>
+      <Spanish>Kamaz de reparación</Spanish>
       <Polish>Kamaz Naprawczy</Polish>
       <Czech>Kamaz Opravárenský</Czech>
       <French>Kamaz Réparation</French>
@@ -343,7 +343,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_medical_Name">
       <English>Kamaz Medical</English>
       <German>Kamaz Sanitäter</German>
-      <Spanish>Kamaz Médico</Spanish>
+      <Spanish>Kamaz de médico</Spanish>
       <Polish>Kamaz Sanitarny</Polish>
       <Czech>Kamaz Zdravotnický</Czech>
       <French>Kamaz Médical</French>
@@ -426,7 +426,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_transport_Name">
       <English>Typhoon Transport</English>
       <German>Typhoon Transport</German>
-      <Spanish>Typhoon Trasporte</Spanish>
+      <Spanish>Typhoon de trasporte</Spanish>
       <Polish>Typhoon Transport</Polish>
       <Czech>Typhoon Valník</Czech>
       <French>Typhoon Transport</French>
@@ -435,7 +435,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_covered_Name">
       <English>Typhoon Transport (covered)</English>
       <German>Typhoon Transport (bedeckt)</German>
-      <Spanish>Typhoon Trasporte (cubierto)</Spanish>
+      <Spanish>Typhoon de trasporte (cubierto)</Spanish>
       <Polish>Typhoon Transport (przykryty)</Polish>
       <Czech>Typhoon Valník (krytý)</Czech>
       <French>Typhoon Transport (Couvert)</French>
@@ -444,7 +444,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_device_Name">
       <English>Typhoon Device</English>
       <German>Typhoon Gerät</German>
-      <Spanish>Typhoon Dispositivo</Spanish>
+      <Spanish>Typhoon de dispositivo</Spanish>
       <Polish>Typhoon Device</Polish>
       <Czech>Typhoon (zařízení)</Czech>
       <French>Typhoon Appareil</French>
@@ -453,7 +453,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_ammo_Name">
       <English>Typhoon Ammo</English>
       <German>Typhoon Munition</German>
-      <Spanish>Typhoon Munición</Spanish>
+      <Spanish>Typhoon de munición</Spanish>
       <Polish>Typhoon Amunicyjny</Polish>
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
@@ -462,7 +462,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_fuel_Name">
       <English>Typhoon Fuel</English>
       <German>Typhoon Treibstoff</German>
-      <Spanish>Typhoon Combustible</Spanish>
+      <Spanish>Typhoon de combustible</Spanish>
       <Polish>Typhoon Cysterna</Polish>
       <Czech>Typhoon Cisterna</Czech>
       <French>Typhoon Citerne</French>
@@ -471,7 +471,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_repair_Name">
       <English>Typhoon Repair</English>
       <German>Typhoon Instandsetzung</German>
-      <Spanish>Typhoon Reparación</Spanish>
+      <Spanish>Typhoon de reparación</Spanish>
       <Polish>Typhoon Naprawczy</Polish>
       <Czech>Typhoon Opravárenský</Czech>
       <French>Typhoon Réparation</French>
@@ -480,7 +480,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
       <German>Typhoon Sanitäter</German>
-      <Spanish>Typhoon Médico</Spanish>
+      <Spanish>Typhoon de médico</Spanish>
       <Polish>Typhoon Sanitarny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon médical</French>
@@ -553,7 +553,7 @@
     <Key ID="STR_AGM_RealisticNames_Plane_Fighter_03_CAS_Name">
       <English>L-159 ALCA (CAS)</English>
       <German>L-159 ALCA (CAS)</German>
-      <Spanish>L-159 ALCA</Spanish>
+      <Spanish>L-159 ALCA (CAS)</Spanish>
       <Polish>L-159 ALCA (CAS)</Polish>
       <Czech>L-159 ALCA (CAS)</Czech>
       <French>L-159 ALCA (CAS)</French>

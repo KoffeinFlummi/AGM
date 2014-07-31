@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_Interaction_InteractionMenu">
       <English>Interaction Menu</English>
       <German>Interaktionsmenü</German>
-      <Spanish>Menú de Interacción</Spanish>
+      <Spanish>Menú de interacción</Spanish>
       <Polish>Menu Interakcji</Polish>
       <Czech>Menu interakce</Czech>
       <French>Menu d'interaction</French>
@@ -15,7 +15,7 @@
     <Key ID="STR_AGM_Interaction_InteractionMenuSelf">
       <English>Interaction Menu (Self)</English>
       <German>Interaktionsmenü (Selbst)</German>
-      <Spanish>Menú de Interacción (Propia)</Spanish>
+      <Spanish>Menú de interacción (Propia)</Spanish>
       <Polish>Menu Interakcji (Własne)</Polish>
       <Czech>Menu interakce (vlastní)</Czech>
       <French>Menu d'interaction (Soi-même)</French>
@@ -56,7 +56,7 @@
     <Key ID="STR_AGM_Interaction_BecomeLeader">
       <English>Become Leader</English>
       <German>Grp.-führung übern.</German>
-      <Spanish>Tomar comando del grupo</Spanish>
+      <Spanish>Asumir el liderazgo</Spanish>
       <Polish>Przejmij dowodzenie</Polish>
       <Czech>Stát se velitelem</Czech>
       <French>Devenir Leader</French>
@@ -168,7 +168,7 @@
     <Key ID="STR_AGM_Interaction_Gestures_Cover">
       <English>Cover</English>
       <German>Deckung</German>
-      <Spanish>A cubierto</Spanish>
+      <Spanish>Cubrirse</Spanish>
       <Polish>Do osłony</Polish>
       <Czech>Krýt se</Czech>
       <French>Couvert</French>
@@ -250,7 +250,7 @@
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
-      <Spanish>Tomar (Ventral)</Spanish>
+      <Spanish>Coger (Mochila Ventral)</Spanish>
       <Polish>Załóż (Brzuch)</Polish>
       <Czech>Vzít (ventrální)</Czech>
       <French>Prendre (Ventral)</French>
@@ -260,7 +260,7 @@
     <Key ID="STR_AGM_Interaction_BackpackVentralPut">
       <English>Take Off Backpack</English>
       <German>Rucksack ablegen</German>
-      <Spanish>Dejar (Ventral)</Spanish>
+      <Spanish>Dejar mochila</Spanish>
       <Polish>Zdejmij (Brzuch)</Polish>
       <Czech>Odložit batoh</Czech>
       <French>Enlever le sac</French>
@@ -280,8 +280,8 @@
 
     <Key ID="STR_AGM_Interaction_ShowPlayerNames">
       <English>Show player names</English>
-      <Spanish>Mostrar nombres de jugadores</Spanish>
       <German>Spielernamen anzeigen</German>
+      <Spanish>Mostrar nombres de jugadores</Spanish>
       <Polish>Pokaż nazwy graczy</Polish>
       <French>Afficher nom des joueurs</French>
       <Hungarian>Játékosnevek mutatása</Hungarian>
@@ -323,13 +323,14 @@
     <Key ID="STR_AGM_Interaction_SetCaptive">
       <English>Take Prisoner</English>
       <German>Gefangen nehmen</German>
+      <Spanish>Tomar prisionero</Spanish>
       <French>Prendre en captivité</French>
-      <Spanish>Hacer prisionero</Spanish>
       <Polish>Weź Więźnia</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_ReleaseCaptive">
       <English>Free Prisoner</English>
       <German>Gefangen freilassen</German>
+      <Spanish>Liberar prisionero</Spanish>
       <Polish>Wypuść Więźnia</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_EscortCaptive">
@@ -342,6 +343,7 @@
     <Key ID="STR_AGM_Interaction_StopEscorting">
       <English>Release Prisoner</English>
       <German>Gefangenen loslassen</German>
+      <Spanish>Soltar prisionero</Spanish>
       <Polish>Anuluj Eskortowanie</Polish>
     </Key>
 
@@ -356,6 +358,7 @@
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management >></English>
       <German>Team Management >></German>
+      <Spanish>Gestión de equipo >></Spanish>
       <French>Gestion d'équipe >></French>
       <Polish>Zarządzanie Oddziałem >></Polish>
     </Key>
@@ -363,24 +366,28 @@
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>
       <German>Rot</German>
+      <Spanish>Rojo</Spanish>
       <French>Rouge</French>
       <Polish>Czerwony</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamGREEN">
       <English>Green</English>
       <German>Grün</German>
+      <Spanish>Verde</Spanish>
       <French>Vert</French>
       <Polish>Zielony</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamBLUE">
       <English>Blue</English>
       <German>Blau</German>
+      <Spanish>Azul</Spanish>
       <French>Bleu</French>
       <Polish>Niebieski</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamYELLOW">
       <English>Yellow</English>
       <German>Gelb</German>
+      <Spanish>Amarillo</Spanish>
       <French>Jaune</French>
       <Polish>Żółty</Polish>
     </Key>
@@ -388,30 +395,35 @@
     <Key ID="STR_AGM_Interaction_JoinTeamRed">
       <English>Join Team Red</English>
       <German>Team Rot beitreten</German>
+      <Spanish>Unirse al equipo rojo</Spanish>
       <French>Rejoindre équipe rouge</French>
       <Polish>Dołącz do Drużyny Czerwonej</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamGreen">
       <English>Join Team Green</English>
       <German>Team Grün beitreten</German>
+      <Spanish>Unirse al equipo verde</Spanish>
       <French>Rejoindre équipe verte</French>
       <Polish>Dołącz do Drużyny Zielonej</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamBlue">
       <English>Join Team Blue</English>
       <German>Team Blau beitreten</German>
+      <Spanish>Unirse al equipo azul</Spanish>
       <French>Rejoindre équipe bleu</French>
       <Polish>Dołącz do Drużyny Niebieskiej</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamYellow">
       <English>Join Team Yellow</English>
       <German>Team Gelb beitreten</German>
+      <Spanish>Unirse al equipo amarillo</Spanish>
       <French>Rejoindre équipe jaune</French>
       <Polish>Dołącz do Drużyny Żółtej</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinedTeam">
       <English>You joined Team %1</English>
       <German>Du bist Team %1 beigetreten</German>
+      <Spanish>Te has unido al equipo %1</Spanish>
       <French>Vous avez rejoins l'équipe %1</French>
       <Polish>Dołączyłeś do Drużyny %1</Polish>
     </Key>
@@ -419,19 +431,22 @@
     <Key ID="STR_AGM_Interaction_LeaveTeam">
       <English>Leave Team</English>
       <German>Team verlassen</German>
+      <Spanish>Dejar equipo</Spanish>
       <French>Quitter l'équipe</French>
       <Polish>Opuść Drużynę</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_LeftTeam">
       <English>You left the Team</English>
       <German>Du hast das Team verlassen</German>
+      <Spanish>Has dejado el equipo</Spanish>
       <French>Vous avez quitter l'équipe</French>
       <Polish>Opuściłeś Drużynę</Polish>
     </Key>
 
-    <Key ID="STR_AGM_Interaction_Rehab">
-      <English>Rehabilitate</English>
-      <German>Rehabilitieren</German>
+    <Key ID="STR_AGM_Interaction_Pardon">
+      <English>Pardon</English>
+      <German>Begnadigen</German>
+      <Spanish>Rehabilitar</Spanish>
       <Polish>Zrehabilituj</Polish>
     </Key>
 

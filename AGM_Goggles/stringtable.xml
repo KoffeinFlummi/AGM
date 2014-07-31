@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_Goggles_ShowInThirdPerson">
       <English>Show Goggle Effects in Third Person</English>
       <German>Brilleneffekt in dritter Person anzeigen</German>
-      <Spanish>Mostrar Efecto de las Gafas en Tercera Persona</Spanish>
+      <Spanish>Mostrar efectos de las gafas en tercera persona</Spanish>
       <Czech>Zobrazit účinky brýlí v třetí osobě</Czech>
       <French>Afficher les effets de lunettes à la troisième personne</French>
       <Russian>Show Goggle Effects in Third Person</Russian>
@@ -15,7 +15,7 @@
     <Key ID="STR_AGM_Goggles_WipeGlasses">
       <English>Wipe Goggles</English>
       <German>Brille abwischen</German>
-      <Spanish>Limpiar las Gafas</Spanish>
+      <Spanish>Limpiar gafas</Spanish>
       <Czech>Vyčistit brýle</Czech>
       <French>Essuyez les Lunettes</French>
       <Russian>Wipe Goggles</Russian>
