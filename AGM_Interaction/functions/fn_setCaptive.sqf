@@ -6,7 +6,7 @@ private ["_unit", "_state"];
 _unit = _this select 0;
 _state = _this select 1;
 
-if (!local _unit) then {[_this, _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
+if (!local _unit) exitWith {[_this, _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
 
 if (_state) then {
 	if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
