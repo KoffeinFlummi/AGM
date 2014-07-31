@@ -658,7 +658,7 @@
     <Key ID="STR_AGM_Medical_keepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
-      <Spanish>Reabrir el menú médico despues de tratar</Spanish>
+      <Spanish>Reabrir el menú médico después de tratar</Spanish>
       <Hungarian>Orvosi menü újranyitása ellátás után</Hungarian>
       <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
       <Polish>Otwórz ponownie menu medyczne po zakończeniu akcji leczenia</Polish>
@@ -689,7 +689,7 @@
     <Key ID="STR_AGM_Medical_TakingItemSelf">
       <English>Patient has no %1, using yours...</English>
       <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt...</German>
-      <Spanish>El paciente no tiene %1, usando tus...</Spanish>
+      <Spanish>El paciente no tiene %1, usando el tuyo...</Spanish>
       <Polish>%1 nie znajduje się w ekwipunku pacjenta, użwywanie własnych zasobów...</Polish>
       <French>Le patient n'a pas de %1, utilisation de votre matériel...</French>
     </Key>
