@@ -55,6 +55,7 @@
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>No inventory space</English>
       <German>Kein Platz im Inventar</German>
+      <Spanish>Sin espacio en el inventario</Spanish>
       <Polish>Brak miejsca w ekwipunku</Polish>
       <French>Pas de place dans l'inventaire</French>
     </Key>
