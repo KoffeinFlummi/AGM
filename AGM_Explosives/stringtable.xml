@@ -151,14 +151,14 @@
       <Key ID="STR_AGM_Explosives_DetonateMenu">
         <English>Detonate Menu</English>
         <German>"Zünden"-Menu</German>
-        <Spanish>Menú Detonar</Spanish>
+        <Spanish>Menú de detonación</Spanish>
         <Polish>Menu Detonacji</Polish>
         <French>Menu de détonation</French>
       </Key>
       <Key ID="STR_AGM_Explosives_PlaceMenu">
         <English>Place Menu</English>
         <German>"Platzieren"-Menu</German>
-        <Spanish>Menú Colocar</Spanish>
+        <Spanish>Menú de colocación</Spanish>
         <Polish>Menu Umieszczania</Polish>
         <French>Menu "placer"</French>
       </Key>
@@ -172,7 +172,7 @@
       <Key ID="STR_AGM_Explosives_DefusingExplosive">
         <English>Defusing Explosive...</English>
         <German>Entschärfe Sprengstoff...</German>
-        <Spanish>Desactivando Explosivo...</Spanish>
+        <Spanish>Desactivando explosivo...</Spanish>
         <Polish>Rozbrajanie Ładunku... </Polish>
         <French>Désamorçage des explosifs...</French>
       </Key>
@@ -193,14 +193,14 @@
       <Key ID="STR_AGM_Explosives_SetTime">
         <English>Set Time</English>
         <German>Zeit einstellen</German>
-        <Spanish>Configurar Tiempo</Spanish>
+        <Spanish>Configurar tiempo</Spanish>
         <Polish>Ustaw Czas</Polish>
         <French>Regler compte à rebours</French>
       </Key>
       <Key ID="STR_AGM_Explosives_TriggerMenu">
         <English>Select a Trigger</English>
         <German>Wähle einen Zünder</German>
-        <Spanish>Seleccionar un Disparador</Spanish>
+        <Spanish>Seleccionar un disparador</Spanish>
         <Polish>Wybierz Wyzwalacz</Polish>
         <French>Selectionner un déclencheur</French>
       </Key>
