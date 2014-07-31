@@ -32,28 +32,28 @@
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
       <German>Blauen Leuchtstab befestigen</German>
-      <Spanish>Acoplar luz química azul</Spanish>
+      <Spanish>Acoplar barra de luz azul</Spanish>
       <Polish>Przyczep Niebieskie Światło Chemiczne</Polish>
       <French>Attcher Chemlight bleu</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_green">
       <English>Attach Green Chemlight</English>
       <German>Grünen Leuchtstab befestigen</German>
-      <Spanish>Acoplar luz química verde</Spanish>
+      <Spanish>Acoplar barra de luz verde</Spanish>
       <Polish>Przyczep Zielone Światło Chemiczne</Polish>
       <French>Attacher Chemlight verte</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_red">
       <English>Attach Red Chemlight</English>
       <German>Roten Leuchtstab befestigen</German>
-      <Spanish>Acoplar luz química roja</Spanish>
+      <Spanish>Acoplar barra de luz roja</Spanish>
       <Polish>Przyczep Czerwone Światło Chemiczne</Polish>
       <French>Attacher Chemlight rouge</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_yellow">
       <English>Attach Yellow Chemlight</English>
       <German>Gelben Leuchtstab befestigen</German>
-      <Spanish>Acoplar luz química azul amarilla</Spanish>
+      <Spanish>Acoplar barra de luz azul amarilla</Spanish>
       <Polish>Przyczep Żółte Światło Chemiczne</Polish>
       <French>Attacher Chemlight jaune</French>
     </Key>
