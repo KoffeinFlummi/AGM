@@ -70,6 +70,8 @@ class CfgVehicles {
     };
   };
 
+};
+/*
   // rallypoints
   class FlagCarrier;
   class Flag_NATO_F: FlagCarrier {
@@ -194,3 +196,4 @@ AGM_Rallypoint_Independant
 AGM_RallypointExit_West
 AGM_RallypointExit_East
 AGM_RallypointExit_Independant
+*/
