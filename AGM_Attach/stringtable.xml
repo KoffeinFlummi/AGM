@@ -114,15 +114,11 @@
       <Polish>Stroboskop IR</Polish>
       <Czech>IR Stroboskop</Czech>
       <French>Strobe IR</French>
-      
+
     </Key>
     <Key ID="STR_AGM_IrStrobe_Description">
-      <English>IR Strobe allows you to signal your position trough a visible pulsating beacon only visible with NVGs.</English>
-      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit NachtsichtgerÃ¤t zu erkennen ist.</German>
-      <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna.</Spanish>
-      <Polish>Stroboskop ŚwiatŁa podczerwieni umożliwia oznaczenie swojej pozycji pulsacyjnym Światłem widocznym tyko przez optykę noktowizyjną.</Polish>
-      <Czech>InfraÄervenÄ› zÃ¡Å™Ã­cÃ­ stroboskop umoÅ¾Åˆuje signalizaci vaÅ¡Ã­ pozice dÃ­ky blikajÃ­cÃ­mu svÄ›tlu, kterÃ© je vidÄ›t pouze pÅ™i uÅ¾itÃ­ noktovizoru.</Czech>
-      <French>Le strobe Infra-rouge vous permet de signaler votre position, grÃ¢ce Ã  un clignotement visible uniquement via les NVG.</French>
+      <English>IR Strobe allows you to signal your position through a visible pulsating beacon only visible with NVGs.</English>
+      <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit Nachtsichtgerät zu erkennen ist.</German>
     </Key>
   </Package>
 </Project>

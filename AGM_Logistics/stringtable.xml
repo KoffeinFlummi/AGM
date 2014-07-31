@@ -588,25 +588,16 @@
 
 	<Package name="Resupply">
 		<Key ID="STR_AGM_Resupply_CheckFuel">
-			<English>Checking Fuel</English>
-			<German>Prüfe Treibstoff</German>
-			<Spanish>Comprobando combustible</Spanish>
-			<French>Vérifier le carburant</French>
-			<Polish>Sprawdzanie Paliwa</Polish>
+			<English>Check Fuel</English>
+			<German>Treibstoff Prüfen</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
-			<English>Checking Fuel Cargo</English>
-			<German>Prüfe Treibstoffvorrat</German>
-			<Spanish>Comprobando carga de combustible</Spanish>
-			<French>Vérifier l'alimentation en carburant</French>
-			<Polish>Sprawdzanie Ładunku Paliwa</Polish>
+			<English>Check Fuel (Cargo)</English>
+			<German>Treibstoffvorrat Prüfen</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
-			<English>Checking Jerrycan</English>
-			<German>Prüfe Kanister</German>
-			<Spanish>Comprobando bidón</Spanish>
-			<French>Vérifier Jerrican</French>
-			<Polish>Sprawdzanie Kanistra</Polish>
+			<English>Check Jerrycan</English>
+			<German>Kanister Prüfen</German>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuel">
 			<English>Checking Fuel ...</English>
@@ -616,7 +607,7 @@
 			<Polish>Sprawdzanie Paliwa ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuelCargo">
-			<English>Checking Fuel Cargo ...</English>
+			<English>Checking Fuel (Cargo) ...</English>
 			<German>Prüfe Treibstoffvorrat ...</German>
 			<Spanish>Comprobando carga de combustible ...</Spanish>
 			<French>Vérification alimentation en carburant ...</French>

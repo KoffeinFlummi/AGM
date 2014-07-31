@@ -443,9 +443,9 @@
       <Polish>Opuściłeś Drużynę</Polish>
     </Key>
 
-    <Key ID="STR_AGM_Interaction_Rehab">
-      <English>Rehabilitate</English>
-      <German>Rehabilitieren</German>
+    <Key ID="STR_AGM_Interaction_Pardon">
+      <English>Pardon</English>
+      <German>Begnadigen</German>
       <Spanish>Rehabilitar</Spanish>
       <Polish>Zrehabilituj</Polish>
     </Key>
