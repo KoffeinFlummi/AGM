@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_SpeedLimiter_On">
       <English>Speed Limiter on</English>
       <German>Begrenzer an</German>
-      <Spanish>Limitador de Velocidad activado</Spanish>
+      <Spanish>Limitador de velocidad activado</Spanish>
       <Polish>Ogranicznik prędkości włączony</Polish>
       <Czech>Omezovač rychlosti zapnout</Czech>
       <French>Limiteur de vitesse Activé</French>
@@ -15,7 +15,7 @@
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
       <German>Begrenzer aus</German>
-      <Spanish>Limitador de Velocidad desactivado</Spanish>
+      <Spanish>Limitador de velocidad desactivado</Spanish>
       <Polish>Ogranicznik prędkości wyłączony</Polish>
       <Czech>Omezovač rychlosti vypnout</Czech>
       <French>Limiteur de vitesse Désactivé</French>
@@ -26,7 +26,7 @@
     <Key ID="STR_AGM_SpeedLimiter">
       <English>Speed Limiter</English>
       <German>Begrenzer</German>
-      <Spanish>Limitador de Velocidad</Spanish>
+      <Spanish>Limitador de velocidad</Spanish>
       <Polish>Ogranicznik prędkości</Polish>
       <Czech>Omezovač rychlosti</Czech>
       <French>Limiteur de vitesse</French>
