@@ -4,104 +4,105 @@
     <Key ID="STR_AGM_Attach_AttachDetach">
       <English>Attach item >></English>
       <German>Gegenstand befestigen</German>
-      <Spanish>Colocar objeto >></Spanish>
+      <Spanish>Acoplar objeto >></Spanish>
       <Polish>Przyczep obiekt >></Polish>
       <French>Attacher l'objet >></French>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
       <German>Gegenstand entfernen</German>
-      <Spanish>Remover objeto</Spanish>
+      <Spanish>Quitar objeto</Spanish>
       <Polish>Odczep obiekt</Polish>
       <French>Détacher l'objet</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_IrStrobe">
       <English>Attach IR Strobe</English>
       <German>IR-Stroboskop befestigen</German>
-      <Spanish>Colocar Marcador IR</Spanish>
+      <Spanish>Acoplar marcador IR</Spanish>
       <Polish>Przyczep Stroboskop IR</Polish>
       <French>Attahcer Strobe IR</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_IrGrenade">
       <English>Attach IR Grenade</English>
       <German>IR-Granate befestigen</German>
-      <Spanish>Colocar Granada IR</Spanish>
+      <Spanish>Acoplar granada IR</Spanish>
       <Polish>Przyczep Granat IR</Polish>
       <French>Attacher grenade IR</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_blue">
       <English>Attach Blue Chemlight</English>
       <German>Blauen Leuchtstab befestigen</German>
-      <Spanish>Colocar Barra de Luz Azul</Spanish>
+      <Spanish>Acoplar luz química azul</Spanish>
       <Polish>Przyczep Niebieskie Światło Chemiczne</Polish>
       <French>Attcher Chemlight bleu</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_green">
       <English>Attach Green Chemlight</English>
       <German>Grünen Leuchtstab befestigen</German>
-      <Spanish>Colocar Barra de Luz Verde</Spanish>
+      <Spanish>Acoplar luz química verde</Spanish>
       <Polish>Przyczep Zielone Światło Chemiczne</Polish>
       <French>Attacher Chemlight verte</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_red">
       <English>Attach Red Chemlight</English>
       <German>Roten Leuchtstab befestigen</German>
-      <Spanish>Colocar Barra de Luz Roja</Spanish>
+      <Spanish>Acoplar luz química roja</Spanish>
       <Polish>Przyczep Czerwone Światło Chemiczne</Polish>
       <French>Attacher Chemlight rouge</French>
     </Key>
     <Key ID="STR_AGM_Attach_Attach_Chemlight_yellow">
       <English>Attach Yellow Chemlight</English>
       <German>Gelben Leuchtstab befestigen</German>
-      <Spanish>Colocar Barra de Luz Amarilla</Spanish>
+      <Spanish>Acoplar luz química azul amarilla</Spanish>
       <Polish>Przyczep Żółte Światło Chemiczne</Polish>
       <French>Attacher Chemlight jaune</French>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Attached">
       <English>IR Strobe Attached</English>
       <German>IR-Stroboskop befestigt</German>
-      <Spanish>Marcador IR colocado</Spanish>
+      <Spanish>Marcador IR acoplado</Spanish>
       <Polish>Stroboskop IR Przyczepiony</Polish>
       <French>Strobe IR attaché</French>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Detached">
       <English>IR Strobe Detached</English>
       <German>IR-Stroboskop entfernt</German>
-      <Spanish>Marcador IR removido</Spanish>
+      <Spanish>Marcador IR quitado</Spanish>
       <Polish>Stroboskop IR Odczepiony</Polish>
       <French>Strobe IR détaché</French>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Attached">
       <English>IR Grenade Attached</English>
       <German>IR-Granate befestigt</German>
-      <Spanish>Granada IR colocada</Spanish>
+      <Spanish>Granada IR acoplada</Spanish>
       <Polish>Granat IR Przyczepiony</Polish>
       <French>Grenade IR attachée</French>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Detached">
       <English>IR Grenade Detached</English>
       <German>IR-Granate entfernt</German>
-      <Spanish>Granada IR removida</Spanish>
+      <Spanish>Granada IR quitada</Spanish>
       <Polish>Granat IR Odczepiony</Polish>
       <French>Grenade IR détachée</French>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>
       <German>Leuchtstab befestigt</German>
-      <Spanish>Barra de Luz colocada</Spanish>
+      <Spanish>Luz química acoplada</Spanish>
       <Polish>Światło Chemiczne Przyczepione</Polish>
       <French>Chemlight attaché</French>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Detached">
       <English>Chemlight Detached</English>
       <German>Leuchtstab entfernt</German>
-      <Spanish>Barra de Luz removida</Spanish>
+      <Spanish>Luz química quitada</Spanish>
       <Polish>Światło Chemiczne Odczepione</Polish>
       <French>Chemlight détaché</French>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
       <English>No inventory space</English>
       <German>Kein Platz im Inventar</German>
+      <Spanish>Sin espacio en inventario</Spanish>
       <Polish>Brak miejsca w ekwipunku</Polish>
       <French>Pas de place dans l'inventaire</French>
     </Key>
