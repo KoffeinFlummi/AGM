@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Respawn {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independant", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independant"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.92";
@@ -18,8 +18,10 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class getAllGear;
       class module;
+      class moveRallypoint;
       class removeBody;
       class restoreGear;
+      class teleportToRallypoint;
     };
   };
 };
@@ -67,4 +69,128 @@ class CfgVehicles {
       };
     };
   };
+
+  // rallypoints
+  class FlagCarrier;
+  class Flag_NATO_F: FlagCarrier {
+    class AGM_Actions;
+  };
+
+  class Flag_CSAT_F: FlagCarrier {
+    class AGM_Actions;
+  };
+
+  class Flag_AAF_F: FlagCarrier {
+    class AGM_Actions;
+  };
+
+  // static
+  class AGM_Rallypoint_West: Flag_NATO_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Rallypoint";
+        distance = 4;
+        condition = "playerSide == west";
+        statement = "[player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  class AGM_Rallypoint_East: Flag_CSAT_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Rallypoint";
+        distance = 4;
+        condition = "playerSide == east";
+        statement = "[player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  class AGM_Rallypoint_Independant: Flag_AAF_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Rallypoint";
+        distance = 4;
+        condition = "playerSide == independant";
+        statement = "[player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  // moveable
+  class AGM_RallypointExit_West: Flag_NATO_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Base";
+        distance = 4;
+        condition = "playerSide == west";
+        statement = "[player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  class AGM_RallypointExit_East: Flag_CSAT_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Base";
+        distance = 4;
+        condition = "playerSide == east";
+        statement = "[player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  class AGM_RallypointExit_Independant: Flag_AAF_F {
+    class AGM_Actions: AGM_Actions {
+      class AGM_Teleport {
+        displayName = "Teleport to Base";
+        distance = 4;
+        condition = "playerSide == independant";
+        statement = "[player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        showDisabled = 1;
+        priority = 1;
+      };
+    };
+  };
+
+  // team leader
+  class Man;
+  class CAManBase: Man {
+    class AGM_SelfActions {
+      class AGM_MoveRallypoint {
+        displayName = "Move Rallypoint";
+        condition = "playerSide in [west, east, independant]";
+        statement = "[player, playerSide] call AGM_Respawn_fnc_moveRallypoint;";
+        showDisabled = 0;
+        priority = 0.5;
+      };
+    };
+  };
 };
+
+//init rallypoints
+class Extended_Init_EventHandlers {
+  class AGM_Rallypoint_West {
+    class AGM_InitRallypoint {
+      serverInit = "_oldFlag = missionNamespace getVariable 'AGM_Rallypoint'";
+    };
+  };
+};
+
+AGM_Rallypoint_West
+AGM_Rallypoint_East
+AGM_Rallypoint_Independant
+AGM_RallypointExit_West
+AGM_RallypointExit_East
+AGM_RallypointExit_Independant
