@@ -16,7 +16,7 @@
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
       <English>Increase NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit erhöhen</German>
-      <Spanish>Aumentar el Brillo de los NVG</Spanish>
+      <Spanish>Aumentar el brillo de las NVG</Spanish>
       <Polish>Zwiększ Jasność Noktowizji</Polish>
       <Czech>Zvýšení jasu noktovizoru</Czech>
       <French>Augmenter la luminosité des NVG</French>
@@ -26,7 +26,7 @@
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit verringern</German>
-      <Spanish>Disminuir el Brillo de los NVG</Spanish>
+      <Spanish>Disminuir el brillo de las NVG</Spanish>
       <Polish>Zmniejsz Jasność Noktowizji</Polish>
       <Czech>Snížení jasu noktovizoru</Czech>
       <French>Baisser la luminosité des NVG</French>
