@@ -88,14 +88,14 @@
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>
       <German>Leuchtstab befestigt</German>
-      <Spanish>Luz química acoplada</Spanish>
+      <Spanish>Barra de luz acoplada</Spanish>
       <Polish>Światło Chemiczne Przyczepione</Polish>
       <French>Chemlight attaché</French>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Detached">
       <English>Chemlight Detached</English>
       <German>Leuchtstab entfernt</German>
-      <Spanish>Luz química quitada</Spanish>
+      <Spanish>Barra de luz quitada</Spanish>
       <Polish>Światło Chemiczne Odczepione</Polish>
       <French>Chemlight détaché</French>
     </Key>
