@@ -150,6 +150,7 @@
 	}; \
 	class AGM_CheckFuelJerrycan { \
 		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
+		distance = 4; \
 		condition = "alive AGM_Interaction_Target"; \
 		statement = "[player, AGM_Interaction_Target] call AGM_Resupply_fnc_getFuelAmountJerrycan"; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \

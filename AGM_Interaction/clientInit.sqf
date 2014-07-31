@@ -26,7 +26,7 @@ addMissionEventHandler ["Draw3D", {
 			_target getVariable ["AGM_Name", ""]
 		};
 
-		_rank = TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1);
+		_rank = ["", TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1)] select (profileNamespace getVariable ["AGM_showPlayerRanks", true]);
 
 		_height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
 
