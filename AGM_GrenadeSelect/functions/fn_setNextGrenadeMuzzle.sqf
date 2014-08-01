@@ -78,27 +78,20 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
   };
 } forEach _backPackMagsToRemove;
 
-if (_muzzle != "") then {
-  // Fix the selector
-  if (player canAdd "HandGrenade_Stone") then {
-    // If there's space, add and remove an item
-    // We use HandGrenade_Stone to ensure we remove the same item we added a no other placed somewhere else
-    player addItem "HandGrenade_Stone"; player removeItem "HandGrenade_Stone";
-  } else {
-    // If there's no extra space, remove the current grenade and readd it.
-    // The correct grenade placement should be kept, as there's no place for the grenade to go except the correct one.
-    player removeItem _firstMagazine; player addItem _firstMagazine;
-  };
-};
-
 // Readd magazines
 {
-  uniformContainer player addItemCargo _x;
+  for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
+    player addItemToUniform (_x select 0); 
+  };
 } forEach _uniformMagsToRemove;
 {
-  vestContainer player addItemCargo _x;
+  for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
+    player addItemToVest (_x select 0); 
+  };
 } forEach _vestMagsToRemove;
 {
-  backpackContainer player addItemCargo _x;
+  for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
+    player addItemToBackpack (_x select 0); 
+  };
 } forEach _backPackMagsToRemove;
 
