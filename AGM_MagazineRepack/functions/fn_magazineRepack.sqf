@@ -70,7 +70,6 @@ _ammos     = _ammos     - [[-1]];
 	_repackTime set [_forEachIndex, _ammoToTransfer * AGM_MagazineRepack_TimePerAmmo];
 } forEach _ammos;
 
-_repackTime = _respackTime + AGM_MagazineRepack_TimePerMagazine * (count _ammos);
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
 	systemChat str _magazines;
