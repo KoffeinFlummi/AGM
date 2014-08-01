@@ -67,9 +67,8 @@ _ammos     = _ammos     - [[-1]];
 		_j = _j - 1;
 	};
 
-	_repackTime set [_forEachIndex, _ammoToTransfer * AGM_MagazineRepack_TimePerAmmo];
+	_repackTime set [_forEachIndex, _ammoToTransfer * AGM_MagazineRepack_TimePerAmmo + (count _x) * AGM_MagazineRepack_TimePerMagazine];
 } forEach _ammos;
-
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
 	systemChat str _magazines;

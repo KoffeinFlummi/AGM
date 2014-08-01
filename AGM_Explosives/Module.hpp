@@ -8,7 +8,7 @@ class AGM_ModuleExplosive: Module_F {
 	isGlobal = 1;
     icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
 	class Arguments {
-		class RequireExplosive {
+		class RequireSpecialist {
 			displayName = "Require explosive specialists?";
 			//description = "Require explosive specialists to plant/disable explosives? Default: No";
 			// The above distinction is commented out due to the explanation in fn_SetupExplosive.sqf
@@ -26,7 +26,7 @@ class AGM_ModuleExplosive: Module_F {
 				};
 			};
 		};
-		class PunishNonExplosive {
+		class PunishNonSpecialists {
 			displayName = "Punish non-specialists?";
 			description = "Increase the time it takes to complete actions for non-specialists? Default: Yes";
 			typeName = "BOOL";

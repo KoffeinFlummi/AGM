@@ -19,7 +19,7 @@ private "_unit";
 _unit = _this select 0;
 if (vehicle _unit != _unit || {!("AGM_DefusalKit" in (items _unit))}) exitWith {false};
 
-if (AGM_Explosives_RequireSpecialist && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {false};
+if ((AGM_Explosives_RequireSpecialist > 0) && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {false};
 
 AGM_Interaction_Target = nearestObject [_unit, "TimeBombCore"];
 if (isNull(AGM_Interaction_Target)) exitWith {false};

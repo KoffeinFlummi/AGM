@@ -28,12 +28,6 @@ if (isServer) then {
 		publicVariable "AGM_Explosives_Jammers";
 	};
 	*/
-	if (isNil "AGM_Explosives_RequireSpecialist") then {
-		["AGM_Explosives_RequireSpecialist", false] call AGM_Core_fnc_setParameter;
-	};
-	if (isNil "AGM_Explosives_PunishNonSpecialists") then {
-		["AGM_Explosives_PunishNonSpecialists", true] call AGM_Core_fnc_setParameter;
-	};
 };
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
