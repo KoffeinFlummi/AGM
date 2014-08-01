@@ -13,7 +13,7 @@ if (isNull _target) then {
 };
 
 if (isNull _vehicle) then {
-	_objects = nearestObjects [_unit, ["Car_F", "Tank_F", "Helicopter_F"], 15];
+	_objects = nearestObjects [_unit, ["Car_F", "Tank_F", "Helicopter_F"], 10];
 	_vehicle = _objects select 0;
 };
 
