@@ -1,7 +1,7 @@
 // by commy2, Nic547
 // Makes a civilian unable to move
 
-private ["_unit", "_state", "_remote", "_inputDisabled"];
+private ["_unit", "_state", "_remote"];
 
 _unit = _this select 0;
 _state = _this select 1;
@@ -16,8 +16,6 @@ if (!_remote and _state) then {
 
 if (!local _unit) exitWith {[_this + [true], _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
 
-_inputDisabled = false;
-
 if (_state) then {
 	if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
 
@@ -29,6 +27,8 @@ if (_state) then {
 	};
 
 	_unit spawn {
+		_inputDisabled = false;
+
 		// fix for lowered rifle animation glitch
 		if (currentWeapon _this != "" && {currentWeapon _this == primaryWeapon _this} && {weaponLowered _this} && {stance _this == "STAND"}) then {
 			_this playMove "amovpercmstpsraswrfldnon";
@@ -42,12 +42,12 @@ if (_state) then {
 			if (isPlayer _this) then {
 				if (!_inputDisabled) then {
 					if (!isNull (attachedTo _this) || {vehicle _this != _this}) then {
-						[_this, true] call AGM_Core_fnc_disableUserInput;
+						[true] call AGM_Core_fnc_disableUserInput;
 						_inputDisabled = true;
 					};
 				} else {
 					if (isNull (attachedTo _this) && {vehicle _this == _this}) then {
-						[_this, false] call AGM_Core_fnc_disableUserInput;
+						[false] call AGM_Core_fnc_disableUserInput;
 						_inputDisabled = false;
 					};
 				};
@@ -66,10 +66,11 @@ if (_state) then {
 		};
 
 		[_this, "AGM_Handcuffed", false] call AGM_Interaction_fnc_setCaptivityStatus;
+
+		if (_inputDisabled && {isPlayer _this}) then {
+			[false] call AGM_Core_fnc_disableUserInput;
+		};
 	};
 } else {
 	_unit setVariable ["AGM_isCaptive", false, true];
-	if (_inputDisabled && {isPlayer _unit}) then {
-		[_unit, false] call AGM_Core_fnc_disableUserInput;
-	};
 };
