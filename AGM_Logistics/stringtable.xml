@@ -596,7 +596,7 @@
 	<Package name="Resupply">
 		<Key ID="STR_AGM_Resupply_CheckFuel">
 			<English>Check Fuel</English>
-			<German>Treibxstoff Prüfen</German>
+			<German>Treibstoff Prüfen</German>
 			<Polish>Sprawdź Paliwo</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
