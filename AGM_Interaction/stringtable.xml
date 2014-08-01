@@ -454,5 +454,14 @@
       <Polish>Zrehabilituj</Polish>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_CableTie_Name">
+      <English>Cable Tie</English>
+      <German>Kabelbinder</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_CableTie_Description">
+      <English>Cable ties that allow you to restrain prisoners.</English>
+      <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
+    </Key>
+
   </Package>
 </Project>
