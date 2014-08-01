@@ -17,11 +17,13 @@
 			<English>Loading ...</English>
 			<Spanish>Cargando ...</Spanish>
 			<German>Einladen ...</German>
+			<Polish>Ładowanie ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadedItem">
 			<English>%1 loaded into %2</English>
 			<Spanish>%1 cargado en %2</Spanish>
 			<German>%1 in %2 eingeladen</German>
+			<Polish>%1 załadowano do %2</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadMenu">
 			<English>Unload Menu</English>
@@ -54,7 +56,7 @@
 			<German>Magazine >></German>
 			<Spanish>Cargadores >></Spanish>
 			<French>Chargeurs >></French>
-			<Polish>MAgazynki >></Polish>
+			<Polish>Magazynki >></Polish>
 		</Key>
 	</Package>
 
@@ -441,6 +443,7 @@
 			<English>Remove Wheel</English>
 			<German>Reifen entf.</German>
 			<Spanish>Quitar rueda</Spanish>
+			<Polish>Zdejmij Koło</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_Repairing">
@@ -462,20 +465,24 @@
 			<English>Repair Wheel >></English>
 			<German>Reifen aufziehen >></German>
 			<Spanish>Reparar rueda</Spanish>
+			<Polish>Napraw Koło >></Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_RemoveWheel">
 			<English>Remove Wheel >></English>
 			<German>Reifen entfernen >></German>
 			<Spanish>Quitar rueda</Spanish>
+			<Polish>Zdejmij Koło >></Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_RemovingWheel">
 			<English>Removing %1 ...</English>
 			<German>Entferne %1 ...</German>
+			<Polish>Zdejmowanie %1 ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_RemovedWheel">
 			<English>%1 removed</English>
 			<German>%1 entfernt</German>
 			<Spanish>%1 quitado</Spanish>
+			<Polish>%1 zdjęte</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_checkVehicle">
@@ -589,15 +596,18 @@
 	<Package name="Resupply">
 		<Key ID="STR_AGM_Resupply_CheckFuel">
 			<English>Check Fuel</English>
-			<German>Treibstoff Prüfen</German>
+			<German>Treibxstoff Prüfen</German>
+			<Polish>Sprawdź Paliwo</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
 			<English>Check Fuel (Cargo)</English>
 			<German>Treibstoffvorrat Prüfen</German>
+			<Polish>Sprawdź Paliwo (Ładunek)</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
 			<English>Check Jerrycan</English>
 			<German>Kanister Prüfen</German>
+			<Polish>Sprawdź Kanister</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuel">
 			<English>Checking Fuel ...</English>
@@ -611,28 +621,28 @@
 			<German>Prüfe Treibstoffvorrat ...</German>
 			<Spanish>Comprobando carga de combustible ...</Spanish>
 			<French>Vérification alimentation en carburant ...</French>
-			<Polish>Sprawdzanie Ładunku Paliwa ...</Polish>
+			<Polish>Sprawdzanie Paliwa (Ładunek) ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuel">
 			<English>Jerrycan has %1 litre(s) left</English>
 			<German>Kanister hat %1 Liter übrig</German>
 			<Spanish>El bidón tiene %1 litro(s)</Spanish>
 			<French>Il reste %1 litre(s) de carburant dans le jerrican</French>
-			<Polish>W Kanistrze zostało %1 litr(ów)</Polish>
+			<Polish>W kanistrze zostało %1 litr(ów)</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuelVehicle">
 			<English>Vehicle has %1 litre(s) left</English>
 			<German>Fahrzeug hat %1 Liter übrig</German>
 			<Spanish>El vehículo tiene %1 litro(s)</Spanish>
 			<French>Il reste %1 litre(s) dans le véhicule</French>
-			<Polish>W Pojeździe zostało %1 litr(ów)</Polish>
+			<Polish>W pojeździe zostało %1 litr(ów)</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuelVehicleCargo">
 			<English>Vehicle has %1 litre(s) left in Cargo</English>
 			<German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
 			<Spanish>El vehículo tiene %1 litro(s) en la carga</Spanish>
 			<French>Le véhicule à %1 litre(s) en stock</French>
-			<Polish>W Ładunku Pojazdu zostało %1 litr(ów)</Polish>
+			<Polish>W ładunku Pojazdu zostało %1 litr(ów)</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Resupply_RefuelVehicle">
