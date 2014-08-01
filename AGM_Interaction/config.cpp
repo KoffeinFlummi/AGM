@@ -106,6 +106,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerNames";
     default = 1;
   };
+  class showPlayerRanks {
+    displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
+    default = 1;
+  };
 };
 
 class AGM_Parameters {
