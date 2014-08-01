@@ -15,11 +15,7 @@ private ["_body", "_forceRemove", "_bodyRemoveTimer"];
 _body = _this select 0;
 _forceRemove = _this select 1;
 
-_bodyRemoveTimer = 90;
-
-if (AGM_Respawn_BodyRemoveTimer > 0) then {
-  _bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer;
-};
+_bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer min 0;
 
 // could be used for SpecOps missions.
 if (_forceRemove) then {
