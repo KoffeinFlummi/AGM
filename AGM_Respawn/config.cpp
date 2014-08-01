@@ -71,6 +71,15 @@ class CfgVehicles {
   };
 
 };
+
+class AGM_Parameters {
+  // Number parameters
+  AGM_Respawn_BodyRemoveTimer = 90;
+  // Boolean Parameters (0/1)
+  AGM_Respawn_SavePreDeathGear = 0;
+  AGM_Respawn_RemoveDeadBodies = 1;
+};
+
 /*
   // rallypoints
   class FlagCarrier;
