@@ -290,6 +290,7 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
+      <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -451,7 +452,7 @@
       <English>Pardon</English>
       <German>Begnadigen</German>
       <Spanish>Rehabilitar</Spanish>
-      <Polish>Zrehabilituj</Polish>
+      <Polish>Przebacz</Polish>
     </Key>
 
   </Package>

@@ -10,7 +10,7 @@
       <German>6,5 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
       <Spanish>Cargador de 30 balas trazadoras IR-DIM de 6,5mm</Spanish>
       <French>6.5mm 30Rnd Traçantes IR-DIM Mag</French>
-      <Polish>6,5mm 30 Nab. Smugowych IR-DIM</Polish>
+      <Polish>30 Naboi Smugowych IR-DIM 6,5mm</Polish>
       <Czech>6.5mm 30ks Svítící IR-DIM Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort">
@@ -35,7 +35,7 @@
       <German>6,5 mm 30-Schuss-Magazin SD</German>
       <Spanish>Cargador de 30 balas SD de 6,5mm</Spanish>
       <French>6.5mm 30Rnd SD Mag</French>
-      <Polish>6,5mm 30 Nab. SD</Polish>
+      <Polish>30 Naboi SD 6,5mm</Polish>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort">
       <English>6.5mm SD</English>
@@ -59,7 +59,7 @@
       <German>6,5 mm 30-Schuss-Magazin AP</German>
       <Spanish>Cargador de 30 balas AP de 6,5mm</Spanish>
       <French>6.5mm 30Rnd AP Mag</French>
-      <Polish>6,5mm 30 Nab. AP</Polish>
+      <Polish>30 Naboi AP 6,5mm</Polish>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_APNameShort">
       <English>6.5mm AP</English>
@@ -85,7 +85,7 @@
       <German>6,5 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
       <Spanish>Cargador de 30 balas trazadoras IR-DIM de 6,5mm</Spanish>
       <French>6.5mm 30Rnd Traçantes IR-DIM Mag</French>
-      <Polish>6,5mm 30 Nab. Smugowych IR-DIM</Polish>
+      <Polish>30 Naboi Smugowych IR-DIM 6,5mm</Polish>
       <Czech>6.5mm 30ks Svítící IR-DIM Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimNameShort">
@@ -110,7 +110,7 @@
       <German>6,5 mm 30-Schuss-Magazin SD</German>
       <Spanish>Cargador de 30 balas SD de 6,5mm</Spanish>
       <French>6.5mm 30Rnd SD Mag</French>
-      <Polish>6,5mm 30 Nab. SD</Polish>
+      <Polish>30 Naboi SD 6,5mm</Polish>
       <Czech>6.5mm 30ks SD Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_SDNameShort">
@@ -134,7 +134,7 @@
       <German>6,5 mm 30-Schuss-Magazin AP</German>
       <Spanish>Cargador de 30 balas AP de 6,5mm</Spanish>
       <French>6.5mm 30Rnd AP Mag</French>
-      <Polish>6,5mm 30 Nab. AP</Polish>
+      <Polish>30 Naboi AP 6,5mm</Polish>
       <Czech>6.5mm 30ks AP Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_APNameShort">
@@ -162,7 +162,7 @@
       <German>5,56 mm 30-Schuss-Magazin Leuchtspur IR-DIM</German>
       <Spanish>Cargador de 30 balas trazadoras IR-DIM de 5,56mm</Spanish>
       <French>5.56mm 30rnd Tracer IR-DIM Mag</French>
-      <Polish>5,56mm 30 Nab. Smugowych IR-DIM</Polish>
+      <Polish>30 Naboi Smugowych IR-DIM 5,56mm</Polish>
       <Czech>5.56mm 30ks Svítící IR-DIM Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_556x45_mag_Tracer_DimNameShort">
@@ -187,7 +187,7 @@
       <German>5,56 mm 30-Schuss-Magazin SD</German>
       <Spanish>Cargador de 30 balas SD de 5,56 mm</Spanish>
       <French>5.56mm 30rnd SD Mag</French>
-      <Polish>5,56mm 30 Nab. SD</Polish>
+      <Polish>30 Naboi SD 5,56mm</Polish>
       <Czech>5.56mm 30ks SD Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_556x45_mag_SDNameShort">
@@ -212,7 +212,7 @@
       <German>5,56 mm 30-Schuss-Magazin AP</German>
       <Spanish>Cargador de 30 balas AP de 5,56mm</Spanish>
       <French>5.56mm 30rnd AP Mag</French>
-      <Polish>5,56mm 30 Nab. AP</Polish>
+      <Polish>30 Naboi AP 5,56mm</Polish>
       <Czech>5.56mm 30ks AP Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_556x45_mag_APNameShort">
@@ -240,7 +240,7 @@
       <German>7,62 mm 20-Schuss-Magazin Leuchtspur</German>
       <Spanish>Cargador de 20 balas trazadores de 7,62mm</Spanish>
       <French>7.62mm 20rnd Tracer Mag</French>
-      <Polish>7,62mm 20 Nab. Smugowych</Polish>
+      <Polish>20 Naboi Smugowych 7,62mm</Polish>
       <Czech>7.62mm 20ks Svítící Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_20Rnd_762x51_mag_TracerNameShort">
@@ -264,7 +264,7 @@
       <German>7,62 mm 20-Schuss-Magazin Leuchtspur IR-DIM</German>
       <Spanish>Cargador de 20 balas IR-DIM de 7,62mm</Spanish>
       <French>7.62mm 20rnd Tracer IR-DIM Mag</French>
-      <Polish>7,62mm 20 Nab. Smugowych IR-DIM</Polish>
+      <Polish>20 Naboi Smugowych IR-DIM 7,62mm</Polish>
       <Czech>7.62mm 20ks Svítící IR-DIM Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_20Rnd_762x51_mag_Tracer_DimNameShort">
@@ -289,7 +289,7 @@
       <German>7,62 mm 20-Schuss-Magazin SD</German>
       <Spanish>Cargador de 20 balas SD de 7,62mm</Spanish>
       <French>7.62mm 20rnd SD Mag</French>
-      <Polish>7,62mm 20 Nab. SD</Polish>
+      <Polish>20 Naboi SD 7,62mm</Polish>
       <Czech>7.62mm 20ks SD Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_20Rnd_762x51_mag_SDNameShort">
@@ -314,7 +314,7 @@
       <German>7,62 mm 20-Schuss-Magazin AP</German>
       <Spanish>Cargador de 20 balas AP de 7,62mm</Spanish>
       <French>7.62mm 20rnd AP Mag</French>
-      <Polish>7,62mm 20 Nab. AP</Polish>
+      <Polish>20 Naboi AP 7,62mm</Polish>
       <Czech>7.62mm 20ks AP Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_20Rnd_762x51_mag_APNameShort">
