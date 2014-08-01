@@ -149,7 +149,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
 
     class AmovPercMwlkSlowWrflDf: AmovPercMstpSlowWrflDnon {
-      speed = "1.3*0.206897";
+      //speed = "1.3*0.206897";
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };

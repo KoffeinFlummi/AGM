@@ -133,7 +133,7 @@ def folder_mod_time(path):
 def check_for_changes(module_name):
   """ Checks if a folder had modifications after the last binarization. """
   try:
-    pbo_path     = os.path.join(get_arma_path(), modfolder, "Addons", module_name.lower()+".pbo")
+    pbo_path     = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons", module_name.lower()+".pbo")
     project_path = os.path.join(os.path.dirname(scriptpath), module_name)
     return folder_mod_time(project_path) > os.path.getmtime(pbo_path)
   except: # File not found or some other weirdness
@@ -157,13 +157,13 @@ def get_modules():
 
 def binarize(module_name):
   """ Binarizes the given module """
-  global modfolder, privatekey, movemanually
+  global moddir, modfolder, privatekey, movemanually
 
   tempfolder        = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
 
   addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder", "AddonBuilder.exe")
   source_path       = os.path.join(os.path.dirname(scriptpath), module_name)
-  destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
+  destination_path  = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
   include_path      = os.path.join(os.path.dirname(scriptpath), "include.txt")
   final_path        = os.path.join(destination_path, module_name+".pbo")
 

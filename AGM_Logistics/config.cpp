@@ -690,7 +690,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\track.p3d";
+		model = "\AGM_Logistics\agm_track.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareTrack";
 		mapSize = 0.7;
@@ -709,7 +709,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\wheel.p3d";
+		model = "\AGM_Logistics\agm_wheel.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareWheel";
 		mapSize = 0.7;
