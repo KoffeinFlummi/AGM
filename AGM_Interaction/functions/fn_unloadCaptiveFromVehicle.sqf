@@ -11,8 +11,7 @@ _cargo = [_cargo, {_this getVariable ["AGM_isCaptive", false]}] call AGM_Core_fn
 
 if (count _cargo == 0) exitWith {};
 
-_target = _captives select 0;
+_target = _cargo select 0;
 
 moveOut _target;	//global?
-
-//[_target, "{moveOut _this}", _target] call AGM_Core_fnc_execRemoteFnc;
+[_target, "{unassignVehicle _this}", _target] call AGM_Core_fnc_execRemoteFnc;

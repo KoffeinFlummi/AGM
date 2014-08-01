@@ -21,10 +21,11 @@ if (_state) then {
 
 		while {_this getVariable ["AGM_isSurrender", false]} do {
 			sleep 0.001; //sleep in UI
-			_this playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
 
 			if (!alive _this || {_this getVariable ["AGM_Unconscious", false]}) then {
 				_this setVariable ["AGM_isSurrender", false, true];
+			} else {
+				_this playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
 			};
 		};
 		if !(_this getVariable ["AGM_Unconscious", false]) then {

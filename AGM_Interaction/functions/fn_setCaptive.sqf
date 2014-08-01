@@ -1,7 +1,7 @@
 // by commy2, Nic547
 // Makes a civilian unable to move
 
-private ["_unit", "_state"];
+private ["_unit", "_state", "_remote", "_inputDisabled"];
 
 _unit = _this select 0;
 _state = _this select 1;
@@ -15,6 +15,8 @@ if (!_remote and _state) then {
 };
 
 if (!local _unit) exitWith {[_this + [true], _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
+
+_inputDisabled = false;
 
 if (_state) then {
 	if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
@@ -34,13 +36,28 @@ if (_state) then {
 
 		while {_this getVariable ["AGM_isCaptive", false]} do {
 			sleep 0.001; //sleep in UI
-			_this playMove "AmovPercMstpSnonWnonDnon_Ease";
+
+			waitUntil {!(_this getVariable ["AGM_Unconscious", false])};
+
+			if (isPlayer _this) then {
+				if (!_inputDisabled) then {
+					if (!isNull (attachedTo _this) || {vehicle _this != _this}) then {
+						[_this, true] call AGM_Core_fnc_disableUserInput;
+						_inputDisabled = true;
+					};
+				} else {
+					if (isNull (attachedTo _this) && {vehicle _this == _this}) then {
+						[_this, false] call AGM_Core_fnc_disableUserInput;
+						_inputDisabled = false;
+					};
+				};
+			};
 
 			if (!alive _this) then {
 				_this setVariable ["AGM_isCaptive", false, true];
+			} else {
+				_this playMove "AmovPercMstpSnonWnonDnon_Ease";
 			};
-
-			waitUntil {!(_this getVariable ["AGM_Unconscious", false])};
 		};
 		if !(_this getVariable ["AGM_Unconscious", false]) then {
 			_this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
@@ -52,4 +69,7 @@ if (_state) then {
 	};
 } else {
 	_unit setVariable ["AGM_isCaptive", false, true];
+	if (_inputDisabled && {isPlayer _unit}) then {
+		[_unit, false] call AGM_Core_fnc_disableUserInput;
+	};
 };
