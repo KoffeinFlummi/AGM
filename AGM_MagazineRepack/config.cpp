@@ -41,5 +41,4 @@ class CfgVehicles {
 
 class AGM_Parameters {
   AGM_MagazineRepack_TimePerAmmo = 1.5;
-  AGM_MagazineRepack_TimePerMagazine = 2.0;
 };
