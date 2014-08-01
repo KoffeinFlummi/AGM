@@ -5,8 +5,16 @@ private ["_unit", "_state"];
 
 _unit = _this select 0;
 _state = _this select 1;
+_remote = false;
+if (count _this > 2) then {
+	_remote = _this select 2;
+};
 
-if (!local _unit) exitWith {[_this, _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
+if (!_remote and _state) then {
+	player removeItem "AGM_CableTie";
+};
+
+if (!local _unit) exitWith {[_this + [true], _fnc_scriptName, _unit] call AGM_Core_fnc_execRemoteFnc};
 
 if (_state) then {
 	if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};

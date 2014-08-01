@@ -206,13 +206,13 @@ class CfgSounds {
 	};
 };
 
-class CfgVehicleClasses {
-	class AGM_Repair_Items {
-		displayName = "AGM";
-	};
-};
-
 #include <Macros.hpp>
+
+class CfgVehicleClasses {
+  class AGM_Repair_Items {
+    displayName = "AGM";
+  };
+};
 
 class CfgVehicles {
 	class Man;
@@ -690,7 +690,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\track.p3d";
+		model = "\AGM_Logistics\agm_track.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareTrack";
 		mapSize = 0.7;
@@ -709,7 +709,7 @@ class CfgVehicles {
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\wheel.p3d";
+		model = "\AGM_Logistics\agm_wheel.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareWheel";
 		mapSize = 0.7;
@@ -847,7 +847,7 @@ class CfgVehicles {
 		class AGM_Actions;
 	};
 	class B_Truck_01_transport_F: Truck_01_base_F {
-		class AGM_Load {
+		/*class AGM_Load {											@todo
 			class MidLoad {
 				displayName = "Middle of truck";
 				loadSize = 2; // Size of object, 1 = small, 2 = large
@@ -855,7 +855,7 @@ class CfgVehicles {
 				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
 			};
 			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
-		};
+		};*/
 	};
 	class B_Truck_01_mover_F: B_Truck_01_transport_F {};
 	class B_Truck_01_Repair_F: B_Truck_01_mover_F {

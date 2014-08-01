@@ -22,7 +22,7 @@ class PhysXParams {
   epeImpulseDamageCoef = 1320.0;
   impulseForceRagdollCoef = 200;
   impulseTorqueRagdollCoef = 100;
-  maxRagdollImpulseForceMagnitude = 2200;
+  maxRagdollImpulseForceMagnitude = 500;
   maxRagdollImpulseTorqueMagnitude = 150;
   ragdollUnderwaterBuoyancyCoef = 9.7;
   ragdollUnderwaterResistanceCoef = 0.005;

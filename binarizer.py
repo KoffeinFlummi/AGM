@@ -133,7 +133,7 @@ def folder_mod_time(path):
 def check_for_changes(module_name):
   """ Checks if a folder had modifications after the last binarization. """
   try:
-    pbo_path     = os.path.join(get_arma_path(), modfolder, "Addons", module_name+".pbo")
+    pbo_path     = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons", module_name.lower()+".pbo")
     project_path = os.path.join(os.path.dirname(scriptpath), module_name)
     return folder_mod_time(project_path) > os.path.getmtime(pbo_path)
   except: # File not found or some other weirdness
@@ -157,13 +157,13 @@ def get_modules():
 
 def binarize(module_name):
   """ Binarizes the given module """
-  global modfolder, privatekey, movemanually
+  global moddir, modfolder, privatekey, movemanually
 
   tempfolder        = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
 
   addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder", "AddonBuilder.exe")
   source_path       = os.path.join(os.path.dirname(scriptpath), module_name)
-  destination_path  = os.path.join(get_arma_path(), modfolder, "Addons")
+  destination_path  = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
   include_path      = os.path.join(os.path.dirname(scriptpath), "include.txt")
   final_path        = os.path.join(destination_path, module_name+".pbo")
 
@@ -226,111 +226,124 @@ def binarize(module_name):
       print("# "+module_name+" moved successfully.")
 
 
-# Check all paths.
+def main():
+  # Check all paths.
 
-try:
-  path = get_arma_path()
-  assert(path != "")
-except:
-  print("ERROR: Failed to get Arma installation path.\n")
-  if getattr(sys, "frozen", False):
-    quit = input("\nPress any key to exit ...")
-  sys.exit(1)
-
-try:
-  path = get_armatools_path()
-  assert(path != "")
-except:
-  print("ERROR: Failed to get Addon Builder installation path.\n")
-  if getattr(sys, "frozen", False):
-    quit = input("\nPress any key to exit ...")
-  sys.exit(1)
-
-try:
-  modules = get_modules()
-except:
-  print("ERROR: Failed to read modules.\n")
-  if getattr(sys, "frozen", False):
-    quit = input("\nPress any key to exit ...")
-  sys.exit(1)
-
-try:
-  path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
-  if not os.path.exists(path):
-    print("# Creating Modfolder...")
-    os.makedirs(path)
-except:
-  print("ERROR: Failed to get/create mod path.")
-  if getattr(sys, "frozen", False):
-    quit = input("\nPress any key to exit ...")
-  sys.exit(1)
-
-# Copy FileBank, CfgConvert and DSSignFile if necessary
-if getattr(sys, "frozen", False):
-  convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
-  filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
-  signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
-  if not (os.path.exists(convert_path) and os.path.exists(filebank_path) and os.path.exists(signfile_path)):
-    print("# SETUP")
-    print("This seems to be the first time you're running this. We need to copy some folders (CfgConvert, FileBank, DSSignFile) from 'Arma 3 Tools' to 'Arma 3' to make this work. Are you ok with that? (y/n)")
-    if (input("> ").lower() == "y"):
-      if not os.path.exists(convert_path):
-        try:
-          shutil.copytree(os.path.join(get_armatools_path(), "CfgConvert"), os.path.join(get_arma_path(), "CfgConvert"))
-        except:
-          print("ERROR: Failed to copy CfgConvert from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-          print("\nPress any key to exit ...")
-          sys.exit(1)
-      if not os.path.exists(filebank_path):
-        try:
-          shutil.copytree(os.path.join(get_armatools_path(), "FileBank"), os.path.join(get_arma_path(), "FileBank"))
-        except:
-          print("ERROR: Failed to copy FileBank from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-          print("\nPress any key to exit ...")
-          sys.exit(1)
-      if not os.path.exists(signfile_path):
-        try:
-          shutil.copytree(os.path.join(get_armatools_path(), "DSSignFile"), os.path.join(get_arma_path(), "DSSignFile"))
-        except:
-          print("ERROR: Failed to copy DSSignFile from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-          print("\nPress any key to exit ...")
-          sys.exit(1)
-
-      print("All folders moved successfully.")
-      print("")
-    else:
+  try:
+    path = get_arma_path()
+    assert(path != "")
+  except:
+    print("ERROR: Failed to get Arma installation path.\n")
+    if getattr(sys, "frozen", False):
       quit = input("\nPress any key to exit ...")
-      sys.exit(1)
+    sys.exit(1)
+
+  try:
+    path = get_armatools_path()
+    assert(path != "")
+  except:
+    print("ERROR: Failed to get Addon Builder installation path.\n")
+    if getattr(sys, "frozen", False):
+      quit = input("\nPress any key to exit ...")
+    sys.exit(1)
+
+  try:
+    modules = get_modules()
+  except:
+    print("ERROR: Failed to read modules.\n")
+    if getattr(sys, "frozen", False):
+      quit = input("\nPress any key to exit ...")
+    sys.exit(1)
+
+  try:
+    path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+    if not os.path.exists(path):
+      print("# Creating Modfolder...")
+      os.makedirs(path)
+  except:
+    print("ERROR: Failed to get/create mod path.")
+    if getattr(sys, "frozen", False):
+      quit = input("\nPress any key to exit ...")
+    sys.exit(1)
+
+  # Copy FileBank, CfgConvert and DSSignFile if necessary
+  if getattr(sys, "frozen", False):
+    convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
+    filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
+    signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
+    if not (os.path.exists(convert_path) and os.path.exists(filebank_path) and os.path.exists(signfile_path)):
+      print("# SETUP")
+      print("This seems to be the first time you're running this. We need to copy some folders (CfgConvert, FileBank, DSSignFile) from 'Arma 3 Tools' to 'Arma 3' to make this work. Are you ok with that? (y/n)")
+      if (input("> ").lower() == "y"):
+        if not os.path.exists(convert_path):
+          try:
+            shutil.copytree(os.path.join(get_armatools_path(), "CfgConvert"), os.path.join(get_arma_path(), "CfgConvert"))
+          except:
+            print("ERROR: Failed to copy CfgConvert from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+            print("\nPress any key to exit ...")
+            sys.exit(1)
+        if not os.path.exists(filebank_path):
+          try:
+            shutil.copytree(os.path.join(get_armatools_path(), "FileBank"), os.path.join(get_arma_path(), "FileBank"))
+          except:
+            print("ERROR: Failed to copy FileBank from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+            print("\nPress any key to exit ...")
+            sys.exit(1)
+        if not os.path.exists(signfile_path):
+          try:
+            shutil.copytree(os.path.join(get_armatools_path(), "DSSignFile"), os.path.join(get_arma_path(), "DSSignFile"))
+          except:
+            print("ERROR: Failed to copy DSSignFile from Arma 3 Tools to Arma 3. Please do that manually and restart.")
+            print("\nPress any key to exit ...")
+            sys.exit(1)
+
+        print("All folders moved successfully.")
+        print("")
+      else:
+        quit = input("\nPress any key to exit ...")
+        sys.exit(1)
 
 
-# Binarize stuff.
+  # Binarize stuff.
 
-print("######################################################")
-print("# Tools found, starting binarization.                #")
-print("######################################################")
+  print("######################################################")
+  print("# Tools found, starting binarization.                #")
+  print("######################################################")
 
-threads = []
+  threads = []
 
-print("\nModules that need binarization:")
-if (len(modules) > 0):
-  print(", ".join(modules))
-  print("")
-else:
-  print("none.")
+  print("\nModules that need binarization:")
+  if (len(modules) > 0):
+    print(", ".join(modules))
+    print("")
+  else:
+    print("none.")
 
-for module in modules:
-  print("# Binarizing: " + module)
-  thread = threading.Thread(target=binarize, args=[module])
-  thread.start()
-  threads.append(thread)
-  time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
+  for module in modules:
+    print("# Binarizing: " + module)
+    thread = threading.Thread(target=binarize, args=[module])
+    thread.start()
+    threads.append(thread)
+    time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
 
-for thread in threads:
-  thread.join()
+  for thread in threads:
+    thread.join()
 
-print("\n######################################################")
-print("# Binarization complete.                             #")
-print("######################################################")
+  print("\n######################################################")
+  print("# Binarization complete.                             #")
+  print("######################################################")
 
-if getattr(sys, "frozen", False):
-  quit = input("\nPress any key to exit ...")
+  # Convert PBO names to lowercase for linux.
+  path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+  for filename in os.listdir(path):
+    try:
+      os.rename(os.path.join(path, filename), os.path.join(path, filename.lower()))
+    except:
+      pass
+
+  if getattr(sys, "frozen", False):
+    quit = input("\nPress any key to exit ...")
+
+
+if __name__ == "__main__":
+  main()

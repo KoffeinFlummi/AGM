@@ -287,6 +287,11 @@
       <Hungarian>Játékosnevek mutatása</Hungarian>
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
+    <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
+      <English>Show player ranks (requires player names)</English>
+      <German>Spielerränge anzeigen (benötig Spielernamen)</German>
+      <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
+    </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
       <German>Abbrechen</German>
@@ -447,7 +452,18 @@
       <English>Pardon</English>
       <German>Begnadigen</German>
       <Spanish>Rehabilitar</Spanish>
-      <Polish>Zrehabilituj</Polish>
+      <Polish>Przebacz</Polish>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_CableTie_Name">
+      <English>Cable Tie</English>
+      <German>Kabelbinder</German>
+      <Polish>Opaska Zaciskowa</Polish>
+    </Key>
+    <Key ID="STR_AGM_Interaction_CableTie_Description">
+      <English>Cable ties that allow you to restrain prisoners.</English>
+      <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
+      <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
     </Key>
 
   </Package>

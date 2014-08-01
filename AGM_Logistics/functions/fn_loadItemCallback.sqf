@@ -13,6 +13,19 @@ if (_item == player getVariable ["AGM_carriedItem", objNull]) then {
 	player call AGM_Drag_fnc_releaseObject;
 };
 
+// add default items
+_items = _vehicle getVariable "AGM_Logistics_loadedItems";
+if (isNil "_items") then {
+	switch (true) do {
+		case (_vehicle isKindOf "Car_F") : {
+			[_vehicle] call compile preprocessFileLineNumbers "\AGM_Logistics\scripts\itemsCar.sqf";
+		};
+		case (_vehicle isKindOf "Tank_F") : {
+			[_vehicle] call compile preprocessFileLineNumbers "\AGM_Logistics\scripts\itemsTank.sqf";
+		};
+	};
+};
+
 _size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
 if (!_magicMenu) then {
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;

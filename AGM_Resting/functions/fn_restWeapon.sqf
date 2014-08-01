@@ -23,36 +23,37 @@ private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_check
 if (currentWeapon player != primaryWeapon player or vehicle player != player) exitWith {};
 if !(player getVariable ["AGM_CanTreat", True]) exitWith {};
 if (weaponLowered player) exitWith {};
+if ([player] call AGM_Core_fnc_inTransitionAnim) exitWith {};
 
 // PREPARE INTERSECTS
 AGM_Resting_getIntersection = {
   _weaponPos = ATLtoASL (player modelToWorld (player selectionPosition "RightHand"));
   _weaponDir = player weaponDirection (currentWeapon player);
   _weaponPosDown = [
-                      _weaponPos select 0,
-                      _weaponPos select 1,
-                      (_weaponPos select 2) - MAXHEIGHT
-                    ];
+    _weaponPos select 0,
+    _weaponPos select 1,
+    (_weaponPos select 2) - MAXHEIGHT
+  ];
   _checkPosMiddle = [
-                      (_weaponPos select 0) + MAXDISTANCE * (_weaponDir select 0),
-                      (_weaponPos select 1) + MAXDISTANCE * (_weaponDir select 1),
-                      (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
-                    ];
+    (_weaponPos select 0) + MAXDISTANCE * (_weaponDir select 0),
+    (_weaponPos select 1) + MAXDISTANCE * (_weaponDir select 1),
+    (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
+  ];
   _checkPosLeft = [
-                      (_weaponPos select 0) + MAXDISTANCE * sin (((_weaponDir select 0) atan2 (_weaponDir select 1)) + 360 - MAXANGLE),
-                      (_weaponPos select 1) + MAXDISTANCE * cos (((_weaponDir select 0) atan2 (_weaponDir select 1)) + 360 - MAXANGLE),
-                      (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
-                    ];
+    (_weaponPos select 0) + MAXDISTANCE * sin (((_weaponDir select 0) atan2 (_weaponDir select 1)) + 360 - MAXANGLE),
+    (_weaponPos select 1) + MAXDISTANCE * cos (((_weaponDir select 0) atan2 (_weaponDir select 1)) + 360 - MAXANGLE),
+    (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
+  ];
   _checkPosRight = [
-                      (_weaponPos select 0) + MAXDISTANCE * sin (((_weaponDir select 0) atan2 (_weaponDir select 1)) + MAXANGLE),
-                      (_weaponPos select 1) + MAXDISTANCE * cos (((_weaponDir select 0) atan2 (_weaponDir select 1)) + MAXANGLE),
-                      (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
-                    ];
+    (_weaponPos select 0) + MAXDISTANCE * sin (((_weaponDir select 0) atan2 (_weaponDir select 1)) + MAXANGLE),
+    (_weaponPos select 1) + MAXDISTANCE * cos (((_weaponDir select 0) atan2 (_weaponDir select 1)) + MAXANGLE),
+    (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2)
+  ];
   _checkPosDown = [
-                      (_weaponPos select 0) + MAXDISTANCE * (_weaponDir select 0),
-                      (_weaponPos select 1) + MAXDISTANCE * (_weaponDir select 1),
-                      (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2) - MAXHEIGHT
-                    ];
+    (_weaponPos select 0) + MAXDISTANCE * (_weaponDir select 0),
+    (_weaponPos select 1) + MAXDISTANCE * (_weaponDir select 1),
+    (_weaponPos select 2) + MAXDISTANCE * (_weaponDir select 2) - MAXHEIGHT
+  ];
 
   /* UNCOMMENT THIS FOR DEBUGGING
   weaponPos = ASLtoATL _weaponPos;

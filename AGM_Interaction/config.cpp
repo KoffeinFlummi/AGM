@@ -106,6 +106,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerNames";
     default = 1;
   };
+  class showPlayerRanks {
+    displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
+    default = 1;
+  };
 };
 
 class AGM_Parameters {
@@ -150,6 +154,11 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
     };
   };
+};
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {
@@ -244,7 +253,8 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        //condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "'AGM_CableTie' in items player && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
@@ -629,6 +639,30 @@ class CfgVehicles {
         description = "Distance in meters at which player names are shown. Default: 5";
         defaultValue = 5;
       };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_CableTie,24)
+    };
+  };
+};
+
+class CfgWeapons {
+  class ItemCore;
+  class InventoryItem_Base_F;
+
+  class AGM_CableTie: ItemCore {
+    displayName = "$STR_AGM_Interaction_CableTie_Name";
+    descriptionShort = "$STR_AGM_Interaction_CableTie_Description";
+    model = "\AGM_Interaction\agm_cabletie.p3d";
+    picture = "\AGM_Interaction\UI\agm_cabletie_x_ca.paa";
+    scope = 2;
+    class ItemInfo: InventoryItem_Base_F {
+      mass = 1;
+      type = 401;
     };
   };
 };
