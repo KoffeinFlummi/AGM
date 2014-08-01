@@ -312,7 +312,7 @@ class RscAGM_SelectAnItem {
 			h = 0.1;
 			y = 0.605;
 			text = $STR_AGM_Interaction_CancelSelection;
-			action = "closeDialog 0;";
+			action = "closeDialog 0;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
 		};
 		class approveBtn: AGM_Interaction_Button_Base {
 			idc = 8860;

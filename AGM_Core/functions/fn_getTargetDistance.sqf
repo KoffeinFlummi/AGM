@@ -18,8 +18,9 @@ _interval = _this select 0;
 _maxDistance = _this select 1;
 _minDistance = _this select 2;
 
-_position = positionCameraToWorld [0, 0, 0];
-if (!surfaceIsWater _position) then {_position = ATLtoASL _position};
+_position = ATLToASL positionCameraToWorld [0, 0, 0];
+_position set [2, (_position select 2) - (getTerrainHeightASL _position min 0)];
+
 _laser = + _position;
 _line = [_position, _laser];
 

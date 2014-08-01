@@ -19,10 +19,15 @@ class CfgFunctions {
       class addInteraction;
       class addInteractionSelf;
       class canInteractWith;
+      class canLoadCaptiveIntoVehicle;
       class canTapShoulder;
+      class canUnloadCaptiveFromVehicle;
+      class escortCaptive;
       class getCaptivityStatus;
+      class getDown;
       class isInRange;
       class joinTeam;
+      class loadCaptiveIntoVehicle;
       class module;
       class openDoor;
       class openMenu;
@@ -31,14 +36,13 @@ class CfgFunctions {
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
-      class sortOptionsByPriority;
-      class tapShoulder;
-      class escortCaptive;
-      class getDown;
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
+      class sortOptionsByPriority;
       class surrender;
+      class tapShoulder;
+      class unloadCaptiveFromVehicle;
     };
   };
 };
@@ -279,6 +283,23 @@ class CfgVehicles {
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.3;
+      };
+      class AGM_LoadCaptive {
+        displayName = "Load Captive into Vehicle";
+        distance = 4;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = 2.2;
+      };
+      class AGM_UnloadCaptive {
+        displayName = "Unload Captive from Vehicle";
+        distance = 4;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveIntoVehicle";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveIntoVehicle";
+        showDisabled = 0;
+        priority = 2.2;
       };
 
       class AGM_Pardon {
