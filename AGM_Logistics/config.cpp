@@ -206,13 +206,13 @@ class CfgSounds {
 	};
 };
 
-class CfgVehicleClasses {
-	class AGM_Repair_Items {
-		displayName = "AGM";
-	};
-};
-
 #include <Macros.hpp>
+
+class CfgVehicleClasses {
+  class AGM_Repair_Items {
+    displayName = "AGM";
+  };
+};
 
 class CfgVehicles {
 	class Man;
