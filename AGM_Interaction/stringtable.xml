@@ -458,10 +458,12 @@
     <Key ID="STR_AGM_Interaction_CableTie_Name">
       <English>Cable Tie</English>
       <German>Kabelbinder</German>
+      <Polish>Opaska Zaciskowa</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
       <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
+      <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
     </Key>
 
   </Package>
