@@ -75,7 +75,9 @@ if(format["%1", _backpack] != "") then {
     _unit addMagazine _x;
 } foreach _primaryweaponmagazine;
 
-_unit addweapon _primaryweapon;
+if (_primaryweapon != "") then {
+    _unit addweapon _primaryweapon;
+};
 
 {
     _unit addPrimaryWeaponItem _x;
@@ -87,7 +89,9 @@ _unit addweapon _primaryweapon;
     _unit addMagazine _x;
 } foreach _secondaryweaponmagazine;
 
-_unit addweapon _secondaryweapon;
+if (_secondaryweapon != "") then {
+    _unit addweapon _secondaryweapon;
+};
 
 {
     _unit addSecondaryWeaponItem _x;
@@ -99,7 +103,9 @@ _unit addweapon _secondaryweapon;
     _unit addMagazine _x;
 } foreach _handgunweaponmagazine;
 
-_unit addweapon _handgunweapon;
+if (_handgunweapon != "") then {
+    _unit addweapon _handgunweapon;
+};
 
 {
     _unit addHandgunItem _x;

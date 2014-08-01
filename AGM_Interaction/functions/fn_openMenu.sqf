@@ -8,11 +8,15 @@ _class = _this;
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
 _object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
+// fix inheritance
+_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions";
+if !(_class in ["", "Default"]) then {_configClass = _configClass >> _class};
+
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 {
 	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_Actions";
-	if (_class != "") then {_config = _config >> _this};
+	if !(_class in ["", "Default"]) then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -47,12 +51,12 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 // search add-on config file
 {
 	_config = configfile >> "CfgVehicles" >> _x >> "AGM_Actions";
-	if (_class != "") then {_config = _config >> _this};
+	if !(_class in ["", "Default"]) then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
 		for "_index" from 0 to (_count - 1) do {
-			_action = _config select _index;
+			_action = _configClass >> configName (_config select _index);
 
 			if (count _action > 0) then {
 				_configName = configName _action;
@@ -122,7 +126,7 @@ for "_a" from 0 to (_count - 1) do {
 */
 
 _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
-if (_class == "") then {
+if (_class in ["", "Default"]) then {
 	AGM_Interaction_MainButton = "closeDialog 0;";
 	if (AGM_Interaction_Target isKindOf "Man") then {
 		_ctrlInteractionDialog ctrlSetText (AGM_Interaction_Target getVariable ["AGM_Name", (name AGM_Interaction_Target)]);
@@ -130,7 +134,7 @@ if (_class == "") then {
 		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf AGM_Interaction_Target) >> "displayName"));
 	};
 } else {
-	AGM_Interaction_MainButton = "'' call AGM_Interaction_fnc_openMenu;";
+	AGM_Interaction_MainButton = "'Default' call AGM_Interaction_fnc_openMenu;";
 	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
 };
 

@@ -11,7 +11,7 @@ _this spawn {
 	_unit setVariable ["AGM_carriedItem", _target, true];
 	_target setVariable ["AGM_isUsedBy", _unit, true];
 
-	if (currentWeapon _this != "" && {currentWeapon _this == primaryWeapon _this} && {weaponLowered _unit} && {stance _unit == "STAND"}) then {
+	if (currentWeapon _unit != "" && {currentWeapon _unit == primaryWeapon _unit} && {weaponLowered _unit} && {stance _unit == "STAND"}) then {
 		_unit playMove "amovpercmstpsraswrfldnon";
 	};
 	_unit action ["SwitchWeapon", _unit, _unit, 99];

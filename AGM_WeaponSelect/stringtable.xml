@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectPistol">
       <English>Select Pistol</English>
       <German>Pistole auswählen</German>
-      <Spanish>Seleccionar Pistola</Spanish>
+      <Spanish>Seleccionar pistola</Spanish>
       <Polish>Wybierz Pistolet</Polish>
       <Czech>Zvolit příruční zbraň</Czech>
       <Russian>Выбрать пистолет</Russian>
@@ -15,7 +15,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectRifle">
       <English>Select Rifle</English>
       <German>Gewehr auswählen</German>
-      <Spanish>Seleccionar Rifle</Spanish>
+      <Spanish>Seleccionar fusil</Spanish>
       <Polish>Wybierz Karabin</Polish>
       <Czech>Zvolit hlavní zbraň</Czech>
       <Russian>Выбрать автомат</Russian>
@@ -25,7 +25,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectLauncher">
       <English>Select Launcher</English>
       <German>Raketenwerfer auswählen</German>
-      <Spanish>Seleccionar Lanzador</Spanish>
+      <Spanish>Seleccionar lanzador</Spanish>
       <Polish>Wybierz Wyrzutnię</Polish>
       <Czech>Zvolit Raketomet</Czech>
       <Russian>Выбрать гранатомет</Russian>
@@ -35,7 +35,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectRifleMuzzle">
       <English>Select Grenade Launcher</English>
       <German>Granatwerfer auswählen</German>
-      <Spanish>Seleccionar Lanzador de Granadas</Spanish>
+      <Spanish>Seleccionar lanzador de granadas</Spanish>
       <Polish>Wybierz Granatnik</Polish>
       <Czech>Zvolit Granátomet</Czech>
       <Russian>Выбрать подствольный гранатомет</Russian>
@@ -45,7 +45,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
       <English>Select Binoculars</English>
       <German>Fernglas auswählen</German>
-      <Spanish>Seleccionar Binoculares</Spanish>
+      <Spanish>Seleccionar prismáticos</Spanish>
       <Polish>Wybierz Lornetkę</Polish>
       <Czech>Zvolit Dalekohled</Czech>
       <Russian>Выбрать бинокль</Russian>
@@ -55,7 +55,7 @@
     <Key ID="STR_AGM_WeaponSelect_HolsterWeapon">
       <English>Holster Weapon</English>
       <German>Waffe holstern</German>
-      <Spanish>Enfundar el Arma</Spanish>
+      <Spanish>Enfundar el arma</Spanish>
       <Polish>Schowaj broń</Polish>
       <Czech>Schovat zbraň</Czech>
       <Russian>Убрать оружие</Russian>
@@ -66,7 +66,7 @@
     <Key ID="STR_AGM_WeaponSelect_EngineOn">
       <English>Engine on</English>
       <German>Motor an</German>
-      <Spanish>Prender Motor</Spanish>
+      <Spanish>Encender motor</Spanish>
       <Polish>Włącz silnik</Polish>
       <French>Moteur Allumer</French>
       <Hungarian>Motor indít</Hungarian>
@@ -75,7 +75,7 @@
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
       <English>Engine off</English>
       <German>Motor aus</German>
-      <Spanish>Apagar Motor</Spanish>
+      <Spanish>Apagar motor</Spanish>
       <Polish>Wyłącz silnik</Polish>
       <French>Moteur éteint</French>
       <Hungarian>Motor leállít</Hungarian>
@@ -94,7 +94,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
       <English>Select Machine Gun</English>
       <German>Maschinengewehr auswählen</German>
-      <Spanish>Seleccionar Ametralladora</Spanish>
+      <Spanish>Seleccionar ametralladora</Spanish>
       <Polish>Wybierz Karabin Maszynowy</Polish>
       <French>Sélectionnez Mitrailleuse</French>
       <Hungarian>Géppuska Kiválasztása</Hungarian>
@@ -103,7 +103,7 @@
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
       <English>Select Missiles</English>
       <German>Raketen auswählen</German>
-      <Spanish>Seleccionar Misiles</Spanish>
+      <Spanish>Seleccionar misiles</Spanish>
       <Polish>Wybierz Rakiety</Polish>
       <French>Sélectionnez Missiles</French>
       <Hungarian>Rakéta Kiválasztása</Hungarian>
@@ -113,7 +113,7 @@
     <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
       <English>Enable Quick Select</English>
       <German>Schnellauswahl einschalten</German>
-      <Spanish>Activar Selección Rápida</Spanish>
+      <Spanish>Activar selección rápida</Spanish>
       <Polish>Włącz Szybki Wybór</Polish>
       <French>Activer la Sélection rapide</French>
       <Hungarian>Gyorsváltás Bekapcsolása</Hungarian>

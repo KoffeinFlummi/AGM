@@ -22,15 +22,9 @@ if ((_unit == player) and (_item in items player)) exitWith {
 
 if (_item in (items _unit)) exitWith {
   systemChat format [localize "STR_AGM_Medical_TakingItemPatient", _displayName];
-  if !(local _unit) then {
-    [-2, {
-      if (local (_this select 3)) then {
-        (_this select 0) removeItem (_this select 1);
-        systemChat format [localize "STR_AGM_Medical_TakingYourItem", ((_this select 0) getVariable ["AGM_Name", (name (_this select 0))]), (_this select 2)];
-      };
-    }, [player, _item, _displayName, _unit]] call CBA_fnc_globalExecute;
-  } else {
-    _unit removeItem _item;
+  _unit removeItem _item;
+  if (!(local _unit) and isPlayer _unit) then {
+    [[player, _item, _displayName, _unit], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', ((_this select 0) getVariable ['AGM_Name', (name (_this select 0))]), (_this select 2)];}", _unit] call AGM_Core_fnc_execRemoteFnc;
   };
   true
 };

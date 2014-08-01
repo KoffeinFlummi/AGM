@@ -25,7 +25,7 @@
     <Key ID="STR_AGM_Overheating_WeaponJammed">
       <English>Weapon jammed!</English>
       <German>Ladehemmung!</German>
-      <Spanish>Arma trabada!</Spanish>
+      <Spanish>Arma encasquillada!</Spanish>
       <Polish>Broń się zacięła!</Polish>
       <Czech>Zbraň se zasekla!</Czech>
       <French>Arme enrayer</French>
@@ -35,7 +35,7 @@
     <Key ID="STR_AGM_Overheating_UnjamWeapon">
       <English>Clear jam</English>
       <German>Ladehemmung beheben</German>
-      <Spanish>Destrabar el arma</Spanish>
+      <Spanish>Desencasquillar el arma</Spanish>
       <Polish>Usuń zacięcie</Polish>
       <Czech>Uvolnit zbraň</Czech>
       <French>Nettoyer le canon</French>
@@ -45,7 +45,7 @@
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
       <English>Jam cleared</English>
       <German>Ladehemmung behoben</German>
-      <Spanish>Arma destrabada</Spanish>
+      <Spanish>Arma desencasquillada</Spanish>
       <Polish>Zacięcie usunięte</Polish>
       <Czech>Zbraň uvolněna</Czech>
       <French>Canon nettoyé</French>

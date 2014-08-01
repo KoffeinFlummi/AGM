@@ -49,6 +49,15 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+//release escorted captive if when entering a vehicle
+class Extended_GetIn_EventHandlers {
+  class AllVehicles {
+    class AGM_DetachCaptive {
+      clientGetIn = "if (player == _this select 2 && {player getVariable ['AGM_isEscorting', false]}) then {player setVariable ['AGM_isEscorting', false, true]}";
+    };
+  };
+};
+
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
@@ -97,6 +106,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerNames";
     default = 1;
   };
+  class showPlayerRanks {
+    displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
+    default = 1;
+  };
 };
 
 class AGM_Parameters {
@@ -106,6 +119,12 @@ class AGM_Parameters {
 class AGM_Core_canInteractConditions {
   class AGM_Interaction_isNotEscorting {
     condition = "!(player getVariable ['AGM_isEscorting', false])";
+  };
+  class AGM_Interaction_isNotCaptive {
+    condition = "!(player getVariable ['AGM_isCaptive', false])";
+  };
+  class AGM_Interaction_isNotSurrendering {
+    condition = "!(player getVariable ['AGM_isSurrender', false])";
   };
 };
 
@@ -229,7 +248,7 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])} && {!(AGM_Interaction_Target getVariable ['AGM_isSurrender', false])}";
+        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
@@ -262,8 +281,8 @@ class CfgVehicles {
         priority = 2.3;
       };
 
-      class AGM_Rehab {
-        displayName = "$STR_AGM_Interaction_Rehab";
+      class AGM_Pardon {
+        displayName = "$STR_AGM_Interaction_Pardon";
         distance = 4;
         condition = "rating AGM_Interaction_Target < -2000 && {alive AGM_Interaction_Target} && {playerSide == side group AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, '{_this addRating -rating _this}', AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
@@ -453,7 +472,7 @@ class CfgVehicles {
     };
   };
 
-
+  /*
   // BLUFOR Uniforms
   class SoldierWB: CAManBase {};
   class B_Soldier_base_F: SoldierWB {
@@ -575,6 +594,7 @@ class CfgVehicles {
   class B_G_Soldier_TL_F: I_G_Soldier_TL_F {
     modelSides[] = {3,2,1,0};
   };
+  */
 
   class LandVehicle;
   class StaticWeapon: LandVehicle {
@@ -606,6 +626,7 @@ class CfgVehicles {
     function = "AGM_Interaction_fnc_module";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Interaction\UI\IconInteraction_ca.paa";
     class Arguments {
       class PlayerNamesViewDistance {
         displayName = "Player Names View Dist.";

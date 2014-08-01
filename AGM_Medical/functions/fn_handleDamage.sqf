@@ -53,7 +53,7 @@ _hitPoints = [
   "HitRightLeg"
 ];
 
-// If the damage is being weird, we just tell it fuck off.
+// If the damage is being weird, we just tell it to fuck off.
 if !((_selectionName in _hitSelections) or (_selectionName == "")) exitWith {0};
 
 // Calculate change in damage.
@@ -74,7 +74,7 @@ if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitW
   };
 };
 if (AGM_Medical_IsFalling and (_selectionName == "")) then {
-  _damage = (_damage - _newDamage) + (_newDamage / 2); // half structural fall damage
+  _damage = _damage - _newDamage / 2; // half structural fall damage
 };
 
 // Prevent multiple damages by same hit.
@@ -84,7 +84,7 @@ if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
     if (((AGM_Medical_Hits select _i) select 2) == _projectile) then {
       _found = true;
       if (((AGM_Medical_Hits select _i) select 1) < _newDamage) then {
-        AGM_Medical_Hits set [_i, [(_hitPoints select (_hitSelections find _selectionName)), _newDamage, _projectile]];
+        AGM_Medical_Hits set [_i, [_hitPoints select (_hitSelections find _selectionName), _newDamage, _projectile]];
       };
     };
   };
@@ -118,8 +118,6 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           _unit setHitPointDamage [(_x select 0), (_x select 1)];
         };
       } count AGM_Medical_Hits;
-
-
     };
 
     // reset things.

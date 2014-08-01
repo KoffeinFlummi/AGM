@@ -39,6 +39,8 @@ _this spawn {
     _unit = _this select 0;
     _selection = _this select 1;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
     if (_selection == "All") then {
@@ -66,8 +68,6 @@ _this spawn {
     if (_fullyHealed) then {
       _unit setDamage 0;
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {

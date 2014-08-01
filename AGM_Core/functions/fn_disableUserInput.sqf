@@ -30,7 +30,7 @@ if (_state) then {
 		AGM_Core_disableUserInput_KeydownEH = {
 			_key = _this select 1;
 
-			if (_key == 1) then {
+			if (_key == 1 && {alive player}) then {
 				createDialog (["RscDisplayInterrupt", "RscDisplayMPInterrupt"] select isMultiplayer);
 
 				disableSerialization;
@@ -55,7 +55,7 @@ if (_state) then {
 	_dlg displayAddEventHandler ["KeyDown", AGM_Core_disableUserInput_KeydownEH];
 	_dlg displayAddEventHandler ["KeyUp", {true}];
 
-	hintSilent systemChat "[AGM] Debug: User Input disabled";
+	// diag_log text "[AGM] Debug: User Input disabled";
 } else {
 	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
 		0 spawn {
@@ -65,7 +65,7 @@ if (_state) then {
 			};
 
 			uiNamespace setVariable ["AGM_Core_dlgDisableMouse", displayNull];
-			systemChat "[AGM] Debug: User Input enabled";
+			diag_log text "[AGM] Debug: User Input enabled";
 		};
 	};
 };

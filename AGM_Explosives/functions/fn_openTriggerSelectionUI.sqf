@@ -24,7 +24,7 @@ _listIDC = [localize "STR_AGM_Explosives_TriggerMenu", localize "STR_AGM_Explosi
 _triggerTypes = [_magazine] call AGM_Explosives_fnc_TriggerType;
 
 // clacker enabled
-if (_triggerTypes select 0) then {
+if (_triggerTypes select 0 && {"AGM_Clacker" in (items player)}) then {
 	_item = ConfigFile >> "CfgWeapons" >> "AGM_Clacker";
 	_index = lbAdd [_listIDC, getText(_item >> "DisplayName")];
 	lbSetData [_listIDC, _index, "0"];

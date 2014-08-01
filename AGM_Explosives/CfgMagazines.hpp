@@ -61,6 +61,7 @@ class CfgMagazines {
 	};
 	class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_DemoCharge"; // CfgVehicle class for setup object.
+		model = "\A3\Weapons_F\explosives\c4_charge_small_d";
 	};
 	
 	class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag{

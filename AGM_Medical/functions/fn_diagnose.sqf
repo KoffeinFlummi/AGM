@@ -19,6 +19,8 @@ _this spawn {
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     _damages = [
       ["HitHead",     floor ((_unit getHitPointDamage "HitHead")     * 100) / 100],
       ["HitBody",     floor ((_unit getHitPointDamage "HitBody")     * 100) / 100],
@@ -130,8 +132,6 @@ _this spawn {
     };
     _string = _string + "</t>";
     [composeText [lineBreak, parseText _string]] call AGM_Medical_fnc_displayText;
-
-    player setVariable ["AGM_CanTreat", true, false];
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {

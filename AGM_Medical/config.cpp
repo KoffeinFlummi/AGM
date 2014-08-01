@@ -421,6 +421,7 @@ class CfgVehicles {
     function = "AGM_Medical_fnc_module";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Medical\UI\IconMedical_ca.paa";
     class Arguments {
       class CoefBleeding {
         displayName = "Bleeding Speed Coef.";
