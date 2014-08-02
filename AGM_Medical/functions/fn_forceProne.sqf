@@ -11,15 +11,19 @@
  */
 
 _unit = _this select 0;
+_anim1 = animationState _unit;
+waitUntil { animationState _unit != _anim1; };
 
-if (currentWeapon _unit == primaryWeapon _unit) exitWith {
-  _unit playMoveNow "amovppnemstpsraswrfldnon";
+_anim = "amovppnemstpsnonwnondnon";
+if (currentWeapon _unit == primaryWeapon _unit) then {
+  _anim = "amovppnemstpsraswrfldnon";
 };
-if (currentWeapon _unit == secondaryWeapon _unit) exitWith {
-  // _unit playMoveNow "amovppnemstpsraswlnrdnon"; (launchers can't go prone right now anyways)
-  _unit playMoveNow "amovppnemstpsraswrfldnon";
+if (currentWeapon _unit == secondaryWeapon _unit) then {
+  // _anim = "amovppnemstpsraswlnrdnon"; (launchers can't go prone right now anyways)
+   _anim = "amovppnemstpsraswrfldnon";
 };
-if (currentWeapon _unit == handgunWeapon _unit) exitWith {
-  _unit playMoveNow "AmovPpneMstpSrasWpstDnon";
+if (currentWeapon _unit == handgunWeapon _unit) then {
+  _anim = "AmovPpneMstpSrasWpstDnon";
 };
-_unit playMoveNow "amovppnemstpsnonwnondnon";
+_unit playMoveNow _anim;
+waitUntil { animationState _unit != _anim; };
