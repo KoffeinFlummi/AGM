@@ -55,9 +55,9 @@ class AGM_Core_Default_Keys {
   };
   class adjustRangeUp {
     displayName = "$STR_AGM_FireControlSystem_AdjustRangeUp";
-    condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    condition = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statement = "[_vehicle, 50] call AGM_FCS_fnc_adjustRange";
-    key = 9001; // replace with page up
+    key = 201;
     shift = 0;
     control = 0;
     alt = 0;
@@ -65,7 +65,7 @@ class AGM_Core_Default_Keys {
   class adjustRangeDown: adjustRangeUp {
     displayName = "$STR_AGM_FireControlSystem_AdjustRangeDown";
     statement = "[_vehicle, -50] call AGM_FCS_fnc_adjustRange";
-    key = 9002; // replace with page down
+    key = 209;
   };
 };
 
