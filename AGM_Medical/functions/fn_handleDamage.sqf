@@ -14,10 +14,10 @@
  * Damage value to be inflicted (optional)
  */
 
-#define UNCONSCIOUSNESSTHRESHOLD 0.5
+#define UNCONSCIOUSNESSTHRESHOLD 0.8
 
 #define LEGDAMAGETHRESHOLD1 1
-#define LEGDAMAGETHRESHOLD2 2
+#define LEGDAMAGETHRESHOLD2 1
 #define ARMDAMAGETHRESHOLD 2
 
 #define PAINKILLERTHRESHOLD 0.1
@@ -35,6 +35,10 @@ _projectile = _this select 4;
 
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {};
+  
+//prevent part sometime mess DONT WORK (must change hitpart for all man on cpp)
+// if(_selectionName == "r_femur_hit") then {_selectionName = "hand_l";};
+// if(_selectionName == "legs") then {_selectionName = "leg_l";};
 
 _hitSelections = [
   "head",
@@ -68,7 +72,7 @@ if (((velocity _unit) select 2 < -10) and (vehicle player == player)) then {
 };
 if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitWith {
   if (_selectionName in _hitSelections) then {
-    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))
+    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName));
   } else {
     0
   };
@@ -78,10 +82,11 @@ if (AGM_Medical_IsFalling and (_selectionName == "")) then {
 };
 
 // Prevent multiple damages by same hit.
-if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
+// if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
+if (!(AGM_Medical_IsFalling or (_selectionName == "")) or (AGM_Medical_IsFalling && (_selectionName in ["leg_l", "leg_r"]))) then {
   _found = false;
   for "_i" from 0 to (count AGM_Medical_Hits - 1) do {
-    if (((AGM_Medical_Hits select _i) select 2) == _projectile) then {
+    if ((_hitPoints select (_hitSelections find _selectionName) == (AGM_Medical_Hits select _i) select 0) && (((AGM_Medical_Hits select _i) select 2)) == _projectile) then {
       _found = true;
       if (((AGM_Medical_Hits select _i) select 1) < _newDamage) then {
         AGM_Medical_Hits set [_i, [_hitPoints select (_hitSelections find _selectionName), _newDamage, _projectile]];
@@ -92,7 +97,6 @@ if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
     AGM_Medical_Hits = AGM_Medical_Hits + [[(_hitPoints select (_hitSelections find _selectionName)), _newDamage, _projectile]];
   };
 };
-
 // Code to be executed AFTER damage was dealt
 if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == "")) then {
   null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
@@ -110,7 +114,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
       _preventDeath = true;
     };
 
-    if !(AGM_Medical_IsFalling) then {
+    // if !(AGM_Medical_IsFalling) then {
       {
         if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
           _unit setHitPointDamage [(_x select 0), ((_x select 1) min 0.89)];
@@ -118,7 +122,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           _unit setHitPointDamage [(_x select 0), (_x select 1)];
         };
       } count AGM_Medical_Hits;
-    };
+    // };
 
     // reset things.
     AGM_Medical_Hits = [];
@@ -143,14 +147,14 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     };
 
     // Handle leg damage symptoms
+	/*
     if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
       // lightly wounded, limit walking speed
       [_unit, "HitLegs", 1, true] call AGM_Medical_fnc_setHitPointDamage;
     } else {
       [_unit, "HitLegs", 0, true] call AGM_Medical_fnc_setHitPointDamage;
-    };
-    /* DEAL WITH THIS LATER
-      if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
+    };*/
+   	if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
         // heavily wounded, stop unit from walking alltogether
         if !(_unit getVariable "AGM_NoLegs") then {
           _unit setVariable ["AGM_NoLegs", true, true];
@@ -159,7 +163,8 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
             _unit setUnitPos "DOWN";
             [_unit] call AGM_Medical_fnc_forceProne;
             while {true} do {
-              _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+              // _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+              _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
               if (_legdamage < LEGDAMAGETHRESHOLD2) exitWith {
                 _unit setUnitPos "AUTO";
                 _unit setVariable ["AGM_NoLegs", false, true];
@@ -172,7 +177,8 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           };
         };
       };
-
+    
+	/* DEAL WITH THIS LATER
       // Handle arm damage symptoms
       if (_armdamage >= ARMDAMAGETHRESHOLD) then {
         if !(_unit getVariable "AGM_NoArms") then {
@@ -250,7 +256,6 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
         _this setVariable ["AGM_Bleeding", false, true];
       };
     };
-
   };
 };
 
