@@ -1,12 +1,10 @@
-AGM_CurrentMuzzleIsFrag = true;
-AGM_CurrentMuzzleFrag = "";
-AGM_CurrentMuzzleOther = "";
-AGM_LastGrenadeThrowTime = -1000;
-AGM_GrenadeSelectPopUp = false;
+AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag = true;
+AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = "";
+AGM_WeaponSelect_CurrentGrenadeMuzzleOther = "";
 
 // Collect frag and other muzzles separately
-AGM_MuzzlesFrags = [];
-AGM_MuzzlesOthers = [];
+AGM_WeaponSelect_FragMuzzles = [];
+AGM_WeaponSelect_NonFragMuzzles = [];
 _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles");
 {
   _muzzleName = _x;
@@ -17,8 +15,8 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
   _explosive = getNumber(configfile >> "CfgAmmo" >> _ammo >> "explosive");
   
   if (_explosive == 0) then {
-    AGM_MuzzlesOthers = AGM_MuzzlesOthers + [_muzzleName];
+    AGM_WeaponSelect_NonFragMuzzles = AGM_WeaponSelect_NonFragMuzzles + [_muzzleName];
   } else {
-    AGM_MuzzlesFrags = AGM_MuzzlesFrags + [_muzzleName];
+    AGM_WeaponSelect_FragMuzzles = AGM_WeaponSelect_FragMuzzles + [_muzzleName];
   };  
 } forEach _throwMuzzleNames;
