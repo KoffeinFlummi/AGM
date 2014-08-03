@@ -528,6 +528,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
   class Tank: LandVehicle {
     class AGM_Actions {
@@ -549,6 +550,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
   class Air;
   class Helicopter: Air {
@@ -571,6 +573,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
 
   /*
@@ -697,7 +700,6 @@ class CfgVehicles {
   };
   */
 
-  class LandVehicle;
   class StaticWeapon: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
@@ -705,16 +707,6 @@ class CfgVehicles {
 
   class StaticMortar;
   class Mortar_01_base_F: StaticMortar {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Car: LandVehicle {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Tank: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
   };
