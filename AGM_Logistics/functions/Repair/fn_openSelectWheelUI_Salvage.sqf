@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_vehicle", "_wheels", "_listIDC", "_count", "_index", "_wheel", "_name", "_picture"];
+private ["_vehicle", "_wheels", "_listIDC", "_count", "_index", "_wheel", "_name", "_picture", "_lbIndex"];
 
 _vehicle = _this select 0;
 //_wheels = _this select 1;
@@ -19,9 +19,9 @@ for "_index" from 0 to (_count - 1) do {
 	_picture = "";
 
 	if (_vehicle getHitPointDamage _wheel < 1) then {
-		_index = lbAdd [_listIDC, _name];
-		lbSetData [_listIDC, _index, _wheel];
-		lbSetPicture [_listIDC, _index, _picture];
+		_lbIndex = lbAdd [_listIDC, _name];
+		lbSetData [_listIDC, _lbIndex, _wheel];
+		lbSetPicture [_listIDC, _lbIndex, _picture];
 	};
 };
 
