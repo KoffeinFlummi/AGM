@@ -573,6 +573,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
 
   /*
