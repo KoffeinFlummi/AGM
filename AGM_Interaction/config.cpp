@@ -528,6 +528,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
   class Tank: LandVehicle {
     class AGM_Actions {
@@ -549,6 +550,7 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
   };
   class Air;
   class Helicopter: Air {
