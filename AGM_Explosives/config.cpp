@@ -60,7 +60,32 @@ class CfgFunctions
   count = COUNT; \
 };
 
+#define MACRO_DETONATEACTION 		class AGM_SelfActions { \
+			class AGM_Explosives { \
+				displayName = $STR_AGM_Explosives_Menu;\
+				condition = "true";\
+				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				showDisabled = 1;\
+				priority = 4;\
+				class AGM_Detonate {\
+					displayName = $STR_AGM_Explosives_Detonate;\
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
+					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";\
+					showDisabled = 1;\
+					priority = 2;\
+				};\
+			};\
+		};
+
 class CfgVehicles {
+	class All;
+	class AllVehicles: All {
+		MACRO_DETONATEACTION
+	};
+	class LandVehicle;
+	class Car: LandVehicle {
+		MACRO_DETONATEACTION
+	};
 	class Man;
 
 	class CAManBase: Man {
@@ -70,8 +95,7 @@ class CfgVehicles {
 				condition = "true";
 				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 4;
-				
+				priority = 4;				
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
@@ -116,31 +140,7 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.2;
 				};
-/*				class AGM_Cellphone {
-					displayName = $STR_AGM_Explosives_cellphone_displayName;
-					condition = "('AGM_Cellphone' in (items player))";
-					statement = "closeDialog 0;createDialog 'RscAGM_PhoneInterface';";
-					showDisabled = 0;
-					priority = 0.8;
-				};
-				*/
 			};
-			/*
-			class AGM_ExplosiveJammerOn {
-				displayName = $STR_AGM_Explosives_Jammer_TurnOn;
-				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and !((unitBackpack player) getVariable ['AGM_JammerEnabled', false])}";
-				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', true, true];";
-				showDisabled = 0;
-				priority = 0.1;
-			};
-			class AGM_ExplosiveJammerOff {
-				displayName = $STR_AGM_Explosives_Jammer_TurnOff;
-				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and (unitBackpack player) getVariable ['AGM_JammerEnabled', false]}";
-				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', false, true];";
-				showDisabled = 0;
-				priority = 0.1;
-			};
-			*/
 		};
 	};
 	
