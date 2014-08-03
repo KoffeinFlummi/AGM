@@ -29,6 +29,7 @@ class CfgFunctions
 			class hasPlacedExplosives;
 			
 			class initialise{postInit=1;};
+			class initialiseUnit;
 			class isSpecialist;
 			//class JammerInit;
 			
@@ -92,6 +93,28 @@ class CfgVehicles {
 					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
 					priority = 0.8;
+				};
+				class AGM_PlaceExplosive {
+					displayName = $STR_AGM_Explosives_PlaceAction;
+					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
+					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
+					showDisabled = 0;
+					priority = 0.4;
+				};
+				// Basic attach, needs to be improved.
+				class AGM_AttachExplosive {
+					displayName = $STR_AGM_Explosives_AttachTo;
+					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup) AND (cursorTarget isKindOf 'Car') AND (cursorTarget distance AGM_Explosives_Setup) < 2.5}";
+					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
+					showDisabled = 0;
+					priority = 0.3;
+				};
+				class AGM_CancelPlace {
+					displayName = $STR_AGM_Explosives_CancelAction;
+					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
+					statement = "call AGM_Explosives_fnc_Place_Cancel;";
+					showDisabled = 0;
+					priority = 0.2;
 				};
 /*				class AGM_Cellphone {
 					displayName = $STR_AGM_Explosives_cellphone_displayName;
