@@ -34,6 +34,8 @@ if (_state) then {
 			_this playMove "amovpercmstpsraswrfldnon";
 		};
 
+		//_ehid = _this addEventHandler ["AnimChanged", {if !(_this select 1 in ["amovpercmstpsnonwnondnon_easein", "amovpercmstpsnonwnondnon_ease", "amovpercmstpsnonwnondnon_easeout"]) then {(_this select 0) switchMove "amovpercmstpsnonwnondnon_ease"}}];
+
 		while {_this getVariable ["AGM_isCaptive", false]} do {
 			sleep 0.001; //sleep in UI
 
@@ -59,6 +61,9 @@ if (_state) then {
 				_this playMove "AmovPercMstpSnonWnonDnon_Ease";
 			};
 		};
+
+		//_this removeEventHandler ["AnimChanged", _ehid];
+
 		if !(_this getVariable ["AGM_Unconscious", false]) then {
 			_this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
 		} else {

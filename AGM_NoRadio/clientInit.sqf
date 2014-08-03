@@ -3,7 +3,7 @@
 0 spawn {
 	waitUntil {!isNull player};
 
-	enableRadio !cadetMode;
-	//enableSentences false;
-	//player disableConversation true;
+	enableRadio false;
+	enableSentences false;
+	//player disableConversation cadetMode;
 };
