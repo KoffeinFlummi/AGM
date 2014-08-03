@@ -25,7 +25,7 @@ _this spawn {
 
   player playMoveNow "AcinPercMstpSnonWnonDnon";
 
-  sleep 10;
+  sleep 7;
 
   // Patient woke up while picking up, abandon ship.
   if !(_unit getVariable "AGM_Unconscious") exitWith {

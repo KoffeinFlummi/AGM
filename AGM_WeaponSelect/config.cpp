@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.92";
     versionStr = "0.92";
     versionAr[] = {0,92,0};
-    author[] = {"commy2", "KoffeinFlummi"};
+    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -15,18 +15,29 @@ class CfgPatches {
 class CfgFunctions {
   class AGM_WeaponSelect {
     class AGM_WeaponSelect {
-      file = "\AGM_weaponselect\functions";
+      file = "\AGM_WeaponSelect\functions";
       class canSwitchWeapon;
       class canSwitchWeaponVehicle;
+      class countMagazinesForGrenadeMuzzle;
+      class displayGrenadeTypeAndNumber;
       class getWeaponModes;
       class getWeaponMuzzles;
+      class selectGrenadeFrag;
+      class selectGrenadeOther;
       class selectWeaponMode;
       class selectWeaponMuzzle;
       class selectBinocular;
-      class putWeaponAway;
       class selectWeaponVehicle;
       class selectMagazineVehicle;
+      class setNextGrenadeMuzzle;
+      class putWeaponAway;
     };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_WeaponSelect {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_WeaponSelect\clientInit.sqf'";
   };
 };
 
@@ -92,6 +103,24 @@ class AGM_Core_Default_Keys {
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
     statement = "call AGM_WeaponSelect_fnc_selectBinocular";
     key = 6;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class selectGrenadeFrag {
+    displayName = "$STR_AGM_WeaponSelect_SelectGrenadeFrag";
+    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
+    statement = "call AGM_WeaponSelect_fnc_selectGrenadeFrag";
+    key = 7;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class selectGrenadeOther {
+    displayName = "$STR_AGM_WeaponSelect_SelectGrenadeOther";
+    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
+    statement = "call AGM_WeaponSelect_fnc_selectGrenadeOther";
+    key = 8;
     shift = 0;
     control = 0;
     alt = 0;

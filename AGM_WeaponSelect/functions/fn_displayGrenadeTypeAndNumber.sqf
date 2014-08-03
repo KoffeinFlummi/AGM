@@ -2,11 +2,11 @@
  * Author: CAA-Picard
  *
  * Display a grenade type and quantity.
- * 
+ *
  * Argument:
  * 0: magazine class
  * 1: number of magazines
- * 
+ *
  * Return value:
  * None
  */
@@ -20,7 +20,7 @@ if (_numberOfMagazines > 0) then {
 } else {
   _color = [1,0,0];
 };
- 
+
 _name = getText (configFile >> "CfgMagazines" >> _magazine >> "displayNameShort");
 _picture = getText (configFile >> "CfgMagazines" >> _magazine >> "picture");
 _text = [format["%1  x%2", _name, _numberOfMagazines], _color] call AGM_Core_fnc_stringToColoredText;
