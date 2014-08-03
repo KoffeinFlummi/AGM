@@ -507,72 +507,6 @@ class CfgVehicles {
     };
   };
 
-  class LandVehicle;
-  class Car: LandVehicle {
-    class AGM_Actions {
-      class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
-        distance = 4;
-        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
-        exceptions[] = {"AGM_Interaction_isNotEscorting"};
-        showDisabled = 0;
-        priority = 1.2;
-      };
-      class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
-        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
-        showDisabled = 0;
-        priority = 1.2;
-      };
-    };
-  };
-  class Tank: LandVehicle {
-    class AGM_Actions {
-      class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
-        distance = 4;
-        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
-        exceptions[] = {"AGM_Interaction_isNotEscorting"};
-        showDisabled = 0;
-        priority = 1.2;
-      };
-      class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
-        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
-        showDisabled = 0;
-        priority = 1.2;
-      };
-    };
-  };
-  class Air;
-  class Helicopter: Air {
-    class AGM_Actions {
-      class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
-        distance = 4;
-        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
-        exceptions[] = {"AGM_Interaction_isNotEscorting"};
-        showDisabled = 0;
-        priority = 1.2;
-      };
-      class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
-        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
-        showDisabled = 0;
-        priority = 1.2;
-      };
-    };
-  };
-
   /*
   // BLUFOR Uniforms
   class SoldierWB: CAManBase {};
@@ -696,8 +630,75 @@ class CfgVehicles {
     modelSides[] = {3,2,1,0};
   };
   */
-
+  
   class LandVehicle;
+  class Car: LandVehicle {
+    class AGM_Actions {
+      class AGM_LoadCaptive {
+        displayName = "Load Captive into Vehicle";
+        distance = 4;
+        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
+        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = 1.2;
+      };
+      class AGM_UnloadCaptive {
+        displayName = "Unload Captive from Vehicle";
+        distance = 4;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
+        showDisabled = 0;
+        priority = 1.2;
+      };
+    };
+    class AGM_SelfActions {};
+  };
+  class Tank: LandVehicle {
+    class AGM_Actions {
+      class AGM_LoadCaptive {
+        displayName = "Load Captive into Vehicle";
+        distance = 4;
+        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
+        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = 1.2;
+      };
+      class AGM_UnloadCaptive {
+        displayName = "Unload Captive from Vehicle";
+        distance = 4;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
+        showDisabled = 0;
+        priority = 1.2;
+      };
+    };
+    class AGM_SelfActions {};
+  };
+  class Air;
+  class Helicopter: Air {
+    class AGM_Actions {
+      class AGM_LoadCaptive {
+        displayName = "Load Captive into Vehicle";
+        distance = 4;
+        condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
+        statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
+        exceptions[] = {"AGM_Interaction_isNotEscorting"};
+        showDisabled = 0;
+        priority = 1.2;
+      };
+      class AGM_UnloadCaptive {
+        displayName = "Unload Captive from Vehicle";
+        distance = 4;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
+        statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
+        showDisabled = 0;
+        priority = 1.2;
+      };
+    };
+    //class AGM_SelfActions {}; not sure?
+  };
   class StaticWeapon: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
@@ -705,16 +706,6 @@ class CfgVehicles {
 
   class StaticMortar;
   class Mortar_01_base_F: StaticMortar {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Car: LandVehicle {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Tank: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
   };
