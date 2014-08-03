@@ -697,7 +697,6 @@ class CfgVehicles {
   };
   */
 
-  class LandVehicle;
   class StaticWeapon: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
@@ -705,16 +704,6 @@ class CfgVehicles {
 
   class StaticMortar;
   class Mortar_01_base_F: StaticMortar {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Car: LandVehicle {
-    class AGM_Actions {};
-    class AGM_SelfActions {};
-  };
-
-  class Tank: LandVehicle {
     class AGM_Actions {};
     class AGM_SelfActions {};
   };
