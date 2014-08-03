@@ -31,9 +31,11 @@ if(_class != "") then {
 		_dir = 180 + _dir;
 	};
 	_explosive = [player, getPosATL AGM_Explosives_Setup, _class, AGM_Explosives_Setup getVariable "AGM_DetonateCode", _dir,AGM_Explosives_Setup getVariable "AGM_Timer"] call AGM_Explosives_fnc_PlaceExplosive;
-	AGM_Explosives_Null = [_explosive,_this, _class] spawn {
+	AGM_Explosives_Null = [_explosive,_this, _class, _dir] spawn {
 		sleep 0.1 + getNumber(ConfigFile >> "CfgMagazines" >> (_this select 2) >> "AGM_DelayTime");
 		(_this select 0) attachTo [(_this select 1)];
+		_dir = (_this select 3) - (getDir (_this select 1));
+		(_this select 0) setDir _dir;
 	};
 	deleteVehicle AGM_Explosives_Setup;
 	player RemoveMagazineGlobal _class;
