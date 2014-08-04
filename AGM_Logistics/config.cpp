@@ -143,6 +143,12 @@ class CfgFunctions {
 			class refuelVehicleCargoCallback;
 		};
 	};
+	class AGM_ParaDrop {
+		class AGM_ParaDrop {
+			file = "\AGM_Logistics\functions\ParaDrop";	
+			class paraDrop;
+		};
+	};
 };
 
 class Extended_PostInit_EventHandlers {
@@ -519,6 +525,24 @@ class CfgVehicles {
 		};
 	};
 
+	class Heli_Transport_02_base_F;
+	class I_Heli_Transport_02_F : Heli_Transport_02_base_F {
+		AGM_Vehicle_Cargo = 20;
+		class UserActions {
+			class viewHUD {
+				displayName = "Unload Box";
+				displayNameDefault = "Unload Box";
+				priority = 10;
+				radius = 20;
+				position = "camera";
+				showWindow = 0;
+				onlyForPlayer = 1;
+				condition = "player in [driver this] && getPosATL vehicle player select 2 > 60 && count (vehicle player getVariable ['AGM_Logistics_loadedItems', []]) > 0";
+				statement = "[] spawn AGM_ParaDrop_fnc_paraDrop";
+			};
+		};
+	};
+	
 	// Repair fixed wing aircraft
 	class Plane: Air {
 		AGM_fuelCapacity = 600;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
