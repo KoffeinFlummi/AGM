@@ -24,6 +24,6 @@ _this spawn {
 	
 	sleep _timer;
 	if (!isNull _explosive) then {
-		[_explosive, [_explosive, 0, 15], true, true] call AGM_Explosives_fnc_DetonateExplosive;
+		[_explosive, 0, [_explosive, 0, 0], true, true] call AGM_Explosives_fnc_DetonateExplosive;
 	};
 };
