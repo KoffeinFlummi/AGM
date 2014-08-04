@@ -22,26 +22,10 @@ closeDialog 0;
 _listIDC = [localize "STR_AGM_Explosives_TriggerMenu", localize "STR_AGM_Explosives_SelectTrigger", format["['%1',lbData [8866, lbCurSel 8866]] call AGM_Explosives_fnc_selectTrigger;", _magazine]] call AGM_Interaction_fnc_openSelectMenu;
 
 _triggerTypes = [_magazine] call AGM_Explosives_fnc_TriggerType;
-
-// clacker enabled
-if (_triggerTypes select 0 && {"AGM_Clacker" in (items player)}) then {
-	_item = ConfigFile >> "CfgWeapons" >> "AGM_Clacker";
-	_index = lbAdd [_listIDC, getText(_item >> "DisplayName")];
-	lbSetData [_listIDC, _index, "0"];
-	lbSetPicture [_listIDC, _index, getText(_item >> "picture")];
-};
-// timer
-if (_triggerTypes select 1) then {
-	_index = lbAdd [_listIDC, localize "STR_AGM_Explosives_timerName"];
-	lbSetData [_listIDC, _index, "1"];
-	lbSetPicture [_listIDC, _index, "AGM_Explosives\data\UI\Timer.paa"];
-};
-// Cellphone enabled
-if (_triggerTypes select 2) then {
-	_item = ConfigFile >> "CfgWeapons" >> "AGM_Cellphone";
-	_index = lbAdd [_listIDC, getText(_item >> "DisplayName")];
-	lbSetData [_listIDC, _index, "2"];
-	lbSetPicture [_listIDC, _index, getText(_item >> "picture")];
-};
+{
+	_index = lbAdd [_listIDC, getText(_x >> "displayName")];
+	lbSetData [_listIDC, _index, configName _x];
+	lbSetPicture [_listIDC, _index, getText(_x >> "picture")];
+} count _triggerTypes;
 
 lbSetCurSel [_listIDC, 0];

@@ -211,5 +211,11 @@
         <Polish>Wybierz</Polish>
         <French>Selectionner</French>
       </Key>
+      <Key ID="STR_AGM_Explosives_PressurePlate">
+        <English>Pressure Plate</English>
+      </Key>
+      <Key ID="STR_AGM_Explosives_TripWire">
+        <English>Tripwire</English>
+      </Key>
   </Package>
 </Project>
