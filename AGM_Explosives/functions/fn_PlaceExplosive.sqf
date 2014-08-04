@@ -19,7 +19,7 @@
 		OBJECT: Placed explosive
 	
 	Example:
-		_explosive = [player modelToWorld [0,0.5, 0.1], "SatchelCharge_Remote_Mag", "", 134] call AGM_Explosives_fnc_PlaceExplosive;
+		_explosive = [player, player modelToWorld [0,0.5, 0.1], "SatchelCharge_Remote_Mag", "", 134] call AGM_Explosives_fnc_PlaceExplosive;
 */
 private ["_pos", "_ammo", "_explosive", "_code"];
 _pos = _this select 1;

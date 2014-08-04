@@ -23,7 +23,7 @@ if (AGM_Explosives_pfeh_running) then {
 private "_explosive";
 _explosive = AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""];
 if (_explosive != "") then {
-	private ["_pos", "_oldPos", "_limiter"];
+	private ["_pos", "_oldPos", "_limiter", "_fnc_SimilarPos"];
 	_pos = -5;
 	_oldPos = -1;
 	_limiter = 0;
@@ -33,8 +33,13 @@ if (_explosive != "") then {
 	} else {
 		_dir = 180 + _dir;
 	};
+	_fnc_SimilarPos = {
+		_pos1 = _this select 0;
+		_pos2 = _this select 1;
+		((_pos1 - _pos2) < 0.05)
+	};
 	AGM_Explosives_Setup enableSimulation true;
-	while {_pos != _oldPos AND _limiter < 10} do {
+	while {!([_pos,_oldPos] call _fnc_SimilarPos) AND _limiter < 10} do {
 		sleep 0.1;
 		_oldPos = _pos;
 		_pos = (GetPosATL AGM_Explosives_Setup) select 2;
