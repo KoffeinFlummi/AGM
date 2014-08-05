@@ -24,14 +24,5 @@ if ((AGM_Explosives_RequireSpecialist > 0) && {!_isSpecialist}) exitWith {false}
 
 AGM_Interaction_Target = nearestObject [_unit, "TimeBombCore"];
 if (isNull(AGM_Interaction_Target)) exitWith {false};
-/*
-// Assume the specialist will have knowledge that a particular explosive will detonate on defuse,
-// Thus stop the specialist from attempting to defuse it.
-_mag = getText ConfigFile >> "CfgAmmo" >> typeof AGM_Interaction_Target >> "Magazine";
-_mag = configFile >> "CfgMagazines" >> _mag;
-if (getNumber (_mag >> "AGM_explodeOnDefuse") == 1 && {AGM_Explosives_PunishNonSpecialists > 0 && _isSpecialist}) exitWith {
-	false
-};
-*/
 
 _unit distance AGM_Interaction_Target < 4
