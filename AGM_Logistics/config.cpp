@@ -445,7 +445,8 @@ class CfgVehicles {
 	class Air;
 	class Helicopter: Air {
 		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
-		AGM_Vehicle_Cargo = 4;
+		AGM_Vehicle_Cargo = 8;	 //This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_ParaDrop = 0;
 		class AGM_Actions {
 			MACRO_UNLOAD
 			MACRO_REFUEL
@@ -523,24 +524,15 @@ class CfgVehicles {
 				};
 			};
 		};
+		class AGM_SelfActions {
+			MACRO_ParaDrop
+		};
 	};
 
 	class Heli_Transport_02_base_F;
 	class I_Heli_Transport_02_F : Heli_Transport_02_base_F {
 		AGM_Vehicle_Cargo = 20;
-		class UserActions {
-			class ParaDrop {
-				displayName = "$STR_AGM_ParaDrop_Unload";
-				displayNameDefault = "<t color='#FF0000'>"; //</t> color not shown
-				priority = 10;
-				radius = 20;
-				position = "camera";
-				showWindow = 0;
-				onlyForPlayer = 1;
-				condition = "player in [driver this] && getPosATL vehicle player select 2 > 60 && count (vehicle player getVariable ['AGM_Logistics_loadedItems', []]) > 0";
-				statement = "[] spawn AGM_ParaDrop_fnc_paraDrop";
-			};
-		};
+		AGM_ParaDrop = 1;
 	};
 	
 	// Repair fixed wing aircraft

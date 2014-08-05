@@ -25,9 +25,9 @@ _parachute attachTo [_item, [0, 0, 0]];
 detach _parachute;
 _item attachTo [_parachute, [0, 0, -1]];
 
-_s = [] call SMOKE;
+//_s = [] call SMOKE;
 _l = [] call LIGHT;
 
 waitUntil {sleep 0.1; position _item select 2 < 1};
-_s = [] call SMOKE;
+//_s = [] call SMOKE; Smoke, yes or no
 detach _item;

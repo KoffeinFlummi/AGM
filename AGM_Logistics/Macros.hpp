@@ -233,4 +233,13 @@
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
 		showDisabled = 0; \
 		priority = 1.245; \
+	};	
+#define MACRO_ParaDrop \
+	class AGM_DropCargo { \
+		displayName = "$STR_AGM_ParaDrop_Unload"; \
+		distance = 4; \
+		condition = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_ParaDrop') == 1 && getPosATL vehicle player select 2 > 60 && count (vehicle player getVariable ['AGM_Logistics_loadedItems', []]) > 0"; \
+		conditionShow = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_ParaDrop') == 1"; \
+		statement = "[] spawn AGM_ParaDrop_fnc_paraDrop"; \
+		priority = 1; \
 	};
