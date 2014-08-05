@@ -343,7 +343,7 @@ class CfgVehicles {
 			};
 		};
 	};
-	/*class Kart_01_Base_F: Car_F {
+	class Kart_01_Base_F: Car_F {
 		AGM_fuelCapacity = 8;
 	};
 	class MRAP_01_base_F: Car_F {
@@ -360,7 +360,7 @@ class CfgVehicles {
 	};
 	class Offroad_01_base_f: Car_F {
 		AGM_fuelCapacity = 80; //http://www.nissan.de/content/dam/services/DE/brochure/NISSAN_Navara_Broschuere+Preisliste_DE.pdf
-	};*/
+	};
 	
 	class Truck_F: Car_F {
 		KEY_WHEEL_6X6_REAR
