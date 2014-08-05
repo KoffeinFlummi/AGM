@@ -343,7 +343,25 @@ class CfgVehicles {
 			};
 		};
 	};
-
+	/*class Kart_01_Base_F: Car_F {
+		AGM_fuelCapacity = 8;
+	};
+	class MRAP_01_base_F: Car_F {
+		AGM_fuelCapacity = 163; //fuel capacity of humvee (can't find informations for M-ATV)
+	};
+	class MRAP_02_base_F: Car_F {
+		AGM_fuelCapacity = 200; //This is guesswork and should be adjusted for all vehicles individually in the future @todo
+	};
+	class MRAP_03_base_F: Car_F {
+		AGM_fuelCapacity = 230; //http://de.wikipedia.org/wiki/Sp%C3%A4hwagen_Fennek
+	};
+	class Quadbike_01_base_F: Car_F {
+		AGM_fuelCapacity = 15;
+	};
+	class Offroad_01_base_f: Car_F {
+		AGM_fuelCapacity = 80; //http://www.nissan.de/content/dam/services/DE/brochure/NISSAN_Navara_Broschuere+Preisliste_DE.pdf
+	};*/
+	
 	class Truck_F: Car_F {
 		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
@@ -353,7 +371,7 @@ class CfgVehicles {
 		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 600;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 	};
-
+	
 	// Repair tracked vehicles
 	class Tank_F: Tank {
 		AGM_fuelCapacity = 1500;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
@@ -440,13 +458,18 @@ class CfgVehicles {
 			};
 		};
 	};
-
+	class AllVehicles;
+	class Air: AllVehicles {
+		AGM_ParaDrop = 0;
+		class AGM_SelfActions {
+			MACRO_ParaDrop
+		};
+	};
+	
 	// Repair helicopters
-	class Air;
 	class Helicopter: Air {
 		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 		AGM_Vehicle_Cargo = 8;	 //This is guesswork and should be adjusted for all vehicles individually in the future @todo
-		AGM_ParaDrop = 0;
 		class AGM_Actions {
 			MACRO_UNLOAD
 			MACRO_REFUEL
@@ -524,8 +547,8 @@ class CfgVehicles {
 				};
 			};
 		};
-		class AGM_SelfActions {
-			MACRO_ParaDrop
+		class AGM_SelfActions: AGM_SelfActions {
+		
 		};
 	};
 
@@ -860,6 +883,7 @@ class CfgVehicles {
 	// Trucks BLU
 	class Truck_01_base_F: Truck_F {
 		KEY_WHEEL_8X8
+		AGM_fuelCapacity = 587; //http://en.wikipedia.org/wiki/Heavy_Expanded_Mobility_Tactical_Truck
 		class AGM_Actions;
 	};
 	class B_Truck_01_transport_F: Truck_01_base_F {
@@ -882,7 +906,7 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 3000;
+		AGM_fuelCapacityCargo = 9464; //http://oshkoshdefense.com/variants/m978a4-fuel-servicing-truck-tanker/
 		transportFuel = 0;
 	};
 	/*class B_Truck_01_ammo_F: B_Truck_01_mover_F {
