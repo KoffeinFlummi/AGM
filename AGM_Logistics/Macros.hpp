@@ -44,7 +44,7 @@
 	class AGM_unloadBox { \
 		displayName = "$STR_AGM_Logistics_Unload"; \
 		distance = 4; \
-		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems"; \
+		condition = "[AGM_Interaction_Target] call AGM_Logistics_fnc_hasLoadedItems && {alive AGM_Interaction_Target}"; \
 		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI"; \
 		showDisabled = 1; \
 		priority = 1.5; \
@@ -55,7 +55,7 @@
 		displayName = "$STR_AGM_Logistics_ReloadMagazines"; \
 		distance = 4; \
 		condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0"; \
-		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu" \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu"; \
 		showDisabled = 1; \
 		priority = 1.45; \
 	};

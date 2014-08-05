@@ -36,6 +36,14 @@ class CfgAmmo {
 	};
 	//class ClaymoreDirectionalMine_Remote_Ammo_Scripted:ClaymoreDirectionalMine_Remote_Ammo;
 	
+	class SLAMDirectionalMine_Wire_Ammo;
+	class SLAMDirectionalMine_Command_Ammo:SLAMDirectionalMine_Wire_Ammo {
+		mineTrigger = "RemoteTrigger";
+	};
+	class SLAMDirectionalMine_Timer_Ammo:SLAMDirectionalMine_Wire_Ammo {
+		mineTrigger = "TimeTrigger";
+	};
+	
 	class PipeBombBase;
 	class DemoCharge_Remote_Ammo:PipeBombBase{
 		AGM_Explosive = "DemoCharge_Remote_Ammo_Scripted";

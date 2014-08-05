@@ -18,11 +18,10 @@ class CfgFunctions
 		class Explosives {
 			file="AGM_Explosives\functions";
 			
-			class AddCodeToSpeedDial;
+			class AddClacker;
 			class CanDefuse;
 			class DefuseExplosive;
 			class DetonateExplosive;
-			class DialPhone;
 			class HandleScrollWheel;
 			
 			class hasExplosives;
@@ -43,10 +42,8 @@ class CfgFunctions
 			class Place_Cancel;
 			class PlaceExplosive;
 			
-			class RemoveCodeFromSpeedDial;
 			class SelectTrigger;
 			class SetupExplosive;
-			class SetSpeedDial;
 			class StartDefuse;
 			class StartTimer;
 			
@@ -60,7 +57,32 @@ class CfgFunctions
   count = COUNT; \
 };
 
+#define MACRO_DETONATEACTION 		class AGM_SelfActions { \
+			class AGM_Explosives { \
+				displayName = $STR_AGM_Explosives_Menu;\
+				condition = "true";\
+				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				showDisabled = 1;\
+				priority = 4;\
+				class AGM_Detonate {\
+					displayName = $STR_AGM_Explosives_Detonate;\
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
+					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";\
+					showDisabled = 1;\
+					priority = 2;\
+				};\
+			};\
+		};
+
 class CfgVehicles {
+	class All;
+	class AllVehicles: All {
+		MACRO_DETONATEACTION
+	};
+	class LandVehicle;
+	class Car: LandVehicle {
+		MACRO_DETONATEACTION
+	};
 	class Man;
 
 	class CAManBase: Man {
@@ -70,8 +92,7 @@ class CfgVehicles {
 				condition = "true";
 				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 4;
-				
+				priority = 4;				
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
@@ -116,31 +137,7 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.2;
 				};
-/*				class AGM_Cellphone {
-					displayName = $STR_AGM_Explosives_cellphone_displayName;
-					condition = "('AGM_Cellphone' in (items player))";
-					statement = "closeDialog 0;createDialog 'RscAGM_PhoneInterface';";
-					showDisabled = 0;
-					priority = 0.8;
-				};
-				*/
 			};
-			/*
-			class AGM_ExplosiveJammerOn {
-				displayName = $STR_AGM_Explosives_Jammer_TurnOn;
-				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and !((unitBackpack player) getVariable ['AGM_JammerEnabled', false])}";
-				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', true, true];";
-				showDisabled = 0;
-				priority = 0.1;
-			};
-			class AGM_ExplosiveJammerOff {
-				displayName = $STR_AGM_Explosives_Jammer_TurnOff;
-				condition = "isClass (configFile >> 'CfgVehicles' >> (backpack player)) and {getNumber(configFile >> 'CfgVehicles' >> (backpack player) >> 'AGM_JammerRange') > 0 and (unitBackpack player) getVariable ['AGM_JammerEnabled', false]}";
-				statement = "(unitBackpack player) setVariable ['AGM_JammerEnabled', false, true];";
-				showDisabled = 0;
-				priority = 0.1;
-			};
-			*/
 		};
 	};
 	
@@ -189,9 +186,9 @@ class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {Items[] = 
 class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class I_G_Soldier_base_F; class I_G_engineer_F:I_G_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class I_G_Soldier_exp_F:I_G_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_G_engineer_F; class B_G_engineer_F:I_G_engineer_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
+class B_G_engineer_F:I_G_engineer_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class O_G_engineer_F:I_G_engineer_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_G_Soldier_exp_F; class B_G_Soldier_exp_F:I_G_Soldier_exp_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
+class B_G_Soldier_exp_F:I_G_Soldier_exp_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class O_G_Soldier_exp_F:I_G_Soldier_exp_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
 class I_engineer_F:I_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};

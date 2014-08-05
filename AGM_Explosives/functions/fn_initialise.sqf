@@ -32,8 +32,6 @@ if (isServer) then {
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
 AGM_Explosives_Setup = objNull;
-//AGM_Explosives_CurrentSpeedDial=-1;
-//AGM_Explosives_Phone_SpeedDial = [];
 AGM_Explosives_ShiftDown = false;
 AGM_Explosives_pfeh_running = false;
 AGM_Explosives_null= [] spawn {
