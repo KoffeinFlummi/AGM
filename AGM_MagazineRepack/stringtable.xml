@@ -40,7 +40,7 @@
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
       <German>%1 volle(s) Magazin(e) und %2 übrig gebliebene Patrone(n)</German>
-      <Spanish>&1 cargador(es) completo y %2 bala(s) extra(s)</Spanish>
+      <Spanish>%1 cargador(es) completo y %2 bala(s) extra(s)</Spanish>
       <French>%1 chargeur(s) pleins et %2 balle(s) en plus</French>
       <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
     </Key>
