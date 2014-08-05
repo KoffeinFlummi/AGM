@@ -18,11 +18,10 @@ class CfgFunctions
 		class Explosives {
 			file="AGM_Explosives\functions";
 			
-			class AddCodeToSpeedDial;
+			class AddClacker;
 			class CanDefuse;
 			class DefuseExplosive;
 			class DetonateExplosive;
-			class DialPhone;
 			class HandleScrollWheel;
 			
 			class hasExplosives;
@@ -43,10 +42,8 @@ class CfgFunctions
 			class Place_Cancel;
 			class PlaceExplosive;
 			
-			class RemoveCodeFromSpeedDial;
 			class SelectTrigger;
 			class SetupExplosive;
-			class SetSpeedDial;
 			class StartDefuse;
 			class StartTimer;
 			
