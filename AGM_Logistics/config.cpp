@@ -529,9 +529,9 @@ class CfgVehicles {
 	class I_Heli_Transport_02_F : Heli_Transport_02_base_F {
 		AGM_Vehicle_Cargo = 20;
 		class UserActions {
-			class viewHUD {
-				displayName = "Unload Box";
-				displayNameDefault = "Unload Box";
+			class ParaDrop {
+				displayName = "$STR_AGM_ParaDrop_Unload";
+				displayNameDefault = "<t color='#FF0000'>"; //</t> color not shown
 				priority = 10;
 				radius = 20;
 				position = "camera";

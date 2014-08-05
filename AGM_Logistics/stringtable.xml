@@ -715,7 +715,10 @@
 			<French>Vidange effectuer</French>
 			<Polish>Spuszczono Paliwo z Ładunku</Polish>
 		</Key>
-
+		<Key ID="STR_AGM_ParaDrop_Unload">
+			<English>Unload Box</English>
+			<German>Box ausladen</German>
+		</Key>
 
 	</Package>
 
