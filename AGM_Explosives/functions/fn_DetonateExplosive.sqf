@@ -30,10 +30,9 @@ _item = _this select 2;
 _ignoreRange = (_this select 3);
 _ignoreJammer = true;//(_this select 4); // disabled while jammers aren't in place.
 _result = true;
-if (!_ignoreRange) then {
-	if ((_unit distance (_item select 0)) > _range) then {_result = false;};
-};
-if (!_result) exitWith{};
+
+if (!_ignoreRange && {(_unit distance (_item select 0)) > _range}) exitWith {false};
+
 if (!_ignoreJammer) then {
 	{
 		if (((_x select 2) getVariable ["AGM_JammerEnabled",false]) and {(_x select 0) distance (_item select 0) <= (_x select 1)}) exitWith {
@@ -42,15 +41,18 @@ if (!_ignoreJammer) then {
 	} count AGM_Explosives_Jammers;
 };
 if (!_result) exitWith{};
+
 if (getNumber (ConfigFile >> "CfgAmmo" >> typeof (_item select 0) >> "TriggerWhenDestroyed") == 0) then {
 	private ["_exp", "_previousExp"];
 	_previousExp = _item select 0;
 	_exp = getText (ConfigFile >> "CfgAmmo" >> typeof (_previousExp) >> "AGM_Explosive");
 	if (_exp != "") then {
-		_exp = createVehicle [_exp, getPos _previousExp, [], 0, "NONE"];
+		_exp = createVehicle [_exp, [0,0,15001], [], 0, "NONE"];
 		_exp setDir (getDir _previousExp);
 		_item set [0, _exp];
+		_pos = getPosASL _previousExp;
 		deleteVehicle _previousExp;
+		_exp setPosASL _pos;
 	};
 };
 _item spawn {
