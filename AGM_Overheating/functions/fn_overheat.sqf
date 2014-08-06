@@ -5,7 +5,7 @@
 #define THRESHOLD_3 1.0
 #define MAX_TEMPERATURE 3
 
-
+_unit = _this select 0;
 _weapon = _this select 1;
 _projectile = _this select 5;
 
@@ -24,7 +24,7 @@ _time = _overheat select 1;
 _temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min MAX_TEMPERATURE;
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
-    hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
+	hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
 };
 
 _time = time;
@@ -78,4 +78,15 @@ if (_temperature > THRESHOLD_1) then {
 		};
 		_projectile setVelocity _velocity;
 	};
+};
+
+// jamming
+_chance = _temperature ^ 3;
+
+if (!isNil "AGM_Debug" && {AGM_Debug == "Jamming"}) then {
+	systemChat str format ["Jam chance: %1%", _chance / 1000];
+};
+
+if (random 1000 < _chance) then {
+	[_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;
 };

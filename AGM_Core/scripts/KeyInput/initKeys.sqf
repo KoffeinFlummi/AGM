@@ -27,8 +27,13 @@ for "_index" from 0 to (_count - 1) do {
 	_exceptions = getArray (_configFile >> "exceptions");
 	_canInteract = format ["%1 call AGM_Core_canInteract", _exceptions];
 
+	_conditionName = format ["AGM_Key_%1_Condition", _keyName];
+	_statementName = format ["AGM_Key_%1_Statement", _keyName];
+	missionNamespace setVariable [_conditionName, compileFinal _condition];
+	missionNamespace setVariable [_statementName, compileFinal _statement];
+
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2}) then {if (%4) then {%3}; _isInput = true;};", _keyName, _condition, _statement, _canInteract];
+		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {call %2}) then {if (%4) then {call %3}; _isInput = true;};", _keyName, _conditionName, _statementName, _canInteract];
 		_onKeyDown = _onKeyDown + _entry;
 	};
 
@@ -37,8 +42,13 @@ for "_index" from 0 to (_count - 1) do {
 
 	_statement = getText (_configFile >> "statementUp");
 
+	_conditionName = format ["AGM_Key_%1_ConditionUp", _keyName];
+	_statementName = format ["AGM_Key_%1_StatementUp", _keyName];
+	missionNamespace setVariable [_conditionName, compileFinal _condition];
+	missionNamespace setVariable [_statementName, compileFinal _statement];
+
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == floor (profileNamespace getVariable 'AGM_Key_%1') && {%2}) then {%3; _isInput = true;};", _keyName, _condition, _statement];
+		_entry = format ["if (_keyCode == floor (profileNamespace getVariable 'AGM_Key_%1') && {call %2}) then {call %3; _isInput = true;};", _keyName, _conditionName, _statementName];
 		_onKeyUp = _onKeyUp + _entry;
 	};
 };

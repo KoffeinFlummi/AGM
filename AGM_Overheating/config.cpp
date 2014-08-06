@@ -17,6 +17,8 @@ class CfgFunctions {
     class AGM_Overheating {
       file = "\AGM_Overheating\functions";
       class checkTemperature;
+      class clearJam;
+      class jamWeapon;
       class overheat;
       class swapBarrel;
       class swapBarrelCallback;
@@ -38,8 +40,8 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-/*class AGM_Core_Default_Keys {
-  class checkTemperature {
+class AGM_Core_Default_Keys {
+  /*class checkTemperature {
     displayName = "$STR_AGM_Overheating_checkTemperature";
     condition = "player == _vehicle";
     statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
@@ -47,8 +49,17 @@ class Extended_Fired_EventHandlers {
     shift = 0;
     control = 1;
     alt = 0;
+  };*/
+  class clearJam {
+    displayName = "$STR_AGM_Overheating_UnjamWeapon";
+    condition = "player == _vehicle && {currentWeapon _vehicle in (_vehicle getVariable ['AGM_Overheating_jammedWeapons', []])}";
+    statement = "[_vehicle, currentWeapon _vehicle, false] call AGM_Overheating_fnc_clearJam";
+    key = 19;
+    shift = 1;
+    control = 0;
+    alt = 0;
   };
-};*/
+};
 
 class CfgSounds {
   class AGM_BarrelSwap {

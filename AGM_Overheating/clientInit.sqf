@@ -7,3 +7,5 @@ _this spawn {
 		player addItem "AGM_SpareBarrel"; 
 	};
 };
+
+player addEventHandler ["Take", {if (_this select 2 == currentMagazine player) then {[player, currentWeapon player, true] call AGM_Overheating_fnc_clearJam}}];
