@@ -17,18 +17,27 @@ if (_state) then {
 	player setVariable ["AGM_isEscorting", true, true];
 
 	_unit attachTo [player, [0, 1, 0]];
-	_unit spawn {
+
+	player setVariable ["AGM_escortedUnit", _unit, true];
+	_actionID = player addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Interaction_StopEscorting"], "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Interaction_fnc_escortCaptive;", nil, 20, false, true, "", "!isNull (player getVariable ['AGM_escortedUnit', objNull])"];
+
+	[_unit, _actionID] spawn {
+		_unit = _this select 0;
+		_actionID = _this select 1;
+
 		while {player getVariable ["AGM_isEscorting", false]} do {
 			sleep 0.2;
 
-			if (!alive _this || {!alive player} || {!canStand _this} || {!canStand player}) then {
+			if (!alive _unit || {!alive player} || {!canStand _unit} || {!canStand player}) then {
 				player setVariable ["AGM_isEscorting", false, true];
 			};
 		};
-		[objNull, _this] call AGM_Core_fnc_claim;
+		[objNull, _unit] call AGM_Core_fnc_claim;
 
-		detach _this;
+		detach _unit;
+		player removeAction _actionID;
 	};
 } else {
 	player setVariable ["AGM_isEscorting", false, true];
+	player setVariable ["AGM_escortedUnit", objNull, true];
 };
