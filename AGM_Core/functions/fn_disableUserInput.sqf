@@ -39,14 +39,14 @@ if (_state) then {
 					(_dlg displayCtrl _index) ctrlEnable false;
 				};
 
-				/*_ctrl = _dlg displayctrl 103;
-				_ctrl ctrlSetEventHandler ["buttonClick", "while {!isNull (uiNamespace getVariable ['AGM_Core_dlgDisableMouse', displayNull])} do {closeDialog 0}; failMission 'KILLED'; [false] call AGM_Core_fnc_disableUserInput;"];
+				_ctrl = _dlg displayctrl 103;
+				_ctrl ctrlSetEventHandler ["buttonClick", "while {!isNull (uiNamespace getVariable ['AGM_Core_dlgDisableMouse', displayNull])} do {closeDialog 0}; failMission 'LOSER'; [false] call AGM_Core_fnc_disableUserInput;"];
 				_ctrl ctrlEnable true;
 				_ctrl ctrlSetText "ABORT";
-				_ctrl ctrlSetTooltip "Abort.";*/
+				_ctrl ctrlSetTooltip "Abort.";
 
-				_ctrl = _dlg displayctrl 103;	//104;
-				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; forceRespawn player; [false] call AGM_Core_fnc_disableUserInput;"];
+				_ctrl = _dlg displayctrl 104;
+				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; player setDamage 1; [false] call AGM_Core_fnc_disableUserInput;"];
 				_ctrl ctrlEnable true;
 				_ctrl ctrlSetText "RESPAWN";
 				_ctrl ctrlSetTooltip "Respawn.";
