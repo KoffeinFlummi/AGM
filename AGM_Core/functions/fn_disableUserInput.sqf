@@ -39,10 +39,15 @@ if (_state) then {
 					(_dlg displayCtrl _index) ctrlEnable false;
 				};
 
-				_ctrlRespawn = _dlg displayctrl 104;
-				_ctrlRespawn ctrlSetEventHandler ["buttonClick", "closeDialog 0; forceRespawn player; [false] call AGM_Core_fnc_disableUserInput;"];
-				_ctrlRespawn ctrlEnable true;
-				_ctrlRespawn ctrlSetText "RESPAWN";
+				_ctrl = _dlg displayctrl 103;
+				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; failMission 'KILLED'; [false] call AGM_Core_fnc_disableUserInput;"];
+				_ctrl ctrlEnable true;
+				_ctrl ctrlSetText "ABORT";
+
+				_ctrl = _dlg displayctrl 104;
+				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; forceRespawn player; [false] call AGM_Core_fnc_disableUserInput;"];
+				_ctrl ctrlEnable true;
+				_ctrl ctrlSetText "RESPAWN";
 			};
 
 			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
