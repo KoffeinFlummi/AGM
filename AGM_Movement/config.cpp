@@ -34,7 +34,7 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class CfgFatigue {
+/*class CfgFatigue {
   MinValue1 = 0.1;
   MinValue2 = 0.8;
   NormalRunSpeed = 7.2;
@@ -43,11 +43,23 @@ class CfgFatigue {
   FrequencyMax = 1.0;
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
-};
+};*/
 
 /*class CfgInventoryGlobalVariable {
   maxSoldierLoad = 1200;
 };*/
+
+//DEFAULT (PRE BOOTCAMP!)
+/*
+MinValue1 = 0.1;
+MinValue2 = 0.8;
+NormalRunSpeed = 7.2;
+TiredRunSpeedLimit = 1;
+FrequencyMin = 0.2;
+FrequencyMax = 1.0;
+TotalLoadCoef = 1.1;
+MaxDuty = 10;
+*/
 
 class CfgSounds {
   class AGM_Heartbeat {
@@ -64,18 +76,7 @@ class AGM_Core_Options {
   };
 };
 
-//DEFAULT
-/*
-MinValue1 = 0.1;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 1;
-FrequencyMin = 0.2;
-FrequencyMax = 1.0;
-TotalLoadCoef = 1.1;
-MaxDuty = 10;
-*/
-
+// leaving this for compatibility
 class CfgVehicles {
   class Module_F;
   class AGM_ModuleFatigue: Module_F {

@@ -33,7 +33,7 @@ while {true} do {
 
 	sleep 0.5;
 
-	_fatigueNew = getFatigue player;hint str _fatigueNew;
+	_fatigueNew = getFatigue player;
 
 	if (_fatigueNew > _fatigue) then {
 		_fatigue = _fatigue + GETTING_TIRED_FACTOR * (_fatigueNew - _fatigue);
