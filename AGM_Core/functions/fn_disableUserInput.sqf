@@ -55,6 +55,8 @@ if (_state) then {
 			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
 			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
+			if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) exitWith {false};
+
 			_key > 0
 		};
 	};
