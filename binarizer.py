@@ -155,6 +155,22 @@ def get_modules():
 
   return modules
 
+def get_obsolete():
+  """ Get all the PBOs that no longer have any project folders. """
+  global moddir, modfolder, privatekey, movemanually
+
+  destination_path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+
+  pbos = list(map(lambda x: x.lower(), os.listdir(destination_path)))
+  projects = list(map(lambda x: x.lower(), os.listdir(os.path.dirname(scriptpath))))
+
+  obsolete = []
+  for pbo in pbos:
+    if not ".".join(pbo.split(".")[:-1]) in projects:
+      obsolete.append(pbo)
+
+  return obsolete
+
 def binarize(module_name):
   """ Binarizes the given module """
   global moddir, modfolder, privatekey, movemanually
@@ -309,6 +325,17 @@ def main():
   print("######################################################")
   print("# Tools found, starting binarization.                #")
   print("######################################################")
+
+  obsolete = get_obsolete()
+  if len(obsolete) > 0:
+    print("\nRemoving obsolete PBOs:")
+    print(", ".join(obsolete))
+    for pbo in obsolete:
+      try:
+        os.remove(os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons", pbo))
+      except:
+        print("ERROR: Failed to remove %s." & (pbo))
+        sys.exit(1)
 
   threads = []
 

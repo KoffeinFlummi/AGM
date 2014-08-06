@@ -55,7 +55,7 @@
 		displayName = "$STR_AGM_Logistics_ReloadMagazines"; \
 		distance = 4; \
 		condition = "count ([player, AGM_Interaction_Target] call AGM_Logistics_fnc_getLoadableMagazines) > 0"; \
-		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu" \
+		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu"; \
 		showDisabled = 1; \
 		priority = 1.45; \
 	};

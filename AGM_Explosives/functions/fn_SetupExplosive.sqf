@@ -10,37 +10,33 @@
 	Parameters:
 		0: OBJECT - Unit placing explosive.
 		1: STRING - Classname of explosive to place. (CfgMagazine class)
-		2: NUMBER - (optional) timer
+		2: Config - Trigger Config
+		3: NUMBER - (optional) timer
 	
 	Returns:
 		Nothing
 	
 	Example:
-		[player, "SatchelCharge_Remote_Mag"] call AGM_Explosives_fnc_SetupExplosive;
+		[player, "SatchelCharge_Remote_Mag", configFile >> "CfgAGM_Triggers" >> "Command"] call AGM_Explosives_fnc_SetupExplosive;
 */
 _this spawn {
-	private ["_explosiveClass", "_code", "_unit", "_count", "_timer"];
-	_explosiveClass = _this select 1;
+	private ["_unit", "_class", "_config", "_timer"];
 	_unit = _this select 0;
+	_class = _this select 1;
+	_config = _this select 2;
+	_timer = _this select 3;
 	// Commented out due to the fact there is a distinction between who can deactivate mines and who can plant them in standard configs.
 	// Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
 	//if ((AGM_Explosives_RequireSpecialist > 0) && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {};
-	sleep 0.03;
-	
-	_code = str(round (random 9999));
-	_count = 4 - count (toArray _code);
-	while {_count > 0} do {
-		_code = "0" + _code;
-		_count = _count - 1;
+	if (isNil "_config") then {
+		_config = ConfigFile >> "CfgAGM_Triggers" >> configName ((ConfigFile >> "CfgMagazines" >> _class >> "AGM_Triggers") select 0);
 	};
 	
-	AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _explosiveClass >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
+	AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _class >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
 	
 	AGM_Explosives_Setup enableSimulation false;
-	AGM_Explosives_Setup setVariable ["AGM_ExplosiveClass", _explosiveClass];
-	AGM_Explosives_Setup setVariable ["AGM_DetonateCode", _code];
-	
-	_timer = _this select 2;
+	AGM_Explosives_Setup setVariable ["AGM_Class", _class];
+	AGM_Explosives_Setup setVariable ["AGM_Trigger", _config];
 	if (!isNil "_timer") then {
 		AGM_Explosives_Setup setVariable ["AGM_Timer", _timer];
 	};
@@ -55,4 +51,3 @@ _this spawn {
 		};
 	}] call BIS_fnc_addStackedEventHandler;
 };
-true

@@ -20,9 +20,9 @@ if (AGM_Explosives_pfeh_running) then {
 	["AGM_Explosives_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
 	AGM_Explosives_pfeh_running = false;
 };
-private ["_class", "_explosive"];
-_class = AGM_Explosives_Setup getVariable ["AGM_ExplosiveClass", ""];
-if(_class != "") then {
+private ["_mag", "_explosive"];
+_mag = AGM_Explosives_Setup getVariable ["AGM_Class", ""];
+if(_mag != "") then {
 	private "_explosive";
 	_dir = (getDir AGM_Explosives_Setup);
 	if (_dir > 180) then {
@@ -30,14 +30,14 @@ if(_class != "") then {
 	} else {
 		_dir = 180 + _dir;
 	};
-	_explosive = [player, getPosATL AGM_Explosives_Setup, _class, AGM_Explosives_Setup getVariable "AGM_DetonateCode", _dir,AGM_Explosives_Setup getVariable "AGM_Timer"] call AGM_Explosives_fnc_PlaceExplosive;
-	AGM_Explosives_Null = [_explosive,_this, _class, _dir] spawn {
+	_explosive = [player, getPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive;
+	[_explosive,_this, _mag, _dir] spawn {
 		sleep 0.1 + getNumber(ConfigFile >> "CfgMagazines" >> (_this select 2) >> "AGM_DelayTime");
 		(_this select 0) attachTo [(_this select 1)];
 		_dir = (_this select 3) - (getDir (_this select 1));
 		(_this select 0) setDir _dir;
 	};
 	deleteVehicle AGM_Explosives_Setup;
-	player RemoveMagazineGlobal _class;
+	player RemoveMagazineGlobal _mag;
 };
 AGM_Explosives_Setup = objNull;
