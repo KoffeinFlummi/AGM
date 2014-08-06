@@ -287,6 +287,9 @@
       <Hungarian>Játékosnevek mutatása</Hungarian>
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
+    <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor">
+      <English>Show player name only on cursor</English>
+    </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>

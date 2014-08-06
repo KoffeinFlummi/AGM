@@ -22,6 +22,7 @@ class CfgFunctions {
       class canLoadCaptiveIntoVehicle;
       class canTapShoulder;
       class canUnloadCaptiveFromVehicle;
+      class drawNameTagIcon;
       class escortCaptive;
       class getCaptivityStatus;
       class getDown;
@@ -110,6 +111,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerNames";
     default = 1;
   };
+  class showPlayerNamesOnlyOnCursor {
+    displayName = "$STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor";
+    default = 1;
+  };
   class showPlayerRanks {
     displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
     default = 1;
@@ -118,6 +123,7 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
+  AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
 };
 
 class AGM_Core_canInteractConditions {
