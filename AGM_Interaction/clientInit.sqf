@@ -1,15 +1,4 @@
-// by commy2
-
-#define TEXTURES_RANKS [ \
-	"", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\lieutenant_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\captain_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\major_gs.paa", \
-    "\A3\Ui_f\data\GUI\Cfg\Ranks\colonel_gs.paa" \
-]
+// by commy2 and CAA-Picard
 
 if (!hasInterface) exitWith {};
 
@@ -17,40 +6,36 @@ AGM_Interaction_isOpeningDoor = false;
 AGM_Dancing = false;
 
 addMissionEventHandler ["Draw3D", {
-	_target = effectiveCommander cursorTarget;
-	if (!isNull _target && {profileNamespace getVariable ["AGM_showPlayerNames", true]} && {side group _target == playerSide}) then {
+  if !(profileNamespace getVariable ["AGM_showPlayerNames", true]) exitWith {};
 
-		_name = if (alive _target) then {
-			name _target
-		} else {
-			_target getVariable ["AGM_Name", ""]
-		};
+  if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
 
-		_rank = TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1);
-		_size = [0, 1] select (profileNamespace getVariable ["AGM_showPlayerRanks", true]);
+    _target = effectiveCommander cursorTarget;
+    if (!isNull _target && {side group _target == playerSide}) then {
+      _distance = player distance _target;
+      _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
+      [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
+    };
 
-		_height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
+  } else {
 
-		_position = visiblePosition _target;
-		_position = _position vectorAdd [0, 0, _height];
+    _pos = positionCameraToWorld [0, 0, 0];
+    _vecy = (positionCameraToWorld [0, 0, 1]) vectorDiff _pos;
 
-		_alpha = AGM_Interaction_PlayerNamesViewDistance - (player distance _target) min 0.95;
+    _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
+    {
+      _target = effectiveCommander _x;
+      if (!isNull _target && {side group _target == playerSide} && _target != player) then {
+        _distance = _pos vectorDistance (getPos _target);
 
-		_color = if !(group _target == group player) then {[0.85, 0.85, 0.85, _alpha]} else {
-			[[1, 1, 1, _alpha], [1, 0, 0, _alpha], [0, 1, 0, _alpha], [0, 0, 1, _alpha], [1, 1, 0, _alpha]] select (["MAIN", "RED", "GREEN", "BLUE", "YELLOW"] find assignedTeam _target) max 0
-		};
+        _relPos = (visiblePosition _target) vectorDiff _pos;
+        _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
 
-		drawIcon3D [
-			_rank,
-			_color,
-			_position,
-			_size,
-			_size,
-			0,
-			_name,
-			2,
-			0.033,
-			"PuristaMedium"
-		];
-	};
+        _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min (1 - 0.15 * (_projDist * 5 - _distance - 3)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
+
+        [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
+      };
+    } forEach _targets;
+
+  };
 }];
