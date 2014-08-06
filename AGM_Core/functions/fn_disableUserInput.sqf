@@ -39,15 +39,17 @@ if (_state) then {
 					(_dlg displayCtrl _index) ctrlEnable false;
 				};
 
-				_ctrl = _dlg displayctrl 103;
-				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; failMission 'KILLED'; [false] call AGM_Core_fnc_disableUserInput;"];
+				/*_ctrl = _dlg displayctrl 103;
+				_ctrl ctrlSetEventHandler ["buttonClick", "while {!isNull (uiNamespace getVariable ['AGM_Core_dlgDisableMouse', displayNull])} do {closeDialog 0}; failMission 'KILLED'; [false] call AGM_Core_fnc_disableUserInput;"];
 				_ctrl ctrlEnable true;
 				_ctrl ctrlSetText "ABORT";
+				_ctrl ctrlSetTooltip "Abort.";*/
 
-				_ctrl = _dlg displayctrl 104;
+				_ctrl = _dlg displayctrl 103;	//104;
 				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; forceRespawn player; [false] call AGM_Core_fnc_disableUserInput;"];
 				_ctrl ctrlEnable true;
 				_ctrl ctrlSetText "RESPAWN";
+				_ctrl ctrlSetTooltip "Respawn.";
 			};
 
 			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
@@ -63,14 +65,9 @@ if (_state) then {
 	//	diag_log text "[AGM] Debug: User Input disabled";
 } else {
 	if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
-		0 spawn {
-			waitUntil {
-				closeDialog 0;
-				isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])
-			};
+		while {!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])} do {closeDialog 0};
 
-			uiNamespace setVariable ["AGM_Core_dlgDisableMouse", displayNull];
-			//	diag_log text "[AGM] Debug: User Input enabled";
-		};
+		uiNamespace setVariable ["AGM_Core_dlgDisableMouse", displayNull];
+		//	diag_log text "[AGM] Debug: User Input enabled";
 	};
 };
