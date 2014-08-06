@@ -14,7 +14,9 @@ if (_weapon in _jammedWeapons) then {
 	_unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 
 	if (count _jammedWeapons == 0) then {
-		_unit removeAction AGM_JammingActionID;
+		_actionID = _unit getVariable ["AGM_JammingActionID", -1];
+		_unit removeAction _actionID;
+		_unit setVariable ["AGM_JammingActionID", -1];
 	};
 
 	if !(_skipAnim) then {

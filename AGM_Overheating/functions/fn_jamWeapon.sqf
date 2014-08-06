@@ -1,6 +1,6 @@
 // based on KK_fnc_playerWeaponMulfunction from KillzoneKid
 
-private ["_unit", "_weapon", "_jammedWeapons"];
+private ["_unit", "_weapon", "_jammedWeapons", "_actionID"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
@@ -28,7 +28,7 @@ _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 	};
 };
 
-AGM_JammingActionID = _unit addAction [
+_actionID = _unit addAction [
 	"",
 	{playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0]},
 	"",
@@ -38,3 +38,5 @@ AGM_JammingActionID = _unit addAction [
 	"DefaultAction",
 	"player == vehicle player && {currentWeapon player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
 ];
+
+_unit setVariable ["AGM_JammingActionID", _actionID];
