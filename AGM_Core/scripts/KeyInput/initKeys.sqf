@@ -10,7 +10,7 @@ _handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_
 _handleHold = "if (AGM_Core_keyStates select _keyIndex > 1) exitWith {false}; if (AGM_Core_keyStates select _keyIndex > 0) then {_keyCode = _keyIndex + 0.9};";
 _handleHoldUp = "if (AGM_Core_keyStates select _keyIndex > 1) then {_keyCode = _keyIndex + 0.9};";
 
-_debug = "if (!isNil 'AGM_Debug') then {systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex))};";
+_debug = "if (!isNil 'AGM_Debug' && {AGM_Debug == 'Keys'}) then {systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex))};";
 
 _onKeyDown = "" + _debug;
 _onKeyUp = "" + _debug;
@@ -28,7 +28,7 @@ for "_index" from 0 to (_count - 1) do {
 	_canInteract = format ["%1 call AGM_Core_canInteract", _exceptions];
 
 	if (_statement != "") then {
-		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2} && {%4}) then {%3; _isInput = true;};", _keyName, _condition, _statement, _canInteract];
+		_entry = format ["if (_keyCode == profileNamespace getVariable 'AGM_Key_%1' && {%2}) then {if (%4) then {%3}; _isInput = true;};", _keyName, _condition, _statement, _canInteract];
 		_onKeyDown = _onKeyDown + _entry;
 	};
 
