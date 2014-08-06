@@ -192,7 +192,6 @@ class CfgFunctions {
       class displayTextPicture;
       class displayTextStructured;
       class execRemoteFnc;
-      class exportFunctions;
       class filter;
       class findStringInString;
       class getBinocular;
