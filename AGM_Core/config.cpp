@@ -188,7 +188,6 @@ class CfgFunctions {
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
-      class disableUserInput2;
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
