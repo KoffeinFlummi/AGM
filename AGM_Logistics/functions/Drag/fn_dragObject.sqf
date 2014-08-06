@@ -60,5 +60,7 @@ _this spawn {
 	_attachPoint = [0,1.2, ((_draggedObject modelToWorld [0,0,0]) select 2) - ((_unit modelToWorld [0,0,0]) select 2)];
 	_draggedObject attachTo [_unit, _attachPoint];
 
+	AGM_Drag_ReleaseActionID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Drag_EndDrag"], "player call AGM_Drag_fnc_releaseObject;", nil, 20, false, true, "","player call AGM_Drag_fnc_isDraggingObject"];
+
 	AGM_Drag_CurrentHeightChange = 0;
 };

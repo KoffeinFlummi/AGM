@@ -257,7 +257,6 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        //condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         condition = "'AGM_CableTie' in items player && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
@@ -266,7 +265,7 @@ class CfgVehicles {
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Interaction_ReleaseCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {isNull attachedTo AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_setCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -275,7 +274,7 @@ class CfgVehicles {
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Interaction_EscortCaptive";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {isNull attachedTo AGM_Interaction_Target}";
+        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {isNull attachedTo AGM_Interaction_Target}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -284,7 +283,7 @@ class CfgVehicles {
       class AGM_StopEscorting {
         displayName = "$STR_AGM_Interaction_StopEscorting";
         distance = 4;
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {AGM_Interaction_Target in attachedObjects player}";
+        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {AGM_Interaction_Target in attachedObjects player}";
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -482,7 +481,7 @@ class CfgVehicles {
       };
       class AGM_StopEscortingSelf {
         displayName = "$STR_AGM_Interaction_StopEscorting";
-        condition = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_canInteractWith && {AGM_Interaction_Target getVariable ['AGM_isCaptive', false]} && {AGM_Interaction_Target in attachedObjects player}";
+        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {AGM_Interaction_Target in attachedObjects player}";
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
