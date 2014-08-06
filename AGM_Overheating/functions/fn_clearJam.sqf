@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_unit", "_weapon", "_jammedWeapons"];
+private ["_unit", "_weapon", "_jammedWeapons", "_actionID"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
