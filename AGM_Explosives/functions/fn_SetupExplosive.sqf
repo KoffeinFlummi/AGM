@@ -45,8 +45,8 @@ _this spawn {
 	AGM_Explosives_TweakedAngle = 180;
 	["AGM_Explosives_Placement","OnEachFrame", {
 		AGM_Explosives_pfeh_running = true;
-		_pos = (eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
-		AGM_Explosives_Setup setPosASL _pos;
+		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
+		AGM_Explosives_Setup setPosATL _pos;
 		if (!AGM_Explosives_Shiftdown) then {
 			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);
 		};

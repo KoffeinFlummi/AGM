@@ -7,14 +7,28 @@ class CfgMagazines {
 		AGM_DelayTime = 2.5;
 		class AGM_Triggers {
 			AGM_Triggers[] = {"PressurePlate"};
-			class PressurePlate;
+			class PressurePlate {
+				digDistance = 0.1;
+			};
 		};
 	};
 	class APERSBoundingMine_Range_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSBoundingMine";
+		class AGM_Triggers {
+			AGM_Triggers[] = {"PressurePlate"};
+			class PressurePlate {
+				digDistance = 0.075;
+			};
+		};
 	};
 	class APERSMine_Range_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSMine";
+		class AGM_Triggers {
+			AGM_Triggers[] = {"PressurePlate"};
+			class PressurePlate {
+				digDistance = 0.05;
+			};
+		};
 	};
 	class APERSTripMine_Wire_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSTripwireMine";
@@ -66,6 +80,7 @@ class CfgMagazines {
 			AGM_Triggers[] = {"PressurePlate","Timer","Command"};
 			class PressurePlate{
 				displayName = "Magnetic Influence Sensor (Bottom Attack)";
+				digDistance = 0.025;
 			};
 			class Timer {
 				ammo = "SLAMDirectionalMine_Timer_Ammo";
@@ -88,7 +103,7 @@ class CfgAGM_Triggers {
 	class PressurePlate {
 		displayName = $STR_AGM_Explosives_PressurePlate;
 		picture = "AGM_Explosives\data\UI\Pressure_plate.paa";
-		onPlace = "true";
+		onPlace = "_dist=GetNumber(ConfigFile >> 'CfgMagazines' >> (_this select 2) >> 'AGM_Triggers' >> 'PressurePlate' >> 'digDistance');_ex=_this select 1;_pos=getPosATL _ex;_pos=_pos vectorDiff ((VectorUp _ex)vectorCrossProduct [0,0,_dist]);_ex setPosATL _pos;true";
 	};
 	class Timer {
 		displayName = $STR_AGM_Explosives_timerName;
