@@ -72,6 +72,16 @@ class CfgVehicles {
       };
     };
   };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_Vector {
+        weapon = "AGM_Vector";
+        count = 6;
+      };
+    };
+  };
 };
 
 class AGM_Rsc_Display_Base;
