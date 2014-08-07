@@ -12,13 +12,13 @@ class CfgWeapons {
 		displayName = $STR_AGM_Explosives_clacker_displayName;
 		descriptionShort = $STR_AGM_Explosives_clacker_description;
 		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
-		model = "\A3\Structures_F\Items\Tools\MultiMeter_F.p3d";
+		model = "\A3\weapons_F\ammo\mag_univ.p3d";
 		AGM_range = 100;
 		AGM_Detonator = 1;
 		
 		class ItemInfo: AGM_ExplosiveItem {
 			mass = 3;
-			uniformModel = "\A3\Structures_F\Items\Tools\MultiMeter_F.p3d";
+			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
 		};
 	};
 	class AGM_DefusalKit: ItemCore {

@@ -30,14 +30,15 @@ if(_mag != "") then {
 	} else {
 		_dir = 180 + _dir;
 	};
+	player forceWalk false;
 	_explosive = [player, getPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive;
 	[_explosive,_this, _mag, _dir] spawn {
-		sleep 0.1 + getNumber(ConfigFile >> "CfgMagazines" >> (_this select 2) >> "AGM_DelayTime");
+		sleep getNumber(ConfigFile >> "CfgMagazines" >> (_this select 2) >> "AGM_DelayTime");
 		(_this select 0) attachTo [(_this select 1)];
 		_dir = (_this select 3) - (getDir (_this select 1));
 		(_this select 0) setDir _dir;
 	};
 	deleteVehicle AGM_Explosives_Setup;
-	player RemoveMagazineGlobal _mag;
+	player RemoveMagazine _mag;
 };
 AGM_Explosives_Setup = objNull;
