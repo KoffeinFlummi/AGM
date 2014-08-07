@@ -44,6 +44,7 @@ class CfgFunctions
 			
 			class SelectTrigger;
 			class SetupExplosive;
+			class SetPos;
 			class StartDefuse;
 			class StartTimer;
 			

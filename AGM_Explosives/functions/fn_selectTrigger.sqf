@@ -14,7 +14,7 @@
 		Nothing
 	
 	Example:
-		["SatchelCharge_Remote_Mag",0] call AGM_Explosives_fnc_selectTrigger;
+		["SatchelCharge_Remote_Mag","Timer"] call AGM_Explosives_fnc_selectTrigger;
 */
 private ["_magazine","_trigger"];
 closeDialog 0;

@@ -37,9 +37,7 @@ if (isText(_trigger >> "ammo")) then {
 	_ammo = getText (_trigger >> "ammo");
 };
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
-_explosive setDir _dir;
-_explosive setPosATL _pos;
-_explosive setVectorUp (surfaceNormal _pos);
+[[_explosive, _dir, _pos], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 if (isText(_config >> "onPlace") && {[_unit,_explosive,_mag,_vars] call compile (getText (_config >> "onPlace"))}) exitWith {_explosive};
 
 _explosive
