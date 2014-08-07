@@ -27,7 +27,7 @@ _range = 0;
 	};
 } count (items _unit);
 
-_listIDC = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate", format ["[player,%1, player getVariable ['AGM_Clacker', []] select (parseNumber lbData [8866, lbCurSel 8866]), false, false] call AGM_Explosives_fnc_DetonateExplosive;closeDialog 0;", _range]] call AGM_Interaction_fnc_openSelectMenu;
+_listIDC = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate", format ["[player,%1, player getVariable ['AGM_Clacker', []] select (parseNumber lbData [8866, lbCurSel 8866]), false, false] call AGM_Explosives_fnc_DetonateExplosive;closeDialog 0;", _range], "closeDialog 0;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;"] call AGM_Interaction_fnc_openSelectMenu;
 
 _result = _unit getVariable ["AGM_Clacker", []];
 
