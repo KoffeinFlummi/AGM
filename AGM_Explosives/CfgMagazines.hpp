@@ -6,6 +6,7 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_ATMine"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 2.5;
 		class AGM_Triggers {
+			AGM_Triggers[] = {"PressurePlate"};
 			class PressurePlate;
 		};
 	};
@@ -17,8 +18,8 @@ class CfgMagazines {
 	};
 	class APERSTripMine_Wire_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSTripwireMine";
-		delete AGM_Triggers;
 		class AGM_Triggers {
+			AGM_Triggers[] = {"Tripwire"};
 			class Tripwire;
 		};
 	};
@@ -29,6 +30,7 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_Claymore"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 1.5;
 		class AGM_Triggers {
+			AGM_Triggers[] = {"Command"};
 			class Command {
 				FuseTime = 0.5;
 				MaxDistance = 100;
@@ -42,6 +44,7 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SatchelCharge"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 1;
 		class AGM_Triggers {
+			AGM_Triggers[] = {"Timer","Command"};
 			class Timer {
 				FuseTime = 0.5;
 			};
@@ -60,7 +63,10 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SLAM";
 		AGM_explodeOnDefuse = 1;
 		class AGM_Triggers {
-			class PressurePlate;
+			AGM_Triggers[] = {"PressurePlate","Timer","Command"};
+			class PressurePlate{
+				displayName = "Magnetic Influence Sensor (Bottom Attack)";
+			};
 			class Timer {
 				ammo = "SLAMDirectionalMine_Timer_Ammo";
 			};
