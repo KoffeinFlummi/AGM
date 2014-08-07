@@ -36,7 +36,7 @@ _position = (visiblePosition _target) vectorAdd [0, 0, _height + _heightOffset];
 _color = if !(group _target == group player) then {
            [0.77, 0.51, 0.08, _alpha]}
          else {
-           [[1, 1, 1, _alpha], [1, 0, 0, _alpha], [0, 1, 0, _alpha], [0, 0, 1, _alpha], [1, 1, 0, _alpha]] select (["MAIN", "RED", "GREEN", "BLUE", "YELLOW"] find assignedTeam _target) max 0
+           [[1, 1, 1, _alpha], [1, 0, 0, _alpha], [0, 1, 0, _alpha], [0, 0, 1, _alpha], [1, 1, 0, _alpha]] select (["MAIN", "RED", "GREEN", "BLUE", "YELLOW"] find (if (_target == player) then {0} else {assignedTeam _target})) max 0
          };
 
 _name = if (alive _target) then {

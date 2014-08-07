@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -253,6 +253,7 @@ class CfgVehicles {
 	// Repair wheeled vehicles
 	class Car_F: Car {
 		KEY_WHEEL_4X4
+		class HitPoints;	//	@todo
 		AGM_fuelCapacity = 60;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
@@ -340,6 +341,16 @@ class CfgVehicles {
 
 	class Truck_F: Car_F {
 		KEY_WHEEL_6X6_REAR
+		class HitPoints: HitPoints {	//	@todo
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitLMWheel;
+			class HitLF2Wheel;
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
 		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
 		class AGM_Actions;
 	};
@@ -916,6 +927,17 @@ class CfgVehicles {
 	// Trucks RED
 	class Truck_03_base_F: Truck_F {
 		KEY_WHEEL_6X6_FRONT
+		//	@todo delete extra hit points
+		/*class HitPoints: HitPoints {
+			class HitLFWheel: HitLFWheel {};
+			class HitLF2Wheel: HitLF2Wheel {};
+			delete HitLMWheel;
+			class HitLBWheel: HitLBWheel {};
+			class HitRFWheel: HitRFWheel {};
+			class HitRF2Wheel: HitRF2Wheel {};
+			delete HitRMWheel;
+			class HitRBWheel: HitRBWheel {};
+		};*/
 		class AGM_Actions: AGM_Actions {};
 	};
 	class O_Truck_03_repair_F: Truck_03_base_F {

@@ -17,7 +17,7 @@
 		Nothing
 	
 	Example:
-		[player, "SatchelCharge_Remote_Mag", configFile >> "CfgAGM_Triggers" >> "Command"] call AGM_Explosives_fnc_SetupExplosive;
+		[player, "SatchelCharge_Remote_Mag", "Command"] call AGM_Explosives_fnc_SetupExplosive;
 */
 _this spawn {
 	private ["_unit", "_class", "_config", "_timer"];
@@ -29,7 +29,7 @@ _this spawn {
 	// Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
 	//if ((AGM_Explosives_RequireSpecialist > 0) && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {};
 	if (isNil "_config") then {
-		_config = ConfigFile >> "CfgAGM_Triggers" >> configName ((ConfigFile >> "CfgMagazines" >> _class >> "AGM_Triggers") select 0);
+		_config = getArray(ConfigFile >> "CfgMagazines" >> _class >> "AGM_Triggers" >> "AGM_Triggers") select 0;
 	};
 	
 	AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _class >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
@@ -40,12 +40,13 @@ _this spawn {
 	if (!isNil "_timer") then {
 		AGM_Explosives_Setup setVariable ["AGM_Timer", _timer];
 	};
-
+	
+	_unit forceWalk true;
 	AGM_Explosives_TweakedAngle = 180;
 	["AGM_Explosives_Placement","OnEachFrame", {
 		AGM_Explosives_pfeh_running = true;
-		_pos = (eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
-		AGM_Explosives_Setup setPosASL _pos;
+		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
+		AGM_Explosives_Setup setPosATL _pos;
 		if (!AGM_Explosives_Shiftdown) then {
 			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);
 		};

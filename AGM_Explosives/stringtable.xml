@@ -217,5 +217,17 @@
       <Key ID="STR_AGM_Explosives_TripWire">
         <English>Tripwire</English>
       </Key>
+      <Key ID="STR_AGM_Explosives_IRSensor">
+        <English>IR Sensor</English>
+      </Key>
+      <Key ID="STR_AGM_Explosives_NoTriggersAvailable">
+        <English>No triggers available for %1</English>
+      </Key>
+      <Key ID="STR_AGM_Explosives_SLAME_IRSensor">
+        <English>IR Sensor (Side Attack)</English>
+      </Key>
+      <Key ID="STR_AGM_Explosives_SLAME_Magnetic">
+        <English>Magnetic Influence Sensor (Bottom Attack)</English>
+      </Key>
   </Package>
 </Project>

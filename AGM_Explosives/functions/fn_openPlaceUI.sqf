@@ -19,7 +19,7 @@ private ["_unit","_mags", "_item", "_index", "_listIDC"];
 _unit = _this select 0;
 call AGM_Explosives_fnc_Place_Cancel;
 
-_listIDC = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place", "private ['_triggerTypes', '_mag'];_mag=lbData [8866, lbCurSel 8866];_triggerTypes = [_mag] call AGM_Explosives_fnc_TriggerType;if (count _triggerTypes > 1) then {[_mag] call AGM_Explosives_fnc_openTriggerSelectionUI;}else{[player, _mag, nil, nil] call AGM_Explosives_fnc_SetupExplosive;closeDialog 0;};"] call AGM_Interaction_fnc_openSelectMenu;
+_listIDC = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place", "closeDialog 0;private ['_mag'];_mag=lbData [8866, lbCurSel 8866];[_mag] call AGM_Explosives_fnc_openTriggerSelectionUI;", "closeDialog 0;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;"] call AGM_Interaction_fnc_openSelectMenu;
 
 _mags = magazines _unit;
 {

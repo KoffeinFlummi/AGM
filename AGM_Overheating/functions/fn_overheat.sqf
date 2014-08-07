@@ -83,8 +83,13 @@ if (_temperature > THRESHOLD_1) then {
 // jamming
 _chance = _temperature ^ 3;
 
-if (!isNil "AGM_Debug" && {AGM_Debug == "Jamming"}) then {
-	systemChat str format ["Jam chance: %1%", _chance / 1000];
+if (!isNil "AGM_Debug") then {
+	if (AGM_Debug == "Jamming") then {
+		systemChat str format ["Jam chance: %1%", _chance / 1000];
+	};
+	if (AGM_Debug == "Jamming50") then {
+		_chance = 500;
+	};
 };
 
 if (random 1000 < _chance) then {

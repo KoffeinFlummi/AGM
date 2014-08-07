@@ -23,6 +23,7 @@ if (AGM_Explosives_pfeh_running) then {
 private "_mag";
 _mag = AGM_Explosives_Setup getVariable ["AGM_Class", ""];
 if (_mag != "") then {
+	player playActionNow "PutDown";
 	private ["_pos", "_oldPos", "_limiter", "_fnc_SimilarPos"];
 	_pos = -5;
 	_oldPos = -1;
@@ -45,10 +46,11 @@ if (_mag != "") then {
 		_pos = (GetPosATL AGM_Explosives_Setup) select 2;
 		_limiter = _limiter + 0.1;
 	};
-	
+	player forceWalk false;
 	sleep getNumber(ConfigFile >> "CfgMagazines" >> _mag >> "AGM_DelayTime");
 	[player, GetPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive;
-	player RemoveMagazineGlobal _mag;
+	player RemoveMagazine _mag;
 };
 deleteVehicle AGM_Explosives_Setup;
 AGM_Explosives_Setup = objNull;
+player forceWalk false;
