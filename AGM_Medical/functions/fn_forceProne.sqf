@@ -10,22 +10,19 @@
  * none
  */
 
-private ["_unit"];
-_unit = _this select 0;
-if (_unit getVariable "AGM_NoLegs") then {
-	if (stance _unit != "PRONE") then {
-		if(!_unit getVariable "AGM_GoDown") then {
-			hint "ok";
-			_unit setVariable ["AGM_GoDown", true];
-			[_unit] spawn {
+if (player getVariable "AGM_NoLegs") then {
+	if (stance player != "PRONE") then {
+		if!(player getVariable "AGM_GoDown") then {
+			// hint "ok";
+			player setVariable ["AGM_GoDown", true];
+			[] spawn {
 				private ["_unit","_anim1"];
-				_unit = _this select 0;
-				_anim1 = animationState _unit;
-				waitUntil { animationState _unit != _anim1; };
+				_anim1 = animationState player;
+				waitUntil { animationState player != _anim1; };
 				sleep 2;
-				_unit playActionNow "down";
-				waituntil {stance _unit == "PRONE"};
-				_unit setVariable ["AGM_GoDown", false];
+				player playActionNow "down";
+				waituntil {stance player == "PRONE"};
+				player setVariable ["AGM_GoDown", false];
 			};
 		};
 	};
