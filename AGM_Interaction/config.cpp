@@ -488,7 +488,7 @@ class CfgVehicles {
       class AGM_StopEscortingSelf {
         displayName = "$STR_AGM_Interaction_StopEscorting";
         condition = "(player getVariable ['AGM_escortedUnit', objNull]) getVariable ['AGM_isCaptive', false] && {(player getVariable ['AGM_escortedUnit', objNull]) in attachedObjects player}";
-        statement = "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Interaction_fnc_escortCaptive;"
+        statement = "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Interaction_fnc_escortCaptive;";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.3;
