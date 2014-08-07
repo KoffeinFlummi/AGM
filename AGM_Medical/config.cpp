@@ -79,17 +79,37 @@ class AGM_Core_Options {
 };
 
 class CfgMovesBasic {
-  class Default;
+	class Default;
+	class Actions {
+		class NoActions;
+		class PistolStandActions: NoActions {
+			grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+		};
+		class LauncherKneelActions: NoActions {
+			grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+		};
+		class CivilStandActions: NoActions {
+			grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
+		};
+	};
 };
 class CfgMovesMaleSdr: CfgMovesBasic {
   //class Default: Default;
-  class States {
-    class Unconscious: Default {
-      //forceAim = 1; //0;
-      head = "headNo";
-      static = 1;
-    };
-  };
+	class States {
+		class Unconscious: Default {
+		  //forceAim = 1; //0;
+		  head = "headNo";
+		  static = 1;
+		};
+	};
+	class AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1;
+
+	class AcinPknlMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
+	  enableDirectControl = 1;
+	};
+	class AcinPknlMwlkSnonWnonDb: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
+	  enableDirectControl = 1;
+	};
 };
 
 class CfgVehicles {
@@ -470,8 +490,8 @@ class CfgVehicles {
         defaultValue = 1;
       };
       class MaxUnconsciousnessTime {
-        displayName = "Max Unconsc. Time"
-        description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this."
+        displayName = "Max Unconsc. Time";
+        description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this.";
         defaultValue = -1;
       };
       class AllowNonmedics {
@@ -661,35 +681,6 @@ class CfgActions {
     text = "Treat yourself";
     textDefault = "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />";
     textSimple = "";
-  };
-};
-
-// ANIMATIONS
-class CfgMovesBasic {
-  class Actions {
-    class NoActions;
-    class PistolStandActions: NoActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-    class LauncherKneelActions: NoActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-    class CivilStandActions: NoActions {
-      grabDrag = "AmovPercMstpSlowWrflDnon_AcinPknlMwlkSlowWrflDb_2";
-    };
-  };
-};
-
-class CfgMovesMaleSdr: CfgMovesBasic {
-  class States {
-    class AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1;
-
-    class AcinPknlMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
-      enableDirectControl = 1;
-    };
-    class AcinPknlMwlkSnonWnonDb: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
-      enableDirectControl = 1;
-    };
   };
 };
 
