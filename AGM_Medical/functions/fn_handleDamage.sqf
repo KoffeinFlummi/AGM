@@ -281,9 +281,5 @@ if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) ex
 if (_preventDeath) then {
   _newDamage = _newDamage min 0.89;
 };
-if (_selectionName == "") then {
-	//diag_log format["Damage %1",_newDamage];
-	_newDamage
-} else {
-	false
-};
+//diag_log format["Damage %1",_newDamage];
+_newDamage
