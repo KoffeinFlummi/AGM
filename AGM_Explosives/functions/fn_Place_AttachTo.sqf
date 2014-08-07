@@ -38,6 +38,7 @@ if(_mag != "") then {
 		(_this select 0) setDir _dir;
 	};
 	deleteVehicle AGM_Explosives_Setup;
-	player RemoveMagazineGlobal _mag;
+	player RemoveMagazine _mag;
 };
 AGM_Explosives_Setup = objNull;
+player forceWalk false;

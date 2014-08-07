@@ -18,9 +18,9 @@
 private ["_mag"];
 _mag = _this select 0;
 createDialog "RscAGM_SelectTimeUI";
-sliderSetRange [8845, 5, 900]; // 5seconds - 10minutes
+sliderSetRange [8845, 5, 900]; // 5seconds - 15minutes
 sliderSetPosition [8845, 30];
 
-buttonSetAction [8860, format["[player, '%1', configFile >> 'CfgAGM_Triggers' >> 'Timer', floor(sliderPosition 8845)] call AGM_Explosives_fnc_SetupExplosive;closeDialog 0;", _mag]];
+buttonSetAction [8860, format["[player, '%1', 'Timer', floor(sliderPosition 8845)] call AGM_Explosives_fnc_SetupExplosive;closeDialog 0;", _mag]];
 
 ctrlSetText [8870, format[localize "STR_AGM_Explosives_TimerMenu",0, 30]];
