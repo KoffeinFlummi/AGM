@@ -22,6 +22,8 @@ if (_state) then {
 		while {_this getVariable ["AGM_isSurrender", false]} do {
 			sleep 0.001; //sleep in UI
 
+			if (isPlayer _this) then {showHUD false};
+
 			if (!alive _this || {_this getVariable ["AGM_Unconscious", false]}) then {
 				_this setVariable ["AGM_isSurrender", false, true];
 			} else {
@@ -35,6 +37,8 @@ if (_state) then {
 		};
 
 		[_this, "AGM_Surrendered", false] call AGM_Interaction_fnc_setCaptivityStatus;
+
+		if (isPlayer _this) then {showHUD true};
 	};
 } else {
 	_unit setVariable ["AGM_isSurrender", false, true];

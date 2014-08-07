@@ -34,10 +34,10 @@ if (_state) then {
 			_this playMove "amovpercmstpsraswrfldnon";
 		};
 
-		//_ehid = _this addEventHandler ["AnimChanged", {if !(_this select 1 in ["amovpercmstpsnonwnondnon_easein", "amovpercmstpsnonwnondnon_ease", "amovpercmstpsnonwnondnon_easeout"]) then {(_this select 0) switchMove "amovpercmstpsnonwnondnon_ease"}}];
-
 		while {_this getVariable ["AGM_isCaptive", false]} do {
 			sleep 0.001; //sleep in UI
+
+			if (isPlayer _this) then {showHUD false};
 
 			waitUntil {!(_this getVariable ["AGM_Unconscious", false])};
 
@@ -62,8 +62,6 @@ if (_state) then {
 			};
 		};
 
-		//_this removeEventHandler ["AnimChanged", _ehid];
-
 		if !(_this getVariable ["AGM_Unconscious", false]) then {
 			_this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
 		} else {
@@ -75,6 +73,8 @@ if (_state) then {
 		if (_inputDisabled && {isPlayer _this}) then {
 			[false] call AGM_Core_fnc_disableUserInput;
 		};
+
+		if (isPlayer _this) then {showHUD true};
 	};
 } else {
 	_unit setVariable ["AGM_isCaptive", false, true];
