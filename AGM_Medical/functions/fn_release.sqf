@@ -33,6 +33,8 @@ _this spawn {
   detach _unit;
   player setVariable ["AGM_CanTreat", true, false];
 
+  player removeAction (player getVariable "AGM_Medical_ReleaseID");
+
   if (vehicle _unit != _unit) exitWith {};
 
   [-2, {

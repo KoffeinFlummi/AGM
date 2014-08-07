@@ -14,7 +14,6 @@ _this spawn {
   _unit = _this select 0;
 
   _unit setVariable ["AGM_Treatable", false, true];
-  player setVariable ["AGM_Dragging", _unit, false];
   player setVariable ["AGM_CanTreat", false, false];
 
   // Everything but the rifle animation is fucked
@@ -26,6 +25,10 @@ _this spawn {
   player playMoveNow "AcinPknlMstpSrasWrflDnon";
 
   sleep 1.8;
+
+  player setVariable ["AGM_Dragging", _unit, false];
+  _releaseID = player addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Medical_Release"], "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;", nil, 20, false, true, "", "!isNull (player getVariable ['AGM_Dragging', objNull])"];
+  player setVariable ["AGM_Medical_ReleaseID", _releaseID];
 
   _unit attachTo [player, [0, 1.1, 0.092]];
   [-2, {
