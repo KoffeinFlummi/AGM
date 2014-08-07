@@ -73,7 +73,7 @@ _this spawn {
   _unit addEventHandler ["Take", { (_this select 0) call AGM_Medical_itemCheck; }];
   _unit addEventHandler ["Killed", {[false] call AGM_Core_fnc_disableUserInput;}];
   // _unit removeAllEventHandlers "AnimChanged";
-  _unit addEventHandler["AnimChanged", { (_this select 0) call AGM_Medical_forceProne; }];
+  _unit addEventHandler["AnimChanged", { (_this select 0) call AGM_Medical_fnc_forceProne; }];
   
   _unit spawn {
     while {true} do {
