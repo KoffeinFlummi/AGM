@@ -15,7 +15,7 @@
 	Example:
 		[lbData [8866, lbCurSel 8866]] call AGM_Explosives_fnc_openTriggerSelectionUI;
 */
-private ["_magazine", "_index","_triggerTypes", "_item", "_listIDC"];
+private ["_magazine", "_index","_triggerTypes", "_listIDC"];
 _magazine = _this select 0;
 closeDialog 0;
 
