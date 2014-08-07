@@ -77,10 +77,14 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SLAM";
 		AGM_explodeOnDefuse = 1;
 		class AGM_Triggers {
-			AGM_Triggers[] = {"PressurePlate","Timer","Command"};
+			AGM_Triggers[] = {"IRSensor","PressurePlate","Timer","Command"};
 			class PressurePlate{
-				displayName = "Magnetic Influence Sensor (Bottom Attack)";
-				digDistance = 0.025;
+				displayName = $STR_AGM_Explosives_SLAME_Magnetic;
+				digDistance = 0;
+				ammo = "SLAMDirectionalMine_Magnetic_Ammo";
+			};
+			class IRSensor{
+				displayName = $STR_AGM_Explosives_SLAME_IRSensor;
 			};
 			class Timer {
 				ammo = "SLAMDirectionalMine_Timer_Ammo";
@@ -105,6 +109,11 @@ class CfgAGM_Triggers {
 		picture = "AGM_Explosives\data\UI\Pressure_plate.paa";
 		onPlace = "_dist=GetNumber(ConfigFile >> 'CfgMagazines' >> (_this select 2) >> 'AGM_Triggers' >> 'PressurePlate' >> 'digDistance');_ex=_this select 1;_pos=getPosATL _ex;_pos=_pos vectorDiff ((VectorUp _ex)vectorCrossProduct [0,0,_dist]);_ex setPosATL _pos;true";
 	};
+	class IRSensor {
+		displayName = $STR_AGM_Explosives_IRSensor;
+		picture = "AGM_Explosives\data\UI\Pressure_plate.paa";
+		onPlace = "true";
+	};
 	class Timer {
 		displayName = $STR_AGM_Explosives_timerName;
 		picture = "AGM_Explosives\data\UI\Timer.paa";
@@ -115,5 +124,13 @@ class CfgAGM_Triggers {
 		displayName = $STR_AGM_Explosives_TripWire;
 		picture = "AGM_Explosives\data\UI\Tripwire.paa";
 		onPlace = "true";
+	};
+};
+
+class CfgMineTriggers {
+	class RangeTrigger;
+	class MagneticTrigger: RangeTrigger {
+		mineMagnetic = 1;
+		mineTriggerRange = 1;
 	};
 };

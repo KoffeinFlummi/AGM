@@ -43,6 +43,9 @@ class CfgAmmo {
 	class SLAMDirectionalMine_Timer_Ammo:SLAMDirectionalMine_Wire_Ammo {
 		mineTrigger = "TimeTrigger";
 	};
+	class SLAMDirectionalMine_Magnetic_Ammo:SLAMDirectionalMine_Wire_Ammo {
+		mineTrigger = "MagneticTrigger";
+	};
 	
 	class PipeBombBase;
 	class DemoCharge_Remote_Ammo:PipeBombBase{

@@ -29,12 +29,13 @@ _hasClacker = false;
 _listIDC = [localize "STR_AGM_Explosives_TriggerMenu", localize "STR_AGM_Explosives_SelectTrigger", format["['%1',lbData [8866, lbCurSel 8866]] call AGM_Explosives_fnc_selectTrigger;", _magazine], "closeDialog 0;[player] call AGM_Explosives_fnc_openPlaceUI;"] call AGM_Interaction_fnc_openSelectMenu;
 
 _triggerTypes = [_magazine] call AGM_Explosives_fnc_TriggerType;
+_mag = ConfigFile >> "CfgMagazines" >> _magazine >> "AGM_Triggers";
 {
 	if (configName _x == "Command" && !_hasClacker) then {
 	} else {
-		_index = lbAdd [_listIDC, getText(_x >> "displayName")];
+		_index = lbAdd [_listIDC, if(isText(_mag >> configName _x >> "displayName"))then{getText(_mag >> configName _x >> "displayName")}else{getText(_x >> "displayName")}];
 		lbSetData [_listIDC, _index, configName _x];
-		lbSetPicture [_listIDC, _index, getText(_x >> "picture")];
+		lbSetPicture [_listIDC, _index, if(isText(_mag >> configName _x >> "picture"))then{getText(_mag >> configName _x >> "picture")}else{getText(_x >> "picture")}];
 	};
 } count _triggerTypes;
 
