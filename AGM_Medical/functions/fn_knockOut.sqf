@@ -1,7 +1,7 @@
 /*
  * By: KoffeinFlummi
  *
- * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
+ * Knocks the given player out.
  *
  * Arguments:
  * 0: Unit to be knocked out (Object)
@@ -14,9 +14,11 @@ private ["_unit", "_newGroup"];
 
 _unit = _this select 0;
 _duration = -1;
+
 if (count _this > 1) then {
   _duration = _this select 1;
 };
+
 if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {_unit setDamage 1;};
 
 _unit setVariable ["AGM_Unconscious", true, true];
@@ -29,6 +31,8 @@ if (_unit == player) then {
 
   player setVariable ["acre_sys_core_isDisabled", true, true];
   player setVariable ["acre_sys_core_globalVolume", 0.4];
+
+  closeDialog 0;
 
   [true, true] call AGM_Core_fnc_disableUserInput;
 };

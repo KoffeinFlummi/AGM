@@ -36,6 +36,23 @@ _projectile = _this select 4;
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {};
 
+// For some reason, everything is backwards in MP,
+// so we need to untangle some things.
+_fnc_damageTetris = {
+  _selectionName = _this select 1
+  if !(isMultiplayer) exitWith {_selectionName};
+  if (_selectionName == "hand_r") exitWith {"leg_l"};
+  if (_selectionName == "leg_r") exitWith {"hand_l"};
+  if (_selectionName == "legs") exitWith {"hand_r"};
+};
+_selectionName = [_selectionName] call _fnc_damageTetris;
+
+// This seems to only show up in MP too, but since it doesn't
+// collide with anything, I'll check it in SP as well.
+if (_selectionName == "r_femur_hit") then {
+  _selectionName = "leg_r";
+};
+
 _hitSelections = [
   "head",
   "body",
