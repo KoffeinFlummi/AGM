@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"Ghost", "Hamburger SV", "commy2"};
     authorUrl = "https://github.com/commy2/";
   };

@@ -6,9 +6,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };

@@ -8,4 +8,8 @@ _this spawn {
 	};
 };
 
-player addEventHandler ["Take", {if (_this select 0 == _this select 1 && {isClass (configFile >> "CfgMagazines" >> _this select 2)}) then {[vehicle player, currentWeapon vehicle player, true] call AGM_Overheating_fnc_clearJam}}];
+player addEventHandler ["Take", {
+	if (_this select 0 == _this select 1 && {isClass (configFile >> "CfgMagazines" >> _this select 2)}) then {
+		[vehicle player, currentWeapon vehicle player, true] call AGM_Overheating_fnc_clearJam;
+	};
+}];
