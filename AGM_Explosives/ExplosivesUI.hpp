@@ -56,6 +56,7 @@ class RscAGM_SelectTimeUI
 			w = 0.15;
 			h = 0.1;
 			y = 0.09;
+			style = ST_CENTER;
 			text = $STR_AGM_Explosives_Cancel;
 			action = "closeDialog 0;";
 		};
@@ -65,6 +66,7 @@ class RscAGM_SelectTimeUI
 			y = 0.09;
 			h = 0.1;
 			w = 0.15;
+			style = ST_CENTER;
 			text = $STR_AGM_Explosives_SetTime;
 			action = "closeDialog 0;";
 		};
