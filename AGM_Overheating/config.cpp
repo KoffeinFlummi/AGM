@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Overheating {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_SpareBarrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.93";
@@ -146,6 +146,12 @@ class CfgVehicles {
   class C_supplyCrate_F: ReammoBox_F {
     class TransportItems {
       MACRO_ADDITEM(AGM_SpareBarrel,2)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,6)
     };
   };
 };
