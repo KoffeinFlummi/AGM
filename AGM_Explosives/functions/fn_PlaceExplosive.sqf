@@ -29,15 +29,24 @@ _mag = _this select 3;
 _config = _this select 4;
 _vars = _this select 5;
 
+if (isNil "_config") exitWith {
+	diag_log format ["AGM_Explosives: Error config not passed to PlaceExplosive: %1", _this];
+	objNull
+};
+
 _trigger = ConfigFile >> "CfgMagazines" >> _mag >> "AGM_Triggers" >> _config;
 _config = ConfigFile >> "CfgAGM_Triggers" >> _config;
+
+if (isNil "_config") exitWith {
+	diag_log format ["AGM_Explosives: Error config not found in PlaceExplosive: %1", _this];
+	objNull
+};
 
 _ammo = getText(ConfigFile >> "CfgMagazines" >> _mag >> "ammo");
 if (isText(_trigger >> "ammo")) then {
 	_ammo = getText (_trigger >> "ammo");
 };
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
-[[_explosive, _dir, _pos], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 if (isText(_config >> "onPlace") && {[_unit,_explosive,_mag,_vars] call compile (getText (_config >> "onPlace"))}) exitWith {_explosive};
-
+[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 _explosive

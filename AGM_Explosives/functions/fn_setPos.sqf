@@ -5,20 +5,21 @@
 		Garth de Wet (LH)
 	
 	Description:
-		Sets the Dir and upVector to the surfaceNormal of pos
+		Sets the Dir and pitch
 	
 	Parameters:
 		0: OBJECT - Object
 		1: NUMBER - Direction
-		2: ARRAY - Position
+		2: NUMBER - Pitch
 	
 	Returns:
 		Nothing
 	
 	Example:
-		[_explosive, 150, [0,200,0]] call AGM_Explosives_fnc_SetPos;
+		[_explosive, 150, 90] call AGM_Explosives_fnc_SetPos;
 */
 private "_ex";
 _ex=_this select 0;
 _ex setDir (_this select 1);
-_ex setVectorUp (surfaceNormal (_this select 2));
+[_ex, _this select 2, 0] call BIS_fnc_setPitchBank;
+//_ex setVectorUp (surfaceNormal _pos);
