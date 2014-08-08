@@ -1,5 +1,7 @@
 // by commy2
 
+#define COUNT_BARS 12
+
 _this spawn {
 	_vehicle = _this select 0;
 	_weapon = _this select 1;
@@ -17,11 +19,11 @@ _this spawn {
 		_maxRounds = getNumber (configFile >> "CfgMagazines" >> _magazine >> "count") max 1;
 
 		_ammo = _vehicle ammo _weapon;
-		if (_maxRounds >= 12) then {
-			_count = round (10 * _ammo / _maxRounds);
+		if (_maxRounds >= COUNT_BARS) then {
+			_count = round (COUNT_BARS * _ammo / _maxRounds);
 
-			if (_ammo > 0) then {_count = _count + 1};
-			if (_ammo == _maxRounds) then {_count = _count + 1};
+			if (_ammo > 0) then {_count = _count max 1};
+			if (_ammo < _maxRounds) then {_count = _count min (COUNT_BARS - 1)};
 		} else {
 			_count = _ammo;
 		};
@@ -58,7 +60,7 @@ _this spawn {
 		_text = [_string, _color] call AGM_Core_fnc_stringToColoredText;
 
 		_string = "";
-		for "_a" from (_count + 1) to (_maxRounds min 12) do {
+		for "_a" from (_count + 1) to (_maxRounds min COUNT_BARS) do {
 			_string = _string + "|";
 		};
 
