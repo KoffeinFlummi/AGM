@@ -458,6 +458,16 @@ class CfgVehicles {
 			};
 		};
 	};
+	class MBT_01_base_F: Tank_F {
+		AGM_fuelCapacity = 1400;
+	};
+	class MBT_02_base_F: Tank_F {
+		AGM_fuelCapacity = 1600; //http://www.tanksim.com/topic3.htm
+	};
+	class MBT_03_base_F: Tank_F {
+		AGM_fuelCapacity = 1160;
+	};
+	
 	class AllVehicles;
 	class Air: AllVehicles {
 		AGM_ParaDrop = 0;
@@ -916,6 +926,7 @@ class CfgVehicles {
 	// Trucks INDEP
 	class Truck_02_base_F: Truck_F {
 		KEY_WHEEL_6X6_REAR
+		AGM_fuelCapacity = 420;
 		class AGM_Actions: AGM_Actions {};
 	};
 	class O_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
