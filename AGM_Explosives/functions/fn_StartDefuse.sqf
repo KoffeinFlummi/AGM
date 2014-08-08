@@ -40,17 +40,18 @@ if (player != _unit) then {
 		[[_unit, _target], "AGM_Explosives_fnc_StartDefuse", _unit] call AGM_Core_fnc_execRemoteFnc;
 	} else {
 		[_unit, _target, [_unit call AGM_Explosives_fnc_isSpecialist, _target] call _fnc_DefuseTime] spawn {
-			(_this select 0) playMoveNow "Crouch";
+			(_this select 0) playActionNow "MedicOther";
 			(_this select 0) disableAI "MOVE";
 			(_this select 0) disableAI "TARGET";
 			sleep (_this select 2);
 			[(_this select 0), (_this select 1)] call AGM_Explosives_fnc_DefuseExplosive;
 			(_this select 0) enableAI "MOVE";
 			(_this select 0) enableAI "TARGET";
-			(_this select 0) playMoveNow "";
+			(_this select 0) playActionNow "";
 		};
 	};
 } else {
+	_unit playActionNow "MedicOther";
 	if (AGM_Explosives_RequireSpecialist > 0) then {
 		if (_unit call AGM_Explosives_fnc_isSpecialist) then {
 			[[true, _target] call _fnc_DefuseTime, [_unit,_target], "AGM_Explosives_fnc_DefuseExplosive", localize "STR_AGM_Explosives_DefusingExplosive"] call AGM_Core_fnc_progressBar;
