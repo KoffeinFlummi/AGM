@@ -27,6 +27,7 @@ _mineBase =  nearestObject [_unit, "MineBase"];
 
 _distCore = _unit distance _timeBombCore;
 _distBase = _unit distance _mineBase;
+_distance = 10;
 if (_distCore < _distBase) then {
 	_distance = _distCore;
 	AGM_Interaction_Target = _timeBombCore;
@@ -34,5 +35,5 @@ if (_distCore < _distBase) then {
 	_distance = _distBase;
 	AGM_Interaction_Target = _mineBase;	
 };
-
+if (isNil "_distance") exitWith {false};
 _distance < 4
