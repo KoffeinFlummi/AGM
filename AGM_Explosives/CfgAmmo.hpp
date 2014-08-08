@@ -36,7 +36,9 @@ class CfgAmmo {
 	};
 	//class ClaymoreDirectionalMine_Remote_Ammo_Scripted:ClaymoreDirectionalMine_Remote_Ammo;
 	
-	class SLAMDirectionalMine_Wire_Ammo;
+	class SLAMDirectionalMine_Wire_Ammo:DirectionalBombBase{
+		indirectHitRange = 20;
+	};
 	class SLAMDirectionalMine_Command_Ammo:SLAMDirectionalMine_Wire_Ammo {
 		mineTrigger = "RemoteTrigger";
 	};
