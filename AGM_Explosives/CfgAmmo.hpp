@@ -38,12 +38,15 @@ class CfgAmmo {
 	
 	class SLAMDirectionalMine_Wire_Ammo:DirectionalBombBase{
 		indirectHitRange = 20;
+		AGM_explodeOnDefuse = 1;
 	};
 	class SLAMDirectionalMine_Command_Ammo:SLAMDirectionalMine_Wire_Ammo {
 		mineTrigger = "RemoteTrigger";
+		AGM_explodeOnDefuse = 0;
 	};
 	class SLAMDirectionalMine_Timer_Ammo:SLAMDirectionalMine_Wire_Ammo {
 		mineTrigger = "TimeTrigger";
+		AGM_explodeOnDefuse = 0;
 	};
 	class SLAMDirectionalMine_Magnetic_Ammo:SLAMDirectionalMine_Wire_Ammo {
 		mineTrigger = "MagneticTrigger";

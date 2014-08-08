@@ -47,7 +47,6 @@ if (player != _unit) then {
 			[(_this select 0), (_this select 1)] call AGM_Explosives_fnc_DefuseExplosive;
 			(_this select 0) enableAI "MOVE";
 			(_this select 0) enableAI "TARGET";
-			(_this select 0) playActionNow "";
 		};
 	};
 } else {

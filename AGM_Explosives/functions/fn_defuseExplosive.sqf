@@ -20,9 +20,7 @@ private ["_unit", "_explosive"];
 _unit = _this select 0;
 _explosive = _this select 1;
 
-_mag = getText (ConfigFile >> "CfgAmmo" >> typeof _explosive >> "defaultMagazine");
-_mag = configFile >> "CfgMagazines" >> _mag;
-if (getNumber (_mag >> "AGM_explodeOnDefuse") == 1) exitWith {
+if (getNumber (ConfigFile >> "CfgAmmo" >> typeof _explosive >> "AGM_explodeOnDefuse") == 1) exitWith {
 	[_unit, 0, [_explosive, 1], true, true] call AGM_Explosives_fnc_DetonateExplosive;
 };
 
