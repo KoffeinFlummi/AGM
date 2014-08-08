@@ -879,4 +879,22 @@ class CfgVehicles {
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
     };
   };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_Tracer,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_AP,2)
+    };
+  };
 };
