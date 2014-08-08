@@ -13,10 +13,8 @@
 if (player getVariable "AGM_NoLegs") then {
 	if (stance player != "PRONE") then {
 		if!(player getVariable "AGM_GoDown") then {
-			// hint "ok";
 			player setVariable ["AGM_GoDown", true];
 			[] spawn {
-				private ["_unit","_anim1"];
 				_anim1 = animationState player;
 				waitUntil { animationState player != _anim1; };
 				sleep 2;
