@@ -39,7 +39,7 @@ if (damage _unit == 1) exitWith {};
 // For some reason, everything is backwards in MP,
 // so we need to untangle some things.
 _fnc_damageTetris = {
-  _selectionName = _this select 1
+  _selectionName = _this select 1;
   if !(isMultiplayer) exitWith {_selectionName};
   if (_selectionName == "hand_r") exitWith {"leg_l"};
   if (_selectionName == "leg_r") exitWith {"hand_l"};
