@@ -21,6 +21,7 @@ if (AGM_Explosives_pfeh_running) then {
 	AGM_Explosives_pfeh_running = false;
 };
 private "_mag";
+player forceWalk false;
 _mag = AGM_Explosives_Setup getVariable ["AGM_Class", ""];
 if (_mag != "") then {
 	player playActionNow "PutDown";
@@ -41,7 +42,6 @@ if (_mag != "") then {
 	};
 	AGM_Explosives_Setup enableSimulation true;
 	player playActionNow "MedicOther";
-	player forceWalk false;
 	sleep 0.2;
 	while {!([_pos,_oldPos] call _fnc_SimilarPos) AND _limiter < 10} do {
 		sleep 0.1;
@@ -50,9 +50,9 @@ if (_mag != "") then {
 		_limiter = _limiter + 0.1;
 	};
 	sleep getNumber(ConfigFile >> "CfgMagazines" >> _mag >> "AGM_DelayTime");
-	[player, GetPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive;
-	player RemoveMagazine _mag;
+	if (!isNull([player, GetPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive)) then {
+		player RemoveMagazine _mag;
+	};
 };
 deleteVehicle AGM_Explosives_Setup;
 AGM_Explosives_Setup = objNull;
-player forceWalk false;
