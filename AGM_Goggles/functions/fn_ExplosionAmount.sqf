@@ -22,7 +22,7 @@ _effectIndex = switch true do {
    	case (_effect <= 0.04): {0};
    	case (_effect <= 0.06): {1};
    	case (_effect <= 0.09): {2};
-   	case (_effect > 0.1): {3};
+   	default {3};
 };
 
 _effectIndex
