@@ -40,13 +40,15 @@ if (_mag != "") then {
 		((_pos1 - _pos2) < 0.05)
 	};
 	AGM_Explosives_Setup enableSimulation true;
+	player playActionNow "MedicOther";
+	player forceWalk false;
+	sleep 0.2;
 	while {!([_pos,_oldPos] call _fnc_SimilarPos) AND _limiter < 10} do {
 		sleep 0.1;
 		_oldPos = _pos;
 		_pos = (GetPosATL AGM_Explosives_Setup) select 2;
 		_limiter = _limiter + 0.1;
 	};
-	player forceWalk false;
 	sleep getNumber(ConfigFile >> "CfgMagazines" >> _mag >> "AGM_DelayTime");
 	[player, GetPosATL AGM_Explosives_Setup, _dir, _mag, AGM_Explosives_Setup getVariable "AGM_Trigger", [AGM_Explosives_Setup getVariable "AGM_Timer"]] call AGM_Explosives_fnc_PlaceExplosive;
 	player RemoveMagazine _mag;
