@@ -4,7 +4,7 @@ class CfgWeapons {
 
 	class AGM_ExplosiveItem: InventoryItem_Base_f {
 		allowedSlots[] = {801,701,901};
-		type = 620;
+		type = 201;
 	};
 
 	class AGM_Clacker:ItemCore {

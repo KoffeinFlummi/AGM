@@ -994,7 +994,7 @@ class CfgWeapons {
 	class ToolKit: ItemCore {
 		class ItemInfo: ToolKitItem {
 			mass = 80;
-			type = 401;
+			type = 201;
 		};
 	};
 
@@ -1006,7 +1006,7 @@ class CfgWeapons {
 		picture = "\AGM_Logistics\ui\AGM_battery.paa";
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 20;
-			type = 401;
+			type = 201;
 		};
 	};
 };
