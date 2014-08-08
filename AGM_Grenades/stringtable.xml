@@ -6,7 +6,7 @@
       <English>Switch Grenade Mode</English>
       <German>Granaten-Modus wechseln</German>
       <Spanish>Cambiar modo de granada</Spanish>
-      <Polish>Tryb Rzutu Granatem</Polish>
+      <Polish>Tryb rzutu granatem</Polish>
       <Czech>Změnit styl hodu granátu</Czech>
       <French>Changer type de lancer de grenade</French>
       <Russian>Сменить режим броска гранаты</Russian>
@@ -17,7 +17,7 @@
       <English>Normal Throw</English>
       <German>Normaler Wurf</German>
       <Spanish>Lanzamiento normal</Spanish>
-      <Polish>Normalny</Polish>
+      <Polish>Normalny rzut</Polish>
       <Czech>Normální</Czech>
       <French>Lancer Normal</French>
       <Russian>Нормальный бросок</Russian>
@@ -27,7 +27,7 @@
       <English>High Throw</English>
       <German>Hoher Wurf</German>
       <Spanish>Lanzamiento alto</Spanish>
-      <Polish>Wysoki</Polish>
+      <Polish>Rzut lobem</Polish>
       <Czech>Vysoko</Czech>
       <French>Lancer Haut</French>
       <Russian>Высокий бросок</Russian>
@@ -37,7 +37,7 @@
       <English>Precise Throw</English>
       <German>Präziser Wurf</German>
       <Spanish>Lanzamiento preciso</Spanish>
-      <Polish>Precyzyjny</Polish>
+      <Polish>Precyzyjny rzut</Polish>
       <Czech>Přesně</Czech>
       <French>Lancer Précis</French>
       <Russian>Точный бросок</Russian>
@@ -57,7 +57,7 @@
       <English>Drop Grenade</English>
       <German>Granate fallenlassen</German>
       <Spanish>Soltar granada</Spanish>
-      <Polish>Upuść Granat</Polish>
+      <Polish>Upuść granat</Polish>
       <Czech>Upustit granát</Czech>
       <French>Lacher la grenade</French>
       <Russian>Бросить себе под ноги</Russian>
