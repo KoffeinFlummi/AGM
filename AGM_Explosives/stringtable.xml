@@ -5,7 +5,7 @@
         <English>Explosives >></English>
         <German>Sprengstoffe >></German>
         <Spanish>Explosivos >></Spanish>
-        <Polish>Matriały Wybuchowe >></Polish>
+        <Polish>Materiały wybuchowe >></Polish>
         <French>Explosifs >></French>
       </Key>
       <Key ID="STR_AGM_Explosives_Place">
@@ -26,7 +26,7 @@
         <English>Explosive code: %1</English>
         <German>Sprengstoffcode: %1</German>
         <Spanish>Código del explosivo: %1</Spanish>
-        <Polish>Kod Ładunku: %1</Polish>
+        <Polish>Kod ładunku: %1</Polish>
         <French>Code explosif: %1</French>
       </Key>
       <Key ID="STR_AGM_Explosives_PlaceAction">
@@ -68,7 +68,7 @@
         <English>Cellphone</English>
         <German>Mobiltelefon</German>
         <Spanish>Télefono móvil</Spanish>
-        <Polish>Telefon Komórkowy</Polish>
+        <Polish>Telefon komórkowy</Polish>
         <French>Téléphone Portable</French>
       </Key>
       <Key ID="STR_AGM_Explosives_cellphone_description">
@@ -82,7 +82,7 @@
         <English>M57 Firing Device</English>
         <German>M57 Zündvorrichtung</German>
         <Spanish>Dispositivo de detonación M57</Spanish>
-        <Polish>M57 Urządzenie do detonacji</Polish>
+        <Polish>Detonator M57</Polish>
         <French>M57 Dispositif de mise a feu</French>
       </Key>
       <Key ID="STR_AGM_Explosives_clacker_description">
@@ -96,7 +96,7 @@
         <English>Defusal Kit</English>
         <German>Entschärfungskit</German>
         <Spanish>Kit de desactivación</Spanish>
-        <Polish>Zestaw do Rozbrajania</Polish>
+        <Polish>Zestaw do rozbrajania</Polish>
         <French>Kit de désamorçage</French>
       </Key>
       <Key ID="STR_AGM_Explosives_DefusalKit_description">
@@ -110,35 +110,35 @@
         <English>Add to Speed Dial</English>
         <German>Zur Schnellauswahl hinzufügen</German>
         <Spanish>Agregar a marcado rápido</Spanish>
-        <Polish>Dodaj do Szybkiego Wybierania</Polish>
+        <Polish>Dodaj do szybkiego wybierania</Polish>
         <French>Ajouter à la composition rapide</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Clear">
         <English>Clear</English>
         <German>Löschen</German>
         <Spanish>Borrar</Spanish>
-        <Polish>Oczyścić</Polish>
+        <Polish>Usuń</Polish>
         <French>Nettoyer</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Phone_Dial">
         <English>Dial</English>
         <German>Wählen</German>
         <Spanish>Marcar</Spanish>
-        <Polish>Wybierz Numer</Polish>
+        <Polish>Wybierz mumer</Polish>
         <French>Composer</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Phone_Up">
         <English>Up</English>
         <German>Hoch</German>
         <Spanish>Arriba</Spanish>
-        <Polish>W Górę</Polish>
+        <Polish>W górę</Polish>
         <French>Haut</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Phone_Down">
         <English>Down</English>
         <German>Runter</German>
         <Spanish>Abajo</Spanish>
-        <Polish>W Dół</Polish>
+        <Polish>W dół</Polish>
         <French>Bas</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Cancel">
@@ -152,14 +152,14 @@
         <English>Detonate Menu</English>
         <German>"Zünden"-Menu</German>
         <Spanish>Menú de detonación</Spanish>
-        <Polish>Menu Detonacji</Polish>
+        <Polish>Menu detonowania</Polish>
         <French>Menu de détonation</French>
       </Key>
       <Key ID="STR_AGM_Explosives_PlaceMenu">
         <English>Place Menu</English>
         <German>"Platzieren"-Menu</German>
         <Spanish>Menú de colocación</Spanish>
-        <Polish>Menu Umieszczania</Polish>
+        <Polish>Menu umieszczania</Polish>
         <French>Menu "placer"</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Defuse">
@@ -173,7 +173,7 @@
         <English>Defusing Explosive...</English>
         <German>Entschärfe Sprengstoff...</German>
         <Spanish>Desactivando explosivo...</Spanish>
-        <Polish>Rozbrajanie Ładunku... </Polish>
+        <Polish>Rozbrajanie ładunku...</Polish>
         <French>Désamorçage des explosifs...</French>
       </Key>
       <Key ID="STR_AGM_Explosives_timerName">
@@ -194,14 +194,14 @@
         <English>Set Time</English>
         <German>Zeit einstellen</German>
         <Spanish>Configurar tiempo</Spanish>
-        <Polish>Ustaw Czas</Polish>
+        <Polish>Ustaw czas</Polish>
         <French>Regler compte à rebours</French>
       </Key>
       <Key ID="STR_AGM_Explosives_TriggerMenu">
         <English>Select a Trigger</English>
         <German>Wähle einen Zünder</German>
         <Spanish>Seleccionar un disparador</Spanish>
-        <Polish>Wybierz Wyzwalacz</Polish>
+        <Polish>Wybierz zapalnik</Polish>
         <French>Selectionner un déclencheur</French>
       </Key>
       <Key ID="STR_AGM_Explosives_SelectTrigger">
@@ -213,21 +213,27 @@
       </Key>
       <Key ID="STR_AGM_Explosives_PressurePlate">
         <English>Pressure Plate</English>
+		<Polish>Płyta naciskowa</Polish>
       </Key>
       <Key ID="STR_AGM_Explosives_TripWire">
         <English>Tripwire</English>
+		<Polish>Linka naciągu</Polish>
       </Key>
       <Key ID="STR_AGM_Explosives_IRSensor">
         <English>IR Sensor</English>
+		<Polish>Czujnik podczerwieni</Polish>
       </Key>
       <Key ID="STR_AGM_Explosives_NoTriggersAvailable">
         <English>No triggers available for %1</English>
+		<Polish>Brak dostępnych zapalników dla %1</Polish>
       </Key>
       <Key ID="STR_AGM_Explosives_SLAME_IRSensor">
         <English>IR Sensor (Side Attack)</English>
+		<Polish>Czujnik podczerwieni (wybuch na bok)</Polish>
       </Key>
       <Key ID="STR_AGM_Explosives_SLAME_Magnetic">
         <English>Magnetic Influence Sensor (Bottom Attack)</English>
+		<Polish>Czujnik magnetyczny (wybuch w górę)</Polish>
       </Key>
   </Package>
 </Project>
