@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Overheating {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_SpareBarrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.93";
@@ -148,6 +148,37 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_SpareBarrel,2)
     };
   };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_SpareBarrel,6)
+    };
+  };
+
+  // Add AGM_SpareBarrel to every machine gunner.
+  #define MACRO_ADDSPAREBARREL \
+    items[] = {"FirstAidKit","AGM_SpareBarrel"}; \
+    respawnitems[] = {"FirstAidKit","AGM_SpareBarrel"};
+
+  // NATO
+  class B_Soldier_base_F; class B_soldier_AR_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_Soldier_support_base_F; class B_soldier_AAR_F:B_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
+  class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+
+  // Guerrilla
+  class I_G_Soldier_base_F; class I_G_Soldier_AR_F:I_G_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_G_Soldier_AR_F:I_G_Soldier_AR_F {MACRO_ADDSPAREBARREL};
+  class O_G_Soldier_AR_F:I_G_Soldier_AR_F {MACRO_ADDSPAREBARREL};
+
+  // Iran
+  class O_Soldier_base_F; class O_Soldier_AR_F:O_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class O_Soldier_support_base_F; class O_Soldier_AAR_F:O_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
+  class O_Soldier_Urban_base; class O_soldierU_AR_F:O_Soldier_Urban_base {MACRO_ADDSPAREBARREL};
+  class O_soldierU_AAR_F:O_Soldier_Urban_base {MACRO_ADDSPAREBARREL};
+
+  // Czech
+  class I_Soldier_base_F; class I_Soldier_AR_F:I_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class I_Soldier_support_base_F; class I_Soldier_AAR_F:I_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
 };
 
 class CfgWeapons {
@@ -162,85 +193,98 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 10;
-      type = 401;
+      type = 201;
     };
   };
 
   class Rifle;
   class Rifle_Base_F : Rifle {
-    AGM_Overheating_Increment = 0.012;
-    AGM_Overheating_Cooldown = 0.002;
+    AGM_Jamming_Reliability = 0.006;    // 60 malfunctions on 10,000 rounds fired.
+    AGM_Overheating_Increment = 0.012;  // How much the weapon heats up for every shot. Max temperature is 3. 250 shots for max temp.
+    AGM_Overheating_Cooldown = 0.002;   // How fast the weapon cools down every second. 1500 seconds / 25 minutes for a complete cooldown from max temp.
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class Rifle_Long_Base_F : Rifle_Base_F {
-    AGM_Overheating_Increment = 0.01;
+    AGM_Jamming_Reliability = 0.004;    // 40 malfunctions on 10,000 rounds fired.
+    AGM_Overheating_Increment = 0.01;   // 300 shots for max temp.
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.002;
   };
 
   class arifle_MX_Base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
-    AGM_Overheating_allowSwapBarrel = 1;
+    //AGM_Jamming_Reliability = ;  @todo realistic value
+    AGM_Overheating_allowSwapBarrel = 1;  // This weapon can use spare barrels.
     AGM_Overheating_Increment = 0.01;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.002;
   };
 
   class arifle_Katiba_Base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class mk20_base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class Tavor_base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class SDAR_base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class EBR_base_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class DMR_01_base_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class GM6_base_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class LRR_base_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.001;
   };
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_allowSwapBarrel = 1;
     AGM_Overheating_Increment = 0.01;
     AGM_Overheating_Cooldown = 0.002;
@@ -251,6 +295,7 @@ class CfgWeapons {
   };*/
 
   class LMG_Zafir_F : Rifle_Long_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_allowSwapBarrel = 1;
     AGM_Overheating_Increment = 0.01;
     AGM_Overheating_Cooldown = 0.002;
@@ -258,18 +303,21 @@ class CfgWeapons {
   };
 
   class SMG_01_Base : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.015;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.004;
   };
 
   class SMG_02_base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.015;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.004;
   };
 
   class pdw2000_base_F : Rifle_Base_F {
+    //AGM_Jamming_Reliability = ;  @todo realistic value
     AGM_Overheating_Increment = 0.015;
     AGM_Overheating_Cooldown = 0.002;
     AGM_Overheating_Dispersion = 0.004;

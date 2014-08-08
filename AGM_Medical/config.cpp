@@ -78,20 +78,6 @@ class AGM_Core_Options {
   };
 };
 
-class CfgMovesBasic {
-  class Default;
-};
-class CfgMovesMaleSdr: CfgMovesBasic {
-  //class Default: Default;
-  class States {
-    class Unconscious: Default {
-      //forceAim = 1; //0;
-      head = "headNo";
-      static = 1;
-    };
-  };
-};
-
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
@@ -585,14 +571,14 @@ class CfgWeapons {
     type = 0;
     class ItemInfo: InventoryFirstAidKitItem_Base_F {
       mass = 4;
-      type = 401;
+      type = 201;
     };
   };
   class Medikit: ItemCore {
     type = 0;
     class ItemInfo: MedikitItem {
       mass = 60;
-      type = 401;
+      type = 201;
     };
   };
 
@@ -604,7 +590,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
-      type = 401;
+      type = 201;
     };
   };
   class AGM_Morphine: AGM_Bandage {
@@ -666,6 +652,7 @@ class CfgActions {
 
 // ANIMATIONS
 class CfgMovesBasic {
+  class Default;
   class Actions {
     class NoActions;
     class PistolStandActions: NoActions {
@@ -689,6 +676,11 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
     class AcinPknlMwlkSnonWnonDb: AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1 {
       enableDirectControl = 1;
+    };
+
+    class Unconscious: Default {
+      head = "headNo";
+      static = 1;
     };
   };
 };

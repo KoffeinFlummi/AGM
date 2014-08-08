@@ -179,36 +179,40 @@ class CfgVehicles {
 	
 	#include "Module.hpp"
 	
-// Add AGM_Clacker and AGM_DefusalKit to every explosive unit.
-class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_engineer_F:B_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_Soldier_diver_base_F; class B_diver_exp_F:B_Soldier_diver_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_G_Soldier_base_F; class I_G_engineer_F:I_G_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_G_Soldier_exp_F:I_G_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_G_engineer_F:I_G_engineer_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_G_engineer_F:I_G_engineer_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_G_Soldier_exp_F:I_G_Soldier_exp_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_G_Soldier_exp_F:I_G_Soldier_exp_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_engineer_F:I_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_Soldier_diver_base_F; class I_diver_exp_F:I_Soldier_diver_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_engineer_F:O_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Soldier_diver_base_F; class O_diver_exp_F:O_Soldier_diver_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Soldier_recon_base; class O_recon_exp_F:O_Soldier_recon_base {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Soldier_Urban_base; class O_soldierU_exp_F:O_Soldier_Urban_base {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_engineer_U_F:O_Soldier_Urban_base {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_Protagonist_VR_F:B_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Protagonist_VR_F:O_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_Protagonist_VR_F:I_Soldier_base_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_Soldier_F; class b_soldier_universal_f:B_Soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class B_G_Soldier_F; class b_g_soldier_universal_f:B_G_Soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_Soldier_F; class o_soldier_universal_f:O_Soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class O_G_Soldier_F; class o_g_soldier_universal_f:O_G_Soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_soldier_F; class i_soldier_universal_f:I_soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
-class I_G_Soldier_F; class i_g_soldier_universal_f:I_G_Soldier_F {Items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};};
+	// Add AGM_Clacker and AGM_DefusalKit to every explosive unit.
+	#define MACRO_ADDMINEKIT \
+		items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"}; \
+		respawnitems[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};
+
+	class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+	class B_engineer_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+	class B_Soldier_diver_base_F; class B_diver_exp_F:B_Soldier_diver_base_F {MACRO_ADDMINEKIT};
+	class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {MACRO_ADDMINEKIT};
+	class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_G_Soldier_base_F; class I_G_engineer_F:I_G_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_G_Soldier_exp_F:I_G_Soldier_base_F {MACRO_ADDMINEKIT};
+	class B_G_engineer_F:I_G_engineer_F {MACRO_ADDMINEKIT};
+	class O_G_engineer_F:I_G_engineer_F {MACRO_ADDMINEKIT};
+	class B_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
+	class O_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
+	class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_engineer_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_Soldier_diver_base_F; class I_diver_exp_F:I_Soldier_diver_base_F {MACRO_ADDMINEKIT};
+	class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
+	class O_engineer_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
+	class O_Soldier_diver_base_F; class O_diver_exp_F:O_Soldier_diver_base_F {MACRO_ADDMINEKIT};
+	class O_Soldier_recon_base; class O_recon_exp_F:O_Soldier_recon_base {MACRO_ADDMINEKIT};
+	class O_Soldier_Urban_base; class O_soldierU_exp_F:O_Soldier_Urban_base {MACRO_ADDMINEKIT};
+	class O_engineer_U_F:O_Soldier_Urban_base {MACRO_ADDMINEKIT};
+	class B_Protagonist_VR_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+	class O_Protagonist_VR_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_Protagonist_VR_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
+	class B_Soldier_F; class b_soldier_universal_f:B_Soldier_F {MACRO_ADDMINEKIT};
+	class B_G_Soldier_F; class b_g_soldier_universal_f:B_G_Soldier_F {MACRO_ADDMINEKIT};
+	class O_Soldier_F; class o_soldier_universal_f:O_Soldier_F {MACRO_ADDMINEKIT};
+	class O_G_Soldier_F; class o_g_soldier_universal_f:O_G_Soldier_F {MACRO_ADDMINEKIT};
+	class I_soldier_F; class i_soldier_universal_f:I_soldier_F {MACRO_ADDMINEKIT};
+	class I_G_Soldier_F; class i_g_soldier_universal_f:I_G_Soldier_F {MACRO_ADDMINEKIT};
 };
 
 #include "CfgAmmo.hpp"

@@ -37,6 +37,7 @@ _this spawn {
 	AGM_Explosives_Setup enableSimulation false;
 	AGM_Explosives_Setup setVariable ["AGM_Class", _class];
 	AGM_Explosives_Setup setVariable ["AGM_Trigger", _config];
+	//AGM_Explosives_Setup setVariable ["AGM_Offset", GetArray(ConfigFile >> "CfgVehicles" >> typeof AGM_Explosives_Setup >> "AGM_Offset")];
 	if (!isNil "_timer") then {
 		AGM_Explosives_Setup setVariable ["AGM_Timer", _timer];
 	};
@@ -46,6 +47,7 @@ _this spawn {
 	["AGM_Explosives_Placement","OnEachFrame", {
 		AGM_Explosives_pfeh_running = true;
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
+		//_pos = _pos vectorAdd ((VectorDir AGM_Explosives_setup) vectorCrossProduct (AGM_Explosives_setup getVariable ["AGM_Offset", [0,0,0]]));
 		AGM_Explosives_Setup setPosATL _pos;
 		if (!AGM_Explosives_Shiftdown) then {
 			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);

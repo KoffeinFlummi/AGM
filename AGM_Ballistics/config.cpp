@@ -379,9 +379,8 @@ class CfgWeapons {
   };
   class arifle_MX_SW_F : arifle_MX_Base_F {
     magazines[] += {
-      "AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
-      "AGM_30Rnd_65x39_caseless_mag_SD",
-      "AGM_30Rnd_65x39_caseless_mag_AP"
+      "30Rnd_65x39_caseless_mag",
+      "30Rnd_65x39_caseless_mag_Tracer"
     };
     class Single : Mode_SemiAuto {
       dispersion = 0.000800; // radians. Equal to 2.75 MOA.
@@ -393,11 +392,8 @@ class CfgWeapons {
   };
   class arifle_MXM_F : arifle_MX_Base_F {
     magazines[] += {
-      "AGM_30Rnd_65x39_caseless_mag_Tracer_Dim",
-      "AGM_30Rnd_65x39_caseless_mag_SD",
-      "AGM_30Rnd_65x39_caseless_mag_AP",
-      "100Rnd_65x39_caseless_mag",
-      "100Rnd_65x39_caseless_mag_Tracer"
+      "30Rnd_65x39_caseless_mag",
+      "30Rnd_65x39_caseless_mag_Tracer"
     };
     class Single : Single {
       dispersion = 0.00029; // radians. Equal to 1 MOA.
@@ -881,6 +877,24 @@ class CfgVehicles {
     class TransportMagazines {
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_Tracer,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_Tracer_Dim,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_AP,2)
     };
   };
 };

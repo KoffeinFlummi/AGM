@@ -43,7 +43,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
+      type = 201;
     };
   };
 };

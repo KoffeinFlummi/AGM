@@ -30,25 +30,25 @@
         <French>Code explosif: %1</French>
       </Key>
       <Key ID="STR_AGM_Explosives_PlaceAction">
-        <English>&lt;t color=&apos;#00ff00&apos; &gt;Place&lt;/t&gt;</English>
-        <German>&lt;t color=&apos;#00ff00&apos; &gt;Platzieren&lt;/t&gt;</German>
-        <Spanish>&lt;t color=&apos;#00ff00&apos; &gt;Colocar&lt;/t&gt;</Spanish>
-        <Polish>&lt;t color=&apos;#00ff00&apos; &gt;Umieść&lt;/t&gt;</Polish>
-        <French>&lt;t color=&apos;#00ff00&apos; &gt;Placer&lt;/t&gt;</French>
+        <English>Place</English>
+        <German>Platzieren</German>
+        <Spanish>Colocar</Spanish>
+        <Polish>Umieść</Polish>
+        <French>Placer</French>
       </Key>
       <Key ID="STR_AGM_Explosives_CancelAction">
-        <English>&lt;t color=&apos;#ff0000&apos; &gt;Cancel&lt;/t&gt;</English>
-        <German>&lt;t color=&apos;#ff0000&apos; &gt;Abbrechen&lt;/t&gt;</German>
-        <Spanish>&lt;t color=&apos;#ff0000&apos; &gt;Cancelar&lt;/t&gt;</Spanish>
-        <Polish>&lt;t color=&apos;#ff0000&apos; &gt;Anuluj&lt;/t&gt;</Polish>
-        <French>&lt;t color=&apos;#ff0000&apos; &gt;Annuler&lt;/t&gt;</French>
+        <English>Cancel</English>
+        <German>Abbrechen</German>
+        <Spanish>Cancelar</Spanish>
+        <Polish>Anuluj</Polish>
+        <French>Annuler</French>
       </Key>
       <Key ID="STR_AGM_Explosives_AttachTo">
-        <English>&lt;t color=&apos;#008888&apos; &gt;Attach IED&lt;/t&gt;</English>
-        <German>&lt;t color=&apos;#008888&apos; &gt;USBV befestigen&lt;/t&gt;</German>
-        <Spanish>&lt;t color=&apos;#008888&apos; &gt;Enganchar IED&lt;/t&gt;</Spanish>
-        <Polish>&lt;t color=&apos;#008888&apos; &gt;Przyczep IED&lt;/t&gt;</Polish>
-        <French>&lt;t color=&apos;#008888&apos; &gt;Attacher IED&lt;/t&gt;</French>
+        <English>Attach IED</English>
+        <German>USBV befestigen</German>
+        <Spanish>Enganchar IED</Spanish>
+        <Polish>Przyczep IED</Polish>
+        <French>Attacher IED</French>
       </Key>
       <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
         <English>Turn On Thor III</English>

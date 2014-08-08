@@ -9,7 +9,7 @@ _this spawn {
 };
 
 player addEventHandler ["Take", {
-	if (_this select 0 == _this select 1 && {isClass (configFile >> "CfgMagazines" >> _this select 2)}) then {
+	if (_this select 0 == _this select 1 && {_this select 2 == currentMagazine player}) then {
 		[vehicle player, currentWeapon vehicle player, true] call AGM_Overheating_fnc_clearJam;
 	};
 }];
