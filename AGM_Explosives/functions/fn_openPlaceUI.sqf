@@ -42,4 +42,5 @@ _itemCount = [];
 	lbSetPicture [_listIDC, _index, getText(_x >> "picture")];
 } foreach _list;
 
+lbSort ((findDisplay 8854) displayCtrl _listIDC);
 lbSetCurSel [_listIDC, 0];

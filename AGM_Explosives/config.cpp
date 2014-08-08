@@ -90,7 +90,7 @@ class CfgVehicles {
 		class AGM_SelfActions {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
-				condition = "true";
+				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
 				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
 				priority = 4;				
