@@ -22,7 +22,17 @@ _isSpecialist = (_unit call AGM_Explosives_fnc_isSpecialist);
 
 if ((AGM_Explosives_RequireSpecialist > 0) && {!_isSpecialist}) exitWith {false};
 
-AGM_Interaction_Target = nearestObject [_unit, "TimeBombCore"];
-if (isNull(AGM_Interaction_Target)) exitWith {false};
+_timeBombCore = nearestObject [_unit, "TimeBombCore"];
+_mineBase =  nearestObject [_unit, "MineBase"];
 
-_unit distance AGM_Interaction_Target < 4
+_distCore = _unit distance _timeBombCore;
+_distBase = _unit distance _mineBase;
+if (_distCore < _distBase) then {
+	_distance = _distCore;
+	AGM_Interaction_Target = _timeBombCore;
+}else{
+	_distance = _distBase;
+	AGM_Interaction_Target = _mineBase;	
+};
+
+_distance < 4
