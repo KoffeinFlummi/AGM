@@ -220,6 +220,8 @@ class CfgVehicleClasses {
   };
 };
 
+#include <FuelCapacities.hpp>
+
 class CfgVehicles {
 	class Man;
 	class CAManBase: Man {
@@ -249,7 +251,7 @@ class CfgVehicles {
 	class Car_F: Car {
 		KEY_WHEEL_4X4
 		class HitPoints;	//	@todo
-		AGM_fuelCapacity = 60;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 60;  // in liter.
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
@@ -334,22 +336,22 @@ class CfgVehicles {
 		};
 	};
 	class Kart_01_Base_F: Car_F {
-		AGM_fuelCapacity = 8;
+		AGM_fuelCapacity = AGM_FUELCAPACITY_KART;
 	};
 	class MRAP_01_base_F: Car_F {
-		AGM_fuelCapacity = 163; //fuel capacity of humvee (can't find informations for M-ATV)
+		AGM_fuelCapacity = AGM_FUELCAPACITY_MATV;
 	};
 	class MRAP_02_base_F: Car_F {
-		AGM_fuelCapacity = 200; //This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PUNISHER;
 	};
 	class MRAP_03_base_F: Car_F {
-		AGM_fuelCapacity = 230; //http://de.wikipedia.org/wiki/Sp%C3%A4hwagen_Fennek
+		AGM_fuelCapacity = AGM_FUELCAPACITY_FENNEK;
 	};
 	class Quadbike_01_base_F: Car_F {
-		AGM_fuelCapacity = 15;
+		AGM_fuelCapacity = AGM_FUELCAPACITY_QUAD;
 	};
 	class Offroad_01_base_f: Car_F {
-		AGM_fuelCapacity = 80; //http://www.nissan.de/content/dam/services/DE/brochure/NISSAN_Navara_Broschuere+Preisliste_DE.pdf
+		AGM_fuelCapacity = AGM_FUELCAPACITY_OFFROARD;
 	};
 	
 	class Truck_F: Car_F {
@@ -364,17 +366,17 @@ class CfgVehicles {
 			class HitRMWheel;
 			class HitRF2Wheel;
 		};
-		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 240;  // in liter.
 		class AGM_Actions;
 	};
 	class Wheeled_APC_F: Car_F {
 		KEY_WHEEL_6X6_REAR
-		AGM_fuelCapacity = 600;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 600;  // in liter.
 	};
 	
 	// Repair tracked vehicles
 	class Tank_F: Tank {
-		AGM_fuelCapacity = 1500;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 1500;  // in liter.
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
@@ -459,13 +461,13 @@ class CfgVehicles {
 		};
 	};
 	class MBT_01_base_F: Tank_F {
-		AGM_fuelCapacity = 1400;
+		AGM_fuelCapacity = AGM_FUELCAPACITY_MERKAVA;
 	};
 	class MBT_02_base_F: Tank_F {
-		AGM_fuelCapacity = 1600; //http://www.tanksim.com/topic3.htm
+		AGM_fuelCapacity = AGM_FUELCAPACITY_T100;
 	};
 	class MBT_03_base_F: Tank_F {
-		AGM_fuelCapacity = 1160;
+		AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
 	};
 	
 	class AllVehicles;
@@ -478,8 +480,8 @@ class CfgVehicles {
 	
 	// Repair helicopters
 	class Helicopter: Air {
-		AGM_fuelCapacity = 240;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
-		AGM_Vehicle_Cargo = 8;	 //This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 240;  // in liter.
+		AGM_Vehicle_Cargo = 8;
 		class AGM_Actions {
 			MACRO_UNLOAD
 			MACRO_REFUEL
@@ -570,7 +572,7 @@ class CfgVehicles {
 	
 	// Repair fixed wing aircraft
 	class Plane: Air {
-		AGM_fuelCapacity = 600;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 600;  // in liter.
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
@@ -637,7 +639,7 @@ class CfgVehicles {
 
 	class Ship_F;
 	class Boat_F: Ship_F {
-		AGM_fuelCapacity = 40;  // in liter. This is guesswork and should be adjusted for all vehicles individually in the future @todo
+		AGM_fuelCapacity = 40;  // in liter.
 	};
 
 	// Static weapons
@@ -867,7 +869,7 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = 50000;
 		transportFuel = 0;
 	};
-	class  Land_fs_feed_F: House_Small_F {
+	class Land_fs_feed_F: House_Small_F {
 		class AGM_Actions {
 			MACRO_REFUELCARGO
 		};
@@ -875,8 +877,19 @@ class CfgVehicles {
 		transportFuel = 0;
 	};
 
-	// ARV
-	class APC_Tracked_01_base_F;
+	// APC
+	class APC_Wheeled_01_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PATRIA;
+	};
+	class APC_Wheeled_02_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_ARMA;
+	};
+	class APC_Wheeled_03_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PANDUR;
+	};
+	class APC_Tracked_01_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_NAMER;
+	};
 	class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
 		class AGM_Actions;
 	};
@@ -885,15 +898,21 @@ class CfgVehicles {
 			MACRO_REFUELCARGO
 		};
 		AGM_canRepair = 1;
-		AGM_fuelCapacityCargo = 1500;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_CRV;
 		transportRepair = 0;
 		transportFuel = 0;
+	};
+	class APC_Tracked_02_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_BMP;
+	};
+	class APC_tracked_03_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_WARRIOR;
 	};
 
 	// Trucks BLU
 	class Truck_01_base_F: Truck_F {
 		KEY_WHEEL_8X8
-		AGM_fuelCapacity = 587; //http://en.wikipedia.org/wiki/Heavy_Expanded_Mobility_Tactical_Truck
+		AGM_fuelCapacity = AGM_FUELCAPACITY_HEMTT;
 		class AGM_Actions;
 	};
 	class B_Truck_01_transport_F: Truck_01_base_F {
@@ -916,7 +935,7 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 9464; //http://oshkoshdefense.com/variants/m978a4-fuel-servicing-truck-tanker/
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_HEMTT;
 		transportFuel = 0;
 	};
 	/*class B_Truck_01_ammo_F: B_Truck_01_mover_F {
@@ -926,7 +945,7 @@ class CfgVehicles {
 	// Trucks INDEP
 	class Truck_02_base_F: Truck_F {
 		KEY_WHEEL_6X6_REAR
-		AGM_fuelCapacity = 420;
+		AGM_fuelCapacity = AGM_FUELCAPACITY_KAMAZ;
 		class AGM_Actions: AGM_Actions {};
 	};
 	class O_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
@@ -940,7 +959,7 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 3000;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_KAMAZ;
 		transportFuel = 0;
 	};
 	/*class O_Truck_02_ammo_F: Truck_02_base_F {
@@ -957,7 +976,7 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 3000;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_KAMAZ;
 		transportFuel = 0;
 	};
 	/*class I_Truck_02_ammo_F: Truck_02_base_F {
@@ -967,6 +986,7 @@ class CfgVehicles {
 	// Trucks RED
 	class Truck_03_base_F: Truck_F {
 		KEY_WHEEL_6X6_FRONT
+		AGM_fuelCapacity = AGM_FUELCAPACITY_TYPHOON;
 		//	@todo delete extra hit points
 		/*class HitPoints: HitPoints {
 			class HitLFWheel: HitLFWheel {};
@@ -988,7 +1008,7 @@ class CfgVehicles {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 3000;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_TYPHOON;
 		transportFuel = 0;
 	};
 	/*class O_Truck_03_ammo_F: Truck_03_base_F {
@@ -998,20 +1018,21 @@ class CfgVehicles {
 	// Trucks CIV
 	class Van_01_base_F: Truck_F {
 		KEY_WHEEL_4X4
+		AGM_fuelCapacity = AGM_FUELCAPACITY_VAN;
 		class AGM_Actions: AGM_Actions {};
 	};
 	class I_G_Van_01_fuel_F: Van_01_base_F {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 1000;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
 		transportFuel = 0;
 	};
 	class C_Van_01_fuel_F: Van_01_base_F {
 		class AGM_Actions: AGM_Actions {
 			MACRO_REFUELCARGO
 		};
-		AGM_fuelCapacityCargo = 1000;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
 		transportFuel = 0;
 	};
 };
