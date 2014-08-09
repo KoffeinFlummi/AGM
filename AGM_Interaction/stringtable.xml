@@ -285,12 +285,14 @@
       <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
       <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
+      <French>Afficher le nom des joueurs uniquement sur le curseur (Nom des joueurs requis)</French>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
       <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
+      <French>Afficher le rang des joueurs (Nom des joueurs requis)</French>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -328,7 +330,7 @@
       <English>Take Prisoner</English>
       <German>Gefangen nehmen</German>
       <Spanish>Tomar prisionero</Spanish>
-      <French>Prendre en captivité</French>
+      <French>Capturer le prisonnier</French>
       <Polish>Weź więźnia</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_ReleaseCaptive">
@@ -336,6 +338,7 @@
       <German>Gefangen freilassen</German>
       <Spanish>Liberar prisionero</Spanish>
       <Polish>Wypuść więźnia</Polish>
+      <French>Relacher le prisonnier</French>
     </Key>
     <Key ID="STR_AGM_Interaction_EscortCaptive">
       <English>Escort Prisoner</English>
@@ -349,13 +352,14 @@
       <German>Gefangenen loslassen</German>
       <Spanish>Soltar prisionero</Spanish>
       <Polish>Anuluj eskortowanie</Polish>
+      <French>Stopper l'escorte</French>
     </Key>
     <Key ID="STR_AGM_Interaction_NoCaptive">
       <English>You need you take him as prisoner first!</English>
       <German>Du must ihn zuerst gefangen nehmen.</German>
       <Spanish>Necesitas hacerle prisionero primero!</Spanish>
       <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
-      <French>Vous devez  d'abord le faire prisonnier</French>
+      <French>Vous devez d'abord le faire prisonnier</French>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
@@ -446,18 +450,21 @@
       <German>Begnadigen</German>
       <Spanish>Rehabilitar</Spanish>
       <Polish>Przebacz</Polish>
+      <French>Pardon</French>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Name">
       <English>Cable Tie</English>
       <German>Kabelbinder</German>
       <Polish>Opaska zaciskowa</Polish>
       <Spanish>Precinto de seguridad</Spanish>
+      <French>Menottes</French>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
       <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
       <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
+      <French>Les menottes permettent de faire des prisonnier</French>
     </Key>
   </Package>
 </Project>
