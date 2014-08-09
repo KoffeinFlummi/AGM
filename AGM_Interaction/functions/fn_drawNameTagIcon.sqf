@@ -31,7 +31,9 @@ _heightOffset = _this select 2;
 
 _height = [2, 1.5, 1, 1.5, 1] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _target);
 
-_position = (visiblePosition _target) vectorAdd [0, 0, _height + _heightOffset];
+_position = visiblePositionASL _target;
+// Convert position to ASLW (expected by drawIcon3D) and add height offsets
+_position set [2, ((_target modelToWorld [0,0,0]) select 2) + _height + _heightOffset];
 
 _color = if !(group _target == group player) then {
            [0.77, 0.51, 0.08, _alpha]}
