@@ -5,13 +5,13 @@
 			<English>Load Menu</English>
 			<Spanish>Menú de carga</Spanish>
 			<French>Menu de chargement</French>
-			<Polish>Menu Ładunku</Polish>
+			<Polish>Menu ładunku</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadItem">
 			<English>Load Item</English>
 			<Spanish>Cargar objeto</Spanish>
 			<French>Charger objet</French>
-			<Polish>Załaduj Obiekt</Polish>
+			<Polish>Załaduj obiekt</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadingItem">
 			<English>Loading ...</English>
@@ -29,13 +29,13 @@
 			<English>Unload Menu</English>
 			<Spanish>Menú de descarga</Spanish>
 			<French>Menu de déchargement</French>
-			<Polish>Menu Rozładunku</Polish>
+			<Polish>Menu rozładunku</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadItem">
 			<English>Unload Item</English>
 			<Spanish>Descargar objecto</Spanish>
 			<French>Décharger Objet</French>
-			<Polish>Wyładuj Obiekt</Polish>
+			<Polish>Wyładuj obiekt</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_MagazineMenu">
 			<English>Magazines</English>
@@ -119,14 +119,14 @@
 			<German>Waffe drehen (rechts)</German>
 			<Spanish>Girar arma (SH)</Spanish>
 			<French>Tourner l'arme (CW)</French>
-			<Polish>Obróć Broń (CW)</Polish>
+			<Polish>Obróć broń (w prawo)</Polish>
 		</Key>
 		<Key ID="STR_AGM_StaticWeapons_RotateCounterclockwise">
 			<English>Rotate weapon (CCW)</English>
 			<German>Waffe drehen (links)</German>
 			<Spanish>Girar arma (SAH)</Spanish>
 			<French>Tourner l'arme (CCW)</French>
-			<Polish>Obróć Broń (CCW)</Polish>
+			<Polish>Obróć broń (w lewo)</Polish>
 		</Key>
 	</Package>
 
@@ -143,14 +143,14 @@
 			<German>Ersatzkette</German>
 			<Spanish>Cadena de repuesto</Spanish>
 			<French>Chenille de secours</French>
-			<Polish>Zapasowa Gąsienica</Polish>
+			<Polish>Zapasowa gąsienica</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_SpareWheel">
 			<English>Spare Wheel</English>
 			<German>Ersatzreifen</German>
 			<Spanish>Rueda de repuesto</Spanish>
 			<French>roue de secours</French>
-			<Polish>Zapasowe Koło</Polish>
+			<Polish>Zapasowe koło</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_VehicleName">
@@ -165,7 +165,7 @@
 			<German>Fahrzeug ist unbeschädigt</German>
 			<Spanish>Vehículo sin daños</Spanish>
 			<French>Le véhicule n'est pas endommager</French>
-			<Polish>Pojazd jest nieuszkodzony</Polish>
+			<Polish>Pojazd jest nienaruszony</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitPointDamaged">
 			<English>%1 is damaged</English>
@@ -230,14 +230,14 @@
 			<German>Motor</German>
 			<Spanish>Motor</Spanish>
 			<French>Moteur</French>
-			<Polish>Sinik</Polish>
+			<Polish>Silnik</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitFuel">
 			<English>Fuel Tank</English>
 			<German>Tank</German>
 			<Spanish>Depósito</Spanish>
 			<French>Réservoir</French>
-			<Polish>Zbiornik Paliwa</Polish>
+			<Polish>Zbiornik paliwa</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitTurret">
 			<English>Main Turret</English>
@@ -258,70 +258,70 @@
 			<German>Linke Kette</German>
 			<Spanish>Cadena izquierda</Spanish>
 			<French>Chenille gauche</French>
-			<Polish>Lewa Gąsienica</Polish>
+			<Polish>Lewa gąsienica</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRTrack">
 			<English>Right Track</English>
 			<German>Rechte Kette</German>
 			<Spanish>Cadena derecha</Spanish>
 			<French>Chenille droite</French>
-			<Polish>Prawa Gąsienica</Polish>
+			<Polish>Prawa gąsienica</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLFWheel">
 			<English>Left Front Wheel</English>
 			<German>Linkes Vorderrad</German>
 			<Spanish>Rueda frontal izquierda</Spanish>
 			<French>Roue avant gauche</French>
-			<Polish>Przednie Lewe Koło</Polish>
+			<Polish>Przednie lewe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRFWheel">
 			<English>Right Front Wheel</English>
 			<German>Rechtes Vorderrad</German>
 			<Spanish>Rueda frontal derecha</Spanish>
 			<French>Roue avant droite</French>
-			<Polish>Przednie Prawe Koło</Polish>
+			<Polish>Przednie prawe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLF2Wheel">
 			<English>Second Left Front Wheel</English>
 			<German>Zweites linkes Vorderrad</German>
 			<Spanish>Segunda rueda frontal izquierda</Spanish>
 			<French>Deuxième roue avant gauche</French>
-			<Polish>Drugie Przednie Lewe Koło</Polish>
+			<Polish>Drugie przednie lewe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRF2Wheel">
 			<English>Second Right Front Wheel</English>
 			<German>Zweites rechtes Vorderrad</German>
 			<Spanish>Segunda rueda frontal derecha</Spanish>
 			<French>Deuxième roue avant droite</French>
-			<Polish>Drugie Przednie Prawe Koło</Polish>
+			<Polish>Drugie przednie prawe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLMWheel">
 			<English>Left Middle Wheel</English>
 			<German>Linkes mittleres Rad</German>
 			<Spanish>Rueda central izquierda</Spanish>
 			<French>Roue millieu gauche</French>
-			<Polish>Środkowe Lewe Koło</Polish>
+			<Polish>Środkowe lewe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRMWheel">
 			<English>Right Middle Wheel</English>
 			<German>Rechtes mittleres Rad</German>
 			<Spanish>Rueda central derecha</Spanish>
 			<French>Roue millieu droite</French>
-			<Polish>Środkowe Prawe Koło</Polish>
+			<Polish>Środkowe prawe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitLBWheel">
 			<English>Left Rear Wheel</English>
 			<German>Linkes Hinterrad</German>
 			<Spanish>Rueda trasera izquierda</Spanish>
 			<French>Roue arrière gauche</French>
-			<Polish>Tylnie Lewe Koło</Polish>
+			<Polish>Tylnie lewe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitRBWheel">
 			<English>Right Rear Wheel</English>
 			<German>Rechtes Hinterrad</German>
 			<Spanish>Rueda trasera derecha</Spanish>
 			<French>Roue arrière droite</French>
-			<Polish>Tylnie Prawe Koło</Polish>
+			<Polish>Tylnie prawe koło</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitAvionics">
 			<English>Avionics</English>
@@ -335,14 +335,14 @@
 			<German>Hauptrotor</German>
 			<Spanish>Rotor principal</Spanish>
 			<French>Rotor principal</French>
-			<Polish>Główny Wirnik</Polish>
+			<Polish>Główny rotor</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_HitVRotor">
 			<English>Tail Rotor</English>
 			<German>Heckrotor</German>
 			<Spanish>Rotor de cola</Spanish>
 			<French>rotor de queue</French>
-			<Polish>Tylni Wirnik</Polish>
+			<Polish>Tylni rotor</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_HitRGlass">
@@ -407,14 +407,14 @@
 			<German>Es ist keine Kette in der Nähe!</German>
 			<Spanish>No hay cadena!</Spanish>
 			<French>Il n'y a pas de chenilles!</French>
-			<Polish>Nie ma Gąsienicy</Polish>
+			<Polish>Nie ma gąsienicy!</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_noWheel">
 			<English>There's no wheel!</English>
 			<German>Es ist kein Reifen in der Nähe!</German>
 			<Spanish>No hay rueda!</Spanish>
 			<French>Il n'y a pas de roues!</French>
-			<Polish>Nie ma Koła</Polish>
+			<Polish>Nie ma koła!</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_SelectWheelMenu">
@@ -422,14 +422,14 @@
 			<German>Reifen wählen Menu</German>
 			<Spanish>Seleccionar menú de rueda</Spanish>
 			<French>Selectionner menu roues</French>
-			<Polish>Wybierz menu Kół</Polish>
+			<Polish>Wybierz menu kół</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_SelectWheel">
 			<English>Change Wheel</English>
 			<German>Reifen wechseln</German>
 			<Spanish>Cambiar rueda</Spanish>
 			<French>Changer roue</French>
-			<Polish>Wymień Koło</Polish>
+			<Polish>Wymień koło</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_SelectWheelMenu_Salvage">
@@ -437,13 +437,13 @@
 			<German>Reifen wählen Menu</German>
 			<Spanish>Seleccionar menú de rueda</Spanish>
 			<French>Selectionner menu roues</French>
-			<Polish>Wybierz menu Kół</Polish>
+			<Polish>Wybierz menu kół</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_SelectWheel_Salvage">
 			<English>Remove Wheel</English>
 			<German>Reifen entf.</German>
 			<Spanish>Quitar rueda</Spanish>
-			<Polish>Zdejmij Koło</Polish>
+			<Polish>Zdejmij koło</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Repair_Repairing">
@@ -465,13 +465,13 @@
 			<English>Repair Wheel >></English>
 			<German>Reifen aufziehen >></German>
 			<Spanish>Reparar rueda</Spanish>
-			<Polish>Napraw Koło >></Polish>
+			<Polish>Napraw koło >></Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_RemoveWheel">
 			<English>Remove Wheel >></English>
 			<German>Reifen entfernen >></German>
 			<Spanish>Quitar rueda</Spanish>
-			<Polish>Zdejmij Koło >></Polish>
+			<Polish>Zdejmij koło >></Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_RemovingWheel">
 			<English>Removing %1 ...</English>
@@ -490,14 +490,14 @@
 			<German>Fahrzeug überprüfen</German>
 			<Spanish>Comprobar vehículo</Spanish>
 			<French>Vérifier le véhicule</French>
-			<Polish>Sprawdź Pojazd</Polish>
+			<Polish>Sprawdź pojazd</Polish>
 		</Key>
 		<Key ID="STR_AGM_Repair_checkingVehicle">
 			<English>Checking Vehicle ...</English>
 			<German>Fahrzeug überprüfen ...</German>
 			<Spanish>Comprobando vehículo</Spanish>
 			<French>Vérification du véhicule ...</French>
-			<Polish>Sprawdzanie Pojazdu...</Polish>
+			<Polish>Sprawdzanie pojazdu...</Polish>
 		</Key>
 	</Package>
 
@@ -563,7 +563,7 @@
 			<English>Cut Fence</English>
 			<German>Zaun schneiden</German>
 			<Spanish>Cortar alambrado</Spanish>
-			<Polish>Przetnij Płot</Polish>
+			<Polish>Przetnij płot</Polish>
 			<Czech>Přestřihnout plot</Czech>
 			<French>Couper la clôture</French>
 		</Key>
@@ -571,7 +571,7 @@
 			<English>Cutting Fences / Wires ...</English>
 			<German>Zaun / Draht schneiden ...</German>
 			<Spanish>Cortando alambrado / cables ...</Spanish>
-			<Polish>Przecinanie Płotu / Drutów ...</Polish>
+			<Polish>Przecinanie płotu / drutów ...</Polish>
 			<Czech>Přestřihnout plot / dráty ...</Czech>
 			<French>Coupe la clôture / barbelée ...</French>
 		</Key>
@@ -597,31 +597,31 @@
 		<Key ID="STR_AGM_Resupply_CheckFuel">
 			<English>Check Fuel</English>
 			<German>Treibstoff Prüfen</German>
-			<Polish>Sprawdź Paliwo</Polish>
+			<Polish>Sprawdź poziom paliwa</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelCargo">
 			<English>Check Fuel (Cargo)</English>
 			<German>Treibstoffvorrat Prüfen</German>
-			<Polish>Sprawdź Paliwo (Ładunek)</Polish>
+			<Polish>Sprawdź poziom paliwa (ładunek)</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
 			<English>Check Jerrycan</English>
 			<German>Kanister Prüfen</German>
-			<Polish>Sprawdź Kanister</Polish>
+			<Polish>Sprawdź kanister</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuel">
 			<English>Checking Fuel ...</English>
 			<German>Prüfe Treibstoff ...</German>
 			<Spanish>Comprobando combustible ...</Spanish>
 			<French>Vérification carburant ...</French>
-			<Polish>Sprawdzanie Paliwa ...</Polish>
+			<Polish>Sprawdzanie poziomu paliwa ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckingFuelCargo">
 			<English>Checking Fuel (Cargo) ...</English>
 			<German>Prüfe Treibstoffvorrat ...</German>
 			<Spanish>Comprobando carga de combustible ...</Spanish>
 			<French>Vérification alimentation en carburant ...</French>
-			<Polish>Sprawdzanie Paliwa (Ładunek) ...</Polish>
+			<Polish>Sprawdzanie poziomu paliwa (ładunek) ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_CheckedFuel">
 			<English>Jerrycan has %1 litre(s) left</English>
@@ -642,7 +642,7 @@
 			<German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
 			<Spanish>El vehículo tiene %1 litro(s) en la carga</Spanish>
 			<French>Le véhicule à %1 litre(s) en stock</French>
-			<Polish>W ładunku Pojazdu zostało %1 litr(ów)</Polish>
+			<Polish>W ładunku pojazdu zostało %1 litr(ów)</Polish>
 		</Key>
 
 		<Key ID="STR_AGM_Resupply_RefuelVehicle">
@@ -650,28 +650,28 @@
 			<German>Fahrzeug betanken</German>
 			<Spanish>Reabastecer vehículo</Spanish>
 			<French>Faire le plein du véhicule</French>
-			<Polish>Zatankuj Pojazd</Polish>
+			<Polish>Zatankuj pojazd</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefuelVehicleCargo">
 			<English>Refuel Vehicle</English>
 			<German>Fahrzeug betanken</German>
 			<Spanish>Reabastecer vehículo</Spanish>
 			<French>Faire le plein du véhicule</French>
-			<Polish>Zatankuj Pojazd</Polish>
+			<Polish>Zatankuj pojazd</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainFuel">
 			<English>Drain Fuel</English>
 			<German>Benzin ablassen</German>
 			<Spanish>Drenar combustible</Spanish>
 			<French>Fuite de carburant</French>
-			<Polish>Spuść Paliwo</Polish>
+			<Polish>Spuść paliwo</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainFuelCargo">
 			<English>Drain Fuel Cargo</English>
 			<German>Benzinvorrat ablassen</German>
 			<Spanish>Drenar combustible en la carga</Spanish>
 			<French>Vidanger</French>
-			<Polish>Spuść Paliwo z Ładunku</Polish>
+			<Polish>Spuść paliwo z ładunku</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefuelingVehicle">
 			<English>Refueling ...</English>
@@ -685,14 +685,14 @@
 			<German>Benzin ablassen ...</German>
 			<Spanish>Drenando combustible ...</Spanish>
 			<French>Vidange du carburant ...</French>
-			<Polish>Spuszczanie Paliwa ...</Polish>
+			<Polish>Spuszczanie paliwa ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainingFuelCargo">
 			<English>Draining Fuel Cargo ...</English>
 			<German>Benzinvorrat ablassen ...</German>
 			<Spanish>Drenando combustible de la carga</Spanish>
 			<French>Vidange du carburant ...</French>
-			<Polish>Spuszczanie Paliwa z Ładunku ...</Polish>
+			<Polish>Spuszczanie paliwa z ładunku ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_RefueledVehicle">
 			<English>Refueled %1</English>
@@ -706,14 +706,14 @@
 			<German>Benzin abgelassen</German>
 			<Spanish>Combustible drenado</Spanish>
 			<French>Vidange du carburant effectué</French>
-			<Polish>Spuszczono Paliwo</Polish>
+			<Polish>Spuszczono paliwo</Polish>
 		</Key>
 		<Key ID="STR_AGM_Resupply_DrainedFuelCargo">
 			<English>Drained Fuel Cargo</English>
 			<German>Benzinvorrat abgelassen</German>
 			<Spanish>Combustible de carga drenado</Spanish>
 			<French>Vidange effectuer</French>
-			<Polish>Spuszczono Paliwo z Ładunku</Polish>
+			<Polish>Spuszczono paliwo z ładunku</Polish>
 		</Key>
 
 
