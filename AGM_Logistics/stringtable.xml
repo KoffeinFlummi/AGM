@@ -707,4 +707,10 @@
       <Polish>Spuszczono paliwo z ładunku</Polish>
     </Key>
   </Package>
+  <Package name="Paradrop">
+    <Key ID="STR_AGM_Paradrop_Unload">
+      <English>Airdrop Box</English>
+      <German>Box abwerfen</German>
+    </Key>
+  </Package>
 </Project>
