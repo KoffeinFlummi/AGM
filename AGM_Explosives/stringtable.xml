@@ -217,36 +217,42 @@
       <Polish>Płyta naciskowa</Polish>
       <Spanish>Placa de presión</Spanish>
       <German>Druckplatte</German>
+      <French>Plaque de pression</French>
     </Key>
     <Key ID="STR_AGM_Explosives_TripWire">
       <English>Tripwire</English>
       <Polish>Linka naciągu</Polish>
       <Spanish>Cable de tracción</Spanish>
       <German>Stolperdraht</German>
+      <French>fil de détente</French>
     </Key>
     <Key ID="STR_AGM_Explosives_IRSensor">
       <English>IR Sensor</English>
       <Polish>Czujnik podczerwieni</Polish>
       <Spanish>Sensor IR</Spanish>
       <German>Infrarotsensor</German>
+      <French>Capteur IR</French>
     </Key>
     <Key ID="STR_AGM_Explosives_NoTriggersAvailable">
       <English>No triggers available for %1</English>
       <Polish>Brak dostępnych zapalników dla %1</Polish>
       <Spanish>No hay detonadores disponibles para %1</Spanish>
       <German>Keine Auslöser vorhanden für %1</German>
+      <French>Pas de déclencheur disponible pour %1</French>
     </Key>
     <Key ID="STR_AGM_Explosives_SLAME_IRSensor">
       <English>IR Sensor (Side Attack)</English>
       <Polish>Czujnik podczerwieni (wybuch na bok)</Polish>
       <Spanish>Sensor IR (ataque lateral)</Spanish>
       <German>Infrarotsensor (Seitenangriff)</German>
+      <French>Capteur IR (Attaque de flan)</French>
     </Key>
     <Key ID="STR_AGM_Explosives_SLAME_Magnetic">
       <English>Magnetic Influence Sensor (Bottom Attack)</English>
       <Polish>Czujnik magnetyczny (wybuch w górę)</Polish>
       <Spanish>Sensor IM (ataque inferior)</Spanish>
       <German>Magnetfeldsensor (Bodenangriff)</German>
+      <French>Capteur d'influence magnétique (Attaque arrière)</French>
     </Key>
   </Package>
 </Project>
