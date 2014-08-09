@@ -34,8 +34,12 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-/*class CfgFatigue {
-  MinValue1 = 0.1;
+/*class CfgInventoryGlobalVariable {
+  maxSoldierLoad = 1200;
+};*/
+
+class CfgFatigue {
+  MinValue1 = 0.2;
   MinValue2 = 0.8;
   NormalRunSpeed = 7.2;
   TiredRunSpeedLimit = 0.8;
@@ -43,11 +47,7 @@ class Extended_PostInit_EventHandlers {
   FrequencyMax = 1.0;
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
-};*/
-
-/*class CfgInventoryGlobalVariable {
-  maxSoldierLoad = 1200;
-};*/
+};
 
 //DEFAULT (PRE BOOTCAMP!)
 /*
@@ -58,6 +58,18 @@ TiredRunSpeedLimit = 1;
 FrequencyMin = 0.2;
 FrequencyMax = 1.0;
 TotalLoadCoef = 1.1;
+MaxDuty = 10;
+*/
+
+//DEFAULT (POST BOOTCAMP!)
+/*
+MinValue1 = 0.2;
+MinValue2 = 0.8;
+NormalRunSpeed = 7.2;
+TiredRunSpeedLimit = 0.6;
+FrequencyMin = 0.2;
+FrequencyMax = 1;
+TotalLoadCoef = 10;
 MaxDuty = 10;
 */
 
