@@ -33,6 +33,10 @@ _fnc_DefuseTime = {
 	};
 	_defuseTime
 };
+_actionToPlay = "MedicOther";
+if (STANCE _unit == "Prone") then {
+	_actionToPlay = "PutDown";
+};
 
 if (player != _unit) then {
 	// If the unit is a player, call the function on the player.
@@ -40,7 +44,7 @@ if (player != _unit) then {
 		[[_unit, _target], "AGM_Explosives_fnc_StartDefuse", _unit] call AGM_Core_fnc_execRemoteFnc;
 	} else {
 		[_unit, _target, [_unit call AGM_Explosives_fnc_isSpecialist, _target] call _fnc_DefuseTime] spawn {
-			(_this select 0) playActionNow "MedicOther";
+			(_this select 0) playActionNow _actionToPlay;
 			(_this select 0) disableAI "MOVE";
 			(_this select 0) disableAI "TARGET";
 			sleep (_this select 2);
@@ -50,7 +54,7 @@ if (player != _unit) then {
 		};
 	};
 } else {
-	_unit playActionNow "MedicOther";
+	_unit playActionNow _actionToPlay;
 	if (AGM_Explosives_RequireSpecialist > 0) then {
 		if (_unit call AGM_Explosives_fnc_isSpecialist) then {
 			[[true, _target] call _fnc_DefuseTime, [_unit,_target], "AGM_Explosives_fnc_DefuseExplosive", localize "STR_AGM_Explosives_DefusingExplosive"] call AGM_Core_fnc_progressBar;

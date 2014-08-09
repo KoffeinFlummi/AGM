@@ -28,6 +28,10 @@ _dir = _this select 2;
 _mag = _this select 3;
 _config = _this select 4;
 _vars = _this select 5;
+_setDir = true;
+if (count _this > 6) then {
+	_setDir = _this select 6;
+};
 
 if (isNil "_config") exitWith {
 	diag_log format ["AGM_Explosives: Error config not passed to PlaceExplosive: %1", _this];
@@ -48,5 +52,7 @@ if (isText(_trigger >> "ammo")) then {
 };
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
 if (isText(_config >> "onPlace") && {[_unit,_explosive,_mag,_vars] call compile (getText (_config >> "onPlace"))}) exitWith {_explosive};
-[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
+if (_setDir) then {
+	[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
+};
 _explosive
