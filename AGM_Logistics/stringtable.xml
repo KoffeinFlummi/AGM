@@ -6,23 +6,25 @@
 			<Spanish>Menú de carga</Spanish>
 			<French>Menu de chargement</French>
 			<Polish>Menu Ładunku</Polish>
+			<German>Verladen-Menü</German>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadItem">
 			<English>Load Item</English>
 			<Spanish>Cargar objeto</Spanish>
 			<French>Charger objet</French>
 			<Polish>Załaduj Obiekt</Polish>
+			<German>Gegenstand verladen</German>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadingItem">
 			<English>Loading ...</English>
 			<Spanish>Cargando ...</Spanish>
-			<German>Einladen ...</German>
+			<German>Verladen ...</German>
 			<Polish>Ładowanie ...</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_LoadedItem">
 			<English>%1 loaded into %2</English>
 			<Spanish>%1 cargado en %2</Spanish>
-			<German>%1 in %2 eingeladen</German>
+			<German>%1 in %2 verladen</German>
 			<Polish>%1 załadowano do %2</Polish>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadMenu">
@@ -30,18 +32,21 @@
 			<Spanish>Menú de descarga</Spanish>
 			<French>Menu de déchargement</French>
 			<Polish>Menu Rozładunku</Polish>
+			<German>Abladen-Menü</German>
 		</Key>
 		<Key ID="STR_AGM_Logistics_UnloadItem">
 			<English>Unload Item</English>
 			<Spanish>Descargar objecto</Spanish>
 			<French>Décharger Objet</French>
 			<Polish>Wyładuj Obiekt</Polish>
+			<German>Gegenstand abladen</German>
 		</Key>
 		<Key ID="STR_AGM_Logistics_MagazineMenu">
 			<English>Magazines</English>
 			<Spanish>Cargadores</Spanish>
 			<French>Chargeurs</French>
 			<Polish>Magazynki</Polish>
+			<German>Magazine</German>
 		</Key>
 
 		<Key ID="STR_AGM_Logistics_Unload">
