@@ -171,7 +171,7 @@
       <English>HEMTT Transport</English>
       <German>HEMTT Transport</German>
       <Spanish>HEMTT de transporte</Spanish>
-      <Polish>HEMTT Transport</Polish>
+      <Polish>HEMTT transportowy</Polish>
       <Czech>HEMTT Valník</Czech>
       <French>HEMTT Transport</French>
       <Russian>HEMTT Транспортный</Russian>
@@ -180,7 +180,7 @@
       <English>HEMTT Transport (covered)</English>
       <German>HEMTT Transport (bedeckt)</German>
       <Spanish>HEMTT de transporte (cubierto)</Spanish>
-      <Polish>HEMTT Transport (zakryty)</Polish>
+      <Polish>HEMTT transportowy (zakryty)</Polish>
       <Czech>HEMTT Valník (krytý)</Czech>
       <French>HEMTT Transport (Couvert)</French>
       <Russian>HEMTT Транспортный (крытый)</Russian>
@@ -198,7 +198,7 @@
       <English>HEMTT Container</English>
       <German>HEMTT Container</German>
       <Spanish>HEMTT de contenedor</Spanish>
-      <Polish>HEMTT Kontener</Polish>
+      <Polish>HEMTT kontener</Polish>
       <Czech>HEMTT Skříňový</Czech>
       <French>HEMTT Conteneur</French>
       <Russian>HEMTT Контейнер</Russian>
@@ -207,7 +207,7 @@
       <English>HEMTT Medical</English>
       <German>HEMTT Sanitäter</German>
       <Spanish>HEMTT médico</Spanish>
-      <Polish>HEMTT Sanitarny</Polish>
+      <Polish>HEMTT medyczny</Polish>
       <Czech>HEMTT Zdravotnický</Czech>
       <French>HEMTT Médical</French>
       <Russian>HEMTT Медицинский</Russian>
@@ -216,7 +216,7 @@
       <English>HEMTT Ammo</English>
       <German>HEMTT Munition</German>
       <Spanish>HEMTT de munición</Spanish>
-      <Polish>HEMTT Amunicyjny</Polish>
+      <Polish>HEMTT amunicyjny</Polish>
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
       <Russian>HEMTT Боеприпасы</Russian>
@@ -225,7 +225,7 @@
       <English>HEMTT Fuel</English>
       <German>HEMTT Treibstoff</German>
       <Spanish>HEMTT de combustible</Spanish>
-      <Polish>HEMTT Cysterna</Polish>
+      <Polish>HEMTT cysterna</Polish>
       <Czech>HEMTT Cisterna</Czech>
       <French>HEMTT Citerne</French>
       <Russian>HEMTT Заправщик</Russian>
@@ -234,7 +234,7 @@
       <English>HEMTT Repair</English>
       <German>HEMTT Instandsetzung</German>
       <Spanish>HEMTT de reparación</Spanish>
-      <Polish>HEMTT Naprawczy</Polish>
+      <Polish>HEMTT naprawczy</Polish>
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
       <Russian>HEMTT Ремонт</Russian>
@@ -299,7 +299,7 @@
       <English>Kamaz Transport</English>
       <German>Kamaz Transport</German>
       <Spanish>Kamaz Transporte</Spanish>
-      <Polish>Kamaz Transport</Polish>
+      <Polish>Kamaz transportowy</Polish>
       <Czech>Kamaz Valník</Czech>
       <French>Kamaz Transport</French>
       <Russian>Камаз Траспортный</Russian>
@@ -308,7 +308,7 @@
       <English>Kamaz Transport (covered)</English>
       <German>Kamaz Transport (bedeckt)</German>
       <Spanish>Kamaz de transporte (cubierto)</Spanish>
-      <Polish>Kamaz Transport (zakryty)</Polish>
+      <Polish>Kamaz transportowy (zakryty)</Polish>
       <Czech>Kamaz Valník (krytý)</Czech>
       <French>kamaz Transport (Couvert)</French>
       <Russian>Камаз Траспортный (Крытый)</Russian>
@@ -317,7 +317,7 @@
       <English>Kamaz Ammo</English>
       <German>Kamaz Munition</German>
       <Spanish>Kamaz de munición</Spanish>
-      <Polish>Kamaz Amunicyjny</Polish>
+      <Polish>Kamaz amunicyjny</Polish>
       <Czech>Kamaz Muniční</Czech>
       <French>Kamaz Munitions</French>
       <Russian>Камаз Боеприпасы</Russian>
@@ -326,7 +326,7 @@
       <English>Kamaz Fuel</English>
       <German>Kamaz Treibstoff</German>
       <Spanish>Kamaz de combustible</Spanish>
-      <Polish>Kamaz Cysterna</Polish>
+      <Polish>Kamaz cysterna</Polish>
       <Czech>Kamaz Cisterna</Czech>
       <French>Kamaz Citerne</French>
       <Russian>Камаз Заправщик</Russian>
@@ -335,7 +335,7 @@
       <English>Kamaz Repair</English>
       <German>Kamaz Instandsetzung</German>
       <Spanish>Kamaz de reparación</Spanish>
-      <Polish>Kamaz Naprawczy</Polish>
+      <Polish>Kamaz naprawczy</Polish>
       <Czech>Kamaz Opravárenský</Czech>
       <French>Kamaz Réparation</French>
       <Russian>Камаз Ремонтный</Russian>
@@ -344,7 +344,7 @@
       <English>Kamaz Medical</English>
       <German>Kamaz Sanitäter</German>
       <Spanish>Kamaz de médico</Spanish>
-      <Polish>Kamaz Sanitarny</Polish>
+      <Polish>Kamaz medyczny</Polish>
       <Czech>Kamaz Zdravotnický</Czech>
       <French>Kamaz Médical</French>
       <Russian>Камаз Медицинский</Russian>
@@ -427,7 +427,7 @@
       <English>Typhoon Transport</English>
       <German>Typhoon Transport</German>
       <Spanish>Typhoon de trasporte</Spanish>
-      <Polish>Typhoon Transport</Polish>
+      <Polish>Typhoon transportowy</Polish>
       <Czech>Typhoon Valník</Czech>
       <French>Typhoon Transport</French>
       <Russian>Typhoon Транспортный</Russian>
@@ -436,7 +436,7 @@
       <English>Typhoon Transport (covered)</English>
       <German>Typhoon Transport (bedeckt)</German>
       <Spanish>Typhoon de trasporte (cubierto)</Spanish>
-      <Polish>Typhoon Transport (przykryty)</Polish>
+      <Polish>Typhoon transportowy (przykryty)</Polish>
       <Czech>Typhoon Valník (krytý)</Czech>
       <French>Typhoon Transport (Couvert)</French>
       <Russian>Typhoon Транспортный (Крытый)</Russian>
@@ -445,7 +445,7 @@
       <English>Typhoon Device</English>
       <German>Typhoon Gerät</German>
       <Spanish>Typhoon de dispositivo</Spanish>
-      <Polish>Typhoon Device</Polish>
+      <Polish>Typhoon urządzenie</Polish>
       <Czech>Typhoon (zařízení)</Czech>
       <French>Typhoon Appareil</French>
       <Russian>Typhoon Техника</Russian>
@@ -454,7 +454,7 @@
       <English>Typhoon Ammo</English>
       <German>Typhoon Munition</German>
       <Spanish>Typhoon de munición</Spanish>
-      <Polish>Typhoon Amunicyjny</Polish>
+      <Polish>Typhoon amunicyjny</Polish>
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
       <Russian>Typhoon Боеприпасы</Russian>
@@ -463,7 +463,7 @@
       <English>Typhoon Fuel</English>
       <German>Typhoon Treibstoff</German>
       <Spanish>Typhoon de combustible</Spanish>
-      <Polish>Typhoon Cysterna</Polish>
+      <Polish>Typhoon cysterna</Polish>
       <Czech>Typhoon Cisterna</Czech>
       <French>Typhoon Citerne</French>
       <Russian>Typhoon Заправщик</Russian>
@@ -472,7 +472,7 @@
       <English>Typhoon Repair</English>
       <German>Typhoon Instandsetzung</German>
       <Spanish>Typhoon de reparación</Spanish>
-      <Polish>Typhoon Naprawczy</Polish>
+      <Polish>Typhoon naprawczy</Polish>
       <Czech>Typhoon Opravárenský</Czech>
       <French>Typhoon Réparation</French>
       <Russian>Typhoon Ремонтный</Russian>
@@ -481,7 +481,7 @@
       <English>Typhoon Medical</English>
       <German>Typhoon Sanitäter</German>
       <Spanish>Typhoon de médico</Spanish>
-      <Polish>Typhoon Sanitarny</Polish>
+      <Polish>Typhoon medyczny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon médical</French>
       <Russian>Typhoon Медицинский</Russian>
