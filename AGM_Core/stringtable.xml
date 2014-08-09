@@ -88,14 +88,14 @@
       <English>Default</English>
       <German>Standard</German>
       <Spanish>Por defecto</Spanish>
-      <Polish>Domyślnie</Polish>
+      <Polish>Domyślne</Polish>
       <French>Défaut</French>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
       <German>Keiner</German>
       <Spanish>Ninguna</Spanish>
-      <Polish>Żaden</Polish>
+      <Polish>Brak</Polish>
       <French>Aucun</French>
     </Key>
 
@@ -303,7 +303,7 @@
       <German>Aktion abgebrochen.</German>
       <Spanish>Acción cancelada.</Spanish>
       <French>Action annulée.</French>
-      <Polish>Akcja anulowana</Polish>
+      <Polish>Przerwano czynność</Polish>
       <Hungarian>Cselekvés befejezve</Hungarian>
       <Czech>Akce přerušena</Czech>
     </Key>
@@ -332,7 +332,7 @@
       <German>[AGM] Verschiedenes</German>
       <Spanish>[AGM] Objetos varios</Spanish>
       <Czech>[AGM] Ostatní předměty</Czech>
-      <Polish>[AGM] Różne Przedmioty</Polish>
+      <Polish>[AGM] Różne przedmioty</Polish>
       <French>[AGM] Objets divers</French>
     </Key>
 
