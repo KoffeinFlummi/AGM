@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 08/09/2014 -->
 <Project name="AGM">
   <Package name="Interaction">
-
     <Key ID="STR_AGM_Interaction_InteractionMenu">
       <English>Interaction Menu</English>
       <German>Interaktionsmenü</German>
@@ -32,7 +32,6 @@
       <Russian>Открыть / Закрыть двери</Russian>
       <Hungarian>Ajtó nyitás / zárás</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
@@ -83,7 +82,6 @@
       <Russian>Прекратить танцевать</Russian>
       <Hungarian>Tánc abbahagyása</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_Back">
       <English>Back</English>
       <German>Zurück</German>
@@ -94,16 +92,15 @@
       <Russian>Назад</Russian>
       <Hungarian>Vissza</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_Gestures">
-      <English>Gestures >></English>
-      <German>Gesten >></German>
-      <Spanish>Gestos >></Spanish>
-      <Polish>Gesty >></Polish>
-      <Czech>Gesta >></Czech>
-      <French>Gestes >></French>
-      <Russian>Жесты >></Russian>
-      <Hungarian>Kézjelek >></Hungarian>
+      <English>Gestures &gt;&gt;</English>
+      <German>Gesten &gt;&gt;</German>
+      <Spanish>Gestos &gt;&gt;</Spanish>
+      <Polish>Gesty &gt;&gt;</Polish>
+      <Czech>Gesta &gt;&gt;</Czech>
+      <French>Gestes &gt;&gt;</French>
+      <Russian>Жесты &gt;&gt;</Russian>
+      <Hungarian>Kézjelek &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures_Attack">
       <English>Attack</English>
@@ -225,7 +222,6 @@
       <Russian>Нет</Russian>
       <Hungarian>Nem</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_WeaponOnBack">
       <English>Put weapon on back</English>
       <German>Waffe wegstecken</German>
@@ -246,7 +242,6 @@
       <Russian>Похлопать по плечу</Russian>
       <Hungarian>Vállveregetés</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
@@ -267,7 +262,6 @@
       <Russian>Снять рюкзак (передний)</Russian>
       <Hungarian>Táska levétele</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_YouWereTapped">
       <English>You were tapped on the shoulder.</English>
       <German>Dir wurde auf die Schulter geklopft</German>
@@ -277,7 +271,6 @@
       <Hungarian>Vállonveregettek</Hungarian>
       <Czech>Někdo tě poklepal na rameno.</Czech>
     </Key>
-
     <Key ID="STR_AGM_Interaction_ShowPlayerNames">
       <English>Show player names</English>
       <German>Spielernamen anzeigen</German>
@@ -288,13 +281,15 @@
       <Czech>Zobrazit jména hráčů</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor">
-      <English>Show player name only on cursor</English>
-	  <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
+      <English>Show player name only on cursor (requires player names)</English>
+      <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
+      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
+      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -310,7 +305,6 @@
       <Polish>Wybierz</Polish>
       <French>Selectionner</French>
     </Key>
-
     <Key ID="STR_AGM_Interaction_SendAway">
       <English>Go Away!</English>
       <German>Geh Weg!</German>
@@ -355,7 +349,6 @@
       <Spanish>Soltar prisionero</Spanish>
       <Polish>Anuluj eskortowanie</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_NoCaptive">
       <English>You need you take him as prisoner first!</English>
       <German>Du must ihn zuerst gefangen nehmen.</German>
@@ -363,15 +356,13 @@
       <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
       <French>Vous devez  d'abord le faire prisonnier</French>
     </Key>
-
     <Key ID="STR_AGM_Interaction_TeamManagement">
-      <English>Team Management >></English>
-      <German>Team Management >></German>
-      <Spanish>Gestión de equipo >></Spanish>
-      <French>Gestion d'équipe >></French>
-      <Polish>Zarządzanie oddziałem >></Polish>
+      <English>Team Management &gt;&gt;</English>
+      <German>Team Management &gt;&gt;</German>
+      <Spanish>Gestión de equipo &gt;&gt;</Spanish>
+      <French>Gestion d'équipe &gt;&gt;</French>
+      <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>
       <German>Rot</German>
@@ -400,7 +391,6 @@
       <French>Jaune</French>
       <Polish>Żółty</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_JoinTeamRed">
       <English>Join Team Red</English>
       <German>Team Rot beitreten</German>
@@ -436,7 +426,6 @@
       <French>Vous avez rejoins l'équipe %1</French>
       <Polish>Dołączyłeś do drużyny %1</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_LeaveTeam">
       <English>Leave Team</English>
       <German>Team verlassen</German>
@@ -451,24 +440,23 @@
       <French>Vous avez quitter l'équipe</French>
       <Polish>Opuściłeś drużynę</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_Pardon">
       <English>Pardon</English>
       <German>Begnadigen</German>
       <Spanish>Rehabilitar</Spanish>
       <Polish>Przebacz</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_CableTie_Name">
       <English>Cable Tie</English>
       <German>Kabelbinder</German>
       <Polish>Opaska zaciskowa</Polish>
+      <Spanish>Precinto de seguridad</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
       <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
+      <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
     </Key>
-
   </Package>
 </Project>
