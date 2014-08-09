@@ -38,7 +38,8 @@ _this spawn {
     _this setVariable ["AGM_Overdosing", false];
     _this setVariable ["AGM_Dragging", objNull];
     _this setVariable ["AGM_Carrying", objNull];
-
+    _this setVariable ["AGM_GoDown", false];
+		
     [false] call AGM_Core_fnc_disableUserInput;
   };
 
@@ -71,7 +72,9 @@ _this spawn {
   _unit addEventHandler ["Respawn", { (_this select 0) call AGM_Medical_unitInit; (_this select 0) call AGM_Medical_itemCheck; }];
   _unit addEventHandler ["Take", { (_this select 0) call AGM_Medical_itemCheck; }];
   _unit addEventHandler ["Killed", {[false] call AGM_Core_fnc_disableUserInput;}];
-
+  // _unit removeAllEventHandlers "AnimChanged";
+  _unit addEventHandler["AnimChanged", { (_this select 0) call AGM_Medical_fnc_forceProne; }];
+  
   _unit spawn {
     while {true} do {
       sleep 1;

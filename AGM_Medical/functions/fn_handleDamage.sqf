@@ -14,10 +14,10 @@
  * Damage value to be inflicted (optional)
  */
 
-#define UNCONSCIOUSNESSTHRESHOLD 0.5
+#define UNCONSCIOUSNESSTHRESHOLD 0.8
 
 #define LEGDAMAGETHRESHOLD1 1
-#define LEGDAMAGETHRESHOLD2 2
+#define LEGDAMAGETHRESHOLD2 1
 #define ARMDAMAGETHRESHOLD 2
 
 #define PAINKILLERTHRESHOLD 0.1
@@ -33,8 +33,11 @@ _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
 
+_damage = _damage/2;
+
 // Prevent unnecessary processing
-if (damage _unit == 1) exitWith {};
+if(_damage == 0) exitWith {false};
+if (damage _unit == 1) exitWith {false};
 
 // For some reason, everything is backwards in MP,
 // so we need to untangle some things.
@@ -74,9 +77,9 @@ _hitPoints = [
 if !((_selectionName in _hitSelections) or (_selectionName == "")) exitWith {0};
 
 // Calculate change in damage.
-_newDamage = _damage - (damage _unit);
+_newDamage = (_damage + (damage _unit));
 if (_selectionName in _hitSelections) then {
-  _newDamage = _damage - (_unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName)));
+  _newDamage = (_damage + (_unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))));
 };
 
 // Exclude falling damage to anything other than legs, reduce overall fall damage.
@@ -84,21 +87,21 @@ if (((velocity _unit) select 2 < -10) and (vehicle player == player)) then {
   AGM_Medical_IsFalling = true;
 };
 if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitWith {
-  if (_selectionName in _hitSelections) then {
-    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))
-  } else {
-    0
-  };
+  /*if (_selectionName in _hitSelections) then {
+    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName));
+  } else {*/
+    false
+ /* };*/
 };
 if (AGM_Medical_IsFalling and (_selectionName == "")) then {
-  _damage = _damage - _newDamage / 2; // half structural fall damage
+  _newDamage = ((damage _unit) + (_damage / 2)); // half structural fall damage
 };
 
 // Prevent multiple damages by same hit.
-if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
+if (!(AGM_Medical_IsFalling or (_selectionName == "")) or (AGM_Medical_IsFalling && (_selectionName in ["leg_l", "leg_r"]))) then {
   _found = false;
   for "_i" from 0 to (count AGM_Medical_Hits - 1) do {
-    if (((AGM_Medical_Hits select _i) select 2) == _projectile) then {
+    if ((_hitPoints select (_hitSelections find _selectionName) == (AGM_Medical_Hits select _i) select 0) && (((AGM_Medical_Hits select _i) select 2)) == _projectile) then {
       _found = true;
       if (((AGM_Medical_Hits select _i) select 1) < _newDamage) then {
         AGM_Medical_Hits set [_i, [_hitPoints select (_hitSelections find _selectionName), _newDamage, _projectile]];
@@ -127,7 +130,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
       _preventDeath = true;
     };
 
-    if !(AGM_Medical_IsFalling) then {
+    // if !(AGM_Medical_IsFalling) then {
       {
         if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
           _unit setHitPointDamage [(_x select 0), ((_x select 1) min 0.89)];
@@ -135,7 +138,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
           _unit setHitPointDamage [(_x select 0), (_x select 1)];
         };
       } count AGM_Medical_Hits;
-    };
+    // };
 
     // reset things.
     AGM_Medical_Hits = [];
@@ -156,40 +159,43 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 
     // Handle death and unconsciousness
     if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and damage _unit < 1 and !(_unit getVariable "AGM_Unconscious")) then {
-      [_unit] call AGM_Medical_fnc_knockOut;
+	  [_unit] call AGM_Medical_fnc_knockOut;
+	  _unit allowDamage false;
+	  _unit spawn {
+		sleep 1;
+		_this allowDamage true;
+	  };
     };
 
     // Handle leg damage symptoms
+	/*
     if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
       // lightly wounded, limit walking speed
       [_unit, "HitLegs", 1, true] call AGM_Medical_fnc_setHitPointDamage;
     } else {
       [_unit, "HitLegs", 0, true] call AGM_Medical_fnc_setHitPointDamage;
-    };
-    /* DEAL WITH THIS LATER
-      if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
+    };*/
+   	if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
         // heavily wounded, stop unit from walking alltogether
         if !(_unit getVariable "AGM_NoLegs") then {
           _unit setVariable ["AGM_NoLegs", true, true];
           _unit spawn {
             _unit = _this;
             _unit setUnitPos "DOWN";
-            [_unit] call AGM_Medical_fnc_forceProne;
             while {true} do {
-              _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+              // _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
+              _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
               if (_legdamage < LEGDAMAGETHRESHOLD2) exitWith {
-                _unit setUnitPos "AUTO";
                 _unit setVariable ["AGM_NoLegs", false, true];
-              };
-              if (stance _unit != "PRONE") then {
-                [_unit] call AGM_Medical_fnc_forceProne;
+				_unit setUnitPos "AUTO";
               };
               sleep 1;
             };
           };
         };
       };
-
+    
+	/* DEAL WITH THIS LATER
       // Handle arm damage symptoms
       if (_armdamage >= ARMDAMAGETHRESHOLD) then {
         if !(_unit getVariable "AGM_NoArms") then {
@@ -267,7 +273,6 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
         _this setVariable ["AGM_Bleeding", false, true];
       };
     };
-
   };
 };
 
@@ -291,11 +296,7 @@ if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) ex
 };
 
 if (_preventDeath) then {
-  _damage = _damage min 0.89;
+  _newDamage = _newDamage min 0.89;
 };
-
-if (AGM_Medical_IsFalling or (_selectionName == "")) then {
-  _damage
-} else {
-  _damage - _newDamage
-};
+//diag_log format["Damage %1",_newDamage];
+_newDamage
