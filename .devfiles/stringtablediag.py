@@ -83,11 +83,11 @@ for module in os.listdir(projectpath):
     if localized[i] < keynumber:
       missing[i].append(module)
 
-print("\n")
-print("###########")
+print("\n###########")
 print("# RESULTS #")
 print("###########")
-print("")
+
+print("\nTotal number of keys: %i\n" % (keysum))
 
 for i in range(len(languages)):
   if localizedsum[i] == keysum:
