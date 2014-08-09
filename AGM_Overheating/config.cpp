@@ -26,16 +26,18 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Overheating {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Overheating\clientInit.sqf'";
-  };
-};
-
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Overheating {
-      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_overheat}";
+      clientFired = "if (player == _this select 0) then {_this call AGM_Overheating_fnc_overheat};";
+    };
+  };
+};
+
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_UnjamReload {
+      clientTake = "if (player == _this select 0 && {player == _this select 1} && {_this select 2 == currentMagazine player}) then {_vehicle = vehicle player; [_vehicle, currentWeapon _vehicle, true] call AGM_Overheating_fnc_clearJam};";
     };
   };
 };

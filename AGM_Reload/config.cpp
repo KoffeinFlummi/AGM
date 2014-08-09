@@ -21,9 +21,11 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Reload {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Reload\clientInit.sqf'";
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_AmmoIndicatorReload {
+      clientTake = "if (player == _this select 0 && {player == _this select 1} && {_this select 2 == currentMagazine player}) then {_vehicle = vehicle player; [_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, true] call AGM_Reload_fnc_checkAmmo};";
+    };
   };
 };
 

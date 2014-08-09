@@ -25,10 +25,12 @@
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeUp">
       <English>Adjust FCS Range (Up)</English>
       <German>Feuerleitsystemsentfernung erhöhen</German>
+	  <Polish>Zwiększ zasięg FCS</Polish>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeDown">
       <English>Adjust FCS Range (Down)</English>
       <German>Feuerleitsystemsentfernung verringern</German>
+	  <Polish>Zmniejsz zasięg FCS</Polish>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ResetFCS">
       <English>Reset FCS</English>

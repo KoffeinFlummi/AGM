@@ -10,7 +10,7 @@
       <French>Afficher les effets de lunettes à la troisième personne</French>
       <Russian>Show Goggle Effects in Third Person</Russian>
       <Hungarian>Szemüveg effekt mutatása külső nézetből</Hungarian>
-      <Polish>Pokaż Efekty Okularów w Trzeciej Osobie</Polish>
+      <Polish>Włącz efekty gogli w trzeciej osobie</Polish>
     </Key>
     <Key ID="STR_AGM_Goggles_WipeGlasses">
       <English>Wipe Goggles</English>
@@ -20,7 +20,7 @@
       <French>Essuyez les Lunettes</French>
       <Russian>Wipe Goggles</Russian>
       <Hungarian>Szemüveg törlése</Hungarian>
-      <Polish>Wytrzeć Okulary</Polish>
+      <Polish>Wytrzyj gogle</Polish>
     </Key>
   </Package>
 </Project>

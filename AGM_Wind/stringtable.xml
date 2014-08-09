@@ -6,7 +6,7 @@
       <English>No measurable wind</English>
       <German>Kein messbarer Wind</German>
       <Spanish>Sin viento apreciable</Spanish>
-      <Polish>Nie można zmierzyć Wiatru</Polish>
+      <Polish>Brak wiatru</Polish>
       <Czech>Žádný měřitelný vítr</Czech>
       <French>Pas de vent mesurable</French>
       <Russian>Нет ветра</Russian>
@@ -66,7 +66,7 @@
       <English>wind from the</English>
       <German>Wind aus</German>
       <Spanish>Viento del</Spanish>
-      <Polish>Wiatr z</Polish>
+      <Polish>wiatr z</Polish>
       <Czech>vítr z</Czech>
       <French>Vent venant du</French>
       <Russian>ветер с</Russian>

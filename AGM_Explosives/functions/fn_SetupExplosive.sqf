@@ -34,7 +34,7 @@ _this spawn {
 	
 	AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _class >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
 	
-	AGM_Explosives_Setup enableSimulation false;
+	AGM_Explosives_Setup enableSimulationGlobal false;
 	AGM_Explosives_Setup setVariable ["AGM_Class", _class];
 	AGM_Explosives_Setup setVariable ["AGM_Trigger", _config];
 	//AGM_Explosives_Setup setVariable ["AGM_Offset", GetArray(ConfigFile >> "CfgVehicles" >> typeof AGM_Explosives_Setup >> "AGM_Offset")];

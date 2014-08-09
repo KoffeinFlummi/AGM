@@ -35,22 +35,24 @@ _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 // only display the hint once, after you try to shoot an already jammed weapon
 AGM_Overheating_knowAboutJam = false;
 
-_actionID = _unit addAction [
-	"",
-	{
-		playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
+if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
+	_actionID = _unit addAction [
+		"",
+		{
+			playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
 
-		if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {player ammo currentWeapon player > 0}) then {
-			[localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
-			AGM_Overheating_knowAboutJam = true;
-		};
-	},
-	"",
-	0,
-	false,
-	true,
-	"DefaultAction",
-	"player == vehicle player && {currentWeapon player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
-];
+			if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {player ammo currentWeapon player > 0}) then {
+				[localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
+				AGM_Overheating_knowAboutJam = true;
+			};
+		},
+		"",
+		0,
+		false,
+		true,
+		"DefaultAction",
+		"player == vehicle player && {currentWeapon player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
+	];
 
-_unit setVariable ["AGM_JammingActionID", _actionID];
+	_unit setVariable ["AGM_JammingActionID", _actionID];
+};
