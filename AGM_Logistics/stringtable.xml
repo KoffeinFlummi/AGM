@@ -97,6 +97,7 @@
       <German>Tragen</German>
       <Spanish>Portar</Spanish>
       <Polish>Nieś</Polish>
+      <French>Porter</French>
     </Key>
     <Key ID="STR_AGM_Drag_EndCarry">
       <English>Release</English>
@@ -711,6 +712,7 @@
     <Key ID="STR_AGM_Paradrop_Unload">
       <English>Airdrop Box</English>
       <German>Box abwerfen</German>
+      <French>Parachutage de caisses</French>
     </Key>
   </Package>
 </Project>
