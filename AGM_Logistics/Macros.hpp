@@ -233,8 +233,9 @@
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
 		showDisabled = 0; \
 		priority = 1.245; \
-	};	
-#define MACRO_Paradrop \
+	};
+
+#define MACRO_PARADROP \
 	class AGM_DropCargo { \
 		displayName = "$STR_AGM_Paradrop_Unload"; \
 		distance = 4; \
