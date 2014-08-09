@@ -66,6 +66,7 @@ print(", ".join(languages))
 
 keysum = 0
 localizedsum = list(map(lambda x: 0, languages))
+missing = list(map(lambda x: [], languages))
 
 for module in os.listdir(projectpath):
   keynumber, localized = check_module(projectpath, module, languages)
@@ -79,6 +80,8 @@ for module in os.listdir(projectpath):
   for i in range(len(localized)):
     print("  %s %i" % ((languages[i]+":").ljust(10), localized[i]))
     localizedsum[i] += localized[i]
+    if localized[i] < keynumber:
+      missing[i].append(module)
 
 print("\n")
 print("###########")
@@ -90,4 +93,5 @@ for i in range(len(languages)):
   if localizedsum[i] == keysum:
     print("%s No missing stringtable entries." % ((languages[i] + ":").ljust(10)))
   else:
-    print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(10), str(keysum - localizedsum[i]).rjust(4)))
+    print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(10), str(keysum - localizedsum[i]).rjust(4)), end="")
+    print(" ("+", ".join(missing[i])+")")
