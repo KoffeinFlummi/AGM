@@ -343,31 +343,31 @@ class CfgWeapons {
       displayName = "MX";
     };
     class arifle_MX_Black_F: arifle_MX_F {
-      displayName = "MX";
+      displayName = "MX (Black)";
     };
     class arifle_MXC_F : arifle_MX_Base_F {
       displayName = "MXC";
     };
     class arifle_MXC_Black_F: arifle_MXC_F {
-      displayName = "MXC";
+      displayName = "MXC (Black)";
     };
     class arifle_MX_GL_F : arifle_MX_Base_F {
       displayName = "MX 3GL";
     };
     class arifle_MX_GL_Black_F : arifle_MX_GL_F {
-      displayName = "MX 3GL";
+      displayName = "MX 3GL (Black)";
     };
     class arifle_MX_SW_F : arifle_MX_Base_F {
       displayName = "MX LSW";
     };
     class arifle_MX_SW_Black_F : arifle_MX_SW_F {
-      displayName = "MX LSW";
+      displayName = "MX LSW (Black)";
     };
     class arifle_MXM_F : arifle_MX_Base_F {
       displayName = "MXM";
     };
     class arifle_MXM_Black_F : arifle_MXM_F {
-      displayName = "MXM";
+      displayName = "MXM (Black)";
     };
 
     class arifle_katiba_Base_F;
@@ -399,19 +399,19 @@ class CfgWeapons {
 
     class mk20_base_F;
     class arifle_Mk20_F : mk20_base_F {
-      displayName = "F2000A";
+      displayName = "F2000A (Camo)";
     };
     class arifle_Mk20_plain_F : arifle_Mk20_F {
       displayName = "F2000A";
     };
     class arifle_Mk20C_F : mk20_base_F {
-      displayName = "F2000A Tactical";
+      displayName = "F2000A Tactical (Camo)";
     };
     class arifle_Mk20C_plain_F : arifle_Mk20C_F {
       displayName = "F2000A Tactical";
     };
     class arifle_Mk20_GL_F : mk20_base_F {
-      displayName = "F2000A EGLM";
+      displayName = "F2000A EGLM (Camo)";
     };
     class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
       displayName = "F2000A EGLM";
@@ -447,6 +447,18 @@ class CfgWeapons {
       displayName = "ACP-C2";
     };
 
+    class hgun_Pistol_heavy_01_F: Pistol_Base_F {
+      displayName = "FNX-45 Tactical";
+    };
+
+    class hgun_Pistol_heavy_02_F: Pistol_Base_F {
+      displayName = "Chiappa Rhino 60DS";
+    };
+
+    class hgun_Pistol_Signal_F: Pistol_Base_F {
+      displayName = "Taurus Judge";
+    };
+
     class Rifle_Long_Base_F;
     class LMG_Mk200_F : Rifle_Long_Base_F {
       displayName = "Mk200 LMG";
@@ -465,10 +477,21 @@ class CfgWeapons {
     class srifle_LRR_F : LRR_base_F {
       displayName = "M200 Intervention";
     };
+    class srifle_LRR_camo_F : srifle_LRR_F {
+      displayName = "M200 Intervention (Camo)";
+    };
 
     class GM6_base_F;
     class srifle_GM6_F : GM6_base_F {
       displayName = "GM6 Lynx";
+    };
+    class srifle_GM6_camo_F : srifle_GM6_F {
+      displayName = "GM6 Lynx (Camo)";
+    };
+
+    class DMR_01_base_F;
+    class srifle_DMR_01_F : DMR_01_base_F {
+      displayName = "VS-121";
     };
 
   // VEHICLE STUFF
