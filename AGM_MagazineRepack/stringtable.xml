@@ -8,6 +8,7 @@
       <Spanish>Rellenar cargadores</Spanish>
       <French>Repack chargeur</French>
       <Polish>Przepakuj magazynki</Polish>
+      <Czech>Přepáskovat Zásobníky</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
       <English>Select Magazine Menu</English>
@@ -15,6 +16,7 @@
       <Spanish>Menú de selección de cargador</Spanish>
       <French>Selectionner menu des chargeurs</French>
       <Polish>Wybierz menu magazynków</Polish>
+      <Czech>Zvolit Menu Zásobníků</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
       <English>Select Mag</English>
@@ -22,6 +24,7 @@
       <Spanish>Seleccionar cargador</Spanish>
       <French>Selectionner Chargeur</French>
       <Polish>Wybierz magazynek</Polish>
+      <Czech>Zvolit Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
@@ -29,6 +32,7 @@
       <Spanish>Rellenando cargador ...</Spanish>
       <French>Repacking Chargeurs ...</French>
       <Polish>Przepakowywanie magazynków ...</Polish>
+      <Czech>Páskuji Zásobníky ...</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
@@ -36,6 +40,7 @@
       <Spanish>Cargadores rellenados</Spanish>
       <French>Chargeur repacker</French>
       <Polish>Magazynki przepakowane</Polish>
+      <Czech>Přepáskované Zásobníky</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
@@ -43,6 +48,7 @@
       <Spanish>%1 cargador(es) completo y %2 bala(s) extra(s)</Spanish>
       <French>%1 chargeur(s) pleins et %2 balle(s) en plus</French>
       <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
+      <Czech>%1 plný zásobník(y) a %2 munice navíc</Czech>
     </Key>
 
 

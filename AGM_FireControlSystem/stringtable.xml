@@ -27,12 +27,14 @@
       <German>Feuerleitsystemsentfernung erhöhen</German>
       <Polish>Zwiększ zasięg FCS</Polish>
       <Spanish>Ajustar FCS (arriba)</Spanish>
+      <Czech>Nastavit FCS Náměr (nahoru)</Czech>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeDown">
       <English>Adjust FCS Range (Down)</English>
       <German>Feuerleitsystemsentfernung verringern</German>
       <Polish>Zmniejsz zasięg FCS</Polish>
       <Spanish>Ajustar FCS(abajo)</Spanish>
+      <Czech>Nastavit FCS Náměr (dolů)</Czech>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ResetFCS">
       <English>Reset FCS</English>
@@ -40,6 +42,7 @@
       <Spanish>Reiniciar FCS</Spanish>
       <French>Redémarrer FCS</French>
       <Polish>Resetuj FCS</Polish>
+      <Czech>Resetovat FCS</Czech>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_HasBeenReset">
       <English>FCS has been reset.</English>
@@ -47,6 +50,7 @@
       <Spanish>FCS reiniciado</Spanish>
       <French>FCS à été redémarré</French>
       <Polish>FCS został zresetowany.</Polish>
+      <Czech>FCS byl resetován.</Czech>
     </Key>
   </Package>
 </Project>
