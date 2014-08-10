@@ -5,5 +5,5 @@
 
 	enableRadio false;
 	enableSentences false;
-	//player disableConversation cadetMode;
+	player disableConversation true;
 };
