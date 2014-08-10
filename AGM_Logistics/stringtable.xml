@@ -712,8 +712,9 @@
     <Key ID="STR_AGM_Paradrop_Unload">
       <English>Airdrop Box</English>
       <German>Box abwerfen</German>
-      <French>Parachutage de caisses</French>
       <Spanish>Lanzar caja con paracaídas</Spanish>
+      <French>Parachutage de caisses</French>
+      <Polish>Zrzut ładunku na spadochronie</Polish>
     </Key>
   </Package>
 </Project>

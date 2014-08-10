@@ -33,19 +33,25 @@ _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
 
+//systemChat format ["1: %1", _damage];
+
 // Prevent unnecessary processing
 if (damage _unit == 1) exitWith {};
 
 // For some reason, everything is backwards in MP,
 // so we need to untangle some things.
-_fnc_damageTetris = {
-  _selectionName = _this select 1;
-  if !(isMultiplayer) exitWith {_selectionName};
-  if (_selectionName == "hand_r") exitWith {"leg_l"};
-  if (_selectionName == "leg_r") exitWith {"hand_l"};
-  if (_selectionName == "legs") exitWith {"hand_r"};
+if (isMultiplayer) then {
+  // If you add something to this, remember not to replace something twice.
+  if (_selectionName == "hand_r") then {
+    _selectionName = "leg_l";
+  };
+  if (_selectionName == "leg_r") then {
+    _selectionName = "hand_l";
+  };
+  if (_selectionName == "legs") then {
+    _selectionName = "hand_r";
+  };
 };
-_selectionName = [_selectionName] call _fnc_damageTetris;
 
 // This seems to only show up in MP too, but since it doesn't
 // collide with anything, I'll check it in SP as well.
