@@ -32,7 +32,7 @@ addMissionEventHandler ["Draw3D", {
     _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
     {
       _target = effectiveCommander _x;
-      if (!isNull _target && {side group _target == playerSide} && _target != player) then {
+      if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
