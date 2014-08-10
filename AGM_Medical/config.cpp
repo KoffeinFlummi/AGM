@@ -448,16 +448,19 @@ class CfgVehicles {
       class CoefBleeding {
         displayName = "Bleeding Speed Coef.";
         description = "Multiplier for the rate of bleeding. Default: 1 (obviously)";
+        typeName = "NUMBER";
         defaultValue = 1;
       };
       class CoefPain {
         displayName = "Pain Effect Coef.";
         description = "Multiplier for the intensity of the pain PP effect. Default: 1 (obviously)";
+        typeName = "NUMBER";
         defaultValue = 1;
       };
       class MaxUnconsciousnessTime {
         displayName = "Max Unconsc. Time"
         description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this."
+        typeName = "NUMBER";
         defaultValue = -1;
       };
       class AllowNonmedics {

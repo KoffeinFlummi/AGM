@@ -7,7 +7,7 @@
  * Whatever the module provides. (I dunno.)
  *
  * Return Value:
- * None 
+ * None
  */
 if !(isServer) exitWith {};
 
@@ -19,10 +19,9 @@ if !(_activated) exitWith {};
 
 AGM_Respawn_Module = true;
 
-["AGM_Respawn_SavePreDeathGear", if (_logic getVariable "SavePreDeathGear") then {1} else {0}] call AGM_Core_fnc_setParameter;
-["AGM_Respawn_RemoveDeadBodies", if (_logic getVariable "RemoveDeadBodies") then {1} else {0}] call AGM_Core_fnc_setParameter;
+[_logic, "AGM_Respawn_BodyRemoveTimer",              "BodyRemoveTimer"             ] call AGM_Core_fnc_readNumericParameterFromModule;
 
-// It's already a number
-["AGM_Respawn_BodyRemoveTimer",  _logic getVariable "BodyRemoveTimer"] call AGM_Core_fnc_setParameter;
+[_logic, "AGM_Respawn_SavePreDeathGear",             "SavePreDeathGear"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Respawn_RemoveDeadBodies",             "RemoveDeadBodies"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Respawn Module Initialized.";
