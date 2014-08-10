@@ -140,7 +140,7 @@ false call AGM_Interaction_fnc_moveDown;
 [] spawn {
 	while {!isNil "AGM_Interaction_MainButton"} do {
 		if (!([player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith)) exitWith {};
-		if (![AGM_Interaction_Target, 10] call AGM_Interaction_fnc_isInRange) exitWith {};
+		if (!([AGM_Interaction_Target, 10] call AGM_Interaction_fnc_isInRange)) exitWith {};
 	};
 	call AGM_Interaction_fnc_hideMenu;
 };

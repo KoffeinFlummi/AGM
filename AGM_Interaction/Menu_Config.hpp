@@ -382,9 +382,9 @@ class RscTitles {
 			{
 				idc = 1000;
 				style = 0x01;
-				x = 10 * GUI_GRID_W + GUI_GRID_X;
+				x = 6 * GUI_GRID_W + GUI_GRID_X;
 				y = 12 * GUI_GRID_H + GUI_GRID_Y;
-				w = 9 * GUI_GRID_W;
+				w = 13 * GUI_GRID_W;
 				h = 1.5 * GUI_GRID_H;
 				colorBackground[] = {0.3,0.3,0.3,0.8};
 			};
@@ -394,7 +394,7 @@ class RscTitles {
 				style = 0x0c;
 				x = 21.5 * GUI_GRID_W + GUI_GRID_X;
 				y = 11 * GUI_GRID_H + GUI_GRID_Y;
-				w = 10.5 * GUI_GRID_W;
+				w = 13 * GUI_GRID_W;
 				h = 3.5 * GUI_GRID_H;
 				colorBackground[] = {0,0,0,0.4};
 			};
