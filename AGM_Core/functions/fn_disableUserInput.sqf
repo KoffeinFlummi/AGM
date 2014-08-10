@@ -56,7 +56,9 @@ if (_state) then {
 			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
 			if (serverCommandAvailable "#missions" || {player getVariable ["AGM_Unconscious", false] && {missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", 0] > 0}})  then {
-				if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) exitWith {false};
+				if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) then {
+					_key = 0;
+				};
 			};
 
 			_key > 0
