@@ -68,6 +68,7 @@
       <Spanish>Shift derecho</Spanish>
       <Polish>Prawy Shift</Polish>
       <French>Shift Droite</French>
+      <Czech>Pravý Shift</Czech>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl_Right">
       <English>Ctrl right</English>
@@ -75,6 +76,7 @@
       <Spanish>Ctrl derecho</Spanish>
       <Polish>Prawy Ctrl</Polish>
       <French>Ctrl Droite</French>
+      <Czech>Pravý Ctrl</Czech>
     </Key>
     <Key ID="STR_AGM_Core_Alt_Right">
       <English>Alt right</English>
@@ -82,6 +84,7 @@
       <Spanish>Alt derecho</Spanish>
       <Polish>Prawy Alt</Polish>
       <French>Alt Droite</French>
+      <Czech>Pravý Alt</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_KeyDefault">
@@ -90,6 +93,7 @@
       <Spanish>Por defecto</Spanish>
       <Polish>Domyślne</Polish>
       <French>Défaut</French>
+      <Czech>Výchozí</Czech>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
@@ -97,6 +101,7 @@
       <Spanish>Ninguna</Spanish>
       <Polish>Brak</Polish>
       <French>Aucun</French>
+      <Czech>Žádný</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
@@ -105,6 +110,7 @@
       <Spanish>2x %1</Spanish>
       <Polish>2x %1</Polish>
       <French>2x %1</French>
+      <Czech>2x %1</Czech>
     </Key>
     <Key ID="STR_AGM_Core_HoldKey">
       <English>Hold %1</English>
@@ -112,6 +118,7 @@
       <Spanish>Mantener %1</Spanish>
       <Polish>Przytrzymać %1</Polish>
       <French>Tenir %1</French>
+      <Czech>Držet %1</Czech>
     </Key>
 
 
@@ -142,7 +149,7 @@
       <German>N</German>
       <Spanish>N</Spanish>
       <Polish>N</Polish>
-      <Czech>N</Czech>
+      <Czech>S</Czech>
       <French>N</French>
       <Russian>С</Russian>
       <Hungarian>É</Hungarian>
@@ -152,7 +159,7 @@
       <German>NNO</German>
       <Spanish>NNE</Spanish>
       <Polish>NNE</Polish>
-      <Czech>NNE</Czech>
+      <Czech>SSV</Czech>
       <French>NNE</French>
       <Russian>ССВ</Russian>
       <Hungarian>ÉÉK</Hungarian>
@@ -162,7 +169,7 @@
       <German>NO</German>
       <Spanish>NE</Spanish>
       <Polish>NE</Polish>
-      <Czech>NE</Czech>
+      <Czech>SV</Czech>
       <French>NE</French>
       <Russian>СВ</Russian>
       <Hungarian>ÉK</Hungarian>
@@ -172,7 +179,7 @@
       <German>ONO</German>
       <Spanish>ENE</Spanish>
       <Polish>ENE</Polish>
-      <Czech>ENE</Czech>
+      <Czech>VSV</Czech>
       <French>ENE</French>
       <Russian>ВСВ</Russian>
       <Hungarian>KÉK</Hungarian>
@@ -182,7 +189,7 @@
       <German>O</German>
       <Spanish>E</Spanish>
       <Polish>E</Polish>
-      <Czech>E</Czech>
+      <Czech>V</Czech>
       <French>E</French>
       <Russian>В</Russian>
       <Hungarian>K</Hungarian>
@@ -192,7 +199,7 @@
       <German>OSO</German>
       <Spanish>ESE</Spanish>
       <Polish>ESE</Polish>
-      <Czech>ESE</Czech>
+      <Czech>VJV</Czech>
       <French>ESE</French>
       <Russian>ВЮВ</Russian>
       <Hungarian>KDK</Hungarian>
@@ -202,7 +209,7 @@
       <German>SO</German>
       <Spanish>SE</Spanish>
       <Polish>SE</Polish>
-      <Czech>SE</Czech>
+      <Czech>JV</Czech>
       <French>SE</French>
       <Russian>ЮВ</Russian>
       <Hungarian>DK</Hungarian>
@@ -212,7 +219,7 @@
       <German>SSO</German>
       <Spanish>SSE</Spanish>
       <Polish>SSE</Polish>
-      <Czech>SSE</Czech>
+      <Czech>JJV</Czech>
       <French>SSE</French>
       <Russian>ЮЮВ</Russian>
       <Hungarian>DDK</Hungarian>
@@ -222,7 +229,7 @@
       <German>S</German>
       <Spanish>S</Spanish>
       <Polish>S</Polish>
-      <Czech>S</Czech>
+      <Czech>J</Czech>
       <French>S</French>
       <Russian>Ю</Russian>
       <Hungarian>D</Hungarian>
@@ -232,7 +239,7 @@
       <German>SSW</German>
       <Spanish>SSO</Spanish>
       <Polish>SSW</Polish>
-      <Czech>SSW</Czech>
+      <Czech>JJZ</Czech>
       <French>SSO</French>
       <Russian>ЮЮЗ</Russian>
       <Hungarian>DDNy</Hungarian>
@@ -242,7 +249,7 @@
       <German>SW</German>
       <Spanish>SO</Spanish>
       <Polish>SW</Polish>
-      <Czech>SW</Czech>
+      <Czech>JZ</Czech>
       <French>SO</French>
       <Russian>ЮЗ</Russian>
       <Hungarian>DNy</Hungarian>
@@ -252,7 +259,7 @@
       <German>WSW</German>
       <Spanish>OSO</Spanish>
       <Polish>WSW</Polish>
-      <Czech>WSW</Czech>
+      <Czech>ZJZ</Czech>
       <French>OSO</French>
       <Russian>ЗЮЗ</Russian>
       <Hungarian>NyDNy</Hungarian>
@@ -262,7 +269,7 @@
       <German>W</German>
       <Spanish>O</Spanish>
       <Polish>W</Polish>
-      <Czech>W</Czech>
+      <Czech>Z</Czech>
       <French>O</French>
       <Russian>З</Russian>
       <Hungarian>Ny</Hungarian>
@@ -272,7 +279,7 @@
       <German>WNW</German>
       <Spanish>ONO</Spanish>
       <Polish>WNW</Polish>
-      <Czech>WNW</Czech>
+      <Czech>ZSZ</Czech>
       <French>ONO</French>
       <Russian>ЗСЗ</Russian>
       <Hungarian>NyÉNy</Hungarian>
@@ -282,7 +289,7 @@
       <German>NW</German>
       <Spanish>NO</Spanish>
       <Polish>NW</Polish>
-      <Czech>NW</Czech>
+      <Czech>SZ</Czech>
       <French>NO</French>
       <Russian>СЗ</Russian>
       <Hungarian>ÉNy</Hungarian>
@@ -292,7 +299,7 @@
       <German>NNW</German>
       <Spanish>NNO</Spanish>
       <Polish>NNW</Polish>
-      <Czech>NNW</Czech>
+      <Czech>SSZ</Czech>
       <French>NNO</French>
       <Russian>ССЗ</Russian>
       <Hungarian>ÉÉNy</Hungarian>

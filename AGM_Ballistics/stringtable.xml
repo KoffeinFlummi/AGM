@@ -36,6 +36,7 @@
       <Spanish>Cargador de 30 balas SD de 6,5mm</Spanish>
       <French>6.5mm 30Rnd SD Mag</French>
       <Polish>Magazynek 6,5mm 30rd SD</Polish>
+      <Czech>6.5mm 30ks SD Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort">
       <English>6.5mm SD</English>
@@ -60,6 +61,7 @@
       <Spanish>Cargador de 30 balas AP de 6,5mm</Spanish>
       <French>6.5mm 30Rnd AP Mag</French>
       <Polish>Magazynek 6,5mm 30rd AP</Polish>
+      <Czech>6.5mm 30ks AP Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_APNameShort">
       <English>6.5mm AP</English>
@@ -127,6 +129,7 @@
       <Spanish>Calibre: 6,5x39 mm SD&lt;br /&gt;Balas: 30&lt;br /&gt;Se usa en: Katiba</Spanish>
       <French>Calibre: 6.5x39 mm SD&lt;br /&gt;Balles: 30&lt;br /&gt;Utilisé dans: Katiba</French>
       <Polish>Kaliber: 6,5 x 39 mm SD&lt;br /&gt;Naboje: 30&lt;br /&gt;Używane w: Katiba</Polish>
+      <Czech>Ráže: 6.5x39 mm SD&lt;br /&gt;Munice: 30&lt;br /&gt;Použití: Katiba</Czech>
     </Key>
 
     <Key ID="STR_AGM_30Rnd_65x39_caseless_green_mag_APName">
@@ -249,6 +252,7 @@
       <Spanish>7,62mm Trazadora</Spanish>
       <French>7.62mm Traçantes</French>
       <Polish>7,62mm Smugacz</Polish>
+      <Czech>7.62mm Svítící</Czech>
     </Key>
     <Key ID="STR_AGM_20Rnd_762x51_mag_TracerDescription">
       <English>Caliber: 7.62x51 mm Tracer&lt;br /&gt;Rounds: 20&lt;br /&gt;Used in: Mk18 ABR</English>

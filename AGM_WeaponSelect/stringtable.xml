@@ -126,6 +126,7 @@
       <Spanish>Seleccionar granada de fragmenación</Spanish>
       <Polish>Wybierz granat odłamkowy</Polish>
       <French>Sélectionnez grenade explosive</French>
+      <Czech>Zvolit Výbušný Granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeOther">
       <English>Select Non-Frag Grenade</English>
@@ -133,6 +134,7 @@
       <Spanish>Seleccionar granada de no fragmentación</Spanish>
       <Polish>Wybierz granat nieodłamkowy</Polish>
       <French>Sélectionnez grenade non-explosive</French>
+      <Czech>Zvolit Ne-Výbušný Granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ThrowGrenade">
       <English>Throw Selected Grenade</English>
@@ -140,6 +142,7 @@
       <Spanish>Arrojar granada seleccionada</Spanish>
       <Polish>Rzuć wybrany granat</Polish>
       <French>Lancer la grenade sélectionnée</French>
+      <Czech>Hodit Zvolený Granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
       <English>No frags left</English>
@@ -147,6 +150,7 @@
       <Spanish>Sin granadas de fragmentación</Spanish>
       <Polish>Brak granatów odłamkowych</Polish>
       <French>Plus de grenades explosives</French>
+      <Czech>Už nejsou granáty</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoMiscGrenadeLeft">
       <English>No misc. grenades left</English>
@@ -154,6 +158,7 @@
       <Spanish>Sin granadas de varias</Spanish>
       <Polish>Brak granatów nieodłamkowych</Polish>
       <French>Plus de grenades non-explosives</French>
+      <Czech>Už nejsou žádné ostatní granáty</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoGrenadeSelected">
       <English>No grenade selected</English>
@@ -161,6 +166,7 @@
       <Spanish>Granada no seleccionada</Spanish>
       <Polish>Nie wybrano żadnego granatu</Polish>
       <French>Aucunes grenades Sélectionnée</French>
+      <Czech>Není zvolen žádný granát</Czech>
     </Key>
 
   </Package>
