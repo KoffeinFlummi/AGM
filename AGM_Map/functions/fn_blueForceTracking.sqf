@@ -19,7 +19,7 @@ if !(_activated) exitWith {};
 _logic spawn {
   _interval = parseNumber (_this getVariable "Interval");
 
-  diag_log text "AGM: BlueForceTracking Module Initialized.";
+  diag_log text "[AGM]: BlueForceTracking Module Initialized.";
 
   _side = side player;
   _markers = [];
