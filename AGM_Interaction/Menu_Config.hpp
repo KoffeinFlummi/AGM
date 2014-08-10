@@ -388,6 +388,15 @@ class RscTitles {
 				h = 1.5 * GUI_GRID_H;
 				colorBackground[] = {0.3,0.3,0.3,0.8};
 			};
+			class BackIcon: RscInteractionIcon
+			{
+				idc = 1210;
+				text = "AGM_interaction\UI\backArrow_ca.paa";
+				x = 19 * GUI_GRID_W;
+				y = 13.5 * GUI_GRID_H;
+				w = 0.5 * GUI_GRID_W;
+				h = 0.5 * GUI_GRID_H;
+			};
 			class ItemDetails: RscStructuredText
 			{
 				idc = 1100;

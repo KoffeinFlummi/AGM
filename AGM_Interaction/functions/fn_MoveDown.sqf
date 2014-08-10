@@ -35,6 +35,8 @@ while {_i <= 4} do {
 		_ctrl ctrlSetText (_action select 4);
 		if (!call (_action select 2)) then {
 			_ctrl ctrlSetTextColor [0.3,0.3,0.3,0.8];
+		}else{
+			_ctrl ctrlSetTextColor [1,1,1,1];
 		};
 	}else{
 		_ctrl ctrlShow false;

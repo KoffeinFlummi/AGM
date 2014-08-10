@@ -120,12 +120,12 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _actions;
 closeDialog 0;
 if !(_class in ["", "Default"])then{
-	{"Default" call AGM_Interaction_fnc_openMenuSelf;} call AGM_Interaction_fnc_initialiseInteraction;
+	[{"Default" call AGM_Interaction_fnc_openMenuSelf;}, true] call AGM_Interaction_fnc_initialiseInteraction;
 }else{
-	{call AGM_Interaction_fnc_hideMenu;} call AGM_Interaction_fnc_initialiseInteraction;
+	[{call AGM_Interaction_fnc_hideMenu;}, false] call AGM_Interaction_fnc_initialiseInteraction;
 };
-if (AGM_Interaction_Updater) exitWith {};
-/* [] spawn {
+/*if (AGM_Interaction_Updater) exitWith {};
+ [] spawn {
 	AGM_Interaction_Updater = true;
 	while {!isNil "AGM_Interaction_MainButton"} do {
 		0 call AGM_Interaction_fnc_moveDown;

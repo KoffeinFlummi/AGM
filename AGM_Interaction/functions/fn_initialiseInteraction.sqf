@@ -29,5 +29,6 @@ if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
 	];
 	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton')exitWith{false};(if((_this select 1) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true"];
 };
-AGM_Interaction_MainButton = _this;
+AGM_Interaction_MainButton = _this select 0;
 0 call AGM_Interaction_fnc_moveDown;
+((uiNamespace getVariable "Interaction_Display") displayCtrl (1210)) ctrlShow (_this select 1);

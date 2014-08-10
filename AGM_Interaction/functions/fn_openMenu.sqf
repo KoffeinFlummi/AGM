@@ -118,9 +118,9 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _actions;
 closeDialog 0;
 if !(_class in ["", "Default"])then{
-	{"Default" call AGM_Interaction_fnc_openMenu;} call AGM_Interaction_fnc_initialiseInteraction;
+	[{"Default" call AGM_Interaction_fnc_openMenu;}, true] call AGM_Interaction_fnc_initialiseInteraction;
 }else{
-	{call AGM_Interaction_fnc_hideMenu;} call AGM_Interaction_fnc_initialiseInteraction;
+	[{call AGM_Interaction_fnc_hideMenu;}, false] call AGM_Interaction_fnc_initialiseInteraction;
 };
 if (AGM_Interaction_Updater) exitWith {};
 [] spawn {

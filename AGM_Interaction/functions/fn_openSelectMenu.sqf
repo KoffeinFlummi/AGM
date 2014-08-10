@@ -28,7 +28,7 @@ if (_count == 0) exitWith {};
 _customActions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _customActions;
 closeDialog 0;
-(_this select 1) call AGM_Interaction_fnc_initialiseInteraction;
+[(_this select 1), true] call AGM_Interaction_fnc_initialiseInteraction;
 /* if (AGM_Interaction_Updater) exitWith {};
 [] spawn {
 	AGM_Interaction_Updater = true;
