@@ -612,7 +612,7 @@ class CfgWeapons {
   class AGM_Morphine: AGM_Bandage {
     displayName = "$STR_AGM_Medical_Morphine_Name";
     descriptionShort = "$STR_AGM_Medical_Morphine_Description";
-    model = "\A3\Structures_F_EPA\Items\Medical\PainKillers_F.p3d";
+    model = "\AGM_Medical\agm_morphine.p3d";
     picture = "\AGM_Medical\UI\AGM_morphine_ca.paa";
   };
   class AGM_Epipen: AGM_Bandage {
