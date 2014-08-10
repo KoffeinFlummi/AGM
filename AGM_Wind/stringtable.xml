@@ -79,6 +79,7 @@
       <Spanish>Kestrel 4500NV</Spanish>
       <French>Kestrel 4500NV</French>
       <Polish>Kestrel 4500NV</Polish>
+      <Czech>Kestrel 4500NV</Czech>
     </Key>
     <Key ID="STR_AGM_Kestrel_Description">
       <English>Applied Ballistics Meter</English>
@@ -86,6 +87,7 @@
       <Spanish>Anemómetro balístico</Spanish>
       <French>Applied Ballistics Meter</French>
       <Polish>Urządzenie do monitorowania pogody</Polish>
+      <Czech>Zařízení pro měření vítru</Czech>
     </Key>
     <Key ID="STR_AGM_Wind_OpenKestrel">
       <English>Open Kestrel</English>
@@ -93,6 +95,7 @@
       <Spanish>Abrir Kestrel</Spanish>
       <French>Ouvrir Kestrel</French>
       <Polish>Otwórz Kestrel</Polish>
+      <Czech>Otevřít Kestrel</Czech>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
@@ -100,6 +103,7 @@
       <Spanish>Cerrar Kestrel</Spanish>
       <French>Fermer Kestrel</French>
       <Polish>Zamknij Kestrel</Polish>
+      <Czech>Zavřít Kestrel</Czech>
     </Key>
 
   </Package>

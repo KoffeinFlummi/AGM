@@ -17,7 +17,7 @@
       <German>Selbst behandeln >></German>
       <Spanish>Tratarse >></Spanish>
       <Polish>Opatrz siebie >></Polish>
-      <Czech>Vyšetřit sebe</Czech>
+      <Czech>Vyšetřit sebe >></Czech>
       <Russian>Самолечение >></Russian>
       <French>Se soigner >></French>
       <Hungarian>Önellátás >></Hungarian>
@@ -67,6 +67,7 @@
       <German>Verbinden</German>
       <Spanish>Venda</Spanish>
       <Polish>Bandaż</Polish>
+      <Czech>Obvázat</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
@@ -224,6 +225,7 @@
       <German>Verbinden ...</German>
       <Spanish>Vendando ...</Spanish>
       <Polish>Bandażowanie ...</Polish>
+      <Czech>Obvazuji ...</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
@@ -486,12 +488,14 @@
       <German>Der Patient ist schwer verletzt.</German>
       <Spanish>El paciente está severament herido.</Spanish>
       <Polish>Pacjent jest ciężko ranny.</Polish>
+      <Czech>Pacient je těžce zraněn</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightlyInjured">
       <English>The patient is lightly injured.</English>
       <German>Der Patient ist leicht verletzt.</German>
       <Spanish>El paciente está levemente herido.</Spanish>
       <Polish>Pacjent jest lekko ranny.</Polish>
+      <Czech>Pacient je lehce zraněn</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
@@ -671,6 +675,7 @@
       <Spanish>No tienes mas del objeto requerido.</Spanish>
       <Polish>Nie posiadasz już wymaganego przedmiotu</Polish>
       <French>Vous n'avez pas les objets nécessaire</French>
+      <Czech>Už nemáš potřebný předmět.</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
       <English>Taking the patient's %1...</English>
@@ -678,6 +683,7 @@
       <Spanish>Cogiendo al paciente %1...</Spanish>
       <Polish>Pobrano od pacjenta: %1...</Polish>
       <French>Prendre le patient %1...</French>
+     <Czech>Beru pacientův %1...</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
       <English>%1 is using your %2...</English>
@@ -685,6 +691,7 @@
       <Spanish>%1 está usando tu %2...</Spanish>
       <Polish>%1 pobrał od Ciebie %2...</Polish>
       <French>%1 utilise votre %2...</French>
+      <Czech>%1 používá tvůj %2...</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
       <English>Patient has no %1, using yours...</English>
@@ -692,6 +699,7 @@
       <Spanish>El paciente no tiene %1, usando el tuyo...</Spanish>
       <Polish>%1 nie znajduje się w ekwipunku pacjenta, używanie własnych zasobów...</Polish>
       <French>Le patient n'a pas de %1, utilisation de votre matériel...</French>
+      <Czech>Pacient nemá žádný %1, používám vlastní...</Czech>
     </Key>
 
   </Package>

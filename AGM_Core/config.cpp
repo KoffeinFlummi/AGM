@@ -224,6 +224,8 @@ class CfgFunctions {
       class numberToDigits;
       class numberToDigitsString;
       class progressBar;
+      class readBooleanParameterFromModule;
+      class readNumericParameterFromModule;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;

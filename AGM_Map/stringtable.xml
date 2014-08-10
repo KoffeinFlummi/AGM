@@ -8,6 +8,7 @@
       <French>Outils de cartographie</French>
       <Polish>Narzędzia mapy</Polish>
       <German>Kartenwerkzeug</German>
+      <Czech>Pomůcky k Mapě</Czech>
     </Key>
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
@@ -15,6 +16,7 @@
       <French>Les outils de cartographie vous permettent de mesurer des distances et des angles sur la carte.</French>
       <Polish>Narzędzia pozwalają na mierzenie odległości i kątów na mapie.</Polish>
       <German>Das Kartenwerkzeug erlaubt es dir, Distanzen und Winkel zu messen.</German>
+      <Czech>Pomůcky k mapě slouží k měření vzdáleností a úhlů na mapě.</Czech>
     </Key>
   </Package>
 </Project>

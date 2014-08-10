@@ -102,6 +102,16 @@ class CfgVehicles {
       };
     };
   };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_ItemKestrel {
+        weapon = "AGM_ItemKestrel";
+        count = 6;
+      };
+    };
+  };
 };
 
 
