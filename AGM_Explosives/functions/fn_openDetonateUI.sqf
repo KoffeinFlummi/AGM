@@ -16,6 +16,7 @@
 		[player] call AGM_Explosives_fnc_openDetonateUI;
 */
 private ["_unit","_result", "_item", "_index", "_listIDC", "_item"];
+call AGM_Interaction_fnc_hideMenu;
 _unit = _this select 0;
 _range = 0;
 {
@@ -27,18 +28,23 @@ _range = 0;
 	};
 } count (items _unit);
 
-_listIDC = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate", format ["[player,%1, player getVariable ['AGM_Clacker', []] select (parseNumber lbData [8866, lbCurSel 8866]), false, false] call AGM_Explosives_fnc_DetonateExplosive;closeDialog 0;", _range], "closeDialog 0;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;"] call AGM_Interaction_fnc_openSelectMenu;
-
 _result = _unit getVariable ["AGM_Clacker", []];
-
-private ["_item", "_index"];
+_actions = [];
 {
 	if (!isNull(_x select 0)) then {
 		_item = ConfigFile >> "CfgMagazines" >> (_x select 3);
-		_index = lbAdd [_listIDC, _x select 2];
-		lbSetData [_listIDC, _index, str(_foreachIndex)];
-		lbSetPicture [_listIDC, _index, getText(_item >> "picture")];
+		/*
+			0 = Text
+			1 = statement to execute
+			2 = condition before execute
+			3 = showDisabled
+			4 = priority
+			5 = icon
+			6+ = extra variables.
+		*/
+		_action = [_x select 2, {[player,(_this select 6), player getVariable ["AGM_Clacker", []] select (_this select 5), false, false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;}, {true}, _foreachIndex, getText(_item >> "picture"), _foreachIndex, _range];
+		_actions set [count _actions, _action];
 	};
 } foreach _result;
 
-lbSetCurSel [_listIDC, 0];
+[_actions, {"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;

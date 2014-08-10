@@ -7,37 +7,40 @@
 		Opens the select menu UI and sets up the UI
 	
 	Parameters: 
-		0: TEXT - Header text
-		1: TEXT - Approve button text
-		2: TEXT - Code (as text) to run when approve button is selected
-	
+		0: ARRAY - items
+			ARRAY
+				0 = Text
+				1 = statement to execute
+				2 = condition before execute
+				3 = showDisabled
+				4 = priority
+				5 = icon
+		1: Code - Cancel Action
 	Returns:
 		Nothing
 	
 	Example:
-		["Select Explosive", "Place", "_selectedExplosive = lbData [8866, lbCurSel 8866];"] call AGM_Interaction_fnc_openSelectMenu;
-		// Check AGM_explosives_fnc_openPlaceUI for actual use.
 */
-private ["_buttonAction", "_header", "_buttonText", "_cancelButton"];
-_header = _this select 0;
-_buttonText = _this select 1;
-_buttonAction = _this select 2;
-_cancelButton = "closeDialog 0;";
-if (count _this > 3) then {
-	_cancelButton = _this select 3;
+_customActions = _this select 0;
+_count = count _customActions;
+if (_count == 0) exitWith {};
+
+_customActions call AGM_Interaction_fnc_sortOptionsByPriority;
+AGM_Interaction_Buttons = _customActions;
+closeDialog 0;
+64 cutRsc ["InteractionMenu", "PLAIN",0.5, false];
+AGM_Interaction_Current = 0;
+showHUD false;
+if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
+	player setVariable ["AGM_AcceptAction", player addAction ["", {_action = AGM_Interaction_Buttons select AGM_Interaction_Current; if (call (_action select 2)) then {_action call (_action select 1);};},
+		nil, 0, false, true, "DefaultAction",
+		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+	]];
+	player addAction ["", {call AGM_Interaction_MainButton;},
+		nil, 0, false, true, "menuBack",
+		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+	];
+	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton')exitWith{false};((_this select 1) < 0) call AGM_Interaction_fnc_MoveDown;true"];
 };
-
-if (isNil "_buttonText" or {_buttonText == ""}) then {
-	_buttonText = localize "STR_AGM_Interaction_MakeSelection";
-};
-
-createDialog "RscAGM_SelectAnItem";
-
-buttonSetAction [8860, _buttonAction];
-buttonSetAction [8855, _cancelButton];
-ctrlSetText [8860, _buttonText];
-ctrlSetText [8870, _header];
-
-lbClear 8866;
-
-8866
+AGM_Interaction_MainButton = _this select 1;
+false call AGM_Interaction_fnc_moveDown;

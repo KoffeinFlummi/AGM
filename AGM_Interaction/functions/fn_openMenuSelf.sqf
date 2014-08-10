@@ -39,8 +39,13 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				};
 				_priority = getNumber (_action >> "priority");
 
+				_icon = getText(_action >> "Icon");
+				if (_icon == "") then {
+					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+				};
+
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _icon]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -73,9 +78,14 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 					_showDisabled = call compile getText (_action >> "conditionShow");
 				};
 				_priority = getNumber (_action >> "priority");
+				
+				_icon = getText(_action >> "Icon");
+				if (_icon == "") then {
+					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+				};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _icon]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -93,9 +103,14 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 2;
 	_showDisabled = _customAction select 3;
 	_priority = _customAction select 4;
+	_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+	
+	if (count _customAction > 6) then{
+		_icon = _customAction select 5;
+	};
 
 	if (_showDisabled || {call _condition}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority,_icon]];
 	};
 };
 
@@ -103,51 +118,24 @@ _count = count _actions;
 if (_count == 0) exitWith {};
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
-
 AGM_Interaction_Buttons = _actions;
-
 closeDialog 0;
-createDialog "AGM_Interaction_Dialog";
-
-if (_class == "") then {setMousePosition [0.5, 0.5]};
-
-disableSerialization;
-_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
-
-/*
-for "_a" from 0 to (_count - 1) do {
-	_action = AGM_Interaction_Buttons select _a;
-
-	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _a);
-	_ctrlInteractionDialog ctrlShow true;
-	_ctrlInteractionDialog ctrlSetText (_action select 0);
-	_ctrlInteractionDialog ctrlEnable (call (_action select 2));
+64 cutRsc ["InteractionMenu", "PLAIN",0.5, false];
+AGM_Interaction_Current = 0;
+showHUD false;
+if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
+	player setVariable ["AGM_AcceptAction", player addAction ["", {_action = AGM_Interaction_Buttons select AGM_Interaction_Current; if (call (_action select 2)) then {_action call (_action select 1);};},
+		nil, 0, false, true, "DefaultAction",
+		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+	]];
+	player addAction ["", {call AGM_Interaction_MainButton;},
+		nil, 0, false, true, "menuBack",
+		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+	];
+	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton')exitWith{false};((_this select 1) < 0) call AGM_Interaction_fnc_MoveDown;true"];
 };
-*/
-
-_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
-if (_class in ["", "Default"]) then {
-	AGM_Interaction_MainButton = "closeDialog 0;";
-	if ((vehicle player) isKindOf "Man") then {
-		_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
-	} else {
-		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf (vehicle player)) >> "displayName"));
-	};
-} else {
-	AGM_Interaction_MainButton = "'Default' call AGM_Interaction_fnc_openMenuSelf;";
-	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
+AGM_Interaction_MainButton = {call AGM_Interaction_fnc_hideMenu;};
+if !(_class in ["", "Default"]) then {
+	AGM_Interaction_MainButton = {"Default" call AGM_Interaction_fnc_openMenuSelf;};
 };
-
-for "_i" from 0 to 9 do {
-	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
-	_ctrlInteractionDialog ctrlShow true;
-
-	if (_i < _count) then {
-		_action = AGM_Interaction_Buttons select _i;
-		_ctrlInteractionDialog ctrlSetText (_action select 0);
-		_ctrlInteractionDialog ctrlEnable (call (_action select 2));
-	} else {
-		_ctrlInteractionDialog ctrlSetText "";
-		_ctrlInteractionDialog ctrlEnable false;
-	}
-};
+false call AGM_Interaction_fnc_moveDown;

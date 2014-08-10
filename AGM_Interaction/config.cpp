@@ -26,10 +26,12 @@ class CfgFunctions {
       class escortCaptive;
       class getCaptivityStatus;
       class getDown;
+	  class hideMenu;
       class isInRange;
       class joinTeam;
       class loadCaptiveIntoVehicle;
       class module;
+	  class moveDown;
       class openDoor;
       class openMenu;
       class openMenuSelf;

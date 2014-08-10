@@ -65,6 +65,7 @@ class CfgFunctions
 				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
 				showDisabled = 1;\
 				priority = 4;\
+				icon = "AGM_Explosives\UI\IconExplosives_ca.paa"; \
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
@@ -93,13 +94,15 @@ class CfgVehicles {
 				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
 				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
 				showDisabled = 1;
-				priority = 4;				
+				priority = 4;
+				icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 2;
 				};
 				class AGM_Place {
@@ -107,6 +110,7 @@ class CfgVehicles {
 					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
 					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 1;
 				};
 				class AGM_Defuse {
@@ -114,6 +118,7 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
 					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.8;
 				};
 				class AGM_PlaceExplosive {
@@ -121,21 +126,15 @@ class CfgVehicles {
 					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
 					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.4;
-				};
-				// Basic attach, needs to be improved.
-				class AGM_AttachExplosive {
-					displayName = $STR_AGM_Explosives_AttachTo;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup) AND (cursorTarget isKindOf 'Car') AND (cursorTarget distance AGM_Explosives_Setup) < 2.5}";
-					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
-					showDisabled = 0;
-					priority = 0.3;
 				};
 				class AGM_CancelPlace {
 					displayName = $STR_AGM_Explosives_CancelAction;
 					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
 					statement = "call AGM_Explosives_fnc_Place_Cancel;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.2;
 				};
 			};
