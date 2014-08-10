@@ -1,7 +1,6 @@
 // by commy2
 
 AGM_Interaction_Buttons = [];
-
 _actions = [];
 _patches = [];
 _class = _this;
@@ -32,7 +31,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
-				_statement = compile getText (_action >> "statement");
+				_statement = compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				if (isText (_action >> "conditionShow")) then {
 					_showDisabled = call compile getText (_action >> "conditionShow");
@@ -72,7 +71,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
-				_statement = compile getText (_action >> "statement");
+				_statement = compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
 				if (isText (_action >> "conditionShow")) then {
 					_showDisabled = call compile getText (_action >> "conditionShow");
@@ -126,11 +125,11 @@ showHUD false;
 if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
 	player setVariable ["AGM_AcceptAction", player addAction ["", {_action = AGM_Interaction_Buttons select AGM_Interaction_Current; if (call (_action select 2)) then {_action call (_action select 1);};},
 		nil, 0, false, true, "DefaultAction",
-		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+		"!isNil 'AGM_Interaction_MainButton'"
 	]];
 	player addAction ["", {call AGM_Interaction_MainButton;},
 		nil, 0, false, true, "menuBack",
-		"_this == _target && {!isNil 'AGM_Interaction_MainButton'}"
+		"!isNil 'AGM_Interaction_MainButton'"
 	];
 	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton')exitWith{false};((_this select 1) < 0) call AGM_Interaction_fnc_MoveDown;true"];
 };
