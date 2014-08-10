@@ -11,7 +11,7 @@ addMissionEventHandler ["Draw3D", {
   if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
 
     _target = effectiveCommander cursorTarget;
-    if (!isNull _target && {side group _target == playerSide}) then {
+    if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
       [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
@@ -32,7 +32,7 @@ addMissionEventHandler ["Draw3D", {
     _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
     {
       _target = effectiveCommander _x;
-      if (!isNull _target && {side group _target == playerSide} && _target != player) then {
+      if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
