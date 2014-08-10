@@ -1,5 +1,13 @@
 # v0.93
 
+- Added: New Explosives system including different trigger types
+- Added: New Logistics system including vehicle maintainance, cargo transport and refueling
+- Added: Ability to drag static weapons around
+- Added: Map Tool
+- Added: G-Forces effect and possibiity of GLOC
+- Added: Ported Kestrel from the BWMod
+- Added: Ported Vector IV from the BWMod
+
 - Fixed: Aborting treatments would cause inability to treat again for a short time.
 - Fixed: AI was able to heal themselves with random items.
 - Fixed: Ammo wasn't shown in static weapons.
@@ -19,31 +27,24 @@
 - Fixed: You could check the temperature of binoculars.
 
 - Added: A fix for the offset of the crosshair in the Comanche
-- Added: Ability to drag static weapons around
 - Added: Action Menu option for releasing things for quick access
 - Added: Admins can now still use the chat while unconscious.
 - Added: Bluforce Tracking Module
 - Added: Check PBOs module
 - Added: Fatigue System
 - Added: Fixed guided artillery shells.
-- Added: G-Forces effect and possibiity of GLOC
 - Added: Grenades can now be selected with [6] (lethal) and [7] (non-lethal)
 - Added: Hand Flares
 - Added: HUD for the AH-9
 - Added: Incremental door opening (hold down the button and scroll).
 - Added: Major buff to flares of all kinds.
-- Added: Map Tool
 - Added: Medical module option to heal the entire body with 1 bandage.
 - Added: Medical treatments now use the patient's supplies first.
 - Added: Mission designers can allow certain AI units to fall unconscious using "this setVariable ["AGM_AllowUnconscious", true]".
 - Added: Model for the epipen
 - Added: Model for the morphine injector
 - Added: Module option for maximum unconsciousness time before death
-- Added: New Explosives system including different trigger types
-- Added: New Logistics system including vehicle maintainance, cargo transport and refueling
 - Added: Option to reset a key binding to defaul.
-- Added: Ported Kestrel from the BWMod
-- Added: Ported Vector IV from the BWMod
 - Added: Possibility to manually adjust the FCS range in 50m steps
 - Added: Prisoner system allowing you to detain people with cableties and escort them around.
 - Added: Respawn module and options
