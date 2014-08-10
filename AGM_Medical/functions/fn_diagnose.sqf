@@ -45,11 +45,11 @@ _this spawn {
     _string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
-      _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsDead";
+      _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientIsDead" + "</t>";
     } else {
       // Consciousness
       if (_unit getVariable "AGM_Unconscious") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsUnconscious";
+        _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientIsUnconscious" + "</t>";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsAwake";
       };
@@ -57,10 +57,10 @@ _this spawn {
       // Injuries
       if (AGM_Medical_SingleBandage > 0) then {
         if (damage _unit >= 0.5) then {
-          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientHeavilyInjured";
+          _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>";
         };
         if (damage _unit < 0.5 and damage _unit > 0) then {
-          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientLightlyInjured";
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightlyInjured" + "</t>";
         };
         if (damage _unit == 0) then {
           _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
@@ -74,7 +74,7 @@ _this spawn {
           };
         } forEach _damages;
         if (_heavyinjuries != "") then {
-          _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + " " + _heavyinjuries;
+          _string = _string + "<br/><br/><t color='#FF0000'>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + "</t><br/>" + _heavyinjuries;
         };
 
         _lightinjuries = "";
@@ -85,7 +85,7 @@ _this spawn {
           };
         } forEach _damages;
         if (_lightinjuries != "") then {
-          _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientLightInjuries") + " " + _lightinjuries;
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + (localize "STR_AGM_Medical_PatientLightInjuries") + "</t><br/>" + _lightinjuries;
         };
 
         if (_lightinjuries == "" and _heavyinjuries == "") then {
@@ -95,15 +95,15 @@ _this spawn {
 
       // Blood
       if (_unit getVariable "AGM_Bleeding") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientBleeding" + " ";
+        _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientBleeding" + "</t> ";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";
       };
       if (_unit getVariable "AGM_Blood" < 0.4) then {
-        _string = _string + localize "STR_AGM_Medical_PatientLostBlood";
+        _string = _string + "<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientLostBlood" + "</t>";
       } else {
         if (_unit getVariable "AGM_Blood" < 1) then {
-          _string = _string + localize "STR_AGM_Medical_PatientLostSomeBlood";
+          _string = _string + "<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLostSomeBlood" + "</t>";
         } else {
           _string = _string + localize "STR_AGM_Medical_PatientLostNoBlood";
         };
@@ -111,19 +111,19 @@ _this spawn {
 
       // Pain
       if (_unit getVariable "AGM_Painkiller" < 0.4) then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientPainkillers" + " ";
+        _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientPainkillers" + "</t> ";
       } else {
         if (_unit getVariable "AGM_Painkiller" < 0.9) then {
-          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientSomePainkillers" + " ";
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientSomePainkillers" + "</t> ";
         } else {
           _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNoPainkillers" + " ";
         };
       };
       if (_unit getVariable "AGM_Pain" > 0.4) then {
-        _string = _string + localize "STR_AGM_Medical_PatientHeavyPain";
+        _string = _string + "<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavyPain" + "</t>";
       } else {
         if (_unit getVariable "AGM_Pain" > 0.1) then {
-          _string = _string + localize "STR_AGM_Medical_PatientLightPain";
+          _string = _string + "<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightPain" + "</t>";
         } else {
           _string = _string + localize "STR_AGM_Medical_PatientNoPain";
         };
