@@ -8,6 +8,7 @@
 - Added: Ported Kestrel from the BWMod
 - Added: Ported Vector IV from the BWMod
 - Added: Magazine Repacking
+- Changed: Consolidated a bunch of PBOs
 
 - Fixed: Aborting treatments would cause inability to treat again for a short time.
 - Fixed: AI was able to heal themselves with random items.
