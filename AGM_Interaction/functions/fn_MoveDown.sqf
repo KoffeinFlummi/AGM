@@ -7,22 +7,20 @@
 		Depending on the passed value, either scrolls down through the list or up.
 	
 	Parameters: 
-		BOOLEAN - Move down or move up
+		NUMBER - Amount to increase current interaction target
 	
 	Returns:
 		Nothing
 	
 	Example:
-		false call AGM_Interaction_fnc_MoveDown;
+		1 call AGM_Interaction_fnc_MoveDown;
+		-1 call AGM_Interaction_fnc_MoveDown;
 */
 #define CLAMP(x,low,high) (if(x > high)then{high}else{if(x < low)then{low}else{x}})
-_count = (count AGM_Interaction_Buttons)-1;
-if (_this) then {
-	AGM_Interaction_Current = AGM_Interaction_Current + 1;
-} else {
-	AGM_Interaction_Current = AGM_Interaction_Current - 1;
-};
-AGM_Interaction_Current = CLAMP(AGM_Interaction_Current, 0, _count);
+if (isNil "AGM_Interaction_MainButton") exitWith{};
+if (isNil "AGM_Interaction_Buttons") exitWith{};
+_count = (count AGM_Interaction_Buttons)- 1;
+AGM_Interaction_Current = CLAMP(AGM_Interaction_Current + _this, 0, _count);
 
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "Interaction_Display";
@@ -35,7 +33,9 @@ while {_i <= 4} do {
 		_action = AGM_Interaction_Buttons select _index;
 		_ctrl ctrlShow true;
 		_ctrl ctrlSetText (_action select 4);
-		_ctrl ctrlSetTextColor (if(call (_action select 2)) then {[1,1,1,1]}else{[0.5,0.5,0.5,1]});
+		if (!call (_action select 2)) then {
+			_ctrl ctrlSetTextColor [0.3,0.3,0.3,0.8];
+		};
 	}else{
 		_ctrl ctrlShow false;
 	};

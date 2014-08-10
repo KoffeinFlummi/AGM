@@ -325,13 +325,6 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.1;
 				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
-				};
 			};
 		};
 	};
@@ -450,13 +443,6 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.1;
 				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
-				};
 			};
 		};
 	};
@@ -550,13 +536,6 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.1;
 				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
-				};
 			};
 		};
 		class AGM_SelfActions: AGM_SelfActions {
@@ -626,13 +605,6 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.2;
 				};*/
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
-				};
 			};
 		};
 	};

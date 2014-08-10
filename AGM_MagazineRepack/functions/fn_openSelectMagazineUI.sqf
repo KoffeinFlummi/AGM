@@ -7,18 +7,24 @@ _repackTime = _this select 1;
 
 _count = count _magazines;
 
-_listIDC = [localize "STR_AGM_MagazineRepack_SelectMagazineMenu", localize "STR_AGM_MagazineRepack_SelectMagazine", "_data = call compile lbData [8866, lbCurSel 8866]; closeDialog 0; if (isNil '_data') exitWith {}; [_data select 1, _data, 'AGM_MagazineRepack_fnc_magazineRepackCallback', localize 'STR_AGM_MagazineRepack_RepackingMagazine'] call AGM_Core_fnc_progressBar; [player] call AGM_core_fnc_goKneeling;"] call AGM_Interaction_fnc_openSelectMenu;
-
+_actions = [];
 for "_index" from 0 to (_count - 1) do {
 	_magazine = _magazines select _index;
 	_time = _repackTime select _index;
-
 	_displayName = getText (configFile >> "CfgMagazines" >> _magazine >> "displayName");
 	_picture = getText (configFile >> "CfgMagazines" >> _magazine >> "picture");
 
-	_index = lbAdd [_listIDC, _displayName];
-	lbSetData [_listIDC, _index, str [_magazine, _time]];
-	lbSetPicture [_listIDC, _index, _picture];
+	_action = [_displayName,
+		{call AGM_Interaction_fnc_hideMenu;_data = _this select 5;
+			if (isNil "_data") exitWith {};
+			[_data select 1, _data, "AGM_MagazineRepack_fnc_magazineRepackCallback", localize "STR_AGM_MagazineRepack_RepackingMagazine"] call AGM_Core_fnc_progressBar;
+			[player] call AGM_core_fnc_goKneeling;
+		},
+		{true}, 0,
+		_picture,
+		[_magazine, _time]
+	];
+	_actions set [count _actions, _action];
 };
 
-lbSetCurSel [_listIDC, 0];
+[_actions, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;

@@ -15,6 +15,7 @@
 				3 = showDisabled
 				4 = priority
 				5 = icon
+				6+ extra variables. The entire array is passed as a parameter to the statement.
 		1: Code - Cancel Action
 	Returns:
 		Nothing
@@ -24,23 +25,16 @@
 _customActions = _this select 0;
 _count = count _customActions;
 if (_count == 0) exitWith {};
-
 _customActions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _customActions;
 closeDialog 0;
-64 cutRsc ["InteractionMenu", "PLAIN",0.5, false];
-AGM_Interaction_Current = 0;
-showHUD false;
-if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
-	player setVariable ["AGM_AcceptAction", player addAction ["", {_action = AGM_Interaction_Buttons select AGM_Interaction_Current; if (call (_action select 2)) then {_action call (_action select 1);};},
-		nil, 0, false, true, "DefaultAction",
-		"!isNil 'AGM_Interaction_MainButton'"
-	]];
-	player addAction ["", {call AGM_Interaction_MainButton;},
-		nil, 0, false, true, "menuBack",
-		"!isNil 'AGM_Interaction_MainButton'"
-	];
-	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton')exitWith{false};((_this select 1) < 0) call AGM_Interaction_fnc_MoveDown;true"];
-};
-AGM_Interaction_MainButton = _this select 1;
-false call AGM_Interaction_fnc_moveDown;
+(_this select 1) call AGM_Interaction_fnc_initialiseInteraction;
+/* if (AGM_Interaction_Updater) exitWith {};
+[] spawn {
+	AGM_Interaction_Updater = true;
+	while {!isNil "AGM_Interaction_MainButton"} do {
+		0 call AGM_Interaction_fnc_moveDown;
+		sleep 1;
+	};
+	AGM_Interaction_Updater = false;
+}; */

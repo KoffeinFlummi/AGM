@@ -106,13 +106,6 @@ class CfgVehicles {
           showDisabled = 0;
           priority = 1;
         };
-        class AGM_OpenUIDummy {
-          displayName = "";
-          condition = "false";
-          statement = "";
-          showDisabled = 1;
-          priority = -9;
-        };
       };
 
       class AGM_Attach_Detach {

@@ -28,6 +28,7 @@ class CfgFunctions {
       class getDown;
 	  class hideMenu;
       class isInRange;
+	  class initialiseInteraction;
       class joinTeam;
       class loadCaptiveIntoVehicle;
       class module;
