@@ -372,13 +372,13 @@ class CfgWeapons {
 
     class arifle_katiba_Base_F;
     class arifle_Katiba_F : arifle_katiba_Base_F {
-      displayName = "KH2002 Sama";
+      displayName = "KH2002 Khaybar";
     };
     class arifle_Katiba_GL_F : arifle_katiba_Base_F {
-      displayName = "KH2002 Sama KGL";
+      displayName = "KH2002 Khaybar KGL";
     };
     class arifle_Katiba_C_F : arifle_katiba_Base_F {
-      displayName = "KH2002C Sama";
+      displayName = "KH2002C Khaybar";
     };
 
     class SDAR_base_F;
