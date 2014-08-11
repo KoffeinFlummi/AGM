@@ -10,7 +10,10 @@ addMissionEventHandler ["Draw3D", {
 
   if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
 
-    _target = effectiveCommander cursorTarget;
+    _target = cursorTarget;
+
+    _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};
+
     if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
@@ -31,7 +34,10 @@ addMissionEventHandler ["Draw3D", {
 
     _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
     {
-      _target = effectiveCommander _x;
+      _target = _x;
+
+      _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};
+
       if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
