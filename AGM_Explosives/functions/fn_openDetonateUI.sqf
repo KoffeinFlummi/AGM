@@ -29,22 +29,17 @@ _range = 0;
 } count (items _unit);
 
 _result = _unit getVariable ["AGM_Clacker", []];
-_actions = [];
+_actions = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate"] call AGM_Interaction_fnc_prepareSelectMenu;
 {
 	if (!isNull(_x select 0)) then {
 		_item = ConfigFile >> "CfgMagazines" >> (_x select 3);
-		/*
-			0 = Text
-			1 = statement to execute
-			2 = condition before execute
-			3 = showDisabled
-			4 = priority
-			5 = icon
-			6+ = extra variables.
-		*/
-		_action = [_x select 2, {[player,(_this select 6), player getVariable ["AGM_Clacker", []] select (_this select 5), false, false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;}, {true}, _foreachIndex, getText(_item >> "picture"), _foreachIndex, _range];
-		_actions set [count _actions, _action];
+		_actions = [
+			_actions,
+			_x select 2,
+			getText(_item >> "picture"),
+			[_foreachIndex, _range]
+		] call AGM_Interaction_fnc_AddSelectableItem;
 	};
 } foreach _result;
 
-[_actions, {"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
+[_actions, {[player,parseNumber (_this select 1), player getVariable ["AGM_Clacker", []] select parseNumber (_this select 0), false, false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;}, {"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;

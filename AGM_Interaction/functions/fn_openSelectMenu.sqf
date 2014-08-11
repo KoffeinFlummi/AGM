@@ -15,26 +15,31 @@
 				3 = showDisabled
 				4 = priority
 				5 = icon
-				6+ extra variables. The entire array is passed as a parameter to the statement.
-		1: Code - Cancel Action
+				6 = extra variables. Passed to the code.
+		1: Code - select action
+		2: Code - Cancel Action
 	Returns:
 		Nothing
 	
 	Example:
 */
-_customActions = _this select 0;
-_count = count _customActions;
-if (_count == 0) exitWith {};
-_customActions call AGM_Interaction_fnc_sortOptionsByPriority;
-for "_i" from 0 to _count -1 do {
-	_action = _customActions select _i;
-	if ((_action select 4) == "" || (_action select 4) == "PictureThing") then {
-		_action set [4,"AGM_Interaction\UI\dot_ca.paa"];
+if (!(profileNamespace getVariable ["AGM_Interaction_NewMenu", false])) then {
+	buttonSetAction [8855, "call " + str (_this select 2)]; // cancel
+	diag_log format ["Cancel: %1", "call " + str (_this select 2)];
+	diag_log format ["Accept: %1", "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)];
+	buttonSetAction [8860, "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)]; // accept
+}else{
+	_customActions = _this select 0;
+	_count = count _customActions;
+	if (_count == 0) exitWith {};
+	_customActions call AGM_Interaction_fnc_sortOptionsByPriority;
+	for "_i" from 0 to _count -1 do {
+		_action = _customActions select _i;
+		_action set [1, (_this select 1)];
 	};
+	AGM_Interaction_Buttons = _customActions;
+	[(_this select 2), true, true, false, player] call AGM_Interaction_fnc_initialiseInteraction;
 };
-AGM_Interaction_Buttons = _customActions;
-closeDialog 0;
-[(_this select 1), true] call AGM_Interaction_fnc_initialiseInteraction;
 /* if (AGM_Interaction_Updater) exitWith {};
 [] spawn {
 	AGM_Interaction_Updater = true;

@@ -15,6 +15,7 @@
 	Example:
 		call AGM_Interaction_fnc_hideMenu;
 */
+closeDialog 0;
 (uiNameSpace getVariable "Interaction_Display") closeDisplay 0;
 AGM_Interaction_MainButton = nil;
 showHUD true;

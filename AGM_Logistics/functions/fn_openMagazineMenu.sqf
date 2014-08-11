@@ -20,19 +20,18 @@ AGM_Logistics_targetVehicle = _this select 0;
 _magazines = [player, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_getLoadableMagazines;
 
 _listed = [];
-_actions = [];
+_actions = [localize "STR_AGM_Logistics_MagazineMenu", localize "STR_AGM_Logistics_LoadItem"] call AGM_Interaction_fnc_prepareSelectMenu;
 {
 	if (!(_x in _listed) && {[AGM_Logistics_targetVehicle, _x] call AGM_Logistics_fnc_canLoadMagazine}) then {
 		_class = ConfigFile >> "CfgMagazines" >> _x;
-		_action = [getText (_class >> "DisplayName"),
-			{call AGM_Interaction_fnc_hideMenu;[player, AGM_Logistics_targetVehicle, _this select 5] call AGM_Logistics_fnc_loadMagazine;},
-			{true}, 0,
+		_actions = [
+			_actions,
+			getText (_class >> "DisplayName"),
 			getText (_class >> "picture"),
 			_x
-		];
+		] call AGM_Interaction_fnc_AddSelectableItem;
 		_listed set [count _listed, _x];
-		_actions set [count _actions, _action];
 	};
 } count _magazines;
 
-[_actions, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;
+[_actions, {call AGM_Interaction_fnc_hideMenu;[player, AGM_Logistics_targetVehicle, _this] call AGM_Logistics_fnc_loadMagazine;}, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;

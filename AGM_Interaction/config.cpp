@@ -18,6 +18,7 @@ class CfgFunctions {
       file = "\AGM_interaction\functions";
       class addInteraction;
       class addInteractionSelf;
+	  class AddSelectableItem;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
       class canTapShoulder;
@@ -37,6 +38,7 @@ class CfgFunctions {
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
+	  class prepareSelectMenu;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
@@ -121,6 +123,10 @@ class AGM_Core_Options {
   class showPlayerRanks {
     displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
     default = 1;
+  };
+  class Interaction_NewMenu {
+    displayName = "Experimental Menu";//$STR_AGM_Interaction_NewMenu;
+	default = 0;
   };
 };
 

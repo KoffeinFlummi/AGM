@@ -66,7 +66,7 @@ class AGM_Interaction_Dialog {
     };
     */
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
-      action = "call compile AGM_Interaction_MainButton";
+      action = "call AGM_Interaction_MainButton";
       style = 2;
       tooltip = "";
       text = "Interaction Menu";
@@ -404,7 +404,7 @@ class RscTitles {
 				idc = 1210;
 				text = "AGM_interaction\UI\backArrow_ca.paa";
 				x = 19 * GUI_GRID_W;
-				y = 13.5 * GUI_GRID_H;
+				y = 13.25 * GUI_GRID_H;
 				w = 0.5 * GUI_GRID_W;
 				h = 0.5 * GUI_GRID_H;
 			};
@@ -436,7 +436,7 @@ class RscTitles {
 			class GoBackText: RscInteractionText{
 				idc = 1023;
 				y = 19 * GUI_GRID_H;
-				text = "Back";
+				text = $STR_AGM_Interaction_Back;
 			};
 			class ItemDetails: RscStructuredText{
 				idc = 1100;

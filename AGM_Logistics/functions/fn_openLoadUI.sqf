@@ -26,20 +26,19 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exi
 	_size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;
 	
-	_actions = [];
+	_actions = [localize "STR_AGM_Logistics_LoadMenu", localize "STR_AGM_Logistics_LoadItem"] call AGM_Interaction_fnc_prepareSelectMenu;
 	{
 		if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) then {
-			_action = [getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load" >> _x select 4 >> "DisplayName"),
-				{call AGM_Interaction_fnc_hideMenu;[AGM_Interaction_Target, AGM_Logistics_targetVehicle, _this select 5] call AGM_Logistics_fnc_loadItem;},
-				{true}, 0,
+			_actions = [
+				_actions,
+				getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load" >> _x select 4 >> "DisplayName"),
 				getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "picture"),
 				_x select 4
-			];
-			_actions set [count _actions, _action];
+			] call AGM_Interaction_fnc_AddSelectableItem;
 		};
 	} count _attachPoints;
 
-	[_actions, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;
+	[_actions,{call AGM_Interaction_fnc_hideMenu;[AGM_Interaction_Target, AGM_Logistics_targetVehicle, _this] call AGM_Logistics_fnc_loadItem;}, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;
 };
 call AGM_Interaction_fnc_hideMenu;
 [AGM_Interaction_Target, AGM_Logistics_targetVehicle, ""] call AGM_Logistics_fnc_loadItem;

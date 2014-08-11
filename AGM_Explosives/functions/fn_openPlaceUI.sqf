@@ -15,7 +15,7 @@
 	Example:
 		[player] call AGM_Explosives_fnc_openPlaceUI;
 */
-private ["_unit","_mags", "_item", "_index", "_listIDC"];
+private ["_unit","_mags", "_item", "_index", "_actions"];
 _unit = _this select 0;
 call AGM_Explosives_fnc_Place_Cancel;
 
@@ -34,10 +34,14 @@ _itemCount = [];
 		};
 	};
 } count _mags;
-_actions = [];
+_actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place"] call AGM_Interaction_fnc_prepareSelectMenu;
 {
-	_action = [format [getText(_x >> "displayName") + " (%1)", _itemCount select _foreachIndex], {[_this select 5] call AGM_Explosives_fnc_openTriggerSelectionUI;}, {true}, _foreachIndex, getText(_x >> "picture"), configName _x];
-	_actions set [count _actions, _action];
+	_actions = [
+		_actions,
+		format [getText(_x >> "displayName") + " (%1)", _itemCount select _foreachIndex],
+		getText(_x >> "picture"),
+		configName _x
+	] call AGM_Interaction_fnc_AddSelectableItem;
 } foreach _list;
 
-[_actions, {"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
+[_actions,{[_this] call AGM_Explosives_fnc_openTriggerSelectionUI;},{"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
