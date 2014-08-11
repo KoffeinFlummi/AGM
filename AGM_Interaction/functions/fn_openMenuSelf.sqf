@@ -106,8 +106,12 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
 
-closeDialog 0;
-createDialog "AGM_Interaction_Dialog";
+(findDisplay 1713999) closeDisplay 1;
+(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+
+// add keys to display
+(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 
 if (_class == "") then {setMousePosition [0.5, 0.5]};
 
@@ -127,9 +131,9 @@ for "_a" from 0 to (_count - 1) do {
 
 _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 if (_class in ["", "Default"]) then {
-	AGM_Interaction_MainButton = "closeDialog 0;";
+	AGM_Interaction_MainButton = "(findDisplay 1713999) closeDisplay 1;";
 	if ((vehicle player) isKindOf "Man") then {
-		_ctrlInteractionDialog ctrlSetText ([name player] call AGM_Core_fnc_sanitizeString);
+		_ctrlInteractionDialog ctrlSetText (if (alive vehicle player) then {name vehicle player} else {vehicle player getVariable ["AGM_Name", "Unknown"]});
 	} else {
 		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf (vehicle player)) >> "displayName"));
 	};

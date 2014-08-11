@@ -66,8 +66,8 @@ class Extended_GetIn_EventHandlers {
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
-    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
-    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    condition = "alive player";
+    statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenu} else {(findDisplay 1713999) closeDisplay 1};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
@@ -76,8 +76,8 @@ class AGM_Core_Default_Keys {
   };
   class openInteractionMenuSelf {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    condition = "alive player";
+    statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenuSelf} else {(findDisplay 1713999) closeDisplay 1};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
