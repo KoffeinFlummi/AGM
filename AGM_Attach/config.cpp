@@ -41,6 +41,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
 
         class AGM_Attach_IrStrobe {
           displayName = "$STR_AGM_Attach_Attach_IrStrobe";

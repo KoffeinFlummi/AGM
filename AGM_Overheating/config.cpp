@@ -94,6 +94,7 @@ class CfgVehicles {
         statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
         showDisabled = 0;
         priority = 3.1;
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
       };
     };
   };
