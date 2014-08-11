@@ -35,6 +35,11 @@ if (_state) then {
 
 				disableSerialization;
 				_dlg = finddisplay 49;
+				_dlg displayAddEventHandler ["KeyDown", {
+					_key = _this select 1;
+					!(_key == 1)
+				}];
+
 				for "_index" from 100 to 2000 do {
 					(_dlg displayCtrl _index) ctrlEnable false;
 				};
