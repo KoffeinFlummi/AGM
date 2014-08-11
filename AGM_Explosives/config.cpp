@@ -77,6 +77,7 @@ class CfgFunctions
 		};
 
 class CfgVehicles {
+	class AllVehicles;
 	class LandVehicle;
 	class Car: LandVehicle {
 		MACRO_DETONATEACTION
