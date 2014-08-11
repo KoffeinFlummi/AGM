@@ -40,7 +40,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 				_icon = getText(_action >> "Icon");
 				if (_icon == "") then {
-					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+					_icon = "AGM_Interaction\UI\dot_ca.paa";
 				};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
@@ -80,7 +80,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				
 				_icon = getText(_action >> "Icon");
 				if (_icon == "") then {
-					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+					_icon = "AGM_Interaction\UI\dot_ca.paa";
 				};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
@@ -102,7 +102,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 2;
 	_showDisabled = _customAction select 3;
 	_priority = _customAction select 4;
-	_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+	_icon = "AGM_Interaction\UI\dot_ca.paa";
 	
 	if (count _customAction > 6) then{
 		_icon = _customAction select 5;

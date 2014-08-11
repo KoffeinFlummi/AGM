@@ -39,7 +39,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_priority = getNumber (_action >> "priority");
 				_icon = getText (_action >> "icon");
 				if (_icon == "") then {
-					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+					_icon = "AGM_Interaction\UI\dot_ca.paa";
 				};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
@@ -78,7 +78,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_priority = getNumber (_action >> "priority");
 				_icon = getText (_action >> "icon");
 				if (_icon == "") then {
-					_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+					_icon = "AGM_Interaction\UI\dot_ca.paa";
 				};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
@@ -100,7 +100,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 3;
 	_showDisabled = _customAction select 4;
 	_priority = _customAction select 5;
-	_icon = "AGM_Interaction\UI\IconInteraction_ca.paa";
+	_icon = "AGM_Interaction\UI\dot_ca.paa";
 	
 	if (count _customAction > 6) then{
 		_icon = _customAction select 5;

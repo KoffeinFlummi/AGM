@@ -26,6 +26,12 @@ _customActions = _this select 0;
 _count = count _customActions;
 if (_count == 0) exitWith {};
 _customActions call AGM_Interaction_fnc_sortOptionsByPriority;
+for "_i" from 0 to _count -1 do {
+	_action = _customActions select _i;
+	if ((_action select 4) == "" || (_action select 4) == "PictureThing") then {
+		_action set [4,"AGM_Interaction\UI\dot_ca.paa"];
+	};
+};
 AGM_Interaction_Buttons = _customActions;
 closeDialog 0;
 [(_this select 1), true] call AGM_Interaction_fnc_initialiseInteraction;
