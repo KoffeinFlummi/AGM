@@ -77,12 +77,21 @@ class CfgFunctions
 		};
 
 class CfgVehicles {
-	class All;
-	class AllVehicles: All {
-		MACRO_DETONATEACTION
-	};
 	class LandVehicle;
 	class Car: LandVehicle {
+		MACRO_DETONATEACTION
+	};
+	class Tank: LandVehicle {
+		MACRO_DETONATEACTION
+	};
+	class Ship: AllVehicles {
+		MACRO_DETONATEACTION
+	};
+	class Air;
+	class Helicopter: Air {
+		MACRO_DETONATEACTION
+	};
+	class Plane: Air {
 		MACRO_DETONATEACTION
 	};
 	class Man;

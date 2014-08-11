@@ -22,6 +22,8 @@ addMissionEventHandler ["Draw3D", {
   } else {
 
     _pos = positionCameraToWorld [0, 0, 0];
+    _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
+
     if (!surfaceIsWater _pos) then {
       _pos = ATLtoASL _pos;
     };
@@ -31,7 +33,6 @@ addMissionEventHandler ["Draw3D", {
     };
     _vecy = _pos2 vectorDiff _pos;
 
-    _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
     {
       _target = if (_x in allUnitsUAV) then {objNull} else {effectiveCommander _x};
 
