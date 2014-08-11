@@ -340,6 +340,18 @@ class RscInteractionIcon: RscPicture {
 	w = 1.5 * GUI_GRID_W;
 	h = 1.5 * GUI_GRID_H;
 };
+class RscInteractionHelperIcon: RscInteractionIcon {
+	x = 20 * GUI_GRID_W + GUI_GRID_X;
+	y = 16 * GUI_GRID_H + GUI_GRID_Y;
+	w = 1 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+};
+class RscInteractionText: RscText{
+	x = 21 * GUI_GRID_W + GUI_GRID_X;
+	y = 16 * GUI_GRID_H + GUI_GRID_Y;
+	w = 8 * GUI_GRID_W;
+	h = 1.5 * GUI_GRID_H;
+};
 class RscTitles {
 	class InteractionMenu {
 		idd = 9920;
@@ -351,35 +363,29 @@ class RscTitles {
 		onLoad = "uiNamespace setVariable ['Interaction_Display', _this select 0];";
 		
 		class controls {
-			class TopIcon: RscInteractionIcon
-			{
+			class TopIcon: RscInteractionIcon{
 				idc = 1200;
 				h = 1 * GUI_GRID_H;
 				y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
 				colorText[] = {1,1,1,0.25};
 			};
-			class FirstIcon: RscInteractionIcon
-			{
+			class FirstIcon: RscInteractionIcon{
 				idc = 1201;
 				y = 10 * GUI_GRID_H + GUI_GRID_Y;
 			};
-			class SelectedItemIcon: RscInteractionIcon
-			{
+			class SelectedItemIcon: RscInteractionIcon{
 				idc = 1202;
 				y = 12 * GUI_GRID_H + GUI_GRID_Y;
 			};
-			class ThirdIcon: RscInteractionIcon
-			{
+			class ThirdIcon: RscInteractionIcon{
 				idc = 1203;
 				y = 14 * GUI_GRID_H + GUI_GRID_Y;
 			};
-			class BottomIcon: TopIcon
-			{
+			class BottomIcon: TopIcon{
 				idc = 1204;
 				y = 16 * GUI_GRID_H + GUI_GRID_Y;
 			};
-			class ItemName: RscText
-			{
+			class ItemName: RscText{
 				idc = 1000;
 				style = 0x01;
 				x = 6 * GUI_GRID_W + GUI_GRID_X;
@@ -388,8 +394,7 @@ class RscTitles {
 				h = 1.5 * GUI_GRID_H;
 				colorBackground[] = {0.3,0.3,0.3,0.8};
 			};
-			class BackIcon: RscInteractionIcon
-			{
+			class BackIcon: RscInteractionIcon{
 				idc = 1210;
 				text = "AGM_interaction\UI\backArrow_ca.paa";
 				x = 19 * GUI_GRID_W;
@@ -397,8 +402,37 @@ class RscTitles {
 				w = 0.5 * GUI_GRID_W;
 				h = 0.5 * GUI_GRID_H;
 			};
-			class ItemDetails: RscStructuredText
-			{
+			class SelectIcon: RscInteractionHelperIcon{
+				idc = 1211;
+				text = "AGM_interaction\UI\mouse_left_ca.paa";
+				y = 18 * GUI_GRID_H;
+			};
+			class SelectText: RscInteractionText{
+				idc = 1021;
+				y = 17.5 * GUI_GRID_H;
+				text = "Select";
+			};
+			class ScrollIcon: RscInteractionHelperIcon{
+				idc = 1212;
+				text = "AGM_interaction\UI\mouse_scroll_ca.paa";
+				y = 19.5 * GUI_GRID_H;
+			};
+			class ScrollText: RscInteractionText{
+				idc = 1022;
+				y = 19 * GUI_GRID_H;
+				text = "Scroll";
+			};
+			class GoBackIcon: RscInteractionHelperIcon{
+				idc = 1213;
+				text = "AGM_interaction\UI\mouse_right_ca.paa";
+				y = 21 * GUI_GRID_H;
+			};
+			class GoBackText: RscInteractionText{
+				idc = 1023;
+				y = 20.5 * GUI_GRID_H;
+				text = "Back";
+			};
+			class ItemDetails: RscStructuredText{
 				idc = 1100;
 				style = 0x0c;
 				x = 21.5 * GUI_GRID_W + GUI_GRID_X;

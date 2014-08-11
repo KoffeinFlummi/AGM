@@ -32,3 +32,5 @@ if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
 AGM_Interaction_MainButton = _this select 0;
 0 call AGM_Interaction_fnc_moveDown;
 ((uiNamespace getVariable "Interaction_Display") displayCtrl (1210)) ctrlShow (_this select 1);
+((uiNamespace getVariable "Interaction_Display") displayCtrl (1023)) ctrlShow (_this select 1);
+((uiNamespace getVariable "Interaction_Display") displayCtrl (1213)) ctrlShow (_this select 1);
