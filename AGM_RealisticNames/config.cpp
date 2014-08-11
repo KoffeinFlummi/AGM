@@ -372,18 +372,18 @@ class CfgWeapons {
 
     class arifle_katiba_Base_F;
     class arifle_Katiba_F : arifle_katiba_Base_F {
-      displayName = "KT2002 Katiba";
+      displayName = "KH2002 Sama";
     };
     class arifle_Katiba_GL_F : arifle_katiba_Base_F {
-      displayName = "KT2002 Katiba KGL";
+      displayName = "KH2002 Sama KGL";
     };
     class arifle_Katiba_C_F : arifle_katiba_Base_F {
-      displayName = "KT2002C Katiba";
+      displayName = "KH2002C Sama";
     };
 
     class SDAR_base_F;
     class arifle_SDAR_F : SDAR_base_F {
-      displayName = "CFB SDAR";
+      displayName = "RFB SDAR";
     };
 
     class Tavor_base_F;
@@ -399,22 +399,22 @@ class CfgWeapons {
 
     class mk20_base_F;
     class arifle_Mk20_F : mk20_base_F {
-      displayName = "F2000A (Camo)";
+      displayName = "F2000 (Camo)";
     };
     class arifle_Mk20_plain_F : arifle_Mk20_F {
-      displayName = "F2000A";
+      displayName = "F2000";
     };
     class arifle_Mk20C_F : mk20_base_F {
-      displayName = "F2000A Tactical (Camo)";
+      displayName = "F2000 Tactical (Camo)";
     };
     class arifle_Mk20C_plain_F : arifle_Mk20C_F {
-      displayName = "F2000A Tactical";
+      displayName = "F2000 Tactical";
     };
     class arifle_Mk20_GL_F : mk20_base_F {
-      displayName = "F2000A EGLM (Camo)";
+      displayName = "F2000 EGLM (Camo)";
     };
     class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
-      displayName = "F2000A EGLM";
+      displayName = "F2000 EGLM";
     };
 
     class SMG_01_Base : Rifle_Base_F {
@@ -426,21 +426,21 @@ class CfgWeapons {
 
     class SMG_02_base_F;
     class SMG_02_F : SMG_02_base_F {
-      displayName = "Scorpion Evo 3A1";
+      displayName = "Scorpion Evo 3 A1";
     };
 
     class pdw2000_base_F;
     class hgun_pdw2000_F : pdw2000_base_F {
-      displayName = "CPW-CZ";
+      displayName = "CPW";
     };
 
     class Pistol_Base_F;
     class hgun_P07_F : Pistol_Base_F {
-      displayName = "P99G";
+      displayName = "P99";
     };
 
     class hgun_Rook40_F : Pistol_Base_F {
-      displayName = "MP-443G";
+      displayName = "MP-443";
     };
 
     class hgun_ACPC2_F : Pistol_Base_F {
@@ -461,7 +461,7 @@ class CfgWeapons {
 
     class Rifle_Long_Base_F;
     class LMG_Mk200_F : Rifle_Long_Base_F {
-      displayName = "Mk200 LMG";
+      displayName = "Stoner 99 LMG";
     };
 
     class LMG_Zafir_F: Rifle_Long_Base_F {
