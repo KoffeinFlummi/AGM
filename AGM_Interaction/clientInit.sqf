@@ -35,7 +35,7 @@ addMissionEventHandler ["Draw3D", {
     {
       _target = if (_x in allUnitsUAV) then {objNull} else {effectiveCommander _x};
 
-      if (!isNull _target && {side group _target == playerSide} && {_target != player}}) then {
+      if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
