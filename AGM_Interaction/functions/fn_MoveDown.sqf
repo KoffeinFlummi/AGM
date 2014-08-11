@@ -33,11 +33,17 @@ while {_i <= 4} do {
 		_action = AGM_Interaction_Buttons select _index;
 		_ctrl ctrlShow true;
 		_ctrl ctrlSetText (_action select 4);
+		_color = [1,1,1,1];
 		if (!call (_action select 2)) then {
-			_ctrl ctrlSetTextColor [0.3,0.3,0.3,0.8];
-		}else{
-			_ctrl ctrlSetTextColor [1,1,1,1];
+			_color = [0.3,0.3,0.3,0.8];
 		};
+		if (_i == 0 || _i == 4) then {
+			_color set [3, 0.5];
+		};
+		if (_i == 1 || _i == 3) then {
+			_color set [3, 0.75];
+		};
+		_ctrl ctrlSetTextColor _color;
 	}else{
 		_ctrl ctrlShow false;
 	};
@@ -48,8 +54,9 @@ _ctrl = _dlgInteractionDialog displayCtrl 1000;
 _ctrl ctrlSetText ((AGM_Interaction_Buttons select AGM_Interaction_Current) select 0);
 _ctrl = _dlgInteractionDialog displayCtrl 1100;
 _current = (AGM_Interaction_Buttons select AGM_Interaction_Current);
+_infoText = "";
 if (!call (_current select 2)) then {
-	_ctrl ctrlSetText "Unavailable";
-}else {
-	_ctrl ctrlSetText "";
+	_infoText = "Unavailable";
 };
+_ctrl ctrlSetText _infoText;
+_ctrl ctrlShow (_infoText != "");
