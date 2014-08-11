@@ -17,9 +17,23 @@
 */
 private "_unit";
 _unit = _this select 0;
-if (vehicle player != player || {!("AGM_DefusalKit" in (items player))}) exitWith {false};
+if (vehicle _unit != _unit || {!("AGM_DefusalKit" in (items _unit))}) exitWith {false};
+_isSpecialist = (_unit call AGM_Explosives_fnc_isSpecialist);
 
-AGM_Interaction_Target = nearestObject [_unit, "TimeBombCore"];
-if (isNull(AGM_Interaction_Target)) exitWith {false};
+if ((AGM_Explosives_RequireSpecialist > 0) && {!_isSpecialist}) exitWith {false};
 
-player distance AGM_Interaction_Target < 4
+_timeBombCore = nearestObject [_unit, "TimeBombCore"];
+_mineBase =  nearestObject [_unit, "MineBase"];
+
+_distCore = _unit distance _timeBombCore;
+_distBase = _unit distance _mineBase;
+_distance = 10;
+if (_distCore < _distBase) then {
+	_distance = _distCore;
+	AGM_Interaction_Target = _timeBombCore;
+}else{
+	_distance = _distBase;
+	AGM_Interaction_Target = _mineBase;	
+};
+if (isNil "_distance") exitWith {false};
+_distance < 4

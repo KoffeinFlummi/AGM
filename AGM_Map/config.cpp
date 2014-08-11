@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -43,7 +43,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
+      type = 201;
     };
   };
 };
@@ -90,6 +90,7 @@ class CfgVehicles {
     function = "AGM_Map_fnc_blueForceTracking";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Map\UI\IconBFTracking_ca.paa";
     class Arguments {
       class Interval {
         displayName = "Interval";

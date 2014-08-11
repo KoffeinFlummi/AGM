@@ -8,21 +8,21 @@
 	
 	Parameters: 
 		0: String - Magazine
-		1: Number - trigger
+		1: Number - trigger index in AGM_triggers of magazine class
 	
 	Returns:
 		Nothing
 	
 	Example:
-		["SatchelCharge_Remote_Mag",0] call AGM_Explosives_fnc_selectTrigger;
+		["SatchelCharge_Remote_Mag","Timer"] call AGM_Explosives_fnc_selectTrigger;
 */
 private ["_magazine","_trigger"];
 closeDialog 0;
 _magazine = _this select 0;
-_trigger = parseNumber (_this select 1);
-if (_trigger == 1) exitWith {
-	[_magazine] call AGM_Explosives_fnc_openTimerSetUI;
-};
-if (_trigger == 0 or _trigger == 2) exitWith {
-	[player, _magazine] call AGM_Explosives_fnc_SetupExplosive;
-};
+_trigger = _this select 1;
+_config = ConfigFile >> "CfgAGM_Triggers" >> _trigger;
+
+// If the onSetup function returns true, it is handled elsewhere
+if (isText(_config >> "onSetup") && {[_magazine] call compile getText (_config >> "onSetup")}) exitWith {};
+
+[player, _magazine, _trigger] call AGM_Explosives_fnc_SetupExplosive;

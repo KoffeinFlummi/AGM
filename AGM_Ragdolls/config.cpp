@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi", "Opticalsnare"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -22,7 +22,7 @@ class PhysXParams {
   epeImpulseDamageCoef = 1320.0;
   impulseForceRagdollCoef = 200;
   impulseTorqueRagdollCoef = 100;
-  maxRagdollImpulseForceMagnitude = 2200;
+  maxRagdollImpulseForceMagnitude = 500;
   maxRagdollImpulseTorqueMagnitude = 150;
   ragdollUnderwaterBuoyancyCoef = 9.7;
   ragdollUnderwaterResistanceCoef = 0.005;

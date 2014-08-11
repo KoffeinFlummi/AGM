@@ -14,7 +14,7 @@
  * -
  */
 
-#include <Macros.sqf>
+#include <Macros.hqf>
 
 private ["_vehicle", "_selection", "_damage", "_hitPoints", "_damageHitPoint", "_damageOld", "_damageSumOld", "_damageSumNew", "_damageNew"];
 

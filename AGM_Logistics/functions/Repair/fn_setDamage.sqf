@@ -12,7 +12,7 @@
  * None
  */
 
-#include <Macros.sqf>
+#include <Macros.hqf>
 
 private ["_vehicle", "_damage", "_hitPoints", "_damageHitPoint"];
 

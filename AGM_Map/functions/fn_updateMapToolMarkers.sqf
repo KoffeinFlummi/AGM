@@ -19,7 +19,6 @@ if !("AGM_MapTools" in items player) exitWith {
   if (!isNil "AGM_Map_mapToolFixed") then {
     deleteMarkerLocal "MapToolFixed";
     deleteMarkerLocal "MapToolRotating";
-    deleteMarkerLocal "MapToolFixed";
     AGM_Map_mapToolFixed = nil;
     AGM_Map_mapToolRotating = nil;
   };

@@ -1,11 +1,22 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 09.08.2014 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
       <English>Map Tools</English>
+      <Spanish>Herramientas de mapa</Spanish>
+      <French>Outils de cartographie</French>
+      <Polish>Narzędzia mapy</Polish>
+      <German>Kartenwerkzeug</German>
+      <Czech>Pomůcky k Mapě</Czech>
     </Key>
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
+      <Spanish>Las herramientas de mapa permiten medir distancias y ángulos en el mapa.</Spanish>
+      <French>Les outils de cartographie vous permettent de mesurer des distances et des angles sur la carte.</French>
+      <Polish>Narzędzia pozwalają na mierzenie odległości i kątów na mapie.</Polish>
+      <German>Das Kartenwerkzeug erlaubt es dir, Distanzen und Winkel zu messen.</German>
+      <Czech>Pomůcky k mapě slouží k měření vzdáleností a úhlů na mapě.</Czech>
     </Key>
   </Package>
 </Project>

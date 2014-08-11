@@ -10,11 +10,12 @@ class AGM_Explosives_Place: Items_base_F {
 	scope = 2;
 	scopeCurator = 1;
 	vehicleClass = "Cargo";
+	AGM_offset[] = {0,0,0};
 };
 
 class AGM_Explosives_Place_DemoCharge:AGM_Explosives_Place {
 	displayName = "Demo Charge";
-	model = "\A3\Weapons_F\explosives\c4_charge_small";
+	model = "\A3\Weapons_F\explosives\c4_charge_small_d";
 };
 class AGM_Explosives_Place_APERSBoundingMine:AGM_Explosives_Place {
 	displayName = "APERS Bounding Mine";
@@ -27,6 +28,7 @@ class AGM_Explosives_Place_APERSMine:AGM_Explosives_Place {
 class AGM_Explosives_Place_APERSTripwireMine:AGM_Explosives_Place {
 	displayName = "APERS Tripwire Mine";
 	model = "\A3\Weapons_F\explosives\mine_AP_tripwire";
+	AGM_offset[] = {1,0,0};
 };
 
 class AGM_Explosives_Place_ATMine:AGM_Explosives_Place {

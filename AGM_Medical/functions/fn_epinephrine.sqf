@@ -36,11 +36,11 @@ _this spawn {
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
     [_unit] call AGM_Medical_fnc_wakeUp;
-
-    player setVariable ["AGM_CanTreat", true, false];
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       "AGM_Medical" call AGM_Interaction_fnc_openMenu;
@@ -53,5 +53,5 @@ _this spawn {
   };
 
   [_epinephrinetime, _this, "AGM_Medical_epinephrineCallback", localize "STR_AGM_Medical_Injecting_Epinephrine", "AGM_Medical_epinephrineAbort"] call AGM_Core_fnc_progressBar;
-
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

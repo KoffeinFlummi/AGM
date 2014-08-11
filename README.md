@@ -5,6 +5,8 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
+[![](http://img.shields.io/badge/current_version-v0.92-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-3.6_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.92/AGM_v0-92.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
+
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
@@ -46,7 +48,11 @@ You are a content creator and want to know how to make your weapons or vehicles 
 
 If you want to help development by testing and reporting bugs, feel free to download the current version of this repository either using git (if you know what you're doing) or using the download button on the right.
 
-To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
+To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
+
+In order for the addons to be correctly binarized, you need to exclude the following filytypes from binarization (the binarizer script does this for you):
+`*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
+`
 
 ## Donations
 

@@ -11,6 +11,9 @@ _this spawn {
 	_unit setVariable ["AGM_carriedItem", _target, true];
 	_target setVariable ["AGM_isUsedBy", _unit, true];
 
+	if (currentWeapon _unit != "" && {currentWeapon _unit == primaryWeapon _unit} && {weaponLowered _unit} && {stance _unit == "STAND"}) then {
+		_unit playMove "amovpercmstpsraswrfldnon";
+	};
 	_unit action ["SwitchWeapon", _unit, _unit, 99];
 
 	_unit playMove ANIM_CARRY;
@@ -20,10 +23,11 @@ _this spawn {
 	if !(_unit getVariable ["AGM_isDragging", false]) exitWith {};
 
 	_target attachTo [_unit, ATTACH_POINT, "RightHand"];
-	_target setDir 273;
-	_target setPosASL getPosASL _target;
+	[_target, "{_this setDir 273}", _target] call AGM_Core_fnc_execRemoteFnc;	// the setPos getPos trick doesn't work for attached objects
 
 	_unit forceWalk true;
+
+	AGM_Drag_ReleaseActionID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Drag_EndDrag"], "player call AGM_Drag_fnc_releaseObject;", nil, 20, false, true, "","player call AGM_Drag_fnc_isDraggingObject"];
 
 	waitUntil {
 		if (stance _unit != "STAND" || {currentWeapon _unit != ""}) exitWith {
@@ -32,4 +36,5 @@ _this spawn {
 
 		!(_unit getVariable ["AGM_isDragging", false])
 	};
+	_unit removeAction AGM_Drag_ReleaseActionID;
 };

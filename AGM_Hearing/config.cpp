@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -151,12 +151,12 @@ class CfgWeapons {
   class AGM_EarBuds: ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
-    model = "\AGM_Hearing\earplugs.p3d";
-    picture = "\AGM_Hearing\UI\bwa3_earplugs_x_ca.paa";
+    model = "\AGM_Hearing\agm_earplugs.p3d";
+    picture = "\AGM_Hearing\UI\agm_earplugs_x_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
+      type = 201;
     };
   };
 };

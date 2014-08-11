@@ -65,3 +65,30 @@ class AGM_Core_ProgressBar_Dialog {
     };
   };
 };
+
+class AGM_Core_DisableMouse_Dialog {
+  idd = -1;
+  movingEnable = false;
+  onLoad = "uiNamespace setVariable ['AGM_Core_dlgDisableMouse', _this select 0];";
+  objects[] = {};
+  class controlsBackground {
+    class Background {
+      idc = -1;
+      moving = 0;
+      font = "TahomaB";
+      text = "";
+      sizeEx = 0;
+      lineSpacing = 0;
+      access = 0;
+      type = 0;
+      style = 0;
+      size = 1;
+      colorBackground[] = {0, 0, 0, 0};//0.5
+      colorText[] = {0, 0, 0, 0};
+      x = "safezoneX";
+      y = "safezoneY";
+      w = "safezoneW";
+      h = "safezoneH";
+    };
+  };
+};

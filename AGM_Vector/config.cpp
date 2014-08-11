@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"Ghost", "Hamburger SV", "commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -60,14 +60,25 @@ class CfgWeapons {
 class CfgVehicles {
   class Item_Base_F;
   class AGM_Item_Vector: Item_Base_F {
+    author = "Ghost, Hamburger SV";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_VectorName";
+    displayName = "$STR_AGM_Vector_VectorName";
     vehicleClass = "Items";
     class TransportWeapons {
       class AGM_Vector {
         weapon = "AGM_Vector";
         count = 1;
+      };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_Vector {
+        weapon = "AGM_Vector";
+        count = 6;
       };
     };
   };

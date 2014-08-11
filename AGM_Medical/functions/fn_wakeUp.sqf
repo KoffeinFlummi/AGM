@@ -36,19 +36,17 @@ _position = getPosASL _unit;
 
     [false] call AGM_Core_fnc_disableUserInput;
   };
+
   if (local _this) then {
-    _this enableSimulation true;
-    _this setCaptive false;
+    [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
+    if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {
+      terminate (_this getVariable "AGM_WakeUpTimer");
+    };
+    if !(scriptDone (_this getVariable "AGM_UnconsciousnessTimer")) then {
+      terminate (_this getVariable "AGM_UnconsciousnessTimer");
+    };
   };
+
   _this switchMove "";
   _this switchMove (_this getVariable "AGM_OriginalAnim");
 }, _unit] call CBA_fnc_globalExecute;
-
-if (vehicle _unit == _unit) then {
-  [_unit, _position] spawn {
-    _unit = _this select 0;
-    _position = _this select 1;
-    waitUntil {simulationEnabled _unit};
-    _unit setPosASL _position;
-  };
-};

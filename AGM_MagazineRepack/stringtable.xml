@@ -4,21 +4,51 @@
 
     <Key ID="STR_AGM_MagazineRepack_RepackMagazines">
       <English>Repack Magazines</English>
+      <German>Magazine umpacken</German>
+      <Spanish>Rellenar cargadores</Spanish>
+      <French>Repack chargeur</French>
+      <Polish>Przepakuj magazynki</Polish>
+      <Czech>Přepáskovat Zásobníky</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
       <English>Select Magazine Menu</English>
+      <German>Magazinauswahlmenu</German>
+      <Spanish>Menú de selección de cargador</Spanish>
+      <French>Selectionner menu des chargeurs</French>
+      <Polish>Wybierz menu magazynków</Polish>
+      <Czech>Zvolit Menu Zásobníků</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
       <English>Select Mag</English>
+      <German>Magazin auswählen</German>
+      <Spanish>Seleccionar cargador</Spanish>
+      <French>Selectionner Chargeur</French>
+      <Polish>Wybierz magazynek</Polish>
+      <Czech>Zvolit Zásobník</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
+      <German>Magazine umpacken ...</German>
+      <Spanish>Rellenando cargador ...</Spanish>
+      <French>Repacking Chargeurs ...</French>
+      <Polish>Przepakowywanie magazynków ...</Polish>
+      <Czech>Páskuji Zásobníky ...</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
+      <German>Magazine umgepackt</German>
+      <Spanish>Cargadores rellenados</Spanish>
+      <French>Chargeur repacker</French>
+      <Polish>Magazynki przepakowane</Polish>
+      <Czech>Přepáskované Zásobníky</Czech>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
+      <German>%1 volle(s) Magazin(e) und %2 übrig gebliebene Patrone(n)</German>
+      <Spanish>%1 cargador(es) completo y %2 bala(s) extra(s)</Spanish>
+      <French>%1 chargeur(s) pleins et %2 balle(s) en plus</French>
+      <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
+      <Czech>%1 plný zásobník(y) a %2 munice navíc</Czech>
     </Key>
 
 

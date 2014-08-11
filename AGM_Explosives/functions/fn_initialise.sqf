@@ -32,8 +32,6 @@ if (isServer) then {
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
 AGM_Explosives_Setup = objNull;
-AGM_Explosives_CurrentSpeedDial=-1;
-AGM_Explosives_Phone_SpeedDial = [];
 AGM_Explosives_ShiftDown = false;
 AGM_Explosives_pfeh_running = false;
 AGM_Explosives_null= [] spawn {
@@ -41,22 +39,12 @@ AGM_Explosives_null= [] spawn {
 	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "(_this select 1) call AGM_Explosives_fnc_HandleScrollWheel"];
 	(findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 42) then {AGM_Explosives_ShiftDown = true;};"];
 	(findDisplay 46) displayAddEventHandler ["KeyUp", "AGM_Explosives_ShiftDown = false;"];
-	
-	player addAction [localize "STR_AGM_Explosives_AttachTo", "cursorTarget call AGM_Explosives_fnc_Place_AttachTo;", nil, 22, false, true, "","AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup) AND (cursorTarget isKindOf 'Car') AND (cursorTarget distance AGM_Explosives_Setup) < 2.5}"];
-	player addAction [localize "STR_AGM_Explosives_PlaceAction", "[] spawn AGM_Explosives_fnc_Place_Approve;", nil, 21, false, true, "","AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}"];
-	player addAction [localize "STR_AGM_Explosives_CancelAction", "call AGM_Explosives_fnc_Place_Cancel;", nil, 20, false, true, "","AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}"];
-
-	player SetVariable ["AGM_Clacker", [], true];
+	player addEventHandler ["Respawn", {
+		[(_this select 0)] call AGM_Explosives_fnc_initialiseUnit;
+	}];
 	player addEventHandler ["Killed", {
 		call AGM_Explosives_fnc_Place_Cancel;
 	}];
-	player addEventHandler ["Respawn", {
-		AGM_Explosives_PlacedCount = 0;
-		AGM_Explosives_CurrentSpeedDial=-1;
-		AGM_Explosives_Phone_SpeedDial = [];
-		player setVariable ["AGM_Clacker", [], true];
-	}];
-
 	player addEventHandler ["Take", {
 		private ["_item", "_getter", "_giver"];
 		_item = _this select 2;
@@ -102,4 +90,5 @@ AGM_Explosives_null= [] spawn {
 		};
 		*/
 	}];
+	[player] call AGM_Explosives_fnc_initialiseUnit;
 };

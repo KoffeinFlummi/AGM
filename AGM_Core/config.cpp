@@ -168,9 +168,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -212,6 +212,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
       class isInBuilding;
@@ -223,6 +224,8 @@ class CfgFunctions {
       class numberToDigits;
       class numberToDigitsString;
       class progressBar;
+      class readBooleanParameterFromModule;
+      class readNumericParameterFromModule;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
@@ -233,6 +236,12 @@ class CfgFunctions {
       class toBin;
       class toBitmask;
       class toHex;
+    };
+  };
+  class AGM_Debug {
+    class AGM_Debug {
+      file = "AGM_Core\functions\Debug";
+      class showUser;
     };
   };
 };
@@ -260,7 +269,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      Init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };
@@ -268,7 +277,7 @@ class Extended_Init_EventHandlers {
 class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      serverLocal = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
+      local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };
@@ -290,6 +299,7 @@ class CfgVehicles {
     function = "AGM_Core_fnc_moduleCheckPBOs";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Core\UI\IconCheckPBO_ca.paa";
     class Arguments {
       class Action {
         displayName = "Action";

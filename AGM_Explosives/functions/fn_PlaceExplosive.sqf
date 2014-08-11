@@ -5,57 +5,54 @@
 		Garth de Wet (LH)
 	
 	Description:
-		
+		Places an explosive at the requested position
 	
 	Parameters:
-		0: POSITION - Position to place IED
-		1: STRING - Magazine class
-		2: STRING - Code for remote Explosives
-		3: NUMBER - Rotation
-		4: NUMBER - (OPTIONAL) timer
+		0: OBJECT - unit
+		1: POSITION - Position to place explosive
+		2: NUMBER - Rotation
+		3: STRING - Magazine class
+		4: Config - Config of trigger
+		5: ARRAY - variables required for the trigger type
 	
 	Returns:
-		OBJECT: Placed IED
+		OBJECT: Placed explosive
 	
 	Example:
-		_explosive = [player modelToWorld [0,0.5, 0.1], "SatchelCharge_Remote_Mag", "", 134] call AGM_Explosives_fnc_PlaceExplosive;
+		_explosive = [player, player modelToWorld [0,0.5, 0.1], 134, "SatchelCharge_Remote_Mag", "Command", []] call AGM_Explosives_fnc_PlaceExplosive;
 */
-private ["_pos", "_ammo", "_explosive", "_code"];
-_pos = _this select 0;
-_ammo = getText(configFile >> "CfgMagazines" >> (_this select 1) >> "ammo");
-_code = _this select 2;
+private ["_pos", "_dir", "_mag", "_ammo", "_vars", "_unit", "_config", "_explosive"];
+_unit = _this select 0;
+_pos = _this select 1;
+_dir = _this select 2;
+_mag = _this select 3;
+_config = _this select 4;
+_vars = _this select 5;
+_setDir = true;
+if (count _this > 6) then {
+	_setDir = _this select 6;
+};
 
+if (isNil "_config") exitWith {
+	diag_log format ["AGM_Explosives: Error config not passed to PlaceExplosive: %1", _this];
+	objNull
+};
+
+_trigger = ConfigFile >> "CfgMagazines" >> _mag >> "AGM_Triggers" >> _config;
+_config = ConfigFile >> "CfgAGM_Triggers" >> _config;
+
+if (isNil "_config") exitWith {
+	diag_log format ["AGM_Explosives: Error config not found in PlaceExplosive: %1", _this];
+	objNull
+};
+
+_ammo = getText(ConfigFile >> "CfgMagazines" >> _mag >> "ammo");
+if (isText(_trigger >> "ammo")) then {
+	_ammo = getText (_trigger >> "ammo");
+};
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
-_explosive setDir (_this select 3);
-_explosive setPosATL _pos;
-
-if (getText(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_OnCreate") != "") then {
-	_explosive spawn compile (getText(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_OnCreate"));
+if (isText(_config >> "onPlace") && {[_unit,_explosive,_mag,_vars] call compile (getText (_config >> "onPlace"))}) exitWith {_explosive};
+if (_setDir) then {
+	[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 };
-private ["_triggerSupport"];
-_triggerSupport = _this select 4; // check for a timer
-if (!isNil "_triggerSupport") exitWith {
-	[_explosive, _triggerSupport] call AGM_Explosives_fnc_startTimer;
-	_explosive
-};
-// Set up trigger types for explosive.
-_triggerSupport = [(_this select 1)] call AGM_Explosives_fnc_TriggerType;
-// clacker enabled
-if (_triggerSupport select 0) then {
-	private "_clacker";
-	_clacker = player getVariable ["AGM_Clacker", []];
-	AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
-	_clacker set [count _clacker, [_explosive, getNumber(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_FuseTime"),getNumber (configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_MaxDistance"), "E: " + str(AGM_Explosives_PlacedCount),(_this select 1)]];
-	player setVariable ["AGM_Clacker", _clacker, true];
-	player sideChat format [localize "STR_AGM_Explosives_DetonateCode", AGM_Explosives_PlacedCount];
-};
-// Cellphone enabled
-if (_triggerSupport select 2) then {
-		AGM_Explosives_List set [count AGM_Explosives_List, [_explosive,_code,getNumber(configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_FuseTime"),getNumber (configFile >> "CfgMagazines" >> (_this select 1) >> "AGM_MaxDistance")]];
-		publicVariable "AGM_Explosives_List";
-		AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
-		[format ["E: %1", AGM_Explosives_PlacedCount],_code] call AGM_Explosives_fnc_AddCodeToSpeedDial;
-		player sideChat format [localize "STR_AGM_Explosives_DetonateCode", _code];
-};
-
 _explosive

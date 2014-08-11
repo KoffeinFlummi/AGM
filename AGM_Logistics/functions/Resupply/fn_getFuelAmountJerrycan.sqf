@@ -3,8 +3,11 @@
 private ["_unit", "_item", "_fuel", "_text"];
 
 _unit = _this select 0;
+_item = _this select 1;
 
-_item = _unit getVariable "AGM_carriedItem";
+if (isNil "_item") then {
+	_item = _unit getVariable "AGM_carriedItem";
+};
 if (isNil "_item") exitWith {};
 
 _fuel = _item getVariable ["AGM_amountFuel", 20];

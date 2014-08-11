@@ -27,7 +27,6 @@ for "_index" from 0 to 300 do {
 };
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractFunction.sqf";
-call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractWithFunction.sqf";
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
 
 0 spawn {

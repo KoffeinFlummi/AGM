@@ -2,4 +2,6 @@
 
 _item = _this select 0;
 
-_item setVariable ["AGM_isUsedBy", objNull, true];
+if (_item != player getVariable ["AGM_carriedItem", objNull]) then {
+	_item setVariable ["AGM_isUsedBy", objNull, true];
+};

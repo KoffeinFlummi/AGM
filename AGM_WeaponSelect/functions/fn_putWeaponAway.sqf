@@ -14,4 +14,8 @@ private "_vehicle";
 
 _vehicle = vehicle player;
 
+if (currentWeapon player != "" && {currentWeapon player == primaryWeapon player} && {weaponLowered player} && {stance player == "STAND"}) then {
+	player playMove "amovpercmstpsraswrfldnon";
+};
+
 player action ["SwitchWeapon", _vehicle, _vehicle, 99];

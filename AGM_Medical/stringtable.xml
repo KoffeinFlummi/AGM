@@ -17,7 +17,7 @@
       <German>Selbst behandeln >></German>
       <Spanish>Tratarse >></Spanish>
       <Polish>Opatrz siebie >></Polish>
-      <Czech>Vyšetřit sebe</Czech>
+      <Czech>Vyšetřit sebe >></Czech>
       <Russian>Самолечение >></Russian>
       <French>Se soigner >></French>
       <Hungarian>Önellátás >></Hungarian>
@@ -36,7 +36,7 @@
       <English>Inject Morphine</English>
       <German>Morphin injizieren</German>
       <Spanish>Inyectar Morfina</Spanish>
-      <Polish>Wstrzyknij Morfinę</Polish>
+      <Polish>Wstrzyknij morfinę</Polish>
       <Czech>Aplikovat Morfin</Czech>
       <Russian>Ввести морфин</Russian>
       <French>Injecter Morphine</French>
@@ -46,7 +46,7 @@
       <English>Inject Epinephrine</English>
       <German>Epinephrine injizieren</German>
       <Spanish>Inyectar Epinefrina</Spanish>
-      <Polish>Wtrzyknij Epinefrynę</Polish>
+      <Polish>Wtrzyknij adrenalinę</Polish>
       <Czech>Aplikovat Adrenalin</Czech>
       <Russian>Ввести андреналил</Russian>
       <French>Injecter Adrénaline</French>
@@ -55,18 +55,25 @@
     <Key ID="STR_AGM_Medical_Transfuse_Blood">
       <English>Transfuse Blood</English>
       <German>Bluttransfusion</German>
-      <Spanish>Transfundir Sangre</Spanish>
-      <Polish>Przetocz Krew</Polish>
+      <Spanish>Transfundir sangre</Spanish>
+      <Polish>Przetocz krew</Polish>
       <Czech>Transfúze krve</Czech>
       <Russian>Перелить кровь</Russian>
       <French>Transfusion sanguine</French>
       <Hungarian>Infúzió</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Medical_Bandage">
+      <English>Bandage</English>
+      <German>Verbinden</German>
+      <Spanish>Venda</Spanish>
+      <Polish>Bandaż</Polish>
+      <Czech>Obvázat</Czech>
+    </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
       <German>Kopf verbinden</German>
-      <Spanish>Vendar la Cabeza</Spanish>
-      <Polish>Bandażuj Głowę</Polish>
+      <Spanish>Vendar la cabeza</Spanish>
+      <Polish>Bandażuj głowę</Polish>
       <Czech>Obvázat hlavu</Czech>
       <Russian>Перевязать голову</Russian>
       <French>Bandage à la tête</French>
@@ -75,8 +82,8 @@
     <Key ID="STR_AGM_Medical_Bandage_HitBody">
       <English>Bandage Torso</English>
       <German>Torso verbinden</German>
-      <Spanish>Vendar el Torso</Spanish>
-      <Polish>Bandażuj Tors</Polish>
+      <Spanish>Vendar el torso</Spanish>
+      <Polish>Bandażuj tors</Polish>
       <Czech>Obvázat hruď</Czech>
       <Russian>Перевязать торс</Russian>
       <French>Bandage au Torse</French>
@@ -85,8 +92,8 @@
     <Key ID="STR_AGM_Medical_Bandage_HitLeftArm">
       <English>Bandage Left Arm</English>
       <German>Arm links verbinden</German>
-      <Spanish>Vendar el Brazo Izquierdo</Spanish>
-      <Polish>Bandażuj Lewe Ramię</Polish>
+      <Spanish>Vendar el brazo izquierdo</Spanish>
+      <Polish>Bandażuj lewe ramię</Polish>
       <Czech>Obvázat levou ruku</Czech>
       <Russian>Перевязать левую руку</Russian>
       <French>Bandage Bras Gauche</French>
@@ -95,8 +102,8 @@
     <Key ID="STR_AGM_Medical_Bandage_HitRightArm">
       <English>Bandage Right Arm</English>
       <German>Arm rechts verbinden</German>
-      <Spanish>Vendar el Brazo Derecho</Spanish>
-      <Polish>Bandażuj Prawe Ramię</Polish>
+      <Spanish>Vendar el brazo derecho</Spanish>
+      <Polish>Bandażuj prawe ramię</Polish>
       <Czech>Obvázat pravou ruku</Czech>
       <Russian>Перевязать правую руку</Russian>
       <French>Bandage Bras Droit</French>
@@ -105,8 +112,8 @@
     <Key ID="STR_AGM_Medical_Bandage_HitLeftLeg">
       <English>Bandage Left Leg</English>
       <German>Bein links verbinden</German>
-      <Spanish>Vendar la Pierna Izquierda</Spanish>
-      <Polish>Bandażuj Lewą Nogę</Polish>
+      <Spanish>Vendar la pierna izquierda</Spanish>
+      <Polish>Bandażuj lewą nogę</Polish>
       <Czech>Obvázat levou nohu</Czech>
       <Russian>Перевязать левую ногу</Russian>
       <French>Bandage Jambe Gauche</French>
@@ -115,8 +122,8 @@
     <Key ID="STR_AGM_Medical_Bandage_HitRightLeg">
       <English>Bandage Right Leg</English>
       <German>Bein rechts verbinden</German>
-      <Spanish>Vendar la Pierna Derecha</Spanish>
-      <Polish>Bandażuj Prawą Nogę</Polish>
+      <Spanish>Vendar la pierna derecha</Spanish>
+      <Polish>Bandażuj prawą nogę</Polish>
       <Czech>Obvázat pravou nohu</Czech>
       <Russian>Перевязать правую ногу</Russian>
       <French>Bandage Jambe Droite</French>
@@ -155,8 +162,8 @@
     <Key ID="STR_AGM_Medical_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
-      <Spanish>Introducir al Paciente</Spanish>
-      <Polish>Załaduj Pacjenta</Polish>
+      <Spanish>Introducir el paciente</Spanish>
+      <Polish>Załaduj pacjenta</Polish>
       <Czech>Naložit pacianta do</Czech>
       <Russian>Погрузить пациента в</Russian>
       <French>Charger Patient dans</French>
@@ -165,8 +172,8 @@
     <Key ID="STR_AGM_Medical_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
-      <Spanish>Extraer al Paciente</Spanish>
-      <Polish>Wyładuj Pacjenta</Polish>
+      <Spanish>Extraer el paciente</Spanish>
+      <Polish>Wyładuj pacjenta</Polish>
       <Czech>Vyložit pacienta</Czech>
       <Russian>Выгрузить пациента</Russian>
       <French>Décharger Patient</French>
@@ -187,7 +194,7 @@
       <English>Injecting Morphine ...</English>
       <German>Morphin injizieren ...</German>
       <Spanish>Inyectando Morfina ...</Spanish>
-      <Polish>Wstrzykiwanie Morfiny ...</Polish>
+      <Polish>Wstrzykiwanie morfiny ...</Polish>
       <Czech>Aplikuju Morfin ...</Czech>
       <Russian>Введение морфина...</Russian>
       <French>Injection de Morphine...</French>
@@ -197,7 +204,7 @@
       <English>Injecting Epinephrine ...</English>
       <German>Epinephrine injizieren ...</German>
       <Spanish>Inyectando Epinefrina ...</Spanish>
-      <Polish>Wstrzykiwanie Epinefryny ...</Polish>
+      <Polish>Wstrzykiwanie adrenaliny ...</Polish>
       <Czech>Aplikuju Adrenalin ...</Czech>
       <Russian>Введение андреналина</Russian>
       <French>Injection d'adrénaline ...</French>
@@ -206,18 +213,25 @@
     <Key ID="STR_AGM_Medical_Transfusing_Blood">
       <English>Transfusing Blood ...</English>
       <German>Bluttransfusion ...</German>
-      <Spanish>Realizando Transfusión ...</Spanish>
-      <Polish>Przetaczanie Krwi ...</Polish>
+      <Spanish>Realizando transfusión ...</Spanish>
+      <Polish>Przetaczanie krwi ...</Polish>
       <Czech>Probíhá transfúze krve ...</Czech>
       <Russian>Переливание крови...</Russian>
       <French>Transfusion Sanguine ...</French>
       <Hungarian>Infúzió...</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Medical_Bandaging">
+      <English>Bandaging ...</English>
+      <German>Verbinden ...</German>
+      <Spanish>Vendando ...</Spanish>
+      <Polish>Bandażowanie ...</Polish>
+      <Czech>Obvazuji ...</Czech>
+    </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
       <German>Kopf verbinden ...</German>
-      <Spanish>Vendando la Cabeza ...</Spanish>
-      <Polish>Bandażowanie Głowy ...</Polish>
+      <Spanish>Vendando la cabeza ...</Spanish>
+      <Polish>Bandażowanie głowy ...</Polish>
       <Czech>Obvazuji hlavu ...</Czech>
       <Russian>Перевязывание головы....</Russian>
       <French>Bandage à la tête ...</French>
@@ -226,8 +240,8 @@
     <Key ID="STR_AGM_Medical_Bandaging_HitBody">
       <English>Bandaging Torso ...</English>
       <German>Torso verbinden ...</German>
-      <Spanish>Vendando el Torso ...</Spanish>
-      <Polish>Bandażowanie Torsu ...</Polish>
+      <Spanish>Vendando el torso ...</Spanish>
+      <Polish>Bandażowanie torsu ...</Polish>
       <Czech>Obvazuji hruď ...</Czech>
       <Russian>Перевязывание торса...</Russian>
       <French>Bandage au Torse</French>
@@ -236,8 +250,8 @@
     <Key ID="STR_AGM_Medical_Bandaging_HitLeftArm">
       <English>Bandaging Left Arm ...</English>
       <German>Linken Arm verbinden ...</German>
-      <Spanish>Vendando el Brazo Izquierdo ...</Spanish>
-      <Polish>Bandażowanie Lewego Ramienia ...</Polish>
+      <Spanish>Vendando el brazo izquierdo ...</Spanish>
+      <Polish>Bandażowanie lewego ramienia ...</Polish>
       <Czech>Obvazuji levou ruku ...</Czech>
       <Russian>Перевязывание тела...</Russian>
       <French>Bandage Bras Gauche ...</French>
@@ -246,8 +260,8 @@
     <Key ID="STR_AGM_Medical_Bandaging_HitRightArm">
       <English>Bandaging Right Arm ...</English>
       <German>Rechten Arm verbinden ...</German>
-      <Spanish>Vendando el Brazo Derecho ...</Spanish>
-      <Polish>Bandażowanie Prawego Ramienia ...</Polish>
+      <Spanish>Vendando el brazo derecho ...</Spanish>
+      <Polish>Bandażowanie prawego ramienia ...</Polish>
       <Czech>Obvazuji pravou ruku ...</Czech>
       <Russian>Перевязывание правой руки...</Russian>
       <French> Bandage Bras Droite ...</French>
@@ -256,8 +270,8 @@
     <Key ID="STR_AGM_Medical_Bandaging_HitLeftLeg">
       <English>Bandaging Left Leg ...</English>
       <German>Linkes Bein verbinden ...</German>
-      <Spanish>Vendando la Pierna Izquierda ...</Spanish>
-      <Polish>Bandażowanie Lewej Nogi ...</Polish>
+      <Spanish>Vendando la pierna izquierda ...</Spanish>
+      <Polish>Bandażowanie lewej nogi ...</Polish>
       <Czech>Obvazuji levou nohu ...</Czech>
       <Russian>Перевязывание левой ноги...</Russian>
       <French>Bandage Jambe Gauche ...</French>
@@ -266,8 +280,8 @@
     <Key ID="STR_AGM_Medical_Bandaging_HitRightLeg">
       <English>Bandaging Right Leg ...</English>
       <German>Rechtes Bein verbinden ...</German>
-      <Spanish>Vendando la Pierna Derecha ...</Spanish>
-      <Polish>Bandażowanie Prawej Nogi ...</Polish>
+      <Spanish>Vendando la pierna derecha ...</Spanish>
+      <Polish>Bandażowanie prawej nogi ...</Polish>
       <Czech>Obvazuji pravou nohu ...</Czech>
       <Russian>Перевязывание правой ноги...</Russian>
       <French>Bandage Jambe Droite ...</French>
@@ -277,7 +291,7 @@
     <Key ID="STR_AGM_Medical_MedicalSupplies">
       <English>[AGM] Medical Supplies</English>
       <German>[AGM] Sanitätsmaterial</German>
-      <Spanish>[AGM] Suministros Médicos</Spanish>
+      <Spanish>[AGM] Suministros médicos</Spanish>
       <Polish>[AGM] Medykamenty</Polish>
       <Czech>[AGM] Zdravotnické zásoby</Czech>
       <Russian>[AGM] Медикаменты</Russian>
@@ -309,7 +323,7 @@
       <English>Morphine Autoinjector</English>
       <German>Morphin-Autoinjektor</German>
       <Spanish>Autoinyector de Morfina</Spanish>
-      <Polish>Autostrzykawka z Morfiną</Polish>
+      <Polish>Strzykawka z morfiną</Polish>
       <Czech>Morfin</Czech>
       <Russian>Морфин</Russian>
       <French>Morphine Injection Immédiate</French>
@@ -318,8 +332,8 @@
     <Key ID="STR_AGM_Medical_Morphine_Description">
       <English>Heavy Painkiller</English>
       <German>Schweres Schmerzmittel</German>
-      <Spanish>Sedante Fuerte</Spanish>
-      <Polish>Mocne Środki Przeciwbólowe</Polish>
+      <Spanish>Sedante fuerte</Spanish>
+      <Polish>Mocny środek przeciwbólowy</Polish>
       <Czech>Sedativa</Czech>
       <Russian>Сильное обезболивающее.</Russian>
       <French>Utiliser pour Calmer la douleur.</French>
@@ -329,7 +343,7 @@
       <English>Epinephrine Autoinjector</English>
       <German>Epinephrin-Autoinjektor</German>
       <Spanish>Autoinyector de Epinefrina</Spanish>
-      <Polish>Autostrzykawka z Epinefryną</Polish>
+      <Polish>Strzykawka z adrenaliną</Polish>
       <Czech>Adrenalin</Czech>
       <Russian>Андреналин</Russian>
       <French>Adrénaline Injection Immédiate</French>
@@ -339,7 +353,7 @@
       <English>Used to wake up unconscious units.</English>
       <German>Benutzt zum Aufwecken bewusstloser Patienten.</German>
       <Spanish>Usado para despertar a pacientes inconscientes</Spanish>
-      <Polish>Używana aby ocucić nieprzytomnego pacjenta.</Polish>
+      <Polish>Używana w celu ocucenia nieprzytomnego pacjenta</Polish>
       <Czech>Používaný k probuzení člověka z bezvědomí</Czech>
       <Russian>Используется для возвращения в сознание.</Russian>
       <French>Utiliser pour reveiller les unités inconsciente.</French>
@@ -348,8 +362,8 @@
     <Key ID="STR_AGM_Medical_Bloodbag_Name">
       <English>Blood Bag</English>
       <German>Blutkonserve</German>
-      <Spanish>Bolsa de Sangre</Spanish>
-      <Polish>Worek z Krwią</Polish>
+      <Spanish>Bolsa de sangre</Spanish>
+      <Polish>Worek z krwią</Polish>
       <Czech>Krevní vak</Czech>
       <Russian>Пакет с кровью</Russian>
       <French>Poche de sang</French>
@@ -389,8 +403,8 @@
     <Key ID="STR_AGM_Medical_HitLeftArm">
       <English>Left Arm</English>
       <German>Linker Arm</German>
-      <Spanish>Brazo Izquierdo</Spanish>
-      <Polish>Lewe Ramię</Polish>
+      <Spanish>Brazo izquierdo</Spanish>
+      <Polish>Lewe ramię</Polish>
       <Czech>Levá ruka</Czech>
       <Russian>Левая рука</Russian>
       <French>Bras Gauche</French>
@@ -399,8 +413,8 @@
     <Key ID="STR_AGM_Medical_HitRightArm">
       <English>Right Arm</English>
       <German>Rechter Arm</German>
-      <Spanish>Brazo Derecho</Spanish>
-      <Polish>Prawe Ramię</Polish>
+      <Spanish>Brazo derecho</Spanish>
+      <Polish>Prawe ramię</Polish>
       <Czech>Pravá ruka</Czech>
       <Russian>Правая рука</Russian>
       <French>Bras Droit</French>
@@ -409,8 +423,8 @@
     <Key ID="STR_AGM_Medical_HitLeftLeg">
       <English>Left Leg</English>
       <German>Linkes Bein</German>
-      <Spanish>Pierna Izquierda</Spanish>
-      <Polish>Lewa Noga</Polish>
+      <Spanish>Pierna izquierda</Spanish>
+      <Polish>Lewa noga</Polish>
       <Czech>Levá noha</Czech>
       <Russian>Левая нога</Russian>
       <French>Jambe Gauche</French>
@@ -419,8 +433,8 @@
     <Key ID="STR_AGM_Medical_HitRightLeg">
       <English>Right Leg</English>
       <German>Rechtes Bein</German>
-      <Spanish>Pierna Derecha</Spanish>
-      <Polish>Prawa Noga</Polish>
+      <Spanish>Pierna derecha</Spanish>
+      <Polish>Prawa noga</Polish>
       <Czech>Pravá noha</Czech>
       <Russian>Правая нога</Russian>
       <French>Jambe Droite</French>
@@ -468,6 +482,20 @@
       <Russian>Пациент в сознании.</Russian>
       <French>Le Patient est éveillé</French>
       <Hungarian>Ébren van.</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientHeavilyInjured">
+      <English>The patient is heavily injured.</English>
+      <German>Der Patient ist schwer verletzt.</German>
+      <Spanish>El paciente está severament herido.</Spanish>
+      <Polish>Pacjent jest ciężko ranny.</Polish>
+      <Czech>Pacient je těžce zraněn</Czech>
+    </Key>
+    <Key ID="STR_AGM_Medical_PatientLightlyInjured">
+      <English>The patient is lightly injured.</English>
+      <German>Der Patient ist leicht verletzt.</German>
+      <Spanish>El paciente está levemente herido.</Spanish>
+      <Polish>Pacjent jest lekko ranny.</Polish>
+      <Czech>Pacient je lehce zraněn</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
@@ -543,7 +571,7 @@
       <English>The patient hasn't lost any blood.</English>
       <German>Der Patient hat noch kein Blut verloren.</German>
       <Spanish>El paciente no ha perdido sangre.</Spanish>
-      <Polish>Pacjent nie traci żadnej krwi.</Polish>
+      <Polish>Pacjent nie stracił krwi.</Polish>
       <Czech>Pacient nestratil žádnou krev.</Czech>
       <Russian>Кровяное давление в норме.</Russian>
       <French>Le patient n'a pas perdu de sang.</French>
@@ -553,7 +581,7 @@
       <English>The patient is on heavy painkillers </English>
       <German>Der Patient steht unter starkem Schmerzmitteleinfluss</German>
       <Spanish>El paciente está fuertemente sedado.</Spanish>
-      <Polish>Pacjent jest na silnych środkach przeciwbólowych</Polish>
+      <Polish>Pacjent jest pod wpływem działania dużej ilości morfiny </Polish>
       <Czech>Pacient je na těžkých sedativech </Czech>
       <Russian>У пациента высокая доза морфина в крови.</Russian>
       <French>Le patient est sous analgésiques lourds </French>
@@ -563,7 +591,7 @@
       <English>The patient is on some morphine </English>
       <German>Der Patient steht unter schwachem Schmerzmitteleinfluss</German>
       <Spanish>El paciente está levemente sedado con morfina.</Spanish>
-      <Polish>Pacjent jest pod wpływem działania morfiny</Polish>
+      <Polish>Pacjent jest pod wpływem działania morfiny </Polish>
       <Czech>Pacient má v sobě morfium </Czech>
       <Russian>Пациенту введен морфин.</Russian>
       <French>Le patient est sous morphine </French>
@@ -573,7 +601,7 @@
       <English>The patient isn't on painkillers </English>
       <German>Der Patient steht nicht unter dem Einfluss von Schmerzmitteln</German>
       <Spanish>El paciente no está sedado.</Spanish>
-      <Polish>Pacjent nie przyjmował środków przeciwbólowych</Polish>
+      <Polish>Pacjent nie przyjmował środków przeciwbólowych </Polish>
       <Czech>Pacient není na sedativech </Czech>
       <Russian>Обезболивающие не вводились.</Russian>
       <French>Le patient n'est pas sous analgésiques </French>
@@ -613,7 +641,7 @@
     <Key ID="STR_AGM_Medical_NotTrained">
       <English>You are not trained to do that.</English>
       <German>Dazu bist du nicht ausgebildet.</German>
-      <Spanish>No esta entrenado para hacer eso.</Spanish>
+      <Spanish>No estás entrenado para hacer eso.</Spanish>
       <Polish>Nie zostałeś przeszkolony aby to zrobić.</Polish>
       <Czech>Na to nemáš dostatečné schopnosti.</Czech>
       <Russian>Вы не умеете это делать.</Russian>
@@ -634,7 +662,7 @@
     <Key ID="STR_AGM_Medical_keepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
-      <Spanish>Reabrir el menú médico luego de tratar</Spanish>
+      <Spanish>Reabrir el menú médico después de tratar</Spanish>
       <Hungarian>Orvosi menü újranyitása ellátás után</Hungarian>
       <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
       <Polish>Otwórz ponownie menu medyczne po zakończeniu akcji leczenia</Polish>
@@ -644,22 +672,34 @@
     <Key ID="STR_AGM_Medical_NoItem">
       <English>You don't have the required item anymore.</English>
       <German>Du hast das benötigte Material nicht mehr.</German>
-      <Polish>Już nie posiadasz wymaganego elementu</Polish>
+      <Spanish>No tienes mas del objeto requerido.</Spanish>
+      <Polish>Nie posiadasz już wymaganego przedmiotu</Polish>
+      <French>Vous n'avez pas les objets nécessaire</French>
+      <Czech>Už nemáš potřebný předmět.</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
       <English>Taking the patient's %1...</English>
       <German>%1 des Patienten wird benutzt...</German>
+      <Spanish>Cogiendo al paciente %1...</Spanish>
       <Polish>Pobrano od pacjenta: %1...</Polish>
+      <French>Prendre le patient %1...</French>
+     <Czech>Beru pacientův %1...</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
       <English>%1 is using your %2...</English>
       <German>%1 benutzt dein(e) %2...</German>
+      <Spanish>%1 está usando tu %2...</Spanish>
       <Polish>%1 pobrał od Ciebie %2...</Polish>
+      <French>%1 utilise votre %2...</French>
+      <Czech>%1 používá tvůj %2...</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
       <English>Patient has no %1, using yours...</English>
       <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt...</German>
-      <Polish>%1 nie znajduje się w ekwipunku pacjenta, użwywanie własnych zasobów...</Polish>
+      <Spanish>El paciente no tiene %1, usando el tuyo...</Spanish>
+      <Polish>%1 nie znajduje się w ekwipunku pacjenta, używanie własnych zasobów...</Polish>
+      <French>Le patient n'a pas de %1, utilisation de votre matériel...</French>
+      <Czech>Pacient nemá žádný %1, používám vlastní...</Czech>
     </Key>
 
   </Package>

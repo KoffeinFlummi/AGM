@@ -14,6 +14,9 @@ if (_count == 0) exitWith {};
 
 _house = _intersections select (_count - 1);
 
+// shithouse is bugged
+if (typeOf _house == "") exitWith {};
+
 _intersections = [_house, "GEOM"] intersect [_position0, _position1];
 
 _door = "";

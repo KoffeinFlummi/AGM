@@ -20,11 +20,9 @@ _this spawn {
   _painkillerOld = _unit getVariable "AGM_Painkiller";
 
   // DETERMINE IF PLAYER IS MEDIC
-  _morphinetime = 0;
+  _morphinetime = MORPHINETIMENONMEDIC;
   if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _morphinetime = MORPHINETIMEMEDIC;
-  } else {
-    _morphinetime = MORPHINETIMENONMEDIC;
   };
 
   player setVariable ["AGM_CanTreat", false, false];
@@ -44,6 +42,8 @@ _this spawn {
   AGM_Medical_morphineCallback = {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
+
+    player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
@@ -87,8 +87,6 @@ _this spawn {
       };
     };
 
-    player setVariable ["AGM_CanTreat", true, false];
-
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
         "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
@@ -104,5 +102,5 @@ _this spawn {
   };
 
   [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
-
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

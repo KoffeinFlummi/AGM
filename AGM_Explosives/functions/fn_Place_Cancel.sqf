@@ -5,6 +5,7 @@
 		Garth de Wet (LH)
 	
 	Description:
+		Cancels placement of the explosive
 	
 	Parameters:
 		Nothing
@@ -23,3 +24,4 @@ if (!isNull (AGM_Explosives_Setup)) then {
 	deleteVehicle AGM_Explosives_Setup;
 };
 AGM_Explosives_Setup = objNull;
+player forceWalk false;

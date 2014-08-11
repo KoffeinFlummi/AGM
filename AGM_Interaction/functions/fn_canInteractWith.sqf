@@ -1,9 +1,12 @@
 // by commy2
 
-private "_unit";
+private ["_unit", "_isCivilian"];
 
 _unit = _this select 0;
+_isCivilian = _this select 1;
 
-_unit isKindOf "Civilian" &&
-{alive _unit} &&
-{count (weapons _unit) == 0}
+if (isNil "_isCivilian") then {_isCivilian = true};
+
+alive _unit
+&& [side _unit != playerSide, side group _unit == civilian] select _isCivilian
+//&& {count (weapons _unit) == 0}

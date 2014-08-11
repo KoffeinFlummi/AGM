@@ -21,7 +21,7 @@ _this spawn {
 		_name = [_name, true] call AGM_Core_fnc_sanitizeString;
 	};
 
-	_name = format ["%1 %2", _rank, _name];
+	//_name = format ["%1 %2", _rank, _name];
 
 	_unit setVariable ["AGM_Name", _name, true];
 };

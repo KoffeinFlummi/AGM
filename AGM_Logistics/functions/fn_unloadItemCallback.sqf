@@ -13,13 +13,15 @@ _vehicle setVariable [_itemHolder, _loadedItems, true];
 
 player allowDamage false;
 detach _item;
-_item setVehiclePosition [getPosASL player, [], 2];
-_position = getPosASL _item;
+
+_position = getPosASL player findEmptyPosition [0, 4, typeOf _item];
+if (count _position == 0) then {_position = getPosASL player};
 _position set [2, 0];
-_item setPosASL [-1000, -1000, 0];
+
 _item setPosATL _position;
-player reveal _item;
 [_item, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _item] call AGM_Core_fnc_execRemoteFnc;
+
+player reveal _item;
 player allowDamage true;
 
 _itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");

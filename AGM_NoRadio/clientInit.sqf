@@ -3,7 +3,7 @@
 0 spawn {
 	waitUntil {!isNull player};
 
-	//enableRadio false;
-	//enableSentences false;
+	enableRadio false;
+	enableSentences false;
 	player disableConversation true;
 };

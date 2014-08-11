@@ -32,7 +32,7 @@ if (_button != 0) exitWith {};
 _pos  = _control ctrlMapScreenToWorld _screenPos;
 
 // If clicking
-if (_dir == 1 && !_handled) then {
+if (_dir == 1 && !_handled) exitWith {
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
 
@@ -41,7 +41,7 @@ if (_dir == 1 && !_handled) then {
     // Store data for dragging
     AGM_Map_startPos = + AGM_Map_pos;
     AGM_Map_startDragPos = + _pos;
-    if (_shiftKey) then {
+    if (_ctrlKey) then {
       // Store data for rotating
       AGM_Map_startAngle = + AGM_Map_angle;
       AGM_Map_startDragAngle = (180 + ((AGM_Map_startDragPos select 0) - (AGM_Map_startPos select 0)) atan2 ((AGM_Map_startDragPos select 1) - (AGM_Map_startPos select 1)) mod 360);
@@ -53,6 +53,7 @@ if (_dir == 1 && !_handled) then {
     };
     _handled = true;
   };
+  _handled
 };
 
 // If releasing
@@ -60,5 +61,7 @@ if (_dir != 1 && (AGM_Map_dragging or AGM_Map_rotating)) exitWith {
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
   _handled = true;
+  _handled
 };
+
 _handled

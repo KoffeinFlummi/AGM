@@ -190,7 +190,7 @@ class AGM_Interaction_Dialog {
       h = 0.3 / 9 * safezoneH;
     };
 
-    class Interaction_Icon0 : Interaction_Button0 {
+    /*class Interaction_Icon0 : Interaction_Button0 {
       idc = 20;
       type = 0;
       style = 48;
@@ -268,7 +268,7 @@ class AGM_Interaction_Dialog {
       style = 48;
       colorBackground[] = {0,0,0,0};
       w = 0.3 / 16 * safezoneW;
-    };
+    };*/
 
   };
 };
@@ -276,7 +276,7 @@ class AGM_Interaction_Dialog {
 class RscListbox;
 class IGUIBack;
 class RscText;
-#define X_OFFSET 0.3
+#define X_OFFSET 0.2
 
 class RscAGM_SelectAnItem {
 	idd = 8854;
@@ -285,7 +285,7 @@ class RscAGM_SelectAnItem {
 		class back:IGUIBack {
 			x = X_OFFSET;
 			y = 0;
-			w = 0.4;
+			w = 0.6;
 			h = 0.71;
 			colorBackground[] = {0, 0, 0, 0.5};
 		};
@@ -293,7 +293,7 @@ class RscAGM_SelectAnItem {
 			idc = 8870;
 			x = X_OFFSET + 0.005;
 			y = 0.005;
-			w = 0.39;
+			w = 0.59;
 			h = 0.05;
 			style = 0x02;
 			text = "";
@@ -301,7 +301,7 @@ class RscAGM_SelectAnItem {
 		class itemList:RscListBox {
 			idc = 8866;
 			x = X_OFFSET + 0.005;
-			w = 0.39;
+			w = 0.59;
 			h = 0.54;
 			y = 0.06;
 		};
@@ -311,15 +311,17 @@ class RscAGM_SelectAnItem {
 			w = 0.15;
 			h = 0.1;
 			y = 0.605;
+			style = 2;
 			text = $STR_AGM_Interaction_CancelSelection;
-			action = "closeDialog 0;";
+			action = "closeDialog 0;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
 		};
 		class approveBtn: AGM_Interaction_Button_Base {
 			idc = 8860;
-			x = X_OFFSET + 0.245;
+			x = X_OFFSET + 0.445;
 			y = 0.605;
 			h = 0.1;
 			w = 0.15;
+			style = 2;
 			text = $STR_AGM_Interaction_MakeSelection;
 			action = "closeDialog 0;";
 		};

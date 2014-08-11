@@ -27,14 +27,14 @@ if (!isServer) then {
 			!isNil "AGM_Version_ClientErrors"
 		};
 
-		_missingAddon = _this select 0;
-		_missingAddonServer = _this select 1;
-		_oldVersionClient = _this select 2;
-		_oldVersionServer = _this select 3;
+		_missingAddon = AGM_Version_ClientErrors select 0;
+		_missingAddonServer = AGM_Version_ClientErrors select 1;
+		_oldVersionClient = AGM_Version_ClientErrors select 2;
+		_oldVersionServer = AGM_Version_ClientErrors select 3;
 
 		// Display error message.
 		if (_missingAddon || {_missingAddonServer} || {_oldVersionClient} || {_oldVersionServer}) then {
-			_text = "AGM version mismatch:<br/><br/>";
+			_text = "[AGM] Version mismatch:<br/><br/>";
 			_error = format ["AGM version mismatch: %1: ", profileName];
 
 			if (_missingAddon) then {
@@ -54,7 +54,8 @@ if (!isServer) then {
 				_error = _error + "Newer version; ";
 			};
 
-			[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
+			//[_error, "{systemChat _this}"] call AGM_Core_fnc_execRemoteFnc;
+			diag_log text _error;
 
 			_text = composeText [lineBreak, parseText format ["<t align='center'>%1</t>", _text]];
 
@@ -79,4 +80,4 @@ if (!isServer) then {
 	};
 };
 
-diag_log text "AGM: Check-PBOs Module Initialized.";
+diag_log text format ["[AGM]: Check-PBOs Module Initialized. Mode: %1.", _mode];

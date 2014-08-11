@@ -24,6 +24,9 @@ if isNull (player getVariable "AGM_Carrying") then {
 };
 
 detach _unit;
+
+//[_unit, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
+
 [_unit, _vehicle, player] spawn {
   [-2, {
     _unit = _this select 0;
@@ -32,13 +35,9 @@ detach _unit;
     if (local _unit) then {
       _unit moveInCargo _vehicle;
       _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
-      _unit spawn {
-        sleep 0.5;
-        _this enableSimulation false;
-      };
     };
-    _unit playMoveNow ( ((configfile >> "CfgMovesMaleSdr" >> "States" >> (animationState _unit) >> "interpolateTo") call BIS_fnc_getCfgData) select 0 );
     _player switchMove "";
+    _unit playMoveNow (((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0);
   }, _this] call CBA_fnc_globalExecute;
 };
 

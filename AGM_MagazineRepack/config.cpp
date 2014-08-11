@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"commy2", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -41,4 +41,5 @@ class CfgVehicles {
 
 class AGM_Parameters {
   AGM_MagazineRepack_TimePerAmmo = 1.5;
+  AGM_MagazineRepack_TimePerMagazine = 2.0;
 };

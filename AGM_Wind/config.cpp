@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"Falke", "commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -62,7 +62,7 @@ class CfgWeapons {
     mass = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 10;
-      type = 401;
+      type = 201;
     };
   };
 };
@@ -99,6 +99,16 @@ class CfgVehicles {
       class AGM_ItemKestrel {
         weapon = "AGM_ItemKestrel";
         count = 1;
+      };
+    };
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_ItemKestrel {
+        weapon = "AGM_ItemKestrel";
+        count = 6;
       };
     };
   };

@@ -10,7 +10,7 @@ if (isNil "_item") exitWith {};
 
 _fuel = _item getVariable ["AGM_amountFuel", 20];
 
-_capacity = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "fuelCapacity");
+_capacity = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_fuelCapacity");
 
 _fuelVehicle = fuel _vehicle * _capacity;
 

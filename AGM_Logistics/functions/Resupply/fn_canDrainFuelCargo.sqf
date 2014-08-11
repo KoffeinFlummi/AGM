@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_unit", "_target", "_item", "_fuel"];
+private ["_unit", "_target", "_item", "_fuel", "_fuelCargo"];
 
 _unit = _this select 0;
 _target = _this select 1;

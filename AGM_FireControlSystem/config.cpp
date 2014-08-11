@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,6 +16,7 @@ class CfgFunctions {
   class AGM_FCS {
     class AGM_FCS {
       file = "AGM_FireControlSystem\functions";
+      class adjustRange;
       class firedEH;
       class getAngle;
       class keyDown;
@@ -51,6 +52,20 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 0;
+  };
+  class adjustRangeUp {
+    displayName = "$STR_AGM_FireControlSystem_AdjustRangeUp";
+    condition = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    statement = "[_vehicle, 50] call AGM_FCS_fnc_adjustRange";
+    key = 201;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class adjustRangeDown: adjustRangeUp {
+    displayName = "$STR_AGM_FireControlSystem_AdjustRangeDown";
+    statement = "[_vehicle, -50] call AGM_FCS_fnc_adjustRange";
+    key = 209;
   };
 };
 

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi", "eRazeri", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -134,7 +134,7 @@ class CfgVehicles {
     simulation = "nvmarker";
 
     class NVGMarker {
-      diffuse[] = {0.01, 0.01, 0.01, 1};
+      diffuse[] = {0.006, 0.006, 0.006, 1};
       ambient[] = {0.005, 0.005, 0.005, 1};
       brightness = 0.2;
       name = "pozicni blik";
@@ -208,7 +208,7 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
+      type = 201;
     };
   };
 };

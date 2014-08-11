@@ -22,11 +22,9 @@ if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}
 _this spawn {
   _unit = _this select 0;
 
-  _bloodbagtime = 0;
+  _bloodbagtime = BLOODBAGTIMENONMEDIC;
   if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
     _bloodbagtime = BLOODBAGTIMEMEDIC;
-  } else {
-    _bloodbagtime = BLOODBAGTIMENONMEDIC;
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
@@ -37,12 +35,12 @@ _this spawn {
   AGM_Medical_bloodbagCallback = {
     _unit = _this select 0;
 
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
     _blood = ((_unit getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
     _unit setVariable ["AGM_Blood", _blood, true];
-
-    player setVariable ["AGM_CanTreat", true, false];
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
@@ -59,4 +57,5 @@ _this spawn {
   };
 
   [_bloodbagtime, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

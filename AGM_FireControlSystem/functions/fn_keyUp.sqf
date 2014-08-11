@@ -4,7 +4,8 @@
  * Calculates the offsets for all weapons needed to hit the current target.
  *
  * Arguments:
- * none
+ * 0: The vehicle
+ * 1: Range Override (Optional)
  *
  * Return Value:
  * none
@@ -20,9 +21,13 @@ _distance = [
 _weaponDirection = _vehicle weaponDirection (currentWeapon _vehicle);
 _angleTarget = asin (_weaponDirection select 2);
 
+if (count _this > 1) then {
+  _distance = _this select 1;
+};
+
 // MOVING TARGETS
 _movingAzimuth = 0;
-if (time - AGM_FCSTime > 1 and AGM_FCSTime != -1) then {
+if (time - AGM_FCSTime > 1 and AGM_FCSTime != -1 and count _this < 2) then {
   // calculate speed of target
   _posTarget = [
     (getPos _vehicle select 0) + _distance * (_weaponDirection select 0),

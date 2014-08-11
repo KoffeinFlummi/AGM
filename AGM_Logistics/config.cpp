@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -25,8 +25,10 @@ class CfgFunctions {
 		class AGM_Logistics {
 			file = "\AGM_Logistics\functions";
 			class canLoadItem;
+			class canLoadItemCarried;
 			class canLoadMagazine;
 			class hasLoadedItems;
+			class initLoadedObject;
 			class getLoadableMagazines;
 			class getLoadPoints;
 			class getWeaponsOfMagazine;
@@ -42,6 +44,7 @@ class CfgFunctions {
 			class remainingSpace;
 			class unloadItem;
 			class unloadItemCallback;
+			class spawnObject;
 		};
 	};
 	class AGM_Drag {
@@ -65,16 +68,30 @@ class CfgFunctions {
 	class AGM_Repair {
 		class AGM_Repair {
 			file = "\AGM_Logistics\functions\Repair";
+			class canRemoveWheel;
 			class canRepair;
+			class canRepairTrack;
 			class canRepairWheel;
 			class checkVehicle;
+			class checkVehicleCallback;
 			class getHitPointName;
+			class getNearestRepairer;
+			class getNearestTrack;
+			class getNearestWheel;
 			class openSelectWheelUI;
+			class openSelectWheelUI_Salvage;
+			class removeWheel;
+			class removeWheelAbort;
+			class removeWheelCallback;
 			class repair;
 			class repairAbort;
 			class repairCallback;
-			/*class repairTrack;
-			class repairWheel;*/
+			class repairTrack;
+			class repairTrackAbort;
+			class repairTrackCallback;
+			class repairWheel;
+			class repairWheelAbort;
+			class repairWheelCallback;
 			class setDamage;
 			class setHitPointDamage;
 		};
@@ -108,14 +125,28 @@ class CfgFunctions {
 			file = "\AGM_Logistics\functions\Resupply";
 			class getFuelAmount;
 			class getFuelAmountCallback;
+			class getFuelAmountCargo;
+			class getFuelAmountCargoCallback;
 			class getFuelAmountJerrycan;
+			class getNearestRefueler;
 			class canDrainFuel;
 			class canDrainFuelCargo;
 			class canRefuel;
+			class canRefuelCargo;
 			class drainFuel;
 			class drainFuelCallback;
+			class drainFuelCargo;
+			class drainFuelCargoCallback;
 			class refuelVehicle;
 			class refuelVehicleCallback;
+			class refuelVehicleCargo;
+			class refuelVehicleCargoCallback;
+		};
+	};
+	class AGM_Paradrop {
+		class AGM_Paradrop {
+			file = "\AGM_Logistics\functions\Paradrop";	
+			class paradrop;
 		};
 	};
 };
@@ -181,44 +212,21 @@ class CfgSounds {
 	};
 };
 
+#include <Macros.hpp>
+
 class CfgVehicleClasses {
-	class AGM_Repair_Items {
-		displayName = "AGM";
-	};
+  class AGM_Repair_Items {
+    displayName = "AGM";
+  };
 };
 
-#include <Macros.hpp>
+#include <FuelCapacities.hpp>
 
 class CfgVehicles {
 	class Man;
 	class CAManBase: Man {
 		class AGM_SelfActions {
-			// Sometimes it is not possible to target an object that you are dragging
-			// particularly noticeable on Stratis on the dock wall.
-			// Adding a self option to release will fix this.
-			class AGM_ReleaseItemSelf {
-				displayName = "$STR_AGM_Drag_EndDrag";
-				condition = "player call AGM_Drag_fnc_isDraggingObject";
-				statement = "player call AGM_Drag_fnc_releaseObject";
-				exceptions[] = {"AGM_Drag_isNotDragging"};
-				showDisabled = 0;
-				priority = 2.1;
-			};
 			MACRO_CHECKFUEL
-		};
-	};
-
-	//Vehicles
-	class Truck_01_base_F;
-	class B_Truck_01_transport_F: Truck_01_base_F {
-		class AGM_Load {
-			class MidLoad {
-				displayName = "Middle of truck";
-				loadSize = 2; // Size of object, 1 = small, 2 = large
-				LoadPosition[]={0.05,-4,-0.6}; // Offset when attaching.
-				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
-			};
-			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
 		};
 	};
 
@@ -241,6 +249,9 @@ class CfgVehicles {
 
 	// Repair wheeled vehicles
 	class Car_F: Car {
+		KEY_WHEEL_4X4
+		class HitPoints;	//	@todo
+		AGM_fuelCapacity = 60;  // in liter.
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
@@ -248,7 +259,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -259,18 +270,26 @@ class CfgVehicles {
 					priority = 1;
 				};
 				class AGM_Repair_Wheels {
-					displayName = "$STR_AGM_Repair_Wheels";
+					displayName = "$STR_AGM_Repair_RepairWheel";
 					distance = 4;
 					condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRepairWheel";
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
-					showDisabled = 0;
+					showDisabled = 1;
 					priority = 0.9;
 				};
-				class AGM_Repair_Body {
-					displayName = "$STR_AGM_Repair_HitHull";
+				class AGM_Remove_Wheels {
+					displayName = "$STR_AGM_Repair_RemoveWheel";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_canRemoveWheel";
+					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI_Salvage";
+					showDisabled = 1;
+					priority = 0.8;
+				};
+				class AGM_Repair_Body {
+					displayName = "$STR_AGM_Repair_HitBody";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
 				};
@@ -316,9 +335,48 @@ class CfgVehicles {
 			};
 		};
 	};
-
+	class Kart_01_Base_F: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_KART;
+	};
+	class MRAP_01_base_F: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_MATV;
+	};
+	class MRAP_02_base_F: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PUNISHER;
+	};
+	class MRAP_03_base_F: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_FENNEK;
+	};
+	class Quadbike_01_base_F: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_QUAD;
+	};
+	class Offroad_01_base_f: Car_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_OFFROARD;
+	};
+	
+	class Truck_F: Car_F {
+		KEY_WHEEL_6X6_REAR
+		class HitPoints: HitPoints {	//	@todo
+			class HitLFWheel;
+			class HitLBWheel;
+			class HitLMWheel;
+			class HitLF2Wheel;
+			class HitRFWheel;
+			class HitRBWheel;
+			class HitRMWheel;
+			class HitRF2Wheel;
+		};
+		AGM_fuelCapacity = 240;  // in liter.
+		class AGM_Actions;
+	};
+	class Wheeled_APC_F: Car_F {
+		KEY_WHEEL_6X6_REAR
+		AGM_fuelCapacity = 600;  // in liter.
+	};
+	
 	// Repair tracked vehicles
 	class Tank_F: Tank {
+		AGM_fuelCapacity = 1500;  // in liter.
 		class AGM_Actions: AGM_Actions {
 			class AGM_Repair {
 				displayName = "$STR_AGM_Repair";
@@ -326,7 +384,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -336,7 +394,7 @@ class CfgVehicles {
 					showDisabled = 1;
 					priority = 1;
 				};
-				class AGM_Repair_Body {
+				class AGM_Repair_Hull {
 					displayName = "$STR_AGM_Repair_HitHull";
 					distance = 4;
 					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
@@ -347,16 +405,16 @@ class CfgVehicles {
 				class AGM_Repair_LTrack {
 					displayName = "$STR_AGM_Repair_HitLTrack";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_canRepairTrack";
+					statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.42;
 				};
 				class AGM_Repair_RTrack {
 					displayName = "$STR_AGM_Repair_HitRTrack";
 					distance = 4;
-					condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepair";
-					statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repair";
+					condition = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_canRepairTrack";
+					statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.41;
 				};
@@ -368,14 +426,14 @@ class CfgVehicles {
 					showDisabled = 0;
 					priority = 0.4;
 				};
-				class AGM_Repair_Fuel {
+				/*class AGM_Repair_Fuel {
 					displayName = "$STR_AGM_Repair_HitFuel";
 					distance = 4;
 					condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
 					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.3;
-				};
+				};*/
 				class AGM_Repair_Gun {
 					displayName = "$STR_AGM_Repair_HitGun";
 					distance = 4;
@@ -402,11 +460,28 @@ class CfgVehicles {
 			};
 		};
 	};
-
+	class MBT_01_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_MERKAVA;
+	};
+	class MBT_02_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_T100;
+	};
+	class MBT_03_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
+	};
+	
+	class AllVehicles;
+	class Air: AllVehicles {
+		AGM_Paradrop = 0;
+		class AGM_SelfActions {
+			MACRO_PARADROP
+		};
+	};
+	
 	// Repair helicopters
-	class Air;
 	class Helicopter: Air {
-		AGM_Vehicle_Cargo = 4;
+		AGM_fuelCapacity = 240;  // in liter.
+		AGM_Vehicle_Cargo = 8;
 		class AGM_Actions {
 			MACRO_UNLOAD
 			MACRO_REFUEL
@@ -417,7 +492,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -484,10 +559,20 @@ class CfgVehicles {
 				};
 			};
 		};
+		class AGM_SelfActions: AGM_SelfActions {
+		
+		};
 	};
 
+	class Heli_Transport_02_base_F;
+	class I_Heli_Transport_02_F : Heli_Transport_02_base_F {
+		AGM_Vehicle_Cargo = 20;
+		AGM_Paradrop = 1;
+	};
+	
 	// Repair fixed wing aircraft
 	class Plane: Air {
+		AGM_fuelCapacity = 600;  // in liter.
 		AGM_Vehicle_Cargo = 4;
 		class AGM_Actions {
 			MACRO_UNLOAD
@@ -499,7 +584,7 @@ class CfgVehicles {
 				condition = "alive AGM_Interaction_Target";
 				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
 				showDisabled = 1;
-				priority = 1;
+				priority = 1.4;
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -550,6 +635,11 @@ class CfgVehicles {
 				};
 			};
 		};
+	};
+
+	class Ship_F;
+	class Boat_F: Ship_F {
+		AGM_fuelCapacity = 40;  // in liter.
 	};
 
 	// Static weapons
@@ -603,16 +693,19 @@ class CfgVehicles {
 	// in order to move the bigger ones. Currently simply remove support.
 	// I believe these crates are currently broken (hitbox doesn't work or something) in 1.22 (2014-07-04)
 	class Box_East_AmmoVeh_F: EAST_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_NATO_AmmoVeh_F: NATO_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
 	};
 	class Box_IND_AmmoVeh_F: IND_Box_Base {
+		//transportAmmo = 30000;
 		class AGM_Actions: AGM_Actions {
 			MACRO_NOT_DRAGABLE
 		};
@@ -629,6 +722,7 @@ class CfgVehicles {
 	// New Items
 	class Land_CanisterFuel_F;
 	class AGM_JerryCan: Land_CanisterFuel_F {
+		author = "commy2";
 		AGM_Size = 1; // 1 = small, 2 = large
 		class AGM_Actions {
 			MACRO_LOADABLE
@@ -643,10 +737,11 @@ class CfgVehicles {
 	};
 
 	class AGM_SpareTrack: ThingX {
+		author = "Hawkins";
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\track.p3d";
+		model = "\AGM_Logistics\agm_track.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareTrack";
 		mapSize = 0.7;
@@ -661,10 +756,11 @@ class CfgVehicles {
 	};
 
 	class AGM_SpareWheel: ThingX {
+		author = "marc_book";
 		AGM_Size = 1; // 1 = small, 2 = large
 		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
 		scope = 2;
-		model = "\AGM_Logistics\wheel.p3d";
+		model = "\AGM_Logistics\agm_wheel.p3d";
 		icon = "iconObject_circle";
 		displayName = "$STR_AGM_Repair_SpareWheel";
 		mapSize = 0.7;
@@ -763,6 +859,182 @@ class CfgVehicles {
 			MACRO_CUTWIRE
 		};
 	};
+
+	// disable default arma refueling and repair
+	class House_Small_F;
+	class Land_FuelStation_Feed_F: House_Small_F {
+		class AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = 50000;
+		transportFuel = 0;
+	};
+	class Land_fs_feed_F: House_Small_F {
+		class AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = 50000;
+		transportFuel = 0;
+	};
+
+	// APC
+	class APC_Wheeled_01_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PATRIA;
+	};
+	class APC_Wheeled_02_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_ARMA;
+	};
+	class APC_Wheeled_03_base_F: Wheeled_APC_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_PANDUR;
+	};
+	class APC_Tracked_01_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_NAMER;
+	};
+	class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
+		class AGM_Actions;
+	};
+	class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_canRepair = 1;
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_CRV;
+		transportRepair = 0;
+		transportFuel = 0;
+	};
+	class APC_Tracked_02_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_BMP;
+	};
+	class APC_tracked_03_base_F: Tank_F {
+		AGM_fuelCapacity = AGM_FUELCAPACITY_WARRIOR;
+	};
+
+	// Trucks BLU
+	class Truck_01_base_F: Truck_F {
+		KEY_WHEEL_8X8
+		AGM_fuelCapacity = AGM_FUELCAPACITY_HEMTT;
+		class AGM_Actions;
+	};
+	class B_Truck_01_transport_F: Truck_01_base_F {
+		/*class AGM_Load {											@todo
+			class MidLoad {
+				displayName = "Middle of truck";
+				loadSize = 2; // Size of object, 1 = small, 2 = large
+				LoadPosition[]={0.05,-4,-0.6}; // Offset when attaching.
+				memoryPoint = "exhaustEnd"; // the memory position on the vehicle to use for the attaching and offset.
+			};
+			UnLoadPosition[]={0,-6,-1.0}; // Position objects will be unloaded to. modelToWorld offset.
+		};*/
+	};
+	class B_Truck_01_mover_F: B_Truck_01_transport_F {};
+	class B_Truck_01_Repair_F: B_Truck_01_mover_F {
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class B_Truck_01_fuel_F: B_Truck_01_mover_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_HEMTT;
+		transportFuel = 0;
+	};
+	/*class B_Truck_01_ammo_F: B_Truck_01_mover_F {
+		transportAmmo = 30000;
+	};*/
+
+	// Trucks INDEP
+	class Truck_02_base_F: Truck_F {
+		KEY_WHEEL_6X6_REAR
+		AGM_fuelCapacity = AGM_FUELCAPACITY_KAMAZ;
+		class AGM_Actions: AGM_Actions {};
+	};
+	class O_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class O_Truck_02_medical_F: O_Truck_02_box_F {	// medic inherits from repairer
+		AGM_canRepair = 0;
+	};
+	class O_Truck_02_fuel_F: Truck_02_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_KAMAZ;
+		transportFuel = 0;
+	};
+	/*class O_Truck_02_ammo_F: Truck_02_base_F {
+		transportAmmo = 30000;
+	};*/
+	class I_Truck_02_box_F: Truck_02_base_F {	// this is the repair variant because fuck naming conventions
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class I_Truck_02_medical_F: I_Truck_02_box_F {	// medic inherits from repairer
+		AGM_canRepair = 0;
+	};
+	class I_Truck_02_fuel_F: Truck_02_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_KAMAZ;
+		transportFuel = 0;
+	};
+	/*class I_Truck_02_ammo_F: Truck_02_base_F {
+		transportAmmo = 30000;
+	};*/
+
+	// Trucks RED
+	class Truck_03_base_F: Truck_F {
+		KEY_WHEEL_6X6_FRONT
+		AGM_fuelCapacity = AGM_FUELCAPACITY_TYPHOON;
+		//	@todo delete extra hit points
+		/*class HitPoints: HitPoints {
+			class HitLFWheel: HitLFWheel {};
+			class HitLF2Wheel: HitLF2Wheel {};
+			delete HitLMWheel;
+			class HitLBWheel: HitLBWheel {};
+			class HitRFWheel: HitRFWheel {};
+			class HitRF2Wheel: HitRF2Wheel {};
+			delete HitRMWheel;
+			class HitRBWheel: HitRBWheel {};
+		};*/
+		class AGM_Actions: AGM_Actions {};
+	};
+	class O_Truck_03_repair_F: Truck_03_base_F {
+		AGM_canRepair = 1;
+		transportRepair = 0;
+	};
+	class O_Truck_03_fuel_F: Truck_03_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_TYPHOON;
+		transportFuel = 0;
+	};
+	/*class O_Truck_03_ammo_F: Truck_03_base_F {
+		transportAmmo = 30000;
+	};*/
+
+	// Trucks CIV
+	class Van_01_base_F: Truck_F {
+		KEY_WHEEL_4X4
+		AGM_fuelCapacity = AGM_FUELCAPACITY_VAN;
+		class AGM_Actions: AGM_Actions {};
+	};
+	class I_G_Van_01_fuel_F: Van_01_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
+		transportFuel = 0;
+	};
+	class C_Van_01_fuel_F: Van_01_base_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_REFUELCARGO
+		};
+		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
+		transportFuel = 0;
+	};
 };
 
 // Handle vehicle magazines
@@ -788,11 +1060,13 @@ class CfgWeapons {
 
 	class ItemCore;
 	class InventoryItem_Base_F;
+	class ToolKitItem;
 
+	// disable default arma repair
 	class ToolKit: ItemCore {
-		class ItemInfo: InventoryItem_Base_F {
+		class ItemInfo: ToolKitItem {
 			mass = 80;
-			type = 401;
+			type = 201;
 		};
 	};
 
@@ -804,7 +1078,7 @@ class CfgWeapons {
 		picture = "\AGM_Logistics\ui\AGM_battery.paa";
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 20;
-			type = 401;
+			type = 201;
 		};
 	};
 };

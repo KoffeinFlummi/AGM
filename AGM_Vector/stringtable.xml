@@ -5,18 +5,34 @@
     <Key ID="STR_AGM_Vector_VectorName">
       <English>Vector IV</English>
       <German>Vector IV</German>
+      <Spanish>Vector IV</Spanish>
+      <French>Vector IV</French>
+      <Polish>Vector IV</Polish>
+      <Czech>Vector IV</Czech>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
       <German>Laserentfernungsmesser</German>
+      <Spanish>Telémetro</Spanish>
+      <French>Télémetre</French>
+      <Polish>Dalmierz</Polish>
+      <Czech>Dálkoměr</Czech>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
       <English>Vector - Azimuth Key</English>
       <German>Vector - Azimuth-Taste</German>
+      <Spanish>Vector - Tecla de acimut</Spanish>
+      <French>Vector - Azimuth touche</French>
+      <Polish>Vector - Azymut</Polish>
+      <Czech>Vector - Azimut Klávesa</Czech>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
       <German>Vector - Entfernungs-Taste</German>
+      <Spanish>Vector - Tecla de distancia</Spanish>
+      <French>Vector - Distance touche</French>
+      <Polish>Vector - Odległość</Polish>
+      <Czech>Vector - Vzdálenost Klávesa</Czech>
     </Key>
 
   </Package>
