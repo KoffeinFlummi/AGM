@@ -10,7 +10,7 @@
  * None.
  */
 
-private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode"];
+private ["_weapon", "_muzzles", "_modes", "_count", "_index", "_muzzle", "_mode", "_safedMuzzles", "_actionID"];
 
 _weapon = _this select 0;
 if (_weapon == "") exitWith {};
@@ -19,6 +19,8 @@ if !(player getVariable ["AGM_CanTreat", true]) exitWith {};
 if (currentWeapon player != _weapon) exitWith {
 	player selectWeapon _weapon;
 };
+
+if (currentMuzzle player == _weapon && {[player, _weapon] call AGM_WeaponSelect_fnc_safeModeOff}) exitWith {};
 
 _muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;	
 _modes = [_weapon] call AGM_WeaponSelect_fnc_getWeaponModes;
