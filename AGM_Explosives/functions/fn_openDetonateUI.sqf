@@ -42,4 +42,8 @@ _actions = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explos
 	};
 } foreach _result;
 
-[_actions, {[player,parseNumber (_this select 1), player getVariable ["AGM_Clacker", []] select parseNumber (_this select 0), false, false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;}, {"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
+[
+	_actions,
+	{[player,if(TYPENAME(_this select 1) != "SCALAR")then{parseNumber(_this select 1)}else{_this select 1}, (player getVariable ["AGM_Clacker", []]) select (if(TYPENAME(_this select 0) != "SCALAR")then{parseNumber(_this select 0)}else{_this select 0}), false, false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;},
+	{"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
+] call AGM_Interaction_fnc_openSelectMenu;

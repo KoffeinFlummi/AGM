@@ -25,9 +25,8 @@
 */
 if (!(profileNamespace getVariable ["AGM_Interaction_NewMenu", false])) then {
 	buttonSetAction [8855, "call " + str (_this select 2)]; // cancel
-	diag_log format ["Cancel: %1", "call " + str (_this select 2)];
-	diag_log format ["Accept: %1", "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)];
 	buttonSetAction [8860, "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)]; // accept
+	lbSetCurSel [8866, 0];
 }else{
 	_customActions = _this select 0;
 	_count = count _customActions;
