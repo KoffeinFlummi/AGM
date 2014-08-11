@@ -125,7 +125,7 @@ class AGM_Core_Options {
     default = 1;
   };
   class Interaction_NewMenu {
-    displayName = "Experimental Menu";//$STR_AGM_Interaction_NewMenu;
+    displayName = $STR_AGM_Interaction_NewMenu;
 	default = 0;
   };
 };

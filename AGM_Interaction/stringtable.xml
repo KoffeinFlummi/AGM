@@ -490,5 +490,11 @@
       <French>Les menottes permettent de faire des prisonnier</French>
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
     </Key>
+    <Key ID="STR_AGM_Interaction_NewMenu">
+      <English>Experimental Menu</English>
+    </Key>
+    <Key ID="STR_AGM_Interaction_ScrollHint">
+      <English>Scroll</English>
+    </Key>
   </Package>
 </Project>

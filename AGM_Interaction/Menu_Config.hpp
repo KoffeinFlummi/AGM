@@ -416,7 +416,7 @@ class RscTitles {
 			class SelectText: RscInteractionText{
 				idc = 1021;
 				y = 17 * GUI_GRID_H;
-				text = "Select";
+				text = $STR_AGM_Interaction_MakeSelection;
 			};
 			class ScrollIcon: RscInteractionHelperIcon{
 				idc = 1212;
@@ -426,7 +426,7 @@ class RscTitles {
 			class ScrollText: RscInteractionText{
 				idc = 1022;
 				y = 18 * GUI_GRID_H;
-				text = "Scroll";
+				text = $STR_AGM_Interaction_ScrollHint;
 			};
 			class GoBackIcon: RscInteractionHelperIcon{
 				idc = 1213;
