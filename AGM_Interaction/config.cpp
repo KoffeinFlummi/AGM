@@ -732,6 +732,7 @@ class CfgVehicles {
       class PlayerNamesViewDistance {
         displayName = "Player Names View Dist.";
         description = "Distance in meters at which player names are shown. Default: 5";
+        typeName = "NUMBER";
         defaultValue = 5;
       };
     };

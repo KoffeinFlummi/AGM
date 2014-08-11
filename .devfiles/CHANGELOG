@@ -1,0 +1,146 @@
+# v0.93
+
+- Added: New Explosives system including different trigger types
+- Added: New Logistics system including vehicle maintenance, cargo transport and refueling
+- Added: Ability to drag static weapons around
+- Added: Map Tool
+- Added: G-Forces effect and possibiity of GLOC
+- Added: Ported Kestrel from the BWMod
+- Added: Ported Vector IV from the BWMod
+- Added: Magazine Repacking
+- Changed: Consolidated a bunch of PBOs
+
+- Fixed: Aborting treatments would cause inability to treat again for a short time.
+- Fixed: AI was able to heal themselves with random items.
+- Fixed: Ammo wasn't shown in static weapons.
+- Fixed: Armed KA-60 would spawn without rockets.
+- Fixed: Camshake calculation would produce a script error when a weapon would have no recoil.
+- Fixed: Certain damage sources would damage various body parts.
+- Fixed: Checking your ammo without actually having a magazine would result in a script error.
+- Fixed: Game would crash when loading certain, large missions.
+- Fixed: Hand grenades would produce excessive ragdoll force.
+- Fixed: ODing on morphine now kills you even with Prevent Insta Death on.
+- Fixed: Patient would hover in midair when carrying is aborted during the animation.
+- Fixed: Playing with clantags using <>s would break certain displays.
+- Fixed: Using moduload together with AGM would duplicate key EHs
+- Fixed: Waking up in a vehicle would eject you.
+- Fixed: Weapon resting would bug out during transitional animations.
+- Fixed: Wiping your goggles would cause cam shake even in 3rd person.
+- Fixed: You could check the temperature of binoculars.
+
+- Added: A fix for the offset of the crosshair in the Comanche
+- Added: Action Menu option for releasing things for quick access
+- Added: Admins can now still use the chat while unconscious.
+- Added: Bluforce Tracking Module
+- Added: Check PBOs module
+- Added: Fatigue System
+- Added: Fixed guided artillery shells.
+- Added: Grenades can now be selected with [6] (lethal) and [7] (non-lethal)
+- Added: Hand Flares
+- Added: HUD for the AH-9
+- Added: Incremental door opening (hold down the button and scroll).
+- Added: Major buff to flares of all kinds.
+- Added: Medical module option to heal the entire body with 1 bandage.
+- Added: Medical treatments now use the patient's supplies first.
+- Added: Mission designers can allow certain AI units to fall unconscious using "this setVariable ["AGM_AllowUnconscious", true]".
+- Added: Model for the epipen
+- Added: Model for the morphine injector
+- Added: Module option for maximum unconsciousness time before death
+- Added: Option to reset a key binding to defaul.
+- Added: Possibility to manually adjust the FCS range in 50m steps
+- Added: Prisoner system allowing you to detain people with cableties and escort them around.
+- Added: Respawn module and options
+- Added: Self-Interaction option to reset the FCS
+- Added: Some blood mist effects on hit
+- Added: Support of Ctrl, Shift, Alt as keybindings
+- Added: Tapping another person also causes camshake for you.
+- Added: The inventory screen now shows you the weight of your equipment numerically.
+- Added: Weapon jamming of overheating weapons
+- Added: When using the "Require Diagnosis" option, the result of a diagnosis is now broadcasted to other players standing nearby.
+- Added: Wirecutting using the toolkit
+- Added: You can now attach various signalling devices to yourself (IR strobes).
+
+- Changed: Added some colour to the diagnosis dialog.
+- Changed: Ammo types in APCs are now, like in MBTs, selectable using the action menu.
+- Changed: Buffed weapon resting and bipod deploying.
+- Changed: Falling damage now only damages legs.
+- Changed: Icons of morphine injector and epipen
+- Changed: Lowered the firing rate of the XM312.
+- Changed: Moved the plate carrier nerf to AGM_Ballistics.
+- Changed: reloadTime of the single flare mode was reduced.
+- Changed: Removed AGM_Sway in favour of the new vanilla sway.
+- Changed: Removed the need to remove people from their group when falling unconscious.
+- Changed: Renamed PBOs to lowercase for linux server compatibility.
+- Changed: Reworked Name Tags
+- Changed: Reworked the way unconsciousness blocks user input, fixing a bunch of bugs.
+
+
+# v0.92
+
+- Fixed: "Prevent Insta-Death" didn't actually work. -.-
+- Fixed: (Medical) items couldn't be added using VAS.
+- Fixed: Grenades using the "precise throw" setting were thrown in head direction when freelooking.
+- Fixed: Some third-party addons using miniguns lost their ammunition.
+- Fixed: Tweaked the way the maximum distance for interaction with vehicles is calculating, allowing proper interaction with long vehicles, such as the HEMTT
+- Fixed: Users were able to press buttons while unconscious in vehicles
+- Fixed: Weapon resting while having your weapon lowered would result in weirdnesses.
+
+- Added: ACRE support for Medical and Hearing
+- Added: Box with miscellaneous items (earplugs, UAV batteries etc.)
+- Added: Incorporated LordHeart's LHM Glasses.
+- Added: Made the small dot the default marker
+- Added: Mission makers can now define their own interaction menu entries (https://github.com/KoffeinFlummi/AGM/issues/244)
+- Added: Option to reopen the medical menu automatically after treatments
+- Added: Self-Interaction menu option for equipping ear plugs
+
+- Changed: Burst configuration of the GAU-8 (using the original sound again).
+- Changed: Notifications now use a custom RSC element.
+
+
+# v0.91
+
+- Fixed: 'Center To Current Position' was still present in briefing screen.
+- Fixed: Back button in interaction menu always went to the self menu.
+- Fixed: Changing from standing to crouching while walking would stop the movement.
+- Fixed: Gunner seat of Fennek/Strider was broken.
+- Fixed: Interaction menu would bug out on exotic resolutions.
+- Fixed: KeyDown event handlers weren't initialized properly when spawning inside a vehicle.
+- Fixed: Reloading a savegame would break KeyDown event handlers.
+- Fixed: Resting the weapon while in adjusted prone stances would cause you to stand up.
+- Fixed: Resting weapon during medical treatments would cause weirdnesses.
+- Fixed: Some 'Updating Base Class' bugs.
+- Fixed: Starting a new mission while wearing NVGs would cause weird ligth effects.
+- Fixed: The direction of the wind readout was reversed.
+- Fixed: The name of the MBT Revolution is now Leopard 2SG.
+- Fixed: The night vision effect didn't work in vehicles.
+- Fixed: Treatment of civilians wasn't possible.
+- Fixed: Unconscious effect would carry over to spectator mode/other players after teamswitch.
+- Fixed: Volume of medical supplies now match the things they replace.
+- Fixed: Waking up people in certain buildings would cause them to wake up under the floor.
+- Fixed: Wind ballistics were broken.
+
+- Added: Better Fatigue system.
+- Added: Changes to the behaviour of air-to-air and air-to-ground missiles and rockets (thanks Crusty)
+- Added: Changes to the flight behaviour of various planes (thanks Crusty)
+- Added: Check PBOs module to allow mission makers to make sure that everyone has the right AGM subset.
+- Added: Helicopters now have the fire control system aswell.
+- Added: Key for shoulder tapping
+- Added: Laser Marker to the copilot seat of the Wildcat (thanks Crusty)
+- Added: Module for the medical system, allowing mission designers to customize a variety of options
+- Added: More ammo types (armour-piercing, subsonic)
+- Added: Option to check weapon's temperature
+- Added: Passengers of medical vehicles now don't bleed anymore.
+- Added: Player names and weapon selection via number keys can now be turned off in the AGM options.
+- Added: Players are now notified when they abort an action.
+- Added: Players are now notified when they are given morphine to prevent grieving.
+- Added: Realistic weaponry and weapon names for vehicles
+- Added: Thermal properties of humans were adjusted. (thanks nKey)
+- Added: Unconscious players can't talk with TFAR anymore.
+- Added: Weapons that are compatible with TMR_Autorest (bipods) are now also compatible with AGM_Resting.
+
+- Changed: Adjusted the amount ear plugs dampen overall sound.
+- Changed: Completely overhauled all recoils.
+- Changed: Goggles effect of the clear tactical goggles adjusted.
+- Changed: The A-10 now has a proper name.
+- Changed: Tweaked the NVG adjustment.
+- Changed: Vehicle and weapon renaming is now in seperate PBOs and therefore optional.

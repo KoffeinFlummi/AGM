@@ -286,6 +286,7 @@
       <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
       <French>Afficher le nom des joueurs uniquement sur le curseur (Nom des joueurs requis)</French>
+      <Czech>Zobrazit jméno hráče jenom na kurzor (potřeba jména hráčů)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
@@ -293,6 +294,7 @@
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
       <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
       <French>Afficher le rang des joueurs (Nom des joueurs requis)</French>
+      <Czech>Zobrazit hodnosti hráčů (potřeba jména hráčů)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -300,6 +302,7 @@
       <Spanish>Cancelar</Spanish>
       <Polish>Anuluj</Polish>
       <French>Annuler</French>
+      <Czech>Zrušit</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_MakeSelection">
       <English>Select</English>
@@ -307,6 +310,7 @@
       <Spanish>Seleccionar</Spanish>
       <Polish>Wybierz</Polish>
       <French>Selectionner</French>
+      <Czech>Zvolit</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_SendAway">
       <English>Go Away!</English>
@@ -332,6 +336,7 @@
       <Spanish>Tomar prisionero</Spanish>
       <French>Capturer le prisonnier</French>
       <Polish>Weź więźnia</Polish>
+      <Czech>Zajmout Osobu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ReleaseCaptive">
       <English>Free Prisoner</English>
@@ -339,6 +344,7 @@
       <Spanish>Liberar prisionero</Spanish>
       <Polish>Wypuść więźnia</Polish>
       <French>Relacher le prisonnier</French>
+      <Czech>Osvobodit Zajatce</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_EscortCaptive">
       <English>Escort Prisoner</English>
@@ -346,6 +352,7 @@
       <Spanish>Escoltar prisionero</Spanish>
       <Polish>Eskortuj więźnia</Polish>
       <French>Escorter le prisonnier</French>
+      <Czech>Eskortovat Zajatce</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_StopEscorting">
       <English>Release Prisoner</English>
@@ -353,6 +360,7 @@
       <Spanish>Soltar prisionero</Spanish>
       <Polish>Anuluj eskortowanie</Polish>
       <French>Stopper l'escorte</French>
+      <Czech>Uvolnit Zajatce</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_NoCaptive">
       <English>You need you take him as prisoner first!</English>
@@ -360,6 +368,7 @@
       <Spanish>Necesitas hacerle prisionero primero!</Spanish>
       <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
       <French>Vous devez d'abord le faire prisonnier</French>
+      <Czech>Musíš ho nejdříve zajmout!</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
@@ -367,6 +376,7 @@
       <Spanish>Gestión de equipo &gt;&gt;</Spanish>
       <French>Gestion d'équipe &gt;&gt;</French>
       <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
+      <Czech>Správa týmu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>
@@ -374,6 +384,7 @@
       <Spanish>Rojo</Spanish>
       <French>Rouge</French>
       <Polish>Czerwony</Polish>
+      <Czech>Červený</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamGREEN">
       <English>Green</English>
@@ -381,6 +392,7 @@
       <Spanish>Verde</Spanish>
       <French>Vert</French>
       <Polish>Zielony</Polish>
+      <Czech>Zelený</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamBLUE">
       <English>Blue</English>
@@ -388,6 +400,7 @@
       <Spanish>Azul</Spanish>
       <French>Bleu</French>
       <Polish>Niebieski</Polish>
+      <Czech>Modrý</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamYELLOW">
       <English>Yellow</English>
@@ -395,6 +408,7 @@
       <Spanish>Amarillo</Spanish>
       <French>Jaune</French>
       <Polish>Żółty</Polish>
+      <Czech>Žlutý</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamRed">
       <English>Join Team Red</English>
@@ -402,6 +416,7 @@
       <Spanish>Unirse al equipo rojo</Spanish>
       <French>Rejoindre équipe rouge</French>
       <Polish>Dołącz do drużyny czerwonej</Polish>
+      <Czech>Připojit do Červeného Týmu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamGreen">
       <English>Join Team Green</English>
@@ -409,6 +424,7 @@
       <Spanish>Unirse al equipo verde</Spanish>
       <French>Rejoindre équipe verte</French>
       <Polish>Dołącz do drużyny zielonej</Polish>
+      <Czech>Připojit do Zeleného Týmu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamBlue">
       <English>Join Team Blue</English>
@@ -416,6 +432,7 @@
       <Spanish>Unirse al equipo azul</Spanish>
       <French>Rejoindre équipe bleu</French>
       <Polish>Dołącz do drużyny niebieskiej</Polish>
+      <Czech>Připojit do Modrého Týmu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamYellow">
       <English>Join Team Yellow</English>
@@ -423,6 +440,7 @@
       <Spanish>Unirse al equipo amarillo</Spanish>
       <French>Rejoindre équipe jaune</French>
       <Polish>Dołącz do drużyny żółtej</Polish>
+      <Czech>Připojit do Žlutého Týmu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinedTeam">
       <English>You joined Team %1</English>
@@ -430,6 +448,7 @@
       <Spanish>Te has unido al equipo %1</Spanish>
       <French>Vous avez rejoins l'équipe %1</French>
       <Polish>Dołączyłeś do drużyny %1</Polish>
+      <Czech>Připojil ses do Týmu %1</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_LeaveTeam">
       <English>Leave Team</English>
@@ -437,6 +456,7 @@
       <Spanish>Dejar equipo</Spanish>
       <French>Quitter l'équipe</French>
       <Polish>Opuść drużynę</Polish>
+      <Czech>Opustit tým</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_LeftTeam">
       <English>You left the Team</English>
@@ -444,6 +464,7 @@
       <Spanish>Has dejado el equipo</Spanish>
       <French>Vous avez quitter l'équipe</French>
       <Polish>Opuściłeś drużynę</Polish>
+      <Czech>Opustil si tým</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_Pardon">
       <English>Pardon</English>
@@ -451,6 +472,7 @@
       <Spanish>Rehabilitar</Spanish>
       <Polish>Przebacz</Polish>
       <French>Pardon</French>
+      <Czech>Pardon</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Name">
       <English>Cable Tie</English>
@@ -458,6 +480,7 @@
       <Polish>Opaska zaciskowa</Polish>
       <Spanish>Precinto de seguridad</Spanish>
       <French>Menottes</French>
+      <Czech>Stahovací Pásek</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
@@ -465,6 +488,7 @@
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
       <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
       <French>Les menottes permettent de faire des prisonnier</French>
+      <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
     </Key>
   </Package>
 </Project>

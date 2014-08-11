@@ -19,6 +19,6 @@ if !(_activated) exitWith {};
 
 AGM_Interaction_Module = true;
 
-["AGM_Interaction_PlayerNamesViewDistance", parseNumber (_logic getVariable "PlayerNamesViewDistance")] call AGM_Core_fnc_setParameter;
+[_logic, "AGM_Interaction_PlayerNamesViewDistance",  "PlayerNamesViewDistance"     ] call AGM_Core_fnc_readNumericParameterFromModule;
 
 diag_log text "[AGM]: Interaction Module Initialized.";

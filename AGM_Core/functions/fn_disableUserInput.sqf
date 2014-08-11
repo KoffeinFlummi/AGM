@@ -35,6 +35,11 @@ if (_state) then {
 
 				disableSerialization;
 				_dlg = finddisplay 49;
+				_dlg displayAddEventHandler ["KeyDown", {
+					_key = _this select 1;
+					!(_key == 1)
+				}];
+
 				for "_index" from 100 to 2000 do {
 					(_dlg displayCtrl _index) ctrlEnable false;
 				};
@@ -55,8 +60,10 @@ if (_state) then {
 			if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
 			if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
-			if (serverCommandAvailable "#missions" || {player getVariable ["AGM_Unconscious", false] && {!isNil "AGM_Medical_AllowChatWhileUnconscious"} && {AGM_Medical_AllowChatWhileUnconscious > 0}})  then {
-				if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) exitWith {false};
+			if (serverCommandAvailable "#missions" || {player getVariable ["AGM_Unconscious", false] && {missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", 0] > 0}})  then {
+				if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) then {
+					_key = 0;
+				};
 			};
 
 			_key > 0

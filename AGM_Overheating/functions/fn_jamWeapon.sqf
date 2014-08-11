@@ -51,7 +51,7 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
 		false,
 		true,
 		"DefaultAction",
-		"player == vehicle player && {currentWeapon player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
+		"player == vehicle player && {currentMuzzle player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
 	];
 
 	_unit setVariable ["AGM_JammingActionID", _actionID];

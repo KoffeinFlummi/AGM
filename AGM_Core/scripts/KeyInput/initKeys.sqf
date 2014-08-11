@@ -58,8 +58,8 @@ _haltUp = "AGM_Core_keyStates set [_keyIndex, 0];";
 
 _return = "_isInput";
 
-_repeat = format ["if (!_isInput && {_keyCode mod 1 > 0} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; %1};", _onKeyDown + _return];
-_repeatUp = format ["if (!_isInput && {_keyCode mod 1 > 0} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; %1};", _onKeyUp];
+_repeat = format ["if (!_isInput && {_keyCode mod 1 > 0.75} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; %1};", _onKeyDown + _return];
+_repeatUp = format ["if (!_isInput && {_keyCode mod 1 > 0.75} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; %1};", _onKeyUp];
 
 _onKeyDown = _header + _handleDoubleTap + _handleHold + _onKeyDown + _halt + _repeat + _return;
 _onKeyUp = _headerUp + _onKeyUp + _haltUp + _repeatUp;	//_headerUp + _handleHoldUp + _onKeyUp + _haltUp + _repeatUp;

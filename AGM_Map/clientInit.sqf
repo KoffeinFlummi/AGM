@@ -25,4 +25,15 @@ if (!hasInterface) exitWith{};
 
   // Update the size and rotation
   [] call AGM_Map_fnc_updateMapToolMarkers;
+
+  while {true} do {
+    waitUntil {visibleMap};
+    [] call AGM_Map_fnc_updateMapToolMarkers;
+
+    waitUntil {!visibleMap};
+    deleteMarkerLocal "MapToolFixed";
+    deleteMarkerLocal "MapToolRotating";
+    AGM_Map_mapToolFixed = nil;
+    AGM_Map_mapToolRotating = nil;
+  };
 };
