@@ -129,7 +129,7 @@ _ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 if (_class in ["", "Default"]) then {
 	AGM_Interaction_MainButton = "closeDialog 0;";
 	if (AGM_Interaction_Target isKindOf "Man") then {
-		_ctrlInteractionDialog ctrlSetText (AGM_Interaction_Target getVariable ["AGM_Name", (name AGM_Interaction_Target)]);
+		_ctrlInteractionDialog ctrlSetText (if (alive AGM_Interaction_Target) then {name AGM_Interaction_Target} else {AGM_Interaction_Target getVariable ["AGM_Name", "Unknown"]});
 	} else {
 		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf AGM_Interaction_Target) >> "displayName"));
 	};
