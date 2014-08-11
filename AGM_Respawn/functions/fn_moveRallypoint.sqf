@@ -4,7 +4,7 @@ _this spawn {
 	_unit = _this select 0;
 	_side = _this select 1;
 
-	_rallypoint = [objNull, AGM_Rallypoint_West, AGM_Rallypoint_East, AGM_Rallypoint_Independent] select ([west, east, independent] find _side) + 1;
+	_rallypoint = [objNull, AGM_RallypointExit_West, AGM_RallypointExit_East, AGM_RallypointExit_Independent] select ([west, east, independent] find _side) + 1;
 
 	if (isNull _rallypoint) exitWith {};
 

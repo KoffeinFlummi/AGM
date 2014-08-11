@@ -19,9 +19,9 @@ _this spawn {
 	if (_unit == player) then {
 		_rank = profileNamespace getVariable ["AGM_Rank", _rank];
 		_name = [_name, true] call AGM_Core_fnc_sanitizeString;
-	};_rank = "";
+	};
 
-	_name = format ["%1 %2", _rank, _name];
+	//_name = format ["%1 %2", _rank, _name];
 
 	_unit setVariable ["AGM_Name", _name, true];
 };
