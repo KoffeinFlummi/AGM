@@ -335,10 +335,10 @@ class RscAGM_SelectAnItem {
 class RscPicture;
 class RscStructuredText;
 class RscInteractionIcon: RscPicture {
-	x = 19.5 * GUI_GRID_W + GUI_GRID_X;
-	y = 16 * GUI_GRID_H + GUI_GRID_Y;
-	w = 1.5 * GUI_GRID_W;
-	h = 1.5 * GUI_GRID_H;
+	x = 19.25 * GUI_GRID_W + GUI_GRID_X;
+	y = 15.75 * GUI_GRID_H + GUI_GRID_Y;
+	w = 2 * GUI_GRID_W;
+	h = 2 * GUI_GRID_H;
 };
 class RscInteractionHelperIcon: RscInteractionIcon {
 	x = 20 * GUI_GRID_W + GUI_GRID_X;
@@ -364,11 +364,12 @@ class RscTitles {
 		
 		class controls {
 			class RearIcon: RscInteractionIcon{
+				idc = 999;
 				text = "AGM_interaction\UI\CenterIcon_ca.paa";
-				y = 10.75 * GUI_GRID_H;
-				w = 3 * GUI_GRID_W;
-				h = 4 * GUI_GRID_H;
-				x = 18.75 * GUI_GRID_W;
+				x = 17.975 * GUI_GRID_W;
+				y = 10 * GUI_GRID_H;
+				w = 4.5 * GUI_GRID_W;
+				h = 5.75 * GUI_GRID_H;
 			};
 			class TopIcon: RscInteractionIcon{
 				idc = 1200;
@@ -378,6 +379,7 @@ class RscTitles {
 			class FirstIcon: RscInteractionIcon{
 				idc = 1201;
 				y = 10.25 * GUI_GRID_H + GUI_GRID_Y;
+				h = 1.5 * GUI_GRID_H;
 			};
 			class SelectedItemIcon: RscInteractionIcon{
 				idc = 1202;
@@ -385,17 +387,18 @@ class RscTitles {
 			};
 			class ThirdIcon: RscInteractionIcon{
 				idc = 1203;
-				y = 13.75 * GUI_GRID_H + GUI_GRID_Y;
+				y = 14.25 * GUI_GRID_H + GUI_GRID_Y;
+				h = 1.5 * GUI_GRID_H;
 			};
 			class BottomIcon: TopIcon{
 				idc = 1204;
-				y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
+				y = 16 * GUI_GRID_H + GUI_GRID_Y;
 			};
 			class ItemName: RscText{
 				idc = 1000;
 				style = 0x01;
-				x = 6 * GUI_GRID_W + GUI_GRID_X;
-				y = 12 * GUI_GRID_H + GUI_GRID_Y;
+				x = 5.25 * GUI_GRID_W + GUI_GRID_X;
+				y = 12.15 * GUI_GRID_H + GUI_GRID_Y;
 				w = 13 * GUI_GRID_W;
 				h = 1.5 * GUI_GRID_H;
 				colorBackground[] = {0.3,0.3,0.3,0.8};
@@ -403,8 +406,8 @@ class RscTitles {
 			class BackIcon: RscInteractionIcon{
 				idc = 1210;
 				text = "AGM_interaction\UI\backArrow_ca.paa";
-				x = 19 * GUI_GRID_W;
-				y = 13.25 * GUI_GRID_H;
+				x = 18.25 * GUI_GRID_W;
+				y = 12.69 * GUI_GRID_H;
 				w = 0.5 * GUI_GRID_W;
 				h = 0.5 * GUI_GRID_H;
 			};
