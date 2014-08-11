@@ -363,15 +363,21 @@ class RscTitles {
 		onLoad = "uiNamespace setVariable ['Interaction_Display', _this select 0];";
 		
 		class controls {
+			class RearIcon: RscInteractionIcon{
+				text = "AGM_interaction\UI\CenterIcon_ca.paa";
+				y = 10.75 * GUI_GRID_H;
+				w = 3 * GUI_GRID_W;
+				h = 4 * GUI_GRID_H;
+				x = 18.75 * GUI_GRID_W;
+			};
 			class TopIcon: RscInteractionIcon{
 				idc = 1200;
 				h = 1 * GUI_GRID_H;
-				y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
-				colorText[] = {1,1,1,0.25};
+				y = 9 * GUI_GRID_H + GUI_GRID_Y;
 			};
 			class FirstIcon: RscInteractionIcon{
 				idc = 1201;
-				y = 10 * GUI_GRID_H + GUI_GRID_Y;
+				y = 10.25 * GUI_GRID_H + GUI_GRID_Y;
 			};
 			class SelectedItemIcon: RscInteractionIcon{
 				idc = 1202;
@@ -379,11 +385,11 @@ class RscTitles {
 			};
 			class ThirdIcon: RscInteractionIcon{
 				idc = 1203;
-				y = 14 * GUI_GRID_H + GUI_GRID_Y;
+				y = 13.75 * GUI_GRID_H + GUI_GRID_Y;
 			};
 			class BottomIcon: TopIcon{
 				idc = 1204;
-				y = 16 * GUI_GRID_H + GUI_GRID_Y;
+				y = 15.5 * GUI_GRID_H + GUI_GRID_Y;
 			};
 			class ItemName: RscText{
 				idc = 1000;
@@ -405,31 +411,31 @@ class RscTitles {
 			class SelectIcon: RscInteractionHelperIcon{
 				idc = 1211;
 				text = "AGM_interaction\UI\mouse_left_ca.paa";
-				y = 18 * GUI_GRID_H;
+				y = 17.5 * GUI_GRID_H;
 			};
 			class SelectText: RscInteractionText{
 				idc = 1021;
-				y = 17.5 * GUI_GRID_H;
+				y = 17 * GUI_GRID_H;
 				text = "Select";
 			};
 			class ScrollIcon: RscInteractionHelperIcon{
 				idc = 1212;
 				text = "AGM_interaction\UI\mouse_scroll_ca.paa";
-				y = 19.5 * GUI_GRID_H;
+				y = 18.5 * GUI_GRID_H;
 			};
 			class ScrollText: RscInteractionText{
 				idc = 1022;
-				y = 19 * GUI_GRID_H;
+				y = 18 * GUI_GRID_H;
 				text = "Scroll";
 			};
 			class GoBackIcon: RscInteractionHelperIcon{
 				idc = 1213;
 				text = "AGM_interaction\UI\mouse_right_ca.paa";
-				y = 21 * GUI_GRID_H;
+				y = 19.5 * GUI_GRID_H;
 			};
 			class GoBackText: RscInteractionText{
 				idc = 1023;
-				y = 20.5 * GUI_GRID_H;
+				y = 19 * GUI_GRID_H;
 				text = "Back";
 			};
 			class ItemDetails: RscStructuredText{
