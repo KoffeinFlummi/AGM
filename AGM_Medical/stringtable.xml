@@ -331,7 +331,7 @@
     </Key>
     <Key ID="STR_AGM_Medical_Morphine_Description">
       <English>Heavy Painkiller</English>
-      <German>Schweres Schmerzmittel</German>
+      <German>Starkes Schmerzmittel</German>
       <Spanish>Sedante fuerte</Spanish>
       <Polish>Mocny środek przeciwbólowy</Polish>
       <Czech>Sedativa</Czech>
@@ -371,7 +371,7 @@
     </Key>
     <Key ID="STR_AGM_Medical_Bloodbag_Description">
       <English>Used to compensate for heavy blood loss.</English>
-      <German>Benutzt, um schweren Blutverlust zu kompensieren.</German>
+      <German>Benutzt, um starken Blutverlust zu kompensieren.</German>
       <Spanish>Usada para compensar pérdidas de sangre severas.</Spanish>
       <Polish>Stosowany w celu skompensowania dużej utraty krwi.</Polish>
       <Czech>Používá se pro kompenzaci při těžké ztrátě krve.</Czech>
