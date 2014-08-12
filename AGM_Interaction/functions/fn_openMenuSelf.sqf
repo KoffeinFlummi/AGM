@@ -7,7 +7,7 @@ _patches = [];
 _class = _this;
 
 // crash fix
-if (class != "" && {!(missionNamespace getVariable [AGM_Interaction_isMousePressed, true])}) exitWith {};
+if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])}) exitWith {};
 
 
 _object = vehicle player;

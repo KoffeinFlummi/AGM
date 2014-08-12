@@ -7,7 +7,7 @@ _patches = [];
 _class = _this;
 
 // crash fix
-if (class != "" && {!(missionNamespace getVariable [AGM_Interaction_isMousePressed, true])}) exitWith {};
+if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])}) exitWith {};
 
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
 _object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};

@@ -66,7 +66,7 @@ class AGM_Interaction_Dialog {
     };
     */
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
-      action = "AGM_Interaction_isMousePressed = false; call compile AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
+      action = "AGM_Interaction_isMousePressed = true; call compile AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
       onMouseEnter = "AGM_Interaction_SelectedButton = -1; ctrlSetFocus (_this select 0);";
       style = 2;
       tooltip = "";
@@ -81,7 +81,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 0; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 0; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 0; ctrlSetFocus (_this select 0);";
       style = 2;
       tooltip = "";
@@ -94,7 +94,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button1 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 1; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 1; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 1; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -106,7 +106,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button2 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 2; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 2; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 2; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -118,7 +118,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button3 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 3; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 3; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 3; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -130,7 +130,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button4 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 4; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 4; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 4; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -142,7 +142,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button5 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 5; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 5; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 5; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -154,7 +154,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button6 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 6; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 6; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 6; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -166,7 +166,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button7 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 7; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 7; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 7; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -178,7 +178,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button8 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 8; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 8; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 8; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
@@ -190,7 +190,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button9 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 9; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
+      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 9; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
       onMouseEnter = "AGM_Interaction_SelectedButton = 9; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
