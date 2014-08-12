@@ -691,6 +691,11 @@ class CfgVehicles {
 			MACRO_DRAGABLE
 		};
 	};
+	/*class FIA_Box_Base_F: ReammoBox_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_DRAGABLE
+		};
+	};*/
 	class NATO_Box_Base: ReammoBox_F {
 		class AGM_Actions: AGM_Actions {
 			MACRO_DRAGABLE
