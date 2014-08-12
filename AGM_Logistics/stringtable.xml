@@ -37,7 +37,7 @@
       <Spanish>Menú de descarga</Spanish>
       <French>Menu de déchargement</French>
       <Polish>Menu rozładunku</Polish>
-      <German>Ablademenu</German>
+      <German>Ablademenü</German>
       <Czech>Vyložovací Menu</Czech>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadItem">
@@ -469,7 +469,7 @@
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu">
       <English>Select Wheel Menu</English>
-      <German>Reifen wählen Menu</German>
+      <German>Reifen wählen Menü</German>
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Selectionner menu roues</French>
       <Polish>Wybierz menu kół</Polish>
@@ -485,7 +485,7 @@
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu_Salvage">
       <English>Select Wheel Menu</English>
-      <German>Reifen wählen Menu</German>
+      <German>Reifen wählen Menü</German>
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Selectionner menu roues</French>
       <Polish>Wybierz menu kół</Polish>
@@ -598,7 +598,7 @@
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Description">
       <English>Used to refuel Carried UAV's</English>
-      <German>Verwendet zum Aufladen von dragbaren UAV's</German>
+      <German>Verwendet zum Aufladen von tragbaren UAV's</German>
       <Spanish>Usada para reabastecer el VANT</Spanish>
       <French>Utiliser pour faire le plein de l'UAV</French>
       <Polish>Używana do naładowania UAV</Polish>
@@ -652,21 +652,21 @@
   <Package name="Resupply">
     <Key ID="STR_AGM_Resupply_CheckFuel">
       <English>Check Fuel</English>
-      <German>Treibstoff Prüfen</German>
+      <German>Treibstoff prüfen</German>
       <Polish>Sprawdź poziom paliwa</Polish>
       <Spanish>Comprobar combustible</Spanish>
       <Czech>Zkontrolovat Palivo</Czech>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelCargo">
       <English>Check Fuel (Cargo)</English>
-      <German>Treibstoffvorrat Prüfen</German>
+      <German>Treibstoffvorrat prüfen</German>
       <Polish>Sprawdź poziom paliwa (ładunek)</Polish>
       <Spanish>Comprobar combustible (en carga)</Spanish>
       <Czech>Zkontrolovat Palivo (náklad)</Czech>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
       <English>Check Jerrycan</English>
-      <German>Kanister Prüfen</German>
+      <German>Kanister prüfen</German>
       <Polish>Sprawdź kanister</Polish>
       <Spanish>Comprobar bidón</Spanish>
       <Czech>Zkontrolovat Kanystr</Czech>
