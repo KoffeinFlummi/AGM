@@ -18,7 +18,7 @@
 */
 private ["_buttonAction", "_header", "_buttonText", "_cancelButton"];
 closeDialog 0;
-if (!(profileNamespace getVariable ["AGM_Interaction_NewMenu", false])) exitWith {
+if (!(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) exitWith {
 	_header = _this select 0;
 	_buttonText = _this select 1;
 	if (isNil "_buttonText" or {_buttonText == ""}) then {

@@ -20,11 +20,11 @@
 if (isNil "AGM_Interaction_MainButton") exitWith{};
 if (isNil "AGM_Interaction_Buttons") exitWith{};
 _count = (count AGM_Interaction_Buttons)- 1;
-AGM_Interaction_Current = CLAMP(AGM_Interaction_Current + _this, 0, _count);
+AGM_Interaction_SelectedButton = CLAMP(AGM_Interaction_SelectedButton + _this, 0, _count);
 
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "Interaction_Display";
-_middle = AGM_Interaction_current - 2;
+_middle = AGM_Interaction_SelectedButton - 2;
 _i = 0;
 while {_i <= 4} do {
 	_index =_i + _middle;
@@ -51,9 +51,9 @@ while {_i <= 4} do {
 };
 
 _ctrl = _dlgInteractionDialog displayCtrl 1000;
-_ctrl ctrlSetText ((AGM_Interaction_Buttons select AGM_Interaction_Current) select 0);
+_ctrl ctrlSetText ((AGM_Interaction_Buttons select AGM_Interaction_SelectedButton) select 0);
 _ctrl = _dlgInteractionDialog displayCtrl 1100;
-_current = (AGM_Interaction_Buttons select AGM_Interaction_Current);
+_current = (AGM_Interaction_Buttons select AGM_Interaction_SelectedButton);
 _infoText = "";
 if (!call (_current select 2)) then {
 	_infoText = "Unavailable";

@@ -73,6 +73,8 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player";
     statement = "if (isNil 'AGM_Interaction_MainButton') then {'' call AGM_Interaction_fnc_openMenu;}else{call AGM_Interaction_fnc_hideMenu;};";
+    conditionUp = "!isNull (findDisplay 1713999)";
+    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; if (call (_action select 2)) then {call (_action select 1)};};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
@@ -83,6 +85,8 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "alive player";
     statement = "if (isNil 'AGM_Interaction_MainButton') then {'' call AGM_Interaction_fnc_openMenuSelf}else{call AGM_Interaction_fnc_hideMenu;};";
+    conditionUp = "!isNull (findDisplay 1713999)";
+    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; if (call (_action select 2)) then {call (_action select 1)};};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
@@ -125,7 +129,7 @@ class AGM_Core_Options {
     default = 1;
   };
   class Interaction_NewMenu {
-    displayName = $STR_AGM_Interaction_NewMenu;
+    displayName = $STR_AGM_Interaction_FlowMenu;
 	default = 0;
   };
 };
