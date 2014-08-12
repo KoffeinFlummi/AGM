@@ -107,14 +107,16 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _actions;
 AGM_Interaction_SelectedButton = -1;
 
-(findDisplay 1713999) closeDisplay 1;
-(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+if (_class == "") then {
+	(findDisplay 1713999) closeDisplay 1;
+	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 
-// add keys to display
-(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+	// add keys to display
+	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 
-if (_class == "") then {setMousePosition [0.5, 0.5]};
+	setMousePosition [0.5, 0.5];
+};
 
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";

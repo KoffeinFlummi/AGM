@@ -69,7 +69,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenu} else {(findDisplay 1713999) closeDisplay 1};";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; if (call (_action select 2)) then {call (_action select 1)};};";
+    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;
@@ -81,7 +81,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenuSelf} else {(findDisplay 1713999) closeDisplay 1};";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; if (call (_action select 2)) then {call (_action select 1)};};";
+    statementUp = "(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;

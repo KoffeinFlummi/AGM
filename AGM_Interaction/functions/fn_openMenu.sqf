@@ -115,7 +115,7 @@ if (_class == "") then {
 	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
 	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 
-	setMousePosition [0.5, 0.5]
+	setMousePosition [0.5, 0.5];
 };
 
 disableSerialization;
