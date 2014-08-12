@@ -76,12 +76,22 @@ class CfgFunctions
 		};
 
 class CfgVehicles {
-	class All;
-	class AllVehicles: All {
-		MACRO_DETONATEACTION
-	};
+	class AllVehicles;
 	class LandVehicle;
 	class Car: LandVehicle {
+		MACRO_DETONATEACTION
+	};
+	class Tank: LandVehicle {
+		MACRO_DETONATEACTION
+	};
+	class Ship: AllVehicles {
+		MACRO_DETONATEACTION
+	};
+	class Air;
+	class Helicopter: Air {
+		MACRO_DETONATEACTION
+	};
+	class Plane: Air {
 		MACRO_DETONATEACTION
 	};
 	class Man;
@@ -122,14 +132,6 @@ class CfgVehicles {
 					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
 					showDisabled = 0;
 					priority = 0.4;
-				};
-				// Basic attach, needs to be improved.
-				class AGM_AttachExplosive {
-					displayName = $STR_AGM_Explosives_AttachTo;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup) AND (cursorTarget isKindOf 'Car') AND (cursorTarget distance AGM_Explosives_Setup) < 2.5}";
-					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
-					showDisabled = 0;
-					priority = 0.3;
 				};
 				class AGM_CancelPlace {
 					displayName = $STR_AGM_Explosives_CancelAction;

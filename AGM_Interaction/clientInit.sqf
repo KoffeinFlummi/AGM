@@ -10,8 +10,10 @@ addMissionEventHandler ["Draw3D", {
 
   if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
 
-    _target = effectiveCommander cursorTarget;
-    if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
+    _target = cursorTarget;
+    _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};
+
+    if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
       [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
@@ -20,6 +22,8 @@ addMissionEventHandler ["Draw3D", {
   } else {
 
     _pos = positionCameraToWorld [0, 0, 0];
+    _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
+
     if (!surfaceIsWater _pos) then {
       _pos = ATLtoASL _pos;
     };
@@ -29,10 +33,10 @@ addMissionEventHandler ["Draw3D", {
     };
     _vecy = _pos2 vectorDiff _pos;
 
-    _targets = _pos nearObjects ["Man", AGM_Interaction_PlayerNamesViewDistance + 5];
     {
-      _target = effectiveCommander _x;
-      if (!isNull _target && {side group _target == playerSide} && {_target != player} && {!(_target in allUnitsUAV)}) then {
+      _target = if (_x in allUnitsUAV) then {objNull} else {effectiveCommander _x};
+
+      if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));

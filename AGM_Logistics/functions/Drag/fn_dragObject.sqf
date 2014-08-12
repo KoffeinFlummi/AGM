@@ -39,7 +39,7 @@ _this spawn {
 	if (primaryWeapon _unit == "") then {
 		_unit addWeapon "AGM_FakePrimaryWeapon";
 	};
-	//_unit selectWeapon (primaryWeapon _unit);
+	_unit selectWeapon (primaryWeapon _unit);
 
 	[_unit, _draggedObject] call AGM_Core_fnc_claim;
 
