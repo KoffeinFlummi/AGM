@@ -19,7 +19,7 @@ The components themselves, like the medical system, also include various customi
 More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki/PBO-Overview).
 
 
-<center>[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HPAXPTVCNLDZS)</center>
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HPAXPTVCNLDZS)
 
 ## Features
 
