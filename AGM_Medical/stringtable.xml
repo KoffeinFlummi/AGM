@@ -509,7 +509,7 @@
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightInjuries">
       <English>The patient has light injuries in:</English>
-      <German>Der Patient hat leichte Verletzungen am:</German>
+      <German>Der Patient hat leichte Verletzungen in:</German>
       <Spanish>El paciente tiene heridas leves en:</Spanish>
       <Polish>Pacjent ma lekkie obrażenia na:</Polish>
       <Czech>Pacient má lehká zranění na místech:</Czech>
