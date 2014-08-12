@@ -570,9 +570,7 @@ class CfgVehicles {
 				};
 			};
 		};
-		class AGM_SelfActions: AGM_SelfActions {
-		
-		};
+		class AGM_SelfActions {};
 	};
 
 	class Heli_Transport_02_base_F;
