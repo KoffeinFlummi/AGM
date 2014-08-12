@@ -6,6 +6,10 @@ _actions = [];
 _patches = [];
 _class = _this;
 
+// crash fix
+if (class != "" && {!(missionNamespace getVariable [AGM_Interaction_isMousePressed, true])}) exitWith {};
+
+
 _object = vehicle player;
 
 // fix inheritance
@@ -116,6 +120,12 @@ if (_class == "") then {
 	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 
 	setMousePosition [0.5, 0.5];
+} else {
+	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+
+	// add keys to display
+	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 };
 
 disableSerialization;
