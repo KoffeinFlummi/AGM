@@ -19,6 +19,7 @@ _this spawn {
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     _damages = [
