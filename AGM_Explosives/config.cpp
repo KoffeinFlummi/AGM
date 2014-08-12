@@ -156,6 +156,7 @@ class CfgVehicles {
 	class NATO_Box_Base;
 	class EAST_Box_Base;
 	class IND_Box_Base;
+	class FIA_Box_Base_F;
 	class Box_NATO_Support_F;
 
 	class Box_NATO_AmmoOrd_F: NATO_Box_Base {
@@ -176,6 +177,13 @@ class CfgVehicles {
 		class TransportItems {
 			MACRO_ADDITEM(AGM_Clacker,12)
 			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_FIA_Ammo_F: FIA_Box_Base_F {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,2)
+			MACRO_ADDITEM(AGM_DefusalKit,2)
 		};
 	};
 

@@ -46,7 +46,12 @@ if (_this select 2) then {
 	((uiNamespace getVariable "Interaction_Display") displayCtrl (1023)) ctrlShow _subMenu;
 	((uiNamespace getVariable "Interaction_Display") displayCtrl (1213)) ctrlShow _subMenu;
 }else{ // Normal menu
-	createDialog "AGM_Interaction_Dialog";
+	(findDisplay 1713999) closeDisplay 1;
+	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+	// Add eventhandlers
+	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+	
 	if !(_subMenu) then {setMousePosition [0.5, 0.5]};
 	disableSerialization;
 	_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";

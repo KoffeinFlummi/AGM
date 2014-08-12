@@ -71,7 +71,7 @@ class Extended_GetIn_EventHandlers {
 class AGM_Core_Default_Keys {
   class openInteractionMenu {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
-    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
+    condition = "alive player";
     statement = "if (isNil 'AGM_Interaction_MainButton') then {'' call AGM_Interaction_fnc_openMenu;}else{call AGM_Interaction_fnc_hideMenu;};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
@@ -81,7 +81,7 @@ class AGM_Core_Default_Keys {
   };
   class openInteractionMenuSelf {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
+    condition = "alive player";
     statement = "if (isNil 'AGM_Interaction_MainButton') then {'' call AGM_Interaction_fnc_openMenuSelf}else{call AGM_Interaction_fnc_hideMenu;};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
