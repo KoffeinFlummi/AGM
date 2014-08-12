@@ -94,9 +94,9 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 call AGM_Interaction_fnc_hideMenu;
 AGM_Interaction_Buttons = _actions;
 if !(_class in ["", "Default"])then{
-	[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_NewMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
+	[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
 }else{
-	[{call AGM_Interaction_fnc_hideMenu;}, false, (profileNamespace getVariable ["AGM_Interaction_NewMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
+	[{call AGM_Interaction_fnc_hideMenu;}, false, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
 };
 /* if (AGM_Interaction_Updater) exitWith {};
 [] spawn {

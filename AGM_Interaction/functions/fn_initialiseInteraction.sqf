@@ -7,7 +7,7 @@
 		Initialises the interaction click handlers.
 	
 	Parameters: 
-		0 : CODE - code to call when right clicking.
+		0 : CODE - code to call when right clicking/center button
 		1 : BOOLEAN - Submenu
 		2 : BOOLEAN - Experimental Menu
 		3 : BOOLEAN - Self interaction
@@ -30,16 +30,17 @@ if (_this select 2) then {
 	64 cutRsc ["InteractionMenu", "PLAIN",0.5, false];
 	AGM_Interaction_SelectedButton = 0;
 	showHUD false;
+	(findDisplay 1713999) closeDisplay 1;
 	if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
+		(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 1) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true"];
 		player setVariable ["AGM_AcceptAction", player addAction ["", {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; if (call (_action select 2)) then {if (count _action > 5) then {(_action select 5) call (_action select 1);}else{call (_action select 1);};};},
 			nil, 0, false, true, "DefaultAction",
-			"!isNil 'AGM_Interaction_MainButton' && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}"
+			"(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}"
 		]];
 		player addAction ["", {call AGM_Interaction_MainButton;},
 			nil, 0, false, true, "menuBack",
-			"!isNil 'AGM_Interaction_MainButton' && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}"
+			"(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}"
 		];
-		(findDisplay 46) displayAddEventHandler ["MouseZChanged", "if(isNil 'AGM_Interaction_MainButton' || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 1) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true"];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
 	((uiNamespace getVariable "Interaction_Display") displayCtrl (1210)) ctrlShow _subMenu;
