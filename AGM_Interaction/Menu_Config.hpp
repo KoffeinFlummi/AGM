@@ -81,6 +81,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 0; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '1'";
       style = 2;
       tooltip = "";
       text = "";
@@ -93,6 +94,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button1 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 1; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '2'";
       tooltip = "";
       text = "";
       idc = 11;
@@ -104,6 +106,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button2 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 2; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '3'";
       tooltip = "";
       text = "";
       idc = 12;
@@ -115,6 +118,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button3 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 3; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '4'";
       tooltip = "";
       text = "";
       idc = 13;
@@ -126,6 +130,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button4 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 4; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '5'";
       tooltip = "";
       text = "";
       idc = 14;
@@ -137,6 +142,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button5 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 5; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '6'";
       tooltip = "";
       text = "";
       idc = 15;
@@ -148,6 +154,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button6 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 6; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '7'";
       tooltip = "";
       text = "";
       idc = 16;
@@ -159,6 +166,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button7 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 7; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '8'";
       tooltip = "";
       text = "";
       idc = 17;
@@ -170,6 +178,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button8 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 8; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '9'";
       tooltip = "";
       text = "";
       idc = 18;
@@ -181,6 +190,7 @@ class AGM_Interaction_Dialog {
 
     class Interaction_Button9 : Interaction_Button0 {
       action = "closeDialog 0; _action = AGM_Interaction_Buttons select 9; if (call (_action select 2)) then {call (_action select 1)};";
+      onMouseEnter = "hint '10'";
       tooltip = "";
       text = "";
       idc = 19;
