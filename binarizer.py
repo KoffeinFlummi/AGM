@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 
 # AGM BINARIZER
@@ -70,16 +70,16 @@ if getattr(sys, "frozen", False): # script is run as .exe, ask the user for thes
   moddir = input("> ")
 
   print("\n# MOD FOLDER (including @)")
-  print("(If you don't enter anything, '@AGM_dev' will be used.)")
+  print("(If you don't enter anything, '@agm_dev' will be used.)")
   modfolder = input("> ")
   if modfolder == "":
-    modfolder = "@AGM_dev"
+    modfolder = "@agm_dev"
 
   print("")
 
 else:
   # Path to .biprivatekey file. If not set, addon will not be signed.
-  privatekey   = ""#C:\\Programme\\Steam\\SteamApps\\common\\Arma 3 Tools\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
+  privatekey   = "P:\\AGM.biprivatekey" # if set to anything other that "" it will sign the addons
 
   # Path to Arma installation. If not set, registry values will be used.
   arma         = ""
@@ -91,7 +91,7 @@ else:
   moddir       = ""
 
   # Name of the mod folder. REQUIRED!
-  modfolder    = "@AGM_dev"
+  modfolder    = "@agm_dev"
 
 # set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
 movemanually = False
@@ -159,7 +159,7 @@ def get_obsolete():
   """ Get all the PBOs that no longer have any project folders. """
   global moddir, modfolder, privatekey, movemanually
 
-  destination_path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+  destination_path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "addons")
 
   pbos = list(map(lambda x: x.lower(), os.listdir(destination_path)))
   projects = list(map(lambda x: x.lower(), os.listdir(os.path.dirname(scriptpath))))

@@ -226,6 +226,17 @@ class CfgVehicles {
 	class Man;
 	class CAManBase: Man {
 		class AGM_SelfActions {
+			// Sometimes it is not possible to target an object that you are dragging
+			// particularly noticeable on Stratis on the dock wall.
+			// Adding a self option to release will fix this.
+			class AGM_ReleaseItemSelf {
+				displayName = "$STR_AGM_Drag_EndDrag";
+				condition = "player call AGM_Drag_fnc_isDraggingObject";
+				statement = "player call AGM_Drag_fnc_releaseObject";
+				exceptions[] = {"AGM_Drag_isNotDragging"};
+				showDisabled = 0;
+				priority = 2.1;
+			};
 			MACRO_CHECKFUEL
 		};
 	};
@@ -559,9 +570,7 @@ class CfgVehicles {
 				};
 			};
 		};
-		class AGM_SelfActions: AGM_SelfActions {
-		
-		};
+		class AGM_SelfActions {};
 	};
 
 	class Heli_Transport_02_base_F;
@@ -682,6 +691,11 @@ class CfgVehicles {
 			MACRO_DRAGABLE
 		};
 	};
+	/*class FIA_Box_Base_F: ReammoBox_F {
+		class AGM_Actions: AGM_Actions {
+			MACRO_DRAGABLE
+		};
+	};*/
 	class NATO_Box_Base: ReammoBox_F {
 		class AGM_Actions: AGM_Actions {
 			MACRO_DRAGABLE

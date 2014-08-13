@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import sys
@@ -7,7 +7,7 @@ from xml.dom import minidom
 
 # STRINGTABLE DIAG TOOL
 # Author: KoffeinFlummi
-#
+# ---------------------
 # Checks for missing translations and all that jazz.
 
 def get_all_languages(projectpath):
@@ -52,46 +52,50 @@ def check_module(projectpath, module, languages):
 
   return keynumber, localized
 
-scriptpath = os.path.realpath(__file__)
-projectpath = os.path.dirname(os.path.dirname(scriptpath))
+def main():
+  scriptpath = os.path.realpath(__file__)
+  projectpath = os.path.dirname(os.path.dirname(scriptpath))
 
-print("#########################")
-print("# Stringtable Diag Tool #")
-print("#########################")
+  print("#########################")
+  print("# Stringtable Diag Tool #")
+  print("#########################")
 
-languages = get_all_languages(projectpath)
+  languages = get_all_languages(projectpath)
 
-print("\nLanguages present in the repo:")
-print(", ".join(languages))
+  print("\nLanguages present in the repo:")
+  print(", ".join(languages))
 
-keysum = 0
-localizedsum = list(map(lambda x: 0, languages))
-missing = list(map(lambda x: [], languages))
+  keysum = 0
+  localizedsum = list(map(lambda x: 0, languages))
+  missing = list(map(lambda x: [], languages))
 
-for module in os.listdir(projectpath):
-  keynumber, localized = check_module(projectpath, module, languages)
+  for module in os.listdir(projectpath):
+    keynumber, localized = check_module(projectpath, module, languages)
 
-  if keynumber == 0:
-    continue
+    if keynumber == 0:
+      continue
 
-  print("\n# " + module)
+    print("\n# " + module)
 
-  keysum += keynumber
-  for i in range(len(localized)):
-    print("  %s %i" % ((languages[i]+":").ljust(10), localized[i]))
-    localizedsum[i] += localized[i]
-    if localized[i] < keynumber:
-      missing[i].append(module)
+    keysum += keynumber
+    for i in range(len(localized)):
+      print("  %s %i" % ((languages[i]+":").ljust(10), localized[i]))
+      localizedsum[i] += localized[i]
+      if localized[i] < keynumber:
+        missing[i].append(module)
 
-print("\n###########")
-print("# RESULTS #")
-print("###########")
+  print("\n###########")
+  print("# RESULTS #")
+  print("###########")
 
-print("\nTotal number of keys: %i\n" % (keysum))
+  print("\nTotal number of keys: %i\n" % (keysum))
 
-for i in range(len(languages)):
-  if localizedsum[i] == keysum:
-    print("%s No missing stringtable entries." % ((languages[i] + ":").ljust(10)))
-  else:
-    print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(10), str(keysum - localizedsum[i]).rjust(4)), end="")
-    print(" ("+", ".join(missing[i])+")")
+  for i in range(len(languages)):
+    if localizedsum[i] == keysum:
+      print("%s No missing stringtable entries." % ((languages[i] + ":").ljust(10)))
+    else:
+      print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(10), str(keysum - localizedsum[i]).rjust(4)), end="")
+      print(" ("+", ".join(missing[i])+")")
+
+if __name__ == "__main__":
+  main()

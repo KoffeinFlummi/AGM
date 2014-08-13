@@ -764,6 +764,7 @@ class CfgVehicles {
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;
+  class FIA_Box_Base_F;
   class ReammoBox_F;
 
   class Box_NATO_Wps_F: NATO_Box_Base {
@@ -854,6 +855,25 @@ class CfgVehicles {
   };
 
   class Box_IND_Support_F: IND_Box_Base {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,6)
+    };
+  };
+
+  class Box_FIA_Wps_F: FIA_Box_Base_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+    };
+  };
+
+  class Box_FIA_Ammo_F: FIA_Box_Base_F {
+    class TransportMagazines {
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+    };
+  };
+
+  class Box_FIA_Support_F: FIA_Box_Base_F {
     class TransportMagazines {
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,6)
     };
