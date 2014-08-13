@@ -3,7 +3,7 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
-		requiredAddons[] = {A3_Weapons_F_Explosives, AGM_Interaction};
+		requiredAddons[] = {AGM_Core, AGM_Interaction};
 		version = "0.93";
 		versionStr = "0.93";
 		versionAr[] = {0,93,0};
