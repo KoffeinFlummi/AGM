@@ -32,13 +32,10 @@ if (isServer) then {
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
 AGM_Explosives_Setup = objNull;
-AGM_Explosives_ShiftDown = false;
 AGM_Explosives_pfeh_running = false;
 AGM_Explosives_null= [] spawn {
 	waitUntil {sleep 0.356;!isNull(findDisplay 46)};
 	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "(_this select 1) call AGM_Explosives_fnc_HandleScrollWheel"];
-	(findDisplay 46) displayAddEventHandler ["KeyDown", "if ((_this select 1) == 42) then {AGM_Explosives_ShiftDown = true;};"];
-	(findDisplay 46) displayAddEventHandler ["KeyUp", "AGM_Explosives_ShiftDown = false;"];
 	player addEventHandler ["Respawn", {
 		[(_this select 0)] call AGM_Explosives_fnc_initialiseUnit;
 	}];

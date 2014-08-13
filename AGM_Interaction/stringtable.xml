@@ -496,5 +496,8 @@
     <Key ID="STR_AGM_Interaction_ScrollHint">
       <English>Scroll</English>
     </Key>
+    <Key ID="STR_AGM_Interaction_ModifierKey">
+      <English>Modifier Key</English>
+    </Key>
   </Package>
 </Project>

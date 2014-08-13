@@ -113,6 +113,17 @@ class AGM_Core_Default_Keys {
     control = 0;
     alt = 0;
   };
+  class modifierKey {
+    displayName = $STR_AGM_Interaction_ModifierKey;
+	condition = "true";
+	statement = "AGM_Modifier = 1;";
+	conditionUp = "AGM_Modifier > 0";
+	statementUp = "AGM_Modifier = 0;";
+	key = 29;
+	shift = 0;
+	control = 1;
+	alt = 0;
+  };
 };
 
 class AGM_Core_Options {
@@ -137,6 +148,7 @@ class AGM_Core_Options {
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
   AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
+  AGM_Modifier = 0;
 };
 
 class AGM_Core_canInteractConditions {
