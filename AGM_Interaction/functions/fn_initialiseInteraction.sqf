@@ -1,7 +1,9 @@
 /*
 	Name: AGM_Interaction_fnc_initialiseInteraction
 	
-	Author: Garth de Wet (LH)
+	Author:
+		commy2
+		Garth de Wet (LH)
 	
 	Description:
 		Initialises the interaction click handlers.
@@ -12,6 +14,7 @@
 		2 : BOOLEAN - Experimental Menu
 		3 : BOOLEAN - Self interaction
 		4 : OBJECT - Target
+		5 : BOOLEAN - Initial menu
 	
 	Returns:
 		Nothing
@@ -24,10 +27,13 @@ AGM_Interaction_MainButton = _this select 0;
 _subMenu = _this select 1;
 _selfMenu = _this select 3;
 _target = _this select 4;
+_initialMenu = _this select 5;
 
-// Experimental menu
+diag_log format ["%1", _this];
+
+// Flow menu
 if (_this select 2) then {
-	64 cutRsc ["InteractionMenu", "PLAIN",0.5, false];
+	64 cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
 	AGM_Interaction_SelectedButton = 0;
 	showHUD false;
 	(findDisplay 1713999) closeDisplay 1;
@@ -43,20 +49,32 @@ if (_this select 2) then {
 		];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
-	((uiNamespace getVariable "Interaction_Display") displayCtrl (1210)) ctrlShow _subMenu;
-	((uiNamespace getVariable "Interaction_Display") displayCtrl (1023)) ctrlShow _subMenu;
-	((uiNamespace getVariable "Interaction_Display") displayCtrl (1213)) ctrlShow _subMenu;
+	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1210)) ctrlShow _subMenu;
+	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1023)) ctrlShow _subMenu;
+	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1213)) ctrlShow _subMenu;
 }else{ // Normal menu
 	AGM_Interaction_SelectedButton = -1;
-	(findDisplay 1713999) closeDisplay 1;
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-	// Add eventhandlers
-	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-	
-	if !(_subMenu) then {setMousePosition [0.5, 0.5]};
+	if (!_subMenu && _initialMenu) then {
+		diag_log format ["Not a submenu and the initial menu"];
+		(findDisplay 1713999) closeDisplay 1;
+		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+		// Add eventhandlers
+		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+		(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+		
+		setMousePosition [0.5, 0.5];
+	};
 	disableSerialization;
 	_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
+	diag_log format ["%1", _dlgInteractionDialog];
+	if (isNull _dlgInteractionDialog) then {
+		diag_log format ["Recreating display"];
+		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+		// Add eventhandlers
+		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+		(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+		_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
+	};
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 	if !(_subMenu) then {
 		if (_target isKindOf "Man") then {

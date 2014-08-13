@@ -168,9 +168,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };

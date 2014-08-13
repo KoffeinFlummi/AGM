@@ -3,7 +3,7 @@ class CfgPatches {
     units[] = {};
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
     version = "0.93";
     versionStr = "0.93";
     versionAr[] = {0,93,0};

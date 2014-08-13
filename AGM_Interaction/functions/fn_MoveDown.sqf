@@ -23,11 +23,11 @@ _count = (count AGM_Interaction_Buttons)- 1;
 AGM_Interaction_SelectedButton = CLAMP(AGM_Interaction_SelectedButton + _this, 0, _count);
 
 disableSerialization;
-_dlgInteractionDialog = uiNamespace getVariable "Interaction_Display";
-_middle = AGM_Interaction_SelectedButton - 2;
+_dlgInteractionDialog = uiNamespace getVariable "AGM_Flow_Display";
+_top = AGM_Interaction_SelectedButton - 2;
 _i = 0;
 while {_i <= 4} do {
-	_index =_i + _middle;
+	_index =_i + _top;
 	_ctrl = _dlgInteractionDialog displayCtrl (1200 + _i);
 	if (_index >= 0 && {_index <= _count}) then {
 		_action = AGM_Interaction_Buttons select _index;

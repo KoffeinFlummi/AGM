@@ -17,6 +17,6 @@
 */
 closeDialog 0;
 (findDisplay 1713999) closeDisplay 1;
-(uiNameSpace getVariable "Interaction_Display") closeDisplay 0;
+(uiNameSpace getVariable "AGM_Flow_Display") closeDisplay 0;
 AGM_Interaction_MainButton = nil;
 showHUD true;

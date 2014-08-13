@@ -4,11 +4,10 @@
 
 class AGM_Interaction_Button_Base {
   tooltip = "";
-  action = "";
+  action = "AGM_Interaction_isMousePressed = true;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};"; 
 
   idc = -1;
   access = 0;
-  style = 0;
   type = 1;
   text = "";
   font = "PuristaMedium";
@@ -16,10 +15,11 @@ class AGM_Interaction_Button_Base {
   sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
   shadow = 2;
 
+  style = 2;
   x = 0;
   y = 0;
-  w = 0;
-  h = 0;
+  w = 2.0 / 16 * safezoneW;
+  h = 0.3 / 9 * safezoneH;
 
   offsetX = 0.003;
   offsetY = 0.003;
@@ -32,7 +32,7 @@ class AGM_Interaction_Button_Base {
   colorBackground[] = {0,0,0,0.8};
   colorBackgroundDisabled[] = {0,0,0,0.8};
   colorBackgroundActive[] = {1,1,1,0.8};
-  colorFocused[] = {0,0,0,0.8};
+  colorFocused[] = {1,1,1,0.8};
   colorShadow[] = {0,0,0,0};
   colorBorder[] = {1,1,1,0.8};
 
@@ -47,12 +47,12 @@ class AGM_Interaction_Dialog {
   enableSimulation = 1;
   movingEnable = 0;
   onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
+  onUnload = "uiNamespace setVariable ['AGM_Interaction_Dialog', objNull];";
   objects[] = {};
-
   class controls {
     /*
     class Interaction_AGM_Logo : AGM_Interaction_Button_Base {
-      action = "(findDisplay 1713999) closeDisplay 1;";
+      action = "call AGM_Interaction_fnc_hideMenu;";
       type = 0;
       style = 48;
       //onMouseEnter = "hint ('_' + str(_this))";
@@ -66,10 +66,8 @@ class AGM_Interaction_Dialog {
     };
     */
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
-      action = "call AGM_Interaction_MainButton";
-      onMouseEnter = "AGM_Interaction_SelectedButton = -1";
-      style = 2;
-      tooltip = "";
+      action = "AGM_Interaction_isMousePressed = true; call AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
+      onMouseEnter = "AGM_Interaction_SelectedButton = -1; ctrlSetFocus (_this select 0);";
       text = "Interaction Menu";
       idc = 2;
       //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
@@ -81,124 +79,73 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 0; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 0";
-      style = 2;
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 0; ctrlSetFocus (_this select 0);";
       idc = 10;
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 2.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button1 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 1";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 1; ctrlSetFocus (_this select 0);";
       idc = 11;
       x = (HSPACE + 1.0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button2 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 2; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 2";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 2; ctrlSetFocus (_this select 0);";
       idc = 12;
       x = (HSPACE + 1.25 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 0.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button3 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 3; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 3";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 3; ctrlSetFocus (_this select 0);";
       idc = 13;
       x = (HSPACE + 1.25 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button4 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 4; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 4";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 4; ctrlSetFocus (_this select 0);";
       idc = 14;
       x = (HSPACE + 1.0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 1.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button5 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 5; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 5";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 5; ctrlSetFocus (_this select 0);";
       idc = 15;
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 2.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button6 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 6; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 6";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 6; ctrlSetFocus (_this select 0);";
       idc = 16;
       x = (HSPACE - 1.0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 1.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button7 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 7; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 7";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 7; ctrlSetFocus (_this select 0);";
       idc = 17;
       x = (HSPACE - 1.25 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button8 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 8; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 8";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 8; ctrlSetFocus (_this select 0);";
       idc = 18;
       x = (HSPACE - 1.25 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 0.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     class Interaction_Button9 : Interaction_Button0 {
-      action = "(findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 9; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 9";
-      tooltip = "";
-      text = "";
+      onMouseEnter = "AGM_Interaction_SelectedButton = 9; ctrlSetFocus (_this select 0);";
       idc = 19;
       x = (HSPACE - 1.0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
-      w = 2.0 / 16 * safezoneW;
-      h = 0.3 / 9 * safezoneH;
     };
 
     /*class Interaction_Icon0 : Interaction_Button0 {
@@ -324,7 +271,7 @@ class RscAGM_SelectAnItem {
 			y = 0.605;
 			style = 2;
 			text = $STR_AGM_Interaction_CancelSelection;
-			action = "(findDisplay 1713999) closeDisplay 1;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
+			action = "call AGM_Interaction_fnc_hideMenu;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
 		};
 		class approveBtn: AGM_Interaction_Button_Base {
 			idc = 8860;
@@ -334,7 +281,7 @@ class RscAGM_SelectAnItem {
 			w = 0.15;
 			style = 2;
 			text = $STR_AGM_Interaction_MakeSelection;
-			action = "(findDisplay 1713999) closeDisplay 1;";
+			action = "call AGM_Interaction_fnc_hideMenu;";
 		};
 	};
 };
@@ -364,14 +311,14 @@ class RscInteractionText: RscText{
 	h = 1.5 * GUI_GRID_H;
 };
 class RscTitles {
-	class InteractionMenu {
+	class AGM_FlowMenu {
 		idd = 9920;
 		enableSimulation = 1;
 		movingEnable = 0;
 		fadeIn=0.5;
 		fadeOut=0.5;
 		duration = 10e10;
-		onLoad = "uiNamespace setVariable ['Interaction_Display', _this select 0];";
+		onLoad = "uiNamespace setVariable ['AGM_Flow_Display', _this select 0];";
 		
 		class controls {
 			class RearIcon: RscInteractionIcon{

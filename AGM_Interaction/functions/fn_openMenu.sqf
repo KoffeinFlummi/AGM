@@ -1,9 +1,31 @@
-// by commy2
-
+/*
+	Name: AGM_Interaction_fnc_openMenu
+	
+	Author:
+		commy2
+		Garth de Wet (LH)
+	
+	Description:
+		Opens the interaction menu of AGM_Interaction_Target.
+	
+	Parameters: 
+		STRING - class name of the interaction options
+	Returns:
+		Nothing
+	
+	Example:
+		// Opens default initial menu
+		"" call AGM_interaction_fnc_openMenu;
+		// Opens the Explosive submenu.
+		"AGM_Explosives" call AGM_Interaction_fnc_openMenu;
+*/
 AGM_Interaction_Buttons = [];
 _actions = [];
 _patches = [];
 _class = _this;
+
+if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true]) && !(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])}) exitWith {};
+
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
 _object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
@@ -91,12 +113,11 @@ _count = count _actions;
 if (_count == 0) exitWith {};
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
-call AGM_Interaction_fnc_hideMenu;
 AGM_Interaction_Buttons = _actions;
 if !(_class in ["", "Default"])then{
-	[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
+	[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object, _class == ""] call AGM_Interaction_fnc_initialiseInteraction;
 }else{
-	[{call AGM_Interaction_fnc_hideMenu;}, false, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object] call AGM_Interaction_fnc_initialiseInteraction;
+	[{call AGM_Interaction_fnc_hideMenu;}, false, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object, _class == ""] call AGM_Interaction_fnc_initialiseInteraction;
 };
 /* if (AGM_Interaction_Updater) exitWith {};
 [] spawn {
