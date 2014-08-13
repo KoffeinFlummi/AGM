@@ -14,39 +14,61 @@
 #define CENTER_OFFSET_Y_PERC  0.1606
 #define CONSTANT_SCALE        0.2
 
-if !("AGM_MapTools" in items player) exitWith {
+// If markers exist and they should'nt, delete them
+if (!("AGM_MapTools" in items player) || {AGM_Map_mapToolsShown == 0}) then {
   // If markers exist, delete them
   if (!isNil "AGM_Map_mapToolFixed") then {
     deleteMarkerLocal "MapToolFixed";
-    deleteMarkerLocal "MapToolRotating";
     AGM_Map_mapToolFixed = nil;
-    AGM_Map_mapToolRotating = nil;
+  };
+};
+if (!("AGM_MapTools" in items player) || {AGM_Map_mapToolsShown != 1}) then {
+  if (!isNil "AGM_Map_mapToolRotatingNormal") then {
+    deleteMarkerLocal "MapToolRotatingNormal";
+    AGM_Map_mapToolRotatingNormal = nil;
+  };
+};
+if (!("AGM_MapTools" in items player) || {AGM_Map_mapToolsShown != 2}) then {
+  if (!isNil "AGM_Map_mapToolRotatingSmall") then {
+    deleteMarkerLocal "MapToolRotatingSmall";
+    AGM_Map_mapToolRotatingSmall = nil;
   };
 };
 
-// If markers don't exist, create them
+if (!("AGM_MapTools" in items player)|| {AGM_Map_mapToolsShown == 0}) exitWith {};
+
+// If markers don't exist and should, create them
 if (isNil "AGM_Map_mapToolFixed") then {
-  // Create the markers
   AGM_Map_mapToolFixed = createMarkerLocal ["MapToolFixed", AGM_Map_pos];
-  AGM_Map_mapToolRotating = createMarkerLocal ["MapToolRotating", AGM_Map_pos];
   "MapToolFixed" setMarkerType "MapToolFixed";
-  "MapToolRotating" setMarkerType "MapToolRotating";
 };
+if ((isNil "AGM_Map_mapToolRotatingNormal") && {AGM_Map_mapToolsShown == 1}) then {
+  AGM_Map_mapToolRotatingNormal = createMarkerLocal ["MapToolRotatingNormal", AGM_Map_pos];
+  "MapToolRotatingNormal" setMarkerType "MapToolRotatingNormal";
+};
+if ((isNil "AGM_Map_mapToolRotatingSmall") && {AGM_Map_mapToolsShown == 2}) then {
+  AGM_Map_mapToolRotatingSmall = createMarkerLocal ["MapToolRotatingSmall", AGM_Map_pos];
+  "MapToolRotatingSmall" setMarkerType "MapToolRotatingSmall";
+};
+
+_rotatingMarker = ["MapToolRotatingNormal", "MapToolRotatingSmall"] select (AGM_Map_mapToolsShown - 1);
+_textureWidth = [TEXTURE_WIDTH_IN_M, TEXTURE_WIDTH_IN_M / 2] select (AGM_Map_mapToolsShown - 1);
 
 // Update scale of both parts
 _pos          = ((finddisplay 12) displayctrl 51) ctrlMapScreenToWorld [0.5, 0.5];
 _screenOffset = ((finddisplay 12) displayctrl 51) posWorldToScreen [(_pos select 0) + 100, (_pos select 1)];
-_scale        = TEXTURE_WIDTH_IN_M * CONSTANT_SCALE * ((_screenOffset select 0) - 0.5);
+
+_scale        = _textureWidth * CONSTANT_SCALE * ((_screenOffset select 0) - 0.5);
 "MapToolFixed" setMarkerSizeLocal [_scale,_scale];
-"MapToolRotating" setMarkerSizeLocal [_scale,_scale];
+_rotatingMarker setMarkerSizeLocal [_scale,_scale];
 
 // Position of the fixed part
 _xPos = AGM_Map_pos select 0;
-_yPos = (AGM_Map_pos select 1) + TEXTURE_WIDTH_IN_M * CENTER_OFFSET_Y_PERC;
+_yPos = (AGM_Map_pos select 1) + _textureWidth * CENTER_OFFSET_Y_PERC;
 "MapToolFixed" setMarkerPosLocal [_xPos,_yPos];
 
 // Position and rotation of the rotating part
-_xPos = (AGM_Map_pos select 0) + sin(AGM_Map_angle) * TEXTURE_WIDTH_IN_M * CENTER_OFFSET_Y_PERC;
-_yPos = (AGM_Map_pos select 1) + cos(AGM_Map_angle) * TEXTURE_WIDTH_IN_M * CENTER_OFFSET_Y_PERC;
-"MapToolRotating" setMarkerPosLocal [_xPos,_yPos];
-"MapToolRotating" setMarkerDirLocal AGM_Map_angle;
+_xPos = (AGM_Map_pos select 0) + sin(AGM_Map_angle) * _textureWidth * CENTER_OFFSET_Y_PERC;
+_yPos = (AGM_Map_pos select 1) + cos(AGM_Map_angle) * _textureWidth * CENTER_OFFSET_Y_PERC;
+_rotatingMarker setMarkerPosLocal [_xPos,_yPos];
+_rotatingMarker setMarkerDirLocal AGM_Map_angle;
