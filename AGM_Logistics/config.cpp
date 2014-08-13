@@ -271,7 +271,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
-				subMenu = "AGM_Repair";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -397,7 +397,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
-				subMenu = "AGM_Repair";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -506,7 +506,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
-				subMenu = "AGM_Repair";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -597,7 +597,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
-				subMenu = "AGM_Repair";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";

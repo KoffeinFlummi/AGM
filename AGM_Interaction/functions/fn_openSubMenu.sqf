@@ -7,19 +7,19 @@ uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.
 
 _actions = [];
 _patches = [];
+_class = _this select 0;
 
+_object = AGM_Interaction_Target;
 
-_object = vehicle player;
-
-
+if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
 // fix inheritance
-_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
+_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions" >> _class;
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 {
-	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_Actions" >> _class;
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -29,11 +29,11 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 			if (count _action > 0) then {
 				_configName = configName _action;
 				_displayName = getText (_action >> "displayName");
-
+				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
@@ -44,7 +44,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 				_subMenu = getArray (_action >> "subMenu");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
@@ -55,7 +55,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 // search add-on config file
 {
-	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	_config = configfile >> "CfgVehicles" >> _x >> "AGM_Actions" >> _class;
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -65,11 +65,11 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 			if (count _action > 0) then {
 				_configName = configName _action;
 				_displayName = getText (_action >> "displayName");
-
+				_distance = getNumber (_action >> "distance");
 				_condition = getText (_action >> "condition");
 				if (_condition == "") then {_condition = "true"};
 
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract}", getArray (_action >> "exceptions")];
+				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 				_condition = compile _condition;
 				_statement = compile getText (_action >> "statement");
 				_showDisabled = getNumber (_action >> "showDisabled") == 1;
@@ -80,7 +80,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 				_subMenu = getArray (_action >> "subMenu");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
+				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
@@ -90,18 +90,18 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 } forEach _parents;
 
 // search vehicle namespace
-_customActions = player getVariable ["AGM_InteractionsSelf", []];
+_customActions = _object getVariable ["AGM_Interactions", []];
 for "_index" from 0 to (count _customActions - 1) do {
 	_customAction = _customActions select _index;
 	_displayName = _customAction select 0;
-
-	_condition = _customAction select 1;
-	_statement = _customAction select 2;
-	_showDisabled = _customAction select 3;
-	_priority = _customAction select 4;
+	_distance = _customAction select 1;
+	_condition = _customAction select 2;
+	_statement = _customAction select 3;
+	_showDisabled = _customAction select 4;
+	_priority = _customAction select 5;
 	_subMenu = [];
 
-	if (_showDisabled || {call _condition}) then {
+	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 	};
 };
@@ -113,12 +113,12 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
 
-(findDisplay 1713999) closeDisplay 1;
-(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 
-// add keys to display
-(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+
+
+
+
+
 
 setMousePosition [0.5, 0.5];
 

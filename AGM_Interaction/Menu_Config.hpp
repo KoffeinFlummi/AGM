@@ -32,7 +32,7 @@ class AGM_Interaction_Button_Base {
   colorBackground[] = {0,0,0,0.8};
   colorBackgroundDisabled[] = {0,0,0,0.8};
   colorBackgroundActive[] = {1,1,1,0};
-  colorFocused[] = {1,1,1,0.8};
+  colorFocused[] = {1,1,1,1};
   colorShadow[] = {0,0,0,0};
   colorBorder[] = {1,1,1,0.8};
 
@@ -50,26 +50,33 @@ class AGM_Interaction_Dialog {
   objects[] = {};
 
   class controls {
-    /*
-    class Interaction_AGM_Logo : AGM_Interaction_Button_Base {
-      action = "(findDisplay 1713999) closeDisplay 1;";
+    class Interaction_Dummy : AGM_Interaction_Button_Base {
+      idc = 1;
+      x = 0;
+      y = 0;
+      w = 0;
+      h = 0;
+    };
+
+    class Graphic_CommandRose : AGM_Interaction_Button_Base {
+      idc = 2;
       type = 0;
       style = 48;
-      //onMouseEnter = "hint ('_' + str(_this))";
+      text = "\AGM_Interaction\UI\command_rose_ca.paa";
       tooltip = "";
-      text = "\AGM_common\rsc\bwlogo.paa";
-      idc = 2;
-      x = (0.5-1.0/16/2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5-1.0/9/2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 1.0 / 16 * safezoneW;
-      h = 1.0 / 9 * safezoneH;
+      x = (0.5-8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-8/9/2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 8 / 16 * safezoneW;
+      h = 8 / 9 * safezoneH;
+
+      colorText[] = {0.5,0.5,0.5,0.6};
     };
-    */
+
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
       style = 2;
       tooltip = "";
       text = "Interaction Menu";
-      idc = 2;
+      idc = 3;
       //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
       sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
@@ -77,7 +84,6 @@ class AGM_Interaction_Dialog {
       w = 1.8 / 16 * safezoneW;
       h = 0.55 / 9 * safezoneH;
 
-      colorDisabled[] = {0,0,0,0};
       colorBackground[] = {0,0,0,0};
       colorBackgroundDisabled[] = {0,0,0,0};
       colorBackgroundActive[] = {0,0,0,0};
@@ -96,7 +102,6 @@ class AGM_Interaction_Dialog {
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
 
-      colorDisabled[] = {0,0,0,0};
       colorBackground[] = {0,0,0,0};
       colorBackgroundDisabled[] = {0,0,0,0};
       colorBackgroundActive[] = {0,0,0,0};
@@ -110,7 +115,7 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 11;
       x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 6.7 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -140,7 +145,7 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 14;
       x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 6.7 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE + 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -160,7 +165,7 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 16;
       x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 6.7 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE + 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -190,32 +195,18 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 19;
       x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 6.7 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
-    };
-
-    class Graphic_CommandRose : AGM_Interaction_Button_Base {
-      idc = 30;
-      type = 0;
-      style = 48;
-      text = "\AGM_Interaction\UI\command_rose_ca.paa";
-      tooltip = "";
-      x = (0.5-8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5-8/9/2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 8 / 16 * safezoneW;
-      h = 8 / 9 * safezoneH;
-
-      colorText[] = {0.5,0.5,0.5,0.6};
     };
 
     class Interaction_InteractiveScreen : AGM_Interaction_Button_Base {
       onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this]; hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
       onMouseButtonDown = "call AGM_Interaction_fnc_onClick;";
-      idc = 31;
+      idc = 30;
       style = 2;
       text = "";
-      tooltip = "";
+      tooltip = "Generic Tooltip &lt;br /&gt; line 2 \n line3 /n line4";
       x = safezoneX;
       y = safezoneY;
       w = safezoneW;

@@ -65,7 +65,7 @@ class CfgFunctions
 				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
-				subMenu = "AGM_Explosives";\
+				subMenu[] = {"AGM_Explosives", 1};\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
@@ -105,7 +105,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 4;				
-				subMenu = "AGM_Explosives";
+				subMenu[] = {"AGM_Explosives", 1};
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;

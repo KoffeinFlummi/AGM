@@ -8,15 +8,11 @@ _index = call AGM_Interaction_fnc_getSelectedButton;
 _action = if (_index != -1 && {_index < _count}) then {
 	AGM_Interaction_Buttons select _index
 } else {
-	["", {false}, {}, 0, ""]
+	["", {false}, {}, 0, []]
 };
 
 (findDisplay 1713999) closeDisplay 1;
 closeDialog 0;
-
-
-
-
 
 if (call (_action select 2)) then {
 	call (_action select 1);

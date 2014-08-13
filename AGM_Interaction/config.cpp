@@ -39,6 +39,8 @@ class CfgFunctions {
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
+      class openSubMenu;
+      class openSubMenuSelf;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
@@ -191,7 +193,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 0;
         priority = 3.2;
-        subMenu = "AGM_TeamManagement";
+        subMenu[] = {"AGM_TeamManagement", 0};
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -332,7 +334,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 3.2;
-        subMenu = "AGM_TeamManagement";
+        subMenu[] = {"AGM_TeamManagement", 1};
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -410,7 +412,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 3.5;
-        subMenu = "AGM_Gestures";
+        subMenu[] = {"AGM_Gestures", 1};
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";

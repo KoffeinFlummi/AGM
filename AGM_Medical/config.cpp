@@ -162,7 +162,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 6;
-        subMenu = "AGM_Medical";
+        subMenu[] = {"AGM_Medical", 0};
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -266,7 +266,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 6;
-        subMenu = "AGM_Medical";
+        subMenu[] = {"AGM_Medical", 1};
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
