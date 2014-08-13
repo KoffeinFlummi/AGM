@@ -41,8 +41,8 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
-	  };
+        icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
+      };
       class AGM_Attach_Detach {
         displayName = "$STR_AGM_Attach_Detach";
         condition = "call AGM_Attach_fnc_canDetach";
@@ -50,7 +50,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
       };
     };
   };

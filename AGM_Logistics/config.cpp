@@ -268,10 +268,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -395,10 +396,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -505,10 +507,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -596,10 +599,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";

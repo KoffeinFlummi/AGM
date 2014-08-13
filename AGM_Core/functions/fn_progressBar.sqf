@@ -14,6 +14,7 @@
  * Nothing
  */
 
+closeDialog 0;
 createDialog "AGM_Core_ProgressBar_Dialog";
 
 _this spawn {

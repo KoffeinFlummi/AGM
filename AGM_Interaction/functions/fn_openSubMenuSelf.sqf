@@ -7,19 +7,19 @@ uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.
 
 _actions = [];
 _patches = [];
-
+_class = _this select 0;
 
 _object = vehicle player;
 
 
 
 // fix inheritance
-_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
+_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions" >> _class;
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 {
-	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions" >> _class;
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -55,7 +55,7 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 
 // search add-on config file
 {
-	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
+	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions" >> _class;
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -113,12 +113,12 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
 
-(findDisplay 1713999) closeDisplay 1;
-(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 
-// add keys to display
-(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+
+
+
+
+
 
 setMousePosition [0.5, 0.5];
 

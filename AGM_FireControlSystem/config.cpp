@@ -79,7 +79,8 @@ class CfgVehicles {
     AGM_FCSDistanceInterval = 5;
 
     class AGM_SelfActions {
-      class AGM_LeaveGroup {
+      // INHERITANCE !!
+      class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
         condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
         statement = "[vehicle player] call AGM_FCS_fnc_reset;";
