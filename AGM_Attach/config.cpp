@@ -142,9 +142,21 @@ class CfgWeapons {
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
     picture = "\AGM_Attach\UI\irstrobe_item.paa";
     scope = 2;
+    AGM_attachable = 1;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
       type = 201;
     };
+  };
+};
+
+class CfgMagazines {
+  class CA_Magazine;
+  class B_IR_Grenade: CA_Magazine {
+    AGM_Attachable = 1;
+  };
+  class SmokeShell;
+  class Chemlight_green: SmokeShell {
+    AGM_Attachable = 1;
   };
 };
