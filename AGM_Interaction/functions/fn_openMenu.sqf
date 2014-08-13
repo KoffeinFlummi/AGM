@@ -1,13 +1,30 @@
-// by commy2
-
+/*
+	Name: AGM_Interaction_fnc_openMenu
+	
+	Author:
+		commy2
+		Garth de Wet (LH)
+	
+	Description:
+		Opens the interaction menu of AGM_Interaction_Target.
+	
+	Parameters: 
+		STRING - class name of the interaction options
+	Returns:
+		Nothing
+	
+	Example:
+		// Opens default initial menu
+		"" call AGM_interaction_fnc_openMenu;
+		// Opens the Explosive submenu.
+		"AGM_Explosives" call AGM_Interaction_fnc_openMenu;
+*/
 AGM_Interaction_Buttons = [];
-
 _actions = [];
 _patches = [];
 _class = _this;
 
-// crash fix
-if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])}) exitWith {};
+if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true]) && !(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])}) exitWith {};
 
 if (_class == "") then {AGM_Interaction_Target = cursorTarget};
 _object = AGM_Interaction_Target; if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
@@ -18,74 +35,58 @@ if !(_class in ["", "Default"]) then {_configClass = _configClass >> _class};
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
-{
-	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_Actions";
-	if !(_class in ["", "Default"]) then {_config = _config >> _class};
+_fnc_GetActions = {
+	_actions = _this select 1;
+	_patches = _this select 2;
+	_class = _this select 3;
+	{
+		_config = (_this select 4) >> _x >> "AGM_Actions";
+		if !(_class in ["", "Default"]) then {_config = _config >> _class};
 
-	_count = count _config;
-	if (_count > 0) then {
-		for "_index" from 0 to (_count - 1) do {
-			_action = _config select _index;
-
-			if (count _action > 0) then {
-				_configName = configName _action;
-				_displayName = getText (_action >> "displayName");
-				_distance = getNumber (_action >> "distance");
-				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true"};
-
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
-				_condition = compile _condition;
-				_statement = compile getText (_action >> "statement");
-				_showDisabled = getNumber (_action >> "showDisabled") == 1;
-				if (isText (_action >> "conditionShow")) then {
-					_showDisabled = call compile getText (_action >> "conditionShow");
+		_count = count _config;
+		if (_count > 0) then {
+			for "_index" from 0 to (_count - 1) do {
+				_action = [];
+				if (_this select 5) then {
+					_action = _config select _index;
+				}else{
+					_action = (_this select 6) >> configName (_config select _index);
 				};
-				_priority = getNumber (_action >> "priority");
 
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
-					_patches set [count _patches, _configName];
-				};
-			};
-		};
-	};
-} forEach _parents;
+				if (count _action > 0) then {
+					_configName = configName _action;
+					_displayName = getText (_action >> "displayName");
+					_distance = getNumber (_action >> "distance");
+					_condition = getText (_action >> "condition");
+					if (_condition == "") then {_condition = "true"};
 
-// search add-on config file
-{
-	_config = configfile >> "CfgVehicles" >> _x >> "AGM_Actions";
-	if !(_class in ["", "Default"]) then {_config = _config >> _class};
+					_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
+					_condition = compile _condition;
+					_statement = compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
+					_showDisabled = getNumber (_action >> "showDisabled") == 1;
+					if (isText (_action >> "conditionShow")) then {
+						_showDisabled = call compile getText (_action >> "conditionShow");
+					};
+					_priority = getNumber (_action >> "priority");
+					_icon = getText (_action >> "icon");
+					if (_icon == "") then {
+						_icon = "AGM_Interaction\UI\dot_ca.paa";
+					};
 
-	_count = count _config;
-	if (_count > 0) then {
-		for "_index" from 0 to (_count - 1) do {
-			_action = _configClass >> configName (_config select _index);
-
-			if (count _action > 0) then {
-				_configName = configName _action;
-				_displayName = getText (_action >> "displayName");
-				_distance = getNumber (_action >> "distance");
-				_condition = getText (_action >> "condition");
-				if (_condition == "") then {_condition = "true"};
-
-				_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
-				_condition = compile _condition;
-				_statement = compile getText (_action >> "statement");
-				_showDisabled = getNumber (_action >> "showDisabled") == 1;
-				if (isText (_action >> "conditionShow")) then {
-					_showDisabled = call compile getText (_action >> "conditionShow");
-				};
-				_priority = getNumber (_action >> "priority");
-
-				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
-					_patches set [count _patches, _configName];
+					if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _icon]];
+						_patches set [count _patches, _configName];
+					};
 				};
 			};
 		};
-	};
-} forEach _parents;
+	} forEach (_this select 0);
+	
+	[_actions, _patches]
+};
+_result = [_parents, [], [], _class, missionConfigFile >> "CfgVehicles", true] call _fnc_GetActions;
+_result = [_parents, _result select 0, _result select 1, _class, configfile >> "CfgVehicles", false, _configClass] call _fnc_GetActions;
+_actions = _result select 0;
 
 // search vehicle namespace
 _customActions = _object getVariable ["AGM_Interactions", []];
@@ -97,9 +98,14 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 3;
 	_showDisabled = _customAction select 4;
 	_priority = _customAction select 5;
+	_icon = "AGM_Interaction\UI\dot_ca.paa";
+	
+	if (count _customAction > 6) then{
+		_icon = _customAction select 5;
+	};
 
 	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _icon]];
 	};
 };
 
@@ -107,64 +113,21 @@ _count = count _actions;
 if (_count == 0) exitWith {};
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
-
 AGM_Interaction_Buttons = _actions;
-AGM_Interaction_SelectedButton = -1;
-
-if (_class == "") then {
-	(findDisplay 1713999) closeDisplay 1;
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-
-	// add keys to display
-	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-
-	setMousePosition [0.5, 0.5];
-} else {
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-
-	// add keys to display
-	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+if !(_class in ["", "Default"])then{
+	[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object, _class == ""] call AGM_Interaction_fnc_initialiseInteraction;
+}else{
+	[{call AGM_Interaction_fnc_hideMenu;}, false, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), false, _object, _class == ""] call AGM_Interaction_fnc_initialiseInteraction;
 };
-
-disableSerialization;
-_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
-
-/*
-for "_a" from 0 to (_count - 1) do {
-	_action = AGM_Interaction_Buttons select _a;
-
-	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _a);
-	_ctrlInteractionDialog ctrlShow true;
-	_ctrlInteractionDialog ctrlSetText (_action select 0);
-	_ctrlInteractionDialog ctrlEnable (call (_action select 2));
-};
-*/
-
-_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
-if (_class in ["", "Default"]) then {
-	AGM_Interaction_MainButton = "(findDisplay 1713999) closeDisplay 1;";
-	if (AGM_Interaction_Target isKindOf "Man") then {
-		_ctrlInteractionDialog ctrlSetText (if (alive AGM_Interaction_Target) then {name AGM_Interaction_Target} else {AGM_Interaction_Target getVariable ["AGM_Name", "Unknown"]});
-	} else {
-		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf AGM_Interaction_Target) >> "displayName"));
+/* if (AGM_Interaction_Updater) exitWith {};
+[] spawn {
+	AGM_Interaction_Updater = true;
+	while {!isNil "AGM_Interaction_MainButton"} do {
+		if (!([player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith)) exitWith {};
+		if (!([AGM_Interaction_Target, 6] call AGM_Interaction_fnc_isInRange)) exitWith {};
+		// 0 call AGM_Interaction_fnc_moveDown;
+		sleep 0.75;
 	};
-} else {
-	AGM_Interaction_MainButton = "'Default' call AGM_Interaction_fnc_openMenu;";
-	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
-};
-
-for "_i" from 0 to 9 do {
-	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
-	_ctrlInteractionDialog ctrlShow true;
-
-	if (_i < _count) then {
-		_action = AGM_Interaction_Buttons select _i;
-		_ctrlInteractionDialog ctrlSetText (_action select 0);
-		_ctrlInteractionDialog ctrlEnable (call (_action select 2));
-	} else {
-		_ctrlInteractionDialog ctrlSetText "";
-		_ctrlInteractionDialog ctrlEnable false;
-	}
-};
+	call AGM_Interaction_fnc_hideMenu;
+	AGM_Interaction_Updater = false;
+}; */

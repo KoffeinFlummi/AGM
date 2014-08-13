@@ -34,6 +34,7 @@ class CfgVehicles {
         statement = "call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;
+		icon = "\A3\ui_f\data\igui\cfg\actions\reammo_ca.paa";
       };
     };
   };

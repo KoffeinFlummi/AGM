@@ -49,7 +49,7 @@ _this spawn {
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
 		//_pos = _pos vectorAdd ((VectorDir AGM_Explosives_setup) vectorCrossProduct (AGM_Explosives_setup getVariable ["AGM_Offset", [0,0,0]]));
 		AGM_Explosives_Setup setPosATL _pos;
-		if (!AGM_Explosives_Shiftdown) then {
+		if (AGM_Modifier == 0) then {
 			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);
 		};
 	}] call BIS_fnc_addStackedEventHandler;

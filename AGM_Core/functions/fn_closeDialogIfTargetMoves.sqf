@@ -11,7 +11,8 @@ _this spawn {
 	waitUntil {
 		if (getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}}) then {
 			closeDialog 0;
+			call AGM_Interaction_fnc_hideMenu;
 		};
-		!dialog
+		(isNil "AGM_Interaction_MainButton" && !dialog)
 	};
 };

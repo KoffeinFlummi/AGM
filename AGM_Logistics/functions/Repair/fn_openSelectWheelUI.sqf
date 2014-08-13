@@ -10,19 +10,21 @@ _wheels = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Wheel
 _wheels = [_wheels, {AGM_Interaction_Target getHitPointDamage _this > 0}] call AGM_Core_fnc_filter;
 _count = count _wheels;
 
-_listIDC = [localize "STR_AGM_Repair_SelectWheelMenu", localize "STR_AGM_Repair_SelectWheel", "_vehicle = AGM_Interaction_Target; _wheel = lbData [8866, lbCurSel 8866]; closeDialog 0; [_vehicle, _wheel] call AGM_Repair_fnc_repairWheel;"] call AGM_Interaction_fnc_openSelectMenu;
-
+_actions = [localize "STR_AGM_Repair_SelectWheelMenu", localize "STR_AGM_Repair_SelectWheel"] call AGM_Interaction_fnc_prepareSelectMenu;
 for "_index" from 0 to (_count - 1) do {
 	_wheel = _wheels select _index;
 	//_name = [_wheel] call AGM_Repair_fnc_getHitPointName;
 	_name = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_WheelsLocalized") select (getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Wheels") find _wheel);
-	_picture = "";
+	_picture = "AGM_Interaction\UI\IconInteraction_ca.paa";
 
 	if (_vehicle getHitPointDamage _wheel == 1) then {
-		_lbIndex = lbAdd [_listIDC, _name];
-		lbSetData [_listIDC, _lbIndex, _wheel];
-		lbSetPicture [_listIDC, _lbIndex, _picture];
+		_actions = [
+			_actions,
+			_name,
+			_picture,
+			_wheel
+		] call AGM_Interaction_fnc_AddSelectableItem;
 	};
 };
 
-lbSetCurSel [_listIDC, 0];
+[_actions, {call AGM_Interaction_fnc_hideMenu;_vehicle = AGM_Interaction_Target;[_vehicle, _this] call AGM_Repair_fnc_repairWheel;}, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;

@@ -24,6 +24,7 @@
 		statement = "[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI"; \
 		showDisabled = 1; \
 		priority = 1.6; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	};
 
 #define MACRO_NOT_LOADABLE \
@@ -40,6 +41,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.6; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
 	class AGM_unloadBox { \
 		displayName = "$STR_AGM_Logistics_Unload"; \
@@ -48,6 +50,7 @@
 		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openUnloadUI"; \
 		showDisabled = 1; \
 		priority = 1.5; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	};
 
 #define MACRO_RELOAD_MAGS \
@@ -58,6 +61,7 @@
 		statement = "[AGM_Interaction_Target] call AGM_Logistics_fnc_openMagazineMenu"; \
 		showDisabled = 1; \
 		priority = 1.45; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\reammo_ca.paa"; \
 	};
 
 #define MACRO_DRAGABLE \
@@ -68,6 +72,7 @@
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
 		showDisabled = 1; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
 	class AGM_ReleaseItem { \
 		displayName = "$STR_AGM_Drag_EndDrag"; \
@@ -77,13 +82,13 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	};
 
 #define MACRO_NOT_DRAGABLE \
 	class AGM_DragItem { \
 		condition = "false"; \
 	};
-
 #define MACRO_GETIN_STATIC \
 	class AGM_GetIn { \
 		displayName = "$STR_AGM_StaticWeapons_GetIn"; \
@@ -138,6 +143,7 @@
 		statement = "[player, AGM_Interaction_Target] call AGM_Drag_fnc_carryJerrycan"; \
 		showDisabled = 1; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
 	class AGM_DropJerrycan { \
 		displayName = "$STR_AGM_Drag_EndCarry"; \
@@ -147,6 +153,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
 	class AGM_CheckFuelJerrycan { \
 		displayName = "$STR_AGM_Resupply_CheckFuelJerryCan"; \
@@ -156,6 +163,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	};
 
 #define MACRO_CHECKFUEL \
@@ -166,6 +174,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	};
 
 #define MACRO_REFUEL \
@@ -176,6 +185,7 @@
 		statement = "[AGM_Interaction_Target] call AGM_Resupply_fnc_refuelVehicleCargo"; \
 		showDisabled = 0; \
 		priority = 1.225; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	}; \
 	class AGM_Refuel { \
 		displayName = "$STR_AGM_Resupply_RefuelVehicle"; \
@@ -185,6 +195,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.245; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	}; \
 	class AGM_DrainFuel { \
 		displayName = "$STR_AGM_Resupply_DrainFuel"; \
@@ -194,6 +205,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.235; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	}; \
 	class AGM_CheckFuel { \
 		displayName = "$STR_AGM_Resupply_CheckFuel"; \
@@ -203,6 +215,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.295; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	};
 
 #define MACRO_REFUELCARGO \
@@ -214,6 +227,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.22; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	}; \
 	class AGM_CheckFuelCargo { \
 		displayName = "$STR_AGM_Resupply_CheckFuelCargo"; \
@@ -223,6 +237,7 @@
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 1.24; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	};
 
 #define MACRO_REFUEL_UAV \
@@ -233,6 +248,7 @@
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
 		showDisabled = 0; \
 		priority = 1.245; \
+		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
 	};
 
 #define MACRO_PARADROP \
