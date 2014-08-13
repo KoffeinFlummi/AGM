@@ -29,9 +29,9 @@ class AGM_Interaction_Button_Base {
 
   colorText[] = {1,1,1,1};
   colorDisabled[] = {0.5,0.5,0.5,1};
-  colorBackground[] = {0,0,0,0.8};
-  colorBackgroundDisabled[] = {0,0,0,0.8};
-  colorBackgroundActive[] = {1,1,1,0.8};
+  colorBackground[] = {0,0,0,0};
+  colorBackgroundDisabled[] = {0,0,0,0};
+  colorBackgroundActive[] = {1,1,1,0};
   colorFocused[] = {1,1,1,0.8};
   colorShadow[] = {0,0,0,0};
   colorBorder[] = {1,1,1,0.8};
@@ -66,12 +66,10 @@ class AGM_Interaction_Dialog {
     };
     */
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
-      action = "AGM_Interaction_isMousePressed = true; call compile AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
-      onMouseEnter = "AGM_Interaction_SelectedButton = -1; ctrlSetFocus (_this select 0);";
       style = 2;
       tooltip = "";
       text = "Interaction Menu";
-      idc = 2;
+      idc = 9;
       //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
       sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
@@ -81,8 +79,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 0; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 0; ctrlSetFocus (_this select 0);";
       style = 2;
       tooltip = "";
       text = "";
@@ -94,8 +90,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button1 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 1; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 1; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 11;
@@ -106,8 +100,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button2 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 2; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 2; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 12;
@@ -118,8 +110,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button3 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 3; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 3; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 13;
@@ -130,8 +120,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button4 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 4; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 4; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 14;
@@ -142,8 +130,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button5 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 5; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 5; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 15;
@@ -154,8 +140,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button6 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 6; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 6; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 16;
@@ -166,8 +150,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button7 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 7; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 7; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 17;
@@ -178,8 +160,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button8 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 8; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 8; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 18;
@@ -190,8 +170,6 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_Button9 : Interaction_Button0 {
-      action = "AGM_Interaction_isMousePressed = true; (findDisplay 1713999) closeDisplay 1; _action = AGM_Interaction_Buttons select 9; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
-      onMouseEnter = "AGM_Interaction_SelectedButton = 9; ctrlSetFocus (_this select 0);";
       tooltip = "";
       text = "";
       idc = 19;
@@ -199,6 +177,42 @@ class AGM_Interaction_Dialog {
       y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
+    };
+
+    class Graphic_CommandRose : AGM_Interaction_Button_Base {
+      idc = 30;
+      type = 0;
+      style = 48;
+      text = "\AGM_Interaction\UI\command_rose_ca.paa";
+      tooltip = "";
+      x = (0.5-8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-8/9/2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 8 / 16 * safezoneW;
+      h = 8 / 9 * safezoneH;
+
+      colorText[] = {0.5,0.5,0.5,0.6};
+    };
+
+    class Interaction_InteractiveScreen : AGM_Interaction_Button_Base {
+      onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this]; hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
+      onMouseButtonDown = "call AGM_Interaction_fnc_onClick;";
+      idc = 31;
+      style = 2;
+      text = "";
+      tooltip = "";
+      x = safezoneX;
+      y = safezoneY;
+      w = safezoneW;
+      h = safezoneH;
+
+      colorText[] = {0,0,0,0};
+      colorDisabled[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+      colorBackgroundDisabled[] = {0,0,0,0};
+      colorBackgroundActive[] = {0,0,0,0};
+      colorFocused[] = {0,0,0,0};
+      colorShadow[] = {0,0,0,0};
+      colorBorder[] = {0,0,0,0};
     };
 
     /*class Interaction_Icon0 : Interaction_Button0 {

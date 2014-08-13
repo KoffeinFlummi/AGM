@@ -37,10 +37,11 @@ class CfgVehicles {
       class AGM_Attach {
         displayName = "$STR_AGM_Attach_AttachDetach";
         condition = "[''] call AGM_Attach_fnc_canAttach";
-        statement = "'AGM_Attach' call AGM_Interaction_fnc_openMenuSelf";
+        statement = "";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
+        subMenu = "AGM_Attach";
 
         class AGM_Attach_IrStrobe {
           displayName = "$STR_AGM_Attach_Attach_IrStrobe";

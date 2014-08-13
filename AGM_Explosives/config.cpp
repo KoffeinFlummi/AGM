@@ -62,9 +62,10 @@ class CfgFunctions
 			class AGM_Explosives { \
 				displayName = $STR_AGM_Explosives_Menu;\
 				condition = "true";\
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
+				subMenu = "AGM_Explosives";\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
@@ -101,9 +102,10 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "";
 				showDisabled = 1;
 				priority = 4;				
+				subMenu = "AGM_Explosives";
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;

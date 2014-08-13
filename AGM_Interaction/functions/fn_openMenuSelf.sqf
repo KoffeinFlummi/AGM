@@ -1,13 +1,11 @@
 // by commy2
 
 AGM_Interaction_Buttons = [];
+uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
 _actions = [];
 _patches = [];
 _class = _this;
-
-// crash fix
-if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])}) exitWith {};
 
 
 _object = vehicle player;
@@ -43,8 +41,10 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				};
 				_priority = getNumber (_action >> "priority");
 
+				_subMenu = getText (_action >> "subMenu");
+
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -78,8 +78,10 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				};
 				_priority = getNumber (_action >> "priority");
 
+				_subMenu = getText (_action >> "subMenu");
+
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -97,9 +99,10 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 2;
 	_showDisabled = _customAction select 3;
 	_priority = _customAction select 4;
+	_subMenu = "";
 
 	if (_showDisabled || {call _condition}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 	};
 };
 
@@ -109,7 +112,6 @@ if (_count == 0) exitWith {};
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
-AGM_Interaction_SelectedButton = -1;
 
 if (_class == "") then {
 	(findDisplay 1713999) closeDisplay 1;
@@ -121,7 +123,7 @@ if (_class == "") then {
 
 	setMousePosition [0.5, 0.5];
 } else {
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+	//(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 
 	// add keys to display
 	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];

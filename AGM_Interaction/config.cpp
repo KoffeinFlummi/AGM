@@ -26,10 +26,15 @@ class CfgFunctions {
       class escortCaptive;
       class getCaptivityStatus;
       class getDown;
+      class getSelectedButton;
       class isInRange;
       class joinTeam;
       class loadCaptiveIntoVehicle;
       class module;
+      class onButtonDown;
+      class onButtonDownSelf;
+      class onButtonUp;
+      class onClick;
       class openDoor;
       class openMenu;
       class openMenuSelf;
@@ -64,26 +69,26 @@ class Extended_GetIn_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class openInteractionMenu {
+  class openInteractionMenuNew {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player";
-    statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenu} else {(findDisplay 1713999) closeDisplay 1};";
+    statement = "call AGM_Interaction_fnc_onButtonDown";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};};";
+    statementUp = "call AGM_Interaction_fnc_onButtonUp";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-    key = 221;
+    key = 219;
     shift = 0;
     control = 0;
     alt = 0;
   };
-  class openInteractionMenuSelf {
+  class openInteractionMenuSelfNew {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "alive player";
-    statement = "if (isNull (findDisplay 1713999) && {!dialog}) then {'' call AGM_Interaction_fnc_openMenuSelf} else {(findDisplay 1713999) closeDisplay 1};";
+    statement = "call AGM_Interaction_fnc_onButtonDownSelf";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "AGM_Interaction_isMousePressed = false; (findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};};";
+    statementUp = "call AGM_Interaction_fnc_onButtonUp";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-    key = 221;
+    key = 219;
     shift = 0;
     control = 1;
     alt = 0;
@@ -183,9 +188,10 @@ class CfgVehicles {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
         condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
-        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenu;";
+        statement = "";
         showDisabled = 0;
         priority = 3.2;
+        subMenu = "AGM_TeamManagement";
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -323,9 +329,10 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         condition = "true";
-        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenuSelf;";
+        statement = "";
         showDisabled = 1;
         priority = 3.2;
+        subMenu = "AGM_TeamManagement";
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -400,9 +407,10 @@ class CfgVehicles {
       class AGM_Gestures {
         displayName = "$STR_AGM_Interaction_Gestures";
         condition = "canStand player";
-        statement = "'AGM_Gestures' call AGM_Interaction_fnc_openMenuSelf;";
+        statement = "";
         showDisabled = 1;
         priority = 3.5;
+        subMenu = "AGM_Gestures";
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";
