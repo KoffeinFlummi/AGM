@@ -140,7 +140,7 @@ class AGM_Core_Options {
     default = 1;
   };
   class Interaction_FlowMenu {
-    displayName = $STR_AGM_Interaction_FlowMenu;
+    displayName = "$STR_AGM_Interaction_FlowMenu";
 	default = 0;
   };
 };
