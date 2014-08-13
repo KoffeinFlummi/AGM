@@ -119,6 +119,18 @@ class CfgAmmo {
     SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2",0.125893,1,70};
     timeToLive = 60;
   };
+  class AGM_M84: F_20mm_Yellow {
+    grenadeBurningSound[] = {"SmokeShellSoundLoop1",0.5,"SmokeShellSoundLoop2",0.5};
+    grenadeFireSound[] = {"SmokeShellSoundHit1",0.25,"SmokeShellSoundHit2",0.25,"SmokeShellSoundHit3",0.5};
+    soundTrigger[] = {"SmokeShellSoundLoop1",0.5,"SmokeShellSoundLoop2",0.5};
+    SmokeShellSoundHit1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_1",1.25893,1,100};
+    SmokeShellSoundHit2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_2",1.25893,1,100};
+    SmokeShellSoundHit3[] = {"A3\Sounds_F\weapons\smokeshell\smoke_3",1.25893,1,100};
+    SmokeShellSoundLoop1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop1",0.125893,1,70};
+    SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2",0.125893,1,70};
+    timeToLive = 60;
+    model = "agm_grenades\agm_m84.p3d";
+  };
 };
 
 class CfgMagazines {
@@ -162,6 +174,14 @@ class CfgMagazines {
     model = "\A3\weapons_f\ammo\flare_yellow";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_yellow_ca.paa";
   };
+  class AGM_M84: AGM_HandFlare_Base {
+    ammo = "AGM_M84";
+    displayname = "M84 Stun Grenade";
+    descriptionshort = "Also known as flashbang. Causes immediate flash blindness, deafness, tinnitus, and inner ear disturbance.";
+    displayNameShort = "M84";
+    model = "agm_grenades\agm_m84.p3d";
+    picture = "\agm_grenades\data\M84_Logo.paa";
+  };
 
   class 3Rnd_UGL_FlareGreen_F;
   class 6Rnd_GreenSignal_F: 3Rnd_UGL_FlareGreen_F {
@@ -178,7 +198,7 @@ class CfgWeapons {
   class GrenadeLauncher;
 
   class Throw: GrenadeLauncher {
-    muzzles[] += {"AGM_HandFlare_WhiteMuzzle", "AGM_HandFlare_RedMuzzle", "AGM_HandFlare_GreenMuzzle", "AGM_HandFlare_YellowMuzzle"};
+    muzzles[] += {"AGM_HandFlare_WhiteMuzzle", "AGM_HandFlare_RedMuzzle", "AGM_HandFlare_GreenMuzzle", "AGM_HandFlare_YellowMuzzle", "AGM_Flashbang"};
     class ThrowMuzzle;
     class AGM_HandFlare_WhiteMuzzle: ThrowMuzzle {
       magazines[] = {"AGM_HandFlare_White"};
@@ -191,6 +211,9 @@ class CfgWeapons {
     };
     class AGM_HandFlare_YellowMuzzle: ThrowMuzzle {
       magazines[] = {"AGM_HandFlare_Yellow"};
+    };
+    class AGM_Flashbang: ThrowMuzzle {
+      magazines[] = {"AGM_M84"};
     };
   };
 };

@@ -486,8 +486,8 @@ class CfgVehicles {
         defaultValue = 1;
       };
       class MaxUnconsciousnessTime {
-        displayName = "Max Unconsc. Time"
-        description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this."
+        displayName = "Max Unconsc. Time";
+        description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this.";
         typeName = "NUMBER";
         defaultValue = -1;
       };
