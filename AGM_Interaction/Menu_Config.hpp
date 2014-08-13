@@ -4,7 +4,7 @@
 
 class AGM_Interaction_Button_Base {
   tooltip = "";
-  action = "AGM_Interaction_isMousePressed = true;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};"; 
+  action = "AGM_Interaction_isMousePressed = true;(findDisplay 1713999) closeDisplay 1;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};"; 
 
   idc = -1;
   access = 0;
@@ -66,7 +66,7 @@ class AGM_Interaction_Dialog {
     };
     */
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
-      action = "AGM_Interaction_isMousePressed = true; call AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
+      action = "AGM_Interaction_isMousePressed = true;(findDisplay 1713999) closeDisplay 1; call AGM_Interaction_MainButton; AGM_Interaction_SelectedButton = -1;";
       onMouseEnter = "AGM_Interaction_SelectedButton = -1; ctrlSetFocus (_this select 0);";
       text = "Interaction Menu";
       idc = 2;

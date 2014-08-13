@@ -86,7 +86,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "if (isNil 'AGM_Interaction_MainButton') then {'' call AGM_Interaction_fnc_openMenuSelf}else{call AGM_Interaction_fnc_hideMenu;};";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "AGM_Interaction_isMousePressed = false; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};}else{call AGM_Interaction_fnc_hideMenu;};";
+    statementUp = "AGM_Interaction_isMousePressed = false;(findDisplay 1713999) closeDisplay 1; if (AGM_Interaction_SelectedButton >= 0) then {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton; AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 221;
     shift = 0;

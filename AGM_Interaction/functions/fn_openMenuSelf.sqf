@@ -24,8 +24,6 @@ _actions = [];
 _patches = [];
 _class = _this;
 
-diag_log format ["%1", _this];
-diag_log format ["CLASS: %1 : Pressed: %2", _class != "",!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])];
 if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true]) && !(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])}) exitWith {};
 
 _object = vehicle player;
@@ -112,7 +110,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 		_actions set [count _actions, [_displayName, _statement, _condition, _priority,_icon]];
 	};
 };
-diag_log format ["%1", _actions];
+
 _count = count _actions;
 if (_count == 0) exitWith {};
 

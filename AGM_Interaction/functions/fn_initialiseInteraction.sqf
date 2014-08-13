@@ -29,8 +29,6 @@ _selfMenu = _this select 3;
 _target = _this select 4;
 _initialMenu = _this select 5;
 
-diag_log format ["%1", _this];
-
 // Flow menu
 if (_this select 2) then {
 	64 cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
@@ -54,27 +52,18 @@ if (_this select 2) then {
 	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1213)) ctrlShow _subMenu;
 }else{ // Normal menu
 	AGM_Interaction_SelectedButton = -1;
-	if (!_subMenu && _initialMenu) then {
-		diag_log format ["Not a submenu and the initial menu"];
+	if (_initialMenu) then {
 		(findDisplay 1713999) closeDisplay 1;
-		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-		// Add eventhandlers
-		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-		(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-		
 		setMousePosition [0.5, 0.5];
 	};
+	
+	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+	// Add eventhandlers
+	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+	
 	disableSerialization;
 	_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
-	diag_log format ["%1", _dlgInteractionDialog];
-	if (isNull _dlgInteractionDialog) then {
-		diag_log format ["Recreating display"];
-		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-		// Add eventhandlers
-		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-		(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-		_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
-	};
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
 	if !(_subMenu) then {
 		if (_target isKindOf "Man") then {
