@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };

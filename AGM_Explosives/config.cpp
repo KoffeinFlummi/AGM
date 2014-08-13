@@ -4,9 +4,9 @@ class CfgPatches {
 		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core, AGM_Interaction};
-		version = "0.93";
-		versionStr = "0.93";
-		versionAr[] = {0,93,0};
+		version = "0.931";
+		versionStr = "0.931";
+		versionAr[] = {0,931,0};
 		author[] = {"Garth 'L-H' de Wet"};
 		authorUrl = "https://github.com/corruptedheart/";
 	};
