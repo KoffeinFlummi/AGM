@@ -77,6 +77,7 @@ class CfgVehicles {
         statement = "call AGM_Wind_fnc_openKestrel";
         showDisabled = 0;
         priority = 2;
+		icon = "AGM_Wind\data\4500NV1.paa";
       };
       class AGM_CloseKestrel {
         displayName = "$STR_AGM_Wind_CloseKestrel";
@@ -84,6 +85,7 @@ class CfgVehicles {
         statement = "AGM_isKestrel = false";
         showDisabled = 0;
         priority = 2;
+		icon = "AGM_Wind\data\4500NV1.paa";
       };
     };
   };

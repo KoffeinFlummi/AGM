@@ -8,7 +8,7 @@
 	
 	Parameters: 
 		0: String - Magazine
-		1: Number - trigger index in AGM_triggers of magazine class
+		1: String - trigger index in AGM_triggers of magazine class
 	
 	Returns:
 		Nothing
@@ -21,6 +21,7 @@ closeDialog 0;
 _magazine = _this select 0;
 _trigger = _this select 1;
 _config = ConfigFile >> "CfgAGM_Triggers" >> _trigger;
+call AGM_Interaction_fnc_hideMenu;
 
 // If the onSetup function returns true, it is handled elsewhere
 if (isText(_config >> "onSetup") && {[_magazine] call compile getText (_config >> "onSetup")}) exitWith {};

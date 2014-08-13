@@ -15,11 +15,9 @@
 	Example:
 		[player] call AGM_Explosives_fnc_openPlaceUI;
 */
-private ["_unit","_mags", "_item", "_index", "_listIDC"];
+private ["_unit","_mags", "_item", "_index", "_actions"];
 _unit = _this select 0;
 call AGM_Explosives_fnc_Place_Cancel;
-
-_listIDC = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place", "closeDialog 0;private ['_mag'];_mag=lbData [8866, lbCurSel 8866];[_mag] call AGM_Explosives_fnc_openTriggerSelectionUI;", "closeDialog 0;'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;"] call AGM_Interaction_fnc_openSelectMenu;
 
 _mags = magazines _unit;
 _list = [];
@@ -36,11 +34,14 @@ _itemCount = [];
 		};
 	};
 } count _mags;
+_actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place"] call AGM_Interaction_fnc_prepareSelectMenu;
 {
-	_index = lbAdd [_listIDC, format [getText(_x >> "displayName") + " (%1)", _itemCount select _foreachIndex]];
-	lbSetData [_listIDC, _index, configName _x];
-	lbSetPicture [_listIDC, _index, getText(_x >> "picture")];
+	_actions = [
+		_actions,
+		format [getText(_x >> "displayName") + " (%1)", _itemCount select _foreachIndex],
+		getText(_x >> "picture"),
+		configName _x
+	] call AGM_Interaction_fnc_AddSelectableItem;
 } foreach _list;
 
-lbSort ((findDisplay 8854) displayCtrl _listIDC);
-lbSetCurSel [_listIDC, 0];
+[_actions,{[_this] call AGM_Explosives_fnc_openTriggerSelectionUI;},{"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;

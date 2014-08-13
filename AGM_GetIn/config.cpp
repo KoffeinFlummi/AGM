@@ -72,6 +72,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
 			};
 			class AGM_GetInGunner {
 				displayName = "$STR_AGM_GetInVehicleAsGunner";
@@ -80,6 +81,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
 			};
 			class AGM_GetInCommander {
 				displayName = "$STR_AGM_GetInVehicleAsCommander";
@@ -88,6 +90,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
 			class AGM_GetInCargo {
 				displayName = "$STR_AGM_GetInVehicleAsCargo";
@@ -96,6 +99,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
 				showDisabled = 0;
 				priority = -1.93;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 			class AGM_GetInCoDriver {
 				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
@@ -104,6 +108,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 		};
 		class AGM_SelfActions {
@@ -113,6 +118,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
@@ -120,6 +126,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
@@ -127,6 +134,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
 			/*class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
@@ -134,6 +142,7 @@ class CfgVehicles {
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
 				showDisabled = 0;
 				priority = -1.93;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
@@ -141,6 +150,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};*/
 		};
 	};
@@ -154,6 +164,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
 			};
 			class AGM_GetInGunner {
 				displayName = "$STR_AGM_GetInVehicleAsGunner";
@@ -162,6 +173,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
 			};
 			class AGM_GetInCommander {
 				displayName = "$STR_AGM_GetInVehicleAsCommander";
@@ -170,6 +182,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
 			class AGM_GetInCargo {
 				displayName = "$STR_AGM_GetInVehicleAsCargo";
@@ -178,6 +191,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
 				showDisabled = 0;
 				priority = -1.93;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 			class AGM_GetInCoDriver {
 				displayName = "$STR_AGM_GetInVehicleAsCoDriver";
@@ -186,6 +200,7 @@ class CfgVehicles {
 				statement = "[AGM_Interaction_Target] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 		};
 		class AGM_SelfActions {
@@ -195,6 +210,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInDriver";
 				showDisabled = 0;
 				priority = -1.90;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
@@ -202,6 +218,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInGunner";
 				showDisabled = 0;
 				priority = -1.91;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
@@ -209,6 +226,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCommander";
 				showDisabled = 0;
 				priority = -1.92;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
 			/*class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
@@ -216,6 +234,7 @@ class CfgVehicles {
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
 				showDisabled = 0;
 				priority = -1.93;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
@@ -223,6 +242,7 @@ class CfgVehicles {
 				statement = "[vehicle player] call AGM_GetIn_fnc_getInCoDriver";
 				showDisabled = 0;
 				priority = -1.94;
+				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
 			};*/
 		};
 	};
