@@ -107,7 +107,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 };
 
 _count = count _actions;
-if (_count == 0) exitWith {};
+if (_count == 0) exitWith {call AGM_Interaction_fnc_onButtonDownSelf};
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 

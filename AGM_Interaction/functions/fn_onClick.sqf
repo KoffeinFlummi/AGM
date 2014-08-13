@@ -11,10 +11,10 @@ _action = if (_index != -1 && {_index < _count}) then {
 	["", {false}, {}, 0, ""]
 };
 
-(findDisplay 1713999) closeDisplay 1;
-closeDialog 0;
-
-if ((_action select 4) != "") then {
+if ((_action select 4) == "") then {
+	(findDisplay 1713999) closeDisplay 1;
+	closeDialog 0;
+} else {
 	systemChat (_action select 4);
 };
 

@@ -29,8 +29,8 @@ class AGM_Interaction_Button_Base {
 
   colorText[] = {1,1,1,1};
   colorDisabled[] = {0.5,0.5,0.5,1};
-  colorBackground[] = {0,0,0,0};
-  colorBackgroundDisabled[] = {0,0,0,0};
+  colorBackground[] = {0,0,0,0.8};
+  colorBackgroundDisabled[] = {0,0,0,0.8};
   colorBackgroundActive[] = {1,1,1,0};
   colorFocused[] = {1,1,1,0.8};
   colorShadow[] = {0,0,0,0};
@@ -69,13 +69,21 @@ class AGM_Interaction_Dialog {
       style = 2;
       tooltip = "";
       text = "Interaction Menu";
-      idc = 9;
+      idc = 2;
       //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
       sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
       y = (0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY;
       w = 1.8 / 16 * safezoneW;
       h = 0.55 / 9 * safezoneH;
+
+      colorDisabled[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+      colorBackgroundDisabled[] = {0,0,0,0};
+      colorBackgroundActive[] = {0,0,0,0};
+      colorFocused[] = {0,0,0,0};
+      colorShadow[] = {0,0,0,0};
+      colorBorder[] = {0,0,0,0};
     };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
@@ -84,17 +92,25 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 10;
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 2.5 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE - 9 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
+
+      colorDisabled[] = {0,0,0,0};
+      colorBackground[] = {0,0,0,0};
+      colorBackgroundDisabled[] = {0,0,0,0};
+      colorBackgroundActive[] = {0,0,0,0};
+      colorFocused[] = {0,0,0,0};
+      colorShadow[] = {0,0,0,0};
+      colorBorder[] = {0,0,0,0};
     };
 
     class Interaction_Button1 : Interaction_Button0 {
       tooltip = "";
       text = "";
       idc = 11;
-      x = (HSPACE + 1.0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 6.7 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -103,8 +119,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 12;
-      x = (HSPACE + 1.25 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 0.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.7 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 3.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -113,8 +129,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 13;
-      x = (HSPACE + 1.25 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.7 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 3.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -123,8 +139,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 14;
-      x = (HSPACE + 1.0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 1.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 6.7 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -134,7 +150,7 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 15;
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 2.5 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE + 9 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -143,8 +159,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 16;
-      x = (HSPACE - 1.0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 1.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 6.7 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -153,8 +169,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 17;
-      x = (HSPACE - 1.25 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 0.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.7 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 3.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -163,8 +179,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 18;
-      x = (HSPACE - 1.25 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 0.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.7 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 3.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -173,8 +189,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 19;
-      x = (HSPACE - 1.0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 1.5 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 6.7 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
