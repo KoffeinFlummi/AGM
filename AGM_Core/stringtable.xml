@@ -128,7 +128,7 @@
       <Spanish>Perfil guardado</Spanish>
       <Polish>Profil zapisany</Polish>
       <Czech>Profil uložen</Czech>
-      <French>Profil sauvegarder</French>
+      <French>Profil sauvegardé</French>
       <Russian>Профиль сохранен</Russian>
       <Hungarian>Profil mentve</Hungarian>
     </Key>
@@ -138,7 +138,7 @@
       <Spanish>Perfil no guardado</Spanish>
       <Polish>Profil niezapisany</Polish>
       <Czech>Profil neuložen</Czech>
-      <French>Profil non sauvegarder</French>
+      <French>Profil non sauvegardé</French>
       <Russian>Профиль не сохранен</Russian>
       <Hungarian>Profil nincs mentve</Hungarian>
     </Key>
@@ -320,7 +320,7 @@
       <German>&lt; Zurück</German>
       <Spanish>&lt; Anterior.</Spanish>
       <Polish>&lt; Poprzedni</Polish>
-      <French>&lt; Prec</French>
+      <French>&lt; Préc</French>
       <Hungarian>&lt; Előző</Hungarian>
       <Czech>&lt; Předchozí</Czech>
     </Key>
@@ -331,7 +331,7 @@
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
-      <Czech>Další</Czech>
+      <Czech>Další &gt;</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_MiscItems">
