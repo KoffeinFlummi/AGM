@@ -19,7 +19,7 @@
       <Spanish>Bípode desplegado</Spanish>
       <Polish>Dwójnóg rozstawiony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
-      <French>Bipied deployé</French>
+      <French>Bipied déployé</French>
       <Russian>Сошки установлены</Russian>
       <Hungarian>Állványon</Hungarian>
     </Key>
@@ -29,7 +29,7 @@
       <Spanish>Arma apoyada</Spanish>
       <Polish>Broń oparta</Polish>
       <Czech>Zbraň zapřena</Czech>
-      <French>Arme appuyé</French>
+      <French>Arme appuyée</French>
       <Russian>Оружие зафиксировано</Russian>
       <Hungarian>Fegyver kitámasztva</Hungarian>
     </Key>
@@ -40,7 +40,7 @@
       <Spanish>Bípode plegado</Spanish>
       <Polish>Dwójnóg złożony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
-      <French>Bipied retracté</French>
+      <French>Bipied replié</French>
       <Russian>Сошки убраны</Russian>
       <Hungarian>Állvány csukva</Hungarian>
     </Key>
@@ -50,7 +50,7 @@
       <Spanish>Arma levantada</Spanish>
       <Polish>Broń podniesiona</Polish>
       <Czech>Zbraň zdvihnuta</Czech>
-      <French>Arme Non-appuyé</French>
+      <French>Arme relevée</French>
       <Russian>Оружие не зафиксировано</Russian>
       <Hungarian>Fegyver nincs támasztva</Hungarian>
     </Key>
