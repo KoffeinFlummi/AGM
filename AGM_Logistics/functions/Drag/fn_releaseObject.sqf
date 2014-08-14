@@ -31,7 +31,7 @@ _this setVariable ["AGM_carriedItem", objNull, true];
 
 detach _draggedObject;
 _this forceWalk false;
-_this removeAction AGM_Drag_ReleaseActionID;
+_this removeAction (_this getVariable ["AGM_Drag_ReleaseActionID", -1]);
 _draggedObject setDamage (damage _draggedObject);
 _draggedObject lock (_draggedObject getVariable ["AGM_lockStatus", 1]);
 

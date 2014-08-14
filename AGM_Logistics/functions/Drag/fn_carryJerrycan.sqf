@@ -27,7 +27,14 @@ _this spawn {
 
 	_unit forceWalk true;
 
-	AGM_Drag_ReleaseActionID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Drag_EndDrag"], "player call AGM_Drag_fnc_releaseObject;", nil, 20, false, true, "","player call AGM_Drag_fnc_isDraggingObject"];
+	_actionID = _unit getVariable ["AGM_Drag_ReleaseActionID", -1];
+
+	if (_actionID != -1) then {
+		_unit removeAction _actionID;
+	};
+	_actionID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Drag_EndDrag"], "player call AGM_Drag_fnc_releaseObject;", nil, 20, false, true, "","player call AGM_Drag_fnc_isDraggingObject"];
+
+	_unit setVariable ["AGM_Drag_ReleaseActionID", _actionID];
 
 	waitUntil {
 		if (stance _unit != "STAND" || {currentWeapon _unit != ""}) exitWith {
