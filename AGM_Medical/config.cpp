@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {"AGM_Bandage", "AGM_Morphine", "AGM_Epipen", "AGM_Bloodbag"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -159,10 +159,11 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Treat";
         distance = 4;
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
-        statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenu;";
+        statement = "";
         showDisabled = 1;
 		icon = "AGM_Medical\UI\IconMedical_ca.paa";
         priority = 6;
+        subMenu[] = {"AGM_Medical", 0};
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -276,10 +277,11 @@ class CfgVehicles {
       class AGM_Medical {
         displayName = "$STR_AGM_Medical_Treat_Self";
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
-        statement = "'AGM_Medical' call AGM_Interaction_fnc_openMenuSelf;";
+        statement = "";
         showDisabled = 1;
         priority = 6;
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        subMenu[] = {"AGM_Medical", 1};
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";

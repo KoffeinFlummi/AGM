@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -268,10 +268,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -395,10 +396,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -505,10 +507,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -596,10 +599,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
 				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";

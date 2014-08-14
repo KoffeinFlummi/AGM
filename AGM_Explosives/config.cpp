@@ -4,9 +4,9 @@ class CfgPatches {
 		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core, AGM_Interaction};
-		version = "0.93";
-		versionStr = "0.93";
-		versionAr[] = {0,93,0};
+		version = "0.931";
+		versionStr = "0.931";
+		versionAr[] = {0,931,0};
 		author[] = {"Garth 'L-H' de Wet"};
 		authorUrl = "https://github.com/corruptedheart/";
 	};
@@ -62,10 +62,11 @@ class CfgFunctions
 			class AGM_Explosives { \
 				displayName = $STR_AGM_Explosives_Menu;\
 				condition = "true";\
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
 				icon = "AGM_Explosives\UI\IconExplosives_ca.paa"; \
+				subMenu[] = {"AGM_Explosives", 1};\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
@@ -102,10 +103,11 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "";
 				showDisabled = 1;
 				priority = 4;
-				icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
+				icon = "AGM_Explosives\UI\IconExplosives_ca.paa";			
+				subMenu[] = {"AGM_Explosives", 1};
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;

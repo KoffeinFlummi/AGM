@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "eRazeri", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -41,8 +41,8 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
-	  };
+        icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
+      };
       class AGM_Attach_Detach {
         displayName = "$STR_AGM_Attach_Detach";
         condition = "call AGM_Attach_fnc_canDetach";
@@ -50,7 +50,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
+        icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
       };
     };
   };
