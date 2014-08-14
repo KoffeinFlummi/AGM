@@ -43,5 +43,5 @@ _this spawn {
 
 		!(_unit getVariable ["AGM_isDragging", false])
 	};
-	_unit removeAction AGM_Drag_ReleaseActionID;
+	_unit removeAction (_unit getVariable ["AGM_Drag_ReleaseActionID", -1]);
 };
