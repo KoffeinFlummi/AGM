@@ -65,10 +65,10 @@ class AGM_Interaction_Dialog {
       style = 48;
       text = "\AGM_Interaction\UI\command_rose_ca.paa";
       tooltip = "";
-      x = (0.5- 0.8 / (getResolution select 4) /2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5- 0.8 /2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 0.8 / (getResolution select 4) * safezoneW;
-      h = 0.8 * safezoneH;
+      x = (0.5- 0.6 / (getResolution select 4) /2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.6 /2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 0.6 / (getResolution select 4) * safezoneW;
+      h = 0.6 * safezoneH;
 
       colorText[] = {0.5,0.5,0.5,0.6};
     };
@@ -98,8 +98,9 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 10;
+      sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 9 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
 
@@ -115,8 +116,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 11;
-      x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 0.8 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 5.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -125,8 +126,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 12;
-      x = (HSPACE + 1.7 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 3.1 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 2.3 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -135,8 +136,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 13;
-      x = (HSPACE + 1.7 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 3.1 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 1.3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 2.3 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -145,8 +146,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 14;
-      x = (HSPACE + 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 6.8 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE + 0.8 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 5.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -156,7 +157,7 @@ class AGM_Interaction_Dialog {
       text = "";
       idc = 15;
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 9 * 0.04) * safezoneH + safezoneY;
+      y = (VSPACE + 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -165,8 +166,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 16;
-      x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 6.8 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 0.8 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 5.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -175,8 +176,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 17;
-      x = (HSPACE - 1.7 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE + 3.1 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE + 2.3 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -185,8 +186,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 18;
-      x = (HSPACE - 1.7 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 3.1 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 1.3 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 2.3 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
     };
@@ -195,10 +196,130 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 19;
-      x = (HSPACE - 1.1 * 0.1) * safezoneW + safezoneX;
-      y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
+      x = (HSPACE - 0.8 * 0.1) * safezoneW + safezoneX;
+      y = (VSPACE - 5.1 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
       h = 0.3 / 9 * safezoneH;
+    };
+
+    class Interaction_Icon0 : Interaction_Button0 {
+      idc = 20;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             - 4.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon1 : Interaction_Button1 {
+      idc = 21;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 0.6 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             - 3.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon2 : Interaction_Button2 {
+      idc = 22;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             - 1.4 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon3 : Interaction_Button3 {
+      idc = 23;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             + 1.4 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon4 : Interaction_Button4 {
+      idc = 24;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 0.6 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             + 3.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon5 : Interaction_Button5 {
+      idc = 25;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             + 4.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon6 : Interaction_Button6 {
+      idc = 26;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  - 0.6 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             + 3.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon7 : Interaction_Button7 {
+      idc = 27;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  - 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             + 1.4 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon8 : Interaction_Button8 {
+      idc = 28;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  - 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             - 1.4 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
+    };
+
+    class Interaction_Icon9 : Interaction_Button9 {
+      idc = 29;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+
+      x = (0.5- 0.04 / (getResolution select 4) /2  - 0.6 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.04 /2                             - 3.6 * 0.04) * safezoneH + safezoneY;
+      w = 0.04 / (getResolution select 4) * safezoneW;
+      h = 0.04 * safezoneH;
     };
 
     class Interaction_InteractiveScreen : AGM_Interaction_Button_Base {
@@ -222,87 +343,6 @@ class AGM_Interaction_Dialog {
       colorShadow[] = {0,0,0,0};
       colorBorder[] = {0,0,0,0};
     };
-
-    /*class Interaction_Icon0 : Interaction_Button0 {
-      idc = 20;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon1 : Interaction_Button1 {
-      idc = 21;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon2 : Interaction_Button2 {
-      idc = 22;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon3 : Interaction_Button3 {
-      idc = 23;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon4 : Interaction_Button4 {
-      idc = 24;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon5 : Interaction_Button5 {
-      idc = 25;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon6 : Interaction_Button6 {
-      idc = 26;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon7 : Interaction_Button7 {
-      idc = 27;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon8 : Interaction_Button8 {
-      idc = 28;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };
-
-    class Interaction_Icon9 : Interaction_Button9 {
-      idc = 29;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      w = 0.3 / 16 * safezoneW;
-    };*/
-
   };
 };
 

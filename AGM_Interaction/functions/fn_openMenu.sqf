@@ -43,9 +43,11 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_priority = getNumber (_action >> "priority");
 
 				_subMenu = getArray (_action >> "subMenu");
+				_icon = getText (_action >> "icon");
+				if (_icon == "") then {_icon = "AGM_Interaction\UI\dot_ca.paa"};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -79,9 +81,11 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				_priority = getNumber (_action >> "priority");
 
 				_subMenu = getArray (_action >> "subMenu");
+				_icon = getText (_action >> "icon");
+				if (_icon == "") then {_icon = "AGM_Interaction\UI\dot_ca.paa"};
 
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -100,9 +104,10 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_showDisabled = _customAction select 4;
 	_priority = _customAction select 5;
 	_subMenu = [];
+	_icon = "AGM_Interaction\UI\dot_ca.paa";
 
 	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon]];
 	};
 };
 
@@ -150,12 +155,18 @@ for "_i" from 0 to 9 do {
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
 	_ctrlInteractionDialog ctrlShow true;
 
+	_ctrlInteractionDialogIcon = _dlgInteractionDialog displayCtrl (20 + _i);
+
 	if (_i < _count) then {
 		_action = AGM_Interaction_Buttons select _i;
 		_ctrlInteractionDialog ctrlSetText (_action select 0);
 		_ctrlInteractionDialog ctrlEnable (call (_action select 2));
+
+		_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
 	} else {
 		_ctrlInteractionDialog ctrlSetText "";
 		_ctrlInteractionDialog ctrlEnable false;
+
+		_ctrlInteractionDialogIcon ctrlSetText "";
 	}
 };
