@@ -27,8 +27,9 @@ _this spawn {
 	_ableToDrag = true;
 
 	if ((typeOf _draggedObject) isKindOf "StaticWeapon") then {
-		if !(isNull(gunner _draggedObject) AND {!alive (gunner _draggedObject)}) then {
-			(gunner _draggedObject) setPosATL (GetPosATL(gunner _draggedObject));
+		_gunner = gunner _draggedObject;
+		if (!isNull _gunner && {alive _gunner}) then {
+			_gunner setPosASL getPosASL _gunner;
 		};
 	} else { // Crate handling
 		if (_draggedObject getVariable ["AGM_useWeight", true]) then {
