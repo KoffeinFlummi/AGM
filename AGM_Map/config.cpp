@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -17,6 +17,7 @@ class CfgFunctions {
     class AGM_Map {
       file = "AGM_Map\functions";
       class blueForceTracking;
+      class canUseMapTools;
       class handleMouseButton;
       class handleMouseMove;
       class isInsideMapTool;
@@ -54,6 +55,63 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
+
+  class Man;
+  class CAManBase: Man {
+    class AGM_SelfActions {
+
+      class AGM_MapTools {
+        displayName = "$STR_AGM_Map_MapTools_Menu";
+        condition = "call AGM_Map_fnc_canUseMapTools";
+        statement = "'AGM_MapTools' call AGM_Interaction_fnc_openMenuSelf";
+        exceptions[] = {"AGM_Drag_isNotDragging"};
+        showDisabled = 0;
+        priority = 100;
+
+        class AGM_MapToolsHide {
+          displayName = "$STR_AGM_Map_MapToolsHide";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown > 0}";
+          statement = "AGM_Map_mapToolsShown = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 1;
+          priority = 5;
+        };
+        class AGM_MapToolsShowNormal {
+          displayName = "$STR_AGM_Map_MapToolsShowNormal";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 1}";
+          statement = "AGM_Map_mapToolsShown = 1; [] call AGM_Map_fnc_updateMapToolMarkers";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 1;
+          priority = 4;
+        };
+        class AGM_MapToolsShowSmall {
+          displayName = "$STR_AGM_Map_MapToolsShowSmall";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 2}";
+          statement = "AGM_Map_mapToolsShown = 2; [] call AGM_Map_fnc_updateMapToolMarkers";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 1;
+          priority = 3;
+        };
+        class AGM_MapToolsAlignNorth {
+          displayName = "$STR_AGM_Map_MapToolsAlignNorth";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0}";
+          statement = "AGM_Map_angle = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 1;
+          priority = 2;
+        };
+        class AGM_MapToolsAlignCompass {
+          displayName = "$STR_AGM_Map_MapToolsAlignCompass";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0} && {(""ItemCompass"" in assignedItems player) || {""ItemGPS"" in assignedItems player}}";
+          statement = "AGM_Map_angle = getDir player; [] call AGM_Map_fnc_updateMapToolMarkers";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 1;
+          priority = 1;
+        };
+      };
+    };
+  };
+
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;
@@ -321,9 +379,17 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotating {
+  class MapToolRotatingNormal {
     name = "MapToolRotating";
-    icon = "\AGM_Map\data\mapToolRotating.paa";
+    icon = "\AGM_Map\data\mapToolRotatingNormal.paa";
+    scope = 0;
+    color[] = {1,1,1,1};
+    size = 32;
+  };
+
+  class MapToolRotatingSmall {
+    name = "MapToolRotating";
+    icon = "\AGM_Map\data\mapToolRotatingSmall.paa";
     scope = 0;
     color[] = {1,1,1,1};
     size = 32;

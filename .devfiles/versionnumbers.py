@@ -58,5 +58,8 @@ def main(version):
       print("  Failed to update %s" % (module))
 
 if __name__ == "__main__":
-  main("0.93")
-  #main(sys.argv[1])
+  try:
+    main(sys.argv[1])
+  except:
+    print("No version number specified.")
+    sys.exit(1)

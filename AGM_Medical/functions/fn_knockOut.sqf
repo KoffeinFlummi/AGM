@@ -33,6 +33,7 @@ if (_unit == player) then {
   player setVariable ["acre_sys_core_globalVolume", 0.4];
 
   closeDialog 0;
+  call AGM_Interaction_fnc_hideMenu;
 
   [true, true] call AGM_Core_fnc_disableUserInput;
 };

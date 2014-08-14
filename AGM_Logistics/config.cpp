@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -268,9 +268,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -279,6 +281,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
 					showDisabled = 1;
 					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Wheels {
 					displayName = "$STR_AGM_Repair_RepairWheel";
@@ -287,6 +290,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI";
 					showDisabled = 1;
 					priority = 0.9;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Remove_Wheels {
 					displayName = "$STR_AGM_Repair_RemoveWheel";
@@ -295,6 +299,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, ['HitLFWheel', 'HitLBWheel', 'HitLMWheel', 'HitLF2Wheel', 'HitRFWheel', 'HitRBWheel', 'HitRMWheel', 'HitRF2Wheel']] call AGM_Repair_fnc_openSelectWheelUI_Salvage";
 					showDisabled = 1;
 					priority = 0.8;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Body {
 					displayName = "$STR_AGM_Repair_HitBody";
@@ -303,6 +308,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Engine {
 					displayName = "$STR_AGM_Repair_HitEngine";
@@ -311,6 +317,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Fuel {
 					displayName = "$STR_AGM_Repair_HitFuel";
@@ -319,6 +326,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Gun {
 					displayName = "$STR_AGM_Repair_HitGun";
@@ -327,6 +335,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.2;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Turret {
 					displayName = "$STR_AGM_Repair_HitTurret";
@@ -335,13 +344,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.1;
-				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 			};
 		};
@@ -393,9 +396,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -404,6 +409,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
 					showDisabled = 1;
 					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Hull {
 					displayName = "$STR_AGM_Repair_HitHull";
@@ -412,6 +418,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_LTrack {
 					displayName = "$STR_AGM_Repair_HitLTrack";
@@ -420,6 +427,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitLTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.42;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_RTrack {
 					displayName = "$STR_AGM_Repair_HitRTrack";
@@ -428,6 +436,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitRTrack'] call AGM_Repair_fnc_repairTrack";
 					showDisabled = 0;
 					priority = 0.41;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Engine {
 					displayName = "$STR_AGM_Repair_HitEngine";
@@ -436,6 +445,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				/*class AGM_Repair_Fuel {
 					displayName = "$STR_AGM_Repair_HitFuel";
@@ -444,6 +454,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};*/
 				class AGM_Repair_Gun {
 					displayName = "$STR_AGM_Repair_HitGun";
@@ -452,6 +463,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitGun'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.2;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Turret {
 					displayName = "$STR_AGM_Repair_HitTurret";
@@ -460,13 +472,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitTurret'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.1;
-				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 			};
 		};
@@ -501,9 +507,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -512,6 +520,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
 					showDisabled = 1;
 					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Body {
 					displayName = "$STR_AGM_Repair_HitHull";
@@ -520,6 +529,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Engine {
 					displayName = "$STR_AGM_Repair_HitEngine";
@@ -528,6 +538,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Fuel {
 					displayName = "$STR_AGM_Repair_HitFuel";
@@ -536,6 +547,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Avionics {
 					displayName = "$STR_AGM_Repair_HitAvionics";
@@ -544,6 +556,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.2;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_HRotor {
 					displayName = "$STR_AGM_Repair_HitHRotor";
@@ -552,6 +565,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitHRotor'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.15;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_VRotor {
 					displayName = "$STR_AGM_Repair_HitVRotor";
@@ -560,13 +574,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitVRotor'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.1;
-				};
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 			};
 		};
@@ -591,9 +599,11 @@ class CfgVehicles {
 				displayName = "$STR_AGM_Repair";
 				distance = 4;
 				condition = "alive AGM_Interaction_Target";
-				statement = "'AGM_Repair' call AGM_Interaction_fnc_openMenu;";
+				statement = "";
 				showDisabled = 1;
 				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
 
 				class AGM_Repair_checkVehicle {
 					displayName = "$STR_AGM_Repair_checkVehicle";
@@ -602,6 +612,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
 					showDisabled = 1;
 					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Body {
 					displayName = "$STR_AGM_Repair_HitHull";
@@ -610,6 +621,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				/*class AGM_Repair_Engine {
 					displayName = "$STR_AGM_Repair_HitEngine";
@@ -618,6 +630,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Fuel {
 					displayName = "$STR_AGM_Repair_HitFuel";
@@ -626,6 +639,7 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};
 				class AGM_Repair_Avionics {
 					displayName = "$STR_AGM_Repair_HitAvionics";
@@ -634,14 +648,8 @@ class CfgVehicles {
 					statement = "[AGM_Interaction_Target, 'HitAvionics'] call AGM_Repair_fnc_repair";
 					showDisabled = 0;
 					priority = 0.2;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 				};*/
-				class AGM_OpenUIDummy {
-					displayName = "";
-					condition = "false";
-					statement = "";
-					showDisabled = 1;
-					priority = -9;
-				};
 			};
 		};
 	};

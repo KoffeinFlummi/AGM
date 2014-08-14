@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -79,7 +79,8 @@ class CfgVehicles {
     AGM_FCSDistanceInterval = 5;
 
     class AGM_SelfActions {
-      class AGM_LeaveGroup {
+      // INHERITANCE !!
+      class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
         condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
         statement = "[vehicle player] call AGM_FCS_fnc_reset;";

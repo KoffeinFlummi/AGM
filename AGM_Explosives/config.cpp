@@ -4,9 +4,9 @@ class CfgPatches {
 		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core, AGM_Interaction};
-		version = "0.93";
-		versionStr = "0.93";
-		versionAr[] = {0,93,0};
+		version = "0.931";
+		versionStr = "0.931";
+		versionAr[] = {0,931,0};
 		author[] = {"Garth 'L-H' de Wet"};
 		authorUrl = "https://github.com/corruptedheart/";
 	};
@@ -62,9 +62,11 @@ class CfgFunctions
 			class AGM_Explosives { \
 				displayName = $STR_AGM_Explosives_Menu;\
 				condition = "true";\
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
+				icon = "AGM_Explosives\UI\IconExplosives_ca.paa"; \
+				subMenu[] = {"AGM_Explosives", 1};\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
@@ -101,15 +103,18 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "";
 				showDisabled = 1;
-				priority = 4;				
+				priority = 4;
+				icon = "AGM_Explosives\UI\IconExplosives_ca.paa";			
+				subMenu[] = {"AGM_Explosives", 1};
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 2;
 				};
 				class AGM_Place {
@@ -117,6 +122,7 @@ class CfgVehicles {
 					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
 					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 1;
 				};
 				class AGM_Defuse {
@@ -124,6 +130,7 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
 					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.8;
 				};
 				class AGM_PlaceExplosive {
@@ -131,6 +138,7 @@ class CfgVehicles {
 					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
 					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.4;
 				};
 				class AGM_CancelPlace {
@@ -138,6 +146,7 @@ class CfgVehicles {
 					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
 					statement = "call AGM_Explosives_fnc_Place_Cancel;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
 					priority = 0.2;
 				};
 			};

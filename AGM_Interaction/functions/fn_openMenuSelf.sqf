@@ -1,26 +1,25 @@
 // by commy2
 
+private ["_count", "_index", "_action", "_subMenu"];
+
 AGM_Interaction_Buttons = [];
+uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
 _actions = [];
 _patches = [];
-_class = _this;
-
-// crash fix
-if (_class != "" && {!(missionNamespace getVariable ["AGM_Interaction_isMousePressed", true])}) exitWith {};
 
 
 _object = vehicle player;
 
+
+
 // fix inheritance
 _configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_SelfActions";
-if !(_class in ["", "Default"]) then {_configClass = _configClass >> _class};
 
 // search mission config file
 _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 {
 	_config = missionConfigFile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
-	if !(_class in ["", "Default"]) then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -43,8 +42,10 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				};
 				_priority = getNumber (_action >> "priority");
 
+				_subMenu = getArray (_action >> "subMenu");
+
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -55,7 +56,6 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 // search add-on config file
 {
 	_config = configfile >> "CfgVehicles" >> _x >> "AGM_SelfActions";
-	if !(_class in ["", "Default"]) then {_config = _config >> _class};
 
 	_count = count _config;
 	if (_count > 0) then {
@@ -78,8 +78,10 @@ _parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 				};
 				_priority = getNumber (_action >> "priority");
 
+				_subMenu = getArray (_action >> "subMenu");
+
 				if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-					_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+					_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 					_patches set [count _patches, _configName];
 				};
 			};
@@ -97,9 +99,10 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_statement = _customAction select 2;
 	_showDisabled = _customAction select 3;
 	_priority = _customAction select 4;
+	_subMenu = [];
 
 	if (_showDisabled || {call _condition}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority]];
+		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu]];
 	};
 };
 
@@ -109,24 +112,15 @@ if (_count == 0) exitWith {};
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
-AGM_Interaction_SelectedButton = -1;
 
-if (_class == "") then {
-	(findDisplay 1713999) closeDisplay 1;
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
+(findDisplay 1713999) closeDisplay 1;
+(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 
-	// add keys to display
-	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+// add keys to display
+(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
 
-	setMousePosition [0.5, 0.5];
-} else {
-	(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
-
-	// add keys to display
-	(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
-	(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
-};
+setMousePosition [0.5, 0.5];
 
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
@@ -142,17 +136,14 @@ for "_a" from 0 to (_count - 1) do {
 };
 */
 
-_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 2;
-if (_class in ["", "Default"]) then {
-	AGM_Interaction_MainButton = "(findDisplay 1713999) closeDisplay 1;";
-	if ((vehicle player) isKindOf "Man") then {
-		_ctrlInteractionDialog ctrlSetText (if (alive vehicle player) then {name vehicle player} else {vehicle player getVariable ["AGM_Name", "Unknown"]});
-	} else {
-		_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf (vehicle player)) >> "displayName"));
-	};
+_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 3;
+
+AGM_Interaction_MainButton = "(findDisplay 1713999) closeDisplay 1;";
+
+if (_object isKindOf "Man") then {
+	_ctrlInteractionDialog ctrlSetText (if (alive _object) then {name _object} else {_object getVariable ["AGM_Name", "Unknown"]});
 } else {
-	AGM_Interaction_MainButton = "'Default' call AGM_Interaction_fnc_openMenuSelf;";
-	_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
+	_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> typeOf _object >> "displayName"));
 };
 
 for "_i" from 0 to 9 do {

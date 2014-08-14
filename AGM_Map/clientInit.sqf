@@ -18,7 +18,8 @@ if (!hasInterface) exitWith{};
   ((finddisplay 12) displayctrl 51) ctrlAddEventHandler ["Draw", {[] call AGM_Map_fnc_updateMapToolMarkers;}];
 
   // Init variables
-  AGM_Map_pos = [1000,1000];
+  AGM_Map_mapToolsShown = 0;
+  AGM_Map_pos = [0,0];
   AGM_Map_angle = 0;
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
@@ -32,8 +33,10 @@ if (!hasInterface) exitWith{};
 
     waitUntil {!visibleMap};
     deleteMarkerLocal "MapToolFixed";
-    deleteMarkerLocal "MapToolRotating";
+    deleteMarkerLocal "MapToolRotatingNormal";
+    deleteMarkerLocal "MapToolRotatingSmall";
     AGM_Map_mapToolFixed = nil;
-    AGM_Map_mapToolRotating = nil;
+    AGM_Map_mapToolRotatingNormal = nil;
+    AGM_Map_mapToolRotatingSmall = nil;
   };
 };

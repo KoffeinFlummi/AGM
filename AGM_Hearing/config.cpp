@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -58,6 +58,7 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
+		icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
       class AGM_RemoveEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_Off";
@@ -65,6 +66,7 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_removeEarplugs";
         showDisabled = 0;
         priority = 2.5;
+		icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
     };
   };

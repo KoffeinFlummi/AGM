@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -34,6 +34,7 @@ class CfgVehicles {
         statement = "call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;
+		icon = "\A3\ui_f\data\igui\cfg\actions\reammo_ca.paa";
       };
     };
   };

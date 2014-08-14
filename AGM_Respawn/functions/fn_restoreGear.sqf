@@ -64,6 +64,10 @@ _unit addGoggles _goggles;
 
 if(format["%1", _backpack] != "") then {
     _unit addbackpack _backpack;
+    _backpa = unitBackpack _unit;
+	clearMagazineCargoGlobal _backpa;
+	clearWeaponCargoGlobal _backpa;
+	clearItemCargoGlobal _backpa;
     {
         _unit addItemToBackpack _x;
     } foreach _backpackitems;
@@ -116,3 +120,22 @@ if (_handgunweapon != "") then {
 {
     _unit linkItem _x;
 } foreach _assigneditems;
+// items // einige ITEM gehen nur mit addWeapon
+{_unit addWeapon _x} forEach _assignedItems;
+
+IF("Laserdesignator" in assignedItems _unit) then {
+	_unit selectWeapon "Laserdesignator";
+	IF(currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
+};
+
+
+/*
+Kann es sein, dass immer ein Magazin verschwindet beim ReSp. ? Dann das hier mit einbauen... Ich teste das nachher Flummi
+_primaryWeaponMagazineCount = _unit ammo (primaryWeapon _unit);
+_secondaryWeaponMagazineCount = _unit ammo (secondaryWeapon _unit);
+_handgunWeaponMagazineCount = _unit ammo (handgunWeapon _unit);
+
+{_unit addMagazine [_x,_primaryWeaponMagazineCount   ] ; } forEach _primaryWeaponMagazine;
+{_unit addMagazine [_x,_secondaryWeaponMagazineCount ] ; } forEach _secondaryWeaponMagazine;
+{_unit addMagazine [_x,_handgunWeaponMagazineCount   ] ; } forEach _handgunWeaponMagazine;
+*/
