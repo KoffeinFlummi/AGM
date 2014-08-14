@@ -19,6 +19,7 @@ class CfgFunctions {
       class AddSelectableItem;
       class addInteraction;
       class addInteractionSelf;
+      class applyButtons;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
       class canTapShoulder;
