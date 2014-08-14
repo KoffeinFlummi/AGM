@@ -32,7 +32,7 @@ while {_i <= 4} do {
 	if (_index >= 0 && {_index <= _count}) then {
 		_action = AGM_Interaction_Buttons select _index;
 		_ctrl ctrlShow true;
-		_ctrl ctrlSetText (_action select 4);
+		_ctrl ctrlSetText (_action select 5);
 		_color = [1,1,1,1];
 		if (!call (_action select 2)) then {
 			_color = [0.3,0.3,0.3,0.8];
