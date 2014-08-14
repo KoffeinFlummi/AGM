@@ -48,7 +48,7 @@ class AGM_Interaction_Dialog {
   enableSimulation = 1;
   movingEnable = 0;
   onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
-  onUnload = "uiNamespace setVariable ['AGM_Interaction_Dialog', objNull];";
+  onUnload = "uiNamespace setVariable ['AGM_Interaction_Dialog', displayNull];";
   objects[] = {};
   class controls {
     class Interaction_Dummy : AGM_Interaction_Button_Base {
@@ -65,10 +65,10 @@ class AGM_Interaction_Dialog {
       style = 48;
       text = "\AGM_Interaction\UI\command_rose_ca.paa";
       tooltip = "";
-      x = (0.5-8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5-8/9/2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 8 / 16 * safezoneW;
-      h = 8 / 9 * safezoneH;
+      x = (0.5- 0.8 / (getResolution select 4) /2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5- 0.8 /2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 0.8 / (getResolution select 4) * safezoneW;
+      h = 0.8 * safezoneH;
 
       colorText[] = {0.5,0.5,0.5,0.6};
     };
