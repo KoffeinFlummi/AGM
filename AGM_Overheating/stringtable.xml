@@ -8,7 +8,7 @@
       <Spanish>Cañón de repuesto</Spanish>
       <Polish>Zapasowa lufa</Polish>
       <Czech>Náhradní hlaveň</Czech>
-      <French>Canon de rechange</French>
+      <French>Deuxième canon</French>
       <Russian>Запасной ствол</Russian>
       <Hungarian>Tartalék cső</Hungarian>
     </Key>
@@ -18,7 +18,7 @@
       <Spanish>Permite intercambiar el cañón</Spanish>
       <Polish>Umożliwia wymianę lufy</Polish>
       <Czech>Používané k výměně hlavně</Czech>
-      <French>Utiliser pour changer de canon.</French>
+      <French>Utilisé pour changer de canon.</French>
       <Russian>Используется для смены ствола.</Russian>
       <Hungarian>Cső kicseréléséhez.</Hungarian>
     </Key>
@@ -28,7 +28,7 @@
       <Spanish>Arma encasquillada!</Spanish>
       <Polish>Broń się zacięła!</Polish>
       <Czech>Zbraň se zasekla!</Czech>
-      <French>Arme enrayer</French>
+      <French>Arme enrayéé</French>
       <Russian>Оружие заклинило!</Russian>
       <Hungarian>Elakadt a fegyver!</Hungarian>
     </Key>
@@ -38,7 +38,7 @@
       <Spanish>Desencasquillar el arma</Spanish>
       <Polish>Usuń zacięcie</Polish>
       <Czech>Uvolnit zbraň</Czech>
-      <French>Nettoyer le canon</French>
+      <French>Désenrayer l'arme</French>
       <Russian>Исправить клин оружия.</Russian>
       <Hungarian>Hárítsd el az akadályt!</Hungarian>
     </Key>
@@ -48,7 +48,7 @@
       <Spanish>Arma desencasquillada</Spanish>
       <Polish>Zacięcie usunięte</Polish>
       <Czech>Zbraň uvolněna</Czech>
-      <French>Canon nettoyé</French>
+      <French>Désenrayé</French>
       <Russian>Оружие исправлено</Russian>
       <Hungarian>Akadály elhárítva!</Hungarian>
     </Key>
@@ -58,7 +58,7 @@
       <Spanish>Cambiar el cañón</Spanish>
       <Polish>Wymień lufę</Polish>
       <Czech>Vyměnit hlaveň</Czech>
-      <French>Changer le canon</French>
+      <French>Changer de canon</French>
       <Russian>Сменить ствол</Russian>
       <Hungarian>Cserélj csövet!</Hungarian>
     </Key>
