@@ -357,7 +357,7 @@ def main():
     thread.join()
 
   print("\n######################################################")
-  print("# Binarization complete.                             #")
+  print("# Binarization complete at " + time.strftime("%Y-%m-%d %H:%M:%S").ljust(25) + " #")
   print("######################################################")
 
   # Convert PBO names to lowercase for linux.
