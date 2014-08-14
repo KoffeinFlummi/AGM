@@ -64,5 +64,14 @@
       <Hungarian>Ejtés</Hungarian>
     </Key>
 
+    <Key ID="STR_AGM_Grenades_M84_Name">
+      <English>M84 Stun Grenade</English>
+      <German>M84 Blendgranate</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M84_Description">
+      <English>Also known as flashbang. Causes immediate flash blindness, deafness, tinnitus, and inner ear disturbance.</English>
+      <German>Verursacht temporäre Blind- und Taubheit.</German>
+    </Key>
+
   </Package>
 </Project>
