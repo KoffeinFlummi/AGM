@@ -492,12 +492,15 @@
     </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
+      <Polish>Flow Menu</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_ScrollHint">
       <English>Scroll</English>
+      <Polish>Przewiń</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_ModifierKey">
       <English>Modifier Key</English>
+      <Polish>Modyfikator</Polish>
     </Key>
   </Package>
 </Project>
