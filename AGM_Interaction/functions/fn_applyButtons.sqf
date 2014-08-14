@@ -41,7 +41,7 @@ for "_index" from 0 to 9 do {
 		_ctrlInteractionDialog ctrlSetText (_action select 0);
 		_ctrlInteractionDialog ctrlEnable (call (_action select 2));
 
-		//_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
+		_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
 	} else {
 		_ctrlInteractionDialog ctrlSetText "";
 		_ctrlInteractionDialog ctrlEnable false;
