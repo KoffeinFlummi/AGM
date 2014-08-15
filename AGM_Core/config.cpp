@@ -180,6 +180,7 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class addActionEventhandler;
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
@@ -226,6 +227,7 @@ class CfgFunctions {
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
+      class removeActionEventhandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
