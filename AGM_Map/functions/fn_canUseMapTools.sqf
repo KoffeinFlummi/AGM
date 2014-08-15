@@ -1,7 +1,5 @@
 // by CAA-Picard
 
-private "_item";
-
 visibleMap &&
 {alive player} &&
 {"AGM_MapTools" in items player} &&

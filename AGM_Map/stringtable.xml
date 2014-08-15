@@ -51,5 +51,13 @@
       <German>Kartenwerkzeug am Kompass ausrichten</German>
       <Spanish>Alinear herr. de mapa a la brújula</Spanish>
     </Key>
+    <Key ID="STR_AGM_Map_MapGpsShow">
+      <English>Show GPS on Map</English>
+      <Spanish>Mostrar el GPS sobre el mapa</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Map_MapGpsHide">
+      <English>Hide GPS on Map</English>
+      <Spanish>Ocultar el GPS del mapa</Spanish>
+    </Key>
   </Package>
 </Project>

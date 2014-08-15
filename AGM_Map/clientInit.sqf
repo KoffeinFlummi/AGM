@@ -23,6 +23,7 @@ if (!hasInterface) exitWith{};
   AGM_Map_angle = 0;
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
+  AGM_Map_mapGpsShow = true;
 
   // Update the size and rotation
   [] call AGM_Map_fnc_updateMapToolMarkers;
@@ -30,8 +31,10 @@ if (!hasInterface) exitWith{};
   while {true} do {
     waitUntil {visibleMap};
     [] call AGM_Map_fnc_updateMapToolMarkers;
+    [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps;
 
     waitUntil {!visibleMap};
+    [false] call AGM_Map_fnc_openMapGps;
     deleteMarkerLocal "MapToolFixed";
     deleteMarkerLocal "MapToolRotatingNormal";
     deleteMarkerLocal "MapToolRotatingSmall";
