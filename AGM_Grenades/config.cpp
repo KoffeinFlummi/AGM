@@ -240,6 +240,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_White,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -247,6 +248,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Red,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -254,6 +256,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -263,6 +266,7 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_HandFlare_Red,24)
       MACRO_ADDITEM(AGM_HandFlare_Green,24)
       MACRO_ADDITEM(AGM_HandFlare_Yellow,24)
+      MACRO_ADDITEM(AGM_M84, 24)
     };
   };
 };
