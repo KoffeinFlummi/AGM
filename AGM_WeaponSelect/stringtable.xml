@@ -39,7 +39,7 @@
       <Polish>Wybierz granatnik</Polish>
       <Czech>Zvolit Granátomet</Czech>
       <Russian>Выбрать подствольный гранатомет</Russian>
-      <French>Sélectionner Lance-grenade</French>
+      <French>Sélectionner Lance-grenades</French>
       <Hungarian>Gránátvető kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
@@ -59,7 +59,7 @@
       <Polish>Schowaj broń</Polish>
       <Czech>Schovat zbraň</Czech>
       <Russian>Убрать оружие</Russian>
-      <French>Arme dans le dos</French>
+      <French>Arme à la bretelle</French>
       <Hungarian>Fegyvert tokba</Hungarian>
     </Key>
 
@@ -68,7 +68,7 @@
       <German>Motor an</German>
       <Spanish>Encender motor</Spanish>
       <Polish>Włącz silnik</Polish>
-      <French>Moteur Allumer</French>
+      <French>Moteur allumé</French>
       <Hungarian>Motor indít</Hungarian>
       <Czech>Zapnout motor</Czech>
     </Key>
@@ -87,7 +87,7 @@
       <German>Hauptgeschütz auswählen</German>
       <Spanish>Seleccionar arma principal</Spanish>
       <Polish>Wybierz główne działo</Polish>
-      <French>Sélectionnez l'Arme Principale</French>
+      <French>Sélectionner l'Arme Principale</French>
       <Hungarian>Főfegyver Kiválasztása</Hungarian>
       <Czech>Zvolit Hlavní Zbraň</Czech>
     </Key>
@@ -96,7 +96,7 @@
       <German>Maschinengewehr auswählen</German>
       <Spanish>Seleccionar ametralladora</Spanish>
       <Polish>Wybierz karabin maszynowy</Polish>
-      <French>Sélectionnez Mitrailleuse</French>
+      <French>Sélectionner Mitrailleuse</French>
       <Hungarian>Géppuska Kiválasztása</Hungarian>
       <Czech>Zvolit Kulomet</Czech>
     </Key>
@@ -105,7 +105,7 @@
       <German>Raketen auswählen</German>
       <Spanish>Seleccionar misiles</Spanish>
       <Polish>Wybierz rakiety</Polish>
-      <French>Sélectionnez Missiles</French>
+      <French>Sélectionner Missiles</French>
       <Hungarian>Rakéta Kiválasztása</Hungarian>
       <Czech>Zvolit Rakety</Czech>
     </Key>
@@ -115,7 +115,7 @@
       <German>Schnellauswahl einschalten</German>
       <Spanish>Activar selección rápida</Spanish>
       <Polish>Włącz szybki wybór</Polish>
-      <French>Activer la Sélection rapide</French>
+      <French>Activer la Sélection Rapide</French>
       <Hungarian>Gyorsváltás Bekapcsolása</Hungarian>
       <Czech>Povolit Rychlou Volbu Zbraní</Czech>
     </Key>
@@ -125,7 +125,7 @@
       <German>Explosive Granate auswählen</German>
       <Spanish>Seleccionar granada de fragmenación</Spanish>
       <Polish>Wybierz granat odłamkowy</Polish>
-      <French>Sélectionnez grenade explosive</French>
+      <French>Sélectionner grenade à fragmentation</French>
       <Czech>Zvolit Výbušný Granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeOther">
@@ -133,7 +133,7 @@
       <German>Nichtexplosive Granate auswählen</German>
       <Spanish>Seleccionar granada de no fragmentación</Spanish>
       <Polish>Wybierz granat nieodłamkowy</Polish>
-      <French>Sélectionnez grenade non-explosive</French>
+      <French>Sélectionner grenade non-léthale</French>
       <Czech>Zvolit Ne-Výbušný Granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ThrowGrenade">
@@ -149,7 +149,7 @@
       <German>Keine explosive Granate übrig</German>
       <Spanish>Sin granadas de fragmentación</Spanish>
       <Polish>Brak granatów odłamkowych</Polish>
-      <French>Plus de grenades explosives</French>
+      <French>Plus de grenades à fragmentation</French>
       <Czech>Už nejsou granáty</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoMiscGrenadeLeft">
@@ -157,7 +157,7 @@
       <German>Keine nichtexplosive Granate übrig</German>
       <Spanish>Sin granadas de varias</Spanish>
       <Polish>Brak granatów nieodłamkowych</Polish>
-      <French>Plus de grenades non-explosives</French>
+      <French>Plus de grenades non-léthales</French>
       <Czech>Už nejsou žádné ostatní granáty</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoGrenadeSelected">
@@ -165,7 +165,7 @@
       <German>Keine Granate ausgewählt</German>
       <Spanish>Granada no seleccionada</Spanish>
       <Polish>Nie wybrano żadnego granatu</Polish>
-      <French>Aucunes grenades Sélectionnée</French>
+      <French>Aucune grenade sélectionnée</French>
       <Czech>Není zvolen žádný granát</Czech>
     </Key>
 
