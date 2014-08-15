@@ -4,7 +4,7 @@
 
 class AGM_Interaction_Button_Base {
   tooltip = "";
-  //action = "AGM_Interaction_isMousePressed = true;(findDisplay 1713999) closeDisplay 1;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};"; 
+  //action = "AGM_Interaction_isMousePressed = true;(findDisplay 1713999) closeDisplay 1;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
   action = "";
 
   idc = -1;
@@ -352,177 +352,177 @@ class RscText;
 #define X_OFFSET 0.2
 
 class RscAGM_SelectAnItem {
-	idd = 8854;
-	movingEnable = 0;
-	class controls {
-		class back:IGUIBack {
-			x = X_OFFSET;
-			y = 0;
-			w = 0.6;
-			h = 0.71;
-			colorBackground[] = {0, 0, 0, 0.5};
-		};
-		class header: RscText{
-			idc = 8870;
-			x = X_OFFSET + 0.005;
-			y = 0.005;
-			w = 0.59;
-			h = 0.05;
-			style = 0x02;
-			text = "";
-		};
-		class itemList:RscListBox {
-			idc = 8866;
-			x = X_OFFSET + 0.005;
-			w = 0.59;
-			h = 0.54;
-			y = 0.06;
-		};
-		class cancelBtn: AGM_Interaction_Button_Base {
-			idc = 8855;
-			x = X_OFFSET + 0.005;
-			w = 0.15;
-			h = 0.1;
-			y = 0.605;
-			style = 2;
-			text = $STR_AGM_Interaction_CancelSelection;
-			action = "call AGM_Interaction_fnc_hideMenu;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
-		};
-		class approveBtn: AGM_Interaction_Button_Base {
-			idc = 8860;
-			x = X_OFFSET + 0.445;
-			y = 0.605;
-			h = 0.1;
-			w = 0.15;
-			style = 2;
-			text = $STR_AGM_Interaction_MakeSelection;
-			action = "call AGM_Interaction_fnc_hideMenu;";
-		};
-	};
+  idd = 8854;
+  movingEnable = 0;
+  class controls {
+    class back:IGUIBack {
+      x = X_OFFSET;
+      y = 0;
+      w = 0.6;
+      h = 0.71;
+      colorBackground[] = {0, 0, 0, 0.5};
+    };
+    class header: RscText{
+      idc = 8870;
+      x = X_OFFSET + 0.005;
+      y = 0.005;
+      w = 0.59;
+      h = 0.05;
+      style = 0x02;
+      text = "";
+    };
+    class itemList:RscListBox {
+      idc = 8866;
+      x = X_OFFSET + 0.005;
+      w = 0.59;
+      h = 0.54;
+      y = 0.06;
+    };
+    class cancelBtn: AGM_Interaction_Button_Base {
+      idc = 8855;
+      x = X_OFFSET + 0.005;
+      w = 0.15;
+      h = 0.1;
+      y = 0.605;
+      style = 2;
+      text = $STR_AGM_Interaction_CancelSelection;
+      action = "call AGM_Interaction_fnc_hideMenu;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
+    };
+    class approveBtn: AGM_Interaction_Button_Base {
+      idc = 8860;
+      x = X_OFFSET + 0.445;
+      y = 0.605;
+      h = 0.1;
+      w = 0.15;
+      style = 2;
+      text = $STR_AGM_Interaction_MakeSelection;
+      action = "call AGM_Interaction_fnc_hideMenu;";
+    };
+  };
 };
-#define GUI_GRID_X	(0)
-#define GUI_GRID_Y	(0)
-#define GUI_GRID_W	(0.025)
-#define GUI_GRID_H	(0.04)
+#define GUI_GRID_X  (0)
+#define GUI_GRID_Y  (0)
+#define GUI_GRID_W  (0.025)
+#define GUI_GRID_H  (0.04)
 
 class RscPicture;
 class RscStructuredText;
 class RscInteractionIcon: RscPicture {
-	x = 19.25 * GUI_GRID_W + GUI_GRID_X;
-	y = 15.75 * GUI_GRID_H + GUI_GRID_Y;
-	w = 2 * GUI_GRID_W;
-	h = 2 * GUI_GRID_H;
+  x = 19.25 * GUI_GRID_W + GUI_GRID_X;
+  y = 15.75 * GUI_GRID_H + GUI_GRID_Y;
+  w = 2 * GUI_GRID_W;
+  h = 2 * GUI_GRID_H;
 };
 class RscInteractionHelperIcon: RscInteractionIcon {
-	x = 20 * GUI_GRID_W + GUI_GRID_X;
-	y = 16 * GUI_GRID_H + GUI_GRID_Y;
-	w = 1 * GUI_GRID_W;
-	h = 1 * GUI_GRID_H;
+  x = 20 * GUI_GRID_W + GUI_GRID_X;
+  y = 16 * GUI_GRID_H + GUI_GRID_Y;
+  w = 1 * GUI_GRID_W;
+  h = 1 * GUI_GRID_H;
 };
 class RscInteractionText: RscText{
-	x = 21 * GUI_GRID_W + GUI_GRID_X;
-	y = 16 * GUI_GRID_H + GUI_GRID_Y;
-	w = 8 * GUI_GRID_W;
-	h = 1.5 * GUI_GRID_H;
+  x = 21 * GUI_GRID_W + GUI_GRID_X;
+  y = 16 * GUI_GRID_H + GUI_GRID_Y;
+  w = 8 * GUI_GRID_W;
+  h = 1.5 * GUI_GRID_H;
 };
 class RscTitles {
-	class AGM_FlowMenu {
-		idd = 9920;
-		enableSimulation = 1;
-		movingEnable = 0;
-		fadeIn=0.5;
-		fadeOut=0.5;
-		duration = 10e10;
-		onLoad = "uiNamespace setVariable ['AGM_Flow_Display', _this select 0];";
-		
-		class controls {
-			class RearIcon: RscInteractionIcon{
-				idc = 999;
-				text = "AGM_interaction\UI\CenterIcon_ca.paa";
-				x = 17.975 * GUI_GRID_W;
-				y = 10 * GUI_GRID_H;
-				w = 4.5 * GUI_GRID_W;
-				h = 5.75 * GUI_GRID_H;
-			};
-			class TopIcon: RscInteractionIcon{
-				idc = 1200;
-				h = 1 * GUI_GRID_H;
-				y = 9 * GUI_GRID_H + GUI_GRID_Y;
-			};
-			class FirstIcon: RscInteractionIcon{
-				idc = 1201;
-				y = 10.25 * GUI_GRID_H + GUI_GRID_Y;
-				h = 1.5 * GUI_GRID_H;
-			};
-			class SelectedItemIcon: RscInteractionIcon{
-				idc = 1202;
-				y = 12 * GUI_GRID_H + GUI_GRID_Y;
-			};
-			class ThirdIcon: RscInteractionIcon{
-				idc = 1203;
-				y = 14.25 * GUI_GRID_H + GUI_GRID_Y;
-				h = 1.5 * GUI_GRID_H;
-			};
-			class BottomIcon: TopIcon{
-				idc = 1204;
-				y = 16 * GUI_GRID_H + GUI_GRID_Y;
-			};
-			class ItemName: RscText{
-				idc = 1000;
-				style = 0x01;
-				x = 5.25 * GUI_GRID_W + GUI_GRID_X;
-				y = 12.15 * GUI_GRID_H + GUI_GRID_Y;
-				w = 13 * GUI_GRID_W;
-				h = 1.5 * GUI_GRID_H;
-				colorBackground[] = {0.3,0.3,0.3,0.8};
-			};
-			class BackIcon: RscInteractionIcon{
-				idc = 1210;
-				text = "AGM_interaction\UI\backArrow_ca.paa";
-				x = 18.25 * GUI_GRID_W;
-				y = 12.69 * GUI_GRID_H;
-				w = 0.5 * GUI_GRID_W;
-				h = 0.5 * GUI_GRID_H;
-			};
-			class SelectIcon: RscInteractionHelperIcon{
-				idc = 1211;
-				text = "AGM_interaction\UI\mouse_left_ca.paa";
-				y = 17.5 * GUI_GRID_H;
-			};
-			class SelectText: RscInteractionText{
-				idc = 1021;
-				y = 17 * GUI_GRID_H;
-				text = $STR_AGM_Interaction_MakeSelection;
-			};
-			class ScrollIcon: RscInteractionHelperIcon{
-				idc = 1212;
-				text = "AGM_interaction\UI\mouse_scroll_ca.paa";
-				y = 18.5 * GUI_GRID_H;
-			};
-			class ScrollText: RscInteractionText{
-				idc = 1022;
-				y = 18 * GUI_GRID_H;
-				text = $STR_AGM_Interaction_ScrollHint;
-			};
-			class GoBackIcon: RscInteractionHelperIcon{
-				idc = 1213;
-				text = "AGM_interaction\UI\mouse_right_ca.paa";
-				y = 19.5 * GUI_GRID_H;
-			};
-			class GoBackText: RscInteractionText{
-				idc = 1023;
-				y = 19 * GUI_GRID_H;
-				text = $STR_AGM_Interaction_Back;
-			};
-			class ItemDetails: RscStructuredText{
-				idc = 1100;
-				style = 0x0c;
-				x = 21.5 * GUI_GRID_W + GUI_GRID_X;
-				y = 11 * GUI_GRID_H + GUI_GRID_Y;
-				w = 13 * GUI_GRID_W;
-				h = 3.5 * GUI_GRID_H;
-				colorBackground[] = {0,0,0,0.4};
-			};
-		};
-	};
+  class AGM_FlowMenu {
+    idd = 9920;
+    enableSimulation = 1;
+    movingEnable = 0;
+    fadeIn=0.5;
+    fadeOut=0.5;
+    duration = 10e10;
+    onLoad = "uiNamespace setVariable ['AGM_Flow_Display', _this select 0];";
+
+    class controls {
+      class RearIcon: RscInteractionIcon{
+        idc = 999;
+        text = "AGM_interaction\UI\CenterIcon_ca.paa";
+        x = 17.975 * GUI_GRID_W;
+        y = 10 * GUI_GRID_H;
+        w = 4.5 * GUI_GRID_W;
+        h = 5.75 * GUI_GRID_H;
+      };
+      class TopIcon: RscInteractionIcon{
+        idc = 1200;
+        h = 1 * GUI_GRID_H;
+        y = 9 * GUI_GRID_H + GUI_GRID_Y;
+      };
+      class FirstIcon: RscInteractionIcon{
+        idc = 1201;
+        y = 10.25 * GUI_GRID_H + GUI_GRID_Y;
+        h = 1.5 * GUI_GRID_H;
+      };
+      class SelectedItemIcon: RscInteractionIcon{
+        idc = 1202;
+        y = 12 * GUI_GRID_H + GUI_GRID_Y;
+      };
+      class ThirdIcon: RscInteractionIcon{
+        idc = 1203;
+        y = 14.25 * GUI_GRID_H + GUI_GRID_Y;
+        h = 1.5 * GUI_GRID_H;
+      };
+      class BottomIcon: TopIcon{
+        idc = 1204;
+        y = 16 * GUI_GRID_H + GUI_GRID_Y;
+      };
+      class ItemName: RscText{
+        idc = 1000;
+        style = 0x01;
+        x = 5.25 * GUI_GRID_W + GUI_GRID_X;
+        y = 12.15 * GUI_GRID_H + GUI_GRID_Y;
+        w = 13 * GUI_GRID_W;
+        h = 1.5 * GUI_GRID_H;
+        colorBackground[] = {0.3,0.3,0.3,0.8};
+      };
+      class BackIcon: RscInteractionIcon{
+        idc = 1210;
+        text = "AGM_interaction\UI\backArrow_ca.paa";
+        x = 18.25 * GUI_GRID_W;
+        y = 12.69 * GUI_GRID_H;
+        w = 0.5 * GUI_GRID_W;
+        h = 0.5 * GUI_GRID_H;
+      };
+      class SelectIcon: RscInteractionHelperIcon{
+        idc = 1211;
+        text = "AGM_interaction\UI\mouse_left_ca.paa";
+        y = 17.5 * GUI_GRID_H;
+      };
+      class SelectText: RscInteractionText{
+        idc = 1021;
+        y = 17 * GUI_GRID_H;
+        text = $STR_AGM_Interaction_MakeSelection;
+      };
+      class ScrollIcon: RscInteractionHelperIcon{
+        idc = 1212;
+        text = "AGM_interaction\UI\mouse_scroll_ca.paa";
+        y = 18.5 * GUI_GRID_H;
+      };
+      class ScrollText: RscInteractionText{
+        idc = 1022;
+        y = 18 * GUI_GRID_H;
+        text = $STR_AGM_Interaction_ScrollHint;
+      };
+      class GoBackIcon: RscInteractionHelperIcon{
+        idc = 1213;
+        text = "AGM_interaction\UI\mouse_right_ca.paa";
+        y = 19.5 * GUI_GRID_H;
+      };
+      class GoBackText: RscInteractionText{
+        idc = 1023;
+        y = 19 * GUI_GRID_H;
+        text = $STR_AGM_Interaction_Back;
+      };
+      class ItemDetails: RscStructuredText{
+        idc = 1100;
+        style = 0x0c;
+        x = 21.5 * GUI_GRID_W + GUI_GRID_X;
+        y = 11 * GUI_GRID_H + GUI_GRID_Y;
+        w = 13 * GUI_GRID_W;
+        h = 3.5 * GUI_GRID_H;
+        colorBackground[] = {0,0,0,0.4};
+      };
+    };
+  };
 };

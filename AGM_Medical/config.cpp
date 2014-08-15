@@ -161,7 +161,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "";
         showDisabled = 1;
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
         priority = 6;
         subMenu[] = {"AGM_Medical", 0};
 
@@ -169,7 +169,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Medical_Diagnose";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and AGM_Interaction_Target != player";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_diagnose;";
-		  icon = "AGM_Medical\UI\IconMedical_ca.paa";
+          icon = "AGM_Medical\UI\IconMedical_ca.paa";
           showDisabled = 1;
           priority = 1;
         };
@@ -178,7 +178,7 @@ class CfgVehicles {
           condition = "([AGM_Interaction_Target] call AGM_Medical_fnc_isDiagnosed) and (player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and alive AGM_Interaction_Target and AGM_Interaction_Target != player and 'AGM_Morphine' in itemsWithMagazines player";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_morphine;";
           showDisabled = 1;
-		  icon = "AGM_Medical\UI\agm_morphine_ca.paa";
+          icon = "AGM_Medical\UI\agm_morphine_ca.paa";
           priority = 0.9;
         };
         class AGM_Epipen {
@@ -187,7 +187,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_epinephrine;";
           showDisabled = 1;
           priority = 0.8;
-		  icon = "AGM_Medical\UI\agm_epipen_ca.paa";
+          icon = "AGM_Medical\UI\agm_epipen_ca.paa";
         };
         class AGM_BloodBag {
           displayName = "$STR_AGM_Medical_Transfuse_Blood";
@@ -195,7 +195,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_bloodbag;";
           showDisabled = 1;
           priority = 0.7;
-		  icon = "AGM_Medical\UI\agm_bloodbag_ca.paa";
+          icon = "AGM_Medical\UI\agm_bloodbag_ca.paa";
         };
         class AGM_Bandage {
           displayName = "$STR_AGM_Medical_Bandage";
@@ -203,7 +203,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'All'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage > 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
@@ -211,7 +211,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitHead'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
@@ -219,7 +219,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Medical_fnc_bandage;";
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
@@ -227,7 +227,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.4;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
@@ -235,7 +235,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.3;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
@@ -243,7 +243,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.2;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
@@ -251,7 +251,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.15;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
       };
 
@@ -261,7 +261,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
         priority = 2.1;
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
       };
       class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
@@ -269,7 +269,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
         priority = 2.0;
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
       };
     };
 
@@ -289,7 +289,7 @@ class CfgVehicles {
           statement = "[player] call AGM_Medical_fnc_diagnose;";
           priority = 1;
           showDisabled = 1;
-		  icon = "AGM_Medical\UI\IconMedical_ca.paa";
+          icon = "AGM_Medical\UI\IconMedical_ca.paa";
         };
         class AGM_Morphine {
           displayName = "$STR_AGM_Medical_Inject_Morphine";
@@ -297,7 +297,7 @@ class CfgVehicles {
           statement = "[player] call AGM_Medical_fnc_morphine;";
           priority = 0.9;
           showDisabled = 1;
-		  icon = "AGM_Medical\UI\agm_morphine_ca.paa";
+          icon = "AGM_Medical\UI\agm_morphine_ca.paa";
         };
 
         class AGM_Bandage {
@@ -306,7 +306,7 @@ class CfgVehicles {
           statement = "[player, 'All'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage > 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
@@ -314,7 +314,7 @@ class CfgVehicles {
           statement = "[player, 'HitHead'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
@@ -322,7 +322,7 @@ class CfgVehicles {
           statement = "[player, 'HitBody'] call AGM_Medical_fnc_bandage;";
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
@@ -330,7 +330,7 @@ class CfgVehicles {
           statement = "[player, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.4;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
@@ -338,7 +338,7 @@ class CfgVehicles {
           statement = "[player, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.3;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
@@ -346,7 +346,7 @@ class CfgVehicles {
           statement = "[player, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.2;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
@@ -354,7 +354,7 @@ class CfgVehicles {
           statement = "[player, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.15;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-		  icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
         };
       };
 
@@ -364,13 +364,13 @@ class CfgVehicles {
         condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
       };
       class AGM_Release_Carry: AGM_Release_Drag {
         condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-		icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\IconMedical_ca.paa";
       };
     };
   };
