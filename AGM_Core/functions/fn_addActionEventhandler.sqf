@@ -36,18 +36,19 @@ _actions set [_id, [_condition, _statement]];
 
 // first action to add, unit needs addAction command
 if (_actionID == -1) then {
-	_addAction = compile format [
+	_addAction = call compile format [
 		"[
 			'',
-			{{if (call (_x select 0)) then {_this call (_x select 1)}} forEach (((_this select 0) getVariable 'AGM_Action_%1') select 1)},
+			{{if (call (_x select 0)) then {_this call (_x select 1)}} forEach (((_this select 0) getVariable '%2') select 1)},
 			'',
 			0,
 			false,
 			true,
-			%1,
-			'_actions = ((_this select 0) getVariable 'AGM_Action_%1') select 1; _count = count _actions; _index = 0; _return = false; while {_index < _count && {!_return}} do {_return = call ((_actions select _index) select 0); _index = _index + 1}; _return'
+			'%1',
+			""_actions = (_this getVariable '%2') select 1; _count = count _actions; _index = 0; _return = false; while {_index < _count && {!_return}} do {_return = call ((_actions select _index) select 0); _index = _index + 1}; _return""
 		]",
-		_action
+		_action,
+		format ["AGM_Action_%1", _action]
 	];
 
 	_actionID = _unit addAction _addAction;
