@@ -1,4 +1,4 @@
-- Added: Mission designers can define GLOC resistance using for certain units using "this setVariable ["AGM_GForceCoef", 075]".
+- Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 075]".
 
 # v0.93
 
