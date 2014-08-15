@@ -229,7 +229,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
       0 spawn {
         _time = time;
         "chromAberration" ppEffectEnable true;
-        while {(player getVariable "AGM_Pain") > 0} do {
+        while {(player getVariable "AGM_Pain") > 0 && {alive player}} do {
           _strength = player getVariable "AGM_Pain";
           _strength = _strength * AGM_Medical_CoefPain;
           "chromAberration" ppEffectAdjust [0.035 * _strength, 0.035 * _strength, false];
