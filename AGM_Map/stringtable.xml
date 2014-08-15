@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_MapTools_Name">
       <English>Map Tools</English>
       <Spanish>Herramientas de mapa</Spanish>
-      <French>Outils de cartographie</French>
+      <French>Outils de navigation</French>
       <Polish>Narzędzia mapy</Polish>
       <German>Kartenwerkzeug</German>
       <Czech>Pomůcky k Mapě</Czech>
@@ -13,7 +13,7 @@
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
       <Spanish>Las herramientas de mapa permiten medir distancias y ángulos en el mapa.</Spanish>
-      <French>Les outils de cartographie vous permettent de mesurer des distances et des angles sur la carte.</French>
+      <French>Les outils de navigation permettent de mesurer des distances et des angles sur la carte.</French>
       <Polish>Narzędzia pozwalają na mierzenie odległości i kątów na mapie.</Polish>
       <German>Das Kartenwerkzeug erlaubt es dir, Distanzen und Winkel zu messen.</German>
       <Czech>Pomůcky k mapě slouží k měření vzdáleností a úhlů na mapě.</Czech>
@@ -21,7 +21,7 @@
     <Key ID="STR_AGM_Map_MapTools_Menu">
       <English>Map Tools &gt;&gt;</English>
       <Spanish>Herramientas de mapa &gt;&gt;</Spanish>
-      <French>Outils de cartographie &gt;&gt;</French>
+      <French>Outils de navigation &gt;&gt;</French>
       <Polish>Narzędzia mapy &gt;&gt;</Polish>
       <German>Kartenwerkzeug &gt;&gt;</German>
       <Czech>Pomůcky k Mapě &gt;&gt;</Czech>
@@ -30,26 +30,31 @@
       <English>Hide Map Tool</English>
       <German>Verstecke Kartenwerkzeug</German>
       <Spanish>Ocultar herr. de mapa</Spanish>
+      <French>Dissimuler les outils de navigation</French>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowNormal">
       <English>Show Normal Map Tool</English>
       <German>Zeige Kartenwerkzeug (normal)</German>
       <Spanish>Mostrar herr. de mapa normal</Spanish>
+      <French>Montrer les outils normaux de navigation</French>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowSmall">
       <English>Show Small Map Tool</English>
       <German>Zeige Kartenwerkzeug (klein)</German>
       <Spanish>Mostrar herr. de mapa pequeña</Spanish>
+      <French>Dissimuler les petits outils de navigation</French>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignNorth">
       <English>Align Map Tool to North</English>
       <German>Kartenwerkzeug nach Norden ausrichten</German>
       <Spanish>Alinear herr. de mapa al norte</Spanish>
+      <French>Aligner les outils de navigation au nord</French>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignCompass">
       <English>Align Map Tool to Compass</English>
       <German>Kartenwerkzeug am Kompass ausrichten</German>
       <Spanish>Alinear herr. de mapa a la brújula</Spanish>
+      <French>Aligner les outils de navigation sur la boussole</French>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsShow">
       <English>Show GPS on Map</English>
