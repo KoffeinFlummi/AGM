@@ -65,10 +65,11 @@ class CfgVehicles {
       class AGM_MapTools {
         displayName = "$STR_AGM_Map_MapTools_Menu";
         condition = "(call AGM_Map_fnc_canUseMapTools) || (call AGM_Map_fnc_canUseMapGPS)";
-        statement = "'AGM_MapTools' call AGM_Interaction_fnc_openMenuSelf";
+        statement = "";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 100;
+        subMenu[] = {"AGM_MapTools", 1};
 
         class AGM_MapToolsHide {
           displayName = "$STR_AGM_Map_MapToolsHide";
