@@ -54,7 +54,7 @@
       <English>Mini-Spike Launcher (AT)</English>
       <German>Mini-Spike Lenkflugkörper (AT)</German>
       <Spanish>Lanzador Mini-Spike (AT)</Spanish>
-      <French>Mini-Spike Lanceur (AT)</French>
+      <French>Mini-Spike Lanceur (AC)</French>
       <Czech>Mini-Spike Odpalovač (AT)</Czech>
       <Polish>Wyrzutnia Mini-Spike (AT)</Polish>
     </Key>
@@ -310,7 +310,7 @@
       <Spanish>Kamaz de transporte (cubierto)</Spanish>
       <Polish>Kamaz transportowy (zakryty)</Polish>
       <Czech>Kamaz Valník (krytý)</Czech>
-      <French>kamaz Transport (Couvert)</French>
+      <French>Kamaz Transport (Couvert)</French>
       <Russian>Камаз Траспортный (Крытый)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
@@ -483,7 +483,7 @@
       <Spanish>Typhoon de médico</Spanish>
       <Polish>Typhoon medyczny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
-      <French>Typhoon médical</French>
+      <French>Typhoon Médical</French>
       <Russian>Typhoon Медицинский</Russian>
     </Key>
 
@@ -538,7 +538,7 @@
       <Spanish>AW159 Wildcat (desarmado)</Spanish>
       <Polish>AW159 Wildcat (nieuzbrojony)</Polish>
       <Czech>AW159 Wildcat (neozbrojený)</Czech>
-      <French>AW159 Wildcat (Non-armé)</French>
+      <French>AW159 Wildcat (Non-Armé)</French>
       <Russian>AW159 Wildcat (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_02_Name">
@@ -583,7 +583,7 @@
       <Spanish>Ka-60 Kasatka (desarmado)</Spanish>
       <Polish>Ka-60 Kasatka (nieuzbrojony)</Polish>
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
-      <French>Ka-60 Kasatka (unarmed)</French>
+      <French>Ka-60 Kasatka (Non-Armé)</French>
       <Russian>Ka-60 Касатка (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_02_Name">
