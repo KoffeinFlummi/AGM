@@ -767,9 +767,6 @@ class CfgVehicles {
   // BLUFOR Inheritance
   class Heli_Attack_01_base_F: Helicopter_Base_F {
     class AnimationSources;
-    class MFD {
-      class AirplaneHUD;
-    };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
@@ -933,11 +930,7 @@ class CfgVehicles {
         weapon = "AGM_gatling_20mm_Comanche";
       };
     };
-    class MFD: MFD {
-      class AirplaneHUD: AirplaneHUD {
-        helmetPosition[] = {-0.0276,0.024,0.1};
-      };
-    };
+    #include <mfd_comanche.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
