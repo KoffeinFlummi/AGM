@@ -28,7 +28,6 @@ nul = _this spawn {
 
     sleep (10 * _strength);
 
-    systemChat "vorbei.";
     _unit enableAI "MOVE";
     _unit enableAI "AUTOTARGET";
     _unit enableAI "TARGET";
@@ -38,8 +37,7 @@ nul = _this spawn {
 
   // is there line of sight to the grenade?
   if (lineIntersects [getPosASL _grenade, getPosASL _unit, _grenade, _unit]) then {
-    systemChat format ["true for %1", _unit];
-    _strength = _strength / 20;
+    _strength = _strength / 10;
   };
 
   // beeeeeeeeeeeeeeeeeeeeeeeeeeeeep
@@ -52,8 +50,12 @@ nul = _this spawn {
   _posUnit = getPos _unit;
   _posGrenade = getPos _grenade;
   _angleGrenade = ((_posGrenade select 0) - (_posUnit select 0)) atan2 ((_posGrenade select 1) - (_posUnit select 1));
-  _angleView = direction player;
-  _angleDiff = ((_angleGrenade - _angleView + 180) % 360 - 180) / 180;
+  _angleGrenade = (_angleGrenade + 360) % 360;
+
+  _angleView = (eyeDirection player select 0) atan2 (eyeDirection player select 1);
+  _angleView = (_angleView + 360) % 360;
+
+  _angleDiff = 180 - abs (abs (_angleGrenade - _angleView) - 180);
   _strength = _strength - _strength * 0.4 * _angleDiff;
 
   // create flash to illuminate environment

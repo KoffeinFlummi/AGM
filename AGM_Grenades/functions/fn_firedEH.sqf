@@ -59,11 +59,13 @@ if (typeOf _projectile == "AGM_G_M84") then {
 
     sleep getNumber (configFile >> "CfgAmmo" >> typeOf _projectile >> "fuseDistance");
 
-    playSound3D ["A3\Sounds_F\weapons\Explosion\explosion_mine_1.wss", _projectile, false, getPos _projectile, 5, 1.2, 400];
+    if (alive _projectile) then {
+      playSound3D ["A3\Sounds_F\weapons\Explosion\explosion_mine_1.wss", _projectile, false, getPos _projectile, 5, 1.2, 400];
 
-    _affected = _projectile nearEntities ["CAManBase", 50];
-    {
-      [[_x, _projectile], "AGM_Grenades_fnc_flashbangEffect", _x] call AGM_Core_fnc_execRemoteFnc;
-    } count _affected;
+      _affected = _projectile nearEntities ["CAManBase", 50];
+      {
+        [[_x, _projectile], "AGM_Grenades_fnc_flashbangEffect", _x] call AGM_Core_fnc_execRemoteFnc;
+      } count _affected;
+    };
   };
 };
