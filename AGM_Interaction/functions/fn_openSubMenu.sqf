@@ -1,6 +1,7 @@
 // by commy2
 
 private ["_count", "_index", "_action", "_subMenu"];
+
 AGM_Interaction_Buttons = [];
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
@@ -14,6 +15,7 @@ if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
 // fix inheritance
 _configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions" >> _class;
+
 _fnc_GetActions = {
 	_actions = _this select 1;
 	_patches = _this select 2;
@@ -46,6 +48,7 @@ _fnc_GetActions = {
 					};
 					_priority = getNumber (_action >> "priority");
 					_subMenu = getArray (_action >> "subMenu");
+					_tooltip = getText (_action >> "tooltip");
 					_statement = {};
 					
 					if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
@@ -64,7 +67,7 @@ _fnc_GetActions = {
 					};
 
 					if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon]];
+						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip]];
 						_patches set [count _patches, _configName];
 					};
 				};

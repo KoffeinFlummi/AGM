@@ -323,12 +323,12 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_InteractiveScreen : AGM_Interaction_Button_Base {
-      onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this]; hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
+      onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this];"; //hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
       onMouseButtonDown = "call AGM_Interaction_fnc_onClick;";
       idc = 30;
       style = 2;
       text = "";
-      tooltip = "Generic Tooltip &lt;br /&gt; line 2 \n line3 /n line4";
+      tooltip = "";
       x = safezoneX;
       y = safezoneY;
       w = safezoneW;

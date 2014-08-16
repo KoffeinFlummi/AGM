@@ -90,4 +90,23 @@ if (_this select 2) then {
 			_ctrlInteractionDialogIcon ctrlSetText "";
 		};
 	};
+
+	// Update Buttons
+	0 spawn {
+		disableSerialization;
+		_ctrlTooltip = (uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull]) displayCtrl 30;
+
+		_selectedButton = -1;
+		waitUntil {
+			sleep 0.01;
+			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
+				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
+				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
+					(AGM_Interaction_Buttons select _selectedButton) select 6
+				};
+				_ctrlTooltip ctrlSetTooltip _tooltip;
+			};
+			isNull (findDisplay 1713999)
+		};
+	};
 };
