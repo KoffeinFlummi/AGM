@@ -59,7 +59,6 @@ class CfgWeapons {
     picture = "\AGM_Wind\data\4500NV.paa";
     icon = "iconObject_circle";
     mapSize = 0.034;
-    //mass = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
     };
@@ -96,9 +95,9 @@ class CfgVehicles {
     scopeCurator = 2;
     displayName = "$STR_AGM_Kestrel_Name";
     vehicleClass = "Items";
-    class TransportWeapons {
+    class TransportItems {
       class AGM_ItemKestrel {
-        weapon = "AGM_ItemKestrel";
+        name = "AGM_ItemKestrel";
         count = 1;
       };
     };
@@ -106,9 +105,9 @@ class CfgVehicles {
 
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
-    class TransportWeapons {
+    class TransportItems {
       class _xx_AGM_ItemKestrel {
-        weapon = "AGM_ItemKestrel";
+        name = "AGM_ItemKestrel";
         count = 6;
       };
     };
