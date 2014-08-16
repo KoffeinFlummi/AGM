@@ -59,9 +59,9 @@ class CfgWeapons {
     picture = "\AGM_Wind\data\4500NV.paa";
     icon = "iconObject_circle";
     mapSize = 0.034;
-    mass = 2;
+    //mass = 2;
     class ItemInfo: InventoryItem_Base_F {
-      mass = 10;
+      mass = 2;
     };
   };
 };

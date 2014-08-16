@@ -50,6 +50,21 @@ _fnc_GetActions = {
 					_tooltip = getText (_action >> "tooltip");
 					_statement = {};
 					
+					// Condition to show the action
+					_conditionShow = getText (_action >> "tooltip");
+					if (_conditionShow == "") then {_conditionShow = "true"};
+
+					_conditionShow = compile _conditionShow;
+
+					// Conditions that have to be true or else they show the following tooltip upon clicking
+					_conditionsTooltip = getArray (_action >> "conditionsTooltip");
+
+					{
+						if (_forEachIndex mod 2 == 0) then {
+							_conditionsTooltip set [_forEachIndex, compile _x];
+						};
+					} forEach _conditionsTooltip;
+					
 					if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
 						if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
 							_statement = compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{'%1' call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
@@ -66,7 +81,7 @@ _fnc_GetActions = {
 					};
 
 					if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip]];
+						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip]];
 						_patches set [count _patches, _configName];
 					};
 				};
