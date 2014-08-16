@@ -194,10 +194,10 @@ class CfgVehicles {
 #include <WeaponReliability.hpp>
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_SpareBarrel: ItemCore {
+  class AGM_SpareBarrel: AGM_ItemCore {
     displayname = "$STR_AGM_Overheating_SpareBarrelName";
     descriptionshort = "$STR_AGM_Overheating_SpareBarrelDescription";
     //model = "";
@@ -205,7 +205,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 10;
-      type = 201;
     };
   };
 

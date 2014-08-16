@@ -133,10 +133,10 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_IR_Strobe_Item: ItemCore {
+  class AGM_IR_Strobe_Item: AGM_ItemCore {
     displayName = "$STR_AGM_IrStrobe_Name";
     descriptionShort = "$STR_AGM_IrStrobe_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
@@ -145,7 +145,6 @@ class CfgWeapons {
     AGM_attachable = 1;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

@@ -629,7 +629,8 @@ class CfgWeapons {
     };
   };
 
-  class AGM_Bandage: ItemCore {
+  class AGM_ItemCore;
+  class AGM_Bandage: AGM_ItemCore {
     displayname = "$STR_AGM_Medical_Bandage_Name";
     descriptionshort = "$STR_AGM_Medical_Bandage_Description";
     model = "\A3\Structures_F_EPA\Items\Medical\Bandage_F.p3d";
@@ -637,7 +638,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
-      type = 201;
     };
   };
   class AGM_Morphine: AGM_Bandage {

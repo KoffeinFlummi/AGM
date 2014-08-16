@@ -1086,13 +1086,17 @@ class CfgWeapons {
 
 	// disable default arma repair
 	class ToolKit: ItemCore {
+		type = 4;
+		detectRange = -1;
+		simulation = "ItemMineDetector";
 		class ItemInfo: ToolKitItem {
 			mass = 80;
 			type = 201;
 		};
 	};
 
-	class AGM_UAVBattery: ItemCore {
+	class AGM_ItemCore;
+	class AGM_UAVBattery: AGM_ItemCore {
 		scope = 2;
 		displayName = "$STR_AGM_UAVs_Battery_Name";
 		descriptionShort = "$STR_AGM_UAVs_Battery_Description";
@@ -1100,7 +1104,6 @@ class CfgWeapons {
 		picture = "\AGM_Logistics\ui\AGM_battery.paa";
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 20;
-			type = 201;
 		};
 	};
 };

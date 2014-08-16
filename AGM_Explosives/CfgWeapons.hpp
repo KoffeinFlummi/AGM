@@ -1,13 +1,13 @@
 class CfgWeapons {
-	class ItemCore;
+	class AGM_ItemCore;
 	class InventoryItem_Base_f;
 
 	class AGM_ExplosiveItem: InventoryItem_Base_f {
 		allowedSlots[] = {801,701,901};
-		type = 201;
+		//type = 201;
 	};
 
-	class AGM_Clacker:ItemCore {
+	class AGM_Clacker: AGM_ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_clacker_displayName;
 		descriptionShort = $STR_AGM_Explosives_clacker_description;
@@ -21,7 +21,7 @@ class CfgWeapons {
 			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
 		};
 	};
-	class AGM_DefusalKit: ItemCore {
+	class AGM_DefusalKit: AGM_ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_DefusalKit_displayName;
 		descriptionShort = $STR_AGM_Explosives_DefusalKit_description;

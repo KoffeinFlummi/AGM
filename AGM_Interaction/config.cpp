@@ -781,10 +781,10 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_CableTie: ItemCore {
+  class AGM_CableTie: AGM_ItemCore {
     displayName = "$STR_AGM_Interaction_CableTie_Name";
     descriptionShort = "$STR_AGM_Interaction_CableTie_Description";
     model = "\AGM_Interaction\agm_cabletie.p3d";
@@ -792,7 +792,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

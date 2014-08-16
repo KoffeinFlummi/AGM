@@ -35,10 +35,10 @@ class Extended_PostInit_EventHandlers {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_MapTools: ItemCore {
+  class AGM_MapTools: AGM_ItemCore {
     displayName = "$STR_AGM_MapTools_Name";
     descriptionShort = "$STR_AGM_MapTools_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
@@ -46,7 +46,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };
