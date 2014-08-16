@@ -2,6 +2,7 @@
 
 private ["_count", "_index", "_action", "_subMenu"];
 
+AGM_Interaction_MenuType = 0;	// 0 Interaction, 1 Self Interaction
 AGM_Interaction_Buttons = [];
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
