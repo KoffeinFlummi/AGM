@@ -14,7 +14,7 @@
       <English>Rangefinder</English>
       <German>Laserentfernungsmesser</German>
       <Spanish>Telémetro</Spanish>
-      <French>Télémetre</French>
+      <French>Télémètre</French>
       <Polish>Dalmierz</Polish>
       <Czech>Dálkoměr</Czech>
     </Key>
@@ -22,7 +22,7 @@
       <English>Vector - Azimuth Key</English>
       <German>Vector - Azimuth-Taste</German>
       <Spanish>Vector - Tecla de acimut</Spanish>
-      <French>Vector - Azimuth touche</French>
+      <French>Vector - Touche Azimuth</French>
       <Polish>Vector - Azymut</Polish>
       <Czech>Vector - Azimut Klávesa</Czech>
     </Key>
@@ -30,7 +30,7 @@
       <English>Vector - Distance Key</English>
       <German>Vector - Entfernungs-Taste</German>
       <Spanish>Vector - Tecla de distancia</Spanish>
-      <French>Vector - Distance touche</French>
+      <French>Vector - Touche Distance</French>
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
     </Key>

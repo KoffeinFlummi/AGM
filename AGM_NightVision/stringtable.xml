@@ -8,7 +8,7 @@
       <Spanish>Brillo: %1</Spanish>
       <Polish>Czułość: %1</Polish>
       <Czech>Zvýšení: %1</Czech>
-      <French>luminosité : %1</French>
+      <French>Luminosité : %1</French>
       <Russian>Контраст: </Russian>
       <Hungarian>Fényerő: %1</Hungarian>
     </Key>
@@ -19,7 +19,7 @@
       <Spanish>Aumentar el brillo de las NVG</Spanish>
       <Polish>Zwiększ czułość noktowizji</Polish>
       <Czech>Zvýšení jasu noktovizoru</Czech>
-      <French>Augmenter la luminosité des NVG</French>
+      <French>Augmenter la luminosité des JVN</French>
       <Russian>Увеличить яркость ПНВ</Russian>
       <Hungarian>Fényerő növelése</Hungarian>
     </Key>
@@ -29,7 +29,7 @@
       <Spanish>Disminuir el brillo de las NVG</Spanish>
       <Polish>Zmniejsz czułość noktowizji</Polish>
       <Czech>Snížení jasu noktovizoru</Czech>
-      <French>Baisser la luminosité des NVG</French>
+      <French>Baisser la luminosité des JVN</French>
       <Russian>Уменьшить яркость ПНВ</Russian>
       <Hungarian>Fényerő csökkentése</Hungarian>
     </Key>

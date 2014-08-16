@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Core {
     units[] = {"AGM_Box_Misc"};
-    weapons[] = {};
+    weapons[] = {"AGM_ItemCore", "AGM_FakePrimaryWeapon"};
     requiredVersion = 0.60;
     requiredAddons[] = {
       "a3_air_f",
@@ -180,6 +180,7 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class addActionEventHandler;
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
@@ -226,6 +227,7 @@ class CfgFunctions {
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
+      class removeActionEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
@@ -349,12 +351,19 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class Rifle_Base_F;
+  class ItemCore;
+  class AGM_ItemCore: ItemCore {
+    type = 4;
+    detectRange = -1;
+    simulation = "ItemMineDetector";
+  };
 
+  class Rifle_Base_F;
   class AGM_FakePrimaryWeapon: Rifle_Base_F {
     discreteDistance[] = {};
     discreteDistanceInitIndex = 0;
     displayName = "";
+    picture = "";
     model = "";
     magazines[] = {"AGM_FakeMagazine"};
     scope = 2;

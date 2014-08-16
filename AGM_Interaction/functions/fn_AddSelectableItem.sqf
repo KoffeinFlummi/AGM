@@ -27,7 +27,7 @@ if (_picture == "" || _picture == "PictureThing") then {
 };
 
 if ((profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
-	_container set [count _container, [_displayName, nil, {true}, 0, _picture, _data]];
+	_container set [count _container, [_displayName, nil, {true}, 0,[], _picture, _data]];
 }else{
 	_index = lbAdd [_container, _displayName];
 	lbSetData [_container, _index, str _data];

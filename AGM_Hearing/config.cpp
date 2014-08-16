@@ -58,7 +58,7 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
-		icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
       class AGM_RemoveEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_Off";
@@ -66,7 +66,7 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_removeEarplugs";
         showDisabled = 0;
         priority = 2.5;
-		icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
     };
   };
@@ -154,10 +154,10 @@ class CfgSounds {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_EarBuds: ItemCore {
+  class AGM_EarBuds: AGM_ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
     model = "\AGM_Hearing\agm_earplugs.p3d";
@@ -165,7 +165,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

@@ -22,6 +22,7 @@ class CfgFunctions {
       class module;
       class moveRallypoint;
       class removeBody;
+      class removeDisconnectedPlayer;
       class restoreGear;
       class teleportToRallypoint;
     };
