@@ -396,13 +396,13 @@
       <Russian>2S9 Сокор</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_cannon_Name">
-      <English>BMP-K Kamysh</English>
-      <German>BMP-K Kamysh</German>
-      <Spanish>BMP-K Kamysh</Spanish>
-      <Polish>BMP-K Kamysh</Polish>
-      <Czech>BMP-K Kamysh</Czech>
-      <French>BMP-K Kamysh</French>
-      <Russian>БПМ-К Камыш</Russian>
+      <English>BM-2T Stalker</English>
+      <German>BM-2T Stalker</German>
+      <Spanish>BM-2T Stalker</Spanish>
+      <Polish>BM-2T Stalker</Polish>
+      <Czech>BM-2T Stalker</Czech>
+      <French>BM-2T Stalker</French>
+      <Russian>БМ-2Т Сталкер</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_AA_Name">
       <English>ZSU-35 Tigris</English>
