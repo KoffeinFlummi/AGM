@@ -42,20 +42,21 @@ _fnc_GetActions = {
 
 					_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 					_condition = compile _condition;
-					_showDisabled = getNumber (_action >> "showDisabled") == 1;
-					if (isText (_action >> "conditionShow")) then {
-						_showDisabled = call compile getText (_action >> "conditionShow");
-					};
 					_priority = getNumber (_action >> "priority");
 					_subMenu = getArray (_action >> "subMenu");
 					_tooltip = getText (_action >> "tooltip");
 					_statement = {};
 					
 					// Condition to show the action
-					_conditionShow = getText (_action >> "tooltip");
+					_conditionShow = getText (_action >> "conditionShow");
 					if (_conditionShow == "") then {_conditionShow = "true"};
 
 					_conditionShow = compile _conditionShow;
+					
+					_showDisabled = getNumber (_action >> "showDisabled") == 1;
+					if (isText (_action >> "conditionShow")) then {
+						_showDisabled = call _conditionShow;
+					};
 
 					// Conditions that have to be true or else they show the following tooltip upon clicking
 					_conditionsTooltip = getArray (_action >> "conditionsTooltip");

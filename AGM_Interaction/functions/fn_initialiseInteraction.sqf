@@ -92,13 +92,14 @@ if (_this select 2) then {
 	};
 
 	// Update Buttons
+	if (_subMenu) exitWith {};
+
 	0 spawn {
 		disableSerialization;
 		_ctrlTooltip = (uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull]) displayCtrl 30;
 
 		_selectedButton = -1;
 		waitUntil {
-			sleep 0.01;
 			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
 				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
 				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
@@ -106,6 +107,30 @@ if (_this select 2) then {
 				};
 				_ctrlTooltip ctrlSetTooltip _tooltip;
 			};
+			sleep 0.01;
+			isNull (findDisplay 1713999)
+		};
+	};
+
+	0 spawn {
+		disableSerialization;
+		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
+
+		waitUntil {
+			{
+				_ctrlText = _dlgMenu displayCtrl (10 + _forEachIndex);
+				_ctrlIcon = _dlgMenu displayCtrl (20 + _forEachIndex);
+
+				_condition = _x select 2;
+				_conditionShow = _x select 7;
+				//_conditionTooltip = _x select 8;
+
+				_enable = true && _condition && _conditionShow;
+				_ctrlText ctrlEnable _enable;
+				_ctrlIcon ctrlEnable _enable;
+			} forEach AGM_Interaction_Buttons;
+
+			sleep 0.5;
 			isNull (findDisplay 1713999)
 		};
 	};
