@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.93";
+    versionStr = "0.93";
+    versionAr[] = {0,93,0};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -23,6 +23,17 @@ class CfgFunctions {
       class updateMapToolMarkers;
     };
   };
+  class AGM_Tab {
+    class AGM_Tab {
+      file = "AGM_Map\functions";
+      class createMarker;
+      class onLoad;
+      class onUnload;
+      class showMarkers;
+      class deleteMarker;
+      class openMarkerMenu;
+    };
+  };
 };
 
 class Extended_PostInit_EventHandlers {
@@ -30,6 +41,9 @@ class Extended_PostInit_EventHandlers {
     clientInit = "call compile preprocessFileLineNumbers 'AGM_Map\clientInit.sqf'";
   };
 };
+
+#include <agm_gui_classes.hpp>
+#include <agm_commanding_tablet.hpp>
 
 class CfgWeapons {
   class ItemCore;
@@ -43,7 +57,19 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
+      type = 201;
+    };
+  };
+
+  class AGM_CommandingTab: ItemCore {
+    descriptionshort = "Commanding Tablet";
+    descriptionuse = "BlaBlaBla";
+    displayname = "Commanding Tablet";
+    picture = "";
+    scope = 2;
+    simulation = "ItemGPS";
+    class ItemInfo {
+      mass = 1;
     };
   };
 };
@@ -96,6 +122,18 @@ class CfgVehicles {
         displayName = "Interval";
         description = "How often the markers should be refreshed (in seconds)";
         defaultValue = 1;
+      };
+    };
+  };
+  class Man;
+  class CAManBase: Man {
+    class AGM_SelfActions {
+      class AGM_openTab {
+        displayName = "Open Tablet";
+        condition = "true";
+        statement = "['AGM_tablet_dlg'] execVM 'AGM_Map\openMenu.sqf';";
+        showDisabled = 1;
+        priority = 1;
       };
     };
   };
