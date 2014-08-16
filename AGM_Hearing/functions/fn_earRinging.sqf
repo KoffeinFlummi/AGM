@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_strength"];
+
 _strength = _this select 0;
 
 if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsIn) then {
