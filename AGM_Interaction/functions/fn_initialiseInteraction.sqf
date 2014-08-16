@@ -96,7 +96,7 @@ if (_this select 2) then {
 
 	0 spawn {
 		disableSerialization;
-		_ctrlTooltip = (uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull]) displayCtrl 30;
+		_ctrlTooltip = (uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull]) displayCtrl 4;
 
 		_selectedButton = -1;
 		waitUntil {
@@ -105,7 +105,8 @@ if (_this select 2) then {
 				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
 					(AGM_Interaction_Buttons select _selectedButton) select 6
 				};
-				_ctrlTooltip ctrlSetTooltip _tooltip;
+				_ctrlTooltip ctrlSetText _tooltip;
+				_ctrlTooltip ctrlShow (_tooltip != "");
 			};
 			sleep 0.01;
 			isNull (findDisplay 1713999)
@@ -126,6 +127,8 @@ if (_this select 2) then {
 				//_conditionTooltip = _x select 8;
 
 				_enable = true && _condition && _conditionShow;
+				if (isNil "_enable") then {_enable = false};
+
 				_ctrlText ctrlEnable _enable;
 				_ctrlIcon ctrlEnable _enable;
 			} forEach AGM_Interaction_Buttons;

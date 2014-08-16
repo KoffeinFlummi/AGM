@@ -41,7 +41,6 @@ class CfgFunctions {
       class onButtonUp;
       class onClick;
       class openDoor;
-      class openInteractionMenu;
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
@@ -58,6 +57,7 @@ class CfgFunctions {
       class surrender;
       class tapShoulder;
       class unloadCaptiveFromVehicle;
+      class updateTooltipPosition;
     };
   };
 };

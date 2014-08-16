@@ -2,6 +2,7 @@
 #define HSPACE 0.5-2.0/16/2
 #define VSPACE 0.5-0.3/9/2
 
+class RscStructuredText;
 class AGM_Interaction_Button_Base {
   tooltip = "";
   //action = "AGM_Interaction_isMousePressed = true;(findDisplay 1713999) closeDisplay 1;_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;AGM_Interaction_SelectedButton = -1; if (call (_action select 2)) then {call (_action select 1)};";
@@ -12,8 +13,7 @@ class AGM_Interaction_Button_Base {
   type = 1;
   text = "";
   font = "PuristaMedium";
-  //sizeEx = "1 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
-  sizeEx = "0.8 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+  sizeEx = "0.8 / 40 / (getResolution select 5)";
   shadow = 2;
 
   style = 2;
@@ -74,12 +74,11 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_ButtonMain : AGM_Interaction_Button_Base {
+      idc = 3;
       style = 2;
       tooltip = "";
       text = "Interaction Menu";
-      idc = 3;
-      //sizeEx = "0.8 / 40 / (getResolution select 5) / (16 / 9) * (getResolution select 4)";
-      sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      sizeEx = "0.6 / 40 / (getResolution select 5)";
       x = (0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX;
       y = (0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY;
       w = 1.8 / 16 * safezoneW;
@@ -93,12 +92,30 @@ class AGM_Interaction_Dialog {
       colorBorder[] = {0,0,0,0};
     };
 
+    class Interaction_Tooltip : RscStructuredText {
+      idc = 4;
+      tooltip = "";
+      text = "Generic Tooltip";
+      sizeEx = "0.6 / 40 / (getResolution select 5)";
+      x = 0;
+      y = 0;
+      w = 0;
+      h = 0;
+
+      colorBackground[] = {0,0,0,0.5};
+
+      size = "0.6 / 40 / (getResolution select 5)";
+      class Attributes {
+        align = "left";
+      };
+    };
+
     class Interaction_Button0 : AGM_Interaction_Button_Base {
       style = 2;
       tooltip = "";
       text = "";
       idc = 10;
-      sizeEx = "0.6 / 40 / (getResolution select 5)";// * safezoneX / safezoneXAbs";
+      sizeEx = "0.6 / 40 / (getResolution select 5)";
       x = (HSPACE + 0 * 0.1) * safezoneW + safezoneX;
       y = (VSPACE - 6.8 * 0.04) * safezoneH + safezoneY;
       w = 2.0 / 16 * safezoneW;
@@ -323,7 +340,7 @@ class AGM_Interaction_Dialog {
     };
 
     class Interaction_InteractiveScreen : AGM_Interaction_Button_Base {
-      onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this];"; //hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
+      onMouseMoving = "uiNamespace setVariable ['AGM_Interaction_CursorPosition', _this]; _this call AGM_Interaction_fnc_updateTooltipPosition"; //hintSilent str (call AGM_Interaction_fnc_getSelectedButton);";
       onMouseButtonDown = "call AGM_Interaction_fnc_onClick;";
       idc = 30;
       style = 2;
