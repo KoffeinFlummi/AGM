@@ -17,6 +17,8 @@ class CfgFunctions {
     class AGM_Map {
       file = "AGM_Map\functions";
       class blueForceTracking;
+      class calculateMapScale;
+      class cancelDrawing;
       class canUseMapTools;
       class canUseMapGPS;
       class handleMouseButton;
@@ -24,6 +26,7 @@ class CfgFunctions {
       class isInsideMapTool;
       class openMapGps;
       class updateMapToolMarkers;
+      class updateLineMarker;
     };
   };
 };

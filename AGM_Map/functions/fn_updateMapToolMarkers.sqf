@@ -55,10 +55,7 @@ _rotatingMarker = ["MapToolRotatingNormal", "MapToolRotatingSmall"] select (AGM_
 _textureWidth = [TEXTURE_WIDTH_IN_M, TEXTURE_WIDTH_IN_M / 2] select (AGM_Map_mapToolsShown - 1);
 
 // Update scale of both parts
-_pos          = ((finddisplay 12) displayctrl 51) ctrlMapScreenToWorld [0.5, 0.5];
-_screenOffset = ((finddisplay 12) displayctrl 51) posWorldToScreen [(_pos select 0) + 100, (_pos select 1)];
-
-_scale        = _textureWidth * CONSTANT_SCALE * ((_screenOffset select 0) - 0.5);
+_scale        = _textureWidth * CONSTANT_SCALE * (call AGM_Map_fnc_calculateMapScale);
 "MapToolFixed" setMarkerSizeLocal [_scale,_scale];
 _rotatingMarker setMarkerSizeLocal [_scale,_scale];
 

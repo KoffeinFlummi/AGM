@@ -13,9 +13,6 @@
 
 private ["_dir", "_params", "_control", "_button", "_screenPos", "_shiftKey", "_ctrlKey", "_handled", "_pos"];
 
-// If no map tool marker then exit
-if (isNil "AGM_Map_mapToolFixed") exitWith {};
-
 _dir       = _this select 0;
 _params    = _this select 1;
 _control   = _params select 0;
@@ -23,6 +20,7 @@ _button    = _params select 1;
 _screenPos = [_params select 2, _params select 3];
 _shiftKey  = _params select 4;
 _ctrlKey   = _params select 5;
+_altKey    = _params select 6;
 _handled   = false;
 
 // If it's not a left button event, exit
@@ -30,9 +28,32 @@ if (_button != 0) exitWith {};
 
 // Transform mouse screen position to coordinates
 _pos  = _control ctrlMapScreenToWorld _screenPos;
+_pos set [count _pos, 0];
 
 // If clicking
 if (_dir == 1 && !_handled) exitWith {
+
+  if (AGM_Map_drawing) then {
+    // Already drawing -> Add tempLineMarker to permanent list
+    AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+    AGM_Map_lineMarkers set [count AGM_Map_lineMarkers, +AGM_Map_tempLineMarker];
+    AGM_Map_tempLineMarker = [];
+    AGM_Map_drawing = false;
+  } else {
+    if (_altKey) exitWith {
+      // Start drawing
+      AGM_Map_drawing = true;
+      // Create tempLineMarker
+      _gui = format ["%1%2%3%4", random (100), random (100), random (100), random (100)];
+      AGM_Map_tempLineMarker = [_gui, + _pos, + _pos];
+      AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+      _marker = createMarkerLocal [_gui, [0,0]];
+    };
+  };
+
+  // If no map tool marker then exit
+  if (isNil "AGM_Map_mapToolFixed") exitWith {};
+
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
 
@@ -55,6 +76,9 @@ if (_dir == 1 && !_handled) exitWith {
   };
   _handled
 };
+
+// If no map tool marker then exit
+if (isNil "AGM_Map_mapToolFixed") exitWith {};
 
 // If releasing
 if (_dir != 1 && (AGM_Map_dragging or AGM_Map_rotating)) exitWith {
