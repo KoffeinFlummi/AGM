@@ -11,6 +11,8 @@ _this spawn {
 	_unit setVariable ["AGM_carriedItem", _target, true];
 	_target setVariable ["AGM_isUsedBy", _unit, true];
 
+	[_unit, _target, true] call AGM_Core_fnc_claim;
+
 	if (currentWeapon _unit != "" && {currentWeapon _unit == primaryWeapon _unit} && {weaponLowered _unit} && {stance _unit == "STAND"}) then {
 		_unit playMove "amovpercmstpsraswrfldnon";
 	};
