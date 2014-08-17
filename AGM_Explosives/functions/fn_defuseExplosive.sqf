@@ -21,7 +21,7 @@ _unit = _this select 0;
 _explosive = _this select 1;
 
 if (getNumber (ConfigFile >> "CfgAmmo" >> typeof _explosive >> "AGM_explodeOnDefuse") == 1) exitWith {
-	[_unit, 0, [_explosive, 1], true, true] call AGM_Explosives_fnc_DetonateExplosive;
+	[_unit, -1, [_explosive, 1], true] call AGM_Explosives_fnc_DetonateExplosive;
 };
 
 _unit action ["Deactivate", _unit, _explosive];
