@@ -13,7 +13,7 @@ class CfgWeapons {
 		descriptionShort = $STR_AGM_Explosives_clacker_description;
 		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
 		model = "\A3\weapons_F\ammo\mag_univ.p3d";
-		AGM_range = 100;
+		AGM_range = 200;
 		AGM_Detonator = 1;
 		
 		class ItemInfo: AGM_ExplosiveItem {
