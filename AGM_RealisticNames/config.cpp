@@ -1018,4 +1018,62 @@ class CfgMagazines {
   class 40Rnd_20mm_G_belt: 200Rnd_20mm_G_belt {
     displayNameShort = "20mm HE";
   };
+
+
+  // EXPLOSIVES
+  // most of these can be found here: http://www.dtic.mil/dtic/tr/fulltext/u2/a567897.pdf
+  class ATMine_Range_Mag;
+  class CA_Magazine;
+  class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "M4A1 SLAM";
+  };
+  class ClaymoreDirectionalMine_Remote_Mag: CA_Magazine {
+    displayName = "M18A1 Claymore";
+  };
+  class SatchelCharge_Remote_Mag: CA_Magazine {
+    displayName = "M183 Demolition Charge Assembly";
+  };
+  class DemoCharge_Remote_Mag: SatchelCharge_Remote_Mag {
+    displayName = "M112 Demolition Block";
+  };
+  class HandGrenade: CA_Magazine {
+    displayName = "M67 Fragmentation Grenade";
+  };
+  class SmokeShell: HandGrenade {
+    displayName = "M83 Smoke Grenade (White)";
+  };
+  class SmokeShellBlue: SmokeShell {
+    displayName = "M18 Smoke Grenade (Blue)";
+  };
+  class SmokeShellGreen: SmokeShell {
+    displayName = "M18 Smoke Grenade (Green)";
+  };
+  class SmokeShellOrange: SmokeShell {
+    displayName = "M18 Smoke Grenade (Orange)";
+  };
+  class SmokeShellPurple: SmokeShell {
+    displayName = "M18 Smoke Grenade (Purple)";
+  };
+  class SmokeShellRed: SmokeShell {
+    displayName = "M18 Smoke Grenade (Red)";
+  };
+  class SmokeShellYellow: SmokeShell {
+    displayName = "M18 Smoke Grenade (Yellow)";
+  };
+  // http://en.wikipedia.org/wiki/M15_mine
+  class ATMine_Range_Mag: CA_Magazine {
+    displayName = "M15 Anti-Tank Mine";
+  };
+  // http://en.wikipedia.org/wiki/VS-50_mine
+  class APERSMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "VS-50 Anti-Personnel Mine";
+  };
+  // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
+  class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "M26 Anti-Personnel Bounding Mine";
+  };
+  // http://en.wikipedia.org/wiki/PMR-3_mine
+  class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "PMR-3 Anti-Personnel Tripwire Mine";
+  };
 };

@@ -151,7 +151,7 @@ class CfgMagazines {
   };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
-    displayname = "Hand Flare (White)";
+    displayname = "M127A1 Hand Held Signal (White)";
     descriptionshort = "White Hand Flare";
     displayNameShort = "White Flare";
     model = "\A3\weapons_f\ammo\flare_white";
@@ -159,7 +159,7 @@ class CfgMagazines {
   };
   class AGM_HandFlare_Red: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Red";
-    displayname = "Hand Flare (Red)";
+    displayname = "M127A1 Hand Held Signal (Red)";
     descriptionshort = "Red Hand Flare";
     displayNameShort = "Red Flare";
     model = "\A3\weapons_f\ammo\flare_red";
@@ -167,7 +167,7 @@ class CfgMagazines {
   };
   class AGM_HandFlare_Green: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Green";
-    displayname = "Hand Flare (Green)";
+    displayname = "M127A1 Hand Held Signal (Green)";
     descriptionshort = "Green Hand Flare";
     displayNameShort = "Green Flare";
     model = "\A3\weapons_f\ammo\flare_green";
@@ -175,7 +175,7 @@ class CfgMagazines {
   };
   class AGM_HandFlare_Yellow: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Yellow";
-    displayname = "Hand Flare (Yellow)";
+    displayname = "M127A1 Hand Held Signal (Yellow)";
     descriptionshort = "Yellow Hand Flare";
     displayNameShort = "Yellow Flare";
     model = "\A3\weapons_f\ammo\flare_yellow";
