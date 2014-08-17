@@ -2,10 +2,7 @@
 
 private ["_count", "_index", "_action", "_subMenu"];
 
-_prevMenuType = missionNamespace getVariable ["AGM_Interaction_MenuType", -1];
-_prevTargetType = missionNamespace getVariable ["AGM_Interaction_TargetType", ""];
-
-//AGM_Interaction_Buttons = [];
+AGM_Interaction_MenuType = 2;	// 0 Interaction, 1 Self Interaction, +2 for sub menu
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
 _actions = [];
@@ -14,14 +11,10 @@ _class = _this select 0;
 
 _object = AGM_Interaction_Target;
 
-AGM_Interaction_TargetType = typeOf _object;
-
-
-AGM_Interaction_MenuType = 2;	// 0 Interaction, 1 Self Interaction, +2 for sub menu
 
 if !([player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
-if (_prevMenuType != AGM_Interaction_MenuType || {_prevTargetType != AGM_Interaction_TargetType}) then {
+if (true) then {
 	// fix inheritance
 
 	if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {

@@ -2,10 +2,7 @@
 
 private ["_count", "_index", "_action", "_subMenu"];
 
-_prevMenuType = missionNamespace getVariable ["AGM_Interaction_MenuType", -1];
-_prevTargetType = missionNamespace getVariable ["AGM_Interaction_TargetType", ""];
-
-//AGM_Interaction_Buttons = [];
+AGM_Interaction_MenuType = 1;	// 0 Interaction, 1 Self Interaction
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
 _actions = [];
@@ -17,11 +14,7 @@ _object = vehicle player;
 
 
 
-AGM_Interaction_MenuType = 1;	// 0 Interaction, 1 Self Interaction
-
-
-
-if (_prevMenuType != AGM_Interaction_MenuType) then {
+if (true) then {
 	// fix inheritance
 
 	if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {
