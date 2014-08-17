@@ -399,22 +399,22 @@ class CfgWeapons {
 
     class mk20_base_F;
     class arifle_Mk20_F : mk20_base_F {
-      displayName = "F2000A (Camo)";
+      displayName = "F2000 (Camo)";
     };
     class arifle_Mk20_plain_F : arifle_Mk20_F {
-      displayName = "F2000A";
+      displayName = "F2000";
     };
     class arifle_Mk20C_F : mk20_base_F {
-      displayName = "F2000A Tactical (Camo)";
+      displayName = "F2000 Tactical (Camo)";
     };
     class arifle_Mk20C_plain_F : arifle_Mk20C_F {
-      displayName = "F2000A Tactical";
+      displayName = "F2000 Tactical";
     };
     class arifle_Mk20_GL_F : mk20_base_F {
-      displayName = "F2000A EGLM (Camo)";
+      displayName = "F2000 EGLM (Camo)";
     };
     class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
-      displayName = "F2000A EGLM";
+      displayName = "F2000 EGLM";
     };
 
     class SMG_01_Base : Rifle_Base_F {
@@ -493,7 +493,26 @@ class CfgWeapons {
     class srifle_DMR_01_F : DMR_01_base_F {
       displayName = "VS-121";
     };
-
+    
+  //MANPADS
+    class Launcher_Base_F;
+    class launch_RPG32_F: Launcher_Base_F
+    {
+		displayName = "RPG-32";
+    };
+    class launch_Titan_base: Launcher_Base_F
+    {
+		scope = 0;
+		displayName = "Mini-Spike (AA)";
+    };
+    class launch_Titan_short_base: launch_Titan_base
+    {
+		displayName = "Mini-Spike (AT)";
+    };
+    class launch_NLAW_F: Launcher_Base_F
+    {
+		displayName = "NLAW";
+    };
   // VEHICLE STUFF
     class gatling_20mm: CannonCore {
       class manual;
