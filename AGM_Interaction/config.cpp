@@ -30,6 +30,7 @@ class CfgFunctions {
       class getDown;
       class getSelectedButton;
       class hideMenu;
+	  class hideMouseHint;
       class initialiseInteraction;
       class isInRange;
       class joinTeam;
@@ -53,6 +54,7 @@ class CfgFunctions {
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
+	  class showMouseHint;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;

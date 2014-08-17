@@ -17,6 +17,7 @@ private ["_unit", "_action", "_id", "_name", "_actionsVar", "_actionID", "_actio
 _unit = _this select 0;
 _action = _this select 1;
 _id = _this select 2;
+if (_id == -1) exitWith{};
 
 _name = format ["AGM_Action_%1", _action];
 

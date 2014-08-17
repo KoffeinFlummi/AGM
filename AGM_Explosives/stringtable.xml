@@ -50,13 +50,8 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
     </Key>
-    <Key ID="STR_AGM_Explosives_AttachTo">
-      <English>Attach IED</English>
-      <German>USBV befestigen</German>
-      <Spanish>Enganchar IED</Spanish>
-      <Polish>Przyczep IED</Polish>
-      <French>Attacher IED</French>
-      <Czech>Připevnit IED</Czech>
+    <Key ID="STR_AGM_Explosives_ScrollAction">
+      <English>+ Modifier, rotates</English>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -105,6 +100,14 @@
       <Polish>Używany do zdalnego detonowania ładunków wybuchowych</Polish>
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_M26_displayName">
+      <English>M26 Firing Device</English>
+      <German>M26 Zündvorrichtung</German>
+      <Spanish>Dispositivo de detonación M26</Spanish>
+      <Polish>Detonator M26</Polish>
+      <French>M26 Dispositif de mise a feu</French>
+      <Czech>M26 Odpalovací Zařízení</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>

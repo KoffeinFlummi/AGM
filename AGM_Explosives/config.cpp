@@ -38,7 +38,6 @@ class CfgFunctions
 			class openTriggerSelectionUI;
 			
 			class Place_Approve;
-			class Place_AttachTo;
 			class Place_Cancel;
 			class PlaceExplosive;
 			
