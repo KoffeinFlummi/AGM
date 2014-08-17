@@ -83,7 +83,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDown";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "if (AGM_Interaction_MenuType == 0) then {call AGM_Interaction_fnc_onButtonUp};";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 0) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
     shift = 0;
@@ -95,7 +95,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDownSelf";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "if (AGM_Interaction_MenuType == 1) then {call AGM_Interaction_fnc_onButtonUp};";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
     shift = 0;

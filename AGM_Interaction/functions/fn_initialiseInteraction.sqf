@@ -126,7 +126,7 @@ if (_this select 2) then {
 				_conditionShow = _x select 7;
 				//_conditionTooltip = _x select 8;
 
-				_enable = true && _condition && _conditionShow;
+				_enable = (AGM_Interaction_MenuType % 2 == 1 || {player distanceSqr AGM_Interaction_Target < 16}) && _condition && _conditionShow;
 				if (isNil "_enable") then {_enable = false};
 
 				_ctrlText ctrlEnable _enable;
