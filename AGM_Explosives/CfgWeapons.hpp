@@ -21,6 +21,11 @@ class CfgWeapons {
 			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
 		};
 	};
+	class AGM_M26_Clacker: AGM_Clacker {
+		displayName = $STR_AGM_Explosives_M26_displayName;
+		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
+		AGM_range = 5000;
+	};
 	class AGM_DefusalKit: AGM_ItemCore {
 		scope = 2;
 		displayName = $STR_AGM_Explosives_DefusalKit_displayName;
