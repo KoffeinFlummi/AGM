@@ -50,13 +50,8 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
     </Key>
-    <Key ID="STR_AGM_Explosives_AttachTo">
-      <English>Attach IED</English>
-      <German>USBV befestigen</German>
-      <Spanish>Enganchar IED</Spanish>
-      <Polish>Przyczep IED</Polish>
-      <French>Attacher IED</French>
-      <Czech>Připevnit IED</Czech>
+    <Key ID="STR_AGM_Explosives_ScrollAction">
+      <English>+ Modifier, rotates</English>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
