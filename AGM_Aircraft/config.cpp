@@ -930,7 +930,7 @@ class CfgVehicles {
         weapon = "AGM_gatling_20mm_Comanche";
       };
     };
-    #include <mfd_comanche.hpp>
+    // #include <mfd_comanche.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;

@@ -596,5 +596,70 @@
       <Russian>ЯК-130</Russian>
     </Key>
 
+    <Key ID="STR_AGM_RealisticNames_SLAM_Name">
+      <English>M4A1 SLAM</English>
+      <German>M4A1 SLAM</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_Claymore_Name">
+      <English>M18A1 Claymore</English>
+      <German>M18A1 Claymore</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SatchelCharge_Name">
+      <English>M183 Demolition Charge Assembly</English>
+      <German>M183 Geballte Sprengladung</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_DemoCharge_Name">
+      <English>M112 Demolition Block</English>
+      <German>M112 Sprengladung</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_HandGrenade_Name">
+      <English>M67 Fragmentation Grenade</English>
+      <German>M67 Splittergranate</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShell_Name">
+      <English>M83 Smoke Grenade (White)</English>
+      <German>M83 Rauchgranate (Weiss)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellBlue_Name">
+      <English>M18 Smoke Grenade (Blue)</English>
+      <German>M18 Rauchgranate (Blau)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellGreen_Name">
+      <English>M18 Smoke Grenade (Green)</English>
+      <German>M18 Rauchgranate (Grün)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellOrange_Name">
+      <English>M18 Smoke Grenade (Orange)</English>
+      <German>M18 Rauchgranate (Orange)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
+      <English>M18 Smoke Grenade (Purple)</English>
+      <German>M18 Rauchgranate (Violett)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
+      <English>M18 Smoke Grenade (Red)</English>
+      <German>M18 Rauchgranate (Rot)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
+      <English>M18 Smoke Grenade (Yellow)</English>
+      <German>M18 Rauchgranate (Gelb)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_ATMine_Name">
+      <English>M15 Anti-Tank Mine</English>
+      <German>M15 Panzerabwehrmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSMine_Name">
+      <English>VS-50 Anti-Personnel Mine</English>
+      <German>VS-50 Antipersonenmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSBoundingMine_Name">
+      <English>M26 Anti-Personnel Bounding Mine</English>
+      <German>M26 Antipersonensprungmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSTripwireMine_Name">
+      <English>PMR-3 Anti-Personnel Tripwire Mine</English>
+      <German>PMR-3 Antipersonenstolperdrahtmine</German>
+    </Key>
+
   </Package>
 </Project>

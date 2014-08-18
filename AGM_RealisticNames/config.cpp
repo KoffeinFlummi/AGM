@@ -399,22 +399,22 @@ class CfgWeapons {
 
     class mk20_base_F;
     class arifle_Mk20_F : mk20_base_F {
-      displayName = "F2000A (Camo)";
+      displayName = "F2000 (Camo)";
     };
     class arifle_Mk20_plain_F : arifle_Mk20_F {
-      displayName = "F2000A";
+      displayName = "F2000";
     };
     class arifle_Mk20C_F : mk20_base_F {
-      displayName = "F2000A Tactical (Camo)";
+      displayName = "F2000 Tactical (Camo)";
     };
     class arifle_Mk20C_plain_F : arifle_Mk20C_F {
-      displayName = "F2000A Tactical";
+      displayName = "F2000 Tactical";
     };
     class arifle_Mk20_GL_F : mk20_base_F {
-      displayName = "F2000A EGLM (Camo)";
+      displayName = "F2000 EGLM (Camo)";
     };
     class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
-      displayName = "F2000A EGLM";
+      displayName = "F2000 EGLM";
     };
 
     class SMG_01_Base : Rifle_Base_F {
@@ -492,6 +492,21 @@ class CfgWeapons {
     class DMR_01_base_F;
     class srifle_DMR_01_F : DMR_01_base_F {
       displayName = "VS-121";
+    };
+
+  //MANPADS
+    class Launcher_Base_F;
+    class launch_RPG32_F: Launcher_Base_F {
+      displayName = "RPG-32";
+    };
+    class launch_Titan_base: Launcher_Base_F {
+      displayName = "Mini-Spike (AA)";
+    };
+    class launch_Titan_short_base: launch_Titan_base {
+      displayName = "Mini-Spike (AT)";
+    };
+    class launch_NLAW_F: Launcher_Base_F {
+      displayName = "NLAW";
     };
 
   // VEHICLE STUFF
@@ -1025,55 +1040,55 @@ class CfgMagazines {
   class ATMine_Range_Mag;
   class CA_Magazine;
   class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
-    displayName = "M4A1 SLAM";
+    displayName = "$STR_AGM_RealisticNames_SLAM_Name";
   };
   class ClaymoreDirectionalMine_Remote_Mag: CA_Magazine {
-    displayName = "M18A1 Claymore";
+    displayName = "$STR_AGM_RealisticNames_Claymore_Name";
   };
   class SatchelCharge_Remote_Mag: CA_Magazine {
-    displayName = "M183 Demolition Charge Assembly";
+    displayName = "$STR_AGM_RealisticNames_SatchelCharge_Name";
   };
   class DemoCharge_Remote_Mag: SatchelCharge_Remote_Mag {
-    displayName = "M112 Demolition Block";
+    displayName = "$STR_AGM_RealisticNames_DemoCharge_Name";
   };
   class HandGrenade: CA_Magazine {
-    displayName = "M67 Fragmentation Grenade";
+    displayName = "$STR_AGM_RealisticNames_HandGrenade_Name";
   };
   class SmokeShell: HandGrenade {
-    displayName = "M83 Smoke Grenade (White)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShell_Name";
   };
   class SmokeShellBlue: SmokeShell {
-    displayName = "M18 Smoke Grenade (Blue)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellBlue_Name";
   };
   class SmokeShellGreen: SmokeShell {
-    displayName = "M18 Smoke Grenade (Green)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellGreen_Name";
   };
   class SmokeShellOrange: SmokeShell {
-    displayName = "M18 Smoke Grenade (Orange)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellOrange_Name";
   };
   class SmokeShellPurple: SmokeShell {
-    displayName = "M18 Smoke Grenade (Purple)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellPurple_Name";
   };
   class SmokeShellRed: SmokeShell {
-    displayName = "M18 Smoke Grenade (Red)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellRed_Name";
   };
   class SmokeShellYellow: SmokeShell {
-    displayName = "M18 Smoke Grenade (Yellow)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
   };
   // http://en.wikipedia.org/wiki/M15_mine
   class ATMine_Range_Mag: CA_Magazine {
-    displayName = "M15 Anti-Tank Mine";
+    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
   };
   // http://en.wikipedia.org/wiki/VS-50_mine
   class APERSMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "VS-50 Anti-Personnel Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
   };
   // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
   class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "M26 Anti-Personnel Bounding Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
   };
   // http://en.wikipedia.org/wiki/PMR-3_mine
   class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
-    displayName = "PMR-3 Anti-Personnel Tripwire Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
   };
 };
