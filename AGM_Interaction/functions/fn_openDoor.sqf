@@ -3,6 +3,8 @@
 #define MAX_DISTANCE 2
 #define DOOR_TYPES ["door", "hatch"]
 
+private ["_position0", "_position1", "_intersections", "_count", "_house", "_door", "_selection", "_id", "_index", "_animation", "_phase", "_position", "_usedMouseWheel"];
+
 _position0 = positionCameraToWorld [0, 0, 0];
 _position1 = positionCameraToWorld [0, 0, MAX_DISTANCE];
 
@@ -23,13 +25,18 @@ _door = "";
 {
 	_selection = toArray (_x select 0);
 
-	_index = _selection find 95;
+	_count = count _selection;
 
-	if (_index != -1) then {
-		_selection resize _index;
+	_id = toString [_selection select (_count - 1)];
+	if (_house getVariable [format ["BIS_Disabled_Door_%1", _id], 0] != 1) then {
+		_index = _selection find 95;
 
-		if (toString _selection in DOOR_TYPES) then {
-			_door = _x select 0;
+		if (_index != -1) then {
+			_selection resize _index;
+
+			if (toString _selection in DOOR_TYPES) then {
+				_door = _x select 0;
+			};
 		};
 	};
 } forEach _intersections;
