@@ -29,64 +29,95 @@ _fnc_GetActions = {
 		_count = count _config;
 		if (_count > 0) then {
 			for "_index" from 0 to (_count - 1) do {
-				_action = if (_this select 5) then {_config select _index} else {_this select 6 >> configName (_config select _index)};
+				_action = if (_this select 4) then {_config select _index} else {_this select 5 >> configName (_config select _index)};
+				_cache = missionNamespace getVariable ["AGM_Interaction_MenuCache", [[], []]];
 
 				if (count _action > 0) then {
 					_configName = configName _action;
-					_displayName = getText (_action >> "displayName");
-					_distance = getNumber (_action >> "distance");
-					_priority = getNumber (_action >> "priority");
-					_subMenu = getArray (_action >> "subMenu");
-					_tooltip = getText (_action >> "tooltip");
 
-					// Condition
-					_condition = getText (_action >> "condition");
-					if (_condition == "") then {_condition = "true"};
+					_cacheConfig = _cache select 0;
+					_cacheAction = _cache select 1;
 
-					_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
-					_condition = compile _condition;
+					_indexCache = _cacheConfig find _action;
+					if (_indexCache == -1) then {
+						_displayName = getText (_action >> "displayName");
+						_distance = getNumber (_action >> "distance");
+						_priority = getNumber (_action >> "priority");
+						_subMenu = getArray (_action >> "subMenu");
+						_tooltip = getText (_action >> "tooltip");
 
-					// Condition to show the action
-					_conditionShow = getText (_action >> "conditionShow");
-					_conditionShow = if (_conditionShow == "") then {{true}} else {compile _conditionShow};
+						// Condition
+						_condition = getText (_action >> "condition");
+						if (_condition == "") then {_condition = "true"};
 
-					_showDisabled = getNumber (_action >> "showDisabled") == 1;
-					if (isText (_action >> "conditionShow")) then {
-						_showDisabled = call _conditionShow;
-					};
+						_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
+						_condition = compile _condition;
 
-					// Conditions that have to be true or else they show the following tooltip upon clicking
-					_conditionsTooltip = getArray (_action >> "conditionsTooltip");
+						// Condition to show the action
+						_conditionShow = getText (_action >> "conditionShow");
+						_conditionShow = if (_conditionShow == "") then {{true}} else {compile _conditionShow};
 
-					{
-						if (_forEachIndex mod 2 == 0) then {
-							_conditionsTooltip set [_forEachIndex, compile _x];
+						_showDisabled = getNumber (_action >> "showDisabled") == 1;
+						if (isText (_action >> "conditionShow")) then {
+							_showDisabled = call _conditionShow;
 						};
-					} forEach _conditionsTooltip;
 
-					// statement
-					_statement = getText (_action >> "statement");
-					_statement = compile _statement;
+						// Conditions that have to be true or else they show the following tooltip upon clicking
+						_conditionsTooltip = getArray (_action >> "conditionsTooltip");
 
-					if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
-						_statement = if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
-							compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{['%1'] call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
-						} else {
-							compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
+						{
+							if (_forEachIndex mod 2 == 0) then {
+								_conditionsTooltip set [_forEachIndex, compile _x];
+							};
+						} forEach _conditionsTooltip;
+
+						// statement
+						_statement = getText (_action >> "statement");
+						_statement = compile _statement;
+
+						if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
+							_statement = if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
+								compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{['%1'] call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
+							} else {
+								compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
+							};
 						};
-					};
 
-					// icon
-					_icon = getText (_action >> "Icon");
-					if (_icon == "") then {
-						_icon = "AGM_Interaction\UI\dot_ca.paa";
-					};
+						// icon
+						_icon = getText (_action >> "Icon");
+						if (_icon == "") then {
+							_icon = "\AGM_Interaction\UI\dot_ca.paa";
+						};
 
-					if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-						_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
-						_patches set [count _patches, _configName];
+						if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+							_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
+							_patches set [count _patches, _configName];
+						};
+
+						_indexCache = count _cacheConfig;
+						_cacheConfig set [_indexCache, _action];
+						_cacheAction set [_indexCache, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
+
+						_cache = [_cacheConfig, _cacheAction];
+						if (!isNil "AGM_Debug" && {AGM_Debug = "InteractionMenu"}) then {diag_log text format ["%1 loaded into cache", _action]};
+					} else {
+						if (!isNil "AGM_Debug" && {AGM_Debug = "InteractionMenu"}) then {diag_log text format ["%1 loaded from cache", _action]};
+
+						_cachedAction = _cacheAction select _indexCache;
+
+						_showDisabled = getNumber (_action >> "showDisabled") == 1;
+						if (isText (_action >> "conditionShow")) then {
+							_showDisabled = call (_cachedAction select 7);
+						};
+
+						if (!(_configName in _patches) && {_showDisabled || {call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
+							_actions set [count _actions, _cachedAction];
+							_patches set [count _patches, _configName];
+						};
 					};
 				};
+
+				AGM_Interaction_MenuCache = _cache;
 			};
 		};
 	} forEach _parents;
