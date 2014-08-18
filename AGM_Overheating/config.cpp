@@ -224,6 +224,7 @@ class CfgWeapons {
   };
 
   class arifle_MX_Base_F : Rifle_Base_F {
+    AGM_clearJamAction = "GestureReloadMX";   // Custom jam clearing action. Default uses reload animation
     AGM_Jamming_Reliability = AGM_RELIABILITY_MX;
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
@@ -231,6 +232,7 @@ class CfgWeapons {
   };
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
+    AGM_clearJamAction = "";                 // Custom jam clearing action. Use empty string to undefine.
     AGM_Jamming_Reliability = AGM_RELIABILITY_MX_SW;
     AGM_Overheating_allowSwapBarrel = 1;  // This weapon can use spare barrels.
     AGM_Overheating_Increment = 0.01;
