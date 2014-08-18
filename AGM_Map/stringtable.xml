@@ -58,10 +58,12 @@
     </Key>
     <Key ID="STR_AGM_Map_MapGpsShow">
       <English>Show GPS on Map</English>
+      <German>Zeige GPS auf der Karte</German>
       <Spanish>Mostrar el GPS sobre el mapa</Spanish>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsHide">
       <English>Hide GPS on Map</English>
+      <German>Verstecke GPS auf der Karte</German>
       <Spanish>Ocultar el GPS del mapa</Spanish>
     </Key>
   </Package>
