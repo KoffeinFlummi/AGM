@@ -45,9 +45,8 @@ if (_this select 2) then {
 		];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
+	[localize "STR_AGM_Interaction_MakeSelection", if (_subMenu)then{localize "STR_AGM_Interaction_Back"}else{""}, localize "STR_AGM_Interaction_ScrollHint"] call AGM_Interaction_fnc_showMouseHint;
 	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1210)) ctrlShow _subMenu;
-	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1023)) ctrlShow _subMenu;
-	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1213)) ctrlShow _subMenu;
 }else{ // Rose
 	if !(_subMenu) then {
 		(findDisplay 1713999) closeDisplay 1;
