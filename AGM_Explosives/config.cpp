@@ -113,7 +113,7 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
-					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
+					icon = "AGM_Explosives\UI\detonate_ca.paa";
 					priority = 2;
 				};
 				class AGM_Place {
@@ -129,24 +129,8 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
 					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
-					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
+					icon = "AGM_Explosives\UI\defuse_ca.paa";
 					priority = 0.8;
-				};
-				class AGM_PlaceExplosive {
-					displayName = $STR_AGM_Explosives_PlaceAction;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
-					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
-					showDisabled = 0;
-					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
-					priority = 0.4;
-				};
-				class AGM_CancelPlace {
-					displayName = $STR_AGM_Explosives_CancelAction;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
-					statement = "call AGM_Explosives_fnc_Place_Cancel;";
-					showDisabled = 0;
-					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
-					priority = 0.2;
 				};
 			};
 		};

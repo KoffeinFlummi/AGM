@@ -105,6 +105,7 @@
 		statement = "[AGM_Interaction_Target, true] call AGM_StaticWeapons_fnc_rotate"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\rotate_cw_ca.paa"; \
 	}; \
 	class AGM_RotateCounterclockwise { \
 		displayName = "$STR_AGM_StaticWeapons_RotateCounterclockwise"; \
@@ -113,6 +114,7 @@
 		statement = "[AGM_Interaction_Target, false] call AGM_StaticWeapons_fnc_rotate"; \
 		showDisabled = 1; \
 		priority = 2; \
+		icon = "AGM_Logistics\ui\rotate_ccw_ca.paa"; \
 	};
 
 #define MACRO_CUTWIRE \
@@ -123,6 +125,7 @@
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\wirecutter_ca.paa"; \
 	};
 
 #define MACRO_CUTWIRE_LONG \
@@ -133,6 +136,7 @@
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\wirecutter_ca.paa"; \
 	};
 
 #define MACRO_CARRYJERRYCAN \
@@ -248,7 +252,7 @@
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
 		showDisabled = 0; \
 		priority = 1.245; \
-		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
+		icon = "AGM_Logistics\ui\AGM_battery.paa"; \
 	};
 
 #define MACRO_PARADROP \

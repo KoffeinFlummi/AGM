@@ -161,7 +161,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "";
         showDisabled = 1;
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
         priority = 6;
         subMenu[] = {"AGM_Medical", 0};
 
@@ -169,7 +169,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Medical_Diagnose";
           condition = "(player getVariable 'AGM_CanTreat') and (AGM_Interaction_Target getVariable 'AGM_Treatable') and vehicle player == player and vehicle AGM_Interaction_Target == AGM_Interaction_Target and AGM_Interaction_Target != player";
           statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_diagnose;";
-          icon = "AGM_Medical\UI\IconMedical_ca.paa";
+          icon = "AGM_Medical\UI\diagnose_ca.paa";
           showDisabled = 1;
           priority = 1;
         };
@@ -261,7 +261,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
         priority = 2.1;
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
       };
       class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
@@ -269,7 +269,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
         priority = 2.0;
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
       };
     };
 
@@ -280,7 +280,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 6;
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
         subMenu[] = {"AGM_Medical", 1};
 
         class AGM_Diagnose {
@@ -289,7 +289,7 @@ class CfgVehicles {
           statement = "[player] call AGM_Medical_fnc_diagnose;";
           priority = 1;
           showDisabled = 1;
-          icon = "AGM_Medical\UI\IconMedical_ca.paa";
+          icon = "AGM_Medical\UI\diagnose_ca.paa";
         };
         class AGM_Morphine {
           displayName = "$STR_AGM_Medical_Inject_Morphine";
@@ -364,13 +364,13 @@ class CfgVehicles {
         condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
       };
       class AGM_Release_Carry: AGM_Release_Drag {
         condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-        icon = "AGM_Medical\UI\IconMedical_ca.paa";
+        icon = "AGM_Medical\UI\medical_ca.paa";
       };
     };
   };
