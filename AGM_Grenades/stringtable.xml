@@ -69,12 +69,20 @@
       <German>M84 Blendgranate</German>
       <Spanish>Granada aturdidora M84</Spanish>
       <French>M84 Grenade Incapacitante</French>
+      <Polish>M84 Granat Hukowy</Polish>
+      <Czech>M84 Zábleskový Granát</Czech>
+      <Russian>M84 светозвуковая граната</Russian>
+      <Hungarian>M84 Villanógránátokka</Hungarian>
     </Key>
     <Key ID="STR_AGM_Grenades_M84_Description">
       <English>Also known as flashbang. Causes immediate flash blindness, deafness, tinnitus, and inner ear disturbance.</English>
       <German>Verursacht temporäre Blind- und Taubheit.</German>
       <Spanish>Produce de manera inmediata ceguera, sordera, tinitus y afecta el oído interior.</Spanish>
       <French>Les grenades incapacitantes servent à désorienter ou distraire une menace pendant quelques secondes.</French>
+      <Polish>Granat ogłusza, nie zabijając przeciwnika. Detonacja daje efekt oślepiającego błysku i głośnego huku</Polish>
+      <Czech>Zábleskový granát je taktická nesmrtící zbraň používaná při taktice záchrany rukojmí a zvládání davu.</Czech>
+      <Russian>Граната XM84 (M84) - не летального действия, и предназначена для отвлечения и временного вывода из строя, либо дезориентации противника. Основное использование нашла при освобождении заложников,  захвате преступников и террористов, а также проведении диверсионных миссий.</Russian>
+      <Hungarian>Eldobás után felrobban és éles hang, valamint fényhatással zavarja össze a környezetében tartózkodókat.</Hungarian>
     </Key>
 
   </Package>
