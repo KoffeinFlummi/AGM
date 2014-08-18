@@ -76,7 +76,7 @@ if (true) then {
 						
 						if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
 							if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
-								_statement = compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{'%1' call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
+								_statement = compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{['%1'] call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
 							}else{
 								_statement = compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
 							};
