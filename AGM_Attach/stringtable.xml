@@ -12,6 +12,11 @@
     </Key>
     <Key ID="STR_AGM_Attach_Attach">
       <English>Attach</English>
+      <German>Befestigen</German>
+      <Spanish>Acoplar</Spanish>
+      <Polish>Przyczep</Polish>
+      <French>Attacher</French>
+      <Czech>Připnout</Czech>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
@@ -90,7 +95,7 @@
       <German>Das IR-Stroboskop erlaubt es dir deine Position mit einem blinkenden Leuchtfeuer zu signalisieren, welches nur mit Nachtsichtgerät zu erkennen ist.</German>
       <Polish>Stroboskop Światła podczerwieni umożliwia oznaczenie swojej pozycji pulsacyjnym światłem widocznym tyko przez optykę noktowizyjną.</Polish>
       <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna. </Spanish>
-      <French>Le Strobe IR permet de signaler votre position grace à un clignotement visible via des NVG.</French>
+      <French>Le Strobe IR permet de signaler votre position grace à un clignotement visible par des JVN.</French>
       <Czech>IR Značkovač je Infračerveně zářící stroboskop umožňující signalizaci vaší pozice díky blikajícímu světlu, které je vidět pouze při užití noktovizoru.</Czech>
     </Key>
   </Package>

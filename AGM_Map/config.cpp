@@ -18,9 +18,11 @@ class CfgFunctions {
       file = "AGM_Map\functions";
       class blueForceTracking;
       class canUseMapTools;
+      class canUseMapGPS;
       class handleMouseButton;
       class handleMouseMove;
       class isInsideMapTool;
+      class openMapGps;
       class updateMapToolMarkers;
     };
   };
@@ -33,10 +35,10 @@ class Extended_PostInit_EventHandlers {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_MapTools: ItemCore {
+  class AGM_MapTools: AGM_ItemCore {
     displayName = "$STR_AGM_MapTools_Name";
     descriptionShort = "$STR_AGM_MapTools_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
@@ -44,7 +46,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };
@@ -62,11 +63,12 @@ class CfgVehicles {
 
       class AGM_MapTools {
         displayName = "$STR_AGM_Map_MapTools_Menu";
-        condition = "call AGM_Map_fnc_canUseMapTools";
-        statement = "'AGM_MapTools' call AGM_Interaction_fnc_openMenuSelf";
+        condition = "(call AGM_Map_fnc_canUseMapTools) || (call AGM_Map_fnc_canUseMapGPS)";
+        statement = "";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 100;
+        subMenu[] = {"AGM_MapTools", 1};
 
         class AGM_MapToolsHide {
           displayName = "$STR_AGM_Map_MapToolsHide";
@@ -107,6 +109,22 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 1;
+        };
+        class AGM_MapGpsShow {
+          displayName = "$STR_AGM_Map_MapGpsShow";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && {!AGM_Map_mapGpsShow}";
+          statement = "AGM_Map_mapGpsShow = true; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 0;
+          priority = 0;
+        };
+        class AGM_MapGpsHide {
+          displayName = "$STR_AGM_Map_MapGpsHide";
+          condition = "(call AGM_Map_fnc_canUseMapTools) && AGM_Map_mapGpsShow";
+          statement = "AGM_Map_mapGpsShow = false; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 0;
+          priority = 0;
         };
       };
     };
@@ -395,3 +413,5 @@ class CfgMarkers {
     size = 32;
   };
 };
+
+#include "MapGpsUI.hpp"

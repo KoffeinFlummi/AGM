@@ -49,7 +49,7 @@
       <Spanish>Rodar granada</Spanish>
       <Polish>Po ziemi</Polish>
       <Czech>Po zemi</Czech>
-      <French>Lancer rouler</French>
+      <French>Lancer Roulé</French>
       <Russian>Катить гранату</Russian>
       <Hungarian>Gurítás</Hungarian>
     </Key>
@@ -59,9 +59,22 @@
       <Spanish>Soltar granada</Spanish>
       <Polish>Upuść granat</Polish>
       <Czech>Upustit granát</Czech>
-      <French>Lacher la grenade</French>
+      <French>Lâcher la grenade</French>
       <Russian>Бросить себе под ноги</Russian>
       <Hungarian>Ejtés</Hungarian>
+    </Key>
+
+    <Key ID="STR_AGM_Grenades_M84_Name">
+      <English>M84 Stun Grenade</English>
+      <German>M84 Blendgranate</German>
+      <Spanish>Granada aturdidora M84</Spanish>
+      <French>M84 Grenade Incapacitante</French>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M84_Description">
+      <English>Also known as flashbang. Causes immediate flash blindness, deafness, tinnitus, and inner ear disturbance.</English>
+      <German>Verursacht temporäre Blind- und Taubheit.</German>
+      <Spanish>Produce de manera inmediata ceguera, sordera, tinitus y afecta el oído interior.</Spanish>
+      <French>Les grenades incapacitantes servent à désorienter ou distraire une menace pendant quelques secondes.</French>
     </Key>
 
   </Package>

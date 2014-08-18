@@ -19,6 +19,7 @@ class CfgFunctions {
       class AddSelectableItem;
       class addInteraction;
       class addInteractionSelf;
+      class applyButtons;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
       class canTapShoulder;
@@ -29,6 +30,7 @@ class CfgFunctions {
       class getDown;
       class getSelectedButton;
       class hideMenu;
+	  class hideMouseHint;
       class initialiseInteraction;
       class isInRange;
       class joinTeam;
@@ -52,10 +54,12 @@ class CfgFunctions {
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
+	  class showMouseHint;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
       class unloadCaptiveFromVehicle;
+      class updateTooltipPosition;
     };
   };
 };
@@ -81,7 +85,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDown";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "call AGM_Interaction_fnc_onButtonUp";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 0) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
     shift = 0;
@@ -93,7 +97,7 @@ class AGM_Core_Default_Keys {
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDownSelf";
     conditionUp = "!isNull (findDisplay 1713999)";
-    statementUp = "call AGM_Interaction_fnc_onButtonUp";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
     shift = 0;
@@ -779,10 +783,10 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_CableTie: ItemCore {
+  class AGM_CableTie: AGM_ItemCore {
     displayName = "$STR_AGM_Interaction_CableTie_Name";
     descriptionShort = "$STR_AGM_Interaction_CableTie_Description";
     model = "\AGM_Interaction\agm_cabletie.p3d";
@@ -790,7 +794,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

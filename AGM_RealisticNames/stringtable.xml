@@ -54,7 +54,7 @@
       <English>Mini-Spike Launcher (AT)</English>
       <German>Mini-Spike Lenkflugkörper (AT)</German>
       <Spanish>Lanzador Mini-Spike (AT)</Spanish>
-      <French>Mini-Spike Lanceur (AT)</French>
+      <French>Mini-Spike Lanceur (AC)</French>
       <Czech>Mini-Spike Odpalovač (AT)</Czech>
       <Polish>Wyrzutnia Mini-Spike (AT)</Polish>
     </Key>
@@ -310,7 +310,7 @@
       <Spanish>Kamaz de transporte (cubierto)</Spanish>
       <Polish>Kamaz transportowy (zakryty)</Polish>
       <Czech>Kamaz Valník (krytý)</Czech>
-      <French>kamaz Transport (Couvert)</French>
+      <French>Kamaz Transport (Couvert)</French>
       <Russian>Камаз Траспортный (Крытый)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
@@ -396,13 +396,13 @@
       <Russian>2S9 Сокор</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_cannon_Name">
-      <English>BMP-K Kamysh</English>
-      <German>BMP-K Kamysh</German>
-      <Spanish>BMP-K Kamysh</Spanish>
-      <Polish>BMP-K Kamysh</Polish>
-      <Czech>BMP-K Kamysh</Czech>
-      <French>BMP-K Kamysh</French>
-      <Russian>БПМ-К Камыш</Russian>
+      <English>BM-2T Stalker</English>
+      <German>BM-2T Stalker</German>
+      <Spanish>BM-2T Stalker</Spanish>
+      <Polish>BM-2T Stalker</Polish>
+      <Czech>BM-2T Stalker</Czech>
+      <French>BM-2T Stalker</French>
+      <Russian>БМ-2Т Сталкер</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_AA_Name">
       <English>ZSU-35 Tigris</English>
@@ -483,7 +483,7 @@
       <Spanish>Typhoon de médico</Spanish>
       <Polish>Typhoon medyczny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
-      <French>Typhoon médical</French>
+      <French>Typhoon Médical</French>
       <Russian>Typhoon Медицинский</Russian>
     </Key>
 
@@ -538,7 +538,7 @@
       <Spanish>AW159 Wildcat (desarmado)</Spanish>
       <Polish>AW159 Wildcat (nieuzbrojony)</Polish>
       <Czech>AW159 Wildcat (neozbrojený)</Czech>
-      <French>AW159 Wildcat (Non-armé)</French>
+      <French>AW159 Wildcat (Non-Armé)</French>
       <Russian>AW159 Wildcat (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_02_Name">
@@ -583,7 +583,7 @@
       <Spanish>Ka-60 Kasatka (desarmado)</Spanish>
       <Polish>Ka-60 Kasatka (nieuzbrojony)</Polish>
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
-      <French>Ka-60 Kasatka (unarmed)</French>
+      <French>Ka-60 Kasatka (Non-Armé)</French>
       <Russian>Ka-60 Касатка (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_02_Name">
@@ -594,6 +594,71 @@
       <Czech>Yak-130</Czech>
       <French>Yak-130</French>
       <Russian>ЯК-130</Russian>
+    </Key>
+
+    <Key ID="STR_AGM_RealisticNames_SLAM_Name">
+      <English>M4A1 SLAM</English>
+      <German>M4A1 SLAM</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_Claymore_Name">
+      <English>M18A1 Claymore</English>
+      <German>M18A1 Claymore</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SatchelCharge_Name">
+      <English>M183 Demolition Charge Assembly</English>
+      <German>M183 Geballte Sprengladung</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_DemoCharge_Name">
+      <English>M112 Demolition Block</English>
+      <German>M112 Sprengladung</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_HandGrenade_Name">
+      <English>M67 Fragmentation Grenade</English>
+      <German>M67 Splittergranate</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShell_Name">
+      <English>M83 Smoke Grenade (White)</English>
+      <German>M83 Rauchgranate (Weiss)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellBlue_Name">
+      <English>M18 Smoke Grenade (Blue)</English>
+      <German>M18 Rauchgranate (Blau)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellGreen_Name">
+      <English>M18 Smoke Grenade (Green)</English>
+      <German>M18 Rauchgranate (Grün)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellOrange_Name">
+      <English>M18 Smoke Grenade (Orange)</English>
+      <German>M18 Rauchgranate (Orange)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
+      <English>M18 Smoke Grenade (Purple)</English>
+      <German>M18 Rauchgranate (Violett)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
+      <English>M18 Smoke Grenade (Red)</English>
+      <German>M18 Rauchgranate (Rot)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
+      <English>M18 Smoke Grenade (Yellow)</English>
+      <German>M18 Rauchgranate (Gelb)</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_ATMine_Name">
+      <English>M15 Anti-Tank Mine</English>
+      <German>M15 Panzerabwehrmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSMine_Name">
+      <English>VS-50 Anti-Personnel Mine</English>
+      <German>VS-50 Antipersonenmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSBoundingMine_Name">
+      <English>M26 Anti-Personnel Bounding Mine</English>
+      <German>M26 Antipersonensprungmine</German>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_APERSTripwireMine_Name">
+      <English>PMR-3 Anti-Personnel Tripwire Mine</English>
+      <German>PMR-3 Antipersonenstolperdrahtmine</German>
     </Key>
 
   </Package>

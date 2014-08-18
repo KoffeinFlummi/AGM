@@ -494,6 +494,21 @@ class CfgWeapons {
       displayName = "VS-121";
     };
 
+  //MANPADS
+    class Launcher_Base_F;
+    class launch_RPG32_F: Launcher_Base_F {
+      displayName = "RPG-32";
+    };
+    class launch_Titan_base: Launcher_Base_F {
+      displayName = "Mini-Spike (AA)";
+    };
+    class launch_Titan_short_base: launch_Titan_base {
+      displayName = "Mini-Spike (AT)";
+    };
+    class launch_NLAW_F: Launcher_Base_F {
+      displayName = "NLAW";
+    };
+
   // VEHICLE STUFF
     class gatling_20mm: CannonCore {
       class manual;
@@ -1017,5 +1032,63 @@ class CfgMagazines {
   };
   class 40Rnd_20mm_G_belt: 200Rnd_20mm_G_belt {
     displayNameShort = "20mm HE";
+  };
+
+
+  // EXPLOSIVES
+  // most of these can be found here: http://www.dtic.mil/dtic/tr/fulltext/u2/a567897.pdf
+  class ATMine_Range_Mag;
+  class CA_Magazine;
+  class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_SLAM_Name";
+  };
+  class ClaymoreDirectionalMine_Remote_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_Claymore_Name";
+  };
+  class SatchelCharge_Remote_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_SatchelCharge_Name";
+  };
+  class DemoCharge_Remote_Mag: SatchelCharge_Remote_Mag {
+    displayName = "$STR_AGM_RealisticNames_DemoCharge_Name";
+  };
+  class HandGrenade: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_HandGrenade_Name";
+  };
+  class SmokeShell: HandGrenade {
+    displayName = "$STR_AGM_RealisticNames_SmokeShell_Name";
+  };
+  class SmokeShellBlue: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellBlue_Name";
+  };
+  class SmokeShellGreen: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellGreen_Name";
+  };
+  class SmokeShellOrange: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellOrange_Name";
+  };
+  class SmokeShellPurple: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellPurple_Name";
+  };
+  class SmokeShellRed: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellRed_Name";
+  };
+  class SmokeShellYellow: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
+  };
+  // http://en.wikipedia.org/wiki/M15_mine
+  class ATMine_Range_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/VS-50_mine
+  class APERSMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
+  };
+  // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
+  class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/PMR-3_mine
+  class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
   };
 };

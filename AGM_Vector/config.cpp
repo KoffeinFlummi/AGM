@@ -52,8 +52,8 @@ class CfgWeapons {
     modelOptics = "\AGM_Vector\agm_vector_optics.p3d";
     picture = "\AGM_Vector\UI\agm_vector_x_ca.paa";
     visionMode[] = {"Normal","NVG"};
-    opticszoommax = 0.03;
-    opticszoommin = 0.03;
+    opticsZoomMax = 0.03;
+    opticsZoomMin = 0.03;
   };
 };
 

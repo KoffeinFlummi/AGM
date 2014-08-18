@@ -15,7 +15,8 @@ if (_weapon in _jammedWeapons) then {
 
 	if (count _jammedWeapons == 0) then {
 		_actionID = _unit getVariable ["AGM_JammingActionID", -1];
-		_unit removeAction _actionID;
+		//_unit removeAction _actionID;
+		[_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionEventHandler;
 		_unit setVariable ["AGM_JammingActionID", -1];
 	};
 

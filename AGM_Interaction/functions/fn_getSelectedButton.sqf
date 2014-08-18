@@ -1,6 +1,6 @@
 // by commy2
 
-#define MIN_DISTANCE 0.02
+#define MIN_DISTANCE 0.0065
 
 private ["_position", "_distance", "_angle"];
 
