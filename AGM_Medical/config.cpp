@@ -161,7 +161,7 @@ class CfgVehicles {
         condition = "(player getVariable 'AGM_CanTreat') and (player getVariable 'AGM_Treatable') and vehicle player == player";
         statement = "";
         showDisabled = 1;
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         priority = 6;
         subMenu[] = {"AGM_Medical", 0};
 
@@ -280,7 +280,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 6;
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         subMenu[] = {"AGM_Medical", 1};
 
         class AGM_Diagnose {
