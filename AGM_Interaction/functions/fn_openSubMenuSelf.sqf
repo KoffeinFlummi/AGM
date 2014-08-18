@@ -29,7 +29,7 @@ _fnc_GetActions = {
 		_count = count _config;
 		if (_count > 0) then {
 			for "_index" from 0 to (_count - 1) do {
-				_action = if (_this select 4) then {_config select _index} else {_this select 5 >> configName (_config select _index)};
+				_action = if (_this select 5) then {_config select _index} else {_this select 6 >> configName (_config select _index)};
 				_cache = missionNamespace getVariable ["AGM_Interaction_MenuCache", [[], []]];
 
 				if (count _action > 0) then {
