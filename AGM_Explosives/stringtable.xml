@@ -90,7 +90,7 @@
       <German>M57 Zündvorrichtung</German>
       <Spanish>Dispositivo de detonación M57</Spanish>
       <Polish>Detonator M57</Polish>
-      <French>M57 Dispositif de mise a feu</French>
+      <French>M57 Dispositif de mise à feu</French>
       <Czech>M57 Odpalovací Zařízení</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_clacker_description">
@@ -106,7 +106,7 @@
       <German>M26 Zündvorrichtung</German>
       <Spanish>Dispositivo de detonación M26</Spanish>
       <Polish>Detonator M26</Polish>
-      <French>M26 Dispositif de mise a feu</French>
+      <French>M26 Dispositif de mise à feu</French>
       <Czech>M26 Odpalovací Zařízení</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
