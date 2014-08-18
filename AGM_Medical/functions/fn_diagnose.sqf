@@ -95,7 +95,7 @@ _this spawn {
       };
 
       // Blood
-      if (_unit getVariable "AGM_Bleeding") then {
+      if (_unit getVariable "AGM_Bleeding" and ((AGM_Medical_SingleBandage > 0 and damage _unit > 0) or (_heavyinjuries != "" or _lightinjuries != ""))) then {
         _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientBleeding" + "</t> ";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";
