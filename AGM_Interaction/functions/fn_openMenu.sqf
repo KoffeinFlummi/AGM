@@ -24,41 +24,38 @@ if (true) then {
 	_configClass = configFile >> "CfgVehicles" >> typeOf _object >> "AGM_Actions";
 
 	_fnc_GetActions = {
+		_parents = _this select 0;
 		_actions = _this select 1;
 		_patches = _this select 2;
+		_baseConfig = _this select 3;
+
 		{
-			_config = (_this select 3) >> _x >> "AGM_Actions";
+			_config = _baseConfig >> _x >> "AGM_Actions";
 
 			_count = count _config;
 			if (_count > 0) then {
 				for "_index" from 0 to (_count - 1) do {
-					_action = [];
-					if (_this select 4) then {
-						_action = _config select _index;
-					}else{
-						_action = (_this select 5) >> configName (_config select _index);
-					};
+					_action = if (_this select 4) then {_config select _index} else {_this select 5 >> configName (_config select _index)};
 
 					if (count _action > 0) then {
 						_configName = configName _action;
 						_displayName = getText (_action >> "displayName");
 						_distance = getNumber (_action >> "distance");
+						_priority = getNumber (_action >> "priority");
+						_subMenu = getArray (_action >> "subMenu");
+						_tooltip = getText (_action >> "tooltip");
+
+						// Condition
 						_condition = getText (_action >> "condition");
 						if (_condition == "") then {_condition = "true"};
 
 						_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 						_condition = compile _condition;
-						_priority = getNumber (_action >> "priority");
-						_subMenu = getArray (_action >> "subMenu");
-						_tooltip = getText (_action >> "tooltip");
-						_statement = {};
-						
+
 						// Condition to show the action
 						_conditionShow = getText (_action >> "conditionShow");
-						if (_conditionShow == "") then {_conditionShow = "true"};
+						_conditionShow = if (_conditionShow == "") then {{true}} else {compile _conditionShow};
 
-						_conditionShow = compile _conditionShow;
-						
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
 							_showDisabled = call _conditionShow;
@@ -72,33 +69,37 @@ if (true) then {
 								_conditionsTooltip set [_forEachIndex, compile _x];
 							};
 						} forEach _conditionsTooltip;
-						
+
+						// statement
+						_statement = getText (_action >> "statement");
+						_statement = compile _statement;
+
 						if (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]) then {
-							if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
-								_statement = compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{['%1'] call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
-							}else{
-								_statement = compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
+							_statement = if (getText (_action >> "statement") == "" && {count _subMenu > 1}) then {
+								compile format ["call AGM_Interaction_fnc_hideMenu;if(%2 == 1)then{['%1'] call AGM_Interaction_fnc_openSubMenuSelf;}else{['%1'] call AGM_Interaction_fnc_openSubMenu;};", _subMenu select 0, _subMenu select 1];
+							} else {
+								compile ("call AGM_Interaction_fnc_hideMenu;" + getText (_action >> "statement"));
 							};
-						}else{
-							_statement = compile (getText (_action >> "statement"));
 						};
-						
-						_icon = getText (_action >> "icon");
+
+						// icon
+						_icon = getText (_action >> "Icon");
 						if (_icon == "") then {
 							_icon = "AGM_Interaction\UI\dot_ca.paa";
 						};
 
 						if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-							_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip]];
+							_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
 							_patches set [count _patches, _configName];
 						};
 					};
 				};
 			};
-		} forEach (_this select 0);
-		
+		} forEach _parents;
+
 		[_actions, _patches]
 	};
+
 	_parents = [configfile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 	_result = [_parents, [], [], missionConfigFile >> "CfgVehicles", true] call _fnc_GetActions;
 	_result = [_parents, _result select 0, _result select 1, configfile >> "CfgVehicles", false, _configClass] call _fnc_GetActions;
@@ -115,10 +116,13 @@ if (true) then {
 		_showDisabled = _customAction select 4;
 		_priority = _customAction select 5;
 		_subMenu = [];
-		_icon = "AGM_Interaction\UI\dot_ca.paa";
+		_icon = "\AGM_Interaction\UI\dot_ca.paa";
+		_tooltip = "";
+		_conditionShow = {true};
+		_conditionsTooltip = [];
 
 		if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-			_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon]];
+			_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
 		};
 	};
 
