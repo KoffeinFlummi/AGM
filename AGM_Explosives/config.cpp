@@ -64,12 +64,13 @@ class CfgFunctions
 				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
-				icon = "AGM_Explosives\UI\IconExplosives_ca.paa"; \
+				icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
 				subMenu[] = {"AGM_Explosives", 1};\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";\
+					icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
 					showDisabled = 1;\
 					priority = 2;\
 				};\
@@ -105,7 +106,7 @@ class CfgVehicles {
 				statement = "";
 				showDisabled = 1;
 				priority = 4;
-				icon = "AGM_Explosives\UI\IconExplosives_ca.paa";			
+				icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";			
 				subMenu[] = {"AGM_Explosives", 1};
 				//Sub-menu items
 				class AGM_Detonate {
@@ -113,7 +114,7 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
 					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
 					showDisabled = 1;
-					icon = "AGM_Explosives\UI\detonate_ca.paa";
+					icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
 					priority = 2;
 				};
 				class AGM_Place {
@@ -121,7 +122,7 @@ class CfgVehicles {
 					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
 					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
 					showDisabled = 1;
-					icon = "AGM_Explosives\UI\IconExplosives_ca.paa";
+					icon = "AGM_Explosives\UI\Place_Explosive_ca.paa";
 					priority = 1;
 				};
 				class AGM_Defuse {
