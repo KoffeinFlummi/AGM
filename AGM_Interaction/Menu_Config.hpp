@@ -423,7 +423,6 @@ class RscAGM_SelectAnItem {
 #define GUI_GRID_H  (0.04)
 
 class RscPicture;
-class RscStructuredText;
 class RscInteractionIcon: RscPicture {
   x = 19.25 * GUI_GRID_W + GUI_GRID_X;
   y = 15.75 * GUI_GRID_H + GUI_GRID_Y;
