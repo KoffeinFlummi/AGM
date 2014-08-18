@@ -83,7 +83,7 @@ if (_temperature > THRESHOLD_1) then {
 // jamming
 
 _chance = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Jamming_Reliability");
-_chance = _chance * (1 + 9 * (_temperature / MAX_TEMPERATURE) ^ 3);
+_chance = _chance * (10 * (_temperature / MAX_TEMPERATURE) ^ 3);
 
 if (!isNil "AGM_Debug") then {
 	if (AGM_Debug == "Jamming") then {
