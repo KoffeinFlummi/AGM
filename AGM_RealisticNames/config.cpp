@@ -1040,55 +1040,55 @@ class CfgMagazines {
   class ATMine_Range_Mag;
   class CA_Magazine;
   class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
-    displayName = "M4A1 SLAM";
+    displayName = "$STR_AGM_RealisticNames_SLAM_Name";
   };
   class ClaymoreDirectionalMine_Remote_Mag: CA_Magazine {
-    displayName = "M18A1 Claymore";
+    displayName = "$STR_AGM_RealisticNames_Claymore_Name";
   };
   class SatchelCharge_Remote_Mag: CA_Magazine {
-    displayName = "M183 Demolition Charge Assembly";
+    displayName = "$STR_AGM_RealisticNames_SatchelCharge_Name";
   };
   class DemoCharge_Remote_Mag: SatchelCharge_Remote_Mag {
-    displayName = "M112 Demolition Block";
+    displayName = "$STR_AGM_RealisticNames_DemoCharge_Name";
   };
   class HandGrenade: CA_Magazine {
-    displayName = "M67 Fragmentation Grenade";
+    displayName = "$STR_AGM_RealisticNames_HandGrenade_Name";
   };
   class SmokeShell: HandGrenade {
-    displayName = "M83 Smoke Grenade (White)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShell_Name";
   };
   class SmokeShellBlue: SmokeShell {
-    displayName = "M18 Smoke Grenade (Blue)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellBlue_Name";
   };
   class SmokeShellGreen: SmokeShell {
-    displayName = "M18 Smoke Grenade (Green)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellGreen_Name";
   };
   class SmokeShellOrange: SmokeShell {
-    displayName = "M18 Smoke Grenade (Orange)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellOrange_Name";
   };
   class SmokeShellPurple: SmokeShell {
-    displayName = "M18 Smoke Grenade (Purple)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellPurple_Name";
   };
   class SmokeShellRed: SmokeShell {
-    displayName = "M18 Smoke Grenade (Red)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellRed_Name";
   };
   class SmokeShellYellow: SmokeShell {
-    displayName = "M18 Smoke Grenade (Yellow)";
+    displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
   };
   // http://en.wikipedia.org/wiki/M15_mine
   class ATMine_Range_Mag: CA_Magazine {
-    displayName = "M15 Anti-Tank Mine";
+    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
   };
   // http://en.wikipedia.org/wiki/VS-50_mine
   class APERSMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "VS-50 Anti-Personnel Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
   };
   // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
   class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "M26 Anti-Personnel Bounding Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
   };
   // http://en.wikipedia.org/wiki/PMR-3_mine
   class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
-    displayName = "PMR-3 Anti-Personnel Tripwire Mine";
+    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
   };
 };
