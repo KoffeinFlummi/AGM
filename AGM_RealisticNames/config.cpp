@@ -493,26 +493,22 @@ class CfgWeapons {
     class srifle_DMR_01_F : DMR_01_base_F {
       displayName = "VS-121";
     };
-    
+
   //MANPADS
     class Launcher_Base_F;
-    class launch_RPG32_F: Launcher_Base_F
-    {
-		displayName = "RPG-32";
+    class launch_RPG32_F: Launcher_Base_F {
+      displayName = "RPG-32";
     };
-    class launch_Titan_base: Launcher_Base_F
-    {
-		scope = 0;
-		displayName = "Mini-Spike (AA)";
+    class launch_Titan_base: Launcher_Base_F {
+      displayName = "Mini-Spike (AA)";
     };
-    class launch_Titan_short_base: launch_Titan_base
-    {
-		displayName = "Mini-Spike (AT)";
+    class launch_Titan_short_base: launch_Titan_base {
+      displayName = "Mini-Spike (AT)";
     };
-    class launch_NLAW_F: Launcher_Base_F
-    {
-		displayName = "NLAW";
+    class launch_NLAW_F: Launcher_Base_F {
+      displayName = "NLAW";
     };
+
   // VEHICLE STUFF
     class gatling_20mm: CannonCore {
       class manual;
