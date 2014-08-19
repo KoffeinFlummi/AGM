@@ -21,8 +21,10 @@ class CfgFunctions {
       class cancelDrawing;
       class canUseMapTools;
       class canUseMapGPS;
+      class handleKeyDown;
       class handleMouseButton;
       class handleMouseMove;
+      class handleMouseZChanged;
       class isInsideMapTool;
       class openMapGps;
       class updateMapToolMarkers;
@@ -115,7 +117,7 @@ class CfgVehicles {
         };
         class AGM_MapGpsShow {
           displayName = "$STR_AGM_Map_MapGpsShow";
-          condition = "(call AGM_Map_fnc_canUseMapTools) && {!AGM_Map_mapGpsShow}";
+          condition = "(call AGM_Map_fnc_canUseMapGPS) && {!AGM_Map_mapGpsShow}";
           statement = "AGM_Map_mapGpsShow = true; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
@@ -123,7 +125,7 @@ class CfgVehicles {
         };
         class AGM_MapGpsHide {
           displayName = "$STR_AGM_Map_MapGpsHide";
-          condition = "(call AGM_Map_fnc_canUseMapTools) && AGM_Map_mapGpsShow";
+          condition = "(call AGM_Map_fnc_canUseMapGPS) && AGM_Map_mapGpsShow";
           statement = "AGM_Map_mapGpsShow = false; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
@@ -192,6 +194,7 @@ class RscActiveText;
 class RscPicture;
 class RscText;
 class RscObject;
+class RscButton;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -221,6 +224,72 @@ class RscDisplayMainMap {
         };
         class Separator1: RscPicture {
           x = "14.5 * ( ((safezoneW / safezoneH) min 1.2) / 40)";
+        };
+        class ColorBlack: RscButton {
+          idc = 36732;
+          x = "0 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.2,0.2,0.2,1};
+          colorBackgroundActive[] = {0,0,0,1};
+          colorFocused[] = {0,0,0,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorBlack""]";
+        };
+        class ColorRed: RscButton {
+          idc = 36733;
+          x = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.8,0.2,0.2,1};
+          colorBackgroundActive[] = {1,0,0,1};
+          colorFocused[] = {1,0,0,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorRed""]";
+        };
+        class ColorGreen: RscButton {
+          idc = 36734;
+          x = "0.6 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.2,0.8,0.2,1};
+          colorBackgroundActive[] = {0,1,0,1};
+          colorFocused[] = {0,1,0,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorGreen""]";
+        };
+        class ColorBlue: RscButton {
+          idc = 36735;
+          x = "0.9 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.2,0.2,0.8,1};
+          colorBackgroundActive[] = {0,0,1,1};
+          colorFocused[] = {0,0,1,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorBlue""]";
+        };
+        class ColorYellow: RscButton {
+          idc = 36736;
+          x = "1.2 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.8,0.8,0.2,1};
+          colorBackgroundActive[] = {1,1,0,1};
+          colorFocused[] = {1,1,0,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorYellow""]";
+        };
+        class ColorWhite: RscButton {
+          idc = 36737;
+          x = "1.5 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          y = "0.25 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          w = "0.3 * (((safezoneW / safezoneH) min 1.2) / 40)";
+          h = "1.00 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+          colorBackground[] = {0.8,0.8,0.8,1};
+          colorBackgroundActive[] = {1,1,1,1};
+          colorFocused[] = {1,1,1,1};
+          onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorWhite""]";
         };
       };
     };

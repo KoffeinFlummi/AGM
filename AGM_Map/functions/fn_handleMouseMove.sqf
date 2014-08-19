@@ -15,19 +15,27 @@ private ["_control", "_pos"];
 
 _control = _this select 0;
 _pos = [_this select 1, _this select 2];
-
 AGM_Map_mousePos = _control ctrlMapScreenToWorld _pos;
 AGM_Map_mousePos set [count AGM_Map_mousePos, 0];
+
+// If no map tool marker then exit
+if !("AGM_MapTools" in items player) exitWith {
+  // If was drawing, cancel
+  if (AGM_Map_drawing) then {
+    call AGM_Map_fnc_cancelDrawing;
+  };
+  false
+};
 
 // Handle drawing
 if (AGM_Map_drawing) exitWith {
   AGM_Map_tempLineMarker set [2, AGM_Map_mousePos];
   AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+  false
 };
 
 // Handle Map tools
-// If no map tool marker then exit
-if (isNil "AGM_Map_mapToolFixed") exitWith {};
+if (isNil "AGM_Map_mapToolFixed") exitWith {false};
 
 // Translation
 if (AGM_Map_dragging) exitWith {
