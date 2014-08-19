@@ -372,18 +372,18 @@ class CfgWeapons {
 
     class arifle_katiba_Base_F;
     class arifle_Katiba_F : arifle_katiba_Base_F {
-      displayName = "KT2002 Katiba";
+      displayName = "KH2002 Khaybar";
     };
     class arifle_Katiba_GL_F : arifle_katiba_Base_F {
-      displayName = "KT2002 Katiba KGL";
+      displayName = "KH2002 Khaybar KGL";
     };
     class arifle_Katiba_C_F : arifle_katiba_Base_F {
-      displayName = "KT2002C Katiba";
+      displayName = "KH2002C Khaybar";
     };
 
     class SDAR_base_F;
     class arifle_SDAR_F : SDAR_base_F {
-      displayName = "CFB SDAR";
+      displayName = "RFB SDAR";
     };
 
     class Tavor_base_F;
@@ -426,21 +426,21 @@ class CfgWeapons {
 
     class SMG_02_base_F;
     class SMG_02_F : SMG_02_base_F {
-      displayName = "Scorpion Evo 3A1";
+      displayName = "Scorpion Evo 3 A1";
     };
 
     class pdw2000_base_F;
     class hgun_pdw2000_F : pdw2000_base_F {
-      displayName = "CPW-CZ";
+      displayName = "CPW";
     };
 
     class Pistol_Base_F;
     class hgun_P07_F : Pistol_Base_F {
-      displayName = "P99G";
+      displayName = "P99";
     };
 
     class hgun_Rook40_F : Pistol_Base_F {
-      displayName = "MP-443G";
+      displayName = "MP-443";
     };
 
     class hgun_ACPC2_F : Pistol_Base_F {
@@ -461,7 +461,7 @@ class CfgWeapons {
 
     class Rifle_Long_Base_F;
     class LMG_Mk200_F : Rifle_Long_Base_F {
-      displayName = "Mk200 LMG";
+      displayName = "Stoner 99 LMG";
     };
 
     class LMG_Zafir_F: Rifle_Long_Base_F {
