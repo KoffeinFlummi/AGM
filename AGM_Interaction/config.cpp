@@ -22,19 +22,22 @@ class CfgFunctions {
       class applyButtons;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
+      class canLockDoor;
       class canTapShoulder;
       class canUnloadCaptiveFromVehicle;
       class drawNameTagIcon;
       class escortCaptive;
       class getCaptivityStatus;
+      class getDoor;
       class getDown;
       class getSelectedButton;
       class hideMenu;
-	  class hideMouseHint;
+      class hideMouseHint;
       class initialiseInteraction;
       class isInRange;
       class joinTeam;
       class loadCaptiveIntoVehicle;
+      class lockDoor;
       class module;
       class moveDown;
       class onButtonDown;
@@ -54,7 +57,7 @@ class CfgFunctions {
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
-	  class showMouseHint;
+      class showMouseHint;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
@@ -114,6 +117,24 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 1;
     alt = 0;
+  };
+  class lockDoor {
+    displayName = "$STR_AGM_Interaction_LockDoor";
+    condition = "[true] call AGM_Interaction_fnc_canLockDoor && {!AGM_Interaction_isOpeningDoor}";
+    statement = "[true] call AGM_Interaction_fnc_lockDoor";
+    key = 57;
+    shift = 0;
+    control = 0;
+    alt = 1;
+  };
+  class unlockDoor {
+    displayName = "$STR_AGM_Interaction_UnlockDoor";
+    condition = "[false] call AGM_Interaction_fnc_canLockDoor";
+    statement = "[false] call AGM_Interaction_fnc_lockDoor";
+    key = 57;
+    shift = 0;
+    control = 1;
+    alt = 1;
   };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
