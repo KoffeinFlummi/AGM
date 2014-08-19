@@ -1036,9 +1036,24 @@ class CfgMagazines {
 
 
   // EXPLOSIVES
-  // most of these can be found here: http://www.dtic.mil/dtic/tr/fulltext/u2/a567897.pdf
-  class ATMine_Range_Mag;
   class CA_Magazine;
+  // http://en.wikipedia.org/wiki/M15_mine
+  class ATMine_Range_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/VS-50_mine
+  class APERSMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
+  };
+  // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
+  class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/PMR-3_mine
+  class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
+  };
+  // the following ones can be found here: http://www.dtic.mil/dtic/tr/fulltext/u2/a567897.pdf
   class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
     displayName = "$STR_AGM_RealisticNames_SLAM_Name";
   };
@@ -1074,21 +1089,5 @@ class CfgMagazines {
   };
   class SmokeShellYellow: SmokeShell {
     displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
-  };
-  // http://en.wikipedia.org/wiki/M15_mine
-  class ATMine_Range_Mag: CA_Magazine {
-    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
-  };
-  // http://en.wikipedia.org/wiki/VS-50_mine
-  class APERSMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
-  };
-  // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
-  class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
-    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
-  };
-  // http://en.wikipedia.org/wiki/PMR-3_mine
-  class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
-    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
   };
 };

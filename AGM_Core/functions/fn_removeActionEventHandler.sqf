@@ -12,12 +12,13 @@
  * None.
  */
 
-private ["_unit", "_action", "_id", "_name", "_actionsVar", "_actionID", "_actions", "_count"];
+private ["_unit", "_action", "_id", "_name", "_actionsVar", "_actionID", "_actions", "_currentID", "_actionIDs", "_count"];
 
 _unit = _this select 0;
 _action = _this select 1;
 _id = _this select 2;
-if (_id == -1) exitWith{};
+
+if (_id == -1) exitWith {};
 
 _name = format ["AGM_Action_%1", _action];
 
@@ -26,14 +27,25 @@ _actionsVar = _unit getVariable [_name, [-1, []]];		// AGM_Action_DefaultAction 
 _actionID = _actionsVar select 0;
 _actions = _actionsVar select 1;
 
-if (_id >= count _actions) exitWith {};
+_currentID = _actions select 0;
+_actionIDs = _actions select 1;
+_actions = _actions select 2;
+
+_id = _actionIDs find _id;
+
+if (_id == -1) exitWith {};
 
 _actions set [_id, [{false}, {}]];
 
-_count = 0;
-if ({_count = _count + 1; _x isEqualTo [{false}, {}]} count _actions == _count) then {
+_actionIDs set [_id, -1];
+_actionIDs = _actionIDs - [-1];
+
+_actions set [_id, []];
+_actions = _actions - [[]];
+
+if (count _actions == 0) then {
 	_unit removeAction _actionID;
 	_actionID = -1;
 };
 
-_unit setVariable [_name, [_actionID, _actions], false];
+_unit setVariable [_name, [_actionID, [_currentID, _actionIDs, _actions]], false];

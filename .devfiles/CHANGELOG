@@ -1,3 +1,5 @@
+- Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 0.75]".
+
 # v0.93
 
 - Added: New Explosives system including different trigger types

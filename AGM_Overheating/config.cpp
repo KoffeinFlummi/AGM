@@ -94,7 +94,7 @@ class CfgVehicles {
         statement = "[currentWeapon player] call AGM_Overheating_fnc_CheckTemperature";
         showDisabled = 0;
         priority = 3.1;
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa";
+		icon = "AGM_Overheating\UI\temp_ca.paa";
       };
     };
   };
@@ -224,6 +224,7 @@ class CfgWeapons {
   };
 
   class arifle_MX_Base_F : Rifle_Base_F {
+    AGM_clearJamAction = "GestureReloadMX";   // Custom jam clearing action. Default uses reload animation
     AGM_Jamming_Reliability = AGM_RELIABILITY_MX;
     AGM_Overheating_Increment = 0.012;
     AGM_Overheating_Cooldown = 0.002;
@@ -231,6 +232,7 @@ class CfgWeapons {
   };
 
   class arifle_MX_SW_F : arifle_MX_Base_F {
+    AGM_clearJamAction = "";                 // Custom jam clearing action. Use empty string to undefine.
     AGM_Jamming_Reliability = AGM_RELIABILITY_MX_SW;
     AGM_Overheating_allowSwapBarrel = 1;  // This weapon can use spare barrels.
     AGM_Overheating_Increment = 0.01;

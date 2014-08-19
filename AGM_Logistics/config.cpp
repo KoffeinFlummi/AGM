@@ -789,6 +789,7 @@ class CfgVehicles {
 		accuracy = 0.2;
 		vehicleClass = "AGM_Repair_Items";
 		destrType = "DesturctNo";
+		picture = "\AGM_Logistics\ui\tire_ca.paa";
 
 		class AGM_Actions {
 			MACRO_DRAGABLE
