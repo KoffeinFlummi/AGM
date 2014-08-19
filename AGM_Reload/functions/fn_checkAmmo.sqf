@@ -9,6 +9,8 @@ _this spawn {
 	_magazine = _this select 3;
 	_skipDelay = _this select 4;
 
+	if (typeName _muzzle != "STRING") then {_muzzle = _weapon};
+
 	_showNumber = false;
 	_ammo = 0;
 	_maxRounds = 1;
@@ -32,11 +34,11 @@ _this spawn {
 	} else {
 		_showNumber = true;
 
-		if (_magazine != "") then {
-			_count = {_x == _magazine} count (magazines _vehicle + [_magazine]);
+		_count = if (_magazine != "") then {
+			{_x == _magazine} count (magazines _vehicle + [_magazine])
 		} else {
-			_count = {_x in getArray (configFile >> "CfgWeapons" >> _weapon >> _muzzle >> "Magazines")} count magazines _vehicle;
-		}
+			{_x in getArray (configFile >> "CfgWeapons" >> _weapon >> _muzzle >> "Magazines")} count magazines _vehicle
+		};
 	};
 
 	if !(_skipDelay) then {
