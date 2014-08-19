@@ -145,6 +145,15 @@ class CfgAmmo {
     class CamShakeFire {};
     class CamShakePlayerFire {};
   };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy: Gatling_30mm_HE_Plane_CAS_01_F {
+    simulation = "shotSubmunitions";
+    triggerTime = 0;
+    submunitionAmmo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Sub";
+    submunitionConeAngle = 0;
+    submunitionCount = 3;
+  };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Sub: Gatling_30mm_HE_Plane_CAS_01_F {
+  };
 
   class Cannon_30mm_HE_Plane_CAS_02_F: Gatling_30mm_HE_Plane_CAS_01_F {
     model = "\A3\Weapons_f\Data\bullettracer\tracer_green.p3d";
@@ -402,8 +411,9 @@ class CfgMagazines {
   class 1000Rnd_Gatling_30mm_Plane_CAS_01_F: VehicleMagazine {
     scope = 2;
     displayNameShort = "";
-    ammo = "Gatling_30mm_HE_Plane_CAS_01_F";
+    ammo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy";
     count = 1170;
+    //count = 390;
     //initSpeed = 3852;
     maxLeadSpeed = 300;
     nameSound = "cannon";
@@ -608,14 +618,17 @@ class CfgWeapons {
     reloadTime = 0.0154;
     class LowROF: Mode_FullAuto {
       autoFire = 0;
-      burst = 65;
-      reloadTime = 0.0154;
+      //burst = 65;
+      burst = 22;
+      //reloadTime = 0.0154;
+      reloadTime = 0.0462;
       //sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
       sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,{25704,32159}};
       weaponSoundEffect = "DefaultRifle";
       dispersion = 0.005;
       soundContinuous = 1;
       textureType = "burst";
+      multiplier = 3;
     };
     class close: LowROF{};
     class near: close{};
