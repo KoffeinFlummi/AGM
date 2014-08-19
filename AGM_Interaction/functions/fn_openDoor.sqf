@@ -27,7 +27,7 @@ _info spawn {
 	_phase = _house animationPhase _animation0;
 	_position = getPosASL player;
 
-	_time = time + 1;
+	_time = time + 0.2;
 	_usedMouseWheel = false;
 	waitUntil {
 		if (inputAction "PrevAction" > 0 || {inputAction "NextAction" > 0}) then {
