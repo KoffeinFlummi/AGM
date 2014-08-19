@@ -93,28 +93,10 @@ if (_this select 2) then {
 	// Update Buttons
 	if (_subMenu) exitWith {};
 
-	0 spawn {
-		disableSerialization;
-		_ctrlTooltip = (uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull]) displayCtrl 4;
-
-		_selectedButton = -1;
-		waitUntil {
-			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
-				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
-				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
-					(AGM_Interaction_Buttons select _selectedButton) select 6
-				};
-				_ctrlTooltip ctrlSetText _tooltip;
-				_ctrlTooltip ctrlShow (_tooltip != "");
-			};
-			sleep 0.01;
-			isNull (findDisplay 1713999)
-		};
-	};
-
-	0 spawn {
+	_updateLoop = 0 spawn {
 		disableSerialization;
 		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
+		_ctrlTooltip = _dlgMenu displayCtrl 4;
 
 		waitUntil {
 			{
@@ -123,10 +105,26 @@ if (_this select 2) then {
 
 				_condition = _x select 2;
 				_conditionShow = _x select 7;
-				//_conditionTooltip = _x select 8;
+				_distance = _x select 9;
 
-				_enable = (AGM_Interaction_MenuType % 2 == 1 || {player distanceSqr AGM_Interaction_Target < 16}) && _condition && _conditionShow;
+				_enable = (_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && _condition && _conditionShow;
 				if (isNil "_enable") then {_enable = false};
+
+				// apply conditional tooltips
+				if (_forEachIndex == call AGM_Interaction_fnc_getSelectedButton) then {
+					_tooltip = _x select 6;
+					_conditionTooltip = _x select 8;
+
+					_count = count _conditionTooltip;
+					for "_index" from 0 to (_count - 1) step 2 do {
+						if !(call (_conditionTooltip select _index)) then {
+							_tooltip = _tooltip + (_conditionTooltip select _index + 1);
+							_enable = false;
+						};
+					};
+					_ctrlTooltip ctrlSetText _tooltip;
+					_ctrlTooltip ctrlShow (_tooltip != "");
+				};
 
 				_ctrlText ctrlEnable _enable;
 				_ctrlIcon ctrlEnable _enable;
@@ -135,5 +133,39 @@ if (_this select 2) then {
 			sleep 0.5;
 			isNull (findDisplay 1713999)
 		};
+	};
+
+	_updateLoop spawn {
+		disableSerialization;
+		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
+		_ctrlTooltip = _dlgMenu displayCtrl 4;
+
+		_selectedButton = -1;
+		waitUntil {
+			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
+				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
+				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
+					_tooltip = (AGM_Interaction_Buttons select _selectedButton) select 6;
+
+					// apply conditional tooltips
+					_conditionTooltip = (AGM_Interaction_Buttons select _selectedButton) select 8;
+
+					_count = count _conditionTooltip;
+					for "_index" from 0 to (_count - 1) step 2 do {
+						if !(call (_conditionTooltip select _index)) then {
+							_tooltip = _tooltip + (_conditionTooltip select _index + 1);
+						};
+					};
+					_tooltip
+				};
+
+				_ctrlTooltip ctrlSetText _tooltip;
+				_ctrlTooltip ctrlShow (_tooltip != "");
+			};
+			sleep 0.01;
+			isNull (findDisplay 1713999)
+		};
+
+		terminate _this;
 	};
 };
