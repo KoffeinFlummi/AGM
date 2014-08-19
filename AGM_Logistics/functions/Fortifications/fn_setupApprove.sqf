@@ -5,7 +5,7 @@ if (AGM_Fortifications_pfeh_running) then {
 	AGM_Fortifications_pfeh_running = false;
 };
 
-private ["_mag", "_setup"];
+private "_setup";
 
 _setup = AGM_Fortifications_Setup;
 
@@ -20,11 +20,7 @@ call AGM_Interaction_fnc_hideMouseHint;
 _setup spawn {
 	_dir = getDir _this;
 
-	if (_dir > 180) then {
-		_dir = _dir - 180;
-	} else {
-		_dir = 180 + _dir;
-	};
+	_dir = if (_dir > 180) then {_dir - 180} else {180 + _dir};
 
 	player setVariable ["AGM_PlantingExplosive", true];
 
@@ -32,9 +28,12 @@ _setup spawn {
 
 	sleep 5;
 
+	deleteVehicle AGM_Fortifications_crate;
+
 	player setVariable ["AGM_PlantingExplosive", false];
 
 	_this enableSimulationGlobal true;
+	//_this setDamage 0;
 
 	/*[_setup] spawn {
 		sleep 10;

@@ -9,6 +9,8 @@ if (!isNull (AGM_Fortifications_Setup)) then {
 	deleteVehicle AGM_Fortifications_Setup;
 };
 
+[objNull, AGM_Fortifications_crate] call AGM_Core_fnc_claim;
+
 AGM_Fortifications_Setup = objNull;
 
 if (isNil {AGM_Fortifications_placer}) then {

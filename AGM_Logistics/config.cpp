@@ -151,10 +151,12 @@ class CfgFunctions {
 	};
 	class AGM_Fortifications {
 		class AGM_Fortifications {
-			file = "\AGM_Logistics\functions\Fortifications";	
+			file = "\AGM_Logistics\functions\Fortifications";
+			class canSetupBarrier;	
 			class setupApprove;
 			class setupBarrier;
 			class setupCancel;
+			class openSelectBarrierlUI;
 		};
 	};
 };
@@ -820,11 +822,31 @@ class CfgVehicles {
 		class AGM_Actions {
 			MACRO_DRAGABLE
 			MACRO_LOADABLE
+			class AGM_PlaceFortification {
+				displayName = "Place Fortification";
+				distance = 4;
+				condition = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_canSetupBarrier";
+				statement = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_openSelectBarrierlUI";
+				showDisabled = 0;
+				priority = 0.5;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+			};
 		};
 	};
 	class AGM_RazorWire_Crate: AGM_SandbagBarrier_Crate {
 		author = "commy2";
 		displayName = "$STR_AGM_Fortifications_RazorWireCrate";
+		class AGM_Actions: AGM_Actions {
+			class AGM_PlaceFortification {
+				displayName = "Place Fortification";
+				distance = 4;
+				condition = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_canSetupBarrier";
+				statement = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_setupBarrier";
+				showDisabled = 0;
+				priority = 0.5;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+			};
+		};
 	};
 
 	// Misc box content

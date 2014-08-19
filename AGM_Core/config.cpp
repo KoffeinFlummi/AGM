@@ -225,6 +225,7 @@ class CfgFunctions {
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
+      class owned;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
