@@ -23,14 +23,30 @@
       <Hungarian>Interakció (saját) </Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_OpenDoor">
-      <English>Open / Close Doors</English>
-      <German>Türen öffnen / schließen</German>
+      <English>Open / Close Door</English>
+      <German>Tür öffnen / schließen</German>
       <Spanish>Abrir / Cerrar Puerta</Spanish>
       <Polish>Otwórz / Zamknij drzwi</Polish>
       <Czech>Otevřít / Zavřít dveře</Czech>
       <French>Ouvrir / Fermer Portes</French>
       <Russian>Открыть / Закрыть двери</Russian>
       <Hungarian>Ajtó nyitás / zárás</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_LockDoor">
+      <English>Lock Door</English>
+      <German>Tür sperren</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_UnlockDoor">
+      <English>Unlock Door</English>
+      <German>Tür entsperren</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_LockedDoor">
+      <English>Locked Door</English>
+      <German>Tür gesperrt</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_UnlockedDoor">
+      <English>Unlocked Door</English>
+      <German>Tür entsperrt</German>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
