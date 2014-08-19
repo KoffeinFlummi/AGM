@@ -7,9 +7,9 @@
  * 0: Unit (Object)
  * 1: Animation (String)
  * 2: Priority of the animation. (Number, optional default: 0)
- * 		Mode 0: execute on this machine only
- * 		Mode 1: execute on server
- * 		Mode 2: execute on all clients + server
+ * 		0: PlayMove
+ * 		1: PlayMoveNow
+ * 		2: SwitchMove (no transitional animation, doesn't overwrite priority 1)
  * 
  * Return value:
  * Nothing
@@ -25,7 +25,7 @@ if (isNil "_priority") then {
 	_priority = 0;
 };
 
-// down overwrite more important animations
+// don't overwrite more important animations
 if (_unit getVariable ["AGM_Unconscious", false]) exitWith {};
 
 switch (_priority) do {
@@ -33,7 +33,7 @@ switch (_priority) do {
 		if (_unit == vehicle _unit) then {
 			[_unit, format ["{_this playMove '%1'}", _animation], _unit] call AGM_Core_fnc_execRemoteFnc;
 		} else {
-			// execute on all machines. PlayMove and PlayMoveNow are bugged: They have no global effects when executed on remote machines inside vehicles
+			// Execute on all machines. PlayMove and PlayMoveNow are bugged: They have no global effects when executed on remote machines inside vehicles.
 			[_unit, format ["{_this playMove '%1'}", _animation]] call AGM_Core_fnc_execRemoteFnc;
 		};
 	};
@@ -41,11 +41,12 @@ switch (_priority) do {
 		if (_unit == vehicle _unit) then {
 			[_unit, format ["{_this playMoveNow '%1'}", _animation], _unit] call AGM_Core_fnc_execRemoteFnc;
 		} else {
-			// execute on all machines. PlayMove and PlayMoveNow are bugged: They have no global effects when executed on remote machines inside vehicles
+			// Execute on all machines. PlayMove and PlayMoveNow are bugged: They have no global effects when executed on remote machines inside vehicles.
 			[_unit, format ["{_this playMoveNow '%1'}", _animation]] call AGM_Core_fnc_execRemoteFnc;
 		};
 	};
 	case 2 : {
+		// Execute on all machines. SwitchMove has local effects.
 		[_unit, format ["{_this switchMove '%1'}", _animation]] call AGM_Core_fnc_execRemoteFnc;
 	};
 	default {};
