@@ -149,8 +149,7 @@ class CfgAmmo {
     simulation = "shotSubmunitions";
     triggerTime = 0;
     submunitionAmmo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Sub";
-    submunitionConeAngle = 0;
-    submunitionCount = 3;
+    submunitionConeType[] = {"custom", {{0,0}, {0,0}}, {0,0}} };
   };
   class AGM_Gatling_30mm_HE_Plane_CAS_01_Sub: Gatling_30mm_HE_Plane_CAS_01_F {
   };
