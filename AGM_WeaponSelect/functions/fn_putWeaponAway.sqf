@@ -15,7 +15,7 @@ private "_vehicle";
 _vehicle = vehicle player;
 
 if (currentWeapon player != "" && {currentWeapon player == primaryWeapon player} && {weaponLowered player} && {stance player == "STAND"}) then {
-	player playMove "amovpercmstpsraswrfldnon";
+	[player, "amovpercmstpsraswrfldnon"] call AGM_Core_fnc_doAnimation;
 };
 
 player action ["SwitchWeapon", _vehicle, _vehicle, 99];

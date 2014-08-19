@@ -192,6 +192,7 @@ class CfgFunctions {
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
+      class doAnimation;
       class execRemoteFnc;
       class filter;
       class findStringInString;

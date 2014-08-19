@@ -26,6 +26,6 @@ try {
 	};
 } catch {
 	if (stance _unit != "PRONE") then {
-		[[_unit, _exception], "{(_this select 0) playMove (_this select 1)}", _unit] call AGM_Core_fnc_execRemoteFnc;
+		[_unit, _exception] call AGM_Core_fnc_doAnimation;
 	};
 };

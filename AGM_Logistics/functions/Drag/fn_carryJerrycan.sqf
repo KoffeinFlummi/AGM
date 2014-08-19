@@ -14,11 +14,11 @@ _this spawn {
 	[_unit, _target, true] call AGM_Core_fnc_claim;
 
 	if (currentWeapon _unit != "" && {currentWeapon _unit == primaryWeapon _unit} && {weaponLowered _unit} && {stance _unit == "STAND"}) then {
-		_unit playMove "amovpercmstpsraswrfldnon";
+		[_unit, "amovpercmstpsraswrfldnon"] call AGM_Core_fnc_doAnimation;
 	};
 	_unit action ["SwitchWeapon", _unit, _unit, 99];
 
-	_unit playMove ANIM_CARRY;
+	[_unit, ANIM_CARRY] call AGM_Core_fnc_doAnimation;
 	waitUntil {animationState _unit == ANIM_CARRY};
 
 	// exit here if the player releases the jerry can before the animation is finished

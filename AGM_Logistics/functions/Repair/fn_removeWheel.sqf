@@ -11,7 +11,7 @@ _time = 10;
 _time = _time + 10 * (_vehicle getHitPointDamage _part);
 if !(_isEngineer) then {_time = _time + 10};
 
-player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+[player, "AinvPknlMstpSnonWnonDr_medic5", 0] call AGM_Core_fnc_doAnimation;
 
 _name = [_part] call AGM_Repair_fnc_getHitPointName;
 _string = format [localize "STR_AGM_Repair_RemovingWheel", _name];
