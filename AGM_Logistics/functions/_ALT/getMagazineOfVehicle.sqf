@@ -8,8 +8,8 @@ _magazine = _this select 1;
 _magazines1 = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "magazines");
 _magazines2 = getArray (configFile >> "CfgMagazines" >> _magazine >> "AGM_Magazines");
 
-_magazines1 set [count _magazines1, ""];
-_magazines2 set [count _magazines2, ""];
+_magazines1 pushBack "";
+_magazines2 pushBack "";
 
 _index = 0;
 while {

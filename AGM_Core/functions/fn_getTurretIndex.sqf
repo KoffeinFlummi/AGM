@@ -19,7 +19,7 @@ _turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurrets;
 
 _units = [];
 {
-	_units set [count _units, _vehicle turretUnit _x];
+	_units pushBack (_vehicle turretUnit _x);
 } forEach _turrets;
 
 _index = _units find _unit;

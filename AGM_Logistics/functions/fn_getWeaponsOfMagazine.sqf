@@ -15,6 +15,6 @@ _weaponMagazines = [];
 
 _magazineWeapons = [];
 {
-	if (_magazine in _x) then {_magazineWeapons set [count _magazineWeapons, _weapons select _forEachIndex]};
+	if (_magazine in _x) then {_magazineWeapons pushBack (_weapons select _forEachIndex);};
 } forEach _weaponMagazines;
 _magazineWeapons

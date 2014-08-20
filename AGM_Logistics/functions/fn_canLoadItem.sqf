@@ -28,7 +28,7 @@ _nearestVehicles = [
 _distances = [];
 {
 	if (typeName _x == "OBJECT") then {
-		_distances set [count _distances, player distance _x];
+		_distances pushBack (player distance _x);
 	};
 } count _nearestVehicles;
 
