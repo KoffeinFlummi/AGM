@@ -17,10 +17,10 @@ _weapon = _this select 0;
 _modes = [];
 {
 	if (getNumber (configFile >> "CfgWeapons" >> _weapon >> _x >> "showToPlayer") == 1) then {
-		_modes set [count _modes, _x];
+		_modes pushBack _x;
 	};
 	if (_x == "this") then {
-		_modes set [count _modes, _weapon];
+		_modes pushBack _weapon;
 	};
 } forEach getArray (configfile >> "CfgWeapons" >> _weapon >> "modes");
 _modes

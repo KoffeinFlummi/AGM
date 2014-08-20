@@ -28,6 +28,6 @@ _config = ConfigFile >> "CfgMagazines" >> _mag >> "AGM_Triggers" >> "Command";
 
 _clacker = _unit getVariable ["AGM_Clacker", []];
 AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
-_clacker set [count _clacker, [_explosive, getNumber(_config >> "FuseTime"), "E: " + str(AGM_Explosives_PlacedCount),_mag]];
+_clacker spushBack [_explosive, getNumber(_config >> "FuseTime"), "E: " + str(AGM_Explosives_PlacedCount),_mag];
 _unit setVariable ["AGM_Clacker", _clacker, true];
 _unit sideChat format [localize "STR_AGM_Explosives_DetonateCode", AGM_Explosives_PlacedCount];

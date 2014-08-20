@@ -31,7 +31,7 @@ _actions = [localize "STR_AGM_Attach_AttachDetach", localize "STR_AGM_Attach_Att
 				_x
 			] call AGM_Interaction_fnc_AddSelectableItem;
 		};
-		_listed set [count _listed, _x];
+		_listed pushBack _x;
 	};
 } count _attachables;
 _attachables = items _unit;
@@ -46,7 +46,7 @@ _attachables = items _unit;
 				_x
 			] call AGM_Interaction_fnc_AddSelectableItem;
 		};
-		_listed set [count _listed, _x];
+		_listed pushBack _x;
 	};
 } count _attachables;
 
