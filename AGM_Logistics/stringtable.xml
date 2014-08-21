@@ -26,6 +26,10 @@
       <Polish>Ładowanie ...</Polish>
       <Czech>Naložuji ...</Czech>
     </Key>
+    <Key ID="STR_AGM_Logistics_UnloadingItem">
+      <English>Unloading ...</English>
+      <German>Lade ab ...</German>
+    </Key>
     <Key ID="STR_AGM_Logistics_LoadedItem">
       <English>%1 loaded into %2</English>
       <Spanish>%1 cargado en %2</Spanish>
@@ -33,6 +37,10 @@
       <German>%1 in %2 verladen</German>
       <Polish>%1 załadowano do %2</Polish>
       <Czech>%1 naloženo do %2</Czech>
+    </Key>
+    <Key ID="STR_AGM_Logistics_UnloadedItem">
+      <English>Unloaded %1 from %2</English>
+      <Spanish>%1 von %2 abgeladen</Spanish>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadMenu">
       <English>Unload Menu</English>
