@@ -812,4 +812,43 @@
       <Czech>Schodnit letecky bednu</Czech>
     </Key>
   </Package>
+  <Package name="Fortifications">
+    <Key ID="STR_AGM_Fortifications_SandbagBarrierCrate">
+      <English>Sandbag Barrier Crate</English>
+      <German>Sandsack-Kiste</German>
+    </Key>
+    <Key ID="STR_AGM_Fortifications_RazorWireCrate">
+      <English>Razor Wire Crate</English>
+      <German>Stacheldraht-Kiste</German>
+    </Key>
+    <Key ID="STR_AGM_Fortifications_SandbagBarrier">
+      <English>Sandbag Barrier</English>
+      <German>Sandsackbarriere</German>
+    </Key>
+    <Key ID="STR_AGM_Fortifications_RazorWire">
+      <English>Razor Wire</English>
+      <German>Stacheldraht</German>
+    </Key>
+
+    <Key ID="STR_AGM_Fortifications_PlaceAction">
+      <English>Place</English>
+      <German>Platzieren</German>
+      <Spanish>Colocar</Spanish>
+      <Polish>Umieść</Polish>
+      <French>Placer</French>
+      <Czech>Položit</Czech>
+    </Key>
+    <Key ID="STR_AGM_Fortifications_CancelAction">
+      <English>Cancel</English>
+      <German>Abbrechen</German>
+      <Spanish>Cancelar</Spanish>
+      <Polish>Anuluj</Polish>
+      <French>Annuler</French>
+      <Czech>Zrušit</Czech>
+    </Key>
+    <Key ID="STR_AGM_Fortifications_ScrollAction">
+      <English>Rotate</English>
+      <German>Drehen</German>
+    </Key>
+  </Package>
 </Project>

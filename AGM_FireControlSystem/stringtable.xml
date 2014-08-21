@@ -24,7 +24,7 @@
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeUp">
       <English>Adjust FCS Range (Up)</English>
-      <German>Feuerleitsystemsentfernung erhöhen</German>
+      <German>Entfernung des FLS erhöhen</German>
       <Polish>Zwiększ zasięg FCS</Polish>
       <Spanish>Ajustar FCS (arriba)</Spanish>
       <Czech>Nastavit FCS Náměr (nahoru)</Czech>
@@ -32,7 +32,7 @@
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeDown">
       <English>Adjust FCS Range (Down)</English>
-      <German>Feuerleitsystemsentfernung verringern</German>
+      <German>Entfernung des FLS verringern</German>
       <Polish>Zmniejsz zasięg FCS</Polish>
       <Spanish>Ajustar FCS(abajo)</Spanish>
       <Czech>Nastavit FCS Náměr (dolů)</Czech>

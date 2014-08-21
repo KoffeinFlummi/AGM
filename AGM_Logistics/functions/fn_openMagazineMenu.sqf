@@ -30,7 +30,7 @@ _actions = [localize "STR_AGM_Logistics_MagazineMenu", localize "STR_AGM_Logisti
 			getText (_class >> "picture"),
 			_x
 		] call AGM_Interaction_fnc_AddSelectableItem;
-		_listed set [count _listed, _x];
+		_listed pushBack _x;
 	};
 } count _magazines;
 

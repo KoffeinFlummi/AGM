@@ -7,7 +7,7 @@ _files = [];
 	_addon = toString _addon;
 
 	if (_addon == "AGM_") then {
-		_files set [count _files, _x];
+		_files pushBack _x;
 	};
 } forEach activatedAddons;
 
@@ -71,17 +71,17 @@ if (!isServer) then {
 
 			_index = _files find _x;
 			if (_index == -1) then {
-				_missingAddons set [count _missingAddons, _x];
+				_missingAddons pushBack _x;
 			} else {
 
 				_clientVersion = _versions select _index;
 
 				if (_clientVersion < _serverVersion) then {
-					_oldVersionsClient set [count _oldVersionsClient, [_x, _clientVersion, _serverVersion]];
+					_oldVersionsClient pushBack [_x, _clientVersion, _serverVersion];
 				};
 
 				if (_clientVersion > _serverVersion) then {
-					_oldVersionsServer set [count _oldVersionsServer, [_x, _clientVersion, _serverVersion]];
+					_oldVersionsServer pushBack [_x, _clientVersion, _serverVersion];
 				};
 			};
 		} forEach _serverFiles;
@@ -91,7 +91,7 @@ if (!isServer) then {
 		{
 			_index = _serverFiles find _x;
 			if (_index == -1) then {
-				_missingAddonsServer set [count _missingAddonsServer, _x];
+				_missingAddonsServer pushBack _x;
 			}
 		} forEach _files;
 

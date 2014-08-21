@@ -18,7 +18,6 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-/*
 class CfgVoice {
   class Base;
   class ENG: Base {
@@ -34,4 +33,3 @@ class CfgVoice {
     protocol = "";
   };
 };
-*/

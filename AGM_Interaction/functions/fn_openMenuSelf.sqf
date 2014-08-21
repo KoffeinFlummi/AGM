@@ -90,8 +90,8 @@ _fnc_GetActions = {
 						};
 
 						if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-							_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
-							_patches set [count _patches, _configName];
+							_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance];
+							_patches pushBack _configName;
 						};
 
 						_indexCache = count _cacheConfig;
@@ -111,8 +111,8 @@ _fnc_GetActions = {
 						};
 
 						if (!(_configName in _patches) && {_showDisabled || {call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
-							_actions set [count _actions, _cachedAction];
-							_patches set [count _patches, _configName];
+							_actions pushBack _cachedAction;
+							_patches pushBack _configName;
 						};
 					};
 				};
@@ -147,7 +147,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_conditionsTooltip = [];
 
 	if (_showDisabled || {call _condition}) then {
-		_actions set [count _actions, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
+		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance];
 	};
 };
 

@@ -31,7 +31,7 @@ _fnc_addTurret = {
 		_config2 = _config select _index;
 
 		if (isClass _config2) then {
-			_turrets set [count _turrets, _path2];
+			_turrets pushBack _path2;
 			[_config2, _path2] call _fnc_addTurret;
 		} else {
 			_offset = _offset + 1;

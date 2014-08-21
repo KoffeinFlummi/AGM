@@ -1,6 +1,6 @@
 class CfgPatches {
   class AGM_Logistics {
-    units[] = {"AGM_JerryCan", "AGM_SpareTrack", "AGM_SpareWheel"};
+    units[] = {"AGM_JerryCan", "AGM_SpareTrack", "AGM_SpareWheel", "AGM_SandbagBarrier_Crate", "AGM_RazorWire_Crate"};
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
@@ -147,6 +147,16 @@ class CfgFunctions {
 		class AGM_Paradrop {
 			file = "\AGM_Logistics\functions\Paradrop";	
 			class paradrop;
+		};
+	};
+	class AGM_Fortifications {
+		class AGM_Fortifications {
+			file = "\AGM_Logistics\functions\Fortifications";
+			class canSetupBarrier;	
+			class setupApprove;
+			class setupBarrier;
+			class setupCancel;
+			class openSelectBarrierlUI;
 		};
 	};
 };
@@ -369,6 +379,7 @@ class CfgVehicles {
 	};
 	
 	class Truck_F: Car_F {
+		AGM_Vehicle_Cargo = 8;
 		KEY_WHEEL_6X6_REAR
 		class HitPoints: HitPoints {	//	@todo
 			class HitLFWheel;
@@ -794,6 +805,47 @@ class CfgVehicles {
 		class AGM_Actions {
 			MACRO_DRAGABLE
 			MACRO_LOADABLE
+		};
+	};
+
+	class Land_WoodenBox_F;
+	class AGM_SandbagBarrier_Crate: Land_WoodenBox_F {
+		author = "commy2";
+		AGM_Size = 1; // 1 = small, 2 = large
+		AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
+		icon = "iconObject_circle";
+		displayName = "$STR_AGM_Fortifications_SandbagBarrierCrate";
+		mapSize = 0.7;
+		accuracy = 0.2;
+		vehicleClass = "AGM_Repair_Items";
+		destrType = "DesturctNo";
+		class AGM_Actions {
+			MACRO_DRAGABLE
+			MACRO_LOADABLE
+			class AGM_PlaceFortification {
+				displayName = "Place Fortification";
+				distance = 4;
+				condition = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_canSetupBarrier";
+				statement = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_openSelectBarrierlUI";
+				showDisabled = 0;
+				priority = 0.5;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+			};
+		};
+	};
+	class AGM_RazorWire_Crate: AGM_SandbagBarrier_Crate {
+		author = "commy2";
+		displayName = "$STR_AGM_Fortifications_RazorWireCrate";
+		class AGM_Actions: AGM_Actions {
+			class AGM_PlaceFortification {
+				displayName = "Place Fortification";
+				distance = 4;
+				condition = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_canSetupBarrier";
+				statement = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_setupBarrier";
+				showDisabled = 0;
+				priority = 0.5;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+			};
 		};
 	};
 

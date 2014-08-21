@@ -52,7 +52,7 @@
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerLeft">
       <English>Get in as Door gunner (left)</English>
-      <German>Einsteigen als Doorgunner (links)</German>
+      <German>Einsteigen als Bordschütze (links)</German>
       <Spanish>Entrar como artillero de puerta (izquierda)</Spanish>
       <French>Embarquer comme Artilleur (gauche)</French>
       <Polish>Wejdź jako strzelec (lewy)</Polish>
@@ -60,7 +60,7 @@
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
       <English>Get in as Door gunner (right)</English>
-      <German>Einsteigen als Doorgunner (rechts)</German>
+      <German>Einsteigen als Bordschütze (rechts)</German>
       <Spanish>Entrar como artillero de puerta (derecha)</Spanish>
       <French>Embarquer comme Artilleur (droite)</French>
       <Polish>Wejdź jako strzelec (prawy)</Polish>
@@ -125,7 +125,7 @@
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerLeft">
       <English>Move to Door gunner (left)</English>
-      <German>Zum Doorgunnersitz (links)</German>
+      <German>Zum Bordschützensitz (links)</German>
       <Spanish>Mover a artillero de puerta (izquierda)</Spanish>
       <French>Passer en Artilleur (gauche)</French>
       <Polish>Przejdź na miejsce strzelca (lewy)</Polish>
@@ -133,7 +133,7 @@
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerRight">
       <English>Move to Door gunner (right)</English>
-      <German>Zum Doorgunnersitz (rechts)</German>
+      <German>Zum Bordschützensitz (rechts)</German>
       <Spanish>Mover a artillero de puerta (derecha)</Spanish>
       <French>Passer en Artilleur (droite)</French>
       <Polish>Przejdź na miejsce strzelca (prawy)</Polish>

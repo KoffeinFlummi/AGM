@@ -68,9 +68,11 @@
 	class AGM_DragItem { \
 		displayName = "$STR_AGM_Drag_StartDrag"; \
 		distance = 4; \
-		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
+		condition = "!(player call AGM_Drag_fnc_isDraggingObject)"; \
+		conditionShow = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
-		showDisabled = 1; \
+		tooltip = "Drag this object."; \
+		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
@@ -79,6 +81,7 @@
 		distance = 4; \
 		condition = "player call AGM_Drag_fnc_isDraggingObject && {AGM_Interaction_Target == player getVariable ['AGM_carriedItem', objNull]}"; \
 		statement = "player call AGM_Drag_fnc_releaseObject"; \
+		tooltip = "Release the dragged / carried object."; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \

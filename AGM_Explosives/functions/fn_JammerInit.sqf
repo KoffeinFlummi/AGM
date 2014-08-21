@@ -27,7 +27,7 @@ if (isClass (configFile >> "CfgVehicles" >> (typeof (_this select 1))) and {getN
 		};
 	} count AGM_Explosives_Jammers;
 	if !(_found) then {
-		AGM_Explosives_Jammers set [count AGM_Explosives_Jammers, [(_this select 0), getNumber(configFile >> "CfgVehicles" >> (typeof (_this select 1)) >> "AGM_JammerRange"),(_this select 1)]];
+		AGM_Explosives_Jammers pushBack [(_this select 0), getNumber(configFile >> "CfgVehicles" >> (typeof (_this select 1)) >> "AGM_JammerRange"),(_this select 1)];
 	};
 	publicVariable "AGM_Explosives_Jammers";
 	private "_check";

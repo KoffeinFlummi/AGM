@@ -23,7 +23,7 @@ _arrayNew = [];
 
 for "_i" from 0 to (count _array - 1) do {
   if ((_array select _i) call _code) then {
-    _arrayNew set [count _arrayNew, _array select _i];
+    _arrayNew pushBack (_array select _i);
   };
 };
 
