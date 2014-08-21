@@ -336,6 +336,9 @@ class CfgVehicles {
   class Weapon_hgun_Pistol_heavy_02_F: Pistol_Base_F {
     displayName = "Chiappa Rhino 60DS";
   };
+  class Weapon_hgun_Pistol_Signal_F: Pistol_Base_F {
+    displayName = "Taurus Judge";
+  };
 
   // rocket launchers
   class Launcher_Base_F;
@@ -448,8 +451,14 @@ class CfgVehicles {
   class Weapon_srifle_GM6_F: Weapon_Base_F {
     displayName = "GM6 Lynx";
   };
+  class Weapon_srifle_GM6_camo_F: Weapon_Base_F {
+    displayName = "GM6 Lynx (Camo)";
+  };
   class Weapon_srifle_LRR_F: Weapon_Base_F {
     displayName = "M200 Intervention";
+  };
+  class Weapon_srifle_LRR_camo_F: Weapon_Base_F {
+    displayName = "M200 Intervention (Camo)";
   };
   class Weapon_srifle_DMR_01_F: Weapon_Base_F {
     displayName = "VS-121";
