@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.931";
     versionStr = "0.931";
     versionAr[] = {0,931,0};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"KoffeinFlummi", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
@@ -26,6 +26,8 @@ class CfgPatches {
  *       are for setSkill.
  */
 
+/*
+// temp disabled to tweak ai @todo re-enable
 class CfgAISkill {
   aimingAccuracy[] = {0,0, 1,0.8};
   aimingShake[]    = {0,0, 1,0.6};
@@ -35,4 +37,348 @@ class CfgAISkill {
   reloadSpeed[]    = {0,0, 1,0.8};
   spotDistance[]   = {0,0, 1,0.9};
   spotTime[]       = {0,0, 1,0.7};
+};*/
+
+
+// weapon config changes, by commy2
+
+/* documentation:
+aiDispersionCoefX = 1.0         Dispersion multiplier for AI units (axis X - left to right).
+aiDispersionCoefY = 1.0         Dispersion multiplier for AI units (axis Y - top-down).
+aiRateOfFire = 5.0              Delay between shots at given aiRateOfFireDistance.
+aiRateOfFireDistance = 500      At shorter distance delay (aiRateOfFire) goes linearly to zero.
+*/
+
+class Mode_SemiAuto;
+class Mode_Burst;
+class Mode_FullAuto;
+
+class CfgWeapons {
+
+  // rifles
+  class RifleCore;
+  class Rifle: RifleCore {
+    aiDispersionCoefX = 6;
+    aiDispersionCoefY = 6;
+  };
+  class Rifle_Base_F: Rifle {};
+  //class Rifle_Long_Base_F: Rifle_Base_F {};
+
+  class arifle_MX_Base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    modes[] = {"Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.7; // 0.5;
+      midRange = 300;       // 200;
+      midRangeProbab = 0.5; // 0.7;
+    };
+    class FullAuto;
+    class fullauto_medium: FullAuto {
+      minRange = 20;        // 2;
+      burst = "3 + round random 5"; //3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 500;
+      minRange = 400;
+      minRangeProbab = 0.1;
+      midRange = 500;
+      midRangeProbab = 0.2;
+      maxRange = 600;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: Single {
+      aiRateOfFireDistance = 700; // 600;
+      minRange = 120;             // 2;
+      maxRange = 700;             // 600;
+    };
+    class single_far_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 900; // 700;
+      minRange = 200;             // 100;
+      maxRange = 900;             // 700;
+    };
+  };
+
+  class arifle_MXC_F: arifle_MX_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Single {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.5; // 0.3;
+      midRange = 250;       // 150;
+      midRangeProbab = 0.3; // 0.5;
+    };
+    class FullAuto;
+    class fullauto_medium: fullauto_medium {
+      minRange = 20;       // 2;
+      burst = "3 + round random 5"; //3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 400;
+      minRange = 300;
+      minRangeProbab = 0.1;
+      midRange = 400;
+      midRangeProbab = 0.2;
+      maxRange = 500;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: Single {
+      aiRateOfFireDistance = 600; // 500;
+      minRange = 120;             // 2;
+      maxRange = 600;             // 500;
+    };
+    class single_far_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 800; // 700;
+      minRange = 200;             // 100;
+      maxRange = 800;             // 700;
+    };
+  };
+
+  //class arifle_MX_F: arifle_MX_Base_F {};
+  //class arifle_MX_GL_F: arifle_MX_Base_F {};
+  class arifle_MX_SW_F: arifle_MX_Base_F {
+    aiDispersionCoefY = 24.0;
+    aiDispersionCoefX = 21.0;
+
+    modes[] = {"Single","manual","close","short","medium","far_optic1","far_optic2"}; // @todo
+  };
+
+
+  class arifle_Katiba_Base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    modes[] = {"Single","FullAuto","single_medium_optics1","single_far_optics2","fullauto_medium","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.7; // 0.5;
+      midRange = 300;       // 200;
+      midRangeProbab = 0.5; // 0.7;
+    };
+    class FullAuto;
+    class fullauto_medium: FullAuto {
+      minRange = 20;       // 2;
+      burst = "3 + round random 5"; //3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 500;
+      minRange = 400;
+      minRangeProbab = 0.1;
+      midRange = 500;
+      midRangeProbab = 0.2;
+      maxRange = 600;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: Single {
+      aiRateOfFireDistance = 700; // 600;
+      minRange = 120;             // 2;
+      maxRange = 700;             // 600;
+    };
+    class single_far_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 900; // 800;
+      minRange = 200;             // 100;
+      maxRange = 900;             // 800;
+    };
+  };
+  class arifle_Katiba_C_F: arifle_Katiba_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Single {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.5; // 0.3;
+      midRange = 250;       // 150;
+      midRangeProbab = 0.3; // 0.7;
+    };
+    //class FullAuto: FullAuto {};
+    class fullauto_medium: fullauto_medium {
+      minRange = 20;       // 2;
+      maxRange = 150;      //100;
+      burst = "3 + round random 5"; //3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 400;
+      minRange = 300;
+      minRangeProbab = 0.1;
+      midRange = 400;
+      midRangeProbab = 0.2;
+      maxRange = 500;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: single_medium_optics1 {
+      minRange = 120;     // 2;
+      maxRange = 600;     // 500;
+    };
+    class single_medium_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 800; // 700;
+      minRange = 200;             // 100;
+      maxRange = 800;             // 700;
+    };
+  };
+
+  class mk20_base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    modes[] = {"Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.7; // 0.5;
+      midRange = 250;       // 150;
+      midRangeProbab = 0.5; // 0.7;
+    };
+    class FullAuto: Mode_FullAuto {
+      minRange = 0; //2;
+    };
+    class fullauto_medium: FullAuto {
+      minRange = 20;                // 2;
+      maxRange = 150;               // 100;
+      burst = "3 + round random 5"; // 3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 500;
+      minRange = 400;
+      minRangeProbab = 0.1;
+      midRange = 500;
+      midRangeProbab = 0.2;
+      maxRange = 600;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: Single {
+      aiRateOfFireDistance = 600; // 500;
+      minRange = 120;             // 5;
+      maxRange = 600;             // 500;
+    };
+    class single_far_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 800; // 700;
+      minRange = 200;             // 100;
+      maxRange = 800;             // 700;
+    };
+  };
+  class arifle_Mk20C_F: mk20_base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Single {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.7; // 0.5;
+      midRange = 250;       // 150;
+      midRangeProbab = 0.5; // 0.7;
+      maxRange = 350;       // 250;
+    };
+    class FullAuto: FullAuto {
+      minRange = 0; //2;
+    };
+    class single_medium_optics1: single_medium_optics1 {
+      aiRateOfFireDistance = 600; // 500;
+      minRange = 120;             // 5;
+      maxRange = 550;             // 450;
+    };
+    //class single_medium_optics2: single_medium_optics1 {};
+    class fullauto_medium: fullauto_medium {
+      minRange = 20;                //2;
+      burst = "3 + round random 5"; //3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 400;
+      minRange = 300;
+      minRangeProbab = 0.1;
+      midRange = 400;
+      midRangeProbab = 0.2;
+      maxRange = 500;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+  };
+
+  class Tavor_base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+
+    modes[] = {"Single","FullAuto","single_medium_optics1","single_medium_optics2","fullauto_medium","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;       //2;
+      minRangeProbab = 0.7; //0.5;
+      midRange = 250;       //150;
+      midRangeProbab = 0.5; //0.7;
+      maxRange = 350;       //250;
+    };
+    class FullAuto: Mode_FullAuto {
+      minRange = 0; //2;
+    };
+    class fullauto_medium: FullAuto {
+      minRange = 20;                // 2;
+      maxRange = 150;               // 100;
+      burst = "3 + round random 5"; // 3;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 400;
+      minRange = 300;
+      minRangeProbab = 0.1;
+      midRange = 400;
+      midRangeProbab = 0.2;
+      maxRange = 500;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+    class single_medium_optics1: Single {
+      aiRateOfFireDistance = 600; // 500;
+      minRange = 120;             // 5;
+      maxRange = 550;             // 450;
+    };
+    class single_medium_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 700; // 600;
+      minRange = 200;             // 100;
+      maxRange = 700;             // 600;
+    };
+  };
+  class arifle_TRG21_F: Tavor_base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Single {
+      minRange = 120;        // 2;
+      minRangeProbab = 0.7;  // 0.3;
+      midRange = 300;        // 200;
+      midRangeProbab = 0.5;  // 0.7;
+      maxRange = 400;        // 300;
+    };
+    class FullAuto: FullAuto {
+      minRange = 0; //2;
+    };
+    class fullauto_medium: fullauto_medium {
+      minRange = 20;                // 2;
+      maxRange = 150;               // 100;
+      burst = "3 + round random 5"; // 3;
+    };
+    class single_medium_optics1: single_medium_optics1 {
+      aiRateOfFireDistance = 700; // 600;
+      minRange = 120;             // 2;
+      maxRange = 600;             // 500;
+    };
+    class single_medium_optics2: single_medium_optics1 {
+      aiRateOfFireDistance = 800; // 700;
+      minRange = 200;             // 100;
+      maxRange = 800;             // 700;
+    };
+    class AGM_Burst_far: fullauto_medium {
+      aiRateOfFire = 2.0;
+      aiRateOfFireDistance = 400;
+      minRange = 300;
+      minRangeProbab = 0.1;
+      midRange = 400;
+      midRangeProbab = 0.2;
+      maxRange = 500;
+      maxRangeProbab = 0.2;
+      burst = "2 + round random 3";
+    };
+  };
 };
