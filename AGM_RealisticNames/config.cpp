@@ -318,8 +318,143 @@ class CfgVehicles {
   class O_static_AA_F: AA_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AA_Name";
   };
-};
 
+  // pistols
+  class Pistol_Base_F;
+  class Weapon_hgun_P07_F: Pistol_Base_F {
+    displayName = "P99";
+  };
+  class Weapon_hgun_Rook40_F: Pistol_Base_F {
+    displayName = "MP-443 Grach";
+  };
+  class Weapon_hgun_ACPC2_F: Pistol_Base_F {
+    displayName = "ACP-C2";
+  };
+  class Weapon_hgun_Pistol_heavy_01_F: Pistol_Base_F {
+    displayName = "FNX-45 Tactical";
+  };
+  class Weapon_hgun_Pistol_heavy_02_F: Pistol_Base_F {
+    displayName = "Chiappa Rhino 60DS";
+  };
+
+  // rocket launchers
+  class Launcher_Base_F;
+  class Weapon_launch_NLAW_F: Launcher_Base_F {
+    displayName = "NLAW";
+  };
+  class Weapon_launch_RPG32_F: Launcher_Base_F {
+    displayName = "RPG-32";
+  };
+  class Weapon_launch_Titan_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AA)";
+  };
+  class Weapon_launch_Titan_short_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AT)";
+  };
+  class Weapon_launch_B_Titan_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AA)";
+  };
+  //class Weapon_launch_I_Titan_F: Weapon_launch_B_Titan_F {};
+  //class Weapon_launch_O_Titan_F: Weapon_launch_B_Titan_F {};
+  class Weapon_launch_launch_B_Titan_short_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AT)";
+  };
+  //class Weapon_launch_I_Titan_short_F: Weapon_launch_launch_B_Titan_short_F {};
+  //class Weapon_launch_O_Titan_short_F: Weapon_launch_launch_B_Titan_short_F {};
+
+  // rifles
+  class Weapon_Base_F;
+  class Weapon_arifle_MX_F: Weapon_Base_F {
+    displayName = "MX";
+  };
+  class Weapon_arifle_MXC_F: Weapon_Base_F {
+    displayName = "MXC";
+  };
+  class Weapon_arifle_MX_GL_F: Weapon_Base_F {
+    displayName = "MX 3GL";
+  };
+  class Weapon_arifle_MX_SW_F: Weapon_Base_F {
+    displayName = "MX LSW";
+  };
+  class Weapon_arifle_MXM_F: Weapon_Base_F {
+    displayName = "MXM";
+  };
+
+  class Weapon_arifle_Katiba_F: Weapon_Base_F {
+    displayName = "KT2002 Katiba";
+  };
+  class Weapon_arifle_Katiba_C_F: Weapon_Base_F {
+    displayName = "KT2002C Katiba";
+  };
+  class Weapon_arifle_Katiba_GL_F: Weapon_Base_F {
+    displayName = "KT2002 Katiba KGL";
+  };
+
+  class Weapon_arifle_Mk20_F: Weapon_Base_F {
+    displayName = "F2000 (Camo)";
+  };
+  class Weapon_arifle_Mk20_plain_F: Weapon_Base_F {
+    displayName = "F2000";
+  };
+  class Weapon_arifle_Mk20C_F: Weapon_Base_F {
+    displayName = "F2000 Tactical (Camo)";
+  };
+  class Weapon_arifle_Mk20C_plain_F: Weapon_Base_F {
+    displayName = "F2000 Tactical";
+  };
+  class Weapon_arifle_Mk20_GL_F: Weapon_Base_F {
+    displayName = "F2000 EGLM (Camo)";
+  };
+  class Weapon_arifle_Mk20_GL_plain_F: Weapon_Base_F {
+    displayName = "F2000 EGLM";
+  };
+
+  class Weapon_arifle_TRG21_F: Weapon_Base_F {
+    displayName = "TAR-21";
+  };
+  class Weapon_arifle_TRG20_F: Weapon_Base_F {
+    displayName = "CTAR-21";
+  };
+  class Weapon_arifle_TRG21_GL_F: Weapon_Base_F {
+    displayName = "TAR-21 EGLM";
+  };
+
+  // sub machine guns
+  class Weapon_SMG_01_F: Weapon_Base_F {
+    displayName = "Vector SMG";
+  };
+  class Weapon_SMG_02_F: Weapon_Base_F {
+    displayName = "Scorpion Evo 3 A1";
+  };
+  class Weapon_hgun_PDW2000_F: Weapon_Base_F {
+    displayName = "CPW";
+  };
+  class Weapon_arifle_SDAR_F: Weapon_Base_F {
+    displayName = "RFB SDAR";
+  };
+
+  // machine guns
+  class Weapon_LMG_Mk200_F: Weapon_Base_F {
+    displayName = "Stoner 99 LMG";
+  };
+  class Weapon_LMG_Zafir_F: Weapon_Base_F {
+    displayName = "Negev NG7";
+  };
+
+  // sniper rifles
+  class Weapon_srifle_EBR_F: Weapon_Base_F {
+    displayName = "Mk14 Mod 1 EBR";
+  };
+  class Weapon_srifle_GM6_F: Weapon_Base_F {
+    displayName = "GM6 Lynx";
+  };
+  class Weapon_srifle_LRR_F: Weapon_Base_F {
+    displayName = "M200 Intervention";
+  };
+  class Weapon_srifle_DMR_01_F: Weapon_Base_F {
+    displayName = "VS-121";
+  };
+};
 
 // WEAPONS
 
