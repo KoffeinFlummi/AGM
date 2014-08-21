@@ -13,7 +13,7 @@ _this spawn {
 	AGM_Fortifications_Setup = _type createVehicleLocal [0, 0, -10000];
 	AGM_Fortifications_Setup allowDamage false;
 	AGM_Fortifications_Setup enableSimulationGlobal false;
-	AGM_Fortifications_Setup attachTo [_unit, (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0])];
+	AGM_Fortifications_Setup attachTo [_unit, _unit worldToModel ((ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0]))];
 	detach AGM_Fortifications_Setup;
 
 	_unit forceWalk true;

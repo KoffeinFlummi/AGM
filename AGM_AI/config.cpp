@@ -61,7 +61,7 @@ class CfgWeapons {
     aiDispersionCoefY = 6;
   };
   class Rifle_Base_F: Rifle {};
-  //class Rifle_Long_Base_F: Rifle_Base_F {};
+  class Rifle_Long_Base_F: Rifle_Base_F {};
 
   class arifle_MX_Base_F: Rifle_Base_F {
     aiDispersionCoefY = 18.0;
@@ -140,13 +140,59 @@ class CfgWeapons {
 
   //class arifle_MX_F: arifle_MX_Base_F {};
   //class arifle_MX_GL_F: arifle_MX_Base_F {};
+
+  class arifle_MXM_F: arifle_MX_Base_F {
+    class Single: Single {
+      minRange = 120;       // 2;
+      minRangeProbab = 0.7; // 0.5;
+      midRange = 350;       // 250;
+      midRangeProbab = 0.5; // 0.7;
+    };
+    class fullauto_medium: fullauto_medium {
+      minRange = 20;        // 2;
+      burst = "3 + round random 5"; //3;
+    };
+    class single_medium_optics1: single_medium_optics1 {
+      aiRateOfFireDistance = 700; // 600;
+      minRange = 120;             // 2;
+      maxRange = 750;             // 650;
+    };
+    class single_far_optics2: single_far_optics2 {
+      aiRateOfFireDistance = 900; // 800;
+      minRange = 200;             // 100;
+      maxRange = 900;             // 800;
+    };
+  };
+
   class arifle_MX_SW_F: arifle_MX_Base_F {
     aiDispersionCoefY = 24.0;
     aiDispersionCoefX = 21.0;
-
-    modes[] = {"Single","manual","close","short","medium","far_optic1","far_optic2"}; // @todo
+    modes[] = {"Single","manual","close","short","medium","far_optic1","far_optic2","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;             // 2;
+    };
+    class close;
+    class medium;
+    class AGM_Burst_far: medium {
+      aiRateOfFire = 6.0;
+      aiRateOfFireDistance = 900;
+      minRange = 500;
+      minRangeProbab = 0.1;
+      midRange = 700;
+      midRangeProbab = 0.2;
+      maxRange = 900;
+      maxRangeProbab = 0.2;
+      burst = "3 + round random 5";
+    };
+    class far_optic1: close {
+      aiRateOfFireDistance = 750; // 650;
+      maxRange = 750;             // 650;
+    };
+    class far_optic2: far_optic1 {
+      maxRange = 1100;            // 900;
+      aiRateOfFireDistance = 1100;// 900;
+    };
   };
-
 
   class arifle_Katiba_Base_F: Rifle_Base_F {
     aiDispersionCoefY = 18.0;
@@ -378,6 +424,105 @@ class CfgWeapons {
       maxRange = 500;
       maxRangeProbab = 0.2;
       burst = "2 + round random 3";
+    };
+  };
+
+  // sub machine guns
+  class SDAR_base_F: Rifle_Base_F {
+    aiDispersionCoefY = 28.0;
+    aiDispersionCoefX = 20.0;
+    class Single: Mode_SemiAuto {
+      minRange = 10;  //2;
+    };
+    class Burst: Mode_Burst {
+      minRange = 5;   //1;
+    };
+  };
+
+  class pdw2000_base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Mode_SemiAuto {
+      minRange = 100; //2;
+    };
+    class Burst: Mode_Burst {
+      minRange = 50;  //1;
+    };
+  };
+
+  class SMG_01_Base: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Mode_SemiAuto {
+      minRange = 50;  //2;
+    };
+    class Burst: Mode_Burst {
+      minRange = 25;  //2;
+    };
+  };
+
+  class SMG_02_base_F: Rifle_Base_F {
+    aiDispersionCoefY = 18.0;
+    aiDispersionCoefX = 12.0;
+    class Single: Mode_SemiAuto {
+      minRange = 50;  //2;
+    };
+    class Burst: Mode_Burst {
+      minRange = 25;  //2;
+    };
+  };
+
+  // machine guns
+  class LMG_Mk200_F: Rifle_Long_Base_F {
+    aiDispersionCoefY = 24.0;
+    aiDispersionCoefX = 21.0;
+    modes[] = {"manual","close","short","medium","far_optic1","far_optic2","AGM_Burst_far"};
+    class medium;
+    class AGM_Burst_far: medium {
+      aiRateOfFire = 6.0;
+      aiRateOfFireDistance = 900;
+      minRange = 500;
+      minRangeProbab = 0.1;
+      midRange = 700;
+      midRangeProbab = 0.2;
+      maxRange = 900;
+      maxRangeProbab = 0.2;
+      burst = "3 + round random 5";
+    };
+    class far_optic1: medium {
+      maxRange = 750;             // 650;
+    };
+    class far_optic2: far_optic1 {
+      maxRange = 1100;            // 900;
+      aiRateOfFireDistance = 1100;// 900;
+    };
+  };
+
+  class LMG_Zafir_F: Rifle_Long_Base_F {
+    aiDispersionCoefY = 23.0;
+    aiDispersionCoefX = 19.0;
+    modes[] = {"Single","FullAuto","close","short","medium","far_optic1","far_optic2","AGM_Burst_far"};
+    class Single: Mode_SemiAuto {
+      minRange = 120;        // 2;
+    };
+    class close;
+    class medium;
+    class AGM_Burst_far: medium {
+      aiRateOfFire = 6.0;
+      aiRateOfFireDistance = 900;
+      minRange = 500;
+      minRangeProbab = 0.1;
+      midRange = 700;
+      midRangeProbab = 0.2;
+      maxRange = 900;
+      maxRangeProbab = 0.2;
+      burst = "3 + round random 5";
+    };
+    class far_optic1: close {
+      maxRange = 800;  //700;
+    };
+    class far_optic2: far_optic1 {
+      maxRange = 1200; //1000;
     };
   };
 };
