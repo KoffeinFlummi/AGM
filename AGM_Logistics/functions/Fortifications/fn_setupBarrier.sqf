@@ -11,7 +11,10 @@ _this spawn {
 	[_unit, _crate] call AGM_Core_fnc_claim;
 
 	AGM_Fortifications_Setup = _type createVehicleLocal [0, 0, -10000];
+	AGM_Fortifications_Setup allowDamage false;
 	AGM_Fortifications_Setup enableSimulationGlobal false;
+	AGM_Fortifications_Setup attachTo [_unit, (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0])];
+	detach AGM_Fortifications_Setup;
 
 	_unit forceWalk true;
 	AGM_Fortifications_TweakedAngle = 180;
@@ -25,7 +28,7 @@ _this spawn {
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0]);
 		_pos set [2, 0];
 
-		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_Unconscious", false]} || {player != vehicle player} || {damage AGM_Fortifications_Setup == 1}) exitWith {
+		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_Unconscious", false]} || {player != vehicle player}) exitWith {
 			call AGM_Fortifications_fnc_setupCancel;
 		};
 

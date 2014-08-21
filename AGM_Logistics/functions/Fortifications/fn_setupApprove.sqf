@@ -33,6 +33,7 @@ _setup spawn {
 	player setVariable ["AGM_PlantingExplosive", false];
 
 	_this enableSimulationGlobal true;
+	_this allowDamage true;
 	//_this setDamage 0;
 
 	/*[_setup] spawn {
