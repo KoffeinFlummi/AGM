@@ -102,12 +102,15 @@
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_M26_displayName">
-      <English>M26 Firing Device</English>
-      <German>M26 Zündvorrichtung</German>
-      <Spanish>Dispositivo de detonación M26</Spanish>
-      <Polish>Detonator M26</Polish>
-      <French>M26 Dispositif de mise à feu</French>
-      <Czech>M26 Odpalovací Zařízení</Czech>
+      <English>MK26 Firing Device</English>
+      <German>MK26 Zündvorrichtung</German>
+      <Spanish>Dispositivo de detonación MK26</Spanish>
+      <Polish>Detonator MK26</Polish>
+      <French>MK26 Dispositif de mise à feu</French>
+      <Czech>MK26 Odpalovací Zařízení</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_MK16_displayName">
+      <English>M152 RAMS</English>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>
@@ -292,6 +295,9 @@
       <German>Magnetfeldsensor (Bodenangriff)</German>
       <French>Capteur Magnétique (Attaque par le bas)</French>
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
+      <English>No explosives on trigger</English>
     </Key>
   </Package>
 </Project>

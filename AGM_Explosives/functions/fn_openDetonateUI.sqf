@@ -8,42 +8,46 @@
 	
 	Parameters: 
 		0: OBJECT - unit
+		0: STRING - Classname of detonator
 	
 	Returns:
 		Nothing
 	
 	Example:
-		[player] call AGM_Explosives_fnc_openDetonateUI;
+		[player, "AGM_M26_Clacker"] call AGM_Explosives_fnc_openDetonateUI;
 */
-private ["_unit","_result", "_item", "_index", "_listIDC", "_item"];
+private ["_unit","_result", "_item"];
 call AGM_Interaction_fnc_hideMenu;
 _unit = _this select 0;
-_range = 0;
-{
-	if (getNumber (ConfigFile >> "CfgWeapons" >> _x >> "AGM_Detonator") == 1) then {
-		_cr = getNumber (ConfigFile >> "CfgWeapons" >> _x >> "AGM_Range");
-		if (_range < _cr) then {
-			_range = _cr;
-		};
-	};
-} count (items _unit);
+_detonator = _this select 1;
+_range = GetNumber (ConfigFile >> "CfgWeapons" >> _detonator >> "AGM_Range");
 
 _result = _unit getVariable ["AGM_Clacker", []];
 _actions = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate"] call AGM_Interaction_fnc_prepareSelectMenu;
+_count = 0;
 {
 	if (!isNull(_x select 0)) then {
-		_item = ConfigFile >> "CfgMagazines" >> (_x select 3);
-		_actions = [
-			_actions,
-			_x select 2,
-			getText(_item >> "picture"),
-			[_foreachIndex, _range]
-		] call AGM_Interaction_fnc_AddSelectableItem;
+		_required = getArray (ConfigFile >> "CfgAGM_Triggers" >> (_x select 4) >> "requires");
+		if (_detonator in _required) then {
+			_item = ConfigFile >> "CfgMagazines" >> (_x select 3);
+			_actions = [
+				_actions,
+				_x select 2,
+				getText(_item >> "picture"),
+				[_foreachIndex, _range]
+			] call AGM_Interaction_fnc_AddSelectableItem;
+			_count = _count + 1;
+		};
 	};
 } foreach _result;
-
-[
-	_actions,
-	{[player,if(TYPENAME(_this select 1) != "SCALAR")then{parseNumber(_this select 1)}else{_this select 1}, (player getVariable ["AGM_Clacker", []]) select (if(TYPENAME(_this select 0) != "SCALAR")then{parseNumber(_this select 0)}else{_this select 0}), false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;},
-	{"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
-] call AGM_Interaction_fnc_openSelectMenu;
+if (_count > 0) then {
+	[
+		_actions,
+		{[player,if(TYPENAME(_this select 1) != "SCALAR")then{parseNumber(_this select 1)}else{_this select 1}, (player getVariable ["AGM_Clacker", []]) select (if(TYPENAME(_this select 0) != "SCALAR")then{parseNumber(_this select 0)}else{_this select 0}), false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;},
+		{[player] call AGM_Explosives_fnc_openTransmitterUI;}
+	] call AGM_Interaction_fnc_openSelectMenu;
+}else{
+	call AGM_Interaction_fnc_hideMenu;
+	[player] call AGM_Explosives_fnc_openTransmitterUI;
+	[localize "STR_AGM_Explosives_NoExplosivesAvailable"] call AGM_Core_fnc_displayTextStructured;
+};
