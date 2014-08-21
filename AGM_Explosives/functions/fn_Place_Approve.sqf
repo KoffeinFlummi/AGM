@@ -39,16 +39,19 @@ if ((_setup getVariable ["AGM_Class", ""]) != "") then {
 	player setVariable ["AGM_PlantingExplosive", true];
 	_setup addEventHandler ["EpeContactStart", {
 		if (!((_this select 0) getVariable ["AGM_Handled", false])) then {
+			_pos = getPosATL (_this select 0);
 			(_this select 0) enableSimulationGlobal false;
+			if (surfaceIsWater _pos) then {
+				_pos = getPosASL (_this select 0);
+				(_this select 0) setPosASL _pos;
+			}else{
+				(_this select 0) setPosATL _pos;
+			};
 			(_this select 0) setVariable ["AGM_Handled", true];
 			player setVariable ["AGM_PlantingExplosive", false];
 			_attachTo = objNull;
 			if (!isNull (_this select 1) && {(_this select 1) isKindOf "AllVehicles"}) then {
 				_attachTo = (_this select 1);
-			};
-			_pos = getPosATL (_this select 0);
-			if (surfaceIsWater _pos) then {
-				_pos = getPosASL (_this select 0);
 			};
 			[(_this select 0),_attachTo, _pos] spawn {
 				private ["_mag", "_setup", "_dir"];
