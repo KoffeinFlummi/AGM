@@ -9,7 +9,16 @@ _this spawn {
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _K_lat = 16 * getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  // For deduction see https://github.com/KoffeinFlummi/AGM/issues/996
+  // _K_lat = (4/pi) * (L/D) * (-airFriction)
+  _K_lat = -5.09;               //L/D = 4
+  if (_round isKindOf "GrenadeCore") then {
+    _K_lat = -1.27;             //L/D = 1
+  };
+  if (_round isKindOf "RocketCore") then {
+    _coefficient = -12.7;       //L/D = 10
+  };
+  _K_lat = _K_lat * getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
 
   // HUMIDITY
   _round setVelocity ([velocity _round, {_this - _this * humidity * 0.1}] call AGM_Core_fnc_map);
