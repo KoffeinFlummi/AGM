@@ -79,7 +79,7 @@ def main():
 
     keysum += keynumber
     for i in range(len(localized)):
-      print("  %s %i" % ((languages[i]+":").ljust(10), localized[i]))
+      print("  %s %s / %i" % ((languages[i]+":").ljust(10), str(localized[i]).ljust(3), keynumber))
       localizedsum[i] += localized[i]
       if localized[i] < keynumber:
         missing[i].append(module)

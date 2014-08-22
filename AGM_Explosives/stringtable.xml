@@ -52,7 +52,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_ScrollAction">
       <English>+ Modifier, rotates</English>
-      <German>Drehen</German>
+      <German>+ Modifikator, drehen</German>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -112,6 +112,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_MK16_displayName">
       <English>M152 RAMS</English>
+      <German>M152 RAMS</German>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>
@@ -298,7 +299,8 @@
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
-      <English>No explosives on trigger</English>
+      <English>No explosives on trigger.</English>
+      <German>Keine Sprengladungen auf diesem Auslöser.</German>
     </Key>
   </Package>
 </Project>
