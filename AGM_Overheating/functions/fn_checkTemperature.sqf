@@ -23,7 +23,13 @@ _this spawn {
 	player setVariable [_string, [_temperature, _time], false];
 
 	// Play animation and report temperature
-	player playActionNow "Gear";
+	_action = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_checkTemperatureAction");
+
+	if (_action == "") then {
+		_action = "Gear";
+	};
+
+	player playActionNow _action;
 
 	sleep 1;
 

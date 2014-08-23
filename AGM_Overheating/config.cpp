@@ -223,6 +223,7 @@ class CfgWeapons {
 
   class arifle_MX_Base_F : Rifle_Base_F {
     AGM_clearJamAction = "GestureReloadMX";   // Custom jam clearing action. Default uses reload animation.
+    AGM_checkTemperatureAction = "Gear";      // Custom check temperature action. Default uses gear animation.
     AGM_Overheating_Dispersion[] = {0, 0.001, 0.002, 0.004};
     AGM_Overheating_SlowdownFactor[] = {1, 1, 1, 0.9};
     AGM_Overheating_JamChance[] = {0, 0, 0.006, 0.02};
