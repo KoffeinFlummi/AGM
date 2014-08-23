@@ -214,6 +214,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
