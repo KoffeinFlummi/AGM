@@ -9,9 +9,7 @@ _this spawn {
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  // For deduction see https://github.com/KoffeinFlummi/AGM/issues/996
   _airFriction = - getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
-  diag_log _airFriction;
 
   // HUMIDITY
   _round setVelocity ([velocity _round, {_this - _this * humidity * 0.1}] call AGM_Core_fnc_map);
@@ -22,10 +20,8 @@ _this spawn {
     // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
 
+    // See https://github.com/KoffeinFlummi/AGM/issues/996
     _velocityNew = (velocity _round) vectorAdd (wind vectorMultiply ((vectorMagnitude ((velocity _round) vectorAdd wind) * _airFriction * _deltaTime));
-    diag_log _deltaTime;
-    diag_log velocity _round;
-    diag_log (wind vectorMultiply ((vectorMagnitude velocity _round) * _airFriction * _deltaTime));
 
     _round setVelocity _velocityNew;
 
