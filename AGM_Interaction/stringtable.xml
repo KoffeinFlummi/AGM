@@ -35,18 +35,22 @@
     <Key ID="STR_AGM_Interaction_LockDoor">
       <English>Lock Door</English>
       <German>Tür sperren</German>
+      <French>Verrouiller Porte</French>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
       <German>Tür entsperren</German>
+      <French>Déverrouiller Porte</French>
     </Key>
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
       <German>Tür gesperrt</German>
+      <French>Porte Verrouillée</French>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
       <German>Tür entsperrt</German>
+      <French>Porte Déverrouillée</French>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -301,7 +305,7 @@
       <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
       <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
-      <French>Afficher le nom des joueurs uniquement sous le curseur (requiert le nom des joueurs)</French>
+      <French>Noms uniquement sous le curseur (si noms affichés)</French>
       <Czech>Zobrazit jméno hráče jenom na kurzor (potřeba jména hráčů)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
@@ -309,7 +313,7 @@
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
       <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
-      <French>Afficher le grade des joueurs (requiert le nom des joueurs)</French>
+      <French>Grade des joueurs  (si noms affichés)</French>
       <Czech>Zobrazit hodnosti hráčů (potřeba jména hráčů)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
