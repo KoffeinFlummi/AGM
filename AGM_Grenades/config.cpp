@@ -136,7 +136,7 @@ class CfgAmmo {
     SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2",0.125893,1,70};
     timeToLive = 60;
     fuseDistance = 2.3;
-    model = "agm_grenades\agm_m84.p3d";
+    model = "agm_grenades\agm_m84_thrown.p3d";
   };
 };
 
