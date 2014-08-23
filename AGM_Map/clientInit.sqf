@@ -13,29 +13,50 @@ if (!hasInterface) exitWith{};
   AGM_Map_drawing = false;
   AGM_Map_tempLineMarker = [];
   AGM_Map_lineMarkers = [];
+
   AGM_Map_drawColor = "ColorBlack";
   AGM_Map_drawingControls = [36732, 36733, 36734, 36735, 36736, 36737];
 
-  // Wait until the briefing map is detected (display = 51 for SP and MP clients; display = 52 for host server on MP)
-  waitUntil { !(isNull (findDisplay 51)) || !(isNull (findDisplay 52)) };
-  _d = if !(isNull (findDisplay 51)) then {51} else {52};
+  AGM_Map_fnc_installEvents = {
+    _d = _this;
+    diag_log format ["Installing EH in display %1", _d];
+    ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseMoving", {_this call AGM_Map_fnc_handleMouseMove;}];
+    ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseButtonDown", {[1, _this] call AGM_Map_fnc_handleMouseButton;}];
+    ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseButtonUp", {[0, _this] call AGM_Map_fnc_handleMouseButton}];
+    ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["Draw", {[] call AGM_Map_fnc_updateMapToolMarkers;}];
+    (finddisplay _d) displayAddEventHandler ["KeyDown", {_this call AGM_Map_fnc_handleKeyDown;}];
+  };
 
-  // Install event handlers on the map control of the briefing screen (control = 51)
-  ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseMoving", {_this call AGM_Map_fnc_handleMouseMove;}];
-  ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseButtonDown", {[1, _this] call AGM_Map_fnc_handleMouseButton;}];
-  ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["MouseButtonUp", {[0, _this] call AGM_Map_fnc_handleMouseButton}];
-  ((finddisplay _d) displayctrl 51) ctrlAddEventHandler ["Draw", {[] call AGM_Map_fnc_updateMapToolMarkers;}];
-  (finddisplay _d) displayAddEventHandler ["KeyDown", {_this call AGM_Map_fnc_handleKeyDown;}];
+  // Wait until the briefing map is detected (display = 52 for host server on MP; display = 53 for SP and MP clients)
+  waitUntil {(!isNull findDisplay 52) || (!isNull findDisplay 53) || (!isNull findDisplay 12)};
+  diag_log findDisplay 52;
+  diag_log findDisplay 53;
+  diag_log findDisplay 12;
+
+  if ((!isNull findDisplay 52) || (!isNull findDisplay 53)) then {
+    _d = if (!isNull findDisplay 52) then {52} else {53};
+    diag_log "Briefing Display:";
+    diag_log findDisplay 52;
+    diag_log findDisplay 53;
+
+    // Install event handlers on the map control of the briefing screen (control = 51)
+    AGM_Map_syncMarkers = true;
+    _d call AGM_Map_fnc_installEvents;
+  } else {
+    // If player is JIP, create the markers defined during the briefing
+    diag_log "JIP";
+    diag_log AGM_Map_serverLineMarkers;
+    AGM_Map_syncMarkers = false;
+    {
+      _x call AGM_Map_fnc_addLineMarker;
+    } forEach AGM_Map_serverLineMarkers;
+  };
 
   // Wait until the main map display is detected (display = 12)
-  waitUntil { !(isNull (findDisplay 12)) };
-
+  waitUntil { !isNull findDisplay 12 };
   // Install event handlers on the map control and display (control = 51)
-  ((finddisplay 12) displayctrl 51) ctrlAddEventHandler ["MouseMoving", {_this call AGM_Map_fnc_handleMouseMove;}];
-  ((finddisplay 12) displayctrl 51) ctrlAddEventHandler ["MouseButtonDown", {[1, _this] call AGM_Map_fnc_handleMouseButton;}];
-  ((finddisplay 12) displayctrl 51) ctrlAddEventHandler ["MouseButtonUp", {[0, _this] call AGM_Map_fnc_handleMouseButton}];
-  ((finddisplay 12) displayctrl 51) ctrlAddEventHandler ["Draw", {[] call AGM_Map_fnc_updateMapToolMarkers;}];
-  (finddisplay 12) displayAddEventHandler ["KeyDown", {_this call AGM_Map_fnc_handleKeyDown;}];
+  AGM_Map_syncMarkers = false;
+  12 call AGM_Map_fnc_installEvents;
 
   // Update the size and rotation of map tools
   [] call AGM_Map_fnc_updateMapToolMarkers;

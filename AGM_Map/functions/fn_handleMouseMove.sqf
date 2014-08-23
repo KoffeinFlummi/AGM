@@ -18,8 +18,8 @@ _pos = [_this select 1, _this select 2];
 AGM_Map_mousePos = _control ctrlMapScreenToWorld _pos;
 AGM_Map_mousePos set [count AGM_Map_mousePos, 0];
 
-// If no map tool marker then exit
-if !("AGM_MapTools" in items player) exitWith {
+// If cannot draw then exit
+if !(call AGM_Map_fnc_canDraw) exitWith {
   // If was drawing, cancel
   if (AGM_Map_drawing) then {
     call AGM_Map_fnc_cancelDrawing;

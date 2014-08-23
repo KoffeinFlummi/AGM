@@ -37,7 +37,7 @@ if (_dir != 1 && (AGM_Map_dragging or AGM_Map_rotating)) exitWith {
 // If clicking
 if (_dir == 1) exitWith {
 
-  if !("AGM_MapTools" in items player) exitWith {_handled = false;};
+  if !(call AGM_Map_fnc_canDraw) exitWith {_handled = false;};
 
   // Transform mouse screen position to coordinates
   _pos  = _control ctrlMapScreenToWorld _screenPos;
@@ -45,8 +45,13 @@ if (_dir == 1) exitWith {
 
   if (AGM_Map_drawing) exitWith {
     // Already drawing -> Add tempLineMarker to permanent list
-    AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
-    AGM_Map_lineMarkers set [count AGM_Map_lineMarkers, +AGM_Map_tempLineMarker];
+    if (AGM_Map_syncMarkers) then {
+      deleteMarkerLocal (AGM_Map_tempLineMarker select 0);
+      [AGM_Map_tempLineMarker, "AGM_Map_fnc_addLineMarker", 2] call AGM_Core_fnc_execRemoteFnc;
+    } else {
+      AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+      AGM_Map_lineMarkers pushBack (+AGM_Map_tempLineMarker);
+    };
     AGM_Map_tempLineMarker = [];
     AGM_Map_drawing = false;
     _handled = true;

@@ -45,22 +45,26 @@ if (_code == DIK_DELETE) exitWith {
       _relPos = AGM_Map_mousePos vectorDiff (_x select 1);
       _diffVector = (_x select 2) vectorDiff (_x select 1);
       _magDiffVector = vectorMagnitude _diffVector;
+      if (_magDiffVector == 0) then {
+        _diffVector = [10,0,0];
+        _magDiffVector = vectorMagnitude _diffVector;
+      };
       _diffVector = _diffVector vectorMultiply (1/_magDiffVector);
 
-      diag_log _relPos;
-      diag_log _diffVector;
-
-      // Projection of the relative position over the longitudinal axis of the map tool
+      // Projection of the relative position over the longitudinal axis
       _lambdaLong = _diffVector vectorDotProduct _relPos;
-      // Projection of the relative position over the trasversal axis of the map tool
+      // Projection of the relative position over the trasversal axis
       _lambdaTrasAbs = vectorMagnitude (_relPos vectorDiff (_diffVector vectorMultiply _lambdaLong));
-      diag_log _lambdaLong;
-      diag_log _lambdaTrasAbs;
       if (_lambdaLong >= 0 && _lambdaLong <= _magDiffVector && _lambdaTrasAbs <= 5) exitWith {
         // Delete the line marker
-        deleteMarkerLocal (_x select 0);
-        AGM_Map_lineMarkers = AGM_Map_lineMarkers - [_x];
+        if (AGM_Map_syncMarkers) then {
+          [[_x select 0], "AGM_Map_fnc_removeLineMarker", 2] call AGM_Core_fnc_execRemoteFnc;
+        } else {
+          deleteMarkerLocal (_x select 0);
+          AGM_Map_lineMarkers = AGM_Map_lineMarkers - [_x];
+        };
         _handled = true;
+
       };
     } forEach AGM_Map_lineMarkers;
   };
