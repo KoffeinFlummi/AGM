@@ -62,14 +62,8 @@ _fnc_GetActions = {
 							_showDisabled = call _conditionShow;
 						};
 
-						// Conditions that have to be true or else they show the following tooltip upon clicking
-						_conditionsTooltip = getArray (_action >> "conditionsTooltip");
-
-						{
-							if (_forEachIndex mod 2 == 0) then {
-								_conditionsTooltip set [_forEachIndex, compile _x];
-							};
-						} forEach _conditionsTooltip;
+						// Exceptions to the general conditions that have to be true
+						_exceptions = getArray (_action >> "exceptions");
 
 						// statement
 						_statement = getText (_action >> "statement");
@@ -90,18 +84,18 @@ _fnc_GetActions = {
 						};
 
 						if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-							_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance];
+							_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
 							_patches pushBack _configName;
 						};
 
 						_indexCache = count _cacheConfig;
 						_cacheConfig set [_indexCache, _action];
-						_cacheAction set [_indexCache, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _conditionsTooltip, _distance]];
+						_cacheAction set [_indexCache, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance]];
 
 						_cache = [_cacheConfig, _cacheAction];
-						if (!isNil "AGM_Debug" && {AGM_Debug = "InteractionMenu"}) then {diag_log text format ["%1 loaded into cache", _action]};
+						if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {diag_log text format ["%1 loaded into cache", _action]};
 					} else {
-						if (!isNil "AGM_Debug" && {AGM_Debug = "InteractionMenu"}) then {diag_log text format ["%1 loaded from cache", _action]};
+						if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {diag_log text format ["%1 loaded from cache", _action]};
 
 						_cachedAction = _cacheAction select _indexCache;
 
