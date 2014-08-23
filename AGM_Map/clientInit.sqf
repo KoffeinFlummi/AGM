@@ -27,25 +27,22 @@ if (!hasInterface) exitWith{};
     (finddisplay _d) displayAddEventHandler ["KeyDown", {_this call AGM_Map_fnc_handleKeyDown;}];
   };
 
-  // Wait until the briefing map is detected (display = 52 for host server on MP; display = 53 for SP and MP clients)
-  waitUntil {(!isNull findDisplay 52) || (!isNull findDisplay 53) || (!isNull findDisplay 12)};
-  diag_log findDisplay 52;
-  diag_log findDisplay 53;
-  diag_log findDisplay 12;
+  // Wait until the briefing map is detected
+  // display = 37 for SP
+  // display = 52 for host server on MP;
+  // display = 53 for MP clients)
+  waitUntil {(!isNull findDisplay 37) || (!isNull findDisplay 52) || (!isNull findDisplay 53) || (!isNull findDisplay 12)};
 
-  if ((!isNull findDisplay 52) || (!isNull findDisplay 53)) then {
-    _d = if (!isNull findDisplay 52) then {52} else {53};
-    diag_log "Briefing Display:";
-    diag_log findDisplay 52;
-    diag_log findDisplay 53;
-
+  if (isNull findDisplay 12) then {
     // Install event handlers on the map control of the briefing screen (control = 51)
     AGM_Map_syncMarkers = true;
-    _d call AGM_Map_fnc_installEvents;
+    switch {true} do {
+      case (!isNull findDisplay 52) : {52 call AGM_Map_fnc_installEvents;};
+      case (!isNull findDisplay 53) : {53 call AGM_Map_fnc_installEvents;};
+      default {37 call AGM_Map_fnc_installEvents;};
+    };
   } else {
-    // If player is JIP, create the markers defined during the briefing
-    diag_log "JIP";
-    diag_log AGM_Map_serverLineMarkers;
+    // Briefing screen was skipped; the player is JIP, create the markers defined during the briefing
     AGM_Map_syncMarkers = false;
     {
       _x call AGM_Map_fnc_addLineMarker;
