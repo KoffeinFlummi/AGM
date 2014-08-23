@@ -21,7 +21,7 @@ _this spawn {
     _deltaTime = time - _time;
 
     // See https://github.com/KoffeinFlummi/AGM/issues/996
-    _velocityNew = (velocity _round) vectorAdd (wind vectorMultiply ((vectorMagnitude ((velocity _round) vectorAdd wind) * _airFriction * _deltaTime));
+    _velocityNew = (velocity _round) vectorAdd (wind vectorMultiply (vectorMagnitude ((velocity _round) vectorAdd wind) * _airFriction * _deltaTime));
 
     _round setVelocity _velocityNew;
 
