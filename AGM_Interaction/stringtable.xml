@@ -264,7 +264,7 @@
       <Spanish>Coger (Mochila Ventral)</Spanish>
       <Polish>Załóż (brzuch)</Polish>
       <Czech>Vzít (ventrální)</Czech>
-      <French>Prendre le sac ventral</French>
+      <French>Prendre (Ventral)</French>
       <Russian>Взять рюкзак (передний)</Russian>
       <Hungarian>Felvétel (előre)</Hungarian>
     </Key>
@@ -274,7 +274,7 @@
       <Spanish>Dejar mochila</Spanish>
       <Polish>Zdejmij (brzuch)</Polish>
       <Czech>Odložit batoh</Czech>
-      <French>Enlever le sac ventral</French>
+      <French>Enlever (Ventral)</French>
       <Russian>Снять рюкзак (передний)</Russian>
       <Hungarian>Táska levétele</Hungarian>
     </Key>
@@ -431,7 +431,7 @@
       <English>Join Team Red</English>
       <German>Team Rot beitreten</German>
       <Spanish>Unirse al equipo rojo</Spanish>
-      <French>Rejoindre l'équipe rouge</French>
+      <French>Rejoindre Rouge</French>
       <Polish>Dołącz do drużyny czerwonej</Polish>
       <Czech>Připojit do Červeného Týmu</Czech>
     </Key>
@@ -439,7 +439,7 @@
       <English>Join Team Green</English>
       <German>Team Grün beitreten</German>
       <Spanish>Unirse al equipo verde</Spanish>
-      <French>Rejoindre l'équipe verte</French>
+      <French>Rejoindre Verte</French>
       <Polish>Dołącz do drużyny zielonej</Polish>
       <Czech>Připojit do Zeleného Týmu</Czech>
     </Key>
@@ -447,7 +447,7 @@
       <English>Join Team Blue</English>
       <German>Team Blau beitreten</German>
       <Spanish>Unirse al equipo azul</Spanish>
-      <French>Rejoindre l'équipe bleue</French>
+      <French>Rejoindre Bleue</French>
       <Polish>Dołącz do drużyny niebieskiej</Polish>
       <Czech>Připojit do Modrého Týmu</Czech>
     </Key>
@@ -455,7 +455,7 @@
       <English>Join Team Yellow</English>
       <German>Team Gelb beitreten</German>
       <Spanish>Unirse al equipo amarillo</Spanish>
-      <French>Rejoindre l'équipe jaune</French>
+      <French>Rejoindre Jaune</French>
       <Polish>Dołącz do drużyny żółtej</Polish>
       <Czech>Připojit do Žlutého Týmu</Czech>
     </Key>
@@ -511,6 +511,9 @@
       <English>Flow Menu</English>
       <German>Mausradmenü</German>
       <Polish>Flow Menu</Polish>
+      <Spanish>Flow Menu</Spanish>
+      <French>Menu Déroulant</French>
+      <Czech>Flow Menu</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ScrollHint">
       <English>Scroll</English>
