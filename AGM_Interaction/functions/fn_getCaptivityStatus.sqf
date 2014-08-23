@@ -21,7 +21,7 @@ _unitCaptivityStatus = [captiveNum _unit, count _captivityReasons] call AGM_Core
 _unitCaptivityReasons = [];
 {
 	if (_unitCaptivityStatus select _forEachIndex) then {
-		_unitCaptivityReasons set [count _unitCaptivityReasons, _x];
+		_unitCaptivityReasons pushBack _x;
 	};
 } forEach _captivityReasons;
 

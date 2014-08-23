@@ -1,6 +1,6 @@
 // by commy2
 
-private ["_unit", "_weapon", "_skipAnim", "_jammedWeapons", "_actionID", "_reloadAction"];
+private ["_unit", "_weapon", "_skipAnim", "_jammedWeapons", "_actionID", "_clearJamAction"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
@@ -21,8 +21,13 @@ if (_weapon in _jammedWeapons) then {
 	};
 
 	if !(_skipAnim) then {
-		_reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
-		_unit playActionNow _reloadAction;
+		_clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_clearJamAction");
+
+		if (_clearJamAction == "") then {
+			_clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+		};
+
+		_unit playActionNow _clearJamAction;
 	};
 
 	[localize "STR_AGM_Overheating_WeaponUnjammed"] call AGM_Core_fnc_displayTextStructured;

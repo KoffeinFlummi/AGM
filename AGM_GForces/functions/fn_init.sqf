@@ -69,8 +69,11 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _average = _sum / (count AGM_GForces);
     };
 
-    _upTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef") * getNumber (configFile >> "CfgWeapons" >> (uniform player) >> "AGM_GForceCoef");
-    _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef");
+    _downTolerance = player getVariable ["AGM_GForceCoef", nil];
+    if (isNil "_downTolerance") then {
+      _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef");
+    };
+    _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform player) >> "AGM_GForceCoef");
 
     if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical")}) then {
       [player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;

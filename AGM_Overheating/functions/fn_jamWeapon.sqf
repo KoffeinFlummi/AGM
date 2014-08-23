@@ -9,7 +9,7 @@ _weapon = _this select 1;
 if (_unit ammo _weapon == 0) exitWith {};
 
 _jammedWeapons = _unit getVariable ["AGM_Overheating_jammedWeapons", []];
-_jammedWeapons set [count _jammedWeapons, _weapon];
+_jammedWeapons pushBack _weapon;
 
 _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 

@@ -29,8 +29,8 @@ _itemCount = [];
 		if (_index != -1) then {
 			_itemCount set [_index, (_itemCount select _index) + 1];
 		} else {
-			_list set [count _list, _item];
-			_itemCount set [count _itemCount, 1];
+			_list pushBack _item;
+			_itemCount pushBack 1;
 		};
 	};
 } count _mags;

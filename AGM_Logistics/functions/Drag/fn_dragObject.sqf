@@ -42,13 +42,10 @@ _this spawn {
 	};
 	_unit selectWeapon (primaryWeapon _unit);
 
-	[_unit, _draggedObject] call AGM_Core_fnc_claim;
+	[_unit, _draggedObject, true] call AGM_Core_fnc_claim;
 
 	_unit setVariable ["AGM_isDragging", true];
 	_unit setVariable ["AGM_carriedItem", _draggedObject, true];
-
-	_draggedObject setVariable ["AGM_lockStatus", locked _draggedObject, true];
-	_draggedObject lock true;
 
 	_unit playActionNow "grabDrag";
 	waitUntil {animationState _unit in ANIM_CARRY};

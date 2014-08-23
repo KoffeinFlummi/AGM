@@ -21,37 +21,38 @@
 	Example:
 		_explosive = [player, player modelToWorld [0,0.5, 0.1], 134, "SatchelCharge_Remote_Mag", "Command", []] call AGM_Explosives_fnc_PlaceExplosive;
 */
-private ["_pos", "_dir", "_mag", "_ammo", "_vars", "_unit", "_config", "_explosive"];
+private ["_pos", "_dir", "_magazineClass", "_ammo", "_triggerSpecificVars", "_unit", "_triggerConfig", "_explosive"];
 _unit = _this select 0;
 _pos = _this select 1;
 _dir = _this select 2;
-_mag = _this select 3;
-_config = _this select 4;
-_vars = _this select 5;
+_magazineClass = _this select 3;
+_triggerConfig = _this select 4;
+_triggerSpecificVars = _this select 5;
 _setDir = true;
 if (count _this > 6) then {
 	_setDir = _this select 6;
 };
 
-if (isNil "_config") exitWith {
+if (isNil "_triggerConfig") exitWith {
 	diag_log format ["AGM_Explosives: Error config not passed to PlaceExplosive: %1", _this];
 	objNull
 };
 
-_trigger = ConfigFile >> "CfgMagazines" >> _mag >> "AGM_Triggers" >> _config;
-_config = ConfigFile >> "CfgAGM_Triggers" >> _config;
+_trigger = ConfigFile >> "CfgMagazines" >> _magazineClass >> "AGM_Triggers" >> _triggerConfig;
+_triggerConfig = ConfigFile >> "CfgAGM_Triggers" >> _triggerConfig;
 
-if (isNil "_config") exitWith {
+if (isNil "_triggerConfig") exitWith {
 	diag_log format ["AGM_Explosives: Error config not found in PlaceExplosive: %1", _this];
 	objNull
 };
 
-_ammo = getText(ConfigFile >> "CfgMagazines" >> _mag >> "ammo");
+_ammo = getText(ConfigFile >> "CfgMagazines" >> _magazineClass >> "ammo");
 if (isText(_trigger >> "ammo")) then {
 	_ammo = getText (_trigger >> "ammo");
 };
+_triggerSpecificVars pushBack _triggerConfig;
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
-if (isText(_config >> "onPlace") && {[_unit,_explosive,_mag,_vars] call compile (getText (_config >> "onPlace"))}) exitWith {_explosive};
+if (isText(_triggerConfig >> "onPlace") && {[_unit,_explosive,_magazineClass,_triggerSpecificVars] call compile (getText (_triggerConfig >> "onPlace"))}) exitWith {_explosive};
 if (_setDir) then {
 	[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 };

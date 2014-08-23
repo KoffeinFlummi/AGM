@@ -7,6 +7,8 @@ _unit setVariable ["AGM_isDragging", false];
 _unit setVariable ["AGM_carriedItem", objNull, true];
 _target setVariable ["AGM_isUsedBy", objNull, true];
 
+[objNull, _target, true] call AGM_Core_fnc_claim;
+
 _unit allowDamage false;
 detach _target;
 _unit forceWalk false;

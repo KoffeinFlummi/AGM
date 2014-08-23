@@ -1,5 +1,6 @@
 // by commy2
 
+/*
 0 spawn {
 	waitUntil {!isNull player};
 
@@ -7,3 +8,4 @@
 	enableSentences false;
 	player disableConversation true;
 };
+*/

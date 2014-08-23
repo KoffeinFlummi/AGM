@@ -192,6 +192,7 @@ class CfgFunctions {
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
+      class doAnimation;
       class execRemoteFnc;
       class filter;
       class findStringInString;
@@ -213,6 +214,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
@@ -224,6 +226,7 @@ class CfgFunctions {
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
+      class owned;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;

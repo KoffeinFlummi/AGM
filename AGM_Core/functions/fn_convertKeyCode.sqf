@@ -13,9 +13,13 @@
  * Key code (Number)
  */
 
+#define KEY_MODIFIERS [42, 54, 29, 157, 56, 184]
+
 private "_key";
 
 _key = _this select 0;
+
+if (_key in KEY_MODIFIERS) exitWith {_key};
 
 if (_this select 1) then {_key = _key + 0.1};
 if (_this select 2) then {_key = _key + 0.2};

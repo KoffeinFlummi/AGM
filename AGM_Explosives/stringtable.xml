@@ -50,13 +50,9 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
     </Key>
-    <Key ID="STR_AGM_Explosives_AttachTo">
-      <English>Attach IED</English>
-      <German>USBV befestigen</German>
-      <Spanish>Enganchar IED</Spanish>
-      <Polish>Przyczep IED</Polish>
-      <French>Attacher IED</French>
-      <Czech>Připevnit IED</Czech>
+    <Key ID="STR_AGM_Explosives_ScrollAction">
+      <English>+ Modifier, rotates</English>
+      <German>+ Modifikator, drehen</German>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -95,7 +91,7 @@
       <German>M57 Zündvorrichtung</German>
       <Spanish>Dispositivo de detonación M57</Spanish>
       <Polish>Detonator M57</Polish>
-      <French>M57 Dispositif de mise a feu</French>
+      <French>M57 Dispositif de mise à feu</French>
       <Czech>M57 Odpalovací Zařízení</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_clacker_description">
@@ -105,6 +101,18 @@
       <Polish>Używany do zdalnego detonowania ładunków wybuchowych</Polish>
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_M26_displayName">
+      <English>MK26 Firing Device</English>
+      <German>MK26 Zündvorrichtung</German>
+      <Spanish>Dispositivo de detonación MK26</Spanish>
+      <Polish>Detonator MK26</Polish>
+      <French>MK26 Dispositif de mise à feu</French>
+      <Czech>MK26 Odpalovací Zařízení</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_MK16_displayName">
+      <English>M152 RAMS</English>
+      <German>M152 RAMS</German>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>
@@ -172,7 +180,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_DetonateMenu">
       <English>Detonate Menu</English>
-      <German>"Zünden"-Menu</German>
+      <German>"Zünden"-Menü</German>
       <Spanish>Menú de detonación</Spanish>
       <Polish>Menu detonowania</Polish>
       <French>Menu de mise à feu</French>
@@ -180,7 +188,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceMenu">
       <English>Place Menu</English>
-      <German>"Platzieren"-Menu</German>
+      <German>"Platzieren"-Menü</German>
       <Spanish>Menú de colocación</Spanish>
       <Polish>Menu umieszczania</Polish>
       <French>Menu Placement</French>
@@ -289,6 +297,10 @@
       <German>Magnetfeldsensor (Bodenangriff)</German>
       <French>Capteur Magnétique (Attaque par le bas)</French>
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
+    </Key>
+    <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
+      <English>No explosives on trigger.</English>
+      <German>Keine Sprengladungen auf diesem Auslöser.</German>
     </Key>
   </Package>
 </Project>

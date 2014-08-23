@@ -318,8 +318,152 @@ class CfgVehicles {
   class O_static_AA_F: AA_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AA_Name";
   };
-};
 
+  // pistols
+  class Pistol_Base_F;
+  class Weapon_hgun_P07_F: Pistol_Base_F {
+    displayName = "P99";
+  };
+  class Weapon_hgun_Rook40_F: Pistol_Base_F {
+    displayName = "MP-443 Grach";
+  };
+  class Weapon_hgun_ACPC2_F: Pistol_Base_F {
+    displayName = "ACP-C2";
+  };
+  class Weapon_hgun_Pistol_heavy_01_F: Pistol_Base_F {
+    displayName = "FNX-45 Tactical";
+  };
+  class Weapon_hgun_Pistol_heavy_02_F: Pistol_Base_F {
+    displayName = "Chiappa Rhino 60DS";
+  };
+  class Weapon_hgun_Pistol_Signal_F: Pistol_Base_F {
+    displayName = "Taurus Judge";
+  };
+
+  // rocket launchers
+  class Launcher_Base_F;
+  class Weapon_launch_NLAW_F: Launcher_Base_F {
+    displayName = "NLAW";
+  };
+  class Weapon_launch_RPG32_F: Launcher_Base_F {
+    displayName = "RPG-32";
+  };
+  class Weapon_launch_Titan_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AA)";
+  };
+  class Weapon_launch_Titan_short_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AT)";
+  };
+  class Weapon_launch_B_Titan_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AA)";
+  };
+  //class Weapon_launch_I_Titan_F: Weapon_launch_B_Titan_F {};
+  //class Weapon_launch_O_Titan_F: Weapon_launch_B_Titan_F {};
+  class Weapon_launch_launch_B_Titan_short_F: Launcher_Base_F {
+    displayName = "Mini-Spike (AT)";
+  };
+  //class Weapon_launch_I_Titan_short_F: Weapon_launch_launch_B_Titan_short_F {};
+  //class Weapon_launch_O_Titan_short_F: Weapon_launch_launch_B_Titan_short_F {};
+
+  // rifles
+  class Weapon_Base_F;
+  class Weapon_arifle_MX_F: Weapon_Base_F {
+    displayName = "MX";
+  };
+  class Weapon_arifle_MXC_F: Weapon_Base_F {
+    displayName = "MXC";
+  };
+  class Weapon_arifle_MX_GL_F: Weapon_Base_F {
+    displayName = "MX 3GL";
+  };
+  class Weapon_arifle_MX_SW_F: Weapon_Base_F {
+    displayName = "MX LSW";
+  };
+  class Weapon_arifle_MXM_F: Weapon_Base_F {
+    displayName = "MXM";
+  };
+
+  class Weapon_arifle_Katiba_F: Weapon_Base_F {
+    displayName = "KT2002 Katiba";
+  };
+  class Weapon_arifle_Katiba_C_F: Weapon_Base_F {
+    displayName = "KT2002C Katiba";
+  };
+  class Weapon_arifle_Katiba_GL_F: Weapon_Base_F {
+    displayName = "KT2002 Katiba KGL";
+  };
+
+  class Weapon_arifle_Mk20_F: Weapon_Base_F {
+    displayName = "F2000 (Camo)";
+  };
+  class Weapon_arifle_Mk20_plain_F: Weapon_Base_F {
+    displayName = "F2000";
+  };
+  class Weapon_arifle_Mk20C_F: Weapon_Base_F {
+    displayName = "F2000 Tactical (Camo)";
+  };
+  class Weapon_arifle_Mk20C_plain_F: Weapon_Base_F {
+    displayName = "F2000 Tactical";
+  };
+  class Weapon_arifle_Mk20_GL_F: Weapon_Base_F {
+    displayName = "F2000 EGLM (Camo)";
+  };
+  class Weapon_arifle_Mk20_GL_plain_F: Weapon_Base_F {
+    displayName = "F2000 EGLM";
+  };
+
+  class Weapon_arifle_TRG21_F: Weapon_Base_F {
+    displayName = "TAR-21";
+  };
+  class Weapon_arifle_TRG20_F: Weapon_Base_F {
+    displayName = "CTAR-21";
+  };
+  class Weapon_arifle_TRG21_GL_F: Weapon_Base_F {
+    displayName = "TAR-21 EGLM";
+  };
+
+  // sub machine guns
+  class Weapon_SMG_01_F: Weapon_Base_F {
+    displayName = "Vector SMG";
+  };
+  class Weapon_SMG_02_F: Weapon_Base_F {
+    displayName = "Scorpion Evo 3 A1";
+  };
+  class Weapon_hgun_PDW2000_F: Weapon_Base_F {
+    displayName = "CPW";
+  };
+  class Weapon_arifle_SDAR_F: Weapon_Base_F {
+    displayName = "RFB SDAR";
+  };
+
+  // machine guns
+  class Weapon_LMG_Mk200_F: Weapon_Base_F {
+    displayName = "Stoner 99 LMG";
+  };
+  class Weapon_LMG_Zafir_F: Weapon_Base_F {
+    displayName = "Negev NG7";
+  };
+
+  // sniper rifles
+  class Weapon_srifle_EBR_F: Weapon_Base_F {
+    displayName = "Mk14 Mod 1 EBR";
+  };
+  class Weapon_srifle_GM6_F: Weapon_Base_F {
+    displayName = "GM6 Lynx";
+  };
+  class Weapon_srifle_GM6_camo_F: Weapon_Base_F {
+    displayName = "GM6 Lynx (Camo)";
+  };
+  class Weapon_srifle_LRR_F: Weapon_Base_F {
+    displayName = "M200 Intervention";
+  };
+  class Weapon_srifle_LRR_camo_F: Weapon_Base_F {
+    displayName = "M200 Intervention (Camo)";
+  };
+  class Weapon_srifle_DMR_01_F: Weapon_Base_F {
+    displayName = "VS-121";
+  };
+};
 
 // WEAPONS
 
@@ -383,7 +527,7 @@ class CfgWeapons {
 
     class SDAR_base_F;
     class arifle_SDAR_F : SDAR_base_F {
-      displayName = "CFB SDAR";
+      displayName = "RFB SDAR";
     };
 
     class Tavor_base_F;
@@ -399,22 +543,22 @@ class CfgWeapons {
 
     class mk20_base_F;
     class arifle_Mk20_F : mk20_base_F {
-      displayName = "F2000A (Camo)";
+      displayName = "F2000 (Camo)";
     };
     class arifle_Mk20_plain_F : arifle_Mk20_F {
-      displayName = "F2000A";
+      displayName = "F2000";
     };
     class arifle_Mk20C_F : mk20_base_F {
-      displayName = "F2000A Tactical (Camo)";
+      displayName = "F2000 Tactical (Camo)";
     };
     class arifle_Mk20C_plain_F : arifle_Mk20C_F {
-      displayName = "F2000A Tactical";
+      displayName = "F2000 Tactical";
     };
     class arifle_Mk20_GL_F : mk20_base_F {
-      displayName = "F2000A EGLM (Camo)";
+      displayName = "F2000 EGLM (Camo)";
     };
     class arifle_Mk20_GL_plain_F : arifle_Mk20_GL_F {
-      displayName = "F2000A EGLM";
+      displayName = "F2000 EGLM";
     };
 
     class SMG_01_Base : Rifle_Base_F {
@@ -426,21 +570,21 @@ class CfgWeapons {
 
     class SMG_02_base_F;
     class SMG_02_F : SMG_02_base_F {
-      displayName = "Scorpion Evo 3A1";
+      displayName = "Scorpion Evo 3 A1";
     };
 
     class pdw2000_base_F;
     class hgun_pdw2000_F : pdw2000_base_F {
-      displayName = "CPW-CZ";
+      displayName = "CPW";
     };
 
     class Pistol_Base_F;
     class hgun_P07_F : Pistol_Base_F {
-      displayName = "P99G";
+      displayName = "P99";
     };
 
     class hgun_Rook40_F : Pistol_Base_F {
-      displayName = "MP-443G";
+      displayName = "MP-443 Grach";
     };
 
     class hgun_ACPC2_F : Pistol_Base_F {
@@ -461,7 +605,7 @@ class CfgWeapons {
 
     class Rifle_Long_Base_F;
     class LMG_Mk200_F : Rifle_Long_Base_F {
-      displayName = "Mk200 LMG";
+      displayName = "Stoner 99 LMG";
     };
 
     class LMG_Zafir_F: Rifle_Long_Base_F {
@@ -492,6 +636,21 @@ class CfgWeapons {
     class DMR_01_base_F;
     class srifle_DMR_01_F : DMR_01_base_F {
       displayName = "VS-121";
+    };
+
+  //MANPADS
+    class Launcher_Base_F;
+    class launch_RPG32_F: Launcher_Base_F {
+      displayName = "RPG-32";
+    };
+    class launch_Titan_base: Launcher_Base_F {
+      displayName = "Mini-Spike (AA)";
+    };
+    class launch_Titan_short_base: launch_Titan_base {
+      displayName = "Mini-Spike (AT)";
+    };
+    class launch_NLAW_F: Launcher_Base_F {
+      displayName = "NLAW";
     };
 
   // VEHICLE STUFF
@@ -1017,5 +1176,62 @@ class CfgMagazines {
   };
   class 40Rnd_20mm_G_belt: 200Rnd_20mm_G_belt {
     displayNameShort = "20mm HE";
+  };
+
+
+  // EXPLOSIVES
+  class CA_Magazine;
+  // http://en.wikipedia.org/wiki/M15_mine
+  class ATMine_Range_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_ATMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/VS-50_mine
+  class APERSMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSMine_Name";
+  };
+  // https://www.buymilsurp.com/us-m26-antipersonnel-bounding-mine-p-5419.html
+  class APERSBoundingMine_Range_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSBoundingMine_Name";
+  };
+  // http://en.wikipedia.org/wiki/PMR-3_mine
+  class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_APERSTripwireMine_Name";
+  };
+  // the following ones can be found here: http://www.dtic.mil/dtic/tr/fulltext/u2/a567897.pdf
+  class SLAMDirectionalMine_Wire_Mag: ATMine_Range_Mag {
+    displayName = "$STR_AGM_RealisticNames_SLAM_Name";
+  };
+  class ClaymoreDirectionalMine_Remote_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_Claymore_Name";
+  };
+  class SatchelCharge_Remote_Mag: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_SatchelCharge_Name";
+  };
+  class DemoCharge_Remote_Mag: SatchelCharge_Remote_Mag {
+    displayName = "$STR_AGM_RealisticNames_DemoCharge_Name";
+  };
+  class HandGrenade: CA_Magazine {
+    displayName = "$STR_AGM_RealisticNames_HandGrenade_Name";
+  };
+  class SmokeShell: HandGrenade {
+    displayName = "$STR_AGM_RealisticNames_SmokeShell_Name";
+  };
+  class SmokeShellBlue: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellBlue_Name";
+  };
+  class SmokeShellGreen: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellGreen_Name";
+  };
+  class SmokeShellOrange: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellOrange_Name";
+  };
+  class SmokeShellPurple: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellPurple_Name";
+  };
+  class SmokeShellRed: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellRed_Name";
+  };
+  class SmokeShellYellow: SmokeShell {
+    displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
   };
 };

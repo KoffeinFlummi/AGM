@@ -14,7 +14,7 @@
       <English>Get in as Driver</English>
       <German>Einsteigen als Fahrer</German>
       <Spanish>Entrar como conductor</Spanish>
-      <French>Embarquer comme Chauffeur</French>
+      <French>Embarquer (Chauffeur)</French>
       <Polish>Wejdź jako kierowca</Polish>
       <Czech>Nastoupit jako Řidič</Czech>
     </Key>
@@ -22,7 +22,7 @@
       <English>Get in as Gunner</English>
       <German>Einsteigen als Schütze</German>
       <Spanish>Entrar como artillero</Spanish>
-      <French>Embarquer comme Tireur</French>
+      <French>Embarquer (Tireur)</French>
       <Polish>Wejdź jako strzelec</Polish>
       <Czech>Nastoupit jako Střelec</Czech>
     </Key>
@@ -30,7 +30,7 @@
       <English>Get in as Commander</English>
       <German>Einsteigen als Kommandant</German>
       <Spanish>Entrar como comandante</Spanish>
-      <French>Embarquer comme Chef de Bord</French>
+      <French>Embarquer (Chef de Bord)</French>
       <Polish>Wejdź jako dowódca</Polish>
       <Czech>Nastoupit jako Velitel</Czech>
     </Key>
@@ -38,7 +38,7 @@
       <English>Get in as Loader</English>
       <German>Einsteigen als Ladeschütze</German>
       <Spanish>Entrar como cargador</Spanish>
-      <French>Embarquer comme Pourvoyeur</French>
+      <French>Embarquer (Pourvoyeur)</French>
       <Polish>Wejdź jako ładowniczy</Polish>
       <Czech>Nastoupit jako Nabíječ</Czech>
     </Key>
@@ -46,23 +46,23 @@
       <English>Get in as Pilot</English>
       <German>Einsteigen als Pilot</German>
       <Spanish>Entrar como piloto</Spanish>
-      <French>Embarquer comme Pilote</French>
+      <French>Embarquer (Pilote)</French>
       <Polish>Wejdź jako pilot</Polish>
       <Czech>Nastoupit jako Pilot</Czech>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerLeft">
       <English>Get in as Door gunner (left)</English>
-      <German>Einsteigen als Doorgunner (links)</German>
+      <German>Einsteigen als Bordschütze (links)</German>
       <Spanish>Entrar como artillero de puerta (izquierda)</Spanish>
-      <French>Embarquer comme Artilleur (gauche)</French>
+      <French>Embarquer (Artilleur gauche)</French>
       <Polish>Wejdź jako strzelec (lewy)</Polish>
       <Czech>Nastoupit jako Střelec (dveře vlevo)</Czech>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
       <English>Get in as Door gunner (right)</English>
-      <German>Einsteigen als Doorgunner (rechts)</German>
+      <German>Einsteigen als Bordschütze (rechts)</German>
       <Spanish>Entrar como artillero de puerta (derecha)</Spanish>
-      <French>Embarquer comme Artilleur (droite)</French>
+      <French>Embarquer (Artilleur droite)</French>
       <Polish>Wejdź jako strzelec (prawy)</Polish>
       <Czech>Nastoupit jako Střelec (dveře vpravo)</Czech>
     </Key>
@@ -70,7 +70,7 @@
       <English>Get in as Cargo</English>
       <German>Einsteigen als Besatzung</German>
       <Spanish>Entrar como pasajero</Spanish>
-      <French>Embarquer comme Passager</French>
+      <French>Embarquer (Passager)</French>
       <Polish>Wejdź jako pasażer</Polish>
       <Czech>Nastoupit jako Pasažér</Czech>
     </Key>
@@ -78,7 +78,7 @@
       <English>Get in as Co-driver</English>
       <German>Einsteigen als Beifahrer</German>
       <Spanish>Entrar como copiloto</Spanish>
-      <French>Embarquer comme Co-pilote</French>
+      <French>Embarquer (Co-pilote)</French>
       <Polish>Wejdź jako co-pilot</Polish>
       <Czech>Nastoupit jako Co-pilot</Czech>
     </Key>
@@ -125,17 +125,17 @@
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerLeft">
       <English>Move to Door gunner (left)</English>
-      <German>Zum Doorgunnersitz (links)</German>
+      <German>Zum Bordschützensitz (links)</German>
       <Spanish>Mover a artillero de puerta (izquierda)</Spanish>
-      <French>Passer en Artilleur (gauche)</French>
+      <French>Passer en Artilleur gauche</French>
       <Polish>Przejdź na miejsce strzelca (lewy)</Polish>
       <Czech>Přesednout na Střelce (dveře vlevo)</Czech>
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerRight">
       <English>Move to Door gunner (right)</English>
-      <German>Zum Doorgunnersitz (rechts)</German>
+      <German>Zum Bordschützensitz (rechts)</German>
       <Spanish>Mover a artillero de puerta (derecha)</Spanish>
-      <French>Passer en Artilleur (droite)</French>
+      <French>Passer en Artilleur droite</French>
       <Polish>Przejdź na miejsce strzelca (prawy)</Polish>
       <Czech>Přesednout na Střelce (dveře vpravo)</Czech>
     </Key>

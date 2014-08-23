@@ -68,9 +68,11 @@
 	class AGM_DragItem { \
 		displayName = "$STR_AGM_Drag_StartDrag"; \
 		distance = 4; \
-		condition = "!(player call AGM_Drag_fnc_isDraggingObject) AND {[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable}"; \
+		condition = "!(player call AGM_Drag_fnc_isDraggingObject)"; \
+		conditionShow = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
-		showDisabled = 1; \
+		tooltip = "Drag this object."; \
+		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 	}; \
@@ -79,6 +81,7 @@
 		distance = 4; \
 		condition = "player call AGM_Drag_fnc_isDraggingObject && {AGM_Interaction_Target == player getVariable ['AGM_carriedItem', objNull]}"; \
 		statement = "player call AGM_Drag_fnc_releaseObject"; \
+		tooltip = "Release the dragged / carried object."; \
 		exceptions[] = {"AGM_Drag_isNotDragging"}; \
 		showDisabled = 0; \
 		priority = 3; \
@@ -105,6 +108,7 @@
 		statement = "[AGM_Interaction_Target, true] call AGM_StaticWeapons_fnc_rotate"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\rotate_cw_ca.paa"; \
 	}; \
 	class AGM_RotateCounterclockwise { \
 		displayName = "$STR_AGM_StaticWeapons_RotateCounterclockwise"; \
@@ -113,6 +117,7 @@
 		statement = "[AGM_Interaction_Target, false] call AGM_StaticWeapons_fnc_rotate"; \
 		showDisabled = 1; \
 		priority = 2; \
+		icon = "AGM_Logistics\ui\rotate_ccw_ca.paa"; \
 	};
 
 #define MACRO_CUTWIRE \
@@ -123,6 +128,7 @@
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\wirecutter_ca.paa"; \
 	};
 
 #define MACRO_CUTWIRE_LONG \
@@ -133,6 +139,7 @@
 		statement = "[5, AGM_Interaction_Target] call AGM_Wirecutter_fnc_cutDownFence"; \
 		showDisabled = 1; \
 		priority = 2.1; \
+		icon = "AGM_Logistics\ui\wirecutter_ca.paa"; \
 	};
 
 #define MACRO_CARRYJERRYCAN \
@@ -248,7 +255,7 @@
 		statement = "[cursorTarget, player] call AGM_UAVs_fnc_refuel"; \
 		showDisabled = 0; \
 		priority = 1.245; \
-		icon = "\A3\ui_f\data\igui\cfg\actions\refuel_ca.paa"; \
+		icon = "AGM_Logistics\ui\AGM_battery.paa"; \
 	};
 
 #define MACRO_PARADROP \

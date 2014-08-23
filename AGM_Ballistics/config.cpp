@@ -895,8 +895,8 @@ class CfgVehicles {
 
   class C_supplyCrate_F: ReammoBox_F {
     class TransportMagazines {
-      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_AP,2)
-      MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_AP,2)
+      MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,2)
     };
   };
 

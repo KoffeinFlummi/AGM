@@ -13,13 +13,18 @@ class CfgWeapons {
 		descriptionShort = $STR_AGM_Explosives_clacker_description;
 		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
 		model = "\A3\weapons_F\ammo\mag_univ.p3d";
-		AGM_range = 100;
+		AGM_range = 250;
 		AGM_Detonator = 1;
 		
 		class ItemInfo: AGM_ExplosiveItem {
 			mass = 3;
 			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
 		};
+	};
+	class AGM_M26_Clacker: AGM_Clacker {
+		displayName = $STR_AGM_Explosives_M26_displayName;
+		picture = "\AGM_Explosives\Data\UI\MK26_Transmitter_ca.paa";
+		AGM_range = 5000;
 	};
 	class AGM_DefusalKit: AGM_ItemCore {
 		scope = 2;
