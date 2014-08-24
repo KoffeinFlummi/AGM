@@ -78,12 +78,13 @@ def replace_entries(oldpath, newpath, language, breakdown):
       oldkey.insertBefore(oldfile.createTextNode("\n      "), oldkey.lastChild)
       oldkey.insertBefore(oldentry, oldkey.lastChild)
 
-  # Ensure newline at the end of file
+  # Make a nice string
   xmlstring = oldfile.toxml()
-  xmlstring = xmlstring.replace('version="1.0" ?>', 'version="1.0" encoding="utf-8" ?>')
+  xmlstring = xmlstring.replace('" ?>', '" encoding="utf-8" ?>')
 
-  # Replace the other newlines that minidom swallows
+  # Replace the newlines that minidom swallows
   xmlstring = xmlstring.replace("><", ">\n<")
+  xmlstring += "\n"
 
   fhandle = open(oldpath, "w")
   fhandle.write(xmlstring)
