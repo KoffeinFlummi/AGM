@@ -61,7 +61,7 @@ def replace_entries(oldpath, newpath, language, breakdown):
       continue
 
     if breakdown:
-      print("  # Merging translation for %s" % (keyid))
+      print("  Merging translation for %s" % (keyid))
 
     newentry = newkey.getElementsByTagName(language)[0].firstChild
 
@@ -114,6 +114,8 @@ def main(sourcepath, language, breakdown):
     keycounter += keynum
 
     print("# Merged %i entry/entries in %s" % (keynum, module))
+    if breakdown:
+      print("")
 
   print("")
   print("Merged %i entry/entries in %i modules" % (keycounter, modulecounter))
