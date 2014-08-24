@@ -14,10 +14,7 @@
 _open = _this select 0;
 _isOpen = !(isNull (uiNamespace getVariable ['AGM_Map_mapGpsDisplay', displayNull]));
 
-// If already on the desired state, exit
-if ((_isOpen && _open) || {(!_isOpen) && {!_open}}) exitWith {};
-
-if (_open && {"ItemGPS" in assignedItems player}) then {
+if (_open && {"ItemGPS" in assignedItems player} && {!_isOpen}) then {
   ("AGM_mapGpsLayer" call BIS_fnc_rscLayer) cutRsc ["RscAGM_MapGps","PLAIN"];
 
   // Spawn a thread to update gps display

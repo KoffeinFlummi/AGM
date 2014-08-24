@@ -26,4 +26,4 @@ player allowDamage true;
 
 _itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");
 _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
-[format ["unloaded %1 from %2", _itemName, _vehicleName]] call AGM_Core_fnc_displayTextStructured;
+[format [localize "STR_AGM_Logistics_UnloadedItem", _itemName, _vehicleName]] call AGM_Core_fnc_displayTextStructured;
