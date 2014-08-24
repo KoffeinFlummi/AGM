@@ -23,20 +23,23 @@ _fnc_GetActions = {
 	_patches = _this select 2;
 	_class = _this select 3;
 	_baseConfig = _this select 4;
-	{
-		_config = _baseConfig >> _x >> "AGM_SelfActions" >> _class;
+
+	_count = count _parents;
+	for "_i" from 0 to (_count - 1) do {
+		_config = _baseConfig >> _parents select _i >> "AGM_SelfActions" >> _class;
 
 		_count = count _config;
 		if (_count > 0) then {
 			for "_index" from 0 to (_count - 1) do {
 				_action = if (_this select 5) then {_config select _index} else {_this select 6 >> configName (_config select _index)};
-				_cache = missionNamespace getVariable ["AGM_Interaction_MenuCache", [[], []]];
+				_cache = missionNamespace getVariable ["AGM_Interaction_MenuCache", [[], [], []]];
 
 				if (count _action > 0) then {
 					_configName = configName _action;
 
 					_cacheConfig = _cache select 0;
 					_cacheAction = _cache select 1;
+					_cacheIndices = _cache select 2;
 
 					_indexCache = _cacheConfig find _action;
 					if (_indexCache == -1) then {
@@ -114,7 +117,7 @@ _fnc_GetActions = {
 				AGM_Interaction_MenuCache = _cache;
 			};
 		};
-	} forEach _parents;
+	};
 
 	[_actions, _patches]
 };
