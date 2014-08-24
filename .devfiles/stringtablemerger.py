@@ -12,6 +12,7 @@ from xml.dom import minidom
 # in the given language from the given dir.
 
 def get_modules(projectpath):
+  """ Get all the modules of the project. """
   modules = []
   
   for i in os.listdir(projectpath):
@@ -36,6 +37,7 @@ def contains_language(key, language):
   return False
 
 def get_entry_by_id(keys, keyid):
+  """ Returns the first child of keys with ID='keyid'. """
   for key in keys:
     if key.getAttribute("ID") == keyid:
       return key
@@ -43,17 +45,12 @@ def get_entry_by_id(keys, keyid):
   return False
 
 def replace_entries(oldpath, newpath, language):
+  """ Replaces all new entries of the given language in the given module. """
   oldfile = minidom.parse(oldpath)
   newfile = minidom.parse(newpath)
 
   oldkeys = oldfile.getElementsByTagName("Key")
   newkeys = newfile.getElementsByTagName("Key")
-  """
-  for keys in oldkeys + newkeys:
-    for child in keys.childNodes:
-      if len(child.childNodes) == 0:
-        keys.removeChild(child)
-  """
   newkeys = list(filter(lambda x: contains_language(x, language), newkeys))
 
   for newkey in newkeys:
@@ -66,14 +63,18 @@ def replace_entries(oldpath, newpath, language):
     newentry = newkey.getElementsByTagName(language)[0].firstChild
 
     try:
+      # An entry for this language already exists, overwrite it
       oldentry = oldkey.getElementsByTagName(language)[0].firstChild
       oldentry.setWholeText(newentry.wholeText)
     except:
+      # There is no entry for this language yet, make one
       oldentry = oldfile.createElement(language)
       oldentry.appendChild(oldfile.createTextNode(newentry.wholeText))
+      # Some whitespace tetris to maintain file structure
       oldkey.insertBefore(oldfile.createTextNode("\n      "), oldkey.lastChild)
       oldkey.insertBefore(oldentry, oldkey.lastChild)
 
+  # Ensure newline at the end of file
   xmlstring = oldfile.toxml()
   if xmlstring[-1] != "\n":
     xmlstring += "\n"
@@ -95,8 +96,13 @@ def main(sourcepath, language):
   for module in modules:
     oldpath = os.path.join(projectpath, module, "stringtable.xml")
     newpath = os.path.join(sourcepath, module, "stringtable.xml")
+
+    # Some translators extract the lowercase PBOs, so the module name might
+    # be lowercase (obviously only matters on Linux)
     if not os.path.exists(newpath):
       newpath = os.path.join(sourcepath, module.lower(), "stringtable.xml")
+
+    # Translator didn't include this module, skip
     if not os.path.exists(newpath):
       continue
 
