@@ -13,9 +13,6 @@
 
 private ["_dir", "_params", "_control", "_button", "_screenPos", "_shiftKey", "_ctrlKey", "_handled", "_pos"];
 
-// If no map tool marker then exit
-if (isNil "AGM_Map_mapToolFixed") exitWith {};
-
 _dir       = _this select 0;
 _params    = _this select 1;
 _control   = _params select 0;
@@ -23,18 +20,59 @@ _button    = _params select 1;
 _screenPos = [_params select 2, _params select 3];
 _shiftKey  = _params select 4;
 _ctrlKey   = _params select 5;
+_altKey    = _params select 6;
 _handled   = false;
 
 // If it's not a left button event, exit
 if (_button != 0) exitWith {};
 
-// Transform mouse screen position to coordinates
-_pos  = _control ctrlMapScreenToWorld _screenPos;
-
-// If clicking
-if (_dir == 1 && !_handled) exitWith {
+// If releasing
+if (_dir != 1 && (AGM_Map_dragging or AGM_Map_rotating)) exitWith {
   AGM_Map_dragging = false;
   AGM_Map_rotating = false;
+  _handled = true;
+  _handled
+};
+
+// If clicking
+if (_dir == 1) exitWith {
+
+  if !(call AGM_Map_fnc_canDraw) exitWith {_handled = false;};
+
+  // Transform mouse screen position to coordinates
+  _pos  = _control ctrlMapScreenToWorld _screenPos;
+  _pos set [count _pos, 0];
+
+  if (AGM_Map_drawing) exitWith {
+    // Already drawing -> Add tempLineMarker to permanent list
+    if (AGM_Map_syncMarkers) then {
+      deleteMarkerLocal (AGM_Map_tempLineMarker select 0);
+      [AGM_Map_tempLineMarker, "AGM_Map_fnc_addLineMarker", 2] call AGM_Core_fnc_execRemoteFnc;
+    } else {
+      AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+      AGM_Map_lineMarkers pushBack (+AGM_Map_tempLineMarker);
+    };
+    AGM_Map_tempLineMarker = [];
+    AGM_Map_drawing = false;
+    _handled = true;
+  };
+
+  if (_altKey) exitWith {
+    // Start drawing
+    AGM_Map_drawing = true;
+    // Create tempLineMarker
+    _gui = format ["%1%2%3%4", random (100), random (100), random (100), random (100)];
+    AGM_Map_tempLineMarker = [_gui, + _pos, + _pos, AGM_Map_drawColor];
+    _marker = createMarkerLocal [_gui, [0,0]];
+    AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
+    _handled = true;
+  };
+
+  AGM_Map_dragging = false;
+  AGM_Map_rotating = false;
+
+  // If no map tool marker then exit
+  if (isNil "AGM_Map_mapToolFixed") exitWith {_handled = false;};
 
   // Check if clicking the maptool
   if (_pos call AGM_Map_fnc_isInsideMapTool) exitWith {
@@ -53,15 +91,6 @@ if (_dir == 1 && !_handled) exitWith {
     };
     _handled = true;
   };
-  _handled
-};
-
-// If releasing
-if (_dir != 1 && (AGM_Map_dragging or AGM_Map_rotating)) exitWith {
-  AGM_Map_dragging = false;
-  AGM_Map_rotating = false;
-  _handled = true;
-  _handled
 };
 
 _handled

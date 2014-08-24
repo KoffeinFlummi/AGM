@@ -70,13 +70,13 @@
     </Key>
     <Key ID="STR_AGM_Wind_WindFromThe">
       <English>wind from the</English>
-      <German>Wind aus</German>
-      <Spanish>Viento del</Spanish>
+      <German>wind aus</German>
+      <Spanish>viento del</Spanish>
       <Polish>wiatr z</Polish>
       <Czech>vítr z</Czech>
-      <French>Vent venant du</French>
+      <French>vent venant du</French>
       <Russian>ветер с</Russian>
-      <Hungarian>Szélirány:</Hungarian>
+      <Hungarian>szélirány:</Hungarian>
       <Italian>Vento da</Italian>
     </Key>
 
