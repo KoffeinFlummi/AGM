@@ -79,7 +79,7 @@ def replace_entries(oldpath, newpath, language, breakdown):
       oldkey.insertBefore(oldentry, oldkey.lastChild)
 
   # Ensure newline at the end of file
-  xmlstring = oldfile.toxml()
+  xmlstring = oldfile.toxml(encoding="utf-8")
   if xmlstring[-1] != "\n":
     xmlstring += "\n"
 
