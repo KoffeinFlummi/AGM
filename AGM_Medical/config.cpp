@@ -81,9 +81,6 @@ class AGM_Core_Options {
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
-    armor = 2.5;
-    armorStructural = 5;
-
     class HitPoints {
       // "DEACTIVE" DEFAULT HITPOINTS
       class HitHands {
@@ -92,7 +89,7 @@ class CfgVehicles {
         material = -1;
         minimalHit = 0;
         name = "";
-        passThrough = 1; //passThrough = 1;
+        passThrough = 1;
         radius = 0; //radius = 0.06;
         visual = "injury_hands";
       };
@@ -102,14 +99,14 @@ class CfgVehicles {
         material = -1;
         minimalHit = 0;
         name = "";
-        passThrough = 1; //passThrough = 1;
+        passThrough = 1;
         radius = 0; //radius = 0.08;
         visual = "injury_legs";
       };
 
       class HitHead {
         armor = 0.5;
-        explosionShielding = 1;
+        explosionShielding = 0.5;
         material = -1;
         minimalHit = 0;
         name = "head";
@@ -118,7 +115,7 @@ class CfgVehicles {
       };
       class HitBody {
         armor = 0.5;
-        explosionShielding = 6;
+        explosionShielding = 2.4; //10;
         material = -1;
         minimalHit = 0;
         name = "body";
@@ -128,7 +125,7 @@ class CfgVehicles {
       };
       class HitLeftArm {
         armor = 2;
-        explosionShielding = 1;
+        explosionShielding = 1.2; //1;
         material = -1;
         minimalHit = 0;
         name = "hand_l";
@@ -141,7 +138,7 @@ class CfgVehicles {
       };
       class HitLeftLeg {
         armor = 2;
-        explosionShielding = 1;
+        explosionShielding = 1.2; //1;
         material = -1;
         minimalHit = 0;
         name = "leg_l";
@@ -371,6 +368,147 @@ class CfgVehicles {
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
         icon = "AGM_Medical\UI\medical_ca.paa";
+      };
+    };
+  };
+
+  // NATO
+  class SoldierWB: CAManBase {};
+  class B_Soldier_base_F: SoldierWB {};
+  class B_Soldier_05_f: B_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2;
+      };
+    };
+  };
+
+  // AAF
+  class SoldierGB: CAManBase {};
+  class I_Soldier_base_F: SoldierGB {};
+  class I_Soldier_03_F: I_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2;
+      };
+    };
+  };
+  class I_Soldier_04_F: I_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2;
+      };
+    };
+  };
+
+  // CSAT
+  class SoldierEB: CAManBase {};
+  class O_Soldier_base_F: SoldierEB {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4; //1.5;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2; //0.8;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2; //0.8;
+      };
+    };
+  };
+  class O_officer_F: O_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4; //10;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2; //1;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2; //1;
+      };
+    };
+  };
+  class O_Soldier_02_F: O_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4; //1.5;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2; //0.8;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2; //0.8;
+      };
+    };
+  };
+
+  // VR
+  class O_Soldier_VR_F: O_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4; //6;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2; //1;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2; //1;
+      };
+    };
+  };
+  class O_Protagonist_VR_F: O_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {
+        explosionShielding = 0.5;
+      };
+      class HitBody: HitBody {
+        explosionShielding = 2.4; //6;
+      };
+      class HitHands: HitHands {
+        explosionShielding = 1.2; //1;
+      };
+      class HitLegs: HitLegs {
+        explosionShielding = 1.2; //1;
       };
     };
   };
