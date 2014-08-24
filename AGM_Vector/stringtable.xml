@@ -17,6 +17,7 @@
       <French>Télémètre</French>
       <Polish>Dalmierz</Polish>
       <Czech>Dálkoměr</Czech>
+      <Italian>Telemetro</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
       <English>Vector - Azimuth Key</English>
@@ -25,6 +26,7 @@
       <French>Vector - Touche Azimuth</French>
       <Polish>Vector - Azymut</Polish>
       <Czech>Vector - Azimut Klávesa</Czech>
+      <Italian>Vector - Tasto Azimuth</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
@@ -33,6 +35,7 @@
       <French>Vector - Touche Distance</French>
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
+      <Italian>Vector - Tasto distanza</Italian>
     </Key>
 
   </Package>

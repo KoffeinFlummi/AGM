@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Edited with tabler - 2014-08-12 -->
 <Project name="AGM">
   <Package name="Map">
@@ -9,6 +9,7 @@
       <Polish>Narzędzia mapy</Polish>
       <German>Kartenwerkzeug</German>
       <Czech>Pomůcky k Mapě</Czech>
+      <Italian>Strumenti per mappa</Italian>
     </Key>
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
@@ -17,6 +18,7 @@
       <Polish>Narzędzia pozwalają na mierzenie odległości i kątów na mapie.</Polish>
       <German>Das Kartenwerkzeug erlaubt es dir, Distanzen und Winkel zu messen.</German>
       <Czech>Pomůcky k mapě slouží k měření vzdáleností a úhlů na mapě.</Czech>
+      <Italian>Gli strumenti per mappa ti permettono di misurare le distanze e gli angoli di essa.</Italian>
     </Key>
     <Key ID="STR_AGM_Map_MapTools_Menu">
       <English>Map Tools &gt;&gt;</English>
