@@ -94,10 +94,8 @@ class V_RebreatherB: Vest_Camo_Base {
     passThrough = 1;
   };
 };
-class V_RebreatherIR: V_RebreatherB {
-};
-class V_RebreatherIA: V_RebreatherB {
-};
+//class V_RebreatherIR: V_RebreatherB {};
+//class V_RebreatherIA: V_RebreatherB {};
 
 // tac vests
 class V_TacVest_camo: Vest_Camo_Base {
@@ -141,7 +139,7 @@ class V_BandollierB_khk: Vest_Camo_Base {
     passThrough = 1;
   };
 };
-class V_BandollierB_cbr: V_BandollierB_khk {
+/*class V_BandollierB_cbr: V_BandollierB_khk {
   class ItemInfo: ItemInfo {};
 };
 class V_BandollierB_rgr: V_BandollierB_khk {
@@ -152,7 +150,7 @@ class V_BandollierB_blk: V_BandollierB_khk {
 };
 class V_BandollierB_oli: V_BandollierB_khk {
   class ItemInfo: ItemInfo {};
-};
+};*/
 
 // chestrigs
 class V_Chestrig_khk: Vest_Camo_Base {
@@ -161,10 +159,8 @@ class V_Chestrig_khk: Vest_Camo_Base {
     passThrough = 1;
   };
 };
-class V_Chestrig_rgr: V_Chestrig_khk {
-};
-class V_Chestrig_blk: V_Chestrig_khk {
-};
+//class V_Chestrig_rgr: V_Chestrig_khk {};
+//class V_Chestrig_blk: V_Chestrig_khk {};
 class V_Chestrig_oli: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     armor = 0;
@@ -217,9 +213,9 @@ class V_Rangemaster_belt: Vest_NoCamo_Base {
     passThrough = 1;
   };
 };
-class V_I_G_resistanceLeader_F: V_TacVest_camo {
+/*class V_I_G_resistanceLeader_F: V_TacVest_camo {
   class ItemInfo: ItemInfo {};
-};
+};*/
 class V_Press_F: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     armor = 0;
