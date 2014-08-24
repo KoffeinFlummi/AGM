@@ -44,7 +44,7 @@ def get_entry_by_id(keys, keyid):
 
   return False
 
-def replace_entries(oldpath, newpath, language):
+def replace_entries(oldpath, newpath, language, breakdown):
   """ Replaces all new entries of the given language in the given module. """
   oldfile = minidom.parse(oldpath)
   newfile = minidom.parse(newpath)
@@ -59,6 +59,9 @@ def replace_entries(oldpath, newpath, language):
 
     if not oldkey:
       continue
+
+    if breakdown:
+      print("  # Merging translation for %s" % (keyid))
 
     newentry = newkey.getElementsByTagName(language)[0].firstChild
 
@@ -85,7 +88,7 @@ def replace_entries(oldpath, newpath, language):
 
   return len(newkeys)
 
-def main(sourcepath, language):
+def main(sourcepath, language, breakdown):
   scriptpath = os.path.realpath(__file__)
   projectpath = os.path.dirname(os.path.dirname(scriptpath))
 
@@ -106,7 +109,7 @@ def main(sourcepath, language):
     if not os.path.exists(newpath):
       continue
 
-    keycounter += replace_entries(oldpath, newpath, language)
+    keycounter += replace_entries(oldpath, newpath, language, breakdown)
     modulecounter += 1
 
     print("# Merged %i entry/entries in %s" % (keycounter, module))
@@ -126,4 +129,4 @@ if __name__ == "__main__":
     print("[script] [path to new project] [language]")
     sys.exit(1)
 
-  main(sourcepath, language)
+  main(sourcepath, language, "--breakdown" in sys.argv)
