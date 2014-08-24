@@ -105,7 +105,6 @@ class CfgVehicles {
       };
 
       class HitHead {
-        armor = 0.5;
         explosionShielding = 0.5;
         material = -1;
         minimalHit = 0;
@@ -114,7 +113,6 @@ class CfgVehicles {
         radius = 0.1;
       };
       class HitBody {
-        armor = 0.5;
         explosionShielding = 2.4; //10;
         material = -1;
         minimalHit = 0;
