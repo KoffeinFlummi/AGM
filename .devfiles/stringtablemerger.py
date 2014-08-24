@@ -79,9 +79,8 @@ def replace_entries(oldpath, newpath, language, breakdown):
       oldkey.insertBefore(oldentry, oldkey.lastChild)
 
   # Ensure newline at the end of file
-  xmlstring = oldfile.toxml(encoding="utf-8")
-  if xmlstring[-1] != "\n":
-    xmlstring += "\n"
+  xmlstring = oldfile.toxml()
+  xmlstring = xmlstring.replace('version="1.0" ?>', 'version="1.0" encoding="utf-8" ?>')
 
   # Replace the other newlines that minidom swallows
   xmlstring = xmlstring.replace("><", ">\n<")
