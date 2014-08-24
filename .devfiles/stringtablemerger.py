@@ -2,6 +2,7 @@
 
 import os
 import sys
+import re
 
 from xml.dom import minidom
 
@@ -81,6 +82,9 @@ def replace_entries(oldpath, newpath, language, breakdown):
   xmlstring = oldfile.toxml()
   if xmlstring[-1] != "\n":
     xmlstring += "\n"
+
+  # Replace the other newlines that minidom swallows
+  xmlstring = xmlstring.replace("><", ">\n<")
 
   fhandle = open(oldpath, "w")
   fhandle.write(xmlstring)
