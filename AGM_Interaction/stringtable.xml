@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 09.08.2014 -->
+<!-- Edited with tabler - 2014-08-24 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -25,7 +25,7 @@
     <Key ID="STR_AGM_Interaction_OpenDoor">
       <English>Open / Close Door</English>
       <German>Tür öffnen / schließen</German>
-      <Spanish>Abrir / Cerrar Puerta</Spanish>
+      <Spanish>Abrir / Cerrar puerta</Spanish>
       <Polish>Otwórz / Zamknij drzwi</Polish>
       <Czech>Otevřít / Zavřít dveře</Czech>
       <French>Ouvrir / Fermer Portes</French>
@@ -35,18 +35,22 @@
     <Key ID="STR_AGM_Interaction_LockDoor">
       <English>Lock Door</English>
       <German>Tür sperren</German>
+      <Spanish>Trabar puerta</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
       <German>Tür entsperren</German>
+      <Spanish>Destrabar puerta</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
       <German>Tür gesperrt</German>
+      <Spanish>Puerta trabada</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
       <German>Tür entsperrt</German>
+      <Spanish>Puerta destrabada</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -520,12 +524,14 @@
       <German>Scrollen</German>
       <Polish>Przewiń</Polish>
       <French>Défilement</French>
+      <Spanish>Desplazar</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_ModifierKey">
       <English>Modifier Key</English>
       <German>Modifikator</German>
       <Polish>Modyfikator</Polish>
       <French>Modifier la touche</French>
+      <Spanish>Tecla modificadora</Spanish>
     </Key>
   </Package>
 </Project>

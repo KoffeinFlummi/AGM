@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-24 -->
 <Project name="AGM">
   <Package name="Logistics">
     <Key ID="STR_AGM_Logistics_LoadMenu">
@@ -28,6 +29,7 @@
     <Key ID="STR_AGM_Logistics_UnloadingItem">
       <English>Unloading ...</English>
       <German>Lade ab ...</German>
+      <Spanish>Descargando ...</Spanish>
     </Key>
     <Key ID="STR_AGM_Logistics_LoadedItem">
       <English>%1 loaded into %2</English>
@@ -40,6 +42,7 @@
     <Key ID="STR_AGM_Logistics_UnloadedItem">
       <English>Unloaded %1 from %2</English>
       <German>%1 von %2 abgeladen</German>
+      <Spanish>Descargado/a %1 de %2</Spanish>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadMenu">
       <English>Unload Menu</English>
@@ -170,7 +173,6 @@
       <French>Chenille de réserve</French>
       <Polish>Zapasowa gąsienica</Polish>
       <Czech>Náhradní pásy</Czech>
-
     </Key>
     <Key ID="STR_AGM_Repair_SpareWheel">
       <English>Spare Wheel</English>
@@ -852,7 +854,6 @@
       <French>Concertina</French>
       <Czech>Razor Wire</Czech>
     </Key>
-
     <Key ID="STR_AGM_Fortifications_PlaceAction">
       <English>Place</English>
       <German>Platzieren</German>
