@@ -37,11 +37,11 @@ _fnc_GetActions = {
 				if (count _action > 0) then {
 					_configName = configName _action;
 
-					_cacheConfig = _cache select 0;
-					_cacheAction = _cache select 1;
+					_cacheConfigs = _cache select 0;
+					_cacheActions = _cache select 1;
 					_cacheIndices = _cache select 2;
 
-					_indexCache = _cacheConfig find _action;
+					_indexCache = _cacheConfigs find _action;
 					if (_indexCache == -1) then {
 						_displayName = getText (_action >> "displayName");
 						_distance = 0;
@@ -86,21 +86,28 @@ _fnc_GetActions = {
 							_icon = "\AGM_Interaction\UI\dot_ca.paa";
 						};
 
-						if (!(_configName in _patches) && {_showDisabled || {call _condition}}) then {
-							_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
+						_actionToCache = [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
+
+						if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
+							_actions pushBack _actionToCache;
 							_patches pushBack _configName;
 						};
 
-						_indexCache = count _cacheConfig;
-						_cacheConfig set [_indexCache, _action];
-						_cacheAction set [_indexCache, [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance]];
+						_indexCache = _cacheActions find _actionToCache;
+						if (_indexCache == -1) then {
+							_indexCache = count _cacheActions;
+							_cacheActions pushBack _actionToCache;
+						};
 
-						_cache = [_cacheConfig, _cacheAction];
+						_cacheConfigs pushBack _action;
+						_cacheIndices pushBack _indexCache;
+
+						_cache = [_cacheConfigs, _cacheActions, _cacheIndices];
 						if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {diag_log text format ["%1 loaded into cache", _action]};
 					} else {
 						if (!isNil "AGM_Debug" && {AGM_Debug == "InteractionMenu"}) then {diag_log text format ["%1 loaded from cache", _action]};
 
-						_cachedAction = _cacheAction select _indexCache;
+						_cachedAction = _cacheActions select (_cacheIndices select _indexCache);
 
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
