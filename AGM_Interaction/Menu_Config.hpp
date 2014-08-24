@@ -47,7 +47,7 @@ class AGM_Interaction_Dialog {
   idd = 1713999;
   enableSimulation = 1;
   movingEnable = 0;
-  onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
+  onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; (_dlgInteractionDialog displayCtrl 4) ctrlShow false; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
   onUnload = "uiNamespace setVariable ['AGM_Interaction_Dialog', displayNull];";
   objects[] = {};
   class controls {
