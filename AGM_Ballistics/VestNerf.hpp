@@ -82,7 +82,7 @@ class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl {
 };
 class V_PlateCarrierSpec_rgr: Vest_NoCamo_Base {
   class ItemInfo: ItemInfo {
-    armor = 16 //"40*0.4";
+    armor = 16; //"40*0.4";
     passThrough = 0.45; //0.1;
   };
 };

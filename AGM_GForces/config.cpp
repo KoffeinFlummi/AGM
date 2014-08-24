@@ -50,12 +50,12 @@ class CfgVehicles {
     AGM_GForceCoef = 1;
   };
 
-  class B_Helipilot_F;
-  class B_Pilot_F: B_Helipilot_F {
+  class B_Soldier_05_f;
+  class B_Pilot_F: B_Soldier_05_f {
     AGM_GForceCoef = 0.75;
   };
-  class I_helipilot_F;
-  class I_pilot_F: I_helipilot_F {
+  class I_Soldier_04_F;
+  class I_pilot_F: I_Soldier_04_F {
     AGM_GForceCoef = 0.75;
   };
   class O_helipilot_F;
