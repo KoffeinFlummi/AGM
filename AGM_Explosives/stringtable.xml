@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 09.08.2014 -->
+<!-- Edited with tabler - 2014-08-24 -->
 <Project name="AGM">
   <Package name="Explosives">
     <Key ID="STR_AGM_Explosives_Menu">
@@ -53,6 +53,7 @@
     <Key ID="STR_AGM_Explosives_ScrollAction">
       <English>+ Modifier, rotates</English>
       <German>+ Modifikator, drehen</German>
+      <Spanish>+ Modificador, rota</Spanish>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -113,6 +114,10 @@
     <Key ID="STR_AGM_Explosives_MK16_displayName">
       <English>M152 RAMS</English>
       <German>M152 RAMS</German>
+      <Czech>M152 RAMS</Czech>
+      <French>M152 RAMS</French>
+      <Polish>M152 RAMS</Polish>
+      <Spanish>M152 RAMS</Spanish>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>
@@ -301,6 +306,7 @@
     <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
       <English>No explosives on trigger.</English>
       <German>Keine Sprengladungen auf diesem Auslöser.</German>
+      <Spanish>Ningún explosivo en el detonador.</Spanish>
     </Key>
   </Package>
 </Project>
