@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-08-24 -->
+<?xml version="1.0" encoding="utf-8" ?>
 <Project name="AGM">
   <Package name="Explosives">
     <Key ID="STR_AGM_Explosives_Menu">
@@ -54,6 +53,7 @@
       <English>+ Modifier, rotates</English>
       <German>+ Modifikator, drehen</German>
       <Spanish>+ Modificador, rota</Spanish>
+      <French>+ Modificateur, tourner</French>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -116,7 +116,10 @@
       <German>M152 RAMS</German>
       <Czech>M152 RAMS</Czech>
       <French>M152 RAMS</French>
+      <Hungarian>M152 RAMS</Hungarian>
       <Polish>M152 RAMS</Polish>
+      <Portuguese>M152 RAMS</Portuguese>
+      <Russian>M152 RAMS</Russian>
       <Spanish>M152 RAMS</Spanish>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
@@ -148,7 +151,7 @@
       <German>Löschen</German>
       <Spanish>Borrar</Spanish>
       <Polish>Usuń</Polish>
-      <French>Nettoyé</French>
+      <French>Désamorçé</French>
       <Czech>Čistý</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Dial">
@@ -307,6 +310,7 @@
       <English>No explosives on trigger.</English>
       <German>Keine Sprengladungen auf diesem Auslöser.</German>
       <Spanish>Ningún explosivo en el detonador.</Spanish>
+      <French>Pas d'explosif à mettre à feu.</French>
     </Key>
   </Package>
 </Project>
