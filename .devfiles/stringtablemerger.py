@@ -109,10 +109,11 @@ def main(sourcepath, language, breakdown):
     if not os.path.exists(newpath):
       continue
 
-    keycounter += replace_entries(oldpath, newpath, language, breakdown)
+    keynum = replace_entries(oldpath, newpath, language, breakdown)
     modulecounter += 1
+    keycounter += keynum
 
-    print("# Merged %i entry/entries in %s" % (keycounter, module))
+    print("# Merged %i entry/entries in %s" % (keynum, module))
 
   print("")
   print("Merged %i entry/entries in %i modules" % (keycounter, modulecounter))
