@@ -74,8 +74,12 @@ def replace_entries(oldpath, newpath, language):
       oldkey.insertBefore(oldfile.createTextNode("\n      "), oldkey.lastChild)
       oldkey.insertBefore(oldentry, oldkey.lastChild)
 
+  xmlstring = oldfile.toxml()
+  if xmlstring[-1] != "\n":
+    xmlstring += "\n"
+
   fhandle = open(oldpath, "w")
-  fhandle.write(oldfile.toxml())
+  fhandle.write(xmlstring)
   fhandle.close()
 
   return len(newkeys)
