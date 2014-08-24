@@ -10,6 +10,10 @@ _this spawn {
   if (_round isKindOf "GrenadeHand") exitWith {};
 
   _airFriction = - getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
+  if (_airFriction > 0 || { simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+    _airFriction = 0.0007;
+  };
 
   // HUMIDITY
   _round setVelocity ([velocity _round, {_this - _this * humidity * 0.1}] call AGM_Core_fnc_map);
