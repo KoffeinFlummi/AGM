@@ -39,9 +39,7 @@ _direction = [
   - cos _altitude
 ];
 
-_velocity = velocity _round;
-_velocity = sqrt ((_velocity select 0) ^ 2 + (_velocity select 1) ^ 2 + (_velocity select 2) ^ 2);
-_velocity = [(_direction select 0) * _velocity, (_direction select 1) * _velocity, (_direction select 2) * _velocity];
+_velocity = _direction vectorMultiply (vectorMagnitude velocity _round);
 
 _round setVectorDirAndUp [
   _direction,
