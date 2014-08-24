@@ -11,7 +11,7 @@
       <Russian>Лечение &gt;&gt;</Russian>
       <French>Soigner &gt;&gt;</French>
       <Hungarian>Ellátás &gt;&gt;</Hungarian>
-      <Italian>Cura</Italian>
+      <Italian>Cura &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Treat_Self">
       <English>Self-treatment &gt;&gt;</English>
@@ -22,7 +22,7 @@
       <Russian>Самолечение &gt;&gt;</Russian>
       <French>Se soigner &gt;&gt;</French>
       <Hungarian>Önellátás &gt;&gt;</Hungarian>
-      <Italian>Curati</Italian>
+      <Italian>Curati &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Diagnose">
       <English>Diagnose</English>
