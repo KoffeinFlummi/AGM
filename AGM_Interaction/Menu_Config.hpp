@@ -95,7 +95,7 @@ class AGM_Interaction_Dialog {
     class Interaction_Tooltip : RscStructuredText {
       idc = 4;
       tooltip = "";
-      text = "Generic Tooltip";
+      text = "";
       sizeEx = "0.6 / 40 / (getResolution select 5)";
       x = 0;
       y = 0;
