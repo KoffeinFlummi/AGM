@@ -67,10 +67,10 @@ class CfgWeapons {
 
 // CODE BELOW TAKEN FROM TMR, PREFIXES EDITED FOR COMPATABILITY
 
-#define AGM_SWAY_DEPLOY       0.1*0.04
-#define AGM_SWAY_DEPLOYPRONE  0.1*0.01
-#define AGM_SWAY_RESTED       0.1*0.08
-#define AGM_SWAY_RESTEDPRONE  0.1*0.02
+#define AGM_SWAY_DEPLOY       0.02
+#define AGM_SWAY_DEPLOYPRONE  0.01
+#define AGM_SWAY_RESTED       0.04  //0.08
+#define AGM_SWAY_RESTEDPRONE  0.02  //0.04
 #define AGM_DEPLOY_TURNSPEED  0.1
 
 // Arma 3 doesn't respect turnSpeed.
