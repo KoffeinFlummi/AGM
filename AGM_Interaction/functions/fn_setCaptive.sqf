@@ -34,6 +34,9 @@ if (_state) then {
 			_this playMove "amovpercmstpsraswrfldnon";
 		};
 
+		// fix grenade throwing
+		_actionID = [_this, "Throw", {true}, {}] call AGM_Core_fnc_addActionEventHandler;
+
 		while {_this getVariable ["AGM_isCaptive", false]} do {
 			sleep 0.001; //sleep in UI
 
@@ -61,6 +64,9 @@ if (_state) then {
 				_this playMove "AmovPercMstpSnonWnonDnon_Ease";
 			};
 		};
+
+		// fix grenade throwing
+		[_this, "Throw", _actionID] call AGM_Core_fnc_removeActionEventHandler;
 
 		if !(_this getVariable ["AGM_Unconscious", false]) then {
 			_this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";

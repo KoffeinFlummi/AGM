@@ -17,9 +17,6 @@ _this spawn {
     _coefficient = 0.35;
   };
 
-  // HUMIDITY
-  _round setVelocity ([velocity _round, {_this - _this * humidity * 0.1}] call AGM_Core_fnc_map);
-
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {

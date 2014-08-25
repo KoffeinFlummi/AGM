@@ -113,15 +113,7 @@ if (_this select 2) then {
 				// apply conditional tooltips
 				if (_forEachIndex == call AGM_Interaction_fnc_getSelectedButton) then {
 					_tooltip = _x select 6;
-					_conditionTooltip = _x select 8;
 
-					_count = count _conditionTooltip;
-					for "_index" from 0 to (_count - 1) step 2 do {
-						if !(call (_conditionTooltip select _index)) then {
-							_tooltip = _tooltip + (_conditionTooltip select _index + 1);
-							_enable = false;
-						};
-					};
 					_ctrlTooltip ctrlSetText _tooltip;
 					_ctrlTooltip ctrlShow (_tooltip != "");
 				};
@@ -145,18 +137,7 @@ if (_this select 2) then {
 			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
 				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
 				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {""} else {
-					_tooltip = (AGM_Interaction_Buttons select _selectedButton) select 6;
-
-					// apply conditional tooltips
-					_conditionTooltip = (AGM_Interaction_Buttons select _selectedButton) select 8;
-
-					_count = count _conditionTooltip;
-					for "_index" from 0 to (_count - 1) step 2 do {
-						if !(call (_conditionTooltip select _index)) then {
-							_tooltip = _tooltip + (_conditionTooltip select _index + 1);
-						};
-					};
-					_tooltip
+					AGM_Interaction_Buttons select _selectedButton select 6;
 				};
 
 				_ctrlTooltip ctrlSetText _tooltip;

@@ -501,9 +501,6 @@ class CfgVehicles {
 	class AllVehicles;
 	class Air: AllVehicles {
 		AGM_Paradrop = 0;
-		class AGM_SelfActions {
-			MACRO_PARADROP
-		};
 	};
 	
 	// Repair helicopters
@@ -589,7 +586,9 @@ class CfgVehicles {
 				};
 			};
 		};
-		class AGM_SelfActions {};
+		class AGM_SelfActions {
+			MACRO_PARADROP
+		};
 	};
 
 	class Heli_Transport_02_base_F;

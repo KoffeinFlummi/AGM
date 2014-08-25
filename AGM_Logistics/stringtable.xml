@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-08-09 -->
+<!-- Edited with tabler - 2014-08-24 -->
 <Project name="AGM">
   <Package name="Logistics">
     <Key ID="STR_AGM_Logistics_LoadMenu">
@@ -29,6 +29,7 @@
     <Key ID="STR_AGM_Logistics_UnloadingItem">
       <English>Unloading ...</English>
       <German>Lade ab ...</German>
+      <Spanish>Descargando ...</Spanish>
     </Key>
     <Key ID="STR_AGM_Logistics_LoadedItem">
       <English>%1 loaded into %2</English>
@@ -40,7 +41,8 @@
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadedItem">
       <English>Unloaded %1 from %2</English>
-      <Spanish>%1 von %2 abgeladen</Spanish>
+      <German>%1 von %2 abgeladen</German>
+      <Spanish>Descargado/a %1 de %2</Spanish>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadMenu">
       <English>Unload Menu</English>
@@ -171,7 +173,6 @@
       <French>Chenille de réserve</French>
       <Polish>Zapasowa gąsienica</Polish>
       <Czech>Náhradní pásy</Czech>
-
     </Key>
     <Key ID="STR_AGM_Repair_SpareWheel">
       <English>Spare Wheel</English>
@@ -201,7 +202,7 @@
       <English>%1 is damaged</English>
       <German>%1 ist beschädigt</German>
       <Spanish>%1 dañado</Spanish>
-      <French>%1 est endommagé</French>
+      <French>%1 est endommagé(e)</French>
       <Polish>%1 jest uszkodzony</Polish>
       <Czech>%1 je poškozený</Czech>
     </Key>
@@ -209,7 +210,7 @@
       <English>%1 is heavily damaged</English>
       <German>%1 ist schwer beschädigt</German>
       <Spanish>%1 dañado severamente</Spanish>
-      <French>%1 est lourdement endommagé</French>
+      <French>%1 est gravement endommagé(e)</French>
       <Polish>%1 jest mocno uszkodzony</Polish>
       <Czech>%1 je velice poškozené</Czech>
     </Key>
@@ -217,7 +218,7 @@
       <English>%1 is destroyed</English>
       <German>%1 ist zerstört</German>
       <Spanish>%1 destruido</Spanish>
-      <French>%1 est détruit</French>
+      <French>%1 est détruit(e)</French>
       <Polish>%1 jest zniszczony</Polish>
       <Czech>%1 je zničené</Czech>
     </Key>
@@ -281,7 +282,7 @@
       <English>Main Turret</English>
       <German>Turm</German>
       <Spanish>Torreta príncipal</Spanish>
-      <French>Tourelle principale</French>
+      <French>Tourelle</French>
       <Polish>Wieżyczka</Polish>
       <Czech>Hlavní Věž</Czech>
     </Key>
@@ -345,7 +346,7 @@
       <English>Left Middle Wheel</English>
       <German>Linkes mittleres Rad</German>
       <Spanish>Rueda central izquierda</Spanish>
-      <French>Roue milieu-gauche</French>
+      <French>Roue centre-gauche</French>
       <Polish>Środkowe lewe koło</Polish>
       <Czech>Levé prostřední Kolo</Czech>
     </Key>
@@ -353,7 +354,7 @@
       <English>Right Middle Wheel</English>
       <German>Rechtes mittleres Rad</German>
       <Spanish>Rueda central derecha</Spanish>
-      <French>Roue milieu-droite</French>
+      <French>Roue centre-droite</French>
       <Polish>Środkowe prawe koło</Polish>
       <Czech>Pravé prostřední Kolo</Czech>
     </Key>
@@ -465,7 +466,7 @@
       <English>There's no track!</English>
       <German>Es ist keine Kette in der Nähe!</German>
       <Spanish>No hay cadena!</Spanish>
-      <French>Il n'y a pas de chenille!</French>
+      <French>Pas de chenille!</French>
       <Polish>Nie ma gąsienicy!</Polish>
       <Czech>Chybí pás!</Czech>
     </Key>
@@ -473,7 +474,7 @@
       <English>There's no wheel!</English>
       <German>Es ist kein Reifen in der Nähe!</German>
       <Spanish>No hay rueda!</Spanish>
-      <French>Il n'y a pas de roue!</French>
+      <French>Pas de roue!</French>
       <Polish>Nie ma koła!</Polish>
       <Czech>Chybí kolo!</Czech>
     </Key>
@@ -561,7 +562,7 @@
       <English>Check Vehicle</English>
       <German>Fahrzeug überprüfen</German>
       <Spanish>Comprobar vehículo</Spanish>
-      <French>Vérifier le véhicule</French>
+      <French>Vérifier Véhicule</French>
       <Polish>Sprawdź pojazd</Polish>
       <Czech>Zkontrolovat Vozidlo</Czech>
     </Key>
@@ -569,7 +570,7 @@
       <English>Checking Vehicle ...</English>
       <German>Fahrzeug überprüfen ...</German>
       <Spanish>Comprobando vehículo</Spanish>
-      <French>Vérification du véhicule ...</French>
+      <French>Vérification ...</French>
       <Polish>Sprawdzanie pojazdu...</Polish>
       <Czech>Kontroluji Vozidlo ...</Czech>
     </Key>
@@ -637,7 +638,7 @@
       <Spanish>Cortar alambrado</Spanish>
       <Polish>Przetnij płot</Polish>
       <Czech>Přestřihnout plot</Czech>
-      <French>Couper la clôture</French>
+      <French>Cisailler Clôture</French>
     </Key>
     <Key ID="STR_AGM_CuttingFence">
       <English>Cutting Fences / Wires ...</English>
@@ -645,7 +646,7 @@
       <Spanish>Cortando alambrado / cables ...</Spanish>
       <Polish>Przecinanie płotu / drutów ...</Polish>
       <Czech>Přestřihnout plot / dráty ...</Czech>
-      <French>Coupe la clôture / le barbelé ...</French>
+      <French>Cisaille l'obstacle ...</French>
     </Key>
     <Key ID="STR_AGM_CuttingFenceChat">
       <English>Cutting Fences!</English>
@@ -653,7 +654,7 @@
       <Spanish>Cortando alambrado!</Spanish>
       <Polish>Przecinanie płotu!</Polish>
       <Czech>Stříhání plotu!</Czech>
-      <French>Découpe de la clôture!</French>
+      <French>Cisaillage!</French>
     </Key>
     <Key ID="STR_AGM_FenceCut">
       <English>Fence cut</English>
@@ -661,7 +662,7 @@
       <Spanish>Alambrado cortado</Spanish>
       <Polish>Płot przecięty</Polish>
       <Czech>Plot přestřižen</Czech>
-      <French>Clôture coupée</French>
+      <French>Clôture cisaillée</French>
     </Key>
   </Package>
   <Package name="Resupply">
@@ -670,7 +671,7 @@
       <German>Treibstoff prüfen</German>
       <Polish>Sprawdź poziom paliwa</Polish>
       <Spanish>Comprobar combustible</Spanish>
-      <French>Vérifier le carburant</French>
+      <French>Jauger Réservoir</French>
       <Czech>Zkontrolovat Palivo</Czech>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelCargo">
@@ -678,7 +679,7 @@
       <German>Treibstoffvorrat prüfen</German>
       <Polish>Sprawdź poziom paliwa (ładunek)</Polish>
       <Spanish>Comprobar combustible (en carga)</Spanish>
-      <French>Vérifier le carburant (Citerne)</French>
+      <French>Jauger Citerne</French>
       <Czech>Zkontrolovat Palivo (náklad)</Czech>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
@@ -686,14 +687,14 @@
       <German>Kanister prüfen</German>
       <Polish>Sprawdź kanister</Polish>
       <Spanish>Comprobar bidón</Spanish>
-      <French>Vérifier le jerrican</French>
+      <French>Jauger Jerrican</French>
       <Czech>Zkontrolovat Kanystr</Czech>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckingFuel">
       <English>Checking Fuel ...</English>
       <German>Prüfe Treibstoff ...</German>
       <Spanish>Comprobando combustible ...</Spanish>
-      <French>Vérification carburant ...</French>
+      <French>Jaugeage ...</French>
       <Polish>Sprawdzanie poziomu paliwa ...</Polish>
       <Czech>Kontroluji Palivo ...</Czech>
     </Key>
@@ -701,7 +702,7 @@
       <English>Checking Fuel (Cargo) ...</English>
       <German>Prüfe Treibstoffvorrat ...</German>
       <Spanish>Comprobando combustible en la carga...</Spanish>
-      <French>Vérification carburant (Citerne) ...</French>
+      <French>Jaugeage ...</French>
       <Polish>Sprawdzanie poziomu paliwa (ładunek) ...</Polish>
       <Czech>Kontroluji Palivo (náklad) ...</Czech>
     </Key>
@@ -709,7 +710,7 @@
       <English>Jerrycan has %1 litre(s) left</English>
       <German>Kanister hat %1 Liter übrig</German>
       <Spanish>El bidón tiene %1 litro(s)</Spanish>
-      <French>Il reste %1 litre(s) de carburant dans le jerrican</French>
+      <French>%1 litre(s) de carburant dans le jerrican</French>
       <Polish>W kanistrze zostało %1 litr(ów)</Polish>
       <Czech>Kanystru zbývá %1 litr(ů)</Czech>
     </Key>
@@ -717,7 +718,7 @@
       <English>Vehicle has %1 litre(s) left</English>
       <German>Fahrzeug hat %1 Liter übrig</German>
       <Spanish>El vehículo tiene %1 litro(s)</Spanish>
-      <French>Il reste %1 litre(s) dans le véhicule</French>
+      <French>%1 litre(s) dans le réservoir</French>
       <Polish>W pojeździe zostało %1 litr(ów)</Polish>
       <Czech>Vozidlu zbývá %1 litr(ů)</Czech>
     </Key>
@@ -725,7 +726,7 @@
       <English>Vehicle has %1 litre(s) left in Cargo</English>
       <German>Fahrzeug hat %1 Liter übrig im Vorrat</German>
       <Spanish>El vehículo tiene %1 litro(s) en la carga</Spanish>
-      <French>Il reste %1 litre(s) dans la citerne</French>
+      <French>%1 litre(s) dans la citerne</French>
       <Polish>W ładunku pojazdu zostało %1 litr(ów)</Polish>
       <Czech>Vozidlu zbývá %1 litr(ů) v nákladu</Czech>
     </Key>
@@ -733,7 +734,7 @@
       <English>Refuel Vehicle</English>
       <German>Fahrzeug betanken</German>
       <Spanish>Reabastecer vehículo</Spanish>
-      <French>Ravitailler le véhicule</French>
+      <French>Ravitailler Réservoir</French>
       <Polish>Zatankuj pojazd</Polish>
       <Czech>Natankovat Vozidlo</Czech>
     </Key>
@@ -741,7 +742,7 @@
       <English>Refuel Vehicle</English>
       <German>Fahrzeug betanken</German>
       <Spanish>Reabastecer vehículo</Spanish>
-      <French>Ravitailler la citerne</French>
+      <French>Ravitailler Citerne</French>
       <Polish>Zatankuj pojazd</Polish>
       <Czech>Natankovat Vozidlo</Czech>
     </Key>
@@ -749,7 +750,7 @@
       <English>Drain Fuel</English>
       <German>Benzin ablassen</German>
       <Spanish>Drenar combustible</Spanish>
-      <French>Vidanger le carburant</French>
+      <French>Vidanger Réservoir</French>
       <Polish>Spuść paliwo</Polish>
       <Czech>Vypustit Palivo</Czech>
     </Key>
@@ -757,7 +758,7 @@
       <English>Drain Fuel Cargo</English>
       <German>Benzinvorrat ablassen</German>
       <Spanish>Drenar combustible en la carga</Spanish>
-      <French>Vidanger la citerne</French>
+      <French>Vidanger Citerne</French>
       <Polish>Spuść paliwo z ładunku</Polish>
       <Czech>Vypustit Palivo Nákladu</Czech>
     </Key>
@@ -773,7 +774,7 @@
       <English>Draining Fuel ...</English>
       <German>Benzin ablassen ...</German>
       <Spanish>Drenando combustible ...</Spanish>
-      <French>Vidange du carburant ...</French>
+      <French>Vidange ...</French>
       <Polish>Spuszczanie paliwa ...</Polish>
       <Czech>Vypouštění paliva ...</Czech>
     </Key>
@@ -781,7 +782,7 @@
       <English>Draining Fuel Cargo ...</English>
       <German>Benzinvorrat ablassen ...</German>
       <Spanish>Drenando combustible de la carga</Spanish>
-      <French>Vidange de la citerne ...</French>
+      <French>Vidange ...</French>
       <Polish>Spuszczanie paliwa z ładunku ...</Polish>
       <Czech>Vypouštění paliva nákladu ...</Czech>
     </Key>
@@ -797,7 +798,7 @@
       <English>Drained Fuel</English>
       <German>Benzin abgelassen</German>
       <Spanish>Combustible drenado</Spanish>
-      <French>Carburant vidangé</French>
+      <French>Réservoir vidangé</French>
       <Polish>Spuszczono paliwo</Polish>
       <Czech>Vypuštěné Palivo</Czech>
     </Key>
@@ -815,7 +816,7 @@
       <English>Airdrop Box</English>
       <German>Box abwerfen</German>
       <Spanish>Lanzar caja con paracaídas</Spanish>
-      <French>Largage de caisse</French>
+      <French>Aérolargage</French>
       <Polish>Zrzut ładunku na spadochronie</Polish>
       <Czech>Schodnit letecky bednu</Czech>
     </Key>
@@ -824,20 +825,35 @@
     <Key ID="STR_AGM_Fortifications_SandbagBarrierCrate">
       <English>Sandbag Barrier Crate</English>
       <German>Sandsack-Kiste</German>
+      <Spanish>Sandbag Barrier Crate</Spanish>
+      <Polish>Sandbag Barrier Crate</Polish>
+      <French>Sac de Sable (Caisse)</French>
+      <Czech>Sandbag Barrier Crate</Czech>
     </Key>
     <Key ID="STR_AGM_Fortifications_RazorWireCrate">
       <English>Razor Wire Crate</English>
       <German>Stacheldraht-Kiste</German>
+      <Spanish>Razor Wire Crate</Spanish>
+      <Polish>Razor Wire Crate</Polish>
+      <French>Concertina (Caisse)</French>
+      <Czech>Razor Wire Crate</Czech>
     </Key>
     <Key ID="STR_AGM_Fortifications_SandbagBarrier">
       <English>Sandbag Barrier</English>
       <German>Sandsackbarriere</German>
+      <Spanish>Sandbag Barrier</Spanish>
+      <Polish>Worek z piaskiem</Polish>
+      <French>Sacs de sable</French>
+      <Czech>Sandbag Barrier</Czech>
     </Key>
     <Key ID="STR_AGM_Fortifications_RazorWire">
       <English>Razor Wire</English>
       <German>Stacheldraht</German>
+      <Spanish>Concertina</Spanish>
+      <Polish>Koncertina</Polish>
+      <French>Concertina</French>
+      <Czech>Razor Wire</Czech>
     </Key>
-
     <Key ID="STR_AGM_Fortifications_PlaceAction">
       <English>Place</English>
       <German>Platzieren</German>
@@ -857,6 +873,10 @@
     <Key ID="STR_AGM_Fortifications_ScrollAction">
       <English>Rotate</English>
       <German>Drehen</German>
+      <Spanish>Girar</Spanish>
+      <Polish>Przekręcać</Polish>
+      <French>Tourner</French>
+      <Czech>Točit</Czech>
     </Key>
   </Package>
 </Project>

@@ -1,7 +1,5 @@
 // by commy2 and CAA-Picard
 
-#define MAX_TEMPERATURE 3
-
 _this spawn {
 	_weapon = _this select 0;
 
@@ -25,17 +23,23 @@ _this spawn {
 	player setVariable [_string, [_temperature, _time], false];
 
 	// Play animation and report temperature
-	player playActionNow "Gear";
+	_action = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_checkTemperatureAction");
+
+	if (_action == "") then {
+		_action = "Gear";
+	};
+
+	player playActionNow _action;
 
 	sleep 1;
 
 	_color = [
-		2 * _temperature / MAX_TEMPERATURE min 1,
-		2 * (MAX_TEMPERATURE - _temperature) / MAX_TEMPERATURE min 1,
+		2 * _temperature min 1,
+		2 * (1 - _temperature) min 1,
 		00
 	];
 
-	_count = 2 + round (10 * _temperature / MAX_TEMPERATURE);
+	_count = 2 + round (10 * _temperature);
 	_string = "";
 	for "_a" from 1 to _count do {
 		_string = _string + "|";

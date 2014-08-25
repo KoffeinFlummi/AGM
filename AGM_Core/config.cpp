@@ -184,6 +184,7 @@ class CfgFunctions {
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
+      class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToString;
@@ -214,6 +215,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
