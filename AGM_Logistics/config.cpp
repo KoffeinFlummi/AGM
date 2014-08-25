@@ -1127,25 +1127,25 @@ class CfgVehicles {
 			class TimeRepair
             {
                 displayName = "Heavy Repair Time";
-                description = "Time to repair engine/turret/body/fuel components (in seconds). Default: 30";
+                description = "Time to repair engine/turret/body/fuel components (in seconds). Default: 10";
                 typeName = "NUMBER";
-                defaultValue = 30;
+                defaultValue = 10;
             };
 			//Time to replace a wheel
             class TimeWheelRepair
             {
                 displayName = "Wheel Replace Time";
-                description = "Time to replace a wheel (in seconds). Default: 30";
+                description = "Time to replace a wheel (in seconds). Default: 10";
                 typeName = "NUMBER";
-                defaultValue = 30;
+                defaultValue = 10;
             };
 			//Time to replace a track
             class TimeTrackRepair
             {
                 displayName = "Track Replace Time";
-                description = "Time to replace a track (in seconds). Default: 30";
+                description = "Time to replace a track (in seconds). Default: 10";
                 typeName = "NUMBER";
-                defaultValue = 30;
+                defaultValue = 10;
             };
 			//Maximum damage that can be repaired
 			//See Logistics\functions\Repair\fn_repairCallback.sqf
@@ -1211,10 +1211,10 @@ class CfgWeapons {
 
 class AGM_Parameters 
 {
-	AGM_Repair_TimeRepair = 30;
-	AGM_Repair_TimeWheelRepair = 30;
-	AGM_Repair_TimeTrackRepair = 30;
-	AGM_Repair_MaxDamageRepair = 30;
+	AGM_Repair_TimeRepair = 10;
+	AGM_Repair_TimeWheelRepair = 10;
+	AGM_Repair_TimeTrackRepair = 10;
+	AGM_Repair_MaxDamageRepair = 0;
 };
 
 #include <DiagnoseDialog.hpp>
