@@ -61,6 +61,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 0;
+    allowHolding = 1;
   };
   class adjustRangeDown: adjustRangeUp {
     displayName = "$STR_AGM_FireControlSystem_AdjustRangeDown";
