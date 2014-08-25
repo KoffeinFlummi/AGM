@@ -46,13 +46,13 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
     if (player getVariable ["AGM_Unconscious", false] or player getVariable ["AGM_Overdosing", false]) then {
       AGM_UnconsciousCC ppEffectEnable true;
       AGM_UnconsciousRB ppEffectEnable true;
-      if (isNil "AGM_Core_disableUserInput_ehid") then {
+      if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [true, true] call AGM_Core_fnc_disableUserInput;
       };
     } else {
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousRB ppEffectEnable false;
-      if !(isNil "AGM_Core_disableUserInput_ehid") then {
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [false] call AGM_Core_fnc_disableUserInput;
       };
     };
