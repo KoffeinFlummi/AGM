@@ -184,6 +184,7 @@ class CfgFunctions {
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
+      class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToString;
