@@ -56,6 +56,8 @@ _this spawn {
       };
 
       // Injuries
+      _lightinjuries = "";
+      _heavyinjuries = "";
       if (AGM_Medical_SingleBandage > 0) then {
         if (damage _unit >= 0.5) then {
           _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>";
