@@ -40,8 +40,8 @@ _vdir = [
 
 // No idea if the up vector can be calculated easier / quicker or if this is even correct.
 _vup = [
-	(_vdir select 0) * (_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
-	(_vdir select 1) * (_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
+	(_vdir select 0) * -(_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
+	(_vdir select 1) * -(_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
 	sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2)
 ];
 
