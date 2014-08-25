@@ -60,7 +60,7 @@ class CfgFunctions
   count = COUNT; \
 };
 
-#define MACRO_DETONATEACTION 		class AGM_SelfActions { \
+#define MACRO_DETONATEACTION 		class AGM_SelfActions: AGM_SelfActions { \
 			class AGM_Explosives { \
 				displayName = $STR_AGM_Explosives_Menu;\
 				condition = "true";\
@@ -81,6 +81,7 @@ class CfgFunctions
 		};
 
 class CfgVehicles {
+	class AGM_SelfActions;
 	class AllVehicles;
 	class LandVehicle;
 	class Car: LandVehicle {
