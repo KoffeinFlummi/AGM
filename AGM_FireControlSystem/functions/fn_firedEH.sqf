@@ -29,27 +29,4 @@ _offset = 0;
   };
 } forEach _FCSMagazines;
 
-_direction = vectorDir _round;
-_azimuth = (_direction select 0) atan2 (_direction select 1) + (_unit getVariable "AGM_FCSAzimuth");
-_altitude = sqrt ((_direction select 1) ^ 2 + (_direction select 0) ^ 2) atan2 - (_direction select 2) + _offset;
-
-_direction = [
-  sin _azimuth * sin _altitude,
-  cos _azimuth * sin _altitude,
-  - cos _altitude
-];
-
-_velocity = velocity _round;
-_velocity = sqrt ((_velocity select 0) ^ 2 + (_velocity select 1) ^ 2 + (_velocity select 2) ^ 2);
-_velocity = [(_direction select 0) * _velocity, (_direction select 1) * _velocity, (_direction select 2) * _velocity];
-
-_round setVectorDirAndUp [
-  _direction,
-  [
-    (_direction select 0) * (_direction select 2) / sqrt ((_direction select 0) ^ 2 + (_direction select 1) ^ 2),
-    (_direction select 1) * (_direction select 2) / sqrt ((_direction select 0) ^ 2 + (_direction select 1) ^ 2),
-    sqrt ((_direction select 0) ^ 2 + (_direction select 1) ^ 2)
-  ]
-];
-_round setPosASL (getPosASL _round);
-_round setVelocity _velocity;
+[_round, (_unit getVariable "AGM_FCSAzimuth"), _offset, 0] call AGM_Core_fnc_changeProjectileDirection;
