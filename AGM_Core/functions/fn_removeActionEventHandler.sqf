@@ -22,7 +22,7 @@ if (_id == -1) exitWith {};
 
 _name = format ["AGM_Action_%1", _action];
 
-_actionsVar = _unit getVariable [_name, [-1, []]];		// AGM_Action_DefaultAction => [ID, [action1, action2, ...]]
+_actionsVar = _unit getVariable [_name, [-1, [-1, [], []]]];
 
 _actionID = _actionsVar select 0;
 _actions = _actionsVar select 1;
