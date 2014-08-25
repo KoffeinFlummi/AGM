@@ -1,4 +1,5 @@
 // by commy2
+// Edited by Hawkeye104 for compatibility with Repair Module
 
 private ["_vehicle", "_part", "_isEngineer", "_time", "_name", "_string", "_spareTrack", "_repairer"];
 
@@ -7,7 +8,15 @@ _part = _this select 1;
 
 _isEngineer = [player] call AGM_Core_fnc_isEngineer;
 
+//Old time calculation
+/*
 _time = 10;
+_time = _time + 10 * (_vehicle getHitPointDamage _part);
+if !(_isEngineer) then {_time = _time + 10};
+*/
+
+//New time calculation from repair module
+_time = AGM_Repair_TimeTrackRepair;
 _time = _time + 10 * (_vehicle getHitPointDamage _part);
 if !(_isEngineer) then {_time = _time + 10};
 
