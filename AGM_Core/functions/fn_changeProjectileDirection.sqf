@@ -13,7 +13,7 @@
  * None.
  */
 
-private ["_projectile", "_adjustDir", "_adjustUp", "_adjustSpeed", "_vdir", "_dir", "_up", "_vup", "_vel"];
+private ["_projectile", "_adjustDir", "_adjustUp", "_adjustSpeed", "_vdir", "_dir", "_up", "_l", "_r", "_vup", "_vel"];
 
 _projectile = _this select 0;
 _adjustDir = _this select 1;
@@ -38,11 +38,14 @@ _vdir = [
   - cos _up
 ];
 
-// No idea if the up vector can be calculated easier / quicker or if this is even correct.
+// get best up vector
+_l = sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2);
+_r = -(_vdir select 2) / _l;
+
 _vup = [
-	(_vdir select 0) * -(_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
-	(_vdir select 1) * -(_vdir select 2) / sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2),
-	sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2)
+	(_vdir select 0) * _r,
+	(_vdir select 1) * _r,
+	_l
 ];
 
 // get new speed vector. Keep total speed, but change to new direction. Yay for vector commands.
