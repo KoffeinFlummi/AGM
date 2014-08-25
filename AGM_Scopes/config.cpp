@@ -44,6 +44,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Scopes_AdjustUp";
     condition = "[0, 0.1] call AGM_Scopes_fnc_canAdjustScope;";
     statement = "[0, 0.1] call AGM_Scopes_fnc_adjustScope;";
+    allowHolding = 1;
     key = 201;
     shift = 0;
     control = 0;
