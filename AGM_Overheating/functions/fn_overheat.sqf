@@ -114,6 +114,7 @@ _jamChance = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating
 _count = count _jamChance;
 if (_count == 0) then {
 	_jamChance = [0];
+	_count = 1;
 };
 
 _jamChance = [_jamChance, (_count - 1) * _temperature] call AGM_Core_fnc_interpolateFromArray;

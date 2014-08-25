@@ -135,7 +135,7 @@ _result = [_parents, _result select 0, _result select 1, configfile >> "CfgVehic
 _actions = _result select 0;
 
 // search vehicle namespace
-_customActions = _object getVariable ["AGM_InteractionsSelf", []];
+_customActions = (_object getVariable ["AGM_InteractionsSelf", [-1, [], []]]) select 2;
 for "_index" from 0 to (count _customActions - 1) do {
 	_customAction = _customActions select _index;
 	_displayName = _customAction select 0;

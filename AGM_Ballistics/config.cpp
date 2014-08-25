@@ -623,6 +623,8 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
+  #include <UniformNerf.hpp>
+
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;

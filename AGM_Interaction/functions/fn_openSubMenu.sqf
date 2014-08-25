@@ -135,7 +135,7 @@ _result = [_parents, _result select 0, _result select 1, _class, configfile >> "
 _actions = _result select 0;
 
 // search vehicle namespace
-_customActions = _object getVariable ["AGM_Interactions", []];
+/*_customActions = (_object getVariable ["AGM_Interactions", [-1, [], []]]) select 2;
 for "_index" from 0 to (count _customActions - 1) do {
 	_customAction = _customActions select _index;
 	_displayName = _customAction select 0;
@@ -153,7 +153,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
 	};
-};
+};*/
 
 _count = count _actions;
 if (_count == 0) exitWith {};
