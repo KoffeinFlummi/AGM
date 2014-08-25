@@ -23,16 +23,16 @@ AGM_Scopes_inventoryCheck = {
     };
   };
   AGM_Scopes_Optics = _new;
-}
+};
 
 0 spawn {
   waitUntil {sleep 5; AGM_Scopes_Optics != [] call AGM_Scopes_fnc_getScopes};
   [] call AGM_Scopes_inventoryCheck;
 };
 
-_unit addEventHandler ["Put", {
+(_this select 0) addEventHandler ["Put", {
   [] call AGM_Scopes_inventoryCheck;
 }];
-_unit addEventHandler ["Take", {
+(_this select 0) addEventHandler ["Take", {
   [] call AGM_Scopes_inventoryCheck;
 }];

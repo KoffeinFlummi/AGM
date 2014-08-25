@@ -11,6 +11,8 @@
  * True
  */
 
+private ["_weapons", "_zeroing", "_hint"];
+
 _weapons = [
   primaryWeapon player,
   secondaryWeapon player,
@@ -23,6 +25,7 @@ _zeroing set [1, (_zeroing select 1) + (_this select 1)];
 
 AGM_Scopes_Adjustment set [_weapons find (currentWeapon player), _zeroing];
 
+// TODO: some rsc magic
 _hint = "Current Zeroing: ";
 if (_zeroing select 0 < 0) then {
   _hint = _hint + format ["%1 Right", _zeroing select 0];

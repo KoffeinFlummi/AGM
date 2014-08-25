@@ -10,6 +10,8 @@
  * None
  */
 
+private ["_unit", "_weaponType", "_ammoType", "_magazineType", "_round", "_weapons", "_zeroing", "_direction", "_azimuth", "_altitude", "_velocity"];
+
 _unit = _this select 0;
 _weaponType = _this select 1;
 _ammoType = _this select 4;
@@ -19,11 +21,11 @@ _round = _this select 6;
 _weapons = [
   primaryWeapon player,
   secondaryWeapon player,
-  handgunWeapon player;
+  handgunWeapon player
 ];
 _zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
 
-// convert zeroing to degrees
+// convert zeroing from mils to degrees
 _zeroing = [_zeroing, {_this * 0.05625}] call AGM_Core_fnc_map;
 
 _direction = vectorDir _round;

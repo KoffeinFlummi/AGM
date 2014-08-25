@@ -11,6 +11,8 @@
  * Can adjustment be done? (Bool)
  */
 
+private ["_weapons", "_zeroing", "_optic", "_maxHorizontal", "_maxVertical"];
+
 _weapons = [
   primaryWeapon player,
   secondaryWeapon player,
