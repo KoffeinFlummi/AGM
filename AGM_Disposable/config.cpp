@@ -19,6 +19,7 @@ class CfgFunctions {
       file = "\AGM_Disposable\functions";
       class replaceATWeapon;
       class takeLoadedATWeapon;
+      class topDownAttack;
     };
   };
 };
@@ -27,6 +28,9 @@ class Extended_Fired_EventHandlers {
   class CAManBase {
     class BWA3_FiredReplaceATWeapon {
       Fired = "if (local (_this select 0) && {getText (configFile >> 'CfgWeapons' >> _this select 1 >> 'AGM_UsedTube') != ''}) then {_this call AGM_Disposable_fnc_replaceATWeapon}";
+    };
+    class BWA3_TopDownAttack {
+      Fired = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_topDownAttack}";
     };
   };
 };
