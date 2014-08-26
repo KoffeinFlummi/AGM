@@ -82,7 +82,7 @@ _this spawn {
 
         _lightinjuries = "";
         {
-          if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
+          if ((_x select 1) < 0.5 and (_x select 1) > 0) then {
             if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
             _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
           };
