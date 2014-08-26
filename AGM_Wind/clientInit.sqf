@@ -34,7 +34,7 @@ if (isNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJan")) then
     _dailyTempAmplitude = AGM_TempAmplitudeJan * (1 - _annualCoef) + AGM_TempAmplitudeJul * _annualCoef;
 
     _hourlyCoef = -0.5 * sin(360 * ((3 + (date select 3))/24 + (date select 4)/1440));
-    AGM_Wind_currectTemperature = _dailyTempMean + _hourlyCoef * _dailyTempAmplitude;
+    AGM_Wind_currectTemperature = _dailyTempMean + _hourlyCoef * _dailyTempAmplitude - 2 * humidity - 4 * overcast;
     AGM_Wind_currectRelativeDensity = (273.15 + 20) / (273.15 + AGM_Wind_currectTemperature);
     sleep 60;
   };
