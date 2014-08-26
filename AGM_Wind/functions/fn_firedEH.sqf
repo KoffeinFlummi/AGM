@@ -11,7 +11,7 @@ _this spawn {
 
   _airFriction = - getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
   _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
-  if (_airFriction > 0 || { simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+  if (_airFriction < 0 || { simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
     _airFriction = 0.0007;
   };
 
