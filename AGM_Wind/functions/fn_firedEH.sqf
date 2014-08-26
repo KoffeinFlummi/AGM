@@ -13,7 +13,7 @@ _this spawn {
   _airFrictionWind = - _airFriction;
 
   _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
-  if (_airFriction > 0 || { simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+  if (_airFriction > 0 || {_simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
     // Do not correct for airDensity y airFriction is not logical on the first place
     _airFriction = 0;
     _airFrictionWind = 0.0007;
