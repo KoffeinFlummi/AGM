@@ -12,6 +12,22 @@ AGM_isKestrelWheel = false;
   waitUntil {preloadTitleRsc ["AGM_KestrelWheel_Preload", "PLAIN"]};
 };
 
+// Air temperature and air density
+0 spawn {
+  while {true} do {
+    _annualCoef = 0.5 - 0.5 * cos(360 * dateToNumber date);
+    _dailyTempMean =      getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJan") * (1 - _annualCoef) +
+                          getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJul") * _annualCoef;
+    _dailyTempAmplitude = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempAmplitudeJan") * (1 - _annualCoef) +
+                          getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempAmplitudeJull") * _annualCoef;
+
+    _dailyCoef = -0.5 * sin(360 * ((date select 3)/24 + (date select 4)/1440));
+    AGM_Wind_currectTemperature = _dailyTempMean + _dailyCoef * _dailyTempAmplitude;
+    AGM_Wind_currectRelativeDensity = (273.15 + 20) / (273.15 + AGM_Wind_currectTemperature);
+    sleep 10;
+  };
+};
+
 // Wind Reading
 0 spawn {
   while {true} do {

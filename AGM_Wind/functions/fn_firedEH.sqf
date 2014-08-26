@@ -9,10 +9,14 @@ _this spawn {
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _airFriction = - getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _airFrictionWind = - _airFriction;
+
   _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
   if (_airFriction > 0 || { simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
-    _airFriction = 0.0007;
+    // Do not correct for airDensity y airFriction is not logical on the first place
+    _airFriction = 0;
+    _airFrictionWind = 0.0007;
   };
 
   // HUMIDITY
@@ -25,7 +29,9 @@ _this spawn {
     _deltaTime = time - _time;
 
     // See https://github.com/KoffeinFlummi/AGM/issues/996
-    _velocityNew = (velocity _round) vectorAdd (wind vectorMultiply (vectorMagnitude ((velocity _round) vectorAdd wind) * _airFriction * _deltaTime));
+    _velocity = velocity _round;
+    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currectRelativeDensity - 1) * _airFriction * _deltaTime))
+                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currectRelativeDensity * _airFrictionWind * _deltaTime));
 
     _round setVelocity _velocityNew;
 
