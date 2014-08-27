@@ -1,6 +1,6 @@
 // by commy2
 
-if (isNil "AGM_Debug" || {AGM_Debug != "TOPDOWN"}) exitWith {};
+if (missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] != 1) exitWith {};
 
 _this spawn {
 	_projectile = _this select 5;

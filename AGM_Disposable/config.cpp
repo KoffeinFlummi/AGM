@@ -17,8 +17,10 @@ class CfgFunctions {
   class AGM_Disposable {
     class AGM_Disposable {
       file = "\AGM_Disposable\functions";
+      class canToggleTopDownAttack;
       class replaceATWeapon;
       class takeLoadedATWeapon;
+      class toggleTopDownAttack;
       class topDownAttack;
     };
   };
@@ -35,11 +37,23 @@ class Extended_Fired_EventHandlers {
   };
 };
 
-class Extended_Take_EventHandlers {
+/*class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_TakeLoadedATWeapon {
       Take = "if (getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherClass') != '') then {_this call AGM_Disposable_fnc_takeLoadedATWeapon};";
     };
+  };
+};*/
+
+class AGM_Core_Default_Keys {
+  class toggleTopDownAttack {
+    displayName = "Toggle Top Down Attack";
+    condition = "call AGM_Disposable_fnc_canToggleTopDownAttack";
+    statement = "call AGM_Disposable_fnc_toggleTopDownAttack";
+    key = 25;
+    shift = 0;
+    control = 0;
+    alt = 0;
   };
 };
 
@@ -50,7 +64,7 @@ class CfgWeapons {
   class launch_NLAW_F: Launcher_Base_F {
     AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the already fired launcher.
   };
-  class AGM_launch_NLAW_Loaded_F: launch_NLAW_F { // This is a loaded launcher. If you put this in a crate or a vehicles cargo it will be converted to the real launcher and a magazine.
+  /*class AGM_launch_NLAW_Loaded_F: launch_NLAW_F { // This is a loaded launcher. If you put this in a crate or a vehicles cargo it will be converted to the real launcher and a magazine.
     AGM_LauncherClass = "launch_NLAW_F";          // Launcher you get when picking up the loaded class
     AGM_LauncherMagazine = "NLAW_F";              // Magazine you get when picking up the loaded launcher, note: the magazine has to have a mass of 0 until BIS adds a command to give a magazine to a weapon directly.
   };
@@ -60,6 +74,13 @@ class CfgWeapons {
     magazines[] = {"AGM_UsedTube_F"};              // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
+  };*/
+
+  class launch_Titan_base: Launcher_Base_F {
+    AGM_enableTopDownAttack = 1;
+  };
+  class launch_Titan_short_base: launch_Titan_base {
+    AGM_enableTopDownAttack = 1;
   };
 };
 
