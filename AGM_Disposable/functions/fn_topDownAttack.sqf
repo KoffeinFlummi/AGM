@@ -1,6 +1,9 @@
 // by commy2
 
-if (missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] != 1) exitWith {};
+if (
+	getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDownAttack") != 1
+	|| {missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] != 1}
+) exitWith {};
 
 _this spawn {
 	_projectile = _this select 5;

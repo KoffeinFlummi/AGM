@@ -1,7 +1,7 @@
 
 class RscInGameUI {
 	class RscOptics_titan {
-		onLoad = "uiNamespace setVariable ['AGM_dlgJavelinOptics', _this select 0]";
+		onLoad = "uiNamespace setVariable ['AGM_dlgJavelinOptics', _this select 0]; missionNamespace setVariable ['AGM_Disposable_modeJavelin', 0];";
 	};
 };
 
