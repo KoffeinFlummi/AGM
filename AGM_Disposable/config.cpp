@@ -26,11 +26,11 @@ class CfgFunctions {
 
 class Extended_Fired_EventHandlers {
   class CAManBase {
-    class BWA3_FiredReplaceATWeapon {
-      Fired = "if (local (_this select 0) && {getText (configFile >> 'CfgWeapons' >> _this select 1 >> 'AGM_UsedTube') != ''}) then {_this call AGM_Disposable_fnc_replaceATWeapon}";
-    };
-    class BWA3_TopDownAttack {
-      Fired = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_topDownAttack}";
+    /*class AGM_FiredReplaceATWeapon {
+      Fired = "if (local (_this select 0) && {getText (configFile >> 'CfgWeapons' >> _this select 1 >> 'AGM_UsedTube') != ''}) then {_this call AGM_Disposable_fnc_replaceATWeapon};";
+    };*/
+    class AGM_TopDownAttack {
+      Fired = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_topDownAttack};";
     };
   };
 };
@@ -38,7 +38,7 @@ class Extended_Fired_EventHandlers {
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_TakeLoadedATWeapon {
-      Take = "if (getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherClass') != '') then {_this call AGM_Disposable_fnc_takeLoadedATWeapon}";
+      Take = "if (getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherClass') != '') then {_this call AGM_Disposable_fnc_takeLoadedATWeapon};";
     };
   };
 };
