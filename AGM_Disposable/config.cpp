@@ -43,6 +43,8 @@ class Extended_Take_EventHandlers {
   };
 };
 
+#include <Optics.hpp>
+
 class CfgWeapons {
   class Launcher_Base_F;
   class launch_NLAW_F: Launcher_Base_F {
