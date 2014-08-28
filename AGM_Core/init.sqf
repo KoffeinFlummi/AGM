@@ -28,12 +28,14 @@ for "_index" from 0 to 300 do {
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractFunction.sqf";
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWheel.sqf";
 
 0 spawn {
   while {true} do {
     waitUntil {!isNull (findDisplay 46)}; sleep 0.1;
     findDisplay 46 displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
     findDisplay 46 displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+    findDisplay 46 displayAddEventHandler ["MouseZChanged", "_this call AGM_Core_onScrollWheel"];
     [false] call AGM_Core_fnc_disableUserInput;
     waitUntil {isNull (findDisplay 46)};
   };

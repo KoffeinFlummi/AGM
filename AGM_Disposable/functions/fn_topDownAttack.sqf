@@ -8,7 +8,9 @@ if (
 _this spawn {
 	_projectile = _this select 5;
 
-	_target = cursorTarget;
+	_target = missionNamespace getVariable ["AGM_Disposable_LockedTarget", objNull];
+	_isLocked = missionNamespace getVariable ["AGM_Disposable_isTargetLocked", false];
+	AGM_Disposable_LockedTarget = objNull;
 
 	// save values of the auto-guided  missile
 	_type = typeOf _projectile;
@@ -76,11 +78,6 @@ _this spawn {
 	// init phase
 	sleep 0.5;
 
-	// targeting sets cursorTarget to objNull after firing for a short amount of time, @todo better fix later
-	if (isNull _target) then {
-		_target = cursorTarget;
-	};
-
 	// premature explosion
 	if (!alive _projectile) exitWith {};
 
@@ -103,10 +100,17 @@ _this spawn {
 
 	[_projectile, _vector] call _fnc_changeMissileDirection;
 
+	// no target, self destruct
+	if (isNull _target || {!_isLocked}) exitWith {
+		sleep 2;
+		_projectile setDamage 1;
+	};
+
 	// loop to stay in travel height and correct altitude
 	_time = time;
 	while {
 		alive _projectile
+		&& {!isNull _target}
 		&& {[_projectile, _target] call _fnc_getHorizontalDistance > 100}
 	} do {
 		_height = _projectile call _fnc_getHeight;
@@ -129,6 +133,7 @@ _this spawn {
 	// allah ackbar, motherufcker
 	while {
 		alive _projectile
+		&& {!isNull _target}
 	} do {
 		_height = _projectile call _fnc_getHeight;
 		_pitch = _projectile call _fnc_getPitch;

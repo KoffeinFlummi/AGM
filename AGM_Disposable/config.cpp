@@ -18,10 +18,19 @@ class CfgFunctions {
     class AGM_Disposable {
       file = "\AGM_Disposable\functions";
       class canToggleTopDownAttack;
+      class lockTarget;
       class replaceATWeapon;
       class takeLoadedATWeapon;
       class toggleTopDownAttack;
       class topDownAttack;
+    };
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_InitLockTargetMode {
+      clientInit = "call compile preprocessFileLineNumbers '\AGM_Disposable\initUnit.sqf'";
     };
   };
 };
@@ -57,6 +66,17 @@ class AGM_Core_Default_Keys {
   };
 };
 
+class CfgSounds {
+  class AGM_Sound_Locked1 {
+    sound[] = {"\A3\Sounds_F\weapons\Rockets\locked_3", 0.316228, 2.5, 200};
+    titles[] = {};
+  };
+  class AGM_Sound_Locked2 {
+    sound[] = {"\A3\Sounds_F\weapons\Rockets\locked_1", 0.316228, 1, 200};
+    titles[] = {};
+  };
+};
+
 #include <Optics.hpp>
 
 class CfgWeapons {
@@ -78,9 +98,11 @@ class CfgWeapons {
 
   class launch_Titan_base: Launcher_Base_F {
     AGM_enableTopDownAttack = 1;
+    AGM_lockTargetMode = 1;
   };
   class launch_Titan_short_base: launch_Titan_base {
     AGM_enableTopDownAttack = 1;
+    AGM_lockTargetMode = 1;
   };
 };
 
