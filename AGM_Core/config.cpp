@@ -205,6 +205,7 @@ class CfgFunctions {
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
       class getTurretConfigPath;
       class getTurretIndex;
       class getTurrets;

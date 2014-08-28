@@ -5,13 +5,13 @@
 #define COLOR_ORANGE [0.9255, 0.5216, 0.1216, 1.0]
 
 0 spawn {
-	if (!isNull (missionNamespace getVariable ["AGM_Disposable_LockedTarget", objNull])) exitWith {
+	if (!isNull (missionNamespace getVariable ["AGM_Disposable_LockedTarget", objNull]) || {cameraView != "GUNNER"}) exitWith {
 		AGM_Disposable_LockedTarget = objNull;
 		AGM_Disposable_isTargetLocked = false;
 	};
 
 	_weapon = currentWeapon player;
-	AGM_Disposable_LockedTarget = cursorTarget;
+	AGM_Disposable_LockedTarget = [2000] call AGM_Core_fnc_getTargetObject;
 	AGM_Disposable_isTargetLocked = false;
 
 	if !(AGM_Disposable_LockedTarget isKindOf "Tank" || {AGM_Disposable_LockedTarget isKindOf "Car"}) exitWith {};
@@ -28,10 +28,10 @@
 		playSound "AGM_Sound_Locked2"; sleep 0.1;
 		_alternate = !_alternate;
 		_ctrlJavelinSeek ctrlSetTextColor ([COLOR_OFF, COLOR_ORANGE] select _alternate);
-		time > _time || {cursorTarget != AGM_Disposable_LockedTarget} || {currentWeapon player != _weapon}
+		time > _time || {[2000] call AGM_Core_fnc_getTargetObject != AGM_Disposable_LockedTarget} || {currentWeapon player != _weapon} || {cameraView != "GUNNER"}
 	};
 
-	if (cursorTarget != AGM_Disposable_LockedTarget || {currentWeapon player != _weapon}) exitWith {
+	if ([2000] call AGM_Core_fnc_getTargetObject != AGM_Disposable_LockedTarget || {currentWeapon player != _weapon} || {cameraView != "GUNNER"}) exitWith {
 		_ctrlJavelinSeek ctrlSetTextColor COLOR_OFF;
 	};
 
@@ -42,7 +42,7 @@
 
 	waitUntil {
 		playSound "AGM_Sound_Locked1"; sleep 0.1;
-		cursorTarget != AGM_Disposable_LockedTarget || {currentWeapon player != _weapon}
+		[2000] call AGM_Core_fnc_getTargetObject != AGM_Disposable_LockedTarget || {currentWeapon player != _weapon} || {cameraView != "GUNNER"}
 	};
 
 	_ctrlJavelinSeek ctrlSetTextColor COLOR_OFF;
