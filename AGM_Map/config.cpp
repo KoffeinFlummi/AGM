@@ -23,6 +23,7 @@ class CfgFunctions {
       class canDraw;
       class canUseMapTools;
       class canUseMapGPS;
+      class copyMapMarkers;
       class handleKeyDown;
       class handleMouseButton;
       class handleMouseMove;
@@ -30,6 +31,7 @@ class CfgFunctions {
       class isInsideMapTool;
       class openMapGps;
       class removeLineMarker;
+      class sendMapMarkers;
       class updateMapToolMarkers;
       class updateLineMarker;
     };
@@ -140,6 +142,16 @@ class CfgVehicles {
           showDisabled = 0;
           priority = 0;
         };
+      };
+    };
+
+    class AGM_Actions {
+      class AGM_CopyMap {
+        displayName = "$STR_AGM_Map_CopyMap";
+        condition = "isPlayer AGM_Interaction_Target && {""ItemMap"" in assignedItems player} && {""AGM_MapTools"" in items player} && {""ItemMap"" in assignedItems AGM_Interaction_Target}";
+        statement = "[player, ""AGM_Map_fnc_sendMapMarkers"", AGM_Interaction_Target] call AGM_Core_fnc_execRemoteFnc";
+        showDisabled = 0;
+        priority = -1;
       };
     };
   };
