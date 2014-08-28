@@ -12,6 +12,8 @@
  * None
  */
 
+private ["_unit", "_damage", "_hitPoints"];
+
 _unit = _this select 0;
 _damage = _this select 1;
 

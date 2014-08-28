@@ -27,6 +27,8 @@
 #define BLOODTHRESHOLD2 0
 #define BLOODLOSSRATE 0.02
 
+private ["_unit", "_selectionName", "_damage", "_source", "_source", "_projectile", "_hitSelections", "_hitPoints", "_newDamage", "_found", "_preventDeath"];
+
 _unit = _this select 0;
 _selectionName = _this select 1;
 _damage = _this select 2;
