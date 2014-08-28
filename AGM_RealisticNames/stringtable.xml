@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-28 -->
 <Project name="AGM">
   <Package name="RealisticNames">
-
     <Key ID="STR_AGM_RealisticNames_HMG_01_Name">
       <English>XM312</English>
       <German>XM312</German>
@@ -9,6 +9,10 @@
       <French>XM312</French>
       <Czech>XM312</Czech>
       <Polish>XM312</Polish>
+      <Russian>XM312</Russian>
+      <Portuguese>XM312</Portuguese>
+      <Hungarian>XM312</Hungarian>
+      <Italian>XM312A</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_HMG_01_A_Name">
       <English>XM312A</English>
@@ -17,6 +21,10 @@
       <French>XM312A</French>
       <Czech>XM312A</Czech>
       <Polish>XM312A</Polish>
+      <Russian>XM312A</Russian>
+      <Portuguese>XM312A</Portuguese>
+      <Hungarian>XM312A</Hungarian>
+      <Italian>XM312A</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_HMG_01_high_Name">
       <English>XM312 (High)</English>
@@ -25,6 +33,10 @@
       <French>XM312 (Haut)</French>
       <Czech>XM312 (Vysoký)</Czech>
       <Polish>XM312 (Wysoki)</Polish>
+      <Russian>XM312 (высоко)</Russian>
+      <Portuguese>XM312 (Alto)</Portuguese>
+      <Hungarian>XM312 (Emelt)</Hungarian>
+      <Italian>XM312 (Elevato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_GMG_01_Name">
       <English>XM307</English>
@@ -33,6 +45,10 @@
       <French>XM307</French>
       <Czech>XM307</Czech>
       <Polish>XM307</Polish>
+      <Russian>XM307</Russian>
+      <Portuguese>XM307</Portuguese>
+      <Hungarian>XM307</Hungarian>
+      <Italian>XM307</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_GMG_01_A_Name">
       <English>XM307A</English>
@@ -41,6 +57,10 @@
       <French>XM307A</French>
       <Czech>XM307A</Czech>
       <Polish>XM307A</Polish>
+      <Russian>XM307A</Russian>
+      <Portuguese>XM307A</Portuguese>
+      <Hungarian>XM307A</Hungarian>
+      <Italian>XM307A</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_GMG_01_high_Name">
       <English>XM307 (High)</English>
@@ -49,6 +69,10 @@
       <French>XM307 (Haut)</French>
       <Czech>XM307 (Vysoký)</Czech>
       <Polish>XM307 (Wysoki)</Polish>
+      <Russian>XM307 (высоко)</Russian>
+      <Portuguese>XM307 (Alto)</Portuguese>
+      <Hungarian>XM307 (Emelt)</Hungarian>
+      <Italian>XM307 (Elevato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AT_Name">
       <English>Mini-Spike Launcher (AT)</English>
@@ -57,6 +81,10 @@
       <French>Mini-Spike Lanceur (AC)</French>
       <Czech>Mini-Spike Odpalovač (AT)</Czech>
       <Polish>Wyrzutnia Mini-Spike (AT)</Polish>
+      <Russian>Mini-Spike гранатомет (ПТРК)</Russian>
+      <Portuguese>Mini-Spike Lançador (AT)</Portuguese>
+      <Hungarian>Mini-Spike Launcher (AT)</Hungarian>
+      <Italian>Mini-Spike Launcher (AT)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AA_Name">
       <English>Mini-Spike Launcher (AA)</English>
@@ -65,8 +93,11 @@
       <French>Mini-Spike Lanceur (AA)</French>
       <Czech>Mini-Spike Odpalovač (AA)</Czech>
       <Polish>Wyrzutnia Mini-Spike (AA)</Polish>
+      <Russian>Mini-Spike гранатомет (ВВ)</Russian>
+      <Portuguese>Mini-Spike Lançador (AA)</Portuguese>
+      <Hungarian>Mini-Spike Launcher (AA)</Hungarian>
+      <Italian>Mini-Spike Launcher (AA)</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
       <German>M-ATV</German>
@@ -75,6 +106,9 @@
       <Czech>M-ATV</Czech>
       <French>M-ATV</French>
       <Russian>M-ATV</Russian>
+      <Portuguese>M-ATV</Portuguese>
+      <Hungarian>M-ATV</Hungarian>
+      <Italian>M-ATV</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_hmg_Name">
       <English>M-ATV (HMG)</English>
@@ -84,6 +118,9 @@
       <Czech>M-ATV (TK)</Czech>
       <French>M-ATV (HMG)</French>
       <Russian>M-ATV (Пулемет)</Russian>
+      <Portuguese>M-ATV (HMG)</Portuguese>
+      <Hungarian>M-ATV (HMG)</Hungarian>
+      <Italian>M-ATV (HMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_gmg_Name">
       <English>M-ATV (GMG)</English>
@@ -93,24 +130,33 @@
       <Czech>M-ATV (Granátomet)</Czech>
       <French>M-ATV (GMG)</French>
       <Russian>M-ATV (Гранатомет)</Russian>
+      <Portuguese>M-ATV (GMG)</Portuguese>
+      <Hungarian>M-ATV (GMG)</Hungarian>
+      <Italian>M-ATV (GMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_cannon_Name">
-      <English>Merkava Mk IV</English>
-      <German>Merkava Mk IV</German>
-      <Spanish>Merkava Mk IV</Spanish>
-      <Polish>Merkava Mk IV</Polish>
-      <Czech>Merkava Mk IV</Czech>
-      <French>Merkava Mk IV</French>
-      <Russian>Меркава Mk IV</Russian>
+      <English>Merkava Mk.4 M</English>
+      <German>Merkava Mk.4 M</German>
+      <Spanish>Merkava Mk.4 M</Spanish>
+      <Polish>Merkawa Mk.4 M</Polish>
+      <Czech>Merkava Mk.4 M</Czech>
+      <French>Merkava Mk.4 M</French>
+      <Russian>Меркава Mk.4 M</Russian>
+      <Portuguese>Merkava Mk.4 M</Portuguese>
+      <Hungarian>Merkava Mk.4 M</Hungarian>
+      <Italian>Merkava Mk.4 M</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_TUSK_Name">
-      <English>Merkava LIC</English>
-      <German>Merkava LIC</German>
-      <Spanish>Merkava LIC</Spanish>
-      <Polish>Merkava LIC</Polish>
-      <Czech>Merkava LIC</Czech>
-      <French>Merkava LIC</French>
-      <Russian>Merkava LIC</Russian>
+      <English>Merkava Mk.4 LIC</English>
+      <German>Merkava Mk.4 LIC</German>
+      <Spanish>Merkava Mk.4 LIC</Spanish>
+      <Polish>Merkawa Mk.4 LIC</Polish>
+      <Czech>Merkava Mk.4 LIC</Czech>
+      <French>Merkava Mk.4 LIC</French>
+      <Russian>Меркава Mk.4 LIC</Russian>
+      <Portuguese>Merkava Mk.4 LIC</Portuguese>
+      <Hungarian>Merkava Mk.4 LIC</Hungarian>
+      <Italian>Merkava Mk.4 LIC</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_arty_Name">
       <English>Sholef</English>
@@ -119,7 +165,10 @@
       <Polish>Sholef</Polish>
       <Czech>Sholef</Czech>
       <French>Sholef</French>
-      <Russian>Sholef</Russian>
+      <Russian>Шолеф</Russian>
+      <Portuguese>Sholef</Portuguese>
+      <Hungarian>Sholef</Hungarian>
+      <Italian>Sholef</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_mlrs_Name">
       <English>Seara</English>
@@ -129,15 +178,21 @@
       <Czech>Seara</Czech>
       <French>Seara</French>
       <Russian>Seara</Russian>
+      <Portuguese>Seara</Portuguese>
+      <Hungarian>Seara</Hungarian>
+      <Italian>Seara</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_01_rcws_Name">
       <English>Namer</English>
       <German>Namer</German>
-      <Spanish>Namer</Spanish>
+      <Spanish>Namera</Spanish>
       <Polish>Namer</Polish>
       <Czech>Namer</Czech>
       <French>Namer</French>
-      <Russian>Namer</Russian>
+      <Russian>Намер</Russian>
+      <Portuguese>Namer</Portuguese>
+      <Hungarian>Namer</Hungarian>
+      <Italian>Namer</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_01_AA_Name">
       <English>Bardelas</English>
@@ -147,43 +202,57 @@
       <Czech>Bardelas</Czech>
       <French>Bardelas</French>
       <Russian>Bardelas</Russian>
+      <Portuguese>Bardelas</Portuguese>
+      <Hungarian>Bardelas</Hungarian>
+      <Italian>Bardelas</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Wheeled_cannon_Name">
-      <English>Patria AMV</English>
-      <German>Patria AMV</German>
-      <Spanish>Patria AMV</Spanish>
-      <Polish>Patria AMV</Polish>
-      <Czech>Patria AMV</Czech>
-      <French>Patria AMV</French>
-      <Russian>Patria AMV</Russian>
+      <English>Rosomak</English>
+      <German>Rosomak</German>
+      <Spanish>Rosomak</Spanish>
+      <Polish>Rosomak</Polish>
+      <Czech>Rosomak</Czech>
+      <French>Rosomak</French>
+      <Russian>Rosomak</Russian>
+      <Portuguese>Rosomak</Portuguese>
+      <Hungarian>Rosomak</Hungarian>
+      <Italian>Rosomak</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_01_CRV_Name">
       <English>Nemmera</English>
       <German>Nemmera</German>
       <Spanish>Nemmera</Spanish>
-      <Polish>Nammera</Polish>
+      <Polish>Nemmera</Polish>
       <Czech>Nemmera</Czech>
       <French>Nemmera</French>
       <Russian>Nemmera</Russian>
+      <Portuguese>Nemmera</Portuguese>
+      <Hungarian>Nemmera</Hungarian>
+      <Italian>Nemmera</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_Truck_01_transport_Name">
       <English>HEMTT Transport</English>
       <German>HEMTT Transport</German>
-      <Spanish>HEMTT de transporte</Spanish>
-      <Polish>HEMTT transportowy</Polish>
+      <Spanish>HEMTT Transporte</Spanish>
+      <Polish>HEMTT Transportowy</Polish>
       <Czech>HEMTT Valník</Czech>
       <French>HEMTT Transport</French>
       <Russian>HEMTT Транспортный</Russian>
+      <Portuguese>HEMTT Transportar</Portuguese>
+      <Hungarian>HEMTT Közlekedés</Hungarian>
+      <Italian>HEMTT Transporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_covered_Name">
       <English>HEMTT Transport (covered)</English>
       <German>HEMTT Transport (bedeckt)</German>
-      <Spanish>HEMTT de transporte (cubierto)</Spanish>
-      <Polish>HEMTT transportowy (zakryty)</Polish>
+      <Spanish>HEMTT Transporte (cubierto)</Spanish>
+      <Polish>HEMTT Transportowy (zakryty)</Polish>
       <Czech>HEMTT Valník (krytý)</Czech>
-      <French>HEMTT Transport (Couvert)</French>
+      <French>HEMTT Transport (bâché)</French>
       <Russian>HEMTT Транспортный (крытый)</Russian>
+      <Portuguese>HEMTT Transportar (coberta)</Portuguese>
+      <Hungarian>HEMTT Közlekedés (fedett)</Hungarian>
+      <Italian>HEMTT Transporto (covered)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_mover_Name">
       <English>HEMTT</English>
@@ -193,53 +262,70 @@
       <Czech>HEMTT</Czech>
       <French>HEMTT</French>
       <Russian>HEMTT</Russian>
+      <Portuguese>HEMTT</Portuguese>
+      <Hungarian>HEMTT</Hungarian>
+      <Italian>HEMTT</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_box_Name">
       <English>HEMTT Container</English>
       <German>HEMTT Container</German>
-      <Spanish>HEMTT de contenedor</Spanish>
-      <Polish>HEMTT kontener</Polish>
+      <Spanish>HEMTT Contenedor</Spanish>
+      <Polish>HEMTT Kontener</Polish>
       <Czech>HEMTT Skříňový</Czech>
       <French>HEMTT Conteneur</French>
       <Russian>HEMTT Контейнер</Russian>
+      <Portuguese>HEMTT Contêiner</Portuguese>
+      <Hungarian>HEMTT Konténer</Hungarian>
+      <Italian>HEMTT Contenitore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_medical_Name">
       <English>HEMTT Medical</English>
       <German>HEMTT Sanitäter</German>
-      <Spanish>HEMTT médico</Spanish>
-      <Polish>HEMTT medyczny</Polish>
+      <Spanish>HEMTT Médico</Spanish>
+      <Polish>HEMTT Medyczny</Polish>
       <Czech>HEMTT Zdravotnický</Czech>
       <French>HEMTT Médical</French>
       <Russian>HEMTT Медицинский</Russian>
+      <Portuguese>HEMTT Médico</Portuguese>
+      <Hungarian>HEMTT Medikus</Hungarian>
+      <Italian>HEMTT Medica</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_ammo_Name">
       <English>HEMTT Ammo</English>
       <German>HEMTT Munition</German>
-      <Spanish>HEMTT de munición</Spanish>
-      <Polish>HEMTT amunicyjny</Polish>
+      <Spanish>HEMTT Munición</Spanish>
+      <Polish>HEMTT Amunicyjny</Polish>
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
       <Russian>HEMTT Боеприпасы</Russian>
+      <Portuguese>HEMTT Munição</Portuguese>
+      <Hungarian>HEMTT Muníció</Hungarian>
+      <Italian>HEMTT Munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_fuel_Name">
       <English>HEMTT Fuel</English>
       <German>HEMTT Treibstoff</German>
-      <Spanish>HEMTT de combustible</Spanish>
-      <Polish>HEMTT cysterna</Polish>
+      <Spanish>HEMTT Combustible</Spanish>
+      <Polish>HEMTT Cysterna</Polish>
       <Czech>HEMTT Cisterna</Czech>
       <French>HEMTT Citerne</French>
       <Russian>HEMTT Заправщик</Russian>
+      <Portuguese>HEMTT Combustível</Portuguese>
+      <Hungarian>HEMTT Üzemanyag</Hungarian>
+      <Italian>HEMTT Combustibile</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_Repair_Name">
       <English>HEMTT Repair</English>
       <German>HEMTT Instandsetzung</German>
-      <Spanish>HEMTT de reparación</Spanish>
-      <Polish>HEMTT naprawczy</Polish>
+      <Spanish>HEMTT Reparación</Spanish>
+      <Polish>HEMTT Naprawczy</Polish>
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
       <Russian>HEMTT Ремонт</Russian>
+      <Portuguese>HEMTT Reparo</Portuguese>
+      <Hungarian>HEMTT Kijavítás</Hungarian>
+      <Italian>HEMTT Riparazione</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_MRAP_03_Name">
       <English>Fennek</English>
       <German>Fennek</German>
@@ -247,7 +333,10 @@
       <Polish>Fennek</Polish>
       <Czech>Fennek</Czech>
       <French>Fennek</French>
-      <Russian>Fennek</Russian>
+      <Russian>Феннек</Russian>
+      <Portuguese>Fennek</Portuguese>
+      <Hungarian>Fennek</Hungarian>
+      <Italian>Fennek</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_03_hmg_Name">
       <English>Fennek (HMG)</English>
@@ -256,7 +345,10 @@
       <Polish>Fennek (CKM)</Polish>
       <Czech>Fennek (TK)</Czech>
       <French>Fennek (HMG)</French>
-      <Russian>Fennek (Пулемет)</Russian>
+      <Russian>Феннек (Пулемет)</Russian>
+      <Portuguese>Fennek (HMG)</Portuguese>
+      <Hungarian>Fennek (HMG)</Hungarian>
+      <Italian>Fennek (HMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_03_gmg_Name">
       <English>Fennek (GMG)</English>
@@ -265,7 +357,10 @@
       <Polish>Fennek (GMG)</Polish>
       <Czech>Fennek (granátomet)</Czech>
       <French>Fennek (GMG)</French>
-      <Russian>Fennek (Гранатомет)</Russian>
+      <Russian>Феннек(Гранатомет)</Russian>
+      <Portuguese>Fennek (GMG)</Portuguese>
+      <Hungarian>Fennek (GMG)</Hungarian>
+      <Italian>Fennek (GMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_03_cannon_Name">
       <English>Leopard 2SG</English>
@@ -274,7 +369,10 @@
       <Polish>Leopard 2SG</Polish>
       <Czech>Leopard 2SG</Czech>
       <French>Leopard 2SG</French>
-      <Russian>Leopard 2SG</Russian>
+      <Russian>Леопард 2SG</Russian>
+      <Portuguese>Leopard 2SG</Portuguese>
+      <Hungarian>Leopard 2SG</Hungarian>
+      <Italian>Leopard 2SG</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_tracked_03_cannon_Name">
       <English>FV510 Warrior</English>
@@ -283,7 +381,10 @@
       <Polish>FV510 Warrior</Polish>
       <Czech>FV510 Warrior</Czech>
       <French>FV510 Warrior</French>
-      <Russian>FV510 Warrior</Russian>
+      <Russian>FV510 Уорриор</Russian>
+      <Portuguese>FV510 Warrior</Portuguese>
+      <Hungarian>FV510 Warrior</Hungarian>
+      <Italian>FV510 Warrior</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Wheeled_03_cannon_Name">
       <English>Pandur II</English>
@@ -293,63 +394,82 @@
       <Czech>Pandur II</Czech>
       <French>Pandur II</French>
       <Russian>Pandur II</Russian>
+      <Portuguese>Pandur II</Portuguese>
+      <Hungarian>Pandur II</Hungarian>
+      <Italian>Pandur II</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_Truck_02_transport_Name">
-      <English>Kamaz Transport</English>
-      <German>Kamaz Transport</German>
-      <Spanish>Kamaz Transporte</Spanish>
-      <Polish>Kamaz transportowy</Polish>
-      <Czech>Kamaz Valník</Czech>
-      <French>Kamaz Transport</French>
-      <Russian>Камаз Траспортный</Russian>
+      <English>KamAZ Transport</English>
+      <German>KamAZ Transport</German>
+      <Spanish>KamAZ Transporte</Spanish>
+      <Polish>KamAZ transportowy</Polish>
+      <Czech>KamAZ Valník</Czech>
+      <French>KamAZ Transport</French>
+      <Russian>КамАЗ Траспортный</Russian>
+      <Portuguese>KamAZ Transportar</Portuguese>
+      <Hungarian>KamAZ Közlekedés</Hungarian>
+      <Italian>KamAZ Transporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_covered_Name">
-      <English>Kamaz Transport (covered)</English>
-      <German>Kamaz Transport (bedeckt)</German>
-      <Spanish>Kamaz de transporte (cubierto)</Spanish>
-      <Polish>Kamaz transportowy (zakryty)</Polish>
-      <Czech>Kamaz Valník (krytý)</Czech>
-      <French>Kamaz Transport (Couvert)</French>
-      <Russian>Камаз Траспортный (Крытый)</Russian>
+      <English>KamAZ Transport (covered)</English>
+      <German>KamAZ Transport (bedeckt)</German>
+      <Spanish>KamAZ Transporte (cubierto)</Spanish>
+      <Polish>KamAZ Transportowy (zakryty)</Polish>
+      <Czech>KamAZ Valník (krytý)</Czech>
+      <French>KamAZ Transport (bâché)</French>
+      <Russian>КамАЗ Траспортный (Крытый)</Russian>
+      <Portuguese>KamAZ Transportar (coberta)</Portuguese>
+      <Hungarian>KamAZ Közlekedés (fedett)</Hungarian>
+      <Italian>KamAZ Transporto (covered)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
-      <English>Kamaz Ammo</English>
-      <German>Kamaz Munition</German>
-      <Spanish>Kamaz de munición</Spanish>
-      <Polish>Kamaz amunicyjny</Polish>
-      <Czech>Kamaz Muniční</Czech>
-      <French>Kamaz Munitions</French>
-      <Russian>Камаз Боеприпасы</Russian>
+      <English>KamAZ Ammo</English>
+      <German>KamAZ Munition</German>
+      <Spanish>KamAZ Munición</Spanish>
+      <Polish>KamAZ Amunicyjny</Polish>
+      <Czech>KamAZ Muniční</Czech>
+      <French>KamAZ Munitions</French>
+      <Russian>КамАЗ Боеприпасы</Russian>
+      <Portuguese>KamAZ Munição</Portuguese>
+      <Hungarian>KamAZ Muníció</Hungarian>
+      <Italian>KamAZ Munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_fuel_Name">
-      <English>Kamaz Fuel</English>
-      <German>Kamaz Treibstoff</German>
-      <Spanish>Kamaz de combustible</Spanish>
-      <Polish>Kamaz cysterna</Polish>
-      <Czech>Kamaz Cisterna</Czech>
-      <French>Kamaz Citerne</French>
-      <Russian>Камаз Заправщик</Russian>
+      <English>KamAZ Fuel</English>
+      <German>KamAZ Treibstoff</German>
+      <Spanish>KamAZ de combustible</Spanish>
+      <Polish>KamAZ cysterna</Polish>
+      <Czech>KamAZ Cisterna</Czech>
+      <French>KamAZ Citerne</French>
+      <Russian>КамАЗ Заправщик</Russian>
+      <Portuguese>KamAZ Combustível</Portuguese>
+      <Hungarian>KamAZ Üzemanyag</Hungarian>
+      <Italian>KamAZ Combustibile</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_box_Name">
-      <English>Kamaz Repair</English>
-      <German>Kamaz Instandsetzung</German>
-      <Spanish>Kamaz de reparación</Spanish>
-      <Polish>Kamaz naprawczy</Polish>
-      <Czech>Kamaz Opravárenský</Czech>
-      <French>Kamaz Réparation</French>
-      <Russian>Камаз Ремонтный</Russian>
+      <English>KamAZ Repair</English>
+      <German>KamAZ Instandsetzung</German>
+      <Spanish>KamAZ Reparación</Spanish>
+      <Polish>KamAZ Naprawczy</Polish>
+      <Czech>KamAZ Opravárenský</Czech>
+      <French>KamAZ Réparation</French>
+      <Russian>КамАЗ Ремонтный</Russian>
+      <Portuguese>KamAZ Reparo</Portuguese>
+      <Hungarian>KamAZ Kijavítás</Hungarian>
+      <Italian>KamAZ Riparazione</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_medical_Name">
-      <English>Kamaz Medical</English>
-      <German>Kamaz Sanitäter</German>
-      <Spanish>Kamaz de médico</Spanish>
-      <Polish>Kamaz medyczny</Polish>
-      <Czech>Kamaz Zdravotnický</Czech>
-      <French>Kamaz Médical</French>
-      <Russian>Камаз Медицинский</Russian>
+      <English>KamAZ Medical</English>
+      <German>KamAZ Sanitäter</German>
+      <Spanish>KamAZ Médico</Spanish>
+      <Polish>KamAZ Medyczny</Polish>
+      <Czech>KamAZ Zdravotnický</Czech>
+      <French>KamAZ Médical</French>
+      <Russian>КамАЗ Медицинский</Russian>
+      <Portuguese>KamAZ Médico</Portuguese>
+      <Hungarian>KamAZ Medikus</Hungarian>
+      <Italian>KamAZ Medica</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_MRAP_02_Name">
       <English>Punisher</English>
       <German>Punisher</German>
@@ -357,7 +477,10 @@
       <Polish>Punisher</Polish>
       <Czech>Punisher</Czech>
       <French>Punisher</French>
-      <Russian>Punisher</Russian>
+      <Russian>Kаратель</Russian>
+      <Portuguese>Punisher</Portuguese>
+      <Hungarian>Punisher</Hungarian>
+      <Italian>Punisher</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_02_hmg_Name">
       <English>Punisher (HMG)</English>
@@ -366,7 +489,10 @@
       <Polish>Punisher (CKM)</Polish>
       <Czech>Punisher (TK)</Czech>
       <French>Punisher (HMG)</French>
-      <Russian>Punisher (Пулемет)</Russian>
+      <Russian>Kаратель (Пулемет)</Russian>
+      <Portuguese>Punisher (HMG)</Portuguese>
+      <Hungarian>Punisher (HMG)</Hungarian>
+      <Italian>Punisher (HMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_02_gmg_Name">
       <English>Punisher (GMG)</English>
@@ -375,7 +501,10 @@
       <Polish>Punisher (CKM)</Polish>
       <Czech>Punisher (granátomet)</Czech>
       <French>Punisher (GMG)</French>
-      <Russian>Punisher (Гранатомет)</Russian>
+      <Russian>Kаратель (Гранатомет)</Russian>
+      <Portuguese>Punisher (GMG)</Portuguese>
+      <Hungarian>Punisher (GMG)</Hungarian>
+      <Italian>Punisher (GMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_02_cannon_Name">
       <English>T100 Black Eagle</English>
@@ -385,6 +514,9 @@
       <Czech>T100 Black Eagle</Czech>
       <French>T100 Black Eagle</French>
       <Russian>T100 Черный Орел</Russian>
+      <Portuguese>T100 Black Eagle</Portuguese>
+      <Hungarian>T100 Black Eagle</Hungarian>
+      <Italian>T100 Black Eagle</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_02_arty_Name">
       <English>2S9 Sochor</English>
@@ -394,6 +526,9 @@
       <Czech>2S9 Sochor</Czech>
       <French>2S9 Sochor</French>
       <Russian>2S9 Сокор</Russian>
+      <Portuguese>2S9 Sochor</Portuguese>
+      <Hungarian>2S9 Sochor</Hungarian>
+      <Italian>2S9 Sochor</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_cannon_Name">
       <English>BM-2T Stalker</English>
@@ -403,6 +538,9 @@
       <Czech>BM-2T Stalker</Czech>
       <French>BM-2T Stalker</French>
       <Russian>БМ-2Т Сталкер</Russian>
+      <Portuguese>BM-2T Stalker</Portuguese>
+      <Hungarian>BM-2T Stalker</Hungarian>
+      <Italian>BM-2T Stalker</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Tracked_02_AA_Name">
       <English>ZSU-35 Tigris</English>
@@ -411,7 +549,10 @@
       <Polish>ZSU-35 Tigris</Polish>
       <Czech>ZSU-35 Tigris</Czech>
       <French>ZSU-35 Tigris</French>
-      <Russian>ZSU-35 Tigris</Russian>
+      <Russian>ЗСУ-35 Tigris</Russian>
+      <Portuguese>ZSU-35 Tigris</Portuguese>
+      <Hungarian>ZSU-35 Tigris</Hungarian>
+      <Italian>ZSU-35 Tigris</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Wheeled_02_rcws_Name">
       <English>ARMA</English>
@@ -421,72 +562,94 @@
       <Czech>ARMA</Czech>
       <French>ARMA</French>
       <Russian>ARMA</Russian>
+      <Portuguese>ARMA</Portuguese>
+      <Hungarian>ARMA</Hungarian>
+      <Italian>ARMA</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_Truck_03_transport_Name">
       <English>Typhoon Transport</English>
       <German>Typhoon Transport</German>
-      <Spanish>Typhoon de trasporte</Spanish>
-      <Polish>Typhoon transportowy</Polish>
+      <Spanish>Typhoon Trasporte</Spanish>
+      <Polish>Typhoon Transportowy</Polish>
       <Czech>Typhoon Valník</Czech>
       <French>Typhoon Transport</French>
-      <Russian>Typhoon Транспортный</Russian>
+      <Russian>Тайфун Транспортный</Russian>
+      <Portuguese>Typhoon Transportar</Portuguese>
+      <Hungarian>Typhoon Közlekedés</Hungarian>
+      <Italian>Typhoon Transporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_covered_Name">
       <English>Typhoon Transport (covered)</English>
       <German>Typhoon Transport (bedeckt)</German>
-      <Spanish>Typhoon de trasporte (cubierto)</Spanish>
-      <Polish>Typhoon transportowy (przykryty)</Polish>
+      <Spanish>Typhoon Trasporte (cubierto)</Spanish>
+      <Polish>Typhoon Transportowy (przykryty)</Polish>
       <Czech>Typhoon Valník (krytý)</Czech>
-      <French>Typhoon Transport (Couvert)</French>
-      <Russian>Typhoon Транспортный (Крытый)</Russian>
+      <French>Typhoon Transport (bâché)</French>
+      <Russian>Тайфун Транспортный (kрытый)</Russian>
+      <Portuguese>Typhoon Transportar (coberta)</Portuguese>
+      <Hungarian>Typhoon Közlekedés (fedett)</Hungarian>
+      <Italian>Typhoon Transporto (covered)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_device_Name">
       <English>Typhoon Device</English>
       <German>Typhoon Gerät</German>
-      <Spanish>Typhoon de dispositivo</Spanish>
-      <Polish>Typhoon urządzenie</Polish>
-      <Czech>Typhoon (zařízení)</Czech>
+      <Spanish>Typhoon Aparato</Spanish>
+      <Polish>Typhoon Urządzenie</Polish>
+      <Czech>Typhoon Zařízení</Czech>
       <French>Typhoon Appareil</French>
-      <Russian>Typhoon Техника</Russian>
+      <Russian>Тайфун Техника</Russian>
+      <Portuguese>Typhoon Aparelho</Portuguese>
+      <Hungarian>Typhoon Berendezés</Hungarian>
+      <Italian>Typhoon Apparecchio</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_ammo_Name">
       <English>Typhoon Ammo</English>
       <German>Typhoon Munition</German>
-      <Spanish>Typhoon de munición</Spanish>
-      <Polish>Typhoon amunicyjny</Polish>
+      <Spanish>Typhoon Munición</Spanish>
+      <Polish>Typhoon Amunicyjny</Polish>
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
-      <Russian>Typhoon Боеприпасы</Russian>
+      <Russian>Тайфун Боеприпасы</Russian>
+      <Portuguese>Typhoon Munição</Portuguese>
+      <Hungarian>Typhoon Muníció</Hungarian>
+      <Italian>Typhoon Munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_fuel_Name">
       <English>Typhoon Fuel</English>
       <German>Typhoon Treibstoff</German>
-      <Spanish>Typhoon de combustible</Spanish>
-      <Polish>Typhoon cysterna</Polish>
+      <Spanish>Typhoon Combustible</Spanish>
+      <Polish>Typhoon Cysterna</Polish>
       <Czech>Typhoon Cisterna</Czech>
       <French>Typhoon Citerne</French>
-      <Russian>Typhoon Заправщик</Russian>
+      <Russian>Тайфун Заправщик</Russian>
+      <Portuguese>Typhoon Combustível</Portuguese>
+      <Hungarian>Typhoon Üzemanyag</Hungarian>
+      <Italian>Typhoon Combustibile</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_repair_Name">
       <English>Typhoon Repair</English>
       <German>Typhoon Instandsetzung</German>
-      <Spanish>Typhoon de reparación</Spanish>
-      <Polish>Typhoon naprawczy</Polish>
+      <Spanish>Typhoon Reparación</Spanish>
+      <Polish>Typhoon Naprawczy</Polish>
       <Czech>Typhoon Opravárenský</Czech>
       <French>Typhoon Réparation</French>
-      <Russian>Typhoon Ремонтный</Russian>
+      <Russian>Тайфун Ремонтный</Russian>
+      <Portuguese>Typhoon Reparo</Portuguese>
+      <Hungarian>Typhoon Kijavítás</Hungarian>
+      <Italian>Typhoon Riparazione</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
       <German>Typhoon Sanitäter</German>
-      <Spanish>Typhoon de médico</Spanish>
-      <Polish>Typhoon medyczny</Polish>
+      <Spanish>Typhoon Médico</Spanish>
+      <Polish>Typhoon Medyczny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon Médical</French>
-      <Russian>Typhoon Медицинский</Russian>
+      <Russian>Тайфун Медицинский</Russian>
+      <Portuguese>Typhoon Médico</Portuguese>
+      <Hungarian>Typhoon Medikus</Hungarian>
+      <Italian>Typhoon Medica</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_Heli_Attack_01_Name">
       <English>RAH-66 Comanche</English>
       <German>RAH-66 Comanche</German>
@@ -494,7 +657,10 @@
       <Polish>RAH-66 Comanche</Polish>
       <Czech>RAH-66 Comanche</Czech>
       <French>RAH-66 Commanche</French>
-      <Russian>RAH-66 Comanche</Russian>
+      <Russian>RAH-66 Команч</Russian>
+      <Portuguese>RAH-66 Comanche</Portuguese>
+      <Hungarian>RAH-66 Comanche</Hungarian>
+      <Italian>RAH-66 Comanche</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Light_01_Name">
       <English>MH-6 Little Bird</English>
@@ -504,6 +670,9 @@
       <Czech>MH-6 Little Bird</Czech>
       <French>MH-6 LittleBird</French>
       <Russian>MH-6 Little Bird</Russian>
+      <Portuguese>MH-6 Little Bird</Portuguese>
+      <Hungarian>MH-6 Little Bird</Hungarian>
+      <Italian>MH-6 Little Bird</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Light_01_armed_Name">
       <English>AH-6 Little Bird</English>
@@ -513,6 +682,9 @@
       <Czech>AH-6 Little Bird</Czech>
       <French>AH-6 Little Bird</French>
       <Russian>AH-6 Little Bird</Russian>
+      <Portuguese>AH-6 Little Bird</Portuguese>
+      <Hungarian>AH-6 Little Bird</Hungarian>
+      <Italian>AH-6 Little Bird</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
       <English>A-10D Thunderbolt II</English>
@@ -521,7 +693,10 @@
       <Polish>A-10D Thunderbolt II</Polish>
       <Czech>A-10D Thunderbolt II</Czech>
       <French>A-10D Thunderbolt II</French>
-      <Russian>A-10D Thunderbolt II</Russian>
+      <Russian>A-10D Тандерболт II</Russian>
+      <Portuguese>A-10D Thunderbolt II</Portuguese>
+      <Hungarian>A-10D Thunderbolt II</Hungarian>
+      <Italian>A-10D Thunderbolt II</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_light_03_Name">
       <English>AW159 Wildcat</English>
@@ -531,6 +706,9 @@
       <Czech>AW159 Wildcat</Czech>
       <French>AW159 Wildcat</French>
       <Russian>AW159 Wildcat</Russian>
+      <Portuguese>AW159 Wildcat</Portuguese>
+      <Hungarian>AW159 Wildcat</Hungarian>
+      <Italian>AW159 Wildcat</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_light_03_unarmed_Name">
       <English>AW159 Wildcat (unarmed)</English>
@@ -540,6 +718,9 @@
       <Czech>AW159 Wildcat (neozbrojený)</Czech>
       <French>AW159 Wildcat (Non-Armé)</French>
       <Russian>AW159 Wildcat (невооруженный)</Russian>
+      <Portuguese>AW159 Wildcat (desarmadas)</Portuguese>
+      <Hungarian>AW159 Wildcat (fegyvertelen)</Hungarian>
+      <Italian>AW159 Wildcat (disarmato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_02_Name">
       <English>AW101 Merlin</English>
@@ -549,6 +730,9 @@
       <Czech>AW101 Merlin</Czech>
       <French>AW101 Merlin</French>
       <Russian>AW101 Мерлин</Russian>
+      <Portuguese>AW101 Merlin</Portuguese>
+      <Hungarian>AW101 Merlin</Hungarian>
+      <Italian>AW101 Merlin</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_Fighter_03_CAS_Name">
       <English>L-159 ALCA (CAS)</English>
@@ -558,6 +742,9 @@
       <Czech>L-159 ALCA (CAS)</Czech>
       <French>L-159 ALCA (CAS)</French>
       <Russian>L-159 Альбатрос (CAS)</Russian>
+      <Portuguese>L-159 ALCA (CAS)</Portuguese>
+      <Hungarian>L-159 ALCA (CAS)</Hungarian>
+      <Italian>L-159 ALCA (CAS)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_Fighter_03_AA_Name">
       <English>L-159 ALCA (AA)</English>
@@ -567,6 +754,9 @@
       <Czech>L-159 ALCA (AA)</Czech>
       <French>L-159 ALCA (AA)</French>
       <Russian>L-159 Альбатрос (AA)</Russian>
+      <Portuguese>L-159 ALCA (ВВ)</Portuguese>
+      <Hungarian>L-159 ALCA (AA)</Hungarian>
+      <Italian>L-159 ALCA (AA)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Light_02_Name">
       <English>Ka-60 Kasatka</English>
@@ -576,6 +766,9 @@
       <Czech>Ka-60 Kasatka</Czech>
       <French>Ka-60 Kasatka</French>
       <Russian>Ka-60 Касатка</Russian>
+      <Portuguese>Ka-60 Kasatka</Portuguese>
+      <Hungarian>Ka-60 Kasatka</Hungarian>
+      <Italian>Ka-60 Kasatka</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Light_02_unarmed_Name">
       <English>Ka-60 Kasatka (unarmed)</English>
@@ -585,17 +778,22 @@
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
       <French>Ka-60 Kasatka (Non-Armé)</French>
       <Russian>Ka-60 Касатка (невооруженный)</Russian>
+      <Portuguese>Ka-60 Kasatka (desarmadas)</Portuguese>
+      <Hungarian>Ka-60 Kasatka (fegyvertelen)</Hungarian>
+      <Italian>Ka-60 Kasatka (disarmato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_02_Name">
       <English>Yak-130</English>
-      <German>Yak-130</German>
+      <German>Jak-130</German>
       <Spanish>Yak-130</Spanish>
-      <Polish>Yak-130</Polish>
-      <Czech>Yak-130</Czech>
+      <Polish>Jak-130</Polish>
+      <Czech>Jak-130</Czech>
       <French>Yak-130</French>
-      <Russian>ЯК-130</Russian>
+      <Russian>Як-130</Russian>
+      <Portuguese>Yak-130</Portuguese>
+      <Hungarian>Jak-130</Hungarian>
+      <Italian>Yak-130</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_SLAM_Name">
       <English>M4A1 SLAM</English>
       <German>M4A1 SLAM</German>
@@ -604,6 +802,9 @@
       <Czech>M4A1 SLAM</Czech>
       <French>M4A1 SLAM</French>
       <Russian>M4A1 SLAM</Russian>
+      <Portuguese>M4A1 SLAM</Portuguese>
+      <Hungarian>M4A1 SLAM</Hungarian>
+      <Italian>M4A1 SLAM</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Claymore_Name">
       <English>M18A1 Claymore</English>
@@ -613,6 +814,9 @@
       <Czech>M18A1 Claymore</Czech>
       <French>M18A1 Claymore</French>
       <Russian>M18A1 Клеймор</Russian>
+      <Portuguese>M18A1 Claymore</Portuguese>
+      <Hungarian>M18A1 Claymore</Hungarian>
+      <Italian>M18A1 Claymore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SatchelCharge_Name">
       <English>M183 Demolition Charge Assembly</English>
@@ -622,6 +826,9 @@
       <Czech>M183 Demolition Charge Assembly</Czech>
       <French>M183 Demolition Charge Assembly</French>
       <Russian>Комплектный подрывной заряд М183</Russian>
+      <Portuguese>Mini-Spike Lançador (AA)</Portuguese>
+      <Hungarian>M183 Demolition Charge Assembly</Hungarian>
+      <Italian>M183 Demolition Charge Assembly</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_DemoCharge_Name">
       <English>M112 Demolition Block</English>
@@ -631,15 +838,21 @@
       <Czech>M112 Demolition Block</Czech>
       <French>Pétard M112</French>
       <Russian>M112 Demolition Block</Russian>
+      <Portuguese>M112 Demolition Block</Portuguese>
+      <Hungarian>M112 Demolition Block</Hungarian>
+      <Italian>M112 Demolition Block</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_HandGrenade_Name">
       <English>M67 Fragmentation Grenade</English>
       <German>M67 Splittergranate</German>
-      <Spanish>M67 Granada de Fragmentación</Spanish>
+      <Spanish>M67 Granada Fragmentación</Spanish>
       <Polish>M67 Obronny Granat</Polish>
       <Czech>M67 Obranný Granát</Czech>
       <French>M67 Grenade à fragmentation</French>
       <Russian>M67 ручная осколочная граната</Russian>
+      <Portuguese>M67 Granada de Fragmentação</Portuguese>
+      <Hungarian>M67 Fragmentation Grenade</Hungarian>
+      <Italian>M67 Granata Frammentazione</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShell_Name">
       <English>M83 Smoke Grenade (White)</English>
@@ -649,60 +862,81 @@
       <Czech>M83 Dýmový Granát (Bílá)</Czech>
       <French>M83 Grenade Fumigène (Blanche)</French>
       <Russian>M83 дымовой гранаты (Белый)</Russian>
+      <Portuguese>M83 Granada de Fumaça (Branco)</Portuguese>
+      <Hungarian>M83 Smoke Grenade (Fehér)</Hungarian>
+      <Italian>M83 Smoke Grenade (Bianco)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellBlue_Name">
       <English>M18 Smoke Grenade (Blue)</English>
       <German>M18 Rauchgranate (Blau)</German>
-      <Spanish>M18 Granadas fumígenas (Azul)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Azul)</Spanish>
       <Polish>M18 Granat Dymny (Niebieska)</Polish>
       <Czech>M18 Dýmový Granát (Modrá)</Czech>
       <French>M18 Grenade Fumigène (Bleue)</French>
-      <Russian>M183 дымовой гранаты (Синий)</Russian>
+      <Russian>M18 дымовой гранаты (Синий)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Azul)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Kék)</Hungarian>
+      <Italian>M18 Smoke Grenade (Blu)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellGreen_Name">
       <English>M18 Smoke Grenade (Green)</English>
       <German>M18 Rauchgranate (Grün)</German>
-      <Spanish>M18 Granadas fumígenas (Verde)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Verde)</Spanish>
       <Polish>M18 Granat Dymny (Zielona)</Polish>
       <Czech>M18 Dýmový Granát (Zelená)</Czech>
       <French>M18 Grenade Fumigène (Verte)</French>
-      <Russian>M183 дымовой гранаты (Зелёный)</Russian>
+      <Russian>M18 дымовой гранаты (Зелёный)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Verde)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Zöld)</Hungarian>
+      <Italian>M18 Smoke Grenade (Verde)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellOrange_Name">
       <English>M18 Smoke Grenade (Orange)</English>
       <German>M18 Rauchgranate (Orange)</German>
-      <Spanish>M18 Granadas fumígenas (Naranja)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Naranja)</Spanish>
       <Polish>M18 Granat Dymny (Pomarańczowa)</Polish>
       <Czech>M18 Dýmový Granát (Oranžová)</Czech>
       <French>M18 Grenade Fumigène (Orange)</French>
       <Russian>M183 дымовой гранаты (Оранжевый)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Laranja)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Narancs)</Hungarian>
+      <Italian>M18 Smoke Grenade (Arancione)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
       <English>M18 Smoke Grenade (Purple)</English>
       <German>M18 Rauchgranate (Violett)</German>
-      <Spanish>M18 Granadas fumígenas (Púrpura)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Púrpura)</Spanish>
       <Polish>M18 Granat Dymny (Purpurowa)</Polish>
       <Czech>M18 Dýmový Granát (Fialové)</Czech>
       <French>M18 Grenade Fumigène (Pourpre)</French>
       <Russian>M183 дымовой гранаты (Пурпурный)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Roxo)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Bíbor)</Hungarian>
+      <Italian>M18 Smoke Grenade (Viola)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
       <English>M18 Smoke Grenade (Red)</English>
       <German>M18 Rauchgranate (Rot)</German>
-      <Spanish>M18 Granadas fumígenas (Rojo)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Rojo)</Spanish>
       <Polish>M18 Granat Dymny (Czerwona)</Polish>
       <Czech>M18 Dýmový Granát (Červená)</Czech>
       <French>M18 Grenade Fumigène (Rouge)</French>
       <Russian>M183 дымовой гранаты (Красный)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Vermelho)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Vörös)</Hungarian>
+      <Italian>M18 Smoke Grenade (Rosso)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
       <English>M18 Smoke Grenade (Yellow)</English>
       <German>M18 Rauchgranate (Gelb)</German>
-      <Spanish>M18 Granadas fumígenas (Amarillo)</Spanish>
+      <Spanish>M18 Granadas Fumígenas (Amarillo)</Spanish>
       <Polish>M18 Granat Dymny (żółta)</Polish>
       <Czech>M18 Dýmový Granát (Žlutá)</Czech>
       <French>M18 Grenade Fumigène (Jaune)</French>
       <Russian>M183 дымовой гранаты (Жёлтые)</Russian>
+      <Portuguese>M18 Granada de Fumaça (Amarelo)</Portuguese>
+      <Hungarian>M18 Smoke Grenade (Sárga)</Hungarian>
+      <Italian>M18 Smoke Grenade (Giallo)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_ATMine_Name">
       <English>M15 Anti-Tank Mine</English>
@@ -712,6 +946,9 @@
       <Czech>M15 Protitankové Mina</Czech>
       <French>M15 Mine Anti-Char</French>
       <Russian>M15 противотанковая мина</Russian>
+      <Portuguese>M15 Mina AntiTanque</Portuguese>
+      <Hungarian>M15 Anti-Tank Mine</Hungarian>
+      <Italian>M15 Anti-Tank Mine</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSMine_Name">
       <English>VS-50 Anti-Personnel Mine</English>
@@ -721,6 +958,9 @@
       <Czech>VS-50 Protipěchotní Mina</Czech>
       <French>VS-50 Mine Anti-Personnel</French>
       <Russian>VS-50 Противопехотная мина</Russian>
+      <Portuguese>VS-50 Mina AntiPessoal</Portuguese>
+      <Hungarian>VS-50 Anti-Personnel Mine</Hungarian>
+      <Italian>VS-50 Anti-Personnel Mine</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSBoundingMine_Name">
       <English>M26 Anti-Personnel Bounding Mine</English>
@@ -728,8 +968,11 @@
       <Spanish>M26 Mina Antipersona</Spanish>
       <Polish>M26 Mina Przeciwpiechotna</Polish>
       <Czech>M26 Protipěchotní Mina</Czech>
-      <French>M26 Mine Bondissante</French>
+      <French>M26 Mine Bondissante AP</French>
       <Russian>M26 Противопехотная мина</Russian>
+      <Portuguese>M26 Mina Saltadora AntiPessoal</Portuguese>
+      <Hungarian>M26 Anti-Personnel Bounding Mine</Hungarian>
+      <Italian>M26 Anti-Personnel Bounding Mine</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSTripwireMine_Name">
       <English>PMR-3 Anti-Personnel Tripwire Mine</English>
@@ -737,9 +980,11 @@
       <Spanish>PMR-3 SLAM</Spanish>
       <Polish>PMR-3 Mina Przeciwpiechotna</Polish>
       <Czech>PMR-3 Protipěchotní Mina</Czech>
-      <French>PMR-3 Mine à fil de butée</French>
+      <French>PMR-3 Mine AP à fil de butée</French>
       <Russian>PMR-3 Противопехотная мина</Russian>
+      <Portuguese>PMR-3 Mina Tripwire AntiPessoal</Portuguese>
+      <Hungarian>PMR-3 Anti-Personnel Tripwire Mine</Hungarian>
+      <Italian>PMR-3 Anti-Personnel Tripwire Mine</Italian>
     </Key>
-
   </Package>
 </Project>
