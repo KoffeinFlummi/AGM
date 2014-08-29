@@ -298,7 +298,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_transport_Name">
       <English>Kamaz Transport</English>
       <German>Kamaz Transport</German>
-      <Spanish>Kamaz Transporte</Spanish>
+      <Spanish>Kamaz de transporte</Spanish>
       <Polish>Kamaz transportowy</Polish>
       <Czech>Kamaz Valník</Czech>
       <French>Kamaz Transport</French>
@@ -343,7 +343,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_02_medical_Name">
       <English>Kamaz Medical</English>
       <German>Kamaz Sanitäter</German>
-      <Spanish>Kamaz de médico</Spanish>
+      <Spanish>Kamaz médico</Spanish>
       <Polish>Kamaz medyczny</Polish>
       <Czech>Kamaz Zdravotnický</Czech>
       <French>Kamaz Médical</French>
@@ -480,7 +480,7 @@
     <Key ID="STR_AGM_RealisticNames_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
       <German>Typhoon Sanitäter</German>
-      <Spanish>Typhoon de médico</Spanish>
+      <Spanish>Typhoon médico</Spanish>
       <Polish>Typhoon medyczny</Polish>
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon Médical</French>
@@ -617,7 +617,7 @@
     <Key ID="STR_AGM_RealisticNames_SatchelCharge_Name">
       <English>M183 Demolition Charge Assembly</English>
       <German>M183 Geballte Sprengladung</German>
-      <Spanish>M183 Demolition Charge Assembly</Spanish>
+      <Spanish>Conjunto de carga de demolición M183</Spanish>
       <Polish>M183 Demolition Charge Assembly</Polish>
       <Czech>M183 Demolition Charge Assembly</Czech>
       <French>M183 Demolition Charge Assembly</French>
@@ -626,7 +626,7 @@
     <Key ID="STR_AGM_RealisticNames_DemoCharge_Name">
       <English>M112 Demolition Block</English>
       <German>M112 Sprengladung</German>
-      <Spanish>M112 Demolition Block</Spanish>
+      <Spanish>Bloque de demolición M112</Spanish>
       <Polish>M112 Demolition Block</Polish>
       <Czech>M112 Demolition Block</Czech>
       <French>Pétard M112</French>
@@ -635,7 +635,7 @@
     <Key ID="STR_AGM_RealisticNames_HandGrenade_Name">
       <English>M67 Fragmentation Grenade</English>
       <German>M67 Splittergranate</German>
-      <Spanish>M67 Granada de Fragmentación</Spanish>
+      <Spanish>Granada de fragmentación M67</Spanish>
       <Polish>M67 Obronny Granat</Polish>
       <Czech>M67 Obranný Granát</Czech>
       <French>M67 Grenade à fragmentation</French>
@@ -644,7 +644,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShell_Name">
       <English>M83 Smoke Grenade (White)</English>
       <German>M83 Rauchgranate (Weiss)</German>
-      <Spanish>M83 Granadas Fumígenas (Blanco)</Spanish>
+      <Spanish>Granada de humo M83 (Blanco)</Spanish>
       <Polish>M83 Granat Dymny (Biała)</Polish>
       <Czech>M83 Dýmový Granát (Bílá)</Czech>
       <French>M83 Grenade Fumigène (Blanche)</French>
@@ -653,7 +653,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellBlue_Name">
       <English>M18 Smoke Grenade (Blue)</English>
       <German>M18 Rauchgranate (Blau)</German>
-      <Spanish>M18 Granadas fumígenas (Azul)</Spanish>
+      <Spanish>Granada de humo M18 (Azul)</Spanish>
       <Polish>M18 Granat Dymny (Niebieska)</Polish>
       <Czech>M18 Dýmový Granát (Modrá)</Czech>
       <French>M18 Grenade Fumigène (Bleue)</French>
@@ -662,7 +662,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellGreen_Name">
       <English>M18 Smoke Grenade (Green)</English>
       <German>M18 Rauchgranate (Grün)</German>
-      <Spanish>M18 Granadas fumígenas (Verde)</Spanish>
+      <Spanish>Granada de humo M18 (Verde)</Spanish>
       <Polish>M18 Granat Dymny (Zielona)</Polish>
       <Czech>M18 Dýmový Granát (Zelená)</Czech>
       <French>M18 Grenade Fumigène (Verte)</French>
@@ -671,7 +671,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellOrange_Name">
       <English>M18 Smoke Grenade (Orange)</English>
       <German>M18 Rauchgranate (Orange)</German>
-      <Spanish>M18 Granadas fumígenas (Naranja)</Spanish>
+      <Spanish>Granada de humo M18 (Naranja)</Spanish>
       <Polish>M18 Granat Dymny (Pomarańczowa)</Polish>
       <Czech>M18 Dýmový Granát (Oranžová)</Czech>
       <French>M18 Grenade Fumigène (Orange)</French>
@@ -680,7 +680,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
       <English>M18 Smoke Grenade (Purple)</English>
       <German>M18 Rauchgranate (Violett)</German>
-      <Spanish>M18 Granadas fumígenas (Púrpura)</Spanish>
+      <Spanish>Granada de humo M18 (Púrpura)</Spanish>
       <Polish>M18 Granat Dymny (Purpurowa)</Polish>
       <Czech>M18 Dýmový Granát (Fialové)</Czech>
       <French>M18 Grenade Fumigène (Pourpre)</French>
@@ -689,7 +689,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
       <English>M18 Smoke Grenade (Red)</English>
       <German>M18 Rauchgranate (Rot)</German>
-      <Spanish>M18 Granadas fumígenas (Rojo)</Spanish>
+      <Spanish>Granada de humo M18 (Rojo)</Spanish>
       <Polish>M18 Granat Dymny (Czerwona)</Polish>
       <Czech>M18 Dýmový Granát (Červená)</Czech>
       <French>M18 Grenade Fumigène (Rouge)</French>
@@ -698,7 +698,7 @@
     <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
       <English>M18 Smoke Grenade (Yellow)</English>
       <German>M18 Rauchgranate (Gelb)</German>
-      <Spanish>M18 Granadas fumígenas (Amarillo)</Spanish>
+      <Spanish>Granada de humo M18 (Amarillo)</Spanish>
       <Polish>M18 Granat Dymny (żółta)</Polish>
       <Czech>M18 Dýmový Granát (Žlutá)</Czech>
       <French>M18 Grenade Fumigène (Jaune)</French>
@@ -707,7 +707,7 @@
     <Key ID="STR_AGM_RealisticNames_ATMine_Name">
       <English>M15 Anti-Tank Mine</English>
       <German>M15 Panzerabwehrmine</German>
-      <Spanish>M5 Mina Antitanque</Spanish>
+      <Spanish>Mina antitanque M5</Spanish>
       <Polish>M15 Mina Przeciwpancerna</Polish>
       <Czech>M15 Protitankové Mina</Czech>
       <French>M15 Mine Anti-Char</French>
@@ -716,7 +716,7 @@
     <Key ID="STR_AGM_RealisticNames_APERSMine_Name">
       <English>VS-50 Anti-Personnel Mine</English>
       <German>VS-50 Antipersonenmine</German>
-      <Spanish>VS-50 Mina Antipersona</Spanish>
+      <Spanish>Mina antipersona VS-50</Spanish>
       <Polish>VS-50 Mina Przeciwpiechotna</Polish>
       <Czech>VS-50 Protipěchotní Mina</Czech>
       <French>VS-50 Mine Anti-Personnel</French>
@@ -725,7 +725,7 @@
     <Key ID="STR_AGM_RealisticNames_APERSBoundingMine_Name">
       <English>M26 Anti-Personnel Bounding Mine</English>
       <German>M26 Antipersonensprungmine</German>
-      <Spanish>M26 Mina Antipersona</Spanish>
+      <Spanish>Mina antipersona M26</Spanish>
       <Polish>M26 Mina Przeciwpiechotna</Polish>
       <Czech>M26 Protipěchotní Mina</Czech>
       <French>M26 Mine Bondissante</French>
@@ -734,7 +734,7 @@
     <Key ID="STR_AGM_RealisticNames_APERSTripwireMine_Name">
       <English>PMR-3 Anti-Personnel Tripwire Mine</English>
       <German>PMR-3 Antipersonenstolperdrahtmine</German>
-      <Spanish>PMR-3 SLAM</Spanish>
+      <Spanish>Mina antipersona de alambre PMR-3</Spanish>
       <Polish>PMR-3 Mina Przeciwpiechotna</Polish>
       <Czech>PMR-3 Protipěchotní Mina</Czech>
       <French>PMR-3 Mine à fil de butée</French>
