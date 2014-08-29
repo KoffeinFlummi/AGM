@@ -23,7 +23,7 @@ Maggiori informazioni sui singoli scopi dei diversi componenti dell'AGM, e a qua
 
 ## Funzionalità
 
-*   Sistema sanitario migiorato
+*   Sistema sanitario migliorato
 *   Sistema di logistica, inclusi i trasporti di carichi di vario tipo e il mantenimento dei veicoli
 *   Sistema di esplosivi che include differenti tipologia di trigger
 *   Sistema di schiavizzazione (traduzione letterale riferita al comportamento di IA tenute in ostaggio, da "captivity")
