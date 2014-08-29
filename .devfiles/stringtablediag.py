@@ -92,9 +92,9 @@ def main():
 
   for i in range(len(languages)):
     if localizedsum[i] == keysum:
-      print("%s No missing stringtable entries." % ((languages[i] + ":").ljust(10)))
+      print("%s No missing stringtable entries." % ((languages[i] + ":").ljust(12)))
     else:
-      print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(10), str(keysum - localizedsum[i]).rjust(4)), end="")
+      print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(12), str(keysum - localizedsum[i]).rjust(4)), end="")
       print(" ("+", ".join(missing[i])+")")
 
 if __name__ == "__main__":
