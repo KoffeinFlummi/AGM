@@ -20,7 +20,7 @@
 private ["_lastRainCheck"];
 waitUntil {sleep 0.46;alive player};
 call AGM_Goggles_fnc_CheckGlasses;
-["AGM_Goggles_RotorWash", "OnEachFrame", "call AGM_Goggles_fnc_OnEachFrame;"] call BIS_fnc_addStackedEventHandler;
+["AGM_Goggles_RotorWash", "OnEachFrame", {call AGM_Goggles_fnc_OnEachFrame;}] call BIS_fnc_addStackedEventHandler;
 while {alive player} do {
 	sleep 1;
 	if (true) then {

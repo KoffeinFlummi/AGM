@@ -14,20 +14,21 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
-#define COMBAT_GOGGLES 		AGM_Goggles_Image="AGM_Goggles\textures\HUD\CombatGoggles.paa"; \
-		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa"; \
-		AGM_Goggles_CrackRating = 2; \
-		AGM_Goggles_EyeProtection = 1;
+#define COMBAT_GOGGLES 		AGM_Overlay="AGM_Goggles\textures\HUD\CombatGoggles.paa"; \
+		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\CombatGogglesCracked.paa"; \
+		AGM_Resistance = 2; \
+		AGM_Protection = 1;
 
 class CfgGlasses {
 	class None {
 		AGM_Goggles_Color[] = {0,0,0};
 		AGM_TintAmount=0;
-		AGM_Goggles_Image = "";
-		AGM_Goggles_DirtImage = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
-		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\Cracked.paa";
-		AGM_Goggles_CrackRating = 1;
-		AGM_Goggles_EyeProtection = 0;
+		AGM_Overlay = "";
+		AGM_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
+		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\Cracked.paa";
+		AGM_Resistance = 1;
+		AGM_Protection = 0;
+		AGM_DustPath = "AGM_Goggles\textures\fx\dust\%1.paa";
 	};
 
 	class G_Combat:None {
@@ -35,16 +36,16 @@ class CfgGlasses {
 	};
 
 	class G_Diving:None {
-		AGM_Goggles_Image="AGM_Goggles\textures\HUD\DivingGoggles.paa";
-		AGM_Goggles_CrackedImage = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
-		AGM_Goggles_CrackRating = 2;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Overlay="AGM_Goggles\textures\HUD\DivingGoggles.paa";
+		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
+		AGM_Resistance = 2;
+		AGM_Protection = 1;
 	};
 
 	class G_Lowprofile:None {
 		AGM_TintAmount=COLOUR*2;
-		AGM_Goggles_CrackRating = 2;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Resistance = 2;
+		AGM_Protection = 1;
 	};
 
 	class G_Shades_Black:None {
@@ -154,27 +155,27 @@ class CfgGlasses {
 	
 	class G_Balaclava_lowprofile:G_Balaclava_blk {
 		AGM_TintAmount=COLOUR*2;
-		AGM_Goggles_CrackRating = 2;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Resistance = 2;
+		AGM_Protection = 1;
 	};
 	
 	class G_Bandanna_blk;
 	class G_Bandanna_shades:G_Bandanna_blk {
 		AGM_TintAmount=COLOUR*2;
-		AGM_Goggles_CrackRating = 1;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Resistance = 1;
+		AGM_Protection = 1;
 	};
 	class G_Bandanna_sport:G_Bandanna_blk {
 		AGM_Goggles_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
-		AGM_Goggles_CrackRating = 1;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Resistance = 1;
+		AGM_Protection = 1;
 	};
 	class G_Bandanna_aviator:G_Bandanna_blk {
 		AGM_Goggles_Color[] = {0,0,-1};
 		AGM_TintAmount=COLOUR;
-		AGM_Goggles_CrackRating = 1;
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Resistance = 1;
+		AGM_Protection = 1;
 	};
 };
 
@@ -205,13 +206,13 @@ class CfgWeapons{
 	class H_HelmetB;
 
 	class H_CrewHelmetHeli_B:H_HelmetB {
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Protection = 1;
 	};
 	class H_PilotHelmetHeli_B:H_HelmetB {
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Protection = 1;
 	};
 	class H_PilotHelmetFighter_B:H_HelmetB {
-		AGM_Goggles_EyeProtection = 1;
+		AGM_Protection = 1;
 	};
 };
 
