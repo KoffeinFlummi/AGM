@@ -363,7 +363,7 @@ class CfgMagazines {
 class Mode_SemiAuto;
 class Mode_FullAuto;
 class SlotInfo;
-//class MuzzleSlot: SlotInfo {};
+//class MuzzleSlot;
 
 class CfgWeapons {
   class Pistol;
@@ -593,6 +593,7 @@ class CfgWeapons {
   class hgun_P07_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
       class MuzzleSlot: SlotInfo {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
     };
@@ -601,6 +602,7 @@ class CfgWeapons {
   class hgun_Rook40_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
       class MuzzleSlot: SlotInfo {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
     };
@@ -622,13 +624,14 @@ class CfgWeapons {
     };
   };
 
-  class hgun_Pistol_heavy_02_F: Pistol_Base_F {
+  /*class hgun_Pistol_heavy_02_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
         compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
       };
     };
-  };
+  };*/
 
 
   /* Silencers */
