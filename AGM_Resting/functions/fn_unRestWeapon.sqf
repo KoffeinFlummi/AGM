@@ -14,6 +14,8 @@
 #define BIPODRECOIL 0.3
 #define CAMSHAKE [1,0.5,5]
 
+private ["_picture"];
+
 // UNREST THE WEAPON
 addCamShake CAMSHAKE;
 if (AGM_bipodDeployed) then {

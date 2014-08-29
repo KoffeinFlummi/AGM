@@ -11,6 +11,8 @@
  * None
  */
 
+private ["_vehicle", "_delta", "_min", "_max", "_distance"];
+
 _vehicle = _this select 0;
 _delta = _this select 1;
 
@@ -23,4 +25,3 @@ _distance = _distance min _max;
 _distance = _distance max _min;
 
 [_vehicle, _distance] call AGM_FCS_fnc_keyUp;
-

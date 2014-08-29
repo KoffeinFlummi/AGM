@@ -10,14 +10,26 @@
  * None.
  */
 
-private ["_id", "_actions"];
+
+private ["_id", "_actionsVar", "_currentID", "_actionIDs", "_actions"];
+
 
 _id = _this select 0;
 
-_actions = player getVariable ["AGM_InteractionsSelf", []];
+_actionsVar = player getVariable ["AGM_InteractionsSelf", [-1, [], []]];
 
-if (_id > count _actions - 1) exitWith {};
+_currentID = _actionsVar select 0;
+_actionIDs = _actionsVar select 1;
+_actions = _actionsVar select 2;
 
-_actions set [_id, ["", {false}, {}, false, 0]];
+_id = _actionIDs find _id;
 
-player setVariable ["AGM_InteractionsSelf", _actions, false];
+if (_id == -1) exitWith {};
+
+_actionIDs set [_id, -1];
+_actionIDs = _actionIDs - [-1];
+
+_actions set [_id, []];
+_actions = _actions - [[]];
+
+player setVariable ["AGM_InteractionsSelf", [_currentID, _actionIDs, _actions], false];

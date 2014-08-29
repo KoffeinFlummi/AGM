@@ -10,7 +10,7 @@
  * None
  */
 
-private ["_unit", "_newGroup"];
+private ["_unit", "_duration", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
 
 _unit = _this select 0;
 _duration = -1;

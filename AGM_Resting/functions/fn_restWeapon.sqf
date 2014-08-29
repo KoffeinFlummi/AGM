@@ -104,7 +104,7 @@ if (true in _intersects and (speed player) < 1 and currentWeapon player == prima
   0 spawn {
     while {AGM_weaponRested} do {
       _intersects = [] call AGM_Resting_getIntersection;
-      if (!(true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) or (getPos player) distance AGM_restedPosition > 1) then {
+      if (!(true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) or (getPos player) distance AGM_restedPosition > 1 || {inputAction "reloadMagazine" > 0}) then {
         [] call AGM_Resting_fnc_unRestWeapon;
       };
       sleep 0.3;

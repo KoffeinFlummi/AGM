@@ -351,5 +351,29 @@
     </Key>
 
 
+    <!-- Flash suppressors -->
+
+    <Key ID="STR_AGM_muzzle_mzls_H">
+      <English>Flash Suppressor (6.5 mm)</English>
+      <German>Mündungsfeuerdämpfer (6,5 mm)</German>
+    </Key>
+    <Key ID="STR_AGM_muzzle_mzls_B">
+      <English>Flash Suppressor (7.62 mm)</English>
+      <German>Mündungsfeuerdämpfer (7,62 mm)</German>
+    </Key>
+    <Key ID="STR_AGM_muzzle_mzls_L">
+      <English>Flash Suppressor (5.56 mm)</English>
+      <German>Mündungsfeuerdämpfer (5,56 mm)</German>
+    </Key>
+    <Key ID="STR_AGM_muzzle_mzls_smg_01">
+      <English>Flash Suppressor (.45 ACP)</English>
+      <German>Mündungsfeuerdämpfer (.45 ACP)</German>
+    </Key>
+    <Key ID="STR_AGM_muzzle_mzls_smg_02">
+      <English>Flash Suppressor (9 mm)</English>
+      <German>Mündungsfeuerdämpfer (9 mm)</German>
+    </Key>
+
+
   </Package>
 </Project>

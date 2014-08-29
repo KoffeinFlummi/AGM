@@ -1,3 +1,5 @@
+private ["_unit"];
+
 _unit = _this select 0;
 
 // Substitute wind calculations for AI by lowering accuracy

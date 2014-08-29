@@ -47,6 +47,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+    allowHolding = 1;
   };
   class decreaseNVGBrightness {
     displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
@@ -56,5 +57,6 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+    allowHolding = 1;
   };
 };

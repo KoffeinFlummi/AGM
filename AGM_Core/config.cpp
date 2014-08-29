@@ -184,6 +184,7 @@ class CfgFunctions {
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
+      class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToString;
@@ -204,6 +205,7 @@ class CfgFunctions {
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
       class getTurretConfigPath;
       class getTurretIndex;
       class getTurrets;
