@@ -33,7 +33,7 @@ def get_all_languages(projectpath):
         except:
           continue
 
-    return languages
+  return languages
 
 def check_module(projectpath, module, languages):
   """ Checks the given module for all the different languages. """
