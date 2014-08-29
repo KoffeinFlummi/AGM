@@ -25,3 +25,4 @@ if (isNull _vehicle) exitWith {};
 
 _unit setVariable ["AGM_isEscorting", false];
 [[_target, _vehicle], "{(_this select 0) moveInCargo (_this select 1)}", _target] call AGM_Core_fnc_execRemoteFnc;
+

@@ -19,3 +19,4 @@ for "_index" from 0 to 10 do {
 
 	_ctrlInteraction ctrlSetText _displayName;
 };
+

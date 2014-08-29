@@ -18,3 +18,4 @@ _config = configFile >> "CfgVehicles" >> _vehicle;
 _turret = [_vehicle] call AGM_Core_fnc_getTurretCommander;
 
 [_config, _turret] call AGM_Core_fnc_getTurretConfigPath
+

@@ -139,3 +139,4 @@ _handgunWeaponMagazineCount = _unit ammo (handgunWeapon _unit);
 {_unit addMagazine [_x,_secondaryWeaponMagazineCount ] ; } forEach _secondaryWeaponMagazine;
 {_unit addMagazine [_x,_handgunWeaponMagazineCount   ] ; } forEach _handgunWeaponMagazine;
 */
+

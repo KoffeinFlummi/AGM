@@ -354,3 +354,4 @@ class CfgVehicles {
 };
 
 #include <Optics.hpp>
+

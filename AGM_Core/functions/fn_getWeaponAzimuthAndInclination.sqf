@@ -23,3 +23,4 @@ _inclination = asin (_direction select 2);
 if (_azimuth < 0) then {_azimuth = _azimuth + 360};
 
 [_azimuth, _inclination]
+

@@ -96,3 +96,4 @@ AGM_GForces_CC ppEffectCommit 0.4;
     AGM_GForces_CC ppEffectCommit 0.25;
   };
 };
+

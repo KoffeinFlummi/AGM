@@ -69,3 +69,4 @@ _this spawn {
 
 	AGM_Drag_CurrentHeightChange = 0;
 };
+

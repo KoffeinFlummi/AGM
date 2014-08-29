@@ -18,3 +18,4 @@ _value = _this select 1;
 
 missionNamespace setVariable [_name, _value];
 publicVariable _name;
+

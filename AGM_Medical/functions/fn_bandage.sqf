@@ -91,3 +91,4 @@ _this spawn {
   };
   [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
+

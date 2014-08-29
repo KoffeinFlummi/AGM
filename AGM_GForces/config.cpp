@@ -63,3 +63,4 @@ class CfgVehicles {
     AGM_GForceCoef = 0.75;
   };
 };
+

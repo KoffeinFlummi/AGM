@@ -41,3 +41,4 @@ _this spawn {
   if (isNull (player getVariable "AGM_Dragging")) exitWith {};
   [player getVariable "AGM_Dragging"] call AGM_Medical_fnc_release;
 };
+

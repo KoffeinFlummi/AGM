@@ -27,3 +27,4 @@ if (isServer && AGM_Map_syncMarkers) then {
     };
   } forEach AGM_Map_serverLineMarkers;
 };
+

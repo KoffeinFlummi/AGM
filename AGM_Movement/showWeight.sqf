@@ -8,3 +8,4 @@ while {true} do {
 		isNull (findDisplay 602)
 	};
 };
+

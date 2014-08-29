@@ -171,3 +171,4 @@ if (!isServer) then {
 		AGM_Version_ClientErrors = [_missingAddon, _missingAddonServer, _oldVersionClient, _oldVersionServer];
 	};
 };
+

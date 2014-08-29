@@ -63,3 +63,4 @@ class CfgWeapons {
     agm_recoil_shakeMultiplier = 0;
   };
 };
+

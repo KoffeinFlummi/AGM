@@ -22,3 +22,4 @@ if (getNumber (configFile >> "CfgMagazines" >> _magazine >> "AGM_MagazineReloadT
 
 	_vehicle ammo _weapon < getNumber (configFile >> "CfgMagazines" >> _magazine >> "count");
 } else {true}
+

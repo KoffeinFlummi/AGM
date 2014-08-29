@@ -33,3 +33,4 @@ if (count (weapons player) > 0) then {
     }, [_x, player]] call CBA_fnc_globalExecute;
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);
+

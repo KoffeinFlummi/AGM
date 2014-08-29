@@ -317,3 +317,4 @@ class CfgWeapons {
     AGM_Overheating_JamChance[] = {0, 0, 0.006, 0.02};
   };
 };
+

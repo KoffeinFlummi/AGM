@@ -9,3 +9,4 @@ _unit selectWeapon _weapon;
 {
 	if (_x != "") then {_unit addSecondaryWeaponItem _x};
 } forEach _items;
+

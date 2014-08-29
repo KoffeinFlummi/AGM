@@ -44,3 +44,4 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWhe
 enableCamShake true;
 
 [player] call AGM_Core_fnc_setName;
+

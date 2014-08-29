@@ -32,3 +32,4 @@ if (_weapon in _jammedWeapons) then {
 
 	[localize "STR_AGM_Overheating_WeaponUnjammed"] call AGM_Core_fnc_displayTextStructured;
 };
+

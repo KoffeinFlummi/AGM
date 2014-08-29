@@ -14,3 +14,4 @@ _nearObjects = _nearObjects - [objNull];
 
 if (count _nearObjects == 0) exitWith {objNull};
 _nearObjects select 0
+

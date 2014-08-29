@@ -37,3 +37,4 @@ _usedSize = 0;
 } count _objects;
 
 (_size - _usedSize)
+

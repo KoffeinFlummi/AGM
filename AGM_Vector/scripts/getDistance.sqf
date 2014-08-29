@@ -40,3 +40,4 @@ if (AGM_vectorSettings select 3) then {
 };
 
 _distance
+

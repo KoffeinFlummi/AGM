@@ -49,3 +49,4 @@ for "_index" from 0 to 9 do {
 		_ctrlInteractionDialogIcon ctrlSetText "";
 	};
 };
+

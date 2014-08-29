@@ -16,3 +16,4 @@ _script_handle = _this spawn {
 	ppEffectDestroy _ppEffect;
 };
 _script_handle
+

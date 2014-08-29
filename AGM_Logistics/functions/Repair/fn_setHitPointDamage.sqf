@@ -68,3 +68,4 @@ _vehicle setDamage _damageNew;
 {
   _vehicle setHitPointDamage [_x, _hitPoints select _forEachIndex];
 } forEach ALL_HITPOINTS;
+

@@ -32,3 +32,4 @@ if (AGM_bipodDeployed) then {
 
 AGM_weaponRested = false;
 AGM_bipodDeployed = false;
+

@@ -62,3 +62,4 @@ if (_Loaded) then {
 };
 
 _item setVariable ["AGM_isUsedBy", objNull, true];
+

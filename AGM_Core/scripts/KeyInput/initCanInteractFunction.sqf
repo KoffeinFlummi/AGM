@@ -17,3 +17,4 @@ for "_index" from 0 to (_count -1) do {
 };
 
 AGM_Core_canInteract = compileFinal _function;
+

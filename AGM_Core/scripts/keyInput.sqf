@@ -23,3 +23,4 @@ AGM_Core_keyTimes set [_keyIndex, _time];
 
 AGM_Core_keyNewTemp = [_key, [_shft, _ctrl, _alt], _keyCode];
 true
+

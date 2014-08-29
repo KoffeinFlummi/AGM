@@ -425,3 +425,4 @@ class AGM_Core_canInteractConditions {};
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
 #include <HintConfig.hpp>
+

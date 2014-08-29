@@ -237,3 +237,4 @@ class AGM_Parameters {
   AGM_Respawn_SavePreDeathGear = 0;
   AGM_Respawn_RemoveDeadBodies = 1;
 };
+

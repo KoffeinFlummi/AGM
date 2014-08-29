@@ -8,3 +8,4 @@ _target = _this select 1;
 _owner = _target getVariable ["AGM_isUsedBy", objNull];
 
 isNull _owner || {_unit == _owner} || {!isPlayer _owner}
+

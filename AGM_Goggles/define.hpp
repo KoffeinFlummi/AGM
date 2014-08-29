@@ -25,3 +25,4 @@ class RscPicture
 	w = safezoneW;
 	h = safezoneH;
 };
+

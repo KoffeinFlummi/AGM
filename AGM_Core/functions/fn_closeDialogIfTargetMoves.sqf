@@ -16,3 +16,4 @@ _this spawn {
 		(isNil "AGM_Interaction_MainButton" && !dialog)
 	};
 };
+

@@ -25,3 +25,4 @@ _name = getText (configFile >> "CfgMagazines" >> _magazine >> "displayNameShort"
 _picture = getText (configFile >> "CfgMagazines" >> _magazine >> "picture");
 _text = [format["%1  x%2", _name, _numberOfMagazines], _color] call AGM_Core_fnc_stringToColoredText;
 [_text, _picture] call AGM_Core_fnc_displayTextPicture;
+

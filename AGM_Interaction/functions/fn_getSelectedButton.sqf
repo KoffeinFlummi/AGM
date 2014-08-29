@@ -21,3 +21,4 @@ if (_angle < 0) then {_angle = _angle + 360};
 
 _angle = floor (_angle / 360 * 10);
 if (_angle == 10) then {0} else {_angle}
+

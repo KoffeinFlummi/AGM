@@ -18,3 +18,4 @@ _string = format [localize "STR_AGM_Repair_RemovingWheel", _name];
 
 [_time, [_vehicle, _part], "AGM_Repair_fnc_removeWheelCallback", _string, "AGM_Repair_fnc_removeWheelAbort"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
+

@@ -38,3 +38,4 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exi
 // Fallback to magic menu
 [5 * _size, [_item, _vehicle, "", true], "AGM_Logistics_fnc_loadItemCallback", localize "STR_AGM_Logistics_LoadingItem", "AGM_Logistics_fnc_loadItemAbort"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
+

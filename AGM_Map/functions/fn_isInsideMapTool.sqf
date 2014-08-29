@@ -33,3 +33,4 @@ if (_lambdaLong > DIST_TOP_TO_CENTER_PERC * _textureWidth) exitWith {false};
 if (_lambdaTrasAbs > DIST_LEFT_TO_CENTER_PERC * _textureWidth) exitWith {false};
 
 true
+

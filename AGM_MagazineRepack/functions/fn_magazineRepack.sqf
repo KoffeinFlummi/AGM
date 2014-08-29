@@ -75,3 +75,4 @@ if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
 	systemChat str _repackTime;
 };
 [_magazines, _repackTime] call AGM_MagazineRepack_fnc_openSelectMagazineUI;
+

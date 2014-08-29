@@ -43,3 +43,4 @@ _this spawn {
 	_unit setVariable ["AGM_Fortifications_Place", [_unit, "DefaultAction", {AGM_Fortifications_pfeh_running && {!isNull AGM_Fortifications_Setup}}, {call AGM_Fortifications_fnc_setupApprove}] call AGM_Core_fnc_AddActionEventHandler];
 	_unit setVariable ["AGM_Fortifications_Cancel", [_unit, "MenuBack", {AGM_Fortifications_pfeh_running && {!isNull AGM_Fortifications_Setup}}, {call AGM_Fortifications_fnc_setupCancel}] call AGM_Core_fnc_AddActionEventHandler];
 };
+

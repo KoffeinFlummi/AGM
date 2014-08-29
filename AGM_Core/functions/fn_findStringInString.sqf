@@ -36,3 +36,4 @@ while {true} do {
 	_array1 set [_index, -1];
 };
 _index
+

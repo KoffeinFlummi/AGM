@@ -148,3 +148,4 @@ _vehicle setVariable ["AGM_FCSAzimuth",   _FCSAzimuth,   true];
 };
 
 [format ["%1: %2", localize "STR_AGM_FireControlSystem_ZeroedTo", _distance]] call AGM_Core_fnc_displayTextStructured;
+

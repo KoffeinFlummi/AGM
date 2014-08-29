@@ -25,3 +25,4 @@ _color = (
 );
 
 parseText format ["<t align='center' color='#%2' >%1</t>", _string, _color];
+

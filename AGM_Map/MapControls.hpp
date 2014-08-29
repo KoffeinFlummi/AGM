@@ -85,3 +85,4 @@
           onButtonClick = "missionNamespace setVariable [""AGM_Map_drawColor"", ""ColorWhite""]";
         };
       };
+

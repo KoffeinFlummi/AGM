@@ -26,3 +26,4 @@ _magazines = magazines _unit;
 } count _magazines;
 
 _result
+

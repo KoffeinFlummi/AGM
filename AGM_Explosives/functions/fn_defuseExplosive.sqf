@@ -25,3 +25,4 @@ if (getNumber (ConfigFile >> "CfgAmmo" >> typeof _explosive >> "AGM_explodeOnDef
 };
 
 _unit action ["Deactivate", _unit, _explosive];
+

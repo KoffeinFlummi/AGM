@@ -25,3 +25,4 @@ _house setVariable [format ["BIS_Disabled_%1_%2", _door, _id], [0, 1] select _mo
 playSound "AGM_Sound_Click";
 
 [localize (["STR_AGM_Interaction_UnlockedDoor", "STR_AGM_Interaction_LockedDoor"] select _mode)] call AGM_Core_fnc_displayTextStructured;
+

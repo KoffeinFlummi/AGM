@@ -7,3 +7,4 @@ _ctrlJavelinMode = (uiNamespace getVariable ["AGM_dlgJavelinOptics", displayNull
 
 getNumber (configFile >> "CfgWeapons" >> currentWeapon player >> "AGM_enableTopDownAttack") == 1
 && {ctrlShown _ctrlJavelinMode}
+

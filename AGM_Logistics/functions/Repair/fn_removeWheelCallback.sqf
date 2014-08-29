@@ -21,3 +21,4 @@ _name = [_part] call AGM_Repair_fnc_getHitPointName;
 _string = format [localize "STR_AGM_Repair_RemovedWheel", _name];
 
 [_string] call AGM_Core_fnc_displayTextStructured;
+

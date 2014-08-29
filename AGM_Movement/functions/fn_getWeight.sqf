@@ -15,3 +15,4 @@ if (profileNamespace getVariable ["AGM_useImperial", false]) then {
 };
 
 _weight
+

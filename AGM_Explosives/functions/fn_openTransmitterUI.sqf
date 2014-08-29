@@ -42,3 +42,4 @@ if (count _detonators == 0) then {
 		{call AGM_Interaction_fnc_hideMenu;"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
+

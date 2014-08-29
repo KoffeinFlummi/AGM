@@ -43,3 +43,4 @@ if (player call AGM_Drag_fnc_isDraggingObject) then {
 };
 
 _handled
+

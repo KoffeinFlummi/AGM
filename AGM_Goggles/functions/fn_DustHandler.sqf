@@ -73,3 +73,4 @@ if (GETDUSTT(DAMOUNT) < 2) then {
 	};
 };
 true
+

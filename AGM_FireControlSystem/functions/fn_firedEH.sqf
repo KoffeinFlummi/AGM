@@ -33,3 +33,4 @@ _offset = 0;
 } forEach _FCSMagazines;
 
 [_round, (_unit getVariable "AGM_FCSAzimuth"), _offset, 0] call AGM_Core_fnc_changeProjectileDirection;
+

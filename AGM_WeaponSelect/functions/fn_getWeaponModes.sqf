@@ -24,3 +24,4 @@ _modes = [];
 	};
 } forEach getArray (configfile >> "CfgWeapons" >> _weapon >> "modes");
 _modes
+

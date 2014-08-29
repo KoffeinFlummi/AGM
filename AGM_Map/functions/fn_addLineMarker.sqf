@@ -38,3 +38,4 @@ if (isServer && AGM_Map_syncMarkers) then {
   AGM_Map_serverLineMarkers pushBack (+_this);
   publicVariable "AGM_Map_serverLineMarkers";
 };
+

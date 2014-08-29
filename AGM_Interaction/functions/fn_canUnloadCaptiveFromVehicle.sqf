@@ -10,3 +10,4 @@ _cargo = crew _vehicle;	// Can also unload from driver, gunner, commander, turre
 _cargo = [_cargo, {_this getVariable ["AGM_isCaptive", false]}] call AGM_Core_fnc_filter;
 
 count _cargo > 0
+

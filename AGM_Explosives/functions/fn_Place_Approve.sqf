@@ -92,3 +92,4 @@ if ((_setup getVariable ["AGM_Class", ""]) != "") then {
 }else{
 	deleteVehicle _setup;
 };
+

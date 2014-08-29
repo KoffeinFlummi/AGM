@@ -9,3 +9,4 @@ _item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObje
 
 _item = ['AGM_SpareTrack', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
 [_vehicle, _item] call AGM_Logistics_fnc_initLoadedObject;
+

@@ -85,3 +85,4 @@ nul = _this spawn {
     AGM_Flashbang_CC ppEffectEnable false;
   };
 };
+

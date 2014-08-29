@@ -36,3 +36,4 @@ if (!(isNil "_id") OR {_id != -1}) then {
 	_object setVariable ["AGM_dragActionID", -1, true];
 	[_object, _id] call AGM_Interaction_fnc_removeInteraction;
 };
+

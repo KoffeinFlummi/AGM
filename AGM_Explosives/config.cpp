@@ -247,3 +247,4 @@ class AGM_Parameters {
   AGM_Explosives_RequireSpecialist = 0;
   AGM_Explosives_PunishNonSpecialists = 1;
 };
+

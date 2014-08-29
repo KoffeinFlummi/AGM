@@ -51,3 +51,4 @@ _attachables = items _unit;
 } count _attachables;
 
 [_actions,{[player, _this] call AGM_Attach_fnc_attach;call AGM_Interaction_fnc_hideMenu;},{call AGM_Interaction_fnc_hideMenu;"Default" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
+

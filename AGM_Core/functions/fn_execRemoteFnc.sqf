@@ -66,3 +66,4 @@ if (local _unit) then {
 		publicVariableServer "AGM_Core_remoteFnc";
 	};
 };
+

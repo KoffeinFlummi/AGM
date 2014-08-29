@@ -22,3 +22,4 @@ if (getNumber(configFile >> "CfgVehicles" >> typeOf _vehicle >> "attendant") == 
   true
 };
 false
+

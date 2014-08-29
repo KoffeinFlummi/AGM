@@ -28,3 +28,4 @@ switch (round (windDir / 360 * 16)) do {
 	case 15 : {localize "STR_AGM_Core_SSE"};
 	default   {localize "STR_AGM_Core_S"};
 };
+

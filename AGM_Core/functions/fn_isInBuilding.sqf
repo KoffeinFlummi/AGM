@@ -43,3 +43,4 @@ if (lineIntersects [_position, [_positionX, _positionY - DISTANCE, _positionZ]])
 };
 
 _intersections > 3
+

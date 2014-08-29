@@ -49,3 +49,4 @@ if ((isNil "_nilTest") OR {_id == -1}) then {
 		_object setVariable ["AGM_releaseActionID", _id, true];
 	};
 };
+

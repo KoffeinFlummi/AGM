@@ -19,3 +19,4 @@ while {
 	_index = _index + 1;
 };
 _magazine
+

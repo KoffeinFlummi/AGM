@@ -5,3 +5,4 @@ if (alive player) then {
 	[localize "STR_AGM_FenceCut"] call AGM_Core_fnc_displayTextStructured;
 	[player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 };
+

@@ -267,3 +267,4 @@
 		statement = "[vehicle player] call AGM_Paradrop_fnc_paradrop"; \
 		priority = 1; \
 	};
+

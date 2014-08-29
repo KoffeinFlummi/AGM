@@ -66,3 +66,4 @@ AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit 0;
 
 AGM_NightVision_ppEffectMuzzleFlash ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 1]];
 AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit _visibleFireTime;
+

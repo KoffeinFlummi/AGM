@@ -8,3 +8,4 @@ canStand player &&
 {alive player} &&
 {player getVariable ["AGM_AttachedItemName", ""] == ""} &&
 {_item in (magazines player + items player + [""])}
+

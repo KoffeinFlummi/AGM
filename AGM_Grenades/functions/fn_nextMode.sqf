@@ -24,3 +24,4 @@ _hint = [
 [_hint] call AGM_Core_fnc_displayTextStructured;
 
 AGM_Grenades_Mode = _mode;
+

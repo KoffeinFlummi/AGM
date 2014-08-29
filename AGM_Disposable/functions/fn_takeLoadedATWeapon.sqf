@@ -14,3 +14,4 @@ if (backpack player == "") then {
 	player addMagazine _magazine;
 	player addWeapon _weapon;
 };
+

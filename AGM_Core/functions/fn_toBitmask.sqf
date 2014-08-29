@@ -20,3 +20,4 @@ _result = 0;
 } forEach _array;
 
 _result
+

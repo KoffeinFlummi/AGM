@@ -1355,3 +1355,4 @@ class CfgVehicles {
     incomingMissileDetectionSystem = 16;
   };
 };
+

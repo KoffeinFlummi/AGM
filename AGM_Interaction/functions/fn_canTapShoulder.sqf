@@ -9,3 +9,4 @@ _target isKindOf "CAManBase" &&
 {alive _target} &&
 {_unit distance _target < 4} &&
 {!(_target getVariable ["AGM_Unconscious", false])}
+

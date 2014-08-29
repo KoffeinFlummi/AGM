@@ -73,3 +73,4 @@ AGM_Explosives_null= [] spawn {
 	}];
 	[player] call AGM_Explosives_fnc_initialiseUnit;
 };
+

@@ -31,3 +31,4 @@ if (typeName _value == "STRING") then {
 
 // Set the parameter
 [_agmParameterName, _value] call AGM_Core_fnc_setParameter;
+

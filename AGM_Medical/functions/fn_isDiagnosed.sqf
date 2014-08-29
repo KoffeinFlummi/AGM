@@ -18,3 +18,4 @@ if (AGM_Medical_RequireDiagnosis == 0) exitWith {true};
 if !(_unit getVariable "AGM_Unconscious") exitWith {true};
 
 (_unit getVariable ["AGM_Diagnosed", true])
+

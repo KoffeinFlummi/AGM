@@ -85,3 +85,4 @@ if (_state) then {
 } else {
 	_unit setVariable ["AGM_isCaptive", false, true];
 };
+

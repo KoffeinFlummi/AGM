@@ -57,3 +57,4 @@ if (_setDir) then {
 	[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 };
 _explosive
+

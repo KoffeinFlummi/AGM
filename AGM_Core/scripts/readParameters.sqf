@@ -21,3 +21,4 @@ for "_index" from 0 to (_count - 1) do {
   _value = _x call bis_fnc_getcfgdata;
   [_name, _value] call AGM_Core_fnc_setParameter;
 };
+

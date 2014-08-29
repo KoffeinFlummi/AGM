@@ -101,3 +101,4 @@ class RscDisplayInterruptEditorPreview: RscStandardDisplay {
 		class AGM_Tile : AGM_Tile_Base {};
 	};
 };
+

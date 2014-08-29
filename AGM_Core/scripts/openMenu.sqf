@@ -97,3 +97,4 @@ AGM_Core_MenuPage = nil;
 AGM_Core_OptionNames = nil;
 AGM_Core_OptionNamesNew = nil;
 AGM_Core_OptionStatesNew = nil;
+

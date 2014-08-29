@@ -17,3 +17,4 @@ _unit allowDamage true;
 _unit removeAction (_unit getVariable ["AGM_Drag_ReleaseActionID", -1]);
 
 [_target, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _target] call AGM_Core_fnc_execRemoteFnc;
+

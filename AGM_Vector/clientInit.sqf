@@ -31,3 +31,4 @@ AGM_Vector_modeFallOfShort = compile preprocessFileLineNumbers "\AGM_Vector\scri
 	waitUntil {preloadTitleRsc ["AGM_Digit_Preload", "PLAIN"]};
 	waitUntil {preloadTitleRsc ["AGM_Debug_Crosshair", "PLAIN"]};
 };
+

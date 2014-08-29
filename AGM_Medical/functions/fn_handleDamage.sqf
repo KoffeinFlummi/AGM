@@ -307,3 +307,4 @@ if (AGM_Medical_IsFalling or (_selectionName == "")) then {
 } else {
   _damage - _newDamage
 };
+

@@ -12,3 +12,4 @@ _spareTrack = [player] call AGM_Repair_fnc_getNearestTrack;
 && {speed _vehicle == 0}
 && {!isNull _spareTrack}
 && {floor (3 * (_vehicle getHitPointDamage _part)) > 0}
+

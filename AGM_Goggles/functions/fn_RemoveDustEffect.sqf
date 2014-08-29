@@ -18,3 +18,4 @@
 if (!isNull(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull])) then {
 	(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull] displayCtrl 10662) ctrlSetText "";
 };
+

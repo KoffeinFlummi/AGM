@@ -83,3 +83,4 @@ if ((_rotorWash select 1) <= 15) then {
 		AGM_Goggles_PostProcessEyes ppEffectEnable true;
 	};
 };
+

@@ -44,3 +44,4 @@ class AGM_ModuleExplosive: Module_F {
 		};
 	};
 };
+

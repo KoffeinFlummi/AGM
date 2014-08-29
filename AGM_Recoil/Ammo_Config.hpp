@@ -46,3 +46,4 @@ class CfgAmmo {
     AGM_Recoil_shakeMultiplier = 3;
   };
 };
+

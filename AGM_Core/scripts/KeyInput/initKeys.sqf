@@ -68,3 +68,4 @@ _onKeyUp = _headerUp + _onKeyUp + _haltUp + _repeatUp;	//_headerUp + _handleHold
 
 AGM_Core_onKeyDown = compileFinal _onKeyDown;
 AGM_Core_onKeyUp = compileFinal _onKeyUp;
+

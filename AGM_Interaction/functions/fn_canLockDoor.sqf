@@ -14,3 +14,4 @@ _id = _info select 2;
 && {_door == "door"}
 && {!_mode || {_house animationPhase format ["door_%1_rot", _id] <= 0}}
 && {(_house getVariable [format ["BIS_Disabled_Door_%1", _id], 0] != 1) isEqualTo _mode}
+

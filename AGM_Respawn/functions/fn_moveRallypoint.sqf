@@ -27,3 +27,4 @@ _this spawn {
 
 	["Rallypoint deployed"] call AGM_Core_fnc_displayTextStructured;
 };
+

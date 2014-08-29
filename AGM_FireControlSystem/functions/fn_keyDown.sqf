@@ -23,3 +23,4 @@ AGM_FCSPosition = [
   (getPos _vehicle select 1) + _distance * (_weaponDirection select 1),
   (getPos _vehicle select 2) + _distance * (_weaponDirection select 2)
 ];
+

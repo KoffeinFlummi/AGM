@@ -9,3 +9,4 @@ _item = ['AGM_JerryCan', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject
 
 _item = ['AGM_SpareWheel', [-1000, -1000, 100]] call AGM_Logistics_fnc_spawnObject;
 [_vehicle, _item] call AGM_Logistics_fnc_initLoadedObject;
+

@@ -63,3 +63,4 @@ class AGM_Explosives_Place_NavalPDMMine:AGM_Explosives_Place {
 	displayName = "Naval Mine";
 	model = "\A3\Weapons_F\explosives\mine_naval3";
 };*/
+

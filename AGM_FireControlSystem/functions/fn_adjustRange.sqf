@@ -25,3 +25,4 @@ _distance = _distance min _max;
 _distance = _distance max _min;
 
 [_vehicle, _distance] call AGM_FCS_fnc_keyUp;
+

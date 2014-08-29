@@ -24,3 +24,4 @@ if (isNull _spareWheel) exitWith {};
 [_time, [_vehicle, _part, _spareWheel], "AGM_Repair_fnc_repairWheelCallback", _string, "AGM_Repair_fnc_repairWheelAbort"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
 [_spareWheel] call AGM_Core_fnc_closeDialogIfTargetMoves;
+

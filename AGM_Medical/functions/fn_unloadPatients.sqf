@@ -31,3 +31,4 @@ _vehicle = _this select 0;
     }, [_x, player]] call CBA_fnc_globalExecute;
   };
 } forEach crew _vehicle;
+

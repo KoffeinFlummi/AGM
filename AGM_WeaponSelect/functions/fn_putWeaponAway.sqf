@@ -19,3 +19,4 @@ if (currentWeapon player != "" && {currentWeapon player == primaryWeapon player}
 };
 
 player action ["SwitchWeapon", _vehicle, _vehicle, 99];
+

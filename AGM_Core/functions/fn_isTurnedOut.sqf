@@ -36,3 +36,4 @@ _animation resize (count toArray _action);
 _animation = toString _animation;
 
 _animation == _action
+

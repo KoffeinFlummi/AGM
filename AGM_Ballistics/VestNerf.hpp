@@ -222,3 +222,4 @@ class V_Press_F: Vest_Camo_Base {
     passThrough = 1;
   };
 };
+

@@ -32,3 +32,4 @@ if (player call AGM_Goggles_fnc_isGogglesVisible) then{
 };
 
 true
+

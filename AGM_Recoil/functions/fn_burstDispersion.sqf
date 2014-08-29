@@ -76,3 +76,4 @@ if (time - _lastFired < 0.45) then {
 };
 
 _unit setVariable ["AGM_Recoil_lastFired", time];
+

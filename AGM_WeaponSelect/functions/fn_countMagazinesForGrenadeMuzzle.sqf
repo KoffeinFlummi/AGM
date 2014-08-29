@@ -39,3 +39,4 @@ _firstMagazine = _magazineClasses select 0;
 } forEach _magazineClasses;
 
 [_numberOfMagazines, _firstMagazine]
+

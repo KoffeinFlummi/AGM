@@ -22,3 +22,4 @@ _unit getVariable ["AGM_isEscorting", false]
 && {!isNull _vehicle}
 && {_vehicle emptyPositions "Cargo" > 0}
 && {!(_vehicle lockedCargo 0)}
+

@@ -39,3 +39,4 @@ class CfgVehicles {
     tBody = 32; // Metabolism temperature of the model (in celsius)
   };
 };
+

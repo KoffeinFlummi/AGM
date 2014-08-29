@@ -51,3 +51,4 @@ if (_count > 0) then {
 	[player] call AGM_Explosives_fnc_openTransmitterUI;
 	[localize "STR_AGM_Explosives_NoExplosivesAvailable"] call AGM_Core_fnc_displayTextStructured;
 };
+

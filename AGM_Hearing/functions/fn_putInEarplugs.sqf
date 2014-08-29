@@ -20,3 +20,4 @@ AGM_EarPlugsIn = true;
 
 /*// No Ear Buds in inventory, telling user
 [localize "STR_AGM_Hearing_NoBuds"] call AGM_Core_fnc_displayTextStructured;*/
+

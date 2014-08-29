@@ -11,3 +11,4 @@
  */
 
 ["Mission", "Intel", "windForced"] call AGM_Core_fnc_getNumberFromMissionSQM != 1
+

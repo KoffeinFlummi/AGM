@@ -46,3 +46,4 @@ player addEventHandler ["Respawn", {
 if (player == leader group player) then {
   player setVariable ['AGM_canMoveRallypoint', true, true];
 };
+

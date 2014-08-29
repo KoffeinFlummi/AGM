@@ -28,3 +28,4 @@ if (cameraOn == player) then {
 	};
 	(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull] displayCtrl 10661) ctrlSetText format[IMAGEPATH, _this select 1];
 };
+

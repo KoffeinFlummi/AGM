@@ -102,3 +102,4 @@ _picture = getText (configFile >> "CfgMagazines" >> _magazine >> "picture");
 _text = parseText format ["<img align='center' size='1.8' color='#ffffff' image='%1'/> <br/> <t align='center'>%2</t> <br/> <t align='center'>%3</t>", _picture, localize "STR_AGM_MagazineRepack_RepackedMagazines", _text];
 
 [_text] call AGM_Core_fnc_displayTextStructured;
+

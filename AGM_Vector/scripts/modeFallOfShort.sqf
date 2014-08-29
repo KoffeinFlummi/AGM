@@ -99,3 +99,4 @@ _ctrlDigit8 ctrlSetText "";
 _ctrlDigit9 ctrlSetText "";
 
 AGM_isVectorReady = true;
+

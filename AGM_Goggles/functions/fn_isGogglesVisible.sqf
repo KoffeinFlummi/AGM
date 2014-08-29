@@ -33,3 +33,4 @@ if (_currentGlasses != "") then {
 };
 
 _result
+

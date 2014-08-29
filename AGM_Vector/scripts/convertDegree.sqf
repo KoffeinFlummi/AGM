@@ -61,3 +61,4 @@ if (AGM_vectorSettings select 2) then {
 	_return = [_digit1, _digit2, _digit3, _digit4];
 };
 _return
+

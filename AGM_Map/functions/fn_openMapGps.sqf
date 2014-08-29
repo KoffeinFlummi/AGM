@@ -40,3 +40,4 @@ if (_open && {"ItemGPS" in assignedItems player} && {!_isOpen}) then {
   ("AGM_mapGpsLayer" call BIS_fnc_rscLayer) cutText ["","PLAIN"];
 };
 
+

@@ -59,3 +59,4 @@ _item spawn {
 	(_this select 0) setDamage 1;
 };
 _result
+

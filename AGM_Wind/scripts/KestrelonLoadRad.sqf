@@ -18,3 +18,4 @@ while {AGM_isKestrelWheel} do {
   _i = 0; waitUntil {_i = _i + 1; _i > 1};
 };
 _ctrl10 ctrlShow false;
+

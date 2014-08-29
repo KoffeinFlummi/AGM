@@ -24,3 +24,4 @@ if (isNil "_isSpecialist") then {
 	_isSpecialist = getNumber(ConfigFile >> "CfgVehicles" >> typeof _this >> "canDeactivateMines") == 1;
 };
 _isSpecialist
+

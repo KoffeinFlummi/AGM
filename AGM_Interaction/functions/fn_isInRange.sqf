@@ -38,3 +38,4 @@ _position1 = ATLToASL positionCameraToWorld [0, 0, _distance];
 _position1 set [2, (_position1 select 2) - (getTerrainHeightASL _position1 min 0)];
 
 _vehicle in lineIntersectsWith [_position0, _position1] || {player distance _vehicle < _distance}
+

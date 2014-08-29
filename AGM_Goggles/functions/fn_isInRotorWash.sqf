@@ -39,3 +39,4 @@ _heli = (getPosATL _unit) nearEntities [["Helicopter"], RADIUS];
 } count _heli;
 
 _result
+

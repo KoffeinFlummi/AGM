@@ -19,3 +19,4 @@
 private "_unit";
 _unit = _this select 0;
 _unit SetVariable ["AGM_Clacker", [], true];
+

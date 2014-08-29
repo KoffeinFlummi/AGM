@@ -29,3 +29,4 @@ if (isMultiplayer && {isServer} && {AGM_Respawn_RemoveDeadBodies > 0}) then {
 };
 
 diag_log text "[AGM]: Respawn Module Initialized.";
+

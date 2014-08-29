@@ -2,3 +2,4 @@
 
 AGM_Map_serverLineMarkers = [];  
 publicVariable "AGM_Map_serverLineMarkers";
+

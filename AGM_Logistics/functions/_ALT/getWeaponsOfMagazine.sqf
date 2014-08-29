@@ -18,3 +18,4 @@ _magazineWeapons = [];
 	if (_magazine in _x) then {_magazineWeapons pushBack (_weapons select _forEachIndex);};
 } forEach _weaponMagazines;
 _magazineWeapons
+

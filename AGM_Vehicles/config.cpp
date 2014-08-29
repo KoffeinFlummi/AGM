@@ -379,3 +379,4 @@ class CfgAmmo {
     weaponLockSystem = 4;
   };
 };
+

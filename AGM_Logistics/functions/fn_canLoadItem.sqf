@@ -56,3 +56,4 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(AGM_Logistics_targetVehicle) 
 	};
 };
 _result && {_this select 0 != missionNamespace getVariable ["AGM_Fortifications_crate", objNull]}
+

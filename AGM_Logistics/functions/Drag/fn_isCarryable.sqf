@@ -8,3 +8,4 @@ _target = _this select 1;
 _unit == vehicle _unit &&
 {alive _target} &&
 {!(_target getVariable ["AGM_disableDrag", false])}
+

@@ -908,3 +908,4 @@ class AGM_Parameters {
   AGM_Medical_AllowChatWhileUnconscious = 0;
 };
 #include <HintConfig.hpp>
+

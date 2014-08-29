@@ -79,3 +79,4 @@ if (_exit) exitWith {
 _ctrlVectorCenter ctrlShow false;
 
 AGM_isVectorReady = true;
+

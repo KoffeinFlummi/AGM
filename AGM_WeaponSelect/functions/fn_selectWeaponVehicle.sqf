@@ -19,3 +19,4 @@ while {
 	player action ["SwitchWeapon", _vehicle, player, _index];
 	_index = _index + 1;
 };
+

@@ -413,3 +413,4 @@ class CfgWeapons {
   class InventoryMuzzleItem_Base_F;
 
 };
+

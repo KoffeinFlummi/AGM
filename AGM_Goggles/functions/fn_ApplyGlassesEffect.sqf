@@ -53,3 +53,4 @@ if GETDUSTT(DACTIVE) then {
 	SETDUST(DAMOUNT,CLAMP(GETDUSTT(DAMOUNT)-1,0,2));
 	call AGM_Goggles_fnc_ApplyDust;
 };
+

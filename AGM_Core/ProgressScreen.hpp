@@ -92,3 +92,4 @@ class AGM_Core_DisableMouse_Dialog {
     };
   };
 };
+

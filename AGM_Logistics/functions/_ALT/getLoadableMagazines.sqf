@@ -19,3 +19,4 @@ _magazines = [];
 } forEach _magazines;
 
 _magazines
+

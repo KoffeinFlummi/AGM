@@ -15,3 +15,4 @@ _fuel = _vehicle getVariable ["AGM_amountFuelCargo", getNumber (configFile >> "C
 && {speed _vehicle == 0}
 && {fuel _target < 1}
 && {_fuel > 0}
+

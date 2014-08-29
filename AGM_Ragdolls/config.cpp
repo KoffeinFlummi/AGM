@@ -799,3 +799,4 @@ class CfgRagDollSkeletons {
     };
   };
 };
+

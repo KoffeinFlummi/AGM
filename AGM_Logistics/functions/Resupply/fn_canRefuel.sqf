@@ -13,3 +13,4 @@ _item isKindOf "AGM_JerryCan"
 && {speed _target == 0}
 && {fuel _target < 1}
 && {_fuel > 0}
+

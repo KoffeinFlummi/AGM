@@ -23,3 +23,4 @@ AGM_Explosives_Setup setDir ((getDir AGM_Explosives_Setup) + (_this*5));
 AGM_Explosives_TweakedAngle = AGM_Explosives_TweakedAngle + _this*5;
 
 true
+

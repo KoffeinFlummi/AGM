@@ -44,3 +44,4 @@ while {count toArray _hex < _minLength} do {
 };
 
 _sign + _hex
+

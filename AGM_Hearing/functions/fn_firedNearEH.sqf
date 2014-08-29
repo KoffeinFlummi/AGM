@@ -49,3 +49,4 @@ _strength spawn {
   sleep 0.2;
   [_this] call AGM_Hearing_fnc_earRinging;
 };
+

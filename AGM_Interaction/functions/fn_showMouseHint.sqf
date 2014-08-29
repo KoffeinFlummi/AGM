@@ -51,3 +51,4 @@ if (_scroll == "") exitWith {
 	(_display displayCtrl 1201) ctrlCommit 0;
 };
 (_display displayCtrl 1002) ctrlSetText _scroll;
+

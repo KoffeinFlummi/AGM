@@ -30,3 +30,4 @@ if (_height == 1) then {
 
 _string = _string + "</t>";
 [composeText [lineBreak, parseText _string], _height] call AGM_Core_fnc_displayTextStructured;
+

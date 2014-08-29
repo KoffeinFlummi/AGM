@@ -60,3 +60,4 @@ class AGM_Core_Default_Keys {
     allowHolding = 1;
   };
 };
+
