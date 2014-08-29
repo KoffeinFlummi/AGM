@@ -22,7 +22,7 @@
       <French>Annuler</French>
       <Russian>Отмена</Russian>
       <Hungarian>Mégsem</Hungarian>
-      <Italian>Cancella</Italian>
+      <Italian>Annulla</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Options">
       <English>AGM Options</English>
@@ -33,7 +33,7 @@
       <French>AGM Options</French>
       <Russian>AGM Настройки</Russian>
       <Hungarian>AGM Beállítások</Hungarian>
-      <Italian>AGM Opzioni</Italian>
+      <Italian>Opzioni AGM</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Shift">
       <English>Shift</English>
@@ -93,7 +93,7 @@
       <Polish>Prawy Alt</Polish>
       <French>Alt Droite</French>
       <Czech>Pravý Alt</Czech>
-      <Italian>Alt destro</Italian>
+      <Italian>Alt Gr</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_KeyDefault">
@@ -103,7 +103,7 @@
       <Polish>Domyślne</Polish>
       <French>Défaut</French>
       <Czech>Výchozí</Czech>
-      <Italian>Predefinito</Italian>
+      <Italian>Standard</Italian>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
@@ -112,7 +112,7 @@
       <Polish>Brak</Polish>
       <French>Aucun</French>
       <Czech>Žádný</Czech>
-      <Italian>Nulla</Italian>
+      <Italian>Non assegnato</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
@@ -131,7 +131,7 @@
       <Polish>Przytrzymać %1</Polish>
       <French>Tenir %1</French>
       <Czech>Držet %1</Czech>
-      <Italian>Tieni %1</Italian>
+      <Italian>Tieni premuto %1</Italian>
     </Key>
 
 
@@ -267,7 +267,7 @@
       <French>SSO</French>
       <Russian>ЮЮЗ</Russian>
       <Hungarian>DDNy</Hungarian>
-      <Italian>SSW</Italian>
+      <Italian>SSO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_SW">
       <English>SW</English>
@@ -278,7 +278,7 @@
       <French>SO</French>
       <Russian>ЮЗ</Russian>
       <Hungarian>DNy</Hungarian>
-      <Italian>SW</Italian>
+      <Italian>SO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_WSW">
       <English>WSW</English>
@@ -289,7 +289,7 @@
       <French>OSO</French>
       <Russian>ЗЮЗ</Russian>
       <Hungarian>NyDNy</Hungarian>
-      <Italian>WSW</Italian>
+      <Italian>OSO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_W">
       <English>W</English>
@@ -300,7 +300,7 @@
       <French>O</French>
       <Russian>З</Russian>
       <Hungarian>Ny</Hungarian>
-      <Italian>W</Italian>
+      <Italian>O</Italian>
     </Key>
     <Key ID="STR_AGM_Core_WNW">
       <English>WNW</English>
@@ -311,6 +311,7 @@
       <French>ONO</French>
       <Russian>ЗСЗ</Russian>
       <Hungarian>NyÉNy</Hungarian>
+      <Italian>ONO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NW">
       <English>NW</English>
@@ -321,6 +322,7 @@
       <French>NO</French>
       <Russian>СЗ</Russian>
       <Hungarian>ÉNy</Hungarian>
+      <Italian>NO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NNW">
       <English>NNW</English>
@@ -331,6 +333,7 @@
       <French>NNO</French>
       <Russian>ССЗ</Russian>
       <Hungarian>ÉÉNy</Hungarian>
+      <Italian>NNO</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_ActionAborted">
@@ -352,7 +355,7 @@
       <French>&lt; Préc</French>
       <Hungarian>&lt; Előző</Hungarian>
       <Czech>&lt; Předchozí</Czech>
-      <Italian>&lt; Indietro</Italian>
+      <Italian>&lt; Prec</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
@@ -362,7 +365,7 @@
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
       <Czech>Další &gt;</Czech>
-      <Italian>Avanti &gt;</Italian>
+      <Italian>Prossimo &gt;</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_MiscItems">
@@ -372,7 +375,7 @@
       <Czech>[AGM] Ostatní předměty</Czech>
       <Polish>[AGM] Różne przedmioty</Polish>
       <French>[AGM] Objets divers</French>
-      <Italian>[AGM] Oggetti Vari</Italian>
+      <Italian>[AGM] Oggetti vari</Italian>
     </Key>
 
   </Package>

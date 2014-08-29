@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-30 -->
 <Project name="AGM">
   <Package name="Resting">
-
     <Key ID="STR_AGM_Resting_RestWeapon">
       <English>Rest Weapon</English>
       <German>Waffe auflegen</German>
@@ -11,8 +11,8 @@
       <French>Appuyer l'arme</French>
       <Russian>Зафиксировать оружие</Russian>
       <Hungarian>Fegyver kitámasztása</Hungarian>
+      <Italian>Appoggia l'arma</Italian>
     </Key>
-
     <Key ID="STR_AGM_Resting_BipodDeployed">
       <English>Bipod deployed</English>
       <German>Zweibein ausgeklappt</German>
@@ -22,6 +22,7 @@
       <French>Bipied déployé</French>
       <Russian>Сошки установлены</Russian>
       <Hungarian>Állványon</Hungarian>
+      <Italian>Bipiede appoggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponRested">
       <English>Weapon rested</English>
@@ -32,8 +33,8 @@
       <French>Arme appuyée</French>
       <Russian>Оружие зафиксировано</Russian>
       <Hungarian>Fegyver kitámasztva</Hungarian>
+      <Italian>Arma appoggiata</Italian>
     </Key>
-
     <Key ID="STR_AGM_Resting_BipodUndeployed">
       <English>Bipod undeployed</English>
       <German>Zweibein eingeklappt</German>
@@ -43,6 +44,7 @@
       <French>Bipied replié</French>
       <Russian>Сошки убраны</Russian>
       <Hungarian>Állvány csukva</Hungarian>
+      <Italian>Bipiede richiuso</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponLifted">
       <English>Weapon lifted</English>
@@ -53,7 +55,7 @@
       <French>Arme relevée</French>
       <Russian>Оружие не зафиксировано</Russian>
       <Hungarian>Fegyver nincs támasztva</Hungarian>
+      <Italian>Arma sollevata</Italian>
     </Key>
-
   </Package>
 </Project>

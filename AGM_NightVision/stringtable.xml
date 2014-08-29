@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-30 -->
 <Project name="AGM">
   <Package name="NightVision">
-
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
       <German>Helligkeit: %1</German>
@@ -13,7 +13,6 @@
       <Hungarian>Fényerő: %1</Hungarian>
       <Italian>Luminosità: %1</Italian>
     </Key>
-
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
       <English>Increase NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit erhöhen</German>
@@ -23,7 +22,7 @@
       <French>Augmenter la luminosité des JVN</French>
       <Russian>Увеличить яркость ПНВ</Russian>
       <Hungarian>Fényerő növelése</Hungarian>
-      <Italian>Incrementa luminosità visore notturno</Italian>
+      <Italian>Aumenta la luminosità dell'NVG</Italian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -34,8 +33,7 @@
       <French>Baisser la luminosité des JVN</French>
       <Russian>Уменьшить яркость ПНВ</Russian>
       <Hungarian>Fényerő csökkentése</Hungarian>
-      <Italian>Decrementa luminosità visore notturno</Italian>
+      <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>
-
   </Package>
 </Project>
