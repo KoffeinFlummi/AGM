@@ -126,7 +126,7 @@ class CfgWeapons {
       maxRangeProbab = 0.2;
       burst = "2 + round random 3";
     };
-    class single_medium_optics1: Single {
+    class single_medium_optics1: single_medium_optics1 {
       aiRateOfFireDistance = 600; // 500;
       minRange = 120;             // 2;
       maxRange = 600;             // 500;

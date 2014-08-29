@@ -415,7 +415,7 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_H"};
       };
     };
