@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_unit", "_firer", "_distance", "_weapon", "_muzzle", "_mode", "_ammo", "_silencer", "_audibleFireCoef", "_loudness", "_strength"];
+
 _unit = _this select 0;
 _firer = _this select 1;
 _distance = (_this select 2) max 1;

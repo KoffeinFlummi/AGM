@@ -30,7 +30,7 @@ More information on the purpose of the different components of AGM and which one
 *   Realistic names for vehicles and weapons
 *   Realistic ballistics including wind and humidity
 *   Backblast simulation
-*   Weapon resting
+*   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
 and more...
 

@@ -11,6 +11,8 @@
  * none
  */
 
+private ["_ammoType", "_viewDiff", "_posArrival", "_airFriction", "_timeToLive", "_maxElev", "_vehicle", "_posTarget", "_distance", "_simulationStep", "_posX", "_velocityMagnitude", "_magazines", "_movingAzimuth", "_FCSElevation", "_velocityX", "_velocityY", "_weaponDirection", "_velocityTarget", "_FCSAzimuth", "_FCSMagazines", "_dirArrival", "_i", "_magazineType", "_angleTarget", "_offset", "_timeToTarget", "_initSpeed"];
+
 _vehicle = _this select 0;
 _magazines = magazines _vehicle;
 
