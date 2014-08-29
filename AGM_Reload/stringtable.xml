@@ -10,6 +10,7 @@
       <French>Vérifier Munitions</French>
       <Hungarian>Lőszerellenőrzés</Hungarian>
       <Czech>Zkontrolovat Munici</Czech>
+      <Italian>Controlla munizioni</Italian>
     </Key>
 
     <Key ID="STR_AGM_Reload_Ammo">
@@ -20,6 +21,7 @@
       <French>Munitions</French>
       <Hungarian>Lőszer</Hungarian>
       <Czech>Munice</Czech>
+      <Italian>Munizioni</Italian>
     </Key>
 
   </Package>
