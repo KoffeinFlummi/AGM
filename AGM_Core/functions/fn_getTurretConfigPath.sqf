@@ -36,4 +36,3 @@ for "_index" from 0 to (count _turretIndex - 1) do {
 	_config = _config2;
 };
 _config
-

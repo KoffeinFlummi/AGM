@@ -34,4 +34,3 @@ _unit setHitPointDamage ["HitLeftArm", (_hitPoints select 2)];
 _unit setHitPointDamage ["HitRightArm", (_hitPoints select 3)];
 _unit setHitPointDamage ["HitLeftLeg", (_hitPoints select 4)];
 _unit setHitPointDamage ["HitRightLeg", (_hitPoints select 5)];
-

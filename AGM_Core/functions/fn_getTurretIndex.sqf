@@ -27,4 +27,3 @@ _index = _units find _unit;
 if (_index == -1) exitWith {[]};
 
 _turrets select _index;
-

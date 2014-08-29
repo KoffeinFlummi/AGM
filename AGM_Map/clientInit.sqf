@@ -97,4 +97,3 @@ if (!hasInterface) exitWith{};
     call AGM_Map_fnc_cancelDrawing;
   };
 };
-

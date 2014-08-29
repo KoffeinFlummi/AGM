@@ -9,4 +9,3 @@ if (isNull (findDisplay 1713999)) then {
 } else {
 	(findDisplay 1713999) closeDisplay 1;
 };
-

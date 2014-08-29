@@ -22,4 +22,3 @@ AGM_Interaction_Module = true;
 [_logic, "AGM_Interaction_PlayerNamesViewDistance",  "PlayerNamesViewDistance"     ] call AGM_Core_fnc_readNumericParameterFromModule;
 
 diag_log text "[AGM]: Interaction Module Initialized.";
-

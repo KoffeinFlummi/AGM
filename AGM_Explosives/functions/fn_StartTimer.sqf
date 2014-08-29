@@ -27,4 +27,3 @@ _this spawn {
 		[_explosive, -1, [_explosive, 0], true] call AGM_Explosives_fnc_DetonateExplosive;
 	};
 };
-

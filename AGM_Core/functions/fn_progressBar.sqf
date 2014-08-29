@@ -53,4 +53,3 @@ _this spawn {
 		if (!isNil "_function2") then {_arguments call _function2};
 	};
 };
-

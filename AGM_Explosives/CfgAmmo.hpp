@@ -79,4 +79,3 @@ class CfgAmmo {
 		triggerWhenDestroyed = 1;
 	};*/
 };
-

@@ -21,4 +21,3 @@ closeDialog 0;
 AGM_Interaction_MainButton = nil;
 showHUD true;
 call AGM_Interaction_fnc_hideMouseHint;
-

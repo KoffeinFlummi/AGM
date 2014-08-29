@@ -19,4 +19,3 @@
 if (isNull (uiNamespace getVariable ["AGM_Helper_Display", objNull])) exitWith{};
 
 72 cutText ["", "PLAIN"];
-

@@ -159,4 +159,3 @@ class CfgMagazines {
     AGM_Attachable = 1;
   };
 };
-

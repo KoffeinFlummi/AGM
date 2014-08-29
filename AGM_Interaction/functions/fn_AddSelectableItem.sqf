@@ -35,4 +35,3 @@ if ((profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
 };
 
 _container
-

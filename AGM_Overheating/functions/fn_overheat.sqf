@@ -131,4 +131,3 @@ if (!isNil "AGM_Debug") then {
 if (random 1 < _jamChance) then {
 	[_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;
 };
-

@@ -9,4 +9,3 @@ player playActionNow "Gear";
 
 [2, [_vehicle], "AGM_Resupply_fnc_getFuelAmountCallback", localize "STR_AGM_Resupply_CheckingFuel"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
-

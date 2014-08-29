@@ -23,4 +23,3 @@ _laser set [2, (_laser select 2) - (getTerrainHeightASL _laser min 0)];
 _intersects = lineIntersectsObjs [_position, _laser, objNull, objNull, true, 2];
 
 if (count _intersects == 0) then {objNull} else {_intersects select 0}
-

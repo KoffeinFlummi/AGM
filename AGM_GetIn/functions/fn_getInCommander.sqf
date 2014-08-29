@@ -6,4 +6,3 @@ player action [
 	["GetInCommander", "MoveToCommander"] select (vehicle player == _vehicle),
 	_vehicle
 ];
-

@@ -140,4 +140,3 @@ class CfgMineTriggers {
 		mineTriggerRange = 1;
 	};
 };
-

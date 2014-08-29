@@ -5,4 +5,3 @@ if !("AGM_UAVBattery" in items _caller) exitWith {};
 
 _target setFuel 1;
 _caller removeItem "AGM_UAVBattery";
-

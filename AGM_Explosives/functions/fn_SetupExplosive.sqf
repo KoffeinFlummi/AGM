@@ -61,4 +61,3 @@ _this spawn {
 	_unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler];
 	_unit setVariable ["AGM_Explosive_Cancel", [_unit, "MenuBack", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Cancel;}] call AGM_Core_fnc_AddActionEventHandler];
 };
-

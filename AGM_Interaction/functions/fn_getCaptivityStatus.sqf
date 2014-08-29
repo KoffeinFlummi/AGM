@@ -26,4 +26,3 @@ _unitCaptivityReasons = [];
 } forEach _captivityReasons;
 
 _unitCaptivityReasons
-

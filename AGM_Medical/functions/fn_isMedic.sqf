@@ -18,4 +18,3 @@ if (getNumber(configFile >> "CfgVehicles" >> typeOf _unit >> "attendant") == 1 o
   true
 };
 false
-

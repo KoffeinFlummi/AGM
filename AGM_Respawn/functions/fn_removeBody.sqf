@@ -28,4 +28,3 @@ if (_forceRemove) then {
   // a better hideBody would make this more aesthetic
   deleteVehicle (_this select 0);
 };
-

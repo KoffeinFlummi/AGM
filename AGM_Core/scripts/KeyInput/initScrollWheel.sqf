@@ -5,4 +5,3 @@ AGM_Core_onScrollWheel = {
 
 	//hintSilent str _scroll;
 };
-

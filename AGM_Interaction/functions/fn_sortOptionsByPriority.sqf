@@ -18,4 +18,3 @@ while {_index < _count - 1} do {
 		_index = _index + 1;
 	};
 };
-

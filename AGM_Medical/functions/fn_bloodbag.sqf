@@ -60,4 +60,3 @@ _this spawn {
   [_bloodbagtime, _this, "AGM_Medical_bloodbagCallback", localize "STR_AGM_Medical_Transfusing_Blood", "AGM_Medical_bloodbagAbort"] call AGM_Core_fnc_progressBar;
   [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
-

@@ -15,4 +15,3 @@ _position set [2, 0];
 _item = createVehicle [_item, _position, [], 0, "NONE"];
 _item setDamage _damage;
 _item
-

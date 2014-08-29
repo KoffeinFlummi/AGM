@@ -33,4 +33,3 @@ _actions set [_id, []];
 _actions = _actions - [[]];
 
 player setVariable ["AGM_InteractionsSelf", [_currentID, _actionIDs, _actions], false];
-

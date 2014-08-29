@@ -32,4 +32,3 @@ if (getNumber (configFile >> "CfgMagazines" >> _magazine >> "AGM_MagazineReloadT
 };
 
 _result
-

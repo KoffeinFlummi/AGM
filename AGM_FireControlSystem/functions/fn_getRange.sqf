@@ -9,4 +9,3 @@ _range = ctrlText (_dlgRangefinder displayCtrl 151);
 (_dlgRangefinder displayCtrl 1713151) ctrlSetText _range;
 
 parseNumber _range
-

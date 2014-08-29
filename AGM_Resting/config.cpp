@@ -818,4 +818,3 @@ class CfgMovesMaleSdr : CfgMovesBasic {
     };
   };
 };
-

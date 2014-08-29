@@ -27,4 +27,3 @@ _turret = [];
 	};
 } forEach _turrets;
 _turret
-

@@ -49,4 +49,3 @@ if (_unit != _vehicle) then {
 		};
 	};
 };
-

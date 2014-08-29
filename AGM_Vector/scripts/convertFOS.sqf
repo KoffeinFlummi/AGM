@@ -221,4 +221,3 @@ switch (_coordinate) do {
 };
 
 [_digit0, _digit1, _digit2, _digit3, _digit4]
-

@@ -32,4 +32,3 @@ AGM_Explosives_placer = objNull;
 call AGM_Interaction_fnc_hideMouseHint;
 [player, "DefaultAction", player getVariable ["AGM_Explosive_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;
 [player, "MenuBack", player getVariable ["AGM_Explosive_Cancel", -1]] call AGM_Core_fnc_removeActionEventHandler;
-

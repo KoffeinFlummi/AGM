@@ -45,4 +45,3 @@ _allControls = [
 {_x ctrlShow false} forEach _allControls;
 
 AGM_isVectorReady = true;
-

@@ -59,4 +59,3 @@ switch true do {
 _unit removeItem _itemName;
 _unit setVariable ["AGM_AttachedItemName", _itemName, true];
 _unit setVariable ["AGM_AttachedItem", _attachedItem, true];
-

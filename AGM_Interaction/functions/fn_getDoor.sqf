@@ -36,4 +36,3 @@ _door resize _index;
 _door = toString _door;
 
 [_house, _door, _id]
-

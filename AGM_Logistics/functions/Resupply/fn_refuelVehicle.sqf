@@ -20,4 +20,3 @@ _time = TIME_PER_LITER * (_capacity - _fuelVehicle min _fuel) max 2;
 
 [_time, [_unit, _vehicle], "AGM_Resupply_fnc_refuelVehicleCallback", localize "STR_AGM_Resupply_RefuelingVehicle"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
-

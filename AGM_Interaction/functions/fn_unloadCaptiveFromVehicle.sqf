@@ -15,4 +15,3 @@ _target = _cargo select 0;
 
 moveOut _target;	//global?
 [_target, "{unassignVehicle _this}", _target] call AGM_Core_fnc_execRemoteFnc;
-

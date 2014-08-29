@@ -42,4 +42,3 @@ _fnc_addTurret = {
 [_config, []] call _fnc_addTurret;
 
 _turrets
-

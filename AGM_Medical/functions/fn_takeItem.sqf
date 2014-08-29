@@ -39,4 +39,3 @@ if (_item in (items player)) exitWith {
 
 [localize "STR_AGM_Medical_NoItem"] call AGM_Core_fnc_displayTextStructured;
 false
-

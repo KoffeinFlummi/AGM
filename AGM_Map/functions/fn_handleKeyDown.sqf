@@ -71,4 +71,3 @@ if (_code == DIK_DELETE) exitWith {
 };
 
 _handled
-

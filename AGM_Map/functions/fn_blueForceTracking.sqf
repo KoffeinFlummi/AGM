@@ -47,4 +47,3 @@ _logic spawn {
     sleep _interval;
   };
 };
-

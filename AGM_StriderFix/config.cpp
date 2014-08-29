@@ -39,4 +39,3 @@ class RscInGameUI {
     onLoad = "uiNamespace setVariable ['AGM_ctrlStrider', (_this select 0) displayCtrl 156]";
   };
 };
-

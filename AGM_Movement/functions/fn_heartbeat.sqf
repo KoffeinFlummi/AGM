@@ -7,4 +7,3 @@ _script_handle = _this spawn {
 	sleep 8;
 };
 _script_handle
-

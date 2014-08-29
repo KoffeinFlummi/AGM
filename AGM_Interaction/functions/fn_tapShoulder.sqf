@@ -18,4 +18,3 @@ addCamShake [4, 0.5, 5];
 _message = localize "STR_AGM_Interaction_YouWereTapped";
 
 [_message] call AGM_Core_fnc_displayTextStructured;
-

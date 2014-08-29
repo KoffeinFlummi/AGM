@@ -45,4 +45,3 @@ _ctrlHint ctrlSetPosition [
 	_size * 0.1 * SafeZoneH
 ];
 _ctrlHint ctrlCommit ([0.2, 0] select _isShown);
-

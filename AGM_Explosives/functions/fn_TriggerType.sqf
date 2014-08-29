@@ -25,4 +25,3 @@ for "_index" from 0 to (_count - 1) do {
 	_result set [_index, ConfigFile >> "CfgAGM_Triggers" >> (_config select _index)];
 };
 _result
-

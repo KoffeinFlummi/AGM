@@ -32,4 +32,3 @@ if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "AGM_
     (_this select 0) setVariable ["AGM_FCSViewDiff", 0, true];
   };
 };
-

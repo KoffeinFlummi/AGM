@@ -44,4 +44,3 @@ if (_strength > 0.2 and !AGM_EarRingingPlaying) exitWith {
     AGM_EarRingingPlaying = false;
   };
 };
-

@@ -2,4 +2,3 @@
 
 player == vehicle player &&
 {inputAction 'reloadMagazine' == 0}
-

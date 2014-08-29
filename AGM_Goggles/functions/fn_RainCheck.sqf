@@ -78,4 +78,3 @@ if (player call AGM_Goggles_fnc_isGogglesVisible) then {
 		AGM_Goggles_Effects set [LRAIN, [false, 0, time]];
 	};
 };
-

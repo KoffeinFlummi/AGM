@@ -27,4 +27,3 @@
 #define GLASSDISPLAY (uiNamespace getVariable ["AGM_Goggles_Display", displayNull])
 
 #define CLAMP(x,low,high) (if(x > high)then{high}else{if(x < low)then{low}else{x}})
-

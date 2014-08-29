@@ -42,4 +42,3 @@ _bitmask = _captivityReasonsBooleans call AGM_Core_fnc_toBitmask;
 
 // actually apply the setCaptive command globaly
 [[_unit, _bitmask], "{(_this select 0) setCaptive (_this select 1)}", _unit] call AGM_Core_fnc_execRemoteFnc;
-

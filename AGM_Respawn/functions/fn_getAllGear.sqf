@@ -39,4 +39,3 @@ _allGear = [
 
 // return
 _allGear
-

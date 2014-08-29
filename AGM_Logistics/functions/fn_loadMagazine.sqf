@@ -31,4 +31,3 @@ if (_unit == player) then {
 	sleep 10;
 	[_unit, _vehicle, _magazine, _weapon] call AGM_Logistics_fnc_loadMagazineCallback;
 };
-

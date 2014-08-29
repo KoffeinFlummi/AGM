@@ -22,4 +22,3 @@ for "_i" from 0 to (((count _vector1) min (count _vector2)) - 1) do {
 };
 
 _newVector
-

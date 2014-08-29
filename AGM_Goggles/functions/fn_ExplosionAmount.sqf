@@ -26,4 +26,3 @@ _effectIndex = switch true do {
 };
 
 _effectIndex
-

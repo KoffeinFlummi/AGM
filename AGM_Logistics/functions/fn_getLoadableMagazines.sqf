@@ -37,4 +37,3 @@ _unitMagazines = magazines _unit;	//(magazines _unit + magazineCargo _vehicle))
 } forEach _magazines;
 
 _magazines
-

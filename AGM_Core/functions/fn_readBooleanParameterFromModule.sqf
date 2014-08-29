@@ -25,4 +25,3 @@ if (isNil {_logic getVariable _moduleParameterName}) exitWith {
 
 // Set the parameter
 [_agmParameterName , if (_logic getVariable _moduleParameterName) then {1} else {0}] call AGM_Core_fnc_setParameter;
-

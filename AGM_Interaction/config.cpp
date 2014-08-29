@@ -841,4 +841,3 @@ class CfgWeapons {
 };
 
 #include <Menu_Config.hpp>
-

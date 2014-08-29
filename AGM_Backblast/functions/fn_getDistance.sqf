@@ -28,4 +28,3 @@ while {
 };
 
 if (_distance > _maxDistance) then {999} else {_distance}
-

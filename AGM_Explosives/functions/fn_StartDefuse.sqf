@@ -63,4 +63,3 @@ if (player != _unit) then {
 		[[(_unit call AGM_Explosives_fnc_isSpecialist), _target] call _fnc_DefuseTime, [_unit,_target], "AGM_Explosives_fnc_DefuseExplosive", localize "STR_AGM_Explosives_DefusingExplosive"] call AGM_Core_fnc_progressBar;
 	};
 };
-

@@ -15,4 +15,3 @@ count _wheels > 0
 && {alive _vehicle}
 && {speed _vehicle == 0}
 && {!isNull _spareWheel}
-

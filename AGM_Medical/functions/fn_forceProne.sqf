@@ -23,4 +23,3 @@ if (currentWeapon _unit == handgunWeapon _unit) exitWith {
   _unit playMoveNow "AmovPpneMstpSrasWpstDnon";
 };
 _unit playMoveNow "amovppnemstpsnonwnondnon";
-

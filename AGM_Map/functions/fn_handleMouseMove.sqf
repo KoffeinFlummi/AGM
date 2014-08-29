@@ -59,4 +59,3 @@ if (AGM_Map_rotating) exitWith {
 };
 
 false
-

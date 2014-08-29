@@ -19,4 +19,3 @@ _text = _this select 0;
 disableSerialization;
 _ctrlHint = uiNamespace getVariable "AGM_ctrlHint";
 _ctrlHint ctrlSetStructuredText _text;
-

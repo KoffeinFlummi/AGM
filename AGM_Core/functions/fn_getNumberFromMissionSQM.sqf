@@ -15,4 +15,3 @@ private "_number";
 _number = _this call AGM_Core_fnc_getStringFromMissionSQM;
 
 parseNumber _number;
-

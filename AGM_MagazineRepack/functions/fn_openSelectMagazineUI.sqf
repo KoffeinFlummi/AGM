@@ -32,4 +32,3 @@ for "_index" from 0 to (_count - 1) do {
 	},
 	{"Default" call AGM_Interaction_fnc_openMenu;}
 ] call AGM_Interaction_fnc_openSelectMenu;
-

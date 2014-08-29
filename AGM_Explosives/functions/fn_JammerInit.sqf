@@ -40,4 +40,3 @@ if (isClass (configFile >> "CfgVehicles" >> (typeof (_this select 1))) and {getN
 		(_this select 1) setVariable ["AGM_JammerEnabled", false, true];
 	};
 };
-

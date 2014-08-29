@@ -82,4 +82,3 @@ if (_state) then {
 		//	diag_log text "[AGM] Debug: User Input enabled";
 	};
 };
-

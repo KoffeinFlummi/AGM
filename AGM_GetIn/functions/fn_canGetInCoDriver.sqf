@@ -46,4 +46,3 @@ count _crew < _countCrew &&
 {!_isLocked} &&
 {getNumber (_config >> "isUav") != 1} &&
 {player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle player == _vehicle}}
-

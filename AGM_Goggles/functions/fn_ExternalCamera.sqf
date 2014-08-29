@@ -17,4 +17,3 @@
 */
 if (profileNamespace getVariable ["AGM_showInThirdPerson", false]) exitWith { false };
 (cameraView == "External")
-

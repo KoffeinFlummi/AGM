@@ -15,4 +15,3 @@ _control ctrlSetText format ["\AGM_Core\UI\box_%1checked_ca.paa", ["un", ""] sel
 
 AGM_Core_OptionNamesNew set [_index1, _name];
 AGM_Core_OptionStatesNew set [_index1, _state];
-

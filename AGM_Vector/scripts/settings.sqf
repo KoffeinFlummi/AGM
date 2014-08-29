@@ -181,4 +181,3 @@ if (_count >= 5) then {
 };
 
 AGM_isVectorReady = true;
-

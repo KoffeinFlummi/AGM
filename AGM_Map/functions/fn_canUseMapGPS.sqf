@@ -3,4 +3,3 @@
 visibleMap &&
 {alive player} &&
 {"ItemGPS" in assignedItems player}
-

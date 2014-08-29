@@ -20,4 +20,3 @@ _vehicle setVariable ["AGM_FCSElevation", 0, true];
 _vehicle setVariable ["AGM_FCSAzimuth", 0, true];
 
 [localize "STR_AGM_FireControlSystem_HasBeenReset"] call AGM_Core_fnc_displayTextStructured;
-

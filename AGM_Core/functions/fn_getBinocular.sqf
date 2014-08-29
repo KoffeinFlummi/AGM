@@ -17,4 +17,3 @@ _unit = _this select 0;
 _weapons = weapons _unit - [primaryWeapon _unit, secondaryWeapon _unit, handgunWeapon _unit];
 
 ["", _weapons select 0] select (count _weapons > 0)
-

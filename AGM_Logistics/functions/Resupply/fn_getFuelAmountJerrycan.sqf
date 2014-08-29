@@ -17,4 +17,3 @@ _unit playActionNow "Gear";
 
 _text = format [localize "STR_AGM_Resupply_CheckedFuel", _fuel];
 [_text] call AGM_Core_fnc_displayTextStructured;
-

@@ -43,4 +43,3 @@ AGM_Explosives_PlacedCount = AGM_Explosives_PlacedCount + 1;
 _clacker pushBack [_explosive, getNumber(_config >> "FuseTime"), "E: " + str(AGM_Explosives_PlacedCount), _magazineClass, configName ((_this select 3) select (count (_this select 3) - 1))];
 _unit setVariable ["AGM_Clacker", _clacker, true];
 _unit sideChat format [localize "STR_AGM_Explosives_DetonateCode", AGM_Explosives_PlacedCount];
-

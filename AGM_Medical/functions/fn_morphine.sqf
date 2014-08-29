@@ -105,4 +105,3 @@ _this spawn {
   [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
   [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
-

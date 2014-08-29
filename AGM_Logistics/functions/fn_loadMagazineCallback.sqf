@@ -36,4 +36,3 @@ if (_magazine in magazines _unit) then {
 	
 	[[_vehicle, _magazine, _weapon], "AGM_Logistics_fnc_loadMagazineRemote", _vehicle] call AGM_Core_fnc_execRemoteFnc;
 };
-

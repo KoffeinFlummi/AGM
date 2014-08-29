@@ -33,4 +33,3 @@ _actions set [_id, []];
 _actions = _actions - [[]];
 
 _object setVariable ["AGM_Interactions", [_currentID, _actionIDs, _actions], true];
-

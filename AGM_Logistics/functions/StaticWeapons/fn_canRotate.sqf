@@ -6,4 +6,3 @@ _vehicle = _this select 0;
 
 isNull (gunner _vehicle) &&
 {alive _vehicle}
-

@@ -46,4 +46,3 @@ _totalWeight = _totalWeight + ([getBackpackCargo _this, "CfgVehicles"] call _fnc
 _totalWeight = _totalWeight * 0.5; // Mass in Arma isn't an exact amount but rather a volume/weight value. This attempts to work around that by making it a usable value. (sort of).
 
 _totalWeight
-

@@ -110,4 +110,3 @@ if (AGM_Core_keySet == 1 && {count AGM_Core_keyNewTemp > 0}) then {
 AGM_Core_keySet = -1;
 AGM_Core_keyNewTemp = nil;
 AGM_Core_keysetDefault = nil;
-

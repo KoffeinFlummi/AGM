@@ -28,4 +28,3 @@
 #define AGM_FUELCAPACITYCARGO_KAMAZ      7125  // guesswork based on relative size compared to HEMTT
 #define AGM_FUELCAPACITYCARGO_TYPHOON    7125  // guesswork based on relative size compared to HEMTT
 #define AGM_FUELCAPACITYCARGO_CRV        0     // this thing doesn't carry any fuel (I think)
-

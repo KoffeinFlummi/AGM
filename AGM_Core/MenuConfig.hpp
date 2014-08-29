@@ -925,4 +925,3 @@ class AGM_Core_OptionsMenu_Dialog {
     };
   };
 };
-

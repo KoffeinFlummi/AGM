@@ -32,4 +32,3 @@ _vehicle setDamage _damage;
 {
 	_vehicle setHitPointDamage [_x, _hitPoints select _forEachIndex];
 } forEach ALL_HITPOINTS;
-

@@ -20,4 +20,3 @@ _time = TIME_PER_LITER * (_fuelVehicle min 20) max 2;
 
 [_time, [_unit, _vehicle], "AGM_Resupply_fnc_drainFuelCallback", localize "STR_AGM_Resupply_DrainingFuel"] call AGM_Core_fnc_progressBar;
 [_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
-

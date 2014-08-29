@@ -25,4 +25,3 @@ if !(_activated) exitWith {};
 [_logic, "AGM_Explosives_PunishNonSpecialists",      "PunishNonSpecialists"        ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Explosive Module Initialized.";
-

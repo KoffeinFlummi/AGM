@@ -46,4 +46,3 @@ _distance = _distance min _maxDistance;
 if !(isNil "_minDistance") then {_distance = _distance max _minDistance};
 
 _distance
-

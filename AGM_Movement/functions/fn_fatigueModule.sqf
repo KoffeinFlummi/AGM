@@ -12,4 +12,3 @@ AGM_Fatigue_CoefFatigue = parseNumber (_logic getVariable "CoefFatigue");
 AGM_Fatigue_CoefRecover = parseNumber (_logic getVariable "CoefRecover");
 
 diag_log text "[AGM]: Fatigue Module Initialized.";
-

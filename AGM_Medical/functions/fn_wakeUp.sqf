@@ -50,4 +50,3 @@ _position = getPosASL _unit;
   _this switchMove "";
   _this switchMove (_this getVariable "AGM_OriginalAnim");
 }, _unit] call CBA_fnc_globalExecute;
-

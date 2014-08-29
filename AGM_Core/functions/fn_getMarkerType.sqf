@@ -56,4 +56,3 @@ if (_vehicle isKindOf "Ship") exitWith {
 
 // generic marker
 ["n_unknown", "b_unknown", "o_unknown"] select ((["GUER", "WEST", "EAST"] find (str _side)) max 0);
-

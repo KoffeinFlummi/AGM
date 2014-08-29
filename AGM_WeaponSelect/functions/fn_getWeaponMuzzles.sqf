@@ -20,4 +20,3 @@ if ("this" in _muzzles) then {
 	_muzzles set [_muzzles find "this", _weapon];
 };
 _muzzles
-

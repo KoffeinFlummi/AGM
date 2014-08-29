@@ -27,4 +27,3 @@ AGM_Drag_CurrentHeightChange = 0;
 if (isNil "AGM_Drag_MaxWeight") then {
 	AGM_Drag_MaxWeight = 800;
 };
-

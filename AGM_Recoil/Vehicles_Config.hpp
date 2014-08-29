@@ -16,4 +16,3 @@ class CfgVehicles {
     AGM_enableCamshake = 1;
   };
 };
-

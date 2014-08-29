@@ -27,4 +27,3 @@ _text = composeText [
 ];
 
 [_text] call AGM_Core_fnc_displayTextStructured;
-

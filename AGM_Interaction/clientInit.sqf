@@ -49,4 +49,3 @@ addMissionEventHandler ["Draw3D", {
 
   };
 }];
-

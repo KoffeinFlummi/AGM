@@ -25,4 +25,3 @@ buttonSetAction [8860, format["[player, '%1', 'Timer', floor(sliderPosition 8845
 buttonSetAction [8855, format["['%1'] call AGM_Explosives_fnc_openTriggerSelectionUI;", _mag]];
 
 ctrlSetText [8870, format[localize "STR_AGM_Explosives_TimerMenu",0, 30]];
-

@@ -23,4 +23,3 @@ _repairer = [_vehicle] call AGM_Repair_fnc_getNearestRepairer;
 if (!("ToolKit" in items player) && {!isNull _repairer}) then {
 	[_repairer] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
-

@@ -6,4 +6,3 @@ player action [
 	["GetInPilot", "MoveToPilot"] select (vehicle player == _vehicle),
 	_vehicle
 ];
-

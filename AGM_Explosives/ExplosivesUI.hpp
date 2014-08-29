@@ -72,4 +72,3 @@ class RscAGM_SelectTimeUI
 		};
 	};
 };
-

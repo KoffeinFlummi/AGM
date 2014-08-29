@@ -69,4 +69,3 @@ if !(call AGM_Goggles_fnc_ExternalCamera) then {
 		};
 	};
 };
-

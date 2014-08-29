@@ -9,4 +9,3 @@ AGM_UAVs_refuelAbort = {
 
 [10,[_target,_caller], "AGM_UAVs_fnc_refuelCallback", localize "STR_AGM_UAVs_Battery_Recharge", "AGM_UAVs_refuelAbort"] call AGM_Core_fnc_progressBar;
 [_target] call AGM_Core_fnc_closeDialogIfTargetMoves;
-

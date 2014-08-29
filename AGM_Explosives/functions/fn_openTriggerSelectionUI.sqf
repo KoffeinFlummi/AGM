@@ -52,4 +52,3 @@ if (_count == 0) then {
 		{[player] call AGM_Explosives_fnc_openPlaceUI;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
-

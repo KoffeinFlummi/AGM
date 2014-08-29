@@ -15,4 +15,3 @@ if (isNull _rallypoint) exitWith {};
 
 _unit setPosASL (getPosASL _rallypoint);
 [["Teleported to Rallypoint", "Teleported to Base"] select _toBase] call AGM_Core_fnc_displayTextStructured;
-

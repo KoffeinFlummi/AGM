@@ -19,4 +19,3 @@ if (_isEngineOn && {player == driver _vehicle} && {speed _vehicle == 0}) then {
 		};
 	};
 };
-

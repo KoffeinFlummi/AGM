@@ -48,4 +48,3 @@ while {true} do {
 	};
 	player setFatigue _fatigue;
 };
-

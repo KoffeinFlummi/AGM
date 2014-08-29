@@ -76,4 +76,3 @@ class CfgWeapons {
     AGM_DangerZone_Damage = 1;
   };
 };
-

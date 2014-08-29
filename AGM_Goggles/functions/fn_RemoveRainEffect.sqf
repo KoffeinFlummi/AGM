@@ -21,4 +21,3 @@ AGM_Goggles_Effects set [LRAIN, [false, 0, time]];
 if (!isNull(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull])) then {
 	(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull] displayCtrl 10661) ctrlSetText "";
 };
-

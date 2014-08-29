@@ -82,4 +82,3 @@ _unconsciousnessTimer = [_unit] spawn {
   };
 };
 _unit setVariable ["AGM_UnconsciousnessTimer", _unconsciousnessTimer];
-

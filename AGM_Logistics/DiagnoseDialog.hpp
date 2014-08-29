@@ -102,4 +102,3 @@ class AGM_Repair_Diagnose_Dialog {
     };
   };
 };
-

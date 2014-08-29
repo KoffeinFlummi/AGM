@@ -35,4 +35,3 @@ while {_number > 0} do {
 	_index = _index + 1;
 };
 _array
-

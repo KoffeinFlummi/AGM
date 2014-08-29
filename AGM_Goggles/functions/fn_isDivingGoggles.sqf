@@ -21,4 +21,3 @@ _result = _glasses == "G_Diving";
 if (_result) exitWith {true};
 _result = [configFile >> "CfgGlasses" >> _glasses, configFile >> "CfgGlasses" >> "G_Diving"] call CBA_fnc_inheritsFrom;
 _result
-

@@ -9,4 +9,3 @@ _part = _this select 1;
 && {alive _vehicle}
 && {speed _vehicle == 0}
 && {floor (3 * (_vehicle getHitPointDamage _part)) > 0}
-

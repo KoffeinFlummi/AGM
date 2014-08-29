@@ -66,4 +66,3 @@ if (_actionID == -1) then {
 _unit setVariable [_name, [_actionID, [_id, _actionIDs, _actions]], false];
 
 _id
-

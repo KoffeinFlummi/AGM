@@ -49,4 +49,3 @@ if (count _actions == 0) then {
 };
 
 _unit setVariable [_name, [_actionID, [_currentID, _actionIDs, _actions]], false];
-

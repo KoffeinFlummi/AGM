@@ -1161,4 +1161,3 @@ class CfgWeapons {
 };
 
 #include <DiagnoseDialog.hpp>
-

@@ -55,4 +55,3 @@ _index = [";", _mission] call AGM_Core_fnc_findStringInString;
 _mission = toArray _mission;
 _mission resize _index;
 format ["%1", toString _mission];
-

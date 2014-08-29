@@ -42,4 +42,3 @@ _ctrlDigit4 ctrlSetText (_digits select 3);
 _ctrlVectorCenter ctrlShow false;
 
 AGM_isVectorReady = true;
-

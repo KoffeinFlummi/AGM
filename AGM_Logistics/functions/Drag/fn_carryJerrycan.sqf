@@ -47,4 +47,3 @@ _this spawn {
 	};
 	_unit removeAction (_unit getVariable ["AGM_Drag_ReleaseActionID", -1]);
 };
-

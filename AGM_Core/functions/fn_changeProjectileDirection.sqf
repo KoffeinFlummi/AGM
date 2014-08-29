@@ -56,4 +56,3 @@ _projectile setVectorDirAndUp [_vdir, _vup];
 
 // set new speed vector
 _projectile setVelocity _vel;
-

@@ -54,4 +54,3 @@ _actions set [_count, [_displayName, _distance, _condition, _statement, _showDis
 
 _object setVariable ["AGM_Interactions", [_id, _actionIDs, _actions], true];
 _id
-

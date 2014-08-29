@@ -17,4 +17,3 @@
 		player setVariable ["AGM_Name", _name, true];
 	};
 };
-

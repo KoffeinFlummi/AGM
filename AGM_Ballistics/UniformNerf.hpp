@@ -175,4 +175,3 @@ class O_Protagonist_VR_F: O_Soldier_base_F {
     };
   };
 };
-

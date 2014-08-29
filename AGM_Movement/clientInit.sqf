@@ -9,4 +9,3 @@ if (!isNil "AGM_Debug" && {AGM_Debug == "Fatigue"}) then {
 		false
 	};
 };
-

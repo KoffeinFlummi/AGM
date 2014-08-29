@@ -12,4 +12,3 @@ _wheels = [_wheels, {_vehicle getHitPointDamage _this < 1}] call AGM_Core_fnc_fi
 count _wheels > 0
 && {alive _vehicle}
 && {speed _vehicle == 0}
-

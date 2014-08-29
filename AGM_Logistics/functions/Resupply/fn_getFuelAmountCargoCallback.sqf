@@ -8,4 +8,3 @@ _fuel = _vehicle getVariable ["AGM_amountFuelCargo", getNumber (configFile >> "C
 
 _text = format [localize "STR_AGM_Resupply_CheckedFuelVehicleCargo", _fuel];
 [_text] call AGM_Core_fnc_displayTextStructured;
-

@@ -76,4 +76,3 @@ _this spawn {
 
 	[_text, _picture] call AGM_Core_fnc_displayTextPicture;
 };
-

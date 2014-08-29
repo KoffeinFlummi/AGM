@@ -21,4 +21,3 @@ _draggedObject = _this getVariable ["AGM_carriedItem", objNull];
 if (isNull _draggedObject) exitWith {false};
 
 true
-

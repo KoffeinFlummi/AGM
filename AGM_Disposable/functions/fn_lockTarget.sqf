@@ -51,4 +51,3 @@
 	AGM_Disposable_LockedTarget = objNull;
 	AGM_Disposable_isTargetLocked = false;
 };
-

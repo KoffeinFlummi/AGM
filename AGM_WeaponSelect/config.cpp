@@ -204,4 +204,3 @@ class AGM_Core_Options {
     default = 1;
   };
 };
-

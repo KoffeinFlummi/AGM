@@ -41,4 +41,3 @@ if (_state) then {
 	player setVariable ["AGM_isEscorting", false, true];
 	player setVariable ["AGM_escortedUnit", objNull, true];
 };
-

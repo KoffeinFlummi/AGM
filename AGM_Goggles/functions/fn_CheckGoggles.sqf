@@ -58,4 +58,3 @@ while {alive player} do {
 		};
 	};
 };
-

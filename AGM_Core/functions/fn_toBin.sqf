@@ -35,4 +35,3 @@ while {count toArray _bin < _minLength} do {
 };
 
 _sign + _bin
-

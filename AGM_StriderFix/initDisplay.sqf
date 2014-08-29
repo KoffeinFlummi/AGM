@@ -10,4 +10,3 @@ while {true} do {
 	waitUntil {_vehicle != vehicle player};
 	_vehicle = vehicle player;
 };
-

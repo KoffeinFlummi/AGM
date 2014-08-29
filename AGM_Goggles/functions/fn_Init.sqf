@@ -108,4 +108,3 @@ player AddEventHandler ["Put", {call AGM_Goggles_fnc_CheckGlasses;}];
 	};
 }] call CBA_fnc_addEventHandler;
 AGM_Goggles_MainLoop = [] spawn AGM_Goggles_fnc_CheckGoggles;
-

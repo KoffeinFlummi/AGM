@@ -20,4 +20,3 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
     AGM_WeaponSelect_FragMuzzles = AGM_WeaponSelect_FragMuzzles + [_muzzleName];
   };  
 } forEach _throwMuzzleNames;
-

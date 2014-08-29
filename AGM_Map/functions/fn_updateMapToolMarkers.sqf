@@ -69,4 +69,3 @@ _xPos = (AGM_Map_pos select 0) + sin(AGM_Map_angle) * _textureWidth * CENTER_OFF
 _yPos = (AGM_Map_pos select 1) + cos(AGM_Map_angle) * _textureWidth * CENTER_OFFSET_Y_PERC;
 _rotatingMarker setMarkerPosLocal [_xPos,_yPos];
 _rotatingMarker setMarkerDirLocal AGM_Map_angle;
-

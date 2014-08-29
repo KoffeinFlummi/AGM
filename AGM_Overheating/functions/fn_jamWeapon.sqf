@@ -54,4 +54,3 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
 
 	_unit setVariable ["AGM_JammingActionID", _actionID];
 };
-

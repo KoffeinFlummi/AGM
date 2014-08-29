@@ -120,4 +120,3 @@ if (AGM_Core_MenuPage == _countPages - 1) then {
 
 	AGM_Core_keySet = -1;
 };
-

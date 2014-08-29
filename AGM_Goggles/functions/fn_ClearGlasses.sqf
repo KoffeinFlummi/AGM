@@ -37,4 +37,3 @@ null = [] spawn {
 call AGM_Goggles_fnc_RemoveDirtEffect;
 call AGM_Goggles_fnc_RemoveRainEffect;
 call AGM_Goggles_fnc_RemoveDustEffect;
-

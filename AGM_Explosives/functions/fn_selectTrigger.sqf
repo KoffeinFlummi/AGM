@@ -27,4 +27,3 @@ call AGM_Interaction_fnc_hideMenu;
 if (isText(_config >> "onSetup") && {[_magazine] call compile getText (_config >> "onSetup")}) exitWith {};
 
 [player, _magazine, _trigger] call AGM_Explosives_fnc_SetupExplosive;
-

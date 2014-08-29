@@ -30,4 +30,3 @@ if (_mag > 0) then {
   _name setMarkerSizeLocal [5, 5];
   _name setMarkerDirLocal 0;
 };
-

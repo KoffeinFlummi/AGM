@@ -526,4 +526,3 @@ class CfgWeapons {
     };
   };
 };
-

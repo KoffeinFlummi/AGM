@@ -47,4 +47,3 @@ if (_numberOfMagazines > 0) then {
 };
 
 AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag = false;
-

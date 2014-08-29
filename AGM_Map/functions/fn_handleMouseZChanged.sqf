@@ -34,4 +34,3 @@ if (count AGM_Map_tempLineMarker > 0) then {
   _handled = true;
 };
 _handled
-

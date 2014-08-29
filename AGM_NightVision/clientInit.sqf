@@ -16,4 +16,3 @@ AGM_NightVision_ppEffectMuzzleFlash ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0
 AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit 0;
 
 0 spawn compile preprocessFileLineNumbers "\AGM_NightVision\nightVision.sqf";
-

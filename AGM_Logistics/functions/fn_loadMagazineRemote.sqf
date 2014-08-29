@@ -27,4 +27,3 @@ if (getNumber (configFile >> "CfgMagazines" >> _magazine >> "AGM_MagazineReloadT
 } else {
 	_vehicle addMagazineGlobal _magazine;
 };
-

@@ -26,4 +26,3 @@ if (_this select 2) then {_key = _key + 0.2};
 if (_this select 3) then {_key = _key + 0.4};
 
 _key
-

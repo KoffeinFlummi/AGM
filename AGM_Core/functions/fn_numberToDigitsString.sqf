@@ -22,4 +22,3 @@ for "_index" from 0 to (_count - 1) do {
 	_string = _string + str (_digits select _index);
 };
 _string
-

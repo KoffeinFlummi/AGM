@@ -60,4 +60,3 @@ if (!call (_current select 2)) then {
 };
 _ctrl ctrlSetText _infoText;
 _ctrl ctrlShow (_infoText != "");
-

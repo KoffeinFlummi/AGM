@@ -121,4 +121,3 @@ class CfgMagazines {
 };
 
 //@todo edit the weapon crates and vehicle cargo inventories. The loadout of the soldiers can stay as is.
-

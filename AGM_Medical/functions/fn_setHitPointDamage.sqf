@@ -101,4 +101,3 @@ _unit setDamage _damageNew;
 
   _unit setHitPointDamage [_x, _damageFinal];
 } forEach _selections;
-

@@ -32,4 +32,3 @@ if (!isNull(_item)) then {
 	[_size * 5, [_vehicle, _item, _variableName], "AGM_Logistics_fnc_unloadItemCallback", localize "STR_AGM_Logistics_UnloadingItem"] call AGM_Core_fnc_progressBar;
 	[_vehicle] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };
-

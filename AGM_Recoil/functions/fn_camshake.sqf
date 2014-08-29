@@ -60,4 +60,3 @@ if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
 };
 
 addcamshake _camshake;
-

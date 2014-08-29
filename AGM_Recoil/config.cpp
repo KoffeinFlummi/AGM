@@ -235,4 +235,3 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 #include <Ammo_Config.hpp>
 #include <Vehicles_Config.hpp>
 #include <Weapons_Config.hpp>
-

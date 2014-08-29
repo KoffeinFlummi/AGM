@@ -41,4 +41,3 @@ while {
 	_digits set [_count, _digit];
 };
 _digits
-

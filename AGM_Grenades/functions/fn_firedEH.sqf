@@ -69,4 +69,3 @@ if (typeOf _projectile == "AGM_G_M84") then {
     };
   };
 };
-

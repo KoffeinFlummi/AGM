@@ -15,4 +15,3 @@ if (isNil _name) then {
 	deleteVehicle _rallypoint;
 	diag_log text "[AGM] Respawn: ERROR Multiple Rallypoints of same type.";
 };
-

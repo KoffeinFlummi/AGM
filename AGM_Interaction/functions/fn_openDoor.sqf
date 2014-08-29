@@ -54,4 +54,3 @@ _info spawn {
 
 	AGM_Interaction_isOpeningDoor = false;
 };
-

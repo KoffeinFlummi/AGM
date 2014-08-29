@@ -58,4 +58,3 @@ _this spawn {
     };
   }, _unit] call CBA_fnc_globalExecute;*/
 };
-

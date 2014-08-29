@@ -1235,4 +1235,3 @@ class CfgMagazines {
     displayName = "$STR_AGM_RealisticNames_SmokeShellYellow_Name";
   };
 };
-

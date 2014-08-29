@@ -50,4 +50,3 @@ _this spawn {
 		if (_time == AGM_Core_lastHint select 0) then {hintSilent ""};
 	};
 };
-

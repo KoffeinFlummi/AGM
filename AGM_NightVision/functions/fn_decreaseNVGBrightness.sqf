@@ -17,4 +17,3 @@ if (_brightness > -1 && {currentVisionMode player == 1}) then {
 	_return = true;
 };
 _return
-

@@ -44,4 +44,3 @@ if !(_activated) exitWith {};
 } count _units;
 
 diag_log text "[AGM]: WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.";
-

@@ -13,4 +13,3 @@ _script_handle = _this spawn {
 	player setUnitRecoilCoefficient (_recoilFactor / unitRecoilCoefficient player);
 };
 _script_handle
-

@@ -24,4 +24,3 @@ if (_t > 4.5) then {
 };
 
 [_t, [_fence], "AGM_Wirecutter_fnc_cutDownFenceCallback", localize "STR_AGM_CuttingFence", "AGM_Wirecutter_fnc_cutDownFenceAbort"] call AGM_Core_fnc_progressBar;
-

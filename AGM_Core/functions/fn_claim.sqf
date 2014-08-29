@@ -25,4 +25,3 @@ if (_lockTarget) then {
 };
 
 //systemChat str locked _target; systemChat str (_target getVariable ['AGM_lockStatus', locked _target]);
-

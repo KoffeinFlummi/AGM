@@ -13,4 +13,3 @@ _forceRemove = _this select 0;
 if (!isNil "_body" && {!alive _body}) then {
 	[_body, _forceRemove] call AGM_Respawn_fnc_removeBody;
 };
-

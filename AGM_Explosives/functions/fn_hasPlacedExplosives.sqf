@@ -32,4 +32,3 @@ if (_adjustedList) then {
 };
 
 (count _clackerList > 0)
-

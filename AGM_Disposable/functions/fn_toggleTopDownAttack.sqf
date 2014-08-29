@@ -21,4 +21,3 @@ _ctrlJavelinModeDir = _dlgJavelinOptics displayCtrl 1007;
 
 _ctrlJavelinModeTop ctrlSetTextColor ([COLOR_OFF, COLOR_ON] select _state);
 _ctrlJavelinModeDir ctrlSetTextColor ([COLOR_ON, COLOR_OFF] select _state);
-

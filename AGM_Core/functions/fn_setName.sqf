@@ -25,4 +25,3 @@ _this spawn {
 
 	_unit setVariable ["AGM_Name", _name, true];
 };
-

@@ -69,4 +69,3 @@ if (_weapon == handgunWeapon _unit) then {
 
 _dropHelper setHitPointDamage ["HitHead", 1];
 //hideObject _dropHelper;
-

@@ -65,4 +65,3 @@ if (_unit == _firer) then {
 		};
 	};
 };
-

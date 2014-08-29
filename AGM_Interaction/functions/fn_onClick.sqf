@@ -33,4 +33,3 @@ _distance = _action select 9;
 if ((_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && _condition && _conditionShow) then {
 	call _statement;
 };
-

@@ -156,4 +156,3 @@ class cfgRecoils {
 	recoil_recoiless_weapon[] = {0.5,0,0.04};
 	recoil_empty[] = {0,0,0};
 };
-

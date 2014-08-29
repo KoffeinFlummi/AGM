@@ -13,4 +13,3 @@ _this spawn {
 
 	[_vehicle, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _vehicle] call AGM_Core_fnc_execRemoteFnc;
 };
-

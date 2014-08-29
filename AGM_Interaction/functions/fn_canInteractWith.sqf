@@ -10,4 +10,3 @@ if (isNil "_isCivilian") then {_isCivilian = true};
 alive _unit
 && [side _unit != playerSide, side group _unit == civilian] select _isCivilian
 //&& {count (weapons _unit) == 0}
-

@@ -67,4 +67,3 @@ _ctrlDigitE2 ctrlShow false;
 _ctrlDigitE3 ctrlShow false;
 
 AGM_isVectorReady = true;
-

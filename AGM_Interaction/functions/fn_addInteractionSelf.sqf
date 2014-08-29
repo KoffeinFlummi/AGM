@@ -54,4 +54,3 @@ _actions set [_count, [_displayName, _condition, _statement, _showDisabled, _pri
 
 player setVariable ["AGM_InteractionsSelf", [_id, _actionIDs, _actions], false];
 _id
-

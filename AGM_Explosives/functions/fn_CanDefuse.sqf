@@ -37,4 +37,3 @@ if (_distCore < _distBase) then {
 };
 if (isNil "_distance") exitWith {false};
 _distance < 4
-

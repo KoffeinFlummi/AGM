@@ -17,4 +17,3 @@ if (_unit == player) then {
 
 	[_message] call AGM_Core_fnc_displayTextStructured;
 };
-

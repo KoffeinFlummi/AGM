@@ -95,4 +95,3 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
   };
 } forEach _backPackMagsToRemove;
 
-

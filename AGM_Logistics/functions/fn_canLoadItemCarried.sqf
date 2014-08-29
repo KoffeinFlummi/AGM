@@ -23,4 +23,3 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) the
 	};
 };
 _result
-

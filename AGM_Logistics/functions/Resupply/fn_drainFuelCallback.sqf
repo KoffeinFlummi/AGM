@@ -29,4 +29,3 @@ _displayName = getText (configfile >> "CfgVehicles" >> typeOf _vehicle >> "displ
 
 _text = format [localize "STR_AGM_Resupply_DrainedFuel", _displayName];
 [_text] call AGM_Core_fnc_displayTextStructured;
-
