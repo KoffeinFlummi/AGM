@@ -135,28 +135,28 @@
       <Italian>M-ATV (GMG)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_cannon_Name">
-      <English>Merkava Mk.4 M</English>
-      <German>Merkava Mk.4 M</German>
-      <Spanish>Merkava Mk.4 M</Spanish>
-      <Polish>Merkawa Mk.4 M</Polish>
-      <Czech>Merkava Mk.4 M</Czech>
-      <French>Merkava Mk.4 M</French>
-      <Russian>Меркава Mk.4 M</Russian>
-      <Portuguese>Merkava Mk.4 M</Portuguese>
-      <Hungarian>Merkava Mk.4 M</Hungarian>
-      <Italian>Merkava Mk.4 M</Italian>
+      <English>Merkava Mk IV M</English>
+      <German>Merkava Mk IV M</German>
+      <Spanish>Merkava Mk IV M</Spanish>
+      <Polish>Merkawa Mk IV M</Polish>
+      <Czech>Merkava Mk IV M</Czech>
+      <French>Merkava Mk IV M</French>
+      <Russian>Меркава Mk IV M</Russian>
+      <Portuguese>Merkava Mk IV M</Portuguese>
+      <Hungarian>Merkava Mk IV M</Hungarian>
+      <Italian>Merkava Mk IV M</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_TUSK_Name">
-      <English>Merkava Mk.4 LIC</English>
-      <German>Merkava Mk.4 LIC</German>
-      <Spanish>Merkava Mk.4 LIC</Spanish>
-      <Polish>Merkawa Mk.4 LIC</Polish>
-      <Czech>Merkava Mk.4 LIC</Czech>
-      <French>Merkava Mk.4 LIC</French>
-      <Russian>Меркава Mk.4 LIC</Russian>
-      <Portuguese>Merkava Mk.4 LIC</Portuguese>
-      <Hungarian>Merkava Mk.4 LIC</Hungarian>
-      <Italian>Merkava Mk.4 LIC</Italian>
+      <English>Merkava Mk IV LIC</English>
+      <German>Merkava Mk IV LIC</German>
+      <Spanish>Merkava Mk IV LIC</Spanish>
+      <Polish>Merkawa Mk IV LIC</Polish>
+      <Czech>Merkava Mk IV LIC</Czech>
+      <French>Merkava Mk IV LIC</French>
+      <Russian>Меркава Mk IV LIC</Russian>
+      <Portuguese>Merkava Mk IV LIC</Portuguese>
+      <Hungarian>Merkava Mk IV LIC</Hungarian>
+      <Italian>Merkava Mk IV LIC</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MBT_01_arty_Name">
       <English>Sholef</English>
@@ -784,7 +784,7 @@
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_02_Name">
       <English>Yak-130</English>
-      <German>Jak-130</German>
+      <German>Yak-130</German>
       <Spanish>Yak-130</Spanish>
       <Polish>Jak-130</Polish>
       <Czech>Jak-130</Czech>
