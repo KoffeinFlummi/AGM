@@ -15,7 +15,7 @@ _this spawn {
     _airFriction = 0.0007;
   };
 // powder temp effect
-_round setVelocity ((velocity _round) vectorMultiply (((AGM_Wind_currectTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ));
+_round setVelocity ((velocity _round) vectorMultiply (((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ));
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
