@@ -10,6 +10,7 @@
       <Polish>Przepakuj magazynki</Polish>
       <Czech>Přepáskovat Zásobníky</Czech>
       <Italian>Riempi caricatori</Italian>
+      <Italian>Ricarica Caricatori</Italian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
       <English>Select Magazine Menu</English>
@@ -19,6 +20,7 @@
       <Polish>Wybierz menu magazynków</Polish>
       <Czech>Zvolit Menu Zásobníků</Czech>
       <Italian>Menu di selezione caricatori</Italian>
+      <Italian>Seleziona Menù di Ricarica</Italian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
       <English>Select Mag</English>
@@ -28,6 +30,7 @@
       <Polish>Wybierz magazynek</Polish>
       <Czech>Zvolit Zásobník</Czech>
       <Italian>Seleziona caricatore</Italian>
+      <Italian>Seleziona Caricatore</Italian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
@@ -37,6 +40,7 @@
       <Polish>Przepakowywanie magazynków ...</Polish>
       <Czech>Páskuji Zásobníky ...</Czech>
       <Italian>Riempimento caricatori ...</Italian>
+      <Italian>Sto ricaricando le munizioni ...</Italian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
@@ -46,6 +50,7 @@
       <Polish>Magazynki przepakowane</Polish>
       <Czech>Přepáskované Zásobníky</Czech>
       <Italian>Caricatori riempiti</Italian>
+      <Italian>Caricatore ricaricato</Italian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
@@ -55,6 +60,7 @@
       <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
       <Czech>%1 plný zásobník(y) a %2 munice navíc</Czech>
       <Italian>%1 caricatore(i) pieno(i) e %2 proiettile(i) extra</Italian>
+      <Italian>%1 caricatore/i pieno e %2 munizioni extra</Italian>
     </Key>
 
 

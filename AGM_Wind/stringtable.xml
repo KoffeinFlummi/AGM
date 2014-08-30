@@ -12,6 +12,7 @@
       <Russian>Нет ветра</Russian>
       <Hungarian>Nincs mérhető szél</Hungarian>
       <Italian>Nessun vento misurabile</Italian>
+      <Italian>Nessun vento misurabile</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_NoMeasurable">
       <English>No measurable</English>
@@ -22,6 +23,7 @@
       <French>Non mesurable</French>
       <Russian>Не заметный</Russian>
       <Hungarian>Nem mérhető</Hungarian>
+      <Italian>Non misurabile</Italian>
       <Italian>Non misurabile</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_VeryLight">
@@ -34,6 +36,7 @@
       <Russian>Очень слабый</Russian>
       <Hungarian>Nagyon gyenge</Hungarian>
       <Italian>Molto leggero</Italian>
+      <Italian>Vento molto leggero</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_Light">
       <English>Light</English>
@@ -44,6 +47,7 @@
       <French>Léger</French>
       <Russian>Слабый</Russian>
       <Hungarian>Gyenge</Hungarian>
+      <Italian>Leggero</Italian>
       <Italian>Leggero</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_Moderate">
@@ -56,6 +60,7 @@
       <Russian>Умеренный</Russian>
       <Hungarian>Közepes</Hungarian>
       <Italian>Moderato</Italian>
+      <Italian>Moderato</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_Strong">
       <English>Strong</English>
@@ -66,6 +71,7 @@
       <French>Fort</French>
       <Russian>Сильный</Russian>
       <Hungarian>Erős</Hungarian>
+      <Italian>Forte</Italian>
       <Italian>Forte</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_WindFromThe">
@@ -78,6 +84,7 @@
       <Russian>ветер с</Russian>
       <Hungarian>szélirány:</Hungarian>
       <Italian>Vento da</Italian>
+      <Italian>Vento da</Italian>
     </Key>
 
     <Key ID="STR_AGM_Kestrel_Name">
@@ -88,6 +95,7 @@
       <Polish>Kestrel 4500NV</Polish>
       <Czech>Kestrel 4500NV</Czech>
       <Italian>Kestrel 4500NV</Italian>
+      <Italian>Kestrel 4500NV</Italian>
     </Key>
     <Key ID="STR_AGM_Kestrel_Description">
       <English>Applied Ballistics Meter</English>
@@ -97,6 +105,7 @@
       <Polish>Urządzenie do monitorowania pogody</Polish>
       <Czech>Zařízení pro měření vítru</Czech>
       <Italian>Anemometro balistico</Italian>
+      <Italian>Monitoraggio Balistico Attivo</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_OpenKestrel">
       <English>Open Kestrel</English>
@@ -106,6 +115,7 @@
       <Polish>Otwórz Kestrel</Polish>
       <Czech>Otevřít Kestrel</Czech>
       <Italian>Apri Kestrel</Italian>
+      <Italian>Apri Kestrel</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
@@ -114,6 +124,7 @@
       <French>Fermer Kestrel</French>
       <Polish>Zamknij Kestrel</Polish>
       <Czech>Zavřít Kestrel</Czech>
+      <Italian>Chiudi Kestrel</Italian>
       <Italian>Chiudi Kestrel</Italian>
     </Key>
 
