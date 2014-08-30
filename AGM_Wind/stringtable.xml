@@ -33,7 +33,7 @@
       <French>Très léger</French>
       <Russian>Очень слабый</Russian>
       <Hungarian>Nagyon gyenge</Hungarian>
-      <Italian>Molto leggero</Italian>
+      <Italian>Vento molto leggero</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_Light">
       <English>Light</English>
@@ -96,7 +96,7 @@
       <French>Applied Ballistics Meter</French>
       <Polish>Urządzenie do monitorowania pogody</Polish>
       <Czech>Zařízení pro měření vítru</Czech>
-      <Italian>Anemometro balistico</Italian>
+      <Italian>Monitoraggio Balistico Attivo</Italian>
     </Key>
     <Key ID="STR_AGM_Wind_OpenKestrel">
       <English>Open Kestrel</English>

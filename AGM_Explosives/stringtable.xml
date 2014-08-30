@@ -35,7 +35,7 @@
       <Polish>Kod ładunku: %1</Polish>
       <French>Code explosif: %1</French>
       <Czech>Kód výbušniny: %1</Czech>
-      <Italian>Codice esplosivo: %1</Italian>
+      <Italian>Codice dell'esplosivo : %1</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceAction">
       <English>Place</English>
@@ -53,13 +53,14 @@
       <Polish>Anuluj</Polish>
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
-      <Italian>Cancella</Italian>
+      <Italian>Annulla</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_ScrollAction">
       <English>+ Modifier, rotates</English>
       <German>+ Modifikator, drehen</German>
       <Spanish>+ Modificador, rota</Spanish>
       <French>+ Modificateur, tourner</French>
+      <Italian>+ Modificatore, rotazione</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
       <English>Turn On Thor III</English>
@@ -95,7 +96,7 @@
       <Polish>Używany do zdalnego detonowania ładunków wybuchowych</Polish>
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Používaný ke vzdálenému odpalování výbušnin</Czech>
-      <Italian>Usato per detonare in modo remoto gli esplosivi</Italian>
+      <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_clacker_displayName">
       <English>M57 Firing Device</English>
@@ -113,7 +114,7 @@
       <Polish>Używany do zdalnego detonowania ładunków wybuchowych</Polish>
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
-      <Italian>Usato per detonare in modo remoto gli esplosivi</Italian>
+      <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_M26_displayName">
       <English>MK26 Firing Device</English>
@@ -122,6 +123,7 @@
       <Polish>Detonator MK26</Polish>
       <French>MK26 Dispositif de mise à feu</French>
       <Czech>MK26 Odpalovací Zařízení</Czech>
+      <Italian>Detonatore MK26</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_MK16_displayName">
       <English>M152 RAMS</English>
@@ -133,6 +135,7 @@
       <Portuguese>M152 RAMS</Portuguese>
       <Russian>M152 RAMS</Russian>
       <Spanish>M152 RAMS</Spanish>
+      <Italian>M152 RAMS</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_displayName">
       <English>Defusal Kit</English>
@@ -141,7 +144,7 @@
       <Polish>Zestaw do rozbrajania</Polish>
       <French>Kit de désamorçage</French>
       <Czech>Zneškodňovací sada</Czech>
-      <Italian>Kit di disarmo</Italian>
+      <Italian>Kit E.O.D.</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_description">
       <English>Allows defusing of explosives</English>
@@ -150,7 +153,7 @@
       <Polish>Umożliwia rozbrojenie ładunków wybuchowych</Polish>
       <French>Permet de désamorçer des explosifs</French>
       <Czech>Dovoluje zneškodňování výbušnin</Czech>
-      <Italian>Permette di disarmare gli esplosivi</Italian>
+      <Italian>Consente la disattivazione degli ordigni esplosivi</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_AddToSpeedDial">
       <English>Add to Speed Dial</English>
@@ -168,7 +171,7 @@
       <Polish>Usuń</Polish>
       <French>Désamorçé</French>
       <Czech>Čistý</Czech>
-      <Italian>Pulire</Italian>
+      <Italian>Libera</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Dial">
       <English>Dial</English>
@@ -177,7 +180,7 @@
       <Polish>Wybierz mumer</Polish>
       <French>Composer</French>
       <Czech>Vytočit</Czech>
-      <Italian>Componi</Italian>
+      <Italian>Composizione numero</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Up">
       <English>Up</English>
@@ -186,7 +189,7 @@
       <Polish>W górę</Polish>
       <French>Haut</French>
       <Czech>Nahoru</Czech>
-      <Italian>Su</Italian>
+      <Italian>Sopra</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Down">
       <English>Down</English>
@@ -204,7 +207,7 @@
       <Polish>Anuluj</Polish>
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
-      <Italian>Cancella</Italian>
+      <Italian>Annulla</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_DetonateMenu">
       <English>Detonate Menu</English>
@@ -213,7 +216,7 @@
       <Polish>Menu detonowania</Polish>
       <French>Menu de mise à feu</French>
       <Czech>Menu Detonace</Czech>
-      <Italian>Menu di detonazione</Italian>
+      <Italian>Menù di detonazione</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceMenu">
       <English>Place Menu</English>
@@ -222,7 +225,7 @@
       <Polish>Menu umieszczania</Polish>
       <French>Menu Placement</French>
       <Czech>Menu Umístění</Czech>
-      <Italian>Menu di piazzamento</Italian>
+      <Italian>Menù di collocamento</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_Defuse">
       <English>Defuse</English>
@@ -231,7 +234,7 @@
       <Polish>Rozbrój</Polish>
       <French>Désamorçer</French>
       <Czech>Zneškodnit</Czech>
-      <Italian>Disarma</Italian>
+      <Italian>Disinnesca</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusingExplosive">
       <English>Defusing Explosive...</English>
@@ -240,7 +243,7 @@
       <Polish>Rozbrajanie ładunku...</Polish>
       <French>Désamorçage des explosifs...</French>
       <Czech>Zneškodňuji Výbušninu...</Czech>
-      <Italian>Disarmo esplosivo...</Italian>
+      <Italian>Esposivo in fase di disattivazione...</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_timerName">
       <English>Timer</English>
@@ -249,7 +252,7 @@
       <Polish>Czasomierz</Polish>
       <French>Compte à rebours</French>
       <Czech>Časovač</Czech>
-      <Italian>Timer</Italian>
+      <Italian>Cronometro</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_TimerMenu">
       <English>Time: %1m %2s</English>
@@ -258,7 +261,7 @@
       <Polish>Czas: %1m %2s</Polish>
       <French>Temps : %1m %2s</French>
       <Czech>Čas: %1m %2s</Czech>
-      <Italian>Tempo: %1m %2s</Italian>
+      <Italian>Tempo : %1m %2s</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_SetTime">
       <English>Set Time</English>
@@ -267,7 +270,7 @@
       <Polish>Ustaw czas</Polish>
       <French>Régler compte à rebours</French>
       <Czech>Nastavit Čas</Czech>
-      <Italian>Configura tempo</Italian>
+      <Italian>Modifica il conto alla rovescia</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_TriggerMenu">
       <English>Select a Trigger</English>
@@ -276,7 +279,7 @@
       <Polish>Wybierz zapalnik</Polish>
       <French>Sélectionner une mise à feu</French>
       <Czech>Zvolit Detonátor</Czech>
-      <Italian>Seleziona un detonatore</Italian>
+      <Italian>Seleziona un Attivatore</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_SelectTrigger">
       <English>Select</English>
@@ -294,7 +297,7 @@
       <German>Druckplatte</German>
       <French>Plaque de pression</French>
       <Czech>Nášlapná nástraha</Czech>
-      <Italian>Piastra a pressione</Italian>
+      <Italian>Piastra a Pressione</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_TripWire">
       <English>Tripwire</English>
@@ -303,7 +306,7 @@
       <German>Stolperdraht</German>
       <French>Fil de butée</French>
       <Czech>Nástražný drát</Czech>
-      <Italian>Cavo di trazione</Italian>
+      <Italian>Filo a Inciampo</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_IRSensor">
       <English>IR Sensor</English>
@@ -321,7 +324,7 @@
       <German>Keine Auslöser vorhanden für %1</German>
       <French>Pas de mise à feu disponible pour %1</French>
       <Czech>Žádný detonátor k dispozici pro %1</Czech>
-      <Italian>Nessun detonatore disponibile per %1</Italian>
+      <Italian>Nessun attivatore disponibile per %1</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_SLAME_IRSensor">
       <English>IR Sensor (Side Attack)</English>
@@ -339,13 +342,14 @@
       <German>Magnetfeldsensor (Bodenangriff)</German>
       <French>Capteur Magnétique (Attaque par le bas)</French>
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
-      <Italian>Sensore IM (Attacco inferiore)</Italian>
+      <Italian>Sensore Magnetico di Prossimità (Attacco inferiore)</Italian>
     </Key>
     <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
       <English>No explosives on trigger.</English>
       <German>Keine Sprengladungen auf diesem Auslöser.</German>
       <Spanish>Ningún explosivo en el detonador.</Spanish>
       <French>Pas d'explosif à mettre à feu.</French>
+      <Italian>Nessun esplosivo sul sensore.</Italian>
     </Key>
   </Package>
 </Project>

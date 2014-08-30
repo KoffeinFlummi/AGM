@@ -9,6 +9,7 @@
       <French>Vector IV</French>
       <Polish>Vector IV</Polish>
       <Czech>Vector IV</Czech>
+      <Italian>Vector IV</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
@@ -35,7 +36,7 @@
       <French>Vector - Touche Distance</French>
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
-      <Italian>Vector - Tasto distanza</Italian>
+      <Italian>Vecto - Tasto Distanza</Italian>
     </Key>
 
   </Package>

@@ -11,7 +11,7 @@
       <French>Limiteur de vitesse Activé</French>
       <Russian>Ограничение скорости включено</Russian>
       <Hungarian>Sebességkorlát bekapcsolva</Hungarian>
-      <Italian>Limitatore di velocità attivato</Italian>
+      <Italian>Limitatore Attivo</Italian>
     </Key>
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
@@ -22,7 +22,7 @@
       <French>Limiteur de vitesse Désactivé</French>
       <Russian>Ограничение скорости выключено</Russian>
       <Hungarian>Sebességkorlát kikapcsolva</Hungarian>
-      <Italian>Limitatore di velocità disattivato</Italian>
+      <Italian>Limitatore Non Attivo</Italian>
     </Key>
 
     <Key ID="STR_AGM_SpeedLimiter">
@@ -34,7 +34,7 @@
       <French>Limiteur de vitesse</French>
       <Russian>Ограничение скорости</Russian>
       <Hungarian>Sebességkorlát</Hungarian>
-      <Italian>Limitatore di velocità</Italian>
+      <Italian>Limitatore di Velocità</Italian>
     </Key>
   </Package>
 </Project>

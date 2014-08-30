@@ -11,6 +11,7 @@
       <French>Appuyer l'arme</French>
       <Russian>Зафиксировать оружие</Russian>
       <Hungarian>Fegyver kitámasztása</Hungarian>
+      <Italian>Appoggia l'arma</Italian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodDeployed">
@@ -22,6 +23,7 @@
       <French>Bipied déployé</French>
       <Russian>Сошки установлены</Russian>
       <Hungarian>Állványon</Hungarian>
+      <Italian>Bipiede appoggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponRested">
       <English>Weapon rested</English>
@@ -32,6 +34,7 @@
       <French>Arme appuyée</French>
       <Russian>Оружие зафиксировано</Russian>
       <Hungarian>Fegyver kitámasztva</Hungarian>
+      <Italian>Arma appoggiata</Italian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodUndeployed">
@@ -43,6 +46,7 @@
       <French>Bipied replié</French>
       <Russian>Сошки убраны</Russian>
       <Hungarian>Állvány csukva</Hungarian>
+      <Italian>Bipiede richiuso</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponLifted">
       <English>Weapon lifted</English>
@@ -53,6 +57,7 @@
       <French>Arme relevée</French>
       <Russian>Оружие не зафиксировано</Russian>
       <Hungarian>Fegyver nincs támasztva</Hungarian>
+      <Italian>Arma sollevata</Italian>
     </Key>
 
   </Package>

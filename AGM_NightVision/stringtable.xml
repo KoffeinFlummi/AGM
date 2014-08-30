@@ -23,7 +23,7 @@
       <French>Augmenter la luminosité des JVN</French>
       <Russian>Увеличить яркость ПНВ</Russian>
       <Hungarian>Fényerő növelése</Hungarian>
-      <Italian>Incrementa luminosità visore notturno</Italian>
+      <Italian>Aumenta la luminosità dell'NVG</Italian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -34,7 +34,7 @@
       <French>Baisser la luminosité des JVN</French>
       <Russian>Уменьшить яркость ПНВ</Russian>
       <Hungarian>Fényerő csökkentése</Hungarian>
-      <Italian>Decrementa luminosità visore notturno</Italian>
+      <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>
 
   </Package>
