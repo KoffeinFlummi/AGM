@@ -64,6 +64,7 @@ def replace_entries(oldpath, newpath, language, breakdown):
     if breakdown:
       print("  Merging %s translation for %s" % (language, keyid))
 
+    print(newkey.getAttribute("ID"))
     newentry = newkey.getElementsByTagName(language)[0].firstChild
 
     try:
