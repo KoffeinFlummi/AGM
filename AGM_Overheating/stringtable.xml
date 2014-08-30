@@ -12,7 +12,6 @@
       <Russian>Запасной ствол</Russian>
       <Hungarian>Tartalék cső</Hungarian>
       <Italian>Barile di ricambio</Italian>
-      <Italian>Canna di ricambio</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
       <English>Use to swap barrel.</English>
@@ -24,7 +23,6 @@
       <Russian>Используется для смены ствола.</Russian>
       <Hungarian>Cső kicseréléséhez.</Hungarian>
       <Italian>Serve ad intercambiare il barile.</Italian>
-      <Italian>Usata per cambiare la canna.</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponJammed">
       <English>Weapon jammed!</English>
@@ -35,7 +33,6 @@
       <French>Arme enrayée</French>
       <Russian>Оружие заклинило!</Russian>
       <Hungarian>Elakadt a fegyver!</Hungarian>
-      <Italian>Arma inceppata!</Italian>
       <Italian>Arma inceppata!</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_UnjamWeapon">
@@ -48,7 +45,6 @@
       <Russian>Исправить клин оружия.</Russian>
       <Hungarian>Hárítsd el az akadályt!</Hungarian>
       <Italian>Rimuovi inceppo</Italian>
-      <Italian>Ripulisci l'arma</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
       <English>Jam cleared</English>
@@ -60,7 +56,6 @@
       <Russian>Оружие исправлено</Russian>
       <Hungarian>Akadály elhárítva!</Hungarian>
       <Italian>Inceppo rimosso</Italian>
-      <Italian>Arma pronta al fuoco</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwapBarrel">
       <English>Swap barrel</English>
@@ -72,7 +67,6 @@
       <Russian>Сменить ствол</Russian>
       <Hungarian>Cserélj csövet!</Hungarian>
       <Italian>Cambia barile</Italian>
-      <Italian>Sostiuisci la canna</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappingBarrel">
       <English>Swapping barrel...</English>
@@ -84,7 +78,6 @@
       <Russian>Смена ствола...</Russian>
       <Hungarian>Cső cserélése...</Hungarian>
       <Italian>Cambio del barile...</Italian>
-      <Italian>Sto sostituendo la canna ...</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappedBarrel">
       <English>Swapped barrel</English>
@@ -96,7 +89,6 @@
       <Russian>Ствол сменен</Russian>
       <Hungarian>Cső kicserélve!</Hungarian>
       <Italian>Barile cambiato</Italian>
-      <Italian>Canna sostituita</Italian>
     </Key>
 
 
@@ -109,7 +101,6 @@
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu zbraně</Czech>
       <Italian>Controlla temperatura dell'arma</Italian>
-      <Italian>Controlla la temperatura della canna</Italian>
     </Key>
 
     <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
@@ -121,7 +112,6 @@
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu</Czech>
       <Italian>Controlla temperatura</Italian>
-      <Italian>Controlla la temperatura</Italian>
     </Key>
 
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
@@ -133,7 +123,6 @@
       <Hungarian>Hőmérséklet ellenőrzése...</Hungarian>
       <Czech>Zjišťuju teplotu ...</Czech>
       <Italian>Controllo temperatura ...</Italian>
-      <Italian>Sto controllando la temperatura ...</Italian>
     </Key>
 
     <Key ID="STR_AGM_Overheating_Temperature">
@@ -144,7 +133,6 @@
       <French>Température</French>
       <Hungarian>Hőmérséklet</Hungarian>
       <Czech>Teplota</Czech>
-      <Italian>Temperatura</Italian>
       <Italian>Temperatura</Italian>
     </Key>
 

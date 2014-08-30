@@ -9,7 +9,6 @@
       <French>Vector IV</French>
       <Polish>Vector IV</Polish>
       <Czech>Vector IV</Czech>
-      <Italian>Vector IV</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
@@ -18,7 +17,6 @@
       <French>Télémètre</French>
       <Polish>Dalmierz</Polish>
       <Czech>Dálkoměr</Czech>
-      <Italian>Telemetro</Italian>
       <Italian>Telemetro</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
@@ -29,7 +27,6 @@
       <Polish>Vector - Azymut</Polish>
       <Czech>Vector - Azimut Klávesa</Czech>
       <Italian>Vector - Tasto Azimuth</Italian>
-      <Italian>Vector - Tasto Azimuth</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
@@ -39,7 +36,6 @@
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
       <Italian>Vector - Tasto distanza</Italian>
-      <Italian>Vecto - Tasto Distanza</Italian>
     </Key>
 
   </Package>

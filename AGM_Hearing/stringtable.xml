@@ -12,7 +12,6 @@
       <French>Bouchons Anti-Bruits</French>
       <Hungarian>Füldugó</Hungarian>
       <Italian>Tappi per orecchie</Italian>
-      <Italian>Tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
       <English>Protective Ear Buds allow the wearer to be near loud weaponry without damage to his hearing.</English>
@@ -24,7 +23,6 @@
       <French>Bouchons Anti-Bruits pour la prévention des traumatismes sonores aigus.</French>
       <Hungarian>Erősebb hanghatásoktól védő füldugó, megakadályozza a nagy hanggal járó fegyverzettől való halláskárosodást.</Hungarian>
       <Italian>I tappi protettivi per le orecchie, consentono di utilizzare vari armamenti senza danneggiare l'udito.</Italian>
-      <Italian>Proteggono l'apparato uditivo, permettendo a chi li indossa di resistere ai suoni particolarmente forti senza alcun danno.</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
@@ -36,7 +34,6 @@
       <French>Bouchons mis</French>
       <Hungarian>Füldugó berakva</Hungarian>
       <Italian>Tappi per orecchie messi</Italian>
-      <Italian>Indossa i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
       <English>Earplugs out</English>
@@ -48,7 +45,6 @@
       <French>Bouchons enlevés</French>
       <Hungarian>Füldugó kivéve</Hungarian>
       <Italian>Tappi per orecchie tolti</Italian>
-      <Italian>Levati i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
       <English>You have no ear plugs</English>
@@ -60,7 +56,6 @@
       <French>Vous n'avez pas de Bouchons Anti-Bruits</French>
       <Hungarian>Nincs füldugód</Hungarian>
       <Italian>Non hai tappi per orecchie</Italian>
-      <Italian>Non hai i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
       <English>No inventory space</English>
@@ -70,7 +65,6 @@
       <French>Pas de place dans l'inventaire</French>
       <Czech>Není místo v inventáři</Czech>
       <Italian>Nessuno spazio nell'inventario</Italian>
-      <Italian>Non hai abbastanza spazio</Italian>
     </Key>
 
   </Package>

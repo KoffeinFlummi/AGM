@@ -26,7 +26,6 @@
       <Czech>XM312 (Vysoký)</Czech>
       <Polish>XM312 (Wysoki)</Polish>
       <Italian>XM312 (Alta)</Italian>
-      <Italian>XM312 (Alta)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_GMG_01_Name">
       <English>XM307</English>
@@ -51,7 +50,6 @@
       <French>XM307 (Haut)</French>
       <Czech>XM307 (Vysoký)</Czech>
       <Polish>XM307 (Wysoki)</Polish>
-      <Italian>XM307 (Alta)</Italian>
       <Italian>XM307 (Alta)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AT_Name">
@@ -189,7 +187,6 @@
       <French>HEMTT Transport (Couvert)</French>
       <Russian>HEMTT Транспортный (крытый)</Russian>
       <Italian>HEMTT da trasporto (coperto)</Italian>
-      <Italian>HEMTT da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_mover_Name">
       <English>HEMTT</English>
@@ -218,7 +215,6 @@
       <French>HEMTT Médical</French>
       <Russian>HEMTT Медицинский</Russian>
       <Italian>HEMTT Medico</Italian>
-      <Italian>HEMTT Medico</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_ammo_Name">
       <English>HEMTT Ammo</English>
@@ -228,7 +224,6 @@
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
       <Russian>HEMTT Боеприпасы</Russian>
-      <Italian>HEMTT di rifornimento munizioni</Italian>
       <Italian>HEMTT di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_fuel_Name">
@@ -240,7 +235,6 @@
       <French>HEMTT Citerne</French>
       <Russian>HEMTT Заправщик</Russian>
       <Italian>HEMTT di rifornimento carburante</Italian>
-      <Italian>HEMTT di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_Repair_Name">
       <English>HEMTT Repair</English>
@@ -250,7 +244,6 @@
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
       <Russian>HEMTT Ремонт</Russian>
-      <Italian>HEMTT Riparatore</Italian>
       <Italian>HEMTT Riparatore</Italian>
     </Key>
 
@@ -318,7 +311,6 @@
       <French>Kamaz Transport</French>
       <Russian>Камаз Траспортный</Russian>
       <Italian>Kamaz da trasporto</Italian>
-      <Italian>Kamaz da trasporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_covered_Name">
       <English>Kamaz Transport (covered)</English>
@@ -328,7 +320,6 @@
       <Czech>Kamaz Valník (krytý)</Czech>
       <French>Kamaz Transport (Couvert)</French>
       <Russian>Камаз Траспортный (Крытый)</Russian>
-      <Italian>Kamaz da trasporto (coperto)</Italian>
       <Italian>Kamaz da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
@@ -340,7 +331,6 @@
       <French>Kamaz Munitions</French>
       <Russian>Камаз Боеприпасы</Russian>
       <Italian>Kamaz di rifornimento munizioni</Italian>
-      <Italian>Kamaz di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_fuel_Name">
       <English>Kamaz Fuel</English>
@@ -350,7 +340,6 @@
       <Czech>Kamaz Cisterna</Czech>
       <French>Kamaz Citerne</French>
       <Russian>Камаз Заправщик</Russian>
-      <Italian>Kamaz di rifornimento carburante</Italian>
       <Italian>Kamaz di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_box_Name">
@@ -362,7 +351,6 @@
       <French>Kamaz Réparation</French>
       <Russian>Камаз Ремонтный</Russian>
       <Italian>Kamaz riparatore</Italian>
-      <Italian>Kamaz riparatore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_medical_Name">
       <English>Kamaz Medical</English>
@@ -372,7 +360,6 @@
       <Czech>Kamaz Zdravotnický</Czech>
       <French>Kamaz Médical</French>
       <Russian>Камаз Медицинский</Russian>
-      <Italian>Kamaz Medico</Italian>
       <Italian>Kamaz Medico</Italian>
     </Key>
 
@@ -458,7 +445,6 @@
       <French>Typhoon Transport</French>
       <Russian>Typhoon Транспортный</Russian>
       <Italian>Typhoon da trasporto</Italian>
-      <Italian>Typhoon da trasporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_covered_Name">
       <English>Typhoon Transport (covered)</English>
@@ -468,7 +454,6 @@
       <Czech>Typhoon Valník (krytý)</Czech>
       <French>Typhoon Transport (Couvert)</French>
       <Russian>Typhoon Транспортный (Крытый)</Russian>
-      <Italian>Typhoon da trasporto (coperto)</Italian>
       <Italian>Typhoon da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_device_Name">
@@ -480,7 +465,6 @@
       <French>Typhoon Appareil</French>
       <Russian>Typhoon Техника</Russian>
       <Italian>Typhoon per dispositivo</Italian>
-      <Italian>Typhoon per dispositivo</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_ammo_Name">
       <English>Typhoon Ammo</English>
@@ -490,7 +474,6 @@
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
       <Russian>Typhoon Боеприпасы</Russian>
-      <Italian>Typhoon di rifornimento munizioni</Italian>
       <Italian>Typhoon di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_fuel_Name">
@@ -502,7 +485,6 @@
       <French>Typhoon Citerne</French>
       <Russian>Typhoon Заправщик</Russian>
       <Italian>Typhoon di rifornimento carburante</Italian>
-      <Italian>Typhoon di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_repair_Name">
       <English>Typhoon Repair</English>
@@ -513,7 +495,6 @@
       <French>Typhoon Réparation</French>
       <Russian>Typhoon Ремонтный</Russian>
       <Italian>Typhoon riparatore</Italian>
-      <Italian>Typhoon riparatore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_medical_Name">
       <English>Typhoon Medical</English>
@@ -523,7 +504,6 @@
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon Médical</French>
       <Russian>Typhoon Медицинский</Russian>
-      <Italian>Typhoon medico</Italian>
       <Italian>Typhoon medico</Italian>
     </Key>
 
@@ -581,7 +561,6 @@
       <French>AW159 Wildcat (Non-Armé)</French>
       <Russian>AW159 Wildcat (невооруженный)</Russian>
       <Italian>AW159 Wildcat (disarmato)</Italian>
-      <Italian>AW159 Wildcat (disarmato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_02_Name">
       <English>AW101 Merlin</English>
@@ -627,7 +606,6 @@
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
       <French>Ka-60 Kasatka (Non-Armé)</French>
       <Russian>Ka-60 Касатка (невооруженный)</Russian>
-      <Italian>Ka-60 Kastka (disarmato)</Italian>
       <Italian>Ka-60 Kastka (disarmato)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_02_Name">

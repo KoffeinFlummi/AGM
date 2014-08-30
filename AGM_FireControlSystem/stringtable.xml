@@ -12,7 +12,6 @@
       <Russian>Установить зероинг</Russian>
       <Hungarian>Cél jelölése</Hungarian>
       <Italian>Bersaglio Laser</Italian>
-      <Italian>Designatore Laser</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
@@ -24,7 +23,6 @@
       <Russian>Зероинг</Russian>
       <Hungarian>Zérózás</Hungarian>
       <Italian>Azzerato a</Italian>
-      <Italian>Azzeramento a</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeUp">
       <English>Adjust FCS Range (Up)</English>
@@ -34,7 +32,6 @@
       <Czech>Nastavit FCS Náměr (nahoru)</Czech>
       <French>Augmenter la distance du SCT</French>
       <Italian>Regolazione gamma FCS (Sù)</Italian>
-      <Italian>Aumentare la distanza dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeDown">
       <English>Adjust FCS Range (Down)</English>
@@ -44,7 +41,6 @@
       <Czech>Nastavit FCS Náměr (dolů)</Czech>
       <French>Réduire la distance du SCT</French>
       <Italian>Regolazione gamma FCS (Giù)</Italian>
-      <Italian>Ridurre la distanza dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ResetFCS">
       <English>Reset FCS</English>
@@ -54,7 +50,6 @@
       <Polish>Resetuj FCS</Polish>
       <Czech>Resetovat FCS</Czech>
       <Italian>Azzera FCS</Italian>
-      <Italian>Azzeramento dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_HasBeenReset">
       <English>FCS has been reset.</English>
@@ -64,7 +59,6 @@
       <Polish>FCS został zresetowany.</Polish>
       <Czech>FCS byl resetován.</Czech>
       <Italian>FCS azzerato.</Italian>
-      <Italian>L'FCS è stato azzerato</Italian>
     </Key>
   </Package>
 </Project>

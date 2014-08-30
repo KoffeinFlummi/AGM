@@ -11,7 +11,6 @@
       <French>Changer type de lancer de grenade</French>
       <Russian>Сменить режим броска гранаты</Russian>
       <Hungarian>Gránátdobás mód váltás</Hungarian>
-      <Italian>Cambia tipo di granata</Italian>
     </Key>
 
     <Key ID="STR_AGM_Grenades_NormalThrow">
@@ -23,7 +22,6 @@
       <French>Lancer Normal</French>
       <Russian>Нормальный бросок</Russian>
       <Hungarian>Normál dobás</Hungarian>
-      <Italian>Lancio normale</Italian>
     </Key>
     <Key ID="STR_AGM_Grenades_HighThrow">
       <English>High Throw</English>
@@ -34,7 +32,6 @@
       <French>Lancer Haut</French>
       <Russian>Высокий бросок</Russian>
       <Hungarian>Magas dobás</Hungarian>
-      <Italian>Lancio verso l'alto</Italian>
     </Key>
     <Key ID="STR_AGM_Grenades_PreciseThrow">
       <English>Precise Throw</English>
@@ -45,7 +42,6 @@
       <French>Lancer Précis</French>
       <Russian>Точный бросок</Russian>
       <Hungarian>Pontos dobás</Hungarian>
-      <Italian>Lancio preciso</Italian>
     </Key>
     <Key ID="STR_AGM_Grenades_RollGrenade">
       <English>Roll Grenade</English>
@@ -56,7 +52,6 @@
       <French>Lancer Roulé</French>
       <Russian>Катить гранату</Russian>
       <Hungarian>Gurítás</Hungarian>
-      <Italian>Fai rotolare la granata</Italian>
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
@@ -67,7 +62,6 @@
       <French>Lâcher la grenade</French>
       <Russian>Бросить себе под ноги</Russian>
       <Hungarian>Ejtés</Hungarian>
-      <Italian>Lascia la granata</Italian>
     </Key>
 
     <Key ID="STR_AGM_Grenades_M84_Name">
@@ -79,7 +73,6 @@
       <Czech>M84 Zábleskový Granát</Czech>
       <Russian>M84 светозвуковая граната</Russian>
       <Hungarian>M84 Villanógránátokka</Hungarian>
-      <Italian>Granata Stordente M84</Italian>
     </Key>
     <Key ID="STR_AGM_Grenades_M84_Description">
       <English>Also known as flashbang. Causes immediate flash blindness, deafness, tinnitus, and inner ear disturbance.</English>
@@ -90,7 +83,6 @@
       <Czech>Zábleskový granát je taktická nesmrtící zbraň používaná při taktice záchrany rukojmí a zvládání davu.</Czech>
       <Russian>Граната XM84 (M84) - не летального действия, и предназначена для отвлечения и временного вывода из строя, либо дезориентации противника. Основное использование нашла при освобождении заложников,  захвате преступников и террористов, а также проведении диверсионных миссий.</Russian>
       <Hungarian>Eldobás után felrobban és éles hang, valamint fényhatással zavarja össze a környezetében tartózkodókat.</Hungarian>
-      <Italian>Anche conosciuta come flashbang. Causa accecamento immediato, sensazioni di sposatezza, mancanza d'equilibrio e disturbi al timpano.</Italian>
     </Key>
 
   </Package>

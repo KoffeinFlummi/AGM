@@ -12,7 +12,6 @@
       <Russian>Контраст: </Russian>
       <Hungarian>Fényerő: %1</Hungarian>
       <Italian>Luminosità: %1</Italian>
-      <Italian>Luminosità: %1</Italian>
     </Key>
 
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
@@ -25,7 +24,6 @@
       <Russian>Увеличить яркость ПНВ</Russian>
       <Hungarian>Fényerő növelése</Hungarian>
       <Italian>Incrementa luminosità visore notturno</Italian>
-      <Italian>Aumenta la luminosità dell'NVG</Italian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
       <English>Decrease NVG Brightness</English>
@@ -37,7 +35,6 @@
       <Russian>Уменьшить яркость ПНВ</Russian>
       <Hungarian>Fényerő csökkentése</Hungarian>
       <Italian>Decrementa luminosità visore notturno</Italian>
-      <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>
 
   </Package>
