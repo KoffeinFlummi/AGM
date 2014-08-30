@@ -18,10 +18,11 @@
 #include "\AGM_Goggles\script.sqf"
 
 AGM_Goggles_Effects set [LRAIN, [false, 0, time]];
-if (!isNull(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull])) then {
+if (!isNull(uiNamespace getVariable ["AGM_Goggles_Rain", displayNull])) then {
 	disableSerialization;
-	_display = (uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull]);
+	_display = (uiNamespace getVariable ["AGM_Goggles_Rain", displayNull]);
 	for "_i" from 0 to 3 do {
-		(_display displayCtrl (10670 + _i)) ctrlEnable false;
+		(_display displayCtrl (10670 + _i)) ctrlShow false;
+		(_display displayCtrl (10680 + _i)) ctrlShow false;
 	};
 };
