@@ -15,7 +15,7 @@ from xml.dom import minidom
 def get_modules(projectpath):
   """ Get all the modules of the project. """
   modules = []
-  
+
   for i in os.listdir(projectpath):
     path = os.path.join(projectpath, i)
     if not os.path.isdir(path):
@@ -27,7 +27,7 @@ def get_modules(projectpath):
   return modules
 
 def contains_language(key, language):
-  """ Checks wether a given key contains a certain language. """
+  """ Checks whether a given key contains a certain language. """
   for child in key.childNodes:
     try:
       assert(child.tagName == language)
@@ -69,7 +69,7 @@ def replace_entries(oldpath, newpath, language, breakdown):
     try:
       # An entry for this language already exists, overwrite it
       oldentry = oldkey.getElementsByTagName(language)[0].firstChild
-      oldentry.setWholeText(newentry.wholeText)
+      oldentry.replaceWholeText(newentry.wholeText)
     except:
       # There is no entry for this language yet, make one
       oldentry = oldfile.createElement(language)
@@ -86,9 +86,9 @@ def replace_entries(oldpath, newpath, language, breakdown):
   xmlstring = xmlstring.replace("><", ">\n<")
   xmlstring += "\n"
 
-  fhandle = open(oldpath, "w")
-  fhandle.write(xmlstring)
-  fhandle.close()
+  #fhandle = open(oldpath, "w")
+  #fhandle.write(xmlstring)
+  #fhandle.close()
 
   return len(newkeys)
 
