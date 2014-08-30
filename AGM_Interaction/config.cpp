@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -16,34 +16,53 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
+      class AddSelectableItem;
       class addInteraction;
       class addInteractionSelf;
+      class applyButtons;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
+      class canLockDoor;
       class canTapShoulder;
       class canUnloadCaptiveFromVehicle;
       class drawNameTagIcon;
       class escortCaptive;
       class getCaptivityStatus;
+      class getDoor;
       class getDown;
+      class getSelectedButton;
+      class hideMenu;
+      class hideMouseHint;
+      class initialiseInteraction;
       class isInRange;
       class joinTeam;
       class loadCaptiveIntoVehicle;
+      class lockDoor;
       class module;
+      class moveDown;
+      class onButtonDown;
+      class onButtonDownSelf;
+      class onButtonUp;
+      class onClick;
       class openDoor;
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
+      class openSubMenu;
+      class openSubMenuSelf;
+      class prepareSelectMenu;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
+      class showMouseHint;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
       class unloadCaptiveFromVehicle;
+      class updateTooltipPosition;
     };
   };
 };
@@ -64,22 +83,26 @@ class Extended_GetIn_EventHandlers {
 };
 
 class AGM_Core_Default_Keys {
-  class openInteractionMenu {
+  class openInteractionMenuNew {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
-    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
-    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenu} else {closeDialog 0}";
+    condition = "alive player";
+    statement = "call AGM_Interaction_fnc_onButtonDown";
+    conditionUp = "!isNull (findDisplay 1713999)";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 0) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-    key = 221;
+    key = 219;
     shift = 0;
     control = 0;
     alt = 0;
   };
-  class openInteractionMenuSelf {
+  class openInteractionMenuSelfNew {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
-    statement = "if (!dialog) then {'' call AGM_Interaction_fnc_openMenuSelf} else {closeDialog 0}";
+    condition = "alive player";
+    statement = "call AGM_Interaction_fnc_onButtonDownSelf";
+    conditionUp = "!isNull (findDisplay 1713999)";
+    statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-    key = 221;
+    key = 219;
     shift = 0;
     control = 1;
     alt = 0;
@@ -95,6 +118,24 @@ class AGM_Core_Default_Keys {
     control = 1;
     alt = 0;
   };
+  class lockDoor {
+    displayName = "$STR_AGM_Interaction_LockDoor";
+    condition = "[true] call AGM_Interaction_fnc_canLockDoor && {!AGM_Interaction_isOpeningDoor}";
+    statement = "[true] call AGM_Interaction_fnc_lockDoor";
+    key = 57;
+    shift = 0;
+    control = 0;
+    alt = 1;
+  };
+  class unlockDoor {
+    displayName = "$STR_AGM_Interaction_UnlockDoor";
+    condition = "[false] call AGM_Interaction_fnc_canLockDoor";
+    statement = "[false] call AGM_Interaction_fnc_lockDoor";
+    key = 57;
+    shift = 0;
+    control = 1;
+    alt = 1;
+  };
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
     condition = "[player, cursorTarget] call AGM_Interaction_fnc_canTapShoulder";
@@ -102,6 +143,17 @@ class AGM_Core_Default_Keys {
     key = 20;
     shift = 1;
     control = 0;
+    alt = 0;
+  };
+  class modifierKey {
+    displayName = $STR_AGM_Interaction_ModifierKey;
+    condition = "true";
+    statement = "AGM_Modifier = 1;";
+    conditionUp = "AGM_Modifier > 0";
+    statementUp = "AGM_Modifier = 0;";
+    key = 29;
+    shift = 0;
+    control = 1;
     alt = 0;
   };
 };
@@ -119,11 +171,16 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
     default = 1;
   };
+  class Interaction_FlowMenu {
+    displayName = "$STR_AGM_Interaction_FlowMenu";
+	default = 0;
+  };
 };
 
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
   AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
+  AGM_Modifier = 0;
 };
 
 class AGM_Core_canInteractConditions {
@@ -179,9 +236,11 @@ class CfgVehicles {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
         condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
-        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenu;";
+        statement = "";
         showDisabled = 0;
         priority = 3.2;
+		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        subMenu[] = {"AGM_TeamManagement", 0};
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -189,6 +248,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'RED'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
+		  icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           priority = 2.4;
         };
         class AGM_JoinTeamGreen {
@@ -197,6 +257,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
+		  icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           priority = 2.3;
         };
         class AGM_JoinTeamBlue {
@@ -205,6 +266,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
+		  icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           priority = 2.2;
         };
         class AGM_JoinTeamYellow {
@@ -213,6 +275,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
+		  icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           priority = 2.1;
         };
 
@@ -222,6 +285,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player} && {assignedTeam player != 'MAIN'}";
           statement = "[AGM_Interaction_Target, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
+		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           priority = 2.5;
         };
       };
@@ -241,6 +305,7 @@ class CfgVehicles {
         statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 0;
         priority = 2.6;
+		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
       };
 
       class AGM_GetDown {
@@ -267,6 +332,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
+		icon = "\AGM_Interaction\UI\handcuff_ca.paa";
       };
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Interaction_ReleaseCaptive";
@@ -276,6 +342,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.4;
+		icon = "\AGM_Interaction\UI\handcuff_ca.paa";
       };
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Interaction_EscortCaptive";
@@ -284,6 +351,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
+		icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.3;
       };
       class AGM_StopEscorting {
@@ -293,6 +361,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
+		icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.3;
       };
       class AGM_LoadCaptive {
@@ -302,6 +371,7 @@ class CfgVehicles {
         statement = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
+		icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.2;
       };
 
@@ -319,9 +389,11 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         condition = "true";
-        statement = "'AGM_TeamManagement' call AGM_Interaction_fnc_openMenuSelf;";
+        statement = "";
         showDisabled = 1;
         priority = 3.2;
+		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        subMenu[] = {"AGM_TeamManagement", 1};
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -329,6 +401,7 @@ class CfgVehicles {
           statement = "[player, 'RED'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.4;
+		  icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -336,6 +409,7 @@ class CfgVehicles {
           statement = "[player, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.3;
+		  icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -343,6 +417,7 @@ class CfgVehicles {
           statement = "[player, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.2;
+		  icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -350,6 +425,7 @@ class CfgVehicles {
           statement = "[player, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.1;
+		  icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
         };
 
         class AGM_LeaveTeam {
@@ -358,6 +434,7 @@ class CfgVehicles {
           statement = "[player, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.5;
+		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
         };
 
         class AGM_BecomeLeader {
@@ -366,6 +443,7 @@ class CfgVehicles {
           statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
           showDisabled = 1;
           priority = 1.0;
+		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
         };
         class AGM_LeaveGroup {
           displayName = "$STR_AGM_Interaction_LeaveGroup";
@@ -373,6 +451,7 @@ class CfgVehicles {
           statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
           showDisabled = 1;
           priority = 1.2;
+		  icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         };
       };
 
@@ -396,9 +475,11 @@ class CfgVehicles {
       class AGM_Gestures {
         displayName = "$STR_AGM_Interaction_Gestures";
         condition = "canStand player";
-        statement = "'AGM_Gestures' call AGM_Interaction_fnc_openMenuSelf;";
+        statement = "";
         showDisabled = 1;
         priority = 3.5;
+        subMenu[] = {"AGM_Gestures", 1};
+		icon = "AGM_Interaction\UI\gestures_ca.paa";
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";
@@ -744,10 +825,10 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_CableTie: ItemCore {
+  class AGM_CableTie: AGM_ItemCore {
     displayName = "$STR_AGM_Interaction_CableTie_Name";
     descriptionShort = "$STR_AGM_Interaction_CableTie_Description";
     model = "\AGM_Interaction\agm_cabletie.p3d";
@@ -755,7 +836,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

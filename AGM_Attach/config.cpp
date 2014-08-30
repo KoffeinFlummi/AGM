@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "eRazeri", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -20,6 +20,7 @@ class CfgFunctions {
       class canAttach;
       class canDetach;
       class detach;
+	  class openAttachUI;
     };
   };
 };
@@ -33,88 +34,15 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-
       class AGM_Attach {
         displayName = "$STR_AGM_Attach_AttachDetach";
         condition = "[''] call AGM_Attach_fnc_canAttach";
-        statement = "'AGM_Attach' call AGM_Interaction_fnc_openMenuSelf";
+        statement = "[player] call AGM_Attach_fnc_openAttachUI;";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
-
-        class AGM_Attach_IrStrobe {
-          displayName = "$STR_AGM_Attach_Attach_IrStrobe";
-          condition = "['AGM_IR_Strobe_Item'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'AGM_IR_Strobe_Item'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 3;
-        };
-        class AGM_Attach_IrStrobeB {
-          displayName = "$STR_AGM_Attach_Attach_IrGrenade";
-          condition = "['B_IR_Grenade'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'B_IR_Grenade'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 2;
-        };
-        class AGM_Attach_IrStrobeO {
-          displayName = "$STR_AGM_Attach_Attach_IrGrenade";
-          condition = "['O_IR_Grenade'] call AGM_Attach_fnc_canAttach && {!('B_IR_Grenade' in magazines player)}";
-          statement = "[player, 'O_IR_Grenade'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 2;
-        };
-        class AGM_Attach_IrStrobeI {
-          displayName = "$STR_AGM_Attach_Attach_IrGrenade";
-          condition = "['I_IR_Grenade'] call AGM_Attach_fnc_canAttach && {!('B_IR_Grenade' in magazines player)} && {!('O_IR_Grenade' in magazines player)}";
-          statement = "[player, 'I_IR_Grenade'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 2;
-        };
-        class AGM_Attach_Chemlight_blue {
-          displayName = "$STR_AGM_Attach_Attach_Chemlight_blue";
-          condition = "['Chemlight_blue'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'Chemlight_blue'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_Attach_Chemlight_green {
-          displayName = "$STR_AGM_Attach_Attach_Chemlight_green";
-          condition = "['Chemlight_green'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'Chemlight_green'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_Attach_Chemlight_red {
-          displayName = "$STR_AGM_Attach_Attach_Chemlight_red";
-          condition = "['Chemlight_red'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'Chemlight_red'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_Attach_Chemlight_yellow {
-          displayName = "$STR_AGM_Attach_Attach_Chemlight_yellow";
-          condition = "['Chemlight_yellow'] call AGM_Attach_fnc_canAttach";
-          statement = "[player, 'Chemlight_yellow'] call AGM_Attach_fnc_attach";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
-          showDisabled = 0;
-          priority = 1;
-        };
-        class AGM_OpenUIDummy {
-          displayName = "";
-          condition = "false";
-          statement = "";
-          showDisabled = 1;
-          priority = -9;
-        };
+        icon = "\AGM_Attach\UI\attach_ca.paa";
       };
-
       class AGM_Attach_Detach {
         displayName = "$STR_AGM_Attach_Detach";
         condition = "call AGM_Attach_fnc_canDetach";
@@ -122,6 +50,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
+        icon = "\AGM_Attach\UI\detach_ca.paa";
       };
     };
   };
@@ -170,6 +99,7 @@ class CfgVehicles {
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;
+  class FIA_Box_Base_F;
 
   class Box_NATO_Support_F: NATO_Box_Base {
     class TransportItems {
@@ -189,6 +119,12 @@ class CfgVehicles {
     };
   };
 
+  class Box_FIA_Support_F: FIA_Box_Base_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,12)
+    };
+  };
+
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
       MACRO_ADDITEM(AGM_IR_Strobe_Item,24)
@@ -197,18 +133,29 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_IR_Strobe_Item: ItemCore {
+  class AGM_IR_Strobe_Item: AGM_ItemCore {
     displayName = "$STR_AGM_IrStrobe_Name";
     descriptionShort = "$STR_AGM_IrStrobe_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
     picture = "\AGM_Attach\UI\irstrobe_item.paa";
     scope = 2;
+    AGM_attachable = 1;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
+  };
+};
+
+class CfgMagazines {
+  class CA_Magazine;
+  class B_IR_Grenade: CA_Magazine {
+    AGM_Attachable = 1;
+  };
+  class SmokeShell;
+  class Chemlight_green: SmokeShell {
+    AGM_Attachable = 1;
   };
 };

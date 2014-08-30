@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -67,11 +67,11 @@ class CfgWeapons {
 
 // CODE BELOW TAKEN FROM TMR, PREFIXES EDITED FOR COMPATABILITY
 
-#define AGM_SWAY_DEPLOY 0.04
-#define AGM_SWAY_DEPLOYPRONE 0.01
-#define AGM_SWAY_RESTED 0.08
-#define AGM_SWAY_RESTEDPRONE 0.02
-#define AGM_DEPLOY_TURNSPEED 0.1
+#define AGM_SWAY_DEPLOY       0.02
+#define AGM_SWAY_DEPLOYPRONE  0.01
+#define AGM_SWAY_RESTED       0.04  //0.08
+#define AGM_SWAY_RESTEDPRONE  0.02  //0.04
+#define AGM_DEPLOY_TURNSPEED  0.1
 
 // Arma 3 doesn't respect turnSpeed.
 

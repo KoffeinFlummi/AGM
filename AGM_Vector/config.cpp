@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"Ghost", "Hamburger SV", "commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -52,8 +52,8 @@ class CfgWeapons {
     modelOptics = "\AGM_Vector\agm_vector_optics.p3d";
     picture = "\AGM_Vector\UI\agm_vector_x_ca.paa";
     visionMode[] = {"Normal","NVG"};
-    opticszoommax = 0.03;
-    opticszoommin = 0.03;
+    opticsZoomMax = 0.03;
+    opticsZoomMin = 0.03;
   };
 };
 

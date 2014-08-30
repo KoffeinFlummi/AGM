@@ -3,10 +3,10 @@ class CfgPatches {
 		units[] = {};
 		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
 		requiredVersion = 0.60;
-		requiredAddons[] = {A3_Weapons_F_Explosives, AGM_Interaction};
-		version = "0.93";
-		versionStr = "0.93";
-		versionAr[] = {0,93,0};
+		requiredAddons[] = {AGM_Core, AGM_Interaction};
+		version = "0.931";
+		versionStr = "0.931";
+		versionAr[] = {0,931,0};
 		author[] = {"Garth 'L-H' de Wet"};
 		authorUrl = "https://github.com/corruptedheart/";
 	};
@@ -27,6 +27,8 @@ class CfgFunctions
 			class hasExplosives;
 			class hasPlacedExplosives;
 			
+			class getDetonators;
+			
 			class initialise{postInit=1;};
 			class initialiseUnit;
 			class isSpecialist;
@@ -34,11 +36,11 @@ class CfgFunctions
 			
 			class openDetonateUI;
 			class openPlaceUI;
+			class openTransmitterUI;
 			class openTimerSetUI;
 			class openTriggerSelectionUI;
 			
 			class Place_Approve;
-			class Place_AttachTo;
 			class Place_Cancel;
 			class PlaceExplosive;
 			
@@ -62,13 +64,16 @@ class CfgFunctions
 			class AGM_Explosives { \
 				displayName = $STR_AGM_Explosives_Menu;\
 				condition = "true";\
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";\
+				statement = "";\
 				showDisabled = 1;\
 				priority = 4;\
+				icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
+				subMenu[] = {"AGM_Explosives", 1};\
 				class AGM_Detonate {\
 					displayName = $STR_AGM_Explosives_Detonate;\
-					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";\
-					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";\
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([player] call AGM_Explosives_fnc_getDetonators) > 0}";\
+					statement = "[player] call AGM_Explosives_fnc_openTransmitterUI;";\
+					icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
 					showDisabled = 1;\
 					priority = 2;\
 				};\
@@ -101,15 +106,18 @@ class CfgVehicles {
 			class AGM_Explosives {
 				displayName = $STR_AGM_Explosives_Menu;
 				condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
-				statement = "'AGM_Explosives' call AGM_Interaction_fnc_openMenuSelf;";
+				statement = "";
 				showDisabled = 1;
-				priority = 4;				
+				priority = 4;
+				icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";			
+				subMenu[] = {"AGM_Explosives", 1};
 				//Sub-menu items
 				class AGM_Detonate {
 					displayName = $STR_AGM_Explosives_Detonate;
-					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {('AGM_Clacker' in (items player))}";
-					statement = "[player] call AGM_Explosives_fnc_openDetonateUI;";
+					condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([player] call AGM_Explosives_fnc_getDetonators) > 0}";
+					statement = "[player] call AGM_Explosives_fnc_openTransmitterUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
 					priority = 2;
 				};
 				class AGM_Place {
@@ -117,6 +125,7 @@ class CfgVehicles {
 					condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
 					statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
 					showDisabled = 1;
+					icon = "AGM_Explosives\UI\Place_Explosive_ca.paa";
 					priority = 1;
 				};
 				class AGM_Defuse {
@@ -124,21 +133,8 @@ class CfgVehicles {
 					condition = "[player] call AGM_Explosives_fnc_CanDefuse";
 					statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
 					showDisabled = 0;
+					icon = "AGM_Explosives\UI\defuse_ca.paa";
 					priority = 0.8;
-				};
-				class AGM_PlaceExplosive {
-					displayName = $STR_AGM_Explosives_PlaceAction;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
-					statement = "[] spawn AGM_Explosives_fnc_Place_Approve;";
-					showDisabled = 0;
-					priority = 0.4;
-				};
-				class AGM_CancelPlace {
-					displayName = $STR_AGM_Explosives_CancelAction;
-					condition = "AGM_Explosives_pfeh_running AND {!isNull(AGM_Explosives_Setup)}";
-					statement = "call AGM_Explosives_fnc_Place_Cancel;";
-					showDisabled = 0;
-					priority = 0.2;
 				};
 			};
 		};
@@ -149,11 +145,13 @@ class CfgVehicles {
 	class NATO_Box_Base;
 	class EAST_Box_Base;
 	class IND_Box_Base;
+	class FIA_Box_Base_F;
 	class Box_NATO_Support_F;
 
 	class Box_NATO_AmmoOrd_F: NATO_Box_Base {
 		class TransportItems {
 			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_M26_Clacker,6)
 			MACRO_ADDITEM(AGM_DefusalKit,12)
 		};
 	};
@@ -161,6 +159,7 @@ class CfgVehicles {
 	class Box_East_AmmoOrd_F: EAST_Box_Base {
 		class TransportItems {
 			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_M26_Clacker,6)
 			MACRO_ADDITEM(AGM_DefusalKit,12)
 		};
 	};
@@ -168,13 +167,23 @@ class CfgVehicles {
 	class Box_IND_AmmoOrd_F: IND_Box_Base {
 		class TransportItems {
 			MACRO_ADDITEM(AGM_Clacker,12)
+			MACRO_ADDITEM(AGM_M26_Clacker,6)
 			MACRO_ADDITEM(AGM_DefusalKit,12)
+		};
+	};
+
+	class Box_FIA_Ammo_F: FIA_Box_Base_F {
+		class TransportItems {
+			MACRO_ADDITEM(AGM_Clacker,2)
+			MACRO_ADDITEM(AGM_M26_Clacker,2)
+			MACRO_ADDITEM(AGM_DefusalKit,2)
 		};
 	};
 
 	class AGM_Box_Misc: Box_NATO_Support_F {
 		class TransportItems {
 			MACRO_ADDITEM(AGM_Clacker,24)
+			MACRO_ADDITEM(AGM_M26_Clacker,12)
 			MACRO_ADDITEM(AGM_DefusalKit,24)
 		};
 	};
@@ -215,6 +224,22 @@ class CfgVehicles {
 	class O_G_Soldier_F; class o_g_soldier_universal_f:O_G_Soldier_F {MACRO_ADDMINEKIT};
 	class I_soldier_F; class i_soldier_universal_f:I_soldier_F {MACRO_ADDMINEKIT};
 	class I_G_Soldier_F; class i_g_soldier_universal_f:I_G_Soldier_F {MACRO_ADDMINEKIT};
+
+	// Add AGM_Clacker to snipers and spotters for setting off Claymores
+	#define MACRO_ADDCLAYMOREKIT \
+		items[] = {"FirstAidKit","AGM_Clacker"}; \
+		respawnitems[] = {"FirstAidKit","AGM_Clacker"};
+
+	class B_Soldier_sniper_base_F;
+	class B_sniper_F: B_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class B_spotter_F: B_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class I_Soldier_sniper_base_F;
+	class I_Sniper_F: I_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class I_Spotter_F: I_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class O_Soldier_sniper_base_F;
+	class O_sniper_F: O_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class O_spotter_F: O_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+
 };
 
 #include "CfgAmmo.hpp"

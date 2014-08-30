@@ -1,8 +1,6 @@
 // by commy2
 
-private "_script_handle";
-
-_script_handle = _this spawn {
+_this spawn {
 	if (isTouchingGround player) then {
 		_animation = switch (currentWeapon player) do {
 			case "" : {"AmovPpneMstpSnonWnonDnon"};
@@ -12,8 +10,7 @@ _script_handle = _this spawn {
 			case (player call AGM_Core_fnc_getBinocular) : {"AmovPpneMstpSrasWbinDnon"};
 			default {"AmovPpneMstpSnonWnonDnon"};
 		};
-		player playMoveNow _animation;
+		[player, _animation] call AGM_Core_fnc_doAnimation;
 	};
 	sleep 6;
-};
-_script_handle
+}

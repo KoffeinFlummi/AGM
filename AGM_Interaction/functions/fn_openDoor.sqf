@@ -1,53 +1,33 @@
 // by commy2
 
-#define MAX_DISTANCE 2
-#define DOOR_TYPES ["door", "hatch"]
+private ["_info", "_house", "_door", "_id"];
 
-_position0 = positionCameraToWorld [0, 0, 0];
-_position1 = positionCameraToWorld [0, 0, MAX_DISTANCE];
+_info = [2] call AGM_Interaction_fnc_getDoor;
 
-_intersections = lineIntersectsWith [ATLToASL _position0, ATLToASL _position1, player, objNull, true];
+_house = _info select 0;
+_door = _info select 1;
+_id = _info select 2;
 
-_count = count _intersections;
+if (isNull _house) exitWith {};
 
-if (_count == 0) exitWith {};
+if (_house animationPhase format ["%1_%2_rot", _door, _id] <= 0 && {_house getVariable [format ["BIS_Disabled_Door_%1", _id], 0] == 1}) exitWith {
+	[_house, format ["Door_Handle_%1_rot_1", _id], format ["Door_Locked_%1_rot", _id]] spawn compile preprocessFileLineNumbers "\A3\Structures_F\scripts\LockedDoor_open.sqf";
+};
 
-_house = _intersections select (_count - 1);
-
-// shithouse is bugged
-if (typeOf _house == "") exitWith {};
-
-_intersections = [_house, "GEOM"] intersect [_position0, _position1];
-
-_door = "";
-{
-	_selection = toArray (_x select 0);
-
-	_index = _selection find 95;
-
-	if (_index != -1) then {
-		_selection resize _index;
-
-		if (toString _selection in DOOR_TYPES) then {
-			_door = _x select 0;
-		};
-	};
-} forEach _intersections;
-
-if (_door == "") exitWith {};
-
+AGM_Interaction_isOpeningDoor = true;
 playSound "AGM_Sound_Click";
 
-_animation = _door + "_rot";
-AGM_Interaction_isOpeningDoor = true;
-
-[_house, _animation] spawn {
+_info spawn {
 	_house = _this select 0;
-	_animation = _this select 1;
 
-	_phase = _house animationPhase _animation;
+	_animation0 = format ["%1_%2_rot",        _this select 1, _this select 2];
+	_animation1 = format ["%1_Handle_%2_rot_1", _this select 1, _this select 2];
+	_animation2 = format ["%1_Handle_%2_rot_2", _this select 1, _this select 2];
+
+	_phase = _house animationPhase _animation0;
 	_position = getPosASL player;
 
+	_time = time + 0.2;
 	_usedMouseWheel = false;
 	waitUntil {
 		if (inputAction "PrevAction" > 0 || {inputAction "NextAction" > 0}) then {
@@ -57,13 +37,19 @@ AGM_Interaction_isOpeningDoor = true;
 		_phase = _phase + (inputAction "PrevAction" / 12) min 1;
 		_phase = _phase - (inputAction "NextAction" / 12) max 0;
 
-		_house animate [_animation, _phase];
+		_house animate [_animation0, _phase];
+		_house animate [_animation1, _phase];
+		_house animate [_animation2, _phase];
+
 		!AGM_Interaction_isOpeningDoor || {getPosASL player distance _position > 1}
 	};
 
-	if !(_usedMouseWheel) then {
-		_phase = [0, 1] select (_house animationPhase _animation < 0.5);
-		_house animate [_animation, _phase];
+	if (!_usedMouseWheel && {time < _time}) then {
+		_phase = [0, 1] select (_house animationPhase _animation0 < 0.5);
+
+		_house animate [_animation0, _phase];
+		_house animate [_animation1, _phase];
+		_house animate [_animation2, _phase];
 	};
 
 	AGM_Interaction_isOpeningDoor = false;

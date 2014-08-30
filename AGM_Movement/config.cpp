@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.10;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -162,7 +162,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
 
     class AmovPercMwlkSlowWrflDf: AmovPercMstpSlowWrflDnon {
-      //speed = "1.3*0.206897";
+      speed = 0.3; //0.206897;
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };

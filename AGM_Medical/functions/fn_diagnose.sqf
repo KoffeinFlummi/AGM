@@ -19,6 +19,7 @@ _this spawn {
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     _damages = [
@@ -55,6 +56,8 @@ _this spawn {
       };
 
       // Injuries
+      _lightinjuries = "";
+      _heavyinjuries = "";
       if (AGM_Medical_SingleBandage > 0) then {
         if (damage _unit >= 0.5) then {
           _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>";
@@ -94,7 +97,7 @@ _this spawn {
       };
 
       // Blood
-      if (_unit getVariable "AGM_Bleeding") then {
+      if (_unit getVariable "AGM_Bleeding" and ((AGM_Medical_SingleBandage > 0 and damage _unit > 0) or (_heavyinjuries != "" or _lightinjuries != ""))) then {
         _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientBleeding" + "</t> ";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";

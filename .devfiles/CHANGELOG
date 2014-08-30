@@ -1,3 +1,5 @@
+- Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 0.75]".
+
 # v0.93
 
 - Added: New Explosives system including different trigger types
@@ -46,7 +48,7 @@
 - Added: Model for the epipen
 - Added: Model for the morphine injector
 - Added: Module option for maximum unconsciousness time before death
-- Added: Option to reset a key binding to defaul.
+- Added: Option to reset a key binding to default.
 - Added: Possibility to manually adjust the FCS range in 50m steps
 - Added: Prisoner system allowing you to detain people with cableties and escort them around.
 - Added: Respawn module and options

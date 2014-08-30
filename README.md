@@ -5,7 +5,7 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
-[![](http://img.shields.io/badge/current_version-v0.92-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-3.6_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.92/AGM_v0-92.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
+[![](http://img.shields.io/badge/current_version-v0.93-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
@@ -16,15 +16,21 @@ This mod is entirely **open-source**, and everyone is free to propose changes or
 It is **built modularly**; Every PBO (with some exceptions) can be removed, so that groups can maintain their own configurations of AGM, excluding components that they don't like, or that might clash with other addons.
 The components themselves, like the medical system, also include various customization options, allowing mission designers to tweak the experience.
 
-More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki/PBO-Overview).
+More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki#features).
+
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HPAXPTVCNLDZS)
 
 ## Features
 
 *   Improved medical system
+*   Logistics system including cargo transport and vehicle maintenance
+*   Explosives system including different trigger types
+*   Captivity system
 *   Realistic names for vehicles and weapons
 *   Realistic ballistics including wind and humidity
 *   Backblast simulation
-*   Weapon resting
+*   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
 and more...
 
@@ -51,16 +57,9 @@ If you want to help development by testing and reporting bugs, feel free to down
 To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
 
 In order for the addons to be correctly binarized, you need to exclude the following filytypes from binarization (the binarizer script does this for you):
-`*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
-`
-
-## Donations
-
-If you don't have the motivation or time to contribute yourself, and you still want to "give something back", you can donate a small amount here to pay for my caffeine addiction and commy's need for the blood of orphans:
-
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HPAXPTVCNLDZS)
-
-*Please do not feel obligated to do this. This is entirely optional.*
+```
+*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
+```
 
 ---
 

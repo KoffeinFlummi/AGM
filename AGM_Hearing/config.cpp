@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -58,6 +58,7 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
       class AGM_RemoveEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_Off";
@@ -65,14 +66,16 @@ class CfgVehicles {
         statement = "call AGM_Hearing_fnc_removeEarplugs";
         showDisabled = 0;
         priority = 2.5;
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
       };
     };
   };
 
+  class ReammoBox_F;
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;
-  class ReammoBox_F;
+  class FIA_Box_Base_F;
 
   class Box_NATO_Support_F: NATO_Box_Base {
     class TransportItems {
@@ -99,6 +102,12 @@ class CfgVehicles {
   };
 
   class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_FIA_Support_F: FIA_Box_Base_F {
     class TransportItems {
       MACRO_ADDITEM(AGM_EarBuds,12)
     };
@@ -145,10 +154,10 @@ class CfgSounds {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_EarBuds: ItemCore {
+  class AGM_EarBuds: AGM_ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
     model = "\AGM_Hearing\agm_earplugs.p3d";
@@ -156,7 +165,6 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 201;
     };
   };
 };

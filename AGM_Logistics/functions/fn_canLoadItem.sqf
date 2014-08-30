@@ -28,7 +28,7 @@ _nearestVehicles = [
 _distances = [];
 {
 	if (typeName _x == "OBJECT") then {
-		_distances set [count _distances, player distance _x];
+		_distances pushBack (player distance _x);
 	};
 } count _nearestVehicles;
 
@@ -55,4 +55,4 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(AGM_Logistics_targetVehicle) 
 		_result = true;
 	};
 };
-_result
+_result && {_this select 0 != missionNamespace getVariable ["AGM_Fortifications_crate", objNull]}

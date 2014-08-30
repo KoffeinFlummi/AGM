@@ -1,12 +1,12 @@
 class CfgPatches {
   class AGM_Wind {
-    units[] = {};
-    weapons[] = {};
+    units[] = {"AGM_Item_ItemKestrel"};
+    weapons[] = {"AGM_ItemKestrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"Falke", "commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -47,10 +47,10 @@ class Extended_Fired_EventHandlers {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_ItemKestrel: ItemCore {
+  class AGM_ItemKestrel: AGM_ItemCore {
     author = "Falke";
     scope = 2;
     displayName = "$STR_AGM_Kestrel_Name";
@@ -59,10 +59,8 @@ class CfgWeapons {
     picture = "\AGM_Wind\data\4500NV.paa";
     icon = "iconObject_circle";
     mapSize = 0.034;
-    mass = 2;
     class ItemInfo: InventoryItem_Base_F {
-      mass = 10;
-      type = 201;
+      mass = 2;
     };
   };
 };
@@ -77,6 +75,7 @@ class CfgVehicles {
         statement = "call AGM_Wind_fnc_openKestrel";
         showDisabled = 0;
         priority = 2;
+        icon = "AGM_Wind\data\4500NV1.paa";
       };
       class AGM_CloseKestrel {
         displayName = "$STR_AGM_Wind_CloseKestrel";
@@ -84,6 +83,7 @@ class CfgVehicles {
         statement = "AGM_isKestrel = false";
         showDisabled = 0;
         priority = 2;
+        icon = "AGM_Wind\data\4500NV1.paa";
       };
     };
   };
@@ -95,9 +95,9 @@ class CfgVehicles {
     scopeCurator = 2;
     displayName = "$STR_AGM_Kestrel_Name";
     vehicleClass = "Items";
-    class TransportWeapons {
+    class TransportItems {
       class AGM_ItemKestrel {
-        weapon = "AGM_ItemKestrel";
+        name = "AGM_ItemKestrel";
         count = 1;
       };
     };
@@ -105,9 +105,9 @@ class CfgVehicles {
 
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
-    class TransportWeapons {
+    class TransportItems {
       class _xx_AGM_ItemKestrel {
-        weapon = "AGM_ItemKestrel";
+        name = "AGM_ItemKestrel";
         count = 6;
       };
     };

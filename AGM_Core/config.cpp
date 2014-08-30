@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Core {
     units[] = {"AGM_Box_Misc"};
-    weapons[] = {};
+    weapons[] = {"AGM_ItemCore", "AGM_FakePrimaryWeapon"};
     requiredVersion = 0.60;
     requiredAddons[] = {
       "a3_air_f",
@@ -168,9 +168,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -180,9 +180,11 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class addActionEventHandler;
       class adminKick;
       class binarizeNumber;
       class canInteractWith;
+      class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToString;
@@ -191,6 +193,7 @@ class CfgFunctions {
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
+      class doAnimation;
       class execRemoteFnc;
       class filter;
       class findStringInString;
@@ -202,6 +205,7 @@ class CfgFunctions {
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
       class getTurretConfigPath;
       class getTurretIndex;
       class getTurrets;
@@ -212,6 +216,7 @@ class CfgFunctions {
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
@@ -223,9 +228,11 @@ class CfgFunctions {
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
+      class owned;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
+      class removeActionEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
@@ -349,12 +356,19 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class Rifle_Base_F;
+  class ItemCore;
+  class AGM_ItemCore: ItemCore {
+    type = 4;
+    detectRange = -1;
+    simulation = "ItemMineDetector";
+  };
 
+  class Rifle_Base_F;
   class AGM_FakePrimaryWeapon: Rifle_Base_F {
     discreteDistance[] = {};
     discreteDistanceInitIndex = 0;
     displayName = "";
+    picture = "";
     model = "";
     magazines[] = {"AGM_FakeMagazine"};
     scope = 2;

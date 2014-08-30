@@ -3,7 +3,7 @@ class AGM_ModuleExplosive: Module_F {
 	author = "AGM Team";
 	category = "AGM";
 	displayName = "Explosive System";
-	function = "AGM_Explosive_fnc_module";
+	function = "AGM_Explosives_fnc_module";
 	scope = 2;
 	isGlobal = 1;
     icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";

@@ -22,7 +22,7 @@ _captivityReasons = missionNamespace getVariable ["AGM_captivityReasons", []];
 
 // register new reason (these reasons are shared publicly, since units can change ownership, but keep their captivity status)
 if !(_reason in _captivityReasons) then {
-	_captivityReasons set [count _captivityReasons, _reason];
+	_captivityReasons pushBack _reason;
 
 	AGM_captivityReasons = _captivityReasons;
 	publicVariable "AGM_captivityReasons";

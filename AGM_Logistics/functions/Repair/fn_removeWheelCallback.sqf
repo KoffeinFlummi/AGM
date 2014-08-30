@@ -12,7 +12,7 @@ if (_damage == 1) exitWith {};
 
 [_vehicle, _part, 1, true] call AGM_Repair_fnc_setHitPointDamage;
 
-player playMoveNow "AmovPknlMstpSrasWrflDnon";
+[player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 
 _wheel = ['AGM_SpareWheel', getPosASL player] call AGM_Logistics_fnc_spawnObject;
 _wheel setdamage _damage;

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.93";
-    versionStr = "0.93";
-    versionAr[] = {0,93,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"jodav"};
     authorUrl = "https://github.com/jodav/";
   };
@@ -22,6 +22,7 @@ class CfgFunctions {
       class module;
       class moveRallypoint;
       class removeBody;
+      class removeDisconnectedPlayer;
       class restoreGear;
       class teleportToRallypoint;
     };

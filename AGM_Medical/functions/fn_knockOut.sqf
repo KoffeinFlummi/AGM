@@ -10,7 +10,7 @@
  * None
  */
 
-private ["_unit", "_newGroup"];
+private ["_unit", "_duration", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
 
 _unit = _this select 0;
 _duration = -1;
@@ -33,6 +33,7 @@ if (_unit == player) then {
   player setVariable ["acre_sys_core_globalVolume", 0.4];
 
   closeDialog 0;
+  call AGM_Interaction_fnc_hideMenu;
 
   [true, true] call AGM_Core_fnc_disableUserInput;
 };
@@ -61,14 +62,12 @@ _unit spawn {
 _wakeUpTimer = [_unit, _duration] spawn {
   _unit = _this select 0;
   _duration = _this select 1;
-  if (random 1 > 0.2 or _duration != -1) then {
-    if (_duration != -1) then {
-      sleep _duration;
-    } else {
-      sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.3));
-    };
-    [_unit] call AGM_Medical_fnc_wakeUp;
+  if (_duration != -1) then {
+    sleep _duration;
+  } else {
+    sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
   };
+  [_unit] call AGM_Medical_fnc_wakeUp;
 };
 _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
 

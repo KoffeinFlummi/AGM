@@ -1,6 +1,6 @@
 // based on KK_fnc_playerWeaponMulfunction from KillzoneKid
 
-private ["_unit", "_weapon", "_jammedWeapons", "_actionID"];
+private ["_unit", "_weapon", "_jammedWeapons", "_condition", "_statement", "_actionID"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
@@ -9,7 +9,7 @@ _weapon = _this select 1;
 if (_unit ammo _weapon == 0) exitWith {};
 
 _jammedWeapons = _unit getVariable ["AGM_Overheating_jammedWeapons", []];
-_jammedWeapons set [count _jammedWeapons, _weapon];
+_jammedWeapons pushBack _weapon;
 
 _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 
@@ -36,23 +36,21 @@ _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 AGM_Overheating_knowAboutJam = false;
 
 if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
-	_actionID = _unit addAction [
-		"",
-		{
-			playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
+	_condition = {
+		player == vehicle player
+		&& {currentMuzzle player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}
+	};
 
-			if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {player ammo currentWeapon player > 0}) then {
-				[localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
-				AGM_Overheating_knowAboutJam = true;
-			};
-		},
-		"",
-		0,
-		false,
-		true,
-		"DefaultAction",
-		"player == vehicle player && {currentMuzzle player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}"
-	];
+	_statement = {
+		playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
+
+		if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {player ammo currentWeapon player > 0}) then {
+			[localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
+			AGM_Overheating_knowAboutJam = true;
+		};
+	};
+
+	_actionID = [_unit, "DefaultAction", _condition, _statement] call AGM_Core_fnc_addActionEventHandler;
 
 	_unit setVariable ["AGM_JammingActionID", _actionID];
 };

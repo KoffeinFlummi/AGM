@@ -9,16 +9,11 @@ _this spawn {
   if !(_unit == player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _coefficient = 0.7;
-  if (_round isKindOf "GrenadeCore") then {
-    _coefficient = 0.2;
+  _airFriction = - getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
+  if (_airFriction < 0 || { _simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+    _airFriction = 0.0007;
   };
-  if (_round isKindOf "RocketCore") then {
-    _coefficient = 0.35;
-  };
-
-  // HUMIDITY
-  _round setVelocity ([velocity _round, {_this - _this * humidity * 0.1}] call AGM_Core_fnc_map);
 
   // WIND
   _time = time;
@@ -26,11 +21,8 @@ _this spawn {
     // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
 
-    _velocityNew = [
-      ((velocity _round) select 0) + _coefficient * (wind select 0) * _deltaTime,
-      ((velocity _round) select 1) + _coefficient * (wind select 1) * _deltaTime,
-      ((velocity _round) select 2)
-    ];
+    // See https://github.com/KoffeinFlummi/AGM/issues/996
+    _velocityNew = (velocity _round) vectorAdd (wind vectorMultiply (vectorMagnitude ((velocity _round) vectorAdd wind) * _airFriction * _deltaTime));
 
     _round setVelocity _velocityNew;
 

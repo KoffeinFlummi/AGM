@@ -43,6 +43,7 @@ _this spawn {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -81,7 +82,7 @@ _this spawn {
     if (_painkillerOld == 1) then {
       0 = _unit spawn {
         while {_this getVariable "AGM_Painkiller" < 1} do {
-          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1];
+          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1, true];
           sleep 10;
         };
       };

@@ -28,7 +28,7 @@ if (_state) then {
 		while {player getVariable ["AGM_isEscorting", false]} do {
 			sleep 0.2;
 
-			if (!alive _unit || {!alive player} || {!canStand _unit} || {!canStand player} || {!isNull (attachedTo player)}) then {
+			if (!alive _unit || {!alive player} || {!canStand _unit} || {!canStand player} || {_unit getVariable ["AGM_Unconscious", false]} || {!(player getVariable ["AGM_Unconscious", false])} || {!isNull (attachedTo player)}) then {
 				player setVariable ["AGM_isEscorting", false, true];
 			};
 		};

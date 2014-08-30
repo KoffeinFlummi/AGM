@@ -47,7 +47,6 @@ class CfgMagazines {
 			AGM_Triggers[] = {"Command"};
 			class Command {
 				FuseTime = 0.5;
-				MaxDistance = 100;
 			};
 		};
 	};
@@ -58,13 +57,14 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SatchelCharge"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 1;
 		class AGM_Triggers {
-			AGM_Triggers[] = {"Timer","Command"};
+			AGM_Triggers[] = {"Timer","Command", "MK16_Transmitter"};
 			class Timer {
 				FuseTime = 0.5;
 			};
 			class Command {
 				FuseTime = 0.5;
-				MaxDistance = 100;
+			};
+			class MK16_Transmitter:Command{
 			};
 		};
 	};
@@ -92,7 +92,6 @@ class CfgMagazines {
 			class Command {
 				ammo = "SLAMDirectionalMine_Command_Ammo";
 				fuseTime = 0.5;
-				MaxDistance = 100;
 			};
 		};
 	};
@@ -103,6 +102,13 @@ class CfgAGM_Triggers {
 		displayName = $STR_AGM_Explosives_clacker_displayName;
 		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
 		onPlace = "_this call AGM_Explosives_fnc_AddClacker;false";
+		requires[] = {"AGM_Clacker"};
+	};
+	class MK16_Transmitter:Command {
+		displayName = $STR_AGM_Explosives_MK16_displayName;
+		picture = "\AGM_Explosives\Data\UI\MK16_Reciever_ca.paa";
+		onPlace = "_this call AGM_Explosives_fnc_AddClacker;false";
+		requires[] = {"AGM_M26_Clacker"};
 	};
 	class PressurePlate {
 		displayName = $STR_AGM_Explosives_PressurePlate;

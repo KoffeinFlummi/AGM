@@ -19,23 +19,30 @@ private ["_vehicle", "_index", "_listIDC"];
 _vehicle = _this select 0;
 
 AGM_Logistics_targetVehicle = _vehicle;
-_listIDC = [localize "STR_AGM_Logistics_UnloadMenu", localize "STR_AGM_Logistics_UnloadItem", "[AGM_Logistics_targetVehicle, call compile (lbData [8866, lbCurSel 8866])] spawn AGM_Logistics_fnc_unloadItem;closeDialog 0;"] call AGM_Interaction_fnc_openSelectMenu;
-
-if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exitWith {
+_actions = [localize "STR_AGM_Logistics_UnloadMenu", localize "STR_AGM_Logistics_UnloadItem"] call AGM_Interaction_fnc_prepareSelectMenu;
+if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) then {
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;
 	{
 		_class = _x select 4;
-		{
-			_index = lbAdd [_listIDC, getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")];
-			lbSetData [_listIDC, _index, format ["['AGM_Load_%1', %2]", _class, _foreachIndex]];
+		{	
+			_actions = [
+				_actions,
+				getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "displayName"),
+				getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "picture"),
+				["AGM_Load_" + _class, _foreachIndex]
+			] call AGM_Interaction_fnc_AddSelectableItem;
 		} foreach (_x select 3);
 	} count _attachPoints;
-
-	lbSetCurSel [_listIDC, 0];
 };
 
 _attachPoints = _vehicle getVariable ["AGM_Logistics_loadedItems", []];
 {
-	_index = lbAdd [_listIDC, getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "displayName")];
-	lbSetData [_listIDC, _index, format ["['AGM_Logistics_loadedItems', %1]", _foreachIndex]];
+	_actions = [
+		_actions,
+		getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "displayName"),
+		getText (ConfigFile >> "CfgVehicles" >> typeOf(_x) >> "picture"),
+		["AGM_Logistics_loadedItems", _foreachIndex]
+	] call AGM_Interaction_fnc_AddSelectableItem;
 } foreach _attachPoints;
+
+[_actions, {call AGM_Interaction_fnc_hideMenu;[AGM_Logistics_targetVehicle, _this] spawn AGM_Logistics_fnc_unloadItem;}, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;

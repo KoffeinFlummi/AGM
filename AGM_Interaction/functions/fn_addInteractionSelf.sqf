@@ -14,9 +14,13 @@
  * ID of the action (used to remove it later).
  */
 
-private ["_displayName", "_condition", "_statement", "_showDisabled", "_priority", "_actions", "_id"];
+
+
+private ["_displayName", "_condition", "_statement", "_showDisabled", "_priority", "_actionsVar", "_id", "_actionIDs", "_actions"];
+
 
 _displayName = _this select 0;
+
 _condition = _this select 1;
 _statement = _this select 2;
 _showDisabled = _this select 3;
@@ -38,10 +42,15 @@ if (isNil "_priority") then {
 	_priority = 0;
 };
 
-_actions = player getVariable ["AGM_InteractionsSelf", []];
+_actionsVar = player getVariable ["AGM_InteractionsSelf", [-1, [], []]];
 
-_id = count _actions;
-_actions set [_id, [_displayName, _condition, _statement, _showDisabled, _priority]];
+_id = (_actionsVar select 0) + 1;
+_actionIDs = _actionsVar select 1;
+_actions = _actionsVar select 2;
 
-player setVariable ["AGM_InteractionsSelf", _actions, false];
+_count = count _actions;
+_actionIDs set [_count, _id];
+_actions set [_count, [_displayName, _condition, _statement, _showDisabled, _priority]];
+
+player setVariable ["AGM_InteractionsSelf", [_id, _actionIDs, _actions], false];
 _id

@@ -25,6 +25,7 @@ _this spawn {
 	_class = _this select 1;
 	_config = _this select 2;
 	_timer = _this select 3;
+	AGM_Explosives_placer = _unit;
 	// Commented out due to the fact there is a distinction between who can deactivate mines and who can plant them in standard configs.
 	// Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
 	//if ((AGM_Explosives_RequireSpecialist > 0) && {!(_unit call AGM_Explosives_fnc_isSpecialist)}) exitWith {};
@@ -45,12 +46,18 @@ _this spawn {
 	_unit forceWalk true;
 	AGM_Explosives_TweakedAngle = 180;
 	["AGM_Explosives_Placement","OnEachFrame", {
+		if (AGM_Explosives_placer != player) exitWith {
+			call AGM_Explosives_fnc_Place_Cancel;
+		};
 		AGM_Explosives_pfeh_running = true;
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
 		//_pos = _pos vectorAdd ((VectorDir AGM_Explosives_setup) vectorCrossProduct (AGM_Explosives_setup getVariable ["AGM_Offset", [0,0,0]]));
 		AGM_Explosives_Setup setPosATL _pos;
-		if (!AGM_Explosives_Shiftdown) then {
+		if (AGM_Modifier == 0) then {
 			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);
 		};
 	}] call BIS_fnc_addStackedEventHandler;
+	[localize "STR_AGM_Explosives_PlaceAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;
+	_unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler];
+	_unit setVariable ["AGM_Explosive_Cancel", [_unit, "MenuBack", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Cancel;}] call AGM_Core_fnc_AddActionEventHandler];
 };

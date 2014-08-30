@@ -1,39 +1,50 @@
 // by commy2
 
-#define THRESHOLD_1 0.5
-#define THRESHOLD_2 0.8
-#define THRESHOLD_3 1.0
-#define MAX_TEMPERATURE 3
+private ["_unit", "_weapon", "_projectile", "_increment", "_cooldown", "_variableName", "_overheat", "_temperature", "_time"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
 _projectile = _this select 5;
 
-_increment = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Increment");
-_cooldown = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Cooldown");
+// @todo config values in CfgMagazines + Non linear cooldown
+_increment = 1/250;		// 250 shots for max temp.
+_cooldown = 1/25/60;	// 25 minutes for complete cooldown from max temp.
 
-if (_increment == 0) exitWith {};
 
-_string = format ["AGM_Overheating_%1", _weapon];
+// each weapon has it's own variable. Can't store the temperature in the weapon since they are not objects unfortunately.
+_variableName = format ["AGM_Overheating_%1", _weapon];
 
-_overheat = player getVariable [_string, [0, 0]];
+
+// get old values
+_overheat = _unit getVariable [_variableName, [0, 0]];
 _temperature = _overheat select 0;
 _time = _overheat select 1;
 
+
+// calculate the new values
 // the *first shot after a break in the firing should set the temperature variable to the *first increment, not zero
-_temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min MAX_TEMPERATURE;
+_temperature = (_temperature + _increment - _cooldown * (time - _time) max _increment) min 1;
 
 if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
 	hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, _increment, _cooldown];
 };
 
+
+// set updated values
 _time = time;
 
-player setVariable [_string, [_temperature, _time], false];
+_unit setVariable [_variableName, [_temperature, _time], false];
 
-if (_temperature > THRESHOLD_1) then {
-	_intensity = 0.1 * (_temperature - THRESHOLD_1);
+
+// Smoke SFX, beginning at TEMP 0.15
+private "_intensity";
+
+_intensity = 0.3 * (_temperature - 0.15) max 0;
+
+if (_intensity > 0) then {
+	private "_position";
 	_position = getPosATL _projectile;
+
 	drop [
 		["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
 		"",
@@ -55,45 +66,68 @@ if (_temperature > THRESHOLD_1) then {
 		"",
 		""
 	];
-
-	if (_temperature > THRESHOLD_2) then {
-		_dispersion = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Dispersion");
-		_random = _dispersion * (_temperature - THRESHOLD_2);
-
-		_velocity = velocity _projectile;
-		_velocity = [
-			(_velocity select 0) * (1 - _random + 2 * random _random),
-			(_velocity select 1) * (1 - _random + 2 * random _random),
-			(_velocity select 2) * (1 - _random + 2 * random _random)
-		];
-
-		if (_temperature > THRESHOLD_3) then {
-			_factor = 1 - 0.05 * (_temperature - THRESHOLD_3);
-
-			_velocity = [
-				_factor * (_velocity select 0),
-				_factor * (_velocity select 1),
-				_factor * (_velocity select 2)
-			];
-		};
-		_projectile setVelocity _velocity;
-	};
 };
 
-// jamming
 
-_chance = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Jamming_Reliability");
-_chance = _chance * (1 + 9 * (_temperature / MAX_TEMPERATURE) ^ 3);
+// dispersion and bullet slow down
+private ["_dispersion", "_velocity", "_slowdownFactor", "_count"];
+
+_velocity = velocity _projectile;
+
+_dispersion = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Dispersion");
+
+_count = count _dispersion;
+if (_count > 0) then {
+	_dispersion = ([_dispersion, (_count - 1) * _temperature] call AGM_Core_fnc_interpolateFromArray) max 0;
+
+	// @todo FUNCTION for projectile dispersion and slowdown, Placeholder
+	_velocity = [
+		(_velocity select 0) * (1 - _dispersion + 2 * random _dispersion),
+		(_velocity select 1) * (1 - _dispersion + 2 * random _dispersion),
+		(_velocity select 2) * (1 - _dispersion + 2 * random _dispersion)
+	];
+};
+
+_slowdownFactor = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_slowdownFactor");
+
+_count = count _slowdownFactor;
+if (_count > 0) then {
+	_slowdownFactor = ([_slowdownFactor, (_count - 1) * _temperature] call AGM_Core_fnc_interpolateFromArray) max 0;
+
+	// @todo FUNCTION for projectile dispersion and slowdown, Placeholder
+	// Value EX: _slowdownFactor = 1 - 0.05 * (_temperature - 1);
+	_velocity = [
+		_slowdownFactor * (_velocity select 0),
+		_slowdownFactor * (_velocity select 1),
+		_slowdownFactor * (_velocity select 2)
+	];
+};
+
+_projectile setVelocity _velocity;
+
+
+// jamming
+private "_jamChance";
+
+_jamChance = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_jamChance");
+
+_count = count _jamChance;
+if (_count == 0) then {
+	_jamChance = [0];
+	_count = 1;
+};
+
+_jamChance = [_jamChance, (_count - 1) * _temperature] call AGM_Core_fnc_interpolateFromArray;
 
 if (!isNil "AGM_Debug") then {
 	if (AGM_Debug == "Jamming") then {
-		systemChat str format ["Jam chance: %1%", _chance];
+		systemChat format ["Jam chance: %1%", _jamChance];
 	};
 	if (AGM_Debug == "Jamming50") then {
-		_chance = 0.5;
+		_jamChance = 0.5;
 	};
 };
 
-if (random 1 < _chance) then {
+if (random 1 < _jamChance) then {
 	[_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;
 };

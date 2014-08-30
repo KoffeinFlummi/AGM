@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_vehicle", "_distance", "_weaponDirection"];
+
 _vehicle = _this select 0;
 
 AGM_FCSEnabled = true;
