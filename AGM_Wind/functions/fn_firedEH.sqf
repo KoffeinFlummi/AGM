@@ -14,7 +14,11 @@ _this spawn {
   if (_airFriction < 0 || { _simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
     _airFriction = 0.0007;
   };
-
+// powder temp effect
+   _velocity = velocity _round;
+ _velocity_update = _velocity vectorMultiply ((AGM_Wind_currectTemperature/288.13-1)/2.5+1 )
+ _round setVelocity _velocity_update;
+//
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
