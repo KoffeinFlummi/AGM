@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-30 -->
 <Project name="AGM">
   <Package name="Overheating">
-
     <Key ID="STR_AGM_Overheating_SpareBarrelName">
       <English>Spare barrel</English>
       <German>Ersatzlauf</German>
@@ -11,7 +11,7 @@
       <French>Deuxième canon</French>
       <Russian>Запасной ствол</Russian>
       <Hungarian>Tartalék cső</Hungarian>
-      <Italian>Barile di ricambio</Italian>
+      <Italian>Canna di ricambio</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
       <English>Use to swap barrel.</English>
@@ -22,7 +22,7 @@
       <French>Utilisé pour changer de canon.</French>
       <Russian>Используется для смены ствола.</Russian>
       <Hungarian>Cső kicseréléséhez.</Hungarian>
-      <Italian>Serve ad intercambiare il barile.</Italian>
+      <Italian>Usata per cambiare la canna.</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponJammed">
       <English>Weapon jammed!</English>
@@ -44,7 +44,7 @@
       <French>Désenrayer l'arme</French>
       <Russian>Исправить клин оружия.</Russian>
       <Hungarian>Hárítsd el az akadályt!</Hungarian>
-      <Italian>Rimuovi inceppo</Italian>
+      <Italian>Ripulisci l'arma</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
       <English>Jam cleared</English>
@@ -55,7 +55,7 @@
       <French>Arme désenrayée</French>
       <Russian>Оружие исправлено</Russian>
       <Hungarian>Akadály elhárítva!</Hungarian>
-      <Italian>Inceppo rimosso</Italian>
+      <Italian>Arma pronta al fuoco</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwapBarrel">
       <English>Swap barrel</English>
@@ -66,7 +66,7 @@
       <French>Changer de canon</French>
       <Russian>Сменить ствол</Russian>
       <Hungarian>Cserélj csövet!</Hungarian>
-      <Italian>Cambia barile</Italian>
+      <Italian>Sostiuisci la canna</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappingBarrel">
       <English>Swapping barrel...</English>
@@ -77,7 +77,7 @@
       <French>Changement du canon...</French>
       <Russian>Смена ствола...</Russian>
       <Hungarian>Cső cserélése...</Hungarian>
-      <Italian>Cambio del barile...</Italian>
+      <Italian>Sto sostituendo la canna ...</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappedBarrel">
       <English>Swapped barrel</English>
@@ -88,10 +88,8 @@
       <French>Canon changé</French>
       <Russian>Ствол сменен</Russian>
       <Hungarian>Cső kicserélve!</Hungarian>
-      <Italian>Barile cambiato</Italian>
+      <Italian>Canna sostituita</Italian>
     </Key>
-
-
     <Key ID="STR_AGM_Overheating_CheckTemperature">
       <English>Check weapons temperature</English>
       <German>Temperatur der Waffe prüfen</German>
@@ -100,9 +98,8 @@
       <French>Vérifier la température de l'arme</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu zbraně</Czech>
-      <Italian>Controlla temperatura dell'arma</Italian>
+      <Italian>Controlla la temperatura della canna</Italian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
       <English>Check temperature</English>
       <German>Temperatur prüfen</German>
@@ -111,9 +108,8 @@
       <French>Vérifier la température</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu</Czech>
-      <Italian>Controlla temperatura</Italian>
+      <Italian>Controlla la temperatura</Italian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
       <English>Checking temperature ...</English>
       <German>Prüfe Temperatur ...</German>
@@ -122,9 +118,8 @@
       <French>Vérification de la température ...</French>
       <Hungarian>Hőmérséklet ellenőrzése...</Hungarian>
       <Czech>Zjišťuju teplotu ...</Czech>
-      <Italian>Controllo temperatura ...</Italian>
+      <Italian>Sto controllando la temperatura ...</Italian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_Temperature">
       <English>Temperature</English>
       <German>Temperatur</German>
@@ -135,6 +130,5 @@
       <Czech>Teplota</Czech>
       <Italian>Temperatura</Italian>
     </Key>
-
   </Package>
 </Project>

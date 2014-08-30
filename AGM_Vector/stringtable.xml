@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-30 -->
 <Project name="AGM">
   <Package name="Vector">
-
     <Key ID="STR_AGM_Vector_VectorName">
       <English>Vector IV</English>
       <German>Vector IV</German>
@@ -9,6 +9,7 @@
       <French>Vector IV</French>
       <Polish>Vector IV</Polish>
       <Czech>Vector IV</Czech>
+      <Italian>Vector IV</Italian>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
@@ -35,8 +36,7 @@
       <French>Vector - Touche Distance</French>
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
-      <Italian>Vector - Tasto distanza</Italian>
+      <Italian>Vecto - Tasto Distanza</Italian>
     </Key>
-
   </Package>
 </Project>

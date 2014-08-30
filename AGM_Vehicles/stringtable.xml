@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-08-30 -->
 <Project name="AGM">
   <Package name="Vehicles">
-
     <Key ID="STR_AGM_SpeedLimiter_On">
       <English>Speed Limiter on</English>
       <German>Begrenzer an</German>
@@ -11,7 +11,7 @@
       <French>Limiteur de vitesse Activé</French>
       <Russian>Ограничение скорости включено</Russian>
       <Hungarian>Sebességkorlát bekapcsolva</Hungarian>
-      <Italian>Limitatore di velocità attivato</Italian>
+      <Italian>Limitatore Attivo</Italian>
     </Key>
     <Key ID="STR_AGM_SpeedLimiter_Off">
       <English>Speed Limiter Off</English>
@@ -22,9 +22,8 @@
       <French>Limiteur de vitesse Désactivé</French>
       <Russian>Ограничение скорости выключено</Russian>
       <Hungarian>Sebességkorlát kikapcsolva</Hungarian>
-      <Italian>Limitatore di velocità disattivato</Italian>
+      <Italian>Limitatore Non Attivo</Italian>
     </Key>
-
     <Key ID="STR_AGM_SpeedLimiter">
       <English>Speed Limiter</English>
       <German>Begrenzer</German>
@@ -34,7 +33,7 @@
       <French>Limiteur de vitesse</French>
       <Russian>Ограничение скорости</Russian>
       <Hungarian>Sebességkorlát</Hungarian>
-      <Italian>Limitatore di velocità</Italian>
+      <Italian>Limitatore di Velocità</Italian>
     </Key>
   </Package>
 </Project>
