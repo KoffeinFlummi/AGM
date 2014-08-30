@@ -16,7 +16,7 @@ _this spawn {
   };
 // powder temp effect
    _velocity = velocity _round;
- _velocity_update = _velocity vectorMultiply (((AGM_Wind_currectTemperature+273.13)/288.13-1)/2.5+1 )
+ _velocity_update = _velocity vectorMultiply (((AGM_Wind_currectTemperature+273.15)/288.15-1)/2.5+1 )
  _round setVelocity _velocity_update;
 //
   // WIND
