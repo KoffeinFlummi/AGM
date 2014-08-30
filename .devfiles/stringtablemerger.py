@@ -86,9 +86,9 @@ def replace_entries(oldpath, newpath, language, breakdown):
   xmlstring = xmlstring.replace("><", ">\n<")
   xmlstring += "\n"
 
-  #fhandle = open(oldpath, "w")
-  #fhandle.write(xmlstring)
-  #fhandle.close()
+  fhandle = open(oldpath, "w")
+  fhandle.write(xmlstring)
+  fhandle.close()
 
   return len(newkeys)
 
