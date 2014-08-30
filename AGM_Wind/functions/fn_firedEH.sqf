@@ -27,8 +27,8 @@ _this spawn {
 
     // See https://github.com/KoffeinFlummi/AGM/issues/996
     _velocity = velocity _round;
-    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currectRelativeDensity - 1) * _airFriction * _deltaTime))
-                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currectRelativeDensity * _airFrictionWind * _deltaTime));
+    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currentRelativeDensity - 1) * _airFriction * _deltaTime))
+                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currentRelativeDensity * _airFrictionWind * _deltaTime));
 
     _round setVelocity _velocityNew;
 
