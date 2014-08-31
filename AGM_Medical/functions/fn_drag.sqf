@@ -22,7 +22,7 @@ _this spawn {
   };
   player selectWeapon (primaryWeapon player);
 
-  player playMoveNow "AcinPknlMstpSrasWrflDnon";
+  [player, "AcinPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 
   sleep 1.8;
 
@@ -31,10 +31,10 @@ _this spawn {
   player setVariable ["AGM_Medical_ReleaseID", _releaseID];
 
   _unit attachTo [player, [0, 1.1, 0.092]];
+  [_unit, "AinjPpneMrunSnonWnonDb_still", 2] call AGM_Core_fnc_doAnimation;
   [-2, {
     _this setDir 180;
     _this setPos (getPos _this);
-    _this switchMove "AinjPpneMrunSnonWnonDb_still";
   }, _unit] call CBA_fnc_globalExecute;
 
   waitUntil {sleep 0.5; vehicle player != player or isNull (player getVariable "AGM_Dragging") or !(alive player) or !(alive _unit) or (player getVariable "AGM_Unconscious") or !(_unit getVariable "AGM_Unconscious")};

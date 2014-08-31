@@ -30,7 +30,7 @@ _this spawn {
   };
 
   // animation
-  player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+  [player, "AinvPknlMstpSnonWnonDr_medic5", 1] call AGM_Core_fnc_doAnimation;
   player setVariable ["AGM_CanTreat", false, false];
 
   if !([_unit, "AGM_Bandage"] call AGM_Medical_fnc_takeItem) exitWith {};
@@ -39,7 +39,7 @@ _this spawn {
     _unit = _this select 0;
     _selection = _this select 1;
 
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -80,7 +80,7 @@ _this spawn {
   };
 
   AGM_Medical_bandageAbort = {
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
   };
 

@@ -48,15 +48,15 @@ _unit disableAI "FSM";
 
 if (vehicle _unit != _unit && {animationState _unit != "Unconscious"}) then {   // don't lock into unconsciousness state after waking up
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
-  [player, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
+  [player, format ["{[_this, '%1', 1] call AGM_Core_fnc_doAnimation}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
 } else {
   _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
-};
 
-_unit spawn {
-  waitUntil {isTouchingGround _this};
-  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
-  _this playMoveNow "Unconscious";
+  _unit spawn {
+    waitUntil {isTouchingGround _this};
+    waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
+    [_this, "Unconscious", 1] call AGM_Core_fnc_doAnimation;
+  };
 };
 
 _wakeUpTimer = [_unit, _duration] spawn {
