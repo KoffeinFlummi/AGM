@@ -15,13 +15,13 @@
 	Nothing
 	
 	Example:
-	call AGM_Goggles_fnc_ApplyGlassesEffect;
+	(goggles player) call AGM_Goggles_fnc_ApplyGlassesEffect;
 */
 #include "\AGM_Goggles\script.sqf"
 private["_postProcessColour", "_postProcessTintAmount", "_glassesClassname", "_glassImagePath"];
 
 _glassesClassname = _this;
-_postProcessColour = getArray(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Goggles_Color");
+_postProcessColour = getArray(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Color");
 _postProcessTintAmount = getNumber(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_TintAmount");
 
 call AGM_Goggles_fnc_RemoveGlassesEffect;
@@ -34,9 +34,9 @@ if (_postProcessTintAmount != 0 && {AGM_Goggles_UsePP}) then {
 	AGM_Goggles_PostProcess ppEffectEnable true;
 };
 
-_glassImagePath = getText(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Goggles_Image");
+_glassImagePath = getText(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Overlay");
 if GETBROKEN then {
-	_glassImagePath = getText(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Goggles_CrackedImage");
+	_glassImagePath = getText(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_OverlayCracked");
 };
 if (_glassImagePath != "") then {
 	150 cutRsc["RscAGM_Goggles", "PLAIN",1, false];
@@ -46,8 +46,6 @@ if (_glassImagePath != "") then {
 if GETDIRT then {
 	call AGM_Goggles_fnc_ApplyDirtEffect;
 };
-
-GETRAIN call AGM_Goggles_fnc_ApplyRainEffect;
 
 if GETDUSTT(DACTIVE) then {
 	SETDUST(DAMOUNT,CLAMP(GETDUSTT(DAMOUNT)-1,0,2));
