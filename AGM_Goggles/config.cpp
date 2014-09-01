@@ -21,12 +21,12 @@ class CfgPatches {
 
 class CfgGlasses {
 	class None {
-		AGM_Goggles_Color[] = {0,0,0};
+		AGM_Color[] = {0,0,0};
 		AGM_TintAmount=0;
 		AGM_Overlay = "";
 		AGM_OverlayDirt = "A3\Ui_f\data\igui\rsctitles\HealthTextures\dust_upper_ca.paa";
 		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\Cracked.paa";
-		AGM_Resistance = 1;
+		AGM_Resistance = 0;
 		AGM_Protection = 0;
 		AGM_DustPath = "AGM_Goggles\textures\fx\dust\%1.paa";
 	};
@@ -50,97 +50,118 @@ class CfgGlasses {
 
 	class G_Shades_Black:None {
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Shades_Blue:None{
-		AGM_Goggles_Color[] = {0,0,1};
+		AGM_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Shades_Green:None{
-		AGM_Goggles_Color[] = {0,1,0};
+		AGM_Color[] = {0,1,0};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Shades_Red:None{
-		AGM_Goggles_Color[] = {1,0,0};
+		AGM_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Spectacles:None{
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Spectacles_Tinted:None{
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_Blackred:None{
-		AGM_Goggles_Color[] = {1,0,0};
+		AGM_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_BlackWhite:None{
-		AGM_Goggles_Color[] = {0,0,1};
+		AGM_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_Blackyellow:None{
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_Checkered:None{
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_Greenblack:None{
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Sport_Red:None{
 		AGM_TintAmount=COLOUR*2;
-		AGM_Goggles_Color[] = {0,0,0};
+		AGM_Color[] = {0,0,0};
+		AGM_Resistance = 1;
 	};
 
 	class G_Squares:None{
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Squares_Tinted:None{
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Tactical_Black:None{
 		AGM_TintAmount=COLOUR;
-		AGM_Goggles_Color[] = {0,0,-1.5};
+		AGM_Color[] = {0,0,-1.5};
+		AGM_Resistance = 1;
 	};
 
 	class G_Tactical_Clear:None{
 		AGM_TintAmount=COLOUR;
-		AGM_Goggles_Color[] = {0,0,-1};
+		AGM_Color[] = {0,0,-1};
+		AGM_Resistance = 1;
 	};
 
 	class G_Aviator:None{
-		AGM_Goggles_Color[] = {0,0,-1};
+		AGM_Color[] = {0,0,-1};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Lady_Blue:None{
-		AGM_Goggles_Color[] = {0,0,1};
+		AGM_Color[] = {0,0,1};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Lady_Red:None{
-		AGM_Goggles_Color[] = {1,0,0};
+		AGM_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class G_Lady_Dark:None{
 		AGM_TintAmount=COLOUR*2;
+		AGM_Resistance = 1;
 	};
 
 	class G_Lady_Mirror:None{
 		AGM_TintAmount=COLOUR;
+		AGM_Resistance = 1;
 	};
 
 	class AV_ESS_blk:None{
@@ -166,13 +187,13 @@ class CfgGlasses {
 		AGM_Protection = 1;
 	};
 	class G_Bandanna_sport:G_Bandanna_blk {
-		AGM_Goggles_Color[] = {1,0,0};
+		AGM_Color[] = {1,0,0};
 		AGM_TintAmount=COLOUR;
 		AGM_Resistance = 1;
 		AGM_Protection = 1;
 	};
 	class G_Bandanna_aviator:G_Bandanna_blk {
-		AGM_Goggles_Color[] = {0,0,-1};
+		AGM_Color[] = {0,0,-1};
 		AGM_TintAmount=COLOUR;
 		AGM_Resistance = 1;
 		AGM_Protection = 1;

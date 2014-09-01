@@ -21,7 +21,7 @@
 private["_postProcessColour", "_postProcessTintAmount", "_glassesClassname", "_glassImagePath"];
 
 _glassesClassname = _this;
-_postProcessColour = getArray(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Goggles_Color");
+_postProcessColour = getArray(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_Color");
 _postProcessTintAmount = getNumber(configFile >> "CfgGlasses" >> _glassesClassname >> "AGM_TintAmount");
 
 call AGM_Goggles_fnc_RemoveGlassesEffect;
