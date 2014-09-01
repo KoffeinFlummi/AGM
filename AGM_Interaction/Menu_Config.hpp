@@ -65,9 +65,9 @@ class AGM_Interaction_Dialog {
       style = 48;
       text = "\AGM_Interaction\UI\command_rose_ca.paa";
       tooltip = "";
-      x = (0.5- 0.6 / (getResolution select 4) /2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5- 0.6 /2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 0.6 / (getResolution select 4) * safezoneW;
+      x = (0.5 - 0.6 / (getResolution select 4) * safezoneWAbs / safezoneW / 2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5 - 0.6 / 2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 0.6 / (getResolution select 4) * safezoneWAbs / safezoneW * safezoneW;
       h = 0.6 * safezoneH;
 
       colorText[] = {0.5,0.5,0.5,0.6};
