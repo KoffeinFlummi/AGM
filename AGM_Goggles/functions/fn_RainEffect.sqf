@@ -59,7 +59,7 @@ while {alive player} do {
 					_yAxis = safezoneY + ((random 1) * SafezoneH);
 					_amount = sunOrMoon max 0.5;
 					_color = [_amount,_amount,_amount,random 0.8 max 0.5];
-					_size = 0.06 + (random 0.03);
+					_size = 0.09 + (random 0.02);
 					disableSerialization;
 					_ctrl = _x select 0;
 					
