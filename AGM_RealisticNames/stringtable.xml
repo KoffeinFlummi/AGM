@@ -325,6 +325,7 @@
       <Hungarian>HEMTT (szerelő-jármű)</Hungarian>
       <Italian>HEMTT Riparatore</Italian>
     </Key>
+
     <Key ID="STR_AGM_RealisticNames_MRAP_03_Name">
       <English>Fennek</English>
       <German>Fennek</German>
@@ -356,7 +357,7 @@
       <Polish>Fennek (GMG)</Polish>
       <Czech>Fennek (granátomet)</Czech>
       <French>Fennek (GMG)</French>
-      <Russian>Феннек(Гранатомет)</Russian>
+      <Russian>Феннек (Гранатомет)</Russian>
       <Portuguese>Fennek (GMG)</Portuguese>
       <Hungarian>Fennek (GMG)</Hungarian>
       <Italian>Fennek (GMG)</Italian>
@@ -469,6 +470,7 @@
       <Hungarian>KamAZ (egészségügyi)</Hungarian>
       <Italian>KamAZ Medico</Italian>
     </Key>
+
     <Key ID="STR_AGM_RealisticNames_MRAP_02_Name">
       <English>Punisher</English>
       <German>Punisher</German>
@@ -649,6 +651,7 @@
       <Hungarian>Typhoon (egészségügyi)</Hungarian>
       <Italian>Typhoon medico</Italian>
     </Key>
+
     <Key ID="STR_AGM_RealisticNames_Heli_Attack_01_Name">
       <English>RAH-66 Comanche</English>
       <German>RAH-66 Comanche</German>
@@ -793,6 +796,7 @@
       <Hungarian>Jak-130</Hungarian>
       <Italian>Yak-130</Italian>
     </Key>
+
     <Key ID="STR_AGM_RealisticNames_SLAM_Name">
       <English>M4A1 SLAM</English>
       <German>M4A1 SLAM</German>
