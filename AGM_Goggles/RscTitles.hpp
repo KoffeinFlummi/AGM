@@ -49,38 +49,68 @@ class RscTitles{
 		class controls{
 			class rainImage1: RscPicture{
 				idc = 10670;
-				text = "AGM_Goggles\textures\fx\rain\1.paa";
+				text = "AGM_Goggles\textures\fx\rain\d1.paa";
+				w = 0.04;
+				h = 0.04;
 			};
-			class rainImage2: RscPicture{
+			class rainImage2: rainImage1{
 				idc = 10671;
-				text = "AGM_Goggles\textures\fx\rain\2.paa";
+				text = "AGM_Goggles\textures\fx\rain\d2.paa";
 			};
-			class rainImage3: RscPicture{
+			class rainImage3: rainImage1{
 				idc = 10672;
-				text = "AGM_Goggles\textures\fx\rain\3.paa";
+				text = "AGM_Goggles\textures\fx\rain\d3.paa";
 			};
-			class rainImage4: RscPicture{
+			class rainImage4: rainImage1{
 				idc = 10673;
-				text = "AGM_Goggles\textures\fx\rain\4.paa";
+				text = "AGM_Goggles\textures\fx\rain\d4.paa";
 			};
-			
-			class rainImage1Dup: RscPicture{
+			class rainImage5: rainImage1{
+				idc = 10674;
+				text = "AGM_Goggles\textures\fx\rain\d5.paa";
+			};
+			class rainImage6: rainImage1{
+				idc = 10675;
+				text = "AGM_Goggles\textures\fx\rain\d2.paa";
+			};
+			class rainImage7: rainImage1{
+				idc = 10676;
+				text = "AGM_Goggles\textures\fx\rain\d3.paa";
+			};
+			/*
+			class rainImage8: rainImage1{
+				idc = 10677;
+				text = "AGM_Goggles\textures\fx\rain\d5.paa";
+			};
+			class rainImage9: rainImage1{
+				idc = 10678;
+				text = "AGM_Goggles\textures\fx\rain\d1.paa";
+			};
+			class rainImage10: rainImage1{
+				idc = 10679;
+				text = "AGM_Goggles\textures\fx\rain\d4.paa";
+			};
+			class rainImage11: rainImage1{
 				idc = 10680;
-				text = "AGM_Goggles\textures\fx\rain\1.paa";
-				y = "(safezoneY - safezoneH)";
+				text = "AGM_Goggles\textures\fx\rain\d5.paa";
 			};
-			class rainImage2Dup: rainImage1Dup{
+			class rainImage12: rainImage1{
 				idc = 10681;
-				text = "AGM_Goggles\textures\fx\rain\2.paa";
+				text = "AGM_Goggles\textures\fx\rain\d1.paa";
 			};
-			class rainImage3Dup: rainImage1Dup{
+			class rainImage13: rainImage1{
 				idc = 10682;
-				text = "AGM_Goggles\textures\fx\rain\3.paa";
+				text = "AGM_Goggles\textures\fx\rain\d4.paa";
 			};
-			class rainImage4Dup: rainImage1Dup{
+			class rainImage14: rainImage1{
 				idc = 10683;
-				text = "AGM_Goggles\textures\fx\rain\4.paa";
+				text = "AGM_Goggles\textures\fx\rain\d3.paa";
 			};
+			class rainImage15: rainImage1{
+				idc = 10684;
+				text = "AGM_Goggles\textures\fx\rain\d2.paa";
+			};
+			*/
 		};
 	};
 };

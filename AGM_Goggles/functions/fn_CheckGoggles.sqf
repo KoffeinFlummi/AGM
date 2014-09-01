@@ -15,15 +15,19 @@
 	[] execVM "AGM_Goggles\functions\fn_CheckGoggles.sqf";
 */
 #include "\AGM_Goggles\script.sqf"
-#define RAINCHECK 5
-
-private ["_lastRainCheck"];
 waitUntil {sleep 0.46;alive player};
 call AGM_Goggles_fnc_CheckGlasses;
 ["AGM_Goggles_RotorWash", "OnEachFrame", {call AGM_Goggles_fnc_OnEachFrame;}] call BIS_fnc_addStackedEventHandler;
+[] spawn AGM_Goggles_fnc_RainEffect;
 while {alive player} do {
 	sleep 1;
 	if (true) then {
+		// Detect if curator interface is open and disable effects
+		if (!isNull(findDisplay 312)) exitWith {
+			if (AGM_Goggles_EffectsActive) then {
+				call AGM_Goggles_fnc_RemoveGlassesEffect;
+			};
+		};
 		call AGM_Goggles_fnc_CheckGlasses;
 		if !(player call AGM_Goggles_fnc_isGogglesVisible) exitWith {
 			if (AGM_Goggles_EffectsActive) then {
@@ -35,18 +39,6 @@ while {alive player} do {
 				call AGM_Goggles_fnc_RemoveGlassesEffect;
 			};
 		};
-		// Detect if curator interface is open and disable effects
-		if (!isNull(findDisplay 312)) exitWith {
-			if (AGM_Goggles_EffectsActive) then {
-				call AGM_Goggles_fnc_RemoveGlassesEffect;
-			};
-		};
-		// Check rain
-		if (GETRAINT(RTIME) <= time - (RAINCHECK + GETRAINT(RAMOUNT)*RAINCHECK)) then {
-			SETLRAIN(RTIME, time);
-			(rain > 0.1) call AGM_Goggles_fnc_RainCheck;
-		};
-
 		if !(AGM_Goggles_EffectsActive) then {
 			(goggles player) call AGM_Goggles_fnc_ApplyGlassesEffect;
 		} else {
