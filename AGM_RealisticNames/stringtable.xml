@@ -35,7 +35,7 @@
       <Polish>XM312 (Wysoki)</Polish>
       <Russian>XM312 (Высокий)</Russian>
       <Portuguese>XM312 (Alto)</Portuguese>
-      <Hungarian>XM312 (Emelt)</Hungarian>
+      <Hungarian>XM312 (Magasított)</Hungarian>
       <Italian>XM312 (Alta)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_GMG_01_Name">
@@ -71,7 +71,7 @@
       <Polish>XM307 (Wysoki)</Polish>
       <Russian>XM307 (Высокий)</Russian>
       <Portuguese>XM307 (Alto)</Portuguese>
-      <Hungarian>XM307 (Emelt)</Hungarian>
+      <Hungarian>XM307 (Magasított)</Hungarian>
       <Italian>XM307 (Alta)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AT_Name">
@@ -83,7 +83,7 @@
       <Polish>Wyrzutnia Mini-Spike (AT)</Polish>
       <Russian>Mini-Spike Пусковое устройство (ПТРК)</Russian>
       <Portuguese>Lança-mísseis Mini-Spike (AC)</Portuguese>
-      <Hungarian>Mini-Spike Launcher (AT)</Hungarian>
+      <Hungarian>Mini-Spike rakétarendszer (páncéltörő)>
       <Italian>Lanciatore Mini-Spike (AC)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AA_Name">
@@ -95,7 +95,7 @@
       <Polish>Wyrzutnia Mini-Spike (AA)</Polish>
       <Russian>Mini-Spike Пусковое устройство (ВВ)</Russian>
       <Portuguese>Lança-mísseis Mini-Spike (AA)</Portuguese>
-      <Hungarian>Mini-Spike Launcher (AA)</Hungarian>
+      <Hungarian>Mini-Spike rakétarendszer (légvédelmi)</Hungarian>
       <Italian>Lanciatore Mini-Spike (AA)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
@@ -239,7 +239,7 @@
       <French>HEMTT Transport</French>
       <Russian>HEMTT Транспортный</Russian>
       <Portuguese>HEMTT de transporte</Portuguese>
-      <Hungarian>HEMTT Közlekedés</Hungarian>
+      <Hungarian>HEMTT szállítójármű</Hungarian>
       <Italian>HEMTT da trasporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_covered_Name">
@@ -251,7 +251,7 @@
       <French>HEMTT Transport (bâché)</French>
       <Russian>HEMTT Транспортный (крытый)</Russian>
       <Portuguese>HEMTT de transporte (coberta)</Portuguese>
-      <Hungarian>HEMTT Közlekedés (fedett)</Hungarian>
+      <Hungarian>HEMTT szállítójármű (ponyvás)</Hungarian>
       <Italian>HEMTT da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_mover_Name">
@@ -287,7 +287,7 @@
       <French>HEMTT Sanitaire</French>
       <Russian>HEMTT Медицинский</Russian>
       <Portuguese>HEMTT de médico</Portuguese>
-      <Hungarian>HEMTT Medikus</Hungarian>
+      <Hungarian>HEMTT (egészségügyi)</Hungarian>
       <Italian>HEMTT Medico</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_ammo_Name">
@@ -299,7 +299,7 @@
       <French>HEMTT Munitions</French>
       <Russian>HEMTT Боеприпасы</Russian>
       <Portuguese>HEMTT de munições</Portuguese>
-      <Hungarian>HEMTT Muníció</Hungarian>
+      <Hungarian>HEMTT (lőszerszállító)</Hungarian>
       <Italian>HEMTT di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_fuel_Name">
@@ -311,7 +311,7 @@
       <French>HEMTT Citerne</French>
       <Russian>HEMTT Заправщик</Russian>
       <Portuguese>HEMTT de combustível</Portuguese>
-      <Hungarian>HEMTT Üzemanyag</Hungarian>
+      <Hungarian>HEMTT (üzemanyag-szállító)</Hungarian>
       <Italian>HEMTT di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_01_Repair_Name">
@@ -323,7 +323,7 @@
       <French>HEMTT Réparation</French>
       <Russian>HEMTT Ремонтный</Russian>
       <Portuguese>HEMTT de reparador</Portuguese>
-      <Hungarian>HEMTT Kijavítás</Hungarian>
+      <Hungarian>HEMTT (szerelő-jármű)</Hungarian>
       <Italian>HEMTT Riparatore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_03_Name">
@@ -407,7 +407,7 @@
       <French>KamAZ Transport</French>
       <Russian>КамАЗ Траспортный</Russian>
       <Portuguese>KamAZ de transporte</Portuguese>
-      <Hungarian>KamAZ Közlekedés</Hungarian>
+      <Hungarian>KamAZ szállítójármű</Hungarian>
       <Italian>KamAZ da trasporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_covered_Name">
@@ -419,7 +419,7 @@
       <French>KamAZ Transport (bâché)</French>
       <Russian>КамАЗ Траспортный (Крытый)</Russian>
       <Portuguese>KamAZ de transporte (coberta)</Portuguese>
-      <Hungarian>KamAZ Közlekedés (fedett)</Hungarian>
+      <Hungarian>KamAZ szállítójármű (ponyvás)</Hungarian>
       <Italian>KamAZ da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_ammo_Name">
@@ -431,7 +431,7 @@
       <French>KamAZ Munitions</French>
       <Russian>КамАЗ Боеприпасы</Russian>
       <Portuguese>KamAZ de munições</Portuguese>
-      <Hungarian>KamAZ Muníció</Hungarian>
+      <Hungarian>KamAZ (lőszerszállító)</Hungarian>
       <Italian>KamAZ  di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_fuel_Name">
@@ -443,7 +443,7 @@
       <French>KamAZ Citerne</French>
       <Russian>КамАЗ Заправщик</Russian>
       <Portuguese>KamAZ de combustível</Portuguese>
-      <Hungarian>KamAZ Üzemanyag</Hungarian>
+      <Hungarian>KamAZ (üzemanyag-szállító)</Hungarian>
       <Italian>KamAZ  di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_box_Name">
@@ -455,7 +455,7 @@
       <French>KamAZ Réparation</French>
       <Russian>КамАЗ Ремонтный</Russian>
       <Portuguese>KamAZ de reparador</Portuguese>
-      <Hungarian>KamAZ Kijavítás</Hungarian>
+      <Hungarian>KamAZ (szerelő-jármű)</Hungarian>
       <Italian>KamAZ  riparatore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_02_medical_Name">
@@ -467,7 +467,7 @@
       <French>KamAZ Sanitaire</French>
       <Russian>КамАЗ Медицинский</Russian>
       <Portuguese>KamAZ de médico</Portuguese>
-      <Hungarian>KamAZ Medikus</Hungarian>
+      <Hungarian>KamAZ (egészségügyi)</Hungarian>
       <Italian>KamAZ Medico</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_02_Name">
@@ -575,7 +575,7 @@
       <French>Typhoon Transport</French>
       <Russian>Тайфун Транспортный</Russian>
       <Portuguese>Typhoon de transporte</Portuguese>
-      <Hungarian>Typhoon Közlekedés</Hungarian>
+      <Hungarian>Typhoon szállítójármű</Hungarian>
       <Italian>Typhoon da trasporto</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_covered_Name">
@@ -587,7 +587,7 @@
       <French>Typhoon Transport (bâché)</French>
       <Russian>Тайфун Транспортный (kрытый)</Russian>
       <Portuguese>Typhoon de transporte (coberta)</Portuguese>
-      <Hungarian>Typhoon Közlekedés (fedett)</Hungarian>
+      <Hungarian>Typhoon szállítójármű (ponyvás)</Hungarian>
       <Italian>Typhoon da trasporto (coperto)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_device_Name">
@@ -596,10 +596,10 @@
       <Spanish>Typhoon de dispositivo</Spanish>
       <Polish>Typhoon Urządzenie</Polish>
       <Czech>Typhoon Zařízení</Czech>
-      <French>Typhoon Appareil</French>
+      <French>Typhoon Dispositif</French>
       <Russian>Тайфун Устройство</Russian>
       <Portuguese>Typhoon de dispositivo</Portuguese>
-      <Hungarian>Typhoon Berendezés</Hungarian>
+      <Hungarian>Typhoon (szerkezet)</Hungarian>
       <Italian>Typhoon per dispositivo</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_ammo_Name">
@@ -611,7 +611,7 @@
       <French>Typhoon Munitions</French>
       <Russian>Тайфун Боеприпасы</Russian>
       <Portuguese>Typhoon de munições</Portuguese>
-      <Hungarian>Typhoon Muníció</Hungarian>
+      <Hungarian>Typhoon (lőszerszállító)</Hungarian>
       <Italian>Typhoon di rifornimento munizioni</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_fuel_Name">
@@ -623,7 +623,7 @@
       <French>Typhoon Citerne</French>
       <Russian>Тайфун Заправщик</Russian>
       <Portuguese>Typhoon de combustível</Portuguese>
-      <Hungarian>Typhoon Üzemanyag</Hungarian>
+      <Hungarian>Typhoon (üzemanyag-szállító)</Hungarian>
       <Italian>Typhoon di rifornimento carburante</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_repair_Name">
@@ -635,7 +635,7 @@
       <French>Typhoon Réparation</French>
       <Russian>Тайфун Ремонтный</Russian>
       <Portuguese>Typhoon de reparador</Portuguese>
-      <Hungarian>Typhoon Kijavítás</Hungarian>
+      <Hungarian>Typhoon (szerelő-jármű)</Hungarian>
       <Italian>Typhoon riparatore</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_medical_Name">
@@ -647,7 +647,7 @@
       <French>Typhoon Sanitaire</French>
       <Russian>Тайфун Медицинский</Russian>
       <Portuguese>Typhoon de médico</Portuguese>
-      <Hungarian>Typhoon Medikus</Hungarian>
+      <Hungarian>Typhoon (egészségügyi)</Hungarian>
       <Italian>Typhoon medico</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Heli_Attack_01_Name">
@@ -810,36 +810,36 @@
       <English>M18A1 Claymore</English>
       <German>M18A1 Claymore</German>
       <Spanish>M18A1 Claymore</Spanish>
-      <Polish>M18A1 Claymore</Polish>
-      <Czech>M18A1 Claymore</Czech>
+      <Polish>Mina kierunkowa M18A1 Claymore</Polish>
+      <Czech>M18A1 Claymore Mina</Czech>
       <French>M18A1 Claymore Mine antipersonnel à effet dirigé</French>
       <Russian>M18A1 Клеймор</Russian>
       <Portuguese>M18A1 Claymore</Portuguese>
-      <Hungarian>M18A1 Claymore</Hungarian>
+      <Hungarian>M18A1 Claymore akna</Hungarian>
       <Italian>M18A1 Claymore Mina antiuomo</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SatchelCharge_Name">
       <English>M183 Demolition Charge Assembly</English>
       <German>M183 Geballte Sprengladung</German>
       <Spanish>Conjunto de carga de demolición M183</Spanish>
-      <Polish>M183 Demolition Charge Assembly</Polish>
+      <Polish>Ładunek burzący M183</Polish>
       <Czech>M183 Demolition Charge Assembly</Czech>
-      <French>M183 Demolition Charge Assembly</French>
+      <French>M183 Charge de Démolition</French>
       <Russian>M183 Комплектный подрывной заряд</Russian>
       <Portuguese>M183 Demolition Charge Assembly</Portuguese>
-      <Hungarian>M183 Demolition Charge Assembly</Hungarian>
+      <Hungarian>M183 romboló töltet</Hungarian>
       <Italian>M183 Demolition Charge Assembly</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_DemoCharge_Name">
       <English>M112 Demolition Block</English>
       <German>M112 Sprengladung</German>
       <Spanish>Bloque de demolición M112</Spanish>
-      <Polish>M112 Demolition Block</Polish>
-      <Czech>M112 Demolition Block</Czech>
+      <Polish>Ładunek burzący M112</Polish>
+      <Czech>M112 Demoliční nálož</Czech>
       <French>Pétard M112</French>
-      <Russian>M112 Блок взрывчатки</Russian>
+      <Russian>M112 подрывной заряд</Russian>
       <Portuguese>M112 Demolition Block</Portuguese>
-      <Hungarian>M112 Demolition Block</Hungarian>
+      <Hungarian>M112 romboló töltet</Hungarian>
       <Italian>M112 Demolition Block</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_HandGrenade_Name">
@@ -851,7 +851,7 @@
       <French>M67 Grenade à fragmentation</French>
       <Russian>M67 ручная осколочная граната</Russian>
       <Portuguese>M67 Granada de fragmentação</Portuguese>
-      <Hungarian>M67 Fragmentation Grenade</Hungarian>
+      <Hungarian>M67 repeszgránát</Hungarian>
       <Italian>M67 Granata a frammentazione</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShell_Name">
@@ -863,7 +863,7 @@
       <French>M83 Grenade fumigène (Blanche)</French>
       <Russian>M83 дымовой гранаты (Белый)</Russian>
       <Portuguese>M83 Granada de fumaça (Branco)</Portuguese>
-      <Hungarian>M83 Smoke Grenade (Fehér)</Hungarian>
+      <Hungarian>M83 füstgránát (Fehér)</Hungarian>
       <Italian>M83 Granata fumogena (Bianco)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellBlue_Name">
@@ -875,7 +875,7 @@
       <French>M18 Grenade fumigène (Bleue)</French>
       <Russian>M18 дымовой гранаты (Синий)</Russian>
       <Portuguese>M18 Granada de fumaça (Azul)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Kék)</Hungarian>
+      <Hungarian>M18 füstgránát (Kék)</Hungarian>
       <Italian>M18 Granata fumogena (Blu)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellGreen_Name">
@@ -887,7 +887,7 @@
       <French>M18 Grenade fumigène (Verte)</French>
       <Russian>M18 дымовой гранаты (Зелёный)</Russian>
       <Portuguese>M18 Granada de fumaça (Verde)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Zöld)</Hungarian>
+      <Hungarian>M18 füstgránát (Zöld)</Hungarian>
       <Italian>M18 Granata fumogena (Verde)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellOrange_Name">
@@ -899,7 +899,7 @@
       <French>M18 Grenade fumigène (Orange)</French>
       <Russian>M18 дымовой гранаты (Оранжевый)</Russian>
       <Portuguese>M18 Granada de fumaça (Laranja)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Narancs)</Hungarian>
+      <Hungarian>M18 füstgránát (Narancs)</Hungarian>
       <Italian>M18 Granata fumogena (Arancione)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
@@ -911,7 +911,7 @@
       <French>M18 Grenade fumigène (Pourpre)</French>
       <Russian>M18 дымовой гранаты (Пурпурный)</Russian>
       <Portuguese>M18 Granada de fumaça (Roxo)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Bíbor)</Hungarian>
+      <Hungarian>M18 füstgránát (Bíbor)</Hungarian>
       <Italian>M18 Granata fumogena (Viola)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
@@ -923,7 +923,7 @@
       <French>M18 Grenade fumigène (Rouge)</French>
       <Russian>M18 дымовой гранаты (Красный)</Russian>
       <Portuguese>M18 Granada de fumaça (Vermelho)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Vörös)</Hungarian>
+      <Hungarian>M18 füstgránát (Vörös)</Hungarian>
       <Italian>M18 Granata fumogena (Rosso)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
@@ -935,7 +935,7 @@
       <French>M18 Grenade fumigène (Jaune)</French>
       <Russian>M183 дымовой гранаты (Жёлтые)</Russian>
       <Portuguese>M18 Granada de fumaça (Amarelo)</Portuguese>
-      <Hungarian>M18 Smoke Grenade (Sárga)</Hungarian>
+      <Hungarian>M18 füstgránát (Sárga)</Hungarian>
       <Italian>M18 Granata fumogena (Giallo)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_ATMine_Name">
@@ -947,7 +947,7 @@
       <French>M15 Mine antichar</French>
       <Russian>M15 противотанковая мина</Russian>
       <Portuguese>M15 Mina anticarro</Portuguese>
-      <Hungarian>M15 Anti-Tank Mine</Hungarian>
+      <Hungarian>M15 harckocsiakna</Hungarian>
       <Italian>M15 Mine anticarro</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSMine_Name">
@@ -959,7 +959,7 @@
       <French>VS-50 Mine antipersonnel à pression</French>
       <Russian>VS-50 Противопехотная мина</Russian>
       <Portuguese>VS-50 Mina antipessoal</Portuguese>
-      <Hungarian>VS-50 Anti-Personnel Mine</Hungarian>
+      <Hungarian>VS-50 gyalogsági taposóakna</Hungarian>
       <Italian>VS-50 Mine antiuomo</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSBoundingMine_Name">
@@ -971,7 +971,7 @@
       <French>M26  Mine antipersonnel bondissante</French>
       <Russian>M26 Противопехотная мина</Russian>
       <Portuguese>M26 Mina saltadora antipessoal</Portuguese>
-      <Hungarian>M26 Anti-Personnel Bounding Mine</Hungarian>
+      <Hungarian>M26 gyalogsági ugróakna</Hungarian>
       <Italian>M26 Mine saltanti antiuomo</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APERSTripwireMine_Name">
@@ -983,7 +983,7 @@
       <French>PMR-3 Mine antipersonnel à traction</French>
       <Russian>PMR-3 Противопехотная мина</Russian>
       <Portuguese>PMR-3 Anti-Personnel Tripwire Mine</Portuguese>
-      <Hungarian>PMR-3 Anti-Personnel Tripwire Mine</Hungarian>
+      <Hungarian>PMR-3 botlódrótos gyalogsági akna</Hungarian>
       <Italian>PMR-3 Mine antiuomo</Italian>
     </Key>
   </Package>
