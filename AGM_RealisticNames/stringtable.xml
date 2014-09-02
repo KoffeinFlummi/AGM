@@ -33,7 +33,7 @@
       <Czech>XM312 (Vysoký)</Czech>
       <Polish>XM312 (Wysoki)</Polish>
       <Russian>XM312 (Высокий)</Russian>
-      <Portuguese>XM312 (Alto)</Portuguese>
+      <Portuguese>XM312 (Alta)</Portuguese>
       <Hungarian>XM312 (Magasított)</Hungarian>
       <Italian>XM312 (Alta)</Italian>
     </Key>
@@ -69,7 +69,7 @@
       <Czech>XM307 (Vysoký)</Czech>
       <Polish>XM307 (Wysoki)</Polish>
       <Russian>XM307 (Высокий)</Russian>
-      <Portuguese>XM307 (Alto)</Portuguese>
+      <Portuguese>XM307 (Alta)</Portuguese>
       <Hungarian>XM307 (Magasított)</Hungarian>
       <Italian>XM307 (Alta)</Italian>
     </Key>
@@ -237,7 +237,7 @@
       <Czech>HEMTT Valník</Czech>
       <French>HEMTT Transport</French>
       <Russian>HEMTT Транспортный</Russian>
-      <Portuguese>HEMTT de transporte</Portuguese>
+      <Portuguese>HEMTT Transporte</Portuguese>
       <Hungarian>HEMTT szállítójármű</Hungarian>
       <Italian>HEMTT da trasporto</Italian>
     </Key>
@@ -249,7 +249,7 @@
       <Czech>HEMTT Valník (krytý)</Czech>
       <French>HEMTT Transport (bâché)</French>
       <Russian>HEMTT Транспортный (крытый)</Russian>
-      <Portuguese>HEMTT de transporte (coberta)</Portuguese>
+      <Portuguese>HEMTT Transporte (coberto)</Portuguese>
       <Hungarian>HEMTT szállítójármű (ponyvás)</Hungarian>
       <Italian>HEMTT da trasporto (coperto)</Italian>
     </Key>
@@ -273,7 +273,7 @@
       <Czech>HEMTT Skříňový</Czech>
       <French>HEMTT Conteneur</French>
       <Russian>HEMTT Контейнер</Russian>
-      <Portuguese>HEMTT de contêiner</Portuguese>
+      <Portuguese>HEMTT Contêiner</Portuguese>
       <Hungarian>HEMTT Konténer</Hungarian>
       <Italian>HEMTT portacontainer </Italian>
     </Key>
@@ -285,7 +285,7 @@
       <Czech>HEMTT Zdravotnický</Czech>
       <French>HEMTT Sanitaire</French>
       <Russian>HEMTT Медицинский</Russian>
-      <Portuguese>HEMTT de médico</Portuguese>
+      <Portuguese>HEMTT Médico</Portuguese>
       <Hungarian>HEMTT (egészségügyi)</Hungarian>
       <Italian>HEMTT Medico</Italian>
     </Key>
@@ -297,7 +297,7 @@
       <Czech>HEMTT Muniční</Czech>
       <French>HEMTT Munitions</French>
       <Russian>HEMTT Боеприпасы</Russian>
-      <Portuguese>HEMTT de munições</Portuguese>
+      <Portuguese>HEMTT Munições</Portuguese>
       <Hungarian>HEMTT (lőszerszállító)</Hungarian>
       <Italian>HEMTT di rifornimento munizioni</Italian>
     </Key>
@@ -309,7 +309,7 @@
       <Czech>HEMTT Cisterna</Czech>
       <French>HEMTT Citerne</French>
       <Russian>HEMTT Заправщик</Russian>
-      <Portuguese>HEMTT de combustível</Portuguese>
+      <Portuguese>HEMTT Combustível</Portuguese>
       <Hungarian>HEMTT (üzemanyag-szállító)</Hungarian>
       <Italian>HEMTT di rifornimento carburante</Italian>
     </Key>
@@ -321,7 +321,7 @@
       <Czech>HEMTT Opravárenský</Czech>
       <French>HEMTT Réparation</French>
       <Russian>HEMTT Ремонтный</Russian>
-      <Portuguese>HEMTT de reparador</Portuguese>
+      <Portuguese>HEMTT Reparador</Portuguese>
       <Hungarian>HEMTT (szerelő-jármű)</Hungarian>
       <Italian>HEMTT Riparatore</Italian>
     </Key>
@@ -406,7 +406,7 @@
       <Czech>KamAZ Valník</Czech>
       <French>KamAZ Transport</French>
       <Russian>КамАЗ Траспортный</Russian>
-      <Portuguese>KamAZ de transporte</Portuguese>
+      <Portuguese>KamAZ Transporte</Portuguese>
       <Hungarian>KamAZ szállítójármű</Hungarian>
       <Italian>KamAZ da trasporto</Italian>
     </Key>
@@ -418,7 +418,7 @@
       <Czech>KamAZ Valník (krytý)</Czech>
       <French>KamAZ Transport (bâché)</French>
       <Russian>КамАЗ Траспортный (Крытый)</Russian>
-      <Portuguese>KamAZ de transporte (coberta)</Portuguese>
+      <Portuguese>KamAZ Transporte (coberto)</Portuguese>
       <Hungarian>KamAZ szállítójármű (ponyvás)</Hungarian>
       <Italian>KamAZ da trasporto (coperto)</Italian>
     </Key>
@@ -430,7 +430,7 @@
       <Czech>KamAZ Muniční</Czech>
       <French>KamAZ Munitions</French>
       <Russian>КамАЗ Боеприпасы</Russian>
-      <Portuguese>KamAZ de munições</Portuguese>
+      <Portuguese>KamAZ Munições</Portuguese>
       <Hungarian>KamAZ (lőszerszállító)</Hungarian>
       <Italian>KamAZ  di rifornimento munizioni</Italian>
     </Key>
@@ -442,7 +442,7 @@
       <Czech>KamAZ Cisterna</Czech>
       <French>KamAZ Citerne</French>
       <Russian>КамАЗ Заправщик</Russian>
-      <Portuguese>KamAZ de combustível</Portuguese>
+      <Portuguese>KamAZ Combustível</Portuguese>
       <Hungarian>KamAZ (üzemanyag-szállító)</Hungarian>
       <Italian>KamAZ  di rifornimento carburante</Italian>
     </Key>
@@ -454,7 +454,7 @@
       <Czech>KamAZ Opravárenský</Czech>
       <French>KamAZ Réparation</French>
       <Russian>КамАЗ Ремонтный</Russian>
-      <Portuguese>KamAZ de reparador</Portuguese>
+      <Portuguese>KamAZ Reparador</Portuguese>
       <Hungarian>KamAZ (szerelő-jármű)</Hungarian>
       <Italian>KamAZ  riparatore</Italian>
     </Key>
@@ -466,7 +466,7 @@
       <Czech>KamAZ Zdravotnický</Czech>
       <French>KamAZ Sanitaire</French>
       <Russian>КамАЗ Медицинский</Russian>
-      <Portuguese>KamAZ de médico</Portuguese>
+      <Portuguese>KamAZ Médico</Portuguese>
       <Hungarian>KamAZ (egészségügyi)</Hungarian>
       <Italian>KamAZ Medico</Italian>
     </Key>
@@ -575,7 +575,7 @@
       <Czech>Typhoon Valník</Czech>
       <French>Typhoon Transport</French>
       <Russian>Тайфун Транспортный</Russian>
-      <Portuguese>Typhoon de transporte</Portuguese>
+      <Portuguese>Typhoon Transporte</Portuguese>
       <Hungarian>Typhoon szállítójármű</Hungarian>
       <Italian>Typhoon da trasporto</Italian>
     </Key>
@@ -587,7 +587,7 @@
       <Czech>Typhoon Valník (krytý)</Czech>
       <French>Typhoon Transport (bâché)</French>
       <Russian>Тайфун Транспортный (kрытый)</Russian>
-      <Portuguese>Typhoon de transporte (coberta)</Portuguese>
+      <Portuguese>Typhoon Transporte (coberto)</Portuguese>
       <Hungarian>Typhoon szállítójármű (ponyvás)</Hungarian>
       <Italian>Typhoon da trasporto (coperto)</Italian>
     </Key>
@@ -599,7 +599,7 @@
       <Czech>Typhoon Zařízení</Czech>
       <French>Typhoon Dispositif</French>
       <Russian>Тайфун Устройство</Russian>
-      <Portuguese>Typhoon de dispositivo</Portuguese>
+      <Portuguese>Typhoon Dispositivo</Portuguese>
       <Hungarian>Typhoon (szerkezet)</Hungarian>
       <Italian>Typhoon per dispositivo</Italian>
     </Key>
@@ -611,7 +611,7 @@
       <Czech>Typhoon Muniční</Czech>
       <French>Typhoon Munitions</French>
       <Russian>Тайфун Боеприпасы</Russian>
-      <Portuguese>Typhoon de munições</Portuguese>
+      <Portuguese>Typhoon Munições</Portuguese>
       <Hungarian>Typhoon (lőszerszállító)</Hungarian>
       <Italian>Typhoon di rifornimento munizioni</Italian>
     </Key>
@@ -623,7 +623,7 @@
       <Czech>Typhoon Cisterna</Czech>
       <French>Typhoon Citerne</French>
       <Russian>Тайфун Заправщик</Russian>
-      <Portuguese>Typhoon de combustível</Portuguese>
+      <Portuguese>Typhoon Combustível</Portuguese>
       <Hungarian>Typhoon (üzemanyag-szállító)</Hungarian>
       <Italian>Typhoon di rifornimento carburante</Italian>
     </Key>
@@ -635,7 +635,7 @@
       <Czech>Typhoon Opravárenský</Czech>
       <French>Typhoon Réparation</French>
       <Russian>Тайфун Ремонтный</Russian>
-      <Portuguese>Typhoon de reparador</Portuguese>
+      <Portuguese>Typhoon Reparador</Portuguese>
       <Hungarian>Typhoon (szerelő-jármű)</Hungarian>
       <Italian>Typhoon riparatore</Italian>
     </Key>
@@ -647,7 +647,7 @@
       <Czech>Typhoon Zdravotnický</Czech>
       <French>Typhoon Sanitaire</French>
       <Russian>Тайфун Медицинский</Russian>
-      <Portuguese>Typhoon de médico</Portuguese>
+      <Portuguese>Typhoon Médico</Portuguese>
       <Hungarian>Typhoon (egészségügyi)</Hungarian>
       <Italian>Typhoon medico</Italian>
     </Key>
@@ -720,7 +720,7 @@
       <Czech>AW159 Wildcat (neozbrojený)</Czech>
       <French>AW159 Wildcat (non-armé)</French>
       <Russian>AW159 Wildcat (невооруженный)</Russian>
-      <Portuguese>AW159 Wildcat (desarmadas)</Portuguese>
+      <Portuguese>AW159 Wildcat (desarmado)</Portuguese>
       <Hungarian>AW159 Wildcat (fegyvertelen)</Hungarian>
       <Italian>AW159 Wildcat (disarmato)</Italian>
     </Key>
@@ -780,7 +780,7 @@
       <Czech>Ka-60 Kasatka (neozbrojená)</Czech>
       <French>Ka-60 Kasatka (non-armé)</French>
       <Russian>Ka-60 Касатка (невооруженный)</Russian>
-      <Portuguese>Ka-60 Kasatka (desarmadas)</Portuguese>
+      <Portuguese>Ka-60 Kasatka (desarmado)</Portuguese>
       <Hungarian>Ka-60 Kasatka (fegyvertelen)</Hungarian>
       <Italian>Ka-60 Kasatka (disarmato)</Italian>
     </Key>
@@ -829,7 +829,7 @@
       <Czech>M183 Demolition Charge Assembly</Czech>
       <French>M183 Charge de Démolition</French>
       <Russian>M183 Комплектный подрывной заряд</Russian>
-      <Portuguese>M183 Demolition Charge Assembly</Portuguese>
+      <Portuguese>M183 Sacola de Demolição</Portuguese>
       <Hungarian>M183 romboló töltet</Hungarian>
       <Italian>M183 Demolition Charge Assembly</Italian>
     </Key>
@@ -841,7 +841,7 @@
       <Czech>M112 Demoliční nálož</Czech>
       <French>Pétard M112</French>
       <Russian>M112 подрывной заряд</Russian>
-      <Portuguese>M112 Demolition Block</Portuguese>
+      <Portuguese>M112 Carga de Demolição</Portuguese>
       <Hungarian>M112 romboló töltet</Hungarian>
       <Italian>M112 Demolition Block</Italian>
     </Key>
@@ -985,7 +985,7 @@
       <Czech>PMR-3 Protipěchotní Mina</Czech>
       <French>PMR-3 Mine antipersonnel à traction</French>
       <Russian>PMR-3 Противопехотная мина</Russian>
-      <Portuguese>PMR-3 Anti-Personnel Tripwire Mine</Portuguese>
+      <Portuguese>PMR-3 Mina antipessoal (armadilha)</Portuguese>
       <Hungarian>PMR-3 botlódrótos gyalogsági akna</Hungarian>
       <Italian>PMR-3 Mine antiuomo</Italian>
     </Key>
