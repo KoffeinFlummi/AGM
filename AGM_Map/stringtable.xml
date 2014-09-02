@@ -78,5 +78,9 @@
       <French>Montrer le GPS</French>
       <Italian>Nascondi il GPS sulla mappa</Italian>
     </Key>
+    <Key ID="STR_AGM_Map_CopyMap">
+      <English>Copy Map</English>
+      <Spanish>Copiar mapa</Spanish>
+    </Key>
   </Package>
 </Project>
