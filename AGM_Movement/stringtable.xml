@@ -9,6 +9,7 @@
       <French>Afficher le poids en lb</French>
       <Polish>Pokaż ciężar w funtach</Polish>
       <Czech>Zobrazit váhu v lb</Czech>
+      <Italian>Mostra peso in libbre</Italian>
     </Key>
     <Key ID="STR_AGM_Movement_Weight">
       <English>Weight:</English>
@@ -17,6 +18,7 @@
       <French>Poids:</French>
       <Polish>Waga:</Polish>
       <Czech>Váha:</Czech>
+      <Italian>Peso:</Italian>
     </Key>
 
 

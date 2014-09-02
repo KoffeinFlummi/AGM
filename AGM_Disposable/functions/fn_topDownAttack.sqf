@@ -2,13 +2,19 @@
 
 if (
 	getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDownAttack") != 1
-	|| {missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] != 1}
 ) exitWith {};
 
 _this spawn {
 	_projectile = _this select 5;
 
-	_target = cursorTarget;
+	_flyInHeight = nil;
+	if (missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] == 1) then {
+		_flyInHeight = 100;
+	};
+
+	_target = missionNamespace getVariable ["AGM_Disposable_LockedTarget", objNull];
+	_isLocked = missionNamespace getVariable ["AGM_Disposable_isTargetLocked", false];
+	AGM_Disposable_LockedTarget = objNull;
 
 	// save values of the auto-guided  missile
 	_type = typeOf _projectile;
@@ -76,51 +82,59 @@ _this spawn {
 	// init phase
 	sleep 0.5;
 
-	// targeting sets cursorTarget to objNull after firing for a short amount of time, @todo better fix later
-	if (isNull _target) then {
-		_target = cursorTarget;
-	};
+	// top down attack
+	if (!isNil "_flyInHeight") then {
+		// premature explosion
+		if (!alive _projectile) exitWith {};
 
-	// premature explosion
-	if (!alive _projectile) exitWith {};
+		// get in travel height phase, abrupt direction change
+		_vector = vectorDir _projectile;
+		_vector set [2, 2];
+		_vector = vectorNormalized _vector;
 
-	// get in travel hight phase, abrupt direction change
-	_vector = vectorDir _projectile;
-	_vector set [2, 2];
-	_vector = vectorNormalized _vector;
+		[_projectile, _vector] call _fnc_changeMissileDirection;
 
-	[_projectile, _vector] call _fnc_changeMissileDirection;
+		// missile reached travel height, change direction again
+		waitUntil {!alive _projectile || {_projectile call _fnc_getHeight > _flyInHeight}};
 
-	// missile reached travel height, change direction again
-	waitUntil {!alive _projectile || {_projectile call _fnc_getHeight > 150}};
+		// premature explosion2
+		if (!alive _projectile) exitWith {};
 
-	// premature explosion2
-	if (!alive _projectile) exitWith {};
+		// stay in travel height phase, another abrupt direction change
+		_vector = vectorDir _projectile;
+		_vector set [2, 0];
+		_vector = vectorNormalized _vector;
 
-	_vector = vectorDir _projectile;
-	_vector set [2, 0];
-	_vector = vectorNormalized _vector;
+		[_projectile, _vector] call _fnc_changeMissileDirection;
 
-	[_projectile, _vector] call _fnc_changeMissileDirection;
-
-	// loop to stay in travel height and correct altitude
-	_time = time;
-	while {
-		alive _projectile
-		&& {[_projectile, _target] call _fnc_getHorizontalDistance > 100}
-	} do {
-		_height = _projectile call _fnc_getHeight;
-		_pitch = _projectile call _fnc_getPitch;
-
-		_dir = ([_projectile, _target] call _fnc_getDirTo) - direction _projectile;
-		_up = if (abs (150 - _height) < 1) then {-_pitch min 10 max -10} else {
-			([-20, 20] select (_height < 150)) * (time - _time);
+		// no target, self destruct
+		if (isNull _target || {!_isLocked}) exitWith {
+			sleep 2;
+			deleteVehicle _projectile;
 		};
 
-		[_projectile, _dir, _up] call AGM_Core_fnc_changeProjectileDirection;
-
+		// loop to stay in travel height and correct altitude
 		_time = time;
-		sleep 0.05;
+		while {
+			alive _projectile
+			&& {!isNull _target}
+			&& {[_projectile, _target] call _fnc_getHorizontalDistance > 100}
+		} do {
+			_height = _projectile call _fnc_getHeight;
+			_pitch = _projectile call _fnc_getPitch;
+
+			_dir = ([_projectile, _target] call _fnc_getDirTo) - direction _projectile;
+			_up = if (abs (_flyInHeight - _height) < 1) then {
+				-_pitch min 10 max -10
+			} else {
+				([-20, 20] select (_height < _flyInHeight)) * (time - _time)
+			};
+
+			[_projectile, _dir, _up] call AGM_Core_fnc_changeProjectileDirection;
+
+			_time = time;
+			sleep 0.05;
+		};
 	};
 
 	// missile missed target or hit a bird or something
@@ -129,7 +143,19 @@ _this spawn {
 	// allah ackbar, motherufcker
 	while {
 		alive _projectile
+		&& {!isNull _target}
 	} do {
+
+		// flare near target. Target flare instead if the target isn't a flare already
+		if !(_target isKindOf "CMflareAmmo") then {
+			_flares = position _target nearObjects ["CMflareAmmo", 10];
+
+			_count = count _flares;
+			if (_count > 0) then {
+				_target = _flares select floor random _count;
+			};
+		};
+
 		_height = _projectile call _fnc_getHeight;
 		_pitch = _projectile call _fnc_getPitch;
 

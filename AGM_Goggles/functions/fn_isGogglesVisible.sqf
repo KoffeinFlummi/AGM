@@ -15,7 +15,7 @@
 	Example:
 	_visible = player call AGM_Goggles_fnc_isGogglesVisible;
 */
-private ["_currentGlasses", "_position", "_result", "_unit"];
+private ["_currentGlasses", "_result", "_unit"];
 _unit = _this;
 
 _currentGlasses = goggles _unit;
@@ -24,12 +24,14 @@ _result = false;
 if ((vehicle _unit) != _unit) exitWith {(cameraView != "GUNNER")};
 
 if (_currentGlasses != "") then {
-	_position = getPosASLW _unit;
-	if (surfaceIsWater _position && {((_position select 2) < 0.25)}) then {
+	_position =(getPosASLW _unit);
+	if (surfaceIsWater _position && {((_position select 2) < 0.25)}) exitWith {
 		_result = (_currentGlasses call AGM_Goggles_fnc_isDivingGoggles);
-	} else {
-		_result = !(_currentGlasses call AGM_Goggles_fnc_isDivingGoggles);
 	};
+	if (getNumber (ConfigFile >> "CfgGlasses" >> _currentGlasses >> "AGM_Resistance") == 0) exitWith {
+		_result = false;
+	};
+	_result = !(_currentGlasses call AGM_Goggles_fnc_isDivingGoggles);
 };
 
 _result

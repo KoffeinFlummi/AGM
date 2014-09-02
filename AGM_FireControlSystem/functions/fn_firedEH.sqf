@@ -9,6 +9,9 @@
  * Return Value:
  * None
  */
+
+private ["_unit", "_weaponType", "_ammoType", "_magazineType", "_round", "_FCSMagazines", "_FCSElevation", "_offset"];
+
 _unit = _this select 0;
 _weaponType = _this select 1;
 _ammoType = _this select 4;

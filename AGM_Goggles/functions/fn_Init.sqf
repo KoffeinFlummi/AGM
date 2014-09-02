@@ -47,27 +47,27 @@ player addEventHandler ["Explosion", {
 	if (alive player) then {
 		call AGM_Goggles_fnc_ApplyDirtEffect;
 		if (GETBROKEN) exitWith {};
-		if (((_this select 1) call AGM_Goggles_fnc_GetExplosionIndex) < getNumber(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Goggles_CrackRating")) exitWith {};
+		if (((_this select 1) call AGM_Goggles_fnc_GetExplosionIndex) < getNumber(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Resistance")) exitWith {};
 		if !(player call AGM_Goggles_fnc_isGogglesVisible) exitWith {["GlassesCracked",[player]] call CBA_fnc_localEvent;};
 		AGM_Goggles_Effects set [BROKEN, true];
-		if (getText(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Goggles_CrackedImage") != "" && {cameraOn == player}) then {
+		if (getText(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_OverlayCracked") != "" && {cameraOn == player}) then {
 			if (call AGM_Goggles_fnc_ExternalCamera) exitWith {};
 			if (isNull(GLASSDISPLAY)) then {
 				150 cutRsc["RscAGM_Goggles", "PLAIN",1, false];
 			};
-			(GLASSDISPLAY displayCtrl 10650) ctrlSetText getText(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Goggles_CrackedImage");
+			(GLASSDISPLAY displayCtrl 10650) ctrlSetText getText(ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_OverlayCracked");
 		};
 		["GlassesCracked",[player]] call CBA_fnc_localEvent;
 	};
 }];
 player addEventHandler ["Killed",{
 	[] spawn {
-		sleep 3;
+		sleep 2;
 		AGM_Goggles_PostProcessEyes ppEffectEnable false;
 		AGM_Goggles_Effects = GLASSESDEFAULT;
 		call AGM_Goggles_fnc_RemoveGlassesEffect;
 		AGM_Goggles_EffectsActive=false;
-		player setVariable ["EyesDamaged", false];
+		player setVariable ["AGM_EyesDamaged", false];
 		terminate AGM_Goggles_EyesDamageScript;
 		terminate AGM_Goggles_MainLoop;
 		terminate AGM_Goggles_DustHandler;
@@ -91,7 +91,7 @@ player AddEventHandler ["Put", {call AGM_Goggles_fnc_CheckGlasses;}];
 }] call CBA_fnc_addEventHandler;
 ["GlassesCracked",{
 	if (_this select 0 != player) exitWith {};
-	player setVariable ["EyesDamaged", true];
+	player setVariable ["AGM_EyesDamaged", true];
 	if !(scriptDone AGM_Goggles_EyesDamageScript) then {
 		terminate AGM_Goggles_EyesDamageScript;
 	};
@@ -104,7 +104,7 @@ player AddEventHandler ["Put", {call AGM_Goggles_fnc_CheckGlasses;}];
 		AGM_Goggles_PostProcessEyes ppEffectCommit 5;
 		sleep 5;
 		AGM_Goggles_PostProcessEyes ppEffectEnable false;
-		player setVariable ["EyesDamaged", false];
+		player setVariable ["AGM_EyesDamaged", false];
 	};
 }] call CBA_fnc_addEventHandler;
 AGM_Goggles_MainLoop = [] spawn AGM_Goggles_fnc_CheckGoggles;

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Edited with tabler - 08/09/2014 -->
 <Project name="AGM">
   <Package name="Attach">
@@ -9,6 +9,7 @@
       <Polish>Przyczep przedmiot &gt;&gt;</Polish>
       <French>Attacher l'objet &gt;&gt;</French>
       <Czech>Připnout předmět &gt;&gt;</Czech>
+      <Italian>Attacca l'oggetto &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Attach">
       <English>Attach</English>
@@ -17,6 +18,7 @@
       <Polish>Przyczep</Polish>
       <French>Attacher</French>
       <Czech>Připnout</Czech>
+      <Italian>Attacca</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
@@ -25,6 +27,7 @@
       <Polish>Odczep przedmiot</Polish>
       <French>Détacher l'objet</French>
       <Czech>Odepnout předmět</Czech>
+      <Italian>Stacca l'oggetto</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Attached">
       <English>IR Strobe Attached</English>
@@ -33,6 +36,7 @@
       <Polish>Przyczepiono stroboskop IR</Polish>
       <French>Strobe IR attaché</French>
       <Czech>IR Značkovač Připnutý</Czech>
+      <Italian>Strobo IR attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Detached">
       <English>IR Strobe Detached</English>
@@ -41,6 +45,7 @@
       <Polish>Odczepiono stroboskop IR</Polish>
       <French>Strobe IR détaché</French>
       <Czech>IR Značkovač Odepnutý</Czech>
+      <Italian>Strobo IR staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Attached">
       <English>IR Grenade Attached</English>
@@ -49,6 +54,7 @@
       <Polish>Przyczepiono granat IR</Polish>
       <French>Grenade IR attachée</French>
       <Czech>IR Granát Připnutý</Czech>
+      <Italian>Granata IR attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Detached">
       <English>IR Grenade Detached</English>
@@ -57,6 +63,7 @@
       <Polish>Odczepiono granat IR</Polish>
       <French>Grenade IR détachée</French>
       <Czech>IR Granát Odepnutý</Czech>
+      <Italian>Granata IR staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
       <English>Chemlight Attached</English>
@@ -65,6 +72,7 @@
       <Polish>Przyczepiono światło chemiczne</Polish>
       <French>Chemlight attaché</French>
       <Czech>Chemické světlo Připnuto</Czech>
+      <Italian>Chemlight attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Detached">
       <English>Chemlight Detached</English>
@@ -73,6 +81,7 @@
       <Polish>Odczepiono światło chemiczne</Polish>
       <French>Chemlight détaché</French>
       <Czech>Chemické světlo Odepnuto</Czech>
+      <Italian>Chemlight staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
       <English>No inventory space</English>
@@ -81,6 +90,7 @@
       <Polish>Brak miejsca w ekwipunku</Polish>
       <French>Pas de place dans l'inventaire</French>
       <Czech>Není místo v inventáři</Czech>
+      <Italian>Non hai più spazio</Italian>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Name">
       <English>IR Strobe</English>
@@ -89,6 +99,7 @@
       <Polish>Stroboskop IR</Polish>
       <French>Strobe IR</French>
       <Czech>IR Značkovač</Czech>
+      <Italian>Strobo IR</Italian>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Description">
       <English>IR Strobe allows you to signal your position through a visible pulsating beacon only visible with NVGs.</English>
@@ -97,6 +108,7 @@
       <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna. </Spanish>
       <French>Le Strobe IR permet de signaler votre position grace à un clignotement visible par des JVN.</French>
       <Czech>IR Značkovač je Infračerveně zářící stroboskop umožňující signalizaci vaší pozice díky blikajícímu světlu, které je vidět pouze při užití noktovizoru.</Czech>
+      <Italian>La Strobo IR è una luce stroboscopica che ti permette di segnalare la tua posizione grazie all'emissione di impulsi ad infrarossi visibili solo con i visori notturni.</Italian>
     </Key>
   </Package>
 </Project>

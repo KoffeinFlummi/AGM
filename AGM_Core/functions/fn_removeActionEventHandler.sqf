@@ -6,7 +6,7 @@
  * Argument:
  * 0: Unit the action is assigned to (Object)
  * 1: Name of the action, e.g. "DefaultAction" (String)
- * 1: ID of the action (Number)
+ * 2: ID of the action (Number)
  *
  * Return value:
  * None.
@@ -34,8 +34,6 @@ _actions = _actions select 2;
 _id = _actionIDs find _id;
 
 if (_id == -1) exitWith {};
-
-_actions set [_id, [{false}, {}]];
 
 _actionIDs set [_id, -1];
 _actionIDs = _actionIDs - [-1];

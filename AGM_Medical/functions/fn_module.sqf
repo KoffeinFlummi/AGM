@@ -9,6 +9,9 @@
  * Return Value:
  * None 
  */
+
+private ["_logic", "_units", "_activated"];
+
 if !(isServer) exitWith {};
 
 _logic = _this select 0;

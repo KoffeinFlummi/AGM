@@ -11,6 +11,7 @@
       <French>Sauvegarder</French>
       <Russian>Сохранить</Russian>
       <Hungarian>Mentés</Hungarian>
+      <Italian>Salva</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Cancel">
       <English>Cancel</English>
@@ -21,6 +22,7 @@
       <French>Annuler</French>
       <Russian>Отмена</Russian>
       <Hungarian>Mégsem</Hungarian>
+      <Italian>Annulla</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Options">
       <English>AGM Options</English>
@@ -31,6 +33,7 @@
       <French>AGM Options</French>
       <Russian>AGM Настройки</Russian>
       <Hungarian>AGM Beállítások</Hungarian>
+      <Italian>Opzioni AGM</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Shift">
       <English>Shift</English>
@@ -41,6 +44,7 @@
       <French>Shift</French>
       <Russian>Shift</Russian>
       <Hungarian>Shift</Hungarian>
+      <Italian>Shift</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl">
       <English>Ctrl</English>
@@ -51,6 +55,7 @@
       <French>Ctrl</French>
       <Russian>Ctrl</Russian>
       <Hungarian>Ctrl</Hungarian>
+      <Italian>Ctrl</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Alt">
       <English>Alt</English>
@@ -61,6 +66,7 @@
       <French>Alt</French>
       <Russian>Alt</Russian>
       <Hungarian>Alt</Hungarian>
+      <Italian>Alt</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Shift_Right">
       <English>Shift right</English>
@@ -69,6 +75,7 @@
       <Polish>Prawy Shift</Polish>
       <French>Shift Droite</French>
       <Czech>Pravý Shift</Czech>
+      <Italian>Shift destro</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl_Right">
       <English>Ctrl right</English>
@@ -77,6 +84,7 @@
       <Polish>Prawy Ctrl</Polish>
       <French>Ctrl Droite</French>
       <Czech>Pravý Ctrl</Czech>
+      <Italian>Ctrl destro</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Alt_Right">
       <English>Alt right</English>
@@ -85,6 +93,7 @@
       <Polish>Prawy Alt</Polish>
       <French>Alt Droite</French>
       <Czech>Pravý Alt</Czech>
+      <Italian>Alt Gr</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_KeyDefault">
@@ -94,6 +103,7 @@
       <Polish>Domyślne</Polish>
       <French>Défaut</French>
       <Czech>Výchozí</Czech>
+      <Italian>Standard</Italian>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
       <English>None</English>
@@ -102,6 +112,7 @@
       <Polish>Brak</Polish>
       <French>Aucun</French>
       <Czech>Žádný</Czech>
+      <Italian>Non assegnato</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_DoubleTapKey">
@@ -111,6 +122,7 @@
       <Polish>2x %1</Polish>
       <French>2x %1</French>
       <Czech>2x %1</Czech>
+      <Italian>2x %1</Italian>
     </Key>
     <Key ID="STR_AGM_Core_HoldKey">
       <English>Hold %1</English>
@@ -119,6 +131,7 @@
       <Polish>Przytrzymać %1</Polish>
       <French>Tenir %1</French>
       <Czech>Držet %1</Czech>
+      <Italian>Tieni premuto %1</Italian>
     </Key>
 
 
@@ -131,6 +144,7 @@
       <French>Profil sauvegardé</French>
       <Russian>Профиль сохранен</Russian>
       <Hungarian>Profil mentve</Hungarian>
+      <Italian>Profilo salvato</Italian>
     </Key>
     <Key ID="STR_AGM_Core_ProfileNotSaved">
       <English>Profile not saved</English>
@@ -141,6 +155,7 @@
       <French>Profil non sauvegardé</French>
       <Russian>Профиль не сохранен</Russian>
       <Hungarian>Profil nincs mentve</Hungarian>
+      <Italian>Profilo non salvato</Italian>
     </Key>
 
     <!-- These are cardinal directions, in case you didn't guess. -->
@@ -153,6 +168,7 @@
       <French>N</French>
       <Russian>С</Russian>
       <Hungarian>É</Hungarian>
+      <Italian>N</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NNE">
       <English>NNE</English>
@@ -163,6 +179,7 @@
       <French>NNE</French>
       <Russian>ССВ</Russian>
       <Hungarian>ÉÉK</Hungarian>
+      <Italian>NNE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NE">
       <English>NE</English>
@@ -173,6 +190,7 @@
       <French>NE</French>
       <Russian>СВ</Russian>
       <Hungarian>ÉK</Hungarian>
+      <Italian>NE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_ENE">
       <English>ENE</English>
@@ -183,6 +201,7 @@
       <French>ENE</French>
       <Russian>ВСВ</Russian>
       <Hungarian>KÉK</Hungarian>
+      <Italian>ENE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_E">
       <English>E</English>
@@ -193,6 +212,7 @@
       <French>E</French>
       <Russian>В</Russian>
       <Hungarian>K</Hungarian>
+      <Italian>E</Italian>
     </Key>
     <Key ID="STR_AGM_Core_ESE">
       <English>ESE</English>
@@ -203,6 +223,7 @@
       <French>ESE</French>
       <Russian>ВЮВ</Russian>
       <Hungarian>KDK</Hungarian>
+      <Italian>ESE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_SE">
       <English>SE</English>
@@ -213,6 +234,7 @@
       <French>SE</French>
       <Russian>ЮВ</Russian>
       <Hungarian>DK</Hungarian>
+      <Italian>SE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_SSE">
       <English>SSE</English>
@@ -223,6 +245,7 @@
       <French>SSE</French>
       <Russian>ЮЮВ</Russian>
       <Hungarian>DDK</Hungarian>
+      <Italian>SSE</Italian>
     </Key>
     <Key ID="STR_AGM_Core_S">
       <English>S</English>
@@ -233,6 +256,7 @@
       <French>S</French>
       <Russian>Ю</Russian>
       <Hungarian>D</Hungarian>
+      <Italian>S</Italian>
     </Key>
     <Key ID="STR_AGM_Core_SSW">
       <English>SSW</English>
@@ -243,6 +267,7 @@
       <French>SSO</French>
       <Russian>ЮЮЗ</Russian>
       <Hungarian>DDNy</Hungarian>
+      <Italian>SSO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_SW">
       <English>SW</English>
@@ -253,6 +278,7 @@
       <French>SO</French>
       <Russian>ЮЗ</Russian>
       <Hungarian>DNy</Hungarian>
+      <Italian>SO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_WSW">
       <English>WSW</English>
@@ -263,6 +289,7 @@
       <French>OSO</French>
       <Russian>ЗЮЗ</Russian>
       <Hungarian>NyDNy</Hungarian>
+      <Italian>OSO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_W">
       <English>W</English>
@@ -273,6 +300,7 @@
       <French>O</French>
       <Russian>З</Russian>
       <Hungarian>Ny</Hungarian>
+      <Italian>O</Italian>
     </Key>
     <Key ID="STR_AGM_Core_WNW">
       <English>WNW</English>
@@ -283,6 +311,7 @@
       <French>ONO</French>
       <Russian>ЗСЗ</Russian>
       <Hungarian>NyÉNy</Hungarian>
+      <Italian>ONO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NW">
       <English>NW</English>
@@ -293,6 +322,7 @@
       <French>NO</French>
       <Russian>СЗ</Russian>
       <Hungarian>ÉNy</Hungarian>
+      <Italian>NO</Italian>
     </Key>
     <Key ID="STR_AGM_Core_NNW">
       <English>NNW</English>
@@ -303,6 +333,7 @@
       <French>NNO</French>
       <Russian>ССЗ</Russian>
       <Hungarian>ÉÉNy</Hungarian>
+      <Italian>NNO</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_ActionAborted">
@@ -313,6 +344,7 @@
       <Polish>Przerwano czynność</Polish>
       <Hungarian>Cselekvés befejezve</Hungarian>
       <Czech>Akce přerušena</Czech>
+      <Italian>Azione cancellata.</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_Prev">
@@ -323,6 +355,7 @@
       <French>&lt; Préc</French>
       <Hungarian>&lt; Előző</Hungarian>
       <Czech>&lt; Předchozí</Czech>
+      <Italian>&lt; Prec</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Next">
       <English>Next &gt;</English>
@@ -332,6 +365,7 @@
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
       <Czech>Další &gt;</Czech>
+      <Italian>Prossimo &gt;</Italian>
     </Key>
 
     <Key ID="STR_AGM_Core_MiscItems">
@@ -341,6 +375,7 @@
       <Czech>[AGM] Ostatní předměty</Czech>
       <Polish>[AGM] Różne przedmioty</Polish>
       <French>[AGM] Objets divers</French>
+      <Italian>[AGM] Oggetti vari</Italian>
     </Key>
 
   </Package>

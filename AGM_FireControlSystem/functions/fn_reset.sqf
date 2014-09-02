@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_vehicle"];
+
 _vehicle = _this select 0;
 
 _vehicle setVariable ["AGM_FCSDistance", 0, true];
