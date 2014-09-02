@@ -36,10 +36,14 @@ if (!hasInterface) exitWith{};
   if (isNull findDisplay 12) then {
     // Install event handlers on the map control of the briefing screen (control = 51)
     AGM_Map_syncMarkers = true;
-    switch {true} do {
-      case (!isNull findDisplay 52) : {52 call AGM_Map_fnc_installEvents;};
-      case (!isNull findDisplay 53) : {53 call AGM_Map_fnc_installEvents;};
-      default {37 call AGM_Map_fnc_installEvents;};
+    if (!isNull findDisplay 52) then {
+      52 call AGM_Map_fnc_installEvents;
+    } else {
+      if (!isNull findDisplay 53) then {
+        53 call AGM_Map_fnc_installEvents;
+      } else {
+        37 call AGM_Map_fnc_installEvents;
+      };
     };
   } else {
     // Briefing screen was skipped; the player is JIP, create the markers defined during the briefing
