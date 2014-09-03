@@ -181,6 +181,7 @@ class CfgFunctions {
     class AGM_Core {
       file = "AGM_Core\functions";
       class addActionEventHandler;
+      class addCameraEventHandler;
       class addCustomEventHandler;
       class adminKick;
       class binarizeNumber;
@@ -235,6 +236,7 @@ class CfgFunctions {
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
+      class removeCameraEventHandler;
       class removeCustomEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
