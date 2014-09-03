@@ -183,6 +183,7 @@ class CfgFunctions {
       class addActionEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
+      class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
@@ -238,6 +239,7 @@ class CfgFunctions {
       class removeActionEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
+      class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;

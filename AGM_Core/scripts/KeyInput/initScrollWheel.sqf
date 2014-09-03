@@ -3,5 +3,7 @@
 AGM_Core_onScrollWheel = {
 	_scroll = _this select 1;
 
-	//hintSilent str _scroll;
+	{
+		[_scroll] call _x;
+	} forEach ((missionNamespace getVariable ["AGM_EventHandler_ScrollWheel", [-1, [], []]]) select 2);
 };
