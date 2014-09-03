@@ -153,6 +153,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 0;
+    allowHolding = 1;
   };
   class modifierKey {
     displayName = $STR_AGM_Interaction_ModifierKey;
