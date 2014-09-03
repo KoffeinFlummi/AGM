@@ -4,6 +4,7 @@ if (!hasInterface) exitWith {};
 
 AGM_Interaction_isOpeningDoor = false;
 AGM_Dancing = false;
+AGM_Interaction_ShowNamesTime = -10;
 
 addMissionEventHandler ["Draw3D", {
   if !(profileNamespace getVariable ["AGM_showPlayerNames", true]) exitWith {};
@@ -16,6 +17,9 @@ addMissionEventHandler ["Draw3D", {
     if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
+      if (AGM_Interaction_ShownNamesOnKeypress > 0) then {
+        _alpha = _alpha min (1 - (time - AGM_Interaction_ShowNamesTime - 1));
+      };
       [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
     };
 
@@ -42,7 +46,9 @@ addMissionEventHandler ["Draw3D", {
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
 
         _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min (1 - 0.15 * (_projDist * 5 - _distance - 3)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
-
+        if (AGM_Interaction_ShownNamesOnKeypress > 0) then {
+          _alpha = _alpha min (1 - (time - AGM_Interaction_ShowNamesTime - 1));
+        };
         [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
       };
     } forEach _targets;

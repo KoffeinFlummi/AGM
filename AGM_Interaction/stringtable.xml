@@ -62,6 +62,10 @@
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
     </Key>
+    <Key ID="STR_AGM_Interaction_ShowNames">
+      <English>Show Names</English>
+      <Spanish>Mostrar nombres</Spanish>
+    </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
