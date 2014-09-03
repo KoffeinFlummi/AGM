@@ -82,6 +82,13 @@
       <English>Copy Map</English>
       <German>Karte kopieren</German>
       <Spanish>Copiar mapa</Spanish>
+      <Russian>Скопировать карту</Russian>
+      <Polish>Kopiuj oznaczenia mapy</Polish>
+      <French>Copier la carte</French>
+      <Czech>Zkopírovat mapu</Czech>
+      <Italian>Copiare Carta</Italian>
+      <Hungarian>Térkép másolása</Hungarian>
+      <Portuguese>Copiar mapa</Portuguese>
     </Key>
   </Package>
 </Project>
