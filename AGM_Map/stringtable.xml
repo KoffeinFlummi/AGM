@@ -80,6 +80,7 @@
     </Key>
     <Key ID="STR_AGM_Map_CopyMap">
       <English>Copy Map</English>
+      <German>Karte kopieren</German>
       <Spanish>Copiar mapa</Spanish>
     </Key>
   </Package>
