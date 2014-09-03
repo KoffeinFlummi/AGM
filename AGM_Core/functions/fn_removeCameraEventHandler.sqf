@@ -1,7 +1,7 @@
 /*
  * Author: commy2
  *
- * Remove a camera view event handler from an object.
+ * Remove a camera view event handler.
  *
  * Argument:
  * 0: ID of the event handler (Number)
