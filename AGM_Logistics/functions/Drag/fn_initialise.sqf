@@ -18,11 +18,7 @@
 		call AGM_Drag_fnc_Initialise;
 */
 AGM_Drag_CurrentHeightChange = 0;
-
-[] spawn {
-	waitUntil {sleep 0.13;!isNull(findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "(_this select 1) call AGM_Drag_fnc_HandleScrollWheel"];
-};
+[{(_this select 0) call AGM_Drag_fnc_HandleScrollWheel;}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
 if (isNil "AGM_Drag_MaxWeight") then {
 	AGM_Drag_MaxWeight = 800;
