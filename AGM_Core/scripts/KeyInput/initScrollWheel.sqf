@@ -5,5 +5,5 @@ AGM_Core_onScrollWheel = {
 
 	{
 		[_scroll] call _x;
-	} forEach ((missionNamespace getVariable ["AGM_EventHandler_ScrollWheel", [-1, [], []]]) select 2);
+	} count ((missionNamespace getVariable ["AGM_EventHandler_ScrollWheel", [-1, [], []]]) select 2);
 };
