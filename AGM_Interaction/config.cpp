@@ -146,14 +146,15 @@ class AGM_Core_Default_Keys {
     alt = 0;
   };
   class modifierKey {
-    displayName = $STR_AGM_Interaction_ModifierKey;
-    condition = "true";
+    displayName = "$STR_AGM_Interaction_ModifierKey";
+    condition = "";
     statement = "AGM_Modifier = 1;";
-    conditionUp = "AGM_Modifier > 0";
+    conditionUp = "";
     statementUp = "AGM_Modifier = 0;";
+    exceptions[] = {"AGM_Drag_isNotDragging"};
     key = 29;
     shift = 0;
-    control = 1;
+    control = 0;
     alt = 0;
   };
 };
