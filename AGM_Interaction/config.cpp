@@ -19,6 +19,7 @@ class CfgFunctions {
       class AddSelectableItem;
       class addInteraction;
       class addInteractionSelf;
+      class addToTooltip;
       class applyButtons;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
@@ -480,7 +481,7 @@ class CfgVehicles {
         showDisabled = 1;
         priority = 3.5;
         subMenu[] = {"AGM_Gestures", 1};
-		icon = "AGM_Interaction\UI\gestures_ca.paa";
+        icon = "AGM_Interaction\UI\gestures_ca.paa";
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";
