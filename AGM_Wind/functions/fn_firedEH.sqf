@@ -14,9 +14,13 @@ _this spawn {
   if (_airFriction < 0 || { _simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
     _airFriction = 0.0007;
   };
+
   // Additional dispersion
    _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
-  [_round,(random (_dispersion * 2)) - 1, (random (_dispersion * 2)) - 1, 0] call AGM_Core_fnc_changeProjectileDirection;
+  // Powder temp effect
+  _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
+  [_round,(random (_dispersion * 2)) - 1, (random (_dispersion * 2)) - 1, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
+
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
