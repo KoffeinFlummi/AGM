@@ -17,7 +17,7 @@ addMissionEventHandler ["Draw3D", {
     if (!isNull _target && {side group _target == playerSide} && {_target != player}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
-      if (AGM_Interaction_ShownNamesOnKeypress > 0) then {
+      if (AGM_Interaction_ShowNamesOnKeypress > 0) then {
         _alpha = _alpha min (1 - (time - AGM_Interaction_ShowNamesTime - 1));
       };
       [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
