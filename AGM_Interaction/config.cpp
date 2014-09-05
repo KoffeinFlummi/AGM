@@ -191,7 +191,7 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
-  AGM_Interaction_ShownNamesOnKeypress = 0;
+  AGM_Interaction_ShowNamesOnKeypress = 0;
   AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
   AGM_Modifier = 0;
 };
@@ -826,7 +826,7 @@ class CfgVehicles {
         typeName = "NUMBER";
         defaultValue = 5;
       };
-      class ShownNamesOnKeypress {
+      class ShowNamesOnKeypress {
         displayName = "Show nametags only on keypress?";
         description = "Hide the name tags when the show key is not pressed? Default: No";
         typeName = "BOOL";
