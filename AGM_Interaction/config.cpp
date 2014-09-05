@@ -192,6 +192,7 @@ class AGM_Core_Options {
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
   AGM_Interaction_ShowNamesOnKeypress = 0;
+  AGM_Interaction_ShowNamesForAI = 0;
   AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
   AGM_Modifier = 0;
 };
@@ -829,6 +830,22 @@ class CfgVehicles {
       class ShowNamesOnKeypress {
         displayName = "Show nametags only on keypress?";
         description = "Hide the name tags when the show key is not pressed? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class ShowNamesForAI {
+        displayName = "Show nametags for AI?";
+        description = "Show the name and rank tags for friendly AI units? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
