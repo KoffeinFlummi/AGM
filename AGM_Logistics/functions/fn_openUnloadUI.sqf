@@ -45,4 +45,11 @@ _attachPoints = _vehicle getVariable ["AGM_Logistics_loadedItems", []];
 	] call AGM_Interaction_fnc_AddSelectableItem;
 } foreach _attachPoints;
 
-[_actions, {call AGM_Interaction_fnc_hideMenu;[AGM_Logistics_targetVehicle, _this] spawn AGM_Logistics_fnc_unloadItem;}, {"Default" call AGM_Interaction_fnc_openMenu;}] call AGM_Interaction_fnc_openSelectMenu;
+[
+	_actions,
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		[AGM_Logistics_targetVehicle, _this] spawn AGM_Logistics_fnc_unloadItem;
+	},
+	{"Default" call AGM_Interaction_fnc_openMenu;}
+] call AGM_Interaction_fnc_openSelectMenu;
