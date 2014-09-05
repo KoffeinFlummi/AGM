@@ -24,7 +24,7 @@
 	Example:
 */
 if (!(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
-	buttonSetAction [8855, "call " + str (_this select 2)]; // cancel
+	//buttonSetAction [8855, "call " + str (_this select 2)]; // cancel
 	buttonSetAction [8860, "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)]; // accept
 	lbSetCurSel [8866, 0];
 }else{

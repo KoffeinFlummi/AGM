@@ -597,5 +597,12 @@
       <Spanish>Tecla modificadora</Spanish>
       <Italian>Modifica Tasto</Italian>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_NotInRange">
+      <English>Not in Range</English>
+      <German>Außer Reichweite</German>
+    </Key>
+
+
   </Package>
 </Project>
