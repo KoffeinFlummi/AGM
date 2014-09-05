@@ -150,7 +150,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_ShowNames";
     condition = "true";
     statement = "AGM_Interaction_ShowNamesTime = time";
-    key = 58;
+    key = 29;
     shift = 0;
     control = 0;
     alt = 0;
