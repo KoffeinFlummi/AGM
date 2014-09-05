@@ -12,22 +12,6 @@ class CfgPatches {
   };
 };
 
-class CfgAmmo {
-	class Default;	// External class reference
-	class BulletCore;	// External class reference
-	class B_127x108_Ball;// External class reference
-	class B_127x99_Ball;// External class reference
-		class BulletBase : BulletCore {
-		bullet_dispersion=0;
-		};
-		class B_127x108_APDS : B_127x108_Ball {
-		bullet_dispersion=0.017; 
-		};
-		class B_127x99_SLAP : B_127x99_Ball {
-		bullet_dispersion=0.017;
-		}
-		};
-
 class CfgFunctions {
   class AGM_Wind {
     class AGM_Wind {
@@ -130,6 +114,22 @@ class CfgVehicles {
   };
 };
 
+
+class CfgAmmo {
+  class Default;
+  class BulletCore;
+  class B_127x108_Ball;
+  class B_127x99_Ball;
+  class BulletBase : BulletCore {
+    AGM_Bullet_Dispersion = 0;
+  };
+  class B_127x108_APDS : B_127x108_Ball {
+    AGM_Bullet_Dispersion = 0.017;
+  };
+  class B_127x99_SLAP : B_127x99_Ball {
+    AGM_Bullet_Dispersion = 0.017;
+  }
+};
 
 class RscText;
 class AGM_Rsc_Control_Base;

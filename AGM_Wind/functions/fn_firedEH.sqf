@@ -14,9 +14,9 @@ _this spawn {
   if (_airFriction < 0 || { _simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
     _airFriction = 0.0007;
   };
- // DISPERSION note:((round (random 1 )) * 2 - 1) gives a 50% chance for result (1) and 50 for(-1) Dust2Dust
-   _disp = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "bullet_dispersion");
-  [_round, ((round (random 1 )) * 2 - 1) * random _disp, ((round (random 1 )) * 2 - 1) * random _disp, 0] call AGM_Core_fnc_changeProjectileDirection;
+  // Additional dispersion
+   _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
+  [_round,(random (_dispersion * 2)) - 1, (random (_dispersion * 2)) - 1, 0] call AGM_Core_fnc_changeProjectileDirection;
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
