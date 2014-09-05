@@ -28,7 +28,7 @@ AGM_Explosives_Setup = objNull;
 AGM_Explosives_pfeh_running = false;
 AGM_Explosives_null= [] spawn {
 	waitUntil {sleep 0.356;!isNull(findDisplay 46)};
-	(findDisplay 46) displayAddEventHandler ["MouseZChanged", "(_this select 1) call AGM_Explosives_fnc_HandleScrollWheel"];
+	[{(_this select 0) call AGM_Explosives_fnc_HandleScrollWheel;}] call AGM_Core_fnc_addScrollWheelEventHandler;
 	player addEventHandler ["Respawn", {
 		[(_this select 0)] call AGM_Explosives_fnc_initialiseUnit;
 	}];

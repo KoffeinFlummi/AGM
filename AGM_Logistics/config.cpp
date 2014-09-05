@@ -152,7 +152,8 @@ class CfgFunctions {
 	class AGM_Fortifications {
 		class AGM_Fortifications {
 			file = "\AGM_Logistics\functions\Fortifications";
-			class canSetupBarrier;	
+			class initialise{postInit = 1;};
+			class canSetupBarrier;
 			class setupApprove;
 			class setupBarrier;
 			class setupCancel;

@@ -22,4 +22,5 @@ _actions = (_object getVariable [_name, [-1, [], []]]) select 2;
 
 {
 	[_object] call _x;
-} forEach _actions;
+} count _actions;
+nil

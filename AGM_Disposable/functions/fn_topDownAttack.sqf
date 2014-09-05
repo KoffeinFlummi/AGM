@@ -52,9 +52,12 @@ _this spawn {
 	};
 
 	_getPitchTo = {
-		private "_v";
+		private ["_p", "_v"];
 
-		_v = getPosASL (_this select 0) vectorFromTo getPosASL (_this select 1);
+		_p = getPosASL (_this select 1);
+		_p set [2, (_p select 2) + 1];
+
+		_v = getPosASL (_this select 0) vectorFromTo _p;
 
 		asin (_v select 2)
 	};
