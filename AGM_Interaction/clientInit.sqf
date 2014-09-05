@@ -48,7 +48,7 @@ addMissionEventHandler ["Draw3D", {
         _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min (1 - 0.15 * (_projDist * 5 - _distance - 3)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
 
         if (AGM_Interaction_ShownNamesOnKeypress > 0) then {
-          _alpha = _alpha min (1 - (time - AGM_Interaction_ShowNamesTime - 1));
+          _alpha = _alpha min (1 - (time - AGM_Interaction_ShowNamesTime - 2));
         };
 
         // Check if there is line of sight
