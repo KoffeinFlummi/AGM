@@ -14,7 +14,7 @@ addMissionEventHandler ["Draw3D", {
     _target = cursorTarget;
     _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};
 
-    if (!isNull _target && {side group _target == playerSide} && {_target != player} && {isPlayer _target || {AGM_Interaction_ShowNamesForAI > 0}}) then {
+    if (!isNull _target && {side group _target == playerSide} && {_target != player} && {isPlayer _target || {AGM_Interaction_ShowNamesForAI > 0}} && {!(_target getVariable ["AGM_hideName", false])}) then {
       _distance = player distance _target;
       _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
       if (AGM_Interaction_ShowNamesOnKeypress > 0) then {
@@ -40,7 +40,7 @@ addMissionEventHandler ["Draw3D", {
     {
       _target = if (_x in allUnitsUAV) then {objNull} else {effectiveCommander _x};
 
-      if (!isNull _target && {side group _target == playerSide} && {_target != player} && {isPlayer _target || {AGM_Interaction_ShowNamesForAI > 0}}) then {
+      if (!isNull _target && {side group _target == playerSide} && {_target != player} && {isPlayer _target || {AGM_Interaction_ShowNamesForAI > 0}} && {!(_target getVariable ["AGM_hideName", false])}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
