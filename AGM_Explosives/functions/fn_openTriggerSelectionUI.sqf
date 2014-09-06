@@ -48,7 +48,9 @@ if (_count == 0) then {
 }else{
 	[
 		_actions,
-		{[_this select 1, _this select 0] call AGM_Explosives_fnc_selectTrigger;},
+		{
+			[_this select 1, _this select 0] call AGM_Explosives_fnc_selectTrigger;
+		},
 		{[player] call AGM_Explosives_fnc_openPlaceUI;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };

@@ -25,6 +25,12 @@ for "_index" from 0 to (_count - 1) do {
 
 [
 	_actions,
-	{call AGM_Interaction_fnc_hideMenu;_vehicle = AGM_Interaction_Target;if ([player, _vehicle, _this] call AGM_Fortifications_fnc_canSetupBarrier) then {[player, _vehicle, _this] call AGM_Fortifications_fnc_setupBarrier;};},
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		_vehicle = AGM_Interaction_Target;
+		if ([player, _vehicle, _this] call AGM_Fortifications_fnc_canSetupBarrier) then {
+			[player, _vehicle, _this] call AGM_Fortifications_fnc_setupBarrier;
+		};
+	},
 	{"Default" call AGM_Interaction_fnc_openMenu;}
 ] call AGM_Interaction_fnc_openSelectMenu;

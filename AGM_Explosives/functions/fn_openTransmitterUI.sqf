@@ -38,7 +38,9 @@ if (count _detonators == 0) then {
 }else{
 	[
 		_actions,
-		{[player, _this] call AGM_Explosives_fnc_openDetonateUI;},
+		{
+			[player, _this] call AGM_Explosives_fnc_openDetonateUI;
+		},
 		{call AGM_Interaction_fnc_hideMenu;"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
