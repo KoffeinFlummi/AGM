@@ -224,6 +224,22 @@ class CfgVehicles {
 	class O_G_Soldier_F; class o_g_soldier_universal_f:O_G_Soldier_F {MACRO_ADDMINEKIT};
 	class I_soldier_F; class i_soldier_universal_f:I_soldier_F {MACRO_ADDMINEKIT};
 	class I_G_Soldier_F; class i_g_soldier_universal_f:I_G_Soldier_F {MACRO_ADDMINEKIT};
+
+	// Add AGM_Clacker to snipers and spotters for setting off Claymores
+	#define MACRO_ADDCLAYMOREKIT \
+		items[] = {"FirstAidKit","AGM_Clacker"}; \
+		respawnitems[] = {"FirstAidKit","AGM_Clacker"};
+
+	class B_Soldier_sniper_base_F;
+	class B_sniper_F: B_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class B_spotter_F: B_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class I_Soldier_sniper_base_F;
+	class I_Sniper_F: I_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class I_Spotter_F: I_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class O_Soldier_sniper_base_F;
+	class O_sniper_F: O_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+	class O_spotter_F: O_Soldier_sniper_base_F {MACRO_ADDCLAYMOREKIT};
+
 };
 
 #include "CfgAmmo.hpp"

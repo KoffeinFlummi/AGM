@@ -11,7 +11,7 @@
  * True if item was successfully take, false otherwise.
  */
 
-private ["_unit", "_item", "_displayName"]
+private ["_unit", "_item", "_displayName"];
 
 _unit = _this select 0;
 _item = _this select 1;
