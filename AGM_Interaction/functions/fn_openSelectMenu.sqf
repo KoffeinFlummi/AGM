@@ -24,8 +24,10 @@
 	Example:
 */
 if (!(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
-	//buttonSetAction [8855, "call " + str (_this select 2)]; // cancel
-	buttonSetAction [8860, "(call compile (lbData [8866, lbCurSel 8866])) call " + str (_this select 1)]; // accept
+	AGM_Interaction_SelectAccept = _this select 1;
+	AGM_Interaction_SelectCancel = {call AGM_Interaction_fnc_hideMenu;}; //_this select 2;
+	buttonSetAction [8855, "call AGM_Interaction_SelectCancel;"]; // cancel
+	buttonSetAction [8860, "(call compile (lbData [8866, lbCurSel 8866])) call AGM_Interaction_SelectAccept;"]; // accept
 	lbSetCurSel [8866, 0];
 }else{
 	_customActions = _this select 0;
@@ -39,12 +41,3 @@ if (!(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
 	AGM_Interaction_Buttons = _customActions;
 	[(_this select 2), true, true, false, player] call AGM_Interaction_fnc_initialiseInteraction;
 };
-/* if (AGM_Interaction_Updater) exitWith {};
-[] spawn {
-	AGM_Interaction_Updater = true;
-	while {!isNil "AGM_Interaction_MainButton"} do {
-		0 call AGM_Interaction_fnc_moveDown;
-		sleep 1;
-	};
-	AGM_Interaction_Updater = false;
-}; */
