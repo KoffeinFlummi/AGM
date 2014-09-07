@@ -46,6 +46,7 @@ class CfgFunctions {
       class onButtonUp;
       class onClick;
       class openDoor;
+      class openFriskMenu;
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
