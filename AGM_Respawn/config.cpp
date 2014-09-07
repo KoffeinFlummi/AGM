@@ -17,7 +17,6 @@ class CfgFunctions {
     class AGM_Respawn {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
-      class getAllGear;
       class initRallypoint;
       class module;
       class moveRallypoint;

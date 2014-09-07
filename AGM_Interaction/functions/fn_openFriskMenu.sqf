@@ -21,51 +21,17 @@ _unit = _this select 0;
 
 _listedItemClasses = [];
 
-_allGear = [_unit] call AGM_Respawn_fnc_getAllGear;
-
-_actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
-
+_allGear = [_unit] call AGM_Core_fnc_getAllGear;
 _uniformitems = _allGear select 3;
 _vestitems = _allGear select 5;
 _backpackitems = _allGear select 7;
 _assigneditems = _allGear select 17;
 
+_actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
+
 // Uniform Items
-{
-    if (!(_x in _listedItemClasses)) then {
-        _item = configFile >> "CfgMagazines" >> _x;
-        if (isNil "_item" || str _item == "") then {
-            _item = configFile >> "CfgWeapons" >> _x;
-        };
-        _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
-        _listedItemClasses pushBack _x;
-    };
-}foreach _uniformitems;
-
 // Vest Items
-{
-    if (!(_x in _listedItemClasses)) then {
-        _item = configFile >> "CfgMagazines" >> _x;
-        if (isNil "_item" || str _item == "") then {
-            _item = configFile >> "CfgWeapons" >> _x;
-        };
-        _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
-        _listedItemClasses pushBack _x;
-    };
-}foreach _vestitems;
-
 // Backpack Items
-{
-    if (!(_x in _listedItemClasses)) then {
-        _item = configFile >> "CfgMagazines" >> _x;
-        if (isNil "_item" || str _item == "") then {
-            _item = configFile >> "CfgWeapons" >> _x;
-        };
-        _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
-        _listedItemClasses pushBack _x;
-    };
-} foreach _backpackitems;
-
 // Assigned Items
 {
     if (!(_x in _listedItemClasses)) then {
@@ -76,7 +42,8 @@ _assigneditems = _allGear select 17;
         _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
         _listedItemClasses pushBack _x;
     };
-} forEach _assignedItems;
+} foreach (_uniformitems + _vestitems + _backpackitems + _assignedItems + (binocular _unit));
+
 
 [_actions, {call AGM_Interaction_fnc_hideMenu;}, {call AGM_Interaction_fnc_hideMenu;}] call AGM_Interaction_fnc_openSelectMenu;
 

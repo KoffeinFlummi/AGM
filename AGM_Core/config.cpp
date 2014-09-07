@@ -201,6 +201,7 @@ class CfgFunctions {
       class execRemoteFnc;
       class filter;
       class findStringInString;
+      class getAllGear;
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
