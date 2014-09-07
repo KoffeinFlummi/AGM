@@ -13,9 +13,9 @@
 private ["_array"];
 
 _array = [
-  [primaryWeaponItems player, {getNumber (configFile >> "CfgWeapon" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
-  [secondaryWeaponItems player, {getNumber (configFile >> "CfgWeapon" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
-  [handgunItems player, {getNumber (configFile >> "CfgWeapon" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter
-],
+  [primaryWeaponItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
+  [secondaryWeaponItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
+  [handgunItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter
+];
 
 [_array, {if (count _this > 0) then {_this select 0} else {""}}] call AGM_Core_fnc_map

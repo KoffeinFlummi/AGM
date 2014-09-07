@@ -56,18 +56,31 @@ class AGM_Core_Default_Keys {
     statement = "[0, -0.1] call AGM_Scopes_fnc_adjustScope;";
     key = 209;
   };
-  class adjustScopeLeft: adjustRangeUp {
+  class adjustScopeLeft: adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustLeft";
     condition = "[-0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
     statement = "[-0.1, 0] call AGM_Scopes_fnc_adjustScope;";
-    key = 201;
+    key = 209;
     control = 1;
   };
   class adjustScopeRight: adjustScopeLeft {
     displayName = "$STR_AGM_Scopes_AdjustRight";
     condition = "[0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
     statement = "[0.1, 0] call AGM_Scopes_fnc_adjustScope;";
-    key = 209;
+    key = 201;
+  };
+};
+
+class CfgSounds {
+  class AGM_Sound_Click;
+  class AGM_Scopes_Click_1: AGM_Sound_Click {
+    sound[] = {"\AGM_Scopes\sounds\agm_scopes_click.wav", 3, 2, 200};
+  };
+  class AGM_Scopes_Click_2: AGM_Scopes_Click_1 {
+    sound[] = {"\AGM_Scopes\sounds\agm_scopes_click.wav", 3.3, 1.8, 200};
+  };
+  class AGM_Scopes_Click_3: AGM_Scopes_Click_1 {
+    sound[] = {"\AGM_Scopes\sounds\agm_scopes_click.wav", 2.8, 2.3, 200};
   };
 };
 
@@ -77,26 +90,26 @@ class CfgWeapons {
   class InventoryOpticsItem_Base_F;
 
   class optic_LRPS: ItemCore {
-    AGM_ScopeAdjust_Horizontal = {-5,5};
-    AGM_ScopeAdjust_Vertical = {-7,7};
+    AGM_ScopeAdjust_Horizontal[] = {-50,50};
+    AGM_ScopeAdjust_Vertical[] = {-70,70};
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
           discreteDistance[] = {};
-          discreteDistance[] = 0;
+          discreteDistanceIndex = 0;
         };
       };
     };
   };
 
   class optic_SOS: ItemCore {
-    AGM_ScopeAdjust_Horizontal = {-5,5};
-    AGM_ScopeAdjust_Vertical = {-6,6};
+    AGM_ScopeAdjust_Horizontal[] = {-50,50};
+    AGM_ScopeAdjust_Vertical[] = {-60,60};
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
           discreteDistance[] = {};
-          discreteDistance[] = 0;
+          discreteDistanceIndex = 0;
         };
       };
     };

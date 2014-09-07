@@ -15,8 +15,8 @@ private ["_unit", "_weaponType", "_ammoType", "_magazineType", "_round", "_weapo
 _unit = _this select 0;
 _weaponType = _this select 1;
 _ammoType = _this select 4;
-_magazineType = _this select 5;
-_round = _this select 6;
+_round = _this select 5;
+_magazineType = _this select 6;
 
 _weapons = [
   primaryWeapon player,

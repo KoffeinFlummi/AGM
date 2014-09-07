@@ -202,14 +202,15 @@ class CfgFunctions {
       class getConfigGunner;
       class getMarkerType;
       class getNumberFromMissionSQM;
+      class getPitchBankYaw;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
-      class getTurretCommander;
-      class getTurretGunner;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
@@ -237,6 +238,7 @@ class CfgFunctions {
       class setKeyDefault;
       class setName;
       class setParameter;
+      class setPitchBankYaw;
       class stringToColoredText;
       class subString;
       class toBin;

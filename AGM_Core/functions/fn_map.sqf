@@ -17,10 +17,11 @@
 private ["_array", "_code"];
 
 _array = _this select 0;
+_newArray = [];
 _code = _this select 1;
 
 for "_i" from 0 to (count _array - 1) do {
-  _array set [_i, (_array select _i) call _code];
+  _newArray set [_i, (_array select _i) call _code];
 };
 
-_array
+_newArray

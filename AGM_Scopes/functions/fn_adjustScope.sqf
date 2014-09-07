@@ -11,32 +11,45 @@
  * True
  */
 
-private ["_weapons", "_zeroing", "_hint"];
+private ["_weapons", "_zeroing", "_pitchbankyaw", "_pitch", "_bank", "_yaw", "_hint"];
 
 _weapons = [
   primaryWeapon player,
   secondaryWeapon player,
-  handgunWeapon player;
+  handgunWeapon player
 ];
 
 _zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
-_zeroing set [0, (_zeroing select 0) + (_this select 0)];
-_zeroing set [1, (_zeroing select 1) + (_this select 1)];
+_zeroing set [0, (round (((_zeroing select 0) + (_this select 0)) * 10)) / 10];
+_zeroing set [1, (round (((_zeroing select 1) + (_this select 1)) * 10)) / 10];
 
 AGM_Scopes_Adjustment set [_weapons find (currentWeapon player), _zeroing];
 
+playSound (["AGM_Scopes_Click_1", "AGM_Scopes_Click_2", "AGM_Scopes_Click_3"] select (floor (random 3)));
+
+// slightly rotate the player if looking through optic
+if (cameraView == "GUNNER") then {
+  _pitchbankyaw = [player] call AGM_Core_fnc_getPitchBankYaw;
+  // these are not exact mil-to-degree conversions, but instead chosen 
+  // to minimize the effect of rounding errors
+  _pitch = (_pitchbankyaw select 0) + ((_this select 1) * -0.04);
+  _bank = _pitchbankyaw select 1;
+  _yaw = (_pitchbankyaw select 2) + ((_this select 0) * -0.04);
+  [player, _pitch, _bank, _yaw] call AGM_Core_fnc_setPitchBankYaw;
+};
+
 // TODO: some rsc magic
 _hint = "Current Zeroing: ";
-if (_zeroing select 0 < 0) then {
+if (_zeroing select 0 >= 0) then {
   _hint = _hint + format ["%1 Right", _zeroing select 0];
 } else {
-  _hint = _hint + format ["%1 Left", -1 * _zeroing select 0];
+  _hint = _hint + format ["%1 Left", -1 * (_zeroing select 0)];
 };
 _hint = _hint + ", ";
-if (_zeroing select 1 < 0) then {
+if (_zeroing select 1 >= 0) then {
   _hint = _hint + format ["%1 Up", _zeroing select 1];
 } else {
-  _hint = _hint + format ["%1 Down", -1 * _zeroing select 1];
+  _hint = _hint + format ["%1 Down", -1 * (_zeroing select 1)];
 };
 
 hintSilent _hint;
