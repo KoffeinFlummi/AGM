@@ -24,7 +24,7 @@ _listedItemClasses = [];
 _allGear = [_unit] call AGM_Respawn_fnc_getAllGear;
 
 // localize this
-_actions = ["Iventory of frisked person", "Cancel"] call AGM_Interaction_fnc_prepareSelectMenu;
+_actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
 
 _uniformitems = _allGear select 3;
 _vestitems = _allGear select 5;

@@ -603,6 +603,10 @@
       <German>Außer Reichweite</German>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_FriskMenuHeader">
+      <English>Inventory of frisked unit</English>
+      <German>Inventar der durchsuchten Person</German>
+    </Key>
 
   </Package>
 </Project>
