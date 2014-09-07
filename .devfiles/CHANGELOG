@@ -1,4 +1,42 @@
+- Added: New optional "Flow" interaction menu.
+- Added: Icons in interaction menus.
+- Added: Switch between bigger and smaller map tools.
+- Added: Align map tools.
+- Added: Draw lines on map with map tools or during briefing.
+- Added: Copy other players map lines.
 - Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 0.75]".
+- Added: Animated raindrops on goggles.
+- Added: Added M152 RAMS detonator package.
+- Added: Flashsupressors available in Arma 3 are now usable.
+- Added: Support for custom jam clearing animations.
+- Added: M84 Stun Grenade
+- Added: Many new entries in various languages, including new Italian support.
+- Added: Improved documentation (https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started)
+
+- Changed: Allow moving while interaction menus is open.
+- Changed: Interaction Menus now remain open while the interaction key is pressed.
+- Changed: Removed AGM_StriderFix, which is no longer neccesary.
+- Changed: Physically correct wind drag.
+- Changed: Optimization of various functions by using new pushBack command.
+- Changed: Removed humidity effect over bullet trajectories.
+- Changed: Increased the odds of people spontaneously regaining conciousness.
+- Changed: Many improvements to AGM_RealisticNames.
+- Changed: Increased M57 Trigger Device range to 200m.
+
+- Fixed: Morphine diagnosis was sometimes not correcly linked accross clients.
+- Fixed: User input remained disabled after switching from an unconcious unit.
+- Fixed: Weapons showed vanilla names when placed on the ground.
+- Fixed: Support disabled doors.
+- Fixed: Conflict between AGM and new Arma walking speed.
+- Fixed: Explosives Module caused error in RPT.
+- Fixed: Could not place explosives after team switching.
+- Fixed: Prisoners could throw grenades
+- Fixed: Sniper classes didn't have a detonator by default.
+- Fixed: Wrong explosives behaviour on water.
+- Fixed: Units could mount static weapons while they're being dragged.
+- Fixed: Static weapons were locked after draging them once.
+- Fixed: Error on checking ammo of static weapons.
+- Fixed: A-10 Gau cannon burst inconsistent
 
 # v0.93
 

@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_unit", "_damage", "_strength"];
+
 _unit = _this select 0;
 _damage = _this select 1;
 _strength = (_damage * 2) min 1;

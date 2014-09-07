@@ -1,6 +1,15 @@
 // NEW CLASSES
 /*
 
+// CFGWeapons
+
+AGM_muzzle_mzls_H
+AGM_muzzle_mzls_B
+AGM_muzzle_mzls_L
+AGM_muzzle_mzls_smg_01
+AGM_muzzle_mzls_smg_02
+
+
 // CFGAmmo
 
 AGM_B_65x39_Caseless_Tracer_Dim
@@ -47,13 +56,13 @@ AGM_20Rnd_762x51_Mag_AP
 class CfgPatches {
 	class AGM_Ballistics {
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core};
     version = "0.931";
     versionStr = "0.931";
     versionAr[] = {0,931,0};
-    author[] = {"TaoSensai"};
+    author[] = {"TaoSensai", "commy2"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
 };
@@ -353,10 +362,21 @@ class CfgMagazines {
 
 class Mode_SemiAuto;
 class Mode_FullAuto;
+class SlotInfo;
+//class MuzzleSlot;
 
 class CfgWeapons {
-  class Rifle_Base_F;
-  class Rifle_Long_Base_F;
+  class Pistol;
+  class Pistol_Base_F: Pistol {
+    class WeaponSlotsInfo;
+  };
+  class Rifle;
+  class Rifle_Base_F: Rifle {
+    class WeaponSlotsInfo;
+  };
+  class Rifle_Long_Base_F: Rifle_Base_F {
+    class WeaponSlotsInfo;
+  };
 
 
   /* MX */
@@ -376,6 +396,11 @@ class CfgWeapons {
     class FullAuto : Mode_FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+      };
+    };
   };
   class arifle_MX_SW_F : arifle_MX_Base_F {
     magazines[] += {
@@ -388,6 +413,11 @@ class CfgWeapons {
     };
     class manual : FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
+    };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: MuzzleSlot {
+        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+      };
     };
   };
   class arifle_MXM_F : arifle_MX_Base_F {
@@ -421,10 +451,30 @@ class CfgWeapons {
     class FullAuto : Mode_FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+      };
+    };
   };
 
 
   /* Other */
+
+  class EBR_base_F: Rifle_Long_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_B"};
+      };
+    };
+  };
+  class DMR_01_base_F: Rifle_Long_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_B"};
+      };
+    };
+  };
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
     class manual : Mode_FullAuto {
@@ -432,6 +482,11 @@ class CfgWeapons {
     };
     class Single : manual {
       dispersion = 0.00175; // radians. Equal to 6 MOA.
+    };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+      };
     };
   };
 
@@ -442,7 +497,15 @@ class CfgWeapons {
     class Single : Mode_SemiAuto {
       dispersion = 0.00175; // radians. Equal to 6 MOA.
     };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_B"};
+      };
+    };
   };
+
+
+  /* Assault Rifles */
 
   class Tavor_base_F : Rifle_Base_F {
     magazines[] += {
@@ -456,6 +519,11 @@ class CfgWeapons {
     };
     class FullAuto : Mode_FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
+    };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_L"};
+      };
     };
   };
 
@@ -472,7 +540,15 @@ class CfgWeapons {
     class FullAuto : Mode_FullAuto {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_L"};
+      };
+    };
   };
+
+
+  /* SMGs */
 
   class SDAR_base_F : Rifle_Base_F {
     magazines[] += {
@@ -488,6 +564,74 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
   };
+
+  class pdw2000_base_F: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
+      };
+    };
+  };
+  class SMG_01_Base: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
+      };
+    };
+  };
+  class SMG_02_base_F: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
+      };
+    };
+  };
+
+
+  /* Pistols */
+
+  class hgun_P07_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
+      };
+    };
+  };
+
+  class hgun_Rook40_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
+      };
+    };
+  };
+
+  class hgun_ACPC2_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
+      };
+    };
+  };
+
+  class hgun_Pistol_heavy_01_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
+      };
+    };
+  };
+
+  /*class hgun_Pistol_heavy_02_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot {
+        linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
+        compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
+      };
+    };
+  };*/
 
 
   /* Silencers */
@@ -511,6 +655,20 @@ class CfgWeapons {
         typicalSpeed = 1.0;
         airFriction = 1.0;
       };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
     };
   };
 
@@ -529,6 +687,20 @@ class CfgWeapons {
         cost = 1.0;
         typicalSpeed = 1.0;
         airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
       };
     };
   };
@@ -549,6 +721,20 @@ class CfgWeapons {
         typicalSpeed = 1.0;
         airFriction = 1.0;
       };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
     };
   };
 
@@ -567,6 +753,20 @@ class CfgWeapons {
         cost = 1.0;
         typicalSpeed = 1.0;
         airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
       };
     };
   };
@@ -587,6 +787,20 @@ class CfgWeapons {
         typicalSpeed = 1.0;
         airFriction = 1.0;
       };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
     };
   };
 
@@ -606,9 +820,288 @@ class CfgWeapons {
         typicalSpeed = 1.0;
         airFriction = 1.0;
       };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
     };
   };
 
+  class muzzle_snds_acp: muzzle_snds_H {
+    class ItemInfo: ItemInfo {
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 0.9;
+        visibleFire = 0.5;
+        audibleFire = 0.1;
+        visibleFireTime = 0.5;
+        audibleFireTime = 0.5;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.8f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+  };
+
+  // Flash suppressors
+  class AGM_muzzle_mzls_H: ItemCore {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_muzzle_mzls_H";
+    htMin = 1;
+    htMax = 600;
+    afMax = 0;
+    mfMax = 0;
+    mFact = 1;
+    tBody = 100;
+    scope = 2;
+    displayName = "$STR_AGM_muzzle_mzls_H";
+    picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_h_ca.paa";
+    model = "\A3\weapons_f\acc\acca_mzls_H_F";
+
+    class ItemInfo: InventoryMuzzleItem_Base_F {
+      mass = 8;
+      soundTypeIndex = 0;
+      muzzleEnd = "zaslehPoint";
+      alternativeFire = "Zasleh2";
+
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 1.0;
+        visibleFire = 0.5;
+        audibleFire = 1.0;
+        visibleFireTime = 0.5;
+        audibleFireTime = 1.0;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.9f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+    inertia = 0.2;
+  };
+
+  class AGM_muzzle_mzls_B: AGM_muzzle_mzls_H {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_muzzle_mzls_B";
+    displayName = "$STR_AGM_muzzle_mzls_B";
+    picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_h_ca.paa";
+    model = "\A3\weapons_f\acc\acca_mzls_H_F";
+
+    class ItemInfo: ItemInfo {
+      mass = 6;
+      soundTypeIndex = 0;
+      muzzleEnd = "zaslehPoint";
+      alternativeFire = "Zasleh2";
+
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 1.0;
+        visibleFire = 0.5;
+        audibleFire = 1.0;
+        visibleFireTime = 0.5;
+        audibleFireTime = 1.0;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.9f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+    inertia = 0.2;
+  };
+
+  class AGM_muzzle_mzls_L: AGM_muzzle_mzls_H {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_muzzle_mzls_L";
+    displayName = "$STR_AGM_muzzle_mzls_L";
+    picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
+    model = "\A3\weapons_f\acc\acca_mzls_l_F";
+
+    class ItemInfo: ItemInfo {
+      mass = 6;
+      soundTypeIndex = 0;
+      muzzleEnd = "zaslehPoint";
+      alternativeFire = "Zasleh2";
+
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 1.0;
+        visibleFire = 0.5;
+        audibleFire = 1.0;
+        visibleFireTime = 0.5;
+        audibleFireTime = 1.0;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.9f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+    inertia = 0.1;
+  };
+
+  class AGM_muzzle_mzls_smg_01: AGM_muzzle_mzls_H {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_muzzle_mzls_smg_01";
+    displayName = "$STR_AGM_muzzle_mzls_smg_01";
+    picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
+    model = "\A3\weapons_f\acc\acca_mzls_H_F"; //"\A3\weapons_f\acc\acca_mzls_smg_01_F";
+
+    class ItemInfo: ItemInfo {
+      mass = 6;
+      soundTypeIndex = 0;
+      muzzleEnd = "zaslehPoint";
+      alternativeFire = "Zasleh2";
+
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 1.0;
+        visibleFire = 0.5;
+        audibleFire = 1.0;
+        visibleFireTime = 0.5;
+        audibleFireTime = 1.0;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.9f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+    inertia = 0.1;
+  };
+
+  class AGM_muzzle_mzls_smg_02: AGM_muzzle_mzls_H {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_muzzle_mzls_smg_02";
+    displayName = "$STR_AGM_muzzle_mzls_smg_02";
+    picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
+    model = "\A3\weapons_f\acc\acca_mzls_H_F"; //"\A3\weapons_f\acc\acca_mzls_smg_01_F";
+
+    class ItemInfo: ItemInfo {
+      mass = 6;
+      soundTypeIndex = 0;
+      muzzleEnd = "zaslehPoint";
+      alternativeFire = "Zasleh2";
+
+      class MagazineCoef {
+        initSpeed = 1.0;
+      };
+
+      class AmmoCoef {
+        hit = 1.0;
+        visibleFire = 0.5;
+        audibleFire = 1.0;
+        visibleFireTime = 0.5;
+        audibleFireTime = 1.0;
+        cost = 1.0;
+        typicalSpeed = 1.0;
+        airFriction = 1.0;
+      };
+
+      class MuzzleCoef {
+        dispersionCoef = "0.9f";
+        artilleryDispersionCoef = "1.0f";
+        fireLightCoef = "0.5f";
+        recoilCoef = "1.0f";
+        recoilProneCoef = "1.0f";
+        minRangeCoef = "1.0f";
+        minRangeProbabCoef = "1.0f";
+        midRangeCoef = "1.0f";
+        midRangeProbabCoef = "1.0f";
+        maxRangeCoef = "1.0f";
+        maxRangeProbabCoef = "1.0f";
+      };
+    };
+    inertia = 0.1;
+  };
 
   /* Vests */
 
@@ -616,9 +1109,13 @@ class CfgWeapons {
   #include <VestNerf.hpp>
 };
 
-
 #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
   magazine = #MAGAZINE; \
+  count = COUNT; \
+};
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
   count = COUNT; \
 };
 
@@ -652,6 +1149,12 @@ class CfgVehicles {
   };
 
   class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_muzzle_mzls_H,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_B,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,5)
+    };
     class TransportMagazines {
       MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_mag_SD,6)
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,3)
@@ -686,6 +1189,12 @@ class CfgVehicles {
   };
 
   class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_muzzle_mzls_H,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_B,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,5)
+    };
     class TransportMagazines {
       MACRO_ADDMAGAZINE(AGM_30Rnd_65x39_caseless_green_mag_SD,6)
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,3)
@@ -719,6 +1228,13 @@ class CfgVehicles {
   };
 
   class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_muzzle_mzls_H,1)
+      MACRO_ADDITEM(AGM_muzzle_mzls_B,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_L,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,5)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,5)
+    };
     class TransportMagazines {
       MACRO_ADDMAGAZINE(AGM_30Rnd_556x45_Stanag_SD,6)
     };
@@ -780,5 +1296,20 @@ class CfgVehicles {
       MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_SD,2)
       MACRO_ADDMAGAZINE(AGM_20Rnd_762x51_Mag_AP,2)*/
     };
+    class TransportItems {
+      MACRO_ADDITEM(AGM_muzzle_mzls_H,2)
+      MACRO_ADDITEM(AGM_muzzle_mzls_B,2)
+      MACRO_ADDITEM(AGM_muzzle_mzls_L,2)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,2)
+      MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,2)
+    };
   };
 };
+
+/*
+MACRO_ADDITEM(AGM_muzzle_mzls_H,2)
+MACRO_ADDITEM(AGM_muzzle_mzls_B,2)
+MACRO_ADDITEM(AGM_muzzle_mzls_L,2)
+MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,2)
+MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,2)
+*/

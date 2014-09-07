@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Edited with tabler - 08/09/2014 -->
 <Project name="AGM">
   <Package name="FireControlSystem">
@@ -11,6 +11,7 @@
       <French>Illuminer la cible</French>
       <Russian>Установить зероинг</Russian>
       <Hungarian>Cél jelölése</Hungarian>
+      <Italian>Designatore Laser</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
@@ -21,6 +22,7 @@
       <French>Zéroté à</French>
       <Russian>Зероинг</Russian>
       <Hungarian>Zérózás</Hungarian>
+      <Italian>Azzeramento a</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeUp">
       <English>Adjust FCS Range (Up)</English>
@@ -29,6 +31,7 @@
       <Spanish>Ajustar FCS (arriba)</Spanish>
       <Czech>Nastavit FCS Náměr (nahoru)</Czech>
       <French>Augmenter la distance du SCT</French>
+      <Italian>Aumentare la distanza dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_AdjustRangeDown">
       <English>Adjust FCS Range (Down)</English>
@@ -37,6 +40,7 @@
       <Spanish>Ajustar FCS(abajo)</Spanish>
       <Czech>Nastavit FCS Náměr (dolů)</Czech>
       <French>Réduire la distance du SCT</French>
+      <Italian>Ridurre la distanza dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ResetFCS">
       <English>Reset FCS</English>
@@ -45,6 +49,7 @@
       <French>Réinitialiser le SCT</French>
       <Polish>Resetuj FCS</Polish>
       <Czech>Resetovat FCS</Czech>
+      <Italian>Azzeramento dell'FCS</Italian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_HasBeenReset">
       <English>FCS has been reset.</English>
@@ -53,6 +58,7 @@
       <French>SCT réinitialisé.</French>
       <Polish>FCS został zresetowany.</Polish>
       <Czech>FCS byl resetován.</Czech>
+      <Italian>L'FCS è stato azzerato</Italian>
     </Key>
   </Package>
 </Project>

@@ -43,6 +43,12 @@ addMissionEventHandler ["Draw3D", {
 
         _alpha = ((1 - 0.2 * (_distance - AGM_Interaction_PlayerNamesViewDistance)) min (1 - 0.15 * (_projDist * 5 - _distance - 3)) min 1) * AGM_Interaction_PlayerNamesMaxAlpha;
 
+        // Check if there is line of sight
+        if (_alpha > 0) then {
+          if (lineIntersects [_pos, (visiblePositionASL _target) vectorAdd [0,0,1], vehicle player, _target]) then {
+            _alpha = 0;
+          };
+        };
         [_target, _alpha, _distance * 0.026] call AGM_Interaction_fnc_drawNameTagIcon;
       };
     } forEach _targets;

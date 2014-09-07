@@ -47,7 +47,7 @@ class AGM_Interaction_Dialog {
   idd = 1713999;
   enableSimulation = 1;
   movingEnable = 0;
-  onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; (_dlgInteractionDialog displayCtrl 4) ctrlShow false; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
+  onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; (_dlgInteractionDialog displayCtrl 40) ctrlShow false; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
   onUnload = "uiNamespace setVariable ['AGM_Interaction_Dialog', displayNull];";
   objects[] = {};
   class controls {
@@ -65,9 +65,9 @@ class AGM_Interaction_Dialog {
       style = 48;
       text = "\AGM_Interaction\UI\command_rose_ca.paa";
       tooltip = "";
-      x = (0.5- 0.6 / (getResolution select 4) /2 + 0 * 0.1) * safezoneW + safezoneX;
-      y = (0.5- 0.6 /2 + 0 * 0.04) * safezoneH + safezoneY;
-      w = 0.6 / (getResolution select 4) * safezoneW;
+      x = (0.5 - 0.6 / (getResolution select 4) * safezoneWAbs / safezoneW / 2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5 - 0.6 / 2 + 0 * 0.04) * safezoneH + safezoneY;
+      w = 0.6 / (getResolution select 4) * safezoneWAbs / safezoneW * safezoneW;
       h = 0.6 * safezoneH;
 
       colorText[] = {0.5,0.5,0.5,0.6};
@@ -90,24 +90,6 @@ class AGM_Interaction_Dialog {
       colorFocused[] = {0,0,0,0};
       colorShadow[] = {0,0,0,0};
       colorBorder[] = {0,0,0,0};
-    };
-
-    class Interaction_Tooltip : RscStructuredText {
-      idc = 4;
-      tooltip = "";
-      text = "";
-      sizeEx = "0.6 / 40 / (getResolution select 5)";
-      x = 0;
-      y = 0;
-      w = 0;
-      h = 0;
-
-      colorBackground[] = {0,0,0,0.5};
-
-      size = "0.6 / 40 / (getResolution select 5)";
-      class Attributes {
-        align = "left";
-      };
     };
 
     class Interaction_Button0 : AGM_Interaction_Button_Base {
@@ -359,6 +341,24 @@ class AGM_Interaction_Dialog {
       colorFocused[] = {0,0,0,0};
       colorShadow[] = {0,0,0,0};
       colorBorder[] = {0,0,0,0};
+    };
+
+    class Interaction_Tooltip : RscStructuredText {
+      idc = 40;
+      tooltip = "";
+      text = "";
+      sizeEx = "0.6 / 40 / (getResolution select 5)";
+      x = 0;
+      y = 0;
+      w = 0;
+      h = 0;
+
+      colorBackground[] = {0,0,0,0.5};
+
+      size = "0.6 / 40 / (getResolution select 5)";
+      class Attributes {
+        align = "left";
+      };
     };
   };
 };

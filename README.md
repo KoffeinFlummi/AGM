@@ -5,7 +5,7 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
-[![](http://img.shields.io/badge/current_version-v0.93-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
+[![](http://img.shields.io/github/release/KoffeinFlummi/AGM.svg)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
@@ -30,7 +30,7 @@ More information on the purpose of the different components of AGM and which one
 *   Realistic names for vehicles and weapons
 *   Realistic ballistics including wind and humidity
 *   Backblast simulation
-*   Weapon resting
+*   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
 and more...
 

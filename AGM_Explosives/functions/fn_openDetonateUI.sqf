@@ -43,7 +43,15 @@ _count = 0;
 if (_count > 0) then {
 	[
 		_actions,
-		{[player,if(TYPENAME(_this select 1) != "SCALAR")then{parseNumber(_this select 1)}else{_this select 1}, (player getVariable ["AGM_Clacker", []]) select (if(TYPENAME(_this select 0) != "SCALAR")then{parseNumber(_this select 0)}else{_this select 0}), false] call AGM_Explosives_fnc_DetonateExplosive;call AGM_Interaction_fnc_hideMenu;},
+		{
+			[
+				player,
+				if(TYPENAME(_this select 1) != "SCALAR")then{parseNumber(_this select 1)}else{_this select 1},
+				(player getVariable ["AGM_Clacker", []]) select (if(TYPENAME(_this select 0) != "SCALAR")then{parseNumber(_this select 0)}else{_this select 0}),
+				false
+			] call AGM_Explosives_fnc_DetonateExplosive;
+			call AGM_Interaction_fnc_hideMenu;
+		},
 		{[player] call AGM_Explosives_fnc_openTransmitterUI;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 }else{

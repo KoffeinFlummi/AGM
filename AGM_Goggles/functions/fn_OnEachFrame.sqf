@@ -22,7 +22,7 @@ if (isNull(player)) then {
 AGM_Goggles_FrameEvent set [0, !(AGM_Goggles_FrameEvent select 0)];
 if (AGM_Goggles_FrameEvent select 0) exitWith {
 	if (vehicle player != player && {!([player] call AGM_Core_fnc_isTurnedOut)}) exitWith {(AGM_Goggles_FrameEvent select 1) set [0, false]; };
-	AGM_Goggles_FrameEvent set [1, (player call AGM_Goggles_fnc_isInRotorWash)];
+	AGM_Goggles_FrameEvent set [1, ([player] call AGM_Goggles_fnc_isInRotorWash)];
 };
 private ["_rotorWash","_safe"];
 _rotorWash = AGM_Goggles_FrameEvent select 1;
@@ -42,26 +42,21 @@ if !(_rotorWash select 0) exitWith {
 	};
 };
 if ((headgear player) != "") then {
-	if (getNumber (ConfigFile >> "CfgWeapons" >> (headgear player) >> "AGM_Goggles_EyeProtection") == 1) then {
-		_safe = true;
-	};
+	_safe = (getNumber (ConfigFile >> "CfgWeapons" >> (headgear player) >> "AGM_Protection") == 1);
 };
 if !(_safe) then {
-	if (player call AGM_Goggles_fnc_isGogglesVisible) then {
-		if (GETDUSTT(DAMOUNT) < 2) then {
-			if (!GETDUSTT(DACTIVE)) then {
-				SETDUST(DACTIVE,true);
+	if !(player call AGM_Goggles_fnc_isGogglesVisible) exitWith{};
+	if (GETDUSTT(DAMOUNT) < 2) then {
+		if (!GETDUSTT(DACTIVE)) then {
+			SETDUST(DACTIVE,true);
+			call AGM_Goggles_fnc_ApplyDust;
+		} else {
+			if ((_rotorWash select 1) > 0.5) then {
 				call AGM_Goggles_fnc_ApplyDust;
-			} else {
-				if ((_rotorWash select 1) > 0.5) then {
-					call AGM_Goggles_fnc_ApplyDust;
-				};
 			};
 		};
-		if (getNumber (ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Goggles_EyeProtection") == 1) then {
-			_safe = true;
-		};
 	};
+	_safe = (getNumber (ConfigFile >> "CfgGlasses" >> AGM_Goggles_Current >> "AGM_Protection") == 1);
 };
 if (_safe) exitWith {};
 if ((_rotorWash select 1) <= 15) then {
@@ -76,7 +71,7 @@ if ((_rotorWash select 1) <= 15) then {
 	if (!scriptDone (AGM_Goggles_DustHandler)) then {
 		terminate AGM_Goggles_DustHandler;
 	};
-	if !(player getVariable ["EyesDamaged", false]) then {
+	if !(player getVariable ["AGM_EyesDamaged", false]) then {
 		AGM_Goggles_PostProcessEyes_Enabled = true;
 		AGM_Goggles_PostProcessEyes ppEffectAdjust [1, 1, 0, [0,0,0,0], [_scale,_scale,_scale,_scale],[1,1,1,0]];
 		AGM_Goggles_PostProcessEyes ppEffectCommit 0.5;

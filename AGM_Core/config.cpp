@@ -181,8 +181,12 @@ class CfgFunctions {
     class AGM_Core {
       file = "AGM_Core\functions";
       class addActionEventHandler;
+      class addCameraEventHandler;
+      class addCustomEventHandler;
+      class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
+      class callCustomEventHandlers;
       class canInteractWith;
       class changeProjectileDirection;
       class claim;
@@ -206,6 +210,7 @@ class CfgFunctions {
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
       class getTurretCommander;
       class getTurretConfigPath;
       class getTurretGunner;
@@ -233,6 +238,9 @@ class CfgFunctions {
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
+      class removeCameraEventHandler;
+      class removeCustomEventHandler;
+      class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
