@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="Scopes">
+
+    <Key ID="STR_AGM_Scopes_AdjustUp">
+      <English>Increase Optic Elevation</English>
+      <German>Optik-Elevation erhöhen</German>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustDown">
+      <English>Decrease Optic Elevation</English>
+      <German>Optik-Elevation verringern</German>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustRight">
+      <English>Increase Optic Azimuth</English>
+      <German>Optik-Azimuth erhöhen</German>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustLeft">
+      <English>Decrease Optic Azimuth</English>
+      <German>Optik-Azimuth verringern</German>
+    </Key>
+
+  </Package>
+</Project>
