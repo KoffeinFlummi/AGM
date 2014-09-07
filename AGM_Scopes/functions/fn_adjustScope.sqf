@@ -38,20 +38,12 @@ if (cameraView == "GUNNER") then {
   [player, _pitch, _bank, _yaw] call AGM_Core_fnc_setPitchBankYaw;
 };
 
-// TODO: some rsc magic
-_hint = "Current Zeroing: ";
-if (_zeroing select 0 >= 0) then {
-  _hint = _hint + format ["%1 Right", _zeroing select 0];
-} else {
-  _hint = _hint + format ["%1 Left", -1 * (_zeroing select 0)];
+_display = uiNamespace getVariable ["AGM_Scopes_ZeroingDisplay", displayNull];
+if !(isNull _display) then {
+  _horizontal = _display displayCtrl 925002;
+  _vertical = _display displayCtrl 925003;
+  _horizontal ctrlSetText (str (_zeroing select 0));
+  _vertical ctrlSetText (str (_zeroing select 1));
 };
-_hint = _hint + ", ";
-if (_zeroing select 1 >= 0) then {
-  _hint = _hint + format ["%1 Up", _zeroing select 1];
-} else {
-  _hint = _hint + format ["%1 Down", -1 * (_zeroing select 1)];
-};
-
-hintSilent _hint;
 
 true
