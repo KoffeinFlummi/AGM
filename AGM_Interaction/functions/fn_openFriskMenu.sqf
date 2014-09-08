@@ -15,13 +15,18 @@
 */
 
 
-private ["_unit", "_listedItemClasses"];
+private ["_unit", "_listedItemClasses", "_allGear"];
 
 _unit = _this select 0;
 
 _listedItemClasses = [];
 
 _actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
+
+_allGear = [];
+_allGear pushBack (handgunWeapon _unit);
+_allGear = _allGear + (uniformItems _unit) + (vestItems _unit) + (backpackItems _unit) + (assignedItems _unit);
+
 
 // Handgun
 // Uniform Items
@@ -37,7 +42,7 @@ _actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_
         _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
         _listedItemClasses pushBack _x;
     };
-} forEach ((handgunWeapon _unit) + (uniformItems _unit) + (vestItems _unit) + (backpackItems _unit) + (assignedItems _unit));
+} forEach (_allGear);
 
 
 [_actions, {call AGM_Interaction_fnc_hideMenu;}, {call AGM_Interaction_fnc_hideMenu;}] call AGM_Interaction_fnc_openSelectMenu;
