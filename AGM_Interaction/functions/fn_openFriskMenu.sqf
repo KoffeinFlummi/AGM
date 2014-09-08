@@ -5,7 +5,7 @@
     
     Description:
         Open the select menu with the "personal" items of a frisked unit
-        It shows only uniformItems, vestItems, backpackItems, assignedItems because every other item is visible on the character
+        It only shows "handgunWeapon", "uniformItems", "vestItems", "backpackItems" and "assignedItems" because every other item is visible on the character
     
     Parameters: 
         0: Object - unit
@@ -15,20 +15,15 @@
 */
 
 
-private ["_unit", "_listedItemClasses", "_allGear", "_actions", "_uniformitems", "_vestitems", "_backpackitems", "_assigneditems"];
+private ["_unit", "_listedItemClasses"];
 
 _unit = _this select 0;
 
 _listedItemClasses = [];
 
-_allGear = [_unit] call AGM_Core_fnc_getAllGear;
-_uniformitems = _allGear select 3;
-_vestitems = _allGear select 5;
-_backpackitems = _allGear select 7;
-_assigneditems = _allGear select 17;
-
 _actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
 
+// Handgun
 // Uniform Items
 // Vest Items
 // Backpack Items
@@ -42,7 +37,7 @@ _actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_
         _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
         _listedItemClasses pushBack _x;
     };
-} foreach (_uniformitems + _vestitems + _backpackitems + _assignedItems + (binocular _unit));
+} forEach ((handgunWeapon _unit) + (uniformItems _unit) + (vestItems _unit) + (backpackItems _unit) + (assignedItems _unit));
 
 
 [_actions, {call AGM_Interaction_fnc_hideMenu;}, {call AGM_Interaction_fnc_hideMenu;}] call AGM_Interaction_fnc_openSelectMenu;

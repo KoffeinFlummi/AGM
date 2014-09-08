@@ -11,7 +11,7 @@ player addEventHandler ["Killed", {
 
   if (AGM_Respawn_SavePreDeathGear > 0) then {
     _killedUnit = _this select 0;
-    AGM_Respawn_unitGear = [_killedUnit] call AGM_Core_fnc_getAllGear;
+    AGM_Respawn_unitGear = [_killedUnit] call AGM_Respawn_fnc_getAllGear;
   };
   
 }];
