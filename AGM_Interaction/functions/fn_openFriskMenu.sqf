@@ -21,7 +21,7 @@ _unit = _this select 0;
 
 _listedItemClasses = [];
 
-_actions = [localize "$STR_AGM_Interaction_FriskMenuHeader", localize "$STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
+_actions = [localize "STR_AGM_Interaction_FriskMenuHeader", localize "STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
 
 _allGear = [];
 _allGear pushBack (handgunWeapon _unit);
