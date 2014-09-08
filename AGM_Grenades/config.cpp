@@ -151,33 +151,33 @@ class CfgMagazines {
   };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
-    displayname = "M127A1 Hand Held Signal (White)";
-    descriptionshort = "White Hand Flare";
-    displayNameShort = "White Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_White_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_White_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_White_NameShort";
     model = "\A3\weapons_f\ammo\flare_white";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_white_ca.paa";
   };
   class AGM_HandFlare_Red: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Red";
-    displayname = "M127A1 Hand Held Signal (Red)";
-    descriptionshort = "Red Hand Flare";
-    displayNameShort = "Red Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Red_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Red_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Red_NameShort";
     model = "\A3\weapons_f\ammo\flare_red";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_red_ca.paa";
   };
   class AGM_HandFlare_Green: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Green";
-    displayname = "M127A1 Hand Held Signal (Green)";
-    descriptionshort = "Green Hand Flare";
-    displayNameShort = "Green Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Green_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Green_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Green_NameShort";
     model = "\A3\weapons_f\ammo\flare_green";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_green_ca.paa";
   };
   class AGM_HandFlare_Yellow: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Yellow";
-    displayname = "M127A1 Hand Held Signal (Yellow)";
-    descriptionshort = "Yellow Hand Flare";
-    displayNameShort = "Yellow Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Yellow_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Yellow_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Yellow_NameShort";
     model = "\A3\weapons_f\ammo\flare_yellow";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_yellow_ca.paa";
   };

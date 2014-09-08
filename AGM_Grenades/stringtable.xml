@@ -92,6 +92,53 @@
       <Hungarian>Eldobás után felrobban és éles hang, valamint fényhatással zavarja össze a környezetében tartózkodókat.</Hungarian>
       <Italian>Anche conosciuta come flashbang. Causa accecamento immediato, sensazioni di sposatezza, mancanza d'equilibrio e disturbi al timpano.</Italian>
     </Key>
-
+    <Key ID="STR_AGM_Grenades_M127A1_White_Name">
+      <English>M127A1 Hand Held Signal (White)</English>
+      <German>M127A1 Leuchtmittel (Weiß)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Red_Name">
+      <English>M127A1 Hand Held Signal (Red)</English>
+      <German>M127A1 Leuchtmittel (Rot)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Green_Name">
+      <English>M127A1 Hand Held Signal (Green)</English>
+      <German>M127A1 Leuchtmittel (Grün)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Yellow_Name">
+      <English>M127A1 Hand Held Signal (Yellow)</English>
+      <German>M127A1 Leuchtmittel (Gelb)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_White_Description">
+      <English>White Hand Flare</English>
+      <German>Weiße Leuchtkugel, wird wie eine Granate geworfen.</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Red_Description">
+      <English>Red Hand Flare</English>
+      <German>Rote Leuchtkugel, wird wie eine Granate geworfen.</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Green_Description">
+      <English>Green Hand Flare</English>
+      <German>Grüne Leuchtkugel, wird wie eine Granate geworfen.</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Yellow_Description">
+      <English>Yellow Hand Flare</English>
+      <German>Gelbe Leuchtkugel, wird wie eine Granate geworfen.</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_White_NameShort">
+      <English>M127A1 (White)</English>
+      <German>M127A1 (Weiß)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Red_NameShort">
+      <English>M127A1 (Red)</English>
+      <German>M127A1 (Rot)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Green_NameShort">
+      <English>M127A1 (Green)</English>
+      <German>M127A1 (Grün)</German>
+    </Key>
+    <Key ID="STR_AGM_Grenades_M127A1_Yellow_NameShort">
+      <English>M127A1 (Yellow)</English>
+      <German>M127A1 (Gelb)</German>
+    </Key>
   </Package>
 </Project>
