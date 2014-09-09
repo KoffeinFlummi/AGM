@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Medical">
-
     <Key ID="STR_AGM_Medical_Treat">
       <English>Treat &gt;&gt;</English>
       <German>Behandeln &gt;&gt;</German>
@@ -76,6 +76,8 @@
       <Czech>Obvázat</Czech>
       <French>Pansement</French>
       <Italian>Benda</Italian>
+      <Hungarian>Kötözése</Hungarian>
+      <Russian>Перевязать</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
       <English>Bandage Head</English>
@@ -198,7 +200,6 @@
       <Hungarian>Sebesült kihúzása</Hungarian>
       <Italian>Scarica il paziente</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_Diagnosing">
       <English>Diagnosing ...</English>
       <German>Diagnostizieren ...</German>
@@ -251,6 +252,8 @@
       <Czech>Obvazuji ...</Czech>
       <French>Pansement ...</French>
       <Italian>Sto applicando la benda ...</Italian>
+      <Hungarian>Bekötözése...</Hungarian>
+      <Russian>Перевязывание....</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
       <English>Bandaging Head ...</English>
@@ -318,7 +321,6 @@
       <Hungarian>Jobb láb bekötözése...</Hungarian>
       <Italian>Sto applicando la benda sulla gamba destra</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_MedicalSupplies">
       <English>[AGM] Medical Supplies</English>
       <German>[AGM] Sanitätsmaterial</German>
@@ -330,7 +332,6 @@
       <Hungarian>[AGM] Elsősegély felszerelés</Hungarian>
       <Italian>Cassa Medica [AGM]</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_Bandage_Name">
       <English>Bandage</English>
       <German>Bandage</German>
@@ -419,7 +420,6 @@
       <Hungarian>Nagyobb vérveszteség esetén</Hungarian>
       <Italian>Usata per compensare grandi perdite di sangue.</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_HitHead">
       <English>Head</English>
       <German>Kopf</German>
@@ -486,7 +486,6 @@
       <Hungarian>Jobb láb</Hungarian>
       <Italian>Gamba destra</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_Patient">
       <English>Patient</English>
       <German>Patient</German>
@@ -498,7 +497,6 @@
       <Hungarian>Páciens</Hungarian>
       <Italian>Paziente</Italian>
     </Key>
-
     <!-- Check AGM_Medical_fnc_diagnose for how the diagnose string is pieced together -->
     <Key ID="STR_AGM_Medical_PatientIsDead">
       <English>The patient is dead.</English>
@@ -541,6 +539,8 @@
       <Czech>Pacient je těžce zraněn</Czech>
       <French>Le patient est gravement blessé.</French>
       <Italian>Il paziente è gravemente ferito.</Italian>
+      <Hungarian>Súlyosan sérült.</Hungarian>
+      <Russian>Пациен тяжело.</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightlyInjured">
       <English>The patient is lightly injured.</English>
@@ -550,6 +550,8 @@
       <Czech>Pacient je lehce zraněn</Czech>
       <French>Le patient est légèrement blessé.</French>
       <Italian>Il paziente è leggermente ferito.</Italian>
+      <Hungarian>Könnyen sérült.</Hungarian>
+      <Russian>Пациенто легко.</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
       <English>The patient has heavy injuries in:</English>
@@ -705,7 +707,6 @@
       <Hungarian>és nincsenek fájdalmai.</Hungarian>
       <Italian>e non lamenta dolore.</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_NotTrained">
       <English>You are not trained to do that.</English>
       <German>Dazu bist du nicht ausgebildet.</German>
@@ -717,7 +718,6 @@
       <Hungarian>Erre nem vagy kiképezve.</Hungarian>
       <Italian>Non sei preparato per farlo.</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_GivingYouMorphine">
       <English>is giving you morphine.</English>
       <German>gibt dir Morphium.</German>
@@ -728,7 +728,6 @@
       <Czech>ti dává morfin.</Czech>
       <Italian>ti sta iniettando la morfina.</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_keepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
@@ -739,7 +738,6 @@
       <French>Réouvrir le menu médical après les soins</French>
       <Italian>Riapri il menù medico dopo il trattamento</Italian>
     </Key>
-
     <Key ID="STR_AGM_Medical_NoItem">
       <English>You don't have the required item anymore.</English>
       <German>Du hast das benötigte Material nicht mehr.</German>
@@ -748,6 +746,7 @@
       <French>Tu n'as plus le matériel nécessaire.</French>
       <Czech>Už nemáš potřebný předmět.</Czech>
       <Italian>Non hai più l'oggetto richiesto</Italian>
+      <Hungarian>Nem rendelkezel a szükséges eszközzel.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
       <English>Taking the patient's %1...</English>
@@ -755,8 +754,9 @@
       <Spanish>Cogiendo al paciente %1...</Spanish>
       <Polish>Pobrano od pacjenta: %1...</Polish>
       <French>Prendre %1... du patient</French>
-     <Czech>Beru pacientův %1...</Czech>
+      <Czech>Beru pacientův %1...</Czech>
       <Italian>Sto prendendo un %1 dal paziente ...</Italian>
+      <Hungarian>Elveszed a páciens...</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
       <English>%1 is using your %2...</English>
@@ -766,6 +766,7 @@
       <French>%1 utilise ton %2...</French>
       <Czech>%1 používá tvůj %2...</Czech>
       <Italian>%1 sta usando il tuo %1 ...</Italian>
+      <Hungarian>%1 használja a %2</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
       <English>Patient has no %1, using yours...</English>
@@ -775,7 +776,7 @@
       <French>Le patient n'a pas de %1, tu utilises ton matériel...</French>
       <Czech>Pacient nemá žádný %1, používám vlastní...</Czech>
       <Italian>Il paziente non ha nessun %1, userai il tuo.</Italian>
+      <Hungarian>A páciensnek nincs %1, a sajátodat használod.</Hungarian>
     </Key>
-
   </Package>
 </Project>
