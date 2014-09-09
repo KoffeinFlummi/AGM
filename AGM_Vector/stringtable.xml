@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Vector">
-
     <Key ID="STR_AGM_Vector_VectorName">
       <English>Vector IV</English>
       <German>Vector IV</German>
@@ -10,6 +10,9 @@
       <Polish>Vector IV</Polish>
       <Czech>Vector IV</Czech>
       <Italian>Vector IV</Italian>
+      <Hungarian>Vector IV</Hungarian>
+      <Portuguese>Vector IV</Portuguese>
+      <Russian>Vector IV</Russian>
     </Key>
     <Key ID="STR_AGM_Vector_VectorDescription">
       <English>Rangefinder</English>
@@ -19,6 +22,9 @@
       <Polish>Dalmierz</Polish>
       <Czech>Dálkoměr</Czech>
       <Italian>Telemetro</Italian>
+      <Hungarian>Távolságmérő</Hungarian>
+      <Portuguese>Telêmetro</Portuguese>
+      <Russian>Лазерный дальномер</Russian>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
       <English>Vector - Azimuth Key</English>
@@ -28,6 +34,7 @@
       <Polish>Vector - Azymut</Polish>
       <Czech>Vector - Azimut Klávesa</Czech>
       <Italian>Vector - Tasto Azimuth</Italian>
+      <Hungarian>Vector - Irányszög gomb</Hungarian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
@@ -37,7 +44,7 @@
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
       <Italian>Vecto - Tasto Distanza</Italian>
+      <Hungarian>Vector - Távolság gomb</Hungarian>
     </Key>
-
   </Package>
 </Project>
