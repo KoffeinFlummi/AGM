@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Hearing">
-
     <Key ID="STR_AGM_Hearing_Earbuds_Name">
       <English>Ear Plugs</English>
       <German>Ohrenstöpsel</German>
@@ -65,7 +65,7 @@
       <French>Pas de place dans l'inventaire</French>
       <Czech>Není místo v inventáři</Czech>
       <Italian>Non hai abbastanza spazio</Italian>
+      <Hungarian>Nincs több hely a felszereléseden</Hungarian>
     </Key>
-
   </Package>
 </Project>
