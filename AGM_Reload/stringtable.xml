@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Reload">
-
     <Key ID="STR_AGM_Reload_checkAmmo">
       <English>Check Ammo</English>
       <German>Munition prüfen</German>
@@ -11,8 +11,9 @@
       <Hungarian>Lőszerellenőrzés</Hungarian>
       <Czech>Zkontrolovat Munici</Czech>
       <Italian>Controlla le munizioni</Italian>
+      <Portuguese>Controle munições</Portuguese>
+      <Russian>Kонтроль Боеприпасы</Russian>
     </Key>
-
     <Key ID="STR_AGM_Reload_Ammo">
       <English>Ammo</English>
       <German>Munition</German>
@@ -22,7 +23,8 @@
       <Hungarian>Lőszer</Hungarian>
       <Czech>Munice</Czech>
       <Italian>Munizioni</Italian>
+      <Portuguese>Munições</Portuguese>
+      <Russian>Боеприпасы</Russian>
     </Key>
-
   </Package>
 </Project>
