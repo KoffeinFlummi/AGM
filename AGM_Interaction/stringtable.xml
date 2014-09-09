@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -597,12 +598,10 @@
       <Spanish>Tecla modificadora</Spanish>
       <Italian>Modifica Tasto</Italian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_NotInRange">
       <English>Not in Range</English>
       <German>Außer Reichweite</German>
+      <French>Hors de portée.</French>
     </Key>
-
-
   </Package>
 </Project>
