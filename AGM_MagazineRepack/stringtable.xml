@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="MagazineRepack">
-
     <Key ID="STR_AGM_MagazineRepack_RepackMagazines">
       <English>Repack Magazines</English>
       <German>Magazine umpacken</German>
@@ -10,6 +10,7 @@
       <Polish>Przepakuj magazynki</Polish>
       <Czech>Přepáskovat Zásobníky</Czech>
       <Italian>Ricarica Caricatori</Italian>
+      <Hungarian>Tárak újratárazása</Hungarian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazineMenu">
       <English>Select Magazine Menu</English>
@@ -19,6 +20,7 @@
       <Polish>Wybierz menu magazynków</Polish>
       <Czech>Zvolit Menu Zásobníků</Czech>
       <Italian>Seleziona Menù di Ricarica</Italian>
+      <Hungarian>Fegyvertár menü kiválasztás</Hungarian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_SelectMagazine">
       <English>Select Mag</English>
@@ -28,6 +30,7 @@
       <Polish>Wybierz magazynek</Polish>
       <Czech>Zvolit Zásobník</Czech>
       <Italian>Seleziona Caricatore</Italian>
+      <Hungarian>Tár kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
@@ -37,6 +40,7 @@
       <Polish>Przepakowywanie magazynków ...</Polish>
       <Czech>Páskuji Zásobníky ...</Czech>
       <Italian>Sto ricaricando le munizioni ...</Italian>
+      <Hungarian>Újratárazás ...</Hungarian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
@@ -46,6 +50,7 @@
       <Polish>Magazynki przepakowane</Polish>
       <Czech>Přepáskované Zásobníky</Czech>
       <Italian>Caricatore ricaricato</Italian>
+      <Hungarian>Újratárazott tárak</Hungarian>
     </Key>
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
@@ -55,8 +60,7 @@
       <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
       <Czech>%1 plný zásobník(y) a %2 munice navíc</Czech>
       <Italian>%1 caricatore/i pieno e %2 munizioni extra</Italian>
+      <Hungarian>%1 tejles tár és %2 extra lőszer.</Hungarian>
     </Key>
-
-
   </Package>
 </Project>
