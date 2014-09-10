@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-09-11 -->
 <Project name="AGM">
   <Package name="Grenades">
     <Key ID="STR_AGM_Grenades_SwitchGrenadeMode">
@@ -114,7 +114,7 @@
       <English>M127A1 Hand Held Signal (Red)</English>
       <German>M127A1 Leuchtmittel (Rot)</German>
       <Czech>M127A1 Světlice (Červená)</Czech>
-      <Hungarian>M127A1 Jelzőrakéta (Vörös)</Hungarian>
+      <Hungarian>M127A1 Jelzőrakéta (Piros)</Hungarian>
       <Italian>M127A1 Bengala (Rosso)</Italian>
       <Polish>M127A1 Flara (Czerwony)</Polish>
       <Portuguese>M127A1 Sinalizador (Vermelho)</Portuguese>
@@ -162,7 +162,7 @@
       <English>Red Hand Flare</English>
       <German>Rote Leuchtkugel, wird wie eine Granate geworfen.</German>
       <Czech>Světlice (Červená)</Czech>
-      <Hungarian>Jelzőrakéta (Vörös)</Hungarian>
+      <Hungarian>Jelzőrakéta (Piros)</Hungarian>
       <Italian>Bengala (Rosso)</Italian>
       <Polish>Flara (Czerwony)</Polish>
       <Portuguese>Sinalizador (Vermelho)</Portuguese>
@@ -211,7 +211,7 @@
       <German>M127A1 (Rot)</German>
       <Czech>M127A1 (Červená)</Czech>
       <French>M127A1 (Rouge)</French>
-      <Hungarian>M127A1 (Vörös)</Hungarian>
+      <Hungarian>M127A1 (Piros)</Hungarian>
       <Italian>M127A1 (Rosso)</Italian>
       <Polish>M127A1 (Czerwony)</Polish>
       <Portuguese>M127A1 (Vermelho)</Portuguese>
