@@ -12,6 +12,7 @@
       <Russian>Сменить режим броска гранаты</Russian>
       <Hungarian>Gránátdobás mód váltás</Hungarian>
       <Italian>Cambia tipo di granata</Italian>
+      <Portuguese>Alternar Modo de Granada</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_NormalThrow">
       <English>Normal Throw</English>
@@ -23,6 +24,7 @@
       <Russian>Нормальный бросок</Russian>
       <Hungarian>Normál dobás</Hungarian>
       <Italian>Lancio normale</Italian>
+      <Portuguese>Arremesso Normal</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_HighThrow">
       <English>High Throw</English>
@@ -34,6 +36,7 @@
       <Russian>Высокий бросок</Russian>
       <Hungarian>Magas dobás</Hungarian>
       <Italian>Lancio verso l'alto</Italian>
+      <Portuguese>Arremesso Alto</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_PreciseThrow">
       <English>Precise Throw</English>
@@ -45,6 +48,7 @@
       <Russian>Точный бросок</Russian>
       <Hungarian>Pontos dobás</Hungarian>
       <Italian>Lancio preciso</Italian>
+      <Portuguese>Arremesso Preciso</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_RollGrenade">
       <English>Roll Grenade</English>
@@ -56,6 +60,7 @@
       <Russian>Катить гранату</Russian>
       <Hungarian>Gurítás</Hungarian>
       <Italian>Fai rotolare la granata</Italian>
+      <Portuguese>Rolar Granada</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_DropGrenade">
       <English>Drop Grenade</English>
@@ -67,6 +72,7 @@
       <Russian>Бросить себе под ноги</Russian>
       <Hungarian>Ejtés</Hungarian>
       <Italian>Lascia la granata</Italian>
+      <Portuguese>Largar Granada</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_M84_Name">
       <English>M84 Stun Grenade</English>
