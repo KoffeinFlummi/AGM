@@ -5,7 +5,7 @@ Authentic Gameplay Mod
   <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
 </p>
 
-[![](http://img.shields.io/badge/release-0.93-orange.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/issues)
+[![](http://img.shields.io/badge/release-0.93-green.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat-square)](https://github.com/KoffeinFlummi/AGM/issues)
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
