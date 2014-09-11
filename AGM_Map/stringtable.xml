@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-10 -->
+<!-- Edited with tabler - 2014-09-11 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
@@ -62,7 +62,7 @@
       <Spanish>Alinear herr. de mapa al norte</Spanish>
       <French>Aligner au nord</French>
       <Italian>Allinea gli Strumenti Cartografici con il Nord</Italian>
-      <Hungarian>Térképészeti eszköz iránytűhöz állítása</Hungarian>
+      <Hungarian>Térképészeti eszköz Északhoz állítása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignCompass">
       <English>Align Map Tool to Compass</English>
