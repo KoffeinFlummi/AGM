@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-09-11 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -41,6 +41,7 @@
       <Spanish>Trabar puerta</Spanish>
       <French>Verrouiller Porte</French>
       <Italian>Blocca la porta</Italian>
+      <Hungarian>Ajtó bezárása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
@@ -48,6 +49,7 @@
       <Spanish>Destrabar puerta</Spanish>
       <French>Déverrouiller Porte</French>
       <Italian>Sblocca la porta</Italian>
+      <Hungarian> Zár kinyitása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
@@ -55,6 +57,7 @@
       <Spanish>Puerta trabada</Spanish>
       <French>Porte Verrouillée</French>
       <Italian>Porta bloccata</Italian>
+      <Hungarian>Zárt ajtó</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
@@ -62,6 +65,7 @@
       <Spanish>Puerta destrabada</Spanish>
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
+      <Hungarian>Nyitott ajtó</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -344,6 +348,7 @@
       <French>Noms uniquement sous le curseur (si noms affichés)</French>
       <Czech>Zobrazit jméno hráče jenom na kurzor (potřeba jména hráčů)</Czech>
       <Italian>Mostra i nomi solo se puntati (richiede i nomi dei giocatori abilitati)</Italian>
+      <Hungarian>Játékosok nevének mutatása (névcímke szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
@@ -353,6 +358,7 @@
       <French>Grade des joueurs  (si noms affichés)</French>
       <Czech>Zobrazit hodnosti hráčů (potřeba jména hráčů)</Czech>
       <Italian>Mostra i gradi (richiede i nomi dei giocatori abilitati)</Italian>
+      <Hungarian>Játékosok rendfokozatának mutatása (névcímke szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -362,6 +368,7 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
+      <Hungarian>Mégse</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_MakeSelection">
       <English>Select</English>
@@ -371,6 +378,7 @@
       <French>Sélectionner</French>
       <Czech>Zvolit</Czech>
       <Italian>Seleziona</Italian>
+      <Hungarian>Kiválaszt</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_SendAway">
       <English>Go Away!</English>
@@ -401,6 +409,7 @@
       <Polish>Weź więźnia</Polish>
       <Czech>Zajmout Osobu</Czech>
       <Italian>Arresta il Prigioniero</Italian>
+      <Hungarian>Foglyul ejtés</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ReleaseCaptive">
       <English>Free Prisoner</English>
@@ -410,6 +419,7 @@
       <French>Libérer le prisonnier</French>
       <Czech>Osvobodit Zajatce</Czech>
       <Italian>Libera il Prigioniero</Italian>
+      <Hungarian>Fogoly szabadon elengedése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_EscortCaptive">
       <English>Escort Prisoner</English>
@@ -419,6 +429,7 @@
       <French>Escorter le prisonnier</French>
       <Czech>Eskortovat Zajatce</Czech>
       <Italian>Scorta il Prigioniero</Italian>
+      <Hungarian>Fogoly kísérése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_StopEscorting">
       <English>Release Prisoner</English>
@@ -428,6 +439,7 @@
       <French>Relâcher le prisonnier</French>
       <Czech>Uvolnit Zajatce</Czech>
       <Italian>Rilascia il Prigioniero</Italian>
+      <Hungarian>Fogoly elengedése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_NoCaptive">
       <English>You need you take him as prisoner first!</English>
@@ -437,6 +449,7 @@
       <French>Vous devez d'abord le capturer!</French>
       <Czech>Musíš ho nejdříve zajmout!</Czech>
       <Italian>Prima devi arrestarlo!</Italian>
+      <Hungarian>Először foglyul kell ejtened!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
@@ -446,6 +459,7 @@
       <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
       <Czech>Správa týmu</Czech>
       <Italian>Organizzazione Squadra</Italian>
+      <Hungarian>Csapat kezelés</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>
@@ -455,6 +469,7 @@
       <Polish>Czerwony</Polish>
       <Czech>Červený</Czech>
       <Italian>Rosso</Italian>
+      <Hungarian>Piros</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamGREEN">
       <English>Green</English>
@@ -464,6 +479,7 @@
       <Polish>Zielony</Polish>
       <Czech>Zelený</Czech>
       <Italian>Verde</Italian>
+      <Hungarian>Zöld</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamBLUE">
       <English>Blue</English>
@@ -473,6 +489,7 @@
       <Polish>Niebieski</Polish>
       <Czech>Modrý</Czech>
       <Italian>Blu</Italian>
+      <Hungarian>Kék</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamYELLOW">
       <English>Yellow</English>
@@ -482,6 +499,7 @@
       <Polish>Żółty</Polish>
       <Czech>Žlutý</Czech>
       <Italian>Giallo</Italian>
+      <Hungarian>Sárga</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamRed">
       <English>Join Team Red</English>
@@ -491,6 +509,7 @@
       <Polish>Dołącz do drużyny czerwonej</Polish>
       <Czech>Připojit do Červeného Týmu</Czech>
       <Italian>Entra nella Squadra Rossa</Italian>
+      <Hungarian>Csatlakozás a piros csapathoz</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamGreen">
       <English>Join Team Green</English>
@@ -500,6 +519,7 @@
       <Polish>Dołącz do drużyny zielonej</Polish>
       <Czech>Připojit do Zeleného Týmu</Czech>
       <Italian>Entra nella Squadra Verde</Italian>
+      <Hungarian>Csatlakozás a zöld csapathoz</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamBlue">
       <English>Join Team Blue</English>
@@ -509,6 +529,7 @@
       <Polish>Dołącz do drużyny niebieskiej</Polish>
       <Czech>Připojit do Modrého Týmu</Czech>
       <Italian>Entra nella Squadra Blu</Italian>
+      <Hungarian>Csatlakozás a kék csapathoz</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinTeamYellow">
       <English>Join Team Yellow</English>
@@ -518,6 +539,7 @@
       <Polish>Dołącz do drużyny żółtej</Polish>
       <Czech>Připojit do Žlutého Týmu</Czech>
       <Italian>Entra nella Squadra Gialla</Italian>
+      <Hungarian>Csatlakozás a sárga csapathoz</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinedTeam">
       <English>You joined Team %1</English>
@@ -527,6 +549,7 @@
       <Polish>Dołączyłeś do drużyny %1</Polish>
       <Czech>Připojil ses do Týmu %1</Czech>
       <Italian>Sei entrato nella Squadra %1</Italian>
+      <Hungarian>Csatlakoztál a %1 csapathoz</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LeaveTeam">
       <English>Leave Team</English>
@@ -536,6 +559,7 @@
       <Polish>Opuść drużynę</Polish>
       <Czech>Opustit tým</Czech>
       <Italian>Lascia la Squadra</Italian>
+      <Hungarian>Csapat elhagyása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LeftTeam">
       <English>You left the Team</English>
@@ -545,6 +569,7 @@
       <Polish>Opuściłeś drużynę</Polish>
       <Czech>Opustil si tým</Czech>
       <Italian>Hai lasciato la squadra</Italian>
+      <Hungarian>Elhagytad a csapatot</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Pardon">
       <English>Pardon</English>
@@ -554,6 +579,7 @@
       <French>Pardon</French>
       <Czech>Pardon</Czech>
       <Italian>Perdona</Italian>
+      <Hungarian>Megbocsátás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Name">
       <English>Cable Tie</English>
@@ -563,6 +589,7 @@
       <French>Tyrap</French>
       <Czech>Stahovací Pásek</Czech>
       <Italian>Fascietta</Italian>
+      <Hungarian>Műanyag bilincs</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
@@ -572,6 +599,7 @@
       <French>Les Tyrap permettent de menotter les prisonniers.</French>
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
+      <Hungarian>Műanyag bilincs a foglyok feltartóztatására.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
@@ -581,6 +609,7 @@
       <French>Menu Déroulant</French>
       <Czech>Flow Menu</Czech>
       <Italian>Menù a Scorrimento</Italian>
+      <Hungarian>Legördülő menü</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ScrollHint">
       <English>Scroll</English>
@@ -589,6 +618,7 @@
       <French>Défilement</French>
       <Spanish>Desplazar</Spanish>
       <Italian>Scorri</Italian>
+      <Hungarian>Görgetés</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ModifierKey">
       <English>Modifier Key</English>
@@ -597,11 +627,13 @@
       <French>Modifier la touche</French>
       <Spanish>Tecla modificadora</Spanish>
       <Italian>Modifica Tasto</Italian>
+      <Hungarian>Módosító billentyű</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_NotInRange">
       <English>Not in Range</English>
       <German>Außer Reichweite</German>
       <French>Hors de portée.</French>
+      <Hungarian>Hatótávolságon kívül</Hungarian>
     </Key>
   </Package>
 </Project>
