@@ -9,6 +9,7 @@
       <Polish>Przyczep przedmiot</Polish>
       <French>Attacher l'objet</French>
       <Czech>Připnout předmět</Czech>
+	  <Portuguese>Acoplar item</Portuguese>
       <Italian>Attacca l'oggetto</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Attach">
@@ -18,6 +19,7 @@
       <Polish>Przyczep</Polish>
       <French>Attacher</French>
       <Czech>Připnout</Czech>
+	  <Portuguese>Acoplar</Portuguese>
       <Italian>Attacca</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
@@ -27,6 +29,7 @@
       <Polish>Odczep przedmiot</Polish>
       <French>Détacher l'objet</French>
       <Czech>Odepnout předmět</Czech>
+	  <Portuguese>Separar item</Portuguese>
       <Italian>Stacca l'oggetto</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Attached">
@@ -36,6 +39,7 @@
       <Polish>Przyczepiono stroboskop IR</Polish>
       <French>Strobe IR attaché</French>
       <Czech>IR Značkovač Připnutý</Czech>
+	  <Portuguese>Marcador IV Acoplado</Portuguese>
       <Italian>Strobo IR attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Detached">
@@ -45,6 +49,7 @@
       <Polish>Odczepiono stroboskop IR</Polish>
       <French>Strobe IR détaché</French>
       <Czech>IR Značkovač Odepnutý</Czech>
+	  <Portuguese>Marcador IV Separado</Portuguese>
       <Italian>Strobo IR staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Attached">
@@ -54,6 +59,7 @@
       <Polish>Przyczepiono granat IR</Polish>
       <French>Grenade IR attachée</French>
       <Czech>IR Granát Připnutý</Czech>
+	  <Portuguese>Granada IV Acoplada</Portuguese>
       <Italian>Granata IR attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_IrGrenade_Detached">
@@ -63,6 +69,7 @@
       <Polish>Odczepiono granat IR</Polish>
       <French>Grenade IR détachée</French>
       <Czech>IR Granát Odepnutý</Czech>
+	  <Portuguese>Granada IV Separada</Portuguese>
       <Italian>Granata IR staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Attached">
@@ -72,6 +79,7 @@
       <Polish>Przyczepiono światło chemiczne</Polish>
       <French>Chemlight attaché</French>
       <Czech>Chemické světlo Připnuto</Czech>
+	  <Portuguese>Chemlight Acoplada</Portuguese>
       <Italian>Chemlight attaccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Chemlight_Detached">
@@ -81,6 +89,7 @@
       <Polish>Odczepiono światło chemiczne</Polish>
       <French>Chemlight détaché</French>
       <Czech>Chemické světlo Odepnuto</Czech>
+	  <Portuguese>Chemlight Separada</Portuguese>
       <Italian>Chemlight staccata</Italian>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">
@@ -90,6 +99,7 @@
       <Polish>Brak miejsca w ekwipunku</Polish>
       <French>Pas de place dans l'inventaire</French>
       <Czech>Není místo v inventáři</Czech>
+	  <Portuguese>Sem espaço no inventário</Portuguese>
       <Italian>Non hai più spazio</Italian>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Name">
@@ -99,6 +109,7 @@
       <Polish>Stroboskop IR</Polish>
       <French>Strobe IR</French>
       <Czech>IR Značkovač</Czech>
+	  <Portuguese>Marcador IV</Portuguese>
       <Italian>Strobo IR</Italian>
     </Key>
     <Key ID="STR_AGM_IrStrobe_Description">
@@ -108,6 +119,7 @@
       <Spanish>El Marcador IR permite señalizar su posisición a través de una baliza visible solo a través de dispositivos de visión nocturna. </Spanish>
       <French>Le Strobe IR permet de signaler votre position grace à un clignotement visible par des JVN.</French>
       <Czech>IR Značkovač je Infračerveně zářící stroboskop umožňující signalizaci vaší pozice díky blikajícímu světlu, které je vidět pouze při užití noktovizoru.</Czech>
+	  <Portuguese>O Marcador IV permite que você sinalize sua posição através de um pulso visível somente com equipamento de visão noturna.</Portuguese>
       <Italian>La Strobo IR è una luce stroboscopica che ti permette di segnalare la tua posizione grazie all'emissione di impulsi ad infrarossi visibili solo con i visori notturni.</Italian>
     </Key>
   </Package>
