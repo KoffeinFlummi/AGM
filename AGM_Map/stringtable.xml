@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!-- Edited with tabler - 2014-08-12 -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-10 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
@@ -10,6 +10,7 @@
       <German>Kartenwerkzeug</German>
       <Czech>Pomůcky k Mapě</Czech>
       <Italian>Strumenti Cartografici</Italian>
+      <Hungarian>Térképészeti eszközök</Hungarian>
     </Key>
     <Key ID="STR_AGM_MapTools_Description">
       <English>The Map Tools allow you to measure distances and angles on the map.</English>
@@ -19,6 +20,7 @@
       <German>Das Kartenwerkzeug erlaubt es dir, Distanzen und Winkel zu messen.</German>
       <Czech>Pomůcky k mapě slouží k měření vzdáleností a úhlů na mapě.</Czech>
       <Italian>Gli Strumenti Cartografici ti consentono di misurare distanze ed angoli sulla mappa.</Italian>
+      <Hungarian>A térképészeti eszközökkel távolságokat és szögeket tud mérni a térképen.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapTools_Menu">
       <English>Map Tools &gt;&gt;</English>
@@ -28,6 +30,7 @@
       <German>Kartenwerkzeug &gt;&gt;</German>
       <Czech>Pomůcky k Mapě &gt;&gt;</Czech>
       <Italian>Strumenti Cartografici &gt;&gt;</Italian>
+      <Hungarian>Térképészeti eszközök &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsHide">
       <English>Hide Map Tool</English>
@@ -35,6 +38,7 @@
       <Spanish>Ocultar herr. de mapa</Spanish>
       <French>Ranger les outils</French>
       <Italian>Nascondi Strumenti Cartografici</Italian>
+      <Hungarian>Térképészeti eszközök elrejtése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowNormal">
       <English>Show Normal Map Tool</English>
@@ -42,6 +46,7 @@
       <Spanish>Mostrar herr. de mapa normal</Spanish>
       <French>Montrer outils normaux</French>
       <Italian>Visualizza Strumenti Cartografici standard</Italian>
+      <Hungarian>Térképészeti eszköz megjelenítése (normál méret)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowSmall">
       <English>Show Small Map Tool</English>
@@ -49,6 +54,7 @@
       <Spanish>Mostrar herr. de mapa pequeña</Spanish>
       <French>Montrer petits outils</French>
       <Italian>Visualizza Strumenti Cartografici piccoli</Italian>
+      <Hungarian>Térképészeti eszköz megjelenítése (kicsinyített)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignNorth">
       <English>Align Map Tool to North</English>
@@ -56,6 +62,7 @@
       <Spanish>Alinear herr. de mapa al norte</Spanish>
       <French>Aligner au nord</French>
       <Italian>Allinea gli Strumenti Cartografici con il Nord</Italian>
+      <Hungarian>Térképészeti eszköz iránytűhöz állítása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignCompass">
       <English>Align Map Tool to Compass</English>
@@ -63,6 +70,7 @@
       <Spanish>Alinear herr. de mapa a la brújula</Spanish>
       <French>Aligner sur la boussole</French>
       <Italian>Allinea gli Strumenti Cartografici con la bussola</Italian>
+      <Hungarian>Térképészeti eszköz iránytűhöz állítása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsShow">
       <English>Show GPS on Map</English>
@@ -70,6 +78,7 @@
       <Spanish>Mostrar el GPS sobre el mapa</Spanish>
       <French>Ranger le GPS</French>
       <Italian>Visualizza il GPS sulla mappa</Italian>
+      <Hungarian>GPS megjelnítése a térképen</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsHide">
       <English>Hide GPS on Map</English>
@@ -77,6 +86,7 @@
       <Spanish>Ocultar el GPS del mapa</Spanish>
       <French>Montrer le GPS</French>
       <Italian>Nascondi il GPS sulla mappa</Italian>
+      <Hungarian>GPS elrejtése térképről</Hungarian>
     </Key>
     <Key ID="STR_AGM_Map_CopyMap">
       <English>Copy Map</English>
