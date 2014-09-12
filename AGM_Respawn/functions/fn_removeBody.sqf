@@ -15,7 +15,7 @@ private ["_body", "_forceRemove", "_bodyRemoveTimer"];
 _body = _this select 0;
 _forceRemove = _this select 1;
 
-if (!isNil "AGM_Respawn_BodyRemoveTimer" && AGM_Respawn_BodyRemoveTimer > 0) then {
+if (!isNil "AGM_Respawn_BodyRemoveTimer" && AGM_Respawn_BodyRemoveTimer >= 0) then {
   _bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer;
 } else {
   // default time
