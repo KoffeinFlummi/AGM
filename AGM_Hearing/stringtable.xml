@@ -11,6 +11,7 @@
       <Russian>Беруши</Russian>
       <French>Bouchons Anti-Bruits</French>
       <Hungarian>Füldugó</Hungarian>
+      <Portuguese>Protetor auricular</Portuguese>
       <Italian>Tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Description">
@@ -22,6 +23,7 @@
       <Russian>Беруши позволяют избежать потери слуха при близкой громкой стрельбе.</Russian>
       <French>Bouchons Anti-Bruits pour la prévention des traumatismes sonores aigus.</French>
       <Hungarian>Erősebb hanghatásoktól védő füldugó, megakadályozza a nagy hanggal járó fegyverzettől való halláskárosodást.</Hungarian>
+      <Portuguese>Protetor para ouvidos permitem que o usuário esteja próximo a ruídos sem danificar sua audição.</Portuguese>
       <Italian>Proteggono l'apparato uditivo, permettendo a chi li indossa di resistere ai suoni particolarmente forti senza alcun danno.</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_On">
@@ -33,6 +35,7 @@
       <Russian>Беруши надеты</Russian>
       <French>Bouchons mis</French>
       <Hungarian>Füldugó berakva</Hungarian>
+      <Portuguese>Protetores colocados</Portuguese>
       <Italian>Indossa i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
@@ -44,6 +47,7 @@
       <Russian>Беруши сняты</Russian>
       <French>Bouchons enlevés</French>
       <Hungarian>Füldugó kivéve</Hungarian>
+      <Portuguese>Protetores retirados</Portuguese>
       <Italian>Levati i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_NoBuds">
@@ -55,6 +59,7 @@
       <Russian>У вас нет беруш</Russian>
       <French>Vous n'avez pas de Bouchons Anti-Bruits</French>
       <Hungarian>Nincs füldugód</Hungarian>
+      <Portuguese>Você não possui protetores auriculares</Portuguese>
       <Italian>Non hai i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Inventory_Full">
@@ -65,6 +70,7 @@
       <French>Pas de place dans l'inventaire</French>
       <Czech>Není místo v inventáři</Czech>
       <Italian>Non hai abbastanza spazio</Italian>
+      <Portuguese>Não há espaço no inventário</Portuguese>
       <Hungarian>Nincs több hely a felszereléseden</Hungarian>
     </Key>
   </Package>
