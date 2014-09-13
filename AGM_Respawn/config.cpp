@@ -67,7 +67,7 @@ class CfgVehicles {
           class No { default = 1; name = "No"; value = 0; };
         };
       };
-      class RemoveDeadBodies {
+      /*class RemoveDeadBodies {
         displayName = "Remove bodies?";
         description = "Remove player bodies after respawn?";
         typeName = "BOOL";
@@ -81,7 +81,7 @@ class CfgVehicles {
         description = "The amount of time (in seconds) after that a unit's body gets removed. Default: 90";
         typeName = "NUMBER";
         defaultValue = 90;
-      };
+      };*/
     };
   };
 
@@ -232,8 +232,8 @@ class CfgVehicles {
 
 class AGM_Parameters {
   // Number parameters
-  AGM_Respawn_BodyRemoveTimer = 90;
+  //AGM_Respawn_BodyRemoveTimer = 90;
   // Boolean Parameters (0/1)
   AGM_Respawn_SavePreDeathGear = 0;
-  AGM_Respawn_RemoveDeadBodies = 1;
+  //AGM_Respawn_RemoveDeadBodies = 1;
 };

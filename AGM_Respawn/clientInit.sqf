@@ -19,14 +19,10 @@ player addEventHandler ["Killed", {
 player addEventHandler ["Respawn", {
     
   _body = _this select 1;
-
-  // just to be safe
-  _body removeAllEventHandlers "Killed";
-  _body removeAllEventHandlers "Respawn";
     
-  if (AGM_Respawn_RemoveDeadBodies > 0) then {
+  /*if (AGM_Respawn_RemoveDeadBodies > 0) then {
     [_body, false] call AGM_Respawn_fnc_removeBody;
-  };
+  };*/
     
   if (AGM_Respawn_SavePreDeathGear > 0) then {
     _respawnedUnit = _this select 0;
@@ -36,7 +32,6 @@ player addEventHandler ["Respawn", {
 }];
 
 // team leaders can move the rallypoint
-
 {
   if (isNil _x) then {
     missionNamespace setVariable [_x, objNull];
@@ -44,5 +39,5 @@ player addEventHandler ["Respawn", {
 } forEach ["AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"];
 
 if (player == leader group player) then {
-  player setVariable ['AGM_canMoveRallypoint', true, true];
+  player setVariable ["AGM_canMoveRallypoint", true, true];
 };
