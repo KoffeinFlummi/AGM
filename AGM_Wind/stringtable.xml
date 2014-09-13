@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Wind">
-
     <Key ID="STR_AGM_Wind_NoMeasurableWind">
       <English>No measurable wind</English>
       <German>Kein messbarer Wind</German>
@@ -79,7 +79,6 @@
       <Hungarian>szélirány:</Hungarian>
       <Italian>Vento da</Italian>
     </Key>
-
     <Key ID="STR_AGM_Kestrel_Name">
       <English>Kestrel 4500NV</English>
       <German>Kestrel 4500NV</German>
@@ -88,6 +87,9 @@
       <Polish>Kestrel 4500NV</Polish>
       <Czech>Kestrel 4500NV</Czech>
       <Italian>Kestrel 4500NV</Italian>
+      <Hungarian>Kestrel 4500NV</Hungarian>
+      <Portuguese>Kestrel 4500NV</Portuguese>
+      <Russian>Kestrel 4500NV</Russian>
     </Key>
     <Key ID="STR_AGM_Kestrel_Description">
       <English>Applied Ballistics Meter</English>
@@ -97,6 +99,9 @@
       <Polish>Urządzenie do monitorowania pogody</Polish>
       <Czech>Zařízení pro měření vítru</Czech>
       <Italian>Monitoraggio Balistico Attivo</Italian>
+      <Hungarian>Applied Ballistics Meter</Hungarian>
+      <Portuguese>Applied Ballistics Meter</Portuguese>
+      <Russian>метеостанция</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_OpenKestrel">
       <English>Open Kestrel</English>
@@ -106,6 +111,7 @@
       <Polish>Otwórz Kestrel</Polish>
       <Czech>Otevřít Kestrel</Czech>
       <Italian>Apri Kestrel</Italian>
+      <Hungarian>Kestrel bekapcsolása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
@@ -115,7 +121,7 @@
       <Polish>Zamknij Kestrel</Polish>
       <Czech>Zavřít Kestrel</Czech>
       <Italian>Chiudi Kestrel</Italian>
+      <Hungarian>Kestrel kikapcsolása</Hungarian>
     </Key>
-
   </Package>
 </Project>

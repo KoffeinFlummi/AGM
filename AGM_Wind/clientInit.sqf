@@ -12,6 +12,34 @@ AGM_isKestrelWheel = false;
   waitUntil {preloadTitleRsc ["AGM_KestrelWheel_Preload", "PLAIN"]};
 };
 
+// Air temperature and air density
+if (isNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJan")) then {
+  AGM_TempMeanJan = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJan");
+  AGM_TempMeanJul = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJul");
+  AGM_TempAmplitudeJan = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempAmplitudeJan");
+  AGM_TempAmplitudeJul = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempAmplitudeJul");
+} else {
+  _lat = - getNumber (configFile >> "CfgWorlds" >> worldName >> "latitude");
+  _yearlyTempMean = 28 min (28 - (abs(_lat) - 23.5) * (3.14159/180) * 6371 / 145);
+  AGM_TempMeanJan = _yearlyTempMean - _lat / abs(_lat) * ((abs(_lat) max 25) - 25) * 30 / 65;
+  AGM_TempMeanJul = _yearlyTempMean + _lat / abs(_lat) * ((abs(_lat) max 25) - 25) * 30 / 65;
+  AGM_TempAmplitudeJan = 10;
+  AGM_TempAmplitudeJul = 10;
+};
+
+0 spawn {
+  while {true} do {
+    _annualCoef = 0.5 - 0.5 * cos(360 * dateToNumber date);
+    _dailyTempMean =      AGM_TempMeanJan      * (1 - _annualCoef) + AGM_TempMeanJul      * _annualCoef;
+    _dailyTempAmplitude = AGM_TempAmplitudeJan * (1 - _annualCoef) + AGM_TempAmplitudeJul * _annualCoef;
+
+    _hourlyCoef = -0.5 * sin(360 * ((3 + (date select 3))/24 + (date select 4)/1440));
+    AGM_Wind_currentTemperature = _dailyTempMean + _hourlyCoef * _dailyTempAmplitude - 2 * humidity - 4 * overcast;
+    AGM_Wind_currentRelativeDensity = (273.15 + 20) / (273.15 + AGM_Wind_currentTemperature);
+    sleep 60;
+  };
+};
+
 // Wind Reading
 0 spawn {
   while {true} do {
