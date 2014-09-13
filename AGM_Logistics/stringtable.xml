@@ -996,6 +996,7 @@
       <Polish>Spuszczono paliwo</Polish>
       <Czech>Vypuštěné Palivo</Czech>
       <Italian>Carburante drenato</Italian>
+      <Hungarian>Leszívott üzemanyag</Hungarian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainedFuelCargo">
       <English>Drained Fuel Cargo</English>
@@ -1005,6 +1006,7 @@
       <Polish>Spuszczono paliwo z ładunku</Polish>
       <Czech>Vypuštěné Palivo Nákladu</Czech>
       <Italian>Carburante drenato dal serbatoio</Italian>
+      <Hungarian>Tartályból leszívott üzemanyag</Hungarian>
     </Key>
   </Package>
   <Package name="Paradrop">
