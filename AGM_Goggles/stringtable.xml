@@ -11,6 +11,7 @@
       <Russian>Show Goggle Effects in Third Person</Russian>
       <Hungarian>Szemüveg effekt mutatása külső nézetből</Hungarian>
       <Polish>Włącz efekty gogli w trzeciej osobie</Polish>
+      <Portuguese>Mostrar efeitos de óculos em Terceira Pessoa</Portuguese>
       <Italian>Attiva l'effetto degli occhiali in terza persona</Italian>
     </Key>
     <Key ID="STR_AGM_Goggles_WipeGlasses">
@@ -22,6 +23,7 @@
       <Russian>Wipe Goggles</Russian>
       <Hungarian>Szemüveg törlése</Hungarian>
       <Polish>Wytrzyj gogle</Polish>
+      <Portuguese>Limpar Óculos</Portuguese>
       <Italian>Pulisci gli occhiali</Italian>
     </Key>
   </Package>
