@@ -58,6 +58,6 @@ _attachables = items _unit;
 	},
 	{
 		call AGM_Interaction_fnc_hideMenu;
-		"Default" call AGM_Interaction_fnc_openMenuSelf;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenuSelf};
 	}
 ] call AGM_Interaction_fnc_openSelectMenu;

@@ -603,6 +603,11 @@
       <German>Außer Reichweite</German>
     </Key>
 
+    <Key ID="STR_AGM_Interaction_AutoCloseMenu">
+      <English>Close Menu on Key Release</English>
+      <German>Menu nach Loslassen schließen</German>
+    </Key>
+
 
   </Package>
 </Project>

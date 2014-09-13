@@ -13,6 +13,11 @@ _action = if (_index != -1 && {_index < _count}) then {
 
 _subMenu = _action select 4;
 
+// back
+if (_index == -1) exitWith {
+	call AGM_Interaction_MainButton;
+};
+
 if (count _subMenu < 2) then {
 	(findDisplay 1713999) closeDisplay 1;
 	closeDialog 0;

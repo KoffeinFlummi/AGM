@@ -88,7 +88,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDown";
-    conditionUp = "!isNull (findDisplay 1713999)";
+    conditionUp = "!isNull (findDisplay 1713999) && {profileNamespace getVariable ['AGM_Interaction_AutoCloseMenu', false]}";
     statementUp = "if (AGM_Interaction_MenuType mod 2 == 0) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
@@ -100,7 +100,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Interaction_InteractionMenuSelf";
     condition = "alive player";
     statement = "call AGM_Interaction_fnc_onButtonDownSelf";
-    conditionUp = "!isNull (findDisplay 1713999)";
+    conditionUp = "!isNull (findDisplay 1713999) && {profileNamespace getVariable ['AGM_Interaction_AutoCloseMenu', false]}";
     statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
     exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
     key = 219;
@@ -175,7 +175,11 @@ class AGM_Core_Options {
   };
   class Interaction_FlowMenu {
     displayName = "$STR_AGM_Interaction_FlowMenu";
-	default = 0;
+    default = 0;
+  };
+  class Interaction_AutoCloseMenu {
+    displayName = "$STR_AGM_Interaction_AutoCloseMenu";
+    default = 0;
   };
 };
 

@@ -24,6 +24,11 @@ closeDialog 0;
 
 
 
+
+
+
+
+
 _statement = _action select 1;
 _condition = _action select 2;
 _conditionShow = _action select 7;
