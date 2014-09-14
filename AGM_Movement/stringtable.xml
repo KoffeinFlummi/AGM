@@ -10,6 +10,7 @@
       <Polish>Pokaż ciężar w funtach</Polish>
       <Czech>Zobrazit váhu v lb</Czech>
       <Italian>Mostra peso in libbre</Italian>
+      <Portuguese>Mostrar peso em libras</Portuguese>
       <Hungarian>Súly megjelenítése fontban.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Movement_Weight">
@@ -20,6 +21,7 @@
       <Polish>Waga:</Polish>
       <Czech>Váha:</Czech>
       <Italian>Peso:</Italian>
+      <Portuguese>Peso:</Portuguese>
       <Hungarian>Súly:</Hungarian>
     </Key>
   </Package>
