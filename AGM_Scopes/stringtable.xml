@@ -7,24 +7,28 @@
       <German>Optik-Elevation erhöhen</German>
       <Portuguese>Ajustar Elevação Acima</Portuguese>
       <French>Hausse +</French>
+      <Polish>Regulacja krzyża w pionie +</Polish>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustDown">
       <English>Adjust Elevation Down</English>
       <German>Optik-Elevation verringern</German>
       <Portuguese>Ajustar Elevação Abaixo</Portuguese>
       <French>Hausse -</French>
+      <Polish>Regulacja krzyża w pionie -</Polish>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustRight">
       <English>Adjust Windage Right</English>
       <German>Optik-Azimuth erhöhen</German>
       <Portuguese>Ajustar Azimute à Direita</Portuguese>
       <French>Dérive +</French>
+      <Polish>Regulacja krzyża w poziomie +</Polish>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustLeft">
       <English>Adjust Windage Left</English>
       <German>Optik-Azimuth verringern</German>
       <Portuguese>Ajustar Azimute à Esquerda</Portuguese>
       <French>Dérive -</French>
+      <Polish>Regulacja krzyża w poziomie -</Polish>
     </Key>
   </Package>
 </Project>
