@@ -8,6 +8,7 @@
       <Polish>Menu ładunku</Polish>
       <German>Lademenü</German>
       <Czech>Naložovací Menu</Czech>
+      <Portuguese>Menu de Carregamento</Portuguese>
       <Italian>Menù di Caricamento</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_LoadItem">
@@ -17,6 +18,7 @@
       <Polish>Załaduj obiekt</Polish>
       <German>Gegenstand laden</German>
       <Czech>Naložit Předmět</Czech>
+      <Portuguese>Carregar Item</Portuguese>
       <Italian>Carica Oggetto</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_LoadingItem">
@@ -26,6 +28,7 @@
       <German>Verladen ...</German>
       <Polish>Ładowanie ...</Polish>
       <Czech>Naložuji ...</Czech>
+      <Portuguese>Carregando ...</Portuguese>
       <Italian>Caricamento ...</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadingItem">
@@ -35,6 +38,7 @@
       <French>Déchargement ...</French>
       <Polish>Rozładunku ...</Polish>
       <Czech>Vyložovací ...</Czech>
+      <Portuguese>Descarregando ...</Portuguese>
       <Italian>Scaricamento ...</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_LoadedItem">
@@ -44,6 +48,7 @@
       <German>%1 in %2 verladen</German>
       <Polish>%1 załadowano do %2</Polish>
       <Czech>%1 naloženo do %2</Czech>
+      <Portuguese>%1 carregado em %2</Portuguese>
       <Italian>%1 caricato su %2</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadedItem">
@@ -53,6 +58,7 @@
       <French>Déchargé %1 de %2</French>
       <Polish>Rozładowany %1 do %2</Polish>
       <Czech>Nezatížený %1 do %2</Czech>
+      <Portuguese>%1 descarregado de %2</Portuguese>
       <Italian>Hai scaricato %1 da %2</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadMenu">
@@ -62,6 +68,7 @@
       <Polish>Menu rozładunku</Polish>
       <German>Ablademenü</German>
       <Czech>Vyložovací Menu</Czech>
+      <Portuguese>Menu de Descarregamento</Portuguese>
       <Italian>Menù di Scaricamento</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadItem">
@@ -71,6 +78,7 @@
       <Polish>Wyładuj obiekt</Polish>
       <German>Gegenstand abladen</German>
       <Czech>Vyložit Předmět</Czech>
+      <Portuguese>Descarregar Item</Portuguese>
       <Italian>Scarica Oggetto</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_MagazineMenu">
@@ -80,6 +88,7 @@
       <Polish>Magazynki</Polish>
       <German>Magazine</German>
       <Czech>Zásobníky</Czech>
+      <Portuguese>Carregadores</Portuguese>
       <Italian>Caricatori</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_Unload">
@@ -89,6 +98,7 @@
       <French>Décharger &gt;&gt;</French>
       <Polish>Wyładuj &gt;&gt;</Polish>
       <Czech>Vyložit &gt;&gt;</Czech>
+      <Portuguese>Descarregar &gt;&gt;</Portuguese>
       <Italian>Scarica &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Logistics_ReloadMagazines">
@@ -98,6 +108,7 @@
       <French>Chargeurs &gt;&gt;</French>
       <Polish>Magazynki &gt;&gt;</Polish>
       <Czech>Zásobníky &gt;&gt;</Czech>
+      <Portuguese>Carregadores &gt;&gt;</Portuguese>
       <Italian>Caricatori &gt;&gt;</Italian>
     </Key>
   </Package>
@@ -110,6 +121,7 @@
       <Czech>Táhnout</Czech>
       <French>Tracter</French>
       <German>Ziehen</German>
+      <Portuguese>Arrastar</Portuguese>
       <Italian>Trascina</Italian>
     </Key>
     <Key ID="STR_AGM_Drag_EndDrag">
@@ -120,6 +132,7 @@
       <Czech>Položit</Czech>
       <French>Lâcher</French>
       <German>Loslassen</German>
+      <Portuguese>Largar</Portuguese>
       <Italian>Lascia</Italian>
     </Key>
     <Key ID="STR_AGM_Drag_UnableToDrag">
@@ -130,6 +143,7 @@
       <Czech>Nelze táhnout z důvodu přílišné váhy</Czech>
       <French>Trop lourd pour être tracté</French>
       <German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
+      <Portuguese>Não é possível carregar o item devido a seu peso</Portuguese>
       <Italian>Non è possibile trascinare l'oggetto a causa del suo peso</Italian>
     </Key>
     <Key ID="STR_AGM_Drag_StartCarry">
@@ -139,6 +153,7 @@
       <Polish>Nieś</Polish>
       <French>Porter</French>
       <Czech>Nést</Czech>
+      <Portuguese>Carregar</Portuguese>
       <Italian>Trascina</Italian>
     </Key>
     <Key ID="STR_AGM_Drag_EndCarry">
@@ -149,6 +164,7 @@
       <Czech>Položit</Czech>
       <French>Lâcher</French>
       <German>Loslassen</German>
+      <Portuguese>Largar</Portuguese>
       <Italian>Lascia</Italian>
     </Key>
   </Package>
@@ -160,6 +176,7 @@
       <French>Servir</French>
       <Polish>Wejdź</Polish>
       <Czech>Nastoupit</Czech>
+      <Portuguese>Entrar</Portuguese>
       <Italian>Sali</Italian>
     </Key>
     <Key ID="STR_AGM_StaticWeapons_RotateClockwise">
@@ -169,6 +186,7 @@
       <French>Orienter l'arme (SH)</French>
       <Polish>Obróć broń (w prawo)</Polish>
       <Czech>Otočit zbraň (vpravo)</Czech>
+      <Portuguese>Rotacionar arma (horário)</Portuguese>
       <Italian>Ruota l'arma (senso orario)</Italian>
     </Key>
     <Key ID="STR_AGM_StaticWeapons_RotateCounterclockwise">
@@ -178,6 +196,7 @@
       <French>Orienter l'arme (SAH)</French>
       <Polish>Obróć broń (w lewo)</Polish>
       <Czech>Otočit zbraň (vlevo)</Czech>
+      <Portuguese>Rotacionar arma (anti-horário)</Portuguese>
       <Italian>Ruota l'arma (senso antiorario)</Italian>
     </Key>
   </Package>
@@ -189,6 +208,7 @@
       <French>Jerrican</French>
       <Polish>Kanister</Polish>
       <Czech>Kanystr</Czech>
+      <Portuguese>Bidão</Portuguese>
       <Italian>Tanica </Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SpareTrack">
@@ -198,6 +218,7 @@
       <French>Chenille de réserve</French>
       <Polish>Zapasowa gąsienica</Polish>
       <Czech>Náhradní pásy</Czech>
+      <Portuguese>Lagarta Reserva</Portuguese>
       <Italian>Cingolo di scorta</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SpareWheel">
@@ -207,6 +228,7 @@
       <French>Roue de secours</French>
       <Polish>Zapasowe koło</Polish>
       <Czech>Náhradní Kolo</Czech>
+      <Portuguese>Roda Reserva</Portuguese>
       <Italian>Ruota di scorta</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_VehicleName">
@@ -216,6 +238,7 @@
       <French>Véhicule: %1</French>
       <Polish>Pojazd: %1</Polish>
       <Czech>Vozidlo: %1</Czech>
+      <Portuguese>Veículo: %1</Portuguese>
       <Italian>Veicolo: %1</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_Nothing">
@@ -225,6 +248,7 @@
       <French>Le véhicule n'est pas endommagé</French>
       <Polish>Pojazd jest nienaruszony</Polish>
       <Czech>Vozidlo není poškozené</Czech>
+      <Portuguese>Veículo não está danificado</Portuguese>
       <Italian>Il veicolo non è danneggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitPointDamaged">
@@ -234,6 +258,7 @@
       <French>%1 est endommagé(e)</French>
       <Polish>%1 jest uszkodzony</Polish>
       <Czech>%1 je poškozený</Czech>
+      <Portuguese>%1 está danificado</Portuguese>
       <Italian>%1 è danneggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitPointDamagedHeavy">
@@ -243,6 +268,7 @@
       <French>%1 est gravement endommagé(e)</French>
       <Polish>%1 jest mocno uszkodzony</Polish>
       <Czech>%1 je velice poškozené</Czech>
+      <Portuguese>%1 está fortemente danificado</Portuguese>
       <Italian>%1 è gravemente danneggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitPointDestroyed">
@@ -252,6 +278,7 @@
       <French>%1 est détruit(e)</French>
       <Polish>%1 jest zniszczony</Polish>
       <Czech>%1 je zničené</Czech>
+      <Portuguese>%1 está destruído</Portuguese>
       <Italian>%1 è distrutto</Italian>
     </Key>
     <Key ID="STR_AGM_Repair">
@@ -261,6 +288,7 @@
       <French>Réparer &gt;&gt;</French>
       <Polish>Napraw &gt;&gt;</Polish>
       <Czech>Opravit &gt;&gt;</Czech>
+      <Portuguese>Reparar &gt;&gt;</Portuguese>
       <Italian>Ripara &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_Tracks">
@@ -270,6 +298,7 @@
       <French>Chenilles &gt;&gt;</French>
       <Polish>Gąsienice &gt;&gt;</Polish>
       <Czech>Pásy &gt;&gt;</Czech>
+      <Portuguese>Lagartas &gt;&gt;</Portuguese>
       <Italian>Cingoli &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_Wheels">
@@ -279,6 +308,7 @@
       <French>Roues &gt;&gt;</French>
       <Polish>Koła &gt;&gt;</Polish>
       <Czech>Kola &gt;&gt;</Czech>
+      <Portuguese>Rodas &gt;&gt;</Portuguese>
       <Italian>Ruote &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitBody">
@@ -288,6 +318,7 @@
       <French>Blindage</French>
       <Polish>Karoseria</Polish>
       <Czech>Karoserie</Czech>
+      <Portuguese>Carroceria</Portuguese>
       <Italian>Carrozzeria</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitHull">
@@ -297,6 +328,7 @@
       <French>Caisse</French>
       <Polish>Kadłub</Polish>
       <Czech>Trup</Czech>
+      <Portuguese>Chassi</Portuguese>
       <Italian>Scafo</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitEngine">
@@ -306,6 +338,7 @@
       <French>Moteur</French>
       <Polish>Silnik</Polish>
       <Czech>Motor</Czech>
+      <Portuguese>Motor</Portuguese>
       <Italian>Motore</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitFuel">
@@ -315,6 +348,7 @@
       <French>Réservoir</French>
       <Polish>Zbiornik paliwa</Polish>
       <Czech>Palivová nádrž</Czech>
+      <Portuguese>Tanque de Combustível</Portuguese>
       <Italian>Serbatoio</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitTurret">
@@ -324,6 +358,7 @@
       <French>Tourelle</French>
       <Polish>Wieżyczka</Polish>
       <Czech>Hlavní Věž</Czech>
+      <Portuguese>Torre principal</Portuguese>
       <Italian>Torretta principale</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGun">
@@ -333,6 +368,7 @@
       <French>Canon</French>
       <Polish>Działo</Polish>
       <Czech>Kanón</Czech>
+      <Portuguese>Canhão</Portuguese>
       <Italian>Cannone</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLTrack">
@@ -342,6 +378,7 @@
       <French>Chenille gauche</French>
       <Polish>Lewa gąsienica</Polish>
       <Czech>Levý Pás</Czech>
+      <Portuguese>Lagarta Esquerda</Portuguese>
       <Italian>Cingolo sinistro</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRTrack">
@@ -351,6 +388,7 @@
       <French>Chenille droite</French>
       <Polish>Prawa gąsienica</Polish>
       <Czech>Pravý Pás</Czech>
+      <Portuguese>Lagarta Direita</Portuguese>
       <Italian>Cingolo destro</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLFWheel">
@@ -360,6 +398,7 @@
       <French>Roue avant-gauche</French>
       <Polish>Przednie lewe koło</Polish>
       <Czech>Levé přední Kolo</Czech>
+      <Portuguese>Roda Dianteira Esquerda</Portuguese>
       <Italian>Ruota frontale sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRFWheel">
@@ -369,6 +408,7 @@
       <French>Roue avant-droite</French>
       <Polish>Przednie prawe koło</Polish>
       <Czech>Pravé přední Kolo</Czech>
+      <Portuguese>Roda Dianteira Direita</Portuguese>
       <Italian>Ruota frontale destra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLF2Wheel">
@@ -378,6 +418,7 @@
       <French>Deuxième roue avant-gauche</French>
       <Polish>Drugie przednie lewe koło</Polish>
       <Czech>Druhé Levé přední Kolo</Czech>
+      <Portuguese>Segunda Roda Dianteira Esquerda</Portuguese>
       <Italian>Seconda ruota frontale sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRF2Wheel">
@@ -387,6 +428,7 @@
       <French>Deuxième roue avant-droite</French>
       <Polish>Drugie przednie prawe koło</Polish>
       <Czech>Druhé Pravé přední Kolo</Czech>
+      <Portuguese>Segunda Roda Dianteira Direita</Portuguese>
       <Italian>Seconda ruota frontale destra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLMWheel">
@@ -396,6 +438,7 @@
       <French>Roue centre-gauche</French>
       <Polish>Środkowe lewe koło</Polish>
       <Czech>Levé prostřední Kolo</Czech>
+      <Portuguese>Roda Intermediária Esquerda</Portuguese>
       <Italian>Ruota centrale sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRMWheel">
@@ -405,6 +448,7 @@
       <French>Roue centre-droite</French>
       <Polish>Środkowe prawe koło</Polish>
       <Czech>Pravé prostřední Kolo</Czech>
+      <Portuguese>Roda Intermediária Direita</Portuguese>
       <Italian>Ruota centrale destra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLBWheel">
@@ -414,6 +458,7 @@
       <French>Roue arrière-gauche</French>
       <Polish>Tylnie lewe koło</Polish>
       <Czech>Levé zadní Kolo</Czech>
+      <Portuguese>Roda Traseira Esquerda</Portuguese>
       <Italian>Ruota posteriore sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRBWheel">
@@ -423,6 +468,7 @@
       <French>Roue arrière-droite</French>
       <Polish>Tylnie prawe koło</Polish>
       <Czech>Pravé zadní Kolo</Czech>
+      <Portuguese>Roda Traseira Direita</Portuguese>
       <Italian>Ruota posteriore destra</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitAvionics">
@@ -432,6 +478,7 @@
       <French>Avionique</French>
       <Polish>Awionika</Polish>
       <Czech>Elektronika</Czech>
+      <Portuguese>Aviônica</Portuguese>
       <Italian>Avionica</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitHRotor">
@@ -441,6 +488,7 @@
       <French>Rotor principal</French>
       <Polish>Główny rotor</Polish>
       <Czech>Hlavní Rotor</Czech>
+      <Portuguese>Rotor Principal</Portuguese>
       <Italian>Rotore principale</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitVRotor">
@@ -450,6 +498,7 @@
       <French>Rotor anticouple</French>
       <Polish>Tylni rotor</Polish>
       <Czech>Zadní Rotor</Czech>
+      <Portuguese>Rotor de Cauda</Portuguese>
       <Italian>Rotore di coda</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitRGlass">
@@ -459,6 +508,7 @@
       <French>Vitre (droite)</French>
       <Polish>Szyba (prawa)</Polish>
       <Czech>Sklo (pravé)</Czech>
+      <Portuguese>Vidro (à direita)</Portuguese>
       <Italian>Vetro destro</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitLGlass">
@@ -468,6 +518,7 @@
       <French>Vitre (gauche)</French>
       <Polish>Szyba (lewa)</Polish>
       <Czech>Sklo (pravé)</Czech>
+      <Portuguese>Vidro (à esquerda)</Portuguese>
       <Italian>Vetro sinistro</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass1">
@@ -477,6 +528,7 @@
       <French>Vitre 1</French>
       <Polish>Szyba 1</Polish>
       <Czech>Sklo 1</Czech>
+      <Portuguese>Vidro 1</Portuguese>
       <Italian>Vetro 1</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass2">
@@ -486,6 +538,7 @@
       <French>Vitre 2</French>
       <Polish>Szyba 2</Polish>
       <Czech>Sklo 2</Czech>
+      <Portuguese>Vidro 2</Portuguese>
       <Italian>Vetro 2</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass3">
@@ -495,6 +548,7 @@
       <French>Vitre 3</French>
       <Polish>Szyba 3</Polish>
       <Czech>Sklo 3</Czech>
+      <Portuguese>Vidro 3</Portuguese>
       <Italian>Vetro 3</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass4">
@@ -504,6 +558,7 @@
       <French>Vitre 4</French>
       <Polish>Szyba 4</Polish>
       <Czech>Sklo 4</Czech>
+      <Portuguese>Vidro 4</Portuguese>
       <Italian>Vetro 4</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass5">
@@ -513,6 +568,7 @@
       <French>Vitre 5</French>
       <Polish>Szyba 5</Polish>
       <Czech>Sklo 5</Czech>
+      <Portuguese>Vidro 5</Portuguese>
       <Italian>Vetro 5</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_HitGlass6">
@@ -522,6 +578,7 @@
       <French>Vitre 6</French>
       <Polish>Szyba 6</Polish>
       <Czech>Sklo 6</Czech>
+      <Portuguese>Vidro 6</Portuguese>
       <Italian>Vetro 6</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_noTrack">
@@ -531,6 +588,7 @@
       <French>Pas de chenille!</French>
       <Polish>Nie ma gąsienicy!</Polish>
       <Czech>Chybí pás!</Czech>
+      <Portuguese>Não há lagarta!</Portuguese>
       <Italian>Nessun cingolo disponibile!</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_noWheel">
@@ -540,6 +598,7 @@
       <French>Pas de roue!</French>
       <Polish>Nie ma koła!</Polish>
       <Czech>Chybí kolo!</Czech>
+      <Portuguese>Não há roda!</Portuguese>
       <Italian>Nessuna ruota disponibile!</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu">
@@ -549,6 +608,7 @@
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
       <Czech>Zvolit Menu Kol</Czech>
+      <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheel">
@@ -558,6 +618,7 @@
       <French>Changer Roue</French>
       <Polish>Wymień koło</Polish>
       <Czech>Vyměňit kolo</Czech>
+      <Portuguese>Trocar Roda</Portuguese>
       <Italian>Sostituisci la ruota</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu_Salvage">
@@ -567,6 +628,7 @@
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
       <Czech>Zvolit Menu Kol</Czech>
+      <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheel_Salvage">
@@ -576,6 +638,7 @@
       <French>Démonter Roue</French>
       <Polish>Zdejmij koło</Polish>
       <Czech>Odstranit Kolo</Czech>
+      <Portuguese>Remover Roda</Portuguese>
       <Italian>Rimuovi la ruota</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_Repairing">
@@ -585,6 +648,7 @@
       <French>Réparation %1 ...</French>
       <Polish>Naprawianie %1...</Polish>
       <Czech>Opravuji %1 ...</Czech>
+      <Portuguese>Reparando %1 ...</Portuguese>
       <Italian>Sto riparando %1 ...</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_Repaired">
@@ -594,6 +658,7 @@
       <French>%1 réparé(e)</French>
       <Polish>Naprawiono %1</Polish>
       <Czech>Opraveno - %1</Czech>
+      <Portuguese>Reparado %1</Portuguese>
       <Italian>%1 Riparata/o</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_RepairWheel">
@@ -603,6 +668,7 @@
       <French>Répare Roue &gt;&gt;</French>
       <Polish>Napraw koło &gt;&gt;</Polish>
       <Czech>Opravit Kolo &gt;&gt;</Czech>
+      <Portuguese>Reparar Roda &gt;&gt;</Portuguese>
       <Italian>Ripara la ruota &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_RemoveWheel">
@@ -612,6 +678,7 @@
       <French>Démonte Roue &gt;&gt;</French>
       <Polish>Zdejmij koło &gt;&gt;</Polish>
       <Czech>Odstranit Kolo &gt;&gt;</Czech>
+      <Portuguese>Remover Roda &gt;&gt;</Portuguese>
       <Italian>Rimuovi la ruota &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_RemovingWheel">
@@ -621,6 +688,7 @@
       <Spanish>Quitando %1 ...</Spanish>
       <French>Démonte %1 ...</French>
       <Czech>Odstraňuji %1 ...</Czech>
+      <Portuguese>Removendo %1 ...</Portuguese>
       <Italian>Sto rimuovendo %1 ...</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_RemovedWheel">
@@ -630,6 +698,7 @@
       <French>%1 démontée</French>
       <Polish>%1 zdjęte</Polish>
       <Czech>%1 odstraněno</Czech>
+      <Portuguese>%1 removido(a)</Portuguese>
       <Italian>%1 Rimossa/o</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_checkVehicle">
@@ -639,6 +708,7 @@
       <French>Vérifier Véhicule</French>
       <Polish>Sprawdź pojazd</Polish>
       <Czech>Zkontrolovat Vozidlo</Czech>
+      <Portuguese>Checar Veículo</Portuguese>
       <Italian>Controlla il veicolo</Italian>
     </Key>
     <Key ID="STR_AGM_Repair_checkingVehicle">
@@ -648,6 +718,7 @@
       <French>Vérification ...</French>
       <Polish>Sprawdzanie pojazdu...</Polish>
       <Czech>Kontroluji Vozidlo ...</Czech>
+      <Portuguese>Checando Veículo ...</Portuguese>
       <Italian>Sto controllando ...</Italian>
     </Key>
   </Package>
@@ -660,6 +731,7 @@
       <Polish>Dron jest naładowany</Polish>
       <Hungarian>Drón tele</Hungarian>
       <Czech>Dron je nabitý</Czech>
+      <Portuguese>O VANT está cheio</Portuguese>
       <Italian>Il drone è pieno</Italian>
     </Key>
     <Key ID="STR_AGM_UAVs_NoBattery">
@@ -670,6 +742,7 @@
       <Polish>Potrzebujesz baterii UAV</Polish>
       <Hungarian>UAV-Akkumulátor szükséges</Hungarian>
       <Czech>Potřebuješ UAV-Baterii</Czech>
+      <Portuguese>Você precisa de uma Bateria para VANT</Portuguese>
       <Italian>Hai bisogno di una Batteria UAV</Italian>
     </Key>
     <Key ID="STR_AGM_UAVs_Recharge">
@@ -680,6 +753,7 @@
       <Polish>Naładuj</Polish>
       <Hungarian>Újratöltés</Hungarian>
       <Czech>Dobít</Czech>
+      <Portuguese>Recarregar</Portuguese>
       <Italian>Ricarica</Italian>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Name">
@@ -690,6 +764,7 @@
       <Polish>Bateria UAV</Polish>
       <Hungarian>UAV-Akkumulátor</Hungarian>
       <Czech>UAV-Baterie</Czech>
+      <Portuguese>Bateria para VANT</Portuguese>
       <Italian>Batteria UAV</Italian>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Description">
@@ -700,6 +775,7 @@
       <Polish>Używana do naładowania UAV</Polish>
       <Hungarian>UAV újratöltéséhez</Hungarian>
       <Czech>Používané k dobíjení UAV</Czech>
+      <Portuguese>Usada para reabastecer VANT</Portuguese>
       <Italian>Usata per ricaricare la Batteria dell'UAV</Italian>
     </Key>
     <Key ID="STR_AGM_UAVs_Battery_Recharge">
@@ -710,6 +786,7 @@
       <Polish>Ładowanie ...</Polish>
       <Hungarian>Újratöltés...</Hungarian>
       <Czech>Dobíjení ...</Czech>
+      <Portuguese>Recarregando ...</Portuguese>
       <Italian>In ricarica ...</Italian>
     </Key>
   </Package>
@@ -721,6 +798,7 @@
       <Polish>Przetnij płot</Polish>
       <Czech>Přestřihnout plot</Czech>
       <French>Cisailler Clôture</French>
+      <Portuguese>Cortar Cerca</Portuguese>
       <Italian>Taglia</Italian>
     </Key>
     <Key ID="STR_AGM_CuttingFence">
@@ -730,6 +808,7 @@
       <Polish>Przecinanie płotu / drutów ...</Polish>
       <Czech>Přestřihnout plot / dráty ...</Czech>
       <French>Cisaille l'obstacle ...</French>
+      <Portuguese>Cortando Cerca / Arame ...</Portuguese>
       <Italian>Sto tagliando ...</Italian>
     </Key>
     <Key ID="STR_AGM_CuttingFenceChat">
@@ -739,6 +818,7 @@
       <Polish>Przecinanie płotu!</Polish>
       <Czech>Stříhání plotu!</Czech>
       <French>Cisaillage!</French>
+      <Portuguese>Cortando Cerca!</Portuguese>
       <Italian>La sto tagliando!</Italian>
     </Key>
     <Key ID="STR_AGM_FenceCut">
@@ -748,6 +828,7 @@
       <Polish>Płot przecięty</Polish>
       <Czech>Plot přestřižen</Czech>
       <French>Clôture cisaillée</French>
+      <Portuguese>Cerca cortada</Portuguese>
       <Italian>Fatto!</Italian>
     </Key>
   </Package>
@@ -759,6 +840,7 @@
       <Spanish>Comprobar combustible</Spanish>
       <French>Jauger Réservoir</French>
       <Czech>Zkontrolovat Palivo</Czech>
+      <Portuguese>Conferir Combustível</Portuguese>
       <Italian>Controlla il carburante</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelCargo">
@@ -768,6 +850,7 @@
       <Spanish>Comprobar combustible (en carga)</Spanish>
       <French>Jauger Citerne</French>
       <Czech>Zkontrolovat Palivo (náklad)</Czech>
+      <Portuguese>Conferir Combustível (carregado)</Portuguese>
       <Italian>Controlla il serbatoio</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
@@ -777,6 +860,7 @@
       <Spanish>Comprobar bidón</Spanish>
       <French>Jauger Jerrican</French>
       <Czech>Zkontrolovat Kanystr</Czech>
+      <Portuguese>Conferir Bidão</Portuguese>
       <Italian>Controlla la tanica</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckingFuel">
@@ -786,6 +870,7 @@
       <French>Jaugeage ...</French>
       <Polish>Sprawdzanie poziomu paliwa ...</Polish>
       <Czech>Kontroluji Palivo ...</Czech>
+      <Portuguese>Conferindo Combustível ...</Portuguese>
       <Italian>Sto controllando il livello di carburante ...</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckingFuelCargo">
@@ -795,6 +880,7 @@
       <French>Jaugeage ...</French>
       <Polish>Sprawdzanie poziomu paliwa (ładunek) ...</Polish>
       <Czech>Kontroluji Palivo (náklad) ...</Czech>
+      <Portuguese>Conferindo Combustível (carregado) ...</Portuguese>
       <Italian>Sto controllando il carburante nel serbatoio ...</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckedFuel">
@@ -804,6 +890,7 @@
       <French>%1 litre(s) de carburant dans le jerrican</French>
       <Polish>W kanistrze zostało %1 litr(ów)</Polish>
       <Czech>Kanystru zbývá %1 litr(ů)</Czech>
+      <Portuguese>O bidão tem %1 litro(s) remanescente(s)</Portuguese>
       <Italian>La tanica ha %1 litro/i rimanente/i</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckedFuelVehicle">
@@ -813,6 +900,7 @@
       <French>%1 litre(s) dans le réservoir</French>
       <Polish>W pojeździe zostało %1 litr(ów)</Polish>
       <Czech>Vozidlu zbývá %1 litr(ů)</Czech>
+      <Portuguese>O veículo tem %1 litro(s) remanescente(s)</Portuguese>
       <Italian>Il veicolo ha %1 litro/i rimanente/i</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckedFuelVehicleCargo">
@@ -822,6 +910,7 @@
       <French>%1 litre(s) dans la citerne</French>
       <Polish>W ładunku pojazdu zostało %1 litr(ów)</Polish>
       <Czech>Vozidlu zbývá %1 litr(ů) v nákladu</Czech>
+      <Portuguese>O veículo tem %1 litro(s) carregados remanescentes</Portuguese>
       <Italian>Il veicolo ha %1 litro/i rimanente/i nel serbatoio</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_RefuelVehicle">
@@ -831,6 +920,7 @@
       <French>Ravitailler Réservoir</French>
       <Polish>Zatankuj pojazd</Polish>
       <Czech>Natankovat Vozidlo</Czech>
+      <Portuguese>Reabastecer Veículo</Portuguese>
       <Italian>Fai rifornimento</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_RefuelVehicleCargo">
@@ -840,6 +930,7 @@
       <French>Ravitailler Citerne</French>
       <Polish>Zatankuj pojazd</Polish>
       <Czech>Natankovat Vozidlo</Czech>
+      <Portuguese>Reabastecer Veículo</Portuguese>
       <Italian>Fai rifornimento</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainFuel">
@@ -849,6 +940,7 @@
       <French>Vidanger Réservoir</French>
       <Polish>Spuść paliwo</Polish>
       <Czech>Vypustit Palivo</Czech>
+      <Portuguese>Drenar Combustível</Portuguese>
       <Italian>Drena il carburante</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainFuelCargo">
@@ -858,6 +950,7 @@
       <French>Vidanger Citerne</French>
       <Polish>Spuść paliwo z ładunku</Polish>
       <Czech>Vypustit Palivo Nákladu</Czech>
+      <Portuguese>Drenar Combustível Carregado</Portuguese>
       <Italian>Drena il carburante dal serbatoio</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_RefuelingVehicle">
@@ -867,6 +960,7 @@
       <French>Ravitaillement ...</French>
       <Polish>Tankowanie ...</Polish>
       <Czech>Tankování ...</Czech>
+      <Portuguese>Reabastecendo ...</Portuguese>
       <Italian>Rifornendo ...</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainingFuel">
@@ -876,6 +970,7 @@
       <French>Vidange ...</French>
       <Polish>Spuszczanie paliwa ...</Polish>
       <Czech>Vypouštění paliva ...</Czech>
+      <Portuguese>Drenando Combustível ...</Portuguese>
       <Italian>Drenando ...</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainingFuelCargo">
@@ -885,6 +980,7 @@
       <French>Vidange ...</French>
       <Polish>Spuszczanie paliwa z ładunku ...</Polish>
       <Czech>Vypouštění paliva nákladu ...</Czech>
+      <Portuguese>Drenando Combustível Carregado ...</Portuguese>
       <Italian>Drenando dal serbatoio ...</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_RefueledVehicle">
@@ -894,6 +990,7 @@
       <French>%1 ravitaillé</French>
       <Polish>Zatankowano %1</Polish>
       <Czech>Natankováno - %1</Czech>
+      <Portuguese>Reabastecido %1</Portuguese>
       <Italian>Rifornito %1</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainedFuel">
@@ -903,6 +1000,7 @@
       <French>Réservoir vidangé</French>
       <Polish>Spuszczono paliwo</Polish>
       <Czech>Vypuštěné Palivo</Czech>
+      <Portuguese>Combustível Drenado</Portuguese>
       <Italian>Carburante drenato</Italian>
     </Key>
     <Key ID="STR_AGM_Resupply_DrainedFuelCargo">
@@ -912,6 +1010,7 @@
       <French>Citerne vidangée</French>
       <Polish>Spuszczono paliwo z ładunku</Polish>
       <Czech>Vypuštěné Palivo Nákladu</Czech>
+      <Portuguese>Combustível Carregado Drenado</Portuguese>
       <Italian>Carburante drenato dal serbatoio</Italian>
     </Key>
   </Package>
@@ -923,6 +1022,7 @@
       <French>Aérolargage</French>
       <Polish>Zrzut ładunku na spadochronie</Polish>
       <Czech>Schodnit letecky bednu</Czech>
+      <Portuguese>Lançar Caixa com Paraquedas</Portuguese>
       <Italian>Scatola paracadutabile</Italian>
     </Key>
   </Package>
@@ -934,6 +1034,7 @@
       <Polish>Sandbag Barrier Crate</Polish>
       <French>Sac de Sable (Caisse)</French>
       <Czech>Sandbag Barrier Crate</Czech>
+      <Portuguese>Caixa de Saco de Areia</Portuguese>
       <Italian>Cassa di sacchi di sabbia</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_RazorWireCrate">
@@ -943,6 +1044,7 @@
       <Polish>Razor Wire Crate</Polish>
       <French>Concertina (Caisse)</French>
       <Czech>Razor Wire Crate</Czech>
+      <Portuguese>Caixa de Arame Farpado</Portuguese>
       <Italian>Cassa di filo spinato</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_SandbagBarrier">
@@ -952,6 +1054,7 @@
       <Polish>Worek z piaskiem</Polish>
       <French>Sacs de sable</French>
       <Czech>Sandbag Barrier</Czech>
+      <Portuguese>Saco de Areia</Portuguese>
       <Italian>Barriera di sacchi di sabbia</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_RazorWire">
@@ -961,6 +1064,7 @@
       <Polish>Koncertina</Polish>
       <French>Concertina</French>
       <Czech>Razor Wire</Czech>
+      <Portuguese>Arame Farpado</Portuguese>
       <Italian>Filo spinato</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_PlaceAction">
@@ -970,6 +1074,7 @@
       <Polish>Umieść</Polish>
       <French>Placer</French>
       <Czech>Položit</Czech>
+      <Portuguese>Colocar</Portuguese>
       <Italian>Posiziona</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_CancelAction">
@@ -979,6 +1084,7 @@
       <Polish>Anuluj</Polish>
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
+      <Portuguese>Cancelar</Portuguese>
       <Italian>Annulla</Italian>
     </Key>
     <Key ID="STR_AGM_Fortifications_ScrollAction">
@@ -988,6 +1094,7 @@
       <Polish>Przekręcać</Polish>
       <French>Tourner</French>
       <Czech>Točit</Czech>
+      <Portuguese>Rotacionar</Portuguese>
       <Italian>Ruota</Italian>
     </Key>
   </Package>

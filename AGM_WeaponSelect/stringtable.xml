@@ -11,6 +11,7 @@
       <Russian>Выбрать пистолет</Russian>
       <French>Sélectionner Pistolet</French>
       <Hungarian>Pisztoly kiválsztása</Hungarian>
+      <Portuguese>Selecionar Pistola</Portuguese>
       <Italian>Seleziona la Pistola</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifle">
@@ -22,6 +23,7 @@
       <Russian>Выбрать автомат</Russian>
       <French>Sélectionner Fusil</French>
       <Hungarian>Puska kiválasztása</Hungarian>
+      <Portuguese>Selecionar Rifle</Portuguese>
       <Italian>Seleziona il Fucile</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectLauncher">
@@ -33,6 +35,7 @@
       <Russian>Выбрать гранатомет</Russian>
       <French>Sélectionner Lanceur</French>
       <Hungarian>Rakétavető kiválasztása</Hungarian>
+      <Portuguese>Selecionar Lançador</Portuguese>
       <Italian>Seleziona il Lanciatore</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectRifleMuzzle">
@@ -44,6 +47,7 @@
       <Russian>Выбрать подствольный гранатомет</Russian>
       <French>Sélectionner Lance-grenades</French>
       <Hungarian>Gránátvető kiválasztása</Hungarian>
+      <Portuguese>Selecionar Lança-Granadas</Portuguese>
       <Italian>Seleziona il Lanciagranate</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectBinocular">
@@ -55,6 +59,7 @@
       <Russian>Выбрать бинокль</Russian>
       <French>Sélectionner Jumelles</French>
       <Hungarian>Távcső kiválasztása</Hungarian>
+      <Portuguese>Selecionar Binóculos</Portuguese>
       <Italian>Seleziona il Binocolo</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_HolsterWeapon">
@@ -66,6 +71,7 @@
       <Russian>Убрать оружие</Russian>
       <French>Arme à la bretelle</French>
       <Hungarian>Fegyvert tokba</Hungarian>
+      <Portuguese>Guardar Arma</Portuguese>
       <Italian>Nascondi l'arma</Italian>
     </Key>
 
@@ -77,6 +83,7 @@
       <French>Moteur allumé</French>
       <Hungarian>Motor indít</Hungarian>
       <Czech>Zapnout motor</Czech>
+      <Portuguese>Ligar Motor</Portuguese>
       <Italian>Motore acceso</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
@@ -87,6 +94,7 @@
       <French>Moteur éteint</French>
       <Hungarian>Motor leállít</Hungarian>
       <Czech>Vypnout motor</Czech>
+      <Portuguese>Desligar Motor</Portuguese>
       <Italian>Motore spento</Italian>
     </Key>
 
@@ -98,6 +106,7 @@
       <French>Sélectionner l'Arme Principale</French>
       <Hungarian>Főfegyver Kiválasztása</Hungarian>
       <Czech>Zvolit Hlavní Zbraň</Czech>
+      <Portuguese>Selecionar Arma Principal</Portuguese>
       <Italian>Seleziona Arma Primaria</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
@@ -108,6 +117,7 @@
       <French>Sélectionner Mitrailleuse</French>
       <Hungarian>Géppuska Kiválasztása</Hungarian>
       <Czech>Zvolit Kulomet</Czech>
+      <Portuguese>Selecionar Metralhadora</Portuguese>
       <Italian>Seleziona Mitragliatrice</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
@@ -118,6 +128,7 @@
       <French>Sélectionner Missiles</French>
       <Hungarian>Rakéta Kiválasztása</Hungarian>
       <Czech>Zvolit Rakety</Czech>
+      <Portuguese>Selecionar Mísseis</Portuguese>
       <Italian>Seleziona Missili</Italian>
     </Key>
 
@@ -129,6 +140,7 @@
       <French>Activer la Sélection Rapide</French>
       <Hungarian>Gyorsváltás Bekapcsolása</Hungarian>
       <Czech>Povolit Rychlou Volbu Zbraní</Czech>
+      <Portuguese>Habilitar Seleção Rápida</Portuguese>
       <Italian>Attiva la Selezione Rapida</Italian>
     </Key>
 
@@ -139,6 +151,7 @@
       <Polish>Wybierz granat odłamkowy</Polish>
       <French>Sélectionner grenade à fragmentation</French>
       <Czech>Zvolit Výbušný Granát</Czech>
+      <Portuguese>Selecionar Granada de Fragmentação</Portuguese>
       <Italian>Seleziona Granata a Frammentazione</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeOther">
@@ -148,6 +161,7 @@
       <Polish>Wybierz granat nieodłamkowy</Polish>
       <French>Sélectionner grenade non-léthale</French>
       <Czech>Zvolit Ne-Výbušný Granát</Czech>
+      <Portuguese>Selecionar Granada</Portuguese>
       <Italian>Seleziona Altre Granate</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ThrowGrenade">
@@ -157,6 +171,7 @@
       <Polish>Rzuć wybrany granat</Polish>
       <French>Lancer la grenade sélectionnée</French>
       <Czech>Hodit Zvolený Granát</Czech>
+      <Portuguese>Lançar Granada Selecionada</Portuguese>
       <Italian>Lancia la Granata Selezionata</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
@@ -166,6 +181,7 @@
       <Polish>Brak granatów odłamkowych</Polish>
       <French>Plus de grenades à fragmentation</French>
       <Czech>Už nejsou granáty</Czech>
+      <Portuguese>Não há granadas de fragmentação restantes</Portuguese>
       <Italian>Nessuna granata a frammentazione rimanente</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoMiscGrenadeLeft">
@@ -175,6 +191,7 @@
       <Polish>Brak granatów nieodłamkowych</Polish>
       <French>Plus de grenades non-léthales</French>
       <Czech>Už nejsou žádné ostatní granáty</Czech>
+      <Portuguese>Não há outras granadas restantes</Portuguese>
       <Italian>Nessun'altra granata rimanente.</Italian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoGrenadeSelected">
@@ -184,6 +201,7 @@
       <Polish>Nie wybrano żadnego granatu</Polish>
       <French>Aucune grenade sélectionnée</French>
       <Czech>Není zvolen žádný granát</Czech>
+      <Portuguese>Nenhuma granada selecionada</Portuguese>
       <Italian>Nessuna granata selezionata</Italian>
     </Key>
 
