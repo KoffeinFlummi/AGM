@@ -82,7 +82,7 @@
       <Italian>+ Modificatore, rotazione</Italian>
       <Czech>+ Modifier, rotates</Czech>
       <Hungarian>+ Modifier, rotates</Hungarian>
-      <Polish>+ Modifier, rotates</Polish>
+      <Polish>+ modyfikator, obracanie</Polish>
       <Portuguese>+ Modificador, rotaciona</Portuguese>
       <Russian>+ Bращать</Russian>
     </Key>
@@ -198,7 +198,7 @@
       <English>Allows defusing of explosives</English>
       <German>Erlaubt die Entschärfung von Sprengstoffen</German>
       <Spanish>Permite desactivar explosivos</Spanish>
-      <Polish>Umożliwia rozbrojenie ładunków wybuchowych</Polish>
+      <Polish>Umożliwia rozbrajanie ładunków wybuchowych</Polish>
       <French>Permet de désamorçer des explosifs</French>
       <Czech>Dovoluje zneškodňování výbušnin</Czech>
       <Italian>Consente la disattivazione degli ordigni esplosivi</Italian>
@@ -466,7 +466,7 @@
       <Italian>Nessun esplosivo sul sensore.</Italian>
       <Czech>No explosives on trigger.</Czech>
       <Hungarian>No explosives on trigger.</Hungarian>
-      <Polish>No explosives on trigger.</Polish>
+      <Polish>Brak ładunków na zapalnik.</Polish>
       <Portuguese>Nenhum explosivo no gatilho.</Portuguese>
       <Russian>Нет взрывчатки на курок.</Russian>
     </Key>
