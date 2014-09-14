@@ -11,7 +11,7 @@ esteldunedain <nicolas.d.badano@gmail.com>
 Garth "L-H" de Wet <garthofhearts@gmail.com>
 ACCtomeek
 pokertour
-11RDP-LoupVert
+11RDP-LoupVert <loupvert@11rdp.fr>
 MarcBook
 Legolasindar
 gienkov
