@@ -46,6 +46,7 @@
       <Italian>Blocca la porta</Italian>
       <Portuguese>Trancar Porta</Portuguese>
       <Hungarian>Ajtó bezárása</Hungarian>
+      <Polish>Zablokuj drzwi</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
@@ -55,6 +56,7 @@
       <Italian>Sblocca la porta</Italian>
       <Portuguese>Destrancar Porta</Portuguese>
       <Hungarian> Zár kinyitása</Hungarian>
+      <Polish>Odblokuj drzwi</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
@@ -64,6 +66,7 @@
       <Italian>Porta bloccata</Italian>
       <Portuguese>Porta Trancada</Portuguese>
       <Hungarian>Zárt ajtó</Hungarian>
+      <Polish>Zablokowano drzwi</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
@@ -73,6 +76,7 @@
       <Italian>Porta sbloccata</Italian>
       <Portuguese>Porta Destrancada</Portuguese>
       <Hungarian>Nyitott ajtó</Hungarian>
+      <Polish>Odblokowano drzwi</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
