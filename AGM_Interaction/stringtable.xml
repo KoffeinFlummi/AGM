@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-11 -->
+<!-- Edited with tabler - 2014-09-14 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -698,13 +698,11 @@
       <Hungarian>Hatótávolságon kívül</Hungarian>
       <Polish>Poza zasięgiem</Polish>
     </Key>
-
     <Key ID="STR_AGM_Interaction_AutoCloseMenu">
       <English>Close Menu on Key Release</English>
       <German>Menu nach Loslassen schließen</German>
       <Polish>Zamknij menu automatycznie</Polish>
+      <French>Fermer le menu en relâchant la touche</French>
     </Key>
-
-
   </Package>
 </Project>
