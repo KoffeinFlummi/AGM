@@ -34,6 +34,7 @@
       <Polish>Vector - Azymut</Polish>
       <Czech>Vector - Azimut Klávesa</Czech>
       <Italian>Vector - Tasto Azimuth</Italian>
+      <Portuguese>Vector - Tecla de Azimute</Portuguese>
       <Hungarian>Vector - Irányszög gomb</Hungarian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
@@ -44,6 +45,7 @@
       <Polish>Vector - Odległość</Polish>
       <Czech>Vector - Vzdálenost Klávesa</Czech>
       <Italian>Vecto - Tasto Distanza</Italian>
+      <Portuguese>Vector - Teclar de Distância</Portuguese>
       <Hungarian>Vector - Távolság gomb</Hungarian>
     </Key>
   </Package>
