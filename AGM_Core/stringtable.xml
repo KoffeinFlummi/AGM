@@ -10,7 +10,7 @@
       <Czech>Uložit</Czech>
       <French>Sauvegarder</French>
       <Russian>Сохранить</Russian>
-	    <Portuguese>Salvar</Portuguese>
+      <Portuguese>Salvar</Portuguese>
       <Hungarian>Mentés</Hungarian>
       <Italian>Salva</Italian>
     </Key>
@@ -22,7 +22,7 @@
       <Czech>Zrušit</Czech>
       <French>Annuler</French>
       <Russian>Отмена</Russian>
-	    <Portuguese>Cancelar</Portuguese>
+      <Portuguese>Cancelar</Portuguese>
       <Hungarian>Mégsem</Hungarian>
       <Italian>Annulla</Italian>
     </Key>
@@ -34,7 +34,7 @@
       <Czech>AGM Nastavení</Czech>
       <French>AGM Options</French>
       <Russian>AGM Настройки</Russian>
-	    <Portuguese>Opções do AGM</Portuguese>
+      <Portuguese>Opções do AGM</Portuguese>
       <Hungarian>AGM Beállítások</Hungarian>
       <Italian>Opzioni AGM</Italian>
     </Key>
@@ -46,7 +46,7 @@
       <Czech>Shift</Czech>
       <French>Shift</French>
       <Russian>Shift</Russian>
-	    <Portuguese>Shift</Portuguese>
+      <Portuguese>Shift</Portuguese>
       <Hungarian>Shift</Hungarian>
       <Italian>Shift</Italian>
     </Key>
@@ -58,7 +58,7 @@
       <Czech>Ctrl</Czech>
       <French>Ctrl</French>
       <Russian>Ctrl</Russian>
-	    <Portuguese>Ctrl</Portuguese>
+      <Portuguese>Ctrl</Portuguese>
       <Hungarian>Ctrl</Hungarian>
       <Italian>Ctrl</Italian>
     </Key>
@@ -70,7 +70,7 @@
       <Czech>Alt</Czech>
       <French>Alt</French>
       <Russian>Alt</Russian>
-	    <Portuguese>Alt</Portuguese>
+      <Portuguese>Alt</Portuguese>
       <Hungarian>Alt</Hungarian>
       <Italian>Alt</Italian>
     </Key>
@@ -81,7 +81,7 @@
       <Polish>Prawy Shift</Polish>
       <French>Shift Droite</French>
       <Czech>Pravý Shift</Czech>
-	    <Portuguese>Shift da Direita</Portuguese>
+      <Portuguese>Shift da Direita</Portuguese>
       <Italian>Shift destro</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Ctrl_Right">
@@ -91,7 +91,7 @@
       <Polish>Prawy Ctrl</Polish>
       <French>Ctrl Droite</French>
       <Czech>Pravý Ctrl</Czech>
-	    <Portuguese>Ctrl da Direita</Portuguese>
+      <Portuguese>Ctrl da Direita</Portuguese>
       <Italian>Ctrl destro</Italian>
     </Key>
     <Key ID="STR_AGM_Core_Alt_Right">
@@ -101,7 +101,7 @@
       <Polish>Prawy Alt</Polish>
       <French>Alt Droite</French>
       <Czech>Pravý Alt</Czech>
-	    <Portuguese>Alt da Direita</Portuguese>
+      <Portuguese>Alt da Direita</Portuguese>
       <Italian>Alt Gr</Italian>
     </Key>
 
@@ -112,7 +112,7 @@
       <Polish>Domyślne</Polish>
       <French>Défaut</French>
       <Czech>Výchozí</Czech>
-	  <Portuguese>Padrão</Portuguese>
+      <Portuguese>Padrão</Portuguese>
       <Italian>Standard</Italian>
     </Key>
     <Key ID="STR_AGM_Core_KeyNone">
@@ -122,7 +122,7 @@
       <Polish>Brak</Polish>
       <French>Aucun</French>
       <Czech>Žádný</Czech>
-	    <Portuguese>Nenhuma</Portuguese>
+      <Portuguese>Nenhuma</Portuguese>
       <Italian>Non assegnato</Italian>
     </Key>
 
@@ -133,7 +133,7 @@
       <Polish>2x %1</Polish>
       <French>2x %1</French>
       <Czech>2x %1</Czech>
-	    <Portuguese>2x %1</Portuguese>
+      <Portuguese>2x %1</Portuguese>
       <Italian>2x %1</Italian>
     </Key>
     <Key ID="STR_AGM_Core_HoldKey">
@@ -143,7 +143,7 @@
       <Polish>Przytrzymać %1</Polish>
       <French>Tenir %1</French>
       <Czech>Držet %1</Czech>
-	    <Portuguese>Segurar %1</Portuguese>
+      <Portuguese>Segurar %1</Portuguese>
       <Italian>Tieni premuto %1</Italian>
     </Key>
 
@@ -156,7 +156,7 @@
       <Czech>Profil uložen</Czech>
       <French>Profil sauvegardé</French>
       <Russian>Профиль сохранен</Russian>
-	    <Portuguese>Perfil salvo</Portuguese>
+      <Portuguese>Perfil salvo</Portuguese>
       <Hungarian>Profil mentve</Hungarian>
       <Italian>Profilo salvato</Italian>
     </Key>
@@ -168,7 +168,7 @@
       <Czech>Profil neuložen</Czech>
       <French>Profil non sauvegardé</French>
       <Russian>Профиль не сохранен</Russian>
-	    <Portuguese>Perfil não salvo</Portuguese>
+      <Portuguese>Perfil não salvo</Portuguese>
       <Hungarian>Profil nincs mentve</Hungarian>
       <Italian>Profilo non salvato</Italian>
     </Key>
@@ -182,7 +182,7 @@
       <Czech>S</Czech>
       <French>N</French>
       <Russian>С</Russian>
-	    <Portuguese>N</Portuguese>
+      <Portuguese>N</Portuguese>
       <Hungarian>É</Hungarian>
       <Italian>N</Italian>
     </Key>
@@ -194,7 +194,7 @@
       <Czech>SSV</Czech>
       <French>NNE</French>
       <Russian>ССВ</Russian>
-	    <Portuguese>NNE</Portuguese>
+      <Portuguese>NNE</Portuguese>
       <Hungarian>ÉÉK</Hungarian>
       <Italian>NNE</Italian>
     </Key>
@@ -206,7 +206,7 @@
       <Czech>SV</Czech>
       <French>NE</French>
       <Russian>СВ</Russian>
-	    <Portuguese>NE</Portuguese>
+      <Portuguese>NE</Portuguese>
       <Hungarian>ÉK</Hungarian>
       <Italian>NE</Italian>
     </Key>
@@ -218,7 +218,7 @@
       <Czech>VSV</Czech>
       <French>ENE</French>
       <Russian>ВСВ</Russian>
-	    <Portuguese>LNE</Portuguese>
+      <Portuguese>LNE</Portuguese>
       <Hungarian>KÉK</Hungarian>
       <Italian>ENE</Italian>
     </Key>
@@ -230,7 +230,7 @@
       <Czech>V</Czech>
       <French>E</French>
       <Russian>В</Russian>
-	    <Portuguese>L</Portuguese>
+      <Portuguese>L</Portuguese>
       <Hungarian>K</Hungarian>
       <Italian>E</Italian>
     </Key>
@@ -242,7 +242,7 @@
       <Czech>VJV</Czech>
       <French>ESE</French>
       <Russian>ВЮВ</Russian>
-	    <Portuguese>LSE</Portuguese>
+      <Portuguese>LSE</Portuguese>
       <Hungarian>KDK</Hungarian>
       <Italian>ESE</Italian>
     </Key>
@@ -266,7 +266,7 @@
       <Czech>JJV</Czech>
       <French>SSE</French>
       <Russian>ЮЮВ</Russian>
-	    <Portuguese>SSE</Portuguese>
+      <Portuguese>SSE</Portuguese>
       <Hungarian>DDK</Hungarian>
       <Italian>SSE</Italian>
     </Key>
@@ -290,7 +290,7 @@
       <Czech>JJZ</Czech>
       <French>SSO</French>
       <Russian>ЮЮЗ</Russian>
-	    <Portuguese>SSO</Portuguese>
+      <Portuguese>SSO</Portuguese>
       <Hungarian>DDNy</Hungarian>
       <Italian>SSO</Italian>
     </Key>
@@ -302,7 +302,7 @@
       <Czech>JZ</Czech>
       <French>SO</French>
       <Russian>ЮЗ</Russian>
-	    <Portuguese>SO</Portuguese>
+      <Portuguese>SO</Portuguese>
       <Hungarian>DNy</Hungarian>
       <Italian>SO</Italian>
     </Key>
@@ -314,7 +314,7 @@
       <Czech>ZJZ</Czech>
       <French>OSO</French>
       <Russian>ЗЮЗ</Russian>
-	    <Portuguese>OSO</Portuguese>
+      <Portuguese>OSO</Portuguese>
       <Hungarian>NyDNy</Hungarian>
       <Italian>OSO</Italian>
     </Key>
@@ -326,7 +326,7 @@
       <Czech>Z</Czech>
       <French>O</French>
       <Russian>З</Russian>
-	    <Portuguese>O</Portuguese>
+      <Portuguese>O</Portuguese>
       <Hungarian>Ny</Hungarian>
       <Italian>O</Italian>
     </Key>
@@ -338,7 +338,7 @@
       <Czech>ZSZ</Czech>
       <French>ONO</French>
       <Russian>ЗСЗ</Russian>
-	    <Portuguese>ONO</Portuguese>
+      <Portuguese>ONO</Portuguese>
       <Hungarian>NyÉNy</Hungarian>
       <Italian>ONO</Italian>
     </Key>
@@ -350,7 +350,7 @@
       <Czech>SZ</Czech>
       <French>NO</French>
       <Russian>СЗ</Russian>
-	    <Portuguese>NO</Portuguese>
+      <Portuguese>NO</Portuguese>
       <Hungarian>ÉNy</Hungarian>
       <Italian>NO</Italian>
     </Key>
@@ -362,7 +362,7 @@
       <Czech>SSZ</Czech>
       <French>NNO</French>
       <Russian>ССЗ</Russian>
-	    <Portuguese>NNO</Portuguese>
+      <Portuguese>NNO</Portuguese>
       <Hungarian>ÉÉNy</Hungarian>
       <Italian>NNO</Italian>
     </Key>
@@ -374,7 +374,7 @@
       <French>Action annulée.</French>
       <Polish>Przerwano czynność</Polish>
       <Hungarian>Cselekvés befejezve</Hungarian>
-	    <Portuguese>Ação cancelada.</Portuguese>
+      <Portuguese>Ação cancelada.</Portuguese>
       <Czech>Akce přerušena</Czech>
       <Italian>Azione cancellata.</Italian>
     </Key>
@@ -386,7 +386,7 @@
       <Polish>&lt; Poprzedni</Polish>
       <French>&lt; Préc</French>
       <Hungarian>&lt; Előző</Hungarian>
-	    <Portuguese>&lt; Anterior</Portuguese>
+      <Portuguese>&lt; Anterior</Portuguese>
       <Czech>&lt; Předchozí</Czech>
       <Italian>&lt; Prec</Italian>
     </Key>
@@ -397,7 +397,7 @@
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
-	    <Portuguese>Próximo &gt;</Portuguese>
+      <Portuguese>Próximo &gt;</Portuguese>
       <Czech>Další &gt;</Czech>
       <Italian>Prossimo &gt;</Italian>
     </Key>
@@ -409,7 +409,7 @@
       <Czech>[AGM] Ostatní předměty</Czech>
       <Polish>[AGM] Różne przedmioty</Polish>
       <French>[AGM] Objets divers</French>
-	    <Portuguese>[AGM] Itens diversos</Portuguese>
+      <Portuguese>[AGM] Itens diversos</Portuguese>
       <Italian>[AGM] Oggetti vari</Italian>
     </Key>
 
