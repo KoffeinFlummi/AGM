@@ -703,6 +703,7 @@
       <German>Menu nach Loslassen schließen</German>
       <Polish>Zamknij menu automatycznie</Polish>
       <French>Fermer le menu en relâchant la touche</French>
+      <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
     </Key>
   </Package>
 </Project>
