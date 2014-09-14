@@ -437,30 +437,35 @@
       <German>Mündungsfeuerdämpfer (6,5 mm)</German>
       <Italian>Soppressore di fiamma (6.5mm)</Italian>
       <Portuguese>Supressor de Clarão (6,5mm)</Portuguese>
+      <Polish>Tłumik płomieni (6,5 mm)</Polish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_B">
       <English>Flash Suppressor (7.62 mm)</English>
       <German>Mündungsfeuerdämpfer (7,62 mm)</German>
       <Italian>Soppressore di fiamma (7.62mm)</Italian>
       <Portuguese>Supressor de Clarão (7,62mm)</Portuguese>
+      <Polish>Tłumik płomieni (7,62 mm)</Polish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_L">
       <English>Flash Suppressor (5.56 mm)</English>
       <German>Mündungsfeuerdämpfer (5,56 mm)</German>
       <Italian>Soppressore di fiamma (5.56mm)</Italian>
       <Portuguese>Supressor de Clarão (5,56mm)</Portuguese>
+      <Polish>Tłumik płomieni (5,56 mm)</Polish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_smg_01">
       <English>Flash Suppressor (.45 ACP)</English>
       <German>Mündungsfeuerdämpfer (.45 ACP)</German>
       <Italian>Soppressore di fiamma (.45 ACP)</Italian>
       <Portuguese>Supressor de Clarão (.45 ACP)</Portuguese>
+      <Polish>Tłumik płomieni (.45 ACP)</Polish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_smg_02">
       <English>Flash Suppressor (9 mm)</English>
       <German>Mündungsfeuerdämpfer (9 mm)</German>
       <Italian>Soppressore di fiamma (9 mm)</Italian>
       <Portuguese>Supressor de Clarão (9mm)</Portuguese>
+      <Polish>Tłumik płomieni (9 mm)</Polish>
     </Key>
 
 
