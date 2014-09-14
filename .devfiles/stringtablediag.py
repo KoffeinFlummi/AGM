@@ -97,5 +97,19 @@ def main():
       print("%s %s missing stringtable entry/entries." % ((languages[i] + ":").ljust(12), str(keysum - localizedsum[i]).rjust(4)), end="")
       print(" ("+", ".join(missing[i])+")")
 
+  print("\n\n### MARKDOWN ###")
+
+  print("\nTotal number of keys: %i\n" % (keysum))
+
+  print("| Language | Missing Entries | Relevant Modules |")
+  print("|----------|----------------:|------------------|")
+
+  for i, language in enumerate(languages):
+    if localizedsum[i] == keysum:
+      print("| {} | 0 | - |".format(language))
+    else:
+      print("| {} | {} | {} |".format(language, keysum - localizedsum[i], ", ".join(missing[i])))
+
+
 if __name__ == "__main__":
   main()
