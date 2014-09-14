@@ -696,11 +696,13 @@
       <French>Hors de portée.</French>
       <Portuguese>Fora do Alcançe</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
+      <Polish>Poza zasięgiem</Polish>
     </Key>
 
     <Key ID="STR_AGM_Interaction_AutoCloseMenu">
       <English>Close Menu on Key Release</English>
       <German>Menu nach Loslassen schließen</German>
+      <Polish>Zamknij menu automatycznie</Polish>
     </Key>
 
 
