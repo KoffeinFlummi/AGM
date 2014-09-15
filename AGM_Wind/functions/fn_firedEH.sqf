@@ -19,6 +19,12 @@ _this spawn {
     _airFrictionWind = 0.0007;
   };
 
+  // Additional dispersion
+   _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
+  // Powder temp effect
+  _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
+  [_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
+
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
