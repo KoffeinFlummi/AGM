@@ -704,7 +704,7 @@
     </Key>
     <Key ID="STR_AGM_Interaction_AutoCloseMenu">
       <English>Close Menu on Key Release</English>
-      <German>Menu nach Loslassen schließen</German>
+      <German>Menü nach Loslassen schließen</German>
       <Polish>Zamknij menu automatycznie</Polish>
       <French>Fermer le menu en relâchant la touche</French>
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
