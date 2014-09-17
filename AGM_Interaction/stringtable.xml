@@ -709,5 +709,10 @@
       <French>Fermer le menu en relâchant la touche</French>
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Interaction_FriskMenuHeader">
+      <English>Inventory of frisked person</English>
+      <German>Inventar der durchsuchten Person</German>
+    </Key>
+
   </Package>
 </Project>
