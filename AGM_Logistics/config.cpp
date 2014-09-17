@@ -78,6 +78,7 @@ class CfgFunctions {
 			class getNearestRepairer;
 			class getNearestTrack;
 			class getNearestWheel;
+			class module;
 			class openSelectWheelUI;
 			class openSelectWheelUI_Salvage;
 			class removeWheel;
@@ -1110,6 +1111,54 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
 		transportFuel = 0;
 	};
+	
+	//Hawkeye104 AGM Repair Module
+    class Module_F;
+    class AGM_ModuleRepair: Module_F
+    {
+        author = "Hawkeye104";
+        category = "AGM";
+        displayName = "Repair System";
+        function = "AGM_Repair_fnc_module";
+        scope = 2;
+        isGlobal = 1;
+        class Arguments
+        {
+            //Time to repair heavy damage e.g. engine, fuel line, body
+			class TimeRepair
+            {
+                displayName = "Heavy Repair Time";
+                description = "Time to repair engine/turret/body/fuel components (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Time to replace a wheel
+            class TimeWheelRepair
+            {
+                displayName = "Wheel Replace Time";
+                description = "Time to replace a wheel (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Time to replace a track
+            class TimeTrackRepair
+            {
+                displayName = "Track Replace Time";
+                description = "Time to replace a track (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Maximum damage that can be repaired
+			//See Logistics\functions\Repair\fn_repairCallback.sqf
+            class MaxDamageRepair
+            {
+                displayName = "Maximum Repaired Damage";
+                description = "Limits the amount of damage that can be repaired. 0 = Repair all damage, 1 = Cannot repair any damage. Decimal Value. Default: 0";
+                typeName = "NUMBER";
+                defaultValue = 0;
+            };
+        };
+    };
 };
 
 // Handle vehicle magazines
@@ -1159,6 +1208,14 @@ class CfgWeapons {
 			mass = 20;
 		};
 	};
+};
+
+class AGM_Parameters 
+{
+	AGM_Repair_TimeRepair = 10;
+	AGM_Repair_TimeWheelRepair = 10;
+	AGM_Repair_TimeTrackRepair = 10;
+	AGM_Repair_MaxDamageRepair = 0;
 };
 
 #include <DiagnoseDialog.hpp>
