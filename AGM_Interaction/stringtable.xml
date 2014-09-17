@@ -712,6 +712,7 @@
     <Key ID="STR_AGM_Interaction_FriskMenuHeader">
       <English>Inventory of frisked person</English>
       <German>Inventar der durchsuchten Person</German>
+      <French>Inventaire de la fouille</French>
     </Key>
 
   </Package>
