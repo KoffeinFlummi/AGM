@@ -24,9 +24,22 @@ _listedItemClasses = [];
 _actions = [localize "STR_AGM_Interaction_FriskMenuHeader", localize "STR_AGM_Interaction_CancelSelection"] call AGM_Interaction_fnc_prepareSelectMenu;
 
 _allGear = [];
-_allGear pushBack (handgunWeapon _unit);
-_allGear = _allGear + (uniformItems _unit) + (vestItems _unit) + (backpackItems _unit) + (assignedItems _unit);
 
+if ((handgunWeapon _unit) != "") then {
+    _allGear pushBack (handgunWeapon _unit);
+};
+if (count (uniformItems _unit) > 0) then {
+    _allGear = _allGear + (uniformItems _unit);
+};
+if (count (vestItems _unit) > 0) then {
+    _allGear = _allGear + (vestItems _unit);
+};
+if (count (backpackItems _unit) > 0) then {
+    _allGear = _allGear + (backpackItems _unit);
+};
+if (count (assignedItems _unit) > 0) then {
+    _allGear = _allGear + (assignedItems _unit);
+};
 
 // Handgun
 // Uniform Items
