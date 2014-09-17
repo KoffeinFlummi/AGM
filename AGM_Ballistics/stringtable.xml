@@ -458,7 +458,7 @@
       <Czech>Tlumičem plamene(6,5 mm)</Czech>
       <French>Cache-flamme (6,5 mm)</French>
       <Russian>Пламегаситель (6,5 мм)</Russian>
-      <Spanish>Bocacha apagallamas (6,5 mm)</Spanish>
+      <Spanish>Supresor (6,5 mm)</Spanish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_B">
       <English>Flash Suppressor (7.62 mm)</English>
@@ -470,7 +470,7 @@
       <Czech>Tlumičem plamene(7,62 mm)</Czech>
       <French>Cache-flamme (7,62 mm)</French>
       <Russian>Пламегаситель (7,62 мм)</Russian>
-      <Spanish>Bocacha apagallamas (7,62 mm)</Spanish>
+      <Spanish>Supresor (7,62 mm)</Spanish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_L">
       <English>Flash Suppressor (5.56 mm)</English>
@@ -482,7 +482,7 @@
       <Czech>Tlumičem plamene(5,56 mm)</Czech>
       <French>Cache-flamme (5,56 mm)</French>
       <Russian>Пламегаситель (5,56 мм)</Russian>
-      <Spanish>Bocacha apagallamas (5,56 mm)</Spanish>
+      <Spanish>Supresor (5,56 mm)</Spanish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_smg_01">
       <English>Flash Suppressor (.45 ACP)</English>
@@ -494,7 +494,7 @@
       <Czech>Tlumičem plamene(.45 ACP)</Czech>
       <French>Cache-flamme (.45 ACP)</French>
       <Russian>Пламегаситель (.45 ACP)</Russian>
-      <Spanish>Bocacha apagallamas (.45 ACP)</Spanish>
+      <Spanish>Supresor (.45 ACP)</Spanish>
     </Key>
     <Key ID="STR_AGM_muzzle_mzls_smg_02">
       <English>Flash Suppressor (9 mm)</English>
@@ -506,7 +506,7 @@
       <Czech>Tlumičem plamene(9 mm)</Czech>
       <French>Cache-flamme (9 mm)</French>
       <Russian>Пламегаситель (9 мм)</Russian>
-      <Spanish>Bocacha apagallamas (9 mm)</Spanish>
+      <Spanish>Supresor (9 mm)</Spanish>
     </Key>
   </Package>
 </Project>
