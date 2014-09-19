@@ -715,6 +715,10 @@
       <French>Inventaire de la fouille</French>
       <Hungarian>Motozott személy felszerelése</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Interaction_FriskPerson">
+      <English>Frisk person</English>
+      <German>Person durchsuchen</German>
+    </Key>
 
   </Package>
 </Project>
