@@ -57,15 +57,15 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SatchelCharge"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 1;
 		class AGM_Triggers {
-			AGM_Triggers[] = {"Timer","Command", "MK16_Transmitter"};
+			AGM_Triggers[] = {"Timer","Command", "MK16_Transmitter", "DeadmanSwitch"};
 			class Timer {
 				FuseTime = 0.5;
 			};
 			class Command {
 				FuseTime = 0.5;
 			};
-			class MK16_Transmitter:Command{
-			};
+			class MK16_Transmitter:Command{};
+			class DeadmanSwitch:Command{};
 		};
 	};
 	class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{
@@ -109,6 +109,12 @@ class CfgAGM_Triggers {
 		picture = "\AGM_Explosives\Data\UI\MK16_Reciever_ca.paa";
 		onPlace = "_this call AGM_Explosives_fnc_AddClacker;false";
 		requires[] = {"AGM_M26_Clacker"};
+	};
+	class DeadManSwitch:Command {
+		displayName = $STR_AGM_Explosives_DeadManSwitch_displayName;
+		picture = "\AGM_Explosives\Data\UI\DeadmanSwitch.paa";
+		onPlace = "_this call AGM_Explosives_fnc_AddClacker;false";
+		requires[] = {"AGM_DeadManSwitch"};
 	};
 	class PressurePlate {
 		displayName = $STR_AGM_Explosives_PressurePlate;
