@@ -17,14 +17,14 @@
 		Nothing
 	
 	Example:
-		[_unit, _explosive, "SatchelCharge_Remote_Mag", [ConfigFile >> "CfgAGM_Triggers" >> "Command"]] AGM_Explosives_fnc_AddClacker;
+		[_unit, _explosive, "SatchelCharge_Remote_Mag", [ConfigFile >> "CfgAGM_Triggers" >> "Command"]] call AGM_Explosives_fnc_AddClacker;
 */
 private ["_unit", "_explosive", "_clacker", "_config", "_magazineClass", "_requiredItems", "_hasRequired"];
 _unit = _this select 0;
 _explosive = _this select 1;
 _magazineClass = _this select 2;
 // Config is the last item in the list of passed in items.
-_config = (_this select 3) select (count (_this select 3) -1);
+_config = (_this select 3) select (count (_this select 3) - 1);
 
 _requiredItems = getArray(_config >> "requires");
 _hasRequired = true;
