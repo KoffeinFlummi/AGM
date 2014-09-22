@@ -27,7 +27,12 @@ AGM_Explosives_null = [] spawn {
 		[(_this select 0)] call AGM_Explosives_fnc_initialiseUnit;
 	}];
 	player addEventHandler ["Killed", {
+		private "_deadman";
 		call AGM_Explosives_fnc_Place_Cancel;
+		_deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
+		{
+			[(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
+		} count _deadman;
 	}];
 	player addEventHandler ["Take", {
 		private ["_item", "_getter", "_giver", "_config"];
@@ -65,5 +70,4 @@ AGM_Explosives_null = [] spawn {
 			};
 		};
 	}];
-	//[player] call AGM_Explosives_fnc_initialiseUnit;
 };
