@@ -470,5 +470,11 @@
       <Portuguese>No explosives on trigger.</Portuguese>
       <Russian>Нет взрывчатки на курок.</Russian>
     </Key>
+    <Key ID="STR_AGM_Explosives_DeadManSwitch_displayName">
+      <English>Dead Man's Switch</English>
+    </Key>
+    <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
+      <English>Used to remotely trigger explosives when released.</English>
+    </Key>
   </Package>
 </Project>
