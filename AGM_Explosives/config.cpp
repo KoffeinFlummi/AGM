@@ -1,7 +1,7 @@
 class CfgPatches {
 	class AGM_Explosives {
 		units[] = {};
-		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
+		weapons[] = {"AGM_Clacker", "AGM_DefusalKit", "AGM_M26_Clacker", "AGM_DeadManSwitch"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core, AGM_Interaction};
 		version = "0.931";
