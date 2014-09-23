@@ -38,7 +38,7 @@ if (isNil "_triggerConfig") exitWith {
 	objNull
 };
 
-_trigger = ConfigFile >> "CfgMagazines" >> _magazineClass >> "AGM_Triggers" >> _triggerConfig;
+_magazineTrigger = ConfigFile >> "CfgMagazines" >> _magazineClass >> "AGM_Triggers" >> _triggerConfig;
 _triggerConfig = ConfigFile >> "CfgAGM_Triggers" >> _triggerConfig;
 
 if (isNil "_triggerConfig") exitWith {
@@ -47,13 +47,13 @@ if (isNil "_triggerConfig") exitWith {
 };
 
 _ammo = getText(ConfigFile >> "CfgMagazines" >> _magazineClass >> "ammo");
-if (isText(_trigger >> "ammo")) then {
-	_ammo = getText (_trigger >> "ammo");
+if (isText(_magazineTrigger >> "ammo")) then {
+	_ammo = getText (_magazineTrigger >> "ammo");
 };
 _triggerSpecificVars pushBack _triggerConfig;
 _explosive = createVehicle [_ammo, _pos, [], 0, "NONE"];
 if (isText(_triggerConfig >> "onPlace") && {[_unit,_explosive,_magazineClass,_triggerSpecificVars] call compile (getText (_triggerConfig >> "onPlace"))}) exitWith {_explosive};
 if (_setDir) then {
-	[[_explosive, _dir, getNumber (_trigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
+	[[_explosive, _dir, getNumber (_magazineTrigger >> "pitch")], "AGM_Explosives_fnc_setPos"] call AGM_Core_fnc_execRemoteFnc;
 };
 _explosive

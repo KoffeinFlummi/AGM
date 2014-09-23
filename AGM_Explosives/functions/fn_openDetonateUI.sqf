@@ -22,7 +22,7 @@ _unit = _this select 0;
 _detonator = _this select 1;
 _range = GetNumber (ConfigFile >> "CfgWeapons" >> _detonator >> "AGM_Range");
 
-_result = _unit getVariable ["AGM_Clacker", []];
+_result = [_unit] call AGM_Explosives_fnc_getPlacedExplosives;
 _actions = [localize "STR_AGM_Explosives_DetonateMenu", localize "STR_AGM_Explosives_Detonate"] call AGM_Interaction_fnc_prepareSelectMenu;
 _count = 0;
 {
