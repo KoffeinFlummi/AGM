@@ -29,6 +29,16 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
       };
     };
 
+    // Detect if player is not alive and disable effects
+    if (!(alive player)) then {
+      AGM_BloodLevel_CC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectEnable false;
+      while {!(alive player)} do {
+        sleep 1;
+      };
+    };
+
     // Blood level
     _currentBlood = player getVariable ["AGM_Blood", 1];
     if (_currentBlood > 0.99) then {
@@ -43,7 +53,7 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
     // TODO: Pain effect ?
 
     // Unconciousness effect
-    if (player getVariable ["AGM_Unconscious", false] or player getVariable ["AGM_Overdosing", false]) then {
+    if (player getVariable ["AGM_Unconscious", false] || {player getVariable ["AGM_Overdosing", false]}) then {
       AGM_UnconsciousCC ppEffectEnable true;
       AGM_UnconsciousRB ppEffectEnable true;
       if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
