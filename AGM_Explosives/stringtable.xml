@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-01 -->
+<!-- Edited with tabler - 2014-09-24 -->
 <Project name="AGM">
   <Package name="Explosives">
     <Key ID="STR_AGM_Explosives_Menu">
@@ -472,9 +472,11 @@
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_displayName">
       <English>Dead Man's Switch</English>
+      <French>Mise à feu par relâchement de pression</French>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
       <English>Used to remotely trigger explosives when released.</English>
+      <French>Déclenche la mise à feu d'un explosif lorsqu'il est libéré.</French>
     </Key>
   </Package>
 </Project>
