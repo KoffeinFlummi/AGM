@@ -15,8 +15,7 @@
 	Example:
 	call AGM_Goggles_fnc_RemoveRainEffect;
 */
-if (isNil {AGM_Goggles_RainDrops}) exitWith {};
-{
-	(_x select 0) ctrlShow false;
-	_x set [1, false];
-} count AGM_Goggles_RainDrops;
+if (!isNull (AGM_Goggles_RainDrops)) then {
+	deleteVehicle (AGM_Goggles_RainDrops);
+};
+AGM_Goggles_Rain_Active = false;
