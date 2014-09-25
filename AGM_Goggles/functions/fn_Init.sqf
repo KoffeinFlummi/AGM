@@ -35,6 +35,7 @@ AGM_Goggles_EyesDamageScript = 0 spawn {};
 AGM_Goggles_FrameEvent = [false, [false,20]];
 AGM_Goggles_PostProcessEyes_Enabled = false;
 AGM_Goggles_DustHandler = 0 spawn {};
+AGM_Goggles_RainDrops = objNull;
 
 AGM_Goggles_fnc_CheckGlasses = {
 	if (AGM_Goggles_Current != (goggles player)) then {
