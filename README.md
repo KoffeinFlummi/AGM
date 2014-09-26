@@ -48,7 +48,7 @@ If you want to help out by fixing a bug or adding a feature, fork this repo and 
 
 If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out [this](https://github.com/KoffeinFlummi/AGM/wiki/Compatibility) page.
+You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out [this](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) page.
 
 ## Testing & Building
 
