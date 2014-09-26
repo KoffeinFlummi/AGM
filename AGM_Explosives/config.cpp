@@ -1,7 +1,7 @@
 class CfgPatches {
 	class AGM_Explosives {
 		units[] = {};
-		weapons[] = {"AGM_Clacker", "AGM_DefusalKit"};
+		weapons[] = {"AGM_Clacker", "AGM_DefusalKit", "AGM_M26_Clacker", "AGM_DeadManSwitch"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core, AGM_Interaction};
 		version = "0.931";
@@ -28,9 +28,9 @@ class CfgFunctions
 			class hasPlacedExplosives;
 			
 			class getDetonators;
+			class getPlacedExplosives;
 			
 			class initialise{postInit=1;};
-			class initialiseUnit;
 			class isSpecialist;
 			//class JammerInit;
 			
@@ -169,6 +169,7 @@ class CfgVehicles {
 			MACRO_ADDITEM(AGM_Clacker,12)
 			MACRO_ADDITEM(AGM_M26_Clacker,6)
 			MACRO_ADDITEM(AGM_DefusalKit,12)
+			MACRO_ADDITEM(AGM_Deadmanswitch,2)
 		};
 	};
 
@@ -177,6 +178,7 @@ class CfgVehicles {
 			MACRO_ADDITEM(AGM_Clacker,2)
 			MACRO_ADDITEM(AGM_M26_Clacker,2)
 			MACRO_ADDITEM(AGM_DefusalKit,2)
+			MACRO_ADDITEM(AGM_Deadmanswitch,1)
 		};
 	};
 
@@ -185,6 +187,7 @@ class CfgVehicles {
 			MACRO_ADDITEM(AGM_Clacker,24)
 			MACRO_ADDITEM(AGM_M26_Clacker,12)
 			MACRO_ADDITEM(AGM_DefusalKit,24)
+			MACRO_ADDITEM(AGM_Deadmanswitch,10)
 		};
 	};
 	
@@ -259,7 +262,7 @@ class CfgActions {
 };
 
 class AGM_Parameters {
-  // Boolean Parameters (0/1)
-  AGM_Explosives_RequireSpecialist = 0;
-  AGM_Explosives_PunishNonSpecialists = 1;
+	// Boolean Parameters (0/1)
+	AGM_Explosives_RequireSpecialist = 0;
+	AGM_Explosives_PunishNonSpecialists = 1;
 };

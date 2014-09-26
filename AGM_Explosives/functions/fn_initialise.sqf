@@ -16,24 +16,23 @@
 	Example:
 		None
 */
-if (isServer) then {
-	if (isNil "AGM_Explosives_List") then {
-		AGM_Explosives_List = [];
-		publicVariable "AGM_Explosives_List";
-	};
-};
 if !(hasInterface) exitWith {};
 AGM_Explosives_PlacedCount = 0;
 AGM_Explosives_Setup = objNull;
 AGM_Explosives_pfeh_running = false;
-AGM_Explosives_null= [] spawn {
-	waitUntil {sleep 0.356;!isNull(findDisplay 46)};
+AGM_Explosives_null = [] spawn {
+	waitUntil {sleep 0.356;!isNull(player)};
 	[{(_this select 0) call AGM_Explosives_fnc_HandleScrollWheel;}] call AGM_Core_fnc_addScrollWheelEventHandler;
 	player addEventHandler ["Respawn", {
 		[(_this select 0)] call AGM_Explosives_fnc_initialiseUnit;
 	}];
 	player addEventHandler ["Killed", {
+		private "_deadman";
 		call AGM_Explosives_fnc_Place_Cancel;
+		_deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
+		{
+			[(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
+		} count _deadman;
 	}];
 	player addEventHandler ["Take", {
 		private ["_item", "_getter", "_giver", "_config"];
@@ -49,7 +48,7 @@ AGM_Explosives_null= [] spawn {
 			
 			_detonators = [_giver] call AGM_Explosives_fnc_getDetonators;
 			if (count _detonators == 0) then {
-				_giver setVariable ["AGM_Clacker", [], true];
+				_giver setVariable ["AGM_Clacker", nil, true];
 			};
 		};
 	}];
@@ -67,9 +66,8 @@ AGM_Explosives_null= [] spawn {
 			
 			_detonators = [_giver] call AGM_Explosives_fnc_getDetonators;
 			if (count _detonators == 0) then {
-				_giver setVariable ["AGM_Clacker", [], true];
+				_giver setVariable ["AGM_Clacker", nil, true];
 			};
 		};
 	}];
-	[player] call AGM_Explosives_fnc_initialiseUnit;
 };

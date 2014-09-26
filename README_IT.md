@@ -48,7 +48,7 @@ Se vuoi aiutarce risolvendo un bug o aggiungendo una funzionalità, forka questa
 
 Se trovi un bug o vuoi richiedere una funzionalità, ti preghiamo di usare l'[Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-Sei un creatore di contenuti e vorresti sapere come rendere le tue armi o i tuoi veicoli compatibili con AGM? Guarda qui [qui](https://github.com/KoffeinFlummi/AGM/wiki/Compatibility) page.
+Sei un creatore di contenuti e vorresti sapere come rendere le tue armi o i tuoi veicoli compatibili con AGM? Guarda qui [qui](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) page.
 
 ## Testando e Costruendo
 
