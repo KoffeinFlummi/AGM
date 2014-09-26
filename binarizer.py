@@ -356,9 +356,16 @@ def main():
   for thread in threads:
     thread.join()
 
-  print("\n######################################################")
-  print("# Binarization complete at " + time.strftime("%Y-%m-%d %H:%M:%S").ljust(25) + " #")
-  print("######################################################")
+  # Check if everything was binarized properly
+  newmodules = get_modules()
+  if len(newmodules) > 0:
+    print("\n# THE FOLLOWING MODULES FAILED TO BINARIZE:")
+    for module in newmodules:
+      print("  %s" % (module))
+  else:
+    print("\n######################################################")
+    print("# Binarization complete at " + time.strftime("%Y-%m-%d %H:%M:%S").ljust(25) + " #")
+    print("######################################################")
 
   # Convert PBO names to lowercase for linux.
   path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
