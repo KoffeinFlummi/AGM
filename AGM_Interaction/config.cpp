@@ -21,6 +21,7 @@ class CfgFunctions {
       class addInteractionSelf;
       class addToTooltip;
       class applyButtons;
+      class canFriskPerson;
       class canInteractWith;
       class canLoadCaptiveIntoVehicle;
       class canLockDoor;
@@ -390,6 +391,16 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.5;
       };
+      
+      class AGM_FriskPerson {
+        displayName = "$STR_AGM_Interaction_FriskPerson";
+        distance = 2;
+        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canFriskPerson";
+        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
+        showDisabled = 0;
+        priority = 3;
+        //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";  
+      }
     };
 
     class AGM_SelfActions {

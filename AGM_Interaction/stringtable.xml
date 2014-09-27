@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-14 -->
+<!-- Edited with tabler - 2014-09-24 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -712,7 +712,13 @@
     <Key ID="STR_AGM_Interaction_FriskMenuHeader">
       <English>Inventory of frisked person</English>
       <German>Inventar der durchsuchten Person</German>
+      <French>Inventaire de la fouille</French>
+      <Hungarian>Motozott személy felszerelése</Hungarian>
     </Key>
-
+    <Key ID="STR_AGM_Interaction_FriskPerson">
+      <English>Frisk person</English>
+      <German>Person durchsuchen</German>
+      <French>Fouiller</French>
+    </Key>
   </Package>
 </Project>

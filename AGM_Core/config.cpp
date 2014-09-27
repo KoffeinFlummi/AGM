@@ -253,6 +253,7 @@ class CfgFunctions {
       class toBin;
       class toBitmask;
       class toHex;
+      class toNumber;
     };
   };
   class AGM_Debug {

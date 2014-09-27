@@ -146,36 +146,36 @@ class RscTitles {
         colorBackground[] = {1,1,1,1};
         shadow = 1;
       };
-      class AGM_Scope_Zeroing_Horizontal: RscText {
+      class AGM_Scope_Zeroing_Vertical: RscText {
         idc = 925002;
         type = 0;
         style = 2;
-        x = (safeZoneX + 0.5 * safeZoneW) - (0.108 / 2);
-        y = safezoneY + 0.045 * safezoneH;
-        w = 0.108;
-        h = 0.09;
+        x = (safeZoneX + 0.5 * safeZoneW) - (0.04 * safeZoneW / 2);
+        y = safezoneY + 0.06 * safezoneH;
+        w = 0.04 * safeZoneW;
+        h = 0.025 * safeZoneH;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
-        colorText[] = {1,1,1,0.9};
-        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {1,1,1, 0.9};
+        colorBackground[] = {1,0,0, 1};
         shadow = 0;
       };
-      class AGM_Scope_Zeroing_Vertical: RscText {
+      class AGM_Scope_Zeroing_Horizontal: RscText {
         idc = 925003;
         type = 0;
         style = 0;
         x = (safeZoneX + 0.5 * safeZoneW) + (0.04 * safeZoneW);
-        y = safezoneY + 0.13 * safezoneH;
-        w = 0.108;
-        h = 0.09;
+        y = (safezoneY + 0.3 * safezoneH / 2) - (0.025 * safeZoneH / 2);
+        w = 0.04  * safeZoneW;
+        h = 0.025 * safeZoneH;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
-        colorText[] = {1,1,1,0.9};
-        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {1,1,1, 0.9};
+        colorBackground[] = {1,0,0, 1};
         shadow = 0;
       };
     };
