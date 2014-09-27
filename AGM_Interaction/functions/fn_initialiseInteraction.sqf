@@ -35,7 +35,7 @@ if (_this select 2) then {
 	(findDisplay 1713999) closeDisplay 1;
 	if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 0) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
-		
+
 		player setVariable ["AGM_AcceptAction", [player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if (call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
 		player setVariable ["AGM_AcceptAction", [player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
@@ -45,11 +45,13 @@ if (_this select 2) then {
 }else{ // Rose
 	if !(_subMenu) then {
 		(findDisplay 1713999) closeDisplay 1;
-	
+
 		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
 		// Add eventhandlers
 		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
 		(findDisplay 1713999) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+
+		(findDisplay 1713999) displayAddEventHandler ["KeyDown", "_this call AGM_Interaction_fnc_menuKeyInput"];
 	};
 	disableSerialization;
 	_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
@@ -70,6 +72,7 @@ if (_this select 2) then {
 		_ctrlInteractionDialog ctrlShow true;
 
 		_ctrlInteractionDialogIcon = _dlgInteractionDialog displayCtrl (20 + _i);
+		_ctrlInteractionDialogShortcut = _dlgInteractionDialog displayCtrl (30 + _i);
 
 		if (_i < _count) then {
 			_action = AGM_Interaction_Buttons select _i;
@@ -77,11 +80,13 @@ if (_this select 2) then {
 			_ctrlInteractionDialog ctrlEnable (call (_action select 2));
 
 			_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
+			_ctrlInteractionDialogShortcut ctrlSetText str _i;
 		} else {
 			_ctrlInteractionDialog ctrlSetText "";
 			_ctrlInteractionDialog ctrlEnable false;
 
 			_ctrlInteractionDialogIcon ctrlSetText "";
+			_ctrlInteractionDialogShortcut ctrlSetText "";
 		};
 	};
 

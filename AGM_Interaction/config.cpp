@@ -40,6 +40,7 @@ class CfgFunctions {
       class joinTeam;
       class loadCaptiveIntoVehicle;
       class lockDoor;
+      class menuKeyInput;
       class module;
       class moveDown;
       class onButtonDown;

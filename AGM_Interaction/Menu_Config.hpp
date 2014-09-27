@@ -169,6 +169,108 @@ class AGM_Interaction_Dialog {
       h = "0.3 / 9 * safezoneH";
     };
 
+    class Interaction_Shortcut0: AGM_Interaction_Button_Base {
+      tooltip = "";
+      text = "";
+      idc = 30;
+      style = 2;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut1: Interaction_Shortcut0 {
+      text = "";
+      idc = 31;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut2: Interaction_Shortcut0 {
+      text = "";
+      idc = 32;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut3: Interaction_Shortcut0 {
+      text = "";
+      idc = 33;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut4: Interaction_Shortcut0 {
+      text = "";
+      idc = 34;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut5 : Interaction_Shortcut0 {
+      text = "";
+      idc = 35;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut6: Interaction_Shortcut0 {
+      text = "";
+      idc = 36;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut7: Interaction_Shortcut0 {
+      text = "";
+      idc = 37;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut8: Interaction_Shortcut0 {
+      text = "";
+      idc = 38;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Shortcut9: Interaction_Shortcut0 {
+      text = "";
+      idc = 39;
+      type = 0;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5+2.0/16/2-0.3/16 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+
     class Interaction_Button0: AGM_Interaction_Button_Base {
       action = "0 call AGM_Interaction_fnc_onClick;";
       style = 2;

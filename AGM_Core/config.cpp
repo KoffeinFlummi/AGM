@@ -191,6 +191,7 @@ class CfgFunctions {
       class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
+      class codeToLetter;
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
@@ -228,6 +229,7 @@ class CfgFunctions {
       class isInBuilding;
       class isMedic;
       class isTurnedOut;
+      class letterToCode;
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
