@@ -493,96 +493,107 @@ class CfgVehicles {
 
       class AGM_Gestures {
         displayName = "$STR_AGM_Interaction_Gestures";
-        condition = "canStand player";
+        condition = "canStand (_this select 0)";
         statement = "";
         showDisabled = 1;
         priority = 3.5;
         subMenu[] = {"AGM_Gestures", 1};
         icon = "AGM_Interaction\UI\gestures_ca.paa";
+        hotkey = "G";
 
         /*class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Attack";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureAttack';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureAttack';";
           showDisabled = 1;
           priority = 2.0;
         };*/
         class AGM_Gesture_Advance {
           displayName = "$STR_AGM_Interaction_Gestures_Advance";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureAdvance';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureAdvance';";
           showDisabled = 1;
           priority = 1.9;
+          hotkey = "1";
         };
         class AGM_Gesture_Go {
           displayName = "$STR_AGM_Interaction_Gestures_Go";
-          condition = "canStand player";
-          statement = "player playActionNow (['gestureGo', 'gestureGoB'] select (floor random 2));";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow (['gestureGo', 'gestureGoB'] select (floor random 2));";
           showDisabled = 1;
           priority = 1.8;
+          hotkey = "2";
         };
         class AGM_Gesture_Follow {
           displayName = "$STR_AGM_Interaction_Gestures_Follow";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureFollow';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureFollow';";
           showDisabled = 1;
           priority = 1.7;
+          hotkey = "3";
         };
         /*class AGM_Gesture_Point {
           displayName = "$STR_AGM_Interaction_Gestures_Point";
-          condition = "canStand player";
-          statement = "player playActionNow 'gesturePoint';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gesturePoint';";
           showDisabled = 1;
           priority = 1.6;
         };*/
         class AGM_Gesture_Up {
           displayName = "$STR_AGM_Interaction_Gestures_Up";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureUp';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureUp';";
           showDisabled = 1;
           priority = 1.5;
+          hotkey = "4";
         };
         class AGM_Gesture_Cover {
           displayName = "$STR_AGM_Interaction_Gestures_Cover";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureCover';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureCover';";
           showDisabled = 1;
           priority = 1.4;
+          hotkey = "5";
         };
         class AGM_Gesture_CeaseFire {
           displayName = "$STR_AGM_Interaction_Gestures_Cease_Fire";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureCeaseFire';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureCeaseFire';";
           showDisabled = 1;
           priority = 1.3;
+          hotkey = "6";
         };
         class AGM_Gesture_Freeze {
           displayName = "$STR_AGM_Interaction_Gestures_Freeze";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureFreeze';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureFreeze';";
           showDisabled = 1;
           priority = 1.2;
+          hotkey = "7";
         };
         class AGM_Gesture_Yes {
           displayName = "$STR_AGM_Interaction_Gestures_Yes";
-          condition = "canStand player";
-          statement = "player playActionNow (['gestureYes', 'gestureNod'] select (floor random 2));";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow (['gestureYes', 'gestureNod'] select (floor random 2));";
           showDisabled = 1;
           priority = 1.1;
+          hotkey = "8";
         };
         class AGM_Gesture_No {
           displayName = "$STR_AGM_Interaction_Gestures_No";
-          condition = "canStand player";
-          statement = "player playActionNow 'gestureNo';";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow 'gestureNo';";
           showDisabled = 1;
           priority = 1.0;
+          hotkey = "9";
         };
         class AGM_Gesture_Hi {
           displayName = "$STR_AGM_Interaction_Gestures_Hi";
-          condition = "canStand player";
-          statement = "player playActionNow (['gestureHi', 'gestureHiB', 'gestureHiC'] select (floor random 3));";
+          condition = "canStand (_this select 0)";
+          statement = "(_this select 0) playActionNow (['gestureHi', 'gestureHiB', 'gestureHiC'] select (floor random 3));";
           showDisabled = 1;
           priority = 0.9;
+          hotkey = "0";
         };
       };
       class AGM_StopEscortingSelf {

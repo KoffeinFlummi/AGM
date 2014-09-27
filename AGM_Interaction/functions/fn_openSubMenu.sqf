@@ -51,6 +51,7 @@ _fnc_GetActions = {
 						_priority = getNumber (_action >> "priority");
 						_subMenu = getArray (_action >> "subMenu");
 						_tooltip = getText (_action >> "tooltip");
+						_hotkey = getText (_action >> "hotkey");
 
 						// Condition
 						_condition = getText (_action >> "condition");
@@ -89,7 +90,7 @@ _fnc_GetActions = {
 							_icon = "\AGM_Interaction\UI\dot_ca.paa";
 						};
 
-						_actionToCache = [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
+						_actionToCache = [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey];
 
 						if (!(_configName in _patches) && {_showDisabled || {[_player, _object] call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
 							_actions pushBack _actionToCache;
@@ -152,9 +153,10 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_tooltip = "";
 	_conditionShow = {true};
 	_exceptions = [];
+	_hotkey = "";
 
 	if ((_showDisabled || {[_player, _object] call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
-		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
+		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey];
 	};
 };*/
 

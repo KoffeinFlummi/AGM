@@ -31,6 +31,8 @@ _player = call AGM_Core_fnc_player;
 _vehicle = vehicle _player;
 //_object = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
 
+AGM_Interaction_Shortcuts = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
+
 // Flow menu
 if (_this select 2) then {
 	64 cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
@@ -84,7 +86,9 @@ if (_this select 2) then {
 			_ctrlInteractionDialog ctrlEnable ([_player, _target] call (_action select 2));
 
 			_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
-			_ctrlInteractionDialogShortcut ctrlSetText str _i;
+			_ctrlInteractionDialogShortcut ctrlSetText (_action select 10);
+
+			AGM_Interaction_Shortcuts set [_i, [_action select 10] call AGM_Core_fnc_letterToCode];
 		} else {
 			_ctrlInteractionDialog ctrlSetText "";
 			_ctrlInteractionDialog ctrlEnable false;
