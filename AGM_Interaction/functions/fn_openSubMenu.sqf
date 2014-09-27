@@ -162,9 +162,4 @@ _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 
 AGM_Interaction_Buttons = _actions;
 
-[{
-	if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
-		call AGM_Interaction_fnc_hideMenu;
-		"Default" spawn AGM_Interaction_fnc_openMenu;
-	};
-}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), true, _object] call AGM_Interaction_fnc_initialiseInteraction;
+[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), true, _object] call AGM_Interaction_fnc_initialiseInteraction;
