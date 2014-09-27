@@ -3,7 +3,7 @@
 private ["_count", "_index", "_action", "_subMenu", "_statement", "_condition", "_conditionShow", "_exceptions", "_distance"];
 
 _count = count AGM_Interaction_Buttons;
-_index = call AGM_Interaction_fnc_getSelectedButton;
+_index = _this; //call AGM_Interaction_fnc_getSelectedButton;
 
 _action = if (_index != -1 && {_index < _count}) then {
 	AGM_Interaction_Buttons select _index

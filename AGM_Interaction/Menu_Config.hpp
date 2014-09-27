@@ -43,7 +43,132 @@ class AGM_Interaction_Button_Base {
   soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
+// Old command rose
 class AGM_Interaction_Dialog {
+  idd = 1713999;
+  enableSimulation = 1;
+  movingEnable = 0;
+  onLoad = "_dlgInteractionDialog = _this select 0; for '_a' from 10 to 19 do {(_dlgInteractionDialog displayCtrl _a) ctrlShow false}; uiNamespace setVariable ['AGM_Interaction_Dialog', _dlgInteractionDialog];";
+  objects[] = {};
+  class controls {
+    class Interaction_ButtonMain: AGM_Interaction_Button_Base {
+      action = "-1 call AGM_Interaction_fnc_onClick;";
+      style = 2;
+      tooltip = "";
+      text = "Interaction Menu";
+      idc = 3;
+      sizeEx = "0.6 / 40 / (getResolution select 5)";
+      x = "(0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY";
+      w = "1.8 / 16 * safezoneW";
+      h = "0.55 / 9 * safezoneH";
+    };
+    class Interaction_Button0: AGM_Interaction_Button_Base {
+      action = "0 call AGM_Interaction_fnc_onClick;";
+      style = 2;
+      tooltip = "";
+      text = "";
+      idc = 10;
+      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button1: Interaction_Button0 {
+      action = "1 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 11;
+      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button2: Interaction_Button0 {
+      action = "2 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 12;
+      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button3: Interaction_Button0 {
+      action = "3 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 13;
+      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button4: Interaction_Button0 {
+      action = "4 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 14;
+      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button5: Interaction_Button0 {
+      action = "5 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 15;
+      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button6: Interaction_Button0 {
+      action = "6 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 16;
+      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button7: Interaction_Button0 {
+      action = "7 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 17;
+      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button8: Interaction_Button0 {
+      action = "8 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 18;
+      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Button9: Interaction_Button0 {
+      action = "9 call AGM_Interaction_fnc_onClick;";
+      tooltip = "";
+      text = "";
+      idc = 19;
+      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "2.0 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+  };
+};
+
+// New command rose
+/*class AGM_Interaction_Dialog {
   idd = 1713999;
   enableSimulation = 1;
   movingEnable = 0;
@@ -361,7 +486,7 @@ class AGM_Interaction_Dialog {
       };
     };
   };
-};
+};*/
 
 class RscListbox;
 class IGUIBack;

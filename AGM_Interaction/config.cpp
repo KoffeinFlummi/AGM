@@ -247,7 +247,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 0;
         priority = 3.2;
-		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 0};
 
         class AGM_JoinTeamRed {
@@ -256,7 +256,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'RED'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
-		  icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           priority = 2.4;
         };
         class AGM_JoinTeamGreen {
@@ -265,7 +265,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
-		  icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           priority = 2.3;
         };
         class AGM_JoinTeamBlue {
@@ -274,7 +274,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
-		  icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           priority = 2.2;
         };
         class AGM_JoinTeamYellow {
@@ -283,7 +283,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player}";
           statement = "[AGM_Interaction_Target, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
-		  icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           priority = 2.1;
         };
 
@@ -293,7 +293,7 @@ class CfgVehicles {
           condition = "alive AGM_Interaction_Target && {!isPlayer AGM_Interaction_Target} && {AGM_Interaction_Target in units group player} && {assignedTeam player != 'MAIN'}";
           statement = "[AGM_Interaction_Target, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
-		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           priority = 2.5;
         };
       };
@@ -313,7 +313,7 @@ class CfgVehicles {
         statement = "[player] joinSilent group AGM_Interaction_Target;";
         showDisabled = 0;
         priority = 2.6;
-		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
       };
 
       class AGM_GetDown {
@@ -340,7 +340,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
-		icon = "\AGM_Interaction\UI\handcuff_ca.paa";
+        icon = "\AGM_Interaction\UI\handcuff_ca.paa";
       };
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Interaction_ReleaseCaptive";
@@ -350,7 +350,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.4;
-		icon = "\AGM_Interaction\UI\handcuff_ca.paa";
+        icon = "\AGM_Interaction\UI\handcuff_ca.paa";
       };
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Interaction_EscortCaptive";
@@ -359,7 +359,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-		icon = "\AGM_Interaction\UI\captive_ca.paa";
+        icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.3;
       };
       class AGM_StopEscorting {
@@ -369,7 +369,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target, false] call AGM_Interaction_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-		icon = "\AGM_Interaction\UI\captive_ca.paa";
+        icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.3;
       };
       class AGM_LoadCaptive {
@@ -379,7 +379,7 @@ class CfgVehicles {
         statement = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
-		icon = "\AGM_Interaction\UI\captive_ca.paa";
+        icon = "\AGM_Interaction\UI\captive_ca.paa";
         priority = 2.2;
       };
 
@@ -400,7 +400,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 3;
         //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";  
-      }
+      };
     };
 
     class AGM_SelfActions {
@@ -410,7 +410,7 @@ class CfgVehicles {
         statement = "";
         showDisabled = 1;
         priority = 3.2;
-		icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 1};
 
         class AGM_JoinTeamRed {
@@ -419,7 +419,7 @@ class CfgVehicles {
           statement = "[player, 'RED'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.4;
-		  icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -427,7 +427,7 @@ class CfgVehicles {
           statement = "[player, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.3;
-		  icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -435,7 +435,7 @@ class CfgVehicles {
           statement = "[player, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.2;
-		  icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -443,7 +443,7 @@ class CfgVehicles {
           statement = "[player, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.1;
-		  icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
         };
 
         class AGM_LeaveTeam {
@@ -452,7 +452,7 @@ class CfgVehicles {
           statement = "[player, 'MAIN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           priority = 2.5;
-		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
         };
 
         class AGM_BecomeLeader {
@@ -461,7 +461,7 @@ class CfgVehicles {
           statement = "_newGroup = createGroup side player; (units group player) joinSilent _newGroup; _newGroup selectLeader player;";
           showDisabled = 1;
           priority = 1.0;
-		  icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
         };
         class AGM_LeaveGroup {
           displayName = "$STR_AGM_Interaction_LeaveGroup";
@@ -469,7 +469,7 @@ class CfgVehicles {
           statement = "_oldGroup = units group player; _newGroup = createGroup side player; [player] joinSilent _newGroup; {player reveal _x} forEach _oldGroup;";
           showDisabled = 1;
           priority = 1.2;
-		  icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+          icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         };
       };
 
