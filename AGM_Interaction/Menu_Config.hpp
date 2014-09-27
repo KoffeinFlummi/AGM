@@ -63,6 +63,110 @@ class AGM_Interaction_Dialog {
       w = "1.8 / 16 * safezoneW";
       h = "0.55 / 9 * safezoneH";
     };
+
+    class Interaction_Icon0: AGM_Interaction_Button_Base {
+      tooltip = "";
+      text = "";
+      idc = 20;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon1: Interaction_Icon0 {
+      idc = 21;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon2: Interaction_Icon0 {
+      idc = 22;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon3: Interaction_Icon0 {
+      idc = 23;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon4: Interaction_Icon0 {
+      idc = 24;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon5 : Interaction_Icon0 {
+      idc = 25;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 2.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon6: Interaction_Icon0 {
+      idc = 26;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon7: Interaction_Icon0 {
+      idc = 27;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon8: Interaction_Icon0 {
+      idc = 28;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+    class Interaction_Icon9: Interaction_Icon0 {
+      idc = 29;
+      type = 0;
+      style = 48;
+      colorBackground[] = {0,0,0,0};
+      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
+      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
+      w = "0.3 / 16 * safezoneW";
+      h = "0.3 / 9 * safezoneH";
+    };
+
     class Interaction_Button0: AGM_Interaction_Button_Base {
       action = "0 call AGM_Interaction_fnc_onClick;";
       style = 2;
@@ -165,7 +269,7 @@ class AGM_Interaction_Dialog {
       h = "0.3 / 9 * safezoneH";
     };
 
-    class Interaction_Icon0 : Interaction_Button0 {
+/*    class Interaction_Icon0 : Interaction_Button0 {
       idc = 20;
       type = 0;
       style = 48;
@@ -264,7 +368,7 @@ class AGM_Interaction_Dialog {
       y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
       w = "0.3 / 16 * safezoneW";
       h = "0.3 / 9 * safezoneH";
-    };
+    };*/
   };
 };
 
