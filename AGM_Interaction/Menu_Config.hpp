@@ -58,6 +58,8 @@ class AGM_Interaction_Dialog {
       text = "Interaction Menu";
       idc = 3;
       sizeEx = "0.6 / 40 / (getResolution select 5)";
+      colorBackground[] = {0,0,0,0.5};
+      colorBackgroundDisabled[] = {0,0,0,0.5};
       x = "(0.5-1.8/16/2 + 0 * 0.1) * safezoneW + safezoneX";
       y = "(0.5-0.55/9/2 + 0 * 0.04) * safezoneH + safezoneY";
       w = "1.8 / 16 * safezoneW";
@@ -173,6 +175,8 @@ class AGM_Interaction_Dialog {
       tooltip = "";
       text = "";
       idc = 10;
+      colorBackground[] = {0,0,0,0.5};
+      colorBackgroundDisabled[] = {0,0,0,0.5};
       x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
       y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
       w = "2.0 / 16 * safezoneW";
@@ -268,107 +272,6 @@ class AGM_Interaction_Dialog {
       w = "2.0 / 16 * safezoneW";
       h = "0.3 / 9 * safezoneH";
     };
-
-/*    class Interaction_Icon0 : Interaction_Button0 {
-      idc = 20;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon1 : Interaction_Button1 {
-      idc = 21;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon2 : Interaction_Button2 {
-      idc = 22;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon3 : Interaction_Button3 {
-      idc = 23;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon4 : Interaction_Button4 {
-      idc = 24;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon5 : Interaction_Button5 {
-      idc = 25;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 2.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon6 : Interaction_Button6 {
-      idc = 26;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon7 : Interaction_Button7 {
-      idc = 27;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon8 : Interaction_Button8 {
-      idc = 28;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };
-    class Interaction_Icon9 : Interaction_Button9 {
-      idc = 29;
-      type = 0;
-      style = 48;
-      colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
-    };*/
   };
 };
 
@@ -707,7 +610,7 @@ class RscAGM_SelectAnItem {
       y = 0;
       w = 0.6;
       h = 0.71;
-      colorBackground[] = {0, 0, 0, 0.5};
+      colorBackground[] = {0, 0, 0, 0.2};
     };
     class header: RscText{
       idc = 8870;
@@ -734,6 +637,8 @@ class RscAGM_SelectAnItem {
       style = 2;
       text = $STR_AGM_Interaction_CancelSelection;
       action = "call AGM_Interaction_fnc_hideMenu;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
+      colorBackground[] = {0, 0, 0, 0.4};
+      colorBackgroundDisabled[] = {0, 0, 0, 0.4};
     };
     class approveBtn: AGM_Interaction_Button_Base {
       idc = 8860;
@@ -744,6 +649,8 @@ class RscAGM_SelectAnItem {
       style = 2;
       text = $STR_AGM_Interaction_MakeSelection;
       action = "call AGM_Interaction_fnc_hideMenu;";
+      colorBackground[] = {0, 0, 0, 0.4};
+      colorBackgroundDisabled[] = {0, 0, 0, 0.4};
     };
   };
 };
@@ -818,7 +725,7 @@ class RscTitles {
         y = 12.15 * GUI_GRID_H;
         w = 13 * GUI_GRID_W;
         h = 1.5 * GUI_GRID_H;
-        colorBackground[] = {0.3,0.3,0.3,0.8};
+        colorBackground[] = {0.3, 0.3, 0.3, 0.8};
       };
       class BackIcon: RscInteractionIcon{
         idc = 1210;
@@ -835,7 +742,7 @@ class RscTitles {
         y = 11 * GUI_GRID_H;
         w = 13 * GUI_GRID_W;
         h = 3.9 * GUI_GRID_H;
-        colorBackground[] = {0,0,0,0.4};
+        colorBackground[] = {0, 0, 0, 0.4};
       };
     };
   };
