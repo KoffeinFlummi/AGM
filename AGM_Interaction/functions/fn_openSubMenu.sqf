@@ -1,6 +1,9 @@
 // by commy2
 
-private ["_count", "_index", "_action", "_subMenu"];
+private ["_player", "_vehicle", "_object", "_count", "_index", "_action", "_subMenu"];
+
+_player = call AGM_Core_fnc_player;
+_vehicle = vehicle _player;
 
 AGM_Interaction_MenuType = 2;	// 0 Interaction, 1 Self Interaction, +2 for sub menu
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
@@ -62,7 +65,7 @@ _fnc_GetActions = {
 
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
-							_showDisabled = call _conditionShow;
+							_showDisabled = [_player, _object] call _conditionShow;
 						};
 
 						// Exceptions to the general conditions that have to be true
@@ -88,7 +91,7 @@ _fnc_GetActions = {
 
 						_actionToCache = [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
 
-						if (!(_configName in _patches) && {_showDisabled || {call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
+						if (!(_configName in _patches) && {_showDisabled || {[_player, _object] call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
 							_actions pushBack _actionToCache;
 							_patches pushBack _configName;
 						};
@@ -111,10 +114,10 @@ _fnc_GetActions = {
 
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
-							_showDisabled = call (_cachedAction select 7);
+							_showDisabled = [_player, _object] call (_cachedAction select 7);
 						};
 
-						if (!(_configName in _patches) && {_showDisabled || {call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
+						if (!(_configName in _patches) && {_showDisabled || {[_player, _object] call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
 							_actions pushBack _cachedAction;
 							_patches pushBack _configName;
 						};
@@ -150,7 +153,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_conditionShow = {true};
 	_exceptions = [];
 
-	if ((_showDisabled || {call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+	if ((_showDisabled || {[_player, _object] call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance];
 	};
 };*/
