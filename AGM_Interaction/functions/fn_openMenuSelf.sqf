@@ -11,7 +11,7 @@ uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.
 _actions = [];
 _patches = [];
 
-
+if (isNil "AGM_Interaction_Target") then {AGM_Interaction_Target = objNull};
 _object = _vehicle;
 
 
