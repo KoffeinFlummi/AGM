@@ -244,7 +244,7 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive (_this select 1) && {!isPlayer (_this select 1)} && {(_this select 1) in units group (_this select 0)}";
+        condition = "alive (_this select 0) && {!isPlayer (_this select 0)} && {(_this select 0) in units group (_this select 1)}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -254,8 +254,8 @@ class CfgVehicles {
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
           distance = 4;
-          condition = "alive (_this select 1) && {!isPlayer (_this select 1)} && {(_this select 1) in units group (_this select 0)}";
-          statement = "[_this select 1, 'RED'] call AGM_Interaction_fnc_joinTeam";
+          condition = "alive (_this select 0) && {!isPlayer (_this select 0)} && {(_this select 0) in units group (_this select 1)}";
+          statement = "[_this select 0, 'RED'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           priority = 2.4;
@@ -263,8 +263,8 @@ class CfgVehicles {
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
           distance = 4;
-          condition = "alive (_this select 1) && {!isPlayer (_this select 1)} && {(_this select 1) in units group (_this select 0)}";
-          statement = "[_this select 1, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
+          condition = "alive (_this select 0) && {!isPlayer (_this select 0)} && {(_this select 0) in units group (_this select 1)}";
+          statement = "[_this select 0, 'GREEN'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           priority = 2.3;
@@ -272,8 +272,8 @@ class CfgVehicles {
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
           distance = 4;
-          condition = "alive (_this select 1) && {!isPlayer (_this select 1)} && {(_this select 1) in units group (_this select 0)}";
-          statement = "[_this select 1, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
+          condition = "alive (_this select 0) && {!isPlayer (_this select 0)} && {(_this select 0) in units group (_this select 1)}";
+          statement = "[_this select 0, 'BLUE'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           priority = 2.2;
@@ -281,8 +281,8 @@ class CfgVehicles {
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
           distance = 4;
-          condition = "alive (_this select 1) && {!isPlayer (_this select 1)} && {(_this select 1) in units group (_this select 0)}";
-          statement = "[_this select 1, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
+          condition = "alive (_this select 0) && {!isPlayer (_this select 0)} && {(_this select 0) in units group (_this select 1)}";
+          statement = "[_this select 0, 'YELLOW'] call AGM_Interaction_fnc_joinTeam";
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           priority = 2.1;

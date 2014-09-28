@@ -66,7 +66,7 @@ _fnc_GetActions = {
 
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
-							_showDisabled = [_player, _object] call _conditionShow;
+							_showDisabled = [_object, _player] call _conditionShow;
 						};
 
 						// Exceptions to the general conditions that have to be true
@@ -92,7 +92,7 @@ _fnc_GetActions = {
 
 						_actionToCache = [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey];
 
-						if (!(_configName in _patches) && {_showDisabled || {[_player, _object] call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
+						if (!(_configName in _patches) && {_showDisabled || {[_object, _player] call _condition}} && {_distance == 0 || {[_object, _distance] call AGM_Interaction_fnc_isInRange}}) then {
 							_actions pushBack _actionToCache;
 							_patches pushBack _configName;
 						};
@@ -115,10 +115,10 @@ _fnc_GetActions = {
 
 						_showDisabled = getNumber (_action >> "showDisabled") == 1;
 						if (isText (_action >> "conditionShow")) then {
-							_showDisabled = [_player, _object] call (_cachedAction select 7);
+							_showDisabled = [_object, _player] call (_cachedAction select 7);
 						};
 
-						if (!(_configName in _patches) && {_showDisabled || {[_player, _object] call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
+						if (!(_configName in _patches) && {_showDisabled || {[_object, _player] call (_cachedAction select 2)}} && {[_object, (_cachedAction select 9)] call AGM_Interaction_fnc_isInRange || {(_cachedAction select 9) == 0}}) then {
 							_actions pushBack _cachedAction;
 							_patches pushBack _configName;
 						};
@@ -155,7 +155,7 @@ for "_index" from 0 to (count _customActions - 1) do {
 	_exceptions = [];
 	_hotkey = "";
 
-	if ((_showDisabled || {[_player, _object] call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+	if ((_showDisabled || {[_object, _player] call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 		_actions pushBack [_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey];
 	};
 };

@@ -39,6 +39,6 @@ _conditionShow = _action select 7;
 _exceptions = _action select 8;//
 _distance = _action select 9;
 
-if ((_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_player, _target] call _condition} && {[_player, _target] call _conditionShow}) then {
-	[_player, _target] call _statement;
+if ((_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_target, _player] call _condition} && {[_target, _player] call _conditionShow}) then {
+	[_target, _player] call _statement;
 };

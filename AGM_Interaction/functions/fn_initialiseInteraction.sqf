@@ -42,7 +42,7 @@ if (_this select 2) then {
 	if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 0) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		player setVariable ["AGM_AcceptAction", [player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if ([_player, _target] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
+		player setVariable ["AGM_AcceptAction", [player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
 		player setVariable ["AGM_AcceptAction", [player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
@@ -84,7 +84,7 @@ if (_this select 2) then {
 		if (_i < _count) then {
 			_action = AGM_Interaction_Buttons select _i;
 			_ctrlInteractionDialog ctrlSetText (_action select 0);
-			_ctrlInteractionDialog ctrlEnable ([_player, _target] call (_action select 2));
+			_ctrlInteractionDialog ctrlEnable ([_target, _player] call (_action select 2));
 
 			_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
 			_ctrlInteractionDialogShortcut ctrlSetText (_action select 10);
@@ -125,7 +125,7 @@ if (_this select 2) then {
 
 				AGM_Interaction_CurrentTooltip = [];
 
-				_enable = (_distance == 0 || {[_target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_player, _target] call _condition} && {[_player, _target] call _conditionShow};
+				_enable = (_distance == 0 || {[_target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_target, _player] call _condition} && {[_target, _player] call _conditionShow};
 				if (isNil "_enable") then {_enable = false};
 
 				AGM_Interaction_Tooltips set [_forEachIndex, AGM_Interaction_CurrentTooltip];
