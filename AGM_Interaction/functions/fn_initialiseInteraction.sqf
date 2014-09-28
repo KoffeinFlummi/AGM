@@ -79,6 +79,7 @@ if (_this select 2) then {
 
 		_ctrlInteractionDialogIcon = _dlgInteractionDialog displayCtrl (20 + _i);
 		_ctrlInteractionDialogShortcut = _dlgInteractionDialog displayCtrl (30 + _i);
+		//_ctrlInteractionDialogBackground = _dlgInteractionDialog displayCtrl (40 + _i);
 
 		if (_i < _count) then {
 			_action = AGM_Interaction_Buttons select _i;
@@ -87,6 +88,7 @@ if (_this select 2) then {
 
 			_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
 			_ctrlInteractionDialogShortcut ctrlSetText (_action select 10);
+			//_ctrlInteractionDialogBackground ctrlShow true;
 
 			AGM_Interaction_Shortcuts set [_i, [_action select 10] call AGM_Core_fnc_letterToCode];
 		} else {
@@ -95,6 +97,7 @@ if (_this select 2) then {
 
 			_ctrlInteractionDialogIcon ctrlSetText "";
 			_ctrlInteractionDialogShortcut ctrlSetText "";
+			//_ctrlInteractionDialogBackground ctrlShow false;
 		};
 	};
 
