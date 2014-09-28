@@ -20,14 +20,8 @@ _vehicle = _this select 0;
       _unit = _this select 0;
       _player = _this select 1;
       _unit setPosATL [(getPos _player select 0) + (random 2) - 1, (getPos _player select 1) + (random 2) - 1, 0];
-      /*if (local _unit) then {
-        _unit spawn {
-          sleep 0.1;
-          _this enableSimulation false;
-        };
-      };*/
-      _unit switchMove "Unconscious";
-      _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
     }, [_x, player]] call CBA_fnc_globalExecute;
+    [_unit, "Unconscious", 2] call AGM_Core_fnc_doAnimation;
+    _unit setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", true];
   };
 } forEach crew _vehicle;

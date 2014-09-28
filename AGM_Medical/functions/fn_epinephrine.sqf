@@ -28,7 +28,7 @@ _this spawn {
     _epinephrinetime = EPINEPHRINETIMENONMEDIC;
   };
 
-  player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+  [player, "AinvPknlMstpSnonWnonDnon_medic1", 1] call AGM_Core_fnc_doAnimation; // healing animation
   player setVariable ["AGM_CanTreat", false, false];
 
   if !([_unit, "AGM_Epipen"] call AGM_Medical_fnc_takeItem) exitWith {};
@@ -36,7 +36,7 @@ _this spawn {
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
 
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -49,7 +49,7 @@ _this spawn {
   };
 
   AGM_Medical_epinephrineAbort = {
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
   };
 

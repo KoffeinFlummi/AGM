@@ -19,7 +19,7 @@ _this spawn {
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
 
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
 
     _damages = [
@@ -146,12 +146,12 @@ _this spawn {
   };
 
   AGM_Medical_diagnoseAbort = {
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
   };
 
   if (_unit != player) then {
-    player playMoveNow DIAGNOSEMOVE;
+    [player, DIAGNOSEMOVE, 1] call AGM_Core_fnc_doAnimation;
 
     player setVariable ["AGM_CanTreat", false, false];
 

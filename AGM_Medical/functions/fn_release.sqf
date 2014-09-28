@@ -37,14 +37,12 @@ _this spawn {
 
   if (vehicle _unit != _unit) exitWith {};
 
-  [-2, {
-    if (vehicle (_this select 0) == (_this select 0)) then {
-      (_this select 0) switchMove DRAGGINGMOVE;
-    };
-    if ((_this select 1) getVariable "AGM_Unconscious") then {
-      (_this select 1) switchMove DRAGGEDMOVE;
-    };
-  }, [player, _unit]] call CBA_fnc_globalExecute;
+  if (vehicle player == player) then {
+    [player, DRAGGINGMOVE, 2] call AGM_Core_fnc_doAnimation;
+  };
+  if (_unit getVariable "AGM_Unconscious") {
+    [_unit, DRAGGEDMOVE, 2] call AGM_Core_fnc_doAnimation;
+  };
 
   /*[-2, {
     if (local _this) then {

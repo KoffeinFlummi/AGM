@@ -27,7 +27,7 @@ _this spawn {
 
   player setVariable ["AGM_CanTreat", false, false];
 
-  player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+  [player, "AinvPknlMstpSnonWnonDnon_medic1", 1] call AGM_Core_fnc_doAnimation; // healing animation
 
   if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
 
@@ -43,7 +43,7 @@ _this spawn {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
 
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -63,8 +63,8 @@ _this spawn {
         AGM_UnconsciousRB ppEffectAdjust [0.4, 0.4, 0, 0];
         AGM_UnconsciousRB ppEffectCommit 0.5;
       };
+      [_unit, "Unconscious", 2] call AGM_Core_fnc_doAnimation;
       [-2, {
-        _this switchMove "Unconscious";
         _this playAction "GestureSpasm4";
       }, _unit] call CBA_fnc_globalExecute;
       _unit spawn {
@@ -98,7 +98,7 @@ _this spawn {
   };
 
   AGM_Medical_morphineAbort = {
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    [player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
     player setVariable ["AGM_CanTreat", true, false];
   };
 

@@ -25,6 +25,8 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 _position = getPosASL _unit;
 
+[_unit, "", 2] call AGM_Core_fnc_doAnimation;
+[_unit, (_unit getVariable "AGM_OriginalAnim"), 2] call AGM_Core_fnc_doAnimation;
 [-2, {
   if (_this == player) then {
     player setVariable ["tf_globalVolume", 1];
@@ -47,6 +49,4 @@ _position = getPosASL _unit;
     };
   };
 
-  _this switchMove "";
-  _this switchMove (_this getVariable "AGM_OriginalAnim");
 }, _unit] call CBA_fnc_globalExecute;

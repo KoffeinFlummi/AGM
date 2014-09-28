@@ -36,9 +36,10 @@ detach _unit;
       _unit moveInCargo _vehicle;
       _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
     };
-    _player switchMove "";
-    _unit playMoveNow (((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0);
   }, _this] call CBA_fnc_globalExecute;
+  [player, "", 2] call AGM_Core_fnc_doAnimation;
+  sleep 0.2; // make sure unit is in vehicle before changing anim
+  [_unit, (((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0), 1] call AGM_Core_fnc_doAnimation;
 };
 
 player removeWeapon "AGM_FakePrimaryWeapon";
