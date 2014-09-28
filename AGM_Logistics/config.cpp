@@ -31,6 +31,7 @@ class CfgFunctions {
 			class initLoadedObject;
 			class getLoadableMagazines;
 			class getLoadPoints;
+			class getPosLoadable;
 			class getWeaponsOfMagazine;
 			class loadItem;
 			class loadItemAbort;
