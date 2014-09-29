@@ -307,6 +307,7 @@ class CfgVehicles {
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_tapShoulder";
         showDisabled = 1;
         priority = 2.8;
+        hotkey = "Q";
       };
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";

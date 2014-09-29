@@ -76,6 +76,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2;
         icon = "AGM_Wind\data\4500NV1.paa";
+        hotkey = "K";
       };
       class AGM_CloseKestrel {
         displayName = "$STR_AGM_Wind_CloseKestrel";
@@ -84,6 +85,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2;
         icon = "AGM_Wind\data\4500NV1.paa";
+        hotkey = "K";
       };
     };
   };
