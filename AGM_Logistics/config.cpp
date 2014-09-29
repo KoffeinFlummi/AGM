@@ -202,7 +202,7 @@ class Extended_WeaponDisassembled_EventHandlers {
 
 class AGM_Core_canInteractConditions {
   class AGM_Drag_isNotDragging {
-    condition = "!(player getVariable ['AGM_isDragging', false])";
+    condition = "!(_player getVariable ['AGM_isDragging', false])";
   };
 };
 

@@ -195,13 +195,16 @@ class AGM_Parameters {
 
 class AGM_Core_canInteractConditions {
   class AGM_Interaction_isNotEscorting {
-    condition = "!(player getVariable ['AGM_isEscorting', false])";
+    condition = "!(_player getVariable ['AGM_isEscorting', false])";
   };
   class AGM_Interaction_isNotCaptive {
-    condition = "!(player getVariable ['AGM_isCaptive', false])";
+    condition = "!(_player getVariable ['AGM_isCaptive', false])";
   };
   class AGM_Interaction_isNotSurrendering {
-    condition = "!(player getVariable ['AGM_isSurrender', false])";
+    condition = "!(_player getVariable ['AGM_isSurrender', false])";
+  };
+  class AGM_Interaction_isNotSwimming {
+    condition = "!underwater _player";
   };
 };
 

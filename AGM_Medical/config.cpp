@@ -61,13 +61,13 @@ class Extended_PostInit_EventHandlers {
 
 class AGM_Core_canInteractConditions {
   class AGM_Medical_canTreat {
-    condition = "player getVariable ['AGM_CanTreat', true]";
+    condition = "_player getVariable ['AGM_CanTreat', true]";
   };
   class AGM_Medical_isConscious {
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
+    condition = "!(_player getVariable ['AGM_Unconscious', false])";
   };
   class AGM_Medical_isNotOverdosing {
-    condition = "!(player getVariable ['AGM_Overdosing', false])";
+    condition = "!(_player getVariable ['AGM_Overdosing', false])";
   };
 };
 
