@@ -179,9 +179,12 @@ def binarize(module_name):
 
   addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder", "AddonBuilder.exe")
   source_path       = os.path.join(os.path.dirname(scriptpath), module_name)
-  destination_path  = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+  destination_path  = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "addons")
   include_path      = os.path.join(os.path.dirname(scriptpath), "include.txt")
   final_path        = os.path.join(destination_path, module_name+".pbo")
+
+  # play tetris to trick addon builder
+  addonbuilder_path
 
   packonly_path     = os.path.join(source_path, ".PACKONLY")
   if os.path.exists(packonly_path):
@@ -197,7 +200,7 @@ def binarize(module_name):
   args = [
     addonbuilder_path,
     source_path,
-    destination_path,
+    os.path.join(os.path.dirname(scriptpath), ".build"),
     "-prefix=",
     "-project="+os.path.dirname(scriptpath),
     "-include="+include_path,
@@ -240,7 +243,14 @@ def binarize(module_name):
       print("# Failed to move "+module_name+".")
     else:
       print("# "+module_name+" moved successfully.")
-
+  else:
+    try:
+      shutil.move(
+        os.path.join(os.path.dirname(scriptpath), ".build", module_name+".pbo"),
+        os.path.join(destination_path, module_name+".pbo")
+        )
+    except:
+      pass
 
 def main():
   # Check all paths.
@@ -272,7 +282,7 @@ def main():
     sys.exit(1)
 
   try:
-    path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
+    path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "addons")
     if not os.path.exists(path):
       print("# Creating Modfolder...")
       os.makedirs(path)
@@ -281,44 +291,6 @@ def main():
     if getattr(sys, "frozen", False):
       quit = input("\nPress any key to exit ...")
     sys.exit(1)
-
-  # Copy FileBank, CfgConvert and DSSignFile if necessary
-  if getattr(sys, "frozen", False):
-    convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
-    filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
-    signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
-    if not (os.path.exists(convert_path) and os.path.exists(filebank_path) and os.path.exists(signfile_path)):
-      print("# SETUP")
-      print("This seems to be the first time you're running this. We need to copy some folders (CfgConvert, FileBank, DSSignFile) from 'Arma 3 Tools' to 'Arma 3' to make this work. Are you ok with that? (y/n)")
-      if (input("> ").lower() == "y"):
-        if not os.path.exists(convert_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "CfgConvert"), os.path.join(get_arma_path(), "CfgConvert"))
-          except:
-            print("ERROR: Failed to copy CfgConvert from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-        if not os.path.exists(filebank_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "FileBank"), os.path.join(get_arma_path(), "FileBank"))
-          except:
-            print("ERROR: Failed to copy FileBank from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-        if not os.path.exists(signfile_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "DSSignFile"), os.path.join(get_arma_path(), "DSSignFile"))
-          except:
-            print("ERROR: Failed to copy DSSignFile from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-
-        print("All folders moved successfully.")
-        print("")
-      else:
-        quit = input("\nPress any key to exit ...")
-        sys.exit(1)
-
 
   # Binarize stuff.
 
@@ -355,6 +327,11 @@ def main():
 
   for thread in threads:
     thread.join()
+
+  try:
+    shutil.rmtree(os.path.join(os.path.dirname(scriptpath), ".build"))
+  except:
+    pass
 
   # Check if everything was binarized properly
   newmodules = get_modules()
