@@ -198,21 +198,24 @@ class CfgVehicles {
 		items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"}; \
 		respawnitems[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};
 
-	class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+  #define MACRO_REMOVEBACKPACK \
+    backpack = "";
+
+	class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
 	class B_engineer_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
 	class B_Soldier_diver_base_F; class B_diver_exp_F:B_Soldier_diver_base_F {MACRO_ADDMINEKIT};
 	class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {MACRO_ADDMINEKIT};
 	class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
 	class I_G_Soldier_base_F; class I_G_engineer_F:I_G_Soldier_base_F {MACRO_ADDMINEKIT};
-	class I_G_Soldier_exp_F:I_G_Soldier_base_F {MACRO_ADDMINEKIT};
+	class I_G_Soldier_exp_F:I_G_Soldier_base_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
 	class B_G_engineer_F:I_G_engineer_F {MACRO_ADDMINEKIT};
 	class O_G_engineer_F:I_G_engineer_F {MACRO_ADDMINEKIT};
-	class B_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
-	class O_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
-	class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
+	class B_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
+	class O_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
+	class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
 	class I_engineer_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
 	class I_Soldier_diver_base_F; class I_diver_exp_F:I_Soldier_diver_base_F {MACRO_ADDMINEKIT};
-	class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
+	class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {MACRO_ADDMINEKIT MACRO_REMOVEBACKPACK};
 	class O_engineer_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
 	class O_Soldier_diver_base_F; class O_diver_exp_F:O_Soldier_diver_base_F {MACRO_ADDMINEKIT};
 	class O_Soldier_recon_base; class O_recon_exp_F:O_Soldier_recon_base {MACRO_ADDMINEKIT};
