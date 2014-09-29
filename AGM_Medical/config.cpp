@@ -739,6 +739,22 @@ class CfgVehicles {
           };
         };
       };
+      class EnableOverdosing {
+        displayName = "Enable Overdosing?"
+        description = "Enable morphine overdoses? Default: Yes";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            default = 1;
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            name = "No";
+            value = 0;
+          };
+        };
+      };
     };
   };
 };
@@ -906,5 +922,6 @@ class AGM_Parameters {
   AGM_Medical_PreventDeathWhileUnconscious = 0;
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
+  AGM_Medical_EnableOverdosing = 1;
 };
 #include <HintConfig.hpp>

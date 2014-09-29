@@ -22,6 +22,10 @@ class CfgAmmo {
 
   class B_20mm: BulletBase {
     deflecting = 3;
+    hit = 100;
+    indirectHit = 60;
+    indirectHitRange = 5;
+    model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
   };
 
   class B_65x39_Minigun_Caseless: SubmunitionBullet {

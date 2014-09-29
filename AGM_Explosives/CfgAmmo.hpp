@@ -57,6 +57,9 @@ class CfgAmmo {
 		AGM_Explosive = "DemoCharge_Remote_Ammo_Scripted";
 		soundActivation[] = {"",0,0,0};
 		soundDeactivation[] = {"",0,0,0};
+    hit = 500;
+    indirectHit = 500;
+    indirectHitRange = 7;
 	};
 	//class DemoCharge_Remote_Ammo_Scripted:DemoCharge_Remote_Ammo;
 	class SatchelCharge_Remote_Ammo:PipeBombBase{

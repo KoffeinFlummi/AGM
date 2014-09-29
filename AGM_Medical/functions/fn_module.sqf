@@ -33,5 +33,6 @@ AGM_Medical_Module = true;
 [_logic, "AGM_Medical_PreventDeathWhileUnconscious", "PreventDeathWhileUnconscious"] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_SingleBandage",                "SingleBandage"               ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_AllowChatWhileUnconscious",    "AllowChatWhileUnconscious"   ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Medical_EnableOverdosing",             "EnableOverdosing"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Medical Module Initialized.";
