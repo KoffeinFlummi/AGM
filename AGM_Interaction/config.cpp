@@ -122,7 +122,8 @@ class AGM_Core_Default_Keys {
     control = 1;
     alt = 0;
   };
-  class lockDoor {
+  // disabled for now
+  /*class lockDoor {
     displayName = "$STR_AGM_Interaction_LockDoor";
     condition = "[true] call AGM_Interaction_fnc_canLockDoor && {!AGM_Interaction_isOpeningDoor}";
     statement = "[true] call AGM_Interaction_fnc_lockDoor";
@@ -139,7 +140,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 1;
     alt = 1;
-  };
+  };*/
   class tapShoulder {
     displayName = "$STR_AGM_Interaction_TapShoulder";
     condition = "[player, cursorTarget] call AGM_Interaction_fnc_canTapShoulder";
