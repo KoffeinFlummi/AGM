@@ -31,5 +31,8 @@ for "_index" from 0 to (_count - 1) do {
 		[_data select 1, _data, "AGM_MagazineRepack_fnc_magazineRepackCallback", localize "STR_AGM_MagazineRepack_RepackingMagazine"] call AGM_Core_fnc_progressBar;
 		[player] call AGM_core_fnc_goKneeling;
 	},
-	{if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};}
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenuSelf};
+	}
 ] call AGM_Interaction_fnc_openSelectMenu;
