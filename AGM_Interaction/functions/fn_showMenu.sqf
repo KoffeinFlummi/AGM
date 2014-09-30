@@ -33,7 +33,7 @@ uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.
 AGM_Interaction_Target = _this select 1;
 _object = AGM_Interaction_Target;
 
-if (AGM_Interaction_MenuType == 0 && {(isNull (_object) || {!([_object, 4] call AGM_Interaction_fnc_isInRange)})}) exitWith {call AGM_Interaction_fnc_onButtonDownSelf};
+if (_menuType == 0 && {(isNull (_object) || {!([_object, 4] call AGM_Interaction_fnc_isInRange)})}) exitWith {call ([AGM_Interaction_fnc_onButtonDown, AGM_Interaction_fnc_onButtonDownSelf] select _menuType)};
 if !([_player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
 _parents = [configFile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
@@ -58,7 +58,7 @@ if (AGM_Interaction_MenuType > 1) then {
 	};
 };
 
-if (count _actions == 0) exitWith {call AGM_Interaction_fnc_onButtonDownSelf};
+if (count _actions == 0) exitWith {call ([AGM_Interaction_fnc_onButtonDown, AGM_Interaction_fnc_onButtonDownSelf] select _menuType)};
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _actions;
