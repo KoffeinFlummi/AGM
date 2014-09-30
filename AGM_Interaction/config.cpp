@@ -620,16 +620,16 @@ class CfgVehicles {
       
       class AGM_LockBackpack {
         displayName = "$STR_AGM_Interaction_LockBackpack";
-        condition = "(alive (_this select 1)) && !((_this select 1) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(_this select 1) setVariable ['AGM_LockedInventory', true, true]";
+        condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
         showDisabled = 0;
         priority = 2.5;
         //icon = "";
       };
       class AGM_UnlockBackpack {
         displayName = "$STR_AGM_Interaction_UnlockBackpack";
-        condition = "(alive (_this select 1)) && ((_this select 1) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(_this select 1) setVariable ['AGM_LockedInventory', false, true]";
+        condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
         showDisabled = 0;
         priority = 2.5;
         //icon = "";
