@@ -249,6 +249,7 @@ class CfgVehicles {
 				exceptions[] = {"AGM_Drag_isNotDragging"};
 				showDisabled = 0;
 				priority = 2.1;
+				hotkey = "R";
 			};
 			MACRO_CHECKFUEL
 		};

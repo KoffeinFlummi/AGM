@@ -75,6 +75,7 @@
 		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
+		hotkey = "R"; \
 	};
 
 #define MACRO_NOT_DRAGABLE \
