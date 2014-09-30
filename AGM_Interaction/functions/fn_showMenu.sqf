@@ -21,13 +21,21 @@
 		[2, AGM_Interaction_Target, "AGM_Explosives"] call AGM_Interaction_fnc_showMenu;
 		[3, player, "AGM_Explosives"] call AGM_Interaction_fnc_showMenu;
 */
-private ["_player", "_vehicle", "_object", "_index", "_actions", "_result", "_menuType"];
+private ["_player", "_vehicle", "_mainButtonAction", "_object", "_index", "_actions", "_result", "_menuType"];
 #define DEFAULT_ICON "\AGM_Interaction\UI\dot_ca.paa"
 _player = call AGM_Core_fnc_player;
 _vehicle = vehicle _player;
 
 AGM_Interaction_MenuType = _this select 0;	// 0 Interaction, 1 Self Interaction
-_menuType = if(AGM_Interaction_MenuType > 1) then {AGM_Interaction_MenuType-2}else{AGM_Interaction_MenuType};
+
+_mainButtonAction = [
+	{call AGM_Interaction_fnc_hideMenu},
+	{call AGM_Interaction_fnc_hideMenu},
+	{"Default" call AGM_Interaction_fnc_openMenu},
+	{"Default" call AGM_Interaction_fnc_openMenuSelf}
+] select AGM_Interaction_MenuType;
+
+_menuType = AGM_Interaction_MenuType % 2;
 uiNamespace setVariable ["AGM_Interaction_CursorPosition", [controlNull, 0.5, 0.5, -1]];
 
 AGM_Interaction_Target = _this select 1;
@@ -62,4 +70,4 @@ if (count _actions == 0) exitWith {};//call ([AGM_Interaction_fnc_onButtonDown, 
 
 _actions call AGM_Interaction_fnc_sortOptionsByPriority;
 AGM_Interaction_Buttons = _actions;
-[{call AGM_Interaction_fnc_hideMenu;}, (_this select 2) != "", (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), _menuType == 1, _object] call AGM_Interaction_fnc_initialiseInteraction;
+[_mainButtonAction, (_this select 2) != "", (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), _menuType == 1, _object] call AGM_Interaction_fnc_initialiseInteraction;
