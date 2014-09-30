@@ -29,6 +29,7 @@ class CfgFunctions {
       class canUnloadCaptiveFromVehicle;
       class drawNameTagIcon;
       class escortCaptive;
+      class GetActions;
       class getCaptivityStatus;
       class getDoor;
       class getDown;
@@ -62,6 +63,7 @@ class CfgFunctions {
       class setCaptive;
       class setCaptivityStatus;
       class showMouseHint;
+      class showMenu;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
