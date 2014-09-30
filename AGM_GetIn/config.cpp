@@ -136,7 +136,7 @@ class CfgVehicles {
 				priority = -1.92;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
-			/*class AGM_MoveToCargo {
+			class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
 				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
@@ -151,7 +151,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.94;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-			};*/
+			};
 		};
 	};
 
@@ -228,7 +228,7 @@ class CfgVehicles {
 				priority = -1.92;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
 			};
-			/*class AGM_MoveToCargo {
+			class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
 				condition = "[vehicle player, -1] call AGM_GetIn_fnc_canGetInCargo";
 				statement = "[vehicle player, -1] call AGM_GetIn_fnc_getInCargo";
@@ -243,7 +243,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.94;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-			};*/
+			};
 		};
 	};
 };
