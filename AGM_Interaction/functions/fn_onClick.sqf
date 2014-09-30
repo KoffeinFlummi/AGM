@@ -25,20 +25,20 @@ if (_index == -1) exitWith {
 if (count _subMenu < 2) then {
 	(findDisplay 1713999) closeDisplay 1;
 	closeDialog 0;
+
+	_statement = _action select 1;
+	_condition = _action select 2;
+	_conditionShow = _action select 7;
+	_exceptions = _action select 8;//
+	_distance = _action select 9;
+
+	if ((_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_target, _player] call _condition} && {[_target, _player] call _conditionShow}) then {
+		[_target, _player] call _statement;
+	};
 } else {
 	if (_subMenu select 1 < 1) then {
 		[_subMenu select 0] call AGM_Interaction_fnc_openSubMenu;
 	} else {
 		[_subMenu select 0] call AGM_Interaction_fnc_openSubMenuSelf;
 	};
-};
-
-_statement = _action select 1;
-_condition = _action select 2;
-_conditionShow = _action select 7;
-_exceptions = _action select 8;//
-_distance = _action select 9;
-
-if ((_distance == 0 || {[AGM_Interaction_Target, _distance] call AGM_Interaction_fnc_isInRange}) && {[_target, _player] call _condition} && {[_target, _player] call _conditionShow}) then {
-	[_target, _player] call _statement;
 };
