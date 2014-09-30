@@ -78,7 +78,7 @@ player addEventHandler ["InventoryOpened", {
     hint (localize "STR_AGM_Interaction_InventoryLocked");
   };
   
-  if ((backpackContainer _curTarget == AGM_Interaction_currentInventory) && (_curTarget getVariable ["AGM_LockedInventory", false]) && (alive _curTarget)) then {
+  if ((backpackContainer _curTarget == AGM_Interaction_currentInventory) && (_curTarget getVariable ["AGM_LockedInventory", false]) && (alive _curTarget) && !(_curTarget getVariable ['AGM_Unconscious', false])) then {
     // a unit's backpack
     _override = true;
     hint format [(localize "STR_AGM_Interaction_BackpackLocked"), name _curTarget];
