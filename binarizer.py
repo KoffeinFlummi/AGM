@@ -1,18 +1,9 @@
 #!/usr/bin/env python3
 
-
-# AGM BINARIZER
-# Authors: KoffeinFlummi, sutt0n
-
 # DESCRIPTION
 # Build script for binarizing the entirety of a multi-PBO
 # project without the mind-numbing chore of confirming 20
 # different things.
-
-# PREPARATION
-# This thing is WIP and for now you need to copy some
-# folders from Arma 3 Tools to Arma 3 for it to work
-# (CfgConvert, FileBank, DSSignFile).
 
 # SELECTING PBOs
 # By default all PBOs that have modifications since the last
@@ -33,7 +24,6 @@
 # The files are then packed into a single self-extracting exe
 # using WinRAR.
 
-
 import os
 import sys
 import shutil
@@ -42,342 +32,237 @@ import winreg
 import threading
 import time
 
-if getattr(sys, "frozen", False):
-    scriptpath = os.path.dirname(sys.executable) # go one up from temp extracting folder
-else:
-    scriptpath = os.path.realpath(__file__)
+PROJECTNAME = "AGM"
+AUTHORS = ["KoffeinFlummi", "sutt0n"]
 
-if getattr(sys, "frozen", False): # script is run as .exe, ask the user for these values.
-  print("###################################")
-  print("#          AGM Binarizer          #")
-  print("# Authors: KoffeinFlummi, sutt0n  #")
-  print("###################################")
+class Binarizer:
+  def __init__(self, path):
+    self.scriptpath = path
+    self.modules = self.get_modules()
+    self.paths = {}
+    self.paths["privatekey"] = ""
+    self.paths["arma"] = self.get_arma_path()
+    self.paths["armatools"] = self.get_armatools_path()
+    self.paths["moddir"] = self.get_arma_path()
+    self.paths["modfolder"] = "@{}_dev".format(PROJECTNAME.lower())
+    if getattr(sys, "frozen", False):
+      self.prompt_paths()
 
-  print("\n# PATH TO PRIVATE KEY")
-  print("(If you don't enter anything, the PBOs will not be signed.)")
-  privatekey = input("> ")
+  def prompt_paths(self):
+    path_prompts = {
+      "privatekey": "Path to .biprivatekey file. If not provided, addon will not be signed.",
+      "arma": "Path to Arma installation. If not provided, registry value will be used.",
+      "armatools": "Path to Arma tools installation. If not provided, registry value will be used.",
+      "moddir": "Path to mod directory. If not provided, Arma path will be used.",
+      "modfolder": "Name of mod folder. If not provided, @[project]_dev will be used."
+    }
+    for k, v in path_prompts.items():
+      print("")
+      print(v)
+      inp = input("> ")
+      if inp != "":
+        self.paths[k] = inp
 
-  print("\n# ARMA INSTALLATION PATH")
-  print("(If you don't enter anything, the path will be read from the registry.)")
-  arma = input("> ")
+  def get_modules(self):
+    if len(sys.argv) > 1:
+      return sys.argv[1:]
 
-  print("\n# ARMA TOOLS INSTALLATION PATH")
-  print("(If you don't enter anything, the path will be read from the registry.)")
-  armatools = input("> ")
+    # Nothing was specifed, binarize all new PBOs.
+    root = os.path.dirname(self.scriptpath)
+    modules = []
+    for module in os.listdir(root):
+      if module[0] != "." and \
+          os.path.isdir(os.path.join(root, module)) and \
+          self.check_for_changes(module) and \
+          not os.path.exists(os.path.join(root, module, ".DONTPACK")):
+        modules.append(module)
 
-  print("\n# MOD DIRECTORY")
-  print("(If you don't enter anything, the Arma installation directory will be used.)")
-  moddir = input("> ")
+    return modules
 
-  print("\n# MOD FOLDER (including @)")
-  print("(If you don't enter anything, '@agm_dev' will be used.)")
-  modfolder = input("> ")
-  if modfolder == "":
-    modfolder = "@agm_dev"
+  def get_obsolete(self):
+    destination_path = os.path.join(
+      self.paths["moddir"], self.paths["modfolder"], "addons")
 
-  print("")
+    pbos = list(map(lambda x: x.lower(), 
+      os.listdir(destination_path)))
+    projects = list(map(lambda x: x.lower(), 
+      os.listdir(os.path.dirname(self.scriptpath))))
 
-else:
-  # Path to .biprivatekey file. If not set, addon will not be signed.
-  privatekey   = "" # if set to anything other that "" it will sign the addons
+    obsolete = []
+    for pbo in pbos:
+      if not ".".join(pbo.split(".")[:-1]) in projects:
+        obsolete.append(pbo)
 
-  # Path to Arma installation. If not set, registry values will be used.
-  arma         = ""
+    return obsolete
 
-  # Path to Arma tools. If not set, registry values will be used.
-  armatools    = ""
-
-  # Path to mod storage. If not set, Arma 3 directory will be used. Not including modfolder.
-  moddir       = ""
-
-  # Name of the mod folder. REQUIRED!
-  modfolder    = "@agm_dev"
-
-# set this to false once bohemia fixes their stuff and you don't need to manually move files from temp anymore
-movemanually = False
-
-def get_arma_path():
-  """ Get the installation directory of Arma 3 """
-  global arma
-  if bool(arma):
-    return arma
-
-  # This might throw an exception, but those will be caught outside of this function.
-  reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-  key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\arma 3")
-  return winreg.EnumValue(key,1)[1]
-
-def get_armatools_path():
-  """ Get the installation directory of the Arma 3 Tools """
-  global armatools
-  if bool(armatools):
-    return armatools
-
-  # This might throw an exception, but those will be caught outside of this function.
-  reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-  key = winreg.OpenKey(reg, r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
-
-  return os.path.dirname(winreg.EnumValue(key,0)[1])
-
-def folder_mod_time(path):
-  """ Recursively gets the latest modification date for any file in a folder and it's subfolders. """
-  if not os.path.isdir(path):
-    return os.path.getmtime(path)
-
-  maximum = os.path.getmtime(path)
-  for thingy in os.listdir(path):
-    maximum = max([folder_mod_time(os.path.join(path, thingy)), maximum])
-
-  return maximum
-
-def check_for_changes(module_name):
-  """ Checks if a folder had modifications after the last binarization. """
-  try:
-    pbo_path     = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons", module_name.lower()+".pbo")
-    project_path = os.path.join(os.path.dirname(scriptpath), module_name)
-    return folder_mod_time(project_path) > os.path.getmtime(pbo_path)
-  except: # File not found or some other weirdness
-    return True
-
-def get_modules():
-  """ Get all the folders that need binarization """
-
-  # User manually defined modules to be binarized, use those.
-  if len(sys.argv) > 1:
-    return sys.argv[1:]
-
-  # Nothing was specifed, binarize all new PBOs.
-  root = os.path.dirname(scriptpath)
-  modules = []
-  for module in os.listdir(root):
-    if module[0] != "." and os.path.isdir(os.path.join(root, module)) and check_for_changes(module) and not os.path.exists(os.path.join(root, module, ".DONTPACK")):
-      modules.append(module)
-
-  return modules
-
-def get_obsolete():
-  """ Get all the PBOs that no longer have any project folders. """
-  global moddir, modfolder, privatekey, movemanually
-
-  destination_path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "addons")
-
-  pbos = list(map(lambda x: x.lower(), os.listdir(destination_path)))
-  projects = list(map(lambda x: x.lower(), os.listdir(os.path.dirname(scriptpath))))
-
-  obsolete = []
-  for pbo in pbos:
-    if not ".".join(pbo.split(".")[:-1]) in projects:
-      obsolete.append(pbo)
-
-  return obsolete
-
-def binarize(module_name):
-  """ Binarizes the given module """
-  global moddir, modfolder, privatekey, movemanually
-
-  tempfolder        = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
-
-  addonbuilder_path = os.path.join(get_armatools_path(), "AddonBuilder", "AddonBuilder.exe")
-  source_path       = os.path.join(os.path.dirname(scriptpath), module_name)
-  destination_path  = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
-  include_path      = os.path.join(os.path.dirname(scriptpath), "include.txt")
-  final_path        = os.path.join(destination_path, module_name+".pbo")
-
-  packonly_path     = os.path.join(source_path, ".PACKONLY")
-  if os.path.exists(packonly_path):
-    temp_path       = os.path.join(os.path.dirname(scriptpath), module_name+".pbo")
-  else:
-    temp_path       = os.path.join(tempfolder, module_name+".pbo")
-
-  binarize_path     = os.path.join(get_armatools_path(), "Binarize", "binarize.exe")
-  convert_path      = os.path.join(get_armatools_path(), "CfgConvert", "CfgConvert.exe")
-  filebank_path     = os.path.join(get_armatools_path(), "FileBank", "FileBank.exe")
-  signfile_path     = os.path.join(get_armatools_path(), "DSSignFile", "DSSignFile.exe")
-
-  args = [
-    addonbuilder_path,
-    source_path,
-    destination_path,
-    "-prefix=",
-    "-project="+os.path.dirname(scriptpath),
-    "-include="+include_path,
-    "-binarize="+binarize_path
-  ]
-
-  if os.path.exists(packonly_path):
-    args.append("-packonly")
-    print("  (.PACKONLY detected, copying directly.)")
-
-  """
-  These seem to be bugged, so you will just have to copy CfgConvert, FileBank and DSSignFile
-  to your Arma 3 root directory.
-
-  "-cfgconvert="+convert_path,
-  "-filebank="+filebank_path
-  """
-
-  if privatekey != "":
-    args.append("-sign="+privatekey)
-    #args.append("-dssignfile="+signfile_path)
-
-  job = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-  out, error = job.communicate()
-
-  if movemanually:
-    job.wait()
-    print("# Binarization of "+module_name+" complete; moving to destination.")
-
-    # Delete previous pbo at that location
+  def get_arma_path(self):
     try:
-      os.remove(final_path)
+      reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+      key = winreg.OpenKey(reg, 
+              r"SOFTWARE\Wow6432Node\bohemia interactive\arma 3")
+      return winreg.EnumValue(key,1)[1]
     except:
-      pass
+      return ""
 
-    # Try to move the file
+  def get_armatools_path(self):
     try:
-      shutil.move(temp_path, final_path)
+      reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
+      key = winreg.OpenKey(reg, 
+              r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
+      return os.path.dirname(winreg.EnumValue(key,0)[1])
     except:
-      print("# Failed to move "+module_name+".")
-    else:
-      print("# "+module_name+" moved successfully.")
+      return ""
 
+  def folder_mod_time(self, path):
+    if not os.path.isdir(path):
+      return os.path.getmtime(path)
 
-def main():
-  # Check all paths.
+    maximum = os.path.getmtime(path)
+    for thingy in os.listdir(path):
+      maximum = max([self.folder_mod_time(
+        os.path.join(path, thingy)), maximum])
 
-  try:
-    path = get_arma_path()
-    assert(path != "")
-  except:
-    print("ERROR: Failed to get Arma installation path.\n")
-    if getattr(sys, "frozen", False):
-      quit = input("\nPress any key to exit ...")
-    sys.exit(1)
+    return maximum
 
-  try:
-    path = get_armatools_path()
-    assert(path != "")
-  except:
-    print("ERROR: Failed to get Addon Builder installation path.\n")
-    if getattr(sys, "frozen", False):
-      quit = input("\nPress any key to exit ...")
-    sys.exit(1)
+  def check_for_changes(self, module_name):
+    try:
+      pbo_path     = os.path.join(
+        self.paths["moddir"], self.paths["modfolder"], "Addons", module_name.lower()+".pbo")
+      project_path = os.path.join(
+        os.path.dirname(self.scriptpath), module_name)
+      return self.folder_mod_time(project_path) > os.path.getmtime(pbo_path)
+    except:
+      return True
 
-  try:
-    modules = get_modules()
-  except:
-    print("ERROR: Failed to read modules.\n")
-    if getattr(sys, "frozen", False):
-      quit = input("\nPress any key to exit ...")
-    sys.exit(1)
+  def remove_obsolete(self):
+    obsolete = self.get_obsolete()
+    if len(obsolete) == 0:
+      return False
 
-  try:
-    path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
-    if not os.path.exists(path):
-      print("# Creating Modfolder...")
-      os.makedirs(path)
-  except:
-    print("ERROR: Failed to get/create mod path.")
-    if getattr(sys, "frozen", False):
-      quit = input("\nPress any key to exit ...")
-    sys.exit(1)
-
-  # Copy FileBank, CfgConvert and DSSignFile if necessary
-  if getattr(sys, "frozen", False):
-    convert_path      = os.path.join(get_arma_path(), "CfgConvert", "CfgConvert.exe")
-    filebank_path     = os.path.join(get_arma_path(), "FileBank", "FileBank.exe")
-    signfile_path     = os.path.join(get_arma_path(), "DSSignFile", "DSSignFile.exe")
-    if not (os.path.exists(convert_path) and os.path.exists(filebank_path) and os.path.exists(signfile_path)):
-      print("# SETUP")
-      print("This seems to be the first time you're running this. We need to copy some folders (CfgConvert, FileBank, DSSignFile) from 'Arma 3 Tools' to 'Arma 3' to make this work. Are you ok with that? (y/n)")
-      if (input("> ").lower() == "y"):
-        if not os.path.exists(convert_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "CfgConvert"), os.path.join(get_arma_path(), "CfgConvert"))
-          except:
-            print("ERROR: Failed to copy CfgConvert from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-        if not os.path.exists(filebank_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "FileBank"), os.path.join(get_arma_path(), "FileBank"))
-          except:
-            print("ERROR: Failed to copy FileBank from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-        if not os.path.exists(signfile_path):
-          try:
-            shutil.copytree(os.path.join(get_armatools_path(), "DSSignFile"), os.path.join(get_arma_path(), "DSSignFile"))
-          except:
-            print("ERROR: Failed to copy DSSignFile from Arma 3 Tools to Arma 3. Please do that manually and restart.")
-            print("\nPress any key to exit ...")
-            sys.exit(1)
-
-        print("All folders moved successfully.")
-        print("")
-      else:
-        quit = input("\nPress any key to exit ...")
-        sys.exit(1)
-
-
-  # Binarize stuff.
-
-  print("######################################################")
-  print("# Tools found, starting binarization.                #")
-  print("######################################################")
-
-  obsolete = get_obsolete()
-  if len(obsolete) > 0:
-    print("\nRemoving obsolete PBOs:")
+    print("Removing obsolete PBOs:")
     print(", ".join(obsolete))
     for pbo in obsolete:
       try:
-        os.remove(os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons", pbo))
+        os.remove(os.path.join(self.paths["moddir"], self.paths["modfolder"], "addons", pbo))
       except:
         print("ERROR: Failed to remove %s." & (pbo))
-        sys.exit(1)
 
-  threads = []
+  def binarize_module(self, module_name):
+    tempfolder       = os.path.join(os.environ["USERPROFILE"], "AppData", "Local", "Temp") # hardcoded, but who cares?
+    addonbuilderpath = os.path.join(self.paths["armatools"], "AddonBuilder", "AddonBuilder.exe")
+    sourcepath       = os.path.join(os.path.dirname(self.scriptpath), module_name)
+    destinationpath  = os.path.join(self.paths["moddir"], self.paths["modfolder"], "addons")
+    includepath      = os.path.join(os.path.dirname(self.scriptpath), "include.txt")
+    finalpath        = os.path.join(destinationpath, module_name+".pbo")
+    packonlypath     = os.path.join(sourcepath, ".PACKONLY")
 
-  print("\nModules that need binarization:")
-  if (len(modules) > 0):
-    print(", ".join(modules))
-    print("")
-  else:
-    print("none.")
+    args = [
+      addonbuilderpath,
+      sourcepath,
+      os.path.join(os.path.dirname(self.scriptpath), ".build"),
+      "-prefix=",
+      "-project="+os.path.dirname(self.scriptpath),
+      "-include="+includepath
+    ]
 
-  for module in modules:
-    print("# Binarizing: " + module)
-    thread = threading.Thread(target=binarize, args=[module])
-    thread.start()
-    threads.append(thread)
-    time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
+    if os.path.exists(packonlypath):
+      args.append("-packonly")
+      print("  (.PACKONLY detected, copying directly.)")
 
-  for thread in threads:
-    thread.join()
+    if self.paths["privatekey"] != "":
+      args.append("-sign="+self.paths["privatekey"])
 
-  # Check if everything was binarized properly
-  newmodules = get_modules()
-  if len(newmodules) > 0:
-    print("\n# THE FOLLOWING MODULES FAILED TO BINARIZE:")
-    for module in newmodules:
-      print("  %s" % (module))
-  else:
-    print("\n######################################################")
-    print("# Binarization complete at " + time.strftime("%Y-%m-%d %H:%M:%S").ljust(25) + " #")
-    print("######################################################")
+    job = subprocess.Popen(args, shell=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    out, error = job.communicate()
 
-  # Convert PBO names to lowercase for linux.
-  path = os.path.join(moddir if bool(moddir) else get_arma_path(), modfolder, "Addons")
-  for filename in os.listdir(path):
     try:
-      os.rename(os.path.join(path, filename), os.path.join(path, filename.lower()))
+      shutil.move(
+        os.path.join(
+          os.path.dirname(self.scriptpath), ".build", module_name+".pbo"),
+        os.path.join(destinationpath, module_name.lower()+".pbo")
+        )
+    except:
+      print("  FAILED to move {} to modfolder.".format(module_name))
+
+  def check_paths(self):
+    assert self.paths["arma"] != ""
+    assert self.paths["armatools"] != ""
+    assert self.paths["moddir"] != ""
+    assert self.paths["modfolder"] != ""
+
+  def binarize(self):
+    modules = self.get_modules()
+    threads = []
+
+    print("Modules that need binarization:")
+    if (len(modules) > 0):
+      print(", ".join(modules))
+      print("")
+    else:
+      print("none.")
+
+    for module in modules:
+      print("# Binarizing: " + module)
+      thread = threading.Thread(target=self.binarize_module, args=[module])
+      thread.start()
+      threads.append(thread)
+      time.sleep(1) # give the threads some time, so they don't access include.txt at the same time etc.
+
+    for thread in threads:
+      thread.join()
+
+    try:
+      shutil.rmtree(os.path.join(os.path.dirname(self.scriptpath), ".build"))
     except:
       pass
 
-  if getattr(sys, "frozen", False):
-    quit = input("\nPress any key to exit ...")
+    return len(modules)
 
+  def verify(self):
+    newmodules = self.get_modules()
+    if len(newmodules) == 0:
+      return 0
+    else:
+      print("The following modules failed to binarize:")
+      print(", ".join(newmodules))
+      return len(newmodules)
+
+def main():
+  if getattr(sys, "frozen", False):
+    scriptpath = os.path.dirname(sys.executable)
+  else:
+    scriptpath = os.path.realpath(__file__)
+
+  print("{} Binarizer".format(PROJECTNAME))
+  print("Authors: {}".format(", ".join(AUTHORS)))
+  b = Binarizer(scriptpath)
+
+  try:
+    b.check_paths()
+  except:
+    print(" Failed to get tool paths. ".center(79, "="))
+    print("")
+    raise
+
+  print("")
+  print(" Tools found, binarizing. ".center(79, "="))
+  print("")
+
+  b.remove_obsolete()
+  attempted = b.binarize()
+
+  failed = b.verify()
+  succeeded = attempted - failed
+
+  result = " {} / {} modules binarized. ".format(succeeded, attempted)
+  print("")
+  print(result.center(79, "="))
+
+  if getattr(sys, "frozen", False):
+    input("\nPress any key to exit...\n")
+
+  if failed > 0:
+    sys.exit(1)
 
 if __name__ == "__main__":
   main()
