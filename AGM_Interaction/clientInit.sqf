@@ -3,6 +3,7 @@
 if (!hasInterface) exitWith {};
 
 AGM_Interaction_isOpeningDoor = false;
+AGM_Interaction_currentInventory = objNull;
 AGM_Dancing = false;
 
 addMissionEventHandler ["Draw3D", {
@@ -61,3 +62,27 @@ addMissionEventHandler ["Draw3D", {
   _team = _x getVariable ["AGM_assignedFireTeam", ""];
   if (_team != "") then {_x assignTeam _team};
 } forEach allUnits;
+
+
+player addEventHandler ["InventoryOpened", {
+  
+  private ["_curTarget", "_override"];
+  
+  _curTarget = cursorTarget;
+  AGM_Interaction_currentInventory = (_this select 1);
+  _override = false;
+  
+  if ((_curTarget == AGM_Interaction_currentInventory) && (AGM_Interaction_currentInventory getVariable ["AGM_LockedInventory", false]) && (alive AGM_Interaction_currentInventory)) then {
+    // a box or similar
+    _override = true;
+    hint (localize "STR_AGM_Interaction_InventoryLocked");
+  };
+  
+  if ((backpackContainer _curTarget == AGM_Interaction_currentInventory) && (_curTarget getVariable ["AGM_LockedInventory", false]) && (alive _curTarget)) then {
+    // a unit's backpack
+    _override = true;
+    hint format [(localize "STR_AGM_Interaction_BackpackLocked"), name _curTarget];
+  };
+  
+  _override
+}];

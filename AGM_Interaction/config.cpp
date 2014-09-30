@@ -617,7 +617,24 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.2;
       };
-
+      
+      class AGM_LockBackpack {
+        displayName = "$STR_AGM_Interaction_LockBackpack";
+        condition = "(alive (_this select 1)) && !((_this select 1) getVariable ['AGM_LockedInventory', false])";
+        statement = "(_this select 1) setVariable ['AGM_LockedInventory', true, true]";
+        showDisabled = 0;
+        priority = 2.5;
+        //icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+      };
+      class AGM_UnlockBackpack {
+        displayName = "$STR_AGM_Interaction_UnlockBackpack";
+        condition = "(alive (_this select 1)) && ((_this select 1) getVariable ['AGM_LockedInventory', false])";
+        statement = "(_this select 1) setVariable ['AGM_LockedInventory', false, true]";
+        showDisabled = 0;
+        priority = 2.5;
+        //icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+      };
+      
       /*class AGM_WeaponOnBack {
         displayName = "$STR_AGM_Interaction_WeaponOnBack";
         condition = "currentWeapon player != ''";

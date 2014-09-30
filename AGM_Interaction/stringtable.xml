@@ -720,5 +720,25 @@
       <German>Person durchsuchen</German>
       <French>Fouiller</French>
     </Key>
+    <Key ID="STR_AGM_Interaction_LockBackpack">
+      <English>Lock Backpack</English>
+      <German>Rucksack verschließen</German>
+      <French>Verrouiller le sac à dos</French>
+    </Key>
+    <Key ID="STR_AGM_Interaction_UnlockBackpack">
+      <English>Unlock Backpack</English>
+      <German>Rucksack aufschließen</German>
+      <French>Déverouiller le sac à dos</French>
+    </Key>
+    <Key ID="STR_AGM_Interaction_InventoryLocked">
+      <English>Inventory is locked</English>
+      <German>Das Inventar ist verschlossen</German>
+      <French>L'inventaire est verrouillé</French>
+    </Key>
+    <Key ID="STR_AGM_Interaction_BackpackLocked">
+      <English>Backpack of %1 is locked</English>
+      <German>Der Rucksack von %1 ist verschlossen</German>
+      <French>Le sac à dos de %1 est verroullé</French>
+    </Key>
   </Package>
 </Project>
