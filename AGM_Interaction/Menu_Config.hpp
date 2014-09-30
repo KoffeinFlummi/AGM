@@ -43,6 +43,8 @@ class AGM_Interaction_Button_Base {
   soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 };
 
+#define ICON_BORDER 0.05
+
 // Old command rose
 class AGM_Interaction_Dialog {
   idd = 1713999;
@@ -162,73 +164,73 @@ class AGM_Interaction_Dialog {
       type = 0;
       style = 48;
       colorBackground[] = {0,0,0,0};
-      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 2.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 - 2.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon1: Interaction_Icon0 {
       idc = 21;
-      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 - 1.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon2: Interaction_Icon0 {
       idc = 22;
-      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 1.25 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 - 0.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon3: Interaction_Icon0 {
       idc = 23;
-      x = "(0.5-2.0/16/2 + 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 1.25 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 + 0.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon4: Interaction_Icon0 {
       idc = 24;
-      x = "(0.5-2.0/16/2 + 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 + 1.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon5 : Interaction_Icon0 {
       idc = 25;
-      x = "(0.5-2.0/16/2 + 0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 2.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 + 0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 + 2.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon6: Interaction_Icon0 {
       idc = 26;
-      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 - 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 + 1.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon7: Interaction_Icon0 {
       idc = 27;
-      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 + 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 - 1.25 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 + 0.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon8: Interaction_Icon0 {
       idc = 28;
-      x = "(0.5-2.0/16/2 - 1.25 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 0.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 - 1.25 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 - 0.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
     class Interaction_Icon9: Interaction_Icon0 {
       idc = 29;
-      x = "(0.5-2.0/16/2 - 1.0 * 0.1) * safezoneW + safezoneX";
-      y = "(0.5-0.3/9/2 - 1.5 * 0.04) * safezoneH + safezoneY";
-      w = "0.3 / 16 * safezoneW";
-      h = "0.3 / 9 * safezoneH";
+      x = (0.5-(2.0-ICON_BORDER)/16/2 - 1.0 * 0.1) * safezoneW + safezoneX;
+      y = (0.5-(0.3-ICON_BORDER)/9/2 - 1.5 * 0.04) * safezoneH + safezoneY;
+      w = (0.3-ICON_BORDER) / 16 * safezoneW;
+      h = (0.3-ICON_BORDER) / 9 * safezoneH;
     };
 
     class Interaction_Shortcut0: AGM_Interaction_Button_Base {
