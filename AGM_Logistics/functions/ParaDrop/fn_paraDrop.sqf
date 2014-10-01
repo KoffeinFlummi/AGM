@@ -2,7 +2,6 @@
 
 // We have to spawn this function (waitUntil and sleep construction)
 _this spawn {
-	private ["_vehicle", "_fnc_smoke", "_fnc_light", "_items", "_count", "_item", "_position", "_parachute", "_smoke", "_light"];
 
 	_vehicle = _this select 0;
 
