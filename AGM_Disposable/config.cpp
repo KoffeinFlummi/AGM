@@ -97,8 +97,8 @@ class CfgWeapons {
   };*/
 
   class launch_Titan_base: Launcher_Base_F {
-    AGM_enableTopDownAttack = 1;
-    AGM_lockTargetMode = 1;
+    AGM_enableTopDownAttack = 0;
+    AGM_lockTargetMode = 0;
   };
   class launch_Titan_short_base: launch_Titan_base {
     AGM_enableTopDownAttack = 1;

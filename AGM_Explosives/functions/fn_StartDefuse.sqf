@@ -38,7 +38,7 @@ if (STANCE _unit == "Prone") then {
 	_actionToPlay = "PutDown";
 };
 
-if (player != _unit) then {
+if (call AGM_Core_fnc_player != _unit) then {
 	// If the unit is a player, call the function on the player.
 	if (isPlayer _unit) then {
 		[[_unit, _target], "AGM_Explosives_fnc_StartDefuse", _unit] call AGM_Core_fnc_execRemoteFnc;

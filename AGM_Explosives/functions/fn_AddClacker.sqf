@@ -28,7 +28,7 @@ _config = (_this select 3) select (count (_this select 3) - 1);
 
 _requiredItems = getArray(_config >> "requires");
 _hasRequired = true;
-_detonators = [player] call AGM_Explosives_fnc_getDetonators;
+_detonators = [call AGM_Core_fnc_player] call AGM_Explosives_fnc_getDetonators;
 {
 	if !(_x in _detonators) exitWith{
 		_hasRequired = false;

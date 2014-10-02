@@ -29,6 +29,7 @@ class CfgFunctions {
       class canUnloadCaptiveFromVehicle;
       class drawNameTagIcon;
       class escortCaptive;
+      class GetActions;
       class getCaptivityStatus;
       class getDoor;
       class getDown;
@@ -62,6 +63,7 @@ class CfgFunctions {
       class setCaptive;
       class setCaptivityStatus;
       class showMouseHint;
+      class showMenu;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
@@ -617,7 +619,24 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.2;
       };
-
+      
+      class AGM_LockBackpack {
+        displayName = "$STR_AGM_Interaction_LockBackpack";
+        condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
+        showDisabled = 0;
+        priority = 2.5;
+        //icon = "";
+      };
+      class AGM_UnlockBackpack {
+        displayName = "$STR_AGM_Interaction_UnlockBackpack";
+        condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
+        showDisabled = 0;
+        priority = 2.5;
+        //icon = "";
+      };
+      
       /*class AGM_WeaponOnBack {
         displayName = "$STR_AGM_Interaction_WeaponOnBack";
         condition = "currentWeapon player != ''";

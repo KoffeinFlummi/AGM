@@ -46,15 +46,17 @@ _this spawn {
 	_unit forceWalk true;
 	AGM_Explosives_TweakedAngle = 180;
 	["AGM_Explosives_Placement","OnEachFrame", {
-		if (AGM_Explosives_placer != player) exitWith {
+		private "_player";
+		_player = call AGM_Core_fnc_player;
+		if (AGM_Explosives_placer != _player) exitWith {
 			call AGM_Explosives_fnc_Place_Cancel;
 		};
 		AGM_Explosives_pfeh_running = true;
-		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
+		_pos = (ASLtoATL eyePos _player) vectorAdd (positionCameraToWorld [0,0,1] vectorDiff positionCameraToWorld [0,0,0]);
 		//_pos = _pos vectorAdd ((VectorDir AGM_Explosives_setup) vectorCrossProduct (AGM_Explosives_setup getVariable ["AGM_Offset", [0,0,0]]));
 		AGM_Explosives_Setup setPosATL _pos;
 		if (AGM_Modifier == 0) then {
-			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir player);
+			AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir _player);
 		};
 	}] call BIS_fnc_addStackedEventHandler;
 	[localize "STR_AGM_Explosives_PlaceAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;

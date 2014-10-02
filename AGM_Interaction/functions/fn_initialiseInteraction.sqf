@@ -37,18 +37,21 @@ AGM_Interaction_Shortcuts = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 if (_this select 2) then {
 	64 cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
 	AGM_Interaction_SelectedButton = 0;
-	showHUD false;
 	(findDisplay 1713999) closeDisplay 1;
-	if (player getVariable ["AGM_AcceptAction", -1] == -1) then {
+	if (_player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 0) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		player setVariable ["AGM_AcceptAction", [player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
-		player setVariable ["AGM_AcceptAction", [player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
 	[localize "STR_AGM_Interaction_MakeSelection", if (_subMenu)then{localize "STR_AGM_Interaction_Back"}else{""}, localize "STR_AGM_Interaction_ScrollHint"] call AGM_Interaction_fnc_showMouseHint;
 	((uiNamespace getVariable "AGM_Flow_Display") displayCtrl (1210)) ctrlShow _subMenu;
 }else{ // Rose
+	if (!isNull(uiNamespace getVariable "AGM_Flow_Display")) then {
+		(uiNameSpace getVariable "AGM_Flow_Display") closeDisplay 0;
+		call AGM_Interaction_fnc_hideMouseHint;
+	};
 	if !(_subMenu) then {
 		(findDisplay 1713999) closeDisplay 1;
 
@@ -72,6 +75,8 @@ if (_this select 2) then {
 	} else {
 		_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
 	};
+	
+	_count = count AGM_Interaction_Buttons;
 
 	for "_i" from 0 to 9 do {
 		_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
@@ -80,7 +85,6 @@ if (_this select 2) then {
 		_ctrlInteractionDialogIcon = _dlgInteractionDialog displayCtrl (20 + _i);
 		_ctrlInteractionDialogShortcut = _dlgInteractionDialog displayCtrl (30 + _i);
 		//_ctrlInteractionDialogBackground = _dlgInteractionDialog displayCtrl (40 + _i);
-
 		if (_i < _count) then {
 			_action = AGM_Interaction_Buttons select _i;
 			_ctrlInteractionDialog ctrlSetText (_action select 0);
