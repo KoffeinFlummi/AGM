@@ -41,6 +41,11 @@ if (count _detonators == 0) then {
 		{
 			[player, _this] call AGM_Explosives_fnc_openDetonateUI;
 		},
-		{call AGM_Interaction_fnc_hideMenu;"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
+		{
+			call AGM_Interaction_fnc_hideMenu;
+			if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
+				"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+			};
+		}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
