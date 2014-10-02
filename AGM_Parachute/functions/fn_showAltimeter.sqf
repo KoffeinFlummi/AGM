@@ -21,25 +21,29 @@ _unit = _this select 0;
 if (isNull (uiNamespace getVariable ["AGM_Altimeter", displayNull])) exitWith {};
 
 AGM_Parachute_AltimeterFnc = [uiNamespace getVariable ["AGM_Altimeter", displayNull], _unit] spawn {
-	private ["_height", "_hour", "_minute", "_second", "_decend"];
+	private ["_height", "_hour", "_minute", "_descentRate"];
 	_unit = _this select 1;
 	_height = floor ((getPosASL _unit) select 2);
 	_oldHeight =  _height;
-	_decend = 0;
+	_descentRate = 0;
 	_hour = floor daytime;
 	_minute = floor ((daytime - _hour) * 60);
 	disableSerialization;
-	private ["_HeightText", "_DecendRate", "_TimeText"];
+	private ["_HeightText", "_DecendRate", "_TimeText", "_prevTime", "_curTime"];
 	_HeightText = (_this select 0) displayCtrl 1100;
 	_DecendRate = (_this select 0) displayCtrl 1000;
 	_TimeText = (_this select 0) displayCtrl 1001;
+	_curTime = time;
+	_prevTime = _curTime;
 	while {true} do {
 		_TimeText ctrlSetText (format ["%1:%2",[_hour, 2] call AGM_Core_fnc_numberToDigitsString,[_minute, 2] call AGM_Core_fnc_numberToDigitsString]);
 		_HeightText ctrlSetText (format ["%1", _height]);
-		_DecendRate ctrlSetText (format ["%1",_decend]);
+		_DecendRate ctrlSetText (format ["%1",_descentRate]);
 		sleep 0.2;
 		_height = floor ((getPosASL _unit) select 2);
-		_decend = _oldHeight - _height;
+		_curTime = time;
+		_descentRate = floor ((_oldHeight - _height) / (_curTime - _prevTime));
 		_oldHeight = _height;
+		_prevTime = _curTime;
 	};
 };

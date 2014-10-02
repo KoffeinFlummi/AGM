@@ -1,7 +1,7 @@
 class CfgPatches {
 	class AGM_Parachute {
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"AGM_Altimeter"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core};
 		version = "0.931";
@@ -27,7 +27,7 @@ class CfgFunctions {
 class AGM_Core_Default_Keys {
 	class showAltimeter {
 		displayName = "$STR_AGM_Parachute_showAltimeter";
-		condition = "alive _player";
+		condition = "(alive _player) && {'AGM_Altimeter' in assignedItems _player}";
 		statement = "[_player] call AGM_Parachute_fnc_showAltimeter;";
 		conditionUp = "true";
 		statementUp = "call AGM_Parachute_fnc_hideAltimeter;";
@@ -40,3 +40,13 @@ class AGM_Core_Default_Keys {
 };
 
 #include "RscTitles.hpp"
+
+class CfgWeapons {
+	class ItemWatch;
+	class AGM_Altimeter:ItemWatch {
+		author = "AGM";
+		descriptionShort = "$STR_AGM_Parachute_AltimeterDescription";
+		displayName = "$STR_AGM_Parachute_AltimeterDisplayName";
+		picture = "\AGM_Parachute\UI\watch_altimeter.paa";
+	};
+};

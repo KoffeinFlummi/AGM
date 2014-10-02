@@ -4,5 +4,11 @@
     <Key ID="STR_AGM_Parachute_showAltimeter">
       <English>Altimeter</English>
     </Key>
+    <Key ID="STR_AGM_Parachute_AltimeterDisplayName">
+      <English>Altimeter Watch</English>
+    </Key>
+    <Key ID="STR_AGM_Parachute_AltimeterDescription">
+      <English>Used to show height, descent rate and the time.</English>
+    </Key>
   </Package>
 </Project>
