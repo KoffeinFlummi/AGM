@@ -71,8 +71,8 @@ class CfgFunctions
         subMenu[] = {"AGM_Explosives", 1};\
         class AGM_Detonate {\
           displayName = $STR_AGM_Explosives_Detonate;\
-          condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([player] call AGM_Explosives_fnc_getDetonators) > 0}";\
-          statement = "[player] call AGM_Explosives_fnc_openTransmitterUI;";\
+          condition = "[_player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([_player] call AGM_Explosives_fnc_getDetonators) > 0}";\
+          statement = "[_player] call AGM_Explosives_fnc_openTransmitterUI;";\
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
           showDisabled = 1;\
           priority = 2;\
@@ -105,7 +105,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_Explosives {
         displayName = $STR_AGM_Explosives_Menu;
-        condition = "!(player getVariable ['AGM_PlantingExplosive', false])";
+        condition = "!(_player getVariable ['AGM_PlantingExplosive', false])";
         statement = "";
         showDisabled = 1;
         priority = 4;
@@ -114,24 +114,24 @@ class CfgVehicles {
         //Sub-menu items
         class AGM_Detonate {
           displayName = $STR_AGM_Explosives_Detonate;
-          condition = "[player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([player] call AGM_Explosives_fnc_getDetonators) > 0}";
-          statement = "[player] call AGM_Explosives_fnc_openTransmitterUI;";
+          condition = "[_player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([_player] call AGM_Explosives_fnc_getDetonators) > 0}";
+          statement = "[_player] call AGM_Explosives_fnc_openTransmitterUI;";
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
           priority = 2;
         };
         class AGM_Place {
           displayName = $STR_AGM_Explosives_Place;
-          condition = "(vehicle player == player) and {[player] call AGM_Explosives_fnc_hasExplosives}";
-          statement = "[player] call AGM_Explosives_fnc_openPlaceUI;";
+          condition = "(vehicle _player == _player) and {[_player] call AGM_Explosives_fnc_hasExplosives}";
+          statement = "[_player] call AGM_Explosives_fnc_openPlaceUI;";
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Place_Explosive_ca.paa";
           priority = 1;
         };
         class AGM_Defuse {
           displayName = $STR_AGM_Explosives_Defuse;
-          condition = "[player] call AGM_Explosives_fnc_CanDefuse";
-          statement = "[player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
+          condition = "[_player] call AGM_Explosives_fnc_CanDefuse";
+          statement = "[_player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
           showDisabled = 0;
           icon = "AGM_Explosives\UI\defuse_ca.paa";
           priority = 0.8;

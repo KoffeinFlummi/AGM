@@ -17,7 +17,7 @@
 */
 private ["_magazine", "_hasRequiredItems","_triggerTypes", "_actions", "_detonators", "_required", "_magTriggers"];
 _magazine = _this select 0;
-_detonators = [player] call AGM_Explosives_fnc_getDetonators;
+_detonators = [call AGM_Core_fnc_player] call AGM_Explosives_fnc_getDetonators;
 
 _triggerTypes = [_magazine] call AGM_Explosives_fnc_TriggerType;
 _magTriggers = ConfigFile >> "CfgMagazines" >> _magazine >> "AGM_Triggers";
@@ -43,7 +43,7 @@ _count = 0;
 } count _triggerTypes;
 
 if (_count == 0) then {
-	[player] call AGM_Explosives_fnc_openPlaceUI;
+	[call AGM_Core_fnc_player] call AGM_Explosives_fnc_openPlaceUI;
 	[format[localize "STR_AGM_Explosives_NoTriggersAvailable", getText(configFile >> "CfgMagazines" >> _magazine >> "DisplayName")]] call AGM_Core_fnc_displayTextStructured;
 }else{
 	[
@@ -51,6 +51,6 @@ if (_count == 0) then {
 		{
 			[_this select 1, _this select 0] call AGM_Explosives_fnc_selectTrigger;
 		},
-		{[player] call AGM_Explosives_fnc_openPlaceUI;}
+		{[call AGM_Core_fnc_player] call AGM_Explosives_fnc_openPlaceUI;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
