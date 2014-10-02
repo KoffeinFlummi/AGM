@@ -40,7 +40,7 @@ class Binarizer:
     self.scriptpath = path
     self.modules = self.get_modules()
     self.paths = {}
-    self.paths["privatekey"] = ""
+    self.paths["privatekey"] = "P:\\AGM.biprivatekey"
     self.paths["arma"] = self.get_arma_path()
     self.paths["armatools"] = self.get_armatools_path()
     self.paths["moddir"] = self.get_arma_path()
@@ -90,7 +90,7 @@ class Binarizer:
 
     obsolete = []
     for pbo in pbos:
-      if not ".".join(pbo.split(".")[:-1]) in projects:
+      if not pbo.split(".")[0] in projects:
         obsolete.append(pbo)
 
     return obsolete
@@ -184,6 +184,22 @@ class Binarizer:
     except:
       print("  FAILED to move {} to modfolder.".format(module_name))
 
+    if self.paths["privatekey"] != "":
+      if os.path.exists(packonlypath):
+        bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
+          ".build")
+      else:
+        bisignlocation = os.path.join(tempfolder, PROJECTNAME)
+      bisignlocation = os.path.join(bisignlocation,
+        module_name+".pbo."+PROJECTNAME+".bisign")
+      try:
+        shutil.move(
+          bisignlocation,
+          os.path.join(destinationpath, module_name.lower()+".pbo."+PROJECTNAME.lower()+".bisign")
+          )
+      except:
+        print("  FAILED to move {}'s signature to modfolder.".format(module_name))
+
   def check_paths(self):
     assert self.paths["arma"] != ""
     assert self.paths["armatools"] != ""
@@ -223,7 +239,7 @@ class Binarizer:
     if len(newmodules) == 0:
       return 0
     else:
-      print("The following modules failed to binarize:")
+      print("\nThe following modules failed to binarize:")
       print(", ".join(newmodules))
       return len(newmodules)
 
