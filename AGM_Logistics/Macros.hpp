@@ -75,17 +75,7 @@
 		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
-	}; \
-	class AGM_ReleaseItem { \
-		displayName = "$STR_AGM_Drag_EndDrag"; \
-		distance = 4; \
-		condition = "player call AGM_Drag_fnc_isDraggingObject && {AGM_Interaction_Target == player getVariable ['AGM_carriedItem', objNull]}"; \
-		statement = "player call AGM_Drag_fnc_releaseObject"; \
-		tooltip = "Release the dragged / carried object."; \
-		exceptions[] = {"AGM_Drag_isNotDragging"}; \
-		showDisabled = 0; \
-		priority = 3; \
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
+		hotkey = "R"; \
 	};
 
 #define MACRO_NOT_DRAGABLE \

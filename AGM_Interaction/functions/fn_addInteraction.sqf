@@ -48,9 +48,8 @@ _id = (_actionsVar select 0) + 1;
 _actionIDs = _actionsVar select 1;
 _actions = _actionsVar select 2;
 
-_count = count _actions;
-_actionIDs set [_count, _id];
-_actions set [_count, [_displayName, _distance, _condition, _statement, _showDisabled, _priority]];
+_actionIDs pushBack _id;
+_actions pushBack [_displayName, _distance, _condition, _statement, _showDisabled, _priority];
 
 _object setVariable ["AGM_Interactions", [_id, _actionIDs, _actions], true];
 _id

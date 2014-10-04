@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-01 -->
+<!-- Edited with tabler - 2014-09-24 -->
 <Project name="AGM">
   <Package name="Explosives">
     <Key ID="STR_AGM_Explosives_Menu">
@@ -11,7 +11,7 @@
       <Czech>Výbušniny &gt;&gt;</Czech>
       <Italian>Esplosivi &gt;&gt;</Italian>
       <Hungarian>Explosives &gt;&gt;</Hungarian>
-      <Portuguese>Explosives &gt;&gt;</Portuguese>
+      <Portuguese>Explosivos &gt;&gt;</Portuguese>
       <Russian>Взрывчатка &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Place">
@@ -23,7 +23,7 @@
       <Czech>Položit &gt;&gt;</Czech>
       <Italian>Piazza &gt;&gt;</Italian>
       <Hungarian>Place &gt;&gt;</Hungarian>
-      <Portuguese>Place &gt;&gt;</Portuguese>
+      <Portuguese>Colocar &gt;&gt;</Portuguese>
       <Russian>Установить &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Detonate">
@@ -35,7 +35,7 @@
       <Czech>Odpálit &gt;&gt;</Czech>
       <Italian>Detona &gt;&gt;</Italian>
       <Hungarian>Detonate &gt;&gt;</Hungarian>
-      <Portuguese>Detonate &gt;&gt;</Portuguese>
+      <Portuguese>Detonar &gt;&gt;</Portuguese>
       <Russian>Подрыв &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_DetonateCode">
@@ -47,7 +47,7 @@
       <Czech>Kód výbušniny: %1</Czech>
       <Italian>Codice dell'esplosivo : %1</Italian>
       <Hungarian>Explosive code: %1</Hungarian>
-      <Portuguese>Explosive code: %1</Portuguese>
+      <Portuguese>Código do explosivo: %1</Portuguese>
       <Russian>Взрывная код: %1</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceAction">
@@ -59,7 +59,7 @@
       <Czech>Položit</Czech>
       <Italian>Piazza</Italian>
       <Hungarian>Elhelyezése</Hungarian>
-      <Portuguese>Place</Portuguese>
+      <Portuguese>Colocar</Portuguese>
       <Russian>Положить</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_CancelAction">
@@ -71,7 +71,7 @@
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
       <Hungarian>Cancel</Hungarian>
-      <Portuguese>Cancel</Portuguese>
+      <Portuguese>Cancelar</Portuguese>
       <Russian>Отмена</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_ScrollAction">
@@ -82,8 +82,8 @@
       <Italian>+ Modificatore, rotazione</Italian>
       <Czech>+ Modifier, rotates</Czech>
       <Hungarian>+ Modifier, rotates</Hungarian>
-      <Polish>+ Modifier, rotates</Polish>
-      <Portuguese>+ Modifier, rotates</Portuguese>
+      <Polish>+ modyfikator, obracanie</Polish>
+      <Portuguese>+ Modificador, rotaciona</Portuguese>
       <Russian>+ Bращать</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOn">
@@ -95,7 +95,7 @@
       <Czech>Zapnout Thor III</Czech>
       <Italian>Accendi Thor III</Italian>
       <Hungarian>Turn On Thor III</Hungarian>
-      <Portuguese>Turn On Thor III</Portuguese>
+      <Portuguese>Ativar Thor III</Portuguese>
       <Russian>Активировать Thor III</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Jammer_TurnOff">
@@ -107,7 +107,7 @@
       <Czech>Vypnout Thor III</Czech>
       <Italian>Spegni Thor III</Italian>
       <Hungarian>Turn Off Thor III</Hungarian>
-      <Portuguese>Turn Off Thor III</Portuguese>
+      <Portuguese>Desativar Thor III</Portuguese>
       <Russian>Деактивировать Thor III</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_cellphone_displayName">
@@ -119,7 +119,7 @@
       <Czech>Telefon</Czech>
       <Italian>Cellulare</Italian>
       <Hungarian>Cellphone</Hungarian>
-      <Portuguese>Cellphone</Portuguese>
+      <Portuguese>Celular</Portuguese>
       <Russian>Сотовый телефон</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_cellphone_description">
@@ -131,7 +131,7 @@
       <Czech>Používaný ke vzdálenému odpalování výbušnin</Czech>
       <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
       <Hungarian>Used to remotely trigger explosives</Hungarian>
-      <Portuguese>Used to remotely trigger explosives</Portuguese>
+      <Portuguese>Usado para acionar explosivos remotamente</Portuguese>
       <Russian>Используется для удаленного запуска взрывчатку</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_clacker_displayName">
@@ -143,7 +143,7 @@
       <Czech>M57 Odpalovací Zařízení</Czech>
       <Italian>Detonatore M57</Italian>
       <Hungarian>M57 Firing Device</Hungarian>
-      <Portuguese>M57 Firing Device</Portuguese>
+      <Portuguese>M57 Dispositivo de Detonação</Portuguese>
       <Russian>Взрыватель M57</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_clacker_description">
@@ -155,7 +155,7 @@
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
       <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
       <Hungarian>Used to remotely trigger explosives</Hungarian>
-      <Portuguese>Used to remotely trigger explosives</Portuguese>
+      <Portuguese>Usado para acionar explosivos remotamente</Portuguese>
       <Russian>Используется для удаленного запуска взрывчатку</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_M26_displayName">
@@ -167,7 +167,7 @@
       <Czech>M26 Odpalovací Zařízení</Czech>
       <Italian>Detonatore M26</Italian>
       <Hungarian>M26 Firing Device</Hungarian>
-      <Portuguese>M26 Firing Device</Portuguese>
+      <Portuguese>M26 Dispositivo de Detonação</Portuguese>
       <Russian>Взрыватель M26</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_MK16_displayName">
@@ -191,19 +191,19 @@
       <Czech>Zneškodňovací sada</Czech>
       <Italian>Kit E.O.D.</Italian>
       <Hungarian>Defusal Kit</Hungarian>
-      <Portuguese>Defusal Kit</Portuguese>
+      <Portuguese>Kit de desarme</Portuguese>
       <Russian>Разминирование комплект</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusalKit_description">
       <English>Allows defusing of explosives</English>
       <German>Erlaubt die Entschärfung von Sprengstoffen</German>
       <Spanish>Permite desactivar explosivos</Spanish>
-      <Polish>Umożliwia rozbrojenie ładunków wybuchowych</Polish>
+      <Polish>Umożliwia rozbrajanie ładunków wybuchowych</Polish>
       <French>Permet de désamorçer des explosifs</French>
       <Czech>Dovoluje zneškodňování výbušnin</Czech>
       <Italian>Consente la disattivazione degli ordigni esplosivi</Italian>
       <Hungarian>Allows defusing of explosives</Hungarian>
-      <Portuguese>Allows defusing of explosives</Portuguese>
+      <Portuguese>Permite o desarme de explosivos</Portuguese>
       <Russian>Allows defusing of explosives</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_AddToSpeedDial">
@@ -215,7 +215,7 @@
       <Czech>Přidat jako rychlou volbu</Czech>
       <Italian>Aggiungi alla selezione rapida</Italian>
       <Hungarian>Add to Speed Dial</Hungarian>
-      <Portuguese>Add to Speed Dial</Portuguese>
+      <Portuguese>Adicionar à ligação rápida</Portuguese>
       <Russian>Добавить в ускоренный набор</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Clear">
@@ -227,7 +227,7 @@
       <Czech>Čistý</Czech>
       <Italian>Libera</Italian>
       <Hungarian>Clear</Hungarian>
-      <Portuguese>Clear</Portuguese>
+      <Portuguese>Limpar</Portuguese>
       <Russian>Pассеиваться</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Dial">
@@ -239,7 +239,7 @@
       <Czech>Vytočit</Czech>
       <Italian>Composizione numero</Italian>
       <Hungarian>Dial</Hungarian>
-      <Portuguese>Dial</Portuguese>
+      <Portuguese>Discar</Portuguese>
       <Russian>Hабрать</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Up">
@@ -251,7 +251,7 @@
       <Czech>Nahoru</Czech>
       <Italian>Sopra</Italian>
       <Hungarian>Up</Hungarian>
-      <Portuguese>Up</Portuguese>
+      <Portuguese>Cima</Portuguese>
       <Russian>Поднять</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Phone_Down">
@@ -263,7 +263,7 @@
       <Czech>Dolu</Czech>
       <Italian>Sotto</Italian>
       <Hungarian>Down</Hungarian>
-      <Portuguese>Down</Portuguese>
+      <Portuguese>Baixo</Portuguese>
       <Russian>Опустить</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Cancel">
@@ -275,7 +275,7 @@
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
       <Hungarian>Cancel</Hungarian>
-      <Portuguese>Cancel</Portuguese>
+      <Portuguese>Cancelar</Portuguese>
       <Russian>Отмена</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_DetonateMenu">
@@ -287,7 +287,7 @@
       <Czech>Menu Detonace</Czech>
       <Italian>Menù di detonazione</Italian>
       <Hungarian>Detonate Menu</Hungarian>
-      <Portuguese>Detonate Menu</Portuguese>
+      <Portuguese>Menu de detonação</Portuguese>
       <Russian>Меню Подрыв</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceMenu">
@@ -299,7 +299,7 @@
       <Czech>Menu Umístění</Czech>
       <Italian>Menù di collocamento</Italian>
       <Hungarian>Place Menu</Hungarian>
-      <Portuguese>Place Menu</Portuguese>
+      <Portuguese>Menu de posicionamento</Portuguese>
       <Russian>Меню Установить</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_Defuse">
@@ -311,7 +311,7 @@
       <Czech>Zneškodnit</Czech>
       <Italian>Disinnesca</Italian>
       <Hungarian>Defuse</Hungarian>
-      <Portuguese>Defuse</Portuguese>
+      <Portuguese>Desarmar</Portuguese>
       <Russian>Обезвредить</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_DefusingExplosive">
@@ -323,7 +323,7 @@
       <Czech>Zneškodňuji Výbušninu...</Czech>
       <Italian>Esposivo in fase di disattivazione...</Italian>
       <Hungarian>Defusing Explosive...</Hungarian>
-      <Portuguese>Defusing Explosive...</Portuguese>
+      <Portuguese>Desarmando Explosivo...</Portuguese>
       <Russian>Обезвреживание...</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_timerName">
@@ -347,7 +347,7 @@
       <Czech>Čas: %1m %2s</Czech>
       <Italian>Tempo : %1m %2s</Italian>
       <Hungarian>Time: %1m %2s</Hungarian>
-      <Portuguese>Time: %1m %2s</Portuguese>
+      <Portuguese>Tempo: %1m %2s</Portuguese>
       <Russian>Tемп: %1m %2c</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_SetTime">
@@ -359,7 +359,7 @@
       <Czech>Nastavit Čas</Czech>
       <Italian>Modifica il conto alla rovescia</Italian>
       <Hungarian>Set Time</Hungarian>
-      <Portuguese>Set Time</Portuguese>
+      <Portuguese>Configurar Tempo</Portuguese>
       <Russian>Xронометр</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_TriggerMenu">
@@ -371,7 +371,7 @@
       <Czech>Zvolit Detonátor</Czech>
       <Italian>Seleziona un Attivatore</Italian>
       <Hungarian>Select a Trigger</Hungarian>
-      <Portuguese>Select a Trigger</Portuguese>
+      <Portuguese>Selecionar um Gatilho</Portuguese>
       <Russian>Выберите</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_SelectTrigger">
@@ -383,7 +383,7 @@
       <Czech>Zvolit</Czech>
       <Italian>Seleziona</Italian>
       <Hungarian>Select</Hungarian>
-      <Portuguese>Select</Portuguese>
+      <Portuguese>Selecionar</Portuguese>
       <Russian>Выбрать защелка</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_PressurePlate">
@@ -395,7 +395,7 @@
       <Czech>Nášlapná nástraha</Czech>
       <Italian>Piastra a Pressione</Italian>
       <Hungarian>Rátaposás</Hungarian>
-      <Portuguese>Pressure Plate</Portuguese>
+      <Portuguese>Placa de pressão</Portuguese>
       <Russian>Давление</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_TripWire">
@@ -407,7 +407,7 @@
       <Czech>Nástražný drát</Czech>
       <Italian>Filo a Inciampo</Italian>
       <Hungarian>Botlódrót</Hungarian>
-      <Portuguese>Tripwire</Portuguese>
+      <Portuguese>Linha de tração</Portuguese>
       <Russian>Натяжной</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_IRSensor">
@@ -419,7 +419,7 @@
       <Czech>IR Značkovač</Czech>
       <Italian>Sensore IR</Italian>
       <Hungarian>IR</Hungarian>
-      <Portuguese>IV Sensor</Portuguese>
+      <Portuguese>Sensor IV</Portuguese>
       <Russian>ИК</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_NoTriggersAvailable">
@@ -431,7 +431,7 @@
       <Czech>Žádný detonátor k dispozici pro %1</Czech>
       <Italian>Nessun attivatore disponibile per %1</Italian>
       <Hungarian>No triggers available for %1</Hungarian>
-      <Portuguese>No triggers available for %1</Portuguese>
+      <Portuguese>Nenhum gatilho disponível para %1</Portuguese>
       <Russian>Нет защелка доступны для %1</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_SLAME_IRSensor">
@@ -443,7 +443,7 @@
       <Czech>IR Značkovač (Výbuch stranou)</Czech>
       <Italian>Sensore IR (Attacco laterale)</Italian>
       <Hungarian>IR Sensor (Side Attack)</Hungarian>
-      <Portuguese>Sensor infravermelho (Side Attack)</Portuguese>
+      <Portuguese>Sensor infravermelho (ataque lateral)</Portuguese>
       <Russian>ИК (боковая атака)</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_SLAME_Magnetic">
@@ -455,7 +455,7 @@
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
       <Italian>Sensore Magnetico di Prossimità (Attacco inferiore)</Italian>
       <Hungarian>Mágneses (Bottom Attack)</Hungarian>
-      <Portuguese>Influência magnética (Bottom Attack)</Portuguese>
+      <Portuguese>Influência magnética (ataque inferior)</Portuguese>
       <Russian>Магнитный (дно атака)</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_NoExplosivesAvailable">
@@ -466,9 +466,17 @@
       <Italian>Nessun esplosivo sul sensore.</Italian>
       <Czech>No explosives on trigger.</Czech>
       <Hungarian>No explosives on trigger.</Hungarian>
-      <Polish>No explosives on trigger.</Polish>
-      <Portuguese>No explosives on trigger.</Portuguese>
+      <Polish>Brak ładunków na zapalnik.</Polish>
+      <Portuguese>Nenhum explosivo no gatilho.</Portuguese>
       <Russian>Нет взрывчатки на курок.</Russian>
+    </Key>
+    <Key ID="STR_AGM_Explosives_DeadManSwitch_displayName">
+      <English>Dead Man's Switch</English>
+      <French>Mise à feu par relâchement de pression</French>
+    </Key>
+    <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
+      <English>Used to remotely trigger explosives when released.</English>
+      <French>Déclenche la mise à feu d'un explosif lorsqu'il est libéré.</French>
     </Key>
   </Package>
 </Project>

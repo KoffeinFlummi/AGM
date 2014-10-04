@@ -75,7 +75,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
     };
     _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform player) >> "AGM_GForceCoef");
 
-    if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical")}) then {
+    if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(player getVariable ["AGM_Unconscious", false])}}) then {
       [player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 

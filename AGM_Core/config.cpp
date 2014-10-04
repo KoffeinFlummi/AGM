@@ -191,6 +191,7 @@ class CfgFunctions {
       class changeProjectileDirection;
       class claim;
       class closeDialogIfTargetMoves;
+      class codeToLetter;
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
@@ -206,15 +207,16 @@ class CfgFunctions {
       class getConfigGunner;
       class getMarkerType;
       class getNumberFromMissionSQM;
+      class getPitchBankYaw;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
       class getTargetObject;
+      class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
-      class getTurretCommander;
-      class getTurretGunner;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
@@ -227,12 +229,14 @@ class CfgFunctions {
       class isInBuilding;
       class isMedic;
       class isTurnedOut;
+      class letterToCode;
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
       class owned;
+      class player;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
@@ -245,11 +249,13 @@ class CfgFunctions {
       class setKeyDefault;
       class setName;
       class setParameter;
+      class setPitchBankYaw;
       class stringToColoredText;
       class subString;
       class toBin;
       class toBitmask;
       class toHex;
+      class toNumber;
     };
   };
   class AGM_Debug {

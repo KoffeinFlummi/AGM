@@ -44,4 +44,15 @@ _actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosive
 	] call AGM_Interaction_fnc_AddSelectableItem;
 } foreach _list;
 
-[_actions,{[_this] call AGM_Explosives_fnc_openTriggerSelectionUI;},{call AGM_Interaction_fnc_hideMenu;"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}] call AGM_Interaction_fnc_openSelectMenu;
+[
+	_actions,
+	{
+		[_this] call AGM_Explosives_fnc_openTriggerSelectionUI;
+	},
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
+			"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+		};
+	}
+] call AGM_Interaction_fnc_openSelectMenu;

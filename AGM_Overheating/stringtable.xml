@@ -11,6 +11,7 @@
       <French>Deuxième canon</French>
       <Russian>Запасной ствол</Russian>
       <Hungarian>Tartalék cső</Hungarian>
+      <Portuguese>Cano Reserva</Portuguese>
       <Italian>Canna di ricambio</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SpareBarrelDescription">
@@ -22,6 +23,7 @@
       <French>Utilisé pour changer de canon.</French>
       <Russian>Используется для смены ствола.</Russian>
       <Hungarian>Cső kicseréléséhez.</Hungarian>
+      <Portuguese>Use para trocar o cano/estriamento.</Portuguese>
       <Italian>Usata per cambiare la canna.</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponJammed">
@@ -33,6 +35,7 @@
       <French>Arme enrayée</French>
       <Russian>Оружие заклинило!</Russian>
       <Hungarian>Elakadt a fegyver!</Hungarian>
+      <Portuguese>Arma travada!</Portuguese>
       <Italian>Arma inceppata!</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_UnjamWeapon">
@@ -44,6 +47,7 @@
       <French>Désenrayer l'arme</French>
       <Russian>Исправить клин оружия.</Russian>
       <Hungarian>Hárítsd el az akadályt!</Hungarian>
+      <Portuguese>Destravar arma</Portuguese>
       <Italian>Ripulisci l'arma</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_WeaponUnjammed">
@@ -55,6 +59,7 @@
       <French>Arme désenrayée</French>
       <Russian>Оружие исправлено</Russian>
       <Hungarian>Akadály elhárítva!</Hungarian>
+      <Portuguese>Arma destravada</Portuguese>
       <Italian>Arma pronta al fuoco</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwapBarrel">
@@ -66,6 +71,7 @@
       <French>Changer de canon</French>
       <Russian>Сменить ствол</Russian>
       <Hungarian>Cserélj csövet!</Hungarian>
+      <Portuguese>Substituir cano</Portuguese>
       <Italian>Sostiuisci la canna</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappingBarrel">
@@ -77,6 +83,7 @@
       <French>Changement du canon...</French>
       <Russian>Смена ствола...</Russian>
       <Hungarian>Cső cserélése...</Hungarian>
+      <Portuguese>Substituindo cano...</Portuguese>
       <Italian>Sto sostituendo la canna ...</Italian>
     </Key>
     <Key ID="STR_AGM_Overheating_SwappedBarrel">
@@ -88,6 +95,7 @@
       <French>Canon changé</French>
       <Russian>Ствол сменен</Russian>
       <Hungarian>Cső kicserélve!</Hungarian>
+      <Portuguese>Cano substituído</Portuguese>
       <Italian>Canna sostituita</Italian>
     </Key>
 
@@ -100,6 +108,7 @@
       <French>Vérifier la température de l'arme</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu zbraně</Czech>
+      <Portuguese>Conferir temperatura da arma</Portuguese>
       <Italian>Controlla la temperatura della canna</Italian>
     </Key>
 
@@ -111,6 +120,7 @@
       <French>Vérifier la température</French>
       <Hungarian>Hőmérséklet ellenőrzése</Hungarian>
       <Czech>Zjistit teplotu</Czech>
+      <Portuguese>Conferir temperatura</Portuguese>
       <Italian>Controlla la temperatura</Italian>
     </Key>
 
@@ -122,6 +132,7 @@
       <French>Vérification de la température ...</French>
       <Hungarian>Hőmérséklet ellenőrzése...</Hungarian>
       <Czech>Zjišťuju teplotu ...</Czech>
+      <Portuguese>Conferindo temperatura ...</Portuguese>
       <Italian>Sto controllando la temperatura ...</Italian>
     </Key>
 
@@ -133,6 +144,7 @@
       <French>Température</French>
       <Hungarian>Hőmérséklet</Hungarian>
       <Czech>Teplota</Czech>
+      <Portuguese>Temperatura</Portuguese>
       <Italian>Temperatura</Italian>
     </Key>
 

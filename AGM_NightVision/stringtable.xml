@@ -11,6 +11,7 @@
       <French>Luminosité : %1</French>
       <Russian>Контраст: </Russian>
       <Hungarian>Fényerő: %1</Hungarian>
+      <Portuguese>Luminosidade: %1</Portuguese>
       <Italian>Luminosità: %1</Italian>
     </Key>
 
@@ -23,6 +24,7 @@
       <French>Augmenter la luminosité des JVN</French>
       <Russian>Увеличить яркость ПНВ</Russian>
       <Hungarian>Fényerő növelése</Hungarian>
+      <Portuguese>Aumentar Luminosidade do EVN</Portuguese>
       <Italian>Aumenta la luminosità dell'NVG</Italian>
     </Key>
     <Key ID="STR_AGM_NightVision_DecreaseNVGBrightness">
@@ -34,6 +36,7 @@
       <French>Baisser la luminosité des JVN</French>
       <Russian>Уменьшить яркость ПНВ</Russian>
       <Hungarian>Fényerő csökkentése</Hungarian>
+      <Portuguese>Diminuir Luminosidade do EVN</Portuguese>
       <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>
 

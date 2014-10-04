@@ -13,7 +13,7 @@
  * ID of the action (used to remove it later).
  */
 
-private ["_unit", "_action", "_condition", "_statement", "_name", "_actionsVar", "_actionID", "_actions", "_id", "_actionIDs", "_count", "_addAction"];
+private ["_unit", "_action", "_condition", "_statement", "_name", "_actionsVar", "_actionID", "_actions", "_id", "_actionIDs", "_addAction"];
 
 _unit = _this select 0;
 _action = _this select 1;
@@ -39,9 +39,8 @@ _id = (_actions select 0) + 1;
 _actionIDs = _actions select 1;
 _actions = _actions select 2;
 
-_count = count _actions;
-_actionIDs set [_count, _id];
-_actions set [_count, [_condition, _statement]];
+_actionIDs pushBack _id;
+_actions pushBack [_condition, _statement];
 
 // first action to add, unit needs addAction command
 if (_actionID == -1) then {

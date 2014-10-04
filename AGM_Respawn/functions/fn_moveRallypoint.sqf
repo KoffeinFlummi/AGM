@@ -4,7 +4,12 @@ _this spawn {
 	_unit = _this select 0;
 	_side = _this select 1;
 
-	_rallypoint = [objNull, AGM_RallypointExit_West, AGM_RallypointExit_East, AGM_RallypointExit_Independent] select ([west, east, independent] find _side) + 1;
+	_rallypoint = [
+		objNull,
+		missionNamespace getVariable ["AGM_RallypointExit_West", objNull],
+		missionNamespace getVariable ["AGM_RallypointExit_East", objNull],
+		missionNamespace getVariable ["AGM_RallypointExit_Independent", objNull]
+	] select ([west, east, independent] find _side) + 1;
 
 	if (isNull _rallypoint) exitWith {};
 

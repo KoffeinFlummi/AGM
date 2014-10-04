@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-11 -->
 <Project name="AGM">
   <Package name="RealisticNames">
     <Key ID="STR_AGM_RealisticNames_HMG_01_Name">
@@ -325,7 +326,6 @@
       <Hungarian>HEMTT (szerelő-jármű)</Hungarian>
       <Italian>HEMTT Riparatore</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_MRAP_03_Name">
       <English>Fennek</English>
       <German>Fennek</German>
@@ -470,7 +470,6 @@
       <Hungarian>KamAZ (egészségügyi)</Hungarian>
       <Italian>KamAZ Medico</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_MRAP_02_Name">
       <English>Punisher</English>
       <German>Punisher</German>
@@ -556,16 +555,16 @@
       <Italian>ZSU-35 Tigris</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_APC_Wheeled_02_rcws_Name">
-      <English>ARMA</English>
-      <German>ARMA</German>
-      <Spanish>ARMA</Spanish>
-      <Polish>ARMA</Polish>
-      <Czech>ARMA</Czech>
-      <French>ARMA</French>
-      <Russian>ARMA</Russian>
-      <Portuguese>ARMA</Portuguese>
-      <Hungarian>ARMA</Hungarian>
-      <Italian>ARMA</Italian>
+      <English>Otokar ARMA</English>
+      <German>Otokar ARMA</German>
+      <Spanish>Otokar ARMA</Spanish>
+      <Polish>Otokar ARMA</Polish>
+      <Czech>Otokar ARMA</Czech>
+      <French>Otokar ARMA</French>
+      <Russian>Otokar ARMA</Russian>
+      <Portuguese>Otokar ARMA</Portuguese>
+      <Hungarian>Otokar ARMA</Hungarian>
+      <Italian>Otokar ARMA</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Truck_03_transport_Name">
       <English>Typhoon Transport</English>
@@ -651,7 +650,6 @@
       <Hungarian>Typhoon (egészségügyi)</Hungarian>
       <Italian>Typhoon medico</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_Heli_Attack_01_Name">
       <English>RAH-66 Comanche</English>
       <German>RAH-66 Comanche</German>
@@ -796,7 +794,6 @@
       <Hungarian>Jak-130</Hungarian>
       <Italian>Yak-130</Italian>
     </Key>
-
     <Key ID="STR_AGM_RealisticNames_SLAM_Name">
       <English>M4A1 SLAM</English>
       <German>M4A1 SLAM</German>
@@ -865,7 +862,7 @@
       <Czech>M83 Dýmový Granát (Bílá)</Czech>
       <French>M83 Grenade fumigène (Blanche)</French>
       <Russian>M83 дымовой гранаты (Белый)</Russian>
-      <Portuguese>M83 Granada de fumaça (Branco)</Portuguese>
+      <Portuguese>M83 Granada de fumaça (Branca)</Portuguese>
       <Hungarian>M83 füstgránát (Fehér)</Hungarian>
       <Italian>M83 Granata fumogena (Bianco)</Italian>
     </Key>
@@ -902,7 +899,7 @@
       <French>M18 Grenade fumigène (Orange)</French>
       <Russian>M18 дымовой гранаты (Оранжевый)</Russian>
       <Portuguese>M18 Granada de fumaça (Laranja)</Portuguese>
-      <Hungarian>M18 füstgránát (Narancs)</Hungarian>
+      <Hungarian>M18 füstgránát (Narancssárga)</Hungarian>
       <Italian>M18 Granata fumogena (Arancione)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellPurple_Name">
@@ -913,8 +910,8 @@
       <Czech>M18 Dýmový Granát (Fialové)</Czech>
       <French>M18 Grenade fumigène (Pourpre)</French>
       <Russian>M18 дымовой гранаты (Пурпурный)</Russian>
-      <Portuguese>M18 Granada de fumaça (Roxo)</Portuguese>
-      <Hungarian>M18 füstgránát (Bíbor)</Hungarian>
+      <Portuguese>M18 Granada de fumaça (Roxa)</Portuguese>
+      <Hungarian>M18 füstgránát (Lila)</Hungarian>
       <Italian>M18 Granata fumogena (Viola)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellRed_Name">
@@ -925,8 +922,8 @@
       <Czech>M18 Dýmový Granát (Červená)</Czech>
       <French>M18 Grenade fumigène (Rouge)</French>
       <Russian>M18 дымовой гранаты (Красный)</Russian>
-      <Portuguese>M18 Granada de fumaça (Vermelho)</Portuguese>
-      <Hungarian>M18 füstgránát (Vörös)</Hungarian>
+      <Portuguese>M18 Granada de fumaça (Vermelha)</Portuguese>
+      <Hungarian>M18 füstgránát (Piros)</Hungarian>
       <Italian>M18 Granata fumogena (Rosso)</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SmokeShellYellow_Name">
@@ -937,7 +934,7 @@
       <Czech>M18 Dýmový Granát (Žlutá)</Czech>
       <French>M18 Grenade fumigène (Jaune)</French>
       <Russian>M183 дымовой гранаты (Жёлтые)</Russian>
-      <Portuguese>M18 Granada de fumaça (Amarelo)</Portuguese>
+      <Portuguese>M18 Granada de fumaça (Amarela)</Portuguese>
       <Hungarian>M18 füstgránát (Sárga)</Hungarian>
       <Italian>M18 Granata fumogena (Giallo)</Italian>
     </Key>
