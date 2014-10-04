@@ -746,7 +746,7 @@ class CfgVehicles {
         };
       };
       class EnableOverdosing {
-        displayName = "Enable Overdosing?"
+        displayName = "Enable Overdosing?";
         description = "Enable morphine overdoses? Default: Yes";
         typeName = "BOOL";
         class values {
