@@ -29,7 +29,7 @@
     <Key ID="STR_AGM_Hearing_Earbuds_On">
       <English>Earplugs in</English>
       <German>Ohrenstöpsel drinnen</German>
-      <Spanish>Tapones colocados</Spanish>
+      <Spanish>Colocar tapones</Spanish>
       <Polish>Załóż stopery</Polish>
       <Czech>Špunty v uších</Czech>
       <Russian>Беруши надеты</Russian>
@@ -39,6 +39,30 @@
       <Italian>Indossa i tappi auricolari</Italian>
     </Key>
     <Key ID="STR_AGM_Hearing_Earbuds_Off">
+      <English>Earplugs out</English>
+      <German>Ohrenstöpsel raus</German>
+      <Spanish>Quitar tapones</Spanish>
+      <Polish>Zdejmij stopery</Polish>
+      <Czech>Špunty venku z uší</Czech>
+      <Russian>Беруши сняты</Russian>
+      <French>Bouchons enlevés</French>
+      <Hungarian>Füldugó kivéve</Hungarian>
+      <Portuguese>Protetores retirados</Portuguese>
+      <Italian>Levati i tappi auricolari</Italian>
+    </Key>
+    <Key ID="STR_AGM_Hearing_Earbuds_Are_On">
+      <English>Earplugs in</English>
+      <German>Ohrenstöpsel drinnen</German>
+      <Spanish>Tapones colocados</Spanish>
+      <Polish>Załóż stopery</Polish>
+      <Czech>Špunty v uších</Czech>
+      <Russian>Беруши надеты</Russian>
+      <French>Bouchons mis</French>
+      <Hungarian>Füldugó berakva</Hungarian>
+      <Portuguese>Protetores colocados</Portuguese>
+      <Italian>Indossa i tappi auricolari</Italian>
+    </Key>
+    <Key ID="STR_AGM_Hearing_Earbuds_Are_Off">
       <English>Earplugs out</English>
       <German>Ohrenstöpsel raus</German>
       <Spanish>Tapones quitados</Spanish>
