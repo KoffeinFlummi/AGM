@@ -48,7 +48,7 @@ _parents = [configFile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 _result = [_object, _parents, [], [], missionConfigFile >> "CfgVehicles", true, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions;
 _actions = ([_object, _parents, _result select 0, _result select 1,configFile >> "CfgVehicles", false, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions) select 0;
 
-if (AGM_Interaction_MenuType > 1) then {
+if (AGM_Interaction_MenuType < 2) then {
 	_customActions = (_object getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;
 	for "_index" from 0 to (count _customActions - 1) do {
 		private ["_customAction", "_displayName", "_distance","_condition","_statement","_showDisabled", "_priority"];
