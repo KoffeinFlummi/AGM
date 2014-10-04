@@ -185,6 +185,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor";
     default = 1;
   };
+  class showPlayerNamesOnlyOnKeyPress {
+    displayName = "$STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress";
+    default = 0;
+  };
   class showPlayerRanks {
     displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
     default = 1;
@@ -201,7 +205,6 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Interaction_PlayerNamesViewDistance = 5;
-  AGM_Interaction_ShowNamesOnKeypress = 0;
   AGM_Interaction_ShowNamesForAI = 0;
   AGM_Interaction_PlayerNamesMaxAlpha = 0.8;
   AGM_Modifier = 0;
@@ -411,7 +414,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.5;
       };
-      
+
       class AGM_FriskPerson {
         displayName = "$STR_AGM_Interaction_FriskPerson";
         distance = 2;
@@ -419,7 +422,7 @@ class CfgVehicles {
         statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
         showDisabled = 0;
         priority = 3;
-        //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";  
+        //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
       };
     };
 
@@ -631,7 +634,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.2;
       };
-      
+
       class AGM_LockBackpack {
         displayName = "$STR_AGM_Interaction_LockBackpack";
         condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
@@ -648,7 +651,7 @@ class CfgVehicles {
         priority = 2.5;
         //icon = "";
       };
-      
+
       /*class AGM_WeaponOnBack {
         displayName = "$STR_AGM_Interaction_WeaponOnBack";
         condition = "currentWeapon player != ''";
@@ -878,22 +881,6 @@ class CfgVehicles {
         description = "Distance in meters at which player names are shown. Default: 5";
         typeName = "NUMBER";
         defaultValue = 5;
-      };
-      class ShowNamesOnKeypress {
-        displayName = "Show nametags only on keypress?";
-        description = "Hide the name tags when the show key is not pressed? Default: No";
-        typeName = "BOOL";
-        class values {
-          class Yes {
-            name = "Yes";
-            value = 1;
-          };
-          class No {
-            default = 1;
-            name = "No";
-            value = 0;
-          };
-        };
       };
       class ShowNamesForAI {
         displayName = "Show nametags for AI?";
