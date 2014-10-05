@@ -78,6 +78,10 @@
       <Hungarian>Nyitott ajtó</Hungarian>
       <Polish>Odblokowano drzwi</Polish>
     </Key>
+    <Key ID="STR_AGM_Interaction_ShowNames">
+      <English>Show Names</English>
+      <Spanish>Mostrar nombres</Spanish>
+    </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
       <German>Gruppe beitreten</German>
@@ -386,6 +390,10 @@
       <Italian>Mostra i nomi solo se puntati (richiede i nomi dei giocatori abilitati)</Italian>
       <Portuguese>Mostrar nome de jogador somente no cursor (requer nome de jogadores)</Portuguese>
       <Hungarian>Játékosok nevének mutatása (névcímke szükséges)</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
+      <English>Show player name only on keypress (requires player names)</English>
+      <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
