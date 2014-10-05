@@ -40,7 +40,7 @@ class Binarizer:
     self.scriptpath = path
     self.modules = self.get_modules()
     self.paths = {}
-    self.paths["privatekey"] = "P:\\AGM.biprivatekey"
+    self.paths["privatekey"] = ""
     self.paths["arma"] = self.get_arma_path()
     self.paths["armatools"] = self.get_armatools_path()
     self.paths["moddir"] = self.get_arma_path()
