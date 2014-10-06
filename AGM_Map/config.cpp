@@ -85,6 +85,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 100;
         subMenu[] = {"AGM_MapTools", 1};
+        enableInside = 1;
 
         class AGM_MapToolsHide {
           displayName = "$STR_AGM_Map_MapToolsHide";
@@ -93,6 +94,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 5;
+          enableInside = 1;
         };
         class AGM_MapToolsShowNormal {
           displayName = "$STR_AGM_Map_MapToolsShowNormal";
@@ -101,6 +103,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 4;
+          enableInside = 1;
         };
         class AGM_MapToolsShowSmall {
           displayName = "$STR_AGM_Map_MapToolsShowSmall";
@@ -109,6 +112,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 3;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignNorth {
           displayName = "$STR_AGM_Map_MapToolsAlignNorth";
@@ -117,6 +121,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 2;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignCompass {
           displayName = "$STR_AGM_Map_MapToolsAlignCompass";
@@ -125,6 +130,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 1;
+          enableInside = 1;
         };
         class AGM_MapGpsShow {
           displayName = "$STR_AGM_Map_MapGpsShow";
@@ -133,6 +139,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
         class AGM_MapGpsHide {
           displayName = "$STR_AGM_Map_MapGpsHide";
@@ -141,6 +148,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
       };
     };
