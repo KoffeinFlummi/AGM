@@ -119,6 +119,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.90;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
@@ -127,6 +128,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.91;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
@@ -135,6 +137,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
@@ -143,6 +146,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.93;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
@@ -151,6 +155,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.94;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+				enableInside = 1;
 			};
 		};
 	};
@@ -211,6 +216,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.90;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToGunner {
 				displayName = "$STR_AGM_MoveToGunner";
@@ -219,6 +225,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.91;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCommander {
 				displayName = "$STR_AGM_MoveToCommander";
@@ -227,6 +234,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.92;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCargo {
 				displayName = "$STR_AGM_MoveToCargo";
@@ -235,6 +243,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.93;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+				enableInside = 1;
 			};
 			class AGM_MoveToCoDriver {
 				displayName = "$STR_AGM_MoveToCoDriver";
@@ -243,6 +252,7 @@ class CfgVehicles {
 				showDisabled = 0;
 				priority = -1.94;
 				icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+				enableInside = 1;
 			};
 		};
 	};

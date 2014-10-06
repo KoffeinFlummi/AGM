@@ -48,6 +48,13 @@ _parents = [configFile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_re
 _result = [_object, _parents, [], [], missionConfigFile >> "CfgVehicles", true, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions;
 _actions = ([_object, _parents, _result select 0, _result select 1,configFile >> "CfgVehicles", false, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions) select 0;
 
+// add self interactions of the vehicle
+if (_menuType == 1 && {_player != _vehicle}) then {
+	_parents = [configFile >> "CfgVehicles" >> typeOf _vehicle, true] call BIS_fnc_returnParents;
+	_result = [_vehicle, _parents, [], [], missionConfigFile >> "CfgVehicles", true, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions;
+	_actions = _actions + (([_vehicle, _parents, _result select 0, _result select 1,configFile >> "CfgVehicles", false, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions) select 0);
+};
+
 if (AGM_Interaction_MenuType < 2) then {
 	_customActions = (_object getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;
 	for "_index" from 0 to (count _customActions - 1) do {
@@ -62,6 +69,25 @@ if (AGM_Interaction_MenuType < 2) then {
 
 		if ((_showDisabled || {[_object, _player] call _condition}) && {[_object, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
 			_actions pushBack [_displayName, _statement, _condition, _priority, [], DEFAULT_ICON, "", {true}, [], _distance, ""];
+		};
+	};
+
+	// add custom self interactions of the vehicle
+	if (_menuType == 1 && {_player != _vehicle}) then {
+		_customActions = (_vehicle getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;
+		for "_index" from 0 to (count _customActions - 1) do {
+			private ["_customAction", "_displayName", "_distance","_condition","_statement","_showDisabled", "_priority"];
+			_customAction = _customActions select _index;
+			_displayName = _customAction select 0;
+			_distance = _customAction select 1;
+			_condition = _customAction select 2;
+			_statement = _customAction select 3;
+			_showDisabled = _customAction select 4;
+			_priority = _customAction select 5;
+
+			if ((_showDisabled || {[_vehicle, _player] call _condition}) && {[_vehicle, _distance] call AGM_Interaction_fnc_isInRange || {_distance == 0}}) then {
+				_actions pushBack [_displayName, _statement, _condition, _priority, [], DEFAULT_ICON, "", {true}, [], _distance, ""];
+			};
 		};
 	};
 };

@@ -435,6 +435,7 @@ class CfgVehicles {
         priority = 3.2;
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 1};
+        enableInside = 1;
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -443,6 +444,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 2.4;
           icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
+          enableInside = 1;
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -451,6 +453,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 2.3;
           icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
+          enableInside = 1;
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -459,6 +462,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 2.2;
           icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
+          enableInside = 1;
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -467,6 +471,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 2.1;
           icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
+          enableInside = 1;
         };
 
         class AGM_LeaveTeam {
@@ -476,6 +481,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 2.5;
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
+          enableInside = 1;
         };
 
         class AGM_BecomeLeader {
@@ -485,6 +491,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 1.0;
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
+          enableInside = 1;
         };
         class AGM_LeaveGroup {
           displayName = "$STR_AGM_Interaction_LeaveGroup";
@@ -493,6 +500,7 @@ class CfgVehicles {
           showDisabled = 1;
           priority = 1.2;
           icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+          enableInside = 1;
         };
       };
 
@@ -642,6 +650,8 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.5;
         //icon = "";
+        hotkey = "L";
+        enableInside = 1;
       };
       class AGM_UnlockBackpack {
         displayName = "$STR_AGM_Interaction_UnlockBackpack";
@@ -650,6 +660,8 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.5;
         //icon = "";
+        hotkey = "L";
+        enableInside = 1;
       };
 
       /*class AGM_WeaponOnBack {

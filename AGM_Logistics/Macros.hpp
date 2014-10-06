@@ -256,4 +256,5 @@
 		conditionShow = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_Paradrop') == 1"; \
 		statement = "[vehicle player] call AGM_Paradrop_fnc_paradrop"; \
 		priority = 1; \
+		enableInside = 1; \
 	};
