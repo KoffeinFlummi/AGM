@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-24 -->
+<!-- Edited with tabler - 2014-10-07 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -81,6 +81,7 @@
     <Key ID="STR_AGM_Interaction_ShowNames">
       <English>Show Names</English>
       <Spanish>Mostrar nombres</Spanish>
+      <French>Afficher noms</French>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -394,6 +395,7 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
       <English>Show player name only on keypress (requires player names)</English>
       <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
+      <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
