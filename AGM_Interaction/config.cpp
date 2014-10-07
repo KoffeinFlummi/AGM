@@ -271,6 +271,7 @@ class CfgVehicles {
         priority = 3.2;
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 0};
+        hotkey = "M";
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -280,6 +281,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           priority = 2.4;
+          hotkey = "R";
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -289,6 +291,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           priority = 2.3;
+          hotkey = "G";
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -298,6 +301,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           priority = 2.2;
+          hotkey = "B";
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -307,6 +311,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           priority = 2.1;
+          hotkey = "Y";
         };
 
         class AGM_LeaveTeam {
@@ -317,6 +322,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           priority = 2.5;
+          hotkey = "N";
         };
       };
 
@@ -337,6 +343,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2.6;
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
+        hotkey = "J";
       };
 
       class AGM_GetDown {
@@ -436,6 +443,7 @@ class CfgVehicles {
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 1};
         enableInside = 1;
+        hotkey = "M";
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -445,6 +453,7 @@ class CfgVehicles {
           priority = 2.4;
           icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           enableInside = 1;
+          hotkey = "R";
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -454,6 +463,7 @@ class CfgVehicles {
           priority = 2.3;
           icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           enableInside = 1;
+          hotkey = "G";
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -463,6 +473,7 @@ class CfgVehicles {
           priority = 2.2;
           icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           enableInside = 1;
+          hotkey = "B";
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -472,6 +483,7 @@ class CfgVehicles {
           priority = 2.1;
           icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           enableInside = 1;
+          hotkey = "Y";
         };
 
         class AGM_LeaveTeam {
@@ -482,6 +494,7 @@ class CfgVehicles {
           priority = 2.5;
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           enableInside = 1;
+          hotkey = "N";
         };
 
         class AGM_BecomeLeader {
@@ -492,6 +505,7 @@ class CfgVehicles {
           priority = 1.0;
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           enableInside = 1;
+          hotkey = "L";
         };
         class AGM_LeaveGroup {
           displayName = "$STR_AGM_Interaction_LeaveGroup";
@@ -501,6 +515,7 @@ class CfgVehicles {
           priority = 1.2;
           icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
           enableInside = 1;
+          hotkey = "M";
         };
       };
 

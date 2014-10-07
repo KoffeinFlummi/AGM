@@ -16,6 +16,9 @@
 	Example:
 		_vehicleLoaded = [_truck] call AGM_Logistics_fnc_hasLoadedItems;
 */
+
+private ["_result", "_vehicle"];
+
 _result = false;
 _vehicle = _this select 0;
 

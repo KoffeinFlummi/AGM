@@ -19,7 +19,11 @@ _target = _this select 1;
 // all the stuff to check!
 // "isCaptive" Or "Handcuffed" Or "isSearchable" Or ("Unconscious" And different side)
 
+/*
 alive _unit 
 && weaponLowered _unit 
 && alive _target 
 && ((_target getVariable["AGM_isCaptive", false]) || (_target getVariable["AGM_Handcuffed", false]) || (_target getVariable["AGM_isSearchable", false]) || ((_target getVariable ["AGM_Unconscious", false]) && side _target != side _unit))
+*/
+
+_target getVariable["AGM_Handcuffed", false] || {_target getVariable["AGM_isSearchable", false]} || {_target getVariable ["AGM_Unconscious", false]}
