@@ -22,6 +22,8 @@ class CfgFunctions {
       class displayGrenadeTypeAndNumber;
       class getWeaponModes;
       class getWeaponMuzzles;
+      class safeMode;
+      class safeModeOff;
       class selectGrenadeFrag;
       class selectGrenadeOther;
       class selectWeaponMode;
@@ -130,6 +132,15 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_WeaponSelect_fnc_selectGrenadeOther";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 8;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+  class safeMode {
+    displayName = "$STR_AGM_WeaponSelect_safeMode";
+    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
+    statement = "[_vehicle, currentMuzzle _vehicle] call AGM_WeaponSelect_fnc_safeMode";
+    key = 10;
     shift = 0;
     control = 0;
     alt = 0;

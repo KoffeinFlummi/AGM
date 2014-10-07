@@ -211,5 +211,10 @@
       <Italian>Nessuna granata selezionata</Italian>
     </Key>
 
+    <Key ID="STR_AGM_WeaponSelect_safeMode">
+      <English>Safe Mode</English>
+      <German>Waffe sichern</German>
+    </Key>
+
   </Package>
 </Project>

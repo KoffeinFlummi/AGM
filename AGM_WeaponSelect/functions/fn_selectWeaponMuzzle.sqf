@@ -10,7 +10,7 @@
  * None.
  */
 
-private ["_weapon", "_muzzles", "_count", "_index", "_muzzle"];
+private ["_weapon", "_muzzles", "_count", "_index", "_muzzle", "_safedMuzzles", "_actionID"];
 
 _weapon = _this select 0;
 if (_weapon == "") exitWith {};
@@ -28,6 +28,8 @@ _index = (_muzzles find currentMuzzle player) + 1;
 if (_index > _count - 1) then {_index = 1};
 
 _muzzle = _muzzles select _index;
+
+if (currentMuzzle player == _muzzle && {[player, _muzzle] call AGM_WeaponSelect_fnc_safeModeOff}) exitWith {};
 
 _index = 0;
 while {
