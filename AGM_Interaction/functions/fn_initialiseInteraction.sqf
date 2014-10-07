@@ -89,6 +89,7 @@ if (_this select 2) then {
 			_action = AGM_Interaction_Buttons select _i;
 			_ctrlInteractionDialog ctrlSetText (_action select 0);
 			_ctrlInteractionDialog ctrlEnable ([_target, _player] call (_action select 2));
+			_ctrlInteractionDialog ctrlSetTooltip (_action select 6);
 
 			_ctrlInteractionDialogIcon ctrlSetText (_action select 5);
 			_ctrlInteractionDialogShortcut ctrlSetText (_action select 10);
@@ -98,6 +99,7 @@ if (_this select 2) then {
 		} else {
 			_ctrlInteractionDialog ctrlSetText "";
 			_ctrlInteractionDialog ctrlEnable false;
+			_ctrlInteractionDialog ctrlSetTooltip "";
 
 			_ctrlInteractionDialogIcon ctrlSetText "";
 			_ctrlInteractionDialogShortcut ctrlSetText "";
@@ -135,7 +137,7 @@ if (_this select 2) then {
 				AGM_Interaction_Tooltips set [_forEachIndex, AGM_Interaction_CurrentTooltip];
 
 				// apply conditional tooltips
-				if (_forEachIndex == call AGM_Interaction_fnc_getSelectedButton) then {
+				/*if (_forEachIndex == call AGM_Interaction_fnc_getSelectedButton) then {
 					_tooltip = _x select 6;
 
 					_showTooltip = _tooltip != "";
@@ -149,7 +151,7 @@ if (_this select 2) then {
 
 					_ctrlTooltip ctrlSetStructuredText _tooltip;
 					_ctrlTooltip ctrlShow _showTooltip;
-				};
+				};*/
 
 				_ctrlText ctrlEnable _enable;
 				_ctrlIcon ctrlEnable _enable;
@@ -167,7 +169,7 @@ if (_this select 2) then {
 
 		_selectedButton = -1;
 		waitUntil {
-			if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
+			/*if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
 				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
 
 				_showTooltip = false;
@@ -188,7 +190,7 @@ if (_this select 2) then {
 
 				_ctrlTooltip ctrlSetStructuredText _tooltip;
 				_ctrlTooltip ctrlShow _showTooltip;
-			};
+			};*/
 			sleep 0.01;
 			isNull (findDisplay 1713999)
 		};
