@@ -10,7 +10,9 @@
  * None.
  */
 
-private "_binocular";
+private ["_player", "_binocular"];
 
-_binocular = [player] call AGM_Core_fnc_getBinocular;
-[_binocular] call AGM_WeaponSelect_fnc_selectWeaponMode;
+_player = _this select 0;
+
+_binocular = [_player] call AGM_Core_fnc_getBinocular;
+[_player, _binocular] call AGM_WeaponSelect_fnc_selectWeaponMode;

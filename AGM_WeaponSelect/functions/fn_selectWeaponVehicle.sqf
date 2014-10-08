@@ -1,11 +1,12 @@
 // by commy2
 
-private ["_vehicle", "_index", "_turret", "_weapons", "_weapon"];
+private ["_player", "_vehicle", "_index", "_turret", "_weapons", "_weapon"];
 
-_vehicle = _this select 0;
-_index = _this select 1;
+_player = _this select 0;
+_vehicle = _this select 1;
+_index = _this select 2;
 
-_turret = [player] call AGM_Core_fnc_getTurretIndex;
+_turret = [_player] call AGM_Core_fnc_getTurretIndex;
 
 _weapons = _vehicle weaponsTurret _turret;
 if (_index > count _weapons - 1) exitWith {};
@@ -16,6 +17,6 @@ _index = 0;
 while {
 	_index < 100 && {_vehicle currentWeaponTurret _turret != _weapon}
 } do {
-	player action ["SwitchWeapon", _vehicle, player, _index];
+	_player action ["SwitchWeapon", _vehicle, _player, _index];
 	_index = _index + 1;
 };

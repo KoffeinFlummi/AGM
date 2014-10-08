@@ -17,7 +17,7 @@ if (
 	private "_index";
 
 	// avoid infinite loop
-	if !("SmokeLauncher" in (_vehicle weaponsTurret _turret)) exitWith {};
+	if !("SmokeLauncher" in _weapons) exitWith {};
 
 	_index = -1;
 	while {
