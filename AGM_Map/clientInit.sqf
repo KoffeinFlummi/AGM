@@ -9,7 +9,7 @@ if (!hasInterface) exitWith{};
   while {true} do {
     sleep 5;
     _markers = [];
-    while {AGM_Map_BFT_Enabled and {alive player}} {
+    while {AGM_Map_BFT_Enabled and {alive player}} do {
       {
         deleteMarkerLocal _x;
       } count _markers;
