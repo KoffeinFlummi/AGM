@@ -16,6 +16,7 @@ with uinamespace do {
 		_sizeX = _display displayctrl 1200;
 		_sizeY = _display displayctrl 1201;
 		_shape = _display displayctrl 1210;
+		_color = _display displayctrl 1211;
 
 		//--- Background
 		_pos = ctrlposition _text;
@@ -34,7 +35,7 @@ with uinamespace do {
 		_title ctrlcommit 0;
 
 		_pos set [1,_posY - 1*_posH];
-		_pos set [3,4*_posH + 3 * BORDER];
+		_pos set [3,4*_posH + 4 * BORDER];
 		_description ctrlsetposition _pos;
 		_description ctrlsetstructuredtext parsetext format ["<t size='0.8'>%1</t>","Description:"]; //--- ToDo: Localze
 		_description ctrlcommit 0;
@@ -42,16 +43,16 @@ with uinamespace do {
 		_activeColor = (["IGUI","WARNING_RGB"] call bis_fnc_displaycolorget) call bis_fnc_colorRGBtoHTML;
 
 		//--- ButtonOK
-		_pos set [1,_posY + 3 * _posH + 4 * BORDER];
+		_pos set [1,_posY + 3 * _posH + 5 * BORDER];
 		_pos set [2,_posW / 2 - BORDER];
 		_pos set [3,_posH];
 		_buttonOk ctrlsetposition _pos;
 		_buttonOk ctrlcommit 0;
 
 		//--- PositionX
-		_pos set [1,_posY + 2 * _posH + 3 * BORDER];
+		/*_pos set [1,_posY + 2 * _posH + 3 * BORDER];
 		_sizeX ctrlsetposition _pos;
-		_sizeX ctrlcommit 0;
+		_sizeX ctrlcommit 0;*/
 
 		//--- Shape
 		_pos set [1,_posY + 1 * _posH + 2 * BORDER];
@@ -59,36 +60,71 @@ with uinamespace do {
 		_shape ctrlsetposition _pos;
 		_shape ctrlcommit 0;
 
+		//--- Color
+		_pos set [1,_posY + 2 * _posH + 3 * BORDER];
+		_pos set [2,_posW];
+		_color ctrlsetposition _pos;
+		_color ctrlcommit 0;
+
 		//--- ButtonCancel
 		_pos set [0,_posX + _posW / 2];
-		_pos set [1,_posY + 3 * _posH + 4 * BORDER];
+		_pos set [1,_posY + 3 * _posH + 5 * BORDER];
 		_pos set [2,_posW / 2];
 		_pos set [3,_posH];
 		_buttonCancel ctrlsetposition _pos;
 		_buttonCancel ctrlcommit 0;
 
 		//--- PositionY
-		_pos set [1,_posY + 2 * _posH + 3 * BORDER];
+		/*_pos set [1,_posY + 2 * _posH + 3 * BORDER];
 		_sizeY ctrlsetposition _pos;
-		_sizeY ctrlcommit 0;
+		_sizeY ctrlcommit 0;*/
 
 		// init marker shape lb
-		_config = configfile >> "CfgMarkers";	//"CfgMarkerColors"
+		_config = configfile >> "CfgMarkers";
+		_index = 0;
 		for "_a" from 0 to (count _config - 1) do {
 			_marker = _config select _a;
 
 			_scope = getNumber (_marker >> "scope");
-			_name = getText (_marker >> "name");	//"color"
+			_name = getText (_marker >> "name");
 			_icon = getText (_marker >> "icon");
 
-			if(_scope == 2) then {
-				_index = lbAdd [1210, _name];
-				lbSetValue [1210, _index, _a];
-				lbSetPicture [1210, _index, _icon];
+			if (_scope == 2) then {
+				_shape lbAdd _name;
+				_shape lbSetValue [_index, _a];
+				_shape lbSetPicture [_index, _icon];
 
-				diag_log text _name;//
+				_index = _index + 1;
 			};
 		};
-		lbSetCurSel [1210, 0];
+		_shape lbSetCurSel 0;
+		_shape ctrlAddEventHandler ["LBSelChanged", {hintSilent str _this}];
+
+		// init marker color lb
+		_config = configfile >> "CfgMarkerColors";
+		_index = 0;
+		for "_a" from 0 to (count _config - 1) do {
+			_marker = _config select _a;
+
+			_scope = getNumber (_marker >> "scope");
+			_name = getText (_marker >> "name");
+
+			if (_scope == 2) then {
+				_color lbAdd _name;
+				_color lbSetValue [_index, _a];
+
+				_rgba = getArray (_marker >> "color");
+
+				if (typeName (_rgba select 0) == "SCALAR") then {
+					_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", _rgba select 0, _rgba select 1, _rgba select 2, _rgba select 3]];
+				} else {
+					_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", 0, 0, 0, 0]];
+				};
+
+				_index = _index + 1;
+			};
+		};
+		_color lbSetCurSel 0;
+		_color ctrlAddEventHandler ["LBSelChanged", {hintSilent str _this}];
 	};
 };
