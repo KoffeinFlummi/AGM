@@ -421,5 +421,10 @@
       <Italian>[AGM] Oggetti vari</Italian>
     </Key>
 
+    <Key ID="STR_AGM_Core_EnableNumberHotkeys">
+      <English>Disable Command Menu</English>
+      <German>Befehlsmenü ausschalten</German>
+    </Key>
+
   </Package>
 </Project>

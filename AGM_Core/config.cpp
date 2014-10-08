@@ -434,6 +434,13 @@ class AGM_Rsc_Control_Base {
 
 class AGM_Core_canInteractConditions {};
 
+class AGM_Core_Options {
+  class enableNumberHotkeys {
+    displayName = "$STR_AGM_Core_EnableNumberHotkeys";
+    default = 1;
+  };
+};
+
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
