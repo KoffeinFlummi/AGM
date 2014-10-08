@@ -19,12 +19,12 @@ if (
 	// avoid infinite loop
 	if !("SmokeLauncher" in _weapons) exitWith {};
 
-	_index = -1;
+	_index = 0;
 	while {
-	  _index = _index + 1;
 	  _vehicle currentWeaponTurret _turret != "SmokeLauncher"
 	} do {
 	  [_vehicle, _index] call AGM_WeaponSelect_fnc_selectWeaponVehicle;
+	  _index = _index + 1;
 	};
 } else {
 	// fire away!

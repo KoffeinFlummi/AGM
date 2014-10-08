@@ -82,6 +82,7 @@ with uinamespace do {
 		// init marker shape lb
 		_config = configfile >> "CfgMarkers";
 		_index = 0;
+
 		for "_a" from 0 to (count _config - 1) do {
 			_marker = _config select _a;
 
@@ -97,12 +98,19 @@ with uinamespace do {
 				_index = _index + 1;
 			};
 		};
-		_shape lbSetCurSel 0;
-		_shape ctrlAddEventHandler ["LBSelChanged", {hintSilent str _this}];
+		_shape ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedShape}];
+
+		_curSelShape = uiNamespace getVariable ["AGM_Map_curSelMarkerShape", 0];
+		_shape lbSetCurSel _curSelShape;
+		_data = _shape lbValue _curSelShape;
+		_config = (configfile >> "CfgMarkers") select _data;
+		_icon = getText (_config >> "icon");
+		_picture ctrlSetText _icon;
 
 		// init marker color lb
 		_config = configfile >> "CfgMarkerColors";
 		_index = 0;
+
 		for "_a" from 0 to (count _config - 1) do {
 			_marker = _config select _a;
 
@@ -126,7 +134,18 @@ with uinamespace do {
 				_index = _index + 1;
 			};
 		};
-		_color lbSetCurSel 0;
-		_color ctrlAddEventHandler ["LBSelChanged", {hintSilent str _this}];
+		_color ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedColor}];
+
+		_curSelColor = uiNamespace getVariable ["AGM_Map_curSelMarkerColor", 0];
+		_color lbSetCurSel _curSelColor;
+		_data = _color lbValue _curSelColor;
+		_config = (configfile >> "CfgMarkerColors") select _data;
+		_rgba = getArray (_config >> "color");
+		{
+			if (typeName _x != "SCALAR") then {
+				_rgba set [_forEachIndex, call compile _x];
+			};
+		} forEach _rgba;
+		_picture ctrlSetTextColor _rgba;
 	};
 };

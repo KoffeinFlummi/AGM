@@ -29,6 +29,8 @@ class CfgFunctions {
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
+      class onLBSelChangedColor;
+      class onLBSelChangedShape;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
