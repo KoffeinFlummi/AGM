@@ -46,7 +46,7 @@ class AGM_Core_Default_Keys {
   class selectPistol {
     displayName = "$STR_AGM_WeaponSelect_SelectPistol";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
+    statement = "[handgunWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 2;
     shift = 0;
@@ -56,7 +56,7 @@ class AGM_Core_Default_Keys {
   class selectRifle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifle";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
+    statement = "[primaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 3;
     shift = 0;
@@ -66,7 +66,7 @@ class AGM_Core_Default_Keys {
   class selectLauncher {
     displayName = "$STR_AGM_WeaponSelect_SelectLauncher";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMode";
+    statement = "[secondaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 5;
     shift = 0;
@@ -76,7 +76,7 @@ class AGM_Core_Default_Keys {
   /*class selectPistolMuzzle {
     displayName = "Select Pistol Muzzle";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[handgunWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
+    statement = "[handgunWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     disabled = 1;
     key = 7;
@@ -87,7 +87,7 @@ class AGM_Core_Default_Keys {
   class selectRifleMuzzle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifleMuzzle";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[primaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
+    statement = "[primaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 4;
     shift = 0;
@@ -97,7 +97,7 @@ class AGM_Core_Default_Keys {
   /*class selectLauncherMuzzle {
     displayName = "Select Launcher Muzzle";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeapon";
-    statement = "[secondaryWeapon player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
+    statement = "[secondaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     disabled = 1;
     key = 8;
@@ -148,9 +148,8 @@ class AGM_Core_Default_Keys {
 
   class engineOn {
     displayName = "$STR_AGM_WeaponSelect_EngineOn";
-    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle && {player == driver _vehicle} && {!isEngineOn _vehicle}";
+    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle && {_player == driver _vehicle} && {!isEngineOn _vehicle}";
     statement = "_vehicle engineOn true";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 3;
     shift = 0;
     control = 0;
@@ -158,9 +157,8 @@ class AGM_Core_Default_Keys {
   };
   class engineOff {
     displayName = "$STR_AGM_WeaponSelect_EngineOff";
-    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle && {player == driver _vehicle} && {isEngineOn _vehicle}";
+    condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle && {_player == driver _vehicle} && {isEngineOn _vehicle}";
     statement = "_vehicle engineOn false";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 2;
     shift = 0;
     control = 0;
@@ -171,7 +169,6 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMainGun";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle";
     statement = "[_vehicle, 0] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 3;
     shift = 0;
     control = 0;
@@ -181,7 +178,6 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMachineGun";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle";
     statement = "[_vehicle, 1] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 4;
     shift = 0;
     control = 0;
@@ -191,7 +187,6 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMissiles";
     condition = "[_vehicle] call AGM_WeaponSelect_fnc_canSwitchWeaponVehicle";
     statement = "[_vehicle, 2] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 5;
     shift = 0;
     control = 0;
@@ -202,7 +197,6 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_FireSmokeLauncher";
     condition = "_player != _vehicle && {_player == commander _vehicle}";
     statement = "[_vehicle] call AGM_WeaponSelect_fnc_fireSmokeLauncher";
-    exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 10;
     shift = 0;
     control = 0;
