@@ -3,6 +3,39 @@
 if (!hasInterface) exitWith{};
 
 [] spawn {
+  if (isNil "AGM_Map_BFT_Enabled") then {
+    AGM_Map_BFT_Enabled = false;
+  };
+  while {true} do {
+    sleep 5;
+    _markers = [];
+    while {AGM_Map_BFT_Enabled and {alive player}} {
+      {
+        deleteMarkerLocal _x;
+      } count _markers;
+      _markers = [];
+
+      _groups = [allGroups, {side leader _this == side player}] call AGM_Core_fnc_filter;
+
+      for "_i" from 0 to (count _groups - 1) do {
+        _group = _groups select _i;
+        _markerType = [_group] call AGM_Core_fnc_getMarkerType;
+        _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select ((["GUER", "WEST", "EAST"] find (str side leader _group)) max 0);
+
+        _marker = createMarker [format ["AGM_BFT_%1", _i], [(getPos leader _group) select 0, (getPos leader _group) select 1]];
+        _marker setMarkerTypeLocal _markerType;
+        _marker setMarkerColorLocal _colour;
+        _marker setMarkerTextLocal (groupID _group);
+
+        _markers pushBack _marker;
+      };
+
+      sleep AGM_Map_BFT_Interval;
+    };
+  };
+};
+
+[] spawn {
   // Init variables
   AGM_Map_mapToolsShown = 0;
   AGM_Map_pos = [0,0];
