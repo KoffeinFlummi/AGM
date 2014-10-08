@@ -98,9 +98,6 @@ if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitW
     0
   };
 };
-if (AGM_Medical_IsFalling and (_selectionName == "")) then {
-  _damage = _damage - _newDamage / 2; // half structural fall damage
-};
 
 // Prevent multiple damages by same hit.
 if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
@@ -137,10 +134,11 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 
     if !(AGM_Medical_IsFalling) then {
       {
+        _hitPointDamage = (_x select 1) * AGM_Medical_CoefDamage;
         if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
-          _unit setHitPointDamage [(_x select 0), ((_x select 1) min 0.89)];
+          _unit setHitPointDamage [(_x select 0), (_hitPointDamage min 0.89)];
         } else {
-          _unit setHitPointDamage [(_x select 0), (_x select 1)];
+          _unit setHitPointDamage [(_x select 0), _hitPointDamage];
         };
       } count AGM_Medical_Hits;
     };
@@ -303,7 +301,12 @@ if (_preventDeath) then {
 };
 
 if (AGM_Medical_IsFalling or (_selectionName == "")) then {
-  _damage
+  _damage = _damage - _newDamage;
+  _newDamage = _newDamage * AGM_Medical_CoefDamage;
+  if (AGM_Medical_IsFalling and (_selectionName == "")) then {
+    _newDamage = _newDamage * 0.5;
+  };
+  _damage + _newDamage
 } else {
   _damage - _newDamage
 };

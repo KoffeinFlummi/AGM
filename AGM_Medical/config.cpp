@@ -615,6 +615,12 @@ class CfgVehicles {
     isGlobal = 1;
     icon = "\AGM_Medical\UI\IconMedical_ca.paa";
     class Arguments {
+      class CoefDamage {
+        displayName = "Damage Coef.";
+        description = "Multiplier for the amount of damage received. Default: 1 (obviously)";
+        typeName = "NUMBER";
+        defaultValue = 1;
+      };
       class CoefBleeding {
         displayName = "Bleeding Speed Coef.";
         description = "Multiplier for the rate of bleeding. Default: 1 (obviously)";
@@ -917,6 +923,7 @@ class ImpactEffectsBlood {
 };
 
 class AGM_Parameters {
+  AGM_Medical_CoefDamage = 1.0;
   AGM_Medical_CoefBleeding = 1.0;
   AGM_Medical_CoefPain = 1.0;
   AGM_Medical_MaxUnconsciousnessTime = -1;

@@ -22,6 +22,7 @@ if !(_activated) exitWith {};
 
 AGM_Medical_Module = true;
 
+[_logic, "AGM_Medical_CoefDamage",                   "CoefDamage"                  ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_CoefBleeding",                 "CoefBleeding"                ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_CoefPain",                     "CoefPain"                    ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_MaxUnconsciousnessTime",       "MaxUnconsciousnessTime"      ] call AGM_Core_fnc_readNumericParameterFromModule;
