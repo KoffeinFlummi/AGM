@@ -115,11 +115,13 @@ with uinamespace do {
 
 				_rgba = getArray (_marker >> "color");
 
-				if (typeName (_rgba select 0) == "SCALAR") then {
-					_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", _rgba select 0, _rgba select 1, _rgba select 2, _rgba select 3]];
-				} else {
-					_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", 0, 0, 0, 0]];
-				};
+				{
+					if (typeName _x != "SCALAR") then {
+						_rgba set [_forEachIndex, call compile _x];
+					};
+				} forEach _rgba;
+
+				_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", _rgba select 0, _rgba select 1, _rgba select 2, _rgba select 3]];
 
 				_index = _index + 1;
 			};
