@@ -1,7 +1,7 @@
 
 class RscDisplayInsertMarker {
 	onLoad = "_this call compile preprocessfilelinenumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
-	onUnload = "";
+	onUnload = "uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0]]];";
 	idd = 54;
 	movingEnable = 0;
 	class controlsBackground {

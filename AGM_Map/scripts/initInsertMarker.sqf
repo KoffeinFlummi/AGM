@@ -7,6 +7,9 @@ with uinamespace do {
 		disableserialization;
 		_display = _this select 0;
 
+		// display vanilla key input
+		_display displayAddEventHandler ["KeyDown", {(_this select 1) in [200, 208]}];
+
 		_text = _display displayctrl 101;
 		_picture = _display displayctrl 102;
 		_buttonOK = _display displayctrl 1;
