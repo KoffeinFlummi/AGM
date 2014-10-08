@@ -211,5 +211,11 @@
       <Italian>Nessuna granata selezionata</Italian>
     </Key>
 
+    <Key ID="STR_AGM_WeaponSelect_FireSmokeLauncher">
+      <English>Fire Smoke Launcher</English>
+      <German>Rauchwand abfeuern</German>
+    </Key>
+
+
   </Package>
 </Project>

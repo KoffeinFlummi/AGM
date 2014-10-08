@@ -20,6 +20,7 @@ class CfgFunctions {
       class canSwitchWeaponVehicle;
       class countMagazinesForGrenadeMuzzle;
       class displayGrenadeTypeAndNumber;
+      class fireSmokeLauncher;
       class getWeaponModes;
       class getWeaponMuzzles;
       class selectGrenadeFrag;
@@ -192,6 +193,17 @@ class AGM_Core_Default_Keys {
     statement = "[_vehicle, 2] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 5;
+    shift = 0;
+    control = 0;
+    alt = 0;
+  };
+
+  class fireSmokeLauncher {
+    displayName = "$STR_AGM_WeaponSelect_FireSmokeLauncher";
+    condition = "_player != _vehicle && {_player == commander _vehicle}";
+    statement = "[_vehicle] call AGM_WeaponSelect_fnc_fireSmokeLauncher";
+    exceptions[] = {"AGM_Interaction_isNotEscorting"};
+    key = 10;
     shift = 0;
     control = 0;
     alt = 0;
