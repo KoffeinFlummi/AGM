@@ -91,9 +91,9 @@ if (!hasInterface) exitWith{};
     // Hide GPS
     [false] call AGM_Map_fnc_openMapGps;
     // Hide Map tools
-    deleteMarkerLocal "MapToolFixed";
-    deleteMarkerLocal "MapToolRotatingNormal";
-    deleteMarkerLocal "MapToolRotatingSmall";
+    deleteMarkerLocal "AGM_MapToolFixed";
+    deleteMarkerLocal "AGM_MapToolRotatingNormal";
+    deleteMarkerLocal "AGM_MapToolRotatingSmall";
     AGM_Map_mapToolFixed = nil;
     AGM_Map_mapToolRotatingNormal = nil;
     AGM_Map_mapToolRotatingSmall = nil;

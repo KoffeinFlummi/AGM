@@ -379,7 +379,7 @@ class CfgMarkers {
   class group_0: b_unknown {scope = 1;};
 
 
-  class MapToolFixed {
+  class AGM_MapToolFixed {
     name = "MapToolFixed";
     icon = "\AGM_Map\data\mapToolFixed.paa";
     scope = 0;
@@ -387,7 +387,7 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingNormal {
+  class AGM_MapToolRotatingNormal {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingNormal.paa";
     scope = 0;
@@ -395,7 +395,7 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingSmall {
+  class AGM_MapToolRotatingSmall {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingSmall.paa";
     scope = 0;
