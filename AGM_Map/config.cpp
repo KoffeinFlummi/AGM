@@ -405,7 +405,7 @@ class CfgMarkers {
 };
 
 class AGM_Parameters {
-  class AGM_Map_BFT_Interval = 1;
+  AGM_Map_BFT_Interval = 1;
 }
 
 #include "MapGpsUI.hpp"
