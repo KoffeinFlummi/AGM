@@ -122,7 +122,7 @@ class RscTitles {
     movingEnable = 0;
     enableSimulation = 1;
     enableDisplay = 1;
-    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'";
+    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'; uiNamespace setVariable ['AGM_Scope_Debug', _this];";
     duration = 1e+011;
     fadein = 0;
     fadeout = 0;
