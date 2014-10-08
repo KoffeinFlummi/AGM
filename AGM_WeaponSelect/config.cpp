@@ -16,8 +16,6 @@ class CfgFunctions {
   class AGM_WeaponSelect {
     class AGM_WeaponSelect {
       file = "\AGM_WeaponSelect\functions";
-      class canSwitchWeapon;
-      class canSwitchWeaponVehicle;
       class countMagazinesForGrenadeMuzzle;
       class displayGrenadeTypeAndNumber;
       class fireSmokeLauncher;
