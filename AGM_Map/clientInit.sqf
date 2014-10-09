@@ -149,6 +149,8 @@ if (!hasInterface) exitWith{};
   _config = (configfile >> "CfgMarkerColors") select (_data select 1);
   _marker setMarkerColor configName _config;
 
+  _marker setMarkerDir (_data select 2);
+
   uiNamespace setVariable ["AGM_Map_currentMarkerData", nil];
 
 }] call AGM_Core_fnc_addMapMarkerCreatedEventhandler;

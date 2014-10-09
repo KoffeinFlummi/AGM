@@ -117,5 +117,10 @@
       <Hungarian>Térkép másolása</Hungarian>
       <Portuguese>Copiar Mapa</Portuguese>
     </Key>
+
+    <Key ID="STR_AGM_Map_MarkerDirection">
+      <English>Direction: %1°</English>
+      <German>Drehung: %1°</German>
+    </Key>
   </Package>
 </Project>

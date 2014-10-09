@@ -31,6 +31,7 @@ class CfgFunctions {
       class isInsideMapTool;
       class onLBSelChangedColor;
       class onLBSelChangedShape;
+      class onSliderPosChangedAngle;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
@@ -232,6 +233,7 @@ class RscButtonMenuCancel;
 class RscButtonMenu;
 class RscEdit;
 class RscCombo;
+class RscSlider;
 
 class RscMapControl {
   sizeExGrid = 0.032;

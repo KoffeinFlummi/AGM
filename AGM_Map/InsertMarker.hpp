@@ -1,7 +1,7 @@
 
 class RscDisplayInsertMarker {
 	onLoad = "_this call compile preprocessfilelinenumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
-	onUnload = "uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0]]];";
+	onUnload = "if (_this select 1 == 1) then {uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0], uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]]];};";
 	idd = 54;
 	movingEnable = 0;
 	class controlsBackground {
@@ -26,13 +26,13 @@ class RscDisplayInsertMarker {
 		//delete ButtonOK;
 		class ButtonMenuOK: RscButtonMenuOK {
 			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
-			y = "13.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
+			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
 			w = "5 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
 		class ButtonMenuCancel: RscButtonMenuCancel {
 			x = "19 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
-			y = "13.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
+			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
 			w = "5 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
@@ -105,6 +105,21 @@ class RscDisplayInsertMarker {
 			idc = 1211;
 			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
 			y = "12.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
+			w = "10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+		class MarkerAngle: RscSlider {
+			idc = 1220;
+			text = "10";
+			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
+			y = "13.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
+			w = "10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
+			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+		};
+		class MarkerAngleText: RscText {
+			idc = 1221;
+			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
+			y = "14.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
 			w = "10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};

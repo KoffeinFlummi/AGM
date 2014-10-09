@@ -20,6 +20,8 @@ with uinamespace do {
 		_sizeY = _display displayctrl 1201;
 		_shape = _display displayctrl 1210;
 		_color = _display displayctrl 1211;
+		_angle = _display displayctrl 1220;
+		_angleText = _display displayctrl 1221;
 
 		ctrlSetFocus _text;
 
@@ -40,28 +42,17 @@ with uinamespace do {
 		_title ctrlcommit 0;
 
 		_pos set [1,_posY - 1*_posH];
-		_pos set [3,4*_posH + 4 * BORDER];
+		_pos set [3,6*_posH + 6 * BORDER];
 		_description ctrlsetposition _pos;
 		_description ctrlsetstructuredtext parsetext format ["<t size='0.8'>%1</t>","Description:"]; //--- ToDo: Localze
 		_description ctrlcommit 0;
 
 		_activeColor = (["IGUI","WARNING_RGB"] call bis_fnc_displaycolorget) call bis_fnc_colorRGBtoHTML;
 
-		//--- ButtonOK
-		_pos set [1,_posY + 3 * _posH + 5 * BORDER];
-		_pos set [2,_posW / 2 - BORDER];
-		_pos set [3,_posH];
-		_buttonOk ctrlsetposition _pos;
-		_buttonOk ctrlcommit 0;
-
-		//--- PositionX
-		/*_pos set [1,_posY + 2 * _posH + 3 * BORDER];
-		_sizeX ctrlsetposition _pos;
-		_sizeX ctrlcommit 0;*/
-
 		//--- Shape
 		_pos set [1,_posY + 1 * _posH + 2 * BORDER];
 		_pos set [2,_posW];
+		_pos set [3,_posH];
 		_shape ctrlsetposition _pos;
 		_shape ctrlcommit 0;
 
@@ -71,18 +62,40 @@ with uinamespace do {
 		_color ctrlsetposition _pos;
 		_color ctrlcommit 0;
 
+		//--- Angle
+		_pos set [1,_posY + 3 * _posH + 4 * BORDER];
+		_pos set [2,_posW];
+		_angle ctrlsetposition _pos;
+		_angle ctrlcommit 0;
+
+		//--- Angle Text
+		_pos set [1,_posY + 4 * _posH + 5 * BORDER];
+		_pos set [2,_posW];
+		_angleText ctrlsetposition _pos;
+		_angleText ctrlcommit 0;
+
+		//--- ButtonOK
+		_pos set [1,_posY + 5 * _posH + 7 * BORDER];
+		_pos set [2,_posW / 2 - BORDER];
+		_buttonOk ctrlsetposition _pos;
+		_buttonOk ctrlcommit 0;
+
 		//--- ButtonCancel
 		_pos set [0,_posX + _posW / 2];
-		_pos set [1,_posY + 3 * _posH + 5 * BORDER];
 		_pos set [2,_posW / 2];
-		_pos set [3,_posH];
 		_buttonCancel ctrlsetposition _pos;
 		_buttonCancel ctrlcommit 0;
+
+		//--- PositionX
+		/*_pos set [1,_posY + 2 * _posH + 3 * BORDER];
+		_sizeX ctrlsetposition _pos;
+		_sizeX ctrlcommit 0;*/
 
 		//--- PositionY
 		/*_pos set [1,_posY + 2 * _posH + 3 * BORDER];
 		_sizeY ctrlsetposition _pos;
 		_sizeY ctrlcommit 0;*/
+
 
 		// init marker shape lb
 		_config = configfile >> "CfgMarkers";
@@ -111,6 +124,7 @@ with uinamespace do {
 		_config = (configfile >> "CfgMarkers") select _data;
 		_icon = getText (_config >> "icon");
 		_picture ctrlSetText _icon;
+
 
 		// init marker color lb
 		_config = configfile >> "CfgMarkerColors";
@@ -152,5 +166,20 @@ with uinamespace do {
 			};
 		} forEach _rgba;
 		_picture ctrlSetTextColor _rgba;
+
+
+		// init marker angle slider
+		_angle sliderSetRange [-180, 180];
+		_angle ctrlAddEventHandler ["SliderPosChanged", {_this call AGM_Map_fnc_onSliderPosChangedAngle}];
+
+		_curSelAngle = uiNamespace getVariable ["AGM_Map_curSelMarkerAngle", 0];
+		_angle sliderSetPosition _curSelAngle;
+
+		_curSelAngle = round _curSelAngle;
+		if (_curSelAngle < 0) then {
+			_curSelAngle = _curSelAngle + 360;
+		};
+
+		_angleText ctrlSetText format [localize "STR_AGM_Map_MarkerDirection", _curSelAngle];
 	};
 };
