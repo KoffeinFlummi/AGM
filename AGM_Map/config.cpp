@@ -410,7 +410,7 @@ class CfgMarkers {
 
 class AGM_Parameters {
   AGM_Map_BFT_Interval = 1;
-}
+};
 
 #include "MapGpsUI.hpp"
 #include <InsertMarker.hpp>
