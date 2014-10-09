@@ -21,6 +21,8 @@ with uinamespace do {
 		_shape = _display displayctrl 1210;
 		_color = _display displayctrl 1211;
 
+		ctrlSetFocus _text;
+
 		//--- Background
 		_pos = ctrlposition _text;
 		_posX = (_pos select 0) + 0.01;
