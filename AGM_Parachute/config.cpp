@@ -32,9 +32,9 @@ class AGM_Core_Default_Keys {
 		conditionUp = "true";
 		statementUp = "call AGM_Parachute_fnc_hideAltimeter;";
 		exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-		key = 20;
+		key = 35;
 		shift = 0;
-		control = 0;
+		control = 1;
 		alt = 0;
 	};
 };
