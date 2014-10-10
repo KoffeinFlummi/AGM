@@ -23,7 +23,7 @@ if (
 	while {
 	  _vehicle currentWeaponTurret _turret != "SmokeLauncher"
 	} do {
-	  [_vehicle, _index] call AGM_WeaponSelect_fnc_selectWeaponVehicle;
+	  [commander _vehicle, _vehicle, _index] call AGM_WeaponSelect_fnc_selectWeaponVehicle;
 	  _index = _index + 1;
 	};
 } else {
