@@ -18,7 +18,7 @@ _sideToShow = _this select 0;
 
         // create markers
         {
-            if ((side (group _x) == (_this select 0) && vehicle _x == _x && !(_x getVariable ["AGM_SwitchUnit_IsPlayerUnit", false])) || (_x getVariable ["AGM_SwitchUnit_IsPlayerControlled", false])) then {
+            if ((side (group _x) == (_this select 0) && vehicle _x == _x && !(_x getVariable ["AGM_SwitchUnits_IsPlayerUnit", false])) || (_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
                 private ["_markerName", "_marker", "_markerColor"];
 
                 //_markerName = format ["%1", (name _x)];
@@ -37,9 +37,9 @@ _sideToShow = _this select 0;
                     default { _markerColor = "ColorEAST"; };
                 };
 
-                if ((_x getVariable ["AGM_SwitchUnit_IsPlayerControlled", false])) then {
+                if ((_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
                     _markerName setMarkerColorLocal "ColorOrange";
-                    _markerName setMarkerTextLocal (_x getVariable ["AGM_SwitchUnit_PlayerControlledName",""]);
+                    _markerName setMarkerTextLocal (_x getVariable ["AGM_SwitchUnits_PlayerControlledName",""]);
                 } else {
                     _markerName setMarkerColorLocal _markerColor;
                     _markerName setMarkerTextLocal (getText (configFile >> "CfgVehicles" >> typeOf _x >> "displayName"));

@@ -21,6 +21,7 @@ class CfgFunctions {
       class initPlayer;
       class markAiOnMap;
       class module;
+      class switchBack;
       class switchUnit;
     };
   };

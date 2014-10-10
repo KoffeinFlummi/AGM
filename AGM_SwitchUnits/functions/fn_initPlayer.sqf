@@ -7,12 +7,12 @@ if (vehicle _playerUnit == _playerUnit) then {
 
   [_side] call AGM_SwitchUnits_fnc_markAiOnMap;
 
-  _playerUnit setVariable ["AGM_SwitchUnit_IsPlayerUnit", true];
-  //_playerUnit addEventHandler ["HandleDamage", {false}];
+  _playerUnit setVariable ["AGM_SwitchUnits_IsPlayerUnit", true];
+  _playerUnit addEventHandler ["HandleDamage", {false}];
   
-  AGM_SwitchUnit_OriginalUnit = _playerUnit;
-  AGM_SwitchUnit_OriginalName = name _playerUnit;
-  AGM_SwitchUnit_OriginalGroup = group _playerUnit;
+  AGM_SwitchUnits_OriginalUnit = _playerUnit;
+  AGM_SwitchUnits_OriginalName = name _playerUnit;
+  AGM_SwitchUnits_OriginalGroup = group _playerUnit;
   
   // remove all starting gear of a player
   removeallweapons _playerUnit;
