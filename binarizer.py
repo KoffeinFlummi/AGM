@@ -83,9 +83,9 @@ class Binarizer:
     destination_path = os.path.join(
       self.paths["moddir"], self.paths["modfolder"], "addons")
 
-    pbos = list(map(lambda x: x.lower(), 
+    pbos = list(map(lambda x: x.lower(),
       os.listdir(destination_path)))
-    projects = list(map(lambda x: x.lower(), 
+    projects = list(map(lambda x: x.lower(),
       os.listdir(os.path.dirname(self.scriptpath))))
 
     obsolete = []
@@ -98,7 +98,7 @@ class Binarizer:
   def get_arma_path(self):
     try:
       reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-      key = winreg.OpenKey(reg, 
+      key = winreg.OpenKey(reg,
               r"SOFTWARE\Wow6432Node\bohemia interactive\arma 3")
       return winreg.EnumValue(key,1)[1]
     except:
@@ -107,7 +107,7 @@ class Binarizer:
   def get_armatools_path(self):
     try:
       reg = winreg.ConnectRegistry(None, winreg.HKEY_LOCAL_MACHINE)
-      key = winreg.OpenKey(reg, 
+      key = winreg.OpenKey(reg,
               r"SOFTWARE\Wow6432Node\bohemia interactive\addonbuilder")
       return os.path.dirname(winreg.EnumValue(key,0)[1])
     except:
