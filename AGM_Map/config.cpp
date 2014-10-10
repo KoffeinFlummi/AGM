@@ -368,7 +368,7 @@ class CfgMarkers {
   class n_service: n_unknown {scope = 1;};
   class n_support: n_unknown {scope = 1;};
 
-  class o_unknown: n_unknown {};
+  class o_unknown: b_unknown {};
   class o_hq: o_unknown {scope = 1;};
   class o_installation: o_unknown {scope = 1;};
   class o_maint: o_unknown {scope = 1;};
