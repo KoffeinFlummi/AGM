@@ -29,6 +29,9 @@ class CfgFunctions {
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
+      class onLBSelChangedColor;
+      class onLBSelChangedShape;
+      class onSliderPosChangedAngle;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
@@ -230,6 +233,7 @@ class RscButtonMenuCancel;
 class RscButtonMenu;
 class RscEdit;
 class RscCombo;
+class RscSlider;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -406,7 +410,7 @@ class CfgMarkers {
 
 class AGM_Parameters {
   AGM_Map_BFT_Interval = 1;
-}
+};
 
 #include "MapGpsUI.hpp"
 #include <InsertMarker.hpp>

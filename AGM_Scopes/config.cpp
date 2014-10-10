@@ -122,7 +122,7 @@ class RscTitles {
     movingEnable = 0;
     enableSimulation = 1;
     enableDisplay = 1;
-    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'";
+    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'; uiNamespace setVariable ['AGM_Scope_Debug', _this];";
     duration = 1e+011;
     fadein = 0;
     fadeout = 0;
@@ -135,32 +135,34 @@ class RscTitles {
         type = 0;
         text = "AGM_Scopes\UI\scopes_bg.paa";
         style = 48 + 0x800;
-        x = (safeZoneX + 0.5 * safeZoneW) - (0.4 * safeZoneW / 2);
-        y = safezoneY + 0 * safezoneH;
-        w = 0.4 * safeZoneW;
-        h = 0.3 * safeZoneH;
         scale = 1;
         sizeEx = 1;
         font = "PuristaMedium";
         colorText[] = {1,1,1,1};
         colorBackground[] = {1,1,1,1};
         shadow = 1;
+
+        x = (0.5-0.4/2) * safezoneW + safezoneX;
+        y = 0 * safezoneH + safezoneY;
+        w = 0.4 * safezoneW;
+        h = 0.3 * safezoneH;
       };
       class AGM_Scope_Zeroing_Vertical: RscText {
         idc = 925002;
         type = 0;
         style = 2;
-        x = (safeZoneX + 0.5 * safeZoneW) - (0.04 * safeZoneW / 2);
-        y = safezoneY + 0.06 * safezoneH;
-        w = 0.04 * safeZoneW;
-        h = 0.025 * safeZoneH;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
         colorText[] = {1,1,1, 0.9};
-        colorBackground[] = {1,0,0, 1};
+        colorBackground[] = {1,0,0, 0};
         shadow = 0;
+
+        x = (0.5-0.4/2 + 0.45*0.4) * safezoneW + safezoneX;
+        y = (0 + 0.19*0.3) * safezoneH + safezoneY;
+        w = 0.04 * safezoneW;
+        h = 0.025 * safezoneH;
       };
       class AGM_Scope_Zeroing_Horizontal: RscText {
         idc = 925003;
@@ -168,15 +170,18 @@ class RscTitles {
         style = 0;
         x = (safeZoneX + 0.5 * safeZoneW) + (0.04 * safeZoneW);
         y = (safezoneY + 0.3 * safezoneH / 2) - (0.025 * safeZoneH / 2);
-        w = 0.04  * safeZoneW;
-        h = 0.025 * safeZoneH;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
         colorText[] = {1,1,1, 0.9};
-        colorBackground[] = {1,0,0, 1};
+        colorBackground[] = {1,0,0, 0};
         shadow = 0;
+
+        x = (0.5-0.4/2 + 0.6*0.4) * safezoneW + safezoneX;
+        y = (0 + 0.47*0.3) * safezoneH + safezoneY;
+        w = 0.04 * safezoneW;
+        h = 0.025 * safezoneH;
       };
     };
   };
