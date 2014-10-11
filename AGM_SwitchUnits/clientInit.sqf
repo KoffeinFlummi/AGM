@@ -1,7 +1,8 @@
 /*
-Author: jodav
-
+  Author(s):
+    jodav
 */
+
 0 spawn {
   sleep 5;
   if (AGM_SwitchUnits_EnableSwitchUnits == 0) exitWith{};
