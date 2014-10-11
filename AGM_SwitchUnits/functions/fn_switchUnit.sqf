@@ -1,3 +1,19 @@
+/*
+  Name: AGM_SwitchUnits_fnc_switchUnit
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Selects the new given player unit
+  
+  Parameters:
+    0: OBJECT - the unit to switch to
+  
+  Returns:
+    VOID
+*/
+
 private ["_newUnit"];
 
 _newUnit = _this select 1;

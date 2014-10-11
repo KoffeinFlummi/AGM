@@ -1,3 +1,19 @@
+/*
+  Name: AGM_SwitchUnits_fnc_addMapFunction
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Adds a mapClick Eventhandler
+  
+  Parameters:
+    0: OBJECT - unit
+  
+  Returns:
+    VOID
+*/
+
 private ["_unit"];
 _unit = _this select 0;
 

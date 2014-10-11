@@ -1,14 +1,21 @@
 /*
- * Author: jodav
- *
- * Initializes the SwitchUnits module.
- *
- * Arguments:
- * Whatever the module provides.
- *
- * Return Value:
- * None
- */
+  Name: AGM_SwitchUnits_fnc_module
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Initializes the SwitchUnits module
+  
+  Parameters:
+    0: OBJECT - module logic
+    1: ARRAY<OBJECT> - list of affected units
+    2: BOOLEAN - isActivated
+  
+  Returns:
+    BOOLEAN (Good practice to include one)
+*/
+
 if !(isServer) exitWith {};
 
 _logic = _this select 0;

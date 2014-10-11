@@ -1,3 +1,20 @@
+/*
+  Name: AGM_SwitchUnits_fnc_initPlayer
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Initializes the player
+  
+  Parameters:
+    0: OBJECT - player
+    1: OBJECT - side
+  
+  Returns:
+    VOID
+*/
+
 private ["_playerUnit", "_side"];
 
 _playerUnit = _this select 0;

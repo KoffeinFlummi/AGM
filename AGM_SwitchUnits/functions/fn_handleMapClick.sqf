@@ -1,4 +1,20 @@
-private ["_args", "_pos", "_nearest", "_sideNearest"];
+/*
+  Name: AGM_SwitchUnits_fnc_handleMapClick
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Finds the clicked unit
+  
+  Parameters:
+    0: OBJECT - MapClickEventHandlerArgs
+  
+  Returns:
+    VOID
+*/
+
+private ["_args", "_pos", "_sideNearest"];
 
 _args = _this select 0;
 _pos = _this select 1;

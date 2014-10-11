@@ -1,3 +1,20 @@
+/*
+  Name: AGM_SwitchUnits_fnc_markAiOnMap
+  
+  Author(s):
+    jodav
+  
+  Description:
+    Creates markers for AI units for given side
+    Marks players in a different color
+  
+  Parameters:
+    0: OBJECT - side
+  
+  Returns:
+    VOID
+*/
+
 private ["_sideToShow"];
 _sideToShow = _this select 0;
 
