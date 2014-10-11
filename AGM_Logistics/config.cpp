@@ -147,7 +147,7 @@ class CfgFunctions {
 	};
 	class AGM_Paradrop {
 		class AGM_Paradrop {
-			file = "\AGM_Logistics\functions\Paradrop";	
+			file = "\AGM_Logistics\functions\Paradrop";
 			class paradrop;
 		};
 	};
@@ -381,7 +381,7 @@ class CfgVehicles {
 	class Offroad_01_base_f: Car_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_OFFROARD;
 	};
-	
+
 	class Truck_F: Car_F {
 		AGM_Vehicle_Cargo = 8;
 		KEY_WHEEL_6X6_REAR
@@ -402,7 +402,7 @@ class CfgVehicles {
 		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 600;  // in liter.
 	};
-	
+
 	// Repair tracked vehicles
 	class Tank_F: Tank {
 		AGM_fuelCapacity = 1500;  // in liter.
@@ -501,12 +501,12 @@ class CfgVehicles {
 	class MBT_03_base_F: Tank_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
 	};
-	
+
 	class AllVehicles;
 	class Air: AllVehicles {
 		AGM_Paradrop = 0;
 	};
-	
+
 	// Repair helicopters
 	class Helicopter: Air {
 		AGM_fuelCapacity = 240;  // in liter.
@@ -600,7 +600,7 @@ class CfgVehicles {
 		AGM_Vehicle_Cargo = 20;
 		AGM_Paradrop = 1;
 	};
-	
+
 	// Repair fixed wing aircraft
 	class Plane: Air {
 		AGM_fuelCapacity = 600;  // in liter.
@@ -1119,7 +1119,7 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
 		transportFuel = 0;
 	};
-	
+
 	//Hawkeye104 AGM Repair Module
     class Module_F;
     class AGM_ModuleRepair: Module_F
@@ -1210,7 +1210,7 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "$STR_AGM_UAVs_Battery_Name";
 		descriptionShort = "$STR_AGM_UAVs_Battery_Description";
-		model = "\A3\weapons_F\ammo\mag_univ.p3d";
+		model = "\AGM_Logistics\agm_battery.p3d";
 		picture = "\AGM_Logistics\ui\AGM_battery.paa";
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 20;
@@ -1218,8 +1218,7 @@ class CfgWeapons {
 	};
 };
 
-class AGM_Parameters 
-{
+class AGM_Parameters {
 	AGM_Repair_TimeRepair = 10;
 	AGM_Repair_TimeWheelRepair = 10;
 	AGM_Repair_TimeTrackRepair = 10;
