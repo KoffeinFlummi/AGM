@@ -193,10 +193,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_ShowPlayerRanks";
     default = 1;
   };
-  class Interaction_FlowMenu {
+  /*class Interaction_FlowMenu {
     displayName = "$STR_AGM_Interaction_FlowMenu";
     default = 0;
-  };
+  };*/
   class Interaction_AutoCloseMenu {
     displayName = "$STR_AGM_Interaction_AutoCloseMenu";
     default = 0;
