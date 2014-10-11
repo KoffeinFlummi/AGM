@@ -1,7 +1,7 @@
 
 class RscDisplayInsertMarker {
 	onLoad = "_this call compile preprocessfilelinenumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
-	onUnload = "if (_this select 1 == 1) then {uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0], uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]]];}; 0 spawn {[allMapMarkers select (count allMapMarkers - 1)] call AGM_Map_fnc_setMarker;};";
+	onUnload = "if (_this select 1 == 1) then {uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0], uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]]]; 0 spawn {[allMapMarkers select (count allMapMarkers - 1)] call AGM_Map_fnc_setMarker;};};";
 	idd = 54;
 	movingEnable = 0;
 	class controlsBackground {

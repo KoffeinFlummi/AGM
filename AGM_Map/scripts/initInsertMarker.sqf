@@ -101,21 +101,34 @@ with uinamespace do {
 		_config = configfile >> "CfgMarkers";
 		_index = 0;
 
-		for "_a" from 0 to (count _config - 1) do {
-			_marker = _config select _a;
+		if (isNil "AGM_Map_MarkersCache") then {
+			AGM_Map_MarkersCache = [];
 
-			_scope = getNumber (_marker >> "scope");
-			_name = getText (_marker >> "name");
-			_icon = getText (_marker >> "icon");
+			for "_a" from 0 to (count _config - 1) do {
+				_marker = _config select _a;
 
-			if (_scope == 2) then {
-				_shape lbAdd _name;
-				_shape lbSetValue [_index, _a];
-				_shape lbSetPicture [_index, _icon];
+				_scope = getNumber (_marker >> "scope");
+				_name = getText (_marker >> "name");
+				_icon = getText (_marker >> "icon");
 
-				_index = _index + 1;
+				if (_scope == 2) then {
+					_shape lbAdd _name;
+					_shape lbSetValue [_index, _a];
+					_shape lbSetPicture [_index, _icon];
+
+					AGM_Map_MarkersCache pushBack [_name, _a, _icon];
+
+					_index = _index + 1;
+				};
 			};
+		} else {
+			{
+				_shape lbAdd (_x select 0);
+				_shape lbSetValue [_forEachIndex, _x select 1];
+				_shape lbSetPicture [_forEachIndex, _x select 2];
+			} forEach AGM_Map_MarkersCache;
 		};
+
 		_shape ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedShape}];
 
 		_curSelShape = uiNamespace getVariable ["AGM_Map_curSelMarkerShape", 0];
@@ -130,29 +143,44 @@ with uinamespace do {
 		_config = configfile >> "CfgMarkerColors";
 		_index = 0;
 
-		for "_a" from 0 to (count _config - 1) do {
-			_marker = _config select _a;
+		if (isNil "AGM_Map_MarkerColorsCache") then {
+			AGM_Map_MarkerColorsCache = [];
 
-			_scope = getNumber (_marker >> "scope");
-			_name = getText (_marker >> "name");
+			for "_a" from 0 to (count _config - 1) do {
+				_marker = _config select _a;
 
-			if (_scope == 2) then {
-				_color lbAdd _name;
-				_color lbSetValue [_index, _a];
+				_scope = getNumber (_marker >> "scope");
+				_name = getText (_marker >> "name");
 
-				_rgba = getArray (_marker >> "color");
+				if (_scope == 2) then {
+					_color lbAdd _name;
+					_color lbSetValue [_index, _a];
 
-				{
-					if (typeName _x != "SCALAR") then {
-						_rgba set [_forEachIndex, call compile _x];
-					};
-				} forEach _rgba;
+					_rgba = getArray (_marker >> "color");
 
-				_color lbSetPicture [_index, format ["#(argb,8,8,3)color(%1,%2,%3,%4)", _rgba select 0, _rgba select 1, _rgba select 2, _rgba select 3]];
+					{
+						if (typeName _x != "SCALAR") then {
+							_rgba set [_forEachIndex, call compile _x];
+						};
+					} forEach _rgba;
 
-				_index = _index + 1;
+					_icon = format ["#(argb,8,8,3)color(%1,%2,%3,%4)", _rgba select 0, _rgba select 1, _rgba select 2, _rgba select 3];
+
+					_color lbSetPicture [_index, _icon];
+
+					AGM_Map_MarkerColorsCache pushBack [_name, _a, _icon];
+
+					_index = _index + 1;
+				};
 			};
+		} else {
+			{
+				_color lbAdd (_x select 0);
+				_color lbSetValue [_forEachIndex, _x select 1];
+				_color lbSetPicture [_forEachIndex, _x select 2];
+			} forEach AGM_Map_MarkerColorsCache;
 		};
+
 		_color ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedColor}];
 
 		_curSelColor = uiNamespace getVariable ["AGM_Map_curSelMarkerColor", 0];
