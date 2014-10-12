@@ -20,9 +20,11 @@ playSound "AGM_Sound_Click";
 _info spawn {
 	_house = _this select 0;
 
-	_animation0 = format ["%1_%2_rot",        _this select 1, _this select 2];
+	_animation0 = format ["%1_%2_rot",          _this select 1, _this select 2];
 	_animation1 = format ["%1_Handle_%2_rot_1", _this select 1, _this select 2];
 	_animation2 = format ["%1_Handle_%2_rot_2", _this select 1, _this select 2];
+	_animation3 = format ["Door_0%2",            _this select 1, _this select 2];
+	_animation4 = format ["dvere%2",            _this select 1, _this select 2];
 
 	_phase = _house animationPhase _animation0;
 	_position = getPosASL player;
@@ -40,6 +42,8 @@ _info spawn {
 		_house animate [_animation0, _phase];
 		_house animate [_animation1, _phase];
 		_house animate [_animation2, _phase];
+		_house animate [_animation3, _phase];
+		_house animate [_animation4, _phase];
 
 		!AGM_Interaction_isOpeningDoor || {getPosASL player distance _position > 1}
 	};
@@ -50,6 +54,8 @@ _info spawn {
 		_house animate [_animation0, _phase];
 		_house animate [_animation1, _phase];
 		_house animate [_animation2, _phase];
+		_house animate [_animation3, _phase];
+		_house animate [_animation4, _phase];
 	};
 
 	AGM_Interaction_isOpeningDoor = false;
