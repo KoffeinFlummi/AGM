@@ -35,13 +35,13 @@ AGM_Interaction_Shortcuts = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 
 // Flow menu
 if (_this select 2) then {
-	64 cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
+	("AGM_FlowMenu" call BIS_fnc_rscLayer) cutRsc ["AGM_FlowMenu", "PLAIN",0.5, false];
 	AGM_Interaction_SelectedButton = 0;
 	(findDisplay 1713999) closeDisplay 1;
 	if (_player getVariable ["AGM_AcceptAction", -1] == -1) then {
-		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(if((_this select 0) < 0)then{1}else{-1}) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
+		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(-(_this select 0) / 1.2) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if (count _action > 6) then {(_action select 6) call (_action select 1);}else{call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = call AGM_Core_fnc_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu; [_target, _player] call (_action select 1);};}] call AGM_core_fnc_addActionEventHandler];
 		_player setVariable ["AGM_AcceptAction", [_player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
