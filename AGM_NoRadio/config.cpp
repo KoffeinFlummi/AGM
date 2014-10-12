@@ -18,18 +18,26 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class RadioProtocolBase {
+  class CuratorWaypointPlaced;
+  class CuratorWaypointPlacedAttack;
+  class CuratorObjectPlaced;
+  class curatorObjectDestroyed;
+  class curatorModuleCAS;
+};
+
 class CfgVoice {
   class Base;
   class ENG: Base {
-    protocol = "";
+    protocol = "RadioProtocolBase";
   };
   class ENGB: Base {
-    protocol = "";
+    protocol = "RadioProtocolBase";
   };
   class GRE: Base {
-    protocol = "";
+    protocol = "RadioProtocolBase";
   };
   class PER: Base {
-    protocol = "";
+    protocol = "RadioProtocolBase";
   };
 };

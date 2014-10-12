@@ -132,18 +132,6 @@
       <Italian>Seleziona Missili</Italian>
     </Key>
 
-    <Key ID="STR_AGM_WeaponSelect_EnableQuickSelect">
-      <English>Enable Quick Select</English>
-      <German>Schnellauswahl einschalten</German>
-      <Spanish>Activar selección rápida</Spanish>
-      <Polish>Włącz szybki wybór</Polish>
-      <French>Activer la Sélection Rapide</French>
-      <Hungarian>Gyors Kiválasztás Engedélyezése</Hungarian>
-      <Czech>Povolit Rychlou Volbu Zbraní</Czech>
-      <Portuguese>Habilitar Seleção Rápida</Portuguese>
-      <Italian>Attiva la Selezione Rapida</Italian>
-    </Key>
-
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
       <German>Explosive Granate auswählen</German>
@@ -210,6 +198,12 @@
       <Portuguese>Nenhuma granada selecionada</Portuguese>
       <Italian>Nessuna granata selezionata</Italian>
     </Key>
+
+    <Key ID="STR_AGM_WeaponSelect_FireSmokeLauncher">
+      <English>Fire Smoke Launcher</English>
+      <German>Rauchwand abfeuern</German>
+    </Key>
+
 
   </Package>
 </Project>

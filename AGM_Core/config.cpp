@@ -183,6 +183,7 @@ class CfgFunctions {
       class addActionEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
+      class addMapMarkerCreatedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
@@ -243,6 +244,7 @@ class CfgFunctions {
       class removeActionEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
+      class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
@@ -433,6 +435,13 @@ class AGM_Rsc_Control_Base {
 };
 
 class AGM_Core_canInteractConditions {};
+
+class AGM_Core_Options {
+  class enableNumberHotkeys {
+    displayName = "$STR_AGM_Core_EnableNumberHotkeys";
+    default = 1;
+  };
+};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>

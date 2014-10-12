@@ -19,24 +19,26 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
 [] spawn {
   while {true} do {
 
-    // Detect if curator interface is open and disable effects
+    // Detect if curator interface is open and then disable effects an enable input
     if (!isNull(findDisplay 312)) then {
       AGM_BloodLevel_CC ppEffectEnable false;
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousRB ppEffectEnable false;
-      while {!isNull(findDisplay 312)} do {
-        sleep 1;
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
+        [false] call AGM_Core_fnc_disableUserInput;
       };
+      waitUntil {!isNull(findDisplay 312)};
     };
 
-    // Detect if player is not alive and disable effects
+    // Detect if player is not alive and then disable effects and enable input
     if (!(alive player)) then {
       AGM_BloodLevel_CC ppEffectEnable false;
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousRB ppEffectEnable false;
-      while {!(alive player)} do {
-        sleep 1;
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
+        [false] call AGM_Core_fnc_disableUserInput;
       };
+      waitUntil {!(alive player)};
     };
 
     // Blood level

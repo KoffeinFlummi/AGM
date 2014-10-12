@@ -35,7 +35,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = -2;
         icon = "AGM_MagazineRepack\UI\repack_ca.paa";
-        hotkey = "M";
+        hotkey = "R";
       };
     };
   };

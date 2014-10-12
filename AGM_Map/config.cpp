@@ -29,9 +29,13 @@ class CfgFunctions {
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
+      class onLBSelChangedColor;
+      class onLBSelChangedShape;
+      class onSliderPosChangedAngle;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
+      class setMarker;
       class updateMapToolMarkers;
       class updateLineMarker;
     };
@@ -85,6 +89,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 100;
         subMenu[] = {"AGM_MapTools", 1};
+        enableInside = 1;
 
         class AGM_MapToolsHide {
           displayName = "$STR_AGM_Map_MapToolsHide";
@@ -93,6 +98,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 5;
+          enableInside = 1;
         };
         class AGM_MapToolsShowNormal {
           displayName = "$STR_AGM_Map_MapToolsShowNormal";
@@ -101,6 +107,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 4;
+          enableInside = 1;
         };
         class AGM_MapToolsShowSmall {
           displayName = "$STR_AGM_Map_MapToolsShowSmall";
@@ -109,6 +116,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 3;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignNorth {
           displayName = "$STR_AGM_Map_MapToolsAlignNorth";
@@ -117,6 +125,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 2;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignCompass {
           displayName = "$STR_AGM_Map_MapToolsAlignCompass";
@@ -125,6 +134,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 1;
           priority = 1;
+          enableInside = 1;
         };
         class AGM_MapGpsShow {
           displayName = "$STR_AGM_Map_MapGpsShow";
@@ -133,6 +143,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
         class AGM_MapGpsHide {
           displayName = "$STR_AGM_Map_MapGpsHide";
@@ -141,6 +152,7 @@ class CfgVehicles {
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
       };
     };
@@ -214,8 +226,15 @@ class RscControlsGroup;
 class RscActiveText;
 class RscPicture;
 class RscText;
+class RscStructuredText;
 class RscObject;
 class RscButton;
+class RscButtonMenuOK;
+class RscButtonMenuCancel;
+class RscButtonMenu;
+class RscEdit;
+class RscCombo;
+class RscSlider;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -324,8 +343,48 @@ class RscDisplayServerGetReady: RscDisplayGetReady {
 
 // MARKERS
 class CfgMarkers {
+  class Flag;
 
-  class MapToolFixed {
+  // Reenable NATO symbols ...
+  class b_unknown: Flag {scope = 2;};
+
+  // ... and disable all the useless ones
+  // If you think that some of these are needed, create an issue; But until
+  // there's a better way to place markers, there should be only the most
+  // important markers here.
+  // Keep in mind that all of these can still be placed in the editor.
+  class b_hq: b_unknown {scope = 1;};
+  class b_installation: b_unknown {scope = 1;};
+  class b_maint: b_unknown {scope = 1;};
+  class b_med: b_unknown {scope = 1;};
+  class b_service: b_unknown {scope = 1;};
+  class b_support: b_unknown {scope = 1;};
+
+  class n_unknown: b_unknown {};
+  class n_hq: n_unknown {scope = 1;};
+  class n_installation: n_unknown {scope = 1;};
+  class u_installation: n_unknown {scope = 1;}; // i have no idea...
+  class n_maint: n_unknown {scope = 1;};
+  class n_med: n_unknown {scope = 1;};
+  class n_service: n_unknown {scope = 1;};
+  class n_support: n_unknown {scope = 1;};
+
+  class o_unknown: b_unknown {};
+  class o_hq: o_unknown {scope = 1;};
+  class o_installation: o_unknown {scope = 1;};
+  class o_maint: o_unknown {scope = 1;};
+  class o_med: o_unknown {scope = 1;};
+  class o_service: o_unknown {scope = 1;};
+  class o_support: o_unknown {scope = 1;};
+
+  // disable all civy markers (harbor etc.)
+  class c_unknown: b_unknown {scope = 1;};
+
+  // disable quantity indicators (fire team/squad/platoon ...)
+  class group_0: b_unknown {scope = 1;};
+
+
+  class AGM_MapToolFixed {
     name = "MapToolFixed";
     icon = "\AGM_Map\data\mapToolFixed.paa";
     scope = 0;
@@ -333,7 +392,7 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingNormal {
+  class AGM_MapToolRotatingNormal {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingNormal.paa";
     scope = 0;
@@ -341,7 +400,7 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingSmall {
+  class AGM_MapToolRotatingSmall {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingSmall.paa";
     scope = 0;
@@ -350,4 +409,9 @@ class CfgMarkers {
   };
 };
 
+class AGM_Parameters {
+  AGM_Map_BFT_Interval = 1;
+};
+
 #include "MapGpsUI.hpp"
+#include <InsertMarker.hpp>

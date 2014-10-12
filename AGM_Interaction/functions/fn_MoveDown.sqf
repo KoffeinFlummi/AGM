@@ -22,6 +22,10 @@ if (isNil "AGM_Interaction_Buttons") exitWith{};
 _count = (count AGM_Interaction_Buttons)- 1;
 AGM_Interaction_SelectedButton = CLAMP(AGM_Interaction_SelectedButton + _this, 0, _count);
 
+_target = AGM_Interaction_Target;
+_player = call AGM_Core_fnc_player;
+_vehicle = vehicle _player;
+
 disableSerialization;
 _dlgInteractionDialog = uiNamespace getVariable "AGM_Flow_Display";
 _top = AGM_Interaction_SelectedButton - 2;
@@ -34,7 +38,7 @@ while {_i <= 4} do {
 		_ctrl ctrlShow true;
 		_ctrl ctrlSetText (_action select 5);
 		_color = [1,1,1,1];
-		if (!call (_action select 2)) then {
+		if !([_target, _player] call (_action select 2)) then {
 			_color = [0.3,0.3,0.3,0.8];
 		};
 		if (_i == 0 || _i == 4) then {
@@ -55,7 +59,7 @@ _ctrl ctrlSetText ((AGM_Interaction_Buttons select AGM_Interaction_SelectedButto
 _ctrl = _dlgInteractionDialog displayCtrl 1100;
 _current = (AGM_Interaction_Buttons select AGM_Interaction_SelectedButton);
 _infoText = "";
-if (!call (_current select 2)) then {
+if !([_target, _player] call (_current select 2)) then {
 	_infoText = "Unavailable";
 };
 _ctrl ctrlSetText _infoText;
