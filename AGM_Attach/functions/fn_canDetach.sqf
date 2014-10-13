@@ -1,5 +1,9 @@
 // by commy2
 
-canStand player &&
-{alive player} &&
-{player getVariable ["AGM_AttachedItemName", ""] != ""}
+private ["_player"];
+
+_player = _this select 0;
+
+canStand _player &&
+{alive _player} &&
+{_player getVariable ["AGM_AttachedItemName", ""] != ""}

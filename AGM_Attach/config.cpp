@@ -20,7 +20,7 @@ class CfgFunctions {
       class canAttach;
       class canDetach;
       class detach;
-	  class openAttachUI;
+      class openAttachUI;
     };
   };
 };
@@ -36,8 +36,8 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_Attach {
         displayName = "$STR_AGM_Attach_AttachDetach";
-        condition = "[''] call AGM_Attach_fnc_canAttach";
-        statement = "[player] call AGM_Attach_fnc_openAttachUI;";
+        condition = "[_player, ''] call AGM_Attach_fnc_canAttach";
+        statement = "[_player] call AGM_Attach_fnc_openAttachUI;";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
@@ -45,8 +45,8 @@ class CfgVehicles {
       };
       class AGM_Attach_Detach {
         displayName = "$STR_AGM_Attach_Detach";
-        condition = "call AGM_Attach_fnc_canDetach";
-        statement = "[player] call AGM_Attach_fnc_detach";
+        condition = "[_player] call AGM_Attach_fnc_canDetach";
+        statement = "[_player] call AGM_Attach_fnc_detach";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 5;
