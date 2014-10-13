@@ -4,10 +4,11 @@
 */
 
 0 spawn {
-  sleep 5;
+  private ["_side"];
+  
+  waitUntil {!isNil "AGM_SwitchUnits_EnableSwitchUnits"};
   if (AGM_SwitchUnits_EnableSwitchUnits == 0) exitWith{};
 
-  private ["_side"];
   _side = [west, east, independent, civilian] select AGM_SwitchUnits_SwitchUnitsAllowedForSide;
 
   if (side player == _side) then {
