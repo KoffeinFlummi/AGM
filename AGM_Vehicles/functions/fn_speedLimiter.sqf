@@ -2,7 +2,8 @@
 
 _this spawn {
   _vehicle = _this select 0;
-
+  _player = call AGM_Core_fnc_player;
+  
   if (missionNamespace getVariable ["AGM_isSpeedLimiter", false]) exitWith {
     [localize "STR_AGM_SpeedLimiter_Off"] call AGM_Core_fnc_displayTextStructured;
     playSound "AGM_Sound_Click";
@@ -26,7 +27,7 @@ _this spawn {
         (_velocity select 2) * _maxSpeed / _speed
       ];
     };
-    !AGM_isSpeedLimiter || {player != driver _vehicle}
+    !AGM_isSpeedLimiter || {_player != driver _vehicle}
   };
   AGM_isSpeedLimiter = false;
 };
