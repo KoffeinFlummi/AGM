@@ -26,8 +26,6 @@ if !((_itemName in items _unit) or (_itemName in magazines _unit)) exitWith {};
 switch true do {
   case (_itemName == "AGM_IR_Strobe_Item") : {
     _attachedItem = "AGM_IR_Strobe_Effect" createVehicle [0,0,0];
-    //_attachedItem attachTo [_unit,[0,-0.07,0.22],"neck"];
-    //_attachedItem attachTo [_unit,[-0.05,0,0.12],"rightshoulder"];
     _attachedItem attachTo [_unit,[0,-0.11,0.16],"pilot"];//makes it attach to the head a bit better, shoulder is not good for visibility - eRazeri
     [localize "STR_AGM_Attach_IrStrobe_Attached"] call AGM_Core_fnc_displayTextStructured;
   };
