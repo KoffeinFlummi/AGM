@@ -63,37 +63,31 @@ class CfgVehicles {
     simulation = "nvmarker";
 
     class NVGMarker {
-      diffuse[] = {0.006, 0.006, 0.006, 1};
-      ambient[] = {0.005, 0.005, 0.005, 1};
-      brightness = 0.2;
+      diffuse[] = {0,0,0};
+			ambient[] = {0,0,0};
+			brightness = 0.004;
       name = "pozicni blik";
       drawLight = 1;
-      drawLightSize = 0.2;
-      drawLightCenterSize = 0.2;
+      drawLightSize = 0.005;
+      drawLightCenterSize = 0.003;
       activeLight = 0;
-      blinking=1;//doesnt effect, maybe because of simulation
-      blinkingStartsOn=1;//doesnt effect, maybe because of simulation
-      blinkingPattern[] = {2,2};//doesnt effect, maybe because of simulation
-      blinkingPatternGuarantee = false;//doesnt effect, maybe because of simulation
+      blinking=1;
       dayLight = 0;
       onlyInNvg = 1;
       useFlare = 0;
     };
-    side = -1;//-1=noside,3=civ,4=neutral
-    accuracy = 0.01;
-    cost = 1;
+    side = 7;//-1=NO_SIDE yellow box,3=CIV grey box,4=NEUTRAL yellow box,6=FRIENDLY green box,7=LOGIC no radar signature
+    accuracy = 1000;
+    cost = 0;
     armor = 500;
     threat[] = {0,0,0};
+    nameSound = "";
     type = 0;
     weapons[] = {};
     magazines[] = {};
     nvTarget = 1;
-    destrType = "DestructEngine";
+    destrType = "DestructNo";
     brightness = 20;
-    blinking=1;//doesnt effect, maybe because of simulation
-    blinkingStartsOn=1;//doesnt effect, maybe because of simulation
-    blinkingPattern[] = {2,2};//doesnt effect, maybe because of simulation
-    blinkingPatternGuarantee = false;//doesnt effect, maybe because of simulation
   };
 
   class NATO_Box_Base;
