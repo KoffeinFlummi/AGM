@@ -229,6 +229,7 @@ class CfgFunctions {
       class isEngineer;
       class isInBuilding;
       class isMedic;
+      class isPlayer;
       class isTurnedOut;
       class letterToCode;
       class map;

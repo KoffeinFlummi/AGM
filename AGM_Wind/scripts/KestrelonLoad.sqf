@@ -9,14 +9,16 @@ _ctrl4 = _display displayCtrl 42004;
 _ctrl5 = _display displayCtrl 42005;
 _sleep1 = 0.5;
 AGM_Kestrel_wind_Head=0;
-//unIFormItems PLAYER+backpackItems PLAYER+vestItems PLAYER
-//assigneditems PLAYER
+//unIFormItems _player+backpackItems _player+vestItems _player
+//assigneditems _player
 
-IF (!("AGM_ItemKestrel" in  items PLAYER )) THEN {AGM_isKestrel = FALSE;};
-IF (underwater PLAYER) THEN {AGM_isKestrel = FALSE;};
+_player = call AGM_Core_fnc_player;
+
+IF (!("AGM_ItemKestrel" in  items _player )) THEN {AGM_isKestrel = FALSE;};
+IF (underwater _player) THEN {AGM_isKestrel = FALSE;};
 
 WHILE {AGM_isKestrel} DO {
-  _dSpotter = direction PLAYER;
+  _dSpotter = direction _player;
   _windrarray = WIND;
   _windrA= _windrarray select 0;
   _windrB= _windrarray select 1;
@@ -29,10 +31,10 @@ WHILE {AGM_isKestrel} DO {
   IF (_windrR < 90) THEN {_windrAA= _windrAA - (_windrAA*2);};
   IF (_windrR > 270) THEN {_windrAA= _windrAA - (_windrAA*2);};
 
-  _OrtPLAYER = eyePos PLAYER;
-  _Pos0=_OrtPLAYER select 0;
-  _Pos1=_OrtPLAYER select 1;
-  _Pos2=_OrtPLAYER select 2;
+  _OrtPlayer = eyePos _player;
+  _Pos0 = _OrtPlayer select 0;
+  _Pos1 = _OrtPlayer select 1;
+  _Pos2 = _OrtPlayer select 2;
 
   // im Gebaude
   _Ort=0;
@@ -59,24 +61,24 @@ WHILE {AGM_isKestrel} DO {
 
   /*
   onEachFrame {
-    _OrtPLAYER = eyePos PLAYER;
+    _OrtPLAYER = eyePos _player;
     _Pos0=_OrtPLAYER select 0;
     _Pos1=_OrtPLAYER select 1;
     _Pos2=_OrtPLAYER select 2;
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin windDir) * 5, (_Pos1) - (cos windDir) * 5, (_Pos2)-(getPosASL PLAYER SELECT 2)], [1,0,0,1]];
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir-15)) * 5, (_Pos1) - (cos (windDir-15)) * 5, (_Pos2)-(getPosASL PLAYER SELECT 2)], [1,0,0,1]];
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir+15)) * 5, (_Pos1) - (cos (windDir+15)) * 5, (_Pos2)-(getPosASL PLAYER SELECT 2)], [1,0,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin windDir) * 5, (_Pos1) - (cos windDir) * 5, (_Pos2)-(getPosASL _player SELECT 2)], [1,0,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir-15)) * 5, (_Pos1) - (cos (windDir-15)) * 5, (_Pos2)-(getPosASL _player SELECT 2)], [1,0,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir+15)) * 5, (_Pos1) - (cos (windDir+15)) * 5, (_Pos2)-(getPosASL _player SELECT 2)], [1,0,0,1]];
 
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [_Pos0,_Pos1,_Pos2 + 15-(getPosASL PLAYER SELECT 2)], [0,0,1,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [_Pos0,_Pos1,_Pos2 + 15-(getPosASL _player SELECT 2)], [0,0,1,1]];
 
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir)) * 15, (_Pos1) - (cos (windDir)) * 15, (_Pos2)-(getPosASL PLAYER SELECT 2)], [0,1,0,1]];
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir+90)) * 15, (_Pos1) - (cos (windDir+90)) * 15, (_Pos2)-(getPosASL PLAYER SELECT 2)], [0,1,0,1]];
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir-90)) * 15, (_Pos1) - (cos (windDir-90)) * 15, (_Pos2)-(getPosASL PLAYER SELECT 2)], [0,1,0,1]];
-    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL PLAYER SELECT 2)], [(_Pos0) - (sin (windDir+180)) * 15, (_Pos1) - (cos (windDir+180)) * 15, (_Pos2)-(getPosASL PLAYER SELECT 2)], [0,1,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir)) * 15, (_Pos1) - (cos (windDir)) * 15, (_Pos2)-(getPosASL _player SELECT 2)], [0,1,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir+90)) * 15, (_Pos1) - (cos (windDir+90)) * 15, (_Pos2)-(getPosASL _player SELECT 2)], [0,1,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir-90)) * 15, (_Pos1) - (cos (windDir-90)) * 15, (_Pos2)-(getPosASL _player SELECT 2)], [0,1,0,1]];
+    drawLine3D [[(_Pos0) , (_Pos1), (_Pos2)-(getPosASL _player SELECT 2)], [(_Pos0) - (sin (windDir+180)) * 15, (_Pos1) - (cos (windDir+180)) * 15, (_Pos2)-(getPosASL _player SELECT 2)], [0,1,0,1]];
   };
   */
-  //IF (vehicle PLAYER != PLAYER) THEN {_windrAA=0;_windrBB=0};
-  IF (PLAYER != vehicle PLAYER) THEN {_windrAA=0;_windrBB=0};
+  //IF (vehicle _player != _player) THEN {_windrAA=0;_windrBB=0};
+  IF (_player != vehicle _player) THEN {_windrAA=0;_windrBB=0};
 
   IF (_windrAA == 99.99) then {
     AGM_Kestrel_wind_Head = 0;
@@ -98,15 +100,15 @@ WHILE {AGM_isKestrel} DO {
 
   _ctrl2 ctrlSetText _windrAA;
   _ctrl3 ctrlSetText _windrBB;
-  _ctrl4 ctrlSetText FORMAT["%1",round (direction PLAYER)];
-  _ctrl5 ctrlSetText FORMAT["%1 %2",round(((getPosATL PLAYER) select 0)/10)/10,round(((getPosATL PLAYER) select 1)/10)/10];
+  _ctrl4 ctrlSetText FORMAT["%1",round (direction _player)];
+  _ctrl5 ctrlSetText FORMAT["%1 %2",round(((getPosATL _player) select 0)/10)/10,round(((getPosATL _player) select 1)/10)/10];
 
-  IF (!("AGM_ItemKestrel" in items PLAYER)) THEN {AGM_isKestrel = FALSE;};
+  IF (!("AGM_ItemKestrel" in items _player)) THEN {AGM_isKestrel = FALSE;};
   IF (
-    underwater PLAYER ||
-    //{PLAYER != vehicle PLAYER} ||
+    underwater _player ||
+    //{_player != vehicle _player} ||
     {cameraView == "GUNNER"} ||
-    {!alive PLAYER}
+    {!alive _player}
   ) THEN {AGM_isKestrel = FALSE;};
   IF (!AGM_isKestrel) THEN {_sleep1 = 0.01;};
 

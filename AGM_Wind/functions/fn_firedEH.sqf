@@ -5,8 +5,8 @@ _this spawn {
   _round = _this select 5;
 
   if !(local _unit) exitwith {};
-  if !(isPlayer _unit) exitwith {};
-  if !(_unit == player) exitwith {};
+  if !([_unit] call AGM_Core_fnc_isPlayer) exitwith {};
+  if !(_unit == call AGM_Core_fnc_player) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
   _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
