@@ -4,8 +4,10 @@
 
 _vehicle = _this select 0;
 _isEngineOn = _this select 1;
+_player = call AGM_Core_fnc_player;
 
-if (_isEngineOn && {player == driver _vehicle} && {speed _vehicle == 0}) then {
+
+if (_isEngineOn && {_player == driver _vehicle} && {speed _vehicle == 0}) then {
 	[_vehicle] spawn {
 		_vehicle = _this select 0;
 
