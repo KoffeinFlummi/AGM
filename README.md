@@ -2,7 +2,7 @@ Authentic Gameplay Mod
 ======================
 
 <p align="center">
-  <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
+  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" />
 </p>
 
 [![](http://img.shields.io/badge/release-0.93-green.svg)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.svg)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.svg)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg)](https://github.com/KoffeinFlummi/AGM/issues)
