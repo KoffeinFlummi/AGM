@@ -10,6 +10,8 @@ A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work w
 
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
+**Get Latest Version:** https://github.com/KoffeinFlummi/AGM/releases
+
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
 
 It is **built modularly**; Every PBO (with some exceptions) can be removed, so that groups can maintain their own configurations of AGM, excluding components that they don't like, or that might clash with other addons.
