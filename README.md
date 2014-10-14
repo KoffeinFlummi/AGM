@@ -58,7 +58,7 @@ To binarize the addon for testing you can use the `binarizer.exe` in the main fo
 
 In order for the addons to be correctly binarized, you need to exclude the following filytypes from binarization (the binarizer script does this for you):
 ```
-*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
+*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf;
 ```
 
 ---
