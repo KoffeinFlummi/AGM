@@ -203,7 +203,6 @@ class CfgFunctions {
       class doAnimation;
       class execRemoteFnc;
       class filter;
-      class findStringInString;
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
