@@ -1,20 +1,18 @@
 // by commy2
 
-if (
-	getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDownAttack") != 1
-) exitWith {};
+if (getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDownAttack") != 1) exitWith {};
 
 _this spawn {
 	_projectile = _this select 5;
 
 	_flyInHeight = nil;
-	if (missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0] == 1) then {
+	if (missionNamespace getVariable ["AGM_TopDownAttack_modeJavelin", 0] == 1) then {
 		_flyInHeight = 100;
 	};
 
-	_target = missionNamespace getVariable ["AGM_Disposable_LockedTarget", objNull];
-	_isLocked = missionNamespace getVariable ["AGM_Disposable_isTargetLocked", false];
-	AGM_Disposable_LockedTarget = objNull;
+	_target = missionNamespace getVariable ["AGM_TopDownAttack_LockedTarget", objNull];
+	_isLocked = missionNamespace getVariable ["AGM_TopDownAttack_isTargetLocked", false];
+	AGM_TopDownAttack_LockedTarget = objNull;
 
 	// save values of the auto-guided  missile
 	_type = typeOf _projectile;

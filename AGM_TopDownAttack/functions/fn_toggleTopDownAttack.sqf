@@ -5,11 +5,11 @@
 
 private ["_state", "_dlgJavelinOptics", "_ctrlJavelinModeTop", "_ctrlJavelinModeDir"];
 
-_state = missionNamespace getVariable ["AGM_Disposable_modeJavelin", 0];
+_state = missionNamespace getVariable ["AGM_TopDownAttack_modeJavelin", 0];
 
 _state = [1, 0] select _state;
 
-AGM_Disposable_modeJavelin = _state;
+AGM_TopDownAttack_modeJavelin = _state;
 
 playSound "AGM_Sound_Click";
 
