@@ -1,6 +1,7 @@
 
 class RscControlsGroup;
 class RscPicture;
+class RscMapControl;
 
 class RscInGameUI {
 	class RscOptics_titan {
@@ -11,6 +12,12 @@ class RscInGameUI {
 				class CA_Javelin_Day_mode_off: RscPicture {};
 				class CA_Javelin_SEEK_off: CA_Javelin_Day_mode_off {
 					idc = 1005;
+				};
+				class GetLockedTarget: RscMapControl {
+					onDraw = "call AGM_TopDownAttack_fnc_getLockedTarget";
+					idc = -1;
+					w = 0;
+					h = 0;
 				};
 			};
 		};

@@ -18,21 +18,12 @@ class CfgFunctions {
     class AGM_TopDownAttack {
       file = "\AGM_TopDownAttack\functions";
       class canToggleTopDownAttack;
-      class lockTarget;
+      class getLockedTarget;
       class toggleTopDownAttack;
       class topDownAttack;
     };
   };
 };
-
-// obsolete
-/*class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_InitLockTargetMode {
-      clientInit = "call compile preprocessFileLineNumbers '\AGM_TopDownAttack\initUnit.sqf'";
-    };
-  };
-};*/
 
 class Extended_Fired_EventHandlers {
   class CAManBase {

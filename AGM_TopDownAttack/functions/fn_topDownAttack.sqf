@@ -5,13 +5,11 @@ if (getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDow
 _this spawn {
 	_projectile = _this select 5;
 
-	_flyInHeight = nil;
-	if (missionNamespace getVariable ["AGM_TopDownAttack_modeJavelin", 0] == 1) then {
-		_flyInHeight = 100;
-	};
+	if (missionNamespace getVariable ["AGM_TopDownAttack_modeJavelin", 0] == 0) exitWith {};
+	_flyInHeight = 100;
 
+	// cursorTarget doesn't work for lockable weapons in fired event handlers
 	_target = missionNamespace getVariable ["AGM_TopDownAttack_LockedTarget", objNull];
-	_isLocked = missionNamespace getVariable ["AGM_TopDownAttack_isTargetLocked", false];
 	AGM_TopDownAttack_LockedTarget = objNull;
 
 	// save values of the auto-guided  missile
@@ -109,7 +107,7 @@ _this spawn {
 		[_projectile, _vector] call _fnc_changeMissileDirection;
 
 		// no target, self destruct
-		if (isNull _target || {!_isLocked}) exitWith {
+		if (isNull _target) exitWith {
 			sleep 2;
 			deleteVehicle _projectile;
 		};
@@ -148,6 +146,7 @@ _this spawn {
 	} do {
 
 		// flare near target. Target flare instead if the target isn't a flare already
+		// @todo some config values
 		if !(_target isKindOf "CMflareAmmo") then {
 			_flares = position _target nearObjects ["CMflareAmmo", 10];
 
