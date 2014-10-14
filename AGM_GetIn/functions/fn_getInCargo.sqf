@@ -1,6 +1,6 @@
 // by commy2
 
-private ["", "_vehicle", "_index"];
+private ["_player", "_vehicle", "_index"];
 
 _player = _this select 0;
 _vehicle = _this select 1;
