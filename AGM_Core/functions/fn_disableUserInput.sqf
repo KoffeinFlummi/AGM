@@ -52,7 +52,7 @@ if (_state) then {
 
 				_ctrl = _dlg displayctrl 104;
 				_ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; player setDamage 1; [false] call AGM_Core_fnc_disableUserInput;"];
-				_ctrl ctrlEnable true;
+				_ctrl ctrlEnable (missionNamespace getVariable ["AGM_Core_enableRespawnButton", true]);
 				_ctrl ctrlSetText "RESPAWN";
 				_ctrl ctrlSetTooltip "Respawn.";
 			};
