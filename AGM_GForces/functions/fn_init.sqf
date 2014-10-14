@@ -20,7 +20,6 @@ AGM_GForces_CC ppEffectCommit 0.4;
       AGM_GForces = [];
       AGM_GForces_Index = 0;
       waitUntil {sleep 5; (vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)};
-      hint "not air";
     };
 
     _oldVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
