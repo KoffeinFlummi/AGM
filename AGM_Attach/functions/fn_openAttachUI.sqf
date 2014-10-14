@@ -33,7 +33,7 @@ _actions = [localize "STR_AGM_Attach_AttachDetach", localize "STR_AGM_Attach_Att
     };
     _listed pushBack _x;
   };
-} count _attachables;
+} forEach _attachables;
 _attachables = items _unit;
 {
   if !(_x in _listed) then {
@@ -48,7 +48,7 @@ _attachables = items _unit;
     };
     _listed pushBack _x;
   };
-} count _attachables;
+} forEach _attachables;
 
 [
   _actions,
