@@ -17,7 +17,7 @@ _memoryPointDriver = getText (_config >> "memoryPointsGetInDriver");
 
 _distance = getNumber (_config >> "getInRadius");
 
-isNull (driver _vehicle)
+(isNull (driver _vehicle) || (!alive (driver _vehicle)))
 && {alive _vehicle}
 && {!lockedDriver _vehicle}
 && {!(locked _vehicle >= 2)}

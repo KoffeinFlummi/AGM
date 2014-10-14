@@ -17,7 +17,7 @@ _memoryPointGunner = getText (_configTurret >> "memoryPointsGetInGunner");
 
 _distance = getNumber (_config >> "getInRadius");
 
-isNull (_vehicle turretUnit _turret)
+(isNull (_vehicle turretUnit _turret) || !alive (_vehicle turretUnit _turret))
 && {alive _vehicle}
 && {!(_vehicle lockedTurret _turret)}
 && {!(locked _vehicle >= 2)}

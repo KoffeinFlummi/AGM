@@ -256,4 +256,84 @@ class CfgVehicles {
       };
     };
   };
+  
+  class Ship;
+  class Ship_F: Ship {
+    class AGM_Actions {
+      class AGM_GetInDriver {
+        displayName = "$STR_AGM_GetInVehicleAsDriver";
+        distance = 4;
+        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInDriver";
+        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInDriver";
+        showDisabled = 0;
+        priority = -1.90;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
+      };
+      class AGM_GetInGunner {
+        displayName = "$STR_AGM_GetInVehicleAsGunner";
+        distance = 4;
+        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
+        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
+        showDisabled = 0;
+        priority = -1.91;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
+      };
+      class AGM_GetInCommander {
+        displayName = "$STR_AGM_GetInVehicleAsCommander";
+        distance = 4;
+        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInCommander";
+        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInCommander";
+        showDisabled = 0;
+        priority = -1.92;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
+      };
+      class AGM_GetInCargo {
+        displayName = "$STR_AGM_GetInVehicleAsCargo";
+        distance = 4;
+        condition = "[_player, AGM_Interaction_Target, -1] call AGM_GetIn_fnc_canGetInCargo";
+        statement = "[_player, AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
+        showDisabled = 0;
+        priority = -1.93;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+      };
+    };
+    class AGM_SelfActions {
+      class AGM_MoveToDriver {
+        displayName = "$STR_AGM_MoveToDriver";
+        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInDriver";
+        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInDriver";
+        showDisabled = 0;
+        priority = -1.90;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getindriver_ca.paa";
+        enableInside = 1;
+      };
+      class AGM_MoveToGunner {
+        displayName = "$STR_AGM_MoveToGunner";
+        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInGunner";
+        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInGunner";
+        showDisabled = 0;
+        priority = -1.91;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
+        enableInside = 1;
+      };
+      class AGM_MoveToCommander {
+        displayName = "$STR_AGM_MoveToCommander";
+        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInCommander";
+        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInCommander";
+        showDisabled = 0;
+        priority = -1.92;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getincommander_ca.paa";
+        enableInside = 1;
+      };
+      class AGM_MoveToCargo {
+        displayName = "$STR_AGM_MoveToCargo";
+        condition = "[_player, vehicle _player, -1] call AGM_GetIn_fnc_canGetInCargo";
+        statement = "[_player, vehicle _player, -1] call AGM_GetIn_fnc_getInCargo";
+        showDisabled = 0;
+        priority = -1.93;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+        enableInside = 1;
+      };
+    };
+  };
 };
