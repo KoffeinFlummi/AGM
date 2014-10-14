@@ -12,7 +12,7 @@ if (!hasInterface) exitWith{};
     while {AGM_Map_BFT_Enabled and {alive player}} do {
       {
         deleteMarkerLocal _x;
-      } count _markers;
+      } forEach _markers;
       _markers = [];
 
       _groups = [allGroups, {side leader _this == side player}] call AGM_Core_fnc_filter;
@@ -22,7 +22,7 @@ if (!hasInterface) exitWith{};
         _markerType = [_group] call AGM_Core_fnc_getMarkerType;
         _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select ((["GUER", "WEST", "EAST"] find (str side leader _group)) max 0);
 
-        _marker = createMarker [format ["AGM_BFT_%1", _i], [(getPos leader _group) select 0, (getPos leader _group) select 1]];
+        _marker = createMarkerLocal [format ["AGM_BFT_%1", _i], [(getPos leader _group) select 0, (getPos leader _group) select 1]];
         _marker setMarkerTypeLocal _markerType;
         _marker setMarkerColorLocal _colour;
         _marker setMarkerTextLocal (groupID _group);
