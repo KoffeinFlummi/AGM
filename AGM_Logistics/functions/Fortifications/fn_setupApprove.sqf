@@ -35,8 +35,8 @@ _setup spawn {
 	_type = typeOf _this;
 	_setup = _type createVehicle [0, 0, -10000];
 	deleteVehicle _this;
-	_setup setPosASL _pos;
 	_setup setDir _dir;
+	_setup setPosASL _pos;
 
 	player setVariable ["AGM_PlantingExplosive", false];
 
