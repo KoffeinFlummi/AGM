@@ -3,9 +3,8 @@
 if (!hasInterface) exitWith{};
 
 [] spawn {
-  if (isNil "AGM_Map_BFT_Enabled") then {
-    AGM_Map_BFT_Enabled = false;
-  };
+  if (isNil "AGM_Map_BFT_Enabled") then { AGM_Map_BFT_Enabled = false; };
+  if (isNil "AGM_Map_BFT_HideAiGroups") then { AGM_Map_BFT_HideAiGroups = false; };
   while {true} do {
     sleep 5;
     _markers = [];
@@ -14,11 +13,22 @@ if (!hasInterface) exitWith{};
         deleteMarkerLocal _x;
       } forEach _markers;
       _markers = [];
-
-      _groups = [allGroups, {side _this == playerSide}] call AGM_Core_fnc_filter;
-
+      
+      _groups = [];
+      if (AGM_Map_BFT_HideAiGroups == 0) then {
+        _groups = [allGroups, {side _this == playerSide}] call AGM_Core_fnc_filter;
+      } else {
+        _groups = [allGroups, {
+          _anyPlayers = {
+            [_x] call AGM_Core_fnc_isPlayer
+          } count units _this;
+          (side _this == playerSide) && _anyPlayers > 0
+        }] call AGM_Core_fnc_filter;
+      };
+      
       for "_i" from 0 to (count _groups - 1) do {
         _group1 = _groups select _i;
+        
         _markerType = [_group1] call AGM_Core_fnc_getMarkerType;
         _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select (([resistance, west, east] find (side _group1)) max 0);
 
