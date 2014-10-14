@@ -20,5 +20,6 @@ _distance = getNumber (_config >> "getInRadius");
 isNull (driver _vehicle)
 && {alive _vehicle}
 && {!lockedDriver _vehicle}
+&& {!(locked _vehicle >= 2)}
 && {getNumber (_config >> "isUav") != 1}
 && {_player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointDriver)) < _distance || {vehicle _player == _vehicle}}

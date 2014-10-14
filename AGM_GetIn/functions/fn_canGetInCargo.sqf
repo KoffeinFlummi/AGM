@@ -19,6 +19,7 @@ _distance = getNumber (_config >> "getInRadius");
 
 _vehicle emptyPositions "Cargo" > 0
 && {alive _vehicle}
+&& {!(locked _vehicle >= 2)}
 //&& {!(_vehicle lockedCargo _index)}
 //&& {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
 && {_player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCargo)) < _distance || {vehicle _player == _vehicle}}
