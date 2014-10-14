@@ -1,9 +1,9 @@
 // by commy2
 
 _this spawn {
-  _vehicle = _this select 0;
-  _player = call AGM_Core_fnc_player;
-  
+  _player = _this select 0;
+  _vehicle = _this select 1;
+
   if (missionNamespace getVariable ["AGM_isSpeedLimiter", false]) exitWith {
     [localize "STR_AGM_SpeedLimiter_Off"] call AGM_Core_fnc_displayTextStructured;
     playSound "AGM_Sound_Click";
