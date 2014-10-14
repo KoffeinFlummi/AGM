@@ -1,8 +1,11 @@
 // by commy2
 
-_vehicle = _this select 0;
+private ["_player", "_vehicle"];
 
-player action [
-	["GetInPilot", "MoveToPilot"] select (vehicle player == _vehicle),
-	_vehicle
+_player = _this select 0;
+_vehicle = _this select 1;
+
+_player action [
+  ["GetInPilot", "MoveToPilot"] select (vehicle _player == _vehicle),
+  _vehicle
 ];
