@@ -11,8 +11,7 @@
  * none
  */
 
-#define BANDAGETIMEMEDIC 4
-#define BANDAGETIMENONMEDIC 8
+#define BANDAGETIME 4
 #define BANDAGEHEAL 0.8
 
 #define LEGDAMAGETHRESHOLD1 1
@@ -24,9 +23,9 @@ _this spawn {
   _selection = _this select 1;
 
   // determine if unit is medic
-  _healtime = BANDAGETIMENONMEDIC;
-  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
-    _healtime = BANDAGETIMEMEDIC;
+  _healtime = BANDAGETIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _healtime = _healtime * AGM_Medical_CoefNonMedic;
   };
 
   // animation
