@@ -26,6 +26,6 @@ _result = [];
 	if (getNumber (_config >> "AGM_Detonator") == 1) then {
 		_result pushBack _x;
 	};
-} count _items;
+} forEach _items;
 
 _result

@@ -54,6 +54,7 @@ class CfgWeapons {
     visionMode[] = {"Normal","NVG"};
     opticsZoomMax = 0.03;
     opticsZoomMin = 0.03;
+    weaponInfoType = "AGM_RscOptics_vector";
   };
 };
 
@@ -86,6 +87,31 @@ class CfgVehicles {
 
 class AGM_Rsc_Display_Base;
 class AGM_Rsc_Control_Base;
+class RSCText;
+
+class RscInGameUI {
+  class AGM_RscOptics_vector: AGM_Rsc_Display_Base {
+    idd = -1;
+    onLoad = "uiNamespace setVariable ['AGM_dlgVectorOptics', _this select 0];";
+    controls[] = {"CA_Distance","CA_Heading","CA_OpticsPitch"};
+
+    class CA_Distance: RSCText {
+      idc = 151;  // distance
+      w = 0;
+      h = 0;
+    };
+    class CA_Heading: RSCText {
+      idc = 156;  // azimuth
+      w = 0;
+      h = 0;
+    };
+    class CA_OpticsPitch: RSCText {
+      idc = 182;  // inclination
+      w = 0;
+      h = 0;
+    };
+  };
+};
 
 class RscTitles {
   class AGM_Vector : AGM_Rsc_Display_Base {

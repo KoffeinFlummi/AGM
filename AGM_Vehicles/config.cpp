@@ -25,8 +25,8 @@ class CfgFunctions {
 class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "$STR_AGM_SpeedLimiter";
-    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statement = "[_vehicle] call AGM_Vehicles_fnc_speedLimiter";
+    condition = "_player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_player, _vehicle] call AGM_Vehicles_fnc_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AGM">
+  <Package name="Disposable">
+    <Key ID="STR_AGM_Disposable_UsedTube">
+      <English>Used Tube</English>
+      <German>Benutze Einwegwaffe</German>
+    </Key>
+    <Key ID="STR_AGM_Disposable_UsedTubeDescription">
+      <English>Used disposable rocket launcher</English>
+      <German>Benutzter Einweg-Raketenwerfer</German>
+    </Key>
+  </Package>
+</Project>

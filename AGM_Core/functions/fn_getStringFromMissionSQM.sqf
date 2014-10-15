@@ -16,7 +16,7 @@ _path = _this;
 
 if (missionName == "") exitWith {""};
 _mission = toArray toLower loadFile "mission.sqm";
-_mission resize 10000;
+_mission resize 65536;
 {
 	if (_x < 33) then {
 		_mission set [_forEachIndex, -1];
@@ -29,7 +29,7 @@ _mission = toString (_mission - [-1]);
 for "_a" from 0 to (count _path - 2) do {
 	_class = format ["class%1{", _path select _a];
 
-	_index = [_class, _mission] call AGM_Core_fnc_findStringInString;
+	_index = _mission find _class;
 
 	_array = toArray _mission;
 	for "_b" from 0 to (_index + count toArray _class - 1) do {
@@ -41,7 +41,7 @@ for "_a" from 0 to (count _path - 2) do {
 };
 
 _entry = format ["%1=", _path select (count _path - 1)];
-_index = [_entry, _mission] call AGM_Core_fnc_findStringInString;
+_index = _mission find _entry;
 if (_index == -1) exitWith {""};
 
 _array = toArray _mission;
@@ -50,7 +50,7 @@ for "_b" from 0 to (_index + count toArray _entry - 1) do {
 };
 _mission = toString (_array - [-1]);
 
-_index = [";", _mission] call AGM_Core_fnc_findStringInString;
+_index = _mission find ";";
 
 _mission = toArray _mission;
 _mission resize _index;

@@ -1,17 +1,17 @@
 
 class RscDisplayInsertMarker {
-	onLoad = "_this call compile preprocessfilelinenumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
-	onUnload = "if (_this select 1 == 1) then {uiNamespace setVariable ['AGM_Map_currentMarkerData', [uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0], uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0], uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]]]; 0 spawn {[allMapMarkers select (count allMapMarkers - 1)] call AGM_Map_fnc_setMarker;};};";
+	onLoad = "_this call compile preprocessFileLineNumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
+	onUnload = "_this call compile preprocessFileLineNumbers 'AGM_Map\scripts\placeMarker.sqf'";
 	idd = 54;
-	movingEnable = 0;
+	movingEnable = 1;
 	class controlsBackground {
 		class RscText_1000: RscText {
 			idc = 1000;
-			x = "0 * GUI_GRID_INSERTMARKER_W + GUI_GRID_INSERTMARKER_X";
+			/*x = "0 * GUI_GRID_INSERTMARKER_W + GUI_GRID_INSERTMARKER_X";
 			y = "0 * GUI_GRID_INSERTMARKER_H + GUI_GRID_INSERTMARKER_Y";
 			w = "8 * GUI_GRID_INSERTMARKER_W";
 			h = "2.5 * GUI_GRID_INSERTMARKER_H";
-			colorBackground[] = {0,0,0,0.5};
+			colorBackground[] = {0,0,0,0.5};*/
 		};
 		class Description: RscStructuredText {
 			colorBackground[] = {0,0,0,0.7};
@@ -46,6 +46,7 @@ class RscDisplayInsertMarker {
 		};*/
 		delete ButtonMenuInfo;
 		class Title: RscText {
+			moving = 1;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.8])"};
 			idc = 1001;
 			text = "$STR_A3_RscDisplayInsertMarker_Title";

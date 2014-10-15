@@ -23,6 +23,7 @@ _logic spawn {
 
   AGM_Map_BFT_Enabled = true;
   [_this, "AGM_Map_BFT_Interval", "Interval"] call AGM_Core_fnc_readNumericParameterFromModule;
+  [_this, "AGM_Map_BFT_HideAiGroups", "HideAiGroups"] call AGM_Core_fnc_readBooleanParameterFromModule;
 
   diag_log text "[AGM]: Blue Force Tracking Module initialized.";
 };
