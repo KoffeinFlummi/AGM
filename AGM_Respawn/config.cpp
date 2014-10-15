@@ -124,8 +124,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == west";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == west";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -143,8 +143,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == east";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == east";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -162,8 +162,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == independent";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == independent";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -182,8 +182,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == west";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == west";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -201,8 +201,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == east";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == east";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -220,8 +220,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == independent";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == independent";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -234,8 +234,8 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_MoveRallypoint {
         displayName = "Move Rallypoint";
-        condition = "[player, playerSide] call AGM_Respawn_fnc_canMoveRallypoint";
-        statement = "[player, playerSide] call AGM_Respawn_fnc_moveRallypoint";
+        condition = "[_player, side group _player] call AGM_Respawn_fnc_canMoveRallypoint";
+        statement = "[_player, side group _player] call AGM_Respawn_fnc_moveRallypoint";
         showDisabled = 0;
         priority = -0.5;
       };
