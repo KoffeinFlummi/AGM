@@ -168,8 +168,6 @@ class RscTitles {
         idc = 925003;
         type = 0;
         style = 0;
-        x = (safeZoneX + 0.5 * safeZoneW) + (0.04 * safeZoneW);
-        y = (safezoneY + 0.3 * safezoneH / 2) - (0.025 * safeZoneH / 2);
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
