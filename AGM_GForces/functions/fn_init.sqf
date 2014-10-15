@@ -15,7 +15,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
 0 spawn {
   while {True} do {
     _player = call AGM_Core_fnc_player;
-    
+
     if !((vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)) then {
       AGM_GForces = [];
       AGM_GForces_Index = 0;
@@ -62,7 +62,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
   while {True} do {
     sleep INTERVAL;
     _player = call AGM_Core_fnc_player;
-    
+
     _average = 0;
     if (count AGM_GForces > 0) then {
       _sum = 0;
