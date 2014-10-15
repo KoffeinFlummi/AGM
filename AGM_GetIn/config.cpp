@@ -20,7 +20,6 @@ class CfgFunctions {
       class canGetInCoDriver;
       class canGetInCommander;
       class canGetInCoPilot;
-      class canGetInDoorGunner;
       class canGetInDriver;
       class canGetInGunner;
       class canGetInPilot;
@@ -29,7 +28,6 @@ class CfgFunctions {
       class getInCoDriver;
       class getInCommander;
       class getInCoPilot;
-      class getInDoorGunner;
       class getInDriver;
       class getInGunner;
       class getInPilot;
@@ -402,8 +400,10 @@ class CfgVehicles {
       };
     };
   };
-  /*
-  class Helicopter: Air {
+  
+  
+  class Helicopter;
+  class Helicopter_Base_F: Helicopter {
     class AGM_Actions {
       class AGM_GetInPilot {
         displayName = "$STR_AGM_GetInVehicleAsPilot";
@@ -423,23 +423,14 @@ class CfgVehicles {
         priority = -1.90;
         icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
       };
-      class AGM_GetInDoorGunnerLeft {
-        displayName = "$STR_AGM_GetInVehicleAsDoorGunnerLeft";
+      class AGM_GetInGunner {
+        displayName = "$STR_AGM_GetInVehicleAsGunner";
         distance = 4;
-        condition = "[_player, AGM_Interaction_Target, 0] call AGM_GetIn_fnc_canGetInDoorGunner";
-        statement = "[_player, AGM_Interaction_Target, 0] call AGM_GetIn_fnc_getInDoorGunner";
+        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
+        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
         showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
-      };
-      class AGM_GetInDoorGunnerRight {
-        displayName = "$STR_AGM_GetInVehicleAsDoorGunnerRight";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target, 1] call AGM_GetIn_fnc_canGetInDoorGunner";
-        statement = "[_player, AGM_Interaction_Target, 1] call AGM_GetIn_fnc_getInDoorGunner";
-        showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
+        priority = -1.91;
+        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
       };
       class AGM_GetInCargo {
         displayName = "$STR_AGM_GetInVehicleAsCargo";
@@ -470,107 +461,6 @@ class CfgVehicles {
         icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
         enableInside = 1;
       };
-      class AGM_MoveToCargo {
-        displayName = "$STR_AGM_MoveToCargo";
-        condition = "[_player, vehicle _player, -1] call AGM_GetIn_fnc_canGetInCargo";
-        statement = "[_player, vehicle _player, -1] call AGM_GetIn_fnc_getInCargo";
-        showDisabled = 0;
-        priority = -1.93;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-        enableInside = 1;
-      };
-    };
-  };
-  */
-  
-  class Helicopter;
-  class Helicopter_Base_F;
-  class Helicopter_Base_H;
-  
-  // Attack
-  class Heli_Attack_01_base_F: Helicopter_Base_F {
-    class AGM_Actions {
-      class AGM_GetInPilot {
-        displayName = "$STR_AGM_GetInVehicleAsPilot";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInPilot";
-        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInPilot";
-        showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
-      };
-      class AGM_GetInGunner {
-        displayName = "$STR_AGM_GetInVehicleAsGunner";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
-        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
-        showDisabled = 0;
-        priority = -1.91;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-      };
-    };
-    class AGM_SelfActions {
-      class AGM_MoveToPilot {
-        displayName = "$STR_AGM_MoveToPilot";
-        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInPilot";
-        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInPilot";
-        showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
-        enableInside = 1;
-      };
-      class AGM_MoveToGunner {
-        displayName = "$STR_AGM_MoveToGunner";
-        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInGunner";
-        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInGunner";
-        showDisabled = 0;
-        priority = -1.91;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        enableInside = 1;
-      };
-    };
-  };
-  
-  class Heli_Attack_02_base_F: Helicopter_Base_F {
-    class AGM_Actions {
-      class AGM_GetInPilot {
-        displayName = "$STR_AGM_GetInVehicleAsPilot";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInPilot";
-        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInPilot";
-        showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
-      };
-      class AGM_GetInGunner {
-        displayName = "$STR_AGM_GetInVehicleAsGunner";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_canGetInGunner";
-        statement = "[_player, AGM_Interaction_Target] call AGM_GetIn_fnc_getInGunner";
-        showDisabled = 0;
-        priority = -1.91;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-      };
-      class AGM_GetInCargo {
-        displayName = "$STR_AGM_GetInVehicleAsCargo";
-        distance = 4;
-        condition = "[_player, AGM_Interaction_Target, -1] call AGM_GetIn_fnc_canGetInCargo";
-        statement = "[_player, AGM_Interaction_Target, -1] call AGM_GetIn_fnc_getInCargo";
-        showDisabled = 0;
-        priority = -1.93;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
-      };
-    };
-    class AGM_SelfActions {
-      class AGM_MoveToPilot {
-        displayName = "$STR_AGM_MoveToPilot";
-        condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInPilot";
-        statement = "[_player, vehicle _player] call AGM_GetIn_fnc_getInPilot";
-        showDisabled = 0;
-        priority = -1.90;
-        icon = "\A3\ui_f\data\igui\cfg\actions\getinpilot_ca.paa";
-        enableInside = 1;
-      };
       class AGM_MoveToGunner {
         displayName = "$STR_AGM_MoveToGunner";
         condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInGunner";
@@ -591,7 +481,4 @@ class CfgVehicles {
       };
     };
   };
-
-  
-  
 };

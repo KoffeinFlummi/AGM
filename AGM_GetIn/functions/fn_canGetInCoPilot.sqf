@@ -1,24 +1,29 @@
 // by commy2
 
-private ["_player", "_vehicle", "_index", "_config", "_slots", "_memoryPointCoDriver", "_distance"];
+private ["_player", "_vehicle", "_coPilotTurret", "_config", "_configTurret", "_memoryPointCoDriver", "_distance"];
 
 _player = _this select 0;
 _vehicle = _this select 1;
 
+
+_coPilotTurret = [typeOf _vehicle] call AGM_Core_fnc_getCopilotTurret;
+
+if (_coPilotTurret isEqualTo []) exitWith {false};
+
+
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+_configTurret = [_config, _coPilotTurret] call AGM_Core_fnc_getTurretConfigPath;
 
-_slots = getArray (_config >> "cargoIsCoDriver");
-{if (_vehicle lockedCargo _x) then {_slots set [_forEachIndex, -1]}} forEach _slots; _slots = _slots - [-1];
-_index = _slots select 0;
-if (isNil "_index") exitWith {false}; AGM_Interaction_MenuData = [_index];
-
-_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo"); //_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
+_memoryPointCoDriver = getText (_configTurret >> "memoryPointsGetInCargo"); //_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
 
 _distance = getNumber (_config >> "getInRadius");
 
-_vehicle emptyPositions "Cargo" > 0
+AGM_Interaction_MenuData = [_coPilotTurret];
+
+
+
+(isNull (_vehicle turretUnit _coPilotTurret) || (!alive (_vehicle turretUnit _coPilotTurret)))
 && {alive _vehicle}
+&& {!(_vehicle lockedTurret _coPilotTurret)}
 && {!(locked _vehicle >= 2)}
-//&& {!(_vehicle lockedCargo _index)}
-//&& {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
 && {_player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle _player == _vehicle}}
