@@ -27,7 +27,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Scopes {
-    clientInit = "[] call AGM_Scopes_fnc_init;";
+    clientInit = "[player] call AGM_Scopes_fnc_init;";
   };
 };
 
