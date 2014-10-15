@@ -114,6 +114,19 @@ class CfgWeapons {
       };
     };
   };
+
+  class optic_DMS: ItemCore {
+    AGM_ScopeAdjust_Horizontal[] = {-40,40};
+    AGM_ScopeAdjust_Vertical[] = {-40,40};
+    class ItemInfo: InventoryOpticsItem_Base_F {
+      class OpticsModes {
+        class Snip {
+          discreteDistance[] = {};
+          discreteDistanceIndex = 0;
+        };
+      };
+    };
+  };
 };
 
 class RscTitles {
