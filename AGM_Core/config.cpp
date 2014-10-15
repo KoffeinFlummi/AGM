@@ -191,6 +191,7 @@ class CfgFunctions {
       class callCustomEventHandlers;
       class canInteractWith;
       class changeProjectileDirection;
+      class checkPBOs;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToLetter;
