@@ -158,7 +158,7 @@ _this spawn {
     player setVariable ["AGM_CanTreat", false, false];
 
     _diagnosetime = DIAGNOSETIME;
-    if !([player] call AGM_Medical_fnc_isMedic) {
+    if !([player] call AGM_Medical_fnc_isMedic) then {
       _diagnosetime = _diagnosetime * AGM_Medical_CoefNonMedic;
     };
     [_diagnosetime, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
