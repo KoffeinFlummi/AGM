@@ -25,7 +25,7 @@ if (vehicle _playerUnit == _playerUnit) then {
   [_side] call AGM_SwitchUnits_fnc_markAiOnMap;
 
   _playerUnit setVariable ["AGM_SwitchUnits_IsPlayerUnit", true];
-  _playerUnit addEventHandler ["HandleDamage", {false}];
+  _playerUnit allowDamage false;
   
   AGM_SwitchUnits_OriginalUnit = _playerUnit;
   AGM_SwitchUnits_OriginalName = name _playerUnit;

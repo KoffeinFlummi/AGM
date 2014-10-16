@@ -25,9 +25,13 @@ if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player !=
   _newUnit spawn {
     private ["_unit", "_oldUnit", "_respawnEhId"];
     _unit = _this;
-    //[_unit] joinSilent SwitchUnits_OriginalGroup;
+    
+    // should switch locality
+    // maybe replace it with: [[_unit, player], "{(_this select 0) setOwner owner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
+    [_unit] joinSilent SwitchUnits_OriginalGroup;
+    
     _oldUnit = player;
-    waitUntil {local _unit};
+    waitUntil {sleep 0.2; local _unit};
     
     _oldUnit setVariable ["AGM_SwitchUnits_IsPlayerControlled", false, true];
     _oldUnit setVariable ["AGM_SwitchUnits_PlayerControlledName", "", true];
