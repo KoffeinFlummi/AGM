@@ -54,7 +54,7 @@ Se vuoi aiutare il progetto testando e riportando bug, sentiti libero di scarica
 
 Per binarizzare l'addon per il testing, puoi usare il `binarizer.exe` nella cartella principale, oppure se hai già installato [Python 3](https://www.python.org/), utilizza lo script in python per maggiori opzioni. Alternativamente puoi binarizzare manualmente ogni PBO usando l'Addon Builder od un qualsiasi altro binarizzatore. Tutti questi metodi richiedono l'installazione di Arma 3 Tools, che può essere trovato su steam nel pannello strumenti. 
 
-Per consentire una corretta binarizzazione delle addon, hai bisogno di escludere i seguenti filytypes dalla binarizzazione (lo script binarizzatore svolge questo compitono autonomamente):
+Per consentire una corretta binarizzazione delle addon, hai bisogno di escludere i seguenti tipi di file dalla binarizzazione (lo script binarizzatore svolge questo compitono autonomamente):
 ```
 *.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
 ```
