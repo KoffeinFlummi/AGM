@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-16 -->
+<!-- Edited with tabler - 2014-09-11 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
@@ -117,10 +117,20 @@
       <Hungarian>Térkép másolása</Hungarian>
       <Portuguese>Copiar Mapa</Portuguese>
     </Key>
+
     <Key ID="STR_AGM_Map_MarkerDirection">
       <English>Direction: %1°</English>
       <German>Drehung: %1°</German>
-      <French>Direction: %1°</French>
+    </Key>
+	
+	<Key ID="STR_AGM_Tablet_TabletName">
+      <English>Commanding Tablet</English>
+      <German>Commanding Tablet</German>
+    </Key>
+	
+	<Key ID="STR_AGM_Tablet_Description">
+      <English>The Commanding Tablet allow you to place markers and create waypoints.</English>
+      <German>Das Commanding Tablet erlaubt es dir, Marker und Wegpunkte zu erstellen.</German>
     </Key>
   </Package>
 </Project>
