@@ -10,8 +10,7 @@
  * none
  */
 
-#define BLOODBAGTIMEMEDIC 20
-#define BLOODBAGTIMENONMEDIC 30
+#define BLOODBAGTIME 15
 #define BLOODBAGHEAL 0.7
 
 // DETERMINE IF UNIT IS MEDIC
@@ -22,9 +21,9 @@ if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}
 _this spawn {
   _unit = _this select 0;
 
-  _bloodbagtime = BLOODBAGTIMENONMEDIC;
-  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
-    _bloodbagtime = BLOODBAGTIMEMEDIC;
+  _bloodbagtime = BLOODBAGTIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _bloodbagtime = _bloodbagtime * AGM_Medical_CoefNonMedic;
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation

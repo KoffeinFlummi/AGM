@@ -164,6 +164,7 @@ class CfgPatches {
       "a3_weapons_f_bootcamp_longrangerifles_m320",
       "a3_weapons_f_kart",
       "a3_weapons_f_kart_pistols_pistol_signal_f",
+      "a3data",
       "cba_xeh",
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
@@ -190,6 +191,7 @@ class CfgFunctions {
       class callCustomEventHandlers;
       class canInteractWith;
       class changeProjectileDirection;
+      class checkPBOs;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToLetter;
@@ -202,7 +204,6 @@ class CfgFunctions {
       class doAnimation;
       class execRemoteFnc;
       class filter;
-      class findStringInString;
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
@@ -229,6 +230,7 @@ class CfgFunctions {
       class isEngineer;
       class isInBuilding;
       class isMedic;
+      class isPlayer;
       class isTurnedOut;
       class letterToCode;
       class map;

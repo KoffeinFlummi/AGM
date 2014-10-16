@@ -28,7 +28,7 @@ if (count _this > 2) then {
 	_scroll = _this select 2;
 };
 
-72 cutRsc ["AGM_InteractionHelper", "PLAIN",0.5, false];
+("AGM_InteractionHelper" call BIS_fnc_rscLayer) cutRsc ["AGM_InteractionHelper", "PLAIN",0.5, false];
 disableSerialization;
 _display = uiNamespace getVariable ["AGM_Helper_Display", objNull];
 if (isNull _display) exitWith{};

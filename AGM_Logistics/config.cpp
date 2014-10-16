@@ -668,9 +668,62 @@ class CfgVehicles {
 		};
 	};
 
-	class Ship_F;
-	class Boat_F: Ship_F {
+	// boats
+	class Ship: AllVehicles {
 		AGM_fuelCapacity = 40;  // in liter.
+		AGM_Vehicle_Cargo = 4;
+
+		class AGM_Actions {
+			MACRO_UNLOAD
+			MACRO_REFUEL
+			class AGM_Repair {
+				displayName = "$STR_AGM_Repair";
+				distance = 4;
+				condition = "alive AGM_Interaction_Target";
+				statement = "";
+				showDisabled = 1;
+				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
+
+				class AGM_Repair_checkVehicle {
+					displayName = "$STR_AGM_Repair_checkVehicle";
+					distance = 4;
+					condition = "alive AGM_Interaction_Target";
+					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
+					showDisabled = 1;
+					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Body {
+					displayName = "$STR_AGM_Repair_HitHull";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Engine {
+					displayName = "$STR_AGM_Repair_HitEngine";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Fuel {
+					displayName = "$STR_AGM_Repair_HitFuel";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+			};
+		};
 	};
 
 	// Static weapons

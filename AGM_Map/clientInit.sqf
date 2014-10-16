@@ -3,29 +3,39 @@
 if (!hasInterface) exitWith{};
 
 [] spawn {
-  if (isNil "AGM_Map_BFT_Enabled") then {
-    AGM_Map_BFT_Enabled = false;
-  };
+  if (isNil "AGM_Map_BFT_Enabled") then { AGM_Map_BFT_Enabled = false; };
+  if (isNil "AGM_Map_BFT_HideAiGroups") then { AGM_Map_BFT_HideAiGroups = false; };
   while {true} do {
     sleep 5;
     _markers = [];
     while {AGM_Map_BFT_Enabled and {alive player}} do {
       {
         deleteMarkerLocal _x;
-      } count _markers;
+      } forEach _markers;
       _markers = [];
-
-      _groups = [allGroups, {side leader _this == side player}] call AGM_Core_fnc_filter;
-
+      
+      _groups = [];
+      if (AGM_Map_BFT_HideAiGroups == 0) then {
+        _groups = [allGroups, {side _this == playerSide}] call AGM_Core_fnc_filter;
+      } else {
+        _groups = [allGroups, {
+          _anyPlayers = {
+            [_x] call AGM_Core_fnc_isPlayer
+          } count units _this;
+          (side _this == playerSide) && _anyPlayers > 0
+        }] call AGM_Core_fnc_filter;
+      };
+      
       for "_i" from 0 to (count _groups - 1) do {
-        _group = _groups select _i;
-        _markerType = [_group] call AGM_Core_fnc_getMarkerType;
-        _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select ((["GUER", "WEST", "EAST"] find (str side leader _group)) max 0);
+        _group1 = _groups select _i;
+        
+        _markerType = [_group1] call AGM_Core_fnc_getMarkerType;
+        _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select (([resistance, west, east] find (side _group1)) max 0);
 
-        _marker = createMarker [format ["AGM_BFT_%1", _i], [(getPos leader _group) select 0, (getPos leader _group) select 1]];
+        _marker = createMarkerLocal [format ["AGM_BFT_%1", _i], [(getPos leader _group1) select 0, (getPos leader _group1) select 1]];
         _marker setMarkerTypeLocal _markerType;
         _marker setMarkerColorLocal _colour;
-        _marker setMarkerTextLocal (groupID _group);
+        _marker setMarkerTextLocal (groupID _group1);
 
         _markers pushBack _marker;
       };
@@ -136,21 +146,4 @@ if (!hasInterface) exitWith{};
 };
 
 // handle newly set markers
-[{
-  _marker = _this select 0;
-
-  _data = uiNamespace getVariable "AGM_Map_currentMarkerData";
-
-  if (isNil "_data") exitWith {};
-
-  _config = (configfile >> "CfgMarkers") select (_data select 0);
-  _marker setMarkerType configName _config;
-
-  _config = (configfile >> "CfgMarkerColors") select (_data select 1);
-  _marker setMarkerColor configName _config;
-
-  _marker setMarkerDir (_data select 2);
-
-  uiNamespace setVariable ["AGM_Map_currentMarkerData", nil];
-
-}] call AGM_Core_fnc_addMapMarkerCreatedEventhandler;
+//[_this call AGM_Map_fnc_setMarker] call AGM_Core_fnc_addMapMarkerCreatedEventhandler;

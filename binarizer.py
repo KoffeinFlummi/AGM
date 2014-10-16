@@ -272,7 +272,19 @@ def main():
 
   result = " {} / {} modules binarized. ".format(succeeded, attempted)
   print("")
-  print(result.center(79, "="))
+
+  try:
+    import colorama
+  except ImportError:
+    print(result.center(79, "="))
+  else:
+    colorama.init()
+    result = result.center(79, "=")
+    if succeeded == attempted:
+      result = "\33[32m" + result + "\33[39m"
+    else:
+      result = "\33[31m" + result + "\33[39m"
+    print(result)
 
   if getattr(sys, "frozen", False):
     input("\nPress any key to exit...\n")

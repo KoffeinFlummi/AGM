@@ -22,4 +22,4 @@ class CfgFunctions{
 			class RemoveDustEffect;
 		};
 	};
-}
+};

@@ -125,11 +125,14 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     sleep 0.00001;
 
     _preventDeath = false;
-    if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-      _preventDeath = true;
-    };
-    if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-      _preventDeath = true;
+    // Only prevent death if we are going to handle unconciousness
+    if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
+      if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
+        _preventDeath = true;
+      };
+      if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+        _preventDeath = true;
+      };
     };
 
     if !(AGM_Medical_IsFalling) then {
@@ -278,11 +281,14 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 };
 
 _preventDeath = false;
-if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-  _preventDeath = true;
-};
-if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-  _preventDeath = true;
+// Only prevent death if we are going to handle unconciousness
+if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
+  if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
+    _preventDeath = true;
+  };
+  if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+    _preventDeath = true;
+  };
 };
 
 if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) exitWith {
