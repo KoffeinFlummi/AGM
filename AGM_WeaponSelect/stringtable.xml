@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-10-16 -->
 <Project name="AGM">
   <Package name="WeaponSelect">
-
     <Key ID="STR_AGM_WeaponSelect_SelectPistol">
       <English>Select Pistol</English>
       <German>Pistole auswählen</German>
@@ -74,7 +74,6 @@
       <Portuguese>Guardar Arma</Portuguese>
       <Italian>Nascondi l'arma</Italian>
     </Key>
-
     <Key ID="STR_AGM_WeaponSelect_EngineOn">
       <English>Engine on</English>
       <German>Motor an</German>
@@ -97,7 +96,6 @@
       <Portuguese>Desligar Motor</Portuguese>
       <Italian>Motore spento</Italian>
     </Key>
-
     <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
       <English>Select Main Gun</English>
       <German>Hauptgeschütz auswählen</German>
@@ -131,7 +129,6 @@
       <Portuguese>Selecionar Mísseis</Portuguese>
       <Italian>Seleziona Missili</Italian>
     </Key>
-
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
       <German>Explosive Granate auswählen</German>
@@ -198,12 +195,10 @@
       <Portuguese>Nenhuma granada selecionada</Portuguese>
       <Italian>Nessuna granata selezionata</Italian>
     </Key>
-
     <Key ID="STR_AGM_WeaponSelect_FireSmokeLauncher">
       <English>Fire Smoke Launcher</English>
       <German>Rauchwand abfeuern</German>
+      <French>Tirer le lance-pots fumigènes</French>
     </Key>
-
-
   </Package>
 </Project>
