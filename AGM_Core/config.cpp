@@ -207,6 +207,8 @@ class CfgFunctions {
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;

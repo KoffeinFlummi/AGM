@@ -5,8 +5,8 @@ private ["_unit", "_muzzle", "_mode", "_index", "_logic"];
 _this resize 3;
 
 _unit = _this select 0;
-_muzzle = _this select 1;	// optinal
-_mode = _this select 2;		// optinal
+_muzzle = _this select 1;	// optional
+_mode = _this select 2;		// optional
 
 // execute on local unit
 if (!local _unit) exitWith {

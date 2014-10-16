@@ -80,6 +80,7 @@
     </Key>
     <Key ID="STR_AGM_Interaction_ShowNames">
       <English>Show Names</English>
+      <German>Namen anzeigen</German>
       <Spanish>Mostrar nombres</Spanish>
       <French>Afficher noms</French>
     </Key>
@@ -394,6 +395,7 @@
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
       <English>Show player name only on keypress (requires player names)</English>
+      <German>Spielernamen nur auf Tastendruck anzeigen (benötigt Spielernamen)</German>
       <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
     </Key>
