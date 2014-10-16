@@ -8,6 +8,7 @@
       <Portuguese>Ajustar Elevação Acima</Portuguese>
       <French>Hausse +</French>
       <Polish>Regulacja krzyża w pionie +</Polish>
+      <Czech>Zvýšit náměr</Czech>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustDown">
       <English>Adjust Elevation Down</English>
@@ -16,6 +17,7 @@
       <Portuguese>Ajustar Elevação Abaixo</Portuguese>
       <French>Hausse -</French>
       <Polish>Regulacja krzyża w pionie -</Polish>
+      <Czech>Snížit náměr</Czech>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustRight">
       <English>Adjust Windage Right</English>
@@ -24,6 +26,7 @@
       <Portuguese>Ajustar Azimute à Direita</Portuguese>
       <French>Dérive +</French>
       <Polish>Regulacja krzyża w poziomie +</Polish>
+      <Czech>Náměr vítru doprava</Czech>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustLeft">
       <English>Adjust Windage Left</English>
@@ -32,6 +35,7 @@
       <Portuguese>Ajustar Azimute à Esquerda</Portuguese>
       <French>Dérive -</French>
       <Polish>Regulacja krzyża w poziomie -</Polish>
+      <Czech>Náměr vítru doleva</Czech>
     </Key>
   </Package>
 </Project>

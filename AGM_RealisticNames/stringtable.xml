@@ -403,7 +403,7 @@
       <German>KamAZ Transport</German>
       <Spanish>KamAZ de transporte</Spanish>
       <Polish>KamAZ transportowy</Polish>
-      <Czech>KamAZ Valník</Czech>
+      <Czech>Kamaz Valník</Czech>
       <French>KamAZ Transport</French>
       <Russian>КамАЗ Траспортный</Russian>
       <Portuguese>KamAZ Transporte</Portuguese>
@@ -415,7 +415,7 @@
       <German>KamAZ Transport (bedeckt)</German>
       <Spanish>KamAZ de transporte (cubierto)</Spanish>
       <Polish>KamAZ Transportowy (zakryty)</Polish>
-      <Czech>KamAZ Valník (krytý)</Czech>
+      <Czech>Kamaz Valník (krytý)</Czech>
       <French>KamAZ Transport (bâché)</French>
       <Russian>КамАЗ Траспортный (Крытый)</Russian>
       <Portuguese>KamAZ Transporte (coberto)</Portuguese>
@@ -427,7 +427,7 @@
       <German>KamAZ Munition</German>
       <Spanish>KamAZ de munición</Spanish>
       <Polish>KamAZ Amunicyjny</Polish>
-      <Czech>KamAZ Muniční</Czech>
+      <Czech>Kamaz Muniční</Czech>
       <French>KamAZ Munitions</French>
       <Russian>КамАЗ Боеприпасы</Russian>
       <Portuguese>KamAZ Munições</Portuguese>
@@ -439,7 +439,7 @@
       <German>KamAZ Treibstoff</German>
       <Spanish>KamAZ de combustible</Spanish>
       <Polish>KamAZ cysterna</Polish>
-      <Czech>KamAZ Cisterna</Czech>
+      <Czech>Kamaz Cisterna</Czech>
       <French>KamAZ Citerne</French>
       <Russian>КамАЗ Заправщик</Russian>
       <Portuguese>KamAZ Combustível</Portuguese>
@@ -451,7 +451,7 @@
       <German>KamAZ Instandsetzung</German>
       <Spanish>KamAZ de reparación</Spanish>
       <Polish>KamAZ Naprawczy</Polish>
-      <Czech>KamAZ Opravárenský</Czech>
+      <Czech>Kamaz Opravárenský</Czech>
       <French>KamAZ Réparation</French>
       <Russian>КамАЗ Ремонтный</Russian>
       <Portuguese>KamAZ Reparador</Portuguese>
@@ -463,7 +463,7 @@
       <German>KamAZ Sanitäter</German>
       <Spanish>KamAZ médico</Spanish>
       <Polish>KamAZ Medyczny</Polish>
-      <Czech>KamAZ Zdravotnický</Czech>
+      <Czech>Kamaz Zdravotnický</Czech>
       <French>KamAZ Sanitaire</French>
       <Russian>КамАЗ Медицинский</Russian>
       <Portuguese>KamAZ Médico</Portuguese>
@@ -811,7 +811,7 @@
       <German>M18A1 Claymore</German>
       <Spanish>M18A1 Claymore</Spanish>
       <Polish>Mina kierunkowa M18A1 Claymore</Polish>
-      <Czech>M18A1 Claymore Mina</Czech>
+      <Czech>M18A1 Mina Claymore</Czech>
       <French>M18A1 Claymore Mine antipersonnel à effet dirigé</French>
       <Russian>M18A1 Клеймор</Russian>
       <Portuguese>M18A1 Claymore</Portuguese>
@@ -823,7 +823,7 @@
       <German>M183 Geballte Sprengladung</German>
       <Spanish>Conjunto de carga de demolición M183</Spanish>
       <Polish>Ładunek burzący M183</Polish>
-      <Czech>M183 Demolition Charge Assembly</Czech>
+      <Czech>M183 Demoliční nálož</Czech>
       <French>M183 Charge de Démolition</French>
       <Russian>M183 Комплектный подрывной заряд</Russian>
       <Portuguese>M183 Sacola de Demolição</Portuguese>
@@ -835,7 +835,7 @@
       <German>M112 Sprengladung</German>
       <Spanish>Bloque de demolición M112</Spanish>
       <Polish>Ładunek burzący M112</Polish>
-      <Czech>M112 Demoliční nálož</Czech>
+      <Czech>M112 Výbušná nálož</Czech>
       <French>Pétard M112</French>
       <Russian>M112 подрывной заряд</Russian>
       <Portuguese>M112 Carga de Demolição</Portuguese>
@@ -847,7 +847,7 @@
       <German>M67 Splittergranate</German>
       <Spanish>Granada de fragmentación M67</Spanish>
       <Polish>M67 Granat obronny</Polish>
-      <Czech>M67 Granát obranný</Czech>
+      <Czech>M67 Granát</Czech>
       <French>M67 Grenade à fragmentation</French>
       <Russian>M67 ручная осколочная граната</Russian>
       <Portuguese>M67 Granada de fragmentação</Portuguese>
@@ -859,7 +859,7 @@
       <German>M83 Rauchgranate (Weiss)</German>
       <Spanish>Granada de humo M83 (Blanco)</Spanish>
       <Polish>M83 Granat Dymny (Biała)</Polish>
-      <Czech>M83 Dýmový Granát (Bílá)</Czech>
+      <Czech>M83 Kouřový Granát (Bílý)</Czech>
       <French>M83 Grenade fumigène (Blanche)</French>
       <Russian>M83 дымовой гранаты (Белый)</Russian>
       <Portuguese>M83 Granada de fumaça (Branca)</Portuguese>
@@ -871,7 +871,7 @@
       <German>M18 Rauchgranate (Blau)</German>
       <Spanish>Granada de humo M18 (Azul)</Spanish>
       <Polish>M18 Granat Dymny (Niebieski)</Polish>
-      <Czech>M18 Dýmový Granát (Modrá)</Czech>
+      <Czech>M18 Kouřový Granát (Modrý)</Czech>
       <French>M18 Grenade fumigène (Bleue)</French>
       <Russian>M18 дымовой гранаты (Синий)</Russian>
       <Portuguese>M18 Granada de fumaça (Azul)</Portuguese>
@@ -883,7 +883,7 @@
       <German>M18 Rauchgranate (Grün)</German>
       <Spanish>Granada de humo M18 (Verde)</Spanish>
       <Polish>M18 Granat Dymny (Zielony)</Polish>
-      <Czech>M18 Dýmový Granát (Zelená)</Czech>
+      <Czech>M18 Kouřový Granát (Zelený)</Czech>
       <French>M18 Grenade fumigène (Verte)</French>
       <Russian>M18 дымовой гранаты (Зелёный)</Russian>
       <Portuguese>M18 Granada de fumaça (Verde)</Portuguese>
@@ -895,7 +895,7 @@
       <German>M18 Rauchgranate (Orange)</German>
       <Spanish>Granada de humo M18 (Naranja)</Spanish>
       <Polish>M18 Granat Dymny (Pomarańczowy)</Polish>
-      <Czech>M18 Dýmový Granát (Oranžová)</Czech>
+      <Czech>M18 Kouřový Granát (Oranžový)</Czech>
       <French>M18 Grenade fumigène (Orange)</French>
       <Russian>M18 дымовой гранаты (Оранжевый)</Russian>
       <Portuguese>M18 Granada de fumaça (Laranja)</Portuguese>
@@ -907,7 +907,7 @@
       <German>M18 Rauchgranate (Violett)</German>
       <Spanish>Granada de humo M18 (Púrpura)</Spanish>
       <Polish>M18 Granat Dymny (Fioletowy)</Polish>
-      <Czech>M18 Dýmový Granát (Fialové)</Czech>
+      <Czech>M18 Kouřový Granát (Fialový)</Czech>
       <French>M18 Grenade fumigène (Pourpre)</French>
       <Russian>M18 дымовой гранаты (Пурпурный)</Russian>
       <Portuguese>M18 Granada de fumaça (Roxa)</Portuguese>
@@ -919,7 +919,7 @@
       <German>M18 Rauchgranate (Rot)</German>
       <Spanish>Granada de humo M18 (Rojo)</Spanish>
       <Polish>M18 Granat Dymny (Czerwony)</Polish>
-      <Czech>M18 Dýmový Granát (Červená)</Czech>
+      <Czech>M18 Kouřový Granát (Červený)</Czech>
       <French>M18 Grenade fumigène (Rouge)</French>
       <Russian>M18 дымовой гранаты (Красный)</Russian>
       <Portuguese>M18 Granada de fumaça (Vermelha)</Portuguese>
@@ -931,7 +931,7 @@
       <German>M18 Rauchgranate (Gelb)</German>
       <Spanish>Granada de humo M18 (Amarillo)</Spanish>
       <Polish>M18 Granat Dymny (Żółty)</Polish>
-      <Czech>M18 Dýmový Granát (Žlutá)</Czech>
+      <Czech>M18 Kouřový Granát (Žlutý)</Czech>
       <French>M18 Grenade fumigène (Jaune)</French>
       <Russian>M183 дымовой гранаты (Жёлтые)</Russian>
       <Portuguese>M18 Granada de fumaça (Amarela)</Portuguese>
@@ -943,7 +943,7 @@
       <German>M15 Panzerabwehrmine</German>
       <Spanish>Mina antitanque M15</Spanish>
       <Polish>M15 Mina Przeciwpancerna</Polish>
-      <Czech>M15 Protitankové Mina</Czech>
+      <Czech>M15 Protitanková Mina</Czech>
       <French>M15 Mine antichar</French>
       <Russian>M15 противотанковая мина</Russian>
       <Portuguese>M15 Mina anticarro</Portuguese>
@@ -967,7 +967,7 @@
       <German>M26 Antipersonensprungmine</German>
       <Spanish>Mina antipersona M26</Spanish>
       <Polish>M26 Mina Przeciwpiechotna</Polish>
-      <Czech>M26 Protipěchotní Mina</Czech>
+      <Czech>M26 Šrapnelová Mina</Czech>
       <French>M26  Mine antipersonnel bondissante</French>
       <Russian>M26 Противопехотная мина</Russian>
       <Portuguese>M26 Mina saltadora antipessoal</Portuguese>
@@ -979,7 +979,7 @@
       <German>PMR-3 Antipersonenstolperdrahtmine</German>
       <Spanish>Mina antipersona de alambre PMR-3</Spanish>
       <Polish>PMR-3 Mina Przeciwpiechotna</Polish>
-      <Czech>PMR-3 Protipěchotní Mina</Czech>
+      <Czech>PMR-3 Nástražná Mina</Czech>
       <French>PMR-3 Mine antipersonnel à traction</French>
       <Russian>PMR-3 Противопехотная мина</Russian>
       <Portuguese>PMR-3 Mina antipessoal (armadilha)</Portuguese>

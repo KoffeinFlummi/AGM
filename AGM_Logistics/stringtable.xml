@@ -8,7 +8,7 @@
       <French>Menu de chargement</French>
       <Polish>Menu ładunku</Polish>
       <German>Lademenü</German>
-      <Czech>Naložovací Menu</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Carregamento</Portuguese>
       <Italian>Menù di Caricamento</Italian>
       <Hungarian>Berakodás menü</Hungarian>
@@ -30,7 +30,7 @@
       <French>Chargement...</French>
       <German>Verladen ...</German>
       <Polish>Ładowanie ...</Polish>
-      <Czech>Naložuji ...</Czech>
+      <Czech>Naložování ...</Czech>
       <Portuguese>Carregando ...</Portuguese>
       <Italian>Caricamento ...</Italian>
       <Hungarian>Berakodás ...</Hungarian>
@@ -41,7 +41,7 @@
       <Spanish>Descargando ...</Spanish>
       <French>Déchargement ...</French>
       <Polish>Rozładunku ...</Polish>
-      <Czech>Vyložovací ...</Czech>
+      <Czech>Vyložování ...</Czech>
       <Portuguese>Descarregando ...</Portuguese>
       <Italian>Scaricamento ...</Italian>
       <Hungarian>Kirakodás ...</Hungarian>
@@ -74,7 +74,7 @@
       <French>Menu de déchargement</French>
       <Polish>Menu rozładunku</Polish>
       <German>Ablademenü</German>
-      <Czech>Vyložovací Menu</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Descarregamento</Portuguese>
       <Italian>Menù di Scaricamento</Italian>
       <Hungarian>Kirakodás menü</Hungarian>
@@ -154,7 +154,7 @@
       <Russian>Слишком тяжелый предмет</Russian>
       <Spanish>No se puede arrastrar el objeto debido a su peso</Spanish>
       <Polish>Nie można ciągnąć tego przedmiotu z powodu jego wagi</Polish>
-      <Czech>Nelze táhnout z důvodu přílišné váhy</Czech>
+      <Czech>Předmět je příliž těžký!</Czech>
       <French>Trop lourd pour être tracté</French>
       <German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
       <Portuguese>Não é possível carregar o item devido a seu peso</Portuguese>
@@ -667,7 +667,7 @@
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
-      <Czech>Zvolit Menu Kol</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
       <Hungarian>Kerék menü kiválasztása</Hungarian>
@@ -689,7 +689,7 @@
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
-      <Czech>Zvolit Menu Kol</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
       <Hungarian>Kerék menü kiválasztása</Hungarian>
@@ -1128,7 +1128,7 @@
       <Spanish>Sandbag Barrier Crate</Spanish>
       <Polish>Skrzynia z workami z piaskiem</Polish>
       <French>Sac de Sable (Caisse)</French>
-      <Czech>Sandbag Barrier Crate</Czech>
+      <Czech>Pytlová bariéra (složená)</Czech>
       <Portuguese>Caixa de Saco de Areia</Portuguese>
       <Italian>Cassa di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák láda</Hungarian>
@@ -1139,7 +1139,7 @@
       <Spanish>Razor Wire Crate</Spanish>
       <Polish>Skrzynia z drutem kolczastym</Polish>
       <French>Concertina (Caisse)</French>
-      <Czech>Razor Wire Crate</Czech>
+      <Czech>Ostnatý drát (složený)</Czech>
       <Portuguese>Caixa de Arame Farpado</Portuguese>
       <Italian>Cassa di filo spinato</Italian>
       <Hungarian>Szögesdrót láda</Hungarian>
@@ -1150,7 +1150,7 @@
       <Spanish>Sandbag Barrier</Spanish>
       <Polish>Worki z piaskiem</Polish>
       <French>Sacs de sable</French>
-      <Czech>Sandbag Barrier</Czech>
+      <Czech>Bytlová bariéra</Czech>
       <Portuguese>Saco de Areia</Portuguese>
       <Italian>Barriera di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák</Hungarian>
@@ -1161,7 +1161,7 @@
       <Spanish>Concertina</Spanish>
       <Polish>Drut kolczasty</Polish>
       <French>Concertina</French>
-      <Czech>Razor Wire</Czech>
+      <Czech>Ostnatý drát</Czech>
       <Portuguese>Arame Farpado</Portuguese>
       <Italian>Filo spinato</Italian>
       <Hungarian>Szögesdrót</Hungarian>
@@ -1194,7 +1194,7 @@
       <Spanish>Girar</Spanish>
       <Polish>Obróć</Polish>
       <French>Tourner</French>
-      <Czech>Točit</Czech>
+      <Czech>Otočit</Czech>
       <Portuguese>Rotacionar</Portuguese>
       <Italian>Ruota</Italian>
       <Hungarian>Forgatás</Hungarian>

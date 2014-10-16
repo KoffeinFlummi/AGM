@@ -416,6 +416,7 @@
       <English>Disable Command Menu</English>
       <German>Befehlsmenü ausschalten</German>
       <French>Désactiver Menu Commande</French>
+      <Czech>Vypnout velící menu</Czech>
     </Key>
   </Package>
 </Project>
