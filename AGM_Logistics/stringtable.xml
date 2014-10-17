@@ -30,7 +30,7 @@
       <French>Chargement...</French>
       <German>Verladen ...</German>
       <Polish>Ładowanie ...</Polish>
-      <Czech>Naložování ...</Czech>
+      <Czech>Nakládání ...</Czech>
       <Portuguese>Carregando ...</Portuguese>
       <Italian>Caricamento ...</Italian>
       <Hungarian>Berakodás ...</Hungarian>
@@ -41,7 +41,7 @@
       <Spanish>Descargando ...</Spanish>
       <French>Déchargement ...</French>
       <Polish>Rozładunku ...</Polish>
-      <Czech>Vyložování ...</Czech>
+      <Czech>Vykládání ...</Czech>
       <Portuguese>Descarregando ...</Portuguese>
       <Italian>Scaricamento ...</Italian>
       <Hungarian>Kirakodás ...</Hungarian>
@@ -74,7 +74,7 @@
       <French>Menu de déchargement</French>
       <Polish>Menu rozładunku</Polish>
       <German>Ablademenü</German>
-      <Czech>Náklad vozidla</Czech>
+      <Czech>Vykládací menu</Czech>
       <Portuguese>Menu de Descarregamento</Portuguese>
       <Italian>Menù di Scaricamento</Italian>
       <Hungarian>Kirakodás menü</Hungarian>
@@ -667,7 +667,7 @@
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
-      <Czech>Náklad vozidla</Czech>
+      <Czech>Zvolit kolo</Czech>
       <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
       <Hungarian>Kerék menü kiválasztása</Hungarian>
@@ -1128,7 +1128,7 @@
       <Spanish>Sandbag Barrier Crate</Spanish>
       <Polish>Skrzynia z workami z piaskiem</Polish>
       <French>Sac de Sable (Caisse)</French>
-      <Czech>Pytlová bariéra (složená)</Czech>
+      <Czech>Pytlová bariéra (v krabici)</Czech>
       <Portuguese>Caixa de Saco de Areia</Portuguese>
       <Italian>Cassa di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák láda</Hungarian>
@@ -1139,7 +1139,7 @@
       <Spanish>Razor Wire Crate</Spanish>
       <Polish>Skrzynia z drutem kolczastym</Polish>
       <French>Concertina (Caisse)</French>
-      <Czech>Ostnatý drát (složený)</Czech>
+      <Czech>Ostnatý drát (v krabici)</Czech>
       <Portuguese>Caixa de Arame Farpado</Portuguese>
       <Italian>Cassa di filo spinato</Italian>
       <Hungarian>Szögesdrót láda</Hungarian>
@@ -1150,7 +1150,7 @@
       <Spanish>Sandbag Barrier</Spanish>
       <Polish>Worki z piaskiem</Polish>
       <French>Sacs de sable</French>
-      <Czech>Bytlová bariéra</Czech>
+      <Czech>Pytlová bariéra</Czech>
       <Portuguese>Saco de Areia</Portuguese>
       <Italian>Barriera di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák</Hungarian>

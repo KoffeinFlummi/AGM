@@ -26,7 +26,7 @@
       <Portuguese>Ajustar Azimute à Direita</Portuguese>
       <French>Dérive +</French>
       <Polish>Regulacja krzyża w poziomie +</Polish>
-      <Czech>Náměr vítru doprava</Czech>
+      <Czech>Náměr doprava (vítr)</Czech>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustLeft">
       <English>Adjust Windage Left</English>
@@ -35,7 +35,7 @@
       <Portuguese>Ajustar Azimute à Esquerda</Portuguese>
       <French>Dérive -</French>
       <Polish>Regulacja krzyża w poziomie -</Polish>
-      <Czech>Náměr vítru doleva</Czech>
+      <Czech>Náměr doleva (vítr)</Czech>
     </Key>
   </Package>
 </Project>

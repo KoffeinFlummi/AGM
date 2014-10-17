@@ -12,13 +12,13 @@
       <English>Altimeter Watch</English>
       <French>Montre altimètre</French>
       <German>Höhenmesser</German>
-      <Czech>Výškoměrové hodinky</Czech>
+      <Czech>Hodinky s výškoměrem</Czech>
     </Key>
     <Key ID="STR_AGM_Parachute_AltimeterDescription">
       <English>Used to show height, descent rate and the time.</English>
       <French>Affiche la hauteur, le taux de descente et l'heure.</French>
       <German>Zeigt Höhe, Fallgeschwindigkeit und Uhrzeit.</German>
-      <Czech>Používané k zobrazení výšky, rychlosti sestupu a času.</Czech>
+      <Czech>Používané k zjištění výšky, rychlosti sestupu a času.</Czech>
     </Key>
   </Package>
 </Project>
