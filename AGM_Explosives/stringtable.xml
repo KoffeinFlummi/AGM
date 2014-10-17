@@ -80,7 +80,7 @@
       <Spanish>+ Modificador, rota</Spanish>
       <French>+ Modificateur, tourner</French>
       <Italian>+ Modificatore, rotazione</Italian>
-      <Czech>+ Modifier, rotates</Czech>
+      <Czech>+ Modifikátor, otáčí</Czech>
       <Hungarian>+ Modifier, rotates</Hungarian>
       <Polish>+ modyfikator, obracanie</Polish>
       <Portuguese>+ Modificador, rotaciona</Portuguese>
@@ -464,7 +464,7 @@
       <Spanish>Ningún explosivo en el detonador.</Spanish>
       <French>Pas d'explosif à mettre à feu.</French>
       <Italian>Nessun esplosivo sul sensore.</Italian>
-      <Czech>No explosives on trigger.</Czech>
+      <Czech>Žádná výbušnina k odpálení.</Czech>
       <Hungarian>No explosives on trigger.</Hungarian>
       <Polish>Brak ładunków na zapalnik.</Polish>
       <Portuguese>Nenhum explosivo no gatilho.</Portuguese>
@@ -474,11 +474,13 @@
       <English>Dead Man's Switch</English>
       <German>Totmannschalter</German>
       <French>Mise à feu par relâchement de pression</French>
+      <Czech>Spínač mrtvého muže</Czech>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
       <English>Used to remotely trigger explosives when released.</English>
       <German>Zündet Sprengladungen wenn losgelassen.</German>
       <French>Déclenche la mise à feu d'un explosif lorsqu'il est libéré.</French>
+      <Czech>Používaný k vzdálenému odpálení, při uvolnění odpálí výbušniny</Czech>
     </Key>
   </Package>
 </Project>
