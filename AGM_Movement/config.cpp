@@ -1,14 +1,116 @@
+// PATCH CONFIG
 class CfgPatches {
   class AGM_Movement {
     units[] = {};
     weapons[] = {};
-    requiredVersion = 0.60;
+    requiredVersion = 0.10;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
-    author[] = {"KoffeinFlummi"};
-    authorUrl = "https://github.com/KoffeinFlummi/";
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
+    author[] = {"commy2"};
+    authorUrl = "https://github.com/commy2/";
+  };
+};
+
+class CfgFunctions {
+  class AGM_Movement {
+    class AGM_Movement {
+      file = "AGM_Movement\functions";
+      class blinking;
+      class fatigueModule;
+      class heartbeat;
+      class getWeight;
+      class recoil;
+      class stumble;
+      class vision;
+    };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_Movement {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Movement\clientInit.sqf'";
+  };
+};
+
+/*class CfgInventoryGlobalVariable {
+  maxSoldierLoad = 1200;
+};*/
+
+class CfgFatigue {
+  MinValue1 = 0.2;
+  MinValue2 = 0.8;
+  NormalRunSpeed = 7.2;
+  TiredRunSpeedLimit = 0.8;
+  FrequencyMin = 0.2;
+  FrequencyMax = 1.0;
+  TotalLoadCoef = 1.1;
+  MaxDuty = 10;
+};
+
+//DEFAULT (PRE BOOTCAMP!)
+/*
+MinValue1 = 0.1;
+MinValue2 = 0.8;
+NormalRunSpeed = 7.2;
+TiredRunSpeedLimit = 1;
+FrequencyMin = 0.2;
+FrequencyMax = 1.0;
+TotalLoadCoef = 1.1;
+MaxDuty = 10;
+*/
+
+//DEFAULT (POST BOOTCAMP!)
+/*
+MinValue1 = 0.2;
+MinValue2 = 0.8;
+NormalRunSpeed = 7.2;
+TiredRunSpeedLimit = 0.6;
+FrequencyMin = 0.2;
+FrequencyMax = 1;
+TotalLoadCoef = 10;
+MaxDuty = 10;
+*/
+
+class CfgSounds {
+  class AGM_Heartbeat {
+    name = "AGM_Heartbeat";
+    sound[] = {"AGM_Movement\sounds\heartbeat.ogg",1,1};
+    titles[] = {};
+  };
+};
+
+class AGM_Core_Options {
+  class useImperial {
+    displayName = "$STR_AGM_Movement_UseImperial";
+    default = 0;
+  };
+};
+
+// leaving this for compatibility
+class CfgVehicles {
+  class Module_F;
+  class AGM_ModuleFatigue: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "Fatigue System";
+    function = "AGM_Movement_fnc_fatigueModule";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Movement\UI\IconFatigue_ca.paa";
+    class Arguments {
+      class CoefFatigue {
+        displayName = "Getting Tired Coef.";
+        description = "Multiplier for the rate of getting tired. Default: 1";
+        defaultValue = 1;
+      };
+      class CoefRecover {
+        displayName = "Recover Coef.";
+        description = "Multiplier for the time to rest after getting tired. Default: 1";
+        defaultValue = 1;
+      };
+    };
   };
 };
 
@@ -60,7 +162,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
 
     class AmovPercMwlkSlowWrflDf: AmovPercMstpSlowWrflDnon {
-      speed = 0.206897;
+      speed = 0.3; //0.206897;
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };

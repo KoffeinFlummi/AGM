@@ -11,15 +11,25 @@
  * None.
  */
 
-private ["_object", "_id", "_actions"];
+private ["_object", "_id", "_actionsVar", "_currentID", "_actionIDs", "_actions"];
 
 _object = _this select 0;
 _id = _this select 1;
 
-_actions = _object getVariable ["AGM_Interactions", []];
+_actionsVar = _object getVariable ["AGM_Interactions", [-1, [], []]];
 
-if (_id > count _actions - 1) exitWith {};
+_currentID = _actionsVar select 0;
+_actionIDs = _actionsVar select 1;
+_actions = _actionsVar select 2;
 
-_actions set [_id, ["", 0, {false}, {}, false, 0]];
+_id = _actionIDs find _id;
 
-_object setVariable ["AGM_Interactions", _actions, true];
+if (_id == -1) exitWith {};
+
+_actionIDs set [_id, -1];
+_actionIDs = _actionIDs - [-1];
+
+_actions set [_id, []];
+_actions = _actions - [[]];
+
+_object setVariable ["AGM_Interactions", [_currentID, _actionIDs, _actions], true];

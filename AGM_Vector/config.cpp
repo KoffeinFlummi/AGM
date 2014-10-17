@@ -1,30 +1,30 @@
-// PATCH CONFIG
 class CfgPatches {
   class AGM_Vector {
-    units[] = {
-      "AGM_Item_Vector"
-    };
-    weapons[] = {
-      "AGM_Vector"
-    };
+    units[] = {"AGM_Item_Vector"};
+    weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
+    author[] = {"Ghost", "Hamburger SV", "commy2"};
+    authorUrl = "https://github.com/commy2/";
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Vector {
-    clientInit = "execVM '\AGM_Vector\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Vector\clientInit.sqf'";
   };
 };
 
 class AGM_Core_Default_Keys {
   class vectorAzimuth {
     displayName = "$STR_AGM_Vector_AzimuthKey";
-    condition = "(currentWeapon player == 'AGM_Vector') and (vehicle player == player) and {cameraView == 'Gunner'}";
-    statement = "systemChat 'down'; AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then { AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabAzimuthKey; 0 spawn AGM_Vector_abort; };";
+    condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
+    statement = "AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabAzimuthKey; 0 spawn AGM_Vector_abort;};";
     conditionUp = "true";
-    statementUp = "systemChat 'up'; AGM_vectorKey set [0, false];";
+    statementUp = "AGM_vectorKey set [0, false];";
     key = 15;
     shift = 0;
     control = 0;
@@ -32,10 +32,10 @@ class AGM_Core_Default_Keys {
   };
   class vectorDistance {
     displayName = "$STR_AGM_Vector_DistanceKey";
-    condition = "(currentWeapon player == 'AGM_Vector') and (vehicle player == player) and {cameraView == 'Gunner'}";
-    statement = "systemChat 'down'; AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then { AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabDistanceKey; 0 spawn AGM_Vector_abort; };";
+    condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
+    statement = "AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabDistanceKey; 0 spawn AGM_Vector_abort;};";
     conditionUp = "true";
-    statementUp = "systemChat 'up'; AGM_vectorKey set [1, false];";
+    statementUp = "AGM_vectorKey set [1, false];";
     key = 19;
     shift = 0;
     control = 0;
@@ -52,17 +52,19 @@ class CfgWeapons {
     modelOptics = "\AGM_Vector\agm_vector_optics.p3d";
     picture = "\AGM_Vector\UI\agm_vector_x_ca.paa";
     visionMode[] = {"Normal","NVG"};
-    opticszoommax = 0.03;
-    opticszoommin = 0.03;
+    opticsZoomMax = 0.03;
+    opticsZoomMin = 0.03;
+    weaponInfoType = "AGM_RscOptics_vector";
   };
 };
 
 class CfgVehicles {
   class Item_Base_F;
   class AGM_Item_Vector: Item_Base_F {
+    author = "Ghost, Hamburger SV";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_VectorName";
+    displayName = "$STR_AGM_Vector_VectorName";
     vehicleClass = "Items";
     class TransportWeapons {
       class AGM_Vector {
@@ -71,10 +73,45 @@ class CfgVehicles {
       };
     };
   };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_Vector {
+        weapon = "AGM_Vector";
+        count = 6;
+      };
+    };
+  };
 };
 
 class AGM_Rsc_Display_Base;
 class AGM_Rsc_Control_Base;
+class RSCText;
+
+class RscInGameUI {
+  class AGM_RscOptics_vector: AGM_Rsc_Display_Base {
+    idd = -1;
+    onLoad = "uiNamespace setVariable ['AGM_dlgVectorOptics', _this select 0];";
+    controls[] = {"CA_Distance","CA_Heading","CA_OpticsPitch"};
+
+    class CA_Distance: RSCText {
+      idc = 151;  // distance
+      w = 0;
+      h = 0;
+    };
+    class CA_Heading: RSCText {
+      idc = 156;  // azimuth
+      w = 0;
+      h = 0;
+    };
+    class CA_OpticsPitch: RSCText {
+      idc = 182;  // inclination
+      w = 0;
+      h = 0;
+    };
+  };
+};
 
 class RscTitles {
   class AGM_Vector : AGM_Rsc_Display_Base {
@@ -270,40 +307,19 @@ class RscTitles {
     };
   };
 
-/*
-  class AGM_KestrelWheel_Preload : AGM_Rsc_Display_Base {
+  class AGM_Debug_Crosshair : AGM_Rsc_Display_Base {
+    name = "AGM_Debug_Crosshair";
+    onLoad = "uiNamespace setVariable ['AGM_ctrlDebugCrosshair', (_this select 0) displayCtrl 1];";
+
     class controlsBackground {
-      class Preload_0 : AGM_Rsc_Control_Base {
-        text = "\agm_kestrel\texturen\kestrel_0.paa";
-      };
-      class Preload_1 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_1.paa";
-      };
-      class Preload_2 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_2.paa";
-      };
-      class Preload_3 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_3.paa";
-      };
-      class Preload_4 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_4.paa";
-      };
-      class Preload_5 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_5.paa";
-      };
-      class Preload_6 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_6.paa";
-      };
-      class Preload_7 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_7.paa";
-      };
-      class Preload_8 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_8.paa";
-      };
-      class Preload_9 : Preload_0 {
-        text = "\agm_kestrel\texturen\kestrel_9.paa";
+      class Debug_Crosshair : AGM_Rsc_Control_Base {
+        text = "\AGM_Vector\rsc\debug_crosshair.paa";
+        colorText[] = {1, 0, 0, 0.5};
+        x = 0.490938 * safezoneW + safezoneX;
+        y = 0.4838 * safezoneH + safezoneY;
+        w = 0.3 / 16 * safezoneW;
+        h = 0.3 / 9 * safezoneH;
       };
     };
   };
-*/
 };

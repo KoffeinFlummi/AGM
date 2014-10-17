@@ -5,6 +5,8 @@
   (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+
 if (!hasInterface) exitWith {};
 
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
@@ -24,20 +26,21 @@ for "_index" from 0 to 300 do {
   AGM_Core_keyTimes set [_index, -1];
 };
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractFunction.sqf";
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWheel.sqf";
 
 0 spawn {
   while {true} do {
-    waitUntil {!isNull (findDisplay 46)}; sleep 1;
-    if (isNil "AGM_Core_KeyDown_ehid") then {AGM_Core_KeyDown_ehid = (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"]};
-    if (isNil "AGM_Core_KeyUp_ehid") then {AGM_Core_KeyUp_ehid = (findDisplay 46) displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"]};
+    waitUntil {!isNull (findDisplay 46)}; sleep 0.1;
+    findDisplay 46 displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
+    findDisplay 46 displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+    findDisplay 46 displayAddEventHandler ["MouseZChanged", "_this call AGM_Core_onScrollWheel"];
     [false] call AGM_Core_fnc_disableUserInput;
     waitUntil {isNull (findDisplay 46)};
-    AGM_Core_KeyDown_ehid = nil;
-    AGM_Core_KeyUp_ehid = nil;
   };
 };
 
-call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
-
 enableCamShake true;
+
+[player] call AGM_Core_fnc_setName;

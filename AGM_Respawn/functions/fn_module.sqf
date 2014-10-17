@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi, jodav
+ * Author: KoffeinFlummi, jodav, CAA-Picard
  *
  * Initializes the respawn module.
  *
@@ -7,17 +7,17 @@
  * Whatever the module provides. (I dunno.)
  *
  * Return Value:
- * None 
+ * None
  */
+if !(isServer) exitWith {};
 
 _logic = _this select 0;
-_units = _this select 1;
 _activated = _this select 2;
 
 if !(_activated) exitWith {};
 
 AGM_Respawn_Module = true;
 
-AGM_Respawn_SavePreDeathGear = _logic getVariable "SavePreDeathGear";
+[_logic, "AGM_Respawn_SavePreDeathGear", "SavePreDeathGear"] call AGM_Core_fnc_readBooleanParameterFromModule;
 
-diag_log text "AGM: Respawn Module Initialized.";
+diag_log text "[AGM]: Respawn Module Initialized.";

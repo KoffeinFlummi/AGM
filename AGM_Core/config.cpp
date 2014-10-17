@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Core {
-    units[] = {};
-    weapons[] = {};
+    units[] = {"AGM_Box_Misc"};
+    weapons[] = {"AGM_ItemCore", "AGM_FakePrimaryWeapon"};
     requiredVersion = 0.60;
     requiredAddons[] = {
       "a3_air_f",
@@ -52,11 +52,11 @@ class CfgPatches {
       "a3_characters_f_epb",
       "a3_characters_f_epb_heads",
       "a3_characters_f_epc",
-      /*"a3_characters_f_bootcamp",
-      "a3_characters_f_bootcamp_common",*/
+      "a3_characters_f_bootcamp",
+      "a3_characters_f_bootcamp_common",
       "a3_data_f",
       "a3_data_f_particleeffects",
-      //"a3_data_f_bootcamp",
+      "a3_data_f_bootcamp",
       "a3_data_f_curator",
       "a3_data_f_curator_characters",
       "a3_data_f_curator_intel",
@@ -88,14 +88,14 @@ class CfgPatches {
       "a3_soft_f_gamma_truckheavy",
       "a3_soft_f_truck",
       "a3_soft_f_epc_truck_03",
-      /*"a3_soft_f_bootcamp_offroad_01",
+      "a3_soft_f_bootcamp_offroad_01",
       "a3_soft_f_bootcamp_quadbike",
-      "a3_soft_f_bootcamp_truck",*/
+      "a3_soft_f_bootcamp_truck",
       "a3_soft_f_kart_kart_01",
       "a3_uav_f_characters_f_gamma",
       "a3_uav_f_weapons_f_gamma_ammoboxes",
       "a3_ui_f",
-      //"a3_ui_f_bootcamp",
+      "a3_ui_f_bootcamp",
       "a3_ui_f_curator",
       "a3_ui_f_kart",
       "a3_weapons_f_gamma_items",
@@ -158,19 +158,20 @@ class CfgPatches {
       "a3_weapons_f_epb_longrangerifles_m320",
       "a3_weapons_f_epb_rifles_mx_black",
       "a3_weapons_f_epc",
-      /*"a3_weapons_f_bootcamp",
+      "a3_weapons_f_bootcamp",
       "a3_weapons_f_bootcamp_ammoboxes",
       "a3_weapons_f_bootcamp_longrangerifles_gm6",
-      "a3_weapons_f_bootcamp_longrangerifles_m320",*/
+      "a3_weapons_f_bootcamp_longrangerifles_m320",
       "a3_weapons_f_kart",
       "a3_weapons_f_kart_pistols_pistol_signal_f",
+      "a3data",
       "cba_xeh",
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -178,57 +179,96 @@ class CfgPatches {
 
 class CfgFunctions {
   class AGM_Core {
-    /*class AGM_Core_init {
-      class AGM_Core {
-        file = "AGM_Core\init.sqf";
-        postInit = 1;
-      };
-    };*/
-    class AGM_Core {//_functions {
+    class AGM_Core {
       file = "AGM_Core\functions";
+      class addActionEventHandler;
+      class addCameraEventHandler;
+      class addCustomEventHandler;
+      class addMapMarkerCreatedEventHandler;
+      class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
+      class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
+      class canInteractWith;
+      class changeProjectileDirection;
+      class checkPBOs;
+      class claim;
+      class closeDialogIfTargetMoves;
+      class codeToLetter;
       class codeToString;
       class convertKeyCode;
-      class createUpdateLoop;
       class disableUserInput;
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
+      class doAnimation;
       class execRemoteFnc;
       class filter;
-      class findStringInString;
       class getBinocular;
+      class getConfigCommander;
+      class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
+      class getPitchBankYaw;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
+      class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
-      class getTurretCommander;
-      class getTurretGunner;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
+      class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
+      class inTransitionAnim;
       class isAutoWind;
+      class isEngineer;
       class isInBuilding;
+      class isMedic;
+      class isPlayer;
       class isTurnedOut;
+      class letterToCode;
       class map;
       class moduleCheckPBOs;
+      class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
+      class owned;
+      class player;
       class progressBar;
+      class readBooleanParameterFromModule;
+      class readNumericParameterFromModule;
+      class removeActionEventHandler;
+      class removeCameraEventHandler;
+      class removeCustomEventHandler;
+      class removeMapMarkerCreatedEventHandler;
+      class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setKeyDefault;
       class setName;
+      class setParameter;
+      class setPitchBankYaw;
       class stringToColoredText;
       class subString;
       class toBin;
+      class toBitmask;
       class toHex;
+      class toNumber;
+    };
+  };
+  class AGM_Debug {
+    class AGM_Debug {
+      file = "AGM_Core\functions\Debug";
+      class showUser;
     };
   };
 };
@@ -240,16 +280,31 @@ class CfgSounds {
   };
 };
 
+class Extended_PreInit_EventHandlers {
+  class AGM_Core {
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
+  };
+};
+
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    disableModuload = true;
   };
 };
 
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      Init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+    };
+  };
+};
+
+class Extended_Local_EventHandlers {
+  class CAManBase {
+    class AGM_SetName {
+      local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };
@@ -271,6 +326,7 @@ class CfgVehicles {
     function = "AGM_Core_fnc_moduleCheckPBOs";
     scope = 2;
     isGlobal = 1;
+    icon = "\AGM_Core\UI\IconCheckPBO_ca.paa";
     class Arguments {
       class Action {
         displayName = "Action";
@@ -279,18 +335,29 @@ class CfgVehicles {
           class WarnOnce {
             default = 1;
             name = "Warn once";
-            value = 1;
+            value = 0;
           };
           class Warn {
             name = "Warn (permanent)";
-            value = 2;
+            value = 1;
           };
           class Kick {
             name = "Kick";
-            value = 3;
+            value = 2;
           };
         };
       };
+    };
+  };
+
+  class AGM_ModuleLSDVehicles: Module_F {
+    author = "AGM Team";
+    category = "AGM";
+    displayName = "LSD Vehicles";
+    function = "AGM_Core_fnc_moduleLSDVehicles";
+    scope = 2;
+    isGlobal = 1;
+    class Arguments {
     };
   };
 
@@ -309,12 +376,19 @@ class CfgVehicles {
 };
 
 class CfgWeapons {
-  class Rifle_Base_F;
+  class ItemCore;
+  class AGM_ItemCore: ItemCore {
+    type = 4;
+    detectRange = -1;
+    simulation = "ItemMineDetector";
+  };
 
+  class Rifle_Base_F;
   class AGM_FakePrimaryWeapon: Rifle_Base_F {
     discreteDistance[] = {};
     discreteDistanceInitIndex = 0;
     displayName = "";
+    picture = "";
     model = "";
     magazines[] = {"AGM_FakeMagazine"};
     scope = 2;
@@ -365,6 +439,14 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
+class AGM_Core_canInteractConditions {};
+
+class AGM_Core_Options {
+  class enableNumberHotkeys {
+    displayName = "$STR_AGM_Core_EnableNumberHotkeys";
+    default = 1;
+  };
+};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>

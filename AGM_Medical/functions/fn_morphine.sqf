@@ -10,8 +10,7 @@
  * none
  */
 
-#define MORPHINETIMEMEDIC 5
-#define MORPHINETIMENONMEDIC 10
+#define MORPHINETIME 5
 #define MORPHINEHEAL 0.4
 #define MORPHINEREDUCTION 0.015
 
@@ -20,16 +19,16 @@ _this spawn {
   _painkillerOld = _unit getVariable "AGM_Painkiller";
 
   // DETERMINE IF PLAYER IS MEDIC
-  _morphinetime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
-    _morphinetime = MORPHINETIMEMEDIC;
-  } else {
-    _morphinetime = MORPHINETIMENONMEDIC;
+  _morphinetime = MORPHINETIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _morphinetime = _morphinetime * AGM_Medical_CoefNonMedic;
   };
 
   player setVariable ["AGM_CanTreat", false, false];
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
+
+  if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
 
   if (_unit != player) then {
     [-2, {
@@ -43,12 +42,14 @@ _this spawn {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    if !([_unit, "AGM_Morphine"] call AGM_Medical_fnc_takeItem) exitWith {};
-
-    if (_painkillerOld < 0.1) exitWith {
+    if (_painkillerOld < 0.1 and AGM_Medical_EnableOverdosing > 0) exitWith {
       if (_unit == player) then {
+        _unit setVariable ["AGM_Overdosing", true];
         AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
         AGM_UnconsciousCC ppEffectEnable true;
         AGM_UnconsciousCC ppEffectForceInNVG true;
@@ -67,7 +68,7 @@ _this spawn {
       }, _unit] call CBA_fnc_globalExecute;
       _unit spawn {
         sleep 20;
-        [_this, "HitHead", 1] call AGM_Medical_fnc_setHitPointDamage;
+        [_this, "HitHead", 1, true] call AGM_Medical_fnc_setHitPointDamage;
       };
     };
 
@@ -80,7 +81,7 @@ _this spawn {
     if (_painkillerOld == 1) then {
       0 = _unit spawn {
         while {_this getVariable "AGM_Painkiller" < 1} do {
-          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1];
+          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1, true];
           sleep 10;
         };
       };
@@ -93,8 +94,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_morphineAbort = {
@@ -103,5 +102,5 @@ _this spawn {
   };
 
   [_morphinetime, (_this + [_painkillerOld]), "AGM_Medical_morphineCallback", localize "STR_AGM_Medical_Injecting_Morphine", "AGM_Medical_morphineAbort"] call AGM_Core_fnc_progressBar;
-
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

@@ -48,10 +48,18 @@ _assigneditems = _allGear select 17;
 
 
 // start restoring the items
-_unit addHeadgear _headgear;
-_unit addUniform _uniform;
-_unit addVest _vest;
-_unit addGoggles _goggles;
+if (_headgear != "") then {
+  _unit addHeadgear _headgear;
+};
+if (_uniform != "") then {
+  _unit addUniform _uniform;
+};
+if (_vest != "") then {
+  _unit addVest _vest;
+};
+if (_goggles != "") then {
+  _unit addGoggles _goggles;
+};
 
 {
     _unit addItemToUniform _x;
@@ -64,6 +72,10 @@ _unit addGoggles _goggles;
 
 if(format["%1", _backpack] != "") then {
     _unit addbackpack _backpack;
+    _backpa = unitBackpack _unit;
+	clearMagazineCargoGlobal _backpa;
+	clearWeaponCargoGlobal _backpa;
+	clearItemCargoGlobal _backpa;
     {
         _unit addItemToBackpack _x;
     } foreach _backpackitems;
@@ -75,7 +87,9 @@ if(format["%1", _backpack] != "") then {
     _unit addMagazine _x;
 } foreach _primaryweaponmagazine;
 
-_unit addweapon _primaryweapon;
+if (_primaryweapon != "") then {
+    _unit addweapon _primaryweapon;
+};
 
 {
     _unit addPrimaryWeaponItem _x;
@@ -87,7 +101,9 @@ _unit addweapon _primaryweapon;
     _unit addMagazine _x;
 } foreach _secondaryweaponmagazine;
 
-_unit addweapon _secondaryweapon;
+if (_secondaryweapon != "") then {
+    _unit addweapon _secondaryweapon;
+};
 
 {
     _unit addSecondaryWeaponItem _x;
@@ -99,7 +115,9 @@ _unit addweapon _secondaryweapon;
     _unit addMagazine _x;
 } foreach _handgunweaponmagazine;
 
-_unit addweapon _handgunweapon;
+if (_handgunweapon != "") then {
+    _unit addweapon _handgunweapon;
+};
 
 {
     _unit addHandgunItem _x;
@@ -107,6 +125,10 @@ _unit addweapon _handgunweapon;
 
 
 // items
-{
-    _unit linkItem _x;
-} foreach _assigneditems;
+{_unit linkItem _x} forEach _assignedItems;
+{_unit addWeapon _x} forEach _assignedItems;
+
+if ("Laserdesignator" in assignedItems _unit) then {
+  _unit selectWeapon "Laserdesignator";
+  if (currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
+};

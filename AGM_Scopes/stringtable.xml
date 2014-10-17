@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AGM">
+  <Package name="Scopes">
+    <Key ID="STR_AGM_Scopes_AdjustUp">
+      <English>Adjust Elevation Up</English>
+      <Hungarian>Magasság Állítása Felfelé</Hungarian>
+      <German>Optik-Elevation erhöhen</German>
+      <Portuguese>Ajustar Elevação Acima</Portuguese>
+      <French>Hausse +</French>
+      <Polish>Regulacja krzyża w pionie +</Polish>
+      <Czech>Zvýšit náměr</Czech>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustDown">
+      <English>Adjust Elevation Down</English>
+      <Hungarian>Magasság Állítása Lefelé</Hungarian>
+      <German>Optik-Elevation verringern</German>
+      <Portuguese>Ajustar Elevação Abaixo</Portuguese>
+      <French>Hausse -</French>
+      <Polish>Regulacja krzyża w pionie -</Polish>
+      <Czech>Snížit náměr</Czech>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustRight">
+      <English>Adjust Windage Right</English>
+      <Hungarian>Oldalirány Állítása Jobbra</Hungarian>
+      <German>Optik-Azimuth erhöhen</German>
+      <Portuguese>Ajustar Azimute à Direita</Portuguese>
+      <French>Dérive +</French>
+      <Polish>Regulacja krzyża w poziomie +</Polish>
+      <Czech>Náměr doprava (vítr)</Czech>
+    </Key>
+    <Key ID="STR_AGM_Scopes_AdjustLeft">
+      <English>Adjust Windage Left</English>
+      <Hungarian>Oldalirány Állítása Balra</Hungarian>
+      <German>Optik-Azimuth verringern</German>
+      <Portuguese>Ajustar Azimute à Esquerda</Portuguese>
+      <French>Dérive -</French>
+      <Polish>Regulacja krzyża w poziomie -</Polish>
+      <Czech>Náměr doleva (vítr)</Czech>
+    </Key>
+  </Package>
+</Project>

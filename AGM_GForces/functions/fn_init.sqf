@@ -1,5 +1,7 @@
-#define AVERAGEDURATION 4
-#define INTERVAL 0.5
+#define AVERAGEDURATION 6
+#define INTERVAL 0.25
+
+if !(hasInterface) exitWith {};
 
 AGM_GForces = [];
 AGM_GForces_Index = 0;
@@ -12,26 +14,28 @@ AGM_GForces_CC ppEffectCommit 0.4;
 
 0 spawn {
   while {True} do {
-    if !((vehicle player isKindOf "Air") or ((getPos player select 2) > 5)) then {
+    _player = call AGM_Core_fnc_player;
+
+    if !((vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)) then {
       AGM_GForces = [];
       AGM_GForces_Index = 0;
-      waitUntil {sleep 5; (vehicle player isKindOf "Air") or ((getPos player select 2) > 5)};
+      waitUntil {sleep 5; (vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)};
     };
 
-    _oldVel = [velocity (vehicle player), vectorDir (vehicle player)] call AGM_Core_fnc_hadamardProduct;
+    _oldVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
 
     sleep INTERVAL;
 
-    _newVel = [velocity (vehicle player), vectorDir (vehicle player)] call AGM_Core_fnc_hadamardProduct;
+    _newVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
     _accel = [
       ((_newVel select 0) - (_oldVel select 0)) / INTERVAL,
       ((_newVel select 1) - (_oldVel select 1)) / INTERVAL,
       ((_newVel select 2) - (_oldVel select 2)) / INTERVAL - 9.8
     ];
 
-    _angle = velocity (vehicle player) vectorDotProduct vectorUp (vehicle player);
+    _angle = velocity (vehicle _player) vectorDotProduct vectorUp (vehicle _player);
     _gForce = (vectorMagnitude _accel) / 9.8;
-    if (((_angle > 0) and (vehicle player isKindOf "Air")) or ((_newVel select 2 < 0) and !(vehicle player isKindOf "Air"))) then {
+    if (((_angle > 0) and (vehicle _player isKindOf "Air")) or ((_newVel select 2 < 0) and !(vehicle _player isKindOf "Air"))) then {
       _gForce = _gForce * -1;
     };
 
@@ -40,9 +44,24 @@ AGM_GForces_CC ppEffectCommit 0.4;
   };
 };
 
+
+/*
+ * source: http://en.wikipedia.org/wiki/G-LOC
+ * untrained persons without gsuit will fall unconscious between 4 and 6G
+ * pilots in gsuits will sustain up to 9G
+ * a person is for average 12 seconds unconscious
+ * after being unconscious, a person is unable to do simple tasks for average 15 seconds
+ *
+ * _upTolerance converts the effective 9G of a pilot to virtual 5.4G (= 0.8*0.75*9G)
+ * pilots with gsuit will get unconscious at an _average of 9G
+ * normal men without gsuit will get unconscious at an _average of 5.4G
+ */
+
 0 spawn {
+  _maxVirtualG = 5.4;
   while {True} do {
     sleep INTERVAL;
+    _player = call AGM_Core_fnc_player;
 
     _average = 0;
     if (count AGM_GForces > 0) then {
@@ -53,26 +72,30 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _average = _sum / (count AGM_GForces);
     };
 
-    _upTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef") * getNumber (configFile >> "CfgWeapons" >> (uniform player) >> "AGM_GForceCoef");
-    _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf player) >> "AGM_GForceCoef");
+    _downTolerance = _player getVariable ["AGM_GForceCoef", nil];
+    if (isNil "_downTolerance") then {
+      _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef");
+    };
+    _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform _player) >> "AGM_GForceCoef");
 
-    if (((_average * _upTolerance) > 4) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical")}) then {
-      [player] call AGM_Medical_fnc_knockOut;
+    if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_Unconscious", false])}}) then {
+      [_player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 
-    if ((abs _average > 2) and !(player getVariable ["AGM_Unconscious", false])) then {
+    if ((abs _average > 2) and !(_player getVariable ["AGM_Unconscious", false])) then {
       if (_average > 0) then {
-        _strength = 2 - (((_average * _upTolerance) min 3.5) / 3.5) * 1.6;
+        _strength = 1.2 - (((_average - 2) * _upTolerance) / (_maxVirtualG - 2));
         AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
         addCamShake [((abs _average) - 2) / 3, 1, 15];
       } else {
-        _strength = 2 - (((_average * _downTolerance) min 2.5) / 2.5) * 1.6;
+        _strength = 1.2 - ((((-1 * _average) - 2) * _downTolerance) / (_maxVirtualG - 2));
         AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
         addCamShake [((abs _average) - 2) / 5, 1, 15];
       };
     } else {
       AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
     };
-    AGM_GForces_CC ppEffectCommit 0.5;
+
+    AGM_GForces_CC ppEffectCommit 0.25;
   };
 };

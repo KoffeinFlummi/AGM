@@ -11,8 +11,7 @@
  * none
  */
 
-#define BANDAGETIMEMEDIC 4
-#define BANDAGETIMENONMEDIC 8
+#define BANDAGETIME 4
 #define BANDAGEHEAL 0.8
 
 #define LEGDAMAGETHRESHOLD1 1
@@ -24,31 +23,36 @@ _this spawn {
   _selection = _this select 1;
 
   // determine if unit is medic
-  _healtime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {!(isNil "AGM_Medical_PunishNonMedics") and {!AGM_Medical_PunishNonMedics}}) then {
-    _healtime = BANDAGETIMEMEDIC;
-  } else {
-    _healtime = BANDAGETIMENONMEDIC;
+  _healtime = BANDAGETIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _healtime = _healtime * AGM_Medical_CoefNonMedic;
   };
 
   // animation
   player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
   player setVariable ["AGM_CanTreat", false, false];
 
+  if !([_unit, "AGM_Bandage"] call AGM_Medical_fnc_takeItem) exitWith {};
+
   AGM_Medical_bandageCallback = {
     _unit = _this select 0;
     _selection = _this select 1;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    player setVariable ["AGM_CanTreat", true, false];
+
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    if !([_unit, "AGM_Bandage"] call AGM_Medical_fnc_takeItem) exitWith {};
+    if (_selection == "All") then {
+      _unit setDamage ((damage _unit - BANDAGEHEAL) max 0);
+    } else {
+      // change damage of body part
+      _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
+      [_unit, _selection, _damage] call AGM_Medical_fnc_setHitPointDamage;
 
-    // change damage of body part
-    _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
-    [_unit, _selection, _damage] call AGM_Medical_fnc_setHitPointDamage;
-
-    // since we have to set the damage remotely, it might take some time.
-    waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
+      // since we have to set the damage remotely, it might take some time.
+      waitUntil {sleep 0.1; _unit getHitPointDamage _selection == _damage};
+    };
 
     // check if legs are healed
     _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
@@ -56,11 +60,11 @@ _this spawn {
       [_unit, "HitLegs", 0] call AGM_Medical_fnc_setHitPointDamage;
     };
 
-    // remove extremely small wounds
+    // reset structural damage if unit is fully healed
     _fullyHealed = true;
     {
       if ((_unit getHitPointDamage _x) > 0.02) exitWith {_fullyHealed = false;};
-    } forEach ["HitHead","HitBody","HitLeftArm","HitRightArm","HitLeftLeg","HitRightLeg"];
+    } count ["HitHead","HitBody","HitLeftArm","HitRightArm","HitLeftLeg","HitRightLeg"];
     if (_fullyHealed) then {
       _unit setDamage 0;
     };
@@ -72,8 +76,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       };
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_bandageAbort = {
@@ -81,5 +83,10 @@ _this spawn {
     player setVariable ["AGM_CanTreat", true, false];
   };
 
-  [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
+  if (_selection == "All") then {
+    [_healtime, _this, "AGM_Medical_bandageCallback", localize "STR_AGM_Medical_Bandaging", "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
+  } else {
+    [_healtime, _this, "AGM_Medical_bandageCallback", localize (format ["STR_AGM_Medical_Bandaging_%1", _selection]), "AGM_Medical_bandageAbort"] call AGM_Core_fnc_progressBar;
+  };
+  [_unit] call AGM_Core_fnc_closeDialogIfTargetMoves;
 };

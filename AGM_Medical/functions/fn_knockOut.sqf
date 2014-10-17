@@ -1,7 +1,7 @@
 /*
  * By: KoffeinFlummi
  *
- * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
+ * Knocks the given player out.
  *
  * Arguments:
  * 0: Unit to be knocked out (Object)
@@ -10,22 +10,19 @@
  * None
  */
 
-private ["_unit", "_newGroup"];
+private ["_unit", "_duration", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
 
 _unit = _this select 0;
-if !(isPlayer _unit) exitWith {_unit setDamage 1;};
+_duration = -1;
+
+if (count _this > 1) then {
+  _duration = _this select 1;
+};
+
+if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {};
 
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
-
-_oldGroup = group _unit;
-_newGroup = createGroup side _unit;
-[_unit] joinSilent _newGroup;
-{
-  _unit reveal _x;
-}
-forEach (units _oldGroup);
-_unit setVariable ["AGM_Group", _oldGroup, true];
 
 if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
@@ -35,10 +32,13 @@ if (_unit == player) then {
   player setVariable ["acre_sys_core_isDisabled", true, true];
   player setVariable ["acre_sys_core_globalVolume", 0.4];
 
+  closeDialog 0;
+  call AGM_Interaction_fnc_hideMenu;
+
   [true, true] call AGM_Core_fnc_disableUserInput;
 };
 
-_unit setCaptive 213;
+[_unit, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";
@@ -46,68 +46,39 @@ _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 
-if (vehicle _unit != _unit) then {
-  _unit playMoveNow (((configfile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0);
+if (vehicle _unit != _unit && {animationState _unit != "Unconscious"}) then {   // don't lock into unconsciousness state after waking up
+  _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
+  [player, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
 } else {
-  _unit playMoveNow "Unconscious";
+  _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
 };
 
 _unit spawn {
-  sleep 3.8;
-  if !(isTouchingGround _this) then {
-    waitUntil {isTouchingGround _this};
-    sleep 1;
+  waitUntil {isTouchingGround _this};
+  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
+  _this playMoveNow "Unconscious";
+};
+
+_wakeUpTimer = [_unit, _duration] spawn {
+  _unit = _this select 0;
+  _duration = _this select 1;
+  if (_duration != -1) then {
+    sleep _duration;
+  } else {
+    sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
   };
-  _this enableSimulation false;
+  [_unit] call AGM_Medical_fnc_wakeUp;
 };
+_unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
 
-_unit spawn {
-  if (random 1 > 0.2) then {
-    sleep (60 * (1 + (random 8)) * ((damage _this) max 0.3));
-    if (_this getVariable "AGM_Unconscious") then {
-      [_this] call AGM_Medical_fnc_wakeUp;
+_unconsciousnessTimer = [_unit] spawn {
+  _unit = _this select 0;
+  if (AGM_Medical_MaxUnconsciousnessTime >= 0) then {
+    sleep AGM_Medical_MaxUnconsciousnessTime;
+    if !(scriptDone (_unit getVariable "AGM_WakeUpTimer")) then {
+      terminate (_unit getVariable "AGM_WakeUpTimer");
     };
+    _unit setDamage 1;
   };
 };
-
-/*
-if (_unit == player) then {
-  [0, "BLACK", 0.15, 1] call BIS_fnc_FadeEffect;
-};
-
-// Not possible to ragdollize on command, so we slam a 'vehicle' in his face.
-_unit setCaptive 213;
-_unit allowDamage false;
-
-_unit disableAI "MOVE";
-_unit disableAI "ANIM";
-_unit disableAI "TARGET";
-_unit disableAI "AUTOTARGET";
-_unit disableAI "FSM";
-//_eh = _unit addEventHandler ["EpeContactStart", {(_this select 0) setVariable ["AGM_Collision", (_this select 1)];}];
-
-
-_helper = "AGM_CollisionHelper" createVehicle [0,0,0];
-_helper setPosATL [(getPos _unit select 0), (getPos _unit select 1), 1.8];
-_helper setVectorUp [0,0,1];
-
-{
-  if (_x != _unit) then {
-    _helper disableCollisionWith _x;
-  };
-} foreach (_unit nearEntities 5);
-
-sleep 0.7;
-
-deleteVehicle _helper;
-
-player globalChat "Helper deleted.";
-
-_unit allowDamage true;
-
-sleep 2;
-_unit enableSimulation false;
-_unit switchMove "unconscious";
-
-player globalChat "done.";
-*/
+_unit setVariable ["AGM_UnconsciousnessTimer", _unconsciousnessTimer];

@@ -10,10 +10,11 @@
  * Is unit diagnosed? (Bool)
  */
 
+private ["_unit"];
+
 _unit = _this select 0;
 
-if (isNil "AGM_Medical_RequireDiagnosis") exitWith {true};
-if !(AGM_Medical_RequireDiagnosis) exitWith {true};
+if (AGM_Medical_RequireDiagnosis == 0) exitWith {true};
 if !(_unit getVariable "AGM_Unconscious") exitWith {true};
 
 (_unit getVariable ["AGM_Diagnosed", true])

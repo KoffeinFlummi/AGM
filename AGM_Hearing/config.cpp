@@ -1,12 +1,12 @@
 class CfgPatches {
   class AGM_Hearing {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -19,7 +19,8 @@ class CfgFunctions {
       class earRinging;
       class explosionEH;
       class firedNearEH;
-      class earplugs;
+      class putInEarplugs;
+      class removeEarplugs;
     };
   };
 };
@@ -30,39 +31,111 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class AGM_Core_Default_Keys {
+/*class AGM_Core_Default_Keys {
   class Earplugs {
     displayName = "$STR_AGM_Hearing_Earbuds_On";
-    condition = "true";
+    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
     statement = "[] call AGM_Hearing_fnc_Earplugs";
     key = 18;
     shift = 0;
     control = 0;
     alt = 1;
   };
+};*/
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
 };
 
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_Earplugs {
+      class AGM_PutInEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "AGM_EarPlugsIn || {player canAdd 'AGM_EarBuds'}";
-        statement = "[] call AGM_Hearing_fnc_Earplugs";
+        condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player} && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
+        statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
-        priority = -0.9;
+        priority = 2.5;
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+        hotkey = "E";
+      };
+      class AGM_RemoveEarplugs {
+        displayName = "$STR_AGM_Hearing_Earbuds_Off";
+        condition = "AGM_EarPlugsIn && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
+        statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
+        showDisabled = 0;
+        priority = 2.5;
+        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+        hotkey = "E";
       };
     };
   };
 
-  class Box_NATO_Support_F;
+  class ReammoBox_F;
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+  class FIA_Box_Base_F;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class B_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class O_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class Box_FIA_Support_F: FIA_Box_Base_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class I_supplyCrate_F: B_supplyCrate_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class IG_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
+  class C_supplyCrate_F: ReammoBox_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_EarBuds,12)
+    };
+  };
+
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      class _xx_AGM_EarBuds {
-        count = 24;
-        name = "AGM_EarBuds";
-      };
+      MACRO_ADDITEM(AGM_EarBuds,24)
     };
   };
 };
@@ -83,18 +156,17 @@ class CfgSounds {
 };
 
 class CfgWeapons {
-  class ItemCore;
+  class AGM_ItemCore;
   class InventoryItem_Base_F;
 
-  class AGM_EarBuds: ItemCore {
+  class AGM_EarBuds: AGM_ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
-    model = "\A3\weapons_F\ammo\mag_univ.p3d";
-    picture = "\AGM_Hearing\UI\bwa3_earplugs_x_ca.paa";
+    model = "\AGM_Hearing\agm_earplugs.p3d";
+    picture = "\AGM_Hearing\UI\agm_earplugs_x_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
-      type = 401;
     };
   };
 };

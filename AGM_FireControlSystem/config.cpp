@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi","BadGuy (simon84)"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,8 +16,11 @@ class CfgFunctions {
   class AGM_FCS {
     class AGM_FCS {
       file = "AGM_FireControlSystem\functions";
+      class adjustRange;
+      class canUseRangefinder;
       class firedEH;
       class getAngle;
+      class getRange;
       class keyDown;
       class keyUp;
       class reset;
@@ -43,36 +46,59 @@ class Extended_Init_EventHandlers {
 class AGM_Core_Default_Keys {
   class laseTarget {
     displayName = "$STR_AGM_FireControlSystem_LaseTarget";
-    condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    /*condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
     conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";*/
+
+    condition = "call AGM_FCS_fnc_canUseRangefinder || {!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}}";
+    statement = "call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}) then {[_vehicle] call AGM_FCS_fnc_keyDown};";
+    conditionUp = "_player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
+
     key = 15;
     shift = 0;
     control = 0;
     alt = 0;
   };
+  class adjustRangeUp {
+    displayName = "$STR_AGM_FireControlSystem_AdjustRangeUp";
+    condition = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    statement = "[_vehicle, 50] call AGM_FCS_fnc_adjustRange";
+    key = 201;
+    shift = 0;
+    control = 0;
+    alt = 0;
+    allowHolding = 1;
+  };
+  class adjustRangeDown: adjustRangeUp {
+    displayName = "$STR_AGM_FireControlSystem_AdjustRangeDown";
+    statement = "[_vehicle, -50] call AGM_FCS_fnc_adjustRange";
+    key = 209;
+  };
 };
 
 class CfgVehicles {
-  // PROVIDE DEFAULT VALUES FOR OTHER MODS
   class All;
   class AllVehicles: All {
     class NewTurret;
-    AGM_FCSEnabled = 0; // FCS defaults to off
+    AGM_FCSEnabled = 0;
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+
     class AGM_SelfActions {
-      class AGM_LeaveGroup {
+      // INHERITANCE !!
+      class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
-        condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
-        statement = "[vehicle player] call AGM_FCS_fnc_reset;";
+        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
+        statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
         showDisabled = 0;
         priority = -1;
       };
     };
   };
+
   class Land: AllVehicles {};
   class LandVehicle: Land {};
   class Tank: LandVehicle {
@@ -325,5 +351,6 @@ class CfgVehicles {
       };
     };
   };
-
 };
+
+#include <Optics.hpp>

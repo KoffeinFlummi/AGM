@@ -10,7 +10,7 @@
  * none
  */
 
-#define DIAGNOSETIME 8
+#define DIAGNOSETIME 4
 #define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDr_medic4"
 
 _this spawn {
@@ -18,6 +18,11 @@ _this spawn {
 
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
+
+    if (_unit != player) then {
+      player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    };
+    player setVariable ["AGM_CanTreat", true, false];
 
     _damages = [
       ["HitHead",     floor ((_unit getHitPointDamage "HitHead")     * 100) / 100],
@@ -30,56 +35,80 @@ _this spawn {
 
     _unit setVariable ["AGM_Diagnosed", true, false];
 
+    // Tell bystanders what's up if necessary
+    if (AGM_Medical_RequireDiagnosis > 0) then {
+      _bystanders = nearestObjects [player, ["Man"], 10];
+      [-1, {
+        if (player in (_this select 1)) then {
+          (_this select 0) setVariable ["AGM_Diagnosed", true, false];
+        };
+      }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
+    };
+
     _string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
 
     if (damage _unit >= 1) then {
-      _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsDead";
+      _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientIsDead" + "</t>";
     } else {
       // Consciousness
       if (_unit getVariable "AGM_Unconscious") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsUnconscious";
+        _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientIsUnconscious" + "</t>";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsAwake";
       };
 
       // Injuries
-      _heavyinjuries = "";
-      {
-        if ((_x select 1) >= 0.5) then {
-          if (_heavyinjuries != "") then { _heavyinjuries = _heavyinjuries + ", "; };
-          _heavyinjuries = _heavyinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
-        };
-      } forEach _damages;
-      if (_heavyinjuries != "") then {
-        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + " " + _heavyinjuries;
-      };
-
       _lightinjuries = "";
-      {
-        if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
-          if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
-          _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+      _heavyinjuries = "";
+      if (AGM_Medical_SingleBandage > 0) then {
+        if (damage _unit >= 0.5) then {
+          _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>";
         };
-      } forEach _damages;
-      if (_lightinjuries != "") then {
-        _string = _string + "<br/><br/>" + (localize "STR_AGM_Medical_PatientLightInjuries") + " " + _lightinjuries;
-      };
+        if (damage _unit < 0.5 and damage _unit > 0) then {
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightlyInjured" + "</t>";
+        };
+        if (damage _unit == 0) then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        };
+      } else {
+        _heavyinjuries = "";
+        {
+          if ((_x select 1) >= 0.5) then {
+            if (_heavyinjuries != "") then { _heavyinjuries = _heavyinjuries + ", "; };
+            _heavyinjuries = _heavyinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+          };
+        } forEach _damages;
+        if (_heavyinjuries != "") then {
+          _string = _string + "<br/><br/><t color='#FF0000'>" + (localize "STR_AGM_Medical_PatientHeavyInjuries") + "</t><br/>" + _heavyinjuries;
+        };
 
-      if (_lightinjuries == "" and _heavyinjuries == "") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        _lightinjuries = "";
+        {
+          if ((_x select 1) < 0.5 and (_x select 1) > 0.01) then {
+            if (_lightinjuries != "") then { _lightinjuries = _lightinjuries + ", "; };
+            _lightinjuries = _lightinjuries + localize (format ["STR_AGM_Medical_%1", (_x select 0)]);
+          };
+        } forEach _damages;
+        if (_lightinjuries != "") then {
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + (localize "STR_AGM_Medical_PatientLightInjuries") + "</t><br/>" + _lightinjuries;
+        };
+
+        if (_lightinjuries == "" and _heavyinjuries == "") then {
+          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured";
+        };
       };
 
       // Blood
-      if (_unit getVariable "AGM_Bleeding") then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientBleeding" + " ";
+      if (_unit getVariable "AGM_Bleeding" and ((AGM_Medical_SingleBandage > 0 and damage _unit > 0) or (_heavyinjuries != "" or _lightinjuries != ""))) then {
+        _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientBleeding" + "</t> ";
       } else {
         _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";
       };
       if (_unit getVariable "AGM_Blood" < 0.4) then {
-        _string = _string + localize "STR_AGM_Medical_PatientLostBlood";
+        _string = _string + "<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientLostBlood" + "</t>";
       } else {
         if (_unit getVariable "AGM_Blood" < 1) then {
-          _string = _string + localize "STR_AGM_Medical_PatientLostSomeBlood";
+          _string = _string + "<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLostSomeBlood" + "</t>";
         } else {
           _string = _string + localize "STR_AGM_Medical_PatientLostNoBlood";
         };
@@ -87,19 +116,19 @@ _this spawn {
 
       // Pain
       if (_unit getVariable "AGM_Painkiller" < 0.4) then {
-        _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientPainkillers" + " ";
+        _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientPainkillers" + "</t> ";
       } else {
         if (_unit getVariable "AGM_Painkiller" < 0.9) then {
-          _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientSomePainkillers" + " ";
+          _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientSomePainkillers" + "</t> ";
         } else {
           _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNoPainkillers" + " ";
         };
       };
       if (_unit getVariable "AGM_Pain" > 0.4) then {
-        _string = _string + localize "STR_AGM_Medical_PatientHeavyPain";
+        _string = _string + "<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavyPain" + "</t>";
       } else {
         if (_unit getVariable "AGM_Pain" > 0.1) then {
-          _string = _string + localize "STR_AGM_Medical_PatientLightPain";
+          _string = _string + "<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightPain" + "</t>";
         } else {
           _string = _string + localize "STR_AGM_Medical_PatientNoPain";
         };
@@ -116,8 +145,6 @@ _this spawn {
         "AGM_Medical" call AGM_Interaction_fnc_openMenu;
       }
     };
-
-    player setVariable ["AGM_CanTreat", true, false];
   };
 
   AGM_Medical_diagnoseAbort = {
@@ -130,7 +157,12 @@ _this spawn {
 
     player setVariable ["AGM_CanTreat", false, false];
 
-    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    _diagnosetime = DIAGNOSETIME;
+    if !([player] call AGM_Medical_fnc_isMedic) then {
+      _diagnosetime = _diagnosetime * AGM_Medical_CoefNonMedic;
+    };
+    [_diagnosetime, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    [_unit, true] call AGM_Core_fnc_closeDialogIfTargetMoves;
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };

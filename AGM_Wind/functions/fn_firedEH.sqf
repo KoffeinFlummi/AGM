@@ -4,44 +4,38 @@ _this spawn {
   _ammoType = _this select 4;
   _round = _this select 5;
 
-  if (!local _unit) exitwith {};
-  if (!isPlayer _unit) exitwith {};
-  if !(_unit == player) exitwith {};
+  if !(local _unit) exitwith {};
+  if !([_unit] call AGM_Core_fnc_isPlayer) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _coefficient = 0.7;
-  if (_round isKindOf "GrenadeCore") then {
-    _coefficient = 0.2;
-  };
-  if (_round isKindOf "RocketCore") then {
-    _coefficient = 0.35;
+  _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _airFrictionWind = - _airFriction;
+
+  _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
+  if (_airFriction > 0 || {_simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+    // Do not correct for airDensity y airFriction is not logical on the first place
+    _airFriction = 0;
+    _airFrictionWind = 0.0007;
   };
 
-  // HUMIDITY
-  _velocity = velocity _round;
-  _velocityX = _velocity select 0;
-  _velocityY = _velocity select 1;
-  _velocityZ = _velocity select 2;
-  _velocityNewX = _velocityX - _velocityX * humidity * 0.2;
-  _velocityNewY = _velocityY - _velocityY * humidity * 0.2;
-  _velocityNewZ = _velocityZ - _velocityZ * humidity * 0.2;
-  _round setVelocity [_velocityNewX, _velocityNewY, _velocityNewZ];
+  // Additional dispersion
+   _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
+  // Powder temp effect
+  _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
+  [_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
 
   // WIND
   _time = time;
   while {!isNull _round and alive _round} do {
-    _velocity = velocity _round;
-    _velocityX = _velocity select 0;
-    _velocityY = _velocity select 1;
-    _velocityZ = _velocity select 2;
-    
     // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
 
-    _velocityNewX = _velocityX + _coefficient * (wind select 0) * _deltaTime;
-    _velocityNewY = _velocityY + _coefficient * (wind select 1) * _deltaTime;
+    // See https://github.com/KoffeinFlummi/AGM/issues/996
+    _velocity = velocity _round;
+    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currentRelativeDensity - 1) * _airFriction * _deltaTime))
+                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currentRelativeDensity * _airFrictionWind * _deltaTime));
 
-    _round setVelocity [_velocityNewX, _velocityNewY, _velocityZ];
+    _round setVelocity _velocityNew;
 
     _time = time;
     sleep 0.05;

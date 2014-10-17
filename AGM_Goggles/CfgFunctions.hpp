@@ -1,16 +1,8 @@
-class CfgFunctions
-{
-	class AGM_Goggles {
-		class AGM_Goggles
-		{
+class CfgFunctions{
+	class AGM_Goggles{
+		class AGM_Goggles{
 			file="AGM_Goggles\functions";
-			class Glasses_Init
-			{
-				file="AGM_Goggles\functions\fn_Init.sqf";	
-				description = "Initialises AGM Goggles.";
-				postInit = 1;
-			};
-			class RainCheck;
+			class Init{postInit = 1;};
 			class ApplyGlassesEffect;
 			class RemoveGlassesEffect;
 			class ApplyDirtEffect;
@@ -19,11 +11,8 @@ class CfgFunctions
 			class isDivingGoggles;
 			class ClearGlasses;
 			class CheckGoggles;
-			class GetExplosionIndex
-			{
-				file = "AGM_Goggles\functions\fn_ExplosionAmount.sqf";
-			};
-			class ApplyRainEffect;
+			class GetExplosionIndex;
+			class RainEffect;
 			class RemoveRainEffect;
 			class DustHandler;
 			class ExternalCamera;

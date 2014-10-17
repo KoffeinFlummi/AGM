@@ -3,12 +3,12 @@
 class CfgPatches {
   class AGM_Smallarms {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_acc_flashlight_tls"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"TaoSensai", "KoffeinFlummi"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -185,6 +185,9 @@ class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
 
+class WeaponSlotsInfo;
+class PointerSlot;
+
 class CfgWeapons {
   class WeaponSlotsInfo;
   class SlotInfo;
@@ -339,13 +342,65 @@ class CfgWeapons {
 
   // Pistols //////////////////////////////////////////////
 
-  class Pistol_Base_F;
+  class Pistol;
+  class Pistol_Base_F: Pistol {
+    class WeaponSlotsInfo;
+  };
   class hgun_P07_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        access = 1;
+        compatibleItems[] = {"AGM_acc_flashlight_tls"};
+        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+        scope = 0;
+      };
+    };
   };
 
   class hgun_Rook40_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        access = 1;
+        compatibleItems[] = {"AGM_acc_flashlight_tls"};
+        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+        scope = 0;
+      };
+    };
+  };
+
+  class hgun_ACPC2_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        access = 1;
+        compatibleItems[] = {"AGM_acc_flashlight_tls"};
+        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+        scope = 0;
+      };
+    };
+  };
+
+  class hgun_Pistol_heavy_01_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        access = 1;
+        compatibleItems[] = {"AGM_acc_flashlight_tls"};
+        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+        scope = 0;
+      };
+    };
+  };
+
+  class hgun_Pistol_heavy_02_F: Pistol_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        access = 1;
+        compatibleItems[] = {"AGM_acc_flashlight_tls"};
+        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
+        scope = 0;
+      };
+    };
   };
 
   // LMGs //////////////////////////////////////////////
@@ -408,8 +463,89 @@ class CfgWeapons {
   //////////// WEAPON ATTACHMENTS ///////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////
 
+
+
+
   class ItemCore;
   class InventoryItem_Base_F;
   class InventoryMuzzleItem_Base_F;
+  class InventoryFlashLightItem_Base_F;
 
+  class AGM_acc_flashlight_tls: ItemCore {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_acc_flashlight_tls";
+    scope = 2;
+    displayName = "$STR_A3_cfgWeapons_acc_flashlight0";//
+    descriptionUse = "$STR_A3_cfgWeapons_use_flashlight0";//
+    picture = "\A3\weapons_F\Data\UI\gear_accv_flashlight_tls_ca.paa";
+    model = "\A3\weapons_f\acc\accv_flashlight_TLS_F";
+    descriptionShort = "$STR_A3_cfgWeapons_acc_flashlight1";//
+    class ItemInfo: InventoryFlashLightItem_Base_F {
+      mass = 4;
+      class FlashLight {
+        color[] = {180,156,120};
+        ambient[] = {0.9,0.78,0.6};
+        intensity = 20;
+        size = 1;
+        innerAngle = 20;
+        outerAngle = 80;
+        coneFadeCoef = 5;
+        position = "flash dir";
+        direction = "flash";
+        useFlare = 1;
+        flareSize = 1.4;
+        flareMaxDistance = "100.0f";
+        dayLight = 0;
+        class Attenuation {
+          start = 0.5;
+          constant = 0;
+          linear = 0;
+          quadratic = 1.1;
+          hardLimitStart = 20;
+          hardLimitEnd = 30;
+        };
+        scale[] = {0};
+      };
+    };
+    inertia = 0.1;
+  };
 };
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
+class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,2)
+    };
+  };
+};
+
+/*
+MACRO_ADDITEM(AGM_acc_flashlight_tls,2)
+*/

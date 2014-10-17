@@ -4,45 +4,13 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi", "Crusty"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
-
-class CfgFunctions {
-  class AGM_Aircraft {
-    class AGM_Aircraft {
-      file = "AGM_Aircraft\functions";
-      class autopilot;
-    };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Aircraft {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_aircraft\clientInit.sqf'";
-  };
-};
-
-/*class AGM_Core_Default_Keys {
-  class autopilot {
-    displayName = "Autopilot";
-    conditionUp = "player == driver _vehicle && {_vehicle isKindOf 'Plane'}";
-    statementUp = "[_vehicle] call AGM_Aircraft_fnc_autopilot";
-    key = 211;
-    shift = 0;
-    control = 0;
-    alt = 0;
-  };
-};*/
-
-class Mode_SemiAuto;
-class Mode_Burst;
-class Mode_FullAuto;
-
 
 class CfgAmmo {
   class BulletBase;
@@ -54,6 +22,10 @@ class CfgAmmo {
 
   class B_20mm: BulletBase {
     deflecting = 3;
+    hit = 100;
+    indirectHit = 10;
+    indirectHitRange = 2;
+    model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
   };
 
   class B_65x39_Minigun_Caseless: SubmunitionBullet {
@@ -172,10 +144,18 @@ class CfgAmmo {
     soundHit4[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_4",3.16228,1,1600};
     soundHit5[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_5",3.16228,1,1600};
     soundHit6[] = {"A3\Sounds_F\weapons\Explosion\gr_explosion_6",3.16228,1,1600};
-    class CamShakeExplode{};
-    class CamShakeHit{};
-    class CamShakeFire{};
-    class CamShakePlayerFire{};
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
+  };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy: Gatling_30mm_HE_Plane_CAS_01_F {
+    simulation = "shotSubmunitions";
+    triggerTime = 0;
+    submunitionAmmo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Sub";
+    submunitionConeType[] = {"custom", {{0,0}, {0,0}, {0,0}} };
+  };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Sub: Gatling_30mm_HE_Plane_CAS_01_F {
   };
 
   class Cannon_30mm_HE_Plane_CAS_02_F: Gatling_30mm_HE_Plane_CAS_01_F {
@@ -220,10 +200,10 @@ class CfgAmmo {
     explosionEffects = "AAMissileExplosion";
     muzzleEffect = "BIS_fnc_effectFiredHeliRocket";
     whistleDist = 20;
-    class CamShakeExplode {  };
-    class CamShakeHit {  };
-    class CamShakeFire {  };
-    class CamShakePlayerFire {  };
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
   };
 
   class Bomb_04_F: LaserBombCore {
@@ -279,10 +259,10 @@ class CfgAmmo {
     timeToLive = 60;
     effectsMissileInit = "MissileDAR1";
     whistleDist = 30;
-    class CamShakeExplode {  };
-    class CamShakeHit {  };
-    class CamShakeFire {  };
-    class CamShakePlayerFire {  };
+    class CamShakeExplode {};
+    class CamShakeHit {};
+    class CamShakeFire {};
+    class CamShakePlayerFire {};
   };
 
   class Rocket_04_AP_F: Rocket_04_HE_F {
@@ -434,8 +414,9 @@ class CfgMagazines {
   class 1000Rnd_Gatling_30mm_Plane_CAS_01_F: VehicleMagazine {
     scope = 2;
     displayNameShort = "";
-    ammo = "Gatling_30mm_HE_Plane_CAS_01_F";
+    ammo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy";
     count = 1170;
+    //count = 390;
     //initSpeed = 3852;
     maxLeadSpeed = 300;
     nameSound = "cannon";
@@ -535,8 +516,11 @@ class CfgMagazines {
   };
 };
 
+class Mode_SemiAuto;
+class Mode_Burst;
+class Mode_FullAuto;
+
 class CfgWeapons {
-  class Default;
   class MissileLauncher;
   class RocketPods;
   class SmokeLauncher;
@@ -548,6 +532,9 @@ class CfgWeapons {
   // Manual Switching Of Flare Mode
   class CMFlareLauncher: SmokeLauncher {
     modes[] = {"Single", "Burst", "AIBurst"};
+    class Single: Mode_SemiAuto {
+      reloadTime = 0.1;
+    };
     class Burst: Mode_Burst {
       displayName = "$STR_AGM_Aircraft_CMFlareLauncher_Burst_Name";
     };
@@ -634,14 +621,17 @@ class CfgWeapons {
     reloadTime = 0.0154;
     class LowROF: Mode_FullAuto {
       autoFire = 0;
-      burst = 65;
-      reloadTime = 0.0154;
+      //burst = 65;
+      burst = 22;
+      //reloadTime = 0.0154;
+      reloadTime = 0.0462;
       //sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
-      sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,[25704,32159]};
+      sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,{25704,32159}};
       weaponSoundEffect = "DefaultRifle";
       dispersion = 0.005;
       soundContinuous = 1;
       textureType = "burst";
+      multiplier = 3;
     };
     class close: LowROF{};
     class near: close{};
@@ -922,9 +912,15 @@ class CfgVehicles {
 
   ////////////////////////////////////////////////////////////
 
+  // lockDetectionSystem:
+  // 1: Visual
+  // 2: IR
+  // 4: Laser
+  // 8: Radar
+
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class AnimationSources: AnimationSources {
@@ -956,6 +952,7 @@ class CfgVehicles {
         weapon = "AGM_gatling_20mm_Comanche";
       };
     };
+    // #include <mfd_comanche.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
@@ -965,7 +962,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Transport_01_F: Heli_Transport_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -983,7 +980,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -993,9 +990,266 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    class MFD {
+      class AirplaneHUD {
+        borderBottom = 0;
+        borderLeft = 0;
+        borderRight = 0;
+        borderTop = 0;
+        bottomLeft = "HUD LD";
+        color[] = {0,1,0,0.1};
+        helmetDown[] = {-0,-0.05,0};
+        helmetMountedDisplay = 1;
+        helmetPosition[] = {-0.0276,0.024,0.1};
+        helmetRight[] = {0.055,0,0};
+        topLeft = "HUD LH";
+        topRight = "HUD PH";
+        class Pos10Vector {
+          pos0[] = {0.502,0.49};
+          pos10[] = {1.112,1.03};
+          type = "vector";
+        };
+        class Bones {
+          /*
+          class GunnerAim: Pos10Vector {
+            pos0[] = {0,-0.0025};
+            pos10[] = {0.01,0.0025};
+            source = "weapon";
+          };*/
+          class ILS_H {
+            pos0[] = {0.5,0.49};
+            pos3[] = {0.683,0.49};
+            type = "ils";
+          };
+          class ILS_W: ILS_H {
+            pos0[] = {0.5,0.49};
+            pos3[] = {0.5,0.652};
+            type = "ils";
+          };
+          class Level0: Pos10Vector {
+            angle = 0;
+            pos0[] = {0.5,0.49};
+            pos10[] = {1.11,1.03};
+            type = "horizon";
+          };
+          class LevelM10: Level0 {
+            angle = -10;
+          };
+          class LevelM20: Level0 {
+            angle = -20;
+          };
+          class LevelM30: Level0 {
+            angle = -30;
+          };
+          class LevelM40: Level0 {
+            angle = -40;
+          };
+          class LevelM50: Level0 {
+            angle = -50;
+          };
+          class LevelP10: Level0 {
+            angle = 10;
+          };
+          class LevelP20: Level0 {
+            angle = 20;
+          };
+          class LevelP30: Level0 {
+            angle = 30;
+          };
+          class LevelP40: Level0 {
+            angle = 40;
+          };
+          class LevelP50: Level0 {
+            angle = 50;
+          };
+          class PlaneW {
+            pos[] = {0.502,0.49};
+            type = "fixed";
+          };
+          class Target: Pos10Vector {
+            source = "target";
+          };
+          class Velocity: Pos10Vector {
+            pos0[] = {0.5,0.49};
+            pos10[] = {1.11,1.03};
+            source = "velocity";
+            type = "vector";
+          };
+          class WeaponAim: Pos10Vector {
+            source = "weapon";
+          };
+        };
+        class Draw {
+          class AAMissile {
+            condition = "AAmissile";
+            class Circle {
+              points[] = {{"WeaponAim",{0,-0.221311},1},{"WeaponAim",{0.125,-0.192541},1},{"WeaponAim",{0.2175,-0.110656},1},{"WeaponAim",{0.25,0},1},{"WeaponAim",{0.2175,0.110656},1},{"WeaponAim",{0.125,0.192541},1},{"WeaponAim",{0,0.221311},1},{"WeaponAim",{-0.125,0.192541},1},{"WeaponAim",{-0.2175,0.110656},1},{"WeaponAim",{-0.25,0},1},{"WeaponAim",{-0.2175,-0.110656},1},{"WeaponAim",{-0.125,-0.192541},1},{"WeaponAim",{0,-0.221311},1},{},{"Target",{0,-0.0619672},1},{"Target",{0.07,0},1},{"Target",{0,0.0619672},1},{"Target",{-0.07,0},1},{"Target",{0,-0.0619672},1}};
+              type = "line";
+              width = 4;
+            };
+          };
+          class SpeedNumber {
+            align = "right";
+            down[] = {{0.06,0.52},1};
+            pos[] = {{0.06,0.47},1};
+            right[] = {{"0.14-0.02",0.47},1};
+            scale = 1;
+            source = "speed";
+            sourceScale = 3.6;
+            type = "text";
+          };
+          class AltNumber: SpeedNumber {
+            down[] = {{"0.86-0.15",0.52},1};
+            pos[] = {{"0.86-0.15",0.47},1};
+            right[] = {{"0.94-0.15-0.02",0.47},1};
+            source = "altitudeAGL";
+            sourceScale = 1;
+          };
+          class AltScale {
+            align = "right";
+            bottom = 0.2;
+            center = 0.5;
+            down[] = {0.86,0.87};
+            horizontal = 0;
+            lineXleft = 0.825;
+            lineXleftMajor = 0.825;
+            lineYright = 0.835;
+            lineYrightMajor = 0.845;
+            majorLineEach = 5;
+            max = "none";
+            min = "none";
+            numberEach = 5;
+            pos[] = {0.86,0.82};
+            right[] = {"0.94-0.02",0.82};
+            scale = 1;
+            source = "altitudeAGL";
+            sourceScale = 1;
+            step = 20;
+            StepSize = "(0.85- 0.2)/20";
+            top = 0.85;
+            type = "scale";
+            width = 4;
+          };
+          class ammo {
+            align = "right";
+            down[] = {{0.1,0.97},1};
+            pos[] = {{0.1,0.93},1};
+            right[] = {{"0.16-0.02",0.93},1};
+            scale = 0.5;
+            source = "ammo";
+            sourceScale = 1;
+            type = "text";
+          };
+          class ATMissile {
+            condition = "ATmissile";
+            class Circle {
+              points[] = {{"WeaponAim",{-0.15,-0.15},1},{"WeaponAim",{-0.15,"-0.15+0.02"},1},{},{"WeaponAim",{-0.15,0.15},1},{"WeaponAim",{-0.15,"+0.15-0.02"},1},{},{"WeaponAim",{0.15,-0.15},1},{"WeaponAim",{0.15,"-0.15+0.02"},1},{},{"WeaponAim",{0.15,0.15},1},{"WeaponAim",{0.15,"+0.15-0.02"},1},{},{"WeaponAim",{-0.15,-0.15},1},{"WeaponAim",{"-0.15+0.02",-0.15},1},{},{"WeaponAim",{-0.15,0.15},1},{"WeaponAim",{"-0.15+0.02",0.15},1},{},{"WeaponAim",{0.15,-0.15},1},{"WeaponAim",{"0.15-0.02",-0.15},1},{},{"WeaponAim",{0.15,0.15},1},{"WeaponAim",{"0.15-0.02",0.15},1},{}};
+              type = "line";
+              width = 4;
+            };
+          };
+          class Bomb {
+            condition = "bomb";
+            class Circle {
+              points[] = {{"WeaponAim",{0,-0.0885246},1},{"WeaponAim",{0.05,-0.0770164},1},{"WeaponAim",{0.087,-0.0442623},1},{"WeaponAim",{0.1,0},1},{"WeaponAim",{0.087,0.0442623},1},{"WeaponAim",{0.05,0.0770164},1},{"WeaponAim",{0,0.0885246},1},{"WeaponAim",{-0.05,0.0770164},1},{"WeaponAim",{-0.087,0.0442623},1},{"WeaponAim",{-0.1,0},1},{"WeaponAim",{-0.087,-0.0442623},1},{"WeaponAim",{-0.05,-0.0770164},1},{"WeaponAim",{0,-0.0885246},1},{},{"Velocity",0.001,"WeaponAim",{0,0},1},{"Velocity",{0,0},1},{},{"Target",{0,-0.0619672},1},{"Target",{0.07,0},1},{"Target",{0,0.0619672},1},{"Target",{-0.07,0},1},{"Target",{0,-0.0619672},1}};
+              type = "line";
+              width = 4;
+            };
+          };/*
+          class Gunner {
+            points[] = {{"GunnerAim",{"0.5-0.015","0.9-0.008"},1},{"GunnerAim",{"0.5-0.015","0.9+0.008"},1},{"GunnerAim",{"0.5+0.015","0.9+0.008"},1},{"GunnerAim",{"0.5+0.015","0.9-0.008"},1},{"GunnerAim",{"0.5-0.015","0.9-0.008"},1}};
+            type = "line";
+            width = 4;
+          };*/
+          class HeadingScale {
+            align = "center";
+            bottom = 0.7;
+            center = 0.5;
+            down[] = {"0.30-0.00","0.04+0.05"};
+            horizontal = 1;
+            lineXleft = "0.06+0.05";
+            lineXleftMajor = "0.07+0.05";
+            lineYright = "0.05+0.05";
+            lineYrightMajor = "0.04+0.05";
+            majorLineEach = 3;
+            max = "none";
+            min = "none";
+            numberEach = 3;
+            pos[] = {"0.30-0.00","0.0+0.05"};
+            right[] = {"0.36-0.00","0.0+0.05"};
+            scale = 1;
+            source = "Heading";
+            sourceScale = 1;
+            step = 10;
+            StepSize = "(0.70- 0.3)/15";
+            top = 0.3;
+            type = "scale";
+            width = 4;
+          };
+          class HorizontalLine {
+            clipBR[] = {0.8,0.96};
+            clipTL[] = {0.2,0.12};
+            class HorizontalLineDraw {
+              points[] = {{"Level0",{"-6*0.075/2",0.02},1},{"Level0",{"-5*0.075/2",0.02},1},{},{"Level0",{"-4*0.075/2",0.02},1},{"Level0",{"-3*0.075/2",0.02},1},{},{"Level0",{"-2*0.075/2",0.02},1},{"Level0",{"-1*0.075/2",0.02},1},{},{"Level0",{"1*0.075/2",0.02},1},{"Level0",{"2*0.075/2",0.02},1},{},{"Level0",{"3*0.075/2",0.02},1},{"Level0",{"4*0.075/2",0.02},1},{},{"Level0",{"5*0.075/2",0.02},1},{"Level0",{"6*0.075/2",0.02},1}};
+              source = "Level0";
+              type = "line";
+            };
+          };
+          class MGun {
+            condition = "mgun";
+            class Circle {
+              points[] = {{"WeaponAim",{0.05,0},1},{"WeaponAim",{0.015,0},1},{},{"WeaponAim",{0,0.0442623},1},{"WeaponAim",{0,0.0132787},1},{},{"WeaponAim",{-0.05,0},1},{"WeaponAim",{-0.015,0},1},{},{"WeaponAim",{0,-0.0442623},1},{"WeaponAim",{0,-0.0132787},1},{}};
+              type = "line";
+              width = 4;
+            };
+          };
+          class PlaneHeading {
+            clipBR[] = {1,0};
+            clipTL[] = {0,1};
+            points[] = {{"Velocity",{0,-0.0177049},1},{"Velocity",{0.014,-0.0123934},1},{"Velocity",{0.02,0},1},{"Velocity",{0.014,0.0123934},1},{"Velocity",{0,0.0177049},1},{"Velocity",{-0.014,0.0123934},1},{"Velocity",{-0.02,0},1},{"Velocity",{-0.014,-0.0123934},1},{"Velocity",{0,-0.0177049},1},{},{"Velocity",{0.04,0},1},{"Velocity",{0.02,0},1},{},{"Velocity",{-0.04,0},1},{"Velocity",{-0.02,0},1},{},{"Velocity",{0,-0.0354098},1},{"Velocity",{0,-0.0177049},1},{}};
+            type = "line";
+            width = 4;
+          };
+          class PlaneW {
+            clipBR[] = {1,0};
+            clipTL[] = {0,1};
+            points[] = {{"PlaneW",{0,-0.0177049},1},{"PlaneW",{0.014,-0.0123934},1},{"PlaneW",{0.02,0},1},{"PlaneW",{0.014,0.0123934},1},{"PlaneW",{0,0.0177049},1},{"PlaneW",{-0.014,0.0123934},1},{"PlaneW",{-0.02,0},1},{"PlaneW",{-0.014,-0.0123934},1},{"PlaneW",{0,-0.0177049},1},{}};
+            type = "line";
+            width = 4;
+          };
+          class Rockets {
+            condition = "Rocket";
+            class Circle {
+              points[] = {{"WeaponAim",{-0.25,-0.25},1},{"WeaponAim",{-0.25,"-0.25+0.05"},1},{},{"WeaponAim",{-0.25,0.25},1},{"WeaponAim",{-0.25,"+0.25-0.05"},1},{},{"WeaponAim",{0.25,-0.25},1},{"WeaponAim",{0.25,"-0.25+0.05"},1},{},{"WeaponAim",{0.25,0.25},1},{"WeaponAim",{0.25,"+0.25-0.05"},1},{},{"WeaponAim",{-0.25,-0.25},1},{"WeaponAim",{"-0.25+0.05",-0.25},1},{},{"WeaponAim",{-0.25,0.25},1},{"WeaponAim",{"-0.25+0.05",0.25},1},{},{"WeaponAim",{0.25,-0.25},1},{"WeaponAim",{"0.25-0.05",-0.25},1},{},{"WeaponAim",{0.25,0.25},1},{"WeaponAim",{"0.25-0.05",0.25},1},{}};
+              type = "line";
+              width = 4;
+            };
+          };
+          /*
+          class Static {
+            clipBR[] = {1,0};
+            clipTL[] = {0,0.1};
+            points[] = {{{0.79,0.52},1},{{0.81,0.5},1},{{0.79,0.48},1},{},{{0.52,"0.08+0.06"},1},{{0.5,"0.06+0.06"},1},{{0.48,"0.08+0.06"},1},{},{{"0.5-0.1","0.9-0.04"},1},{{"0.5-0.1","0.9+0.04"},1},{{"0.5+0.1","0.9+0.04"},1},{{"0.5+0.1","0.9-0.04"},1},{{"0.5-0.1","0.9-0.04"},1},{},{{"0.5-0.1",0.9},1},{{"0.5-0.092",0.9},1},{},{{"0.5+0.1",0.9},1},{{"0.5+0.092",0.9},1},{},{{0.5,"0.9-0.04"},1},{{0.5,"0.9-0.032"},1},{},{{0.5,"0.9+0.04"},1},{{0.5,"0.9+0.032"},1},{}};
+            type = "line";
+            width = 4;
+          };
+          */
+          class weapons {
+            align = "right";
+            down[] = {{0.1,0.92},1};
+            pos[] = {{0.1,0.88},1};
+            right[] = {{"0.16-0.02",0.88},1};
+            scale = 0.5;
+            source = "weapon";
+            sourceScale = 1;
+            type = "text";
+          };
+        };
+      };
+    };
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -1003,7 +1257,7 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 
@@ -1011,7 +1265,7 @@ class CfgVehicles {
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1029,7 +1283,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1047,7 +1301,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1057,13 +1311,13 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 
   // OPFOR
   class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1073,7 +1327,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1084,9 +1338,9 @@ class CfgVehicles {
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
     driverCanEject = 1;
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
-    magazines[] = {"2000Rnd_762x51_Belt_T_Green"};
+    magazines[] = {"2000Rnd_762x51_Belt_T_Green", "12Rnd_PG_missiles", "168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -1094,7 +1348,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1107,7 +1361,7 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 };

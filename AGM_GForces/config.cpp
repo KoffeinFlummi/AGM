@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -50,12 +50,12 @@ class CfgVehicles {
     AGM_GForceCoef = 1;
   };
 
-  class B_Helipilot_F;
-  class B_Pilot_F: B_Helipilot_F {
+  class B_Soldier_05_f;
+  class B_Pilot_F: B_Soldier_05_f {
     AGM_GForceCoef = 0.75;
   };
-  class I_helipilot_F;
-  class I_pilot_F: I_helipilot_F {
+  class I_Soldier_04_F;
+  class I_pilot_F: I_Soldier_04_F {
     AGM_GForceCoef = 0.75;
   };
   class O_helipilot_F;

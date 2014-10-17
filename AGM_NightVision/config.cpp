@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.931";
+    versionStr = "0.931";
+    versionAr[] = {0,931,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -47,6 +47,7 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+    allowHolding = 1;
   };
   class decreaseNVGBrightness {
     displayName = "$STR_AGM_NightVision_DecreaseNVGBrightness";
@@ -56,5 +57,6 @@ class AGM_Core_Default_Keys {
     shift = 0;
     control = 0;
     alt = 1;
+    allowHolding = 1;
   };
 };

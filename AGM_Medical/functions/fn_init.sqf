@@ -14,10 +14,6 @@ _this spawn {
   if !(local _unit) exitWith {};
 
   AGM_Medical_unitInit = {
-    if !(isNull (_this getVariable "AGM_Group")) then {
-      [_this] joinSilent (_this getVariable "AGM_Group");
-    };
-
     if (_this == player) then {
       player setVariable ["tf_globalVolume", 1];
       player setVariable ["tf_voiceVolume", 1, true];
@@ -27,7 +23,7 @@ _this spawn {
       player setVariable ["acre_sys_core_globalVolume", 1];
     };
 
-    _this setCaptive false;
+    [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
     _this setVariable ["AGM_Diagnosed", false, true];   // Is the unit diagnosed?
     _this setVariable ["AGM_CanTreat", true, false];    // Can unit treat others?
     _this setVariable ["AGM_Treatable", true, true];    // Can unit be treated/diagnosed?
@@ -39,6 +35,7 @@ _this spawn {
     _this setVariable ["AGM_NoLegs", false, true];      // Is the unit able to walk?
     _this setVariable ["AGM_NoArms", false, true];      // Is the unit able to hold a gun?
     _this setVariable ["AGM_Unconscious", false, true]; // figure it out
+    _this setVariable ["AGM_Overdosing", false];
     _this setVariable ["AGM_Dragging", objNull];
     _this setVariable ["AGM_Carrying", objNull];
 
@@ -70,9 +67,22 @@ _this spawn {
   _unit call AGM_Medical_unitInit;
   _unit call AGM_Medical_itemCheck;
 
-  _unit addEventHandler ["HandleDamage", { _this call AGM_Medical_fnc_handleDamage; }];
-  _unit addEventHandler ["Respawn", { (_this select 0) call AGM_Medical_unitInit; (_this select 0) call AGM_Medical_itemCheck; }];
-  _unit addEventHandler ["Take", { (_this select 0) call AGM_Medical_itemCheck; }];
+  _unit addEventHandler ["HandleDamage", {
+    _this call AGM_Medical_fnc_handleDamage;
+  }];
+
+  _unit addEventHandler ["Killed", {
+    [false] call AGM_Core_fnc_disableUserInput;
+  }];
+
+  _unit addEventHandler ["Respawn", {
+    (_this select 0) call AGM_Medical_unitInit;
+    (_this select 0) call AGM_Medical_itemCheck;
+  }];
+
+  _unit addEventHandler ["Take", {
+    (_this select 0) call AGM_Medical_itemCheck;
+  }];
 
   _unit spawn {
     while {true} do {

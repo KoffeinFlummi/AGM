@@ -5,7 +5,7 @@ private "_weapon";
 _weapon = _this select 0;
 
 if (stance player != "PRONE") then {
-	player playMoveNow "amovpknlmstpsraswrfldnon";
+	[player, "amovpknlmstpsraswrfldnon", 1] call AGM_Core_fnc_doAnimation;
 };
 player playActionNow "GestureDismountMuzzle";
 player playAction "GestureMountMuzzle";

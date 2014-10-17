@@ -25,8 +25,6 @@ _unit setVariable ["AGM_CanTreat", true, true];
 
 _position = getPosASL _unit;
 
-[_unit] joinSilent (_unit getVariable ["AGM_Group", grpNull]);
-
 [-2, {
   if (_this == player) then {
     player setVariable ["tf_globalVolume", 1];
@@ -38,18 +36,19 @@ _position = getPosASL _unit;
 
     [false] call AGM_Core_fnc_disableUserInput;
   };
-  if (local _this) then {
-    _this enableSimulation true;
-    _this setCaptive false;
-  };
-  _this switchMove "";
-  _this switchMove "amovppnemstpsnonwnondnon";
-}, _unit] call CBA_fnc_globalExecute;
 
-[_unit, _position] spawn {
-  _unit = _this select 0;
-  _position = _this select 1;
-  waitUntil {simulationEnabled _unit};
-  _unit setPosASL _position;
-};
-_unit setCaptive false;
+  if (local _this) then {
+    [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
+    if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {
+      terminate (_this getVariable "AGM_WakeUpTimer");
+    };
+    if !(scriptDone (_this getVariable "AGM_UnconsciousnessTimer")) then {
+      terminate (_this getVariable "AGM_UnconsciousnessTimer");
+    };
+  };
+
+  // Don't ask me; I have no idea...
+  _this switchMove "";
+  _this playMoveNow (_this getVariable "AGM_OriginalAnim");
+  _this switchMove (_this getVariable "AGM_OriginalAnim");
+}, _unit] call CBA_fnc_globalExecute;

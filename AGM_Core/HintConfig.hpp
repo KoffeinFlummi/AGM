@@ -1,6 +1,7 @@
 // by commy2
 
 class RscStructuredText;
+class RscMapControl;
 
 class RscTitles {
 	class AGM_RscHint {
@@ -48,6 +49,27 @@ class RscTitles {
 				y = 0.4 * safezoneH + safeZoneY;
 				w = 0.4 * safeZoneW;
 				h = 0.2 * SafeZoneH;
+			};
+		};
+	};
+	class AGM_EventHandlerHelper: AGM_Rsc_Display_Base {
+		idd = -1;
+		class controls {
+			class CameraView: RscMapControl {
+				onDraw = "if (cameraView != uiNamespace getVariable 'AGM_EventHandler_CameraMode') then {uiNamespace setVariable ['AGM_EventHandler_CameraMode', cameraView]; {[uiNamespace getVariable 'AGM_EventHandler_CameraMode'] call _x; nil} count ((missionNamespace getVariable 'AGM_EventHandler_CameraMode') select 2);};";
+				idc = -1;
+				w = 0;
+				h = 0;
+			};
+		};
+	};
+	class AGM_EventHandlerHelper2: AGM_Rsc_Display_Base {
+		class controls {
+			class MapMarkerCreated: RscMapControl {
+				onDraw = "if (count allMapMarkers != uiNamespace getVariable 'AGM_EventHandler_MapMarker') then {if (count allMapMarkers > uiNamespace getVariable 'AGM_EventHandler_MapMarker') then {{[allMapMarkers select count allMapMarkers - 1] call _x; nil} count ((missionNamespace getVariable 'AGM_EventHandler_MapMarker') select 2);}; uiNamespace setVariable ['AGM_EventHandler_MapMarker', count allMapMarkers];};";
+				idc = -1;
+				w = 0;
+				h = 0;
 			};
 		};
 	};

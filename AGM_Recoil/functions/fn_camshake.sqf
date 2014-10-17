@@ -31,12 +31,14 @@ if (vehicle player != player) then {
     if (currentWeaponMode _unit != _weapon) then {
       _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> (currentWeaponMode _unit) >> "recoilProne");
     };
+    if (count (getArray (configFile >> "CfgRecoils" >> _recoil)) < 2) exitWith {};
     _powerCoef = (getArray (configFile >> "CfgRecoils" >> _recoil)) select 1;
   } else {
     _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> "recoil");
     if (currentWeaponMode _unit != _weapon) then {
       _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> (currentWeaponMode _unit) >> "recoil");
     };
+    if (count (getArray (configFile >> "CfgRecoils" >> _recoil)) < 2) exitWith {};
     _powerCoef = (getArray (configFile >> "CfgRecoils" >> _recoil)) select 1;
   };
 

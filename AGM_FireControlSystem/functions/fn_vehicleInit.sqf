@@ -10,6 +10,8 @@
  * none
  */
 
+private ["_gunBeg", "_gunnerView", "_gunBegPos", "_gunnerViewPos", "_viewDiff"];
+
 if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "AGM_FCSEnabled") == 1) then {
   (_this select 0) addEventHandler ["Fired", {_this call AGM_FCS_fnc_firedEH}];
 
