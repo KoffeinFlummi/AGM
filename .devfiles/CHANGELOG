@@ -17,16 +17,17 @@
 - Added: Disposable rocket launchers (#187).
 - Added: Vertical and horizontal scope adjustments (#1025).
 - Added: 3D model for the UAV battery (#516).
-- Added: Module option to use ona bandage for the entire body (#546).
 - Added: Module option to disable morphine overdose (#743).
 - Added: Module option to set a damage coefficient (#916).
 - Added: Some actions con now be performed while inside vehicles (#824).
-- Added: Congigurable AGM modifier key (#850).
+- Added: Configurable AGM modifier key (#850).
 - Added: Dead Man's Switch trigger for explosives (#940).
 - Added: Tweaks to weapon usage by AI (#1000)
 - Added: Hotkeys to allow quick navigation of the action menus (#1178).
 - Added: Improved add marker dialog (#1258).
 - Added: Option to disable Respawn Button (#1292).
+- Added: Brought back the NATO symbols removed by BIS (#1250).
+- Added: Added a hotkey to use the smoke launcher on vehicles even when the default key is bugged out (#1262).
 
 - Changed: Allow moving while interaction menus is open.
 - Changed: Interaction Menus now remain open while the interaction key is pressed.
@@ -44,7 +45,7 @@
 - Changed: Removed body removal script in favor of Arma Corpse Manager (#1008)
 - Changed: Increased dipersion for sabot bullets (#924)
 - Changed: Increased XM-301 (Comanche) rounds damage (#935).
-- Changed: Standardized release Options (#936).
+- Changed: Standardized release options (#936).
 - Changed: Improved the handling of animation changes in medical (#1078).
 - Changed: Tweaks to some inconsistent vanilla armor values for different classes and faction (#1021).
 - Changed: AGM Binarizer no longer moves the Arma 3 tools executables (#1038).
@@ -60,7 +61,6 @@
 - Fixed: Conflict between AGM and new Arma walking speed (#992).
 - Fixed: Explosives Module caused error in RPT.
 - Fixed: Could not place explosives after team switching (#937).
-- Fixed: Prisoners could throw grenades.
 - Fixed: Sniper classes didn't have a detonator by default (#939).
 - Fixed: Wrong explosives behaviour on water (#857).
 - Fixed: Units could mount static weapons while they're being dragged (#927).
@@ -79,11 +79,9 @@
 - Fixed: Fireteams were not JIP compatible (#1187).
 - Fixed: Divers could bandage themselves underwater (#1202).
 - Fixed: Default map marker was broken by A3 update (#1221).
-- Fixed: Brought back the NATO symbols removed by BIS (#1250).
-- Fixed: Locality issue preventing a client from using the smoke launcher as commander (#1262).
 - Fixed: Could not load/unload from boats (#1279).
 - Fixed: Placing fortifications wasn't working on multiplayer (#1284).
-- Fixed: Waking up didn't restore the animation when inside a vehicle (#1301).
+- Fixed: Waking up didn't restore the animation when inside a vehicle after the v1.32 update (#1301).
 
 # v0.93
 
