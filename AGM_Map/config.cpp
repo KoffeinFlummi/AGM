@@ -40,6 +40,20 @@ class CfgFunctions {
       class updateLineMarker;
     };
   };
+    class AGM_Tab {
+    class AGM_Tab {
+      file = "AGM_Map\functions\tablet";
+      class createMarker;
+      class onLoad;
+      class onUnload;
+      class showMarkers;
+      class deleteMarker;
+      class openMarkerMenu;
+      class blueForceTracker;
+      class addWaypoint;
+      class createWaypoint;
+    };
+  };
 };
 
 class Extended_PreInit_EventHandlers {
@@ -65,6 +79,17 @@ class CfgWeapons {
     picture = "\AGM_Map\UI\maptool_item.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
+      mass = 1;
+    };
+  };
+
+  class AGM_CommandingTab: AGM_ItemCore {
+    descriptionShort = "$STR_AGM_Tablet_Description";
+    displayName = "$STR_AGM_Tablet_TabletName";
+    picture = "";
+    scope = 2;
+    simulation = "ItemGPS";
+    class ItemInfo {
       mass = 1;
     };
   };
@@ -155,6 +180,13 @@ class CfgVehicles {
           enableInside = 1;
         };
       };
+      class AGM_openTab {
+        displayName = "Open Tablet";
+        condition = "true";
+        statement = "['AGM_tablet_dlg'] execVM 'AGM_Map\openMenu.sqf';";
+        showDisabled = 1;
+        priority = 1;
+      };
     };
 
     class AGM_Actions {
@@ -217,15 +249,6 @@ class CfgVehicles {
         displayName = "Interval";
         description = "How often the markers should be refreshed (in seconds)";
         defaultValue = 1;
-      };
-      class HideAiGroups {
-        displayName = "Hide AI groups?";
-        description = "Hide markers for 'AI only' groups?";
-        typeName = "BOOL";
-        class values {
-          class Yes { name = "Yes"; value = 1; };
-          class No { name = "No"; value = 0; default = 1; };
-        };
       };
     };
   };
@@ -416,6 +439,12 @@ class CfgMarkers {
     color[] = {1,1,1,1};
     size = 32;
   };
+
+  class AGM_Waypoint: Flag {
+    name = "AGM_Waypoint";
+    icon = "\AGM_Map\data\AGM_Waypoint.paa";
+    size = 16;
+  };
 };
 
 class AGM_Parameters {
@@ -424,3 +453,4 @@ class AGM_Parameters {
 
 #include "MapGpsUI.hpp"
 #include <InsertMarker.hpp>
+#include <agm_commanding_tablet.hpp>
