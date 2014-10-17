@@ -112,6 +112,10 @@
       <Portuguese>Entrar como Copiloto</Portuguese>
       <Hungarian>Beszállás másodvezetőként</Hungarian>
     </Key>
+    <Key ID="STR_AGM_GetInVehicleAsCoPilot">
+      <English>Get in as Co-pilot</English>
+      <German>Einsteigen als Copilot</German>
+    </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
       <German>Zum Fahrersitz</German>
@@ -210,6 +214,10 @@
       <Italian>Spostati come Copilota</Italian>
       <Portuguese>Mudar para Copiloto</Portuguese>
       <Hungarian>Átülés másodvezetőnek</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_MoveToCoPilot">
+      <English>Move to Co-pilot</English>
+      <German>Zum Copilotensitz</German>
     </Key>
   </Package>
 </Project>

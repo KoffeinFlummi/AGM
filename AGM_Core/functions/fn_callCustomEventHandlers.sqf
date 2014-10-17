@@ -8,7 +8,7 @@
  * 1: Name of the event (String)
  *
  * Return value:
- * ID of the event script (used to remove it later).
+ * None.
  */
 
 private ["_object", "_type", "_name", "_actions"];
@@ -21,6 +21,6 @@ _name = format ["AGM_CustomEventHandlers_%1", _type];
 _actions = (_object getVariable [_name, [-1, [], []]]) select 2;
 
 {
-	[_object] call _x;
+	[_object] call _x; nil;
 } count _actions;
 nil

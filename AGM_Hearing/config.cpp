@@ -55,7 +55,7 @@ class CfgVehicles {
       class AGM_PutInEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_On";
         condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player} && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
-        statement = "call AGM_Hearing_fnc_putInEarplugs";
+        statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
         icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
@@ -64,7 +64,7 @@ class CfgVehicles {
       class AGM_RemoveEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_Off";
         condition = "AGM_EarPlugsIn && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
-        statement = "call AGM_Hearing_fnc_removeEarplugs";
+        statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
         showDisabled = 0;
         priority = 2.5;
         icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";

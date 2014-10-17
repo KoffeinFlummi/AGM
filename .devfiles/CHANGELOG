@@ -1,42 +1,87 @@
 - Added: New optional "Flow" interaction menu.
-- Added: Icons in interaction menus.
-- Added: Switch between bigger and smaller map tools.
-- Added: Align map tools.
-- Added: Draw lines on map with map tools or during briefing.
-- Added: Copy other players map lines.
+- Added: Icons on interaction menus.
+- Added: Switch between bigger and smaller map tools (#852).
+- Added: Align map tools (#852).
+- Added: Draw lines on map with map tools or during briefing (#852).
+- Added: Copy other players map lines (#852).
+- Added: Display GPS coordinates on the map screen (#852).
 - Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 0.75]".
 - Added: Animated raindrops on goggles.
-- Added: Added M152 RAMS detonator package.
-- Added: Flashsupressors available in Arma 3 are now usable.
-- Added: Support for custom jam clearing animations.
-- Added: M84 Stun Grenade
+- Added: Added M152 RAMS detonator package (#714).
+- Added: Flashsupressors available in Arma 3 are now usable (#1054).
+- Added: Support for custom jam clearing animations (#966).
+- Added: M84 Stun Grenade.
 - Added: Many new entries in various languages, including new Italian support.
 - Added: Improved documentation (https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started)
+- Added: Locking backpacks (#42).
+- Added: Disposable rocket launchers (#187).
+- Added: Vertical and horizontal scope adjustments (#1025).
+- Added: 3D model for the UAV battery (#516).
+- Added: Module option to disable morphine overdose (#743).
+- Added: Module option to set a damage coefficient (#916).
+- Added: Some actions con now be performed while inside vehicles (#824).
+- Added: Configurable AGM modifier key (#850).
+- Added: Dead Man's Switch trigger for explosives (#940).
+- Added: Tweaks to weapon usage by AI (#1000)
+- Added: Hotkeys to allow quick navigation of the action menus (#1178).
+- Added: Improved add marker dialog (#1258).
+- Added: Option to disable Respawn Button (#1292).
+- Added: Brought back the NATO symbols removed by BIS (#1250).
+- Added: Added a hotkey to use the smoke launcher on vehicles even when the default key is bugged out (#1262).
 
 - Changed: Allow moving while interaction menus is open.
 - Changed: Interaction Menus now remain open while the interaction key is pressed.
-- Changed: Removed AGM_StriderFix, which is no longer neccesary.
-- Changed: Physically correct wind drag.
+- Changed: Removed AGM_StriderFix, which is no longer neccesary (#1077).
+- Changed: Physically correct wind drag (#996).
 - Changed: Optimization of various functions by using new pushBack command.
 - Changed: Removed humidity effect over bullet trajectories.
-- Changed: Increased the odds of people spontaneously regaining conciousness.
+- Changed: Increased the odds of people spontaneously regaining conciousness (#943).
 - Changed: Many improvements to AGM_RealisticNames.
 - Changed: Increased M57 Trigger Device range to 200m.
+- Changed: Refined lock detection warning (#263).
+- Changed: Improved rangefinding for vehicles (#341).
+- Changed: Client option to disable vanilla command menu keybindings (#676)
+- Changed: Removed toolkit from explosive specialists (#855).
+- Changed: Removed body removal script in favor of Arma Corpse Manager (#1008)
+- Changed: Increased dipersion for sabot bullets (#924)
+- Changed: Increased XM-301 (Comanche) rounds damage (#935).
+- Changed: Standardized release options (#936).
+- Changed: Improved the handling of animation changes in medical (#1078).
+- Changed: Tweaks to some inconsistent vanilla armor values for different classes and faction (#1021).
+- Changed: AGM Binarizer no longer moves the Arma 3 tools executables (#1038).
+- Changed: Syntax of custom AGM actions, to make them more similar to vanilla A3 actions (#1173).
+- Changed: Added configurable coefficient for treatment times of non-medics (#1269).
 
-- Fixed: Morphine diagnosis was sometimes not correcly linked accross clients.
-- Fixed: User input remained disabled after switching from an unconcious unit.
-- Fixed: Weapons showed vanilla names when placed on the ground.
-- Fixed: Support disabled doors.
-- Fixed: Conflict between AGM and new Arma walking speed.
+- Fixed: Morphine status was sometimes not correcly linked accross clients (#929).
+- Fixed: "Unit is bleeding" was shown for very minor injuries which couldn't be bandaged (#944).
+- Fixed: User input remained disabled after switching from an unconcious unit (#1035).
+- Fixed: User input remained disabled in spectator mode (#1251).
+- Fixed: Weapons showed vanilla names when placed on the ground (#1001).
+- Fixed: Support disabled doors (#963).
+- Fixed: Conflict between AGM and new Arma walking speed (#992).
 - Fixed: Explosives Module caused error in RPT.
-- Fixed: Could not place explosives after team switching.
-- Fixed: Prisoners could throw grenades
-- Fixed: Sniper classes didn't have a detonator by default.
-- Fixed: Wrong explosives behaviour on water.
-- Fixed: Units could mount static weapons while they're being dragged.
-- Fixed: Static weapons were locked after draging them once.
-- Fixed: Error on checking ammo of static weapons.
-- Fixed: A-10 Gau cannon burst inconsistent
+- Fixed: Could not place explosives after team switching (#937).
+- Fixed: Sniper classes didn't have a detonator by default (#939).
+- Fixed: Wrong explosives behaviour on water (#857).
+- Fixed: Units could mount static weapons while they're being dragged (#927).
+- Fixed: Static weapons were locked after draging them once (#925).
+- Fixed: Explosives disapearing after placed (#933).
+- Fixed: Error on checking ammo of static weapons (#973).
+- Fixed: A-10 Gau cannon burst inconsistent (#802).
+- Fixed: Error in AGM_Respawn (#786).
+- Fixed: Prisoners could throw grenades (#864)
+- Fixed: Unconciousness effect active in spectator (#909)
+- Fixed: View was uncentered after recovering from a G-force blackout (#938).
+- Fixed: Google effects were applied to some new arma bandannas (#1013).
+- Fixed: Nametags were visible through walls (#1048).
+- Fixed: Respawn module didn't re-add binoculars (#1134).
+- Fixed: The killer of AI units was incorrectly reported (#1155).
+- Fixed: Fireteams were not JIP compatible (#1187).
+- Fixed: Divers could bandage themselves underwater (#1202).
+- Fixed: Default map marker was broken by A3 update (#1221).
+- Fixed: Could not load/unload from boats (#1279).
+- Fixed: Placing fortifications wasn't working on multiplayer (#1284).
+- Fixed: Waking up didn't restore the animation when inside a vehicle after the v1.32 update (#1301).
 
 # v0.93
 
