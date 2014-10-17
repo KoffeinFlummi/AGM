@@ -12,7 +12,7 @@
 
 private ["_unit", "_strength"];
 
-_unit = this select 0;
+_unit = _this select 0;
 _strength = _this select 1;
 
 if (_player getVariable ["AGM_hasEarPlugsin", false] || {_player getVariable ["X39_MedSys_var_hasEarplugs", false]}) then {
