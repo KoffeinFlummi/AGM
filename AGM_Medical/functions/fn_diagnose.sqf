@@ -10,7 +10,7 @@
  * none
  */
 
-#define DIAGNOSETIME 8
+#define DIAGNOSETIME 4
 #define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDr_medic4"
 
 _this spawn {
@@ -157,7 +157,11 @@ _this spawn {
 
     player setVariable ["AGM_CanTreat", false, false];
 
-    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    _diagnosetime = DIAGNOSETIME;
+    if !([player] call AGM_Medical_fnc_isMedic) then {
+      _diagnosetime = _diagnosetime * AGM_Medical_CoefNonMedic;
+    };
+    [_diagnosetime, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
     [_unit, true] call AGM_Core_fnc_closeDialogIfTargetMoves;
   } else {
     _this call AGM_Medical_diagnoseCallback;

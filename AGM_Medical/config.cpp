@@ -651,6 +651,12 @@ class CfgVehicles {
         typeName = "NUMBER";
         defaultValue = 1;
       };
+      class CoefNonMedic {
+        displayName = "Non-Medic Time Coef.";
+        description = "Multiplier for the treatment time of an untrained person compared to that of a trained medic. Default: 2";
+        typeName = "NUMBER";
+        defaultValue = 2;
+      };
       class MaxUnconsciousnessTime {
         displayName = "Max Unconsc. Time";
         description = "Maximum time (in seconds) for a unit to be unconscious before dying. -1 disables this.";
@@ -668,22 +674,6 @@ class CfgVehicles {
           };
           class No {
             default = 1;
-            name = "No";
-            value = 0;
-          };
-        };
-      };
-      class PunishNonMedics {
-        displayName = "Punish non-medics?";
-        description = "Increase the time it takes to complete actions for non-medics? Default: Yes";
-        typeName = "BOOL";
-        class values {
-          class Yes {
-            default = 1;
-            name = "Yes";
-            value = 1;
-          };
-          class No {
             name = "No";
             value = 0;
           };
@@ -944,10 +934,10 @@ class AGM_Parameters {
   AGM_Medical_CoefDamage = 1.0;
   AGM_Medical_CoefBleeding = 1.0;
   AGM_Medical_CoefPain = 1.0;
+  AGM_Medical_CoefNonMedic = 2.0;
   AGM_Medical_MaxUnconsciousnessTime = -1;
   // Boolean Parameters (0/1)
   AGM_Medical_AllowNonMedics = 0;
-  AGM_Medical_PunishNonMedics = 1;
   AGM_Medical_RequireDiagnosis = 0;
   AGM_Medical_PreventInstaDeath = 0;
   AGM_Medical_PreventDeathWhileUnconscious = 0;

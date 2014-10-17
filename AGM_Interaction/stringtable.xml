@@ -80,8 +80,10 @@
     </Key>
     <Key ID="STR_AGM_Interaction_ShowNames">
       <English>Show Names</English>
+      <German>Namen anzeigen</German>
       <Spanish>Mostrar nombres</Spanish>
       <French>Afficher noms</French>
+      <Czech>Zobrazit jména</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -387,15 +389,17 @@
       <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
       <French>Noms uniquement sous le curseur (si noms affichés)</French>
-      <Czech>Zobrazit jméno hráče jenom na kurzor (potřeba jména hráčů)</Czech>
+      <Czech>Zobrazit jméno hráče jenom na kurzor (vyžaduje jména hráčů)</Czech>
       <Italian>Mostra i nomi solo se puntati (richiede i nomi dei giocatori abilitati)</Italian>
       <Portuguese>Mostrar nome de jogador somente no cursor (requer nome de jogadores)</Portuguese>
       <Hungarian>Játékosok nevének mutatása (névcímke szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
       <English>Show player name only on keypress (requires player names)</English>
+      <German>Spielernamen nur auf Tastendruck anzeigen (benötigt Spielernamen)</German>
       <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
+      <Czech>Zobrazit jména hráčů jen na klávesu (vyžaduje jména hráčů)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
@@ -403,7 +407,7 @@
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
       <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
       <French>Grade des joueurs  (si noms affichés)</French>
-      <Czech>Zobrazit hodnosti hráčů (potřeba jména hráčů)</Czech>
+      <Czech>Zobrazit hodnosti hráčů (vyžaduje jména hráčů)</Czech>
       <Italian>Mostra i gradi (richiede i nomi dei giocatori abilitati)</Italian>
       <Portuguese>Mostrar patente de jogadores (requer nome de jogadores)</Portuguese>
       <Hungarian>Játékosok rendfokozatának mutatása (névcímke szükséges)</Hungarian>
@@ -693,6 +697,7 @@
       <Portuguese>Rolar</Portuguese>
       <Italian>Scorri</Italian>
       <Hungarian>Görgetés</Hungarian>
+      <Czech>Otáčení</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ModifierKey">
       <English>Modifier Key</English>
@@ -703,6 +708,7 @@
       <Portuguese>Tecla Modificadora</Portuguese>
       <Italian>Modifica Tasto</Italian>
       <Hungarian>Módosító billentyű</Hungarian>
+      <Czech>Modifikátor</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_NotInRange">
       <English>Not in Range</English>
@@ -711,6 +717,7 @@
       <Portuguese>Fora do Alcançe</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
       <Polish>Poza zasięgiem</Polish>
+      <Czech>Mimo dosah</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_AutoCloseMenu">
       <English>Close Menu on Key Release</English>
@@ -718,37 +725,44 @@
       <Polish>Zamknij menu automatycznie</Polish>
       <French>Fermer le menu en relâchant la touche</French>
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
+      <Czech>Menu interakce (Na držení)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_FriskMenuHeader">
       <English>Inventory of frisked person</English>
       <German>Inventar der durchsuchten Person</German>
       <French>Inventaire de la fouille</French>
       <Hungarian>Motozott személy felszerelése</Hungarian>
+      <Czech>Inventář prohledávané osoby</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_FriskPerson">
       <English>Frisk person</English>
       <German>Person durchsuchen</German>
       <French>Fouiller</French>
+      <Czech>Prohledávaná osoba</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_LockBackpack">
       <English>Lock Backpack</English>
       <German>Rucksack verschließen</German>
       <French>Verrouiller le sac à dos</French>
+      <Czech>Zamknout batoh</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockBackpack">
       <English>Unlock Backpack</English>
       <German>Rucksack aufschließen</German>
       <French>Déverouiller le sac à dos</French>
+      <Czech>Odemknout batoh</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_InventoryLocked">
       <English>Inventory is locked</English>
       <German>Das Inventar ist verschlossen</German>
       <French>L'inventaire est verrouillé</French>
+      <Czech>Inventář je zamčený</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_BackpackLocked">
       <English>Backpack of %1 is locked</English>
       <German>Der Rucksack von %1 ist verschlossen</German>
       <French>Le sac à dos de %1 est verroullé</French>
+      <Czech>%1 má zamčený batoh</Czech>
     </Key>
   </Package>
 </Project>

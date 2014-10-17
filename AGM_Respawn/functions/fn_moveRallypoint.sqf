@@ -13,9 +13,9 @@ _this spawn {
 
 	if (isNull _rallypoint) exitWith {};
 
-	_position = getPosATL player;
+	_position = getPosATL _unit;
 	_position = _position findEmptyPosition [0, 2, typeOf _rallypoint];
-	if (count _position == 0) then {_position = getPosATL player};
+	if (count _position == 0) then {_position = getPosATL _unit};
 
 	_position set [2, 0];
 
@@ -23,6 +23,7 @@ _this spawn {
 
 	sleep 5;
 	_rallypoint setPosATL _position;
+	_unit reveal _rallypoint;
 
 	/*
 	_marker = format ["AGM_RallyPoint_%1", _side];

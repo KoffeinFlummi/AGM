@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, commy2
  *
  * Handles deafness due to explosions going off near the player.
  *
@@ -18,7 +18,7 @@ _strength = (_damage * 2) min 1;
 
 if (_strength < 0.01) exitWith {};
 
-_strength spawn {
+[_unit, _strength] spawn {
   sleep 0.2;
-  [_this] call AGM_Hearing_fnc_earRinging;
+  _this call AGM_Hearing_fnc_earRinging;
 };

@@ -47,6 +47,8 @@ _position = getPosASL _unit;
     };
   };
 
+  // Don't ask me; I have no idea...
   _this switchMove "";
+  _this playMoveNow (_this getVariable "AGM_OriginalAnim");
   _this switchMove (_this getVariable "AGM_OriginalAnim");
 }, _unit] call CBA_fnc_globalExecute;

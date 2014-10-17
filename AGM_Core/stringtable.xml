@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-10-16 -->
 <Project name="AGM">
   <Package name="Core">
-
     <Key ID="STR_AGM_Core_Save">
       <English>Save</English>
       <German>Speichern</German>
@@ -107,7 +107,6 @@
       <Hungarian>Alt Gr</Hungarian>
       <Italian>Alt Gr</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_KeyDefault">
       <English>Default</English>
       <German>Standard</German>
@@ -130,7 +129,6 @@
       <Hungarian>Semmi</Hungarian>
       <Italian>Non assegnato</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_DoubleTapKey">
       <English>2x %1</English>
       <German>2x %1</German>
@@ -153,8 +151,6 @@
       <Hungarian>%1 Nyomvatartása</Hungarian>
       <Italian>Tieni premuto %1</Italian>
     </Key>
-
-
     <Key ID="STR_AGM_Core_ProfileSaved">
       <English>Profile saved</English>
       <German>Profil gespeichert</German>
@@ -179,7 +175,6 @@
       <Hungarian>A profil nincs elmentve</Hungarian>
       <Italian>Profilo non salvato</Italian>
     </Key>
-
     <!-- These are cardinal directions, in case you didn't guess. -->
     <Key ID="STR_AGM_Core_N">
       <English>N</English>
@@ -373,7 +368,6 @@
       <Hungarian>ÉÉNy</Hungarian>
       <Italian>NNO</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_ActionAborted">
       <English>Action cancelled.</English>
       <German>Aktion abgebrochen.</German>
@@ -385,7 +379,6 @@
       <Hungarian>Művelet megszakítva.</Hungarian>
       <Italian>Azione cancellata.</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_Prev">
       <English>&lt; Prev</English>
       <German>&lt; Zurück</German>
@@ -408,7 +401,6 @@
       <Czech>Další &gt;</Czech>
       <Italian>Prossimo &gt;</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_MiscItems">
       <English>[AGM] Miscellaneous Items</English>
       <German>[AGM] Verschiedenes</German>
@@ -420,11 +412,11 @@
       <Hungarian>[AGM] Egyéb tárgyak</Hungarian>
       <Italian>[AGM] Oggetti vari</Italian>
     </Key>
-
     <Key ID="STR_AGM_Core_EnableNumberHotkeys">
       <English>Disable Command Menu</English>
       <German>Befehlsmenü ausschalten</German>
+      <French>Désactiver Menu Commande</French>
+      <Czech>Vypnout velící menu</Czech>
     </Key>
-
   </Package>
 </Project>

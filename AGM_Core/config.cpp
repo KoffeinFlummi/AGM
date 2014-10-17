@@ -189,8 +189,10 @@ class CfgFunctions {
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
       class canInteractWith;
       class changeProjectileDirection;
+      class checkPBOs;
       class claim;
       class closeDialogIfTargetMoves;
       class codeToLetter;
@@ -206,6 +208,8 @@ class CfgFunctions {
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;

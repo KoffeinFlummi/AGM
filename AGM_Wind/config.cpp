@@ -130,7 +130,7 @@ class CfgAmmo {
   };
   class B_127x99_SLAP : B_127x99_Ball {
     AGM_Bullet_Dispersion = 0.017;
-  }
+  };
 };
 
 class RscText;
