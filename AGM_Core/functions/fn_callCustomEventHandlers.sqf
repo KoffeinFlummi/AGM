@@ -8,7 +8,7 @@
  * 1: Name of the event (String)
  *
  * Return value:
- * ID of the event script (used to remove it later).
+ * None.
  */
 
 private ["_object", "_type", "_name", "_actions"];

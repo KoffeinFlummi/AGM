@@ -189,6 +189,7 @@ class CfgFunctions {
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
       class canInteractWith;
       class changeProjectileDirection;
       class checkPBOs;
