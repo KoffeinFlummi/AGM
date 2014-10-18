@@ -23,7 +23,7 @@ if (!isServer) exitWith {};
 
 // if no units are selected, do this for all units
 if (count _units == 0) then {
-	_units = allUnits + allDead;
+	_units = allUnits + vehicles + allDead;
 };
 
 // add MPkilled eventhandler to all selected units
