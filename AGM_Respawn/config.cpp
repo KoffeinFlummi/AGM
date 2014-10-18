@@ -87,7 +87,7 @@ class CfgVehicles {
     };
   };
 
-  class AGM_ModuleRallypoint: Module_F {
+  class AGM_ModuleFriendlyFire: Module_F {
     author = "AGM Team";
     category = "AGM";
     displayName = "Friendly Fire Messages";
