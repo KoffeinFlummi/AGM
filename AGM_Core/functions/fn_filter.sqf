@@ -14,20 +14,20 @@
  * [[0,1,2,3,4], {_this > 2}] call AGM_Core_fnc_filter ==> [3,4]
  */
 
-private ["_array", "_code", "_newArray"];
+private ["_array", "_code", "_newArray", "_index"];
 
 _array = _this select 0;
 _code = _this select 1;
 
-if (!assert (!isNil "_array")) exitWith {
+if (isNil "_array") exitWith {
   diag_log text format ["[AGM] ERROR: No array for function filter in %1", _fnc_scriptNameParent];
   []
 };
 
 _newArray = [];
-{
-  if (_x call _code) then {
-    _newArray pushBack _x;
+for "_index" from 0 to (count _array - 1) do {
+  if ((_array select _index) call _code) then {
+    _newArray pushBack (_array select _index);
   };
-} forEach _array;
+};
 _newArray
