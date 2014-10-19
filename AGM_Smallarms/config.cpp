@@ -208,6 +208,15 @@ class CfgWeapons {
   class GrenadeLauncher;
   class UGL_F : GrenadeLauncher {};
 
+    // @todo the flashlight
+    /*
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class PointerSlot: PointerSlot {
+        compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
+      };
+    };
+    */
+
   // MXs ////////////////////////////////////////////////////
 
   class arifle_MX_Base_F : Rifle_Base_F {
@@ -342,66 +351,18 @@ class CfgWeapons {
 
   // Pistols //////////////////////////////////////////////
 
-  class Pistol;
-  class Pistol_Base_F: Pistol {
-    class WeaponSlotsInfo;
-  };
+  class Pistol_Base_F;
   class hgun_P07_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
   };
 
   class hgun_Rook40_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
   };
 
-  class hgun_ACPC2_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
-
-  class hgun_Pistol_heavy_01_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
-
-  class hgun_Pistol_heavy_02_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
+  /*class hgun_ACPC2_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_01_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_02_F: Pistol_Base_F {};*/
 
   // LMGs //////////////////////////////////////////////
 

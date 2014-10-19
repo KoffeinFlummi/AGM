@@ -8,6 +8,8 @@
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
+**Make Arma Not War:** http://makearmanotwar.com/entry/7jnWM53S2e
+
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
 **Get Latest Version:** https://github.com/KoffeinFlummi/AGM/releases

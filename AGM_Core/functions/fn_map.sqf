@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, commy2
  *
  * Applies given code to every element in an array, LIKE SOMETHING SQF SHOULD HAVE BY DEFAULT.
  *
@@ -17,11 +17,14 @@
 private ["_array", "_code"];
 
 _array = _this select 0;
-_newArray = [];
 _code = _this select 1;
 
-for "_i" from 0 to (count _array - 1) do {
-  _newArray set [_i, (_array select _i) call _code];
+if (!assert (!isNil "_array")) exitWith {
+  diag_log text format ["[AGM] ERROR: No array for function map in %1", _fnc_scriptNameParent];
+  []
 };
 
-_newArray
+{
+  _array set [_forEachIndex, _x call _code];
+} forEach _array;
+_array
