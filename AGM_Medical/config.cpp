@@ -61,13 +61,13 @@ class Extended_PostInit_EventHandlers {
 
 class AGM_Core_canInteractConditions {
   class AGM_Medical_canTreat {
-    condition = "player getVariable ['AGM_CanTreat', true]";
+    condition = "_player getVariable ['AGM_CanTreat', true]";
   };
   class AGM_Medical_isConscious {
-    condition = "!(player getVariable ['AGM_Unconscious', false])";
+    condition = "!(_player getVariable ['AGM_Unconscious', false])";
   };
   class AGM_Medical_isNotOverdosing {
-    condition = "!(player getVariable ['AGM_Overdosing', false])";
+    condition = "!(_player getVariable ['AGM_Overdosing', false])";
   };
 };
 
@@ -159,6 +159,7 @@ class CfgVehicles {
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         priority = 6;
         subMenu[] = {"AGM_Medical", 0};
+        hotkey = "T";
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -257,6 +258,7 @@ class CfgVehicles {
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
         priority = 2.1;
         icon = "AGM_Medical\UI\medical_ca.paa";
+        hotkey = "R";
       };
       class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
@@ -265,6 +267,7 @@ class CfgVehicles {
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
         priority = 2.0;
         icon = "AGM_Medical\UI\medical_ca.paa";
+        hotkey = "C";
       };
     };
 
@@ -277,6 +280,7 @@ class CfgVehicles {
         priority = 6;
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         subMenu[] = {"AGM_Medical", 1};
+        hotkey = "T";
 
         class AGM_Diagnose {
           displayName = "$STR_AGM_Medical_Diagnose";
@@ -360,12 +364,14 @@ class CfgVehicles {
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
         icon = "AGM_Medical\UI\medical_ca.paa";
+        hotkey = "R";
       };
       class AGM_Release_Carry: AGM_Release_Drag {
         condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
         icon = "AGM_Medical\UI\medical_ca.paa";
+        hotkey = "R";
       };
     };
   };
@@ -564,6 +570,24 @@ class CfgVehicles {
       };
     };
   };
+  class AllVehicles;
+  class Ship: AllVehicles {
+    class AGM_Actions {
+      class AGM_Unload {
+        displayName = "$STR_AGM_Medical_Unload";
+        distance = 4;
+        condition = "return = false; {if (_x getVariable 'AGM_Unconscious') exitWith {return = true;};} foreach (crew AGM_Interaction_Target); return and vehicle player == player and !(AGM_Interaction_Target isKindOf 'Man')";
+        statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_unloadPatients;";
+      };
+      class AGM_Load {
+        displayName = "$STR_AGM_Medical_Load";
+        distance = 4;
+        condition = "!(AGM_Interaction_Target isKindOf 'Man') and vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man' or (player getVariable 'AGM_Carrying') isKindOf 'Man') and AGM_Interaction_Target emptyPositions 'cargo' > 0";
+        statement = "[AGM_Interaction_Target] call AGM_Medical_fnc_loadIntoVehicle;";
+        exceptions[] = {"AGM_Medical_canTreat"};
+      };
+    };
+  };
 
   class Box_NATO_Support_F;
   class AGM_Box_Medical: Box_NATO_Support_F {
@@ -609,6 +633,12 @@ class CfgVehicles {
     isGlobal = 1;
     icon = "\AGM_Medical\UI\IconMedical_ca.paa";
     class Arguments {
+      class CoefDamage {
+        displayName = "Damage Coef.";
+        description = "Multiplier for the amount of damage received. Default: 1 (obviously)";
+        typeName = "NUMBER";
+        defaultValue = 1;
+      };
       class CoefBleeding {
         displayName = "Bleeding Speed Coef.";
         description = "Multiplier for the rate of bleeding. Default: 1 (obviously)";
@@ -620,6 +650,12 @@ class CfgVehicles {
         description = "Multiplier for the intensity of the pain PP effect. Default: 1 (obviously)";
         typeName = "NUMBER";
         defaultValue = 1;
+      };
+      class CoefNonMedic {
+        displayName = "Non-Medic Time Coef.";
+        description = "Multiplier for the treatment time of an untrained person compared to that of a trained medic. Default: 2";
+        typeName = "NUMBER";
+        defaultValue = 2;
       };
       class MaxUnconsciousnessTime {
         displayName = "Max Unconsc. Time";
@@ -638,22 +674,6 @@ class CfgVehicles {
           };
           class No {
             default = 1;
-            name = "No";
-            value = 0;
-          };
-        };
-      };
-      class PunishNonMedics {
-        displayName = "Punish non-medics?";
-        description = "Increase the time it takes to complete actions for non-medics? Default: Yes";
-        typeName = "BOOL";
-        class values {
-          class Yes {
-            default = 1;
-            name = "Yes";
-            value = 1;
-          };
-          class No {
             name = "No";
             value = 0;
           };
@@ -734,6 +754,22 @@ class CfgVehicles {
           };
           class No {
             default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
+      class EnableOverdosing {
+        displayName = "Enable Overdosing?";
+        description = "Enable morphine overdoses? Default: Yes";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            default = 1;
+            name = "Yes";
+            value = 1;
+          };
+          class No {
             name = "No";
             value = 0;
           };
@@ -895,16 +931,18 @@ class ImpactEffectsBlood {
 };
 
 class AGM_Parameters {
+  AGM_Medical_CoefDamage = 1.0;
   AGM_Medical_CoefBleeding = 1.0;
   AGM_Medical_CoefPain = 1.0;
+  AGM_Medical_CoefNonMedic = 2.0;
   AGM_Medical_MaxUnconsciousnessTime = -1;
   // Boolean Parameters (0/1)
   AGM_Medical_AllowNonMedics = 0;
-  AGM_Medical_PunishNonMedics = 1;
   AGM_Medical_RequireDiagnosis = 0;
   AGM_Medical_PreventInstaDeath = 0;
   AGM_Medical_PreventDeathWhileUnconscious = 0;
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
+  AGM_Medical_EnableOverdosing = 1;
 };
 #include <HintConfig.hpp>

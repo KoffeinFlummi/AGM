@@ -11,6 +11,7 @@
       <Russian>Лечение &gt;&gt;</Russian>
       <French>Soigner &gt;&gt;</French>
       <Hungarian>Ellátás &gt;&gt;</Hungarian>
+      <Portuguese>Tratar &gt;&gt;</Portuguese>
       <Italian>Cura &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Treat_Self">
@@ -22,6 +23,7 @@
       <Russian>Самолечение &gt;&gt;</Russian>
       <French>Se soigner &gt;&gt;</French>
       <Hungarian>Önellátás &gt;&gt;</Hungarian>
+      <Portuguese>Tratar-se &gt;&gt;</Portuguese>
       <Italian>Curati &gt;&gt;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Diagnose">
@@ -33,6 +35,7 @@
       <Russian>Диагностика</Russian>
       <French>Diagnostiquer</French>
       <Hungarian>Diagnózis</Hungarian>
+      <Portuguese>Diagnosticar</Portuguese>
       <Italian>Fai una diagnosi</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Inject_Morphine">
@@ -44,6 +47,7 @@
       <Russian>Ввести морфин</Russian>
       <French>Morphine</French>
       <Hungarian>Morfium</Hungarian>
+      <Portuguese>Injetar Morfina</Portuguese>
       <Italian>Inietta Morfina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Inject_Epinephrine">
@@ -55,6 +59,7 @@
       <Russian>Ввести андреналил</Russian>
       <French>Adrénaline</French>
       <Hungarian>Adrenalin</Hungarian>
+      <Portuguese>Injetar Epinefrina</Portuguese>
       <Italian>Inietta Epinefrina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Transfuse_Blood">
@@ -66,6 +71,7 @@
       <Russian>Перелить кровь</Russian>
       <French>Transfusion</French>
       <Hungarian>Infúzió</Hungarian>
+      <Portuguese>Transfundir Sangue</Portuguese>
       <Italian>Effettua Trasfusione</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage">
@@ -77,6 +83,7 @@
       <French>Pansement</French>
       <Italian>Benda</Italian>
       <Hungarian>Kötözése</Hungarian>
+      <Portuguese>Atadura</Portuguese>
       <Russian>Перевязать</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitHead">
@@ -88,6 +95,7 @@
       <Russian>Перевязать голову</Russian>
       <French>Pansement Tête</French>
       <Hungarian>Fej kötözése</Hungarian>
+      <Portuguese>Atar Cabeça</Portuguese>
       <Italian>Benda la testa</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitBody">
@@ -99,6 +107,7 @@
       <Russian>Перевязать торс</Russian>
       <French>Pansement Torse</French>
       <Hungarian>Felsőtest kötözése</Hungarian>
+      <Portuguese>Atar Tronco</Portuguese>
       <Italian>Benda il torso</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitLeftArm">
@@ -110,6 +119,7 @@
       <Russian>Перевязать левую руку</Russian>
       <French>Pansement Bras Gauche</French>
       <Hungarian>Bal kar kötözése</Hungarian>
+      <Portuguese>Atar Braço Esquerdo</Portuguese>
       <Italian>Benda il braccio sinistro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitRightArm">
@@ -121,6 +131,7 @@
       <Russian>Перевязать правую руку</Russian>
       <French>Pansement Bras Droit</French>
       <Hungarian>Jobb kar kötözése</Hungarian>
+      <Portuguese>Atar Braço Direito</Portuguese>
       <Italian>Benda il braccio destro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitLeftLeg">
@@ -132,6 +143,7 @@
       <Russian>Перевязать левую ногу</Russian>
       <French>Pansement Jambe Gauche</French>
       <Hungarian>Bal láb kötözése</Hungarian>
+      <Portuguese>Atar Perna Esquerda</Portuguese>
       <Italian>Benda la gamba sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_HitRightLeg">
@@ -143,6 +155,7 @@
       <Russian>Перевязать правую ногу</Russian>
       <French>Pansement Jambe Droite</French>
       <Hungarian>Jobb láb kötözése</Hungarian>
+      <Portuguese>Atar Perna Direita</Portuguese>
       <Italian>Benda la gamba destra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Drag">
@@ -154,6 +167,7 @@
       <Russian>Тащить</Russian>
       <French>Tracter</French>
       <Hungarian>Húzás</Hungarian>
+      <Portuguese>Arrastar</Portuguese>
       <Italian>Trascina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Carry">
@@ -165,6 +179,7 @@
       <Russian>Нести</Russian>
       <French>Porter</French>
       <Hungarian>Cipelés</Hungarian>
+      <Portuguese>Carregar</Portuguese>
       <Italian>Trasporta</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Release">
@@ -176,6 +191,7 @@
       <Russian>Отпустить</Russian>
       <French>Déposer</French>
       <Hungarian>Elenged</Hungarian>
+      <Portuguese>Largar</Portuguese>
       <Italian>Lascia</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Load">
@@ -187,6 +203,7 @@
       <Russian>Погрузить пациента в</Russian>
       <French>Embarquer le Patient</French>
       <Hungarian>Sebesült berakása</Hungarian>
+      <Portuguese>Carregar Paciente Em</Portuguese>
       <Italian>Carica paziente nel</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Unload">
@@ -198,6 +215,7 @@
       <Russian>Выгрузить пациента</Russian>
       <French>Débarquer le Patient</French>
       <Hungarian>Sebesült kihúzása</Hungarian>
+      <Portuguese>Descarregar Paciente</Portuguese>
       <Italian>Scarica il paziente</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Diagnosing">
@@ -209,6 +227,7 @@
       <Russian>Диагоностика....</Russian>
       <French>Diagnostic ...</French>
       <Hungarian>Ellenőrzés...</Hungarian>
+      <Portuguese>Diagnosticando ...</Portuguese>
       <Italian>Eseguo la diagnosi ...</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Injecting_Morphine">
@@ -220,6 +239,7 @@
       <Russian>Введение морфина...</Russian>
       <French>Injection de Morphine...</French>
       <Hungarian>Morfium beadása...</Hungarian>
+      <Portuguese>Injetando Morfina ...</Portuguese>
       <Italian>Inietto la morfina ...</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Injecting_Epinephrine">
@@ -231,6 +251,7 @@
       <Russian>Введение андреналина</Russian>
       <French>Injection d'Adrénaline ...</French>
       <Hungarian>Adrenalin beadása...</Hungarian>
+      <Portuguese>Injetando Epinefrina ...</Portuguese>
       <Italian>Inietto l'epinefrina ...</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Transfusing_Blood">
@@ -242,6 +263,7 @@
       <Russian>Переливание крови...</Russian>
       <French>Transfusion Sanguine ...</French>
       <Hungarian>Infúzió...</Hungarian>
+      <Portuguese>Transfundindo Sangue ...</Portuguese>
       <Italian>Effettuo la trasfusione ...</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging">
@@ -253,6 +275,7 @@
       <French>Pansement ...</French>
       <Italian>Sto applicando la benda ...</Italian>
       <Hungarian>Bekötözése...</Hungarian>
+      <Portuguese>Atando ...</Portuguese>
       <Russian>Перевязывание....</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitHead">
@@ -264,6 +287,7 @@
       <Russian>Перевязывание головы....</Russian>
       <French>Pansement à la Tête ...</French>
       <Hungarian>Fej bekötözése...</Hungarian>
+      <Portuguese>Atando Cabeça ...</Portuguese>
       <Italian>Sto applicando la benda sulla testa ...</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitBody">
@@ -275,6 +299,7 @@
       <Russian>Перевязывание торса...</Russian>
       <French>Pansement au Torse ...</French>
       <Hungarian>Felsőtest bekötözése</Hungarian>
+      <Portuguese>Atando Tronco ...</Portuguese>
       <Italian>Sto applicando la benda sul torso</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitLeftArm">
@@ -286,6 +311,7 @@
       <Russian>Перевязывание тела...</Russian>
       <French>Pansement au Bras Gauche ...</French>
       <Hungarian>Bal kar bekötözése...</Hungarian>
+      <Portuguese>Atando Braço Esquerdo ...</Portuguese>
       <Italian>Sto applicando la benda sul braccio sinistro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitRightArm">
@@ -297,6 +323,7 @@
       <Russian>Перевязывание правой руки...</Russian>
       <French>Pansement au Bras Droit ...</French>
       <Hungarian>Jobb kar bekötözése...</Hungarian>
+      <Portuguese>Atando Braço Direito ...</Portuguese>
       <Italian>Sto applicando la benda sul braccio destro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitLeftLeg">
@@ -308,6 +335,7 @@
       <Russian>Перевязывание левой ноги...</Russian>
       <French>Pansement à la Jambe Gauche ...</French>
       <Hungarian>Bal láb bekötözése...</Hungarian>
+      <Portuguese>Atando Perna Esquerda ...</Portuguese>
       <Italian>Sto applicando la benda sulla gamba sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandaging_HitRightLeg">
@@ -319,6 +347,7 @@
       <Russian>Перевязывание правой ноги...</Russian>
       <French>Pansement à la Jambe Droite ...</French>
       <Hungarian>Jobb láb bekötözése...</Hungarian>
+      <Portuguese>Atando Perna Direita</Portuguese>
       <Italian>Sto applicando la benda sulla gamba destra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_MedicalSupplies">
@@ -330,6 +359,7 @@
       <Russian>[AGM] Медикаменты</Russian>
       <French>[AGM] Matériel Médical</French>
       <Hungarian>[AGM] Elsősegély felszerelés</Hungarian>
+      <Portuguese>[AGM] Suprimentos Médicos</Portuguese>
       <Italian>Cassa Medica [AGM]</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_Name">
@@ -341,6 +371,7 @@
       <Russian>Бинты</Russian>
       <French>Pansement</French>
       <Hungarian>Kötszer</Hungarian>
+      <Portuguese>Atadura</Portuguese>
       <Italian>Bendaggio</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bandage_Description">
@@ -352,6 +383,7 @@
       <Russian>Используется для остановки кровотечения.</Russian>
       <French>Utilisé pour arrêter les hémorragies.</French>
       <Hungarian>Vérzés elállításához.</Hungarian>
+      <Portuguese>Usado para parar sangramentos.</Portuguese>
       <Italian>Usato per fermare l'emorragie</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Morphine_Name">
@@ -363,6 +395,7 @@
       <Russian>Морфин</Russian>
       <French>Syrette de Morphine</French>
       <Hungarian>Morfium</Hungarian>
+      <Portuguese>Autoinjetor de Morfina</Portuguese>
       <Italian>Autoiniettore di morfina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Morphine_Description">
@@ -374,6 +407,7 @@
       <Russian>Сильное обезболивающее.</Russian>
       <French>Utilisé pour atténuer la douleur.</French>
       <Hungarian>Erős fájdalomcsillapító</Hungarian>
+      <Portuguese>Forte Analgésico</Portuguese>
       <Italian>Antidolorifico molto forte</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Epinephrine_Name">
@@ -385,6 +419,7 @@
       <Russian>Андреналин</Russian>
       <French>Syrette d'Adrénaline</French>
       <Hungarian>Adrenalin</Hungarian>
+      <Portuguese>Autoinjetor de Epinefrina</Portuguese>
       <Italian>Autoiniettore di epinefrina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Epinephrine_Description">
@@ -396,6 +431,7 @@
       <Russian>Используется для возвращения в сознание.</Russian>
       <French>Utilisé pour réveiller un patient inconscient.</French>
       <Hungarian>Ájultak felkeltéséhez.</Hungarian>
+      <Portuguese>Usado para despertar indivíduos inconscientes.</Portuguese>
       <Italian>Usato per risvegliare le unità svenute.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bloodbag_Name">
@@ -407,6 +443,7 @@
       <Russian>Пакет с кровью</Russian>
       <French>Poche de sang</French>
       <Hungarian>Infúzió</Hungarian>
+      <Portuguese>Bolsa de Sangue</Portuguese>
       <Italian>Sacca di sangue</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Bloodbag_Description">
@@ -418,6 +455,7 @@
       <Russian>Используется при высокой потере крови.</Russian>
       <French>Utilisé pour combler une perte de sang importante.</French>
       <Hungarian>Nagyobb vérveszteség esetén</Hungarian>
+      <Portuguese>Usado para compensar grandes perdas de sangue.</Portuguese>
       <Italian>Usata per compensare grandi perdite di sangue.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitHead">
@@ -429,6 +467,7 @@
       <Russian>Голова</Russian>
       <French>Tête</French>
       <Hungarian>Fej</Hungarian>
+      <Portuguese>Cabeça</Portuguese>
       <Italian>Testa</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitBody">
@@ -440,6 +479,7 @@
       <Russian>Торс</Russian>
       <French>Torse</French>
       <Hungarian>Felsőtest</Hungarian>
+      <Portuguese>Tronco</Portuguese>
       <Italian>Torso</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitLeftArm">
@@ -451,6 +491,7 @@
       <Russian>Левая рука</Russian>
       <French>Bras Gauche</French>
       <Hungarian>Bal kar</Hungarian>
+      <Portuguese>Braço Esquerdo</Portuguese>
       <Italian>Braccio sinistro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitRightArm">
@@ -462,6 +503,7 @@
       <Russian>Правая рука</Russian>
       <French>Bras Droit</French>
       <Hungarian>Jobb kar</Hungarian>
+      <Portuguese>Braço Direito</Portuguese>
       <Italian>Braccio destro</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitLeftLeg">
@@ -473,6 +515,7 @@
       <Russian>Левая нога</Russian>
       <French>Jambe Gauche</French>
       <Hungarian>Bal láb</Hungarian>
+      <Portuguese>Perna Esquerda</Portuguese>
       <Italian>Gamba sinistra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_HitRightLeg">
@@ -484,6 +527,7 @@
       <Russian>Правая нога</Russian>
       <French>Jambe Droite</French>
       <Hungarian>Jobb láb</Hungarian>
+      <Portuguese>Perna Direita</Portuguese>
       <Italian>Gamba destra</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_Patient">
@@ -495,6 +539,7 @@
       <Russian>Пациент</Russian>
       <French>Patient</French>
       <Hungarian>Páciens</Hungarian>
+      <Portuguese>Paciente</Portuguese>
       <Italian>Paziente</Italian>
     </Key>
     <!-- Check AGM_Medical_fnc_diagnose for how the diagnose string is pieced together -->
@@ -507,6 +552,7 @@
       <Russian>Пациент мертв.</Russian>
       <French>Le patient est décédé.</French>
       <Hungarian>Meghalt.</Hungarian>
+      <Portuguese>O paciente está morto.</Portuguese>
       <Italian>Il paziente è morto.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientIsUnconscious">
@@ -518,6 +564,7 @@
       <Russian>Пациент без сознания.</Russian>
       <French>Le patient est inconscient.</French>
       <Hungarian>Elájult.</Hungarian>
+      <Portuguese>O paciente está inconsciente.</Portuguese>
       <Italian>Il paziente è svenuto.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientIsAwake">
@@ -529,6 +576,7 @@
       <Russian>Пациент в сознании.</Russian>
       <French>Le patient est conscient.</French>
       <Hungarian>Ébren van.</Hungarian>
+      <Portuguese>O paciente está acordado.</Portuguese>
       <Italian>Il paziente è sveglio.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavilyInjured">
@@ -540,6 +588,7 @@
       <French>Le patient est gravement blessé.</French>
       <Italian>Il paziente è gravemente ferito.</Italian>
       <Hungarian>Súlyosan sérült.</Hungarian>
+      <Portuguese>O paciente está gravemente ferido.</Portuguese>
       <Russian>Пациен тяжело.</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightlyInjured">
@@ -551,6 +600,7 @@
       <French>Le patient est légèrement blessé.</French>
       <Italian>Il paziente è leggermente ferito.</Italian>
       <Hungarian>Könnyen sérült.</Hungarian>
+      <Portuguese>O paciente está levemente ferido.</Portuguese>
       <Russian>Пациенто легко.</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyInjuries">
@@ -562,6 +612,7 @@
       <Russian>Пациен тяжело ранен в:</Russian>
       <French>Le patient est gravement blessé:</French>
       <Hungarian>Súlyosan sérült a:</Hungarian>
+      <Portuguese>O paciente tem graves ferimentos em:</Portuguese>
       <Italian>Il paziente ha gravi lesioni in :</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightInjuries">
@@ -573,6 +624,7 @@
       <Russian>Пациенто легко ранен в:</Russian>
       <French>Le patient est légèrement blessé:</French>
       <Hungarian>Könnyen sérült a:</Hungarian>
+      <Portuguese>O paciente tem leves ferimentos em:</Portuguese>
       <Italian>Il paziente ha lesioni lievi in :</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNotInjured">
@@ -584,6 +636,7 @@
       <Russian>Пациент не ранен.</Russian>
       <French>Le patient n'est pas blessé.</French>
       <Hungarian>Nem sérült.</Hungarian>
+      <Portuguese>O paciente não está ferido.</Portuguese>
       <Italian>Il paziente non è ferito.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientBleeding">
@@ -595,6 +648,7 @@
       <Russian>Пациент истекает кровью:</Russian>
       <French>Le patient saigne</French>
       <Hungarian>Vérzik;</Hungarian>
+      <Portuguese>O paciente está sangrando;</Portuguese>
       <Italian>Il paziente sta sanguinando;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNotBleeding">
@@ -606,6 +660,7 @@
       <Russian>Пациент не имеет кровотечений.</Russian>
       <French>Le patient ne saigne pas</French>
       <Hungarian>Nem vérzik;</Hungarian>
+      <Portuguese>O paciente não está sangrando;</Portuguese>
       <Italian>Il paziente non sta sanguinando;</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostBlood">
@@ -617,6 +672,7 @@
       <Russian>Высокая кровопотеря</Russian>
       <French>et a perdu beaucoup de sang.</French>
       <Hungarian>Már sok vért vesztett.</Hungarian>
+      <Portuguese>O paciente já perdeu bastante sangue.</Portuguese>
       <Italian>Il paziente ha perso molto sangue.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostSomeBlood">
@@ -628,6 +684,7 @@
       <Russian>Умеренная кровопотеря.</Russian>
       <French>et a perdu un peu de sang.</French>
       <Hungarian>Már vesztett vért.</Hungarian>
+      <Portuguese>O paciente já perdeu algum sangue.</Portuguese>
       <Italian>Il paziente ha perso poco sangue.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLostNoBlood">
@@ -639,6 +696,7 @@
       <Russian>Кровяное давление в норме.</Russian>
       <French>et n'a pas perdu de sang.</French>
       <Hungarian>Nem vesztett vért.</Hungarian>
+      <Portuguese>O paciente não perdeu sangue.</Portuguese>
       <Italian>Il paziente non ha perso sangue.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientPainkillers">
@@ -650,6 +708,7 @@
       <Russian>У пациента высокая доза морфина в крови.</Russian>
       <French>Le patient est lourdement sédaté,</French>
       <Hungarian>Erős fájdalomcsillapítót kapott.</Hungarian>
+      <Portuguese>O paciente está sob efeito de fortes analgésicos</Portuguese>
       <Italian>Il paziente è sotto effetto di forti antidolorifici</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientSomePainkillers">
@@ -661,6 +720,7 @@
       <Russian>Пациенту введен морфин.</Russian>
       <French>Le patient est sédaté,</French>
       <Hungarian>Kapot morfiumot.</Hungarian>
+      <Portuguese>O paciente está sob efeito de morfina</Portuguese>
       <Italian>Il paziente è un po' fatto di morfina</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNoPainkillers">
@@ -672,6 +732,7 @@
       <Russian>Обезболивающие не вводились.</Russian>
       <French>Le patient n'est pas sédaté,</French>
       <Hungarian>Nem kapott fájdalomcsillapítót.</Hungarian>
+      <Portuguese>O paciente não está sob efeito de analgésicos</Portuguese>
       <Italian>Il paziente non è sotto effetto di antidolorifici</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientHeavyPain">
@@ -683,6 +744,7 @@
       <Russian>и испытывает сильную боль.</Russian>
       <French>et souffre beaucoup.</French>
       <Hungarian>és súlyos fájdalmai vannak.</Hungarian>
+      <Portuguese>e com fortes dores.</Portuguese>
       <Italian>e lamenta molto dolore.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientLightPain">
@@ -694,6 +756,7 @@
       <Russian>и испытывает легкую боль.</Russian>
       <French>et souffre légèrement.</French>
       <Hungarian>és enyhe fájdalmai vannak.</Hungarian>
+      <Portuguese>e com leves dores.</Portuguese>
       <Italian>e lamenta poco dolore.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_PatientNoPain">
@@ -705,6 +768,7 @@
       <Russian>не испытывает боли.</Russian>
       <French>et ne souffre pas.</French>
       <Hungarian>és nincsenek fájdalmai.</Hungarian>
+      <Portuguese>e sem dores.</Portuguese>
       <Italian>e non lamenta dolore.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_NotTrained">
@@ -716,6 +780,7 @@
       <Russian>Вы не умеете это делать.</Russian>
       <French>Tu n'es pas formé pour ça.</French>
       <Hungarian>Erre nem vagy kiképezve.</Hungarian>
+      <Portuguese>Você não está qualificado para fazer isto.</Portuguese>
       <Italian>Non sei preparato per farlo.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_GivingYouMorphine">
@@ -726,6 +791,7 @@
       <Polish>podaje Tobie morfinę.</Polish>
       <Hungarian>morfiumot ad neked.</Hungarian>
       <Czech>ti dává morfin.</Czech>
+      <Portuguese>está lhe dando morfina.</Portuguese>
       <Italian>ti sta iniettando la morfina.</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_keepMenuOpen">
@@ -736,6 +802,7 @@
       <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
       <Polish>Otwórz ponownie menu medyczne po zakończeniu akcji leczenia</Polish>
       <French>Réouvrir le menu médical après les soins</French>
+      <Portuguese>Reabrir menu médico após tratamento</Portuguese>
       <Italian>Riapri il menù medico dopo il trattamento</Italian>
     </Key>
     <Key ID="STR_AGM_Medical_NoItem">
@@ -746,6 +813,7 @@
       <French>Tu n'as plus le matériel nécessaire.</French>
       <Czech>Už nemáš potřebný předmět.</Czech>
       <Italian>Non hai più l'oggetto richiesto</Italian>
+      <Portuguese>Você não possui mais o item médico requerido.</Portuguese>
       <Hungarian>Nem rendelkezel a szükséges eszközzel.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
@@ -756,6 +824,7 @@
       <French>Prendre %1... du patient</French>
       <Czech>Beru pacientův %1...</Czech>
       <Italian>Sto prendendo un %1 dal paziente ...</Italian>
+      <Portuguese>Pegando %1 do paciente ...</Portuguese>
       <Hungarian>Elveszed a páciens...</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
@@ -766,6 +835,7 @@
       <French>%1 utilise ton %2...</French>
       <Czech>%1 používá tvůj %2...</Czech>
       <Italian>%1 sta usando il tuo %1 ...</Italian>
+      <Portuguese>%1 está usando seu %2...</Portuguese>
       <Hungarian>%1 használja a %2</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
@@ -776,6 +846,7 @@
       <French>Le patient n'a pas de %1, tu utilises ton matériel...</French>
       <Czech>Pacient nemá žádný %1, používám vlastní...</Czech>
       <Italian>Il paziente non ha nessun %1, userai il tuo.</Italian>
+      <Portuguese>O paciente não possui %1, usando o seu...</Portuguese>
       <Hungarian>A páciensnek nincs %1, a sajátodat használod.</Hungarian>
     </Key>
   </Package>

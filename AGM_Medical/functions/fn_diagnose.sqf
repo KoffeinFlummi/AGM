@@ -10,7 +10,7 @@
  * none
  */
 
-#define DIAGNOSETIME 8
+#define DIAGNOSETIME 4
 #define DIAGNOSEMOVE "AinvPknlMstpSnonWnonDr_medic4"
 
 _this spawn {
@@ -19,7 +19,9 @@ _this spawn {
   AGM_Medical_diagnoseCallback = {
     _unit = _this select 0;
 
-    player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    if (_unit != player) then {
+      player playMoveNow "AmovPknlMstpSrasWrflDnon";
+    };
     player setVariable ["AGM_CanTreat", true, false];
 
     _damages = [
@@ -138,10 +140,10 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+        [1, call AGM_Core_fnc_player, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+        [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+      };
     };
   };
 
@@ -155,19 +157,13 @@ _this spawn {
 
     player setVariable ["AGM_CanTreat", false, false];
 
-    [DIAGNOSETIME, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
+    _diagnosetime = DIAGNOSETIME;
+    if !([player] call AGM_Medical_fnc_isMedic) then {
+      _diagnosetime = _diagnosetime * AGM_Medical_CoefNonMedic;
+    };
+    [_diagnosetime, _this, "AGM_Medical_diagnoseCallback", localize "STR_AGM_Medical_Diagnosing", "AGM_Medical_diagnoseAbort"] call AGM_Core_fnc_progressBar;
     [_unit, true] call AGM_Core_fnc_closeDialogIfTargetMoves;
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };
-
-  /*
-  if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
-    if (_unit == player) then {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
-    } else {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-    }
-  };
-  */
 };

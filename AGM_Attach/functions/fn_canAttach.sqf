@@ -1,10 +1,11 @@
 // by commy2
 
-private "_item";
+private ["_player", "_item"];
 
-_item = _this select 0;
+_player = _this select 0;
+_item = _this select 1;
 
-canStand player &&
-{alive player} &&
-{player getVariable ["AGM_AttachedItemName", ""] == ""} &&
-{_item in (magazines player + items player + [""])}
+canStand _player &&
+{alive _player} &&
+{_player getVariable ["AGM_AttachedItemName", ""] == ""} &&
+{_item in (magazines _player + items _player + [""])}

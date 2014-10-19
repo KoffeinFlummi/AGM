@@ -31,6 +31,7 @@ class CfgFunctions {
 			class initLoadedObject;
 			class getLoadableMagazines;
 			class getLoadPoints;
+			class getPosLoadable;
 			class getWeaponsOfMagazine;
 			class loadItem;
 			class loadItemAbort;
@@ -78,6 +79,7 @@ class CfgFunctions {
 			class getNearestRepairer;
 			class getNearestTrack;
 			class getNearestWheel;
+			class module;
 			class openSelectWheelUI;
 			class openSelectWheelUI_Salvage;
 			class removeWheel;
@@ -145,7 +147,7 @@ class CfgFunctions {
 	};
 	class AGM_Paradrop {
 		class AGM_Paradrop {
-			file = "\AGM_Logistics\functions\Paradrop";	
+			file = "\AGM_Logistics\functions\Paradrop";
 			class paradrop;
 		};
 	};
@@ -200,7 +202,7 @@ class Extended_WeaponDisassembled_EventHandlers {
 
 class AGM_Core_canInteractConditions {
   class AGM_Drag_isNotDragging {
-    condition = "!(player getVariable ['AGM_isDragging', false])";
+    condition = "!(_player getVariable ['AGM_isDragging', false])";
   };
 };
 
@@ -247,6 +249,7 @@ class CfgVehicles {
 				exceptions[] = {"AGM_Drag_isNotDragging"};
 				showDisabled = 0;
 				priority = 2.1;
+				hotkey = "R";
 			};
 			MACRO_CHECKFUEL
 		};
@@ -378,7 +381,7 @@ class CfgVehicles {
 	class Offroad_01_base_f: Car_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_OFFROARD;
 	};
-	
+
 	class Truck_F: Car_F {
 		AGM_Vehicle_Cargo = 8;
 		KEY_WHEEL_6X6_REAR
@@ -399,7 +402,7 @@ class CfgVehicles {
 		KEY_WHEEL_6X6_REAR
 		AGM_fuelCapacity = 600;  // in liter.
 	};
-	
+
 	// Repair tracked vehicles
 	class Tank_F: Tank {
 		AGM_fuelCapacity = 1500;  // in liter.
@@ -498,12 +501,12 @@ class CfgVehicles {
 	class MBT_03_base_F: Tank_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
 	};
-	
+
 	class AllVehicles;
 	class Air: AllVehicles {
 		AGM_Paradrop = 0;
 	};
-	
+
 	// Repair helicopters
 	class Helicopter: Air {
 		AGM_fuelCapacity = 240;  // in liter.
@@ -597,7 +600,7 @@ class CfgVehicles {
 		AGM_Vehicle_Cargo = 20;
 		AGM_Paradrop = 1;
 	};
-	
+
 	// Repair fixed wing aircraft
 	class Plane: Air {
 		AGM_fuelCapacity = 600;  // in liter.
@@ -665,9 +668,62 @@ class CfgVehicles {
 		};
 	};
 
-	class Ship_F;
-	class Boat_F: Ship_F {
+	// boats
+	class Ship: AllVehicles {
 		AGM_fuelCapacity = 40;  // in liter.
+		AGM_Vehicle_Cargo = 4;
+
+		class AGM_Actions {
+			MACRO_UNLOAD
+			MACRO_REFUEL
+			class AGM_Repair {
+				displayName = "$STR_AGM_Repair";
+				distance = 4;
+				condition = "alive AGM_Interaction_Target";
+				statement = "";
+				showDisabled = 1;
+				priority = 1.4;
+				icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				subMenu[] = {"AGM_Repair", 0};
+
+				class AGM_Repair_checkVehicle {
+					displayName = "$STR_AGM_Repair_checkVehicle";
+					distance = 4;
+					condition = "alive AGM_Interaction_Target";
+					statement = "[AGM_Interaction_Target] call AGM_Repair_fnc_checkVehicle";
+					showDisabled = 1;
+					priority = 1;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Body {
+					displayName = "$STR_AGM_Repair_HitHull";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitHull'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.5;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Engine {
+					displayName = "$STR_AGM_Repair_HitEngine";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitEngine'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.4;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+				class AGM_Repair_Fuel {
+					displayName = "$STR_AGM_Repair_HitFuel";
+					distance = 4;
+					condition = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_canRepair";
+					statement = "[AGM_Interaction_Target, 'HitFuel'] call AGM_Repair_fnc_repair";
+					showDisabled = 0;
+					priority = 0.3;
+					icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+				};
+			};
+		};
 	};
 
 	// Static weapons
@@ -955,12 +1011,18 @@ class CfgVehicles {
 	// APC
 	class APC_Wheeled_01_base_F: Wheeled_APC_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_PATRIA;
+
+		AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
+		AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
 	};
 	class APC_Wheeled_02_base_F: Wheeled_APC_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_ARMA;
 	};
 	class APC_Wheeled_03_base_F: Wheeled_APC_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_PANDUR;
+
+		AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
+		AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
 	};
 	class APC_Tracked_01_base_F: Tank_F {
 		AGM_fuelCapacity = AGM_FUELCAPACITY_NAMER;
@@ -1110,6 +1172,54 @@ class CfgVehicles {
 		AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
 		transportFuel = 0;
 	};
+
+	//Hawkeye104 AGM Repair Module
+    class Module_F;
+    class AGM_ModuleRepair: Module_F
+    {
+        author = "Hawkeye104";
+        category = "AGM";
+        displayName = "Repair System";
+        function = "AGM_Repair_fnc_module";
+        scope = 2;
+        isGlobal = 1;
+        class Arguments
+        {
+            //Time to repair heavy damage e.g. engine, fuel line, body
+			class TimeRepair
+            {
+                displayName = "Heavy Repair Time";
+                description = "Time to repair engine/turret/body/fuel components (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Time to replace a wheel
+            class TimeWheelRepair
+            {
+                displayName = "Wheel Replace Time";
+                description = "Time to replace a wheel (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Time to replace a track
+            class TimeTrackRepair
+            {
+                displayName = "Track Replace Time";
+                description = "Time to replace a track (in seconds). Default: 10";
+                typeName = "NUMBER";
+                defaultValue = 10;
+            };
+			//Maximum damage that can be repaired
+			//See Logistics\functions\Repair\fn_repairCallback.sqf
+            class MaxDamageRepair
+            {
+                displayName = "Maximum Repaired Damage";
+                description = "Limits the amount of damage that can be repaired. 0 = Repair all damage, 1 = Cannot repair any damage. Decimal Value. Default: 0";
+                typeName = "NUMBER";
+                defaultValue = 0;
+            };
+        };
+    };
 };
 
 // Handle vehicle magazines
@@ -1153,12 +1263,19 @@ class CfgWeapons {
 		scope = 2;
 		displayName = "$STR_AGM_UAVs_Battery_Name";
 		descriptionShort = "$STR_AGM_UAVs_Battery_Description";
-		model = "\A3\weapons_F\ammo\mag_univ.p3d";
+		model = "\AGM_Logistics\agm_battery.p3d";
 		picture = "\AGM_Logistics\ui\AGM_battery.paa";
 		class ItemInfo: InventoryItem_Base_F {
 			mass = 20;
 		};
 	};
+};
+
+class AGM_Parameters {
+	AGM_Repair_TimeRepair = 10;
+	AGM_Repair_TimeWheelRepair = 10;
+	AGM_Repair_TimeTrackRepair = 10;
+	AGM_Repair_MaxDamageRepair = 0;
 };
 
 #include <DiagnoseDialog.hpp>

@@ -80,7 +80,7 @@
       <Spanish>Granada aturdidora M84</Spanish>
       <French>M84 Grenade Incapacitante</French>
       <Polish>Granat hukowy M84</Polish>
-      <Czech>M84 Zábleskový Granát</Czech>
+      <Czech>M84 Omračující granát</Czech>
       <Russian>M84 светозвуковая граната</Russian>
       <Hungarian>M84 Villanógránátokka</Hungarian>
       <Italian>Granata Stordente M84</Italian>
@@ -92,11 +92,11 @@
       <Spanish>Produce de manera inmediata ceguera, sordera, tinitus y afecta el oído interior.</Spanish>
       <French>Les grenades incapacitantes servent à désorienter ou distraire une menace pendant quelques secondes.</French>
       <Polish>Granat ogłusza, nie zabijając przeciwnika. Detonacja daje efekt oślepiającego błysku i głośnego huku.</Polish>
-      <Czech>Zábleskový granát je taktická nesmrtící zbraň používaná při taktice záchrany rukojmí a zvládání davu.</Czech>
+      <Czech>Omračující granát je taktická nesmrtící zbraň používaná při záchraně rukojmí a zvládání davu.</Czech>
       <Russian>Граната XM84 (M84) - не летального действия, и предназначена для отвлечения и временного вывода из строя, либо дезориентации противника. Основное использование нашла при освобождении заложников,  захвате преступников и террористов, а также проведении диверсионных миссий.</Russian>
       <Hungarian>Eldobás után felrobban és éles hang, valamint fényhatással zavarja össze a környezetében tartózkodókat.</Hungarian>
       <Italian>Anche conosciuta come flashbang. Causa accecamento immediato, sensazioni di sposatezza, mancanza d'equilibrio e disturbi al timpano.</Italian>
-      <Portuguese>Um tipo de granadas não-letais são destinadas a confundir, desorientar e distrair uma potencial ameaça.</Portuguese>
+      <Portuguese>Um tipo de granada não-letal destinado a confundir, desorientar e distrair uma potencial ameaça.</Portuguese>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_White_Name">
       <English>M127A1 Hand Held Signal (White)</English>
@@ -104,7 +104,7 @@
       <Czech> M127A1 Světlice (Bílá)</Czech>
       <Hungarian>M127A1 Jelzőrakéta (Fehér)</Hungarian>
       <Italian>M127A1 Bengala (Bianco)</Italian>
-      <Polish>M127A1 Flara (Biała)</Polish>
+      <Polish>Flara ręczna sygnałowa M127A1 (biała)</Polish>
       <Portuguese>M127A1 Sinalizador (Branco)</Portuguese>
       <Russian>M127A1 Фальшфейер (Белый)</Russian>
       <Spanish>M127A1 Bengala (Blanco)</Spanish>
@@ -116,7 +116,7 @@
       <Czech>M127A1 Světlice (Červená)</Czech>
       <Hungarian>M127A1 Jelzőrakéta (Piros)</Hungarian>
       <Italian>M127A1 Bengala (Rosso)</Italian>
-      <Polish>M127A1 Flara (Czerwony)</Polish>
+      <Polish>Flara ręczna sygnałowa M127A1 (czerwona)</Polish>
       <Portuguese>M127A1 Sinalizador (Vermelho)</Portuguese>
       <Russian>M127A1 Фальшфейер (Красный)</Russian>
       <Spanish>M127A1 Bengala (Rojo)</Spanish>
@@ -128,7 +128,7 @@
       <Czech>M127A1 Světlice (Zelená)</Czech>
       <Hungarian>M127A1 Jelzőrakéta (Zöld)</Hungarian>
       <Italian>M127A1 Bengala (Verde)</Italian>
-      <Polish>M127A1 Flara (Zielony)</Polish>
+      <Polish>Flara ręczna sygnałowa M127A1 (zielona)</Polish>
       <Portuguese>M127A1 Sinalizador (Verde)</Portuguese>
       <Russian>M127A1 Фальшфейер (Зелёный)</Russian>
       <Spanish>M127A1 Bengala (Verde)</Spanish>
@@ -140,7 +140,7 @@
       <Czech>M127A1 Světlice (Žlutá)</Czech>
       <Hungarian>M127A1 Jelzőrakéta (Sárga)</Hungarian>
       <Italian>M127A1 Bengala (Giallo)</Italian>
-      <Polish>M127A1 Flara (Żółty)</Polish>
+      <Polish>Flara ręczna sygnałowa M127A1 (żółta)</Polish>
       <Portuguese>M127A1 Sinalizador (Amarelo)</Portuguese>
       <Russian>M127A1 Фальшфейер (Жёлтые)</Russian>
       <Spanish>M127A1 Bengala (Amarillo)</Spanish>
@@ -152,7 +152,7 @@
       <Czech>Světlice (Bílá)</Czech>
       <Hungarian>Jelzőrakéta (Fehér)</Hungarian>
       <Italian>Bengala (Bianco)</Italian>
-      <Polish>Flara (Biała)</Polish>
+      <Polish>Flara ręczna (biała)</Polish>
       <Portuguese>Sinalizador (Branco)</Portuguese>
       <Russian>Фальшфейер (Белый)</Russian>
       <Spanish>Bengala (Blanco)</Spanish>
@@ -164,7 +164,7 @@
       <Czech>Světlice (Červená)</Czech>
       <Hungarian>Jelzőrakéta (Piros)</Hungarian>
       <Italian>Bengala (Rosso)</Italian>
-      <Polish>Flara (Czerwony)</Polish>
+      <Polish>Flara ręczna (czerwona)</Polish>
       <Portuguese>Sinalizador (Vermelho)</Portuguese>
       <Russian>Фальшфейер (Красный)</Russian>
       <Spanish>Bengala (Rojo)</Spanish>
@@ -176,7 +176,7 @@
       <Czech>Světlice (Zelená)</Czech>
       <Hungarian>Jelzőrakéta (Zöld)</Hungarian>
       <Italian>Bengala (Verde)</Italian>
-      <Polish>Flara (Zielony)</Polish>
+      <Polish>Flara ręczna (zielona)</Polish>
       <Portuguese>Sinalizador (Verde)</Portuguese>
       <Russian>Фальшфейер (Зелёный)</Russian>
       <Spanish>Bengala (Verde)</Spanish>
@@ -188,7 +188,7 @@
       <Czech>Světlice Žlutá</Czech>
       <Hungarian>Jelzőrakéta (Sárga)</Hungarian>
       <Italian>Bengala (Giallo)</Italian>
-      <Polish>Flara (Żółty)</Polish>
+      <Polish>Flara ręczna (żółta)</Polish>
       <Portuguese>Sinalizador (Amarelo)</Portuguese>
       <Russian>Фальшфейер (Жёлтые)</Russian>
       <Spanish>Bengala (Amarillo)</Spanish>
@@ -201,7 +201,7 @@
       <French>M127A1 (Blanc)</French>
       <Hungarian>M127A1 (Fehér)</Hungarian>
       <Italian>M127A1 (Bianco)</Italian>
-      <Polish>M127A1 (Biała)</Polish>
+      <Polish>M127A1 (biała)</Polish>
       <Portuguese>M127A1 (Branco)</Portuguese>
       <Russian>M127A1 (Белый)</Russian>
       <Spanish>M127A1 (Blanco)</Spanish>
@@ -213,7 +213,7 @@
       <French>M127A1 (Rouge)</French>
       <Hungarian>M127A1 (Piros)</Hungarian>
       <Italian>M127A1 (Rosso)</Italian>
-      <Polish>M127A1 (Czerwony)</Polish>
+      <Polish>M127A1 (czerwona)</Polish>
       <Portuguese>M127A1 (Vermelho)</Portuguese>
       <Russian>M127A1 (Красный)</Russian>
       <Spanish>M127A1(Rojo)</Spanish>
@@ -225,7 +225,7 @@
       <French>M127A1 (Vert)</French>
       <Hungarian>M127A1 (Zöld)</Hungarian>
       <Italian>M127A1 (Verde)</Italian>
-      <Polish>M127A1 (Zielony)</Polish>
+      <Polish>M127A1 (zielona)</Polish>
       <Portuguese>M127A1 (Verde)</Portuguese>
       <Russian>M127A1 (Зелёный)</Russian>
       <Spanish>M127A1 (Verde)</Spanish>
@@ -237,7 +237,7 @@
       <French>M127A1 (Jaune)</French>
       <Hungarian>M127A1 (Sárga)</Hungarian>
       <Italian>M127A1 (Giallo)</Italian>
-      <Polish>M127A1 (Żółty)</Polish>
+      <Polish>M127A1 (żółta)</Polish>
       <Portuguese>M127A1 (Amarelo)</Portuguese>
       <Russian>M127A1 (Жёлтые)</Russian>
       <Spanish>M127A1 (Amarillo)</Spanish>

@@ -98,9 +98,6 @@ if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitW
     0
   };
 };
-if (AGM_Medical_IsFalling and (_selectionName == "")) then {
-  _damage = _damage - _newDamage / 2; // half structural fall damage
-};
 
 // Prevent multiple damages by same hit.
 if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
@@ -128,19 +125,23 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     sleep 0.00001;
 
     _preventDeath = false;
-    if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-      _preventDeath = true;
-    };
-    if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-      _preventDeath = true;
+    // Only prevent death if we are going to handle unconciousness
+    if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
+      if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
+        _preventDeath = true;
+      };
+      if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+        _preventDeath = true;
+      };
     };
 
     if !(AGM_Medical_IsFalling) then {
       {
+        _hitPointDamage = (_x select 1) * AGM_Medical_CoefDamage;
         if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
-          _unit setHitPointDamage [(_x select 0), ((_x select 1) min 0.89)];
+          _unit setHitPointDamage [(_x select 0), (_hitPointDamage min 0.89)];
         } else {
-          _unit setHitPointDamage [(_x select 0), (_x select 1)];
+          _unit setHitPointDamage [(_x select 0), _hitPointDamage];
         };
       } count AGM_Medical_Hits;
     };
@@ -231,7 +232,7 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
       0 spawn {
         _time = time;
         "chromAberration" ppEffectEnable true;
-        while {(player getVariable "AGM_Pain") > 0} do {
+        while {(player getVariable "AGM_Pain") > 0 && {alive player}} do {
           _strength = player getVariable "AGM_Pain";
           _strength = _strength * AGM_Medical_CoefPain;
           "chromAberration" ppEffectAdjust [0.035 * _strength, 0.035 * _strength, false];
@@ -280,11 +281,14 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 };
 
 _preventDeath = false;
-if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-  _preventDeath = true;
-};
-if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-  _preventDeath = true;
+// Only prevent death if we are going to handle unconciousness
+if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
+  if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
+    _preventDeath = true;
+  };
+  if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+    _preventDeath = true;
+  };
 };
 
 if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) exitWith {
@@ -303,7 +307,12 @@ if (_preventDeath) then {
 };
 
 if (AGM_Medical_IsFalling or (_selectionName == "")) then {
-  _damage
+  _damage = _damage - _newDamage;
+  _newDamage = _newDamage * AGM_Medical_CoefDamage;
+  if (AGM_Medical_IsFalling and (_selectionName == "")) then {
+    _newDamage = _newDamage * 0.5;
+  };
+  _damage + _newDamage
 } else {
   _damage - _newDamage
 };

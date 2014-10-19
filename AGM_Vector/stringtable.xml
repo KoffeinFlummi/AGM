@@ -32,8 +32,9 @@
       <Spanish>Vector - Tecla de acimut</Spanish>
       <French>Vector - Touche Azimuth</French>
       <Polish>Vector - Azymut</Polish>
-      <Czech>Vector - Azimut Klávesa</Czech>
+      <Czech>Vector - Zobrazit Azimut</Czech>
       <Italian>Vector - Tasto Azimuth</Italian>
+      <Portuguese>Vector - Tecla de Azimute</Portuguese>
       <Hungarian>Vector - Irányszög gomb</Hungarian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
@@ -42,8 +43,9 @@
       <Spanish>Vector - Tecla de distancia</Spanish>
       <French>Vector - Touche Distance</French>
       <Polish>Vector - Odległość</Polish>
-      <Czech>Vector - Vzdálenost Klávesa</Czech>
+      <Czech>Vector - Zobrazit vzdálenost</Czech>
       <Italian>Vecto - Tasto Distanza</Italian>
+      <Portuguese>Vector - Tecla de Distância</Portuguese>
       <Hungarian>Vector - Távolság gomb</Hungarian>
     </Key>
   </Package>

@@ -164,6 +164,7 @@ class CfgPatches {
       "a3_weapons_f_bootcamp_longrangerifles_m320",
       "a3_weapons_f_kart",
       "a3_weapons_f_kart_pistols_pistol_signal_f",
+      "a3data",
       "cba_xeh",
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
@@ -183,14 +184,18 @@ class CfgFunctions {
       class addActionEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
+      class addMapMarkerCreatedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
       class canInteractWith;
       class changeProjectileDirection;
+      class checkPBOs;
       class claim;
       class closeDialogIfTargetMoves;
+      class codeToLetter;
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
@@ -200,10 +205,12 @@ class CfgFunctions {
       class doAnimation;
       class execRemoteFnc;
       class filter;
-      class findStringInString;
+      class fixCrateContent;
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
@@ -227,19 +234,23 @@ class CfgFunctions {
       class isEngineer;
       class isInBuilding;
       class isMedic;
+      class isPlayer;
       class isTurnedOut;
+      class letterToCode;
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
       class owned;
+      class player;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
+      class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
@@ -252,6 +263,7 @@ class CfgFunctions {
       class toBin;
       class toBitmask;
       class toHex;
+      class toNumber;
     };
   };
   class AGM_Debug {
@@ -294,6 +306,14 @@ class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
       local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
+    };
+  };
+};
+
+class Extended_InventoryOpened_EventHandlers {
+  class CAManBase {
+    class AGM_FixCrateContent {
+      inventoryOpened = "if (typeOf (_this select 1) != 'GroundWeaponHolder') then {_this call AGM_Core_fnc_fixCrateContent} else {false}";
     };
   };
 };
@@ -429,6 +449,13 @@ class AGM_Rsc_Control_Base {
 };
 
 class AGM_Core_canInteractConditions {};
+
+class AGM_Core_Options {
+  class enableNumberHotkeys {
+    displayName = "$STR_AGM_Core_EnableNumberHotkeys";
+    default = 1;
+  };
+};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>

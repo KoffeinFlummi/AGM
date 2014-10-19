@@ -48,10 +48,18 @@ _assigneditems = _allGear select 17;
 
 
 // start restoring the items
-_unit addHeadgear _headgear;
-_unit addUniform _uniform;
-_unit addVest _vest;
-_unit addGoggles _goggles;
+if (_headgear != "") then {
+  _unit addHeadgear _headgear;
+};
+if (_uniform != "") then {
+  _unit forceAddUniform _uniform;
+};
+if (_vest != "") then {
+  _unit addVest _vest;
+};
+if (_goggles != "") then {
+  _unit addGoggles _goggles;
+};
 
 {
     _unit addItemToUniform _x;
@@ -117,25 +125,10 @@ if (_handgunweapon != "") then {
 
 
 // items
-{
-    _unit linkItem _x;
-} foreach _assigneditems;
-// items // einige ITEM gehen nur mit addWeapon
+{_unit linkItem _x} forEach _assignedItems;
 {_unit addWeapon _x} forEach _assignedItems;
 
-IF("Laserdesignator" in assignedItems _unit) then {
-	_unit selectWeapon "Laserdesignator";
-	IF(currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
+if ("Laserdesignator" in assignedItems _unit) then {
+  _unit selectWeapon "Laserdesignator";
+  if (currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
 };
-
-
-/*
-Kann es sein, dass immer ein Magazin verschwindet beim ReSp. ? Dann das hier mit einbauen... Ich teste das nachher Flummi
-_primaryWeaponMagazineCount = _unit ammo (primaryWeapon _unit);
-_secondaryWeaponMagazineCount = _unit ammo (secondaryWeapon _unit);
-_handgunWeaponMagazineCount = _unit ammo (handgunWeapon _unit);
-
-{_unit addMagazine [_x,_primaryWeaponMagazineCount   ] ; } forEach _primaryWeaponMagazine;
-{_unit addMagazine [_x,_secondaryWeaponMagazineCount ] ; } forEach _secondaryWeaponMagazine;
-{_unit addMagazine [_x,_handgunWeaponMagazineCount   ] ; } forEach _handgunWeaponMagazine;
-*/

@@ -1,48 +1,24 @@
 // by commy2
 
-private ["_vehicle", "_config", "_turrets", "_crew", "_index", "_memoryPointCoDriver", "_distance", "_countCrew", "_coDrivers", "_countCoDrivers", "_isLocked"];
+private ["_player", "_vehicle", "_index", "_config", "_slots", "_memoryPointCoDriver", "_distance"];
 
-_vehicle = _this select 0;
+_player = _this select 0;
+_vehicle = _this select 1;
 
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
-_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurrets;
+_slots = getArray (_config >> "cargoIsCoDriver");
+{if (_vehicle lockedCargo _x) then {_slots set [_forEachIndex, -1]}} forEach _slots; _slots = _slots - [-1];
+_index = _slots select 0;
+if (isNil "_index") exitWith {false}; AGM_Interaction_MenuData = [_index];
 
-_crew = crew _vehicle;
-
-_index = crew _vehicle find driver _vehicle;
-if (_index != -1) then {
-	_crew set [_index, objNull];
-};
-
-{
-	_index = crew _vehicle find (_vehicle turretUnit _x);
-	if (_index != -1) then {
-		_crew set [_index, objNull];
-	};
-} forEach _turrets;
-
-_crew = _crew - [objNull];	//_vehicle emptyPositions "Cargo";
-
-_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
-//_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo");
+_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCargo"); //_memoryPointCoDriver = getText (_config >> "memoryPointsGetInCoDriver");
 
 _distance = getNumber (_config >> "getInRadius");
 
-_countCrew = getNumber (_config >> "transportSoldier");	//count getArray (_config >> "cargoAction");
-
-_coDrivers = getArray (_config >> "cargoIsCoDriver");
-_countCoDrivers = {_x == 1} count _coDrivers;
-
-_isLocked = false;
-{
-	if (_x == 1 && {_vehicle lockedCargo _forEachIndex}) then {
-		_isLocked = true;
-	};
-} forEach _coDrivers;
-
-count _crew < _countCrew &&
-{alive _vehicle} &&
-{!_isLocked} &&
-{getNumber (_config >> "isUav") != 1} &&
-{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle player == _vehicle}}
+_vehicle emptyPositions "Cargo" > 0
+&& {alive _vehicle}
+&& {!(locked _vehicle >= 2)}
+//&& {!(_vehicle lockedCargo _index)}
+//&& {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
+&& {_player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointCoDriver)) < _distance || {vehicle _player == _vehicle}}

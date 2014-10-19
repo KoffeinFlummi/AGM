@@ -34,7 +34,8 @@ class CfgVehicles {
         statement = "call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;
-		icon = "AGM_MagazineRepack\UI\repack_ca.paa";
+        icon = "AGM_MagazineRepack\UI\repack_ca.paa";
+        hotkey = "R";
       };
     };
   };

@@ -22,16 +22,18 @@ if !(_activated) exitWith {};
 
 AGM_Medical_Module = true;
 
+[_logic, "AGM_Medical_CoefDamage",                   "CoefDamage"                  ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_CoefBleeding",                 "CoefBleeding"                ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_CoefPain",                     "CoefPain"                    ] call AGM_Core_fnc_readNumericParameterFromModule;
+[_logic, "AGM_Medical_CoefNonMedic",                 "CoefNonMedic"                ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_MaxUnconsciousnessTime",       "MaxUnconsciousnessTime"      ] call AGM_Core_fnc_readNumericParameterFromModule;
 
 [_logic, "AGM_Medical_AllowNonMedics",               "AllowNonMedics"              ] call AGM_Core_fnc_readBooleanParameterFromModule;
-[_logic, "AGM_Medical_PunishNonMedics",              "PunishNonMedics"             ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_RequireDiagnosis",             "RequireDiagnosis"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_PreventInstaDeath",            "PreventInstaDeath"           ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_PreventDeathWhileUnconscious", "PreventDeathWhileUnconscious"] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_SingleBandage",                "SingleBandage"               ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_AllowChatWhileUnconscious",    "AllowChatWhileUnconscious"   ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Medical_EnableOverdosing",             "EnableOverdosing"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Medical Module Initialized.";

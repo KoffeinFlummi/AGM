@@ -4,13 +4,18 @@ _this spawn {
 	_unit = _this select 0;
 	_side = _this select 1;
 
-	_rallypoint = [objNull, AGM_RallypointExit_West, AGM_RallypointExit_East, AGM_RallypointExit_Independent] select ([west, east, independent] find _side) + 1;
+	_rallypoint = [
+		objNull,
+		missionNamespace getVariable ["AGM_RallypointExit_West", objNull],
+		missionNamespace getVariable ["AGM_RallypointExit_East", objNull],
+		missionNamespace getVariable ["AGM_RallypointExit_Independent", objNull]
+	] select ([west, east, independent] find _side) + 1;
 
 	if (isNull _rallypoint) exitWith {};
 
-	_position = getPosATL player;
+	_position = getPosATL _unit;
 	_position = _position findEmptyPosition [0, 2, typeOf _rallypoint];
-	if (count _position == 0) then {_position = getPosATL player};
+	if (count _position == 0) then {_position = getPosATL _unit};
 
 	_position set [2, 0];
 
@@ -18,6 +23,7 @@ _this spawn {
 
 	sleep 5;
 	_rallypoint setPosATL _position;
+	_unit reveal _rallypoint;
 
 	/*
 	_marker = format ["AGM_RallyPoint_%1", _side];

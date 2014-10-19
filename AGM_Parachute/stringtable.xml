@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-10-07 -->
+<Project name="AGM">
+  <Package name="Parachute">
+    <Key ID="STR_AGM_Parachute_showAltimeter">
+      <English>Altimeter</English>
+      <French>Altimètre</French>
+      <German>Höhenmesser</German>
+      <Czech>Výškoměr</Czech>
+    </Key>
+    <Key ID="STR_AGM_Parachute_AltimeterDisplayName">
+      <English>Altimeter Watch</English>
+      <French>Montre altimètre</French>
+      <German>Höhenmesser</German>
+      <Czech>Hodinky s výškoměrem</Czech>
+    </Key>
+    <Key ID="STR_AGM_Parachute_AltimeterDescription">
+      <English>Used to show height, descent rate and the time.</English>
+      <French>Affiche la hauteur, le taux de descente et l'heure.</French>
+      <German>Zeigt Höhe, Fallgeschwindigkeit und Uhrzeit.</German>
+      <Czech>Používané k zjištění výšky, rychlosti sestupu a času.</Czech>
+    </Key>
+  </Package>
+</Project>

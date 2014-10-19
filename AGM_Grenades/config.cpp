@@ -42,10 +42,10 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_Grenades_SwitchGrenadeMode";
     condition = "player == vehicle player";
     statement = "call AGM_Grenades_fnc_nextMode";
-    key = 34;
+    key = 9;//34;
     shift = 0;
     control = 0;
-    alt = 1;
+    alt = 0;//1;
   };
 };
 

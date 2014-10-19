@@ -15,20 +15,4 @@
 	Example:
 		_hasPLacedExplosives = [player] call AGM_Explosives_fnc_hasPlacedExplosives;
 */
-private ["_unit", "_clackerList", "_adjustedList"];
-_unit = _this select 0;
-_adjustedList = false;
-
-_clackerList = _unit getVariable ["AGM_Clacker", []];
-{
-	if isNull (_x select 0) then {
-		_clackerList set [_foreachIndex, "X"];
-		_adjustedList = true;
-	};
-} foreach _clackerList;
-if (_adjustedList) then {
-	_clackerList = _clackerList - ["X"];
-	_unit SetVariable ["AGM_Clacker", _clackerList, true];
-};
-
-(count _clackerList > 0)
+(count (_this call AGM_Explosives_fnc_getPlacedExplosives) > 0)

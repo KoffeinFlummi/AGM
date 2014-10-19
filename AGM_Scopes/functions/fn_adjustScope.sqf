@@ -40,10 +40,10 @@ if (cameraView == "GUNNER") then {
 
 _display = uiNamespace getVariable ["AGM_Scopes_ZeroingDisplay", displayNull];
 if !(isNull _display) then {
-  _horizontal = _display displayCtrl 925002;
-  _vertical = _display displayCtrl 925003;
-  _horizontal ctrlSetText (str (_zeroing select 0));
+  _vertical = _display displayCtrl 925002;
+  _horizontal = _display displayCtrl 925003;
   _vertical ctrlSetText (str (_zeroing select 1));
+  _horizontal ctrlSetText (str (_zeroing select 0));
 };
 
 true

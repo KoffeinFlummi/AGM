@@ -26,7 +26,7 @@ _actionIDs = _actionsVar select 1;
 _actions = _actionsVar select 2;
 
 if (_id == 0) then {
-	uiNamespace setVariable ['AGM_EventHandler_CameraMode', cameraView];
+	uiNamespace setVariable ["AGM_EventHandler_CameraMode", cameraView];
 	("AGM_EventHandlerHelper" call BIS_fnc_rscLayer) cutRsc ["AGM_EventHandlerHelper", "PLAIN"];
 };
 

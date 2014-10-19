@@ -30,14 +30,3 @@ player addEventHandler ["Respawn", {
   };
 
 }];
-
-// team leaders can move the rallypoint
-{
-  if (isNil _x) then {
-    missionNamespace setVariable [_x, objNull];
-  };
-} forEach ["AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"];
-
-if (player == leader group player) then {
-  player setVariable ["AGM_canMoveRallypoint", true, true];
-};

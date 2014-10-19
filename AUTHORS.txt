@@ -1,4 +1,4 @@
-# AGM CONTRIBUTOR LIST
+﻿# AGM CONTRIBUTOR LIST
 # If you contributed, but are not listed here, contact me:
 # koffeinflummi@gmail.com
 #
@@ -11,7 +11,7 @@ esteldunedain <nicolas.d.badano@gmail.com>
 Garth "L-H" de Wet <garthofhearts@gmail.com>
 ACCtomeek
 pokertour
-11RDP-LoupVert
+11RDP-LoupVert <loupvert@11rdp.fr>
 MarcBook
 Legolasindar
 gienkov
@@ -29,7 +29,7 @@ evromalarkey <evromalarkey@gmail.com>
 havena
 Codingboy
 Riccardo Petricca <petriccarcc@gmail.com>
-jonpas
+Jonpas <jonpas33@gmail.com>
 eRazeri
 Brakoviejo
 Valentin Torikian <valentin.torikian@gmail.com>
@@ -41,4 +41,9 @@ rakowozz
 Hamburger SV
 Ghost
 Tonic
+Aggr094 <bastards4glory@gmail.com>
 geraldbolso1899
+Grzegorz
+Ferenczi
+jokoho48
+Filip Basara <filip.basara93@googlemail.com> (Logo)

@@ -51,9 +51,9 @@ class AGM_Core_Default_Keys {
     conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";*/
 
-    condition = "call AGM_FCS_fnc_canUseRangefinder || {!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}}";
-    statement = "call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}) then {[_vehicle] call AGM_FCS_fnc_keyDown};";
-    conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
+    condition = "call AGM_FCS_fnc_canUseRangefinder || {!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}}";
+    statement = "call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}) then {[_vehicle] call AGM_FCS_fnc_keyDown};";
+    conditionUp = "_player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
     statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
 
     key = 15;
@@ -91,8 +91,8 @@ class CfgVehicles {
       // INHERITANCE !!
       class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
-        condition = "(count (vehicle player getVariable ['AGM_FCSMagazines', []]) > 1) and (player == gunner (vehicle player))";
-        statement = "[vehicle player] call AGM_FCS_fnc_reset;";
+        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
+        statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
         showDisabled = 0;
         priority = -1;
       };

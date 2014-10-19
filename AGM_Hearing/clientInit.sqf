@@ -4,9 +4,10 @@
 
 AGM_EarRingingPlaying = false;
 
-AGM_EarPlugsIn = false;
-AGM_hasEarBuds = false;
+/*AGM_EarPlugsIn = false;
+AGM_hasEarBuds = false;*/
 
+// @todo cba EH with: _this select 0 == call AGM_Core_fnc_player
 player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];
 player addEventHandler ["explosion", {_this call AGM_Hearing_fnc_explosionEH}];
 
@@ -25,6 +26,7 @@ AGM_NewStrength = 0;
 // Spawn volume updating process
 [] spawn {
   while {true} do {
+    _player = call AGM_Core_fnc_player;
 
     // Check if new noises increase deafness
     if (AGM_NewStrength * StrenghToDeafness > AGM_CurrentDeafness) then {
@@ -61,23 +63,25 @@ AGM_NewStrength = 0;
     _volume = (_clampedDeafness * _clampedDeafness) max 0.1;
 
     // Earplugs reduce hearing 20%
-    if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsin) then {
+    if (_player getVariable ["AGM_hasEarPlugsin", false] || {_player getVariable ["X39_MedSys_var_hasEarplugs", false]}) then {
       if (_volume > 0.8) then {
         _volume = 0.8;
       };
     };
 
     // Reduce volume if player is unconscious
-    if (player getVariable ["AGM_Unconscious", false]) then {
+    if (_player getVariable ["AGM_Unconscious", false]) then {
       if (_volume > 0.4) then {
         _volume = 0.4;
       };
     };
 
-    0.1 fadeSound _volume;
-    0.1 fadeSpeech _volume;
-    player setVariable ["tf_globalVolume", _volume];
-    player setVariable ["acre_sys_core_globalVolume", _volume];
+    if (!(missionNameSpace getVariable ["AGM_Hearing_disableVolumeUpdate", false])) then {
+      0.1 fadeSound _volume;
+      0.1 fadeSpeech _volume;
+      _player setVariable ["tf_globalVolume", _volume];
+      _player setVariable ["acre_sys_core_globalVolume", _volume];
+    };
 
     //hintSilent format ["AGM_CurrentDeafness, _Volume = %1, %2", AGM_CurrentDeafness, _volume];
 

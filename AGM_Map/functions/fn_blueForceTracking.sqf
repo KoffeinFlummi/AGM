@@ -10,6 +10,8 @@
  * None
  */
 
+if !(hasInterface) exitWith {};
+
 _logic = _this select 0;
 _units = _this select 1;
 _activated = _this select 2;
@@ -17,33 +19,11 @@ _activated = _this select 2;
 if !(_activated) exitWith {};
 
 _logic spawn {
-  _interval = parseNumber (_this getVariable "Interval");
+  waitUntil {alive player};
 
-  diag_log text "[AGM]: BlueForceTracking Module Initialized.";
+  AGM_Map_BFT_Enabled = true;
+  [_this, "AGM_Map_BFT_Interval", "Interval"] call AGM_Core_fnc_readNumericParameterFromModule;
+  [_this, "AGM_Map_BFT_HideAiGroups", "HideAiGroups"] call AGM_Core_fnc_readBooleanParameterFromModule;
 
-  _side = side player;
-  _markers = [];
-  while {True} do {
-    {
-      deleteMarkerLocal _x;
-    } count _markers;
-    _markers = [];
-
-    _groups = [allGroups, {side leader _this == _side}] call AGM_Core_fnc_filter;
-
-    for "_i" from 0 to (count _groups - 1) do {
-      _group = _groups select _i;
-      _markerType = [_group] call AGM_Core_fnc_getMarkerType;
-      _color = ["ColorGUER", "ColorWEST", "ColorEAST"] select ((["GUER", "WEST", "EAST"] find (str side leader _group)) max 0);
-
-      _marker = createMarker ["AGM_BFT_"+(str _i), [(getPos leader _group) select 0, (getPos leader _group) select 1]];
-      _marker setMarkerTypeLocal _markerType;
-      _marker setMarkerColorLocal _color;
-      _marker setMarkerTextLocal (groupID _group);
-
-      _markers = _markers + [_marker];
-    };
-
-    sleep _interval;
-  };
+  diag_log text "[AGM]: Blue Force Tracking Module initialized.";
 };
