@@ -102,26 +102,26 @@
       <Hungarian>Fegyvertár menü</Hungarian>
     </Key>
     <Key ID="STR_AGM_Logistics_Unload">
-      <English>Unload &gt;&gt;</English>
-      <German>Abladen &gt;&gt;</German>
-      <Spanish>Descargar &gt;&gt;</Spanish>
-      <French>Décharger &gt;&gt;</French>
-      <Polish>Wyładuj &gt;&gt;</Polish>
-      <Czech>Vyložit &gt;&gt;</Czech>
-      <Portuguese>Descarregar &gt;&gt;</Portuguese>
-      <Italian>Scarica &gt;&gt;</Italian>
-      <Hungarian>Tárkioldás &gt;&gt;</Hungarian>
+      <English>Unload</English>
+      <German>Abladen</German>
+      <Spanish>Descargar</Spanish>
+      <French>Décharger</French>
+      <Polish>Wyładuj</Polish>
+      <Czech>Vyložit</Czech>
+      <Portuguese>Descarregar</Portuguese>
+      <Italian>Scarica</Italian>
+      <Hungarian>Tárkioldás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Logistics_ReloadMagazines">
-      <English>Magazines &gt;&gt;</English>
-      <German>Magazine &gt;&gt;</German>
-      <Spanish>Cargadores &gt;&gt;</Spanish>
-      <French>Chargeurs &gt;&gt;</French>
-      <Polish>Magazynki &gt;&gt;</Polish>
-      <Czech>Zásobníky &gt;&gt;</Czech>
-      <Portuguese>Carregadores &gt;&gt;</Portuguese>
-      <Italian>Caricatori &gt;&gt;</Italian>
-      <Hungarian>Tárak &gt;&gt;</Hungarian>
+      <English>Magazines</English>
+      <German>Magazine</German>
+      <Spanish>Cargadores</Spanish>
+      <French>Chargeurs</French>
+      <Polish>Magazynki</Polish>
+      <Czech>Zásobníky</Czech>
+      <Portuguese>Carregadores</Portuguese>
+      <Italian>Caricatori</Italian>
+      <Hungarian>Tárak</Hungarian>
     </Key>
   </Package>
   <Package name="Drag">
@@ -321,26 +321,26 @@
       <Hungarian>Szerelés &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_Tracks">
-      <English>Tracks &gt;&gt;</English>
-      <German>Ketten &gt;&gt;</German>
-      <Spanish>Cadenas &gt;&gt;</Spanish>
-      <French>Chenilles &gt;&gt;</French>
-      <Polish>Gąsienice &gt;&gt;</Polish>
-      <Czech>Pásy &gt;&gt;</Czech>
-      <Portuguese>Lagartas &gt;&gt;</Portuguese>
-      <Italian>Cingoli &gt;&gt;</Italian>
-      <Hungarian>Lánctalpak &gt;&gt;</Hungarian>
+      <English>Tracks</English>
+      <German>Ketten</German>
+      <Spanish>Cadenas</Spanish>
+      <French>Chenilles</French>
+      <Polish>Gąsienice</Polish>
+      <Czech>Pásy</Czech>
+      <Portuguese>Lagartas</Portuguese>
+      <Italian>Cingoli</Italian>
+      <Hungarian>Lánctalpak</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_Wheels">
-      <English>Wheels &gt;&gt;</English>
-      <German>Reifen &gt;&gt;</German>
-      <Spanish>Ruedas &gt;&gt;</Spanish>
-      <French>Roues &gt;&gt;</French>
-      <Polish>Koła &gt;&gt;</Polish>
-      <Czech>Kola &gt;&gt;</Czech>
-      <Portuguese>Rodas &gt;&gt;</Portuguese>
-      <Italian>Ruote &gt;&gt;</Italian>
-      <Hungarian>Kerekek &gt;&gt;</Hungarian>
+      <English>Wheels</English>
+      <German>Reifen</German>
+      <Spanish>Ruedas</Spanish>
+      <French>Roues</French>
+      <Polish>Koła</Polish>
+      <Czech>Kola</Czech>
+      <Portuguese>Rodas</Portuguese>
+      <Italian>Ruote</Italian>
+      <Hungarian>Kerekek</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_HitBody">
       <English>Body</English>
@@ -728,26 +728,26 @@
       <Hungarian>%1 megjavítva</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RepairWheel">
-      <English>Repair Wheel &gt;&gt;</English>
-      <German>Reifen aufziehen &gt;&gt;</German>
+      <English>Repair Wheel</English>
+      <German>Reifen aufziehen</German>
       <Spanish>Reparar rueda</Spanish>
-      <French>Répare Roue &gt;&gt;</French>
-      <Polish>Napraw koło &gt;&gt;</Polish>
-      <Czech>Opravit Kolo &gt;&gt;</Czech>
-      <Portuguese>Reparar Roda &gt;&gt;</Portuguese>
-      <Italian>Ripara la ruota &gt;&gt;</Italian>
-      <Hungarian>Kerék javítása &gt;&gt;</Hungarian>
+      <French>Répare Roue</French>
+      <Polish>Napraw koło</Polish>
+      <Czech>Opravit Kolo</Czech>
+      <Portuguese>Reparar Roda</Portuguese>
+      <Italian>Ripara la ruota</Italian>
+      <Hungarian>Kerék javítása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RemoveWheel">
-      <English>Remove Wheel &gt;&gt;</English>
-      <German>Reifen entfernen &gt;&gt;</German>
+      <English>Remove Wheel</English>
+      <German>Reifen entfernen</German>
       <Spanish>Quitar rueda</Spanish>
-      <French>Démonte Roue &gt;&gt;</French>
-      <Polish>Zdejmij koło &gt;&gt;</Polish>
-      <Czech>Odstranit Kolo &gt;&gt;</Czech>
-      <Portuguese>Remover Roda &gt;&gt;</Portuguese>
-      <Italian>Rimuovi la ruota &gt;&gt;</Italian>
-      <Hungarian>Kerék leszerelése &gt;&gt;</Hungarian>
+      <French>Démonte Roue</French>
+      <Polish>Zdejmij koło</Polish>
+      <Czech>Odstranit Kolo</Czech>
+      <Portuguese>Remover Roda</Portuguese>
+      <Italian>Rimuovi la ruota</Italian>
+      <Hungarian>Kerék leszerelése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RemovingWheel">
       <English>Removing %1 ...</English>
