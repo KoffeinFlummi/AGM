@@ -39,12 +39,13 @@ _position = getPosASL _unit;
 
   if (local _this) then {
     [_this, "AGM_Unconscious", false] call AGM_Interaction_fnc_setCaptivityStatus;
-    if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {
-      terminate (_this getVariable "AGM_WakeUpTimer");
-    };
-    if !(scriptDone (_this getVariable "AGM_UnconsciousnessTimer")) then {
-      terminate (_this getVariable "AGM_UnconsciousnessTimer");
-    };
+  };
+
+  if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {
+    terminate (_this getVariable "AGM_WakeUpTimer");
+  };
+  if !(scriptDone (_this getVariable "AGM_UnconsciousnessTimer")) then {
+    terminate (_this getVariable "AGM_UnconsciousnessTimer");
   };
 
   // Don't ask me; I have no idea...
