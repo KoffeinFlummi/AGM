@@ -88,6 +88,7 @@
       <Spanish>Mostrar nombres</Spanish>
       <French>Afficher noms</French>
       <Czech>Zobrazit jména</Czech>
+      <Polish>Pokaż nazwy</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -404,6 +405,7 @@
       <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
       <Czech>Zobrazit jména hráčů jen na klávesu (vyžaduje jména hráčů)</Czech>
+      <Polish>Pokaż nazwę gracza tylko po przytrzymaniu klawisza</Polish>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
