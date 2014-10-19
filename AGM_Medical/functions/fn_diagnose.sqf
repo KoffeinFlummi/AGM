@@ -140,7 +140,7 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        [1, call AGM_Core_fnc_player, ""] call AGM_Interaction_fnc_showMenu;
+        [1, call AGM_Core_fnc_player, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       } else {
         [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       };
