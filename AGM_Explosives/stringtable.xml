@@ -475,12 +475,14 @@
       <German>Totmannschalter</German>
       <French>Mise à feu par relâchement de pression</French>
       <Czech>Spínač mrtvého muže</Czech>
+      <Polish>Czuwak</Polish>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
       <English>Used to remotely trigger explosives when released.</English>
       <German>Zündet Sprengladungen wenn losgelassen.</German>
       <French>Déclenche la mise à feu d'un explosif lorsqu'il est libéré.</French>
       <Czech>Používaný k vzdálenému odpálení, při uvolnění odpálí výbušniny</Czech>
+      <Polish>Używany w celu zdalnej detonacji ładunków kiedy jego operator zostanie zabity.</Polish>
     </Key>
   </Package>
 </Project>
