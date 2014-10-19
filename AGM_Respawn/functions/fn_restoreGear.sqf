@@ -52,7 +52,7 @@ if (_headgear != "") then {
   _unit addHeadgear _headgear;
 };
 if (_uniform != "") then {
-  _unit addUniform _uniform;
+  _unit forceAddUniform _uniform;
 };
 if (_vest != "") then {
   _unit addVest _vest;
