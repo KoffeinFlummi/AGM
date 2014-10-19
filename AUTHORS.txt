@@ -1,4 +1,4 @@
-# AGM CONTRIBUTOR LIST
+﻿# AGM CONTRIBUTOR LIST
 # If you contributed, but are not listed here, contact me:
 # koffeinflummi@gmail.com
 #
@@ -29,7 +29,7 @@ evromalarkey <evromalarkey@gmail.com>
 havena
 Codingboy
 Riccardo Petricca <petriccarcc@gmail.com>
-jonpas
+Jonpas <jonpas33@gmail.com>
 eRazeri
 Brakoviejo
 Valentin Torikian <valentin.torikian@gmail.com>
