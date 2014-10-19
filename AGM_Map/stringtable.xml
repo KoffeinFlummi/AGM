@@ -129,6 +129,7 @@
       <German>Drehung: %1°</German>
       <French>Direction: %1°</French>
       <Czech>Směr: %1°</Czech>
+      <Polish>Kierunek: %1°</Polish>
     </Key>
   </Package>
 </Project>
