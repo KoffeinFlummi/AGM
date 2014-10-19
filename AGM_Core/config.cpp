@@ -205,7 +205,6 @@ class CfgFunctions {
       class doAnimation;
       class execRemoteFnc;
       class filter;
-      class fixCrateContent;
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
@@ -272,6 +271,13 @@ class CfgFunctions {
       class showUser;
     };
   };
+  class AGM_CuratorFix {
+    class AGM_CuratorFix {
+      file = "AGM_Core\functions\CuratorFix";
+      class addUnloadEventhandler;
+      class fixCrateContent;
+    };
+  };
 };
 
 class CfgSounds {
@@ -306,14 +312,6 @@ class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
       local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
-    };
-  };
-};
-
-class Extended_InventoryOpened_EventHandlers {
-  class CAManBase {
-    class AGM_FixCrateContent {
-      inventoryOpened = "if (typeOf (_this select 1) != 'GroundWeaponHolder') then {_this call AGM_Core_fnc_fixCrateContent} else {false}";
     };
   };
 };
@@ -461,3 +459,8 @@ class AGM_Core_Options {
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
 #include <HintConfig.hpp>
+
+class RscControlsGroupNoScrollbars; 
+class RscAttributeInventory: RscControlsGroupNoScrollbars {
+  onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
+};

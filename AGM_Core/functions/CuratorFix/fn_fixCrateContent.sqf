@@ -1,9 +1,8 @@
 // by commy2
 
-private ["_unit", "_crate", "_weapons", "_items"];
+private ["_crate", "_weapons", "_items"];
 
-_unit = _this select 0;
-_crate = _this select 1;
+_crate = _this select 0;
 
 // get all weapons inside the crate
 _weapons = weaponCargo _crate;
@@ -20,7 +19,7 @@ _items = [];
 _weapons = _weapons - [""];
 
 // exit now if everything is fine
-if (count _items == 0) exitWith {false};	//don't overwrite gear menu
+if (count _items == 0) exitWith {};	//don't overwrite gear menu
 
 // otherwise clear weapon cargo and re-add items and weapons
 clearWeaponCargoGlobal _crate;
@@ -32,9 +31,3 @@ clearWeaponCargoGlobal _crate;
 {
     _crate addItemCargoGlobal [_x, 1];
 } forEach _items;
-
-//overwrite gear menu
-[_unit, _crate] spawn {
-	(_this select 0) action ['Gear', _this select 1];
-};
-true
