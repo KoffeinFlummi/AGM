@@ -19,7 +19,7 @@ _items = [];
 _weapons = _weapons - [""];
 
 // exit now if everything is fine
-if (count _items == 0) exitWith {};	//don't overwrite gear menu
+if (count _items == 0) exitWith {};
 
 // otherwise clear weapon cargo and re-add items and weapons
 clearWeaponCargoGlobal _crate;
