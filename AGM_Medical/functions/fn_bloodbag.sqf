@@ -44,9 +44,9 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+        [1, call AGM_Core_fnc_player, ""] call AGM_Interaction_fnc_showMenu;
       } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+        [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       };
     };
   };

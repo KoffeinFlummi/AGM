@@ -140,10 +140,10 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+        [1, call AGM_Core_fnc_player, ""] call AGM_Interaction_fnc_showMenu;
       } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-      }
+        [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+      };
     };
   };
 
@@ -166,14 +166,4 @@ _this spawn {
   } else {
     _this call AGM_Medical_diagnoseCallback;
   };
-
-  /*
-  if (getNumber(configFile >> "AGM_Realism_Settings" >> "reopenInteractionMenu") == 1) then {
-    if (_unit == player) then {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
-    } else {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
-    }
-  };
-  */
 };
