@@ -188,7 +188,9 @@ class Mode_FullAuto;
 // config inheritance of weapon slot info v1.32
 class SlotInfo;
 class CowsSlot: SlotInfo {};
-class PointerSlot: SlotInfo {};
+class PointerSlot: SlotInfo {
+  compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
+};
 
 class CfgWeapons {
 
@@ -203,8 +205,8 @@ class CfgWeapons {
   class Rifle: RifleCore {
     class WeaponSlotsInfo {
       class MuzzleSlot: SlotInfo {};
-      class CowsSlot: CowsSlot{};
-      class PointerSlot: PointerSlot{};
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {};
     };
   };
   class Rifle_Base_F: Rifle {};
@@ -239,15 +241,6 @@ class CfgWeapons {
   // Updated strings are in weapon configs.
   class GrenadeLauncher;
   class UGL_F : GrenadeLauncher {};
-
-    // @todo the flashlight
-    /*
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
-      };
-    };
-    */
 
   // MXs ////////////////////////////////////////////////////
 
