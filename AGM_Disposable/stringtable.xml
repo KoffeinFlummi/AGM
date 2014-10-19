@@ -7,12 +7,14 @@
       <German>Benutze Einwegwaffe</German>
       <French>Tube utilisé</French>
       <Czech>Použitý odpalovač</Czech>
+      <Polish>Zużyta tuba</Polish>
     </Key>
     <Key ID="STR_AGM_Disposable_UsedTubeDescription">
       <English>Used disposable rocket launcher</English>
       <German>Benutzter Einweg-Raketenwerfer</German>
       <French>Lance-roquette à usage unique utilisé</French>
       <Czech>Použitý raketomet</Czech>
+      <Polish>Zużyta tuba granatnika jednorazowego użytku</Polish>
     </Key>
   </Package>
 </Project>
