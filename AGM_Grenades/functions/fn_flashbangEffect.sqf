@@ -36,7 +36,9 @@ nul = _this spawn {
   };
 
   // is there line of sight to the grenade?
-  if (lineIntersects [getPosASL _grenade, getPosASL _unit, _grenade, _unit]) then {
+  _posGrenade = getPosASL _grenade;
+  _posGrenade set [2, (_posGrenade select 2) + 0.2]; // compensate for grenade glitching into ground
+  if (lineIntersects [_posGrenade, getPosASL _unit, _grenade, _unit]) then {
     _strength = _strength / 10;
   };
 
@@ -56,7 +58,15 @@ nul = _this spawn {
   _angleView = (_angleView + 360) % 360;
 
   _angleDiff = 180 - abs (abs (_angleGrenade - _angleView) - 180);
-  _strength = _strength - _strength * 0.4 * _angleDiff;
+  _angleDiff = ((_angleDiff - 45) max 0);
+
+  // player looking away completely
+  if (_angleDiff > 45) then {
+    _strength = 0;
+  } else {
+    _strength = _strength - _strength * (_angleDiff  / 135);
+  };
+
 
   // create flash to illuminate environment
   _light = "#lightpoint" createVehicleLocal getPos _grenade;
@@ -68,13 +78,13 @@ nul = _this spawn {
   // blind player
   if (_strength > 0.1) then {
     AGM_Flashbang_CC ppEffectEnable true;
-    AGM_Flashbang_CC ppEffectAdjust [1,1,0,[1,1,1,(0.5 + _strength) min 1],[0,0,0,1],[0,0,0,0]];
+    AGM_Flashbang_CC ppEffectAdjust [1,1,0,[1,1,1,(0.8 + _strength) min 1],[0,0,0,1],[0,0,0,0]];
     AGM_Flashbang_CC ppEffectCommit 0.01;
   };
 
   sleep 0.1;
   deleteVehicle _light;
-  sleep (5 * _strength);
+  sleep (7 * _strength);
 
   if (_strength > 0.1) then {
     AGM_Flashbang_CC ppEffectAdjust [1,1,0,[1,1,1,0],[0,0,0,1],[0,0,0,0]];
