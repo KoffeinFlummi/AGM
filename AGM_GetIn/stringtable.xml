@@ -210,7 +210,7 @@
       <German>Zum Beifahrersitz</German>
       <Spanish>Mover a copiloto</Spanish>
       <French>Passer en Co-pilote</French>
-      <Polish>Przejdź na miejsce co-pilota</Polish>
+      <Polish>Przejdź na miejsce nawigatora</Polish>
       <Czech>Přesednout si vedle řidiče</Czech>
       <Italian>Spostati come Copilota</Italian>
       <Portuguese>Mudar para Copiloto</Portuguese>
@@ -220,6 +220,7 @@
       <English>Move to Co-pilot</English>
       <German>Zum Copilotensitz</German>
       <Czech>Přesednout na Kopilota</Czech>
+      <Polish>Przejdź na miejsce co-pilota</Polish>
     </Key>
   </Package>
 </Project>
