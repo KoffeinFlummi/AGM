@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_MagazineRepack_RepackMagazines">
       <English>Repack Magazines</English>
       <German>Magazine umpacken</German>
-      <Spanish>Rellenar cargadores</Spanish>
+      <Spanish>Reorganizar cargadores</Spanish>
       <French>Réorganiser chargeurs</French>
       <Polish>Przepakuj magazynki</Polish>
       <Czech>Přepáskovat Zásobníky</Czech>
@@ -38,7 +38,7 @@
     <Key ID="STR_AGM_MagazineRepack_RepackingMagazine">
       <English>Repacking Magazines ...</English>
       <German>Magazine umpacken ...</German>
-      <Spanish>Rellenando cargador ...</Spanish>
+      <Spanish>Reorganizando cargadores ...</Spanish>
       <French>Réorganisation des chargeurs ...</French>
       <Polish>Przepakowywanie magazynków ...</Polish>
       <Czech>Páskuji Zásobníky ...</Czech>
@@ -49,7 +49,7 @@
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazines">
       <English>Repacked Magazines</English>
       <German>Magazine umgepackt</German>
-      <Spanish>Cargadores rellenados</Spanish>
+      <Spanish>Cargadores reorganizados</Spanish>
       <French>Chargeurs réorganisés</French>
       <Polish>Magazynki przepakowane</Polish>
       <Czech>Přepáskované Zásobníky</Czech>
