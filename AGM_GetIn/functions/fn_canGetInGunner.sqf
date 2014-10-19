@@ -9,9 +9,11 @@ _vehicle = _this select 1;
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
 _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretGunner;
+if (_turret isEqualTo []) exitWith {false};
+
 _configTurret = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-if (_turret isEqualTo []) exitWith {false};
+if (count (getArray (_configTurret >> "weapons")) == 0) exitWith {false};
 
 _memoryPointGunner = getText (_configTurret >> "memoryPointsGetInGunner");
 

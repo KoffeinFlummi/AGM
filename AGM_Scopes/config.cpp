@@ -27,7 +27,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Scopes {
-    clientInit = "[] call AGM_Scopes_fnc_init;";
+    clientInit = "[player] call AGM_Scopes_fnc_init;";
   };
 };
 
@@ -95,7 +95,7 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {};
+          discreteDistance[] = {0};
           discreteDistanceIndex = 0;
         };
       };
@@ -108,7 +108,20 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {};
+          discreteDistance[] = {0};
+          discreteDistanceIndex = 0;
+        };
+      };
+    };
+  };
+
+  class optic_DMS: ItemCore {
+    AGM_ScopeAdjust_Horizontal[] = {-40,40};
+    AGM_ScopeAdjust_Vertical[] = {-40,40};
+    class ItemInfo: InventoryOpticsItem_Base_F {
+      class OpticsModes {
+        class Snip {
+          discreteDistance[] = {0};
           discreteDistanceIndex = 0;
         };
       };
