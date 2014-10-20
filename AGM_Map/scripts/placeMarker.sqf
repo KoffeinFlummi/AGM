@@ -9,10 +9,21 @@ if (_this select 1 == 1) then {
 		(_pos select 0) + (_pos select 2) / 2,
 		(_pos select 1) + (_pos select 3) / 2
 	];
-	_pos = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld _pos;
 
-	diag_log text str (findDisplay 12);
-	diag_log text str (findDisplay 12 displayCtrl 51);
+	switch (true) do {
+		case (!isNull findDisplay 12) : {
+			_pos = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld _pos;
+		};
+		case (!isNull findDisplay 37) : {
+			_pos = (findDisplay 37 displayCtrl 51) ctrlMapScreenToWorld _pos;
+		};
+		case (!isNull findDisplay 52) : {
+			_pos = (findDisplay 52 displayCtrl 51) ctrlMapScreenToWorld _pos;
+		};
+		case (!isNull findDisplay 53) : {
+			_pos = (findDisplay 53 displayCtrl 51) ctrlMapScreenToWorld _pos;
+		};
+	};
 
 	_pos spawn {
 		/*[

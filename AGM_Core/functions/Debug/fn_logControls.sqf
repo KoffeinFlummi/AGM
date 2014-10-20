@@ -11,4 +11,4 @@ for "_index" from 0 to 10000 do {
 	};
 };
 
-hintSilent str _array;
+_array;
