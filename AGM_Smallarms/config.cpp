@@ -185,13 +185,47 @@ class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
 
-class WeaponSlotsInfo;
-class PointerSlot;
+// config inheritance of weapon slot info v1.32
+class SlotInfo;
+class CowsSlot: SlotInfo {};
+class PointerSlot: SlotInfo {
+  compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
+};
 
 class CfgWeapons {
-  class WeaponSlotsInfo;
-  class SlotInfo;
-  class Rifle_Base_F;
+
+  // config inheritance of weapon slot info v1.32 for launchers
+  class Launcher;
+  class Launcher_Base_F: Launcher {
+    class WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for assault rifles
+  class RifleCore;
+  class Rifle: RifleCore {
+    class WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {};
+    };
+  };
+  class Rifle_Base_F: Rifle {};
+  class Rifle_Long_Base_F: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for handguns
+  class PistolCore;
+  class Pistol: PistolCore {
+    class WeaponSlotsInfo {
+      class CowsSlot: SlotInfo {};
+    };
+  };
+  class Pistol_Base_F: Pistol {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+    };
+  };
 
   ///////////////////////////////////////////////////////////////////////////////
   //////////// SMALL ARMS WEAPONS ///////////////////////////////////////////////
@@ -207,15 +241,6 @@ class CfgWeapons {
   // Updated strings are in weapon configs.
   class GrenadeLauncher;
   class UGL_F : GrenadeLauncher {};
-
-    // @todo the flashlight
-    /*
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
-      };
-    };
-    */
 
   // MXs ////////////////////////////////////////////////////
 
@@ -351,7 +376,6 @@ class CfgWeapons {
 
   // Pistols //////////////////////////////////////////////
 
-  class Pistol_Base_F;
   class hgun_P07_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
   };
@@ -365,8 +389,6 @@ class CfgWeapons {
   class hgun_Pistol_heavy_02_F: Pistol_Base_F {};*/
 
   // LMGs //////////////////////////////////////////////
-
-  class Rifle_Long_Base_F;
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
     modes[] = {"manual", "Single", "close", "short", "medium", "far_optic1", "far_optic2"};

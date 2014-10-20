@@ -34,6 +34,9 @@ class CfgVoice {
   class ENGB: Base {
     protocol = "RadioProtocolBase";
   };
+  class ENVR: Base {
+    protocol = "RadioProtocolBase";
+  };
   class GRE: Base {
     protocol = "RadioProtocolBase";
   };

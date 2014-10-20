@@ -16,10 +16,10 @@
 
 private ["_array", "_code"];
 
-_array = _this select 0;
+_array = + _this select 0;
 _code = _this select 1;
 
-if (!assert (!isNil "_array")) exitWith {
+if (isNil "_array") exitWith {
   diag_log text format ["[AGM] ERROR: No array for function map in %1", _fnc_scriptNameParent];
   []
 };

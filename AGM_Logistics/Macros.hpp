@@ -71,12 +71,12 @@
 		condition = "!(player call AGM_Drag_fnc_isDraggingObject)"; \
 		conditionShow = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
-		tooltip = "Drag this object."; \
 		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
 		hotkey = "R"; \
 	};
+//		tooltip = "Drag this object."; \
 
 #define MACRO_NOT_DRAGABLE \
 	class AGM_DragItem { \

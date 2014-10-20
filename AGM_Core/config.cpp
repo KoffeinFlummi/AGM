@@ -271,6 +271,13 @@ class CfgFunctions {
       class showUser;
     };
   };
+  class AGM_CuratorFix {
+    class AGM_CuratorFix {
+      file = "AGM_Core\functions\CuratorFix";
+      class addUnloadEventhandler;
+      class fixCrateContent;
+    };
+  };
 };
 
 class CfgSounds {
@@ -378,7 +385,7 @@ class CfgVehicles {
 class CfgWeapons {
   class ItemCore;
   class AGM_ItemCore: ItemCore {
-    type = 4;
+    type = 4096;//4;
     detectRange = -1;
     simulation = "ItemMineDetector";
   };
@@ -452,3 +459,12 @@ class AGM_Core_Options {
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
 #include <HintConfig.hpp>
+
+/*
+class RscControlsGroupNoScrollbars; 
+class RscAttributeInventory: RscControlsGroupNoScrollbars {
+  onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
+};
+*/
+
+#include <PickupFix.hpp>
