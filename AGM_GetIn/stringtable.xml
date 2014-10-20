@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="GetIn">
     <Key ID="STR_AGM_GetInVehicle">
@@ -117,6 +117,7 @@
       <German>Einsteigen als Copilot</German>
       <Czech>Nastoupit jako Kopilot</Czech>
       <Polish>Wejdź jako co-pilot</Polish>
+      <Spanish>Entrar como copiloto</Spanish>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
@@ -222,6 +223,7 @@
       <German>Zum Copilotensitz</German>
       <Czech>Přesednout na Kopilota</Czech>
       <Polish>Przejdź na miejsce co-pilota</Polish>
+      <Spanish>Mover a copiloto</Spanish>
     </Key>
   </Package>
 </Project>

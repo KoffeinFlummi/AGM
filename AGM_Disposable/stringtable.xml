@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-16 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="Disposable">
     <Key ID="STR_AGM_Disposable_UsedTube">
@@ -8,6 +8,7 @@
       <French>Tube utilisé</French>
       <Czech>Použitý odpalovač</Czech>
       <Polish>Zużyta tuba</Polish>
+      <Spanish>Lanzador utilizado</Spanish>
     </Key>
     <Key ID="STR_AGM_Disposable_UsedTubeDescription">
       <English>Used disposable rocket launcher</English>
@@ -15,6 +16,7 @@
       <French>Lance-roquette à usage unique utilisé</French>
       <Czech>Použitý raketomet</Czech>
       <Polish>Zużyta tuba granatnika jednorazowego użytku</Polish>
+      <Spanish>Lanzador descartable utilizado</Spanish>
     </Key>
   </Package>
 </Project>

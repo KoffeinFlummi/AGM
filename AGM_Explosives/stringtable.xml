@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-24 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="Explosives">
     <Key ID="STR_AGM_Explosives_Menu">
@@ -476,6 +476,7 @@
       <French>Mise à feu par relâchement de pression</French>
       <Czech>Spínač mrtvého muže</Czech>
       <Polish>Czuwak</Polish>
+      <Spanish>Detonador de hombre muerto</Spanish>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
       <English>Used to remotely trigger explosives when released.</English>
@@ -483,6 +484,7 @@
       <French>Déclenche la mise à feu d'un explosif lorsqu'il est libéré.</French>
       <Czech>Používaný k vzdálenému odpálení, při uvolnění odpálí výbušniny</Czech>
       <Polish>Używany w celu zdalnej detonacji ładunków kiedy jego operator zostanie zabity.</Polish>
+      <Spanish>Utilizado para detonar explosivos remotamente al soltarlo.</Spanish>
     </Key>
   </Package>
 </Project>
