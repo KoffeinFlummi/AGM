@@ -466,3 +466,5 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
   onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
 };
 */
+
+#include <PickupFix.hpp>
