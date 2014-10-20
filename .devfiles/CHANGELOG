@@ -28,6 +28,12 @@
 - Added: Option to disable Respawn Button (#1292).
 - Added: Brought back the NATO symbols removed by BIS (#1250).
 - Added: Added a hotkey to use the smoke launcher on vehicles even when the default key is bugged out (#1262).
+- Added: Place fortifications.
+- Added: Top Down Attack.
+- Added: Parachute landing animation.
+- Added: Altimeter.
+- Added: Paradrop of supplies.
+- Added: Partial support of remote controlled units via Zeus.
 
 - Changed: Allow moving while interaction menus is open.
 - Changed: Interaction Menus now remain open while the interaction key is pressed.
@@ -51,6 +57,8 @@
 - Changed: AGM Binarizer no longer moves the Arma 3 tools executables (#1038).
 - Changed: Syntax of custom AGM actions, to make them more similar to vanilla A3 actions (#1173).
 - Changed: Added configurable coefficient for treatment times of non-medics (#1269).
+- Changed: Physically based simulation of weapon heating and cooling
+- Changed: Weapon jam chance based on real life MRBS data
 
 - Fixed: Morphine status was sometimes not correcly linked accross clients (#929).
 - Fixed: "Unit is bleeding" was shown for very minor injuries which couldn't be bandaged (#944).
@@ -72,7 +80,7 @@
 - Fixed: Prisoners could throw grenades (#864)
 - Fixed: Unconciousness effect active in spectator (#909)
 - Fixed: View was uncentered after recovering from a G-force blackout (#938).
-- Fixed: Google effects were applied to some new arma bandannas (#1013).
+- Fixed: Goggles effects were applied to some new arma bandannas (#1013).
 - Fixed: Nametags were visible through walls (#1048).
 - Fixed: Respawn module didn't re-add binoculars (#1134).
 - Fixed: The killer of AI units was incorrectly reported (#1155).
