@@ -11,8 +11,8 @@ if (_this select 1 == 1) then {
 	];
 	_pos = (findDisplay 12 displayCtrl 51) ctrlMapScreenToWorld _pos;
 
-	diag_log text str (_display displayCtrl 102);
-	diag_log text str _pos;
+	diag_log text str (findDisplay 12);
+	diag_log text str (findDisplay 12 displayCtrl 51);
 
 	_pos spawn {
 		/*[
