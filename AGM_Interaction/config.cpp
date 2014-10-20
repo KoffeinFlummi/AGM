@@ -425,8 +425,8 @@ class CfgVehicles {
       class AGM_FriskPerson {
         displayName = "$STR_AGM_Interaction_FriskPerson";
         distance = 2;
-        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canFriskPerson";
-        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
+        condition = "[_player, AGM_Interaction_Target] call AGM_Interaction_fnc_canFriskPerson";
+        statement = "[_player, AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
         showDisabled = 0;
         priority = 3;
         //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";

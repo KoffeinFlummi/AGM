@@ -21,7 +21,7 @@ _setup spawn {
 	_pos = getPosASL _this;
 	_dir = getDir _this;
 
-	_dir = if (_dir > 180) then {_dir - 180} else {180 + _dir};
+	//_dir = if (_dir > 180) then {_dir - 180} else {180 + _dir};	// ?
 
 	player setVariable ["AGM_PlantingExplosive", true];
 
