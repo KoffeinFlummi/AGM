@@ -34,7 +34,8 @@ _allGear = [
     (handgunWeapon _unit),
     (handgunItems _unit),
     (handgunMagazine _unit),
-    (assignedItems _unit)
+    (assignedItems _unit),
+    (binocular _unit)
 ];
 
 // return
