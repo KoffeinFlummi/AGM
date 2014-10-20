@@ -1,16 +1,16 @@
-- Added: New optional "Flow" interaction menu.
-- Added: Icons on interaction menus.
+- Added: New optional "Flow" interaction menu (#808).
+- Added: Icons on interaction menus (#959).
 - Added: Switch between bigger and smaller map tools (#852).
 - Added: Align map tools (#852).
 - Added: Draw lines on map with map tools or during briefing (#852).
 - Added: Copy other players map lines (#852).
 - Added: Display GPS coordinates on the map screen (#852).
 - Added: Mission designers can define GLOC resistance for certain units using "this setVariable ["AGM_GForceCoef", 0.75]".
-- Added: Animated raindrops on goggles.
-- Added: Added M152 RAMS detonator package (#714).
+- Added: Animated raindrops on goggles (#1195).
+- Added: Added M152 RAMS detonator package, range 5000m (#714).
 - Added: Flashsupressors available in Arma 3 are now usable (#1054).
 - Added: Support for custom jam clearing animations (#966).
-- Added: M84 Stun Grenade.
+- Added: M84 Stun Grenade (#419).
 - Added: Many new entries in various languages, including new Italian support.
 - Added: Improved documentation (https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started)
 - Added: Locking backpacks (#42).
@@ -22,34 +22,34 @@
 - Added: Some actions con now be performed while inside vehicles (#824).
 - Added: Configurable AGM modifier key (#850).
 - Added: Dead Man's Switch trigger for explosives (#940).
-- Added: Tweaks to weapon usage by AI (#1000)
+- Added: Tweaks to weapon usage by AI (#1000).
 - Added: Hotkeys to allow quick navigation of the action menus (#1178).
 - Added: Improved add marker dialog (#1258).
 - Added: Option to disable Respawn Button (#1292).
 - Added: Brought back the NATO symbols removed by BIS (#1250).
 - Added: Added a hotkey to use the smoke launcher on vehicles even when the default key is bugged out (#1262).
 - Added: Place fortifications.
-- Added: Top Down Attack.
-- Added: Parachute landing animation.
-- Added: Altimeter.
-- Added: Paradrop of supplies.
-- Added: Partial support of remote controlled units via Zeus.
+- Added: Top Down Attack (#339).
+- Added: Parachute landing animation (#540).
+- Added: Altimeter (#540).
+- Added: Paradrop of supplies (#711).
+- Added: Partial support of remote controlled units via Zeus (#327).
 
-- Changed: Allow moving while interaction menus is open.
+- Changed: Allow moving while interaction menus is open (#833).
 - Changed: Interaction Menus now remain open while the interaction key is pressed.
 - Changed: Removed AGM_StriderFix, which is no longer neccesary (#1077).
 - Changed: Physically correct wind drag (#996).
-- Changed: Optimization of various functions by using new pushBack command.
-- Changed: Removed humidity effect over bullet trajectories.
+- Changed: Optimization of various functions by using new pushBack command (#989).
+- Changed: Removed humidity effect over bullet trajectories (#1027).
 - Changed: Increased the odds of people spontaneously regaining conciousness (#943).
 - Changed: Many improvements to AGM_RealisticNames.
-- Changed: Increased M57 Trigger Device range to 200m.
+- Changed: Increased M57 Trigger Device range to 250m.
 - Changed: Refined lock detection warning (#263).
 - Changed: Improved rangefinding for vehicles (#341).
-- Changed: Client option to disable vanilla command menu keybindings (#676)
+- Changed: Client option to disable vanilla command menu keybindings (#676).
 - Changed: Removed toolkit from explosive specialists (#855).
-- Changed: Removed body removal script in favor of Arma Corpse Manager (#1008)
-- Changed: Increased dipersion for sabot bullets (#924)
+- Changed: Removed body removal script in favor of Arma Corpse Manager (#1008).
+- Changed: Increased dipersion for sabot bullets (#924).
 - Changed: Increased XM-301 (Comanche) rounds damage (#935).
 - Changed: Standardized release options (#936).
 - Changed: Improved the handling of animation changes in medical (#1078).
@@ -57,8 +57,8 @@
 - Changed: AGM Binarizer no longer moves the Arma 3 tools executables (#1038).
 - Changed: Syntax of custom AGM actions, to make them more similar to vanilla A3 actions (#1173).
 - Changed: Added configurable coefficient for treatment times of non-medics (#1269).
-- Changed: Physically based simulation of weapon heating and cooling
-- Changed: Weapon jam chance based on real life MRBS data
+- Changed: Physically based simulation of weapon heating and cooling.
+- Changed: Weapon jam chance based on real life MRBS data (#1007).
 
 - Fixed: Morphine status was sometimes not correcly linked accross clients (#929).
 - Fixed: "Unit is bleeding" was shown for very minor injuries which couldn't be bandaged (#944).
@@ -77,8 +77,8 @@
 - Fixed: Error on checking ammo of static weapons (#973).
 - Fixed: A-10 Gau cannon burst inconsistent (#802).
 - Fixed: Error in AGM_Respawn (#786).
-- Fixed: Prisoners could throw grenades (#864)
-- Fixed: Unconciousness effect active in spectator (#909)
+- Fixed: Prisoners could throw grenades (#864).
+- Fixed: Unconciousness effect active in spectator (#909).
 - Fixed: View was uncentered after recovering from a G-force blackout (#938).
 - Fixed: Goggles effects were applied to some new arma bandannas (#1013).
 - Fixed: Nametags were visible through walls (#1048).
