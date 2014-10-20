@@ -18,6 +18,7 @@ class CfgFunctions {
       file = "\AGM_Overheating\functions";
       class checkTemperature;
       class clearJam;
+      class cooldown;
       class jamWeapon;
       class overheat;
       class swapBarrel;
