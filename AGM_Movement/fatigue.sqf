@@ -1,19 +1,41 @@
 // by commy2
 
-#define GETTING_TIRED_FACTOR 0.1
-#define RECOVER_RATE_FACTOR 0.1
 #define THRESHOLD_1 0.8
 #define THRESHOLD_2 0.9
 #define THRESHOLD_3 0.99
 
-_fatigue = getFatigue player;
+// init onEachFrame EH
+AGM_UpdatePlayerFatigue_EHID = ["AGM_UpdatePlayerFatigue", "onEachFrame", {
+	_player = call AGM_Core_fnc_player;
 
-_handleRecoil = 0 spawn {};
-_handleBlinking = 0 spawn {};
-_handleHeartbeat = 0 spawn {};
-_handleStumble = 0 spawn {};
+	// calc new fatigue
+	_fatigue = getFatigue _player;
+	_fatigueOld = _player getVariable ["AGM_Fatigue", getFatigue _player];
 
+	if (_fatigue > _fatigueOld) then {
+		_fatigue = _fatigueOld + (missionNamespace getVariable ["AGM_Fatigue_CoefFatigue", 1]) * (_fatigue - _fatigueOld) max 0 min 1;
+	} else {
+		_fatigue = _fatigueOld - (missionNamespace getVariable ["AGM_Fatigue_CoefRecover", 1]) * (_fatigueOld - _fatigue) max 0 min 1;
+	};
+
+	_player setFatigue _fatigue;
+	_player setVariable ["AGM_Fatigue", _fatigue];
+
+	if (!isNil "AGM_Debug" && {AGM_Debug == "Fatigue"}) then {
+		hintSilent str getFatigue _player;
+	};
+}] call BIS_fnc_addStackedEventHandler;
+
+// init script ehids
+_handleRecoil = scriptNull;
+_handleBlinking = scriptNull;
+_handleHeartbeat = scriptNull;
+_handleStumble = scriptNull;
+
+// apply fatigue effects
 while {true} do {
+	_fatigue = getFatigue (call AGM_Core_fnc_player);
+
 	if (_fatigue > THRESHOLD_1) then {
 		if (scriptDone _handleHeartbeat) then {
 			_handleHeartbeat = call AGM_Movement_fnc_heartbeat;
@@ -32,19 +54,4 @@ while {true} do {
 	};
 
 	sleep 0.5;
-
-	_fatigueNew = getFatigue player;
-
-	if (_fatigueNew > _fatigue) then {
-		_fatigue = _fatigue + GETTING_TIRED_FACTOR * (_fatigueNew - _fatigue);
-		if !(isNil "AGM_Fatigue_CoefFatigue") then {
-			_fatigue = _fatigue * AGM_Fatigue_CoefFatigue;
-		};
-	} else {
-		_fatigue = _fatigue - RECOVER_RATE_FACTOR * (_fatigue - _fatigueNew);
-		if !(isNil "AGM_Fatigue_CoefRecover") then {
-			_fatigue = _fatigue * AGM_Fatigue_CoefRecover;
-		};
-	};
-	player setFatigue _fatigue;
 };
