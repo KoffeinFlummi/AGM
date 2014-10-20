@@ -106,7 +106,7 @@
       <German>Einsteigen als Beifahrer</German>
       <Spanish>Entrar como copiloto</Spanish>
       <French>Embarquer (Co-pilote)</French>
-      <Polish>Wejdź jako co-pilot</Polish>
+      <Polish>Wejdź jako nawigator</Polish>
       <Czech>Nastoupit vedle řidiče</Czech>
       <Italian>Sali come Copilota</Italian>
       <Portuguese>Entrar como Copiloto</Portuguese>
@@ -116,6 +116,7 @@
       <English>Get in as Co-pilot</English>
       <German>Einsteigen als Copilot</German>
       <Czech>Nastoupit jako Kopilot</Czech>
+      <Polish>Wejdź jako co-pilot</Polish>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
