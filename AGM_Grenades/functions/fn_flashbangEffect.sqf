@@ -44,7 +44,7 @@ nul = _this spawn {
 
   // beeeeeeeeeeeeeeeeeeeeeeeeeeeeep
   if (isClass (configFile >> "CfgPatches" >> "AGM_Hearing") and _strength > 0) then {
-    [0.5 + (_strength / 2)] call AGM_Hearing_fnc_earRinging;
+    [_unit, 0.5 + (_strength / 2)] call AGM_Hearing_fnc_earRinging;
   };
 
   // account for people looking away by slightly
