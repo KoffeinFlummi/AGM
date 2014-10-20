@@ -423,4 +423,4 @@ class AGM_Parameters {
 };
 
 #include "MapGpsUI.hpp"
-#include <InsertMarker.hpp>
+//#include <InsertMarker.hpp>
