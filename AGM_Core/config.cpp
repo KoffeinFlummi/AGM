@@ -268,6 +268,8 @@ class CfgFunctions {
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class logControls;
+      class logDisplays;
       class showUser;
     };
   };
