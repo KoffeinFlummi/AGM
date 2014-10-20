@@ -16,7 +16,7 @@
 
 private ["_array", "_code"];
 
-_array = _this select 0;
+_array = + _this select 0;
 _code = _this select 1;
 
 if (isNil "_array") exitWith {
