@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-16 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="WeaponSelect">
     <Key ID="STR_AGM_WeaponSelect_SelectPistol">
@@ -201,6 +201,7 @@
       <Czech>Kouřový odpalovač</Czech>
       <French>Tirer le lance-pots fumigènes</French>
       <Polish>Wystrzel granat dymny</Polish>
+      <Spanish>Disparar lanzador de humo</Spanish>
     </Key>
   </Package>
 </Project>
