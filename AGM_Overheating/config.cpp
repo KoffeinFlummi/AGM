@@ -38,7 +38,7 @@ class Extended_Fired_EventHandlers {
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_UnjamReload {
-      clientTake = "if (player == _this select 0 && {player == _this select 1} && {_this select 2 == currentMagazine player} && {_this select 2 in [primaryWeaponMagazine player select 0, secondaryWeaponMagazine player select 0, handgunMagazine player select 0]}) then {_vehicle = vehicle player; [_vehicle, currentWeapon _vehicle, true] call AGM_Overheating_fnc_clearJam};";
+      clientTake = "if (player == _this select 0 && {(_this select 1) in [uniformContainer player, vestContainer player, backpackContainer player]} && {_this select 2 == currentMagazine player} && {_this select 2 in [primaryWeaponMagazine player select 0, secondaryWeaponMagazine player select 0, handgunMagazine player select 0]}) then {_vehicle = vehicle player; [_vehicle, currentWeapon _vehicle, true] call AGM_Overheating_fnc_clearJam};";
     };
   };
 };
