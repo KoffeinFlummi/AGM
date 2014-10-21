@@ -11,7 +11,7 @@ Return value:
 An array containing all inventory items
 */
 
-private ["_unit", "_allGear", "_headgear", "_goggles", "_uniform", "_uniformitems", "_vest", "_vestitems", "_backpack", "_backpackitems", "_primaryweapon", "_primaryweaponitems", "_primaryweaponmagazine", "_handgunweapon", "_handgunweaponitems", "_handgunweaponmagazine", "_assigneditems"];
+private ["_unit", "_allGear", "_headgear", "_goggles", "_uniform", "_uniformitems", "_vest", "_vestitems", "_backpack", "_backpackitems", "_primaryweapon", "_primaryweaponitems", "_primaryweaponmagazine", "_handgunweapon", "_handgunweaponitems", "_handgunweaponmagazine", "_assigneditems", "_binocular"];
 
 
 _unit = _this select 0;
@@ -45,6 +45,7 @@ _handgunweapon = _allGear select 14;
 _handgunweaponitems = _allGear select 15;
 _handgunweaponmagazine = _allGear select 16;
 _assigneditems = _allGear select 17;
+_binocular = _allGear select 18;
 
 
 // start restoring the items
@@ -52,7 +53,7 @@ if (_headgear != "") then {
   _unit addHeadgear _headgear;
 };
 if (_uniform != "") then {
-  _unit addUniform _uniform;
+  _unit forceAddUniform _uniform;
 };
 if (_vest != "") then {
   _unit addVest _vest;
@@ -62,71 +63,74 @@ if (_goggles != "") then {
 };
 
 {
-    _unit addItemToUniform _x;
+  _unit addItemToUniform _x;
 }foreach _uniformitems;
 
 {
-    _unit addItemToVest _x;
+  _unit addItemToVest _x;
 }foreach _vestitems;
 
 
 if(format["%1", _backpack] != "") then {
-    _unit addbackpack _backpack;
-    _backpa = unitBackpack _unit;
-	clearMagazineCargoGlobal _backpa;
-	clearWeaponCargoGlobal _backpa;
-	clearItemCargoGlobal _backpa;
-    {
-        _unit addItemToBackpack _x;
-    } foreach _backpackitems;
+  _unit addbackpack _backpack;
+  _backpa = unitBackpack _unit;
+  clearMagazineCargoGlobal _backpa;
+  clearWeaponCargoGlobal _backpa;
+  clearItemCargoGlobal _backpa;
+  {
+    _unit addItemToBackpack _x;
+  } foreach _backpackitems;
 };
 
 
 // primaryWeapon
 {
-    _unit addMagazine _x;
+  _unit addMagazine _x;
 } foreach _primaryweaponmagazine;
 
 if (_primaryweapon != "") then {
-    _unit addweapon _primaryweapon;
+  _unit addweapon _primaryweapon;
 };
 
 {
-    _unit addPrimaryWeaponItem _x;
+  _unit addPrimaryWeaponItem _x;
 } foreach _primaryweaponitems;
 
 
 // secondaryWeapon
 {
-    _unit addMagazine _x;
+  _unit addMagazine _x;
 } foreach _secondaryweaponmagazine;
 
 if (_secondaryweapon != "") then {
-    _unit addweapon _secondaryweapon;
+  _unit addweapon _secondaryweapon;
 };
 
 {
-    _unit addSecondaryWeaponItem _x;
+  _unit addSecondaryWeaponItem _x;
 } foreach _secondaryweaponitems;
 
 
 // handgun
 {
-    _unit addMagazine _x;
+  _unit addMagazine _x;
 } foreach _handgunweaponmagazine;
 
 if (_handgunweapon != "") then {
-    _unit addweapon _handgunweapon;
+  _unit addweapon _handgunweapon;
 };
 
 {
-    _unit addHandgunItem _x;
+  _unit addHandgunItem _x;
 } foreach _handgunweaponitems;
 
 
+_assignedItems = _assignedItems  - [_binocular];
+
 // items
 {_unit linkItem _x} forEach _assignedItems;
-{_unit addWeapon _x} forEach _assignedItems;
+
+_unit addWeapon _binocular;
 
 if ("Laserdesignator" in assignedItems _unit) then {
   _unit selectWeapon "Laserdesignator";

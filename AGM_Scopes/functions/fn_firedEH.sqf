@@ -23,6 +23,8 @@ _weapons = [
   secondaryWeapon player,
   handgunWeapon player
 ];
+if !((currentWeapon player) in _weapons) exitWith {};
+
 _zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
 
 // convert zeroing from mils to degrees

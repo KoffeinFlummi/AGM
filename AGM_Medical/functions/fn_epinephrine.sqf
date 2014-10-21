@@ -41,7 +41,7 @@ _this spawn {
     [_unit] call AGM_Medical_fnc_wakeUp;
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+      [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
     };
   };
 

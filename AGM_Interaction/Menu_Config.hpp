@@ -470,7 +470,7 @@ class RscAGM_SelectAnItem {
       h = 0.1;
       y = 0.605;
       style = 2;
-      text = $STR_AGM_Interaction_CancelSelection;
+      text = $STR_AGM_Interaction_Back; //$STR_AGM_Interaction_CancelSelection;
       action = "call AGM_Interaction_fnc_hideMenu;";   //'Default' call AGM_Interaction_fnc_openMenu;    'Default' call AGM_Interaction_fnc_openMenuSelf;
       colorBackground[] = {0,0,0,0};
       colorBackgroundDisabled[] = {0,0,0,0};

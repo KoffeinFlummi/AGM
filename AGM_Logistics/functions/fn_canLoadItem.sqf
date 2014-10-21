@@ -22,7 +22,10 @@
 
 _nearestVehicles = [
 	getPos player nearestObject "Car",
-	getPos player nearestObject "Tank"
+	getPos player nearestObject "Tank",
+	getPos player nearestObject "Helicopter",
+	getPos player nearestObject "Plane",
+	getPos player nearestObject "Ship"
 ];
 
 _distances = [];

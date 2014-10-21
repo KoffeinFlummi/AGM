@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-16 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
@@ -129,6 +129,8 @@
       <German>Drehung: %1°</German>
       <French>Direction: %1°</French>
       <Czech>Směr: %1°</Czech>
+      <Polish>Kierunek: %1°</Polish>
+      <Spanish>Dirección: %1°</Spanish>
     </Key>
   </Package>
 </Project>

@@ -35,7 +35,10 @@ class CfgFunctions {
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
+      class sendMarkersJIP;
       class setMarker;
+      class setMarkerJIP;
+      class setMarkerNetwork;
       class updateMapToolMarkers;
       class updateLineMarker;
     };
