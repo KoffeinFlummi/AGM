@@ -27,7 +27,8 @@ if (_picture == "" || _picture == "PictureThing") then {
 };
 
 if ((profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
-	_container pushBack [_displayName, nil, {true},0,[], _picture, {true}, [], 4, "", _data];
+	//[_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey]
+	_container pushBack [_displayName, nil, {true},0,[], _picture, "", {true}, [], 4, "", _data];
 }else{
 	_index = lbAdd [_container, _displayName];
 	lbSetData [_container, _index, str _data];
