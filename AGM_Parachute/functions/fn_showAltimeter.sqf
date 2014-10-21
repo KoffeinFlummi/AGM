@@ -40,7 +40,7 @@ AGM_Parachute_AltimeterFnc = [uiNamespace getVariable ["AGM_Altimeter", displayN
 		_HeightText ctrlSetText (format ["%1", _height]);
 		_DecendRate ctrlSetText (format ["%1",_descentRate]);
 		sleep 0.2;
-		_height = floor ((getPosASL _unit) select 2);
+		_height = (getPosASL _unit) select 2;
 		_curTime = time;
 		_descentRate = floor ((_oldHeight - _height) / (_curTime - _prevTime));
 		_oldHeight = _height;
