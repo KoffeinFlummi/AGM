@@ -187,6 +187,8 @@ class Binarizer:
     if self.paths["privatekey"] != "":
       bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
         ".build")
+      bisignlocation = os.path.join(bisignlocation,
+        module_name+".pbo."+PROJECTNAME+".bisign")
       try:
         shutil.move(
           bisignlocation,
