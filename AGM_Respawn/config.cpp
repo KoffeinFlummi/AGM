@@ -31,9 +31,24 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Respawn {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Respawn\clientInit.sqf'";
+// class Extended_PostInit_EventHandlers {
+  // class AGM_Respawn {
+    // clientInit = "call compile preprocessFileLineNumbers '\AGM_Respawn\clientInit.sqf'";
+  // };
+// };
+
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn_Gear {
+      killed = "[_this] call compile preprocessFileLineNumbers '\AGM_Respawn\killed.sqf'";
+    };
+  };
+};
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn_Gear {
+      respawn = "[_this] call compile preprocessFileLineNumbers '\AGM_Respawn\respawn.sqf'";
+    };
   };
 };
 
