@@ -40,14 +40,14 @@ class CfgFunctions {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Respawn_Gear {
-      killed = "[_this] call compile preprocessFileLineNumbers '\AGM_Respawn\killed.sqf'";
+      killed = "if (_this select 0 == player) then {[_this select 0] call compile preprocessFileLineNumbers '\AGM_Respawn\killed.sqf'};";
     };
   };
 };
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Respawn_Gear {
-      respawn = "[_this] call compile preprocessFileLineNumbers '\AGM_Respawn\respawn.sqf'";
+      respawn = "if (_this select 0 == player) then {[_this select 0] call compile preprocessFileLineNumbers '\AGM_Respawn\respawn.sqf'};";
     };
   };
 };
