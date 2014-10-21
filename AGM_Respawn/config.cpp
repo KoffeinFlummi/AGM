@@ -99,18 +99,6 @@ class CfgVehicles {
     };
   };
 
-  class AGM_ModuleRallypoint: Module_F {
-    author = "AGM Team";
-    category = "AGM";
-    displayName = "Rallypoint System";
-    function = "AGM_Respawn_fnc_moduleRallypoint";
-    scope = 2;
-    isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";  //@todo
-    class Arguments {
-    };
-  };
-
   // rallypoints
   class FlagCarrier;
   class Flag_NATO_F: FlagCarrier {
