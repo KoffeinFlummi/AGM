@@ -95,8 +95,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -108,8 +108,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -121,8 +121,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
