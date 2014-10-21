@@ -36,10 +36,13 @@ if (_unit == player) then {
   call AGM_Interaction_fnc_hideMenu;
 
   [true, true] call AGM_Core_fnc_disableUserInput;
+
+  if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
+    call AGM_Explosives_fnc_Place_Cancel;
+  };
 };
 
 if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
-  call AGM_Explosives_fnc_Place_Cancel;
   _deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
   {
     [(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
