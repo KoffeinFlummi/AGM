@@ -18,7 +18,7 @@ _unit = _this select 0;
 _allGear = _this select 1;
 
 // remove all starting gear of a player
-removeallweapons _unit;
+removeAllWeapons _unit;
 removeGoggles _unit;
 removeHeadgear _unit;
 removeVest _unit;
@@ -64,68 +64,75 @@ if (_goggles != "") then {
 
 {
   _unit addItemToUniform _x;
-}foreach _uniformitems;
+}forEach _uniformitems;
 
 {
   _unit addItemToVest _x;
-}foreach _vestitems;
+}forEach _vestitems;
 
 
 if(format["%1", _backpack] != "") then {
-  _unit addbackpack _backpack;
+  _unit addBackpack _backpack;
+
   _backpa = unitBackpack _unit;
   clearMagazineCargoGlobal _backpa;
   clearWeaponCargoGlobal _backpa;
   clearItemCargoGlobal _backpa;
   {
     _unit addItemToBackpack _x;
-  } foreach _backpackitems;
+  } forEach _backpackitems;
 };
 
 
 // primaryWeapon
-{
-  _unit addMagazine _x;
-} foreach _primaryweaponmagazine;
-
 if (_primaryweapon != "") then {
-  _unit addweapon _primaryweapon;
-};
+  {
+    _unit addMagazine _x;
+  } forEach _primaryweaponmagazine;
 
-{
-  _unit addPrimaryWeaponItem _x;
-} foreach _primaryweaponitems;
+  _unit addWeapon _primaryweapon;
+
+  {
+    if (_x != "") then {
+      _unit addPrimaryWeaponItem _x;
+    };
+  } forEach _primaryweaponitems;
+};
 
 
 // secondaryWeapon
-{
-  _unit addMagazine _x;
-} foreach _secondaryweaponmagazine;
-
 if (_secondaryweapon != "") then {
-  _unit addweapon _secondaryweapon;
-};
+  {
+    _unit addMagazine _x;
+  } forEach _secondaryweaponmagazine;
 
-{
-  _unit addSecondaryWeaponItem _x;
-} foreach _secondaryweaponitems;
+  _unit addWeapon _secondaryweapon;
+
+  {
+    if (_x != "") then {
+      _unit addSecondaryWeaponItem _x;
+    };
+  } forEach _secondaryweaponitems;
+};
 
 
 // handgun
-{
-  _unit addMagazine _x;
-} foreach _handgunweaponmagazine;
-
 if (_handgunweapon != "") then {
-  _unit addweapon _handgunweapon;
+  {
+    _unit addMagazine _x;
+  } forEach _handgunweaponmagazine;
+
+  _unit addWeapon _handgunweapon;
+
+  {
+    if (_x != "") then {
+      _unit addHandgunItem _x;
+    };
+  } forEach _handgunweaponitems;
 };
 
-{
-  _unit addHandgunItem _x;
-} foreach _handgunweaponitems;
 
-
-_assignedItems = _assignedItems  - [_binocular];
+_assignedItems = _assignedItems - [_binocular];
 
 // items
 {_unit linkItem _x} forEach _assignedItems;

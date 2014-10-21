@@ -268,6 +268,9 @@ class CfgFunctions {
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class getDisplayConfigName;
+      class logControls;
+      class logDisplays;
       class showUser;
     };
   };
@@ -466,3 +469,5 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
   onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
 };
 */
+
+#include <PickupFix.hpp>

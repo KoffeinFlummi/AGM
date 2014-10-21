@@ -50,3 +50,15 @@ class CfgWeapons {
 		picture = "\AGM_Parachute\UI\watch_altimeter.paa";
 	};
 };
+
+class CfgVehicles {
+	class Box_NATO_Support_F;
+	class AGM_Box_Misc: Box_NATO_Support_F {
+		class TransportItems {
+			class _xx_AGM_Altimeter {
+				name = "AGM_Altimeter";
+				count = 6;
+			};
+		};
+	};
+};

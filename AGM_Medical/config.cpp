@@ -257,7 +257,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_drag;";
         priority = 2.1;
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "R";
       };
       class AGM_Medical_Carry {
@@ -266,7 +266,7 @@ class CfgVehicles {
         condition = "vehicle player == player and vehicle cursorTarget == cursorTarget and alive cursorTarget and cursorTarget != player and cursorTarget getVariable 'AGM_Treatable' and cursorTarget getVariable 'AGM_Unconscious' and isNull (player getVariable 'AGM_Dragging') and isNull (player getVariable 'AGM_Carrying')";
         statement = "[cursorTarget] call AGM_Medical_fnc_carry;";
         priority = 2.0;
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "C";
       };
     };
@@ -363,14 +363,14 @@ class CfgVehicles {
         condition = "vehicle player == player and ((player getVariable 'AGM_Dragging') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Dragging')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "R";
       };
       class AGM_Release_Carry: AGM_Release_Drag {
         condition = "vehicle player == player and ((player getVariable 'AGM_Carrying') isKindOf 'Man')";
         statement = "[(player getVariable 'AGM_Carrying')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
-        icon = "AGM_Medical\UI\medical_ca.paa";
+        icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "R";
       };
     };

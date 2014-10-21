@@ -20,6 +20,7 @@ class CfgFunctions {
       class canAdjustScope;
       class firedEH;
       class getOptics;
+      class hideZeroing;
       class init;
     };
   };
@@ -195,5 +196,12 @@ class RscTitles {
         h = 0.025 * safezoneH;
       };
     };
+  };
+};
+
+class RscInGameUI {
+  class RscUnitInfo;
+  class RscWeaponZeroing: RscUnitInfo {
+    onLoad = "[""onLoad"",_this,""RscUnitInfo"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; uiNamespace setVariable ['AGM_dlgWeaponZeroing', _this select 0];";
   };
 };
