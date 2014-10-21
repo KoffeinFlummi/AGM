@@ -58,7 +58,7 @@ class CfgVehicles {
     function = "AGM_Respawn_fnc_module";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";
+    icon = "\AGM_Respawn\UI\Icon_Module_Respawn_ca.paa";
     class Arguments {
       class SavePreDeathGear {
         displayName = "Save Gear?";
@@ -94,7 +94,7 @@ class CfgVehicles {
     function = "AGM_Respawn_fnc_moduleFriendlyFire";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";  //@todo
+    icon = "\AGM_Respawn\UI\Icon_Module_FriendlyFire_ca.paa";
     class Arguments {
     };
   };
@@ -106,7 +106,7 @@ class CfgVehicles {
     function = "AGM_Respawn_fnc_moduleRallypoint";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";  //@todo
+    icon = "\AGM_Respawn\UI\Icon_Module_Rallypoint_ca.paa";
     class Arguments {
     };
   };
