@@ -38,7 +38,7 @@ AGM_Parachute_AltimeterFnc = [uiNamespace getVariable ["AGM_Altimeter", displayN
 	while {true} do {
 		_TimeText ctrlSetText (format ["%1:%2",[_hour, 2] call AGM_Core_fnc_numberToDigitsString,[_minute, 2] call AGM_Core_fnc_numberToDigitsString]);
 		_HeightText ctrlSetText (format ["%1", floor(_height)]);
-		_DecendRate ctrlSetText (format ["%1", max(_descentRate, 0)]);
+		_DecendRate ctrlSetText (format ["%1", _descentRate max 0]);
 		sleep 0.2;
 		_height = (getPosASL _unit) select 2;
 		_curTime = time;
