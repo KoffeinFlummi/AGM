@@ -60,7 +60,7 @@ if (typeOf _projectile == "AGM_G_M84") then {
     sleep getNumber (configFile >> "CfgAmmo" >> typeOf _projectile >> "fuseDistance");
 
     if (alive _projectile) then {
-      playSound3D ["A3\Sounds_F\weapons\Explosion\explosion_mine_1.wss", _projectile, false, getPos _projectile, 5, 1.2, 400];
+      playSound3D ["A3\Sounds_F\weapons\Explosion\explosion_mine_1.wss", _projectile, false, getPosASL _projectile, 5, 1.2, 400];
 
       _affected = _projectile nearEntities ["CAManBase", 50];
       {
