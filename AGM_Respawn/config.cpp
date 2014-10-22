@@ -36,14 +36,14 @@ class CfgFunctions {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Respawn {
-      killed = "if (_this select 0 == player) then {_this call AGM_Respawn_fnc_handleKilled};";
+      killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
     };
   };
 };
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Respawn {
-      respawn = "if (_this select 0 == player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
     };
   };
 };
