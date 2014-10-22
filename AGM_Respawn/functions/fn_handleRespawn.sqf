@@ -8,18 +8,16 @@
     Handles the XEH Respawn event
   
   Parameters:
-    0: ARRAY<XehRespawnEventArgs>
-      0: OBJECT - Respawned Unit
-      1: ?
+    0: OBJECT - Respawned Unit
+    1: ?
   
   Returns:
     VOID
 */
 
-private ["_xehRespawnEventArgs", "_respawnedUnit"];
+private ["_respawnedUnit"];
 
-_xehRespawnEventArgs = _this select 0;
-_respawnedUnit = _xehRespawnEventArgs select 0;
+_respawnedUnit = _this select 0;
 
 // Restores the gear when the player respawns
 if (AGM_Respawn_SavePreDeathGear > 0) then {
