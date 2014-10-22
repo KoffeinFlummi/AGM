@@ -5,7 +5,7 @@ private ["_ctrl", "_data", "_config", "_color"];
 _ctrl = _this select 0;
 _data = _ctrl lbValue (_this select 1);
 
-uiNamespace setVariable ["AGM_Map_curSelMarkerColor", _this select 1];
+uiNamespace setVariable ["AGM_Markers_curSelMarkerColor", _this select 1];
 
 _config = (configfile >> "CfgMarkerColors") select _data;
 
@@ -19,4 +19,4 @@ _color = getArray (_config >> "color");
 
 ((ctrlParent _ctrl) displayCtrl 102) ctrlSetTextColor _color;
 
-uiNamespace setVariable ["AGM_Map_currentMarkerColor", _data];
+uiNamespace setVariable ["AGM_Markers_currentMarkerColor", _data];
