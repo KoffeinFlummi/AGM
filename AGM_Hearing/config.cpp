@@ -54,7 +54,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_PutInEarplugs {
         displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false])";
+        condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false]) && {'AGM_EarBuds' in items _player}";
         statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
         showDisabled = 0;
         priority = 2.5;
