@@ -1,10 +1,4 @@
-// by CAA-Picard, commy2
-
-// request marker data for JIP
-if (isMultiplayer && {!isServer}) then {
-  _logic = createGroup west createUnit ["Logic", [0,0,0], [], 0, "NONE"];
-  [_logic, "AGM_Map_fnc_sendMarkersJIP", 1] call AGM_Core_fnc_execRemoteFnc;
-};
+// by CAA-Picard
 
 if (!hasInterface) exitWith{};
 
@@ -150,6 +144,3 @@ if (!hasInterface) exitWith{};
     call AGM_Map_fnc_cancelDrawing;
   };
 };
-
-// handle newly set markers
-//[_this call AGM_Map_fnc_setMarker] call AGM_Core_fnc_addMapMarkerCreatedEventhandler;

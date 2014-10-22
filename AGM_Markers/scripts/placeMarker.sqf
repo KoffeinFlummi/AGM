@@ -29,23 +29,23 @@ if (_this select 1 == 1) then {
 		/*[
 			allMapMarkers select (count allMapMarkers - 1),
 			[
-				uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0],
-				uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0],
+				uiNamespace getVariable ['AGM_Markers_currentMarkerShape', 0],
+				uiNamespace getVariable ['AGM_Markers_currentMarkerColor', 0],
 				_this,
-				uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]
+				uiNamespace getVariable ['AGM_Markers_currentMarkerAngle', 0]
 			]
-		] call AGM_Map_fnc_setMarker;*/
+		] call AGM_Markers_fnc_setMarker;*/
 
 		[
 			[
 				allMapMarkers select (count allMapMarkers - 1),
 				[
-					uiNamespace getVariable ['AGM_Map_currentMarkerShape', 0],
-					uiNamespace getVariable ['AGM_Map_currentMarkerColor', 0],
+					uiNamespace getVariable ['AGM_Markers_currentMarkerShape', 0],
+					uiNamespace getVariable ['AGM_Markers_currentMarkerColor', 0],
 					_this,
-					uiNamespace getVariable ['AGM_Map_currentMarkerAngle', 0]
+					uiNamespace getVariable ['AGM_Markers_currentMarkerAngle', 0]
 				]
-			], "AGM_Map_fnc_setMarkerNetwork", 2
+			], "AGM_Markers_fnc_setMarkerNetwork", 2
 		] call AGM_Core_fnc_execRemoteFnc;
 	};
 };

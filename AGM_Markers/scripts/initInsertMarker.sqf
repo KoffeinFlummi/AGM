@@ -101,8 +101,8 @@ with uinamespace do {
 		_config = configfile >> "CfgMarkers";
 		_index = 0;
 
-		if (isNil "AGM_Map_MarkersCache") then {
-			AGM_Map_MarkersCache = [];
+		if (isNil "AGM_Markers_MarkersCache") then {
+			AGM_Markers_MarkersCache = [];
 
 			for "_a" from 0 to (count _config - 1) do {
 				_marker = _config select _a;
@@ -116,7 +116,7 @@ with uinamespace do {
 					_shape lbSetValue [_index, _a];
 					_shape lbSetPicture [_index, _icon];
 
-					AGM_Map_MarkersCache pushBack [_name, _a, _icon];
+					AGM_Markers_MarkersCache pushBack [_name, _a, _icon];
 
 					_index = _index + 1;
 				};
@@ -126,12 +126,12 @@ with uinamespace do {
 				_shape lbAdd (_x select 0);
 				_shape lbSetValue [_forEachIndex, _x select 1];
 				_shape lbSetPicture [_forEachIndex, _x select 2];
-			} forEach AGM_Map_MarkersCache;
+			} forEach AGM_Markers_MarkersCache;
 		};
 
-		_shape ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedShape}];
+		_shape ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Markers_fnc_onLBSelChangedShape}];
 
-		_curSelShape = uiNamespace getVariable ["AGM_Map_curSelMarkerShape", 0];
+		_curSelShape = uiNamespace getVariable ["AGM_Markers_curSelMarkerShape", 0];
 		_shape lbSetCurSel _curSelShape;
 		_data = _shape lbValue _curSelShape;
 		_config = (configfile >> "CfgMarkers") select _data;
@@ -143,8 +143,8 @@ with uinamespace do {
 		_config = configfile >> "CfgMarkerColors";
 		_index = 0;
 
-		if (isNil "AGM_Map_MarkerColorsCache") then {
-			AGM_Map_MarkerColorsCache = [];
+		if (isNil "AGM_Markers_MarkerColorsCache") then {
+			AGM_Markers_MarkerColorsCache = [];
 
 			for "_a" from 0 to (count _config - 1) do {
 				_marker = _config select _a;
@@ -168,7 +168,7 @@ with uinamespace do {
 
 					_color lbSetPicture [_index, _icon];
 
-					AGM_Map_MarkerColorsCache pushBack [_name, _a, _icon];
+					AGM_Markers_MarkerColorsCache pushBack [_name, _a, _icon];
 
 					_index = _index + 1;
 				};
@@ -178,12 +178,12 @@ with uinamespace do {
 				_color lbAdd (_x select 0);
 				_color lbSetValue [_forEachIndex, _x select 1];
 				_color lbSetPicture [_forEachIndex, _x select 2];
-			} forEach AGM_Map_MarkerColorsCache;
+			} forEach AGM_Markers_MarkerColorsCache;
 		};
 
-		_color ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Map_fnc_onLBSelChangedColor}];
+		_color ctrlAddEventHandler ["LBSelChanged", {_this call AGM_Markers_fnc_onLBSelChangedColor}];
 
-		_curSelColor = uiNamespace getVariable ["AGM_Map_curSelMarkerColor", 0];
+		_curSelColor = uiNamespace getVariable ["AGM_Markers_curSelMarkerColor", 0];
 		_color lbSetCurSel _curSelColor;
 		_data = _color lbValue _curSelColor;
 		_config = (configfile >> "CfgMarkerColors") select _data;
@@ -198,9 +198,9 @@ with uinamespace do {
 
 		// init marker angle slider
 		_angle sliderSetRange [-180, 180];
-		_angle ctrlAddEventHandler ["SliderPosChanged", {_this call AGM_Map_fnc_onSliderPosChangedAngle}];
+		_angle ctrlAddEventHandler ["SliderPosChanged", {_this call AGM_Markers_fnc_onSliderPosChangedAngle}];
 
-		_curSelAngle = uiNamespace getVariable ["AGM_Map_curSelMarkerAngle", 0];
+		_curSelAngle = uiNamespace getVariable ["AGM_Markers_curSelMarkerAngle", 0];
 		_angle sliderSetPosition _curSelAngle;
 
 		_curSelAngle = round _curSelAngle;
@@ -208,6 +208,6 @@ with uinamespace do {
 			_curSelAngle = _curSelAngle + 360;
 		};
 
-		_angleText ctrlSetText format [localize "STR_AGM_Map_MarkerDirection", _curSelAngle];
+		_angleText ctrlSetText format [localize "STR_AGM_Markers_MarkerDirection", _curSelAngle];
 	};
 };

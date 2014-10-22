@@ -30,6 +30,7 @@ class CfgFunctions {
       class drawNameTagIcon;
       class escortCaptive;
       class GetActions;
+      class getActions2;
       class getCaptivityStatus;
       class getDoor;
       class getDown;

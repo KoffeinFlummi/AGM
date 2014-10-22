@@ -18,6 +18,8 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
       class getAllGear;
+      class handleKilled;
+      class handleRespawn;
       class initRallypoint;
       class module;
       class moduleFriendlyFire;
@@ -31,9 +33,18 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Respawn {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Respawn\clientInit.sqf'";
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
+    };
+  };
+};
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+    };
   };
 };
 
