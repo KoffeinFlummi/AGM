@@ -118,6 +118,7 @@
       <Czech>Nastoupit jako Kopilot</Czech>
       <Polish>Wejdź jako co-pilot</Polish>
       <Spanish>Entrar como copiloto</Spanish>
+      <Hungarian>Beszállás másodpilótaként</Hungarian>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
@@ -224,6 +225,7 @@
       <Czech>Přesednout na Kopilota</Czech>
       <Polish>Przejdź na miejsce co-pilota</Polish>
       <Spanish>Mover a copiloto</Spanish>
+      <Hungarian>Átülés másodpilótának</Hungarian>
     </Key>
   </Package>
 </Project>
