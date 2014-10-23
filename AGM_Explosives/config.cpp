@@ -221,7 +221,7 @@ class CfgVehicles {
     respawnitems[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};
 
   class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
-  class B_engineer_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
+  class B_Soldier_03_f; class B_engineer_F:B_Soldier_03_f {MACRO_ADDMINEKIT};
   class B_Soldier_diver_base_F; class B_diver_exp_F:B_Soldier_diver_base_F {MACRO_ADDMINEKIT};
   class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {MACRO_ADDMINEKIT};
   class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
@@ -231,8 +231,8 @@ class CfgVehicles {
   class O_G_engineer_F:I_G_engineer_F {MACRO_ADDMINEKIT};
   class B_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
   class O_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ADDMINEKIT};
-  class I_Soldier_base_F; class I_Soldier_exp_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
-  class I_engineer_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
+  class I_Soldier_02_F; class I_Soldier_exp_F:I_Soldier_02_F {MACRO_ADDMINEKIT};
+  class I_Soldier_base_F; class I_engineer_F:I_Soldier_base_F {MACRO_ADDMINEKIT};
   class I_Soldier_diver_base_F; class I_diver_exp_F:I_Soldier_diver_base_F {MACRO_ADDMINEKIT};
   class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {MACRO_ADDMINEKIT};
   class O_engineer_F:O_Soldier_base_F {MACRO_ADDMINEKIT};

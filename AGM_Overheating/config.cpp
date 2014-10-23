@@ -174,9 +174,9 @@ class CfgVehicles {
     respawnitems[] = {"FirstAidKit","AGM_SpareBarrel"};
 
   // NATO
-  class B_Soldier_base_F; class B_soldier_AR_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_Soldier_02_f; class B_soldier_AR_F:B_Soldier_02_f {MACRO_ADDSPAREBARREL};
   class B_Soldier_support_base_F; class B_soldier_AAR_F:B_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
-  class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_Soldier_base_F; class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
 
   // Guerrilla
   class I_G_Soldier_base_F; class I_G_Soldier_AR_F:I_G_Soldier_base_F {MACRO_ADDSPAREBARREL};
@@ -190,7 +190,7 @@ class CfgVehicles {
   class O_soldierU_AAR_F:O_Soldier_Urban_base {MACRO_ADDSPAREBARREL};
 
   // Czech
-  class I_Soldier_base_F; class I_Soldier_AR_F:I_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class I_Soldier_02_F; class I_Soldier_AR_F:I_Soldier_02_F {MACRO_ADDSPAREBARREL};
   class I_Soldier_support_base_F; class I_Soldier_AAR_F:I_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
 };
 
