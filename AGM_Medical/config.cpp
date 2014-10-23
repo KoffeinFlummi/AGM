@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {"AGM_Bandage", "AGM_Morphine", "AGM_Epipen", "AGM_Bloodbag"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -199,7 +199,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'All'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage > 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
@@ -207,7 +207,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitHead'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\head.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
@@ -215,7 +215,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitBody'] call AGM_Medical_fnc_bandage;";
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
@@ -223,7 +223,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.4;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\arm_left.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
@@ -231,7 +231,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.3;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\arm_right.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
@@ -239,7 +239,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.2;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\leg_left.paa";
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
@@ -247,7 +247,7 @@ class CfgVehicles {
           statement = "[AGM_Interaction_Target, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.15;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\leg_right.paa";
         };
       };
 
@@ -305,7 +305,7 @@ class CfgVehicles {
           statement = "[player, 'All'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage > 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
@@ -313,7 +313,7 @@ class CfgVehicles {
           statement = "[player, 'HitHead'] call AGM_Medical_fnc_bandage;";
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\head.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
@@ -321,7 +321,7 @@ class CfgVehicles {
           statement = "[player, 'HitBody'] call AGM_Medical_fnc_bandage;";
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
@@ -329,7 +329,7 @@ class CfgVehicles {
           statement = "[player, 'HitLeftArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.4;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\arm_left.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
@@ -337,7 +337,7 @@ class CfgVehicles {
           statement = "[player, 'HitRightArm'] call AGM_Medical_fnc_bandage;";
           priority = 0.3;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\arm_right.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
@@ -345,7 +345,7 @@ class CfgVehicles {
           statement = "[player, 'HitLeftLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.2;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\leg_left.paa";
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
@@ -353,7 +353,7 @@ class CfgVehicles {
           statement = "[player, 'HitRightLeg'] call AGM_Medical_fnc_bandage;";
           priority = 0.15;
           conditionShow = "AGM_Medical_SingleBandage == 0";
-          icon = "AGM_Medical\UI\agm_bandage_ca.paa";
+          icon = "AGM_Medical\UI\parts\leg_right.paa";
         };
       };
 

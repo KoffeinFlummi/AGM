@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -37,7 +37,12 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class LandVehicle;
+
+  class AllVehicles;
+  class LandVehicle : AllVehicles {
+    class AGM_Actions;
+    class AGM_SelfActions;
+  };
   /*class StaticWeapon: LandVehicle {
     class AGM_Actions {
       class AGM_GetIn {
@@ -66,7 +71,7 @@ class CfgVehicles {
   };*/
 
   class Car: LandVehicle {
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       class AGM_GetInDriver {
         displayName = "$STR_AGM_GetInVehicleAsDriver";
         distance = 4;
@@ -113,7 +118,7 @@ class CfgVehicles {
         icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
       };
     };
-    class AGM_SelfActions {
+    class AGM_SelfActions : AGM_SelfActions {
       class AGM_MoveToDriver {
         displayName = "$STR_AGM_MoveToDriver";
         condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInDriver";
@@ -163,7 +168,7 @@ class CfgVehicles {
   };
 
   class Tank: LandVehicle {
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       class AGM_GetInDriver {
         displayName = "$STR_AGM_GetInVehicleAsDriver";
         distance = 4;
@@ -210,7 +215,7 @@ class CfgVehicles {
         icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
       };
     };
-    class AGM_SelfActions {
+    class AGM_SelfActions : AGM_SelfActions {
       class AGM_MoveToDriver {
         displayName = "$STR_AGM_MoveToDriver";
         condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInDriver";
@@ -259,8 +264,7 @@ class CfgVehicles {
     };
   };
   
-  class Ship;
-  class Ship_F: Ship {
+  class Ship : AllVehicles {
     class AGM_Actions {
       class AGM_GetInDriver {
         displayName = "$STR_AGM_GetInVehicleAsDriver";
@@ -339,9 +343,12 @@ class CfgVehicles {
     };
   };
   
-  class Air;
+  class Air : AllVehicles {
+    class AGM_Actions;
+    class AGM_SelfActions;
+  };
   class Plane: Air {
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       class AGM_GetInPilot {
         displayName = "$STR_AGM_GetInVehicleAsPilot";
         distance = 4;
@@ -370,7 +377,7 @@ class CfgVehicles {
         icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
       };
     };
-    class AGM_SelfActions {
+    class AGM_SelfActions : AGM_SelfActions {
       class AGM_MoveToPilot {
         displayName = "$STR_AGM_MoveToPilot";
         condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInPilot";
@@ -401,10 +408,8 @@ class CfgVehicles {
     };
   };
   
-  
-  class Helicopter;
-  class Helicopter_Base_F: Helicopter {
-    class AGM_Actions {
+  class Helicopter : Air {
+    class AGM_Actions : AGM_Actions {
       class AGM_GetInPilot {
         displayName = "$STR_AGM_GetInVehicleAsPilot";
         distance = 4;
@@ -442,7 +447,7 @@ class CfgVehicles {
         icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
       };
     };
-    class AGM_SelfActions {
+    class AGM_SelfActions : AGM_SelfActions {
       class AGM_MoveToPilot {
         displayName = "$STR_AGM_MoveToPilot";
         condition = "[_player, vehicle _player] call AGM_GetIn_fnc_canGetInPilot";

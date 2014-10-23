@@ -20,6 +20,8 @@ _adjustDir = _this select 1;
 _adjustUp = _this select 2;
 _adjustSpeed = _this select 3;
 
+if (!isNil "AGM_Debug" && {AGM_Debug == "CPD"}) then {diag_log text _fnc_scriptNameParent};
+
 if (isNil "_adjustSpeed") then {
 	_adjustSpeed = 0;
 };

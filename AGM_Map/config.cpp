@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -29,16 +29,9 @@ class CfgFunctions {
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
-      class onLBSelChangedColor;
-      class onLBSelChangedShape;
-      class onSliderPosChangedAngle;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
-      class sendMarkersJIP;
-      class setMarker;
-      class setMarkerJIP;
-      class setMarkerNetwork;
       class updateMapToolMarkers;
       class updateLineMarker;
     };
@@ -238,15 +231,12 @@ class RscControlsGroup;
 class RscActiveText;
 class RscPicture;
 class RscText;
-class RscStructuredText;
 class RscObject;
 class RscButton;
 class RscButtonMenuOK;
 class RscButtonMenuCancel;
 class RscButtonMenu;
 class RscEdit;
-class RscCombo;
-class RscSlider;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -426,4 +416,3 @@ class AGM_Parameters {
 };
 
 #include "MapGpsUI.hpp"
-#include <InsertMarker.hpp>

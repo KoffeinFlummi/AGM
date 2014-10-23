@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -502,16 +502,19 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
   };
 
-  class AllVehicles;
+  class AllVehicles {
+    class AGM_Actions;
+  };
   class Air: AllVehicles {
     AGM_Paradrop = 0;
+    class AGM_Actions: AGM_Actions {};
   };
 
   // Repair helicopters
   class Helicopter: Air {
     AGM_fuelCapacity = 240;  // in liter.
     AGM_Vehicle_Cargo = 8;
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       MACRO_RELOAD_MAGS
@@ -605,7 +608,7 @@ class CfgVehicles {
   class Plane: Air {
     AGM_fuelCapacity = 600;  // in liter.
     AGM_Vehicle_Cargo = 4;
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       MACRO_RELOAD_MAGS
@@ -673,7 +676,7 @@ class CfgVehicles {
     AGM_fuelCapacity = 40;  // in liter.
     AGM_Vehicle_Cargo = 4;
 
-    class AGM_Actions {
+    class AGM_Actions : AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       class AGM_Repair {
