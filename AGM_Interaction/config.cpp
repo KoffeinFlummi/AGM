@@ -735,6 +735,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {};
   };
+
   class Air;
   class Helicopter: Air {
     class AGM_Actions {
@@ -756,6 +757,10 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
+  };
+  class Plane: Air {
+    class AGM_Actions {};
     class AGM_SelfActions {};
   };
 
