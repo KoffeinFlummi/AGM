@@ -9,6 +9,7 @@
       <Czech>Použitý odpalovač</Czech>
       <Polish>Zużyta tuba</Polish>
       <Spanish>Lanzador utilizado</Spanish>
+      <Hungarian>Használt cső</Hungarian>
     </Key>
     <Key ID="STR_AGM_Disposable_UsedTubeDescription">
       <English>Used disposable rocket launcher</English>
@@ -17,6 +18,7 @@
       <Czech>Použitý raketomet</Czech>
       <Polish>Zużyta tuba granatnika jednorazowego użytku</Polish>
       <Spanish>Lanzador descartable utilizado</Spanish>
+      <Hungarian>Használt rakétavető</Hungarian>
     </Key>
   </Package>
 </Project>

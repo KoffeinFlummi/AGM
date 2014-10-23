@@ -80,7 +80,7 @@ def replace_entries(oldpath, newpath, language, breakdown):
 
   # Make a nice string
   xmlstring = oldfile.toxml()
-  xmlstring = xmlstring.replace('" ?>', '" encoding="utf-8" ?>')
+  xmlstring = xmlstring.replace('" ?>', '" encoding="utf-8"?>')
 
   # Replace the newlines that minidom swallows
   xmlstring = xmlstring.replace("><", ">\n<")

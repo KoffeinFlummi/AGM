@@ -89,6 +89,7 @@
       <French>Afficher noms</French>
       <Czech>Zobrazit jména</Czech>
       <Polish>Pokaż nazwy</Polish>
+      <Hungarian>Nevek mutatása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -406,6 +407,7 @@
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
       <Czech>Zobrazit jména hráčů jen na klávesu (vyžaduje jména hráčů)</Czech>
       <Polish>Pokaż nazwę gracza tylko po przytrzymaniu klawisza</Polish>
+      <Hungarian>Játékosnevek mutatása gombnyomásra(névcíme szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
@@ -670,7 +672,7 @@
       <Czech>Stahovací Pásek</Czech>
       <Portuguese>Algema Plástica</Portuguese>
       <Italian>Fascietta</Italian>
-      <Hungarian>Műanyag bilincs</Hungarian>
+      <Hungarian>Gyorskötöző</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
@@ -681,7 +683,7 @@
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
       <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
-      <Hungarian>Műanyag bilincs a foglyok feltartóztatására.</Hungarian>
+      <Hungarian>Gyorskötöző emberek fogjulejtéséhez.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
@@ -751,6 +753,7 @@
       <Spanish>Cachear</Spanish>
       <Czech>Prohledávaná osoba</Czech>
       <Polish>Rewiduj osobę</Polish>
+      <Hungarian>Motozás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LockBackpack">
       <English>Lock Backpack</English>
@@ -759,6 +762,7 @@
       <Spanish>Bloquear mochila</Spanish>
       <Czech>Zamknout batoh</Czech>
       <Polish>Zablokuj plecak</Polish>
+      <Hungarian>Táska zárolása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockBackpack">
       <English>Unlock Backpack</English>
@@ -767,6 +771,7 @@
       <Spanish>Desbloquear mochila</Spanish>
       <Czech>Odemknout batoh</Czech>
       <Polish>Odblokuj plecak</Polish>
+      <Hungarian>Táska nyitása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_InventoryLocked">
       <English>Inventory is locked</English>
@@ -775,6 +780,7 @@
       <Spanish>Inventario bloqueado</Spanish>
       <Czech>Inventář je zamčený</Czech>
       <Polish>Ekwipunek jest zablokowany</Polish>
+      <Hungarian>Felszerelés zárolt</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_BackpackLocked">
       <English>Backpack of %1 is locked</English>
@@ -783,6 +789,7 @@
       <Spanish>La mochila de %1 está bloqueada</Spanish>
       <Czech>%1 má zamčený batoh</Czech>
       <Polish>Plecak %1 jest zablokowany</Polish>
+      <Hungarian>%1 táskája zárolva</Hungarian>
     </Key>
   </Package>
 </Project>
