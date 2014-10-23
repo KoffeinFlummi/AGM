@@ -764,6 +764,12 @@ class CfgVehicles {
     class AGM_SelfActions {};
   };
 
+  class Ship;
+  class Ship_F: Ship {
+    class AGM_Actions {};
+    class AGM_SelfActions {};
+  };
+
   /*
   // BLUFOR Uniforms
   class SoldierWB: CAManBase {};

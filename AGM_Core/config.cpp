@@ -268,6 +268,7 @@ class CfgFunctions {
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class getChilds;
       class getDisplayConfigName;
       class logControls;
       class logDisplays;
