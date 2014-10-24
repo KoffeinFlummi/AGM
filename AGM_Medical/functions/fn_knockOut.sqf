@@ -23,7 +23,7 @@ if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWi
 
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
-[_unit, "AGM_Medical_knockedOut"] call AGM_Core_fnc_callCustomEventHandlers;
+[_unit, "AGM_Medical_knockedOut", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
 
 if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
