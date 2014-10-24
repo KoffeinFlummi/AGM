@@ -4,7 +4,7 @@
     <Key ID="STR_AGM_FireControlSystem_LaseTarget">
       <English>Lase Target</English>
       <German>Ziel anlasern</German>
-      <Spanish>Iluminar Objetivo</Spanish>
+      <Spanish>Iluminar objetivo</Spanish>
       <Polish>Naświetl cel</Polish>
       <Czech>Označit cíl</Czech>
       <French>Illuminer la cible</French>
@@ -29,7 +29,7 @@
       <English>Adjust FCS Range (Up)</English>
       <German>Entfernung des FLS erhöhen</German>
       <Polish>Zwiększ zasięg FCS</Polish>
-      <Spanish>Ajustar FCS (arriba)</Spanish>
+      <Spanish>Ajustar distancia del FCS (arriba)</Spanish>
       <Czech>Nastavit FCS Náměr (nahoru)</Czech>
       <French>Augmenter la distance du SCT</French>
       <Hungarian>FCS tartomány állítása (Fel)</Hungarian>
@@ -40,7 +40,7 @@
       <English>Adjust FCS Range (Down)</English>
       <German>Entfernung des FLS verringern</German>
       <Polish>Zmniejsz zasięg FCS</Polish>
-      <Spanish>Ajustar FCS(abajo)</Spanish>
+      <Spanish>Ajustar distancia del FCS (abajo)</Spanish>
       <Czech>Nastavit FCS Náměr (dolů)</Czech>
       <French>Réduire la distance du SCT</French>
       <Hungarian>FCS tartomány állítása (Le)</Hungarian>
