@@ -41,7 +41,7 @@
     <Key ID="STR_AGM_Interaction_LockDoor">
       <English>Lock Door</English>
       <German>Tür sperren</German>
-      <Spanish>Trabar puerta</Spanish>
+      <Spanish>Bloquear puerta</Spanish>
       <French>Verrouiller Porte</French>
       <Italian>Blocca la porta</Italian>
       <Portuguese>Trancar Porta</Portuguese>
@@ -52,7 +52,7 @@
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
       <German>Tür entsperren</German>
-      <Spanish>Destrabar puerta</Spanish>
+      <Spanish>Desbloquear puerta</Spanish>
       <French>Déverrouiller Porte</French>
       <Italian>Sblocca la porta</Italian>
       <Portuguese>Destrancar Porta</Portuguese>
@@ -63,7 +63,7 @@
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
       <German>Tür gesperrt</German>
-      <Spanish>Puerta trabada</Spanish>
+      <Spanish>Puerta bloqueada</Spanish>
       <French>Porte Verrouillée</French>
       <Italian>Porta bloccata</Italian>
       <Portuguese>Porta Trancada</Portuguese>
@@ -74,7 +74,7 @@
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
       <German>Tür entsperrt</German>
-      <Spanish>Puerta destrabada</Spanish>
+      <Spanish>Puerta desbloqueada</Spanish>
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
       <Portuguese>Porta Destrancada</Portuguese>
@@ -346,7 +346,7 @@
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
-      <Spanish>Coger (Mochila Ventral)</Spanish>
+      <Spanish>Coger (Mochila delantera)</Spanish>
       <Polish>Załóż (brzuch)</Polish>
       <Czech>Vzít (ventrální)</Czech>
       <French>Prendre (Ventral)</French>
@@ -392,7 +392,7 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor">
       <English>Show player name only on cursor (requires player names)</English>
       <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
-      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
+      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres de jugadores)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
       <French>Noms uniquement sous le curseur (si noms affichés)</French>
       <Czech>Zobrazit jméno hráče jenom na kurzor (vyžaduje jména hráčů)</Czech>
@@ -403,7 +403,7 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
       <English>Show player name only on keypress (requires player names)</English>
       <German>Spielernamen nur auf Tastendruck anzeigen (benötigt Spielernamen)</German>
-      <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
+      <Spanish>Mostrar nombres solo al pulsar (requiere Mostrar nombres de jugadores)</Spanish>
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
       <Czech>Zobrazit jména hráčů jen na klávesu (vyžaduje jména hráčů)</Czech>
       <Polish>Pokaż nazwę gracza tylko po przytrzymaniu klawisza</Polish>
@@ -413,7 +413,7 @@
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
-      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
+      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres de jugadores)</Spanish>
       <French>Grade des joueurs  (si noms affichés)</French>
       <Czech>Zobrazit hodnosti hráčů (vyžaduje jména hráčů)</Czech>
       <Italian>Mostra i gradi (richiede i nomi dei giocatori abilitati)</Italian>
@@ -667,7 +667,7 @@
       <English>Cable Tie</English>
       <German>Kabelbinder</German>
       <Polish>Opaska zaciskowa</Polish>
-      <Spanish>Precinto de seguridad</Spanish>
+      <Spanish>Bridas</Spanish>
       <French>Serflex</French>
       <Czech>Stahovací Pásek</Czech>
       <Portuguese>Algema Plástica</Portuguese>
@@ -678,7 +678,7 @@
       <English>Cable ties that allow you to restrain prisoners.</English>
       <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
-      <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
+      <Spanish>Las bridas permiten maniatar prisioneros</Spanish>
       <French>Les Tyrap permettent de menotter les prisonniers.</French>
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
