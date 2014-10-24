@@ -139,10 +139,12 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
       {
         _hitPointDamage = (_x select 1) * AGM_Medical_CoefDamage;
         if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
-          _unit setHitPointDamage [(_x select 0), (_hitPointDamage min 0.89)];
-        } else {
-          _unit setHitPointDamage [(_x select 0), _hitPointDamage];
+          if (_hitPointDamage > 0.89) then {
+            _hitPointDamage = 0.89;
+            [_unit, "AGM_preventedDeath"] call AGM_Core_fnc_callCustomEventHandlers;
+          };
         };
+        _unit setHitPointDamage [(_x select 0), _hitPointDamage];
       } count AGM_Medical_Hits;
     };
 
@@ -292,6 +294,7 @@ if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
 };
 
 if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) exitWith {
+  [_unit, "AGM_preventedDeath"] call AGM_Core_fnc_callCustomEventHandlers;
   _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
   [_unit, "HitBody", 0.89, true] call AGM_Medical_fnc_setHitPointDamage;
   [_unit] call AGM_Medical_fnc_knockOut;
