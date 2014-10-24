@@ -40,6 +40,7 @@ _this spawn {
     _this setVariable ["AGM_Carrying", objNull];
 
     [false] call AGM_Core_fnc_disableUserInput;
+    [_unit, "AGM_Medical_initialized"] call AGM_Core_fnc_callCustomEventHandlers;
   };
 
   AGM_Medical_itemCheck = {
