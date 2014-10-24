@@ -773,6 +773,11 @@
       <Polish>Odblokuj plecak</Polish>
       <Hungarian>Táska nyitása</Hungarian>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_Equipment">
+      <English>Equipment &gt;&gt;</English>
+      <German>Ausrüstung &gt;&gt;</German>
+    </Key>
     <Key ID="STR_AGM_Interaction_InventoryLocked">
       <English>Inventory is locked</English>
       <German>Das Inventar ist verschlossen</German>
@@ -791,5 +796,6 @@
       <Polish>Plecak %1 jest zablokowany</Polish>
       <Hungarian>%1 táskája zárolva</Hungarian>
     </Key>
+
   </Package>
 </Project>

@@ -659,25 +659,47 @@ class CfgVehicles {
         priority = 2.2;
       };
 
-      class AGM_LockBackpack {
-        displayName = "$STR_AGM_Interaction_LockBackpack";
-        condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
-        showDisabled = 0;
-        priority = 2.5;
-        //icon = "";
-        hotkey = "L";
+      class AGM_Equipment {
+        displayName = "$STR_AGM_Interaction_Equipment";
+        condition = "true";
+        statement = "";
+        showDisabled = 1;
+        priority = 4.5;
+        icon = "";  // @todo
+        subMenu[] = {"AGM_Equipment", 1};
         enableInside = 1;
-      };
-      class AGM_UnlockBackpack {
-        displayName = "$STR_AGM_Interaction_UnlockBackpack";
-        condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
-        showDisabled = 0;
-        priority = 2.5;
-        //icon = "";
-        hotkey = "L";
-        enableInside = 1;
+        hotkey = "E";
+
+        class AGM_LockBackpack {
+          displayName = "$STR_AGM_Interaction_LockBackpack";
+          condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
+          showDisabled = 0;
+          priority = 2.5;
+          //icon = "";
+          hotkey = "L";
+          enableInside = 1;
+        };
+        class AGM_UnlockBackpack {
+          displayName = "$STR_AGM_Interaction_UnlockBackpack";
+          condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
+          showDisabled = 0;
+          priority = 2.5;
+          //icon = "";
+          hotkey = "L";
+          enableInside = 1;
+        };
+
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Interaction\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
 
       /*class AGM_WeaponOnBack {

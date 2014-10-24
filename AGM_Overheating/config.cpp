@@ -81,14 +81,16 @@ class CfgVehicles {
 
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_SwapBarrel {
-        displayName = "$STR_AGM_Overheating_SwapBarrel";
-        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
-        statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
-        showDisabled = 0;
-        priority = 3;
-        icon = "AGM_Overheating\UI\spare_barrel_ca.paa";
-        hotkey = "B";
+      class AGM_Equipment {
+        class AGM_SwapBarrel {
+          displayName = "$STR_AGM_Overheating_SwapBarrel";
+          condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
+          statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
+          showDisabled = 0;
+          priority = 3;
+          icon = "AGM_Overheating\UI\spare_barrel_ca.paa";
+          hotkey = "B";
+        };
       };
       class AGM_CheckTemperature {
         displayName = "$STR_AGM_Overheating_CheckTemperatureShort";
