@@ -107,7 +107,7 @@
       <Polish>Flara ręczna sygnałowa M127A1 (biała)</Polish>
       <Portuguese>M127A1 Sinalizador (Branco)</Portuguese>
       <Russian>M127A1 Фальшфейер (Белый)</Russian>
-      <Spanish>M127A1 Bengala (Blanco)</Spanish>
+      <Spanish>Bengala M127A1 (Blanca)</Spanish>
       <French>M127A1 Feux à main (Blanc)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Red_Name">
@@ -119,7 +119,7 @@
       <Polish>Flara ręczna sygnałowa M127A1 (czerwona)</Polish>
       <Portuguese>M127A1 Sinalizador (Vermelho)</Portuguese>
       <Russian>M127A1 Фальшфейер (Красный)</Russian>
-      <Spanish>M127A1 Bengala (Rojo)</Spanish>
+      <Spanish>Bengala M127A1 (Roja)</Spanish>
       <French>M127A1 Feux à main (Rouge)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Green_Name">
@@ -131,7 +131,7 @@
       <Polish>Flara ręczna sygnałowa M127A1 (zielona)</Polish>
       <Portuguese>M127A1 Sinalizador (Verde)</Portuguese>
       <Russian>M127A1 Фальшфейер (Зелёный)</Russian>
-      <Spanish>M127A1 Bengala (Verde)</Spanish>
+      <Spanish>Bengala M127A1 (Verde)</Spanish>
       <French>M127A1 Feux à main (Vert)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Yellow_Name">
@@ -143,7 +143,7 @@
       <Polish>Flara ręczna sygnałowa M127A1 (żółta)</Polish>
       <Portuguese>M127A1 Sinalizador (Amarelo)</Portuguese>
       <Russian>M127A1 Фальшфейер (Жёлтые)</Russian>
-      <Spanish>M127A1 Bengala (Amarillo)</Spanish>
+      <Spanish>Bengala M127A1 (Amarilla)</Spanish>
       <French>M127A1 Feux à main (Jaune)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_White_Description">
@@ -155,7 +155,7 @@
       <Polish>Flara ręczna (biała)</Polish>
       <Portuguese>Sinalizador (Branco)</Portuguese>
       <Russian>Фальшфейер (Белый)</Russian>
-      <Spanish>Bengala (Blanco)</Spanish>
+      <Spanish>Bengala (Blanca)</Spanish>
       <French>Feux à main (Blanc)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Red_Description">
@@ -167,7 +167,7 @@
       <Polish>Flara ręczna (czerwona)</Polish>
       <Portuguese>Sinalizador (Vermelho)</Portuguese>
       <Russian>Фальшфейер (Красный)</Russian>
-      <Spanish>Bengala (Rojo)</Spanish>
+      <Spanish>Bengala (Roja)</Spanish>
       <French>Feux à main (Rouge)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Green_Description">
@@ -191,7 +191,7 @@
       <Polish>Flara ręczna (żółta)</Polish>
       <Portuguese>Sinalizador (Amarelo)</Portuguese>
       <Russian>Фальшфейер (Жёлтые)</Russian>
-      <Spanish>Bengala (Amarillo)</Spanish>
+      <Spanish>Bengala (Amarilla)</Spanish>
       <French>Feux à main (Jaune)</French>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_White_NameShort">
@@ -204,7 +204,7 @@
       <Polish>M127A1 (biała)</Polish>
       <Portuguese>M127A1 (Branco)</Portuguese>
       <Russian>M127A1 (Белый)</Russian>
-      <Spanish>M127A1 (Blanco)</Spanish>
+      <Spanish>M127A1 (Blanca)</Spanish>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Red_NameShort">
       <English>M127A1 (Red)</English>
@@ -216,7 +216,7 @@
       <Polish>M127A1 (czerwona)</Polish>
       <Portuguese>M127A1 (Vermelho)</Portuguese>
       <Russian>M127A1 (Красный)</Russian>
-      <Spanish>M127A1(Rojo)</Spanish>
+      <Spanish>M127A1 (Roja)</Spanish>
     </Key>
     <Key ID="STR_AGM_Grenades_M127A1_Green_NameShort">
       <English>M127A1 (Green)</English>
@@ -240,7 +240,7 @@
       <Polish>M127A1 (żółta)</Polish>
       <Portuguese>M127A1 (Amarelo)</Portuguese>
       <Russian>M127A1 (Жёлтые)</Russian>
-      <Spanish>M127A1 (Amarillo)</Spanish>
+      <Spanish>M127A1 (Amarilla)</Spanish>
     </Key>
   </Package>
 </Project>

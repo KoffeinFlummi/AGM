@@ -598,7 +598,7 @@
     <Key ID="STR_AGM_Repair_HitGlass3">
       <English>Glass 3</English>
       <German>Scheibe 3</German>
-      <Spanish>Ventana 2</Spanish>
+      <Spanish>Ventana 3</Spanish>
       <French>Vitre 3</French>
       <Polish>Szyba 3</Polish>
       <Czech>Sklo 3</Czech>
@@ -609,7 +609,7 @@
     <Key ID="STR_AGM_Repair_HitGlass4">
       <English>Glass 4</English>
       <German>Scheibe 4</German>
-      <Spanish>Ventana 2</Spanish>
+      <Spanish>Ventana 4</Spanish>
       <French>Vitre 4</French>
       <Polish>Szyba 4</Polish>
       <Czech>Sklo 4</Czech>
@@ -1125,7 +1125,7 @@
     <Key ID="STR_AGM_Fortifications_SandbagBarrierCrate">
       <English>Sandbag Barrier Crate</English>
       <German>Sandsack-Kiste</German>
-      <Spanish>Sandbag Barrier Crate</Spanish>
+      <Spanish>Caja sacos de arena</Spanish>
       <Polish>Skrzynia z workami z piaskiem</Polish>
       <French>Sac de Sable (Caisse)</French>
       <Czech>Pytlová bariéra (v krabici)</Czech>
@@ -1136,7 +1136,7 @@
     <Key ID="STR_AGM_Fortifications_RazorWireCrate">
       <English>Razor Wire Crate</English>
       <German>Stacheldraht-Kiste</German>
-      <Spanish>Razor Wire Crate</Spanish>
+      <Spanish>Caja de alambre de púas</Spanish>
       <Polish>Skrzynia z drutem kolczastym</Polish>
       <French>Concertina (Caisse)</French>
       <Czech>Ostnatý drát (v krabici)</Czech>
@@ -1147,7 +1147,7 @@
     <Key ID="STR_AGM_Fortifications_SandbagBarrier">
       <English>Sandbag Barrier</English>
       <German>Sandsackbarriere</German>
-      <Spanish>Sandbag Barrier</Spanish>
+      <Spanish>Barrera de sacos de arena</Spanish>
       <Polish>Worki z piaskiem</Polish>
       <French>Sacs de sable</French>
       <Czech>Pytlová bariéra</Czech>
@@ -1158,7 +1158,7 @@
     <Key ID="STR_AGM_Fortifications_RazorWire">
       <English>Razor Wire</English>
       <German>Stacheldraht</German>
-      <Spanish>Concertina</Spanish>
+      <Spanish>Alambre de púas</Spanish>
       <Polish>Drut kolczasty</Polish>
       <French>Concertina</French>
       <Czech>Ostnatý drát</Czech>

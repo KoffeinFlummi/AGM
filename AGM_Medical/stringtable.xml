@@ -197,7 +197,7 @@
     <Key ID="STR_AGM_Medical_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
-      <Spanish>Introducir el paciente</Spanish>
+      <Spanish>Cargar el paciente en</Spanish>
       <Polish>Załaduj pacjenta</Polish>
       <Czech>Naložit pacianta do</Czech>
       <Russian>Погрузить пациента в</Russian>
@@ -209,7 +209,7 @@
     <Key ID="STR_AGM_Medical_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
-      <Spanish>Extraer el paciente</Spanish>
+      <Spanish>Descargar el paciente</Spanish>
       <Polish>Wyładuj pacjenta</Polish>
       <Czech>Vyložit pacienta</Czech>
       <Russian>Выгрузить пациента</Russian>
