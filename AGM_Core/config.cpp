@@ -450,7 +450,11 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
-class AGM_Core_canInteractConditions {};
+class AGM_Core_canInteractConditions {
+  class AGM_Core_notOnMap {
+    condition = "!visibleMap";
+  };
+};
 
 class AGM_Core_Options {
   class enableNumberHotkeys {

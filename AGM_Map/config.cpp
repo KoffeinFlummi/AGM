@@ -81,7 +81,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Map_MapTools_Menu";
         condition = "(call AGM_Map_fnc_canUseMapTools) || (call AGM_Map_fnc_canUseMapGPS)";
         statement = "";
-        exceptions[] = {"AGM_Drag_isNotDragging"};
+        exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
         showDisabled = 0;
         priority = 100;
         subMenu[] = {"AGM_MapTools", 1};
@@ -91,7 +91,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsHide";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown > 0}";
           statement = "AGM_Map_mapToolsShown = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 5;
           enableInside = 1;
@@ -100,7 +100,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsShowNormal";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 1}";
           statement = "AGM_Map_mapToolsShown = 1; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 4;
           enableInside = 1;
@@ -109,7 +109,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsShowSmall";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 2}";
           statement = "AGM_Map_mapToolsShown = 2; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 3;
           enableInside = 1;
@@ -118,7 +118,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsAlignNorth";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0}";
           statement = "AGM_Map_angle = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 2;
           enableInside = 1;
@@ -127,7 +127,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsAlignCompass";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0} && {(""ItemCompass"" in assignedItems player) || {""ItemGPS"" in assignedItems player}}";
           statement = "AGM_Map_angle = getDir player; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 1;
           enableInside = 1;
@@ -136,7 +136,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapGpsShow";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && {!AGM_Map_mapGpsShow}";
           statement = "AGM_Map_mapGpsShow = true; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
           enableInside = 1;
@@ -145,7 +145,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapGpsHide";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && AGM_Map_mapGpsShow";
           statement = "AGM_Map_mapGpsShow = false; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
           enableInside = 1;
