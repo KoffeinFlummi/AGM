@@ -570,8 +570,8 @@ class CfgVehicles {
       };
     };
   };
-  class AllVehicles;
-  class Ship: AllVehicles {
+  class Ship;
+  class Ship_F: Ship {
     class AGM_Actions {
       class AGM_Unload {
         displayName = "$STR_AGM_Medical_Unload";

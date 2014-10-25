@@ -52,23 +52,25 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_PutInEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false]) && {'AGM_EarBuds' in items _player}";
-        statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
-        hotkey = "E";
-      };
-      class AGM_RemoveEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_Off";
-        condition = "_player getVariable ['AGM_hasEarPlugsIn', false]";
-        statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
-        hotkey = "E";
+      class AGM_Equipment {
+        class AGM_PutInEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_On";
+          condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false]) && {'AGM_EarBuds' in items _player}";
+          statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+        };
+        class AGM_RemoveEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_Off";
+          condition = "_player getVariable ['AGM_hasEarPlugsIn', false]";
+          statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+        };
       };
     };
   };
@@ -168,5 +170,13 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
     };
+  };
+};
+
+// Setting up old stuff for A3
+class CfgAmmo {
+  class BulletBase;
+  class B_127x108_Ball: BulletBase {
+    audibleFire = 15;
   };
 };

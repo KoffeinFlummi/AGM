@@ -86,9 +86,13 @@ class CfgVehicles {
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+  };
 
+  class Land: AllVehicles {};
+  class LandVehicle: Land {};
+  class Tank: LandVehicle {
+    AGM_FCSEnabled = 1; // all tracked vehicles get one by default
     class AGM_SelfActions {
-      // INHERITANCE !!
       class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
         condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
@@ -98,18 +102,22 @@ class CfgVehicles {
       };
     };
   };
-
-  class Land: AllVehicles {};
-  class LandVehicle: Land {};
-  class Tank: LandVehicle {
-    AGM_FCSEnabled = 1; // all tracked vehicles get one by default
-  };
   class Tank_F: Tank {
     class Turrets {
       class MainTurret: NewTurret {};
     };
   };
-  class Car: LandVehicle {};
+  class Car: LandVehicle {
+    class AGM_SelfActions {
+      class AGM_ResetFCS {
+        displayName = "$STR_AGM_FireControlSystem_ResetFCS";
+        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
+        statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
+        showDisabled = 0;
+        priority = -1;
+      };
+    };
+  };
   class Car_F: Car {};
   class Wheeled_APC_F: Car_F {
     class Turrets;

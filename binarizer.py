@@ -195,7 +195,6 @@ class Binarizer:
           os.path.join(destinationpath, module_name.lower()+".pbo."+PROJECTNAME.lower()+".bisign")
           )
       except:
-        print(bisignlocation)
         print("  FAILED to move {}'s signature to modfolder.".format(module_name))
 
   def check_paths(self):

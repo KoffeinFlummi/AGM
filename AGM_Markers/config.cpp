@@ -27,9 +27,9 @@ class CfgFunctions {
   };
 };
 
-class Extended_PreInit_EventHandlers {
+class Extended_PostInit_EventHandlers {
   class AGM_Markers {
-    init = "call compile preprocessFileLineNumbers 'AGM_Markers\init.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers 'AGM_Markers\clientInit.sqf'";
   };
 };
 

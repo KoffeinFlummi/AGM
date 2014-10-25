@@ -81,14 +81,16 @@ class CfgVehicles {
 
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_SwapBarrel {
-        displayName = "$STR_AGM_Overheating_SwapBarrel";
-        condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
-        statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
-        showDisabled = 0;
-        priority = 3;
-        icon = "AGM_Overheating\UI\spare_barrel_ca.paa";
-        hotkey = "B";
+      class AGM_Equipment {
+        class AGM_SwapBarrel {
+          displayName = "$STR_AGM_Overheating_SwapBarrel";
+          condition = "'AGM_SpareBarrel' in items player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
+          statement = "[currentWeapon player] call AGM_Overheating_fnc_swapBarrel";
+          showDisabled = 0;
+          priority = 3;
+          icon = "AGM_Overheating\UI\spare_barrel_ca.paa";
+          hotkey = "B";
+        };
       };
       class AGM_CheckTemperature {
         displayName = "$STR_AGM_Overheating_CheckTemperatureShort";
@@ -174,9 +176,9 @@ class CfgVehicles {
     respawnitems[] = {"FirstAidKit","AGM_SpareBarrel"};
 
   // NATO
-  class B_Soldier_base_F; class B_soldier_AR_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_Soldier_02_f; class B_soldier_AR_F:B_Soldier_02_f {MACRO_ADDSPAREBARREL};
   class B_Soldier_support_base_F; class B_soldier_AAR_F:B_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
-  class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class B_Soldier_base_F; class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ADDSPAREBARREL};
 
   // Guerrilla
   class I_G_Soldier_base_F; class I_G_Soldier_AR_F:I_G_Soldier_base_F {MACRO_ADDSPAREBARREL};
@@ -190,7 +192,7 @@ class CfgVehicles {
   class O_soldierU_AAR_F:O_Soldier_Urban_base {MACRO_ADDSPAREBARREL};
 
   // Czech
-  class I_Soldier_base_F; class I_Soldier_AR_F:I_Soldier_base_F {MACRO_ADDSPAREBARREL};
+  class I_Soldier_02_F; class I_Soldier_AR_F:I_Soldier_02_F {MACRO_ADDSPAREBARREL};
   class I_Soldier_support_base_F; class I_Soldier_AAR_F:I_Soldier_support_base_F {MACRO_ADDSPAREBARREL};
 };
 

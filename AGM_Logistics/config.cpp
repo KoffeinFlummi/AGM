@@ -502,19 +502,13 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_LEOPARD;
   };
 
-  class AllVehicles {
-    class AGM_Actions;
-  };
-  class Air: AllVehicles {
-    AGM_Paradrop = 0;
-    class AGM_Actions: AGM_Actions {};
-  };
-
+  class Air;
   // Repair helicopters
   class Helicopter: Air {
+    AGM_Paradrop = 0;
     AGM_fuelCapacity = 240;  // in liter.
     AGM_Vehicle_Cargo = 8;
-    class AGM_Actions : AGM_Actions {
+    class AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       MACRO_RELOAD_MAGS
@@ -606,9 +600,10 @@ class CfgVehicles {
 
   // Repair fixed wing aircraft
   class Plane: Air {
+    AGM_Paradrop = 0;
     AGM_fuelCapacity = 600;  // in liter.
     AGM_Vehicle_Cargo = 4;
-    class AGM_Actions : AGM_Actions {
+    class AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       MACRO_RELOAD_MAGS
@@ -672,11 +667,12 @@ class CfgVehicles {
   };
 
   // boats
-  class Ship: AllVehicles {
+  class Ship;
+  class Ship_F: Ship {
     AGM_fuelCapacity = 40;  // in liter.
     AGM_Vehicle_Cargo = 4;
 
-    class AGM_Actions : AGM_Actions {
+    class AGM_Actions {
       MACRO_UNLOAD
       MACRO_REFUEL
       class AGM_Repair {

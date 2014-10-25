@@ -5,7 +5,7 @@ _firer = _this select 1;
 _distance = _this select 2;
 _weapon = _this select 3;
 
-if (vehicle _unit != _unit) exitWith {};
+if (vehicle _unit != _unit || {!([_firer] call AGM_Core_fnc_isPlayer)}) exitWith {};
 
 _backblastAngle = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Angle") / 2;
 _backblastRange = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Backblast_Range");

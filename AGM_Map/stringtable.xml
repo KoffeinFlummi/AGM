@@ -60,7 +60,7 @@
     <Key ID="STR_AGM_Map_MapToolsShowSmall">
       <English>Show Small Map Tool</English>
       <German>Zeige Kartenwerkzeug (klein)</German>
-      <Spanish>Mostrar herr. de mapa pequeña</Spanish>
+      <Spanish>Mostrar herr. de mapa pequeñas</Spanish>
       <French>Montrer petits outils</French>
       <Italian>Visualizza Strumenti Cartografici piccoli</Italian>
       <Portuguese>Mostrar Ferramenta de Mapa Pequena</Portuguese>
@@ -123,6 +123,15 @@
       <Italian>Copiare Carta</Italian>
       <Hungarian>Térkép másolása</Hungarian>
       <Portuguese>Copiar Mapa</Portuguese>
+    </Key>
+    <Key ID="STR_AGM_Map_MarkerDirection">
+      <English>Direction: %1°</English>
+      <German>Drehung: %1°</German>
+      <French>Direction: %1°</French>
+      <Czech>Směr: %1°</Czech>
+      <Polish>Kierunek: %1°</Polish>
+      <Spanish>Dirección: %1°</Spanish>
+      <Hungarian>Irány: %1</Hungarian>
     </Key>
   </Package>
 </Project>
