@@ -21,14 +21,16 @@ nul = _this spawn {
 
   if !(isPlayer _unit) exitWith {
     _unit disableAI "MOVE";
+    _unit disableAI "ANIM";
     _unit disableAI "AUTOTARGET";
     _unit disableAI "TARGET";
     _unit disableAI "FSM";
     _unit setSkill (skill _unit / 50);
 
-    sleep (10 * _strength);
+    sleep (7 * _strength);
 
     _unit enableAI "MOVE";
+    _unit enableAI "ANIM";
     _unit enableAI "AUTOTARGET";
     _unit enableAI "TARGET";
     _unit enableAI "FSM";
@@ -60,13 +62,7 @@ nul = _this spawn {
   _angleDiff = 180 - abs (abs (_angleGrenade - _angleView) - 180);
   _angleDiff = ((_angleDiff - 45) max 0);
 
-  // player looking away completely
-  if (_angleDiff > 45) then {
-    _strength = 0;
-  } else {
-    _strength = _strength - _strength * (_angleDiff  / 135);
-  };
-
+  _strength = _strength - _strength * (_angleDiff  / 135);
 
   // create flash to illuminate environment
   _light = "#lightpoint" createVehicleLocal getPos _grenade;
