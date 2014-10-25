@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -52,23 +52,25 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_PutInEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false])";
-        statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
-        hotkey = "E";
-      };
-      class AGM_RemoveEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_Off";
-        condition = "_player getVariable ['AGM_hasEarPlugsIn', false]";
-        statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
-        hotkey = "E";
+      class AGM_Equipment {
+        class AGM_PutInEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_On";
+          condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false]) && {'AGM_EarBuds' in items _player}";
+          statement = "[_player] call AGM_Hearing_fnc_putInEarplugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+        };
+        class AGM_RemoveEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_Off";
+          condition = "_player getVariable ['AGM_hasEarPlugsIn', false]";
+          statement = "[_player] call AGM_Hearing_fnc_removeEarplugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+        };
       };
     };
   };
@@ -168,5 +170,13 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
     };
+  };
+};
+
+// Setting up old stuff for A3
+class CfgAmmo {
+  class BulletBase;
+  class B_127x108_Ball: BulletBase {
+    audibleFire = 15;
   };
 };

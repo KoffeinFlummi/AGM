@@ -169,9 +169,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94";
+    versionStr = "0.94";
+    versionAr[] = {0,94,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -268,6 +268,7 @@ class CfgFunctions {
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class getChildren;
       class getDisplayConfigName;
       class logControls;
       class logDisplays;
@@ -449,7 +450,11 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
-class AGM_Core_canInteractConditions {};
+class AGM_Core_canInteractConditions {
+  class AGM_Core_notOnMap {
+    condition = "!visibleMap";
+  };
+};
 
 class AGM_Core_Options {
   class enableNumberHotkeys {

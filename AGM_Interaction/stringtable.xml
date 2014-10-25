@@ -41,7 +41,7 @@
     <Key ID="STR_AGM_Interaction_LockDoor">
       <English>Lock Door</English>
       <German>Tür sperren</German>
-      <Spanish>Trabar puerta</Spanish>
+      <Spanish>Bloquear puerta</Spanish>
       <French>Verrouiller Porte</French>
       <Italian>Blocca la porta</Italian>
       <Portuguese>Trancar Porta</Portuguese>
@@ -52,7 +52,7 @@
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
       <German>Tür entsperren</German>
-      <Spanish>Destrabar puerta</Spanish>
+      <Spanish>Desbloquear puerta</Spanish>
       <French>Déverrouiller Porte</French>
       <Italian>Sblocca la porta</Italian>
       <Portuguese>Destrancar Porta</Portuguese>
@@ -63,7 +63,7 @@
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
       <German>Tür gesperrt</German>
-      <Spanish>Puerta trabada</Spanish>
+      <Spanish>Puerta bloqueada</Spanish>
       <French>Porte Verrouillée</French>
       <Italian>Porta bloccata</Italian>
       <Portuguese>Porta Trancada</Portuguese>
@@ -74,7 +74,7 @@
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
       <German>Tür entsperrt</German>
-      <Spanish>Puerta destrabada</Spanish>
+      <Spanish>Puerta desbloqueada</Spanish>
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
       <Portuguese>Porta Destrancada</Portuguese>
@@ -89,6 +89,7 @@
       <French>Afficher noms</French>
       <Czech>Zobrazit jména</Czech>
       <Polish>Pokaż nazwy</Polish>
+      <Hungarian>Nevek mutatása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -345,7 +346,7 @@
     <Key ID="STR_AGM_Interaction_BackpackVentralTake">
       <English>Take (Ventral)</English>
       <German>Aufnehmen (Ventral)</German>
-      <Spanish>Coger (Mochila Ventral)</Spanish>
+      <Spanish>Coger (Mochila delantera)</Spanish>
       <Polish>Załóż (brzuch)</Polish>
       <Czech>Vzít (ventrální)</Czech>
       <French>Prendre (Ventral)</French>
@@ -391,7 +392,7 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor">
       <English>Show player name only on cursor (requires player names)</English>
       <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
-      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
+      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres de jugadores)</Spanish>
       <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
       <French>Noms uniquement sous le curseur (si noms affichés)</French>
       <Czech>Zobrazit jméno hráče jenom na kurzor (vyžaduje jména hráčů)</Czech>
@@ -402,16 +403,17 @@
     <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnKeyPress">
       <English>Show player name only on keypress (requires player names)</English>
       <German>Spielernamen nur auf Tastendruck anzeigen (benötigt Spielernamen)</German>
-      <Spanish>Mostrar nombres solo al pulsar (requiere mostrar nombres)</Spanish>
+      <Spanish>Mostrar nombres solo al pulsar (requiere Mostrar nombres de jugadores)</Spanish>
       <French>Noms uniquement sur pression de la touche (si noms affichés)</French>
       <Czech>Zobrazit jména hráčů jen na klávesu (vyžaduje jména hráčů)</Czech>
       <Polish>Pokaż nazwę gracza tylko po przytrzymaniu klawisza</Polish>
+      <Hungarian>Játékosnevek mutatása gombnyomásra(névcíme szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
       <German>Spielerränge anzeigen (benötig Spielernamen)</German>
       <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
-      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
+      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres de jugadores)</Spanish>
       <French>Grade des joueurs  (si noms affichés)</French>
       <Czech>Zobrazit hodnosti hráčů (vyžaduje jména hráčů)</Czech>
       <Italian>Mostra i gradi (richiede i nomi dei giocatori abilitati)</Italian>
@@ -665,12 +667,12 @@
       <English>Cable Tie</English>
       <German>Kabelbinder</German>
       <Polish>Opaska zaciskowa</Polish>
-      <Spanish>Precinto de seguridad</Spanish>
+      <Spanish>Precinto</Spanish>
       <French>Serflex</French>
       <Czech>Stahovací Pásek</Czech>
       <Portuguese>Algema Plástica</Portuguese>
       <Italian>Fascietta</Italian>
-      <Hungarian>Műanyag bilincs</Hungarian>
+      <Hungarian>Gyorskötöző</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CableTie_Description">
       <English>Cable ties that allow you to restrain prisoners.</English>
@@ -681,7 +683,7 @@
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
       <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
-      <Hungarian>Műanyag bilincs a foglyok feltartóztatására.</Hungarian>
+      <Hungarian>Gyorskötöző emberek fogjulejtéséhez.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
@@ -751,6 +753,7 @@
       <Spanish>Cachear</Spanish>
       <Czech>Prohledávaná osoba</Czech>
       <Polish>Rewiduj osobę</Polish>
+      <Hungarian>Motozás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_LockBackpack">
       <English>Lock Backpack</English>
@@ -759,6 +762,7 @@
       <Spanish>Bloquear mochila</Spanish>
       <Czech>Zamknout batoh</Czech>
       <Polish>Zablokuj plecak</Polish>
+      <Hungarian>Táska zárolása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockBackpack">
       <English>Unlock Backpack</English>
@@ -767,6 +771,12 @@
       <Spanish>Desbloquear mochila</Spanish>
       <Czech>Odemknout batoh</Czech>
       <Polish>Odblokuj plecak</Polish>
+      <Hungarian>Táska nyitása</Hungarian>
+    </Key>
+
+    <Key ID="STR_AGM_Interaction_Equipment">
+      <English>Equipment &gt;&gt;</English>
+      <German>Ausrüstung &gt;&gt;</German>
     </Key>
     <Key ID="STR_AGM_Interaction_InventoryLocked">
       <English>Inventory is locked</English>
@@ -775,6 +785,7 @@
       <Spanish>Inventario bloqueado</Spanish>
       <Czech>Inventář je zamčený</Czech>
       <Polish>Ekwipunek jest zablokowany</Polish>
+      <Hungarian>Felszerelés zárolt</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_BackpackLocked">
       <English>Backpack of %1 is locked</English>
@@ -783,6 +794,8 @@
       <Spanish>La mochila de %1 está bloqueada</Spanish>
       <Czech>%1 má zamčený batoh</Czech>
       <Polish>Plecak %1 jest zablokowany</Polish>
+      <Hungarian>%1 táskája zárolva</Hungarian>
     </Key>
+
   </Package>
 </Project>

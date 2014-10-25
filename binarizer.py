@@ -185,11 +185,8 @@ class Binarizer:
       print("  FAILED to move {} to modfolder.".format(module_name))
 
     if self.paths["privatekey"] != "":
-      if os.path.exists(packonlypath):
-        bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
-          ".build")
-      else:
-        bisignlocation = os.path.join(tempfolder, PROJECTNAME)
+      bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
+        ".build")
       bisignlocation = os.path.join(bisignlocation,
         module_name+".pbo."+PROJECTNAME+".bisign")
       try:

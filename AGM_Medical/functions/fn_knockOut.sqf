@@ -10,7 +10,7 @@
  * None
  */
 
-private ["_unit", "_duration", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
+private ["_unit", "_duration", "_deadman", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
 
 _unit = _this select 0;
 _duration = -1;
@@ -36,6 +36,17 @@ if (_unit == player) then {
   call AGM_Interaction_fnc_hideMenu;
 
   [true, true] call AGM_Core_fnc_disableUserInput;
+
+  if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
+    call AGM_Explosives_fnc_Place_Cancel;
+  };
+};
+
+if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
+  _deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
+  {
+    [(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
+  } count _deadman;
 };
 
 [_unit, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;

@@ -20,6 +20,8 @@ _adjustDir = _this select 1;
 _adjustUp = _this select 2;
 _adjustSpeed = _this select 3;
 
+if (!isNil "AGM_Debug" && {AGM_Debug == "CPD"}) then {diag_log text _fnc_scriptNameParent};
+
 if (isNil "_adjustSpeed") then {
 	_adjustSpeed = 0;
 };
@@ -39,7 +41,7 @@ _vdir = [
 ];
 
 // get best up vector
-_l = sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2);
+_l = sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2); if (_l == 0) then {diag_log text format ["[AGM] ERROR: %1, %2, %3, %4, %5, %6, %7", _projectile, _adjustDir, _adjustUp, vectorDir _projectile, _vdir, _dir, _up]};
 _r = -(_vdir select 2) / _l;
 
 _vup = [

@@ -44,6 +44,7 @@ _object = AGM_Interaction_Target;
 if (_menuType == 0 && {(isNull (_object) || {!([_object, 4] call AGM_Interaction_fnc_isInRange)})}) exitWith {};//call ([AGM_Interaction_fnc_onButtonDown, AGM_Interaction_fnc_onButtonDownSelf] select _menuType)};
 if !([_player, _object] call AGM_Core_fnc_canInteractWith) exitWith {};
 
+// ------------------------------------------------------------------------ @todo
 _parents = [configFile >> "CfgVehicles" >> typeOf _object, true] call BIS_fnc_returnParents;
 _result = [_object, _parents, [], [], missionConfigFile >> "CfgVehicles", true, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions;
 _actions = ([_object, _parents, _result select 0, _result select 1,configFile >> "CfgVehicles", false, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions) select 0;
@@ -54,6 +55,7 @@ if (_menuType == 1 && {_player != _vehicle}) then {
 	_result = [_vehicle, _parents, [], [], missionConfigFile >> "CfgVehicles", true, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions;
 	_actions = _actions + (([_vehicle, _parents, _result select 0, _result select 1,configFile >> "CfgVehicles", false, ["AGM_Actions", "AGM_SelfActions"] select _menuType, _this select 2] call AGM_Interaction_fnc_GetActions) select 0);
 };
+// ------------------------------------------------------------------------ @todo
 
 if (AGM_Interaction_MenuType < 2) then {
 	_customActions = (_object getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;

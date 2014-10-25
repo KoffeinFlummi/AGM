@@ -78,7 +78,7 @@ nul = _this spawn {
   // blind player
   if (_strength > 0.1) then {
     AGM_Flashbang_CC ppEffectEnable true;
-    AGM_Flashbang_CC ppEffectAdjust [1,1,0,[1,1,1,(0.8 + _strength) min 1],[0,0,0,1],[0,0,0,0]];
+    AGM_Flashbang_CC ppEffectAdjust [1,1,(0.8 + _strength) min 1,[1,1,1,0],[0,0,0,1],[0,0,0,0]];
     AGM_Flashbang_CC ppEffectCommit 0.01;
   };
 
@@ -88,9 +88,9 @@ nul = _this spawn {
 
   if (_strength > 0.1) then {
     AGM_Flashbang_CC ppEffectAdjust [1,1,0,[1,1,1,0],[0,0,0,1],[0,0,0,0]];
-    AGM_Flashbang_CC ppEffectCommit (5 * _strength);
+    AGM_Flashbang_CC ppEffectCommit (10 * _strength);
 
-    sleep (5 * _strength);
+    sleep (10 * _strength);
 
     AGM_Flashbang_CC ppEffectEnable false;
   };

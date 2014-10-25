@@ -10,6 +10,6 @@ _logic = _this;
 		missionNamespace getVariable ["AGM_allMapMarkersProperties", []],
 		_logic
 	],
-	"AGM_Map_fnc_setMarkerJIP",
+	"AGM_Markers_fnc_setMarkerJIP",
 	_logic
 ] call AGM_Core_fnc_execRemoteFnc;

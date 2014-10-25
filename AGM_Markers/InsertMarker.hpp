@@ -1,7 +1,7 @@
 
 class RscDisplayInsertMarker {
-	onLoad = "_this call compile preprocessFileLineNumbers 'AGM_Map\scripts\initInsertMarker.sqf'";
-	onUnload = "_this call compile preprocessFileLineNumbers 'AGM_Map\scripts\placeMarker.sqf'";
+	onLoad = "_this call compile preprocessFileLineNumbers 'AGM_Markers\scripts\initInsertMarker.sqf'";
+	onUnload = "_this call compile preprocessFileLineNumbers 'AGM_Markers\scripts\placeMarker.sqf'";
 	idd = 54;
 	movingEnable = 1;
 	class controlsBackground {
