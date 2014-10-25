@@ -21,6 +21,7 @@ class CfgFunctions {
       class fireSmokeLauncher;
       class getWeaponModes;
       class getWeaponMuzzles;
+      class putWeaponAway;
       class selectGrenadeAll;
       class selectGrenadeFrag;
       class selectGrenadeOther;
@@ -30,14 +31,30 @@ class CfgFunctions {
       class selectWeaponVehicle;
       class selectMagazineVehicle;
       class setNextGrenadeMuzzle;
-      class putWeaponAway;
+      class throwGrenade;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_WeaponSelect {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_WeaponSelect\clientInit.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_WeaponSelect\clientInit.sqf';";
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_WeaponSelect_ThrowGrenade {
+      clientInit = "_this call compile preprocessFileLineNumbers '\AGM_WeaponSelect\initActions.sqf';";
+    };
+  };
+};
+
+class Extended_FiredBis_EventHandlers {
+  class CAManBase {
+    class AGM_WeaponSelect_ThrowGrenade {
+      clientFiredBis = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
+    };
   };
 };
 
