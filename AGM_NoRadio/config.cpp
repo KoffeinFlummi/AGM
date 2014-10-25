@@ -12,12 +12,6 @@ class CfgPatches {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_NoRadio {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
-  };
-};
-
 class RadioProtocolBase {
   class CuratorWaypointPlaced;
   class CuratorWaypointPlacedAttack;
