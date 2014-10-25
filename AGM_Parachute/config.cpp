@@ -4,9 +4,9 @@ class CfgPatches {
 		weapons[] = {"AGM_Altimeter"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core};
-		version = "0.94";
-		versionStr = "0.94";
-		versionAr[] = {0,94,0};
+		version = "0.94.1";
+		versionStr = "0.94.1";
+		versionAr[] = {0,94,1};
 		author[] = {"Garth 'LH' de Wet"};
 	};
 };

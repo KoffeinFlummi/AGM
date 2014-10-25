@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"jodav", "commy2"};
     authorUrl = "https://github.com/jodav/";
   };
