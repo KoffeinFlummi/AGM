@@ -27,7 +27,6 @@ class CfgFunctions {
       class selectGrenadeOther;
       class selectWeaponMode;
       class selectWeaponMuzzle;
-      class selectBinocular;
       class selectWeaponVehicle;
       class selectMagazineVehicle;
       class setNextGrenadeMuzzle;
@@ -124,7 +123,7 @@ class AGM_Core_Default_Keys {
   class selectBinocular {
     displayName = "$STR_AGM_WeaponSelect_SelectBinocular";
     condition = "_player == _vehicle";
-    statement = "[_player] call AGM_WeaponSelect_fnc_selectBinocular";
+    statement = "[_player, binocular _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 6;
     shift = 0;
