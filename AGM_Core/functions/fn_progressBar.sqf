@@ -46,10 +46,14 @@ _this spawn {
 
 	closeDialog 0;
 
+	_progress = 1;
 	if (time > _time) then {
 		_arguments call _function;
 	} else {
 		[localize "STR_AGM_Core_ActionAborted"] call AGM_Core_fnc_displayTextStructured;
-		if (!isNil "_function2") then {_arguments call _function2};
+		if (!isNil "_function2") then {
+			_progress = 1 - ((_time - time) / (_this select 0)) max 0 min 1;
+			_arguments call _function2
+		};
 	};
 };
