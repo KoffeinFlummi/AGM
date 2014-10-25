@@ -11,11 +11,14 @@
  *
  */
 
- _muzzle = _this;
+private ["_player", "_muzzle"];
 
-_uniformMags = getMagazineCargo uniformContainer player;
-_vestMags = getMagazineCargo vestContainer player;
-_backPackMags = getMagazineCargo backpackContainer player;
+_player = _this select 0;
+_muzzle = _this select 1;
+
+_uniformMags = getMagazineCargo uniformContainer _player;
+_vestMags = getMagazineCargo vestContainer _player;
+_backPackMags = getMagazineCargo backpackContainer _player;
 
 _uniformMagsToRemove = [];
 _vestMagsToRemove = [];
@@ -64,34 +67,34 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
 // Remove all magazines except those we are switching to --> this breaks the selector
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player removeItem (_x select 0);
+    _player removeItem (_x select 0);
   };
 } forEach _uniformMagsToRemove;
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player removeItem (_x select 0);
+    _player removeItem (_x select 0);
   };
 } forEach _vestMagsToRemove;
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player removeItem (_x select 0);
+    _player removeItem (_x select 0);
   };
 } forEach _backPackMagsToRemove;
 
 // Readd magazines
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player addItemToUniform (_x select 0); 
+    _player addItemToUniform (_x select 0); 
   };
 } forEach _uniformMagsToRemove;
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player addItemToVest (_x select 0); 
+    _player addItemToVest (_x select 0); 
   };
 } forEach _vestMagsToRemove;
 {
   for [{_i=0},{_i < (_x select 1)}, {_i = _i + 1}] do {
-    player addItemToBackpack (_x select 0); 
+    _player addItemToBackpack (_x select 0); 
   };
 } forEach _backPackMagsToRemove;
 

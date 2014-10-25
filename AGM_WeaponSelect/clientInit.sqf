@@ -20,3 +20,27 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
     AGM_WeaponSelect_FragMuzzles = AGM_WeaponSelect_FragMuzzles + [_muzzleName];
   };  
 } forEach _throwMuzzleNames;
+
+// don't throw no nades if none selected!
+_condition = {
+  _magazines = magazines (call AGM_Core_fnc_player);
+  _muzzle = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
+
+  if (_muzzle == "") exitWith {true};
+
+  _result = true;
+  {
+    if (_x in _magazines) exitWith {_result = false};
+  } forEach getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+
+  if (_result) then {
+    if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
+  };
+  _result
+};
+
+_statement = {
+  [localize "STR_AGM_WeaponSelect_NoGrenadeSelected"] call AGM_Core_fnc_displayTextStructured;
+};
+
+[player, "Throw", _condition, _statement] call AGM_Core_fnc_addActionEventHandler;
