@@ -21,6 +21,7 @@ class CfgFunctions {
       class fireSmokeLauncher;
       class getWeaponModes;
       class getWeaponMuzzles;
+      class selectGrenadeAll;
       class selectGrenadeFrag;
       class selectGrenadeOther;
       class selectWeaponMode;
