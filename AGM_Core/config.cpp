@@ -475,4 +475,5 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
 };
 */
 
+#include <RscInfoType.hpp>
 #include <PickupFix.hpp>
