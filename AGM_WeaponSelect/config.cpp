@@ -21,22 +21,39 @@ class CfgFunctions {
       class fireSmokeLauncher;
       class getWeaponModes;
       class getWeaponMuzzles;
+      class putWeaponAway;
+      class selectGrenadeAll;
       class selectGrenadeFrag;
       class selectGrenadeOther;
       class selectWeaponMode;
       class selectWeaponMuzzle;
-      class selectBinocular;
       class selectWeaponVehicle;
       class selectMagazineVehicle;
       class setNextGrenadeMuzzle;
-      class putWeaponAway;
+      class throwGrenade;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_WeaponSelect {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_WeaponSelect\clientInit.sqf'";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_WeaponSelect\clientInit.sqf';";
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_WeaponSelect_ThrowGrenade {
+      clientInit = "_this call compile preprocessFileLineNumbers '\AGM_WeaponSelect\initActions.sqf';";
+    };
+  };
+};
+
+class Extended_FiredBis_EventHandlers {
+  class CAManBase {
+    class AGM_WeaponSelect_ThrowGrenade {
+      clientFiredBis = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
+    };
   };
 };
 
@@ -106,7 +123,7 @@ class AGM_Core_Default_Keys {
   class selectBinocular {
     displayName = "$STR_AGM_WeaponSelect_SelectBinocular";
     condition = "_player == _vehicle";
-    statement = "[_player] call AGM_WeaponSelect_fnc_selectBinocular";
+    statement = "[_player, binocular _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 6;
     shift = 0;
@@ -116,7 +133,7 @@ class AGM_Core_Default_Keys {
   class selectGrenadeFrag {
     displayName = "$STR_AGM_WeaponSelect_SelectGrenadeFrag";
     condition = "_player == _vehicle";
-    statement = "call AGM_WeaponSelect_fnc_selectGrenadeFrag";
+    statement = "[_player] call AGM_WeaponSelect_fnc_selectGrenadeFrag";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 7;
     shift = 0;
@@ -126,7 +143,7 @@ class AGM_Core_Default_Keys {
   class selectGrenadeOther {
     displayName = "$STR_AGM_WeaponSelect_SelectGrenadeOther";
     condition = "_player == _vehicle";
-    statement = "call AGM_WeaponSelect_fnc_selectGrenadeOther";
+    statement = "[_player] call AGM_WeaponSelect_fnc_selectGrenadeOther";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 8;
     shift = 0;

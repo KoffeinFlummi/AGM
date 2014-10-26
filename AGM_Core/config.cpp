@@ -272,6 +272,7 @@ class CfgFunctions {
       class getDisplayConfigName;
       class logControls;
       class logDisplays;
+      class monitor;
       class showUser;
     };
   };
