@@ -35,6 +35,7 @@ class CfgFunctions {
       class getDoor;
       class getDown;
       class getSelectedButton;
+	  class handleInventoryClick;
       class hideMenu;
       class hideMouseHint;
       class initialiseInteraction;
@@ -85,6 +86,13 @@ class Extended_GetIn_EventHandlers {
   class AllVehicles {
     class AGM_DetachCaptive {
       clientGetIn = "if (player == _this select 2 && {player getVariable ['AGM_isEscorting', false]}) then {player setVariable ['AGM_isEscorting', false, true]}";
+    };
+  };
+};
+class Extended_InventoryOpened_EventHandlers {
+  class CAManBase {
+    class AGM_OpenedInventory {
+      clientInventoryOpened = "if((_this select 0) == (call AGM_Core_fnc_player))then{[] spawn {waitUntil {sleep 0.1;!(isNull (findDisplay 602))};disableSerialization;private ['_display'];_display = (findDisplay 602);(_display displayCtrl 633) ctrlAddEventHandler ['LBDblClick', '_this call AGM_Interaction_fnc_HandleInventoryClick;'];(_display displayCtrl 619) ctrlAddEventHandler ['LBDblClick', '_this call AGM_Interaction_fnc_HandleInventoryClick;'];(_display displayCtrl 638) ctrlAddEventHandler ['LBDblClick', '_this call AGM_Interaction_fnc_HandleInventoryClick;'];};};false";
     };
   };
 };
