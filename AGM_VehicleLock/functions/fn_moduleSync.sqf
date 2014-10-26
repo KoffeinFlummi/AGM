@@ -1,7 +1,7 @@
 /*
 * Author: Pabst Mirror
 *
-* module to handle auto setup and lockpick strength
+* sync module (sync with vehicles and players and players will get keys for those vehicles)
 *
 * Argument: from module
 *
@@ -10,6 +10,8 @@
 */
 
 _this spawn {
+	private ["_logic","_activated","_listOfKeys","_keyName"];
+
 	_logic = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 	_units = [_this,1,[],[[]]] call BIS_fnc_param;
 	_activated = [_this,2,true,[true]] call BIS_fnc_param;
@@ -22,18 +24,21 @@ _this spawn {
 	_listOfKeys = [];
 
 	{
-		if (_x isKindOf "Car") then {_listOfKeys pushBack ([_x] call AGM_VehicleLock_fnc_getVehiclesKeyName);};
-		if (_x isKindOf "Tank") then {_listOfKeys pushBack ([_x] call AGM_VehicleLock_fnc_getVehiclesKeyName);};
-		if (_x isKindOf "Helicopter") then {_listOfKeys pushBack ([_x] call AGM_VehicleLock_fnc_getVehiclesKeyName);};
+		if ((_x isKindOf "Car") || (_x isKindOf "Tank") || (_x isKindOf "Helicopter"))  then {
+			_keyName = [_x] call AGM_VehicleLock_fnc_getVehiclesKeyName;
+			if (!(_keyName in _listOfKeys)) then {
+				_listOfKeys pushBack _keyName;
+			};
+		};
 	} forEach _units;
 
-	if ((count _listOfKeys) < 1) exitWith {
+	if ((count _listOfKeys) == 0) exitWith {
 		["fn_moduleSync.sqf: no vehicles synced"] call BIS_fnc_error;		
 	};
 
 	if (hasInterface) then {
 		waitUntil {player == player};
-	
+		
 		if (player in _units) then {
 			{
 				player addItem _x;

@@ -11,9 +11,8 @@
 * bool
 */
 
-#define MAX_KEYS 50
+private ["_unit","_veh","_vehKeyRequired"];
 
-private ["_unit","_veh","_vehicleConfigSide","_lockType","_keySuffix","_vehKeyRequired"];
 
 _unit = [_this, 0, objNull, [objNull]] call bis_fnc_param;
 _veh = 	[_this, 1, objNull, [objNull]] call bis_fnc_param;

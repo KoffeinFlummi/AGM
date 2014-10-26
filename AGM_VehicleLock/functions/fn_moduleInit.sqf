@@ -11,6 +11,8 @@
 
 #define MAX_KEYS 50
 
+private ["_logic","_activated","_autoSetup","_setLockState","_keysInInventory","_vehiclesToSetupKeys","_index","_lock","_keyClassName"];
+
 _logic = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 _units = [_this,1,[],[[]]] call BIS_fnc_param;
 _activated = [_this,2,false,[true]] call BIS_fnc_param;

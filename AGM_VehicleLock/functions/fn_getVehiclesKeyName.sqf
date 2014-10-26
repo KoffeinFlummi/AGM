@@ -9,7 +9,8 @@
 * Return value:
 * string
 *
-* Example [car1] call AGM_VehicleLock_fnc_getVehiclesKeyName; 		returns "AGM_item_key_west"
+* Example: 	[hunter] call AGM_VehicleLock_fnc_getVehiclesKeyName; 		returns "AGM_item_key_west"
+*
 */
 
 #define MAX_KEYS 50
