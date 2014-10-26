@@ -50,7 +50,7 @@ if ((lbData [_idc, _selectedIndex]) == "") then {
     };
   // Vest
     case 638:{
-    _item = ((vestItems _player) call _fncSort) select _selectedIndex;
+      _item = ((vestItems _player) call _fncSort) select _selectedIndex;
     };
   };
   _class = ConfigFile >> "CfgWeapons" >> _item >> "AGM_Action";
