@@ -1,3 +1,25 @@
+# v0.94.1
+
+- Added: AGM_Core_Fnc_progressBar now returns the progression it had at the time of cancelling (#1432)
+
+- Changed: The way AI reacts to flashbangs (#1375)
+- Changed: AI units no longer create backblast damage when firing launchers (#1404)
+- Changed: New model for the spare wheel. (#1402)
+- Changed: AGM's marker system is now in a seperate PBO, AGM_Markers (#1389)
+
+- Fixed: Putting in ear plugs didn't require the item (#1429)
+- Fixed: Wasn't able to use Shift + [number keys] to select weapons without using "Disable Command Menu" (#1426)
+- Fixed: Couldn't use spectator mode from unconscious state (#1415)
+- Fixed: AGM_Wind would throw an error on some maps (#1412)
+- Fixed: Various "Updating Base Class" errors (#1407)
+- Fixed: Issues with AGM's inheritance, causing some vehicles to not have certain issues (#1386)
+- Fixed: Issues with various grenade throwing modes caused by a change in grenade mass (#1385)
+- Fixed: Friendly-Fire messages were sent multiple times with JIP clients (#1377)
+- Fixed: All new markers were global (#1351)
+- Fixed: Issues with MouseZChanged (#1336)
+- Fixed: An issue with floating explosives. (#1217)
+
+
 # v0.94
 
 - Added: New optional "Flow" interaction menu (#808).
