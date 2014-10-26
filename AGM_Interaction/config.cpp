@@ -367,7 +367,7 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "'AGM_CableTie' in items player && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "'AGM_CableTie' in items player && {alive AGM_Interaction_Target} && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
