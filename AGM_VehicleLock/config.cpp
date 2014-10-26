@@ -35,15 +35,8 @@ class CfgFunctions {
 class CfgVehicles {
 	class Logic;
 	class Module_F: Logic {
-		class ArgumentsBaseUnits
-		{
-			// class Units;
-		};
-		class ModuleDescription
-		{
-			// class AnyPlayer;
-			// class AnyVehicle;
-		};
+		class ArgumentsBaseUnits {};
+		class {};
 	};
 	class AGM_VehicleLock_ModuleSetup: Module_F {
 		author = "Pabst Mirror";
@@ -52,25 +45,20 @@ class CfgVehicles {
 		function = "AGM_VehicleLock_fnc_moduleInit";
 		scope = 2;
 		isGlobal = 1;
-		// icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
+		// icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";	//todo
 		functionPriority = 0;
-
-		// Module arguments
 		class Arguments
 		{
-			class InitType
-			{
+			class InitType {
 				displayName = "Automatic Key Setup"; // Argument label
 				description = "[side: every side's vehicles use the same key][unique: different keys for every vehicle]"; // Tooltip description
 				typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
-				class values
-				{
+				class values {
 					class Side		{name = "Side Keys"; 		value = 0;	 default = 1;};
 					class Unique	{name = "Unique Keys"; 		value = 1;};
 				};
 			};
-			class SetLockState
-			{
+			class SetLockState {
 				displayName = "Set Lock State"; // Argument label
 				description = "Set lock state for all vehicles on map"; // Tooltip description
 				typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
@@ -81,25 +69,20 @@ class CfgVehicles {
 					class Unique	{name = "Unlocked"; 	value = 2;};
 				};
 			};
-			class LockpickStrength
-			{
+			class LockpickStrength {
 				displayName = "Global Lockpick Strength";
 				description = "Global Time to lockpick (in seconds). Default: 10";
 				typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
 				defaultValue = "10"; // Default text filled in the input box
 			};		
-			class KeysInInventory
-			{
+			class KeysInInventory {
 				displayName = "Spare Keys In Car";
 				description = "Number of spare keys to put in vehicles Default: 0";
 				typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
 				defaultValue = "0"; // Default text filled in the input box
 			};
 		};
-
-		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
-		class ModuleDescription: ModuleDescription
-		{
+		class ModuleDescription: ModuleDescription {
 			description = "Can setup vehicle keys automaticly"; // Short description, will be formatted as structured text
 		};
 	};
@@ -111,18 +94,12 @@ class CfgVehicles {
 		function = "AGM_VehicleLock_fnc_moduleSync";
 		scope = 2;
 		isGlobal = 1;
-		// icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
+		// icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";	//todo
 		functionPriority = 100;
 
-		// Module arguments
 		class Arguments {};
-
-		// Module description. Must inherit from base class, otherwise pre-defined entities won't be available
-		class ModuleDescription: ModuleDescription
-		{
-			// class AnyPlayer;
-			// class AnyVehicle;
-			description = "Sets up a unique key for the vehicle and gives a copy to each player synced"; // Short description, will be formatted as structured text
+		class ModuleDescription: ModuleDescription {
+			description = "Sync with vehicles and players, gives player's keys to each synced vehicle"; // Short description, will be formatted as structured text
 			sync[] = {"AnyPlayer", "AnyVehicle"};
 		};
 	};
@@ -139,7 +116,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.3;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};	
 			class AGM_lockVehicle {
 				displayName = "$STR_AGM_VehicleLock";
@@ -149,7 +126,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.2;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};
 			class AGM_lockpickVehicle {
 				displayName = "$STR_AGM_VehicleLockpick";
@@ -171,7 +148,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.3;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};	
 			class AGM_lockVehicle {
 				displayName = "$STR_AGM_VehicleLock";
@@ -181,7 +158,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.2;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};
 			class AGM_lockpickVehicle {
 				displayName = "$STR_AGM_VehicleLockpick";
@@ -205,7 +182,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.3;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};	
 			class AGM_lockVehicle {
 				displayName = "$STR_AGM_VehicleLock";
@@ -215,7 +192,7 @@ class CfgVehicles {
 				showDisabled = 1;
 				priority = 0.2;
 				icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-				hotkey = "V";
+				// hotkey = "V";
 			};
 			class AGM_lockpickVehicle {
 				displayName = "$STR_AGM_VehicleLockpick";
