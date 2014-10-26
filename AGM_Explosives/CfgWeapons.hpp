@@ -15,6 +15,10 @@ class CfgWeapons {
 		model = "\A3\weapons_F\ammo\mag_univ.p3d";
 		AGM_range = 250;
 		AGM_Detonator = 1;
+		class AGM_Action {
+			condition = "true";
+			statement = "[_this select 0, _this select 2] call AGM_Explosives_fnc_openDetonateUI;";
+		};
 		
 		class ItemInfo: AGM_ExplosiveItem {
 			mass = 3;
@@ -38,12 +42,10 @@ class CfgWeapons {
 			uniformModel = "\A3\Structures_F\Items\Tools\Pliers_F.p3d";
 		};
 	};
-	class AGM_DeadManSwitch: AGM_ItemCore {
-		scope = 2;
+	class AGM_DeadManSwitch: AGM_Clacker {
 		displayName = $STR_AGM_Explosives_DeadManSwitch_displayName;
 		descriptionShort = $STR_AGM_Explosives_DeadManSwitch_description;
 		picture = "\AGM_Explosives\Data\UI\DeadmanSwitch.paa";
-		model = "\A3\weapons_F\ammo\mag_univ.p3d";
 		AGM_range = 100;
 		AGM_Detonator = 1;
 		
