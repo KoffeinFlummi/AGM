@@ -35,7 +35,7 @@ class CfgFunctions {
       class getDoor;
       class getDown;
       class getSelectedButton;
-	  class handleInventoryClick;
+      class handleInventoryClick;
       class hideMenu;
       class hideMouseHint;
       class initialiseInteraction;

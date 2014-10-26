@@ -27,43 +27,42 @@ _result = false;
 
 if ((lbData [_idc, _selectedIndex]) == "") then {
   private ["_fncSort"];
-
   _fncSort = {
-	  private ["_newArray"];
-	  _newArray = [];
-	  {
-		  if !(_x in _newArray) then {
-			  _newArray pushBack _x;
-		  };
-		  false
-	  } count _this;
-	  _newArray
+    private ["_newArray"];
+    _newArray = [];
+    {
+      if !(_x in _newArray) then {
+        _newArray pushBack _x;
+      };
+      false
+    } count _this;
+    _newArray
   };
   _item = "";
   switch (_idc) do {
-	  // Uniform
-	  case 633:{
-		  _item = ((uniformItems _player) call _fncSort) select _selectedIndex;
-	  };
-	  // Backpack
-	  case 619:{
-		  _item = ((backpackItems _player) call _fncSort) select _selectedIndex;
-	  };
-	  // Vest
-	  case 638:{
-		  _item = ((vestItems _player) call _fncSort) select _selectedIndex;
-	  };
+  // Uniform
+    case 633:{
+      _item = ((uniformItems _player) call _fncSort) select _selectedIndex;
+    };
+  // Backpack
+    case 619:{
+      _item = ((backpackItems _player) call _fncSort) select _selectedIndex;
+    };
+  // Vest
+    case 638:{
+    _item = ((vestItems _player) call _fncSort) select _selectedIndex;
+    };
   };
   _class = ConfigFile >> "CfgWeapons" >> _item >> "AGM_Action";
 };
 if (isClass(_class)) exitWith {
-	// Not sure how this is supposed to integrate yet.
-	//_exceptions = getArray (_action >> "exceptions");
-	if ([_player, vehicle _player, _item] call (compile getText(_class >> "condition"))) then {
-		[_player, vehicle _player, _item] call (compile getText(_class >> "statement"));
-		true
-	} else {
-		false
-	};
+// Not sure how this is supposed to integrate yet.
+//_exceptions = getArray (_action >> "exceptions");
+  if ([_player, vehicle _player, _item] call (compile getText(_class >> "condition"))) then {
+    [_player, vehicle _player, _item] call (compile getText(_class >> "statement"));
+    true
+  } else {
+    false
+  };
 };
 false
