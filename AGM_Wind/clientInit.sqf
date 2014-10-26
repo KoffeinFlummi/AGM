@@ -2,7 +2,7 @@
 
 if !(hasInterface) exitWith {};
 
-// Kesrel Stuff
+// Kestrel Stuff
 AGM_isKestrel = false;
 AGM_isKestrelWheel = false;
 
@@ -20,6 +20,7 @@ if (isNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempMeanJan")) then
   AGM_TempAmplitudeJul = getNumber (configFile >> "CfgWorlds" >> worldName >> "AGM_TempAmplitudeJul");
 } else {
   _lat = - getNumber (configFile >> "CfgWorlds" >> worldName >> "latitude");
+  if (_lat == 0) then {_lat = 0.1;};
   _yearlyTempMean = 28 min (28 - (abs(_lat) - 23.5) * (3.14159/180) * 6371 / 145);
   AGM_TempMeanJan = _yearlyTempMean - _lat / abs(_lat) * ((abs(_lat) max 25) - 25) * 30 / 65;
   AGM_TempMeanJul = _yearlyTempMean + _lat / abs(_lat) * ((abs(_lat) max 25) - 25) * 30 / 65;
