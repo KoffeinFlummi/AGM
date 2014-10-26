@@ -1,9 +1,10 @@
-Basic key system for locking vehicles.
-Primary target would be role play TVT, but has usues in all game types, even co-ops (DAC AI will steal unlocked vehicles)
+Adds keys as an item, to lock and unlock vehicles.
+
+Primary target would be role play or TVT, but has uses in all game types, even co-ops (DAC AI will steal unlocked vehicles)
 
 Modules allow fast setup, or can manualy add items and set variables.
 
-Two key mods:
+Two key modes:
 
 Side based (Default): "AGM_item_key_west" works on any hunter. 
 Unique:  "AGM_item_key_13" is only key that will open a specific vehicle.
@@ -26,3 +27,7 @@ AGM_VEHICLELOCK_defaultLockpickStrength - Time in seconds to lock pick globaly, 
 vehicle setVariables:
 AGM_VehicleLock_type - either side [west, east...] or number [0-49] - determins what key will open it
 agm_vehicleLock_pickStr - determins how long lockpicking with take
+
+
+New to github, hopefully I didn't screw up.  Not sure if this is within AGM's scope.
+PabstMirror
