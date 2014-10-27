@@ -10,7 +10,7 @@ _handleDoubleTap = "if (_time < (AGM_Core_keyTimes select _keyIndex) + 0.5 && {_
 _handleHold = "_allowHold = false; _disallowHold = false; if (AGM_Core_keyStates select _keyIndex > 1) exitWith {false}; if (AGM_Core_keyStates select _keyIndex > 0) then {_keyCode = _keyIndex + 0.9};";
 _handleHoldUp = "if (AGM_Core_keyStates select _keyIndex > 1) then {_keyCode = _keyIndex + 0.9};";
 
-_debug = "if (!isNil 'AGM_Debug' && {AGM_Debug == 'Keys'}) then {systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex))};";
+_debug = "if (!isNil 'AGM_Debug' && {'Keys' in AGM_Debug}) then {systemChat (str _keyCode + ' ' + str (AGM_Core_keyStates select _keyIndex))};";
 
 _onKeyDown = "" + _debug;
 _onKeyUp = "" + _debug;

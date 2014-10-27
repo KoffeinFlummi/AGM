@@ -112,7 +112,7 @@ if (_count == 0) then {
 _jamChance = [_jamChance, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray;
 
 
-if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
+if (!isNil "AGM_Debug" && {"Overheating" in AGM_Debug}) then {
 	hintSilent format ["Temperature/JamChance: %1, %2", _temperature, 1.0/_jamChance];
 };
 
