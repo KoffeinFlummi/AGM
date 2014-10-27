@@ -250,6 +250,15 @@ class CfgVehicles {
         description = "How often the markers should be refreshed (in seconds)";
         defaultValue = 1;
       };
+      class HideAiGroups {
+        displayName = "Hide AI groups?";
+        description = "Hide markers for 'AI only' groups?";
+        typeName = "BOOL";
+        class values {
+          class Yes { name = "Yes"; value = 1; };
+          class No { name = "No"; value = 0; default = 1; };
+        };
+      };
     };
   };
 };

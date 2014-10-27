@@ -16,6 +16,10 @@ if (AGM_TABLET_ISOPEN) then {
 	{
 	  	deleteMarkerLocal  format ["%1", _x select 1];
 	} forEach AGM_Tablet_Markers;
+
+	{
+	  	deleteMarkerLocal  format ["%1", _x];
+	} forEach AGM_BFT_Markers;
 	
 	_markerselect = player getVariable ["AGM_Tablet_Marker_Select", []];
 	deleteMarkerLocal _markerselect;
