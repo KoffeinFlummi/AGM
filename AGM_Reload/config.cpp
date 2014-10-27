@@ -24,7 +24,7 @@ class CfgFunctions {
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_AmmoIndicatorReload {
-      clientTake = "if (player == _this select 0 && {(_this select 1) in [uniformContainer player, vestContainer player, backpackContainer player]} && {_this select 2 == currentMagazine player}) then {_vehicle = vehicle player; [_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, true] call AGM_Reload_fnc_checkAmmo};";
+      clientTake = "if (_this select 0 == call AGM_Core_fnc_player && {(_this select 1) in [uniformContainer (_this select 0), vestContainer (_this select 0), backpackContainer (_this select 0)]} && {_this select 2 == currentMagazine (_this select 0)}) then {_vehicle = vehicle (_this select 0); [_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, true] call AGM_Reload_fnc_checkAmmo};";
     };
   };
 };
@@ -32,7 +32,7 @@ class Extended_Take_EventHandlers {
 class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
-    condition = "(player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}) && {currentWeapon _vehicle != ''}";
+    condition = "(_player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}) && {currentWeapon _vehicle != ''}";
     statement = "[_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, false] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 0;
