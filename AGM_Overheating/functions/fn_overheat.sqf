@@ -1,11 +1,11 @@
 // by commy2 and CAA-Picard
 
-private ["_unit", "_weapon", "_ammoType", "_projectile", "_variableName", "_overheat", "_temperature", "_time", "_energyIncrement", "_barrelMass", "_scaledTemperature"];
+private ["_unit", "_weapon", "_ammo", "_projectile", "_variableName", "_overheat", "_temperature", "_time", "_energyIncrement", "_barrelMass", "_scaledTemperature"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
-_ammoType = _this select 4;
-_projectile = _this select 5;
+_ammo = _this select 4;
+_projectile = _this select 6;
 _velocity = velocity _projectile;
 
 // each weapon has it's own variable. Can't store the temperature in the weapon since they are not objects unfortunately.
@@ -17,7 +17,7 @@ _temperature = _overheat select 0;
 _time = _overheat select 1;
 
 // Get physical parameters
-_energyIncrement = 0.75 * 0.0005 * getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_BulletMass") * (vectorMagnitudeSqr _velocity);
+_energyIncrement = 0.75 * 0.0005 * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_BulletMass") * (vectorMagnitudeSqr _velocity);
 _barrelMass = 0.50 * (getNumber (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "weight") / 22.0) max 1.0;
 
 // Calculate cooling
