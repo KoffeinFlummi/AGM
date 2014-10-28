@@ -3,7 +3,7 @@
 	class CA_Distance; \
 	class AGM_CA_Distance: CA_Distance { \
 		idc = 1713151; \
-		text = "0200"; \
+		text = "-"; \
 	}; \
 	class AGM_Rangehelper: RscMapControl { \
 		onDraw = "((ctrlParent (_this select 0)) displayCtrl 1713151) ctrlShow (cameraView == 'GUNNER');"; \
