@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AGM">
 <Package name="VehicleLock">
-	<Key ID="STR_AGM_VehicleUnLock">
-		<English>Unlock Vehicle</English>
-<!-- 		<German>todo</German>
-		<Spanish>todo</Spanish>
-		<French>todo</French>
-		<Polish>todo</Polish>
-		<Czech>todo</Czech>
-		<Italian>todo</Italian>
-		<Portuguese>todo</Portuguese>
-		<Hungarian>todo</Hungarian> -->
-	</Key>
-	<Key ID="STR_AGM_VehicleLock">
-		<English>Lock Vehicle</English>
-<!-- 		<German>Lock Vehicle</German>
-		<Spanish>todo</Spanish>
-		<French>todo</French>
-		<Polish>todo</Polish>
-		<Czech>todo</Czech>
-		<Italian>todo</Italian>
-		<Portuguese>todo</Portuguese>
-		<Hungarian>todo</Hungarian> -->
-	</Key>
-	<Key ID="STR_AGM_VehicleLockpick">
-		<English>Lockpick Vehicle</English>
-<!-- 		<German>todo</German>
-		<Spanish>todo</Spanish>
-		<French>todo</French>
-		<Polish>todo</Polish>
-		<Czech>todo</Czech>
-		<Italian>todo</Italian>
-		<Portuguese>todo</Portuguese>
-		<Hungarian>todo</Hungarian> -->
-	</Key>
+  <Key ID="STR_AGM_VehicleUnLock">
+    <English>Unlock Vehicle</English>
+<!--    <German>todo</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
+  <Key ID="STR_AGM_VehicleLock">
+    <English>Lock Vehicle</English>
+<!--    <German>Lock Vehicle</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
+  <Key ID="STR_AGM_VehicleLockpick">
+    <English>Lockpick Vehicle</English>
+<!--    <German>todo</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
 </Package>
 </Project>

@@ -24,3 +24,7 @@ _throwMuzzleNames = getArray (configfile >> "CfgWeapons" >> "Throw" >> "muzzles"
   };
   AGM_WeaponSelect_AllMuzzles pushBack _muzzleName;
 } forEach _throwMuzzleNames;
+
+// hide grenade count if none is selected
+[uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
+["Soldier", {[_this select 0, [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag != ""] call AGM_WeaponSelect_fnc_toggleGrenadeCount}] call AGM_Core_fnc_addInfoDisplayEventHandler;

@@ -356,6 +356,11 @@ class CfgWeapons {
     };
     muzzles[] = {"AP"};
   };
+
+  // comp RHS
+  class RHS_weap_M242BC: autocannon_30mm_CTWS {
+    muzzles[] = {"AP","HE"};
+  };
 };
 
 class CfgAmmo {

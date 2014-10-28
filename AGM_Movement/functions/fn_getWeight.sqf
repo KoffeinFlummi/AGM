@@ -6,7 +6,7 @@ private ["_unit", "_weight"];
 
 _unit = _this select 0;
 
-_weight = loadAbs player * 0.1;
+_weight = loadAbs _unit * 0.1;
 
 if (profileNamespace getVariable ["AGM_useImperial", false]) then {
 	_weight = format ["%1lb", (round (_weight * 100)) / 100];

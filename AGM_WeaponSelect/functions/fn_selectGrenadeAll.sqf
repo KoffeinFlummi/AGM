@@ -41,6 +41,7 @@ if (_numberOfMagazines > 0) then {
   // Select the correct muzzle
   [_player, AGM_WeaponSelect_AllMuzzles select _nextIndex] call AGM_WeaponSelect_fnc_setNextGrenadeMuzzle;
 
+  [uiNamespace getVariable "AGM_dlgSoldier", true] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
 } else {
   // There is a no muzzle with magazines --> select nothing
   AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = "";
@@ -48,6 +49,8 @@ if (_numberOfMagazines > 0) then {
 
   _text = [localize "STR_AGM_WeaponSelect_NoGrenadesLeft", [1,0,0]] call AGM_Core_fnc_stringToColoredText;
   [composeText [lineBreak, _text]] call AGM_Core_fnc_displayTextStructured;
+
+  [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
 };
 
 AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag = AGM_WeaponSelect_CurrentGrenadeMuzzleFrag in AGM_WeaponSelect_FragMuzzles;

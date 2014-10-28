@@ -11,7 +11,7 @@
  * None
  */
 
-nul = _this spawn {
+_this spawn {
   _unit = _this select 0;
   _grenade = _this select 1;
 

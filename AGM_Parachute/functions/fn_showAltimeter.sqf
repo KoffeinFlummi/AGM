@@ -45,5 +45,8 @@ AGM_Parachute_AltimeterFnc = [uiNamespace getVariable ["AGM_Altimeter", displayN
 		_descentRate = floor ((_oldHeight - _height) / (_curTime - _prevTime));
 		_oldHeight = _height;
 		_prevTime = _curTime;
+
+		// close altimeter, @todo _unit can change due to team switch, zeus!
+		if !("AGM_Altimeter" in assignedItems _unit) exitWith {call AGM_Parachute_fnc_hideAltimeter};
 	};
 };

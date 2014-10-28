@@ -1,11 +1,12 @@
 // by commy2 and CAA-Picard
 
 _this spawn {
-	_weapon = _this select 0;
+	_player = _this select 0;
+	_weapon = _this select 1;
 
 	// Calculate cool down of weapon since last shot
 	_string = format ["AGM_Overheating_%1", _weapon];
-	_overheat = player getVariable [_string, [0, 0]];
+	_overheat = _player getVariable [_string, [0, 0]];
 	_temperature = _overheat select 0;
 	_time = _overheat select 1;
 
@@ -21,7 +22,7 @@ _this spawn {
 
 	// Store new temperature
 	_time = time;
-	player setVariable [_string, [_temperature, _time], false];
+	_player setVariable [_string, [_temperature, _time], false];
 	_scaledTemperature = (_temperature / 1000) min 1;
 
 	// Play animation and report temperature
@@ -31,7 +32,7 @@ _this spawn {
 		_action = "Gear";
 	};
 
-	player playActionNow _action;
+	_player playActionNow _action;
 
 	sleep 1;
 

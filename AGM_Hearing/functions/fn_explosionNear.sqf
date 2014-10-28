@@ -14,8 +14,8 @@ private ["_unit", "_damage", "_strength"];
 
 _unit = _this select 0;
 _damage = _this select 1;
-_strength = (_damage * 2) min 1;
 
+_strength = (_damage * 2) min 1;
 if (_strength < 0.01) exitWith {};
 
 [_unit, _strength] spawn {

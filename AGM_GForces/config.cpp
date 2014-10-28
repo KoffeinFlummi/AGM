@@ -12,18 +12,9 @@ class CfgPatches {
   };
 };
 
-class CfgFunctions {
-  class AGM_GForces {
-    class AGM_GForces {
-      file = "AGM_GForces\functions";
-      class init;
-    };
-  };
-};
-
 class Extended_PostInit_EventHandlers {
-  class AGM_GForces {
-    Init = "_this call AGM_GForces_fnc_init";
+  class AGM_Interaction {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_GForces\clientInit.sqf'";
   };
 };
 
