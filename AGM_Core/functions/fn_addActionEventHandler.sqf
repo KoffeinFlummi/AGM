@@ -47,7 +47,7 @@ if (_actionID == -1) then {
 	_addAction = call compile format [
 		"[
 			'',
-			{{if (_this call (_x select 0)) then {_this call (_x select 1)}} forEach (((_this select 0) getVariable '%2') select 1 select 2)},
+			{if (inputAction '%1' == 0) exitWith {}; {if (_this call (_x select 0)) then {_this call (_x select 1)}} forEach (((_this select 0) getVariable '%2') select 1 select 2)},
 			'',
 			0,
 			false,
