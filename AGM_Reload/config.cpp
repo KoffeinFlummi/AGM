@@ -44,7 +44,7 @@ class AGM_Core_Default_Keys {
 class CfgActions {
   class LoadMagazine;
   class LoadEmptyMagazine : LoadMagazine {
-    show = 0;
+    showWindow = 0;
     textDefault = "";
   };
 };
