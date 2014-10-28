@@ -2,8 +2,9 @@
 <Project name="AGM">
   <Package name="FireControlSystem">
     <Key ID="STR_AGM_FireControlSystem_LaseTarget">
-      <English>Lase Target</English>
-      <German>Ziel anlasern</German>
+      <English>Lase Target / Measure Distance</English>
+      <German>Ziel anlasern / Entfernung Messen</German>
+      <!-- Outdated
       <Spanish>Iluminar objetivo</Spanish>
       <Polish>Naświetl cel</Polish>
       <Czech>Označit cíl</Czech>
@@ -12,6 +13,7 @@
       <Hungarian>Lézeres célmegjelölés</Hungarian>
       <Portuguese>Marcar Alvo</Portuguese>
       <Italian>Designatore Laser</Italian>
+      -->
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
