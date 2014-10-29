@@ -23,12 +23,12 @@ if (_mode != 0) then {
       _velocity = [
         0.5 * (_velocity select 0),
         0.5 * (_velocity select 1),
-        [0, 0, 0] distance (0.5 vectorMultiply _velocity)
+        [0, 0, 0] distance (_velocity vectorMultiply 0.5)
       ];
     };
     //precise throw
     case 2 : {
-      _velocity = (vectorMagnitude _velocity) vectorMultiply (_unit weaponDirection _weapon);
+      _velocity = (_unit weaponDirection _weapon) vectorMultiply (vectorMagnitude _velocity);
     };
     //roll grande
     case 3 : {

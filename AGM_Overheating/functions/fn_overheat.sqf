@@ -33,33 +33,59 @@ _scaledTemperature = (_temperature / 1000) min 1;
 // Smoke SFX, beginning at TEMP 0.15
 private "_intensity";
 
-_intensity = 0.3 * (_scaledTemperature - 0.15) max 0;
-
+_intensity = (_scaledTemperature - 0.2) * 1.25;
 if (_intensity > 0) then {
-	private "_position";
-	_position = getPosATL _projectile;
+	private ["_position", "_direction"];
+
+	_position = position _projectile;
+	_direction = (_unit weaponDirection _weapon) vectorMultiply 0.25;
 
 	drop [
-		["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
+		"\A3\data_f\ParticleEffects\Universal\Refract",
 		"",
 		"Billboard",
+		1.1,
+		2,
+		_position,
+		_direction,
 		1,
 		1.2,
-		_position,
-		[0, 0, 0.25],
-		0,
-		1.275,
-		1,
-		0.025,
-		[0.28, 0.33, 0.37],
-		[[0.6, 0.6, 0.6, _intensity]],
-		[0.2],
-		1,
-		0.04,
+		1.0,
+		0.1,
+		[0.1,0.15],
+		[[0.06,0.06,0.06,0.32*_scaledTemperature], [0.3,0.3,0.3,0.28*_scaledTemperature], [0.3,0.3,0.3,0.25*_scaledTemperature], [0.3,0.3,0.3,0.22*_scaledTemperature], [0.3,0.3,0.3,0.1*_scaledTemperature]],
+		[1,0],
+		0.1,
+		0.05,
 		"",
 		"",
 		""
 	];
+
+	_intensity = (_scaledTemperature - 0.5) * 2;
+	if (_intensity > 0) then {
+		drop [
+			["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
+			"",
+			"Billboard",
+			1,
+			1.2,
+			_position,
+			[0,0,0.25],
+			0,
+			1.275,
+			1,
+			0.025,
+			[0.28,0.33,0.37],
+			[[0.6,0.6,0.6,0.3*_intensity]],
+			[0.2],
+			1,
+			0.04,
+			"",
+			"",
+			""
+		];
+	};
 };
 
 
