@@ -3,7 +3,7 @@
 <Package name="VehicleLock">
   <Key ID="STR_AGM_VehicleUnLock">
     <English>Unlock Vehicle</English>
-    <German>Fahrzeug aufschliessen</German>
+    <German>Fahrzeug aufschließen</German>
 <!--<Spanish>todo</Spanish>
     <French>todo</French>
     <Polish>todo</Polish>
@@ -14,7 +14,7 @@
   </Key>
   <Key ID="STR_AGM_VehicleLock">
     <English>Lock Vehicle</English>
-    <German>Fahrzeug abschliessen</German>
+    <German>Fahrzeug abschließen</German>
 <!--<Spanish>todo</Spanish>
     <French>todo</French>
     <Polish>todo</Polish>
