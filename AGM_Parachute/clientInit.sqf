@@ -27,3 +27,6 @@
 		};
 	};
 };
+
+// don't show speed and height when in expert mode
+["Parachute", {if (!cadetMode) then {_dlg = _this select 0; {(_dlg displayCtrl _x) ctrlShow false} forEach [121, 122, 1004, 1005, 1006, 1014]};}] call AGM_Core_fnc_addInfoDisplayEventHandler;

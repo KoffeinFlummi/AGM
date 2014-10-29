@@ -79,12 +79,17 @@ class CfgVehicles {
 	class AGM_NonSteerableParachute: B_Parachute {
 		author = "$STR_AGM_Core_AGMTeam";
 		scope = 2;
-		displayName = "$STR_AGM_Parachute_NonSteerableParachute";	//@todo
+		displayName = "$STR_AGM_Parachute_NonSteerableParachute";
 		//picture = "\A3\Characters_F\data\ui\icon_b_parachute_ca.paa";	// @todo
 		//model = "\A3\Weapons_F\Ammoboxes\Bags\Backpack_Parachute";	// @todo
 		backpackSimulation = "ParachuteNonSteerable";	//ParachuteSteerable
 		ParachuteClass = "NonSteerable_Parachute_F";
 		maximumLoad = 0;
 		mass = 100;
+	};
+
+	class Parachute;
+	class NonSteerable_Parachute_F: Parachute {
+		model = "\A3\Air_F_Beta\Parachute_02\Parachute_02_F.p3d";
 	};
 };

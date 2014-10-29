@@ -12,4 +12,7 @@ class RscInGameUI {
 	class RscUnitInfoAir: RscUnitInfo {
 		onLoad = "uiNamespace setVariable ['AGM_dlgAircraft', _this select 0]; {_this call _x} forEach ((missionNamespace getVariable ['AGM_onLoadInfoAircraft', [-1, [], []]]) select 2); [""onLoad"",_this,""RscUnitInfo"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""";
 	};
+	class RscUnitInfoParachute: RscUnitInfo {
+		onLoad = "uiNamespace setVariable ['AGM_dlgParachute', _this select 0]; {_this call _x} forEach ((missionNamespace getVariable ['AGM_onLoadInfoParachute', [-1, [], []]]) select 2); [""onLoad"",_this,""RscUnitInfo"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""";
+	};
 };
