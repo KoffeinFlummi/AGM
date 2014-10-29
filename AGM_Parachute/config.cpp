@@ -87,9 +87,4 @@ class CfgVehicles {
 		maximumLoad = 0;
 		mass = 100;
 	};
-
-	class Parachute;
-	class NonSteerable_Parachute_F: Parachute {
-		model = "\A3\Air_F_Beta\Parachute_02\Parachute_02_F.p3d";
-	};
 };
