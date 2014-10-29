@@ -57,7 +57,7 @@ class Extended_Init_EventHandlers {
 class CfgWeapons {
 	class ItemWatch;
 	class AGM_Altimeter:ItemWatch {
-		author = "AGM";
+		author = "$STR_AGM_Core_AGMTeam";
 		descriptionShort = "$STR_AGM_Parachute_AltimeterDescription";
 		displayName = "$STR_AGM_Parachute_AltimeterDisplayName";
 		picture = "\AGM_Parachute\UI\watch_altimeter.paa";
@@ -70,6 +70,12 @@ class CfgVehicles {
 		class TransportItems {
 			class _xx_AGM_Altimeter {
 				name = "AGM_Altimeter";
+				count = 6;
+			};
+		};
+		class TransportBackpacks {
+			class _xx_AGM_NonSteerableParachute {
+				backpack = "AGM_NonSteerableParachute";
 				count = 6;
 			};
 		};
@@ -87,4 +93,8 @@ class CfgVehicles {
 		maximumLoad = 0;
 		mass = 100;
 	};
+
+	class B_Soldier_05_f; class B_Pilot_F: B_Soldier_05_f {backpack = "AGM_NonSteerableParachute";};
+	class I_Soldier_04_F; class I_pilot_F: I_Soldier_04_F {backpack = "AGM_NonSteerableParachute";};
+	class O_helipilot_F; class O_Pilot_F: O_helipilot_F {backpack = "AGM_NonSteerableParachute";};
 };
