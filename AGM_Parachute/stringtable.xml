@@ -29,5 +29,9 @@
       <Spanish>Utilizado para mostrar altura, tasa de descenso y hora.</Spanish>
       <Hungarian>Mutatja a magasságot, zuhanás sebességét és az időt.</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Parachute_NonSteerableParachute">
+      <English>Non-Steerable Parachute</English>
+      <German>Ungelenkter Fallschirm</German>
+    </Key>
   </Package>
 </Project>
