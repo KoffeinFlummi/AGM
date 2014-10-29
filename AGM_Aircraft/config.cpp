@@ -803,6 +803,21 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
       class RightDoorGun;
     };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "((this doorPhase 'door_L') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "((this doorPhase 'door_R') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "((this doorPhase 'door_L') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "((this doorPhase 'door_R') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+    };
   };
   class Plane_CAS_01_base_F: Plane_Base_F {
     maxSpeed = 736;
