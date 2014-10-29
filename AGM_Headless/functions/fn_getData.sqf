@@ -18,7 +18,7 @@ _count = count _allGroups; diag_log text "[";
 {
   private ["_units", "_vehicles", "_positions", "_vehiclePositions", "_vehicleIDs", "_index", "_waypoints"];
 
-  _side = side _x;
+  _side = ([civilian, west, east, resistance] find side _x) max 0;
 
   _units = [];
   _vehicles = [];

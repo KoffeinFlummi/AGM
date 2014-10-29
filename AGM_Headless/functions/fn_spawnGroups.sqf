@@ -3,7 +3,7 @@
 {
   private ["_side", "_units", "_positions", "_vehicles", "_vehicleIDs", "_vehiclePositions", "_waypoints", "_vehicle", "_group1", "_unit", "_index", "_waypoint", "_waypointData"];
 
-  _side = _x select 0;
+  _side = [civilian, west, east, resistance] select (_x select 0);
   _units = _x select 1;
   _positions = _x select 2;
   _vehicles = _x select 3;
