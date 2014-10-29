@@ -332,6 +332,28 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
+  class Man;
+  class CAManBase: Man {
+    // @todo
+    class UserActions {
+      class AGM_Fire {
+        displayName = "";
+        priority = -99;
+        available = 1;
+        radius = 2.5;
+        radiusView = 0;
+        position = "";
+        showWindow = 0;
+        showIn3D = 0;
+        onlyForPlayer = 1;
+        shortcut = "DefaultAction";
+        condition = "call AGM_Core_UserActionFireCondition";
+        statement = "call AGM_Core_UserActionFire";
+        userActionID = 100;
+      };
+    };
+  };
+
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
     author = "AGM Team";
