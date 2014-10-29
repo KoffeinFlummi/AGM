@@ -1,6 +1,6 @@
 class CfgPatches {
 	class AGM_Parachute {
-		units[] = {};
+		units[] = {"AGM_NonSteerableParachute"};
 		weapons[] = {"AGM_Altimeter"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core};
@@ -73,5 +73,18 @@ class CfgVehicles {
 				count = 6;
 			};
 		};
+	};
+
+	class B_Parachute;
+	class AGM_NonSteerableParachute: B_Parachute {
+		author = "$STR_AGM_Core_AGMTeam";
+		scope = 2;
+		displayName = "$STR_AGM_Parachute_NonSteerableParachute";	//@todo
+		//picture = "\A3\Characters_F\data\ui\icon_b_parachute_ca.paa";	// @todo
+		//model = "\A3\Weapons_F\Ammoboxes\Bags\Backpack_Parachute";	// @todo
+		backpackSimulation = "ParachuteNonSteerable";	//ParachuteSteerable
+		ParachuteClass = "NonSteerable_Parachute_F";
+		maximumLoad = 0;
+		mass = 100;
 	};
 };

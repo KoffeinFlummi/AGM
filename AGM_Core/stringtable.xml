@@ -2,6 +2,17 @@
 <!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="Core">
+    <Key ID="STR_AGM_Core_AGMTeam">
+      <English>AGM-Team</English>
+      <German>AGM-Team</German>
+      <Spanish>AGM-Team</Spanish>
+      <Czech>AGM-Team</Czech>
+      <Polish>AGM-Team</Polish>
+      <French>AGM-Team</French>
+      <Portuguese>AGM-Team</Portuguese>
+      <Hungarian>AGM-Team</Hungarian>
+      <Italian>AGM-Team</Italian>
+    </Key>
     <Key ID="STR_AGM_Core_Save">
       <English>Save</English>
       <German>Speichern</German>
