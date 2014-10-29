@@ -873,6 +873,24 @@ class CfgVehicles {
       class DoorR1_Close: DoorL1_Close {
         condition = "this animationPhase ""door_back_R"" > 0.5 AND Alive(this)";
       };
+      class CargoRamp_Open: DoorL1_Open {
+        userActionID = 52;
+        displayName = "$STR_AGM_Aircraft_OpenCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_OpenCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" < 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 1]";
+      };
+      class CargoRamp_Close: DoorL1_Close {
+        userActionID = 55;
+        displayName = "$STR_AGM_Aircraft_CloseCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_CloseCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" > 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 0]";
+      };
     };
   };
   class Plane_Fighter_03_base_F: Plane_Base_F {
