@@ -29,6 +29,6 @@ while {
 };
 
 // fire weapon with this index
-_logic = createGroup west createUnit ["Logic", [0,0,0], [], 0, "NONE"];
+_logic = createGroup sideLogic createUnit ["Logic", [0,0,0], [], 0, "NONE"];
 _logic action ["useWeapon", _unit, _unit, _index];
 deleteVehicle _logic;
