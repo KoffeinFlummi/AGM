@@ -53,7 +53,7 @@ def check_file(projectpath, path, name):
       fhandle = open(path, "w")
       content = content.replace("\t", "  ")
       while content.count(" \n") > 0:
-        content.replace(" \n", "\n")
+        content = content.replace(" \n", "\n")
       fhandle.write(content)
       fhandle.close()
       if "-q" not in sys.argv:
