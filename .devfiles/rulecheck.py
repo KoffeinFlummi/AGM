@@ -52,6 +52,8 @@ def check_file(projectpath, path, name):
     if "-f" in sys.argv:
       fhandle = open(path, "w")
       content = content.replace("\t", "  ")
+      while content.count(" \n") > 0:
+        content.replace(" \n", "\n")
       fhandle.write(content)
       fhandle.close()
       if "-q" not in sys.argv:
