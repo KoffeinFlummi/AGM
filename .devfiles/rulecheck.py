@@ -13,6 +13,7 @@ import sys
 # To only check a specific module, put it down as a sys arg.
 # By default, everything is checked.
 # Use "-f" to attempt automatic fixes
+# Use "-q" to surpress file information and just show module stuff
 
 # Right now it just checks indentation, might expand on it later
 
@@ -31,7 +32,8 @@ def check_file(projectpath, path, name):
   if name.split(".")[-1] not in ["sqf", "hqf", "cpp", "xml"]:
     return 0, 0
 
-  print("\nCHECKING FILE: {}".format(relative))
+  if "-q" not in sys.argv:
+    print("\nCHECKING FILE: {}".format(relative))
 
   fhandle = open(path, "r")
   content = fhandle.read()
@@ -43,15 +45,17 @@ def check_file(projectpath, path, name):
   numtabs = content.count("\t")
   if numtabs > 0:
     warnings += numtabs
-    print("  Detected {} tab(s)".format(numtabs))
-    print("  Please use 2 spaces for indentation instead.")
+    if "-q" not in sys.argv:
+      print("  Detected {} tab(s)".format(numtabs))
+      print("  Please use 2 spaces for indentation instead.")
 
     if "-f" in sys.argv:
       fhandle = open(path, "w")
       content = content.replace("\t", "  ")
       fhandle.write(content)
       fhandle.close()
-      print("  !!! Attempted to fix file. Please check to confirm results.")
+      if "-q" not in sys.argv:
+        print("  !!! Attempted to fix file. Please check to confirm results.")
 
   try:
     import xtermcolor
@@ -66,9 +70,9 @@ def check_file(projectpath, path, name):
     string = "There are some issues, please resolve them and rerun this script."
     colour = 0xFF0000
 
-  if coloured:
+  if coloured and "-q" not in sys.argv:
     print(xtermcolor.colorize(string, rgb=colour))
-  else:
+  elif "-q" not in sys.argv:
     print(string)
 
   return warnings, errors
