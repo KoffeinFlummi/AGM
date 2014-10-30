@@ -15,7 +15,7 @@ private ["_statement", "_actionsVar", "_id", "_actionIDs", "_actions"];
 _statement = _this select 0;
 
 if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
+  _statement = compile _statement;
 };
 
 _actionsVar = missionNamespace getVariable ["AGM_EventHandler_ScrollWheel", [-1, [], []]];

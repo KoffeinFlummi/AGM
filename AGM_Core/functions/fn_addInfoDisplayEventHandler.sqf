@@ -17,7 +17,7 @@ _type = format ["AGM_onLoadInfo%1", _this select 0];
 _statement = _this select 1;
 
 if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
+  _statement = compile _statement;
 };
 
 _actionsVar = missionNamespace getVariable [_type, [-1, [], []]];
