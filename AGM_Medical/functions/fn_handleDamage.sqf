@@ -127,10 +127,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
     _preventDeath = false;
     // Only prevent death if we are going to handle unconciousness
     if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
-      if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0 and {_unit getVariable ["AGM_Lives", 1] > 0}}) then {
+      if (!(_unit getVariable "AGM_Unconscious") and {_unit getVariable ["AGM_PreventDeath", AGM_Medical_PreventInstaDeath > 0]}) then {
         _preventDeath = true;
       };
-      if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0 and {_unit getVariable ["AGM_Lives", 1] > 0}}) then {
+      if ((_unit getVariable "AGM_Unconscious") and {_unit getVariable ["AGM_PreventDeath", AGM_Medical_PreventDeathWhileUnconscious > 0]}) then {
         _preventDeath = true;
       };
     };
@@ -285,10 +285,10 @@ if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == 
 _preventDeath = false;
 // Only prevent death if we are going to handle unconciousness
 if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
-  if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0 and {_unit getVariable ["AGM_Lives", 1] > 0}}) then {
+  if (!(_unit getVariable "AGM_Unconscious") and {_unit getVariable ["AGM_PreventDeath", AGM_Medical_PreventInstaDeath > 0]}) then {
     _preventDeath = true;
   };
-  if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0 and {_unit getVariable ["AGM_Lives", 1] > 0}}) then {
+  if ((_unit getVariable "AGM_Unconscious") and {_unit getVariable ["AGM_PreventDeath", AGM_Medical_PreventDeathWhileUnconscious > 0]}) then {
     _preventDeath = true;
   };
 };
