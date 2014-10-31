@@ -50,15 +50,12 @@ AGM_20Rnd_762x51_Mag_SD
 AGM_20Rnd_762x51_Mag_AP
 */
 
-
-// SEE LICENSE.TXT FOR LICENSING INFORMATION
-
 class CfgPatches {
-	class AGM_Ballistics {
-		units[] = {};
-		weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
-		requiredVersion = 0.60;
-		requiredAddons[] = {AGM_Core};
+  class AGM_Ballistics {
+    units[] = {};
+    weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
+    requiredVersion = 0.60;
+    requiredAddons[] = {AGM_Core};
     version = "0.94.1";
     versionStr = "0.94.1";
     versionAr[] = {0,94,1};
