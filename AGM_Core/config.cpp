@@ -355,51 +355,7 @@ class CfgVehicles {
   };
 
   // += needs a non inherited entry in that class, otherwise it simply overwrites
-  #define MACRO_ITEMSDEFAULT \
-    items[] = {"FirstAidKit"}; \
-    respawnitems[] = {"FirstAidKit"};
-
-  class B_Soldier_02_f; class B_soldier_AR_F:B_Soldier_02_f {MACRO_ITEMSDEFAULT};
-  class B_Soldier_support_base_F; class B_soldier_AAR_F:B_Soldier_support_base_F {MACRO_ITEMSDEFAULT};
-  class B_Soldier_base_F; class B_CTRG_soldier_AR_A_F:B_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class I_G_Soldier_base_F; class I_G_Soldier_AR_F:I_G_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class B_G_Soldier_AR_F:I_G_Soldier_AR_F {MACRO_ITEMSDEFAULT};
-  class O_G_Soldier_AR_F:I_G_Soldier_AR_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_base_F; class O_Soldier_AR_F:O_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_support_base_F; class O_Soldier_AAR_F:O_Soldier_support_base_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_Urban_base; class O_soldierU_AR_F:O_Soldier_Urban_base {MACRO_ITEMSDEFAULT};
-  class O_soldierU_AAR_F:O_Soldier_Urban_base {MACRO_ITEMSDEFAULT};
-  class I_Soldier_02_F; class I_Soldier_AR_F:I_Soldier_02_F {MACRO_ITEMSDEFAULT};
-  class I_Soldier_support_base_F; class I_Soldier_AAR_F:I_Soldier_support_base_F {MACRO_ITEMSDEFAULT};
-  class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class B_Soldier_03_f; class B_engineer_F:B_Soldier_03_f {MACRO_ITEMSDEFAULT};
-  class B_Soldier_diver_base_F; class B_diver_exp_F:B_Soldier_diver_base_F {MACRO_ITEMSDEFAULT};
-  class B_Soldier_recon_base; class B_recon_exp_F:B_Soldier_recon_base {MACRO_ITEMSDEFAULT};
-  class B_CTRG_soldier_engineer_exp_F:B_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class I_G_Soldier_base_F; class I_G_engineer_F:I_G_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class I_G_Soldier_exp_F:I_G_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class B_G_engineer_F:I_G_engineer_F {MACRO_ITEMSDEFAULT};
-  class O_G_engineer_F:I_G_engineer_F {MACRO_ITEMSDEFAULT};
-  class B_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ITEMSDEFAULT};
-  class O_G_Soldier_exp_F:I_G_Soldier_exp_F {MACRO_ITEMSDEFAULT};
-  class I_Soldier_02_F; class I_Soldier_exp_F:I_Soldier_02_F {MACRO_ITEMSDEFAULT};
-  class I_Soldier_base_F; class I_engineer_F:I_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class I_Soldier_diver_base_F; class I_diver_exp_F:I_Soldier_diver_base_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_base_F; class O_soldier_exp_F:O_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class O_engineer_F:O_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_diver_base_F; class O_diver_exp_F:O_Soldier_diver_base_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_recon_base; class O_recon_exp_F:O_Soldier_recon_base {MACRO_ITEMSDEFAULT};
-  class O_Soldier_Urban_base; class O_soldierU_exp_F:O_Soldier_Urban_base {MACRO_ITEMSDEFAULT};
-  class O_engineer_U_F:O_Soldier_Urban_base {MACRO_ITEMSDEFAULT};
-  class B_Protagonist_VR_F:B_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class O_Protagonist_VR_F:O_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class I_Protagonist_VR_F:I_Soldier_base_F {MACRO_ITEMSDEFAULT};
-  class B_Soldier_F; class b_soldier_universal_f:B_Soldier_F {MACRO_ITEMSDEFAULT};
-  class B_G_Soldier_F; class b_g_soldier_universal_f:B_G_Soldier_F {MACRO_ITEMSDEFAULT};
-  class O_Soldier_F; class o_soldier_universal_f:O_Soldier_F {MACRO_ITEMSDEFAULT};
-  class O_G_Soldier_F; class o_g_soldier_universal_f:O_G_Soldier_F {MACRO_ITEMSDEFAULT};
-  class I_soldier_F; class i_soldier_universal_f:I_soldier_F {MACRO_ITEMSDEFAULT};
-  class I_G_Soldier_F; class i_g_soldier_universal_f:I_G_Soldier_F {MACRO_ITEMSDEFAULT};
+  #include <DefaultItems.hpp>
 
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
