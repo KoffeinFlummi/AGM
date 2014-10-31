@@ -24,14 +24,14 @@ _number = round abs _number;
 _bin = ["", "0"] select (_number == 0);
 
 while {_number > 0} do {
-	_rest = str (_number mod 2);
-	_number = floor (_number / 2);
+  _rest = str (_number mod 2);
+  _number = floor (_number / 2);
 
-	_bin = _rest + _bin;
+  _bin = _rest + _bin;
 };
 
 while {count toArray _bin < _minLength} do {
-	_bin = "0" + _bin;
+  _bin = "0" + _bin;
 };
 
 _sign + _bin

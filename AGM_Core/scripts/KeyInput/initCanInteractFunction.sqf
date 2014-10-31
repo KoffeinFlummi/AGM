@@ -8,12 +8,12 @@ _configFile = configFile >> "AGM_Core_canInteractConditions";
 _count = count _configFile;
 
 for "_index" from 0 to (_count -1) do {
-	_config = _configFile select _index;
-	_configName = configName _config;
+  _config = _configFile select _index;
+  _configName = configName _config;
 
-	_condition = getText (_config >> "condition");
+  _condition = getText (_config >> "condition");
 
-	_function = _function + format ["&& {%1 || {'%2' in _exceptions}}", _condition, _configName];
+  _function = _function + format ["&& {%1 || {'%2' in _exceptions}}", _condition, _configName];
 };
 
 AGM_Core_canInteract = compileFinal _function;

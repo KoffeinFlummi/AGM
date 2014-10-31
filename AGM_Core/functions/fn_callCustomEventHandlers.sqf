@@ -25,6 +25,6 @@ _name = format ["AGM_CustomEventHandlers_%1", _type];
 _actions = (_object getVariable [_name, [-1, [], []]]) select 2;
 
 {
-	_argument call _x; nil;
+  _argument call _x; nil;
 } count _actions;
 nil
