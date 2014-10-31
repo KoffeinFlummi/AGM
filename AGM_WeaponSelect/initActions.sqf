@@ -3,21 +3,21 @@
 // don't throw no nades if none selected!
 if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
 	AGM_WeaponSelect_actionThrowCondition = {
-	  _muzzle = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
+		_muzzle = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
 
-	if (_muzzle == "") exitWith {true};
+		if (_muzzle == "") exitWith {true};
 
-	_magazines = magazines (_this select 1);
+		_magazines = magazines (_this select 1);
 
-	_result = true;
-	{
-		if (_x in _magazines) exitWith {_result = false};
-	} forEach getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+		_result = true;
+		{
+			if (_x in _magazines) exitWith {_result = false};
+		} forEach getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
 
-	if (_result) then {
-		if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
-	};
-	_result
+		if (_result) then {
+			if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
+		};
+		_result
 	};
 
 	AGM_WeaponSelect_actionThrow = {

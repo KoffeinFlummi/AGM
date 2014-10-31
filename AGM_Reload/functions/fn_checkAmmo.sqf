@@ -42,7 +42,7 @@ _this spawn {
 	};
 
 	if !(_skipDelay) then {
-		player playActionNow "Gear";
+		_vehicle playActionNow "Gear";
 		sleep 1
 	};
 

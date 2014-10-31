@@ -31,6 +31,7 @@ class CfgFunctions {
       class selectMagazineVehicle;
       class setNextGrenadeMuzzle;
       class throwGrenade;
+      class toggleGrenadeCount;
     };
   };
 };

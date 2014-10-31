@@ -207,10 +207,6 @@
       <Polish>Wystrzel granat dymny</Polish>
       <Spanish>Disparar lanzador de humo</Spanish>
     </Key>
-    <Key ID="STR_AGM_WeaponSelect_NoGrenadeSelected">
-      <English>No grenade selected</English>
-      <German>Keine Granate gewählt</German>
-    </Key>
 
   </Package>
 </Project>

@@ -15,7 +15,6 @@ class CfgFunctions {
 	class AGM_Parachute {
 		class AGM_Parachute {
 			file = "\AGM_Parachute\functions";
-			class Init{postInit = 1;};
 			class onEachFrame;
 			class doLanding;
 			class hideAltimeter;
@@ -24,7 +23,21 @@ class CfgFunctions {
 	};
 };
 
-class AGM_Core_Default_Keys {
+class Extended_PostInit_EventHandlers {
+  class AGM_Parachute {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Parachute\clientInit.sqf';";
+  };
+};
+
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Parachute_Altimeter {
+      clientInit = "_this call compile preprocessFileLineNumbers '\AGM_Parachute\initActions.sqf';";
+    };
+  };
+};
+
+/*class AGM_Core_Default_Keys {
 	class showAltimeter {
 		displayName = "$STR_AGM_Parachute_showAltimeter";
 		condition = "(alive _player) && {'AGM_Altimeter' in assignedItems _player}";
@@ -37,7 +50,7 @@ class AGM_Core_Default_Keys {
 		control = 1;
 		alt = 0;
 	};
-};
+};*/
 
 #include "RscTitles.hpp"
 

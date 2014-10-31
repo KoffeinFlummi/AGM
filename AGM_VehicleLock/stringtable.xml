@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AGM">
 <Package name="VehicleLock">
+<<<<<<< HEAD
 	<Key ID="STR_AGM_Vehicle_Action_UnLock">
 		<English>Unlock Vehicle</English>
 		<German>todo</German>
@@ -58,5 +59,40 @@
 	
 	
 
+=======
+  <Key ID="STR_AGM_VehicleUnLock">
+    <English>Unlock Vehicle</English>
+<!--    <German>todo</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
+  <Key ID="STR_AGM_VehicleLock">
+    <English>Lock Vehicle</English>
+<!--    <German>Lock Vehicle</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
+  <Key ID="STR_AGM_VehicleLockpick">
+    <English>Lockpick Vehicle</English>
+<!--    <German>todo</German>
+    <Spanish>todo</Spanish>
+    <French>todo</French>
+    <Polish>todo</Polish>
+    <Czech>todo</Czech>
+    <Italian>todo</Italian>
+    <Portuguese>todo</Portuguese>
+    <Hungarian>todo</Hungarian> -->
+  </Key>
+>>>>>>> origin/master
 </Package>
 </Project>
