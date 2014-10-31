@@ -80,7 +80,7 @@ def check_file(projectpath, path, name):
   return warnings, errors
 
 def check_module(projectpath, module):
-  print("")
+  #print("")
   print(" Checking {} ".format(module).center(79, "="))
 
   warnings = 0
