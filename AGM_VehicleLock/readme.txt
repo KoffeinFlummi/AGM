@@ -29,9 +29,9 @@ Global Variable:
 AGM_VEHICLELOCK_defaultLockpickStrength - Time in seconds to lock pick globaly, can also set per-vehicle (-1 would disable)
 
 Vehicle setVariables:
-agm_lock_side - SIDE: determines what 
+agm_lock_side - SIDE: overrides a vehicle's side, allows indfor to use little-bird's with indp keys
 agm_vehicleLock_pickStr - NUMBER: secons, determines how long lockpicking with take, overrides AGM_VEHICLELOCK_defaultLockpickStrength
-agm_lock_customKeys - ARRAY: array of strings of magazinesDetails, use the following function to set this:
+agm_lock_customKeys - ARRAY: array of strings of magazinesDetails, use the following function to modify
 
 [bob, car1, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
 will add a "AGM_magazine_customKey" to bob and program it to work on car1

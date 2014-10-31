@@ -36,8 +36,7 @@ _this spawn {
           case (1):{true};
           case (2):{false};
         };
-        [_x, _lock]
-        call AGM_VehicleLock_fnc_setVehicleLock;
+        [_x, _lock] call AGM_VehicleLock_fnc_setVehicleLock;
     }
     forEach vehicles;
   };
