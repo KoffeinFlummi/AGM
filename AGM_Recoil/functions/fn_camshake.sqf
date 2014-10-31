@@ -25,25 +25,25 @@ _freqMod = 0;
 
 _powerCoef = 0;
 if (_unit != vehicle _unit) then {
-	_powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
-	_powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
+  _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
+  _powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
 } else {
-	private ["_type", "_config", "_recoil"];
+  private ["_type", "_config", "_recoil"];
 
-	_type = ["recoil", "recoilProne"] select (stance _unit == "PRONE");
+  _type = ["recoil", "recoilProne"] select (stance _unit == "PRONE");
 
-	_config = configFile >> "CfgWeapons" >> _weapon;
-	_recoil = if (_muzzle == _weapon) then {
-		getText (_config >> _type)
-	} else {
-		getText (_config >> _muzzle >> _type)
-	};
+  _config = configFile >> "CfgWeapons" >> _weapon;
+  _recoil = if (_muzzle == _weapon) then {
+    getText (_config >> _type)
+  } else {
+    getText (_config >> _muzzle >> _type)
+  };
 
-	_recoil = getArray (configFile >> "CfgRecoils" >> _recoil);
-	if (count _recoil < 2) exitWith {};
+  _recoil = getArray (configFile >> "CfgRecoils" >> _recoil);
+  if (count _recoil < 2) exitWith {};
 
-	_powerCoef = _recoil select 1;
-	_powerCoef = (call compile format ["%1", _powerCoef]) * RECOIL_COEF;
+  _powerCoef = _recoil select 1;
+  _powerCoef = (call compile format ["%1", _powerCoef]) * RECOIL_COEF;
 };
 
 if (_unit getVariable ["AGM_weaponRested", false]) then {_powerMod = _powerMod - 0.07};
@@ -51,14 +51,14 @@ if (_unit getVariable ["AGM_bipodDeployed", false]) then {_powerMod = _powerMod 
 
 private "_camshake";
 _camshake = [
-	_powerCoef * (BASE_POWER + _powerMod) max 0,
-	BASE_TIME + _timeMod max 0,
-	BASE_FREQ + _freqMod max 0
+  _powerCoef * (BASE_POWER + _powerMod) max 0,
+  BASE_TIME + _timeMod max 0,
+  BASE_FREQ + _freqMod max 0
 ];
 
 if (!isNil "AGM_Debug" && {"Recoil" in AGM_Debug}) then {
-	systemChat str _camshake;
-	copyToClipboard format ["addCamShake %1;", _camshake];
+  systemChat str _camshake;
+  copyToClipboard format ["addCamShake %1;", _camshake];
 };
 
 addCamShake _camshake;

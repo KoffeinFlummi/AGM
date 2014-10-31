@@ -18,48 +18,48 @@ _lastFired = _unit getVariable ["AGM_Recoil_lastFired", -1];
 _burst = _unit getVariable ["AGM_Recoil_Burst", 0];
 
 if (time - _lastFired < 0.45) then {
-	private "_startDisperse";
-	_burst = _burst + 1;
-	_unit setVariable ["AGM_Recoil_Burst", _burst, false];
+  private "_startDisperse";
+  _burst = _burst + 1;
+  _unit setVariable ["AGM_Recoil_Burst", _burst, false];
 
-	_startDisperse = [1, 3] select (cameraView == "GUNNER");
+  _startDisperse = [1, 3] select (cameraView == "GUNNER");
 
-	if (_burst > _startDisperse) then {
-		// Reset burst size for calcs
-		_burst = _burst - _startDisperse;
+  if (_burst > _startDisperse) then {
+    // Reset burst size for calcs
+    _burst = _burst - _startDisperse;
 
-		// Increase dispersion cap if player is not using sights
-		_sightsBurst = [30, 0] select (cameraView == "GUNNER");
+    // Increase dispersion cap if player is not using sights
+    _sightsBurst = [30, 0] select (cameraView == "GUNNER");
 
-		// Increase initial dispersion and cap if player is moving
-		if (speed _unit > 0.5) then {
-			_sightsBurst = 25;
-			_burst = _burst + 15;
-		};
+    // Increase initial dispersion and cap if player is moving
+    if (speed _unit > 0.5) then {
+      _sightsBurst = 25;
+      _burst = _burst + 15;
+    };
 
-		// Maximum possible dispersion (without _sightsBurst mod)
-		_maxBurst = 50;
+    // Maximum possible dispersion (without _sightsBurst mod)
+    _maxBurst = 50;
 
-		if (_unit getVariable ["AGM_weaponRested", false]) then {_maxBurst = 25};
-		if (_unit getVariable ["AGM_bipodDeployed", false]) then {_maxBurst = 18};
+    if (_unit getVariable ["AGM_weaponRested", false]) then {_maxBurst = 25};
+    if (_unit getVariable ["AGM_bipodDeployed", false]) then {_maxBurst = 18};
 
-		// Cap the dispersion
-		_burst = (_burst min _maxBurst) + _sightsBurst;
+    // Cap the dispersion
+    _burst = (_burst min _maxBurst) + _sightsBurst;
 
-		// Add random variance
-		_elevAngle = (_burst / 300) - random (_burst / 300) * 2;
-		_travAngle = (_burst / 260) - random (_burst / 260) * 2;
+    // Add random variance
+    _elevAngle = (_burst / 300) - random (_burst / 300) * 2;
+    _travAngle = (_burst / 260) - random (_burst / 260) * 2;
 
-		if (!isNil "AGM_Debug" && {"Burst" in AGM_Debug}) then {
-			systemChat str [_travAngle, _elevAngle];
-		};
+    if (!isNil "AGM_Debug" && {"Burst" in AGM_Debug}) then {
+      systemChat str [_travAngle, _elevAngle];
+    };
 
-		[_projectile, _travAngle, _elevAngle] call AGM_Core_fnc_changeProjectileDirection;
-	};
+    [_projectile, _travAngle, _elevAngle] call AGM_Core_fnc_changeProjectileDirection;
+  };
 } else {
 
-	// Long enough delay, reset burst
-	_unit setVariable ["AGM_Recoil_Burst", 0, false];
+  // Long enough delay, reset burst
+  _unit setVariable ["AGM_Recoil_Burst", 0, false];
 };
 
 _unit setVariable ["AGM_Recoil_lastFired", time, false];
