@@ -12,7 +12,8 @@ class CfgPatches {
   };
 };
 
-class RadioProtocolBase {
+class RadioProtocolBase;
+class AGM_RadioProtocolNoRadio: RadioProtocolBase {
   class CuratorWaypointPlaced;
   class CuratorWaypointPlacedAttack;
   class CuratorObjectPlaced;
@@ -179,18 +180,27 @@ class RadioProtocolBase {
 class CfgVoice {
   class Base;
   class ENG: Base {
-    protocol = "RadioProtocolBase";
+    protocol = "AGM_RadioProtocolNoRadio";
   };
   class ENGB: Base {
-    protocol = "RadioProtocolBase";
+    protocol = "AGM_RadioProtocolNoRadio";
+  };
+  class ENGVR: Base {
+    protocol = "AGM_RadioProtocolNoRadio";
   };
   class ENVR: Base {
-    protocol = "RadioProtocolBase";
+    protocol = "AGM_RadioProtocolNoRadio";
   };
   class GRE: Base {
-    protocol = "RadioProtocolBase";
+    protocol = "AGM_RadioProtocolNoRadio";
   };
   class PER: Base {
-    protocol = "RadioProtocolBase";
+    protocol = "AGM_RadioProtocolNoRadio";
+  };
+
+  // comp RHS. @todo move this later
+  class BaseRUS;
+  class RUS: BaseRUS {
+    protocol = "AGM_RadioProtocolNoRadio";
   };
 };
