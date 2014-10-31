@@ -40,8 +40,8 @@ if (time - _lastFired < 0.45) then {
 		// Maximum possible dispersion (without _sightsBurst mod)
 		_maxBurst = 50;
 
-		if (missionNamespace getVariable ["AGM_weaponRested", false]) then {_maxBurst = 25};
-		if (missionNamespace getVariable ["AGM_bipodDeployed", false]) then {_maxBurst = 18};
+		if (_unit getVariable ["AGM_weaponRested", false]) then {_maxBurst = 25};
+		if (_unit getVariable ["AGM_bipodDeployed", false]) then {_maxBurst = 18};
 
 		// Cap the dispersion
 		_burst = (_burst min _maxBurst) + _sightsBurst;

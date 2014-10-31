@@ -16,7 +16,7 @@ private ["_magazine", "_ammo"];
 
 _magazine = primaryWeaponMagazine _unit select 0;
 
-if (_magazine == "") exitWith {};
+if (isNil "_magazine") exitWith {};
 
 _ammo = getText (configFile >> "CfgMagazines" >> _magazine >> "ammo");
 

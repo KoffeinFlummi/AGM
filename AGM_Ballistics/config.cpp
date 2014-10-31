@@ -416,7 +416,9 @@ class CfgWeapons {
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
       class MuzzleSlot: MuzzleSlot {
-        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+        // Shit is broken again
+        //compatibleItems[] += {"AGM_muzzle_mzls_H"};
+        compatibleItems[] = {"muzzle_snds_H","muzzle_snds_H_SW","AGM_muzzle_mzls_H"};
       };
     };
   };
@@ -872,7 +874,7 @@ class CfgWeapons {
 
   // Flash suppressors
   class AGM_muzzle_mzls_H: ItemCore {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_H";
     htMin = 1;
     htMax = 600;
@@ -924,7 +926,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_B: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_B";
     displayName = "$STR_AGM_muzzle_mzls_B";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_h_ca.paa";
@@ -969,7 +971,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_L: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_L";
     displayName = "$STR_AGM_muzzle_mzls_L";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
@@ -1014,7 +1016,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_smg_01: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_smg_01";
     displayName = "$STR_AGM_muzzle_mzls_smg_01";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
@@ -1059,7 +1061,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_smg_02: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_smg_02";
     displayName = "$STR_AGM_muzzle_mzls_smg_02";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";

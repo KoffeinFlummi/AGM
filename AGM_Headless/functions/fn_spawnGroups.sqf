@@ -1,18 +1,21 @@
 // by commy2
 
 {
-  private ["_side", "_units", "_positions", "_vehicles", "_vehicleIDs", "_vehiclePositions", "_waypoints", "_vehicle", "_group1", "_unit", "_index", "_waypoint", "_waypointData"];
+  private ["_side", "_units", "_positions", "_directions", "_vehicles", "_vehicleIDs", "_vehiclePositions", "_vehicleDirections", "_waypoints", "_vehicle", "_group1", "_unit", "_index", "_waypoint", "_waypointData"];
 
-  _side = _x select 0;
+  _side = [civilian, west, east, resistance] select (_x select 0);
   _units = _x select 1;
   _positions = _x select 2;
-  _vehicles = _x select 3;
-  _vehicleIDs = _x select 4;
-  _vehiclePositions = _x select 5;
-  _waypoints = _x select 6;
+  _directions = _x select 3;
+  _vehicles = _x select 4;
+  _vehicleIDs = _x select 5;
+  _vehiclePositions = _x select 6;
+  _vehicleDirections = _x select 7;
+  _waypoints = _x select 8;
 
   {
     _vehicle = createVehicle [_x, _vehiclePositions select _forEachIndex, [], 0, "FORM"];
+    _vehicle setDir (_vehicleDirections select _forEachIndex);
     _vehicles set [_forEachIndex, _vehicle];
   } forEach _vehicles;
 
@@ -21,7 +24,9 @@
   {
     _unit = _group1 createUnit [_x, _positions select _forEachIndex, [], 0, "FORM"];
     _index = _vehicleIDs select _forEachIndex;
-    if (_index != -1) then {
+    if (_index == -1) then {
+      _unit setDir (_directions select _forEachIndex);
+    } else {
       _unit moveInAny (_vehicles select _index);
     };
   } forEach _units;

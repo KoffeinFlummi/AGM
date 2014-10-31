@@ -46,8 +46,8 @@ if (_unit != vehicle _unit) then {
 	_powerCoef = (call compile format ["%1", _powerCoef]) * RECOIL_COEF;
 };
 
-if (missionNamespace getVariable ["AGM_weaponRested", false]) then {_powerMod = _powerMod - 0.07};
-if (missionNamespace getVariable ["AGM_bipodDeployed", false]) then {_powerMod = _powerMod - 0.11};
+if (_unit getVariable ["AGM_weaponRested", false]) then {_powerMod = _powerMod - 0.07};
+if (_unit getVariable ["AGM_bipodDeployed", false]) then {_powerMod = _powerMod - 0.11};
 
 private "_camshake";
 _camshake = [

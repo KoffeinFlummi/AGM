@@ -803,6 +803,21 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
       class RightDoorGun;
     };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "((this doorPhase 'door_L') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "((this doorPhase 'door_R') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "((this doorPhase 'door_L') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "((this doorPhase 'door_R') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+    };
   };
   class Plane_CAS_01_base_F: Plane_Base_F {
     maxSpeed = 736;
@@ -843,6 +858,39 @@ class CfgVehicles {
   class Heli_Transport_02_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
+    };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "this animationPhase ""door_back_L"" < 0.5 AND Alive(this)";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "this animationPhase ""door_back_R"" < 0.5 AND Alive(this)";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "this animationPhase ""door_back_L"" > 0.5 AND Alive(this)";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "this animationPhase ""door_back_R"" > 0.5 AND Alive(this)";
+      };
+      class CargoRamp_Open: DoorL1_Open {
+        userActionID = 52;
+        displayName = "$STR_AGM_Aircraft_OpenCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_OpenCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" < 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 1]";
+      };
+      class CargoRamp_Close: DoorL1_Close {
+        userActionID = 55;
+        displayName = "$STR_AGM_Aircraft_CloseCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_CloseCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" > 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 0]";
+      };
     };
   };
   class Plane_Fighter_03_base_F: Plane_Base_F {

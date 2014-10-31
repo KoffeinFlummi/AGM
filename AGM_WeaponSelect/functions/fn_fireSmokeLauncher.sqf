@@ -31,7 +31,7 @@ if (
 
 	private "_logic";
 
-	_logic = createGroup west createUnit ["Logic", [0,0,0], [], 0, "NONE"];
+	_logic = createGroup sideLogic createUnit ["Logic", [0,0,0], [], 0, "NONE"];
 	_logic action ["useWeapon", _vehicle, commander _vehicle, 0];
 	deleteVehicle _logic;
 };

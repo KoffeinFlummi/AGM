@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AGM">
   <Package name="Aircraft">
-
     <Key ID="STR_AGM_Aircraft_CMFlareLauncher_Burst_Name">
       <English>Burst</English>
       <German>Feuerstoß</German>
@@ -13,6 +12,15 @@
       <Hungarian>Sorozat</Hungarian>
       <Portuguese>Rajada</Portuguese>
       <Italian>Raffica</Italian>
+    </Key>
+
+    <Key ID="STR_AGM_Aircraft_OpenCargoRamp">
+      <English>Open Cargo Door</English>
+      <German>Laderampe öffnen</German>
+    </Key>
+    <Key ID="STR_AGM_Aircraft_CloseCargoRamp">
+      <English>Close Cargo Door</English>
+      <German>Laderampe schließen</German>
     </Key>
 
   </Package>

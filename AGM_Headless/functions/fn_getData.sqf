@@ -16,14 +16,16 @@ _allGroups = [];
 _data = [];
 _count = count _allGroups; diag_log text "[";
 {
-  private ["_units", "_vehicles", "_positions", "_vehiclePositions", "_vehicleIDs", "_index", "_waypoints"];
+  private ["_units", "_vehicles", "_positions", "_directions", "_vehiclePositions", "_vehicleDirections", "_vehicleIDs", "_index", "_waypoints"];
 
-  _side = side _x;
+  _side = ([civilian, west, east, resistance] find side _x) max 0;
 
   _units = [];
   _vehicles = [];
   _positions = [];
+  _directions = [];
   _vehiclePositions = [];
+  _vehicleDirections = [];
   _vehicleIDs = [];
   {
     _units pushBack typeOf _x;
@@ -32,6 +34,7 @@ _count = count _allGroups; diag_log text "[";
       if (_index == -1) then {
         _index = _vehicles pushBack vehicle _x;
         _vehiclePositions pushBack position vehicle _x;
+        _vehicleDirections pushBack direction vehicle _x;
       };
       _vehicleIDs pushBack _index;
     } else {
@@ -39,6 +42,7 @@ _count = count _allGroups; diag_log text "[";
     };
 
     _positions pushBack position _x;
+    _directions pushBack direction _x;
   } forEach units _x;
 
   _vehicles = [_vehicles, {typeOf _this}] call AGM_Core_fnc_map;
@@ -72,7 +76,7 @@ _count = count _allGroups; diag_log text "[";
     _waypoints set [_forEachIndex, _waypointData];
   } forEach waypoints _x;
 
-  _data pushBack [_side, _units, _positions, _vehicles, _vehicleIDs, _vehiclePositions, _waypoints];
+  _data pushBack [_side, _units, _positions, _directions, _vehicles, _vehicleIDs, _vehiclePositions, _vehicleDirections, _waypoints];
 
   [str [_side, _units, _positions, _vehicles, _vehicleIDs, _vehiclePositions, _waypoints] + ([",", ""] select (count _data == _count))] call AGM_Headless_fnc_logLongString;
 } forEach _allGroups; diag_log text "] call AGM_Headless_fnc_spawnGroups;";

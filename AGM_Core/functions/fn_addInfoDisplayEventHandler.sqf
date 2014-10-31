@@ -4,7 +4,7 @@
  * Add a unit info type handler.
  *
  * Argument:
- * 0: Type. Can be "Soldier", "Vehicle" or "Aircraft" (String)
+ * 0: Type. Can be "Soldier", "Vehicle", "Aircraft" or "Parachute" (String)
  * 1: Code to execute (Code or String)
  *
  * Return value:

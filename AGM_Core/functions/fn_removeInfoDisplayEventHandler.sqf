@@ -4,7 +4,7 @@
  * Remove a unit info type event handler.
  *
  * Argument:
- * 0: Type. Can be "Soldier", "Vehicle" or "Aircraft" (String)
+ * 0: Type. Can be "Soldier", "Vehicle", "Aircraft" or "Parachute" (String)
  * 1: ID of the event handler (Number)
  *
  * Return value:
