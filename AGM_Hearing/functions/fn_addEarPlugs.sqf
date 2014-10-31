@@ -8,7 +8,7 @@ _unit = _this select 0;
 _launcher = secondaryWeapon _unit;
 
 if (_launcher != "") exitWith {
-	_unit addItem "AGM_EarBuds";
+  _unit addItem "AGM_EarBuds";
 };
 
 // otherwise add earplugs if the soldier has a big rifle
@@ -21,5 +21,5 @@ if (isNil "_magazine") exitWith {};
 _ammo = getText (configFile >> "CfgMagazines" >> _magazine >> "ammo");
 
 if (getNumber (configFile >> "CfgAmmo" >> _ammo >> "audiblefire") > 8) then {
-	_unit addItem "AGM_EarBuds";
+  _unit addItem "AGM_EarBuds";
 };
