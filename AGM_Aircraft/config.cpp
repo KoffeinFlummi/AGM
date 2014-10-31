@@ -547,10 +547,10 @@ class CfgWeapons {
       reloadTime = 0.023;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class AGM_gatling_20mm_Comanche: gatling_20mm {
@@ -584,10 +584,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class LMG_Minigun_heli: LMG_Minigun {
     showAimCursorInternal = 0;
@@ -595,10 +595,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class M134_minigun: MGunCore {
     class LowROF: Mode_FullAuto {
@@ -609,10 +609,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: HighROF{};
-    class short: close{};
-    class medium: LowROF{};
-    class far: medium{};
+    class close: HighROF {};
+    class short: close {};
+    class medium: LowROF {};
+    class far: medium {};
   };
 
   class Gatling_30mm_Plane_CAS_01_F: CannonCore {
@@ -633,11 +633,11 @@ class CfgWeapons {
       textureType = "burst";
       multiplier = 3;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class Missile_AA_04_Plane_CAS_01_F: RocketPods {
@@ -688,8 +688,8 @@ class CfgWeapons {
       aiRateOfFire = 5;
       aiRateOfFireDistance = 500;
     };
-    class Medium_AI: Far_AI {  };
-    class Close_AI: Far_AI {  };
+    class Medium_AI: Far_AI {};
+    class Close_AI: Far_AI {};
     class Burst: RocketPods {
       burst = 1;
       reloadTime = 0.002;
@@ -747,11 +747,11 @@ class CfgWeapons {
       dispersion = 0.0055;
       reloadTime = 0.04;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 };
 
