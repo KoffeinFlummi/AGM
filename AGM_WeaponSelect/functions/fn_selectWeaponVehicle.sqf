@@ -15,8 +15,8 @@ _weapon = _weapons select _index;
 
 _index = 0;
 while {
-	_index < 100 && {_vehicle currentWeaponTurret _turret != _weapon}
+  _index < 100 && {_vehicle currentWeaponTurret _turret != _weapon}
 } do {
-	_player action ["SwitchWeapon", _vehicle, _player, _index];
-	_index = _index + 1;
+  _player action ["SwitchWeapon", _vehicle, _player, _index];
+  _index = _index + 1;
 };
