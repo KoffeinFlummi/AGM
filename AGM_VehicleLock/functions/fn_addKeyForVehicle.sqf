@@ -15,7 +15,7 @@
 		Nothing
 	
 	Example:
-		[bob, car1, false] call AGM_VehicleLock_fnc_addKeyForVehicle;
+		[bob, car1, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
 */
 
 #define CUSTOM_KEY_CLASSNAME "AGM_magazine_customKey"

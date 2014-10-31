@@ -27,6 +27,6 @@ if (_key == "") exitWith {["AGM_VehicleLock_fnc_serverSetupCustomKey: null key s
 
 //Want this as atomic as possible
 
-_currentKeys = _veh  	
+_currentKeys = _veh getVariable ["agm_lock_customKeys", []];
 _currentKeys pushBack _key;
 _veh setVariable ["agm_lock_customKeys", _currentKeys, true];

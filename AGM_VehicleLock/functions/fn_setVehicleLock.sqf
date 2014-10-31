@@ -26,20 +26,6 @@ if (isNull _veh) exitWith {["AGM_VehicleLock_fnc_setVehicleLock: null vehicle"] 
 
 _lockNumber = if (_isLocked) then {2} else {0};
 
-<<<<<<< HEAD
 //this will work on people without this mod
 [[_veh, _lockNumber], "lock", _veh] call BIS_fnc_MP;	
 _veh setVariable ["AGM_LockedInventory", _isLocked, true];
-=======
-if (local _veh) then {
-  if (_lockState) then {
-    _veh lock 2;
-    _veh setVariable ["AGM_LockedInventory", true, true];
-  } else {
-    _veh lock 0;
-    _veh setVariable ["AGM_LockedInventory", false, true];
-  };
-} else {//run where vehicle is local
-  [_this, "AGM_VehicleLock_fnc_setVehicleLock", _veh] call BIS_fnc_MP;
-};
->>>>>>> origin/master
