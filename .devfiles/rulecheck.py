@@ -2,6 +2,7 @@
 
 import os
 import sys
+import re
 
 # CODING GUIDELINE CHECK
 # Author: KoffeinFlummi
@@ -16,6 +17,13 @@ import sys
 # Use "-q" to surpress file information and just show module stuff
 
 # Right now it just checks indentation, might expand on it later
+
+def colorize(text, color):
+  try:
+    import xtermcolor
+    print(xtermcolor.colorize(text, rgb=color))
+  except:
+    print(text)
 
 def get_all_modules(path):
   modules = []
@@ -44,10 +52,10 @@ def check_file(projectpath, path, name):
 
   numtabs = content.count("\t")
   if numtabs > 0:
-    warnings += numtabs
+    errors += numtabs
     if "-q" not in sys.argv:
-      print("  Detected {} tab(s)".format(numtabs))
-      print("  Please use 2 spaces for indentation instead.")
+      print("  ERROR: Detected {} tab(s)".format(numtabs))
+      print("         Please use 2 spaces for indentation instead.")
 
     if "-f" in sys.argv:
       fhandle = open(path, "w")
@@ -57,25 +65,22 @@ def check_file(projectpath, path, name):
       fhandle.write(content)
       fhandle.close()
       if "-q" not in sys.argv:
-        print("  !!! Attempted to fix file. Please check to confirm results.")
+        print("  !!! Attempted to fix indentation. Please check to confirm results.")
 
-  try:
-    import xtermcolor
-    coloured = True
-  except:
-    coloured = False
+  classdefs = re.findall(r"class(.*?)\{", content)
+  for c in classdefs:
+    if re.match(r" [a-zA-Z0-9\-_#]+(: [a-zA-Z0-9\-_#]+)? ", c) is None:
+      warnings += 1
+      if "-q" not in sys.argv:
+        print("  WARNING: Malformed class definition at:")
+        print("           class{}{{".format(c.split("\n")[0]))
 
-  if warnings + errors == 0:
+  if warnings + errors == 0 and "-q" not in sys.argv:
     string = "No problems detected. Good job!"
-    colour = 0x00FF00
-  else:
-    string = "There are some issues, please resolve them and rerun this script."
-    colour = 0xFF0000
-
-  if coloured and "-q" not in sys.argv:
-    print(xtermcolor.colorize(string, rgb=colour))
+    colorize(string, 0x00FF00)
   elif "-q" not in sys.argv:
-    print(string)
+    string = "There are some issues, please resolve them and rerun this script."
+    colorize(string, 0xFF0000)
 
   return warnings, errors
 
@@ -90,25 +95,14 @@ def check_module(projectpath, module):
     for name in files:
       warn, err = check_file(projectpath, path, name)
       warnings += warn
-      errors += errors
-  
-  try:
-    import xtermcolor
-    coloured = True
-  except:
-    coloured = False
+      errors += err
 
   if warnings + errors == 0:
     string = "\n{}: NO PROBLEMS".format(module)
-    colour = 0x00FF00
+    colorize(string, 0x00FF00)
   else:
     string = "\n{}: THERE WERE {} ERROR(S) AND {} WARNING(S)".format(module, errors, warnings)
-    colour = 0xFF0000
-
-  if coloured:
-    print(xtermcolor.colorize(string, rgb=colour))
-  else:
-    print(string)
+    colorize(string, 0xFF0000)
 
 def main():
   scriptpath = os.path.realpath(__file__)
@@ -116,7 +110,7 @@ def main():
 
   print("##########################")
   print("# Coding Guideline Check #")
-  print("##########################")
+  print("##########################\n")
 
   modules = get_all_modules(projectpath)
   if len(sys.argv) > 1 and sys.argv[1] in modules:
