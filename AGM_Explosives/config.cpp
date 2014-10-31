@@ -217,8 +217,8 @@ class CfgVehicles {
   
   // Add AGM_Clacker and AGM_DefusalKit to every explosive unit.
   #define MACRO_ADDMINEKIT \
-    items[] = {"FirstAidKit", "AGM_Clacker", "AGM_DefusalKit"}; \
-    respawnitems[] = {"FirstAidKit", "AGM_Clacker", "AGM_DefusalKit"};
+    items[] += {"AGM_Clacker", "AGM_DefusalKit"}; \
+    respawnitems[] += {"AGM_Clacker", "AGM_DefusalKit"};
 
   class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
   class B_Soldier_03_f; class B_engineer_F:B_Soldier_03_f {MACRO_ADDMINEKIT};

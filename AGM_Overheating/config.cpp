@@ -163,8 +163,8 @@ class CfgVehicles {
 
   // Add AGM_SpareBarrel to every machine gunner.
   #define MACRO_ADDSPAREBARREL \
-    items[] = {"FirstAidKit", "AGM_SpareBarrel"}; \
-    respawnitems[] = {"FirstAidKit", "AGM_SpareBarrel"};
+    items[] += {"AGM_SpareBarrel"}; \
+    respawnitems[] += {"AGM_SpareBarrel"};
 
   // NATO
   class B_Soldier_02_f; class B_soldier_AR_F:B_Soldier_02_f {MACRO_ADDSPAREBARREL};
