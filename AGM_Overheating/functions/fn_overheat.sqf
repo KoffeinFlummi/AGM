@@ -35,57 +35,57 @@ private "_intensity";
 
 _intensity = (_scaledTemperature - 0.2) * 1.25;
 if (_intensity > 0) then {
-	private ["_position", "_direction"];
+  private ["_position", "_direction"];
 
-	_position = position _projectile;
-	_direction = (_unit weaponDirection _weapon) vectorMultiply 0.25;
+  _position = position _projectile;
+  _direction = (_unit weaponDirection _weapon) vectorMultiply 0.25;
 
-	drop [
-		"\A3\data_f\ParticleEffects\Universal\Refract",
-		"",
-		"Billboard",
-		1.1,
-		2,
-		_position,
-		_direction,
-		1,
-		1.2,
-		1.0,
-		0.1,
-		[0.1,0.15],
-		[[0.06,0.06,0.06,0.32*_scaledTemperature], [0.3,0.3,0.3,0.28*_scaledTemperature], [0.3,0.3,0.3,0.25*_scaledTemperature], [0.3,0.3,0.3,0.22*_scaledTemperature], [0.3,0.3,0.3,0.1*_scaledTemperature]],
-		[1,0],
-		0.1,
-		0.05,
-		"",
-		"",
-		""
-	];
+  drop [
+    "\A3\data_f\ParticleEffects\Universal\Refract",
+    "",
+    "Billboard",
+    1.1,
+    2,
+    _position,
+    _direction,
+    1,
+    1.2,
+    1.0,
+    0.1,
+    [0.1,0.15],
+    [[0.06,0.06,0.06,0.32*_scaledTemperature], [0.3,0.3,0.3,0.28*_scaledTemperature], [0.3,0.3,0.3,0.25*_scaledTemperature], [0.3,0.3,0.3,0.22*_scaledTemperature], [0.3,0.3,0.3,0.1*_scaledTemperature]],
+    [1,0],
+    0.1,
+    0.05,
+    "",
+    "",
+    ""
+  ];
 
-	_intensity = (_scaledTemperature - 0.5) * 2;
-	if (_intensity > 0) then {
-		drop [
-			["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
-			"",
-			"Billboard",
-			1,
-			1.2,
-			_position,
-			[0,0,0.25],
-			0,
-			1.275,
-			1,
-			0.025,
-			[0.28,0.33,0.37],
-			[[0.6,0.6,0.6,0.3*_intensity]],
-			[0.2],
-			1,
-			0.04,
-			"",
-			"",
-			""
-		];
-	};
+  _intensity = (_scaledTemperature - 0.5) * 2;
+  if (_intensity > 0) then {
+    drop [
+      ["\A3\data_f\ParticleEffects\Universal\Universal", 16, 12, 1, 16],
+      "",
+      "Billboard",
+      1,
+      1.2,
+      _position,
+      [0,0,0.25],
+      0,
+      1.275,
+      1,
+      0.025,
+      [0.28,0.33,0.37],
+      [[0.6,0.6,0.6,0.3*_intensity]],
+      [0.2],
+      1,
+      0.04,
+      "",
+      "",
+      ""
+    ];
+  };
 };
 
 
@@ -96,29 +96,29 @@ _dispersion = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheatin
 
 _count = count _dispersion;
 if (_count > 0) then {
-	_dispersion = ([_dispersion, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
+  _dispersion = ([_dispersion, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
 
-	// @todo FUNCTION for projectile dispersion and slowdown, Placeholder
-	_velocity = [
-		(_velocity select 0) * (1 - _dispersion + 2 * random _dispersion),
-		(_velocity select 1) * (1 - _dispersion + 2 * random _dispersion),
-		(_velocity select 2) * (1 - _dispersion + 2 * random _dispersion)
-	];
+  // @todo FUNCTION for projectile dispersion and slowdown, Placeholder
+  _velocity = [
+    (_velocity select 0) * (1 - _dispersion + 2 * random _dispersion),
+    (_velocity select 1) * (1 - _dispersion + 2 * random _dispersion),
+    (_velocity select 2) * (1 - _dispersion + 2 * random _dispersion)
+  ];
 };
 
 _slowdownFactor = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_slowdownFactor");
 
 _count = count _slowdownFactor;
 if (_count > 0) then {
-	_slowdownFactor = ([_slowdownFactor, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
+  _slowdownFactor = ([_slowdownFactor, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
 
-	// @todo FUNCTION for projectile dispersion and slowdown, Placeholder
-	// Value EX: _slowdownFactor = 1 - 0.05 * (_scaledTemperature - 1);
-	_velocity = [
-		_slowdownFactor * (_velocity select 0),
-		_slowdownFactor * (_velocity select 1),
-		_slowdownFactor * (_velocity select 2)
-	];
+  // @todo FUNCTION for projectile dispersion and slowdown, Placeholder
+  // Value EX: _slowdownFactor = 1 - 0.05 * (_scaledTemperature - 1);
+  _velocity = [
+    _slowdownFactor * (_velocity select 0),
+    _slowdownFactor * (_velocity select 1),
+    _slowdownFactor * (_velocity select 2)
+  ];
 };
 
 _projectile setVelocity _velocity;
@@ -131,21 +131,21 @@ _jamChance = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating
 
 _count = count _jamChance;
 if (_count == 0) then {
-	_jamChance = [0];
-	_count = 1;
+  _jamChance = [0];
+  _count = 1;
 };
 
 _jamChance = [_jamChance, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray;
 
 if (!isNil "AGM_Debug") then {
-	if ("Jam" in AGM_Debug) then {
-		_jamChance = 0.5;
-	};
-	if ("Overheating" in AGM_Debug) then {
-		hintSilent format ["Temperature/JamChance: %1, %2", _temperature, 1.0 / _jamChance];
-	};
+  if ("Jam" in AGM_Debug) then {
+    _jamChance = 0.5;
+  };
+  if ("Overheating" in AGM_Debug) then {
+    hintSilent format ["Temperature/JamChance: %1, %2", _temperature, 1.0 / _jamChance];
+  };
 };
 
 if (random 1 < _jamChance) then {
-	[_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;
+  [_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;
 };
