@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -810,7 +810,7 @@ class CfgVehicles {
   // New Items
   class Land_CanisterFuel_F;
   class AGM_JerryCan: Land_CanisterFuel_F {
-    author = "commy2";
+    author = "$STR_AGM_Core_AGMTeam";
     AGM_Size = 1; // 1 = small, 2 = large
     class AGM_Actions {
       MACRO_LOADABLE
@@ -844,7 +844,7 @@ class CfgVehicles {
   };
 
   class AGM_SpareWheel: ThingX {
-    author = "marc_book";
+    author = "Hawkins";
     AGM_Size = 1; // 1 = small, 2 = large
     AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
     scope = 2;
@@ -865,7 +865,7 @@ class CfgVehicles {
 
   class Land_WoodenBox_F;
   class AGM_SandbagBarrier_Crate: Land_WoodenBox_F {
-    author = "commy2";
+    author = "$STR_AGM_Core_AGMTeam";
     AGM_Size = 1; // 1 = small, 2 = large
     AGM_CarryPosition[] = {0,1,1}; // offset from player to attach object.
     icon = "iconObject_circle";
@@ -889,7 +889,7 @@ class CfgVehicles {
     };
   };
   class AGM_RazorWire_Crate: AGM_SandbagBarrier_Crate {
-    author = "commy2";
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Fortifications_RazorWireCrate";
     class AGM_Actions: AGM_Actions {
       class AGM_PlaceFortification {

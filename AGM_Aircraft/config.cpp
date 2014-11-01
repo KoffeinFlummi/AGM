@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi", "Crusty"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -547,10 +547,10 @@ class CfgWeapons {
       reloadTime = 0.023;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class AGM_gatling_20mm_Comanche: gatling_20mm {
@@ -584,10 +584,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class LMG_Minigun_heli: LMG_Minigun {
     showAimCursorInternal = 0;
@@ -595,10 +595,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class M134_minigun: MGunCore {
     class LowROF: Mode_FullAuto {
@@ -609,10 +609,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: HighROF{};
-    class short: close{};
-    class medium: LowROF{};
-    class far: medium{};
+    class close: HighROF {};
+    class short: close {};
+    class medium: LowROF {};
+    class far: medium {};
   };
 
   class Gatling_30mm_Plane_CAS_01_F: CannonCore {
@@ -633,11 +633,11 @@ class CfgWeapons {
       textureType = "burst";
       multiplier = 3;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class Missile_AA_04_Plane_CAS_01_F: RocketPods {
@@ -688,8 +688,8 @@ class CfgWeapons {
       aiRateOfFire = 5;
       aiRateOfFireDistance = 500;
     };
-    class Medium_AI: Far_AI {  };
-    class Close_AI: Far_AI {  };
+    class Medium_AI: Far_AI {};
+    class Close_AI: Far_AI {};
     class Burst: RocketPods {
       burst = 1;
       reloadTime = 0.002;
@@ -747,11 +747,11 @@ class CfgWeapons {
       dispersion = 0.0055;
       reloadTime = 0.04;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 };
 
@@ -803,6 +803,21 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
       class RightDoorGun;
     };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "((this doorPhase 'door_L') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "((this doorPhase 'door_R') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "((this doorPhase 'door_L') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "((this doorPhase 'door_R') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+    };
   };
   class Plane_CAS_01_base_F: Plane_Base_F {
     maxSpeed = 736;
@@ -843,6 +858,39 @@ class CfgVehicles {
   class Heli_Transport_02_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
+    };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "this animationPhase ""door_back_L"" < 0.5 AND Alive(this)";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "this animationPhase ""door_back_R"" < 0.5 AND Alive(this)";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "this animationPhase ""door_back_L"" > 0.5 AND Alive(this)";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "this animationPhase ""door_back_R"" > 0.5 AND Alive(this)";
+      };
+      class CargoRamp_Open: DoorL1_Open {
+        userActionID = 52;
+        displayName = "$STR_AGM_Aircraft_OpenCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_OpenCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" < 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 1]";
+      };
+      class CargoRamp_Close: DoorL1_Close {
+        userActionID = 55;
+        displayName = "$STR_AGM_Aircraft_CloseCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_CloseCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" > 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 0]";
+      };
     };
   };
   class Plane_Fighter_03_base_F: Plane_Base_F {

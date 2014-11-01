@@ -169,9 +169,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -184,6 +184,7 @@ class CfgFunctions {
       class addActionEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
+      class addInfoDisplayEventHandler;
       class addMapMarkerCreatedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
@@ -249,6 +250,7 @@ class CfgFunctions {
       class removeActionEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
+      class removeInfoDisplayEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
@@ -272,6 +274,7 @@ class CfgFunctions {
       class getDisplayConfigName;
       class logControls;
       class logDisplays;
+      class monitor;
       class showUser;
     };
   };
@@ -329,6 +332,31 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
+  class Man;
+  class CAManBase: Man {
+    // @todo
+    class UserActions {
+      class AGM_Fire {
+        displayName = "";
+        priority = -99;
+        available = 1;
+        radius = 2.5;
+        radiusView = 0;
+        position = "";
+        showWindow = 0;
+        showIn3D = 0;
+        onlyForPlayer = 1;
+        shortcut = "DefaultAction";
+        condition = "call AGM_Core_UserActionFireCondition";
+        statement = "call AGM_Core_UserActionFire";
+        userActionID = 100;
+      };
+    };
+  };
+
+  // += needs a non inherited entry in that class, otherwise it simply overwrites
+  #include <DefaultItems.hpp>
+
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
     author = "AGM Team";
@@ -376,13 +404,13 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     author = "AGM";
     displayName = "$STR_AGM_Core_MiscItems";
-    transportmaxmagazines = 9001;
-    transportmaxbackbacks = 0;
+    transportMaxMagazines = 9001;
     maximumload = 2000;
 
     class TransportWeapons {};
     class TransportMagazines {};
     class TransportItems {};
+    class TransportBackpacks {};
   };
 };
 
@@ -475,4 +503,5 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
 };
 */
 
+#include <RscInfoType.hpp>
 #include <PickupFix.hpp>

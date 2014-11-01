@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -367,7 +367,7 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "'AGM_CableTie' in items player && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "'AGM_CableTie' in items player && {alive AGM_Interaction_Target} && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
@@ -404,7 +404,7 @@ class CfgVehicles {
         priority = 2.3;
       };
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -651,7 +651,7 @@ class CfgVehicles {
         priority = 2.3;
       };
       class AGM_LoadCaptiveSelf {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         condition = "[player, objNull, objNull] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
@@ -716,7 +716,7 @@ class CfgVehicles {
   class Car: LandVehicle {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -725,7 +725,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
@@ -738,7 +738,7 @@ class CfgVehicles {
   class Tank: LandVehicle {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -747,7 +747,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
@@ -762,7 +762,7 @@ class CfgVehicles {
   class Helicopter: Air {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -771,7 +771,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";

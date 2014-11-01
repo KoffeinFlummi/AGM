@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -16,9 +16,9 @@ class CfgFunctions {
   class AGM_Grenades {
     class AGM_Grenades {
       file = "\AGM_Grenades\functions";
-      class firedEH;
       class flashbangEffect;
       class nextMode;
+      class throwGrenade;
     };
   };
 };
@@ -29,10 +29,10 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_Grenades {
-      clientFired = "if (player == (_this select 0)) then {_this call AGM_Grenades_fnc_firedEH}";
+    class AGM_Grenades_ThrowGrenade {
+      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Grenades_fnc_throwGrenade;};";
     };
   };
 };
@@ -40,7 +40,7 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class switchGrenadeMode {
     displayName = "$STR_AGM_Grenades_SwitchGrenadeMode";
-    condition = "player == vehicle player";
+    condition = "_player == _vehicle";
     statement = "call AGM_Grenades_fnc_nextMode";
     key = 9;//34;
     shift = 0;

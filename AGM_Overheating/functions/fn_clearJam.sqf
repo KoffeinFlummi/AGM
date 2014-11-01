@@ -9,26 +9,26 @@ _skipAnim = _this select 2;
 _jammedWeapons = _unit getVariable ["AGM_Overheating_jammedWeapons", []];
 
 if (_weapon in _jammedWeapons) then {
-	_jammedWeapons = _jammedWeapons - [_weapon];
+  _jammedWeapons = _jammedWeapons - [_weapon];
 
-	_unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
+  _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 
-	if (count _jammedWeapons == 0) then {
-		_actionID = _unit getVariable ["AGM_JammingActionID", -1];
-		//_unit removeAction _actionID;
-		[_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionEventHandler;
-		_unit setVariable ["AGM_JammingActionID", -1];
-	};
+  if (count _jammedWeapons == 0) then {
+    _actionID = _unit getVariable ["AGM_JammingActionID", -1];
+    //_unit removeAction _actionID;
+    [_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionEventHandler;
+    _unit setVariable ["AGM_JammingActionID", -1];
+  };
 
-	if !(_skipAnim) then {
-		_clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_clearJamAction");
+  if !(_skipAnim) then {
+    _clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_clearJamAction");
 
-		if (_clearJamAction == "") then {
-			_clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
-		};
+    if (_clearJamAction == "") then {
+      _clearJamAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+    };
 
-		_unit playActionNow _clearJamAction;
-	};
+    _unit playActionNow _clearJamAction;
+  };
 
-	[localize "STR_AGM_Overheating_WeaponUnjammed"] call AGM_Core_fnc_displayTextStructured;
+  [localize "STR_AGM_Overheating_WeaponUnjammed"] call AGM_Core_fnc_displayTextStructured;
 };

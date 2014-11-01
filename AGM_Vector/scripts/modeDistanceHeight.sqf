@@ -16,12 +16,12 @@ _ctrlVectorCenter ctrlSetText "\AGM_Vector\rsc\Vector_Center.paa";
 
 _exit = false;
 waitUntil {
-	if (AGM_vectorKey select 0) then {_exit = true};
-	!(AGM_vectorKey select 1) || {_exit}
+  if (AGM_vectorKey select 0) then {_exit = true};
+  !(AGM_vectorKey select 1) || {_exit}
 };
 if (_exit) exitWith {
-	waitUntil {!(AGM_vectorKey select 0)};
-	AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeDistanceHeight;
+  waitUntil {!(AGM_vectorKey select 0)};
+  AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeDistanceHeight;
 };
 
 _distance = call AGM_Vector_getDistance;
@@ -32,8 +32,8 @@ _inclination = _direction select 1;
 _height = sin _inclination * _distance;
 _lenght = cos _inclination * _distance;
 if (_distance == -9999) then {
-	_height = -9999;
-	_lenght = -9999;
+  _height = -9999;
+  _lenght = -9999;
 };
 
 _digits = _height call AGM_Vector_convertDistance;

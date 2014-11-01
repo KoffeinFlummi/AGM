@@ -6,24 +6,24 @@
 
 // init onEachFrame EH
 AGM_UpdatePlayerFatigue_EHID = ["AGM_UpdatePlayerFatigue", "onEachFrame", {
-	_player = call AGM_Core_fnc_player;
+  _player = call AGM_Core_fnc_player;
 
-	// calc new fatigue
-	_fatigue = getFatigue _player;
-	_fatigueOld = _player getVariable ["AGM_Fatigue", getFatigue _player];
+  // calc new fatigue
+  _fatigue = getFatigue _player;
+  _fatigueOld = _player getVariable ["AGM_Fatigue", getFatigue _player];
 
-	if (_fatigue > _fatigueOld) then {
-		_fatigue = _fatigueOld + (missionNamespace getVariable ["AGM_Fatigue_CoefFatigue", 1]) * (_fatigue - _fatigueOld) max 0 min 1;
-	} else {
-		_fatigue = _fatigueOld - (missionNamespace getVariable ["AGM_Fatigue_CoefRecover", 1]) * (_fatigueOld - _fatigue) max 0 min 1;
-	};
+  if (_fatigue > _fatigueOld) then {
+    _fatigue = _fatigueOld + (missionNamespace getVariable ["AGM_Fatigue_CoefFatigue", 1]) * (_fatigue - _fatigueOld) max 0 min 1;
+  } else {
+    _fatigue = _fatigueOld - (missionNamespace getVariable ["AGM_Fatigue_CoefRecover", 1]) * (_fatigueOld - _fatigue) max 0 min 1;
+  };
 
-	_player setFatigue _fatigue;
-	_player setVariable ["AGM_Fatigue", _fatigue];
+  _player setFatigue _fatigue;
+  _player setVariable ["AGM_Fatigue", _fatigue];
 
-	if (!isNil "AGM_Debug" && {AGM_Debug == "Fatigue"}) then {
-		hintSilent str getFatigue _player;
-	};
+  if (!isNil "AGM_Debug" && {AGM_Debug == "Fatigue"}) then {
+    hintSilent str getFatigue _player;
+  };
 }] call BIS_fnc_addStackedEventHandler;
 
 // init script ehids
@@ -34,24 +34,24 @@ _handleStumble = scriptNull;
 
 // apply fatigue effects
 while {true} do {
-	_fatigue = getFatigue (call AGM_Core_fnc_player);
+  _fatigue = getFatigue (call AGM_Core_fnc_player);
 
-	if (_fatigue > THRESHOLD_1) then {
-		if (scriptDone _handleHeartbeat) then {
-			_handleHeartbeat = call AGM_Movement_fnc_heartbeat;
-		};
-		if (_fatigue > THRESHOLD_2) then {
-			if (scriptDone _handleBlinking) then {
-				_handleBlinking = call AGM_Movement_fnc_blinking;
-			};
+  if (_fatigue > THRESHOLD_1) then {
+    if (scriptDone _handleHeartbeat) then {
+      _handleHeartbeat = call AGM_Movement_fnc_heartbeat;
+    };
+    if (_fatigue > THRESHOLD_2) then {
+      if (scriptDone _handleBlinking) then {
+        _handleBlinking = call AGM_Movement_fnc_blinking;
+      };
 
-			if (_fatigue > THRESHOLD_3) then {
-				if (scriptDone _handleStumble) then {
-					_handleStumble = call AGM_Movement_fnc_stumble;
-				};
-			};
-		};
-	};
+      if (_fatigue > THRESHOLD_3) then {
+        if (scriptDone _handleStumble) then {
+          _handleStumble = call AGM_Movement_fnc_stumble;
+        };
+      };
+    };
+  };
 
-	sleep 0.5;
+  sleep 0.5;
 };

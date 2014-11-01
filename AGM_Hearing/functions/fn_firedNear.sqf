@@ -24,17 +24,17 @@ if (_weapon in ["Throw", "Put"]) exitWith {};
 if (_unit != vehicle _unit && {!([_unit] call AGM_Core_fnc_isTurnedOut)}) exitWith {};
 
 _silencer = switch (_weapon) do {
-	case (primaryWeapon _unit) : {primaryWeaponItems _unit select 0};
-	case (secondaryWeapon _unit) : {secondaryWeaponItems _unit select 0};
-	case (handgunWeapon _unit) : {handgunItems _unit select 0};
-	default {""};
+  case (primaryWeapon _unit) : {primaryWeaponItems _unit select 0};
+  case (secondaryWeapon _unit) : {secondaryWeaponItems _unit select 0};
+  case (handgunWeapon _unit) : {handgunItems _unit select 0};
+  default {""};
 };
 
 _audibleFireCoef = 1;
 //_audibleFireTimeCoef = 1;
 if (_silencer != "") then {
-	_audibleFireCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFire");
-	//_audibleFireTimeCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFireTime");
+  _audibleFireCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFire");
+  //_audibleFireTimeCoef = getNumber (configFile >> "CfgWeapons" >> _silencer >> "ItemInfo" >> "AmmoCoef" >> "audibleFireTime");
 };
 
 _audibleFire = getNumber (configFile >> "CfgAmmo" >> _ammo >> "audibleFire");

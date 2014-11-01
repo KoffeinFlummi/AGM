@@ -24,22 +24,22 @@ _ctrlDigitE3 = _dlgVector displayCtrl 23;
 _ctrlDigitE4 = _dlgVector displayCtrl 24;
 
 _allControls = [
-	_ctrlVectorCenter,
-	_ctrlVectorCrosshair,
-	_ctrlDigit0,
-	_ctrlDigit1,
-	_ctrlDigit2,
-	_ctrlDigit3,
-	_ctrlDigit4,
-	_ctrlDigit5,
-	_ctrlDigit6,
-	_ctrlDigit7,
-	_ctrlDigit8,
-	_ctrlDigit9,
-	_ctrlDigitE1,
-	_ctrlDigitE2,
-	_ctrlDigitE3,
-	_ctrlDigitE4
+  _ctrlVectorCenter,
+  _ctrlVectorCrosshair,
+  _ctrlDigit0,
+  _ctrlDigit1,
+  _ctrlDigit2,
+  _ctrlDigit3,
+  _ctrlDigit4,
+  _ctrlDigit5,
+  _ctrlDigit6,
+  _ctrlDigit7,
+  _ctrlDigit8,
+  _ctrlDigit9,
+  _ctrlDigitE1,
+  _ctrlDigitE2,
+  _ctrlDigitE3,
+  _ctrlDigitE4
 ];
 
 {_x ctrlShow false} forEach _allControls;

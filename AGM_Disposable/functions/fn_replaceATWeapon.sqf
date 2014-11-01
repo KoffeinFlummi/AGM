@@ -14,5 +14,5 @@ _items = secondaryWeaponItems _unit;
 _unit addWeapon _tube;
 _unit selectWeapon _tube;
 {
-	if (_x != "") then {_unit addSecondaryWeaponItem _x};
+  if (_x != "") then {_unit addSecondaryWeaponItem _x};
 } forEach _items;

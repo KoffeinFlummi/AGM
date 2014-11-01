@@ -2,29 +2,11 @@
 #define StrenghToDeafness 3
 #define MaxDeafness 1.1
 
-AGM_EarRingingPlaying = false;
-
-/*AGM_EarPlugsIn = false;
-AGM_hasEarBuds = false;*/
-
-// @todo cba EH with: _this select 0 == call AGM_Core_fnc_player
-player addEventHandler ["firedNear", {_this call AGM_Hearing_fnc_firedNearEH}];
-player addEventHandler ["explosion", {_this call AGM_Hearing_fnc_explosionEH}];
-
-//give earbuds
-_this spawn {
-  waitUntil {!isNull (findDisplay 46)};
-  _ammo = getText (configFile >> "CfgMagazines" >> currentMagazine player >> "ammo");
-  if (getNumber (configFile >> "CfgAmmo" >> _ammo >> "audiblefire") > 8) then {
-      player addItem "AGM_EarBuds";
-  };
-};
-
 AGM_CurrentDeafness = 0;
 AGM_NewStrength = 0;
 
 // Spawn volume updating process
-[] spawn {
+0 spawn {
   while {true} do {
     _player = call AGM_Core_fnc_player;
 

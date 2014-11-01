@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.10;
     requiredAddons[] = {AGM_Core};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -48,30 +48,6 @@ class CfgFatigue {
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
 };
-
-//DEFAULT (PRE BOOTCAMP!)
-/*
-MinValue1 = 0.1;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 1;
-FrequencyMin = 0.2;
-FrequencyMax = 1.0;
-TotalLoadCoef = 1.1;
-MaxDuty = 10;
-*/
-
-//DEFAULT (POST BOOTCAMP!)
-/*
-MinValue1 = 0.2;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 0.6;
-FrequencyMin = 0.2;
-FrequencyMax = 1;
-TotalLoadCoef = 10;
-MaxDuty = 10;
-*/
 
 class CfgSounds {
   class AGM_Heartbeat {

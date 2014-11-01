@@ -9,11 +9,7 @@ if (!hasInterface) exitWith{};
     sleep 5;
     _markers = [];
     while {AGM_Map_BFT_Enabled and {alive player}} do {
-      {
-        deleteMarkerLocal _x;
-      } forEach _markers;
-      _markers = [];
-      
+    
       _groups = [];
       if (AGM_Map_BFT_HideAiGroups == 0) then {
         _groups = [allGroups, {side _this == playerSide}] call AGM_Core_fnc_filter;
@@ -25,6 +21,11 @@ if (!hasInterface) exitWith{};
           (side _this == playerSide) && _anyPlayers > 0
         }] call AGM_Core_fnc_filter;
       };
+      
+      {
+        deleteMarkerLocal _x;
+      } forEach _markers;
+      _markers = [];
       
       for "_i" from 0 to (count _groups - 1) do {
         _group1 = _groups select _i;

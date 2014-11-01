@@ -20,10 +20,10 @@ _adjustDir = _this select 1;
 _adjustUp = _this select 2;
 _adjustSpeed = _this select 3;
 
-if (!isNil "AGM_Debug" && {AGM_Debug == "CPD"}) then {diag_log text _fnc_scriptNameParent};
+if (!isNil "AGM_Debug" && {"CPD" in AGM_Debug}) then {diag_log text _fnc_scriptNameParent};
 
 if (isNil "_adjustSpeed") then {
-	_adjustSpeed = 0;
+  _adjustSpeed = 0;
 };
 
 // get old direction vector
@@ -45,9 +45,9 @@ _l = sqrt ((_vdir select 0) ^ 2 + (_vdir select 1) ^ 2); if (_l == 0) then {diag
 _r = -(_vdir select 2) / _l;
 
 _vup = [
-	(_vdir select 0) * _r,
-	(_vdir select 1) * _r,
-	_l
+  (_vdir select 0) * _r,
+  (_vdir select 1) * _r,
+  _l
 ];
 
 // get new speed vector. Keep total speed, but change to new direction. Yay for vector commands.

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -40,7 +40,7 @@ class CfgFunctions {
 
 class Extended_PreInit_EventHandlers {
   class AGM_Map {
-    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverPreInit.sqf'";
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverInit.sqf'";
   };
 };
 

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Clacker", "AGM_DefusalKit", "AGM_M26_Clacker", "AGM_DeadManSwitch"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94";
-    versionStr = "0.94";
-    versionAr[] = {0,94,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"Garth 'L-H' de Wet"};
     authorUrl = "https://github.com/corruptedheart/";
   };
@@ -217,8 +217,8 @@ class CfgVehicles {
   
   // Add AGM_Clacker and AGM_DefusalKit to every explosive unit.
   #define MACRO_ADDMINEKIT \
-    items[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"}; \
-    respawnitems[] = {"FirstAidKit","AGM_Clacker", "AGM_DefusalKit"};
+    items[] += {"AGM_Clacker", "AGM_DefusalKit"}; \
+    respawnitems[] += {"AGM_Clacker", "AGM_DefusalKit"};
 
   class B_Soldier_base_F; class B_soldier_exp_F:B_Soldier_base_F {MACRO_ADDMINEKIT};
   class B_Soldier_03_f; class B_engineer_F:B_Soldier_03_f {MACRO_ADDMINEKIT};

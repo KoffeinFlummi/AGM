@@ -520,16 +520,24 @@
       <Portuguese>Você deve tomá-lo como prisioneiro primeiro!</Portuguese>
       <Hungarian>Először foglyul kell ejtened!</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Interaction_LoadCaptive">
+        <English>Load Captive into Vehicle</English>
+        <German>Gefangenen ins Fahrzeug laden</German>
+    </Key>
+    <Key ID="STR_AGM_Interaction_UnloadCaptive">
+        <English>Unload Captive from Vehicle</English>
+        <German>Gefangenen aus dem Fahrzeug ausladen</German>
+    </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
       <German>Team Management &gt;&gt;</German>
       <Spanish>Gestión de equipo &gt;&gt;</Spanish>
       <French>Gestion d'équipe &gt;&gt;</French>
       <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
-      <Czech>Správa týmu</Czech>
+      <Czech>Správa týmu &gt;&gt;</Czech>
       <Portuguese>Gerenciamento de Equipe &gt;&gt;</Portuguese>
-      <Italian>Organizzazione Squadra</Italian>
-      <Hungarian>Csapat kezelés</Hungarian>
+      <Italian>Organizzazione Squadra &gt;&gt;</Italian>
+      <Hungarian>Csapat kezelés &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>

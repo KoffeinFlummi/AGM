@@ -21,29 +21,29 @@ if (_unit getVariable ["AGM_hasEarPlugsin", false] || {_unit getVariable ["X39_M
 
 AGM_NewStrength = AGM_NewStrength max _strength;
 
-if (AGM_EarRingingPlaying) exitWith {};
+if (missionNamespace getVariable ["AGM_isEarRingingPlaying", false]) exitWith {};
 
 if (_strength > 0.75) exitWith {
   playSound ["AGM_EarRinging_Heavy", true];
-  AGM_EarRingingPlaying = true;
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 7;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };
 if (_strength > 0.5) exitWith {
   playSound ["AGM_EarRinging_Medium", true];
-  AGM_EarRingingPlaying = true;
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 5;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };
 if (_strength > 0.2) exitWith {
   playSound ["AGM_EarRinging_Weak", true];
-  AGM_EarRingingPlaying = true;
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 3;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };
