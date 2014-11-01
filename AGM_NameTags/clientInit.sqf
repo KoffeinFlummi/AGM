@@ -20,7 +20,7 @@ addMissionEventHandler ["Draw3D", {
       if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnKeyPress", false]) then {
         _alpha = _alpha min (1 - (time - AGM_NameTags_ShowNamesTime - 1));
       };
-      [_target, _alpha, _distance * 0.026] call AGM_NameTags_fnc_drawNameTagIcon;
+      [_player, _target, _alpha, _distance * 0.026] call AGM_NameTags_fnc_drawNameTagIcon;
     };
   } else {
 
@@ -56,7 +56,7 @@ addMissionEventHandler ["Draw3D", {
             _alpha = 0;
           };
         };
-        [_target, _alpha, _distance * 0.026] call AGM_NameTags_fnc_drawNameTagIcon;
+        [_player, _target, _alpha, _distance * 0.026] call AGM_NameTags_fnc_drawNameTagIcon;
       };
     } forEach _targets;
   };
