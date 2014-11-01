@@ -34,5 +34,8 @@ for "_index" from 0 to (_count - 1) do {
 		_vehicle = AGM_Interaction_Target;
 		[_vehicle, _this] call AGM_Repair_fnc_removeWheel;
 	},
-	{if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};}
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};
+	}
 ] call AGM_Interaction_fnc_openSelectMenu;

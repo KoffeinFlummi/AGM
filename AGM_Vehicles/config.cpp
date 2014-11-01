@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -355,6 +355,11 @@ class CfgWeapons {
       magazineReloadTime = 0;
     };
     muzzles[] = {"AP"};
+  };
+
+  // comp RHS
+  class RHS_weap_M242BC: autocannon_30mm_CTWS {
+    muzzles[] = {"AP","HE"};
   };
 };
 

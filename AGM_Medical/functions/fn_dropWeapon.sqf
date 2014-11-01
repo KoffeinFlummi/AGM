@@ -24,8 +24,8 @@ _end = _magazineDetail find 47;
 
 _ammoCount = [];
 while {_index < _end} do {
-	_ammoCount pushBack (_magazineDetail select _index);
-	_index = _index + 1;
+  _ammoCount pushBack (_magazineDetail select _index);
+  _index = _index + 1;
 };
 _ammoCount = parseNumber toString _ammoCount;
 

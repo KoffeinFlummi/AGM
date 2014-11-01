@@ -12,7 +12,7 @@
  * None.
  */
 
-private ["_object", "_type", "_id", "_name", "_actionsVar", "_currentId", "_actionIDs", "_actions", "_id"];
+private ["_object", "_type", "_id", "_name", "_actionsVar", "_currentId", "_actionIDs", "_actions"];
 
 _object = _this select 0;
 _type = _this select 1;

@@ -1,23 +1,23 @@
 /*
 	Name: AGM_Interaction_fnc_initialiseInteraction
-	
+
 	Author:
 		commy2
 		Garth de Wet (LH)
-	
+
 	Description:
 		Initialises the interaction click handlers.
-	
-	Parameters: 
+
+	Parameters:
 		0 : CODE - code to call when right clicking/center button
 		1 : BOOLEAN - Submenu
 		2 : BOOLEAN - Flow Menu
 		3 : BOOLEAN - Self interaction
 		4 : OBJECT - Target
-	
+
 	Returns:
 		Nothing
-	
+
 	Example:
 		[{"Default" call AGM_Interaction_fnc_openMenu;}, true, (profileNamespace getVariable ["AGM_Interaction_FlowMenu", false]), AGM_Interaction_Target] call AGM_Interaction_fnc_initialiseInteraction;
 */
@@ -41,7 +41,7 @@ if (_this select 2) then {
 	if (_player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(-(_this select 0) / 1.2) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = call AGM_Core_fnc_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu; [_target, _player] call (_action select 1);};}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = call AGM_Core_fnc_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if(count _action == 12) then{(_action select 11) call (_action select 1);}else{[_target, _player] call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
 		_player setVariable ["AGM_AcceptAction", [_player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
@@ -75,7 +75,7 @@ if (_this select 2) then {
 	} else {
 		_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
 	};
-	
+
 	_count = count AGM_Interaction_Buttons;
 
 	for "_i" from 0 to 9 do {

@@ -7,7 +7,7 @@ _vehicle = vehicle (_this select 1);
 _distance = _this select 2;
 _weapon = _this select 3;
 
-if (vehicle _unit != _unit) exitWith {};
+if (vehicle _unit != _unit || {!([gunner _firer] call AGM_Core_fnc_isPlayer)}) exitWith {};
 
 _dangerZoneAngle = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Angle") / 2;
 _dangerZoneRange = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_DangerZone_Range");

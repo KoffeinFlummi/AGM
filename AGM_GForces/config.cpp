@@ -4,26 +4,17 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
-class CfgFunctions {
-  class AGM_GForces {
-    class AGM_GForces {
-      file = "AGM_GForces\functions";
-      class init;
-    };
-  };
-};
-
 class Extended_PostInit_EventHandlers {
-  class AGM_GForces {
-    Init = "_this call AGM_GForces_fnc_init";
+  class AGM_Interaction {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_GForces\clientInit.sqf'";
   };
 };
 

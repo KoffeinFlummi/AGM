@@ -11,10 +11,14 @@
  * none
  */
 
-// Buds in inventory, putting them in
-player removeItem "AGM_EarBuds";
+private "_player";
 
-AGM_EarPlugsIn = true;
+_player = _this select 0;
+
+// Buds in inventory, putting them in
+_player removeItem "AGM_EarBuds";
+
+_player setVariable ["AGM_hasEarPlugsIn", true, true];
 
 [localize "STR_AGM_Hearing_Earbuds_Are_On"] call AGM_Core_fnc_displayTextStructured;
 

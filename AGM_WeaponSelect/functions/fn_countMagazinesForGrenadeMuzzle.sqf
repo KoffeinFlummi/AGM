@@ -1,7 +1,7 @@
 /*
  * Author: CAA-Picard
  *
- * Count how many grenade magazines the player has on the uniform and vest.
+ * Count how many grenade magazines the unit has on the uniform and vest.
  *
  * Argument:
  * 0: Muzzle name
@@ -11,11 +11,14 @@
  * 1: First magazine name
  */
 
- _muzzle = _this;
+private ["_player", "_muzzle"];
 
-_uniformMags = getMagazineCargo uniformContainer player;
-_vestMags = getMagazineCargo vestContainer player;
-_backPackMags = getMagazineCargo backpackContainer player;
+_player = _this select 0;
+_muzzle = _this select 1;
+
+_uniformMags = getMagazineCargo uniformContainer _player;
+_vestMags = getMagazineCargo vestContainer _player;
+_backPackMags = getMagazineCargo backpackContainer _player;
 
 _numberOfMagazines = 0;
 _magazineClasses = getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines" );

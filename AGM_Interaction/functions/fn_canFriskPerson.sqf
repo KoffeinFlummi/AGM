@@ -26,4 +26,4 @@ alive _unit
 && ((_target getVariable["AGM_isCaptive", false]) || (_target getVariable["AGM_Handcuffed", false]) || (_target getVariable["AGM_isSearchable", false]) || ((_target getVariable ["AGM_Unconscious", false]) && side _target != side _unit))
 */
 
-_target getVariable["AGM_Handcuffed", false] || {_target getVariable["AGM_isSearchable", false]} || {_target getVariable ["AGM_Unconscious", false]}
+_target getVariable["AGM_isCaptive", false] || {_target getVariable["AGM_isSearchable", false]} || {_target getVariable ["AGM_Unconscious", false]}

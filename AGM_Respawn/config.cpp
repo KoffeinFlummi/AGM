@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"jodav", "commy2"};
     authorUrl = "https://github.com/jodav/";
   };
@@ -18,8 +18,11 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
       class getAllGear;
+      class handleKilled;
+      class handleRespawn;
       class initRallypoint;
       class module;
+      class moduleFriendlyFire;
       class moduleRallypoint;
       class moveRallypoint;
       class removeBody;
@@ -30,9 +33,18 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Respawn {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Respawn\clientInit.sqf'";
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
+    };
+  };
+};
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+    };
   };
 };
 
@@ -51,13 +63,13 @@ class CfgVehicleClasses {
 class CfgVehicles {
   class Module_F;
   class AGM_ModuleRespawn: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Respawn System";
     function = "AGM_Respawn_fnc_module";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";
+    icon = "\AGM_Respawn\UI\Icon_Module_Respawn_ca.paa";
     class Arguments {
       class SavePreDeathGear {
         displayName = "Save Gear?";
@@ -86,14 +98,26 @@ class CfgVehicles {
     };
   };
 
+  class AGM_ModuleFriendlyFire: Module_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    category = "AGM";
+    displayName = "Friendly Fire Messages";
+    function = "AGM_Respawn_fnc_moduleFriendlyFire";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Respawn\UI\Icon_Module_FriendlyFire_ca.paa";
+    class Arguments {
+    };
+  };
+
   class AGM_ModuleRallypoint: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Rallypoint System";
     function = "AGM_Respawn_fnc_moduleRallypoint";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";
+    icon = "\AGM_Respawn\UI\Icon_Module_Rallypoint_ca.paa";
     class Arguments {
     };
   };
@@ -114,6 +138,7 @@ class CfgVehicles {
 
   // static
   class AGM_Rallypoint_West: Flag_NATO_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint West Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -133,6 +158,7 @@ class CfgVehicles {
   };
 
   class AGM_Rallypoint_East: Flag_CSAT_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint East Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -152,6 +178,7 @@ class CfgVehicles {
   };
 
   class AGM_Rallypoint_Independent: Flag_AAF_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint Independent Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -172,6 +199,7 @@ class CfgVehicles {
 
   // moveable
   class AGM_RallypointExit_West: Flag_NATO_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint West";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -191,6 +219,7 @@ class CfgVehicles {
   };
 
   class AGM_RallypointExit_East: Flag_CSAT_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint East";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -210,6 +239,7 @@ class CfgVehicles {
   };
 
   class AGM_RallypointExit_Independent: Flag_AAF_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint Independent";
     vehicleClass = "AGM_Respawn_Rallypoints";
 

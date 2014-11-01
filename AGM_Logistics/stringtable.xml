@@ -8,7 +8,7 @@
       <French>Menu de chargement</French>
       <Polish>Menu ładunku</Polish>
       <German>Lademenü</German>
-      <Czech>Naložovací Menu</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Carregamento</Portuguese>
       <Italian>Menù di Caricamento</Italian>
       <Hungarian>Berakodás menü</Hungarian>
@@ -30,7 +30,7 @@
       <French>Chargement...</French>
       <German>Verladen ...</German>
       <Polish>Ładowanie ...</Polish>
-      <Czech>Naložuji ...</Czech>
+      <Czech>Nakládání ...</Czech>
       <Portuguese>Carregando ...</Portuguese>
       <Italian>Caricamento ...</Italian>
       <Hungarian>Berakodás ...</Hungarian>
@@ -41,7 +41,7 @@
       <Spanish>Descargando ...</Spanish>
       <French>Déchargement ...</French>
       <Polish>Rozładunku ...</Polish>
-      <Czech>Vyložovací ...</Czech>
+      <Czech>Vykládání ...</Czech>
       <Portuguese>Descarregando ...</Portuguese>
       <Italian>Scaricamento ...</Italian>
       <Hungarian>Kirakodás ...</Hungarian>
@@ -55,7 +55,7 @@
       <Czech>%1 naloženo do %2</Czech>
       <Portuguese>%1 carregado em %2</Portuguese>
       <Italian>%1 caricato su %2</Italian>
-      <Hungarian>%1 berakodva ebből: %2</Hungarian>
+      <Hungarian>%1 berakodva ide: %2</Hungarian>
     </Key>
     <Key ID="STR_AGM_Logistics_UnloadedItem">
       <English>Unloaded %1 from %2</English>
@@ -74,7 +74,7 @@
       <French>Menu de déchargement</French>
       <Polish>Menu rozładunku</Polish>
       <German>Ablademenü</German>
-      <Czech>Vyložovací Menu</Czech>
+      <Czech>Vykládací menu</Czech>
       <Portuguese>Menu de Descarregamento</Portuguese>
       <Italian>Menù di Scaricamento</Italian>
       <Hungarian>Kirakodás menü</Hungarian>
@@ -102,26 +102,26 @@
       <Hungarian>Fegyvertár menü</Hungarian>
     </Key>
     <Key ID="STR_AGM_Logistics_Unload">
-      <English>Unload &gt;&gt;</English>
-      <German>Abladen &gt;&gt;</German>
-      <Spanish>Descargar &gt;&gt;</Spanish>
-      <French>Décharger &gt;&gt;</French>
-      <Polish>Wyładuj &gt;&gt;</Polish>
-      <Czech>Vyložit &gt;&gt;</Czech>
-      <Portuguese>Descarregar &gt;&gt;</Portuguese>
-      <Italian>Scarica &gt;&gt;</Italian>
-      <Hungarian>Tárkioldás &gt;&gt;</Hungarian>
+      <English>Unload</English>
+      <German>Abladen</German>
+      <Spanish>Descargar</Spanish>
+      <French>Décharger</French>
+      <Polish>Wyładuj</Polish>
+      <Czech>Vyložit</Czech>
+      <Portuguese>Descarregar</Portuguese>
+      <Italian>Scarica</Italian>
+      <Hungarian>Tárkioldás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Logistics_ReloadMagazines">
-      <English>Magazines &gt;&gt;</English>
-      <German>Magazine &gt;&gt;</German>
-      <Spanish>Cargadores &gt;&gt;</Spanish>
-      <French>Chargeurs &gt;&gt;</French>
-      <Polish>Magazynki &gt;&gt;</Polish>
-      <Czech>Zásobníky &gt;&gt;</Czech>
-      <Portuguese>Carregadores &gt;&gt;</Portuguese>
-      <Italian>Caricatori &gt;&gt;</Italian>
-      <Hungarian>Tárak &gt;&gt;</Hungarian>
+      <English>Magazines</English>
+      <German>Magazine</German>
+      <Spanish>Cargadores</Spanish>
+      <French>Chargeurs</French>
+      <Polish>Magazynki</Polish>
+      <Czech>Zásobníky</Czech>
+      <Portuguese>Carregadores</Portuguese>
+      <Italian>Caricatori</Italian>
+      <Hungarian>Tárak</Hungarian>
     </Key>
   </Package>
   <Package name="Drag">
@@ -135,7 +135,7 @@
       <German>Ziehen</German>
       <Portuguese>Arrastar</Portuguese>
       <Italian>Trascina</Italian>
-      <Hungarian>Húz</Hungarian>
+      <Hungarian>Húzás</Hungarian>
     </Key>
     <Key ID="STR_AGM_Drag_EndDrag">
       <English>Release</English>
@@ -147,14 +147,14 @@
       <German>Loslassen</German>
       <Portuguese>Largar</Portuguese>
       <Italian>Lascia</Italian>
-      <Hungarian>Elenged</Hungarian>
+      <Hungarian>Elengedés</Hungarian>
     </Key>
     <Key ID="STR_AGM_Drag_UnableToDrag">
       <English>Unable to drag item due to weight</English>
       <Russian>Слишком тяжелый предмет</Russian>
       <Spanish>No se puede arrastrar el objeto debido a su peso</Spanish>
       <Polish>Nie można ciągnąć tego przedmiotu z powodu jego wagi</Polish>
-      <Czech>Nelze táhnout z důvodu přílišné váhy</Czech>
+      <Czech>Předmět je příliž těžký!</Czech>
       <French>Trop lourd pour être tracté</French>
       <German>Dieser Gegenstand kann nicht gezogen werden, da er zu schwer ist.</German>
       <Portuguese>Não é possível carregar o item devido a seu peso</Portuguese>
@@ -195,7 +195,7 @@
       <Czech>Nastoupit</Czech>
       <Portuguese>Entrar</Portuguese>
       <Italian>Sali</Italian>
-      <Hungarian>Használ</Hungarian>
+      <Hungarian>Beszállás</Hungarian>
     </Key>
     <Key ID="STR_AGM_StaticWeapons_RotateClockwise">
       <English>Rotate weapon (CW)</English>
@@ -230,7 +230,7 @@
       <Czech>Kanystr</Czech>
       <Portuguese>Bidão</Portuguese>
       <Italian>Tanica </Italian>
-      <Hungarian>Benzinkanna</Hungarian>
+      <Hungarian>Benzineskanna</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_SpareTrack">
       <English>Spare Track</English>
@@ -321,26 +321,26 @@
       <Hungarian>Szerelés &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_Tracks">
-      <English>Tracks &gt;&gt;</English>
-      <German>Ketten &gt;&gt;</German>
-      <Spanish>Cadenas &gt;&gt;</Spanish>
-      <French>Chenilles &gt;&gt;</French>
-      <Polish>Gąsienice &gt;&gt;</Polish>
-      <Czech>Pásy &gt;&gt;</Czech>
-      <Portuguese>Lagartas &gt;&gt;</Portuguese>
-      <Italian>Cingoli &gt;&gt;</Italian>
-      <Hungarian>Lánctalpak &gt;&gt;</Hungarian>
+      <English>Tracks</English>
+      <German>Ketten</German>
+      <Spanish>Cadenas</Spanish>
+      <French>Chenilles</French>
+      <Polish>Gąsienice</Polish>
+      <Czech>Pásy</Czech>
+      <Portuguese>Lagartas</Portuguese>
+      <Italian>Cingoli</Italian>
+      <Hungarian>Lánctalpak</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_Wheels">
-      <English>Wheels &gt;&gt;</English>
-      <German>Reifen &gt;&gt;</German>
-      <Spanish>Ruedas &gt;&gt;</Spanish>
-      <French>Roues &gt;&gt;</French>
-      <Polish>Koła &gt;&gt;</Polish>
-      <Czech>Kola &gt;&gt;</Czech>
-      <Portuguese>Rodas &gt;&gt;</Portuguese>
-      <Italian>Ruote &gt;&gt;</Italian>
-      <Hungarian>Kerekek &gt;&gt;</Hungarian>
+      <English>Wheels</English>
+      <German>Reifen</German>
+      <Spanish>Ruedas</Spanish>
+      <French>Roues</French>
+      <Polish>Koła</Polish>
+      <Czech>Kola</Czech>
+      <Portuguese>Rodas</Portuguese>
+      <Italian>Ruote</Italian>
+      <Hungarian>Kerekek</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_HitBody">
       <English>Body</English>
@@ -598,7 +598,7 @@
     <Key ID="STR_AGM_Repair_HitGlass3">
       <English>Glass 3</English>
       <German>Scheibe 3</German>
-      <Spanish>Ventana 2</Spanish>
+      <Spanish>Ventana 3</Spanish>
       <French>Vitre 3</French>
       <Polish>Szyba 3</Polish>
       <Czech>Sklo 3</Czech>
@@ -609,7 +609,7 @@
     <Key ID="STR_AGM_Repair_HitGlass4">
       <English>Glass 4</English>
       <German>Scheibe 4</German>
-      <Spanish>Ventana 2</Spanish>
+      <Spanish>Ventana 4</Spanish>
       <French>Vitre 4</French>
       <Polish>Szyba 4</Polish>
       <Czech>Sklo 4</Czech>
@@ -659,7 +659,7 @@
       <Czech>Chybí kolo!</Czech>
       <Portuguese>Não há roda!</Portuguese>
       <Italian>Nessuna ruota disponibile!</Italian>
-      <Hungarian>Nincsenek kerék!</Hungarian>
+      <Hungarian>Nincsen kerék!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu">
       <English>Select Wheel Menu</English>
@@ -667,7 +667,7 @@
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
-      <Czech>Zvolit Menu Kol</Czech>
+      <Czech>Zvolit kolo</Czech>
       <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
       <Hungarian>Kerék menü kiválasztása</Hungarian>
@@ -689,7 +689,7 @@
       <Spanish>Seleccionar menú de rueda</Spanish>
       <French>Sélectionner Menu Roues</French>
       <Polish>Wybierz menu kół</Polish>
-      <Czech>Zvolit Menu Kol</Czech>
+      <Czech>Náklad vozidla</Czech>
       <Portuguese>Menu de Seleção de Roda</Portuguese>
       <Italian>Seleziona il menù della ruota</Italian>
       <Hungarian>Kerék menü kiválasztása</Hungarian>
@@ -728,26 +728,26 @@
       <Hungarian>%1 megjavítva</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RepairWheel">
-      <English>Repair Wheel &gt;&gt;</English>
-      <German>Reifen aufziehen &gt;&gt;</German>
+      <English>Repair Wheel</English>
+      <German>Reifen aufziehen</German>
       <Spanish>Reparar rueda</Spanish>
-      <French>Répare Roue &gt;&gt;</French>
-      <Polish>Napraw koło &gt;&gt;</Polish>
-      <Czech>Opravit Kolo &gt;&gt;</Czech>
-      <Portuguese>Reparar Roda &gt;&gt;</Portuguese>
-      <Italian>Ripara la ruota &gt;&gt;</Italian>
-      <Hungarian>Kerék javítása &gt;&gt;</Hungarian>
+      <French>Répare Roue</French>
+      <Polish>Napraw koło</Polish>
+      <Czech>Opravit Kolo</Czech>
+      <Portuguese>Reparar Roda</Portuguese>
+      <Italian>Ripara la ruota</Italian>
+      <Hungarian>Kerék javítása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RemoveWheel">
-      <English>Remove Wheel &gt;&gt;</English>
-      <German>Reifen entfernen &gt;&gt;</German>
+      <English>Remove Wheel</English>
+      <German>Reifen entfernen</German>
       <Spanish>Quitar rueda</Spanish>
-      <French>Démonte Roue &gt;&gt;</French>
-      <Polish>Zdejmij koło &gt;&gt;</Polish>
-      <Czech>Odstranit Kolo &gt;&gt;</Czech>
-      <Portuguese>Remover Roda &gt;&gt;</Portuguese>
-      <Italian>Rimuovi la ruota &gt;&gt;</Italian>
-      <Hungarian>Kerék leszerelése &gt;&gt;</Hungarian>
+      <French>Démonte Roue</French>
+      <Polish>Zdejmij koło</Polish>
+      <Czech>Odstranit Kolo</Czech>
+      <Portuguese>Remover Roda</Portuguese>
+      <Italian>Rimuovi la ruota</Italian>
+      <Hungarian>Kerék leszerelése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Repair_RemovingWheel">
       <English>Removing %1 ...</English>
@@ -1125,10 +1125,10 @@
     <Key ID="STR_AGM_Fortifications_SandbagBarrierCrate">
       <English>Sandbag Barrier Crate</English>
       <German>Sandsack-Kiste</German>
-      <Spanish>Sandbag Barrier Crate</Spanish>
+      <Spanish>Caja sacos de arena</Spanish>
       <Polish>Skrzynia z workami z piaskiem</Polish>
       <French>Sac de Sable (Caisse)</French>
-      <Czech>Sandbag Barrier Crate</Czech>
+      <Czech>Pytlová bariéra (v krabici)</Czech>
       <Portuguese>Caixa de Saco de Areia</Portuguese>
       <Italian>Cassa di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák láda</Hungarian>
@@ -1136,10 +1136,10 @@
     <Key ID="STR_AGM_Fortifications_RazorWireCrate">
       <English>Razor Wire Crate</English>
       <German>Stacheldraht-Kiste</German>
-      <Spanish>Razor Wire Crate</Spanish>
+      <Spanish>Caja de alambre de púas</Spanish>
       <Polish>Skrzynia z drutem kolczastym</Polish>
       <French>Concertina (Caisse)</French>
-      <Czech>Razor Wire Crate</Czech>
+      <Czech>Ostnatý drát (v krabici)</Czech>
       <Portuguese>Caixa de Arame Farpado</Portuguese>
       <Italian>Cassa di filo spinato</Italian>
       <Hungarian>Szögesdrót láda</Hungarian>
@@ -1147,10 +1147,10 @@
     <Key ID="STR_AGM_Fortifications_SandbagBarrier">
       <English>Sandbag Barrier</English>
       <German>Sandsackbarriere</German>
-      <Spanish>Sandbag Barrier</Spanish>
+      <Spanish>Barrera de sacos de arena</Spanish>
       <Polish>Worki z piaskiem</Polish>
       <French>Sacs de sable</French>
-      <Czech>Sandbag Barrier</Czech>
+      <Czech>Pytlová bariéra</Czech>
       <Portuguese>Saco de Areia</Portuguese>
       <Italian>Barriera di sacchi di sabbia</Italian>
       <Hungarian>Homokzsák</Hungarian>
@@ -1158,10 +1158,10 @@
     <Key ID="STR_AGM_Fortifications_RazorWire">
       <English>Razor Wire</English>
       <German>Stacheldraht</German>
-      <Spanish>Concertina</Spanish>
+      <Spanish>Alambre de púas</Spanish>
       <Polish>Drut kolczasty</Polish>
       <French>Concertina</French>
-      <Czech>Razor Wire</Czech>
+      <Czech>Ostnatý drát</Czech>
       <Portuguese>Arame Farpado</Portuguese>
       <Italian>Filo spinato</Italian>
       <Hungarian>Szögesdrót</Hungarian>
@@ -1194,7 +1194,7 @@
       <Spanish>Girar</Spanish>
       <Polish>Obróć</Polish>
       <French>Tourner</French>
-      <Czech>Točit</Czech>
+      <Czech>Otočit</Czech>
       <Portuguese>Rotacionar</Portuguese>
       <Italian>Ruota</Italian>
       <Hungarian>Forgatás</Hungarian>

@@ -5,9 +5,9 @@
  *
  * Argument:
  * 0: Mode (Number)
- *   0:	Warn once
- *   1:	Warn permanently
- *   2:	Kick
+ *   0:  Warn once
+ *   1:  Warn permanently
+ *   2:  Kick
  *
  * Return value:
  * None.

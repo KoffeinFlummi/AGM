@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-16 -->
+<!-- Edited with tabler - 2014-10-20 -->
 <Project name="AGM">
   <Package name="Map">
     <Key ID="STR_AGM_MapTools_Name">
@@ -44,6 +44,7 @@
       <Portuguese>Ocultar Ferramenta de Mapa</Portuguese>
       <Hungarian>Térképészeti eszközök elrejtése</Hungarian>
       <Polish>Ukryj narzędzia nawigacyjne</Polish>
+      <Czech>Schovat pomůcku k mapě</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowNormal">
       <English>Show Normal Map Tool</English>
@@ -54,16 +55,18 @@
       <Portuguese>Mostrar Ferramenta de Mapa Padrão</Portuguese>
       <Hungarian>Térképészeti eszköz megjelenítése (normál méret)</Hungarian>
       <Polish>Pokaż normalne narzędzia nawigacyjne</Polish>
+      <Czech>Zobrazit normální pomůcku k mapě</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsShowSmall">
       <English>Show Small Map Tool</English>
       <German>Zeige Kartenwerkzeug (klein)</German>
-      <Spanish>Mostrar herr. de mapa pequeña</Spanish>
+      <Spanish>Mostrar herr. de mapa pequeñas</Spanish>
       <French>Montrer petits outils</French>
       <Italian>Visualizza Strumenti Cartografici piccoli</Italian>
       <Portuguese>Mostrar Ferramenta de Mapa Pequena</Portuguese>
       <Hungarian>Térképészeti eszköz megjelenítése (kicsinyített)</Hungarian>
       <Polish>Pokaż pomniejszone narzędzia nawigacyjne</Polish>
+      <Czech>Zobrazit malou pomůcku k mapě</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignNorth">
       <English>Align Map Tool to North</English>
@@ -74,6 +77,7 @@
       <Portuguese>Alinhar Ferramenta de Mapa com o Norte</Portuguese>
       <Hungarian>Térképészeti eszköz Északhoz állítása</Hungarian>
       <Polish>Wyrównaj linijkę do północy</Polish>
+      <Czech>Srovnat pomůcku k mapě na sever</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapToolsAlignCompass">
       <English>Align Map Tool to Compass</English>
@@ -84,6 +88,7 @@
       <Portuguese>Alinhar Ferramenta de Mapa com a Bússola</Portuguese>
       <Hungarian>Térképészeti eszköz iránytűhöz állítása</Hungarian>
       <Polish>Wyrównaj linijkę do kompasu</Polish>
+      <Czech>Srovnat pomůcku k mapě ke kompasu</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsShow">
       <English>Show GPS on Map</English>
@@ -94,6 +99,7 @@
       <Portuguese>Mostrar GPS no Mapa</Portuguese>
       <Hungarian>GPS megjelnítése a térképen</Hungarian>
       <Polish>Pokaż GPS na mapie</Polish>
+      <Czech>Zobrazit GPS na mapě</Czech>
     </Key>
     <Key ID="STR_AGM_Map_MapGpsHide">
       <English>Hide GPS on Map</English>
@@ -104,6 +110,7 @@
       <Portuguese>Ocultar GPS no Mapa</Portuguese>
       <Hungarian>GPS elrejtése térképről</Hungarian>
       <Polish>Ukryj GPS na mapie</Polish>
+      <Czech>Schovat GPS na mapě</Czech>
     </Key>
     <Key ID="STR_AGM_Map_CopyMap">
       <English>Copy Map</English>
@@ -121,6 +128,10 @@
       <English>Direction: %1°</English>
       <German>Drehung: %1°</German>
       <French>Direction: %1°</French>
+      <Czech>Směr: %1°</Czech>
+      <Polish>Kierunek: %1°</Polish>
+      <Spanish>Dirección: %1°</Spanish>
+      <Hungarian>Irány: %1</Hungarian>
     </Key>
   </Package>
 </Project>

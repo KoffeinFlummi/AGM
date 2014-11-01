@@ -8,55 +8,57 @@
 #define BASE_FREQ 13
 #define RECOIL_COEF 40
 
-private ["_unit", "_weapon", "_ammo", "_powerMod", "_timeMod", "_freqMod", "_powerCoef", "_camshake"];
+private ["_unit", "_weapon", "_muzzle", "_ammo"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
+_muzzle = _this select 2;
 _ammo = _this select 4;
 
-if (_weapon == handgunWeapon _unit) exitWith {};
-if (_weapon in ["Throw", "Put"]) exitWith {};
+if (_weapon in [handgunWeapon _unit, "Throw", "Put"]) exitWith {};
+
+private ["_powerMod", "_timeMod", "_freqMod", "_powerCoef"];
 
 _powerMod = ([0, -0.1, -0.1, 0, -0.2] select (["STAND", "CROUCH", "PRONE", "UNDEFINED", ""] find stance _unit)) + ([0, -1, 0, -1] select (["INTERNAL", "EXTERNAL", "GUNNER", "GROUP"] find cameraView));
 _timeMod = 0;
 _freqMod = 0;
 
 _powerCoef = 0;
-if (vehicle player != player) then {
+if (_unit != vehicle _unit) then {
   _powerCoef = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Recoil_shakeMultiplier");
   _powerCoef = _powerCoef * getNumber (configFile >> "CfgAmmo" >> _ammo >> "AGM_Recoil_shakeMultiplier");
 } else {
-  if (stance _unit == "PRONE") then {
-    _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> "recoilProne");
-    if (currentWeaponMode _unit != _weapon) then {
-      _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> (currentWeaponMode _unit) >> "recoilProne");
-    };
-    if (count (getArray (configFile >> "CfgRecoils" >> _recoil)) < 2) exitWith {};
-    _powerCoef = (getArray (configFile >> "CfgRecoils" >> _recoil)) select 1;
+  private ["_type", "_config", "_recoil"];
+
+  _type = ["recoil", "recoilProne"] select (stance _unit == "PRONE");
+
+  _config = configFile >> "CfgWeapons" >> _weapon;
+  _recoil = if (_muzzle == _weapon) then {
+    getText (_config >> _type)
   } else {
-    _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> "recoil");
-    if (currentWeaponMode _unit != _weapon) then {
-      _recoil = getText (configFile >> "CfgWeapons" >> _weapon >> (currentWeaponMode _unit) >> "recoil");
-    };
-    if (count (getArray (configFile >> "CfgRecoils" >> _recoil)) < 2) exitWith {};
-    _powerCoef = (getArray (configFile >> "CfgRecoils" >> _recoil)) select 1;
+    getText (_config >> _muzzle >> _type)
   };
 
-  _powerCoef = (call compile (format ["%1", _powerCoef])) * RECOIL_COEF;
+  _recoil = getArray (configFile >> "CfgRecoils" >> _recoil);
+  if (count _recoil < 2) exitWith {};
+
+  _powerCoef = _recoil select 1;
+  _powerCoef = (call compile format ["%1", _powerCoef]) * RECOIL_COEF;
 };
 
-if (!(isNil "AGM_weaponRested") and {AGM_weaponRested}) then {_powerMod = _powerMod - 0.07};
-if (!(isNil "AGM_bipodDeployed") and {AGM_bipodDeployed}) then {_powerMod = _powerMod - 0.11};
+if (_unit getVariable ["AGM_weaponRested", false]) then {_powerMod = _powerMod - 0.07};
+if (_unit getVariable ["AGM_bipodDeployed", false]) then {_powerMod = _powerMod - 0.11};
 
+private "_camshake";
 _camshake = [
-    _powerCoef * (BASE_POWER + _powerMod) max 0,
-    BASE_TIME + _timeMod max 0,
-    BASE_FREQ + _freqMod max 0
+  _powerCoef * (BASE_POWER + _powerMod) max 0,
+  BASE_TIME + _timeMod max 0,
+  BASE_FREQ + _freqMod max 0
 ];
 
-if (!isNil "AGM_Debug" && {AGM_Debug == "Recoil"}) then {
-    systemChat str _camshake;
-    copyToClipboard format ["addcamshake %1", _camshake];
+if (!isNil "AGM_Debug" && {"Recoil" in AGM_Debug}) then {
+  systemChat str _camshake;
+  copyToClipboard format ["addCamShake %1;", _camshake];
 };
 
-addcamshake _camshake;
+addCamShake _camshake;

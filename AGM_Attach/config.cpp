@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi", "eRazeri", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -34,23 +34,27 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_Attach {
-        displayName = "$STR_AGM_Attach_AttachDetach";
-        condition = "[_player, ''] call AGM_Attach_fnc_canAttach";
-        statement = "[_player] call AGM_Attach_fnc_openAttachUI;";
-        exceptions[] = {"AGM_Drag_isNotDragging"};
-        showDisabled = 0;
-        priority = 5;
-        icon = "\AGM_Attach\UI\attach_ca.paa";
-      };
-      class AGM_Attach_Detach {
-        displayName = "$STR_AGM_Attach_Detach";
-        condition = "[_player] call AGM_Attach_fnc_canDetach";
-        statement = "[_player] call AGM_Attach_fnc_detach";
-        exceptions[] = {"AGM_Drag_isNotDragging"};
-        showDisabled = 0;
-        priority = 5;
-        icon = "\AGM_Attach\UI\detach_ca.paa";
+      class AGM_Equipment {
+        class AGM_Attach {
+          displayName = "$STR_AGM_Attach_AttachDetach";
+          condition = "[_player, ''] call AGM_Attach_fnc_canAttach";
+          statement = "[_player] call AGM_Attach_fnc_openAttachUI;";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 0;
+          priority = 5;
+          icon = "\AGM_Attach\UI\attach_ca.paa";
+          hotkey = "T";
+        };
+        class AGM_Attach_Detach {
+          displayName = "$STR_AGM_Attach_Detach";
+          condition = "[_player] call AGM_Attach_fnc_canDetach";
+          statement = "[_player] call AGM_Attach_fnc_detach";
+          exceptions[] = {"AGM_Drag_isNotDragging"};
+          showDisabled = 0;
+          priority = 5;
+          icon = "\AGM_Attach\UI\detach_ca.paa";
+          hotkey = "T";
+        };
       };
     };
   };

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -30,6 +30,7 @@ class CfgFunctions {
       class drawNameTagIcon;
       class escortCaptive;
       class GetActions;
+      class getActions2;
       class getCaptivityStatus;
       class getDoor;
       class getDown;
@@ -107,7 +108,7 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_Interaction_fnc_onButtonDownSelf";
     conditionUp = "!isNull (findDisplay 1713999) && {profileNamespace getVariable ['AGM_Interaction_AutoCloseMenu', false]}";
     statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
-    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting", "AGM_Core_notOnMap"};
     key = 219;
     shift = 0;
     control = 1;
@@ -366,7 +367,7 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Interaction_SetCaptive";
         distance = 4;
-        condition = "'AGM_CableTie' in items player && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
+        condition = "'AGM_CableTie' in items player && {alive AGM_Interaction_Target} && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
         statement = "[AGM_Interaction_Target, true] call AGM_Interaction_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
@@ -403,7 +404,7 @@ class CfgVehicles {
         priority = 2.3;
       };
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, AGM_Interaction_Target, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -425,8 +426,8 @@ class CfgVehicles {
       class AGM_FriskPerson {
         displayName = "$STR_AGM_Interaction_FriskPerson";
         distance = 2;
-        condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canFriskPerson";
-        statement = "[AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
+        condition = "[_player, AGM_Interaction_Target] call AGM_Interaction_fnc_canFriskPerson";
+        statement = "[_player, AGM_Interaction_Target] call AGM_Interaction_fnc_openFriskMenu";
         showDisabled = 0;
         priority = 3;
         //icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
@@ -650,7 +651,7 @@ class CfgVehicles {
         priority = 2.3;
       };
       class AGM_LoadCaptiveSelf {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         condition = "[player, objNull, objNull] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, objNull] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
@@ -658,25 +659,47 @@ class CfgVehicles {
         priority = 2.2;
       };
 
-      class AGM_LockBackpack {
-        displayName = "$STR_AGM_Interaction_LockBackpack";
-        condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
-        showDisabled = 0;
-        priority = 2.5;
-        //icon = "";
-        hotkey = "L";
+      class AGM_Equipment {
+        displayName = "$STR_AGM_Interaction_Equipment";
+        condition = "true";
+        statement = "";
+        showDisabled = 1;
+        priority = 4.5;
+        icon = "";  // @todo
+        subMenu[] = {"AGM_Equipment", 1};
         enableInside = 1;
-      };
-      class AGM_UnlockBackpack {
-        displayName = "$STR_AGM_Interaction_UnlockBackpack";
-        condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-        statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
-        showDisabled = 0;
-        priority = 2.5;
-        //icon = "";
-        hotkey = "L";
-        enableInside = 1;
+        hotkey = "E";
+
+        class AGM_LockBackpack {
+          displayName = "$STR_AGM_Interaction_LockBackpack";
+          condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
+          showDisabled = 0;
+          priority = 2.5;
+          //icon = "";
+          hotkey = "L";
+          enableInside = 1;
+        };
+        class AGM_UnlockBackpack {
+          displayName = "$STR_AGM_Interaction_UnlockBackpack";
+          condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
+          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
+          showDisabled = 0;
+          priority = 2.5;
+          //icon = "";
+          hotkey = "L";
+          enableInside = 1;
+        };
+
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Interaction\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
 
       /*class AGM_WeaponOnBack {
@@ -693,7 +716,7 @@ class CfgVehicles {
   class Car: LandVehicle {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -702,7 +725,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
@@ -715,7 +738,7 @@ class CfgVehicles {
   class Tank: LandVehicle {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -724,7 +747,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
@@ -734,11 +757,12 @@ class CfgVehicles {
     };
     class AGM_SelfActions {};
   };
+
   class Air;
   class Helicopter: Air {
     class AGM_Actions {
       class AGM_LoadCaptive {
-        displayName = "Load Captive into Vehicle";
+        displayName = "$STR_AGM_Interaction_LoadCaptive";
         distance = 4;
         condition = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_canLoadCaptiveIntoVehicle";
         statement = "[player, objNull, AGM_Interaction_Target] call AGM_Interaction_fnc_loadCaptiveIntoVehicle";
@@ -747,7 +771,7 @@ class CfgVehicles {
         priority = 1.2;
       };
       class AGM_UnloadCaptive {
-        displayName = "Unload Captive from Vehicle";
+        displayName = "$STR_AGM_Interaction_UnloadCaptive";
         distance = 4;
         condition = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_canUnloadCaptiveFromVehicle";
         statement = "[player, AGM_Interaction_Target] call AGM_Interaction_fnc_unloadCaptiveFromVehicle";
@@ -755,6 +779,16 @@ class CfgVehicles {
         priority = 1.2;
       };
     };
+    class AGM_SelfActions {};
+  };
+  class Plane: Air {
+    class AGM_Actions {};
+    class AGM_SelfActions {};
+  };
+
+  class Ship;
+  class Ship_F: Ship {
+    class AGM_Actions {};
     class AGM_SelfActions {};
   };
 

@@ -2,10 +2,10 @@
  * Author: commy2
  *
  * The player will select the specified weapon or will change to the next firing mode if the weapon was already selected.
- * 
+ *
  * Argument:
  * 0: A weapon (String)
- * 
+ *
  * Return value:
  * None.
  */
@@ -18,10 +18,10 @@ _weapon = _this select 1;
 if (_weapon == "") exitWith {};
 
 if (currentWeapon _player != _weapon) exitWith {
-	_player selectWeapon _weapon;
+  _player selectWeapon _weapon;
 };
 
-_muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;	
+_muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
 _modes = [_weapon] call AGM_WeaponSelect_fnc_getWeaponModes;
 
 _count = count _modes;
@@ -33,8 +33,8 @@ _mode = _modes select _index;
 
 _index = 0;
 while {
-	_index < 100 && {currentMuzzle _player != _muzzle || {currentWeaponMode _player != _mode}}
+  _index < 100 && {currentMuzzle _player != _muzzle || {currentWeaponMode _player != _mode}}
 } do {
-	_player action ["SwitchWeapon", _player, _player, _index];
-	_index = _index + 1;
+  _player action ["SwitchWeapon", _player, _player, _index];
+  _index = _index + 1;
 };

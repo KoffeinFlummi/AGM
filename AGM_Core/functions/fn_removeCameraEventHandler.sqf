@@ -10,7 +10,7 @@
  * None.
  */
 
-private ["_id", "_actionsVar", "_currentId", "_actionIDs", "_actions", "_id"];
+private ["_id", "_actionsVar", "_currentId", "_actionIDs", "_actions"];
 
 _id = _this select 0;
 

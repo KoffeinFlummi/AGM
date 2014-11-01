@@ -1,26 +1,29 @@
 // by commy2 and CAA-Picard
 
 _this spawn {
-	_weapon = _this select 0;
+	_player = _this select 0;
+	_weapon = _this select 1;
 
 	// Calculate cool down of weapon since last shot
-	_cooldown = getNumber (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Cooldown");
-
 	_string = format ["AGM_Overheating_%1", _weapon];
-
-	_overheat = player getVariable [_string, [0, 0]];
+	_overheat = _player getVariable [_string, [0, 0]];
 	_temperature = _overheat select 0;
 	_time = _overheat select 1;
 
-	_temperature = (_temperature - _cooldown * (time - _time)) max 0;
+	// Get physical parameters
+	_barrelMass = 0.50 * (getNumber (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "weight") / 22.0) max 1.0;
+
+	// Calculate cooling
+	_temperature = [_temperature, _barrelMass, time - _time] call AGM_Overheating_fnc_cooldown;
 
 	if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
-		hintSilent format ["Temperature: %1%\nTime: %2s\nIncrement: %3\nCooldown: %4", _temperature * 100, time - _time, 0, _cooldown];
+		hintSilent format ["Temperature: %1 C", _temperature];
 	};
 
 	// Store new temperature
 	_time = time;
-	player setVariable [_string, [_temperature, _time], false];
+	_player setVariable [_string, [_temperature, _time], false];
+	_scaledTemperature = (_temperature / 1000) min 1;
 
 	// Play animation and report temperature
 	_action = getText (configFile >> "CfgWeapons" >> _weapon >> "AGM_checkTemperatureAction");
@@ -29,17 +32,17 @@ _this spawn {
 		_action = "Gear";
 	};
 
-	player playActionNow _action;
+	_player playActionNow _action;
 
 	sleep 1;
 
 	_color = [
-		2 * _temperature min 1,
-		2 * (1 - _temperature) min 1,
+		2 * _scaledTemperature min 1,
+		2 * (1 - _scaledTemperature) min 1,
 		00
 	];
 
-	_count = 2 + round (10 * _temperature);
+	_count = 2 + round (10 * _scaledTemperature);
 	_string = "";
 	for "_a" from 1 to _count do {
 		_string = _string + "|";

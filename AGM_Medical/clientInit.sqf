@@ -38,7 +38,7 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
       if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [false] call AGM_Core_fnc_disableUserInput;
       };
-      waitUntil {!(alive player)};
+      waitUntil {alive player};
     };
 
     // Blood level

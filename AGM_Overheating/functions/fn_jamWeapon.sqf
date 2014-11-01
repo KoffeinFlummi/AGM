@@ -37,14 +37,14 @@ AGM_Overheating_knowAboutJam = false;
 
 if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
 	_condition = {
-		player == vehicle player
-		&& {currentMuzzle player in (player getVariable ['AGM_Overheating_jammedWeapons', []])}
+		_this select 1 == vehicle (_this select 1)
+		&& {currentMuzzle (_this select 1) in ((_this select 1) getVariable ['AGM_Overheating_jammedWeapons', []])}
 	};
 
 	_statement = {
 		playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
 
-		if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {player ammo currentWeapon player > 0}) then {
+		if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {(_this select 1) ammo currentWeapon (_this select 1) > 0}) then {
 			[localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
 			AGM_Overheating_knowAboutJam = true;
 		};

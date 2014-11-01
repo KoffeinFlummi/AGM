@@ -169,9 +169,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -184,11 +184,13 @@ class CfgFunctions {
       class addActionEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
+      class addInfoDisplayEventHandler;
       class addMapMarkerCreatedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
       class canInteractWith;
       class changeProjectileDirection;
       class checkPBOs;
@@ -207,6 +209,8 @@ class CfgFunctions {
       class getBinocular;
       class getConfigCommander;
       class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
@@ -246,6 +250,7 @@ class CfgFunctions {
       class removeActionEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
+      class removeInfoDisplayEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
@@ -265,7 +270,19 @@ class CfgFunctions {
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class getChildren;
+      class getDisplayConfigName;
+      class logControls;
+      class logDisplays;
+      class monitor;
       class showUser;
+    };
+  };
+  class AGM_CuratorFix {
+    class AGM_CuratorFix {
+      file = "AGM_Core\functions\CuratorFix";
+      class addUnloadEventhandler;
+      class fixCrateContent;
     };
   };
 };
@@ -315,6 +332,31 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
+  class Man;
+  class CAManBase: Man {
+    // @todo
+    class UserActions {
+      class AGM_Fire {
+        displayName = "";
+        priority = -99;
+        available = 1;
+        radius = 2.5;
+        radiusView = 0;
+        position = "";
+        showWindow = 0;
+        showIn3D = 0;
+        onlyForPlayer = 1;
+        shortcut = "DefaultAction";
+        condition = "call AGM_Core_UserActionFireCondition";
+        statement = "call AGM_Core_UserActionFire";
+        userActionID = 100;
+      };
+    };
+  };
+
+  // += needs a non inherited entry in that class, otherwise it simply overwrites
+  #include <DefaultItems.hpp>
+
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
     author = "AGM Team";
@@ -362,20 +404,20 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     author = "AGM";
     displayName = "$STR_AGM_Core_MiscItems";
-    transportmaxmagazines = 9001;
-    transportmaxbackbacks = 0;
+    transportMaxMagazines = 9001;
     maximumload = 2000;
 
     class TransportWeapons {};
     class TransportMagazines {};
     class TransportItems {};
+    class TransportBackpacks {};
   };
 };
 
 class CfgWeapons {
   class ItemCore;
   class AGM_ItemCore: ItemCore {
-    type = 4;
+    type = 4096;//4;
     detectRange = -1;
     simulation = "ItemMineDetector";
   };
@@ -436,7 +478,11 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
-class AGM_Core_canInteractConditions {};
+class AGM_Core_canInteractConditions {
+  class AGM_Core_notOnMap {
+    condition = "!visibleMap";
+  };
+};
 
 class AGM_Core_Options {
   class enableNumberHotkeys {
@@ -449,3 +495,13 @@ class AGM_Core_Options {
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
 #include <HintConfig.hpp>
+
+/*
+class RscControlsGroupNoScrollbars; 
+class RscAttributeInventory: RscControlsGroupNoScrollbars {
+  onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
+};
+*/
+
+#include <RscInfoType.hpp>
+#include <PickupFix.hpp>

@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -17,24 +17,17 @@ class CfgFunctions {
   class AGM_Resting {
     class AGM_Resting {
       file = "AGM_Resting\functions";
-      class canRestWeapon;
+      class hasBipod;
       class restWeapon;
-      class unRestWeapon;
     };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Resting {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Resting\clientInit.sqf'";
   };
 };
 
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "$STR_AGM_Resting_RestWeapon";
-    condition = "call AGM_Resting_fnc_canRestWeapon";
-    statement = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
+    condition = "_player == _vehicle && {inputAction 'reloadMagazine' == 0} && {!weaponLowered _player} && {speed _player < 1}";
+    statement = "[_player, currentWeapon _player] call AGM_Resting_fnc_restWeapon";
     key = 15;
     shift = 0;
     control = 0;

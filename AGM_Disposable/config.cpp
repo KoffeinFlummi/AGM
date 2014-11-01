@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -22,10 +22,10 @@ class CfgFunctions {
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_ReplaceFiredATWeapon {
-      Fired = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_replaceATWeapon};";
+    class AGM_Disposable_ReplaceFiredATWeapon {
+      firedBIS = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_replaceATWeapon;};";
     };
   };
 };

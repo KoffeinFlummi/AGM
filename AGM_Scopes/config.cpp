@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi";
   };
@@ -20,6 +20,7 @@ class CfgFunctions {
       class canAdjustScope;
       class firedEH;
       class getOptics;
+      class hideZeroing;
       class init;
     };
   };
@@ -95,8 +96,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -108,8 +109,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -121,8 +122,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {0};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -195,5 +196,12 @@ class RscTitles {
         h = 0.025 * safezoneH;
       };
     };
+  };
+};
+
+class RscInGameUI {
+  class RscUnitInfo;
+  class RscWeaponZeroing: RscUnitInfo {
+    onLoad = "[""onLoad"",_this,""RscUnitInfo"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; uiNamespace setVariable ['AGM_dlgWeaponZeroing', _this select 0];";
   };
 };

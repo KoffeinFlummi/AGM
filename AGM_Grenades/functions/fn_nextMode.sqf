@@ -1,6 +1,8 @@
 // by commy2
 
-_mode = AGM_Grenades_Mode;
+private ["_mode", "_hint"];
+
+_mode = missionNamespace getVariable ["AGM_Grenades_Mode", 0];
 
 if (_mode == 4) then {
   _mode = 0;

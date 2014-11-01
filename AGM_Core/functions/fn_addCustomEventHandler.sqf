@@ -19,7 +19,7 @@ _type = _this select 1;
 _statement = _this select 2;
 
 if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
+  _statement = compile _statement;
 };
 
 _name = format ["AGM_CustomEventHandlers_%1", _type];

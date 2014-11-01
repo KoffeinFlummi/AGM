@@ -2,10 +2,10 @@
  * Author: commy2
  *
  * The player will select the specified weapon and change to the first additional muzzle. E.g. the grenade launcher of a assault rifle.
- * 
+ *
  * Argument:
  * 0: A weapon (String)
- * 
+ *
  * Return value:
  * None.
  */
@@ -20,9 +20,9 @@ if (_weapon == "") exitWith {};
 _muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
 
 if (currentWeapon _player != _weapon) exitWith {
-	if (count _muzzles > 1) then {
-		_player selectWeapon (_muzzles select 1);
-	};
+  if (count _muzzles > 1) then {
+    _player selectWeapon (_muzzles select 1);
+  };
 };
 
 _count = count _muzzles;
@@ -33,8 +33,8 @@ _muzzle = _muzzles select _index;
 
 _index = 0;
 while {
-	_index < 100 && {currentMuzzle _player != _muzzle}
+  _index < 100 && {currentMuzzle _player != _muzzle}
 } do {
-	_player action ["SwitchWeapon", _player, _player, _index];
-	_index = _index + 1;
+  _player action ["SwitchWeapon", _player, _player, _index];
+  _index = _index + 1;
 };

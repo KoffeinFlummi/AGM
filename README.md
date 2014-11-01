@@ -8,9 +8,13 @@
 
 A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
+**Make Arma Not War:** http://makearmanotwar.com/entry/7jnWM53S2e
+
 **BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
 
 **Get Latest Version:** https://github.com/KoffeinFlummi/AGM/releases
+
+***The Authentic Gameplay Modification requires [CBA A3](http://www.armaholic.com/page.php?id=18767).***
 
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
 
@@ -56,7 +60,7 @@ If you want to help development by testing and reporting bugs, feel free to down
 
 To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
 
-In order for the addons to be correctly binarized, you need to exclude the following filytypes from binarization (the binarizer script does this for you):
+In order for the addons to be correctly binarized, you need to exclude the following file types from binarization (the binarizer script does this for you):
 ```
 *.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf;
 ```

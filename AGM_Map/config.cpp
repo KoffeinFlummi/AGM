@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -29,13 +29,9 @@ class CfgFunctions {
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
-      class onLBSelChangedColor;
-      class onLBSelChangedShape;
-      class onSliderPosChangedAngle;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
-      class setMarker;
       class updateMapToolMarkers;
       class updateLineMarker;
     };
@@ -44,7 +40,7 @@ class CfgFunctions {
 
 class Extended_PreInit_EventHandlers {
   class AGM_Map {
-    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverPreInit.sqf'";
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverInit.sqf'";
   };
 };
 
@@ -85,7 +81,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Map_MapTools_Menu";
         condition = "(call AGM_Map_fnc_canUseMapTools) || (call AGM_Map_fnc_canUseMapGPS)";
         statement = "";
-        exceptions[] = {"AGM_Drag_isNotDragging"};
+        exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
         showDisabled = 0;
         priority = 100;
         subMenu[] = {"AGM_MapTools", 1};
@@ -95,7 +91,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsHide";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown > 0}";
           statement = "AGM_Map_mapToolsShown = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 5;
           enableInside = 1;
@@ -104,7 +100,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsShowNormal";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 1}";
           statement = "AGM_Map_mapToolsShown = 1; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 4;
           enableInside = 1;
@@ -113,7 +109,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsShowSmall";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 2}";
           statement = "AGM_Map_mapToolsShown = 2; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 3;
           enableInside = 1;
@@ -122,7 +118,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsAlignNorth";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0}";
           statement = "AGM_Map_angle = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 2;
           enableInside = 1;
@@ -131,7 +127,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapToolsAlignCompass";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0} && {(""ItemCompass"" in assignedItems player) || {""ItemGPS"" in assignedItems player}}";
           statement = "AGM_Map_angle = getDir player; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 1;
           enableInside = 1;
@@ -140,7 +136,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapGpsShow";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && {!AGM_Map_mapGpsShow}";
           statement = "AGM_Map_mapGpsShow = true; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
           enableInside = 1;
@@ -149,7 +145,7 @@ class CfgVehicles {
           displayName = "$STR_AGM_Map_MapGpsHide";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && AGM_Map_mapGpsShow";
           statement = "AGM_Map_mapGpsShow = false; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
           enableInside = 1;
@@ -235,15 +231,12 @@ class RscControlsGroup;
 class RscActiveText;
 class RscPicture;
 class RscText;
-class RscStructuredText;
 class RscObject;
 class RscButton;
 class RscButtonMenuOK;
 class RscButtonMenuCancel;
 class RscButtonMenu;
 class RscEdit;
-class RscCombo;
-class RscSlider;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -423,4 +416,3 @@ class AGM_Parameters {
 };
 
 #include "MapGpsUI.hpp"
-#include <InsertMarker.hpp>

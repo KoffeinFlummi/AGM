@@ -1,20 +1,20 @@
 /*
 	Name: AGM_Interaction_fnc_AddSelectableItem
-	
+
 	Author: Garth de Wet (LH)
-	
+
 	Description:
 		Adds an item to the select menu
-	
+
 	Parameters:
 		0: ARRAY/NUMBER - List container
 		1: String - Display Name
 		2: String - Picture
 		3: String/code - data
-		
+
 	Returns:
 		ARRAY/Number
-	
+
 	Example:
 */
 _container = _this select 0;
@@ -27,7 +27,8 @@ if (_picture == "" || _picture == "PictureThing") then {
 };
 
 if ((profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
-	_container pushBack [_displayName, nil, {true}, 0,[], _picture, _data];
+	//[_displayName, _statement, _condition, _priority, _subMenu, _icon, _tooltip, _conditionShow, _exceptions, _distance, _hotkey]
+	_container pushBack [_displayName, nil, {true},0,[], _picture, "", {true}, [], 4, "", _data];
 }else{
 	_index = lbAdd [_container, _displayName];
 	lbSetData [_container, _index, str _data];
