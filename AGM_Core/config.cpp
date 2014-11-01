@@ -354,6 +354,9 @@ class CfgVehicles {
     };
   };
 
+  // += needs a non inherited entry in that class, otherwise it simply overwrites
+  #include <DefaultItems.hpp>
+
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
     author = "AGM Team";
