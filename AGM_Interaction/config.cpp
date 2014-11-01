@@ -639,27 +639,6 @@ class CfgVehicles {
         enableInside = 1;
         hotkey = "E";
 
-        class AGM_LockBackpack {
-          displayName = "$STR_AGM_Interaction_LockBackpack";
-          condition = "(alive (_this select 1)) && !((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', true, true]";
-          showDisabled = 0;
-          priority = 2.5;
-          //icon = "";
-          hotkey = "L";
-          enableInside = 1;
-        };
-        class AGM_UnlockBackpack {
-          displayName = "$STR_AGM_Interaction_UnlockBackpack";
-          condition = "(alive (_this select 1)) && ((backpackContainer (_this select 1)) getVariable ['AGM_LockedInventory', false]) && (backpack (_this select 1) != '')";
-          statement = "(backpackContainer (_this select 1)) setVariable ['AGM_LockedInventory', false, true]";
-          showDisabled = 0;
-          priority = 2.5;
-          //icon = "";
-          hotkey = "L";
-          enableInside = 1;
-        };
-
         class AGM_Dummy {
           displayName = "";
           condition = "false";
@@ -670,14 +649,6 @@ class CfgVehicles {
           enableInside = 1;
         };
       };
-
-      /*class AGM_WeaponOnBack {
-        displayName = "$STR_AGM_Interaction_WeaponOnBack";
-        condition = "currentWeapon player != ''";
-        statement = "player action ['SwitchWeapon', vehicle player, vehicle player, 99];";
-        showDisabled = 0;
-        priority = -2;
-      };*/
     };
   };
 
