@@ -44,8 +44,8 @@ _relAzimuth = (sin _azimuthP2 * _lenghtP2 - sin _azimuthP1 * _lenghtP1) atan2 (c
 if (_relAzimuth < 0) then {_relAzimuth = _relAzimuth + 360};
 
 if (_distanceP1 == -9999 || {_distanceP2 == -9999}) then {
-	_relDistance = -9999;
-	_relAzimuth = -9999;
+  _relDistance = -9999;
+  _relAzimuth = -9999;
 };
 
 _digits = _relLenght call AGM_Vector_convertDistance;

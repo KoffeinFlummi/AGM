@@ -28,6 +28,6 @@ AGM_Vector_modeRelativeAzimuthDistance = compile preprocessFileLineNumbers "\AGM
 AGM_Vector_modeFallOfShort = compile preprocessFileLineNumbers "\AGM_Vector\scripts\modeFallOfShort.sqf";
 
 0 spawn {
-	waitUntil {preloadTitleRsc ["AGM_Digit_Preload", "PLAIN"]};
-	waitUntil {preloadTitleRsc ["AGM_Debug_Crosshair", "PLAIN"]};
+  waitUntil {preloadTitleRsc ["AGM_Digit_Preload", "PLAIN"]};
+  waitUntil {preloadTitleRsc ["AGM_Debug_Crosshair", "PLAIN"]};
 };

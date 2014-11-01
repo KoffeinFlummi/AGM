@@ -17,42 +17,42 @@ _ctrlVectorCenter ctrlSetText "\AGM_Vector\rsc\Vector_Center.paa";
 _time = -1;
 _exit = false;
 waitUntil {
-	if (time > _time + 0.5) then {
-		_direction = call AGM_Vector_getDirection;
-		_azimuth = _direction select 0;
+  if (time > _time + 0.5) then {
+    _direction = call AGM_Vector_getDirection;
+    _azimuth = _direction select 0;
 
-		_digits = _azimuth call AGM_Vector_convertDegree;
-		_ctrlDigit5 ctrlSetText (_digits select 0);
-		_ctrlDigit6 ctrlSetText (_digits select 1);
-		_ctrlDigit7 ctrlSetText (_digits select 2);
-		_ctrlDigit8 ctrlSetText (_digits select 3);
+    _digits = _azimuth call AGM_Vector_convertDegree;
+    _ctrlDigit5 ctrlSetText (_digits select 0);
+    _ctrlDigit6 ctrlSetText (_digits select 1);
+    _ctrlDigit7 ctrlSetText (_digits select 2);
+    _ctrlDigit8 ctrlSetText (_digits select 3);
 
-		_time = time;
-	};
-	if (AGM_vectorKey select 1) then {_exit = true};
-	!(AGM_vectorKey select 0) || {_exit}
+    _time = time;
+  };
+  if (AGM_vectorKey select 1) then {_exit = true};
+  !(AGM_vectorKey select 0) || {_exit}
 };
 if (_exit) exitWith {
-	waitUntil {
-		if (time > _time + 0.5) then {
-			_direction = call AGM_Vector_getDirection;
-			_azimuth = _direction select 0;
+  waitUntil {
+    if (time > _time + 0.5) then {
+      _direction = call AGM_Vector_getDirection;
+      _azimuth = _direction select 0;
 
-			_digits = _azimuth call AGM_Vector_convertDegree;
-			_ctrlDigit5 ctrlSetText (_digits select 0);
-			_ctrlDigit6 ctrlSetText (_digits select 1);
-			_ctrlDigit7 ctrlSetText (_digits select 2);
-			_ctrlDigit8 ctrlSetText (_digits select 3);
+      _digits = _azimuth call AGM_Vector_convertDegree;
+      _ctrlDigit5 ctrlSetText (_digits select 0);
+      _ctrlDigit6 ctrlSetText (_digits select 1);
+      _ctrlDigit7 ctrlSetText (_digits select 2);
+      _ctrlDigit8 ctrlSetText (_digits select 3);
 
-			_time = time;
-		};
-		!(AGM_vectorKey select 1)
-	};
-	_ctrlDigit5 ctrlSetText "";
-	_ctrlDigit6 ctrlSetText "";
-	_ctrlDigit7 ctrlSetText "";
-	_ctrlDigit8 ctrlSetText "";
-	AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeAzimuthDistance;
+      _time = time;
+    };
+    !(AGM_vectorKey select 1)
+  };
+  _ctrlDigit5 ctrlSetText "";
+  _ctrlDigit6 ctrlSetText "";
+  _ctrlDigit7 ctrlSetText "";
+  _ctrlDigit8 ctrlSetText "";
+  AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeAzimuthDistance;
 };
 _ctrlVectorCenter ctrlShow false;
 

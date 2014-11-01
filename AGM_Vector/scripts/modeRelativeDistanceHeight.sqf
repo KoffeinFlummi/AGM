@@ -40,8 +40,8 @@ _lenght = sqrt (_distanceP1^2 + _distanceP2^2 - 2 * _distanceP1 * _distanceP2 * 
 if (_inclination < 0) then {_height = -1 * _height};
 
 if (_distanceP1 == -9999 || {_distanceP2 == -9999}) then {
-	_height = -9999;
-	_lenght = -9999;
+  _height = -9999;
+  _lenght = -9999;
 };
 
 _digits = _height call AGM_Vector_convertDistance;
