@@ -17,6 +17,10 @@ private ["_unit", "_damage", "_hitPoints"];
 _unit = _this select 0;
 _damage = _this select 1;
 
+if !(local _unit) exitWith {
+  [_this, "AGM_Medical_fnc_setDamage", _unit] call AGM_Core_fnc_execRemoteFnc;
+};
+
 _hitPoints = [
   (_unit getHitPointDamage "HitHead"),
   (_unit getHitPointDamage "HitBody"),
