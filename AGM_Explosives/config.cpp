@@ -31,7 +31,6 @@ class CfgFunctions
       class getPlacedExplosives;
       
       class initialise{postInit=1;};
-      class isSpecialist;
       //class JammerInit;
       
       class openDetonateUI;
