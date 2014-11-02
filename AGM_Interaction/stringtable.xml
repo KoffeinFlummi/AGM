@@ -688,11 +688,13 @@
       <Polish>Rewiduj osobę</Polish>
       <Hungarian>Motozás</Hungarian>
     </Key>
-
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>
     </Key>
-
+    <Key ID="STR_AGM_Interaction_Push">
+      <English>Push</English>
+      <German>Schieben</German>
+    </Key>
   </Package>
 </Project>

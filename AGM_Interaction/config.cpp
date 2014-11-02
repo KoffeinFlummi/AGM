@@ -728,7 +728,16 @@ class CfgVehicles {
 
   class Ship;
   class Ship_F: Ship {
-    class AGM_Actions {};
+    class AGM_Actions {
+      class AGM_Push {
+        displayName = "$STR_AGM_Interaction_Push";
+        distance = 4;
+        condition = "getMass AGM_Interaction_Target < 1000 and alive AGM_Interaction_Target";
+        statement = "AGM_Interaction_Target setVelocity [2 * (vectorDir _player select 0), 2 * (vectorDir _player select 1), 0.5]";
+        showDisabled = 0;
+        priority = -1;
+      };
+    };
     class AGM_SelfActions {};
   };
 
