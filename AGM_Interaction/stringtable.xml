@@ -390,69 +390,6 @@
       <Portuguese>Abaixe-se!</Portuguese>
       <Italian>A Terra!</Italian>
     </Key>
-    <Key ID="STR_AGM_Interaction_SetCaptive">
-      <English>Take Prisoner</English>
-      <German>Gefangen nehmen</German>
-      <Spanish>Tomar prisionero</Spanish>
-      <French>Capturer le prisonnier</French>
-      <Polish>Weź więźnia</Polish>
-      <Czech>Zajmout Osobu</Czech>
-      <Italian>Arresta il Prigioniero</Italian>
-      <Portuguese>Tomar Prisioneiro</Portuguese>
-      <Hungarian>Foglyul ejtés</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_ReleaseCaptive">
-      <English>Free Prisoner</English>
-      <German>Gefangen freilassen</German>
-      <Spanish>Liberar prisionero</Spanish>
-      <Polish>Wypuść więźnia</Polish>
-      <French>Libérer le prisonnier</French>
-      <Czech>Osvobodit Zajatce</Czech>
-      <Italian>Libera il Prigioniero</Italian>
-      <Portuguese>Libertar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly szabadon elengedése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_EscortCaptive">
-      <English>Escort Prisoner</English>
-      <German>Gefangenen eskortieren</German>
-      <Spanish>Escoltar prisionero</Spanish>
-      <Polish>Eskortuj więźnia</Polish>
-      <French>Escorter le prisonnier</French>
-      <Czech>Eskortovat Zajatce</Czech>
-      <Italian>Scorta il Prigioniero</Italian>
-      <Portuguese>Escoltar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly kísérése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_StopEscorting">
-      <English>Release Prisoner</English>
-      <German>Gefangenen loslassen</German>
-      <Spanish>Soltar prisionero</Spanish>
-      <Polish>Anuluj eskortowanie</Polish>
-      <French>Relâcher le prisonnier</French>
-      <Czech>Uvolnit Zajatce</Czech>
-      <Italian>Rilascia il Prigioniero</Italian>
-      <Portuguese>Largar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly elengedése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_NoCaptive">
-      <English>You need you take him as prisoner first!</English>
-      <German>Du must ihn zuerst gefangen nehmen.</German>
-      <Spanish>Necesitas hacerle prisionero primero!</Spanish>
-      <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
-      <French>Vous devez d'abord le capturer!</French>
-      <Czech>Musíš ho nejdříve zajmout!</Czech>
-      <Italian>Prima devi arrestarlo!</Italian>
-      <Portuguese>Você deve tomá-lo como prisioneiro primeiro!</Portuguese>
-      <Hungarian>Először foglyul kell ejtened!</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_LoadCaptive">
-        <English>Load Captive into Vehicle</English>
-        <German>Gefangenen ins Fahrzeug laden</German>
-    </Key>
-    <Key ID="STR_AGM_Interaction_UnloadCaptive">
-        <English>Unload Captive from Vehicle</English>
-        <German>Gefangenen aus dem Fahrzeug ausladen</German>
-    </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
       <German>Team Management &gt;&gt;</German>
@@ -596,28 +533,6 @@
       <Italian>Perdona</Italian>
       <Hungarian>Megbocsátás</Hungarian>
     </Key>
-    <Key ID="STR_AGM_Interaction_CableTie_Name">
-      <English>Cable Tie</English>
-      <German>Kabelbinder</German>
-      <Polish>Opaska zaciskowa</Polish>
-      <Spanish>Precinto</Spanish>
-      <French>Serflex</French>
-      <Czech>Stahovací Pásek</Czech>
-      <Portuguese>Algema Plástica</Portuguese>
-      <Italian>Fascietta</Italian>
-      <Hungarian>Gyorskötöző</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_CableTie_Description">
-      <English>Cable ties that allow you to restrain prisoners.</English>
-      <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
-      <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
-      <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
-      <French>Les Tyrap permettent de menotter les prisonniers.</French>
-      <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
-      <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
-      <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
-      <Hungarian>Gyorskötöző emberek fogjulejtéséhez.</Hungarian>
-    </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
       <German>Mausradmenü</German>
@@ -670,25 +585,6 @@
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
       <Czech>Menu interakce (Na držení)</Czech>
     </Key>
-    <Key ID="STR_AGM_Interaction_FriskMenuHeader">
-      <English>Inventory of frisked person</English>
-      <German>Inventar der durchsuchten Person</German>
-      <French>Inventaire de la fouille</French>
-      <Spanish>Inventario de la persona cacheada</Spanish>
-      <Hungarian>Motozott személy felszerelése</Hungarian>
-      <Czech>Inventář prohledávané osoby</Czech>
-      <Polish>Ekwipunek rewidowanej osoby</Polish>
-    </Key>
-    <Key ID="STR_AGM_Interaction_FriskPerson">
-      <English>Frisk person</English>
-      <German>Person durchsuchen</German>
-      <French>Fouiller</French>
-      <Spanish>Cachear</Spanish>
-      <Czech>Prohledávaná osoba</Czech>
-      <Polish>Rewiduj osobę</Polish>
-      <Hungarian>Motozás</Hungarian>
-    </Key>
-
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>

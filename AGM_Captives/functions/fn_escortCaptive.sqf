@@ -6,8 +6,8 @@ private ["_unit", "_state"];
 _unit = _this select 0;
 _state = _this select 1;
 
-if !("AGM_Handcuffed" in ([_unit] call AGM_Interaction_fnc_getCaptivityStatus)) exitWith {
-	[localize "STR_AGM_Interaction_NoCaptive"] call AGM_Core_fnc_displayTextStructured;
+if !("AGM_Handcuffed" in ([_unit] call AGM_Captives_fnc_getCaptivityStatus)) exitWith {
+	[localize "STR_AGM_Captives_NoCaptive"] call AGM_Core_fnc_displayTextStructured;
 };
 
 if (_state) then {
@@ -19,7 +19,7 @@ if (_state) then {
 	_unit attachTo [player, [0, 1, 0]];
 
 	player setVariable ["AGM_escortedUnit", _unit, true];
-	_actionID = player addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Interaction_StopEscorting"], "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Interaction_fnc_escortCaptive;", nil, 20, false, true, "", "!isNull (player getVariable ['AGM_escortedUnit', objNull])"];
+	_actionID = player addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Captives_StopEscorting"], "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Captives_fnc_escortCaptive;", nil, 20, false, true, "", "!isNull (player getVariable ['AGM_escortedUnit', objNull])"];
 
 	[_unit, _actionID] spawn {
 		_unit = _this select 0;
