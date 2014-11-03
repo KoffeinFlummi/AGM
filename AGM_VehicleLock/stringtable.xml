@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AGM">
 <Package name="VehicleLock">
-  <Key ID="STR_AGM_VehicleUnLock">
-    <English>Unlock Vehicle</English>
-    <German>Fahrzeug aufschließen</German>
-<!--<Spanish>todo</Spanish>
-    <French>todo</French>
-    <Polish>todo</Polish>
-    <Czech>todo</Czech>
-    <Italian>todo</Italian>
-    <Portuguese>todo</Portuguese>
-    <Hungarian>todo</Hungarian> -->
-  </Key>
-  <Key ID="STR_AGM_VehicleLock">
-    <English>Lock Vehicle</English>
-    <German>Fahrzeug abschließen</German>
-<!--<Spanish>todo</Spanish>
-    <French>todo</French>
-    <Polish>todo</Polish>
-    <Czech>todo</Czech>
-    <Italian>todo</Italian>
-    <Portuguese>todo</Portuguese>
-    <Hungarian>todo</Hungarian> -->
-  </Key>
-  <Key ID="STR_AGM_VehicleLockpick">
-    <English>Lockpick Vehicle</English>
-    <German>Fahrzeug aufbrechen</German>
-<!--<Spanish>todo</Spanish>
-    <French>todo</French>
-    <Polish>todo</Polish>
-    <Czech>todo</Czech>
-    <Italian>todo</Italian>
-    <Portuguese>todo</Portuguese>
-    <Hungarian>todo</Hungarian> -->
-  </Key>
+	<Key ID="STR_AGM_Vehicle_Action_UnLock">
+		<English>Unlock Vehicle</English>
+	</Key>
+	<Key ID="STR_AGM_Vehicle_Action_Lock">
+		<English>Lock Vehicle</English>
+	</Key>
+	<Key ID="STR_AGM_Vehicle_Action_Lockpick">
+		<English>Lockpick Vehicle</English>
+	</Key>
+	<Key ID="STR_AGM_Vehicle_Action_LockpickInUse">
+		<English>Picking Lock....</English>
+	</Key>
+
+	<Key ID="STR_AGM_Vehicle_Item_Custom_Description">
+		<English>A custom key that will open a specific vehicle.</English>
+	</Key>
+	<Key ID="STR_AGM_Vehicle_Item_Master_Description">
+		<English>A Master Key will open any lock, no matter what!</English>
+	</Key>	
+	<Key ID="STR_AGM_Vehicle_Item_Lockpick_Description">
+		<English>A lockpick set that can pick the locks of most vehicles.</English>
+	</Key>	
+	<Key ID="STR_AGM_Vehicle_Item_West_Description">
+		<English>A key that should open most WEST vehicles.</English>
+	</Key>	
+	<Key ID="STR_AGM_Vehicle_Item_East_Description">
+		<English>A key that should open most EAST vehicle.</English>
+	</Key>	
+	<Key ID="STR_AGM_Vehicle_Item_Indp_Description">
+		<English>A key that should open most CIV vehicle.</English>
+	</Key>
+	<Key ID="STR_AGM_Vehicle_Item_Civ_Description">
+		<English>A key that should open most CIV vehicle.</English>
+	</Key>
 </Package>
 </Project>
