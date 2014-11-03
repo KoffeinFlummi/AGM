@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-07 -->
+<!-- Edited with tabler - 2014-11-03 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -588,10 +588,12 @@
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>
+      <French>Équipment &gt;&gt;</French>
     </Key>
     <Key ID="STR_AGM_Interaction_Push">
       <English>Push</English>
       <German>Schieben</German>
+      <French>Pousser</French>
     </Key>
   </Package>
 </Project>
