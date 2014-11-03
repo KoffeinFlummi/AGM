@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_Wind_ApproximateTemp">
       <English>Approximate Temperature</English>
       <German>Ungefähre Temperatur</German>
-      <Czech>Estimer la température</Czech>
+      <French>Estimer la température</French>
     </Key>
     <Key ID="STR_AGM_Kestrel_Name">
       <English>Kestrel 4500NV</English>
