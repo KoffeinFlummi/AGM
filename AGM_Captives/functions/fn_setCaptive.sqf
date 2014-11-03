@@ -20,7 +20,7 @@ if (_state) then {
 	if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
 
 	_unit setVariable ["AGM_isCaptive", true, true];
-	[_unit, "AGM_Handcuffed", true] call AGM_Interaction_fnc_setCaptivityStatus;
+	[_unit, "AGM_Handcuffed", true] call AGM_Captives_fnc_setCaptivityStatus;
 
 	if (_unit getVariable ["AGM_isSurrender", false]) then {
 		_unit setVariable ["AGM_isSurrender", false, true];
@@ -74,7 +74,7 @@ if (_state) then {
 			_this playMoveNow "unconscious";
 		};
 
-		[_this, "AGM_Handcuffed", false] call AGM_Interaction_fnc_setCaptivityStatus;
+		[_this, "AGM_Handcuffed", false] call AGM_Captives_fnc_setCaptivityStatus;
 
 		if (_inputDisabled && {isPlayer _this}) then {
 			[false] call AGM_Core_fnc_disableUserInput;

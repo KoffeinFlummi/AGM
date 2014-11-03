@@ -232,6 +232,7 @@ class CfgFunctions {
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
+      class isEOD;
       class isInBuilding;
       class isMedic;
       class isPlayer;
