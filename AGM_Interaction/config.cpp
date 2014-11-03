@@ -16,9 +16,9 @@ class CfgFunctions {
   class AGM_Interaction {
     class AGM_Interaction {
       file = "\AGM_interaction\functions";
-      class AddSelectableItem;
       class addInteraction;
       class addInteractionSelf;
+      class AddSelectableItem;
       class addToTooltip;
       class applyButtons;
       class canFriskPerson;
@@ -28,8 +28,8 @@ class CfgFunctions {
       class canTapShoulder;
       class canUnloadCaptiveFromVehicle;
       class escortCaptive;
-      class GetActions;
       class getActions2;
+      class GetActions;
       class getCaptivityStatus;
       class getDoor;
       class getDown;
@@ -55,14 +55,15 @@ class CfgFunctions {
       class openSubMenu;
       class openSubMenuSelf;
       class prepareSelectMenu;
+      class push;
       class removeInteraction;
       class removeInteractionSelf;
       class removeTag;
       class sendAway;
       class setCaptive;
       class setCaptivityStatus;
-      class showMouseHint;
       class showMenu;
+      class showMouseHint;
       class sortOptionsByPriority;
       class surrender;
       class tapShoulder;
@@ -733,7 +734,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Interaction_Push";
         distance = 4;
         condition = "getMass AGM_Interaction_Target < 1000 and alive AGM_Interaction_Target";
-        statement = "AGM_Interaction_Target setVelocity [2 * (vectorDir _player select 0), 2 * (vectorDir _player select 1), 0.5]";
+        statement = "[AGM_Interaction_Target, [2 * (vectorDir _player select 0), 2 * (vectorDir _player select 1), 0.5]] call AGM_Interaction_fnc_push;";
         showDisabled = 0;
         priority = -1;
       };
