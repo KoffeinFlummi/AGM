@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-20 -->
+<!-- Edited with tabler - 2014-11-03 -->
 <Project name="AGM">
   <Package name="GetIn">
     <Key ID="STR_AGM_GetInVehicle">
@@ -105,7 +105,7 @@
       <English>Get in as Co-driver</English>
       <German>Einsteigen als Beifahrer</German>
       <Spanish>Entrar como copiloto</Spanish>
-      <French>Embarquer (Co-pilote)</French>
+      <French>Embarquer (Convoyeur)</French>
       <Polish>Wejdź jako nawigator</Polish>
       <Czech>Nastoupit vedle řidiče</Czech>
       <Italian>Sali come Copilota</Italian>
@@ -119,6 +119,7 @@
       <Polish>Wejdź jako co-pilot</Polish>
       <Spanish>Entrar como copiloto</Spanish>
       <Hungarian>Beszállás másodpilótaként</Hungarian>
+      <French>Embarquer (Co-pilote)</French>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
@@ -212,7 +213,7 @@
       <English>Move to Co-driver</English>
       <German>Zum Beifahrersitz</German>
       <Spanish>Mover a copiloto</Spanish>
-      <French>Passer en Co-pilote</French>
+      <French>Passer en Convoyeur</French>
       <Polish>Przejdź na miejsce nawigatora</Polish>
       <Czech>Přesednout si vedle řidiče</Czech>
       <Italian>Spostati come Copilota</Italian>
@@ -226,6 +227,7 @@
       <Polish>Przejdź na miejsce co-pilota</Polish>
       <Spanish>Mover a copiloto</Spanish>
       <Hungarian>Átülés másodpilótának</Hungarian>
+      <French>Passer en Co-pilote</French>
     </Key>
   </Package>
 </Project>
