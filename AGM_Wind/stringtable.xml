@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-11-03 -->
 <Project name="AGM">
   <Package name="Wind">
     <Key ID="STR_AGM_Wind_ApproximateTemp">
       <English>Approximate Temperature</English>
       <German>Ungefähre Temperatur</German>
+      <French>Estimer la température</French>
     </Key>
     <Key ID="STR_AGM_Kestrel_Name">
       <English>Kestrel 4500NV</English>
