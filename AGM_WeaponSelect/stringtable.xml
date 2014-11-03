@@ -165,6 +165,7 @@
     <Key ID="STR_AGM_WeaponSelect_NoGrenadesLeft">
       <English>No grenades left</English>
       <German>Keine Granaten übrig</German>
+      <French>Plus de grenades</French>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
       <English>No frags left</English>
