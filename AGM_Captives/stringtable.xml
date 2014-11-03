@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-07 -->
+<!-- Edited with tabler - 2014-11-03 -->
 <Project name="AGM">
   <Package name="Captives">
     <Key ID="STR_AGM_Captives_SetCaptive">
@@ -60,10 +60,12 @@
     <Key ID="STR_AGM_Captives_LoadCaptive">
       <English>Load Captive</English>
       <German>Gefangenen einladen</German>
+      <French>Embarquer le prisonnier</French>
     </Key>
     <Key ID="STR_AGM_Captives_UnloadCaptive">
       <English>Unload Captive</English>
       <German>Gefangenen ausladen</German>
+      <French>Débarquer le prisonnier</French>
     </Key>
     <Key ID="STR_AGM_Captives_CableTie">
       <English>Cable Tie</English>
@@ -81,7 +83,7 @@
       <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
       <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
-      <French>Les Tyrap permettent de menotter les prisonniers.</French>
+      <French>Les Serflex permettent de menotter les prisonniers.</French>
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
       <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
