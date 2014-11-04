@@ -4,11 +4,11 @@
     <Key ID="STR_AGM_FireControlSystem_LaseTarget">
       <English>Lase Target / Measure Distance</English>
       <German>Ziel anlasern / Entfernung Messen</German>
+      <French>Télémétrer la cible</French>
       <!-- Outdated
       <Spanish>Iluminar objetivo</Spanish>
       <Polish>Naświetl cel</Polish>
       <Czech>Označit cíl</Czech>
-      <French>Illuminer la cible</French>
       <Russian>Установить зероинг</Russian>
       <Hungarian>Lézeres célmegjelölés</Hungarian>
       <Portuguese>Marcar Alvo</Portuguese>
