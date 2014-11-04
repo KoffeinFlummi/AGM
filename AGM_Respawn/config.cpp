@@ -23,7 +23,6 @@ class CfgFunctions {
       class initRallypoint;
       class module;
       class moduleFriendlyFire;
-      class moduleRallypoint;
       class moveRallypoint;
       class removeBody;
       class removeDisconnectedPlayer;
@@ -106,18 +105,6 @@ class CfgVehicles {
     scope = 2;
     isGlobal = 1;
     icon = "\AGM_Respawn\UI\Icon_Module_FriendlyFire_ca.paa";
-    class Arguments {
-    };
-  };
-
-  class AGM_ModuleRallypoint: Module_F {
-    author = "$STR_AGM_Core_AGMTeam";
-    category = "AGM";
-    displayName = "Rallypoint System";
-    function = "AGM_Respawn_fnc_moduleRallypoint";
-    scope = 2;
-    isGlobal = 1;
-    icon = "\AGM_Respawn\UI\Icon_Module_Rallypoint_ca.paa";
     class Arguments {
     };
   };
