@@ -36,17 +36,6 @@ _rope2 = _rope select 1;
 _helper = _rope select 2;
 _unit disableCollisionWith _helper;
 
-_unit setPos [0,0,0];
-_unit allowDamage False;
-_helper setVectorUp [0,0,1];
-_unit attachTo [_helper, [0,0,-1.35]];
-
-_vector = (getPos _unit) vectorFromTo (getPos _vehicle);
-_unit setVectorDir _vector;
-
-ropeUnwind [_rope1, SPEED, ROPELENGTH];
-ropeUnwind [_rope2, SPEED, 0];
-
 [time, _unit, _vehicle, _index, _rope1, _rope2, _helper] spawn {
   _time = _this select 0;
   _unit = _this select 1;
@@ -55,6 +44,19 @@ ropeUnwind [_rope2, SPEED, 0];
   _rope1 = _this select 4;
   _rope2 = _this select 5;
   _helper = _this select 6;
+
+  _unit allowDamage False;
+  _unit action ["getOut", _vehicle];
+  waitUntil {vehicle _unit == _unit};
+
+  _helper setVectorUp [0,0,1];
+  _unit attachTo [_helper, [0,0,-1.35]];
+
+  _vector = (getPos _unit) vectorFromTo (getPos _vehicle);
+  _unit setVectorDir _vector;
+
+  ropeUnwind [_rope1, SPEED, ROPELENGTH];
+  ropeUnwind [_rope2, SPEED, 0];
 
   sleep 0.1;
   _unit allowDamage True;
