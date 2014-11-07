@@ -37,6 +37,8 @@ class CfgVehicles {
   class Heli_Attack_01_base_F;
   class Heli_Light_01_base_F;
   class Heli_Light_01_armed_base_F;
+  class B_Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {};
   class Plane_CAS_01_base_F;
 
   // INDEP Inheritance
@@ -158,6 +160,12 @@ class CfgVehicles {
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_armed_Name";
   };
+  class B_Heli_Transport_03_F: B_Heli_Transport_03_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_Name";
+  };
+  class B_Heli_Transport_03_unarmed_F: B_Heli_Transport_03_unarmed_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name";
+  };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
     displayName = "$STR_AGM_RealisticNames_Plane_CAS_01_Name";
   };
@@ -234,7 +242,7 @@ class CfgVehicles {
   };
 
 
-  //OPFOR
+  // OPFOR
   class O_MRAP_02_F: MRAP_02_base_F {
     displayName = "$STR_AGM_RealisticNames_MRAP_02_Name";
   };
@@ -317,6 +325,11 @@ class CfgVehicles {
   };
   class O_static_AA_F: AA_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AA_Name";
+  };
+
+  // Civilian
+  class Heli_Light_01_civil_base_F: Heli_Light_01_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Light_01_civil_Name";
   };
 
   // pistols
