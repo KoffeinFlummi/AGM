@@ -21,16 +21,11 @@ class CfgFunctions {
       class AddSelectableItem;
       class addToTooltip;
       class applyButtons;
-      class canFriskPerson;
       class canInteractWith;
-      class canLoadCaptiveIntoVehicle;
       class canLockDoor;
       class canTapShoulder;
-      class canUnloadCaptiveFromVehicle;
-      class escortCaptive;
       class getActions2;
-      class GetActions;
-      class getCaptivityStatus;
+      class GetActions;      
       class getDoor;
       class getDown;
       class getSelectedButton;
@@ -39,7 +34,6 @@ class CfgFunctions {
       class initialiseInteraction;
       class isInRange;
       class joinTeam;
-      class loadCaptiveIntoVehicle;
       class lockDoor;
       class menuKeyInput;
       class moveDown;
@@ -48,7 +42,6 @@ class CfgFunctions {
       class onButtonUp;
       class onClick;
       class openDoor;
-      class openFriskMenu;
       class openMenu;
       class openMenuSelf;
       class openSelectMenu;
@@ -60,14 +53,10 @@ class CfgFunctions {
       class removeInteractionSelf;
       class removeTag;
       class sendAway;
-      class setCaptive;
-      class setCaptivityStatus;
       class showMenu;
       class showMouseHint;
       class sortOptionsByPriority;
-      class surrender;
       class tapShoulder;
-      class unloadCaptiveFromVehicle;
       class updateTooltipPosition;
     };
   };
