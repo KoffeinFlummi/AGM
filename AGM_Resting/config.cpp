@@ -26,8 +26,8 @@ class CfgFunctions {
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "$STR_AGM_Resting_RestWeapon";
-    condition = "_player == _vehicle && {inputAction 'reloadMagazine' == 0} && {!weaponLowered _player} && {speed _player < 1}";
-    statement = "[_player, currentWeapon _player] call AGM_Resting_fnc_restWeapon";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon && {inputAction 'reloadMagazine' == 0} && {!weaponLowered _player} && {speed _player < 1}";
+    statement = "[_player, _vehicle, currentWeapon _player] call AGM_Resting_fnc_restWeapon";
     key = 15;
     shift = 0;
     control = 0;

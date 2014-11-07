@@ -18,10 +18,11 @@
 #define MAXHEIGHT 0.45
 #define CAMSHAKE [1,0.5,5]
 
-private ["_unit", "_weapon"];
+private ["_unit", "_vehicle", "_weapon"];
 
 _unit = _this select 0;
-_weapon = _this select 1;
+_vehicle = _this select 1;
+_weapon = _this select 2;
 
 if (_weapon != primaryWeapon _unit) exitWith {};
 
@@ -150,19 +151,20 @@ if (true in _intersects) then {
   };
 
   // CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC
-  [_unit, _weapon, _fnc_unRestWeapon, _fnc_getIntersection, _restedPosition] spawn {
+  [_unit, _vehicle, _weapon, _fnc_unRestWeapon, _fnc_getIntersection, _restedPosition] spawn {
     _unit = _this select 0;
-    _weapon = _this select 1;
-    _fnc_unRestWeapon = _this select 2;
-    _fnc_getIntersection = _this select 3;
-    _restedPosition = _this select 4;
+    _vehicle = _this select 1;
+    _weapon = _this select 2;
+    _fnc_unRestWeapon = _this select 3;
+    _fnc_getIntersection = _this select 4;
+    _restedPosition = _this select 5;
 
     while {_unit getVariable ["AGM_weaponRested", false]} do {
       _intersects = call _fnc_getIntersection;
 
       if (
         _unit != call AGM_Core_fnc_player
-        || {_unit != vehicle _unit}
+        || {_vehicle != vehicle _unit}
         || {inputAction "reloadMagazine" != 0}
         || {weaponLowered _unit}
         || {speed _unit > 1}

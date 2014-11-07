@@ -58,7 +58,7 @@ if (_menuType == 1 && {_player != _vehicle}) then {
 // ------------------------------------------------------------------------ @todo
 
 if (AGM_Interaction_MenuType < 2) then {
-	_customActions = (_object getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;
+	_customActions = (_object getVariable [["AGM_Interactions", "AGM_InteractionsSelf"] select _menuType, [-1, [], []]]) select 2;
 	for "_index" from 0 to (count _customActions - 1) do {
 		private ["_customAction", "_displayName", "_distance","_condition","_statement","_showDisabled", "_priority"];
 		_customAction = _customActions select _index;
@@ -76,7 +76,7 @@ if (AGM_Interaction_MenuType < 2) then {
 
 	// add custom self interactions of the vehicle
 	if (_menuType == 1 && {_player != _vehicle}) then {
-		_customActions = (_vehicle getVariable [["AGM_Interactions", "AGM_SelfInteractions"] select _menuType, [-1, [], []]]) select 2;
+		_customActions = (_vehicle getVariable [["AGM_Interactions", "AGM_InteractionsSelf"] select _menuType, [-1, [], []]]) select 2;
 		for "_index" from 0 to (count _customActions - 1) do {
 			private ["_customAction", "_displayName", "_distance","_condition","_statement","_showDisabled", "_priority"];
 			_customAction = _customActions select _index;
