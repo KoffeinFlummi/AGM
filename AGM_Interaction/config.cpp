@@ -58,6 +58,10 @@ class CfgFunctions {
       class sortOptionsByPriority;
       class tapShoulder;
       class updateTooltipPosition;
+
+      // backwards compatibility, remove in some patches
+      class getCaptivityStatus;
+      class setCaptivityStatus;
     };
   };
 };

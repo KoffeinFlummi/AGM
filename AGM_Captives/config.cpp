@@ -20,11 +20,9 @@ class CfgFunctions {
       class canLoadCaptiveIntoVehicle;
       class canUnloadCaptiveFromVehicle;
       class escortCaptive;
-      class getCaptivityStatus;
       class loadCaptiveIntoVehicle;
       class openFriskMenu;
       class setCaptive;
-      class setCaptivityStatus;
       class surrender;
       class unloadCaptiveFromVehicle;
     };

@@ -6,7 +6,7 @@ private ["_unit", "_state"];
 _unit = _this select 0;
 _state = _this select 1;
 
-if !("AGM_Handcuffed" in ([_unit] call AGM_Captives_fnc_getCaptivityStatus)) exitWith {
+if !("AGM_Handcuffed" in ([_unit] call AGM_Core_fnc_getCaptivityStatus)) exitWith {
 	[localize "STR_AGM_Captives_NoCaptive"] call AGM_Core_fnc_displayTextStructured;
 };
 

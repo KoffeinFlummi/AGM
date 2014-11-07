@@ -38,7 +38,7 @@ _position = getPosASL _unit;
   };
 
   if (local _this) then {
-    [_this, "AGM_Unconscious", false] call AGM_Captives_fnc_setCaptivityStatus;
+    [_this, "AGM_Unconscious", false] call AGM_Core_fnc_setCaptivityStatus;
   };
 
   if !(scriptDone (_this getVariable "AGM_WakeUpTimer")) then {

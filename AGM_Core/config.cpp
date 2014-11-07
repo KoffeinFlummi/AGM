@@ -208,6 +208,7 @@ class CfgFunctions {
       class execRemoteFnc;
       class filter;
       class getBinocular;
+      class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
       class getCopilotTurret;
@@ -257,6 +258,7 @@ class CfgFunctions {
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
+      class setCaptivityStatus;
       class setKeyDefault;
       class setName;
       class setParameter;

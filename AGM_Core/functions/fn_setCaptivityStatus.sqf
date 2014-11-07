@@ -29,7 +29,7 @@ if !(_reason in _captivityReasons) then {
 };
 
 // get reasons why the unit is captive already and update to the new status
-_unitCaptivityReasons = [_unit] call AGM_Captives_fnc_getCaptivityStatus;
+_unitCaptivityReasons = [_unit] call AGM_Core_fnc_getCaptivityStatus;
 
 _captivityReasonsBooleans = [];
 {
