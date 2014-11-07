@@ -16,12 +16,12 @@ _ctrlVectorCenter ctrlSetText "\AGM_Vector\rsc\Vector_Center.paa";
 
 _exit = false;
 waitUntil {
-	if (AGM_vectorKey select 0) then {_exit = true};
-	!(AGM_vectorKey select 1) || {_exit}
+  if (AGM_vectorKey select 0) then {_exit = true};
+  !(AGM_vectorKey select 1) || {_exit}
 };
 if (_exit) exitWith {
-	waitUntil {!(AGM_vectorKey select 0)};
-	AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeDistance;
+  waitUntil {!(AGM_vectorKey select 0)};
+  AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeDistance;
 };
 
 _distance = call AGM_Vector_getDistance;

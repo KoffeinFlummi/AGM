@@ -14,4 +14,5 @@ private "_unit";
 
 _unit = _this select 0;
 
-getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "engineer") == 1 || {_unit getVariable ["AGM_IsEngineer", false]}
+_unit getVariable ["AGM_IsEngineer", false]
+|| {getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "engineer") == 1}

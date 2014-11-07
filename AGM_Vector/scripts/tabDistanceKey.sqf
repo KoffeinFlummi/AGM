@@ -25,85 +25,85 @@ _ctrlDigitE3 = _dlgVector displayCtrl 23;
 _ctrlDigitE4 = _dlgVector displayCtrl 24;
 
 _allControls = [
-	_ctrlVectorCenter,
-	_ctrlVectorCrosshair,
-	_ctrlDigit0,
-	_ctrlDigit1,
-	_ctrlDigit2,
-	_ctrlDigit3,
-	_ctrlDigit4,
-	_ctrlDigit5,
-	_ctrlDigit6,
-	_ctrlDigit7,
-	_ctrlDigit8,
-	_ctrlDigit9,
-	_ctrlDigitE1,
-	_ctrlDigitE2,
-	_ctrlDigitE3,
-	_ctrlDigitE4
+  _ctrlVectorCenter,
+  _ctrlVectorCrosshair,
+  _ctrlDigit0,
+  _ctrlDigit1,
+  _ctrlDigit2,
+  _ctrlDigit3,
+  _ctrlDigit4,
+  _ctrlDigit5,
+  _ctrlDigit6,
+  _ctrlDigit7,
+  _ctrlDigit8,
+  _ctrlDigit9,
+  _ctrlDigitE1,
+  _ctrlDigitE2,
+  _ctrlDigitE3,
+  _ctrlDigitE4
 ];
 
 
 if (AGM_vectorSettings select 0) then {
-	_ctrlVectorCrosshair ctrlShow true;
-	_ctrlVectorCrosshair ctrlSetText "\AGM_Vector\rsc\Vector_Crosshair.paa";
+  _ctrlVectorCrosshair ctrlShow true;
+  _ctrlVectorCrosshair ctrlSetText "\AGM_Vector\rsc\Vector_Crosshair.paa";
 };
 
 if (AGM_vectorSettings select 1) then {
-	{_x ctrlSetTextColor [1, 0, 0, 1]} forEach _allControls;
+  {_x ctrlSetTextColor [1, 0, 0, 1]} forEach _allControls;
 };
 
 _hold = true;
 _time = time;
 
 waitUntil {
-	if !(AGM_vectorKey select 1) then {
-		_hold = false;
-	};
-	time > _time + DELAY || {!_hold}
+  if !(AGM_vectorKey select 1) then {
+    _hold = false;
+  };
+  time > _time + DELAY || {!_hold}
 };
 
 if (_hold) then {
-	if (AGM_vectorKey select 0) then {
-		AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistanceAzimuth;
-	} else {
-		AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistance;
-	};
+  if (AGM_vectorKey select 0) then {
+    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistanceAzimuth;
+  } else {
+    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistance;
+  };
 } else {
-	waitUntil {time > _time + DELAY};
-	if (AGM_vectorKey select 1) then {
-		if (AGM_vectorKey select 0) then {
-			//R tab + (L + R) hold
-			waitUntil {!(AGM_vectorKey select 1)};
-			AGM_isVectorReady = true;
-		} else {
-			AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistanceHeight;
-		};
-	} else {
-		if (AGM_vectorKey select 0) then {
-			//R tab + L hold
-			waitUntil {!(AGM_vectorKey select 1)};
-			AGM_isVectorReady = true;
-		} else {
-			//R tab
-			waitUntil {!(AGM_vectorKey select 1)};
+  waitUntil {time > _time + DELAY};
+  if (AGM_vectorKey select 1) then {
+    if (AGM_vectorKey select 0) then {
+      //R tab + (L + R) hold
+      waitUntil {!(AGM_vectorKey select 1)};
+      AGM_isVectorReady = true;
+    } else {
+      AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistanceHeight;
+    };
+  } else {
+    if (AGM_vectorKey select 0) then {
+      //R tab + L hold
+      waitUntil {!(AGM_vectorKey select 1)};
+      AGM_isVectorReady = true;
+    } else {
+      //R tab
+      waitUntil {!(AGM_vectorKey select 1)};
 
-			_count = AGM_vectorConfig select 0;
-			_time = AGM_vectorConfig select 1;
+      _count = AGM_vectorConfig select 0;
+      _time = AGM_vectorConfig select 1;
 
-			if (time < _time + 1 && {_count >= 0}) then {
-				_count = _count + 1;
-				if (_count >= 5) then {
-					AGM_vectorConfig = [0, time];
-					0 spawn AGM_Vector_config;
-				} else {
-					AGM_vectorConfig = [_count, time];
-					AGM_isVectorReady = true;
-				};
-			} else {
-				AGM_vectorConfig = [1, time];
-				AGM_isVectorReady = true;
-			};
-		};
-	};
+      if (time < _time + 1 && {_count >= 0}) then {
+        _count = _count + 1;
+        if (_count >= 5) then {
+          AGM_vectorConfig = [0, time];
+          0 spawn AGM_Vector_config;
+        } else {
+          AGM_vectorConfig = [_count, time];
+          AGM_isVectorReady = true;
+        };
+      } else {
+        AGM_vectorConfig = [1, time];
+        AGM_isVectorReady = true;
+      };
+    };
+  };
 };

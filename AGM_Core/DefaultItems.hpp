@@ -34,7 +34,6 @@ diag_log text "=====================";
 
 class SoldierWB;
 class SoldierGB;
-class SoldierGB;
 class SoldierEB;
 class C_man_1;
 class B_Soldier_base_F: SoldierWB {

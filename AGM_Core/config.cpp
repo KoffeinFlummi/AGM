@@ -232,6 +232,7 @@ class CfgFunctions {
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
+      class isEOD;
       class isInBuilding;
       class isMedic;
       class isPlayer;
@@ -355,7 +356,7 @@ class CfgVehicles {
   };
 
   // += needs a non inherited entry in that class, otherwise it simply overwrites
-  #include <DefaultItems.hpp>
+  //#include <DefaultItems.hpp>
 
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
