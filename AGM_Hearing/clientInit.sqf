@@ -1,6 +1,6 @@
 // by commy2 and CAA-Picard
-#define StrenghToDeafness 3
-#define MaxDeafness 1.1
+#define STRENGHTODEAFNESS 3
+#define MAXDEAFNESS 1.1
 
 AGM_CurrentDeafness = 0;
 AGM_NewStrength = 0;
@@ -11,11 +11,16 @@ AGM_NewStrength = 0;
     _player = call AGM_Core_fnc_player;
 
     // Check if new noises increase deafness
-    if (AGM_NewStrength * StrenghToDeafness > AGM_CurrentDeafness) then {
-      AGM_CurrentDeafness = AGM_NewStrength * StrenghToDeafness;
+    if (AGM_NewStrength * STRENGHTODEAFNESS > AGM_CurrentDeafness) then {
+      AGM_CurrentDeafness = AGM_NewStrength * STRENGHTODEAFNESS min MAXDEAFNESS;
 
-      if (AGM_CurrentDeafness > MaxDeafness) then {
-        AGM_CurrentDeafness = MaxDeafness;
+      // icon
+      if (AGM_CurrentDeafness > 0.4) then {
+        if (AGM_CurrentDeafness > 0.8) then {
+          [parseText "<t align='center' color='#FF0000' image='AGM_Hearing\UI\deafness_x_ca.paa'</t>"] call AGM_Core_fnc_displayTextStructured;
+        } else {
+          [parseText "<t align='center' color='#FFFF00' image='AGM_Hearing\UI\deafness_x_ca.paa'</t>"] call AGM_Core_fnc_displayTextStructured;
+        };
       };
     };
     AGM_NewStrength = 0;
@@ -30,32 +35,19 @@ AGM_NewStrength = 0;
     };
 
     // Deafness recovers with time
-    AGM_CurrentDeafness = AGM_CurrentDeafness - _recoverRate;
-    if (AGM_CurrentDeafness < 0) then {
-        AGM_CurrentDeafness = 0
-    };
-
-    // Compute volume
-    _clampedDeafness = (1 - AGM_CurrentDeafness);
-    if (_clampedDeafness < 0) then {
-      _clampedDeafness = 0
-    };
+    AGM_CurrentDeafness = AGM_CurrentDeafness - _recoverRate max 0;
 
     // needed until Bohemia fixes playSound to actually use the second argument
-    _volume = (_clampedDeafness * _clampedDeafness) max 0.1;
+    _volume = (1 - AGM_CurrentDeafness max 0)^2 max 0.1;
 
     // Earplugs reduce hearing 20%
-    if (_player getVariable ["AGM_hasEarPlugsin", false] || {_player getVariable ["X39_MedSys_var_hasEarplugs", false]}) then {
-      if (_volume > 0.8) then {
-        _volume = 0.8;
-      };
+    if ([_player] call AGM_Hearing_fnc_hasEarPlugsIn) then {
+      _volume = _volume min 0.8;
     };
 
     // Reduce volume if player is unconscious
     if (_player getVariable ["AGM_Unconscious", false]) then {
-      if (_volume > 0.4) then {
-        _volume = 0.4;
-      };
+      _volume = _volume min 0.4;
     };
 
     if (!(missionNameSpace getVariable ["AGM_Hearing_disableVolumeUpdate", false])) then {

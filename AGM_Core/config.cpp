@@ -192,6 +192,7 @@ class CfgFunctions {
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
       class canInteractWith;
+      class canUseWeapon;
       class changeProjectileDirection;
       class checkPBOs;
       class claim;

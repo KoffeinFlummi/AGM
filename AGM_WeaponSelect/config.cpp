@@ -61,7 +61,7 @@ class Extended_FiredBis_EventHandlers {
 class AGM_Core_Default_Keys {
   class selectPistol {
     displayName = "$STR_AGM_WeaponSelect_SelectPistol";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player, handgunWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 2;
@@ -71,7 +71,7 @@ class AGM_Core_Default_Keys {
   };
   class selectRifle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifle";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player, primaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 3;
@@ -91,7 +91,7 @@ class AGM_Core_Default_Keys {
   };
   /*class selectPistolMuzzle {
     displayName = "Select Pistol Muzzle";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player, handgunWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     disabled = 1;
@@ -102,7 +102,7 @@ class AGM_Core_Default_Keys {
   };*/
   class selectRifleMuzzle {
     displayName = "$STR_AGM_WeaponSelect_SelectRifleMuzzle";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player, primaryWeapon _player] call AGM_WeaponSelect_fnc_selectWeaponMuzzle";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 4;
@@ -123,7 +123,7 @@ class AGM_Core_Default_Keys {
   };*/
   class selectBinocular {
     displayName = "$STR_AGM_WeaponSelect_SelectBinocular";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player, binocular _player] call AGM_WeaponSelect_fnc_selectWeaponMode";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 6;
@@ -153,7 +153,7 @@ class AGM_Core_Default_Keys {
   };
   class holsterWeapon {
     displayName = "$STR_AGM_WeaponSelect_HolsterWeapon";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player] call AGM_WeaponSelect_fnc_putWeaponAway";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 11;

@@ -15,7 +15,7 @@ private "_player";
 
 _player = _this select 0;
 
-if !(player canAdd "AGM_EarBuds") exitWith { // inventory full
+if !(_player canAdd "AGM_EarBuds") exitWith { // inventory full
   [localize "STR_AGM_Hearing_Inventory_Full"] call AGM_Core_fnc_displayTextStructured;
 };
 
