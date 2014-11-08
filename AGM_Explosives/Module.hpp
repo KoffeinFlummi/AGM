@@ -9,7 +9,7 @@ class AGM_ModuleExplosive: Module_F {
     icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
 	class Arguments {
 		class RequireSpecialist {
-			displayName = "Require explosive specialists?";
+			displayName = "Require specialists?";
 			//description = "Require explosive specialists to plant/disable explosives? Default: No";
 			// The above distinction is commented out due to the explanation in fn_SetupExplosive.sqf
 			description = "Require explosive specialists to disable explosives? Default: No";
