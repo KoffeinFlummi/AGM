@@ -17,6 +17,11 @@ _weapon = _this select 1;
 
 if (_weapon == "") exitWith {};
 
+// unlock safety
+if (_weapon in (_player getVariable ["AGM_SafeMode_safedWeapons", []])) exitWith {
+	_this call AGM_SafeMode_fnc_unlockSafety;
+};
+
 if (currentWeapon _player != _weapon) exitWith {
   _player selectWeapon _weapon;
 };
