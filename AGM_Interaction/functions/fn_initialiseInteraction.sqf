@@ -65,11 +65,11 @@ if (_this select 2) then {
 	disableSerialization;
 	_dlgInteractionDialog = uiNamespace getVariable "AGM_Interaction_Dialog";
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 3;
-	setMousePosition [0.5, 0.5];
+	if (profileNamespace getVariable ["AGM_Interaction_AutoCenterCursor", true]) then {setMousePosition [0.5, 0.5]};
 	if !(_subMenu) then {
 		if (_target isKindOf "Man") then {
 			_ctrlInteractionDialog ctrlSetText (if (alive _target) then {name _target} else {_target getVariable ["AGM_Name", "Unknown"]});
-		}else{
+		} else {
 			_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName"));
 		};
 	} else {

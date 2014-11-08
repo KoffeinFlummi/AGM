@@ -585,6 +585,10 @@
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
       <Czech>Menu interakce (Na držení)</Czech>
     </Key>
+    <Key ID="STR_AGM_Interaction_AutoCenterCursor">
+      <English>Auto Center Cursor</English>
+      <German>Cursor automatisch zentrieren</German>
+    </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>

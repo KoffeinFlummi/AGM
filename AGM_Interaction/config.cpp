@@ -168,6 +168,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_Interaction_AutoCloseMenu";
     default = 0;
   };
+  class Interaction_AutoCenterCursor {
+    displayName = "$STR_AGM_Interaction_AutoCenterCursor";
+    default = 1;
+  };
 };
 
 class AGM_Parameters {
