@@ -186,6 +186,7 @@ class CfgFunctions {
       class addCustomEventHandler;
       class addInfoDisplayEventHandler;
       class addMapMarkerCreatedEventHandler;
+      class addInventoryDisplayLoadedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
@@ -254,6 +255,7 @@ class CfgFunctions {
       class removeCameraEventHandler;
       class removeCustomEventHandler;
       class removeInfoDisplayEventHandler;
+      class removeInventoryDisplayLoadedEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;

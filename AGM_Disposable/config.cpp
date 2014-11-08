@@ -18,7 +18,15 @@ class CfgFunctions {
     class AGM_Disposable {
       file = "\AGM_Disposable\functions";
       class replaceATWeapon;
+      class takeLoadedATWeapon;
+      class updateInventoryDisplay;
     };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_Disposable {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Disposable\clientInit.sqf'";
   };
 };
 
@@ -30,27 +38,52 @@ class Extended_FiredBIS_EventHandlers {
   };
 };
 
+// handle preloaded missile
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_Disposable_UpdateInventoryDisplay {
+      clientTake = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Disposable_fnc_takeLoadedATWeapon; [_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
+    };
+  };
+};
+
+class Extended_Put_EventHandlers {
+  class CAManBase {
+    class AGM_Disposable_UpdateInventoryDisplay {
+      clientPut = "if (_this select 0 == call AGM_Core_fnc_player) then {[_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
+    };
+  };
+};
+
 class CfgWeapons {
   class Launcher_Base_F;
   class launch_NLAW_F: Launcher_Base_F {
     AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the used tube.
+    magazines[] = {"AGM_PreloadedMissileDummy"};  // The dummy magazine
   };
   class AGM_launch_NLAW_Used_F: launch_NLAW_F {   // the used tube should be a sub class of the disposable launcher
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
-    magazines[] = {"AGM_UsedTube_F"};              // This will disable the used launcher class from being fired again.
+    magazines[] = {"AGM_UsedTube_F"};             // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
+    weaponPoolAvailable = 0;
   };
 };
 
 class CfgMagazines {
   class NLAW_F;
+  class AGM_PreloadedMissileDummy: NLAW_F {              // The dummy magazine
+    picture = "\AGM_Core\UI\blank_CO.paa";
+    weaponPoolAvailable = 0;
+    mass = 0;
+  };
   class AGM_UsedTube_F: NLAW_F {
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
-    count = 0;
     displayNameShort = "-";
+    count = 0;
+    weaponPoolAvailable = 0;
     modelSpecial = "";
   };
 };

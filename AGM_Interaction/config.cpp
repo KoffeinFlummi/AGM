@@ -562,7 +562,7 @@ class CfgVehicles {
           statement = "";
           showDisabled = 1;
           priority = -99;
-          icon = "AGM_Interaction\UI\blank_CO.paa";
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
