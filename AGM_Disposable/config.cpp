@@ -86,6 +86,7 @@ class CfgMagazines {
   class AGM_PreloadedMissileDummy: NLAW_F {              // The dummy magazine
     author = "$STR_AGM_Core_AGMTeam";
     scope = 1;
+    displayName = "$STR_AGM_Disposable_PreloadedMissileDummy";
     picture = "\AGM_Core\UI\blank_CO.paa";
     weaponPoolAvailable = 0;
     mass = 0;

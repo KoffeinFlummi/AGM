@@ -20,5 +20,14 @@
       <Spanish>Lanzador desechable utilizado</Spanish>
       <Hungarian>Használt rakétavető</Hungarian>
     </Key>
+    <Key ID="STR_AGM_Disposable_PreloadedMissileDummy">
+      <English>Preloaded Missile Dummy</English>
+      <German>Preloaded Missile Dummy</German>
+      <French>Preloaded Missile Dummy</French>
+      <Czech>Preloaded Missile Dummy</Czech>
+      <Polish>Preloaded Missile Dummy</Polish>
+      <Spanish>Preloaded Missile Dummy</Spanish>
+      <Hungarian>Preloaded Missile Dummy</Hungarian>
+    </Key>
   </Package>
 </Project>
