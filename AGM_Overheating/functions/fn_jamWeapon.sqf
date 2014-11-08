@@ -39,7 +39,7 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
   private ["_condition", "_statement", "_actionID"];
 
   _condition = {
-    _this select 1 == vehicle (_this select 1)
+    [_this select 1] call AGM_Core_fnc_canUseWeapon
     && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_Overheating_jammedWeapons", []])}
     && {!(currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []]))}
   };

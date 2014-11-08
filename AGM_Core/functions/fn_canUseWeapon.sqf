@@ -1,5 +1,7 @@
 // by commy2
 
+// returns true if the unit is on foot or in a ffv position
+
 private ["_unit", "_config"];
 
 _unit = _this select 0;
