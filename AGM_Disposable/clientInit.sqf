@@ -4,6 +4,3 @@
 if (isNil "AGM_Disposable_UpdateInventoryDisplay_EHID") then {
 	AGM_Disposable_UpdateInventoryDisplay_EHID = [{[call AGM_Core_fnc_player, _this select 0] spawn AGM_Disposable_fnc_updateInventoryDisplay}] call AGM_Core_fnc_addInventoryDisplayLoadedEventHandler;
 };
-
-_player = call AGM_Core_fnc_player;
-[_player, nil, secondaryWeapon _player] call AGM_Disposable_fnc_takeLoadedATWeapon;

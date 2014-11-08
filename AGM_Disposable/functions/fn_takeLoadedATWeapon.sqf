@@ -3,7 +3,7 @@
 private ["_unit", "_launcher", "_config"];
 
 _unit = _this select 0;
-_launcher = _this select 2;
+_launcher = _this select 1;
 
 _config = configFile >> "CfgWeapons" >> _launcher;
 

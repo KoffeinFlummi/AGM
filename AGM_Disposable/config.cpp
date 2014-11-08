@@ -33,16 +33,24 @@ class Extended_PostInit_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
     class AGM_Disposable_ReplaceFiredATWeapon {
-      firedBIS = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_replaceATWeapon;};";
+      firedBIS = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_replaceATWeapon};";
     };
   };
 };
 
 // handle preloaded missile
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Disposable_UpdateInventoryDisplay {
+      init = "if (local (_this select 0)) then {_this spawn {[_this select 0, secondaryWeapon (_this select 0)] call AGM_Disposable_fnc_takeLoadedATWeapon}};";
+    };
+  };
+};
+
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_Disposable_UpdateInventoryDisplay {
-      clientTake = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Disposable_fnc_takeLoadedATWeapon; [_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
+      take = "if (local (_this select 0)) then {[_this select 0, _this select 2] call AGM_Disposable_fnc_takeLoadedATWeapon; [_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
     };
   };
 };
@@ -50,7 +58,7 @@ class Extended_Take_EventHandlers {
 class Extended_Put_EventHandlers {
   class CAManBase {
     class AGM_Disposable_UpdateInventoryDisplay {
-      clientPut = "if (_this select 0 == call AGM_Core_fnc_player) then {[_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
+      put = "if (local (_this select 0)) then {[_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
     };
   };
 };
@@ -58,10 +66,12 @@ class Extended_Put_EventHandlers {
 class CfgWeapons {
   class Launcher_Base_F;
   class launch_NLAW_F: Launcher_Base_F {
+    author = "$STR_AGM_Core_AGMTeam";
     AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the used tube.
     magazines[] = {"AGM_PreloadedMissileDummy"};  // The dummy magazine
   };
   class AGM_launch_NLAW_Used_F: launch_NLAW_F {   // the used tube should be a sub class of the disposable launcher
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
     magazines[] = {"AGM_UsedTube_F"};             // This will disable the used launcher class from being fired again.
@@ -74,11 +84,14 @@ class CfgWeapons {
 class CfgMagazines {
   class NLAW_F;
   class AGM_PreloadedMissileDummy: NLAW_F {              // The dummy magazine
+    author = "$STR_AGM_Core_AGMTeam";
+    scope = 1;
     picture = "\AGM_Core\UI\blank_CO.paa";
     weaponPoolAvailable = 0;
     mass = 0;
   };
   class AGM_UsedTube_F: NLAW_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
     displayNameShort = "-";
