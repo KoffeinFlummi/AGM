@@ -13,7 +13,7 @@ class CfgPatches {
 };
 
 class Extended_PostInit_EventHandlers {
-  class AGM_Interaction {
+  class AGM_GForces {
     clientInit = "call compile preprocessFileLineNumbers '\AGM_GForces\clientInit.sqf'";
   };
 };
