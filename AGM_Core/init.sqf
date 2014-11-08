@@ -9,6 +9,8 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNu
 
 if (!hasInterface) exitWith {};
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\assignedItemFix.sqf";
+
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
 AGM_Core_keyRelease  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyRelease.sqf";
 AGM_Core_editKey   = compile preprocessFileLineNumbers "\AGM_core\scripts\editKey.sqf";
