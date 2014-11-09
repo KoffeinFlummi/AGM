@@ -2,7 +2,7 @@
 	Description:
 		Once you use scrollwheel and you are in vehicle, this addon shows
 		vehicle crew names and roles, it also shows picture and name of the vehicle
-		
+
 
 	Credits:
 		Rewritten for AGM by aeroson
@@ -19,73 +19,93 @@
 */
 
 
-#include "macros.sqf"
-#include "dialogDefines.sqf"
-
 
 class CfgPatches {
-  class DOUBLES(PREFIX,COMPONENT) {
-    units[] = {};
-    weapons[] = {};
-    requiredVersion = 0.60;
-    requiredAddons[] = {};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
-    author[] = {"aeroson"};
-    authorUrl = "https://github.com/aeroson/";
-  };
+	class AGM_CrewInfo {
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = 0.60;
+		requiredAddons[] = {AGM_Core};
+		version = "0.94.1";
+		versionStr = "0.94.1";
+		versionAr[] = {0,94,1};
+		author[] = {"aeroson"};
+		authorUrl = "https://github.com/aeroson/";
+	};
 };
 
+
+
+class CfgFunctions {
+	class AGM_CrewInfo {
+		class AGM_CrewInfo {
+			file = "\AGM_CrewInfo\functions";
+			class canShow;
+			class doShow;
+			class setText;
+			class onMouseZChanged;
+			class module;
+			//class postInit { postInit = 1; };
+		};
+	};
+};
 
 
 
 class Extended_PostInit_EventHandlers {
-  class DOUBLES(PREFIX,COMPONENT) {
-    clientInit = call compile preprocessFileLineNumbers '\DOUBLES(PREFIX,COMPONENT)\clientInit.sqf';
-  };
+	class AGM_CrewInfo {
+		clientInit = "call compile preprocessFileLineNumbers '\AGM_CrewInfo\clientInit.sqf'";
+	};
 };
 
 
 
-#define CT_STRUCTURED_TEXT 13 
-#define ST_LEFT 0
-
-class RscTitles 
-{
-
-  titles[]={QGVAR(dialog)};
-  class GVAR(dialog)
-  {
-
-    idd = -1;
-    movingEnable=1;
-    duration = 1; 
-    fadein=0;
-    fadeout=1;    
-    name=QGVAR(dialog);
-    controlsBackground[] = {QGVAR(text)};
-    onLoad = uiNamespace setVariable ['GVAR(dialog)', _this select 0];
-	onUnload = uiNamespace setVariable ['GVAR(dialog)', objNull];
-
-
-    class GVAR(text) { 
-      idc = AGM_CrewInfo_TextIDC; 
-      type = CT_STRUCTURED_TEXT; 
-      style = ST_LEFT; 
-      x = SafeZonex + SafezoneW - 0.31;
-      y = SafeZoneY + SafeZoneH*0.4;
-      w = 0.3;
-      h = 0.6;
-      size = 0.018; 
-      colorBackground[] = { 0, 0, 0, 0 };
-      colortext[] = {0,0,0,0.7};
-      text = "";
-      class Attributes {
-        align = right;
-      };
-    };
-
-  };
-  
+class AGM_Core_Options {
+	class CrewInfo_ShowVehicleCrewInfo {
+		displayName = "$STR_AGM_CrewInfo_ShowVehicleCrewInfo";
+		default = 1;
+	};
 };
+
+
+
+
+class CfgVehicles {
+	class Module_F;
+	class AGM_ModuleCrewInfo: Module_F {
+		author = "AGM Team";
+		category = "AGM";
+		displayName = "Crew Info";
+		function = "AGM_CrewInfo_fnc_module";
+		scope = 2;
+		isGlobal = 1;
+		//icon = "\AGM_NameTags\UI\IconInteraction_ca.paa";
+		class Arguments {
+			class Visibility {
+				displayName = "Visibility of crew info";
+				description = "Forces visibility of vehicle crew info, or by default allows players to choose it on their own. Default: Do Not Force";
+				typeName = "INT";
+				class values {
+					class DoNotForce {
+						default = 1;
+						name = "Do Not Force";
+						value = 0;
+					};
+					class ForceShow {						
+						name = "Force Show";
+						value = 1;
+					};
+					class ForceHide {
+						name = "Force Hide";
+						value = -1;
+					};
+				};
+			};
+		};
+	};
+};
+
+
+
+
+#include "RscTitles.hpp"
