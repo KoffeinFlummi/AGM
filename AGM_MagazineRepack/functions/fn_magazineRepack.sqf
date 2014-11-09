@@ -41,7 +41,7 @@ _ammos     = _ammos     - [[-1]];
 
   // Sort Ascending
   _list = _x call BIS_fnc_sortNum;
-  if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
+  if (!isNil "AGM_Debug" && {"MagazineRepack" in AGM_Debug}) then {
     systemChat str _list;
   };
 
@@ -70,7 +70,7 @@ _ammos     = _ammos     - [[-1]];
   _repackTime set [_forEachIndex, _ammoToTransfer * AGM_MagazineRepack_TimePerAmmo + (count _x) * AGM_MagazineRepack_TimePerMagazine];
 } forEach _ammos;
 
-if (!isNil "AGM_Debug" && {AGM_Debug == "MagazineRepack"}) then {
+if (!isNil "AGM_Debug" && {"MagazineRepack" in AGM_Debug}) then {
   systemChat str _magazines;
   systemChat str _repackTime;
 };

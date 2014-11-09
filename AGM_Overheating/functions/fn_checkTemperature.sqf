@@ -16,7 +16,7 @@ _this spawn {
   // Calculate cooling
   _temperature = [_temperature, _barrelMass, time - _time] call AGM_Overheating_fnc_cooldown;
 
-  if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
+  if (!isNil "AGM_Debug" && {"Overheating" in AGM_Debug}) then {
     hintSilent format ["Temperature: %1 C", _temperature];
   };
 
