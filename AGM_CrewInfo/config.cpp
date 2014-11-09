@@ -1,3 +1,24 @@
+/* 
+	Description:
+		Once you use scrollwheel and you are in vehicle, this addon shows
+		vehicle crew names and roles, it also shows picture and name of the vehicle
+		
+
+	Credits:
+		Rewritten for AGM by aeroson
+
+		Original script by =[A*C]= code34 
+		Modified by [KH]Jman
+		Part is modified code from WINSE - Valhalla mission 
+		modified for MSO: 16/08/2012
+
+		Created by [KH]Jman
+		Creation date: 31/03/2011
+		Email: jman@kellys-heroes.eu
+		Web: http://www.kellys-heroes.eu
+*/
+
+
 #include "macros.sqf"
 #include "dialogDefines.sqf"
 
@@ -27,17 +48,6 @@ class Extended_PostInit_EventHandlers {
 
 
 
-class AGM_Core_Options {
-  class OPTION(showVehicleCrewInfo) {
-    displayName = $STR_AGM_CrewInfo_ShowVehicleCrewInfo;
-    default = 1;
-  };
-};
-
-
-
-
-
 #define CT_STRUCTURED_TEXT 13 
 #define ST_LEFT 0
 
@@ -56,6 +66,8 @@ class RscTitles
     name=QGVAR(dialog);
     controlsBackground[] = {QGVAR(text)};
     onLoad = uiNamespace setVariable ['GVAR(dialog)', _this select 0];
+	onUnload = uiNamespace setVariable ['GVAR(dialog)', objNull];
+
 
     class GVAR(text) { 
       idc = AGM_CrewInfo_TextIDC; 
