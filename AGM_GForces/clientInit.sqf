@@ -29,6 +29,8 @@ AGM_GForces_CC ppEffectCommit 0.4;
     _accel = ((_newVel vectorDiff _oldVel) vectorMultiply (1 / INTERVAL)) vectorAdd [0, 0, 9.8];
     AGM_GForce_Current = (_accel vectorDotProduct vectorUp (vehicle _player)) / 9.8;
 
+    // Cap maximum G's to +- 10 to avoid g-effects when the update is low fps.
+    AGM_GForce_Current = (AGM_GForce_Current max -10) min 10;
 
     AGM_GForces set [AGM_GForces_Index, AGM_GForce_Current];
     AGM_GForces_Index = (AGM_GForces_Index + 1) % round (AVERAGEDURATION / INTERVAL);
