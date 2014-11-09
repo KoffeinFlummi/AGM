@@ -75,7 +75,7 @@ GVAR(show) = {
 	_text= _text + format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow='true'>%2</t><br/>", getText(_config>>"picture"), getText (_config >> "DisplayName")];
 
 	{
-		if(format["%1", name _x] != "" && format["%1", name _x] != "Error: No unit") then {
+		if(alive _x && {format["%1", name _x] != ""} && {format["%1", name _x] != "Error: No unit"}) then {
 
 			_role = assignedVehicleRole _x;
 			switch (_x) do {				
@@ -92,7 +92,7 @@ GVAR(show) = {
 					if(format["%1", (_role select 0)] != "Turret") then {
 						_text = _text + LINE(_x, CARGO_IMG);
 					} else {
-						if(count (_vehicle weaponsTurret [_role select 1])==0) then {
+						if(count (_vehicle weaponsTurret (_role select 1)) == 0) then {
 							_text = _text + LINE(_x, DRIVER_IMG);
 						} else {
 							_text = _text + LINE(_x, GUNNER_IMG);
