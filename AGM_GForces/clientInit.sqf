@@ -22,24 +22,17 @@ AGM_GForces_CC ppEffectCommit 0.4;
       waitUntil {sleep 5; (vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)};
     };
 
-    _oldVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
-
+    _oldVel = velocity (vehicle _player);
     sleep INTERVAL;
+    _newVel = velocity (vehicle _player);
 
-    _newVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
-    _accel = [
-      ((_newVel select 0) - (_oldVel select 0)) / INTERVAL,
-      ((_newVel select 1) - (_oldVel select 1)) / INTERVAL,
-      ((_newVel select 2) - (_oldVel select 2)) / INTERVAL - 9.8
-    ];
+    _accel = ((_newVel vectorDiff _oldVel) vectorMultiply (1 / INTERVAL)) vectorAdd [0, 0, 9.8];
+    AGM_GForce_Current = (_accel vectorDotProduct vectorUp (vehicle _player)) / 9.8;
 
-    _angle = velocity (vehicle _player) vectorDotProduct vectorUp (vehicle _player);
-    _gForce = (vectorMagnitude _accel) / 9.8;
-    if (((_angle > 0) and (vehicle _player isKindOf "Air")) or ((_newVel select 2 < 0) and !(vehicle _player isKindOf "Air"))) then {
-      _gForce = _gForce * -1;
-    };
+    // Cap maximum G's to +- 10 to avoid g-effects when the update is low fps.
+    AGM_GForce_Current = (AGM_GForce_Current max -10) min 10;
 
-    AGM_GForces set [AGM_GForces_Index, _gForce];
+    AGM_GForces set [AGM_GForces_Index, AGM_GForce_Current];
     AGM_GForces_Index = (AGM_GForces_Index + 1) % round (AVERAGEDURATION / INTERVAL);
   };
 };
@@ -77,6 +70,12 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef");
     };
     _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform _player) >> "AGM_GForceCoef");
+
+    if (!isNil "AGM_Debug") then {
+      if ("GForces" in AGM_Debug) then {
+        hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
+      };
+    };
 
     if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_Unconscious", false])}}) then {
       [_player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;
