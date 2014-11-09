@@ -1,5 +1,5 @@
-#include <Macros.hpp>
-#include <DialogDefines.hpp>
+#include "macros.sqf"
+#include "dialogDefines.sqf"
 
 
 class CfgPatches {
@@ -21,7 +21,7 @@ class CfgPatches {
 
 class Extended_PostInit_EventHandlers {
   class DOUBLES(PREFIX,COMPONENT) {
-    clientInit = ' call compile preprocessFileLineNumbers ''\DOUBLES(PREFIX,COMPONENT)\clientInit.sqf'' ';
+    clientInit = call compile preprocessFileLineNumbers '\DOUBLES(PREFIX,COMPONENT)\clientInit.sqf';
   };
 };
 

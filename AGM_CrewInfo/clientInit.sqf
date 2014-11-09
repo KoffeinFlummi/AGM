@@ -20,8 +20,8 @@ if (!hasInterface) exitWith {};
  */
 
 
-#include <Macros.hpp>
-#include <DialogDefines.hpp>
+#include "macros.sqf"
+#include "dialogDefines.sqf"
 
 
 

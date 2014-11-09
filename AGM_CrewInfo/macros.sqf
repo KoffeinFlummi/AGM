@@ -19,4 +19,4 @@
 #define OPTION(A) COMPONENT##_A
 #define QOPTION(A) QUOTE(OPTION(A))
 
-#define GET_OPTION_VALUE (A,DEFAULT) profileNamespace getVariable [QOPTION(A) , DEFAULT]
+#define GET_OPTION_VALUE(VARNAME,DEFAULT) profileNamespace getVariable [QOPTION(VARNAME) , DEFAULT]
