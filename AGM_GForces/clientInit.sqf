@@ -22,24 +22,15 @@ AGM_GForces_CC ppEffectCommit 0.4;
       waitUntil {sleep 5; (vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)};
     };
 
-    _oldVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
-
+    _oldVel = velocity (vehicle _player);
     sleep INTERVAL;
+    _newVel = velocity (vehicle _player);
 
-    _newVel = [velocity (vehicle _player), vectorDir (vehicle _player)] call AGM_Core_fnc_hadamardProduct;
-    _accel = [
-      ((_newVel select 0) - (_oldVel select 0)) / INTERVAL,
-      ((_newVel select 1) - (_oldVel select 1)) / INTERVAL,
-      ((_newVel select 2) - (_oldVel select 2)) / INTERVAL - 9.8
-    ];
+    _accel = ((_newVel vectorDiff _oldVel) vectorMultiply (1 / INTERVAL)) vectorAdd [0, 0, 9.8];
+    AGM_GForce_Current = (_accel vectorDotProduct vectorUp (vehicle _player)) / 9.8;
 
-    _angle = velocity (vehicle _player) vectorDotProduct vectorUp (vehicle _player);
-    _gForce = (vectorMagnitude _accel) / 9.8;
-    if (((_angle > 0) and (vehicle _player isKindOf "Air")) or ((_newVel select 2 < 0) and !(vehicle _player isKindOf "Air"))) then {
-      _gForce = _gForce * -1;
-    };
 
-    AGM_GForces set [AGM_GForces_Index, _gForce];
+    AGM_GForces set [AGM_GForces_Index, AGM_GForce_Current];
     AGM_GForces_Index = (AGM_GForces_Index + 1) % round (AVERAGEDURATION / INTERVAL);
   };
 };
@@ -80,7 +71,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
 
     if (!isNil "AGM_Debug") then {
       if ("GForces" in AGM_Debug) then {
-        hintSilent format ["_averageG/_averageG * _upTolerance: %1, %2", _average, _average * _upTolerance];
+        hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
       };
     };
 
