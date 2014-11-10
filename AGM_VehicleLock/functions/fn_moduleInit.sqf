@@ -1,20 +1,20 @@
 /*
-	Name: AGM_VehicleLock_fnc_moduleInit
-	
-	Author: Pabst Mirror
-	
-	Description:
-		Function for setup module.  Sets default lockpick strength, auto handout keys, and default lock state.
-	
-	Parameters:
-		0: OBJECT - logic
-		1: ARRAY - synced objects
-	
-	Returns:
-		Nothing
-	
-	Example:
-		called from module
+  Name: AGM_VehicleLock_fnc_moduleInit
+
+  Author: Pabst Mirror
+
+  Description:
+    Function for setup module.  Sets default lockpick strength, auto handout keys, and default lock state.
+
+  Parameters:
+    0: OBJECT - logic
+    1: ARRAY - synced objects
+
+  Returns:
+    Nothing
+
+  Example:
+    called from module
 */
 private ["_logic","_sideKeysAssignment","_setLockState","_lock","_giveSideKey","_keyClassName"];
 
