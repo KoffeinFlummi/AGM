@@ -101,7 +101,7 @@ WHILE {AGM_isKestrel} DO {
   _ctrl2 ctrlSetText _windrAA;
   _ctrl3 ctrlSetText _windrBB;
   _ctrl4 ctrlSetText FORMAT["%1",round (direction _player)];
-  _ctrl5 ctrlSetText FORMAT["%1 %2",round(((getPosATL _player) select 0)/10)/10,round(((getPosATL _player) select 1)/10)/10];
+  _ctrl5 ctrlSetText FORMAT["%1", (round (AGM_Wind_currentTemperature * 10)) / 10];
 
   IF (!("AGM_ItemKestrel" in items _player)) THEN {AGM_isKestrel = FALSE;};
   IF (
