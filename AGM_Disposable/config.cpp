@@ -66,7 +66,6 @@ class Extended_Put_EventHandlers {
 class CfgWeapons {
   class Launcher_Base_F;
   class launch_NLAW_F: Launcher_Base_F {
-    author = "$STR_AGM_Core_AGMTeam";
     AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the used tube.
     magazines[] = {"AGM_PreloadedMissileDummy"};  // The dummy magazine
   };
