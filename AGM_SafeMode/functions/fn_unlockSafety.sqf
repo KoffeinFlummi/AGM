@@ -17,7 +17,7 @@ if (_weapon in _safedWeapons) then {
 
     _actionIDs = _unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]];
     //_unit removeAction _actionID;
-    [_unit, "DefaultAction", _actionIDs select 0] call AGM_Core_fnc_removeActionEventHandler;
+    [_unit, "DefaultAction", _actionIDs select 0] call AGM_Core_fnc_removeActionMenuEventHandler;
     [_unit, "nextWeapon",    _actionIDs select 1] call AGM_Core_fnc_removeActionEventHandler;
     _unit setVariable ["AGM_SafeWeaponActionIDs", [-1, -1]];
   };

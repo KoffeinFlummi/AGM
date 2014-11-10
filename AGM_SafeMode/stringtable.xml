@@ -6,5 +6,9 @@
       <German>Waffe sichern</German>
       <Polish>Tryb Bezpieczny</Polish>
     </Key>
+    <Key ID="STR_AGM_SafeMode_TakeOffSafety">
+      <English>Take off Safety</English>
+      <German>Waffe entsichern</German>
+    </Key>
   </Package>
 </Project>
