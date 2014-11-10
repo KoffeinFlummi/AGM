@@ -27,3 +27,6 @@ _unit selectWeapon _weapon;
 
 // play fire mode selector sound
 [_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+
+// player hud
+[true] call AGM_SafeMode_fnc_setSafeModeVisual;

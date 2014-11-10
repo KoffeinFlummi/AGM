@@ -19,8 +19,18 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
   private ["_condition", "_statement", "_actionIDs"];
 
   _condition = {
-    [_this select 1] call AGM_Core_fnc_canUseWeapon
-    && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])}
+    if (
+      [_this select 1] call AGM_Core_fnc_canUseWeapon
+      && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])}
+    ) then {
+      // player hud
+      [false] call AGM_SafeMode_fnc_setSafeModeVisual;
+      true
+    } else {
+      // player hud
+      [true] call AGM_SafeMode_fnc_setSafeModeVisual;
+      false
+    }
   };
 
   _statement = {
