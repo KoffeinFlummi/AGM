@@ -14,7 +14,7 @@ _vehicle setVariable [_itemHolder, _loadedItems, true];
 player allowDamage false;
 detach _item;
 
-_position = getPosASL player findEmptyPosition [0, 2, typeOf _item];
+_position = getPosASL player findEmptyPosition [0, 4, typeOf _item];
 if (count _position == 0) then {_position = getPosASL player};
 _position set [2, 0];
 
@@ -26,4 +26,4 @@ player allowDamage true;
 
 _itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");
 _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
-[format ["unloaded %1 from %2", _itemName, _vehicleName]] call AGM_Core_fnc_displayTextStructured;
+[format [localize "STR_AGM_Logistics_UnloadedItem", _itemName, _vehicleName]] call AGM_Core_fnc_displayTextStructured;

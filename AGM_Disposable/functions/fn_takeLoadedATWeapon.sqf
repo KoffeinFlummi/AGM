@@ -1,16 +1,34 @@
 // by commy2
 
-_weapon = getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherClass');
-_magazine = getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherMagazine');
+private ["_unit", "_launcher", "_config"];
 
-if (backpack player == "") then {
-	player addBackpack "Bag_Base";
+_unit = _this select 0;
+_launcher = _this select 1;
 
-	player addMagazine _magazine;
-	player addWeapon _weapon;
+_config = configFile >> "CfgWeapons" >> _launcher;
 
-	removeBackpack player;
-} else {
-	player addMagazine _magazine;
-	player addWeapon _weapon;
+if (isClass _config && {getText (_config >> "AGM_UsedTube") != ""} && {count secondaryWeaponMagazine _unit == 0}) then {
+	private ["_magazine", "_isLauncherSelected"];
+
+	_magazine = getArray (_config >> "magazines") select 0;
+
+	_isLauncherSelected = currentWeapon _unit == _launcher;
+
+	_unit removeMagazines _magazine;
+
+	if (backpack _unit == "") then {
+		_unit addBackpack "Bag_Base";
+
+		_unit addMagazine _magazine;
+		_unit addWeapon _launcher;
+
+		removeBackpack _unit;
+	} else {
+		_unit addMagazine _magazine;
+		_unit addWeapon _launcher;
+	};
+
+	if (_isLauncherSelected) then {
+		_unit selectWeapon _launcher;
+	};
 };

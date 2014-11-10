@@ -21,7 +21,7 @@
 private ["_handled", "_z", "_draggedObject"];
 _handled = false;
 if (player call AGM_Drag_fnc_isDraggingObject) then {
-	if (AGM_Drag_ShiftDown) then {
+	if (AGM_Modifier > 0) then {
 		_z = (_this * 0.15);
 		AGM_Drag_CurrentHeightChange = CLAMP(AGM_Drag_CurrentHeightChange + _z,0,1.755);
 		if (AGM_Drag_CurrentHeightChange <= 1.75 AND {AGM_Drag_CurrentHeightChange >= 0}) then {

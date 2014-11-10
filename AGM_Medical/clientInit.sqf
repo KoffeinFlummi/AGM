@@ -19,14 +19,26 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
 [] spawn {
   while {true} do {
 
-    // Detect if curator interface is open and disable effects
+    // Detect if curator interface is open and then disable effects an enable input
     if (!isNull(findDisplay 312)) then {
       AGM_BloodLevel_CC ppEffectEnable false;
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousRB ppEffectEnable false;
-      while {!isNull(findDisplay 312)} do {
-        sleep 1;
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
+        [false] call AGM_Core_fnc_disableUserInput;
       };
+      waitUntil {!isNull(findDisplay 312)};
+    };
+
+    // Detect if player is not alive and then disable effects and enable input
+    if (!(alive player)) then {
+      AGM_BloodLevel_CC ppEffectEnable false;
+      AGM_UnconsciousCC ppEffectEnable false;
+      AGM_UnconsciousRB ppEffectEnable false;
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
+        [false] call AGM_Core_fnc_disableUserInput;
+      };
+      waitUntil {alive player};
     };
 
     // Blood level
@@ -43,16 +55,16 @@ AGM_UnconsciousRB ppEffectCommit 0.5;
     // TODO: Pain effect ?
 
     // Unconciousness effect
-    if (player getVariable ["AGM_Unconscious", false] or player getVariable ["AGM_Overdosing", false]) then {
+    if (player getVariable ["AGM_Unconscious", false] || {player getVariable ["AGM_Overdosing", false]}) then {
       AGM_UnconsciousCC ppEffectEnable true;
       AGM_UnconsciousRB ppEffectEnable true;
-      if (isNil "AGM_Core_disableUserInput_ehid") then {
+      if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [true, true] call AGM_Core_fnc_disableUserInput;
       };
     } else {
       AGM_UnconsciousCC ppEffectEnable false;
       AGM_UnconsciousRB ppEffectEnable false;
-      if !(isNil "AGM_Core_disableUserInput_ehid") then {
+      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [false] call AGM_Core_fnc_disableUserInput;
       };
     };

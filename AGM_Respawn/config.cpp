@@ -4,10 +4,10 @@ class CfgPatches {
     weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
-    author[] = {"jodav"};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
+    author[] = {"jodav", "commy2"};
     authorUrl = "https://github.com/jodav/";
   };
 };
@@ -18,19 +18,33 @@ class CfgFunctions {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
       class getAllGear;
+      class handleKilled;
+      class handleRespawn;
       class initRallypoint;
       class module;
+      class moduleFriendlyFire;
+      class moduleRallypoint;
       class moveRallypoint;
       class removeBody;
+      class removeDisconnectedPlayer;
       class restoreGear;
       class teleportToRallypoint;
     };
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Respawn {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Respawn\clientInit.sqf'";
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
+    };
+  };
+};
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Respawn {
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+    };
   };
 };
 
@@ -49,13 +63,13 @@ class CfgVehicleClasses {
 class CfgVehicles {
   class Module_F;
   class AGM_ModuleRespawn: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Respawn System";
     function = "AGM_Respawn_fnc_module";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_Respawn\UI\IconRespawn_ca.paa";
+    icon = "\AGM_Respawn\UI\Icon_Module_Respawn_ca.paa";
     class Arguments {
       class SavePreDeathGear {
         displayName = "Save Gear?";
@@ -66,7 +80,7 @@ class CfgVehicles {
           class No { default = 1; name = "No"; value = 0; };
         };
       };
-      class RemoveDeadBodies {
+      /*class RemoveDeadBodies {
         displayName = "Remove bodies?";
         description = "Remove player bodies after respawn?";
         typeName = "BOOL";
@@ -80,7 +94,31 @@ class CfgVehicles {
         description = "The amount of time (in seconds) after that a unit's body gets removed. Default: 90";
         typeName = "NUMBER";
         defaultValue = 90;
-      };
+      };*/
+    };
+  };
+
+  class AGM_ModuleFriendlyFire: Module_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    category = "AGM";
+    displayName = "Friendly Fire Messages";
+    function = "AGM_Respawn_fnc_moduleFriendlyFire";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Respawn\UI\Icon_Module_FriendlyFire_ca.paa";
+    class Arguments {
+    };
+  };
+
+  class AGM_ModuleRallypoint: Module_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    category = "AGM";
+    displayName = "Rallypoint System";
+    function = "AGM_Respawn_fnc_moduleRallypoint";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Respawn\UI\Icon_Module_Rallypoint_ca.paa";
+    class Arguments {
     };
   };
 
@@ -100,6 +138,7 @@ class CfgVehicles {
 
   // static
   class AGM_Rallypoint_West: Flag_NATO_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint West Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -110,8 +149,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == west";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == west";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -119,6 +158,7 @@ class CfgVehicles {
   };
 
   class AGM_Rallypoint_East: Flag_CSAT_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint East Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -129,8 +169,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == east";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == east";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -138,6 +178,7 @@ class CfgVehicles {
   };
 
   class AGM_Rallypoint_Independent: Flag_AAF_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint Independent Base";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -148,8 +189,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Rallypoint";
         distance = 4;
-        condition = "playerSide == independent";
-        statement = "[player, playerSide, false] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == independent";
+        statement = "[_player, side group _player, false] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -158,6 +199,7 @@ class CfgVehicles {
 
   // moveable
   class AGM_RallypointExit_West: Flag_NATO_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint West";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -168,8 +210,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == west";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == west";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -177,6 +219,7 @@ class CfgVehicles {
   };
 
   class AGM_RallypointExit_East: Flag_CSAT_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint East";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -187,8 +230,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == east";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == east";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -196,6 +239,7 @@ class CfgVehicles {
   };
 
   class AGM_RallypointExit_Independent: Flag_AAF_F {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Rallypoint Independent";
     vehicleClass = "AGM_Respawn_Rallypoints";
 
@@ -206,8 +250,8 @@ class CfgVehicles {
       class AGM_Teleport {
         displayName = "Teleport to Base";
         distance = 4;
-        condition = "playerSide == independent";
-        statement = "[player, playerSide, true] call AGM_Respawn_fnc_teleportToRallypoint;";
+        condition = "side group _player == independent";
+        statement = "[_player, side group _player, true] call AGM_Respawn_fnc_teleportToRallypoint;";
         showDisabled = 1;
         priority = 1;
       };
@@ -220,11 +264,19 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_MoveRallypoint {
         displayName = "Move Rallypoint";
-        condition = "[player, playerSide] call AGM_Respawn_fnc_canMoveRallypoint";
-        statement = "[player, playerSide] call AGM_Respawn_fnc_moveRallypoint";
+        condition = "[_player, side group _player] call AGM_Respawn_fnc_canMoveRallypoint";
+        statement = "[_player, side group _player] call AGM_Respawn_fnc_moveRallypoint";
         showDisabled = 0;
         priority = -0.5;
       };
     };
   };
+};
+
+class AGM_Parameters {
+  // Number parameters
+  //AGM_Respawn_BodyRemoveTimer = 90;
+  // Boolean Parameters (0/1)
+  AGM_Respawn_SavePreDeathGear = 0;
+  //AGM_Respawn_RemoveDeadBodies = 1;
 };

@@ -1,13 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-09-09 -->
 <Project name="AGM">
   <Package name="Movement">
-
     <Key ID="STR_AGM_Movement_UseImperial">
       <English>Show weight in lb</English>
       <German>Zeige Gewicht in Pfund</German>
       <Spanish>Mostrar peso en libras</Spanish>
       <French>Afficher le poids en lb</French>
-      <Polish>Pokaż ciężar w Funtach</Polish>
+      <Polish>Pokaż ciężar w funtach</Polish>
+      <Czech>Zobrazit váhu v lb</Czech>
+      <Italian>Mostra peso in libbre</Italian>
+      <Portuguese>Mostrar peso em libras</Portuguese>
+      <Hungarian>Súly megjelenítése fontban.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Movement_Weight">
       <English>Weight:</English>
@@ -15,8 +19,10 @@
       <Spanish>Peso:</Spanish>
       <French>Poids:</French>
       <Polish>Waga:</Polish>
+      <Czech>Váha:</Czech>
+      <Italian>Peso:</Italian>
+      <Portuguese>Peso:</Portuguese>
+      <Hungarian>Súly:</Hungarian>
     </Key>
-
-
   </Package>
 </Project>

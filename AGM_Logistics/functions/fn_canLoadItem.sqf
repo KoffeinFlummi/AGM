@@ -22,20 +22,23 @@
 
 _nearestVehicles = [
 	getPos player nearestObject "Car",
-	getPos player nearestObject "Tank"
+	getPos player nearestObject "Tank",
+	getPos player nearestObject "Helicopter",
+	getPos player nearestObject "Plane",
+	getPos player nearestObject "Ship"
 ];
 
 _distances = [];
 {
 	if (typeName _x == "OBJECT") then {
-		_distances set [count _distances, player distance _x];
+		_distances pushBack (player distance _x);
 	};
-} count _nearestVehicles;
+} forEach _nearestVehicles;
 
 _distance = MAX_DISTANCE;
 {
 	_distance = _distance min _x;
-} count _distances;
+} forEach _distances;
 
 if (_distance == MAX_DISTANCE) exitWith {false};
 _result = false;
@@ -48,11 +51,11 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(AGM_Logistics_targetVehicle) 
 		if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) exitWith {
 			_result = true;
 		};
-	} count _attachPoints;
+	} forEach _attachPoints;
 } else {
 	_loadedItems = AGM_Logistics_targetVehicle getVariable ["AGM_Logistics_loadedItems", []];
 	if ([getNumber (configFile >> "CfgVehicles" >> typeOf AGM_Logistics_targetVehicle >> "AGM_Vehicle_Cargo"), _loadedItems] call AGM_Logistics_fnc_remainingSpace >= _size) then {
 		_result = true;
 	};
 };
-_result
+_result && {_this select 0 != missionNamespace getVariable ["AGM_Fortifications_crate", objNull]}

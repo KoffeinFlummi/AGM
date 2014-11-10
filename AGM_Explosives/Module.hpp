@@ -3,13 +3,13 @@ class AGM_ModuleExplosive: Module_F {
 	author = "AGM Team";
 	category = "AGM";
 	displayName = "Explosive System";
-	function = "AGM_Explosive_fnc_module";
+	function = "AGM_Explosives_fnc_module";
 	scope = 2;
 	isGlobal = 1;
     icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";
 	class Arguments {
-		class RequireExplosive {
-			displayName = "Require explosive specialists?";
+		class RequireSpecialist {
+			displayName = "Require specialists?";
 			//description = "Require explosive specialists to plant/disable explosives? Default: No";
 			// The above distinction is commented out due to the explanation in fn_SetupExplosive.sqf
 			description = "Require explosive specialists to disable explosives? Default: No";
@@ -26,7 +26,7 @@ class AGM_ModuleExplosive: Module_F {
 				};
 			};
 		};
-		class PunishNonExplosive {
+		class PunishNonSpecialists {
 			displayName = "Punish non-specialists?";
 			description = "Increase the time it takes to complete actions for non-specialists? Default: Yes";
 			typeName = "BOOL";

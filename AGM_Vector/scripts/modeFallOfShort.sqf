@@ -39,9 +39,9 @@ _abscissa = _distanceP1 * sin (_azimuthP1 - _azimuthP2);
 _ordinate = _distanceP1 * cos (_inclinationP1 - _inclinationP2) - _distanceP2 * cos (_azimuthP1 - _azimuthP2);
 _applicate = (sin _inclinationP2 * _distanceP2) - (sin _inclinationP1 * _distanceP1);
 if (_distanceP1 == -9999 || {_distanceP2 == -9999}) then {
-	_abscissa = -9999;
-	_ordinate = -9999;
-	_applicate = -9999;
+  _abscissa = -9999;
+  _ordinate = -9999;
+  _applicate = -9999;
 };
 
 _digits0 = [_ordinate, 0] call AGM_Vector_convertFOS;
@@ -55,37 +55,37 @@ _ctrlDigitE2 ctrlShow false;
 _ctrlDigitE3 ctrlShow false;
 
 waitUntil {
-	_ctrlDigit0 ctrlSetText (_digits0 select 0);
-	_ctrlDigit1 ctrlSetText (_digits0 select 1);
-	_ctrlDigit2 ctrlSetText (_digits0 select 2);
-	_ctrlDigit3 ctrlSetText (_digits0 select 3);
-	_ctrlDigit4 ctrlSetText (_digits0 select 4);
-	_ctrlDigit5 ctrlSetText (_digits1 select 0);
-	_ctrlDigit6 ctrlSetText (_digits1 select 1);
-	_ctrlDigit7 ctrlSetText (_digits1 select 2);
-	_ctrlDigit8 ctrlSetText (_digits1 select 3);
-	_ctrlDigit9 ctrlSetText (_digits1 select 4);
+  _ctrlDigit0 ctrlSetText (_digits0 select 0);
+  _ctrlDigit1 ctrlSetText (_digits0 select 1);
+  _ctrlDigit2 ctrlSetText (_digits0 select 2);
+  _ctrlDigit3 ctrlSetText (_digits0 select 3);
+  _ctrlDigit4 ctrlSetText (_digits0 select 4);
+  _ctrlDigit5 ctrlSetText (_digits1 select 0);
+  _ctrlDigit6 ctrlSetText (_digits1 select 1);
+  _ctrlDigit7 ctrlSetText (_digits1 select 2);
+  _ctrlDigit8 ctrlSetText (_digits1 select 3);
+  _ctrlDigit9 ctrlSetText (_digits1 select 4);
 
-	waitUntil {!(AGM_vectorKey select 1) || {AGM_vectorKey select 0}};
-	waitUntil {AGM_vectorKey select 1 || {AGM_vectorKey select 0}};
+  waitUntil {!(AGM_vectorKey select 1) || {AGM_vectorKey select 0}};
+  waitUntil {AGM_vectorKey select 1 || {AGM_vectorKey select 0}};
 
-	if !(AGM_vectorKey select 0) then {
-		_ctrlDigit0 ctrlSetText (_digits2 select 0);
-		_ctrlDigit1 ctrlSetText (_digits2 select 1);
-		_ctrlDigit2 ctrlSetText (_digits2 select 2);
-		_ctrlDigit3 ctrlSetText (_digits2 select 3);
-		_ctrlDigit4 ctrlSetText (_digits2 select 4);
-		_ctrlDigit5 ctrlSetText "";
-		_ctrlDigit6 ctrlSetText "";
-		_ctrlDigit7 ctrlSetText "";
-		_ctrlDigit8 ctrlSetText "";
-		_ctrlDigit9 ctrlSetText "";
-	};
+  if !(AGM_vectorKey select 0) then {
+    _ctrlDigit0 ctrlSetText (_digits2 select 0);
+    _ctrlDigit1 ctrlSetText (_digits2 select 1);
+    _ctrlDigit2 ctrlSetText (_digits2 select 2);
+    _ctrlDigit3 ctrlSetText (_digits2 select 3);
+    _ctrlDigit4 ctrlSetText (_digits2 select 4);
+    _ctrlDigit5 ctrlSetText "";
+    _ctrlDigit6 ctrlSetText "";
+    _ctrlDigit7 ctrlSetText "";
+    _ctrlDigit8 ctrlSetText "";
+    _ctrlDigit9 ctrlSetText "";
+  };
 
-	waitUntil {!(AGM_vectorKey select 1) || {AGM_vectorKey select 0}};
-	waitUntil {AGM_vectorKey select 1 || {AGM_vectorKey select 0}};
+  waitUntil {!(AGM_vectorKey select 1) || {AGM_vectorKey select 0}};
+  waitUntil {AGM_vectorKey select 1 || {AGM_vectorKey select 0}};
 
-	AGM_vectorKey select 0
+  AGM_vectorKey select 0
 };
 _ctrlDigit0 ctrlSetText "";
 _ctrlDigit1 ctrlSetText "";

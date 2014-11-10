@@ -6,7 +6,7 @@ _vehicle = _this select 0;
 _item = _this select 1;
 
 _loadedItems = _vehicle getVariable ["AGM_Logistics_loadedItems", []];
-_loadedItems set [count _loadedItems, _item];
+_loadedItems pushBack _item;
 
 _item attachTo [AGM_Logistics_loadedItemsDummy, [0, 0, 0], ""];
 

@@ -14,6 +14,8 @@
  * -
  */
 
+private ["_unit", "_selection", "_damage", "_selections", "_damages", "_damageOld", "_damageSumOld", "_damageNew", "_damageSumNew", "_damageFinal"];
+
 _unit = _this select 0;
 _selection = _this select 1;
 _damage = _this select 2;

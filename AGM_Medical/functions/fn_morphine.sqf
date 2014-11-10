@@ -10,8 +10,7 @@
  * none
  */
 
-#define MORPHINETIMEMEDIC 5
-#define MORPHINETIMENONMEDIC 10
+#define MORPHINETIME 5
 #define MORPHINEHEAL 0.4
 #define MORPHINEREDUCTION 0.015
 
@@ -20,9 +19,9 @@ _this spawn {
   _painkillerOld = _unit getVariable "AGM_Painkiller";
 
   // DETERMINE IF PLAYER IS MEDIC
-  _morphinetime = MORPHINETIMENONMEDIC;
-  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
-    _morphinetime = MORPHINETIMEMEDIC;
+  _morphinetime = MORPHINETIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _morphinetime = _morphinetime * AGM_Medical_CoefNonMedic;
   };
 
   player setVariable ["AGM_CanTreat", false, false];
@@ -43,11 +42,12 @@ _this spawn {
     _unit = _this select 0;
     _painkillerOld = _this select 1;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
 
-    if (_painkillerOld < 0.1) exitWith {
+    if (_painkillerOld < 0.1 and AGM_Medical_EnableOverdosing > 0) exitWith {
       if (_unit == player) then {
         _unit setVariable ["AGM_Overdosing", true];
         AGM_UnconsciousCC = ppEffectCreate ["ColorCorrections", 4208];
@@ -81,7 +81,7 @@ _this spawn {
     if (_painkillerOld == 1) then {
       0 = _unit spawn {
         while {_this getVariable "AGM_Painkiller" < 1} do {
-          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1];
+          _this setVariable ["AGM_Painkiller", ((_this getVariable "AGM_Painkiller") + MORPHINEREDUCTION) min 1, true];
           sleep 10;
         };
       };
@@ -89,9 +89,9 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+        [1, call AGM_Core_fnc_player, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+        [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       };
     };
   };

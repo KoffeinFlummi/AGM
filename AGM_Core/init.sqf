@@ -9,6 +9,8 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNu
 
 if (!hasInterface) exitWith {};
 
+call compile preprocessFileLineNumbers "\AGM_core\scripts\assignedItemFix.sqf";
+
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
 AGM_Core_keyRelease  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyRelease.sqf";
 AGM_Core_editKey   = compile preprocessFileLineNumbers "\AGM_core\scripts\editKey.sqf";
@@ -28,12 +30,14 @@ for "_index" from 0 to 300 do {
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initCanInteractFunction.sqf";
 call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initKeys.sqf";
+call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWheel.sqf";
 
 0 spawn {
   while {true} do {
-    waitUntil {!isNull (findDisplay 46)}; sleep 1;
+    waitUntil {!isNull (findDisplay 46)}; sleep 0.1;
     findDisplay 46 displayAddEventHandler ["KeyDown", "_this call AGM_Core_onKeyDown"];
     findDisplay 46 displayAddEventHandler ["KeyUp", "_this call AGM_Core_onKeyUp"];
+    findDisplay 46 displayAddEventHandler ["MouseZChanged", "_this call AGM_Core_onScrollWheel"];
     [false] call AGM_Core_fnc_disableUserInput;
     waitUntil {isNull (findDisplay 46)};
   };

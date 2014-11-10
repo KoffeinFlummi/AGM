@@ -15,7 +15,7 @@
 	Example:
 		[AGM_Interaction_Target, AGM_Logistics_targetVehicle] call AGM_Logistics_fnc_openLoadUI;
 */
-private ["_vehicle","_result", "_item", "_index", "_listIDC"];
+private ["_vehicle","_result", "_item", "_index"];
 _item = _this select 0;
 _vehicle = _this select 1;
 
@@ -24,15 +24,31 @@ AGM_Logistics_targetVehicle = _vehicle;
 
 if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exitWith {
 	_size = getNumber(ConfigFile >> "CfgVehicles" >> Typeof(_item) >> "AGM_Size");
-	_listIDC = [localize "STR_AGM_Logistics_LoadMenu", localize "STR_AGM_Logistics_LoadItem", "[AGM_Interaction_Target, AGM_Logistics_targetVehicle, lbData [8866, lbCurSel 8866]] call AGM_Logistics_fnc_loadItem;closeDialog 0;"] call AGM_Interaction_fnc_openSelectMenu;
 	_attachPoints = _vehicle call AGM_Logistics_fnc_getLoadPoints;
+	
+	_actions = [localize "STR_AGM_Logistics_LoadMenu", localize "STR_AGM_Logistics_LoadItem"] call AGM_Interaction_fnc_prepareSelectMenu;
 	{
 		if ([_x select 1, _x select 3] call AGM_Logistics_fnc_remainingSpace >= _size) then {
-			_index = lbAdd [_listIDC, getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load" >> _x select 4 >> "DisplayName")];
-			lbSetData [_listIDC, _index, _x select 4];
+			_actions = [
+				_actions,
+				getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load" >> _x select 4 >> "DisplayName"),
+				getText (ConfigFile >> "CfgVehicles" >> typeOf(_vehicle) >> "picture"),
+				_x select 4
+			] call AGM_Interaction_fnc_AddSelectableItem;
 		};
 	} count _attachPoints;
 
-	lbSetCurSel [_listIDC, 0];
+	[
+		_actions,
+		{
+			call AGM_Interaction_fnc_hideMenu;
+			[AGM_Interaction_Target, AGM_Logistics_targetVehicle, _this] call AGM_Logistics_fnc_loadItem;
+		},
+		{
+			call AGM_Interaction_fnc_hideMenu;
+			if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};
+		}
+	] call AGM_Interaction_fnc_openSelectMenu;
 };
+call AGM_Interaction_fnc_hideMenu;
 [AGM_Interaction_Target, AGM_Logistics_targetVehicle, ""] call AGM_Logistics_fnc_loadItem;

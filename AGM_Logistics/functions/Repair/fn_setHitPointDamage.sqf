@@ -24,7 +24,7 @@ _damage = _this select 2;
 
 // Unit isn't local, give function to machine where it is.
 if !(local _vehicle) exitWith {
-  [_this, "AGM_Medical_fnc_setHitPointDamage", _vehicle] call AGM_Core_fnc_execRemoteFnc;
+  [_this, "AGM_Repair_fnc_setHitPointDamage", _vehicle] call AGM_Core_fnc_execRemoteFnc;
 };
 
 // Check if overall damage adjustment is disabled

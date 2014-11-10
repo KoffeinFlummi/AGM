@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi", "Crusty"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -22,6 +22,10 @@ class CfgAmmo {
 
   class B_20mm: BulletBase {
     deflecting = 3;
+    hit = 100;
+    indirectHit = 10;
+    indirectHitRange = 2;
+    model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
   };
 
   class B_65x39_Minigun_Caseless: SubmunitionBullet {
@@ -144,6 +148,14 @@ class CfgAmmo {
     class CamShakeHit {};
     class CamShakeFire {};
     class CamShakePlayerFire {};
+  };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy: Gatling_30mm_HE_Plane_CAS_01_F {
+    simulation = "shotSubmunitions";
+    triggerTime = 0;
+    submunitionAmmo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Sub";
+    submunitionConeType[] = {"custom", {{0,0}, {0,0}, {0,0}} };
+  };
+  class AGM_Gatling_30mm_HE_Plane_CAS_01_Sub: Gatling_30mm_HE_Plane_CAS_01_F {
   };
 
   class Cannon_30mm_HE_Plane_CAS_02_F: Gatling_30mm_HE_Plane_CAS_01_F {
@@ -402,8 +414,9 @@ class CfgMagazines {
   class 1000Rnd_Gatling_30mm_Plane_CAS_01_F: VehicleMagazine {
     scope = 2;
     displayNameShort = "";
-    ammo = "Gatling_30mm_HE_Plane_CAS_01_F";
+    ammo = "AGM_Gatling_30mm_HE_Plane_CAS_01_Deploy";
     count = 1170;
+    //count = 390;
     //initSpeed = 3852;
     maxLeadSpeed = 300;
     nameSound = "cannon";
@@ -534,10 +547,10 @@ class CfgWeapons {
       reloadTime = 0.023;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class AGM_gatling_20mm_Comanche: gatling_20mm {
@@ -571,10 +584,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class LMG_Minigun_heli: LMG_Minigun {
     showAimCursorInternal = 0;
@@ -582,10 +595,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: manual{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
   class M134_minigun: MGunCore {
     class LowROF: Mode_FullAuto {
@@ -596,10 +609,10 @@ class CfgWeapons {
       reloadTime = 0.015;
       dispersion = 0.006;
     };
-    class close: HighROF{};
-    class short: close{};
-    class medium: LowROF{};
-    class far: medium{};
+    class close: HighROF {};
+    class short: close {};
+    class medium: LowROF {};
+    class far: medium {};
   };
 
   class Gatling_30mm_Plane_CAS_01_F: CannonCore {
@@ -608,20 +621,23 @@ class CfgWeapons {
     reloadTime = 0.0154;
     class LowROF: Mode_FullAuto {
       autoFire = 0;
-      burst = 65;
-      reloadTime = 0.0154;
+      //burst = 65;
+      burst = 22;
+      //reloadTime = 0.0154;
+      reloadTime = 0.0462;
       //sound[] = {"A3\Sounds_F_epc\weapons\cas_02_cannon",1.77828,1,3800};
       sound[] = {"A3\Sounds_F_EPC\Weapons\gau_03_burst",2.51189,1,4500,{25704,32159}};
       weaponSoundEffect = "DefaultRifle";
       dispersion = 0.005;
       soundContinuous = 1;
       textureType = "burst";
+      multiplier = 3;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 
   class Missile_AA_04_Plane_CAS_01_F: RocketPods {
@@ -672,8 +688,8 @@ class CfgWeapons {
       aiRateOfFire = 5;
       aiRateOfFireDistance = 500;
     };
-    class Medium_AI: Far_AI {  };
-    class Close_AI: Far_AI {  };
+    class Medium_AI: Far_AI {};
+    class Close_AI: Far_AI {};
     class Burst: RocketPods {
       burst = 1;
       reloadTime = 0.002;
@@ -731,11 +747,11 @@ class CfgWeapons {
       dispersion = 0.0055;
       reloadTime = 0.04;
     };
-    class close: LowROF{};
-    class near: close{};
-    class short: close{};
-    class medium: close{};
-    class far: close{};
+    class close: LowROF {};
+    class near: close {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
   };
 };
 
@@ -761,15 +777,13 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: MainTurret {};
     };
+    class UserActions;
   };
   class Plane_Base_F;
 
   // BLUFOR Inheritance
   class Heli_Attack_01_base_F: Helicopter_Base_F {
     class AnimationSources;
-    class MFD {
-      class AirplaneHUD;
-    };
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
@@ -789,6 +803,21 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {};
       class MainTurret: MainTurret {};
       class RightDoorGun;
+    };
+    class UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "((this doorPhase 'door_L') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "((this doorPhase 'door_R') == 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "((this doorPhase 'door_L') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "((this doorPhase 'door_R') > 0) AND Alive(this) AND driver this != player AND gunner this != player";
+      };
     };
   };
   class Plane_CAS_01_base_F: Plane_Base_F {
@@ -830,6 +859,39 @@ class CfgVehicles {
   class Heli_Transport_02_base_F: Helicopter_Base_H {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
+    };
+    class UserActions: UserActions {
+      class DoorL1_Open {
+        available = 1;
+        condition = "this animationPhase ""door_back_L"" < 0.5 AND Alive(this)";
+      };
+      class DoorR1_Open: DoorL1_Open {
+        condition = "this animationPhase ""door_back_R"" < 0.5 AND Alive(this)";
+      };
+      class DoorL1_Close: DoorL1_Open {
+        condition = "this animationPhase ""door_back_L"" > 0.5 AND Alive(this)";
+      };
+      class DoorR1_Close: DoorL1_Close {
+        condition = "this animationPhase ""door_back_R"" > 0.5 AND Alive(this)";
+      };
+      class CargoRamp_Open: DoorL1_Open {
+        userActionID = 52;
+        displayName = "$STR_AGM_Aircraft_OpenCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_OpenCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" < 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 1]";
+      };
+      class CargoRamp_Close: DoorL1_Close {
+        userActionID = 55;
+        displayName = "$STR_AGM_Aircraft_CloseCargoRamp";
+        textToolTip = "$STR_AGM_Aircraft_CloseCargoRamp";
+        position = "action_cargoramp";
+        radius = 3.0;
+        condition = "this animationPhase ""cargoramp_open"" > 0.5 AND Alive(this)";
+        statement = "this animateDoor ['cargoramp_open', 0]";
+      };
     };
   };
   class Plane_Fighter_03_base_F: Plane_Base_F {
@@ -899,9 +961,15 @@ class CfgVehicles {
 
   ////////////////////////////////////////////////////////////
 
+  // lockDetectionSystem:
+  // 1: Visual
+  // 2: IR
+  // 4: Laser
+  // 8: Radar
+
   // BLUFOR
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class AnimationSources: AnimationSources {
@@ -933,11 +1001,7 @@ class CfgVehicles {
         weapon = "AGM_gatling_20mm_Comanche";
       };
     };
-    class MFD: MFD {
-      class AirplaneHUD: AirplaneHUD {
-        helmetPosition[] = {-0.0276,0.024,0.1};
-      };
-    };
+    // #include <mfd_comanche.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
@@ -947,7 +1011,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Transport_01_F: Heli_Transport_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -965,7 +1029,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -975,7 +1039,7 @@ class CfgVehicles {
     };
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class MFD {
@@ -1242,7 +1306,7 @@ class CfgVehicles {
     };
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 
@@ -1250,7 +1314,7 @@ class CfgVehicles {
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1268,7 +1332,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1286,7 +1350,7 @@ class CfgVehicles {
     };
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1296,13 +1360,13 @@ class CfgVehicles {
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 
   // OPFOR
   class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1312,7 +1376,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1323,7 +1387,7 @@ class CfgVehicles {
   };
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
     driverCanEject = 1;
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     magazines[] = {"2000Rnd_762x51_Belt_T_Green", "12Rnd_PG_missiles", "168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
@@ -1333,7 +1397,7 @@ class CfgVehicles {
     };
   };
   class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
@@ -1346,7 +1410,7 @@ class CfgVehicles {
     };
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
-    lockDetectionSystem = 15;
+    lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
   };
 };

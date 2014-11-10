@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -16,8 +16,9 @@ class CfgFunctions {
   class AGM_Grenades {
     class AGM_Grenades {
       file = "\AGM_Grenades\functions";
-      class firedEH;
+      class flashbangEffect;
       class nextMode;
+      class throwGrenade;
     };
   };
 };
@@ -28,10 +29,10 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_Grenades {
-      clientFired = "if (player == (_this select 0)) then {_this call AGM_Grenades_fnc_firedEH}";
+    class AGM_Grenades_ThrowGrenade {
+      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Grenades_fnc_throwGrenade;};";
     };
   };
 };
@@ -39,12 +40,12 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class switchGrenadeMode {
     displayName = "$STR_AGM_Grenades_SwitchGrenadeMode";
-    condition = "player == vehicle player";
+    condition = "_player == _vehicle";
     statement = "call AGM_Grenades_fnc_nextMode";
-    key = 34;
+    key = 9;//34;
     shift = 0;
     control = 0;
-    alt = 1;
+    alt = 0;//1;
   };
 };
 
@@ -119,6 +120,24 @@ class CfgAmmo {
     SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2",0.125893,1,70};
     timeToLive = 60;
   };
+
+
+  class AGM_G_M84: F_20mm_Yellow {
+    useFlare = 0;
+    flareSize = 0;
+    intensity = 0;
+    grenadeBurningSound[] = {"SmokeShellSoundLoop1",0.5,"SmokeShellSoundLoop2",0.5};
+    grenadeFireSound[] = {"SmokeShellSoundHit1",0.25,"SmokeShellSoundHit2",0.25,"SmokeShellSoundHit3",0.5};
+    soundTrigger[] = {"SmokeShellSoundLoop1",0.5,"SmokeShellSoundLoop2",0.5};
+    SmokeShellSoundHit1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_1",1.25893,1,100};
+    SmokeShellSoundHit2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_2",1.25893,1,100};
+    SmokeShellSoundHit3[] = {"A3\Sounds_F\weapons\smokeshell\smoke_3",1.25893,1,100};
+    SmokeShellSoundLoop1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop1",0.125893,1,70};
+    SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2",0.125893,1,70};
+    timeToLive = 60;
+    fuseDistance = 2.3;
+    model = "agm_grenades\agm_m84_thrown.p3d";
+  };
 };
 
 class CfgMagazines {
@@ -132,35 +151,43 @@ class CfgMagazines {
   };
   class AGM_HandFlare_White: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_White";
-    displayname = "Hand Flare (White)";
-    descriptionshort = "White Hand Flare";
-    displayNameShort = "White Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_White_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_White_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_White_NameShort";
     model = "\A3\weapons_f\ammo\flare_white";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_white_ca.paa";
   };
   class AGM_HandFlare_Red: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Red";
-    displayname = "Hand Flare (Red)";
-    descriptionshort = "Red Hand Flare";
-    displayNameShort = "Red Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Red_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Red_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Red_NameShort";
     model = "\A3\weapons_f\ammo\flare_red";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_red_ca.paa";
   };
   class AGM_HandFlare_Green: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Green";
-    displayname = "Hand Flare (Green)";
-    descriptionshort = "Green Hand Flare";
-    displayNameShort = "Green Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Green_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Green_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Green_NameShort";
     model = "\A3\weapons_f\ammo\flare_green";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_green_ca.paa";
   };
   class AGM_HandFlare_Yellow: AGM_HandFlare_Base {
     ammo = "AGM_F_Hand_Yellow";
-    displayname = "Hand Flare (Yellow)";
-    descriptionshort = "Yellow Hand Flare";
-    displayNameShort = "Yellow Flare";
+    displayname = "$STR_AGM_Grenades_M127A1_Yellow_Name";
+    descriptionshort = "$STR_AGM_Grenades_M127A1_Yellow_Description";
+    displayNameShort = "$STR_AGM_Grenades_M127A1_Yellow_NameShort";
     model = "\A3\weapons_f\ammo\flare_yellow";
     picture = "\A3\Weapons_F\Data\UI\gear_flare_yellow_ca.paa";
+  };
+  class AGM_M84: HandGrenade {
+    ammo = "AGM_G_M84";
+    displayname = "$STR_AGM_Grenades_M84_Name";
+    descriptionshort = "$STR_AGM_Grenades_M84_Description";
+    displayNameShort = "M84";
+    model = "agm_grenades\agm_m84.p3d";
+    picture = "\agm_grenades\UI\agm_m84_x_ca.paa";
   };
 
   class 3Rnd_UGL_FlareGreen_F;
@@ -178,7 +205,7 @@ class CfgWeapons {
   class GrenadeLauncher;
 
   class Throw: GrenadeLauncher {
-    muzzles[] += {"AGM_HandFlare_WhiteMuzzle", "AGM_HandFlare_RedMuzzle", "AGM_HandFlare_GreenMuzzle", "AGM_HandFlare_YellowMuzzle"};
+    muzzles[] += {"AGM_HandFlare_WhiteMuzzle", "AGM_HandFlare_RedMuzzle", "AGM_HandFlare_GreenMuzzle", "AGM_HandFlare_YellowMuzzle", "AGM_M84Muzzle"};
     class ThrowMuzzle;
     class AGM_HandFlare_WhiteMuzzle: ThrowMuzzle {
       magazines[] = {"AGM_HandFlare_White"};
@@ -191,6 +218,9 @@ class CfgWeapons {
     };
     class AGM_HandFlare_YellowMuzzle: ThrowMuzzle {
       magazines[] = {"AGM_HandFlare_Yellow"};
+    };
+    class AGM_M84Muzzle: ThrowMuzzle {
+      magazines[] = {"AGM_M84"};
     };
   };
 };
@@ -210,6 +240,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_White,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -217,6 +248,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Red,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -224,6 +256,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_M84, 12)
     };
   };
 
@@ -233,6 +266,7 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_HandFlare_Red,24)
       MACRO_ADDITEM(AGM_HandFlare_Green,24)
       MACRO_ADDITEM(AGM_HandFlare_Yellow,24)
+      MACRO_ADDITEM(AGM_M84, 24)
     };
   };
 };

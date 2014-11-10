@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"Ghost", "Hamburger SV", "commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -52,8 +52,9 @@ class CfgWeapons {
     modelOptics = "\AGM_Vector\agm_vector_optics.p3d";
     picture = "\AGM_Vector\UI\agm_vector_x_ca.paa";
     visionMode[] = {"Normal","NVG"};
-    opticszoommax = 0.03;
-    opticszoommin = 0.03;
+    opticsZoomMax = 0.03;
+    opticsZoomMin = 0.03;
+    weaponInfoType = "AGM_RscOptics_vector";
   };
 };
 
@@ -72,10 +73,45 @@ class CfgVehicles {
       };
     };
   };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportWeapons {
+      class _xx_AGM_Vector {
+        weapon = "AGM_Vector";
+        count = 6;
+      };
+    };
+  };
 };
 
 class AGM_Rsc_Display_Base;
 class AGM_Rsc_Control_Base;
+class RSCText;
+
+class RscInGameUI {
+  class AGM_RscOptics_vector: AGM_Rsc_Display_Base {
+    idd = -1;
+    onLoad = "uiNamespace setVariable ['AGM_dlgVectorOptics', _this select 0];";
+    controls[] = {"CA_Distance","CA_Heading","CA_OpticsPitch"};
+
+    class CA_Distance: RSCText {
+      idc = 151;  // distance
+      w = 0;
+      h = 0;
+    };
+    class CA_Heading: RSCText {
+      idc = 156;  // azimuth
+      w = 0;
+      h = 0;
+    };
+    class CA_OpticsPitch: RSCText {
+      idc = 182;  // inclination
+      w = 0;
+      h = 0;
+    };
+  };
+};
 
 class RscTitles {
   class AGM_Vector : AGM_Rsc_Display_Base {

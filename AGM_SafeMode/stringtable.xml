@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AGM">
+  <Package name="SafeMode">
+    <Key ID="STR_AGM_SafeMode_SafeMode">
+      <English>Safe Mode</English>
+      <German>Waffe sichern</German>
+    </Key>
+  </Package>
+</Project>

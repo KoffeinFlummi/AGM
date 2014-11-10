@@ -15,9 +15,7 @@
 	Example:
 	call AGM_Goggles_fnc_RemoveRainEffect;
 */
-#include "\AGM_Goggles\script.sqf"
-
-AGM_Goggles_Effects set [LRAIN, [false, 0, time]];
-if (!isNull(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull])) then {
-	(uiNamespace getVariable ["AGM_Goggles_DisplayEffects", displayNull] displayCtrl 10661) ctrlSetText "";
+if (!isNull (AGM_Goggles_RainDrops)) then {
+	deleteVehicle (AGM_Goggles_RainDrops);
 };
+AGM_Goggles_Rain_Active = false;

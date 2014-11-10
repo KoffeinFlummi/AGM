@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project name="AGM">
   <Package name="Resting">
 
@@ -11,6 +11,8 @@
       <French>Appuyer l'arme</French>
       <Russian>Зафиксировать оружие</Russian>
       <Hungarian>Fegyver kitámasztása</Hungarian>
+      <Portuguese>Apoiar Arma</Portuguese>
+      <Italian>Appoggia l'arma</Italian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodDeployed">
@@ -19,9 +21,11 @@
       <Spanish>Bípode desplegado</Spanish>
       <Polish>Dwójnóg rozstawiony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
-      <French>Bipied deployé</French>
+      <French>Bipied déployé</French>
       <Russian>Сошки установлены</Russian>
       <Hungarian>Állványon</Hungarian>
+      <Portuguese>Bipé apoiado</Portuguese>
+      <Italian>Bipiede appoggiato</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponRested">
       <English>Weapon rested</English>
@@ -29,9 +33,11 @@
       <Spanish>Arma apoyada</Spanish>
       <Polish>Broń oparta</Polish>
       <Czech>Zbraň zapřena</Czech>
-      <French>Arme appuyé</French>
+      <French>Arme appuyée</French>
       <Russian>Оружие зафиксировано</Russian>
       <Hungarian>Fegyver kitámasztva</Hungarian>
+      <Portuguese>Arma apoiada</Portuguese>
+      <Italian>Arma appoggiata</Italian>
     </Key>
 
     <Key ID="STR_AGM_Resting_BipodUndeployed">
@@ -40,9 +46,11 @@
       <Spanish>Bípode plegado</Spanish>
       <Polish>Dwójnóg złożony</Polish>
       <Czech>Dvojnožka rozložena</Czech>
-      <French>Bipied retracté</French>
+      <French>Bipied replié</French>
       <Russian>Сошки убраны</Russian>
       <Hungarian>Állvány csukva</Hungarian>
+      <Portuguese>Bipé recolhido</Portuguese>
+      <Italian>Bipiede richiuso</Italian>
     </Key>
     <Key ID="STR_AGM_Resting_WeaponLifted">
       <English>Weapon lifted</English>
@@ -50,9 +58,11 @@
       <Spanish>Arma levantada</Spanish>
       <Polish>Broń podniesiona</Polish>
       <Czech>Zbraň zdvihnuta</Czech>
-      <French>Arme Non-appuyé</French>
+      <French>Arme relevée</French>
       <Russian>Оружие не зафиксировано</Russian>
       <Hungarian>Fegyver nincs támasztva</Hungarian>
+      <Portuguese>Arma levantada</Portuguese>
+      <Italian>Arma sollevata</Italian>
     </Key>
 
   </Package>

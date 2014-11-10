@@ -37,7 +37,7 @@ _relDirection = sqrt ((_azimuthP1 - _azimuthP2)^2 + (_inclinationP1 - _inclinati
 _relDistance = sqrt (_distanceP1^2 + _distanceP2^2 - 2 * _distanceP1 * _distanceP2 * cos _relDirection);
 
 if (_distanceP1 == -9999 || {_distanceP2 == -9999}) then {
-	_relDistance = -9999;
+  _relDistance = -9999;
 };
 
 _digits = _relDistance call AGM_Vector_convertDistance;

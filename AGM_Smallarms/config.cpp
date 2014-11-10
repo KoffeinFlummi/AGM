@@ -3,12 +3,12 @@
 class CfgPatches {
   class AGM_Smallarms {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {}; //{"AGM_acc_flashlight_tls"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"TaoSensai", "KoffeinFlummi"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -185,10 +185,47 @@ class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
 
+// config inheritance of weapon slot info v1.32
+class SlotInfo;
+class CowsSlot: SlotInfo {};
+class PointerSlot: SlotInfo {
+  //compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
+};
+
 class CfgWeapons {
-  class WeaponSlotsInfo;
-  class SlotInfo;
-  class Rifle_Base_F;
+
+  // config inheritance of weapon slot info v1.32 for launchers
+  class Launcher;
+  class Launcher_Base_F: Launcher {
+    class WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for assault rifles
+  class RifleCore;
+  class Rifle: RifleCore {
+    class WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {};
+    };
+  };
+  class Rifle_Base_F: Rifle {};
+  class Rifle_Long_Base_F: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for handguns
+  class PistolCore;
+  class Pistol: PistolCore {
+    class WeaponSlotsInfo {
+      class CowsSlot: SlotInfo {};
+    };
+  };
+  class Pistol_Base_F: Pistol {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+    };
+  };
 
   ///////////////////////////////////////////////////////////////////////////////
   //////////// SMALL ARMS WEAPONS ///////////////////////////////////////////////
@@ -339,7 +376,6 @@ class CfgWeapons {
 
   // Pistols //////////////////////////////////////////////
 
-  class Pistol_Base_F;
   class hgun_P07_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
   };
@@ -348,9 +384,11 @@ class CfgWeapons {
     magazines[] = {"16Rnd_9x21_Mag"};
   };
 
-  // LMGs //////////////////////////////////////////////
+  /*class hgun_ACPC2_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_01_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_02_F: Pistol_Base_F {};*/
 
-  class Rifle_Long_Base_F;
+  // LMGs //////////////////////////////////////////////
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
     modes[] = {"manual", "Single", "close", "short", "medium", "far_optic1", "far_optic2"};
@@ -408,8 +446,85 @@ class CfgWeapons {
   //////////// WEAPON ATTACHMENTS ///////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////
 
+
+
+
   class ItemCore;
   class InventoryItem_Base_F;
   class InventoryMuzzleItem_Base_F;
+  class InventoryFlashLightItem_Base_F;
 
+  class AGM_acc_flashlight_tls: ItemCore {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_acc_flashlight_tls";
+    scope = 1; //2;
+    displayName = "$STR_A3_cfgWeapons_acc_flashlight0";//
+    descriptionUse = "$STR_A3_cfgWeapons_use_flashlight0";//
+    picture = "\A3\weapons_F\Data\UI\gear_accv_flashlight_tls_ca.paa";
+    model = "\A3\weapons_f\acc\accv_flashlight_TLS_F";
+    descriptionShort = "$STR_A3_cfgWeapons_acc_flashlight1";//
+    class ItemInfo: InventoryFlashLightItem_Base_F {
+      mass = 4;
+      class FlashLight {
+        color[] = {180,156,120};
+        ambient[] = {0.9,0.78,0.6};
+        intensity = 20;
+        size = 1;
+        innerAngle = 20;
+        outerAngle = 80;
+        coneFadeCoef = 5;
+        position = "flash dir";
+        direction = "flash";
+        useFlare = 1;
+        flareSize = 1.4;
+        flareMaxDistance = "100.0f";
+        dayLight = 0;
+        class Attenuation {
+          start = 0.5;
+          constant = 0;
+          linear = 0;
+          quadratic = 1.1;
+          hardLimitStart = 20;
+          hardLimitEnd = 30;
+        };
+        scale[] = {0};
+      };
+    };
+    inertia = 0.1;
+  };
 };
+
+#define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+  name = #ITEM; \
+  count = COUNT; \
+};
+
+/*class CfgVehicles {
+  class NATO_Box_Base;
+  class EAST_Box_Base;
+  class IND_Box_Base;
+
+  class Box_NATO_Support_F: NATO_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class Box_East_Support_F: EAST_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class Box_IND_Support_F: IND_Box_Base {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,5)
+    };
+  };
+
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_acc_flashlight_tls,2)
+    };
+  };
+};*/

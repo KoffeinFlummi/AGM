@@ -1,10 +1,25 @@
 // by commy2
 
-private ["_vehicle", "_turret"];
+private ["_player", "_vehicle", "_turret", "_config", "_configTurret", "_memoryPointGunner", "_distance"];
 
-_vehicle = _this select 0;
-_turret = _this select 1;
+_player = _this select 0;
+_vehicle = _this select 1;
+_turret = _this select 2;
 
-//WIP
+_config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
-_turret in ([typeOf _vehicle] call AGM_Core_fnc_getTurrets) && {isNull (_vehicle turretUnit _turret)} && {!(_vehicle lockedTurret _turret)} && {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
+
+_configTurret = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+
+if (_turret isEqualTo [] || {!(_turret in ([typeOf _vehicle] call AGM_Core_fnc_getTurrets))}) exitWith {false};
+
+_memoryPointGunner = getText (_configTurret >> "memoryPointsGetInGunner");
+
+_distance = getNumber (_config >> "getInRadius");
+
+(isNull (_vehicle turretUnit _turret) || !alive (_vehicle turretUnit _turret))
+&& {alive _vehicle}
+&& {!(_vehicle lockedTurret _turret)}
+&& {!(locked _vehicle >= 2)}
+&& {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1}
+&& {_player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointGunner)) < _distance || {vehicle _player == _vehicle}}

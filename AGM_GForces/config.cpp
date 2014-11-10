@@ -4,26 +4,17 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
 
-class CfgFunctions {
-  class AGM_GForces {
-    class AGM_GForces {
-      file = "AGM_GForces\functions";
-      class init;
-    };
-  };
-};
-
 class Extended_PostInit_EventHandlers {
   class AGM_GForces {
-    Init = "_this call AGM_GForces_fnc_init";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_GForces\clientInit.sqf'";
   };
 };
 
@@ -50,12 +41,12 @@ class CfgVehicles {
     AGM_GForceCoef = 1;
   };
 
-  class B_Helipilot_F;
-  class B_Pilot_F: B_Helipilot_F {
+  class B_Soldier_05_f;
+  class B_Pilot_F: B_Soldier_05_f {
     AGM_GForceCoef = 0.75;
   };
-  class I_helipilot_F;
-  class I_pilot_F: I_helipilot_F {
+  class I_Soldier_04_F;
+  class I_pilot_F: I_Soldier_04_F {
     AGM_GForceCoef = 0.75;
   };
   class O_helipilot_F;

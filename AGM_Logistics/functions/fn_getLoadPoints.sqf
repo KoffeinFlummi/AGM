@@ -33,7 +33,7 @@ _count = count _config;
 for "_index" from 0 to (_count - 1) do {
 	_class = _config select _index;
 	if (isClass (_class)) then {
-		_result set [count _result, [getText (_class >> "memoryPoint"), getNumber (_class >> "loadSize"), GetArray(_class >> "loadPosition"), _this getVariable [format["AGM_Load_%1", configName _class], []], configName _class]];
+		_result pushBack [getText (_class >> "memoryPoint"), getNumber (_class >> "loadSize"), GetArray(_class >> "loadPosition"), _this getVariable [format["AGM_Load_%1", configName _class], []], configName _class];
 	};
 };
 

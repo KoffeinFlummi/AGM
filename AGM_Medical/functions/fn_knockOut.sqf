@@ -1,7 +1,7 @@
 /*
  * By: KoffeinFlummi
  *
- * Knocks the given player out by ragdollizing him and stopping all movement, thereby making it impossible to differentiate between a dead and unconcious player.
+ * Knocks the given player out.
  *
  * Arguments:
  * 0: Unit to be knocked out (Object)
@@ -10,14 +10,16 @@
  * None
  */
 
-private ["_unit", "_newGroup"];
+private ["_unit", "_duration", "_deadman", "_newGroup", "_wakeUpTimer", "_unconsciousnessTimer"];
 
 _unit = _this select 0;
 _duration = -1;
+
 if (count _this > 1) then {
   _duration = _this select 1;
 };
-if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {_unit setDamage 1;};
+
+if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {};
 
 _unit setVariable ["AGM_Unconscious", true, true];
 _unit setVariable ["AGM_CanTreat", false, true];
@@ -30,10 +32,24 @@ if (_unit == player) then {
   player setVariable ["acre_sys_core_isDisabled", true, true];
   player setVariable ["acre_sys_core_globalVolume", 0.4];
 
+  closeDialog 0;
+  call AGM_Interaction_fnc_hideMenu;
+
   [true, true] call AGM_Core_fnc_disableUserInput;
+
+  if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
+    call AGM_Explosives_fnc_Place_Cancel;
+  };
 };
 
-[_unit, "AGM_Unconscious", true] call AGM_Interaction_fnc_setCaptivityStatus;
+if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
+  _deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
+  {
+    [(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
+  } count _deadman;
+};
+
+[_unit, "AGM_Unconscious", true] call AGM_Core_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";
@@ -57,14 +73,12 @@ _unit spawn {
 _wakeUpTimer = [_unit, _duration] spawn {
   _unit = _this select 0;
   _duration = _this select 1;
-  if (random 1 > 0.2 or _duration != -1) then {
-    if (_duration != -1) then {
-      sleep _duration;
-    } else {
-      sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.3));
-    };
-    [_unit] call AGM_Medical_fnc_wakeUp;
+  if (_duration != -1) then {
+    sleep _duration;
+  } else {
+    sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
   };
+  [_unit] call AGM_Medical_fnc_wakeUp;
 };
 _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
 

@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Core {
     units[] = {"AGM_Box_Misc"};
-    weapons[] = {};
+    weapons[] = {"AGM_ItemCore", "AGM_FakePrimaryWeapon"};
     requiredVersion = 0.60;
     requiredAddons[] = {
       "a3_air_f",
@@ -164,13 +164,14 @@ class CfgPatches {
       "a3_weapons_f_bootcamp_longrangerifles_m320",
       "a3_weapons_f_kart",
       "a3_weapons_f_kart_pistols_pistol_signal_f",
+      "a3data",
       "cba_xeh",
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -180,67 +181,114 @@ class CfgFunctions {
   class AGM_Core {
     class AGM_Core {
       file = "AGM_Core\functions";
+      class addActionEventHandler;
+      class addCameraEventHandler;
+      class addCustomEventHandler;
+      class addInfoDisplayEventHandler;
+      class addMapMarkerCreatedEventHandler;
+      class addInventoryDisplayLoadedEventHandler;
+      class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
+      class callCustomEventHandlers;
+      class callCustomEventHandlersGlobal;
       class canInteractWith;
+      class canUseWeapon;
+      class changeProjectileDirection;
+      class checkPBOs;
       class claim;
       class closeDialogIfTargetMoves;
+      class codeToLetter;
       class codeToString;
       class convertKeyCode;
       class disableUserInput;
-      class disableUserInput2;
       class displayText;
       class displayTextPicture;
       class displayTextStructured;
+      class doAnimation;
       class execRemoteFnc;
       class filter;
-      class findStringInString;
       class getBinocular;
+      class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
+      class getCopilotTurret;
+      class getDoorTurrets;
       class getMarkerType;
       class getNumberFromMissionSQM;
+      class getPitchBankYaw;
       class getStringFromMissionSQM;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
+      class getTargetObject;
+      class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
-      class getTurretCommander;
-      class getTurretGunner;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
       class goKneeling;
       class hadamardProduct;
+      class interpolateFromArray;
       class inTransitionAnim;
       class isAutoWind;
       class isEngineer;
+      class isEOD;
       class isInBuilding;
       class isMedic;
+      class isPlayer;
       class isTurnedOut;
+      class letterToCode;
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
       class numberToDigits;
       class numberToDigitsString;
+      class owned;
+      class player;
       class progressBar;
+      class readBooleanParameterFromModule;
+      class readNumericParameterFromModule;
+      class removeActionEventHandler;
+      class removeCameraEventHandler;
+      class removeCustomEventHandler;
+      class removeInfoDisplayEventHandler;
+      class removeInventoryDisplayLoadedEventHandler;
+      class removeMapMarkerCreatedEventHandler;
+      class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
+      class setCaptivityStatus;
       class setKeyDefault;
       class setName;
       class setParameter;
+      class setPitchBankYaw;
       class stringToColoredText;
       class subString;
       class toBin;
       class toBitmask;
       class toHex;
+      class toNumber;
     };
   };
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
+      class getChildren;
+      class getDisplayConfigName;
+      class logControls;
+      class logDisplays;
+      class monitor;
       class showUser;
+    };
+  };
+  class AGM_CuratorFix {
+    class AGM_CuratorFix {
+      file = "AGM_Core\functions\CuratorFix";
+      class addUnloadEventhandler;
+      class fixCrateContent;
     };
   };
 };
@@ -290,9 +338,34 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
+  class Man;
+  class CAManBase: Man {
+    // @todo
+    class UserActions {
+      class AGM_Fire {
+        displayName = "";
+        priority = -99;
+        available = 1;
+        radius = 2.5;
+        radiusView = 0;
+        position = "";
+        showWindow = 0;
+        showIn3D = 0;
+        onlyForPlayer = 1;
+        shortcut = "DefaultAction";
+        condition = "call AGM_Core_UserActionFireCondition";
+        statement = "call AGM_Core_UserActionFire";
+        userActionID = 100;
+      };
+    };
+  };
+
+  // += needs a non inherited entry in that class, otherwise it simply overwrites
+  //#include <DefaultItems.hpp>
+
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Check PBOs";
     function = "AGM_Core_fnc_moduleCheckPBOs";
@@ -323,7 +396,7 @@ class CfgVehicles {
   };
 
   class AGM_ModuleLSDVehicles: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "LSD Vehicles";
     function = "AGM_Core_fnc_moduleLSDVehicles";
@@ -335,25 +408,32 @@ class CfgVehicles {
 
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
-    author = "AGM";
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Core_MiscItems";
-    transportmaxmagazines = 9001;
-    transportmaxbackbacks = 0;
+    transportMaxMagazines = 9001;
     maximumload = 2000;
 
     class TransportWeapons {};
     class TransportMagazines {};
     class TransportItems {};
+    class TransportBackpacks {};
   };
 };
 
 class CfgWeapons {
-  class Rifle_Base_F;
+  class ItemCore;
+  class AGM_ItemCore: ItemCore {
+    type = 4096;//4;
+    detectRange = -1;
+    simulation = "ItemMineDetector";
+  };
 
+  class Rifle_Base_F;
   class AGM_FakePrimaryWeapon: Rifle_Base_F {
     discreteDistance[] = {};
     discreteDistanceInitIndex = 0;
     displayName = "";
+    picture = "";
     model = "";
     magazines[] = {"AGM_FakeMagazine"};
     scope = 2;
@@ -404,9 +484,30 @@ class AGM_Rsc_Control_Base {
   h = 0;
 };
 
-class AGM_Core_canInteractConditions {};
+class AGM_Core_canInteractConditions {
+  class AGM_Core_notOnMap {
+    condition = "!visibleMap";
+  };
+};
+
+class AGM_Core_Options {
+  class enableNumberHotkeys {
+    displayName = "$STR_AGM_Core_EnableNumberHotkeys";
+    default = 1;
+  };
+};
 
 #include <MainMenu.hpp>
 #include <MenuConfig.hpp>
 #include <ProgressScreen.hpp>
 #include <HintConfig.hpp>
+
+/*
+class RscControlsGroupNoScrollbars; 
+class RscAttributeInventory: RscControlsGroupNoScrollbars {
+  onSetFocus = "[_this,""RscAttributeInventory"",'CuratorCommon'] call (uinamespace getvariable ""BIS_fnc_initCuratorAttribute""); _this select 0 call AGM_CuratorFix_fnc_addUnloadEventhandler;";
+};
+*/
+
+#include <RscInfoType.hpp>
+#include <PickupFix.hpp>

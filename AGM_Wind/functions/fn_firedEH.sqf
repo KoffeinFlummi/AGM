@@ -5,20 +5,24 @@ _this spawn {
   _round = _this select 5;
 
   if !(local _unit) exitwith {};
-  if !(isPlayer _unit) exitwith {};
-  if !(_unit == player) exitwith {};
+  if !([_unit] call AGM_Core_fnc_isPlayer) exitwith {};
   if (_round isKindOf "GrenadeHand") exitWith {};
 
-  _coefficient = 0.7;
-  if (_round isKindOf "GrenadeCore") then {
-    _coefficient = 0.2;
-  };
-  if (_round isKindOf "RocketCore") then {
-    _coefficient = 0.35;
+  _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
+  _airFrictionWind = - _airFriction;
+
+  _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
+  if (_airFriction > 0 || {_simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+    // Do not correct for airDensity y airFriction is not logical on the first place
+    _airFriction = 0;
+    _airFrictionWind = 0.0007;
   };
 
-  // HUMIDITY
-  _round setVelocity ([velocity _round, {_this - _this * humidity * 0.2}] call AGM_Core_fnc_map);
+  // Additional dispersion
+   _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
+  // Powder temp effect
+  _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
+  [_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
 
   // WIND
   _time = time;
@@ -26,11 +30,10 @@ _this spawn {
     // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
     _deltaTime = time - _time;
 
-    _velocityNew = [
-      ((velocity _round) select 0) + _coefficient * (wind select 0) * _deltaTime,
-      ((velocity _round) select 1) + _coefficient * (wind select 1) * _deltaTime,
-      ((velocity _round) select 2)
-    ];
+    // See https://github.com/KoffeinFlummi/AGM/issues/996
+    _velocity = velocity _round;
+    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currentRelativeDensity - 1) * _airFriction * _deltaTime))
+                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currentRelativeDensity * _airFrictionWind * _deltaTime));
 
     _round setVelocity _velocityNew;
 

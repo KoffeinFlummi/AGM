@@ -24,15 +24,15 @@ if (_this == (vehicle _this)) then { // if the unit is the vehicle of the passed
 };
 if (isNull _draggedObject) exitWith {};  // If there is no dragged object exit now.
 
-[objNull, _draggedObject] call AGM_Core_fnc_claim;
+[objNull, _draggedObject, true] call AGM_Core_fnc_claim;
 
 _this setVariable ["AGM_isDragging", false];
 _this setVariable ["AGM_carriedItem", objNull, true];
 
 detach _draggedObject;
 _this forceWalk false;
+_this removeAction (_this getVariable ["AGM_Drag_ReleaseActionID", -1]);
 _draggedObject setDamage (damage _draggedObject);
-_draggedObject lock (_draggedObject getVariable ["AGM_lockStatus", 1]);
 
 _position = getPosATL _draggedObject;
 if (_position select 2 < 0) then {

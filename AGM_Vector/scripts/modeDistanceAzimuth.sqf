@@ -16,19 +16,19 @@ _ctrlVectorCenter ctrlSetText "\AGM_Vector\rsc\Vector_Center.paa";
 
 _time = -1;
 waitUntil {
-	if (time > _time + 0.5) then {
-		_direction = call AGM_Vector_getDirection;
-		_azimuth = _direction select 0;
+  if (time > _time + 0.5) then {
+    _direction = call AGM_Vector_getDirection;
+    _azimuth = _direction select 0;
 
-		_digits = _azimuth call AGM_Vector_convertDegree;
-		_ctrlDigit5 ctrlSetText (_digits select 0);
-		_ctrlDigit6 ctrlSetText (_digits select 1);
-		_ctrlDigit7 ctrlSetText (_digits select 2);
-		_ctrlDigit8 ctrlSetText (_digits select 3);
+    _digits = _azimuth call AGM_Vector_convertDegree;
+    _ctrlDigit5 ctrlSetText (_digits select 0);
+    _ctrlDigit6 ctrlSetText (_digits select 1);
+    _ctrlDigit7 ctrlSetText (_digits select 2);
+    _ctrlDigit8 ctrlSetText (_digits select 3);
 
-		_time = time;
-	};
-	!(AGM_vectorKey select 0) && {!(AGM_vectorKey select 1)}
+    _time = time;
+  };
+  !(AGM_vectorKey select 0) && {!(AGM_vectorKey select 1)}
 };
 
 _distance = call AGM_Vector_getDistance;

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -25,8 +25,8 @@ class CfgFunctions {
 class AGM_Core_Default_Keys {
   class speedLimiter {
     displayName = "$STR_AGM_SpeedLimiter";
-    condition = "player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
-    statement = "[_vehicle] call AGM_Vehicles_fnc_speedLimiter";
+    condition = "_player == driver _vehicle && {_vehicle isKindOf 'Car' || {_vehicle isKindOf 'Tank'}}";
+    statement = "[_player, _vehicle] call AGM_Vehicles_fnc_speedLimiter";
     key = 211;
     shift = 0;
     control = 0;
@@ -355,6 +355,11 @@ class CfgWeapons {
       magazineReloadTime = 0;
     };
     muzzles[] = {"AP"};
+  };
+
+  // comp RHS
+  class RHS_weap_M242BC: autocannon_30mm_CTWS {
+    muzzles[] = {"AP","HE"};
   };
 };
 

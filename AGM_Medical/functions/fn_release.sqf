@@ -2,10 +2,10 @@
  * Author: KoffeinFlummi
  *
  * Releases the given unit.
- * 
+ *
  * Argument:
  * 0: Unit to be released (Object)
- * 
+ *
  * Return value:
  * none
  */
@@ -33,10 +33,14 @@ _this spawn {
   detach _unit;
   player setVariable ["AGM_CanTreat", true, false];
 
+  player removeAction (player getVariable "AGM_Medical_ReleaseID");
+
   if (vehicle _unit != _unit) exitWith {};
 
   [-2, {
-    (_this select 0) switchMove DRAGGINGMOVE;
+    if (vehicle (_this select 0) == (_this select 0)) then {
+      (_this select 0) switchMove DRAGGINGMOVE;
+    };
     if ((_this select 1) getVariable "AGM_Unconscious") then {
       (_this select 1) switchMove DRAGGEDMOVE;
     };

@@ -1,10 +1,13 @@
 // by commy2
 
-_vehicle = _this select 0;
-_index = _this select 1;
+private ["_player", "_vehicle", "_index"];
 
-player action [
-	["GetInCargo", "MoveToCargo"] select (vehicle player == _vehicle),
-	_vehicle,
-	_index
+_player = _this select 0;
+_vehicle = _this select 1;
+_index = AGM_Interaction_MenuData select 0;
+
+_player action [
+  ["GetInCargo", "MoveToCargo"] select (vehicle _player == _vehicle),
+  _vehicle,
+  _index
 ];

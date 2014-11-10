@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    requiredAddons[] = {AGM_Core};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -21,17 +21,19 @@ class CfgFunctions {
   };
 };
 
-class Extended_PostInit_EventHandlers {
-  class AGM_Reload {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Reload\clientInit.sqf'";
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_AmmoIndicatorReload {
+      clientTake = "if (_this select 0 == call AGM_Core_fnc_player && {(_this select 1) in [uniformContainer (_this select 0), vestContainer (_this select 0), backpackContainer (_this select 0)]} && {_this select 2 == currentMagazine (_this select 0)}) then {[_this select 0, currentWeapon (_this select 0), currentMuzzle (_this select 0), currentMagazine (_this select 0), true] call AGM_Reload_fnc_checkAmmo};";
+    };
   };
 };
 
 class AGM_Core_Default_Keys {
   class checkAmmo {
     displayName = "$STR_AGM_Reload_checkAmmo";
-    condition = "player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}";
-    statement = "[currentWeapon _vehicle, _vehicle, false] call AGM_Reload_fnc_checkAmmo";
+    condition = "(_player == _vehicle || {_vehicle isKindOf 'StaticWeapon'}) && {currentWeapon _vehicle != ''}";
+    statement = "[_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, false] call AGM_Reload_fnc_checkAmmo";
     key = 19;
     shift = 0;
     control = 1;
@@ -42,7 +44,7 @@ class AGM_Core_Default_Keys {
 class CfgActions {
   class LoadMagazine;
   class LoadEmptyMagazine : LoadMagazine {
-    show = 0;
+    showWindow = 0;
     textDefault = "";
   };
 };

@@ -10,8 +10,7 @@
  * none
  */
 
-#define BLOODBAGTIMEMEDIC 20
-#define BLOODBAGTIMENONMEDIC 30
+#define BLOODBAGTIME 15
 #define BLOODBAGHEAL 0.7
 
 // DETERMINE IF UNIT IS MEDIC
@@ -22,9 +21,9 @@ if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}
 _this spawn {
   _unit = _this select 0;
 
-  _bloodbagtime = BLOODBAGTIMENONMEDIC;
-  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
-    _bloodbagtime = BLOODBAGTIMEMEDIC;
+  _bloodbagtime = BLOODBAGTIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _bloodbagtime = _bloodbagtime * AGM_Medical_CoefNonMedic;
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
@@ -35,6 +34,7 @@ _this spawn {
   AGM_Medical_bloodbagCallback = {
     _unit = _this select 0;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -44,9 +44,9 @@ _this spawn {
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
       if (_unit == player) then {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenuSelf;
+        [1, call AGM_Core_fnc_player, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       } else {
-        "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+        [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
       };
     };
   };

@@ -16,6 +16,9 @@
 	Example:
 		_vehicleLoaded = [_truck] call AGM_Logistics_fnc_hasLoadedItems;
 */
+
+private ["_result", "_vehicle"];
+
 _result = false;
 _vehicle = _this select 0;
 
@@ -23,6 +26,12 @@ _vehicle = _this select 0;
 _items = _vehicle getVariable "AGM_Logistics_loadedItems";
 if (isNil "_items") then {
 	switch (true) do {
+		/*
+		"B_Truck_01_transport_F"
+		"O_Truck_02_transport_F"
+		"I_Truck_02_transport_F"
+		"O_Truck_03_transport_F"
+		*/
 		case (_vehicle isKindOf "Car_F") : {
 			[_vehicle] call compile preprocessFileLineNumbers "\AGM_Logistics\scripts\itemsCar.sqf";
 		};

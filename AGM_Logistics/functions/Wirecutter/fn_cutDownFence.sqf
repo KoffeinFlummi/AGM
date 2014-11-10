@@ -15,7 +15,7 @@ if !([player] call AGM_Core_fnc_isEngineer) then {
 	_t = _t + 5;
 };
 
-player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+[player, "AinvPknlMstpSnonWnonDr_medic5", 0] call AGM_Core_fnc_doAnimation;
 
 if (_t > 4.5) then {
 	playSound "AGM_wirecutter_sound_long";

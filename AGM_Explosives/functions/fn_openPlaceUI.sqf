@@ -15,19 +15,44 @@
 	Example:
 		[player] call AGM_Explosives_fnc_openPlaceUI;
 */
-private ["_unit","_mags", "_item", "_index", "_listIDC"];
+private ["_unit","_mags", "_item", "_index", "_actions"];
 _unit = _this select 0;
-
-_listIDC = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place", "private ['_triggerTypes', '_mag'];_mag=lbData [8866, lbCurSel 8866];_triggerTypes = [_mag] call AGM_Explosives_fnc_TriggerType;if ({_x} count _triggerTypes > 1) then {[_mag] call AGM_Explosives_fnc_openTriggerSelectionUI;}else{if(_triggerTypes select 1)then{[_mag] call AGM_Explosives_fnc_openTimerSetUI;}else{[player, _mag] call AGM_Explosives_fnc_SetupExplosive;closeDialog 0;};};"] call AGM_Interaction_fnc_openSelectMenu;
+call AGM_Explosives_fnc_Place_Cancel;
 
 _mags = magazines _unit;
+_list = [];
+_itemCount = [];
 {
 	_item = ConfigFile >> "CfgMagazines" >> _x;
 	if (getNumber(_item >> "AGM_Placeable") == 1) then {
-		_index = lbAdd [_listIDC, getText(_item >> "displayName")];
-		lbSetData [_listIDC, _index, _x];
-		lbSetPicture [_listIDC, _index, getText(_item >> "picture")];
+		_index = _list find _item;
+		if (_index != -1) then {
+			_itemCount set [_index, (_itemCount select _index) + 1];
+		} else {
+			_list pushBack _item;
+			_itemCount pushBack 1;
+		};
 	};
-} count _mags;
+} forEach _mags;
+_actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place"] call AGM_Interaction_fnc_prepareSelectMenu;
+{
+	_actions = [
+		_actions,
+		format [getText(_x >> "displayName") + " (%1)", _itemCount select _foreachIndex],
+		getText(_x >> "picture"),
+		configName _x
+	] call AGM_Interaction_fnc_AddSelectableItem;
+} foreach _list;
 
-lbSetCurSel [_listIDC, 0];
+[
+	_actions,
+	{
+		[_this] call AGM_Explosives_fnc_openTriggerSelectionUI;
+	},
+	{
+		call AGM_Interaction_fnc_hideMenu;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
+			"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+		};
+	}
+] call AGM_Interaction_fnc_openSelectMenu;

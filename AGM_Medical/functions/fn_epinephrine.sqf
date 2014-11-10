@@ -10,8 +10,7 @@
  * none
  */
 
-#define EPINEPHRINETIMEMEDIC 8
-#define EPINEPHRINETIMENONMEDIC 14
+#define EPINEPHRINETIME 7
 
 // DETERMINE IF UNIT IS MEDIC
 if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}) exitWith {
@@ -21,11 +20,9 @@ if !(([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_AllowNonMedics > 0}
 _this spawn {
   _unit = _this select 0;
 
-  _epinephrinetime = 0;
-  if (([player] call AGM_Medical_fnc_isMedic) or {AGM_Medical_PunishNonMedics == 0}) then {
-    _epinephrinetime = EPINEPHRINETIMEMEDIC;
-  } else {
-    _epinephrinetime = EPINEPHRINETIMENONMEDIC;
+  _epinephrinetime = EPINEPHRINETIME;
+  if !([player] call AGM_Medical_fnc_isMedic) then {
+    _epinephrinetime = _epinephrinetime * AGM_Medical_CoefNonMedic;
   };
 
   player playMoveNow "AinvPknlMstpSnonWnonDnon_medic1"; // healing animation
@@ -36,6 +33,7 @@ _this spawn {
   AGM_Medical_epinephrineCallback = {
     _unit = _this select 0;
 
+    player playMoveNow "AmovPknlMstpSrasWrflDnon";
     player setVariable ["AGM_CanTreat", true, false];
 
     if (player distance _unit > 4 or vehicle player != player or damage player >= 1 or (player getVariable "AGM_Unconscious")) exitWith {};
@@ -43,7 +41,7 @@ _this spawn {
     [_unit] call AGM_Medical_fnc_wakeUp;
 
     if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", false]) then {
-      "AGM_Medical" call AGM_Interaction_fnc_openMenu;
+      [0, cursorTarget, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
     };
   };
 

@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -19,22 +19,46 @@ class CfgFunctions {
       file = "\AGM_Disposable\functions";
       class replaceATWeapon;
       class takeLoadedATWeapon;
+      class updateInventoryDisplay;
     };
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_PostInit_EventHandlers {
+  class AGM_Disposable {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Disposable\clientInit.sqf'";
+  };
+};
+
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class BWA3_FiredReplaceATWeapon {
-      Fired = "if (local (_this select 0) && {getText (configFile >> 'CfgWeapons' >> _this select 1 >> 'AGM_UsedTube') != ''}) then {_this call AGM_Disposable_fnc_replaceATWeapon}";
+    class AGM_Disposable_ReplaceFiredATWeapon {
+      firedBIS = "if (local (_this select 0)) then {_this call AGM_Disposable_fnc_replaceATWeapon};";
+    };
+  };
+};
+
+// handle preloaded missile
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Disposable_UpdateInventoryDisplay {
+      init = "if (local (_this select 0)) then {_this spawn {[_this select 0, secondaryWeapon (_this select 0)] call AGM_Disposable_fnc_takeLoadedATWeapon}};";
     };
   };
 };
 
 class Extended_Take_EventHandlers {
   class CAManBase {
-    class AGM_TakeLoadedATWeapon {
-      Take = "if (getText (configFile >> 'CfgWeapons' >> _this select 2 >> 'AGM_LauncherClass') != '') then {_this call AGM_Disposable_fnc_takeLoadedATWeapon}";
+    class AGM_Disposable_UpdateInventoryDisplay {
+      take = "if (local (_this select 0)) then {[_this select 0, _this select 2] call AGM_Disposable_fnc_takeLoadedATWeapon; [_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
+    };
+  };
+};
+
+class Extended_Put_EventHandlers {
+  class CAManBase {
+    class AGM_Disposable_UpdateInventoryDisplay {
+      put = "if (local (_this select 0)) then {[_this select 0, findDisplay 602] call AGM_Disposable_fnc_updateInventoryDisplay};";
     };
   };
 };
@@ -42,33 +66,38 @@ class Extended_Take_EventHandlers {
 class CfgWeapons {
   class Launcher_Base_F;
   class launch_NLAW_F: Launcher_Base_F {
-    AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the already fired launcher.
+    author = "$STR_AGM_Core_AGMTeam";
+    AGM_UsedTube = "AGM_launch_NLAW_Used_F";      // The class name of the used tube.
+    magazines[] = {"AGM_PreloadedMissileDummy"};  // The dummy magazine
   };
-  class AGM_launch_NLAW_Loaded_F: launch_NLAW_F { // This is a loaded launcher. If you put this in a crate or a vehicles cargo it will be converted to the real launcher and a magazine.
-    AGM_LauncherClass = "launch_NLAW_F";          // Launcher you get when picking up the loaded class
-    AGM_LauncherMagazine = "NLAW_F";              // Magazine you get when picking up the loaded launcher, note: the magazine has to have a mass of 0 until BIS adds a command to give a magazine to a weapon directly.
-  };
-  class AGM_launch_NLAW_Used_F: launch_NLAW_F {
-    //displayName = "";       // @todo String table
-    //descriptionShort = "";  // @todo String table
-    magazines[] = {"AGM_UsedTube_F"};              // This will disable the used launcher class from being fired again.
+  class AGM_launch_NLAW_Used_F: launch_NLAW_F {   // the used tube should be a sub class of the disposable launcher
+    author = "$STR_AGM_Core_AGMTeam";
+    displayName = "$STR_AGM_Disposable_UsedTube";
+    descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
+    magazines[] = {"AGM_UsedTube_F"};             // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
+    weaponPoolAvailable = 0;
   };
 };
 
 class CfgMagazines {
-  class CA_LauncherMagazine;
-  class NLAW_F: CA_LauncherMagazine {
-    mass = 0;                                     // Unfortunately, the magazine has to have a mass of 0 until BIS adds a command to give a magazine to a weapon directly.
+  class NLAW_F;
+  class AGM_PreloadedMissileDummy: NLAW_F {              // The dummy magazine
+    author = "$STR_AGM_Core_AGMTeam";
+    scope = 1;
+    displayName = "$STR_AGM_Disposable_PreloadedMissileDummy";
+    picture = "\AGM_Core\UI\blank_CO.paa";
+    weaponPoolAvailable = 0;
+    mass = 0;
   };
   class AGM_UsedTube_F: NLAW_F {
-    displayname = "Used Tube";
-    descriptionshort = "Used disposable rocket launcher";
-    count = 0;
+    author = "$STR_AGM_Core_AGMTeam";
+    displayName = "$STR_AGM_Disposable_UsedTube";
+    descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
     displayNameShort = "-";
+    count = 0;
+    weaponPoolAvailable = 0;
     modelSpecial = "";
   };
 };
-
-//@todo edit the weapon crates and vehicle cargo inventories. The loadout of the soldiers can stay as is.

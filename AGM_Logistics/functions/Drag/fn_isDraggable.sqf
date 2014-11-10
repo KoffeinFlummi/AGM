@@ -33,4 +33,4 @@ if ((typeOf _targetObject) isKindOf "StaticWeapon") then {
 };
 if !(_result) exitWith {_result};
 _result = !(_unit call AGM_Drag_fnc_isDraggingObject) AND ((_unit distance _targetObject) < 3);
-_result
+_result && {!([_targetObject] call AGM_Core_fnc_owned)}

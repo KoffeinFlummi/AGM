@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.10;
     requiredAddons[] = {AGM_Core};
-    version = "0.92";
-    versionStr = "0.92";
-    versionAr[] = {0,92,0};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -34,8 +34,12 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+/*class CfgInventoryGlobalVariable {
+  maxSoldierLoad = 1200;
+};*/
+
 class CfgFatigue {
-  MinValue1 = 0.1;
+  MinValue1 = 0.2;
   MinValue2 = 0.8;
   NormalRunSpeed = 7.2;
   TiredRunSpeedLimit = 0.8;
@@ -44,10 +48,6 @@ class CfgFatigue {
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
 };
-
-/*class CfgInventoryGlobalVariable {
-  maxSoldierLoad = 1200;
-};*/
 
 class CfgSounds {
   class AGM_Heartbeat {
@@ -64,18 +64,7 @@ class AGM_Core_Options {
   };
 };
 
-//DEFAULT
-/*
-MinValue1 = 0.1;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 1;
-FrequencyMin = 0.2;
-FrequencyMax = 1.0;
-TotalLoadCoef = 1.1;
-MaxDuty = 10;
-*/
-
+// leaving this for compatibility
 class CfgVehicles {
   class Module_F;
   class AGM_ModuleFatigue: Module_F {
@@ -149,7 +138,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
 
     class AmovPercMwlkSlowWrflDf: AmovPercMstpSlowWrflDnon {
-      //speed = "1.3*0.206897";
+      speed = 0.3; //0.206897;
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };
