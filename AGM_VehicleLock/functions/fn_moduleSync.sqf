@@ -1,20 +1,20 @@
 /*
-	Name: AGM_VehicleLock_fnc_moduleSync
-	
-	Author: Pabst Mirror
-	
-	Description:
-		Function for sync module.  Assigns keys for all synced vehicles to any players that are synced.
-	
-	Parameters:
-		0: OBJECT - logic
-		1: ARRAY - synced objects
-	
-	Returns:
-		Nothing
-	
-	Example:
-		called from module
+  Name: AGM_VehicleLock_fnc_moduleSync
+
+  Author: Pabst Mirror
+
+  Description:
+    Function for sync module.  Assigns keys for all synced vehicles to any players that are synced.
+
+  Parameters:
+    0: OBJECT - logic
+    1: ARRAY - synced objects
+
+  Returns:
+    Nothing
+
+  Example:
+    called from module
 */
 _this spawn {
   private ["_logic","_syncedObjects","_listOfVehicles"];

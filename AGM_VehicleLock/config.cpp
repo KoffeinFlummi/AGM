@@ -37,7 +37,7 @@ class CfgMagazines {
   class CA_Magazine;
   class AGM_magazine_customKey: CA_Magazine {
     picture = "\AGM_vehicleLock\ui\keyBlack.paa";
-    displayName = "AGM Vehicle Key";	 //!!!CANNONT be localized!!!, because it is used as part of the magazineDetail string
+    displayName = "AGM Vehicle Key";   //!!!CANNONT be localized!!!, because it is used as part of the magazineDetail string
     descriptionShort = "$STR_AGM_Vehicle_Item_Custom_Description";
   };
 };
@@ -98,7 +98,7 @@ class CfgVehicles {
     function = "AGM_VehicleLock_fnc_moduleInit";
     scope = 2;
     isGlobal = 1;
-    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";	//todo
+    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo
     functionPriority = 0;
     class Arguments {
       class SideKeysAssignment {
@@ -161,7 +161,7 @@ class CfgVehicles {
     function = "AGM_VehicleLock_fnc_moduleSync";
     scope = 2;
     isGlobal = 1;
-    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";	//todo
+    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo
     functionPriority = 0;
 
     class Arguments {};
