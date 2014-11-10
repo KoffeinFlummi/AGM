@@ -75,6 +75,7 @@ class CfgVehicles {
           priority = 2.5;
           icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
           hotkey = "E";
+          enableInside = 1;
         };
         class AGM_RemoveEarplugs {
           displayName = "$STR_AGM_Hearing_Earbuds_Off";
@@ -84,6 +85,7 @@ class CfgVehicles {
           priority = 2.5;
           icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
           hotkey = "E";
+          enableInside = 1;
         };
       };
     };
