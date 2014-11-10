@@ -182,6 +182,7 @@ class CfgFunctions {
     class AGM_Core {
       file = "AGM_Core\functions";
       class addActionEventHandler;
+      class addActionMenuEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
       class addInfoDisplayEventHandler;
@@ -252,6 +253,7 @@ class CfgFunctions {
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
+      class removeActionMenuEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
       class removeInfoDisplayEventHandler;
