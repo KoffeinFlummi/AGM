@@ -249,6 +249,7 @@ class CfgFunctions {
       class numberToDigitsString;
       class owned;
       class player;
+      class playerSide;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
