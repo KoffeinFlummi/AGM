@@ -264,7 +264,6 @@ class CfgFunctions {
       class sanitizeString;
       class setCaptivityStatus;
       class setKeyDefault;
-      class setName;
       class setParameter;
       class setPitchBankYaw;
       class stringToColoredText;
@@ -273,6 +272,16 @@ class CfgFunctions {
       class toBitmask;
       class toHex;
       class toNumber;
+    };
+  };
+  class AGM_Identity {
+    class AGM_Identity {
+      file = "AGM_Core\functions\Identity";
+      class getName;
+      class getNameSide;
+      //class getRank;
+      class setName;
+      class setRank;
     };
   };
   class AGM_Debug {
@@ -312,21 +321,22 @@ class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
     disableModuload = true;
+    clientInit = "[call AGM_Core_fnc_player] spawn AGM_Identity_fnc_setName;";
   };
 };
 
+// Identity
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+      init = "if (local (_this select 0)) then {_this spawn AGM_Identity_fnc_setName};";
     };
   };
 };
-
 class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
+      local = "if (_this select 1) then {_this spawn AGM_Identity_fnc_setName};";
     };
   };
 };

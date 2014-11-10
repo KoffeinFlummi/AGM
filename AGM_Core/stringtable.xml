@@ -432,5 +432,10 @@
       <Spanish>Desactivar menú de mando</Spanish>
       <Hungarian>Parancsnoki menü kikapcsolása</Hungarian>
     </Key>
+
+    <Key ID="STR_AGM_Core_Unknown">
+      <English>Unknown</English>
+      <German>Unbekannt</German>
+    </Key>
   </Package>
 </Project>
