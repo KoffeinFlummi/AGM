@@ -36,6 +36,7 @@ class CfgVehicles {
         priority = -2;
         icon = "AGM_MagazineRepack\UI\repack_ca.paa";
         hotkey = "R";
+        enableInside = 1;
       };
     };
   };

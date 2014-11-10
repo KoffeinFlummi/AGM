@@ -31,39 +31,78 @@ class CfgVehicles {
   };
 
   class Air;
-  // Repair helicopters
   class Helicopter: Air {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{2, 2.5, 0.25}, {-2, 2.5, 0.25}};
+    AGM_FastRoping = 0;
+    AGM_FastRoping_Positions[] = {};
     class AGM_SelfActions {
-      class AGM_FastRoping_deployRopes {
+      class AGM_DeployRopes {
         displayName = "Deploy Ropes";
-        distance = 4;
-        condition = "!(AGM_Interaction_Target getVariable ['AGM_RopesDeployed', False]) and (getPos AGM_Interaction_Target select 2) > 10 and (getNumber (configFile >> 'CfgVehicles' >> typeOf AGM_Interaction_Target >> 'AGM_FastRoping')) == 1";
-        statement = "[AGM_Interaction_Target] call AGM_FastRoping_fnc_deployRopes";
+        enableInside = 1;
+        condition = "!((vehicle _player) getVariable ['AGM_RopesDeployed', False]) and (getPos (vehicle _player) select 2) > 5 and (getNumber (configFile >> 'CfgVehicles' >> typeOf (vehicle _player) >> 'AGM_FastRoping')) == 1";
+        statement = "[(vehicle _player)] call AGM_FastRoping_fnc_deployRopes";
         showDisabled = 0;
         priority = 1;
         icon = "";
       };
-      class AGM_FastRoping_fastRope {
+      class AGM_FastRope {
         displayName = "Fast Rope";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getVariable ['AGM_RopesDeployed', False])";
-        statement = "[call AGM_Core_fnc_player, AGM_Interaction_Target] call AGM_FastRoping_fnc_fastRope";
+        enableInside = 1;
+        condition = "((vehicle _player) getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity (vehicle _player)) < 4)";
+        statement = "[call AGM_Core_fnc_player, (vehicle _player)] call AGM_FastRoping_fnc_fastRope";
         showDisabled = 0;
         priority = 1;
         icon = "";
       };
-      class AGM_FastRoping_cutRopes {
+      class AGM_CutRopes {
         displayName = "Cut Ropes";
-        distance = 4;
-        condition = "(AGM_Interaction_Target getVariable ['AGM_RopesDeployed', False])";
-        statement = "[AGM_Interaction_Target] call AGM_FastRoping_fnc_cutRopes";
+        enableInside = 1;
+        condition = "((vehicle _player) getVariable ['AGM_RopesDeployed', False])";
+        statement = "[(vehicle _player)] call AGM_FastRoping_fnc_cutRopes";
         showDisabled = 0;
         priority = 1;
         icon = "";
       };
     };
+  };
+
+
+  class Helicopter_Base_F;
+  class Helicopter_Base_H: Helicopter_Base_F {};
+
+  // Ghosthawk
+  class Heli_Transport_01_base_F: Helicopter_Base_H {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
+  };
+
+  // Chinook
+  class B_Heli_Transport_03_base_F: Helicopter_Base_H {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  };
+
+  // Wildcat
+  class I_Heli_light_03_base_F: Helicopter_Base_F {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
+  };
+
+  // Merlin
+  class Heli_Transport_02_base_F: Helicopter_Base_H {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{1.4, 2.5, 0.25}, {-1.2, 2.5, 0.25}};
+  };
+
+  // Kasatka
+  class Heli_Light_02_base_F: Helicopter_Base_H {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{1.4, 1.4, 0.05}, {-1.4, 1.4, 0.05}};
+  };
+
+  // Kajman
+  class Heli_Attack_02_base_F: Helicopter_Base_F {
+    AGM_FastRoping = 1;
+    AGM_FastRoping_Positions[] = {{1.4, 1.4, 0}, {-1.2, 1.4, 0}};
   };
 };
 

@@ -11,7 +11,7 @@ if (_state) then {
 	if (_unit getVariable ["AGM_isSurrender", false]) exitWith {};
 
 	_unit setVariable ["AGM_isSurrender", true, true];
-	[_unit, "AGM_Surrendered", true] call AGM_Captives_fnc_setCaptivityStatus;
+	[_unit, "AGM_Surrendered", true] call AGM_Core_fnc_setCaptivityStatus;
 
 	_unit spawn {
 		// fix for lowered rifle animation glitch
@@ -36,7 +36,7 @@ if (_state) then {
 			_this playMoveNow "unconscious";
 		};
 
-		[_this, "AGM_Surrendered", false] call AGM_Captives_fnc_setCaptivityStatus;
+		[_this, "AGM_Surrendered", false] call AGM_Core_fnc_setCaptivityStatus;
 
 		if (isPlayer _this) then {showHUD true};
 	};

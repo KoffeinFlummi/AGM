@@ -686,6 +686,23 @@
       <Hungarian>AH-6 Little Bird</Hungarian>
       <Italian>AH-6 Little Bird</Italian>
     </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_Name">
+      <English>CH-47I Chinook</English>
+      <German>CH-47I Chinook</German>
+      <Spanish>CH-47I Chinook</Spanish>
+      <Polish>CH-47I Chinook</Polish>
+      <Czech>CH-47I Chinook</Czech>
+      <French>CH-47I Chinook</French>
+      <Russian>CH-47I Chinook</Russian>
+      <Portuguese>CH-47I Chinook</Portuguese>
+      <Hungarian>CH-47I Chinook</Hungarian>
+      <Italian>CH-47I Chinook</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name">
+      <English>CH-47I Chinook (unarmed)</English>
+      <German>CH-47I Chinook (unbewaffnet)</German>
+      <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
+    </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
       <English>A-10D Thunderbolt II</English>
       <German>A-10D Thunderbolt II</German>
@@ -793,6 +810,18 @@
       <Portuguese>Yak-130</Portuguese>
       <Hungarian>Jak-130</Hungarian>
       <Italian>Yak-130</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Light_01_civil_Name">
+      <English>MD 500</English>
+      <German>MD 500</German>
+      <Spanish>MD 500</Spanish>
+      <Polish>MD 500</Polish>
+      <Czech>MD 500</Czech>
+      <French>MD 500</French>
+      <Russian>MD 500</Russian>
+      <Portuguese>MD 500</Portuguese>
+      <Hungarian>MD 500</Hungarian>
+      <Italian>MD 500</Italian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_SLAM_Name">
       <English>M4A1 SLAM</English>

@@ -20,6 +20,7 @@ class CfgFunctions {
       class earRinging;
       class explosionNear;
       class firedNear;
+      class hasEarPlugsIn;
       class putInEarPlugs;
       class removeEarPlugs;
     };
@@ -68,21 +69,23 @@ class CfgVehicles {
       class AGM_Equipment {
         class AGM_PutInEarplugs {
           displayName = "$STR_AGM_Hearing_Earbuds_On";
-          condition = "!(_player getVariable ['AGM_hasEarPlugsIn', false]) && {'AGM_EarBuds' in items _player}";
+          condition = "!([_player] call AGM_Hearing_fnc_hasEarPlugsIn) && {'AGM_EarBuds' in items _player}";
           statement = "[_player] call AGM_Hearing_fnc_putInEarPlugs";
           showDisabled = 0;
           priority = 2.5;
           icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
           hotkey = "E";
+          enableInside = 1;
         };
         class AGM_RemoveEarplugs {
           displayName = "$STR_AGM_Hearing_Earbuds_Off";
-          condition = "_player getVariable ['AGM_hasEarPlugsIn', false]";
+          condition = "[_player] call AGM_Hearing_fnc_hasEarPlugsIn";
           statement = "[_player] call AGM_Hearing_fnc_removeEarPlugs";
           showDisabled = 0;
           priority = 2.5;
           icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
           hotkey = "E";
+          enableInside = 1;
         };
       };
     };

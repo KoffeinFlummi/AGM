@@ -1,24 +1,24 @@
 /*
-	Name: AGM_VehicleLock_fnc_lockpick
-	
-	Author: Pabst Mirror
-	
-	Description:
-		Handles lockpick functionality from action menu.
-	
-	Parameters:
-		0: OBJECT - unit
-		1: OBJECT - vehicle
-		2: STRING - function type
-			"canLockpick": returns BOOL if lockpick is possible
-			"startLockpick": starts the process
-			"finishLockpick": on completions, opens the lock
-			
-	Returns:
-		BOOL
-	
-	Example:
-		[player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick
+  Name: AGM_VehicleLock_fnc_lockpick
+
+  Author: Pabst Mirror
+
+  Description:
+    Handles lockpick functionality from action menu.
+
+  Parameters:
+    0: OBJECT - unit
+    1: OBJECT - vehicle
+    2: STRING - function type
+      "canLockpick": returns BOOL if lockpick is possible
+      "startLockpick": starts the process
+      "finishLockpick": on completions, opens the lock
+
+  Returns:
+    BOOL
+
+  Example:
+    [player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick
 */
 private ["_unit","_veh","_funcType","_vehLockpickStrenth","_returnValue"];
 

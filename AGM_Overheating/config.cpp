@@ -29,7 +29,7 @@ class CfgFunctions {
 
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_Overheating {
+    class AGM_Overheating_Overheat {
       clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Overheating_fnc_overheat};";
     };
   };
@@ -37,7 +37,7 @@ class Extended_FiredBIS_EventHandlers {
 
 class Extended_Take_EventHandlers {
   class CAManBase {
-    class AGM_UnjamReload {
+    class AGM_Overheating_UnjamReload {
       clientTake = "if (_this select 0 == call AGM_Core_fnc_player && {(_this select 1) in [uniformContainer (_this select 0), vestContainer (_this select 0), backpackContainer (_this select 0)]} && {_this select 2 == currentMagazine (_this select 0)}) then {_vehicle = vehicle (_this select 0); [_vehicle, currentWeapon _vehicle, true] call AGM_Overheating_fnc_clearJam};";
     };
   };

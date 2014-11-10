@@ -182,16 +182,19 @@ class CfgFunctions {
     class AGM_Core {
       file = "AGM_Core\functions";
       class addActionEventHandler;
+      class addActionMenuEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
       class addInfoDisplayEventHandler;
       class addMapMarkerCreatedEventHandler;
+      class addInventoryDisplayLoadedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
       class canInteractWith;
+      class canUseWeapon;
       class changeProjectileDirection;
       class checkPBOs;
       class claim;
@@ -207,6 +210,7 @@ class CfgFunctions {
       class execRemoteFnc;
       class filter;
       class getBinocular;
+      class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
       class getCopilotTurret;
@@ -249,13 +253,16 @@ class CfgFunctions {
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
+      class removeActionMenuEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
       class removeInfoDisplayEventHandler;
+      class removeInventoryDisplayLoadedEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
       class revertKeyCodeLocalized;
       class sanitizeString;
+      class setCaptivityStatus;
       class setKeyDefault;
       class setName;
       class setParameter;
@@ -360,7 +367,7 @@ class CfgVehicles {
 
   class Module_F;
   class AGM_ModuleCheckPBOs: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Check PBOs";
     function = "AGM_Core_fnc_moduleCheckPBOs";
@@ -391,7 +398,7 @@ class CfgVehicles {
   };
 
   class AGM_ModuleLSDVehicles: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "LSD Vehicles";
     function = "AGM_Core_fnc_moduleLSDVehicles";
@@ -403,7 +410,7 @@ class CfgVehicles {
 
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
-    author = "AGM";
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Core_MiscItems";
     transportMaxMagazines = 9001;
     maximumload = 2000;

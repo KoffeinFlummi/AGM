@@ -1,21 +1,21 @@
 /*
-	Name: AGM_VehicleLock_fnc_addKeyForVehicle
-	
-	Author: Pabst Mirror
-	
-	Description:
-		Adds a key to a unit that will open a vehicle
-	
-	Parameters:
-		0: OBJECT - unit
-		1: OBJECT - vehicle
-		2: BOOL - custom key (true: custom key  -  false: side key)
-	
-	Returns:
-		Nothing
-	
-	Example:
-		[bob, car1, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
+  Name: AGM_VehicleLock_fnc_addKeyForVehicle
+
+  Author: Pabst Mirror
+
+  Description:
+    Adds a key to a unit that will open a vehicle
+
+  Parameters:
+    0: OBJECT - unit
+    1: OBJECT - vehicle
+    2: BOOL - custom key (true: custom key  -  false: side key)
+
+  Returns:
+    Nothing
+
+  Example:
+    [bob, car1, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
 */
 
 #define CUSTOM_KEY_CLASSNAME "AGM_magazine_customKey"

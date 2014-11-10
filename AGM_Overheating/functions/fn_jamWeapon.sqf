@@ -1,6 +1,6 @@
 // based on KK_fnc_playerWeaponMulfunction from KillzoneKid
 
-private ["_unit", "_weapon", "_jammedWeapons", "_condition", "_statement", "_actionID"];
+private ["_unit", "_weapon", "_jammedWeapons"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
@@ -36,13 +36,16 @@ _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 AGM_Overheating_knowAboutJam = false;
 
 if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
+  private ["_condition", "_statement", "_condition2", "_statement2", "_actionID"];
+
   _condition = {
-    _this select 1 == vehicle (_this select 1)
-    && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ['AGM_Overheating_jammedWeapons', []])}
+    [_this select 1] call AGM_Core_fnc_canUseWeapon
+    && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_Overheating_jammedWeapons", []])}
+    && {!(currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []]))}
   };
 
   _statement = {
-    playSound3D ['a3\sounds_f\weapons\Other\dry9.wss', _this select 0];
+    playSound3D ["a3\sounds_f\weapons\Other\dry9.wss", _this select 0];
 
     if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {(_this select 1) ammo currentWeapon (_this select 1) > 0}) then {
       [localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
@@ -50,7 +53,15 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
     };
   };
 
-  _actionID = [_unit, "DefaultAction", _condition, _statement] call AGM_Core_fnc_addActionEventHandler;
+  _condition2 = {
+    currentWeapon (_this select 1) in ((_this select 1) getVariable ["AGM_Overheating_jammedWeapons", []])
+  };
+
+  _statement2 = {
+    [_this select 1, currentWeapon (_this select 1), false] call AGM_Overheating_fnc_clearJam;
+  };
+
+  _actionID = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_Overheating_UnjamWeapon"], "DefaultAction", _condition, _statement, _condition2, _statement2] call AGM_Core_fnc_addActionMenuEventHandler;//
 
   _unit setVariable ["AGM_JammingActionID", _actionID];
 };

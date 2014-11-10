@@ -29,28 +29,18 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_Parachute_Altimeter {
-      clientInit = "_this call compile preprocessFileLineNumbers '\AGM_Parachute\initActions.sqf';";
-    };
-  };
-};
-
-/*class AGM_Core_Default_Keys {
-	class showAltimeter {
+class AGM_Core_Default_Keys {
+	class showAltimeterNew {
 		displayName = "$STR_AGM_Parachute_showAltimeter";
-		condition = "(alive _player) && {'AGM_Altimeter' in assignedItems _player}";
-		statement = "[_player] call AGM_Parachute_fnc_showAltimeter;";
-		conditionUp = "true";
-		statementUp = "call AGM_Parachute_fnc_hideAltimeter;";
+		condition = "'AGM_Altimeter' in assignedItems _player";
+		statement = "if (isNull (missionNamespace getVariable ['AGM_Parachute_AltimeterFnc', scriptNull])) then {[_player] call AGM_Parachute_fnc_showAltimeter} else {call AGM_Parachute_fnc_hideAltimeter}";
 		exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
-		key = 35;
+		key = 24;
 		shift = 0;
-		control = 1;
+		control = 0;
 		alt = 0;
 	};
-};*/
+};
 
 #include "RscTitles.hpp"
 

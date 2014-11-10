@@ -11,12 +11,12 @@ _this spawn {
   _time = _overheat select 1;
 
   // Get physical parameters
-  _barrelMass = 0.50 * (getNumber (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "weight") / 22.0) max 1.0;
+  _barrelMass = 0.50 * (getNumber (configFile >> "CfgWeapons" >> _weapon >> "WeaponSlotsInfo" >> "mass") / 22.0) max 1.0;
 
   // Calculate cooling
   _temperature = [_temperature, _barrelMass, time - _time] call AGM_Overheating_fnc_cooldown;
 
-  if (!isNil "AGM_Debug" && {AGM_Debug == "Overheating"}) then {
+  if (!isNil "AGM_Debug" && {"Overheating" in AGM_Debug}) then {
     hintSilent format ["Temperature: %1 C", _temperature];
   };
 

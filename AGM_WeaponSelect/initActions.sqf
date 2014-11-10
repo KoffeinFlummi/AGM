@@ -3,6 +3,8 @@
 // don't throw no nades if none selected!
 if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   AGM_WeaponSelect_actionThrowCondition = {
+    if !([_this select 1] call AGM_Core_fnc_canUseWeapon) exitWith {false};
+
     _muzzle = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
 
     if (_muzzle == "") exitWith {true};
@@ -27,4 +29,4 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
 };
 
 [_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
-[_this select 0, "CycleThrownItems", {true}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
+[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;

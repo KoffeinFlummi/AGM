@@ -777,6 +777,7 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: MainTurret {};
     };
+    class UserActions;
   };
   class Plane_Base_F;
 
@@ -859,7 +860,7 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
     };
-    class UserActions {
+    class UserActions: UserActions {
       class DoorL1_Open {
         available = 1;
         condition = "this animationPhase ""door_back_L"" < 0.5 AND Alive(this)";
