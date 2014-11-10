@@ -25,10 +25,10 @@ class CfgFunctions {
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_TopDownAttack {
-      Fired = "if (local (_this select 0)) then {_this call AGM_TopDownAttack_fnc_topDownAttack};";
+    class AGM_TopDownAttack_FireMissile {
+      FiredBIS = "if (local (_this select 0)) then {_this call AGM_TopDownAttack_fnc_topDownAttack};";
     };
   };
 };

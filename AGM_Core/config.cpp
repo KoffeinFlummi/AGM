@@ -412,7 +412,9 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Core_MiscItems";
+    transportMaxWeapons = 9001;
     transportMaxMagazines = 9001;
+    transportMaxItems = 9001;
     maximumload = 2000;
 
     class TransportWeapons {};
