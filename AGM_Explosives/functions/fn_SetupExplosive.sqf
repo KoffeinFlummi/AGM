@@ -62,14 +62,24 @@ _this spawn {
     };
   }] call BIS_fnc_addStackedEventHandler;
   AGM_Explosives_Setup addEventHandler ["EpeContactStart", {
-    private ["_enabled"];
+    private ["_enabled","_disable"];
 	AGM_Explosives_Setup = _this select 0;
     _enabled = AGM_Explosives_Setup getVariable ["AGM_Enable_Place", 0];
     if (_enabled == 1) then{
 	  call AGM_Explosives_fnc_Place_Approve;
 	};
+	_disable=0;
+	_disable
   }];
   [localize "STR_AGM_Explosives_PlaceAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;
-  _unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {AGM_Explosives_Setup setVariable ["AGM_Enable_Place", 1]; sleep(3);AGM_Explosives_Setup enableSimulationGlobal false;call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler];
+  _unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {
+	_unit = call AGM_Core_fnc_player;
+    AGM_Explosives_Setup setVariable ["AGM_Enable_Place", 1]; 
+    AGM_Explosives_Setup enableSimulationGlobal true;
+    [_unit, "DefaultAction", _unit getVariable ["AGM_Explosive_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;
+	call AGM_Interaction_fnc_hideMouseHint;
+	[localize "STR_AGM_Explosives_PlantAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;
+	_unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {AGM_Explosives_Setup enableSimulationGlobal false; call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler]; 
+  }] call AGM_Core_fnc_AddActionEventHandler];
   _unit setVariable ["AGM_Explosive_Cancel", [_unit, "MenuBack", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Cancel;}] call AGM_Core_fnc_AddActionEventHandler];
 };
