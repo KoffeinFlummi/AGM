@@ -414,8 +414,8 @@ class CfgWeapons {
     class WeaponSlotsInfo: WeaponSlotsInfo {
       class MuzzleSlot: MuzzleSlot {
         // Shit is broken again
-        compatibleItems[] += {"AGM_muzzle_mzls_H"};
-        //compatibleItems[] = {"muzzle_snds_H","muzzle_snds_H_SW","AGM_muzzle_mzls_H"};
+        //compatibleItems[] += {"AGM_muzzle_mzls_H"};
+        compatibleItems[] = {"muzzle_snds_H","muzzle_snds_H_SW","AGM_muzzle_mzls_H"};
       };
     };
   };

@@ -59,8 +59,8 @@ _addAction = call compile format [
   "[
     '%2',
     {if (inputAction '%1' == 0) then {if (_this call (%3 select 2)) then {_this call (%3 select 3)}} else {_this call (%3 select 1)}},
-    '',
-    0,
+    nil,
+    10,
     false,
     true,
     '%1',
