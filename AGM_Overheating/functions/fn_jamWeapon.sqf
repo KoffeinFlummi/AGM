@@ -57,3 +57,38 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
 
   _unit setVariable ["AGM_JammingActionID", _actionID];
 };
+
+/*
+
+private ["_condition", "_statement", "_condition2", "_statement2", "_actionID"];
+
+_condition = {
+  [_this select 1] call AGM_Core_fnc_canUseWeapon
+  && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_Overheating_jammedWeapons", []])}
+  && {!(currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []]))}
+};
+
+_statement = {
+  playSound3D ["a3\sounds_f\weapons\Other\dry9.wss", _this select 0];
+
+  if (!(missionNamespace getVariable ["AGM_Overheating_knowAboutJam", false]) && {(_this select 1) ammo currentWeapon (_this select 1) > 0}) then {
+    [localize "STR_AGM_Overheating_WeaponJammed"] call AGM_Core_fnc_displayTextStructured;
+    AGM_Overheating_knowAboutJam = true;
+  };
+};
+
+_condition2 = {
+  currentWeapon (_this select 1) in ((_this select 1) getVariable ["AGM_Overheating_jammedWeapons", []])
+};
+
+_statement2 = {
+  [_this select 1, currentWeapon (_this select 1), false] call AGM_Overheating_fnc_clearJam;
+};
+
+_actionID = [_unit, "Unjam", "DefaultAction", _condition, _statement, _condition2, _statement2] call AGM_Core_fnc_addActionMenuEventHandler;//
+
+//diag_log text format ["%1 call AGM_Core_fnc_addActionMenuEventHandler", [_unit, "Unjam", "DefaultAction", _condition, _statement, _condition2, _statement2]];
+
+//_unit setVariable
+
+*/
