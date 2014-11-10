@@ -701,6 +701,7 @@
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name">
       <English>CH-47I Chinook (unarmed)</English>
       <German>CH-47I Chinook (unbewaffnet)</German>
+      <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
       <English>A-10D Thunderbolt II</English>
