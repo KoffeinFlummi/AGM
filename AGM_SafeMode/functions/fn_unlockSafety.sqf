@@ -25,4 +25,5 @@ if (_weapon in _safedWeapons) then {
 
 _unit selectWeapon _weapon;
 
-playSound "AGM_Sound_Click";
+// play fire mode selector sound
+[_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;

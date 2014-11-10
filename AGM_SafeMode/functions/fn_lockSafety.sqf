@@ -37,4 +37,5 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
 
 _unit selectWeapon _weapon;
 
-playSound "AGM_Sound_Click";
+// play fire mode selector sound
+[_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;

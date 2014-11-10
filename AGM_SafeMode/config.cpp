@@ -19,6 +19,7 @@ class CfgFunctions {
       file = "AGM_SafeMode\functions";
       class firstMode;
       class lockSafety;
+      class playChangeFiremodeSound;
       class unlockSafety;
     };
   };

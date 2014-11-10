@@ -43,3 +43,6 @@ while {
   _player action ["SwitchWeapon", _player, _player, _index];
   _index = _index + 1;
 };
+
+// play fire mode selector sound
+[_player, _weapon] call AGM_WeaponSelect_fnc_playChangeFiremodeSound;
