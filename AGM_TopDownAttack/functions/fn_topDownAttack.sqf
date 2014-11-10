@@ -3,7 +3,7 @@
 if (getNumber (configFile >> "CfgWeapons" >> _this select 1 >> "AGM_enableTopDownAttack") != 1) exitWith {};
 
 _this spawn {
-	_projectile = _this select 5;
+	_projectile = _this select 6;
 
 	if (missionNamespace getVariable ["AGM_TopDownAttack_modeJavelin", 0] == 0) exitWith {};
 	_flyInHeight = 100;

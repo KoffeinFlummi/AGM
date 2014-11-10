@@ -17,6 +17,7 @@ class CfgFunctions {
     class AGM_Respawn {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
+      class checkFriendlyFire;
       class getAllGear;
       class handleKilled;
       class handleRespawn;
@@ -28,6 +29,7 @@ class CfgFunctions {
       class removeBody;
       class removeDisconnectedPlayer;
       class restoreGear;
+      class showFriendlyFireMessage;
       class teleportToRallypoint;
     };
   };
@@ -35,14 +37,17 @@ class CfgFunctions {
 
 class Extended_Killed_EventHandlers {
   class CAManBase {
-    class AGM_Respawn {
+    class AGM_Respawn_HandleGear {
       killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
+    };
+    class AGM_Respawn_FirendlyFireMessage {
+      killed = "_this call AGM_Respawn_fnc_checkFriendlyFire;";
     };
   };
 };
 class Extended_Respawn_EventHandlers {
   class CAManBase {
-    class AGM_Respawn {
+    class AGM_Respawn_HandleGear {
       respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
     };
   };

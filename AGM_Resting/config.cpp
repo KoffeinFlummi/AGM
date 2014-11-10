@@ -505,7 +505,6 @@ class CfgMovesBasic {
 
     //////////////////////////////////////////////////////////////////////
 
-    class passenger_inside_1Actions;
     class passenger_inside_1Actions_agm_rested : passenger_inside_1Actions {
       stop =    "passenger_inside_1_Aim_agm_rested";
       default = "passenger_inside_1_Aim_agm_rested";
@@ -515,7 +514,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_inside_2Actions;
     class passenger_inside_2Actions_agm_rested : passenger_inside_2Actions {
       stop =    "passenger_inside_2_Aim_agm_rested";
       default = "passenger_inside_2_Aim_agm_rested";
@@ -525,7 +523,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_inside_3Actions;
     class passenger_inside_3Actions_agm_rested : passenger_inside_3Actions {
       stop =    "passenger_inside_3_Aim_agm_rested";
       default = "passenger_inside_3_Aim_agm_rested";
@@ -535,7 +532,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_inside_4Actions;
     class passenger_inside_4Actions_agm_rested : passenger_inside_4Actions {
       stop =    "passenger_inside_4_Aim_agm_rested";
       default = "passenger_inside_4_Aim_agm_rested";
@@ -545,7 +541,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_bench_1Actions;
     class passenger_bench_1Actions_agm_rested : passenger_bench_1Actions {
       stop =    "passenger_bench_1_Aim_agm_rested";
       default = "passenger_bench_1_Aim_agm_rested";
@@ -555,7 +550,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_boat_1Actions;
     class passenger_boat_1Actions_agm_rested : passenger_boat_1Actions {
       stop =    "passenger_boat_1_Aim_agm_rested";
       default = "passenger_boat_1_Aim_agm_rested";
@@ -565,7 +559,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_boat_2Actions;
     class passenger_boat_2Actions_agm_rested : passenger_boat_2Actions {
       stop =    "passenger_boat_2_Aim_agm_rested";
       default = "passenger_boat_2_Aim_agm_rested";
@@ -575,7 +568,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_boat_3Actions;
     class passenger_boat_3Actions_agm_rested : passenger_boat_3Actions {
       stop =    "passenger_boat_3_Aim_agm_rested";
       default = "passenger_boat_3_Aim_agm_rested";
@@ -585,7 +577,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_boat_4Actions;
     class passenger_boat_4Actions_agm_rested : passenger_boat_4Actions {
       stop =    "passenger_boat_4_Aim_agm_rested";
       default = "passenger_boat_4_Aim_agm_rested";
@@ -595,7 +586,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_flatground_1Actions;
     class passenger_flatground_1Actions_agm_rested : passenger_flatground_1Actions {
       stop =    "passenger_flatground_1_Aim_agm_rested";
       default = "passenger_flatground_1_Aim_agm_rested";
@@ -605,7 +595,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_flatground_2Actions;
     class passenger_flatground_2Actions_agm_rested : passenger_flatground_2Actions {
       stop =    "passenger_flatground_2_Aim_agm_rested";
       default = "passenger_flatground_2_Aim_agm_rested";
@@ -615,7 +604,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_flatground_3Actions;
     class passenger_flatground_3Actions_agm_rested : passenger_flatground_3Actions {
       stop =    "passenger_flatground_3_Aim_agm_rested";
       default = "passenger_flatground_3_Aim_agm_rested";
@@ -625,7 +613,6 @@ class CfgMovesBasic {
       limitFast = 1;
     };
 
-    class passenger_flatground_4Actions;
     class passenger_flatground_4Actions_agm_rested : passenger_flatground_4Actions {
       stop =    "passenger_flatground_4_Aim_agm_rested";
       default = "passenger_flatground_4_Aim_agm_rested";
@@ -1094,6 +1081,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_bench_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_bench_1_Aim", 0.02};
     };
+
     class passenger_inside_1_Aim;
     class passenger_inside_1_Aim_agm_deploy : passenger_inside_1_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1108,6 +1096,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_1_Aim", 0.02};
     };
+
     class passenger_inside_2_Aim;
     class passenger_inside_2_Aim_agm_deploy : passenger_inside_2_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1122,6 +1111,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_2_Aim", 0.02};
     };
+
     class passenger_inside_3_Aim;
     class passenger_inside_3_Aim_agm_deploy : passenger_inside_3_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1136,6 +1126,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_3_Aim", 0.02};
     };
+
     class passenger_inside_4_Aim;
     class passenger_inside_4_Aim_agm_deploy : passenger_inside_4_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1150,6 +1141,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_4_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_4_Aim", 0.02};
     };
+
     class passenger_boat_1_Aim;
     class passenger_boat_1_Aim_agm_deploy : passenger_boat_1_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1164,6 +1156,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_1_Aim", 0.02};
     };
+
     class passenger_boat_2_Aim;
     class passenger_boat_2_Aim_agm_deploy : passenger_boat_2_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1178,6 +1171,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_2_Aim", 0.02};
     };
+
     class passenger_boat_3_Aim;
     class passenger_boat_3_Aim_agm_deploy : passenger_boat_3_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1192,6 +1186,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_3_Aim", 0.02};
     };
+
     class passenger_boat_4_Aim;
     class passenger_boat_4_Aim_agm_deploy : passenger_boat_4_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1206,6 +1201,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_4_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_4_Aim", 0.02};
     };
+
     class passenger_flatground_1_Aim;
     class passenger_flatground_1_Aim_agm_deploy : passenger_flatground_1_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1220,6 +1216,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_1_Aim", 0.02};
     };
+
     class passenger_flatground_2_Aim;
     class passenger_flatground_2_Aim_agm_deploy : passenger_flatground_2_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1234,6 +1231,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_2_Aim", 0.02};
     };
+
     class passenger_flatground_3_Aim;
     class passenger_flatground_3_Aim_agm_deploy : passenger_flatground_3_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1248,6 +1246,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_3_Aim", 0.02};
     };
+
     class passenger_flatground_4_Aim;
     class passenger_flatground_4_Aim_agm_deploy : passenger_flatground_4_Aim {
       aimPrecision = AGM_SWAY_DEPLOY;
@@ -1265,7 +1264,6 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
     //////////////////////////////////////////////////////////////////////
 
-    class passenger_bench_1_Aim;
     class passenger_bench_1_Aim_agm_rested : passenger_bench_1_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_bench_1Actions_agm_rested";
@@ -1279,7 +1277,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_bench_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_bench_1_Aim", 0.02};
     };
-    class passenger_inside_1_Aim;
+
     class passenger_inside_1_Aim_agm_rested : passenger_inside_1_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_inside_1Actions_agm_rested";
@@ -1293,7 +1291,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_1_Aim", 0.02};
     };
-    class passenger_inside_2_Aim;
+
     class passenger_inside_2_Aim_agm_rested : passenger_inside_2_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_inside_2Actions_agm_rested";
@@ -1307,7 +1305,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_2_Aim", 0.02};
     };
-    class passenger_inside_3_Aim;
+
     class passenger_inside_3_Aim_agm_rested : passenger_inside_3_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_inside_3Actions_agm_rested";
@@ -1321,7 +1319,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_3_Aim", 0.02};
     };
-    class passenger_inside_4_Aim;
+
     class passenger_inside_4_Aim_agm_rested : passenger_inside_4_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_inside_4Actions_agm_rested";
@@ -1335,7 +1333,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_inside_4_Aim", 0.02};
       InterpolateTo[] = {"passenger_inside_4_Aim", 0.02};
     };
-    class passenger_boat_1_Aim;
+
     class passenger_boat_1_Aim_agm_rested : passenger_boat_1_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_boat_1Actions_agm_rested";
@@ -1349,7 +1347,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_1_Aim", 0.02};
     };
-    class passenger_boat_2_Aim;
+
     class passenger_boat_2_Aim_agm_rested : passenger_boat_2_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_boat_2Actions_agm_rested";
@@ -1363,7 +1361,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_2_Aim", 0.02};
     };
-    class passenger_boat_3_Aim;
+
     class passenger_boat_3_Aim_agm_rested : passenger_boat_3_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_boat_3Actions_agm_rested";
@@ -1377,7 +1375,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_3_Aim", 0.02};
     };
-    class passenger_boat_4_Aim;
+
     class passenger_boat_4_Aim_agm_rested : passenger_boat_4_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_boat_4Actions_agm_rested";
@@ -1391,7 +1389,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_boat_4_Aim", 0.02};
       InterpolateTo[] = {"passenger_boat_4_Aim", 0.02};
     };
-    class passenger_flatground_1_Aim;
+
     class passenger_flatground_1_Aim_agm_rested : passenger_flatground_1_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_flatground_1Actions_agm_rested";
@@ -1405,7 +1403,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_1_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_1_Aim", 0.02};
     };
-    class passenger_flatground_2_Aim;
+
     class passenger_flatground_2_Aim_agm_rested : passenger_flatground_2_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_flatground_2Actions_agm_rested";
@@ -1419,7 +1417,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_2_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_2_Aim", 0.02};
     };
-    class passenger_flatground_3_Aim;
+
     class passenger_flatground_3_Aim_agm_rested : passenger_flatground_3_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_flatground_3Actions_agm_rested";
@@ -1433,7 +1431,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       InterpolateFrom[] = {"passenger_flatground_3_Aim", 0.02};
       InterpolateTo[] = {"passenger_flatground_3_Aim", 0.02};
     };
-    class passenger_flatground_4_Aim;
+
     class passenger_flatground_4_Aim_agm_rested : passenger_flatground_4_Aim {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "passenger_flatground_4Actions_agm_rested";

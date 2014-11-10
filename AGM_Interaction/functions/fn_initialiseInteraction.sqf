@@ -68,12 +68,12 @@ if (_this select 2) then {
 	if (profileNamespace getVariable ["AGM_Interaction_AutoCenterCursor", true]) then {setMousePosition [0.5, 0.5]};
 	if !(_subMenu) then {
 		if (_target isKindOf "Man") then {
-			_ctrlInteractionDialog ctrlSetText (if (alive _target) then {name _target} else {_target getVariable ["AGM_Name", "Unknown"]});
+			_ctrlInteractionDialog ctrlSetText ([_target] call AGM_Identity_fnc_getNameSide);
 		} else {
-			_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName"));
+			_ctrlInteractionDialog ctrlSetText getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName");
 		};
 	} else {
-		_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
+		_ctrlInteractionDialog ctrlSetText localize "STR_AGM_Interaction_Back";
 	};
 
 	_count = count AGM_Interaction_Buttons;

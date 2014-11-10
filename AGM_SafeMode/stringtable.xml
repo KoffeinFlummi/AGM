@@ -4,6 +4,7 @@
     <Key ID="STR_AGM_SafeMode_SafeMode">
       <English>Safe Mode</English>
       <German>Waffe sichern</German>
+      <Polish>Tryb Bezpieczny</Polish>
     </Key>
   </Package>
 </Project>
