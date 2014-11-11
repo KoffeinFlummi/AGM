@@ -30,3 +30,7 @@ _unit selectWeapon _weapon;
 
 // player hud
 [true] call AGM_SafeMode_fnc_setSafeModeVisual;
+
+private "_picture";
+_picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+[localize "STR_AGM_SafeMode_TookOffSafety", _picture] call AGM_Core_fnc_displayTextPicture;

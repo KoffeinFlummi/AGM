@@ -55,7 +55,8 @@ _fnc_unRestWeapon = {
 
 if (_unit getVariable ["AGM_weaponRested", false]) exitWith {call _fnc_unRestWeapon};
 
-if ([_unit] call AGM_Core_fnc_inTransitionAnim) exitWith {};
+// exit if this is not an available animation
+if (!isClass (configFile >> "CfgMovesMaleSdr" >> "States" >> format ["%1_agm_deploy", animationState _unit])) exitWith {};
 
 // PREPARE INTERSECTS
 private "_fnc_getIntersection";

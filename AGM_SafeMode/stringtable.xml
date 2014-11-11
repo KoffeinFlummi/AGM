@@ -10,5 +10,13 @@
       <English>Take off Safety</English>
       <German>Waffe entsichern</German>
     </Key>
+    <Key ID="STR_AGM_SafeMode_PutOnSafety">
+      <English>Put on Safety</English>
+      <German>Waffe gesichert</German>
+    </Key>
+    <Key ID="STR_AGM_SafeMode_TookOffSafety">
+      <English>Took off Safety</English>
+      <German>Waffe entsichert</German>
+    </Key>
   </Package>
 </Project>

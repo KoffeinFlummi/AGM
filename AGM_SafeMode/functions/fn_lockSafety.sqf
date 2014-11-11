@@ -50,3 +50,7 @@ _unit selectWeapon _weapon;
 
 // play fire mode selector sound
 [_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+
+private "_picture";
+_picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+[localize "STR_AGM_SafeMode_PutOnSafety", _picture] call AGM_Core_fnc_displayTextPicture;
