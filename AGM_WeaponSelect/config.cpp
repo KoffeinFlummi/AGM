@@ -134,7 +134,7 @@ class AGM_Core_Default_Keys {
   };
   class selectGrenadeFrag {
     displayName = "$STR_AGM_WeaponSelect_SelectGrenadeFrag";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player] call AGM_WeaponSelect_fnc_selectGrenadeFrag";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 7;
@@ -144,7 +144,7 @@ class AGM_Core_Default_Keys {
   };
   class selectGrenadeOther {
     displayName = "$STR_AGM_WeaponSelect_SelectGrenadeOther";
-    condition = "_player == _vehicle";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "[_player] call AGM_WeaponSelect_fnc_selectGrenadeOther";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 8;
