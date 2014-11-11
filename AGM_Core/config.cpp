@@ -193,6 +193,7 @@ class CfgFunctions {
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
+      class canGetInPosition;
       class canInteractWith;
       class canUseWeapon;
       class changeProjectileDirection;
