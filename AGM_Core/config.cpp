@@ -219,6 +219,8 @@ class CfgFunctions {
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
       class getStringFromMissionSQM;
+      class getVehiclePositions;
+      class getVehicleUnits;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
       class getTargetObject;
