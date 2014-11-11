@@ -26,6 +26,8 @@ _unit setVariable ["AGM_CanTreat", true, true];
 _position = getPosASL _unit;
 
 [-2, {
+  [_this, "AGM_Medical_wokeUp", [_this]] call AGM_Core_fnc_callCustomEventHandlers;
+
   if (_this == player) then {
     player setVariable ["tf_globalVolume", 1];
     player setVariable ["tf_voiceVolume", 1, true];
