@@ -22,18 +22,18 @@ _gunner = gunner _vehicle;
 _commander = commander _vehicle;
 
 _coPilot = _vehicle turretUnit (_positions select 3);
-_turrets = _positions select 4;
+_turrets = + _positions select 4;
 {
 	_turrets set [_forEachIndex, _vehicle turretUnit _x];
 } forEach _turrets;
 
-_ffvPositions = _positions select 5;
+_ffvPositions = + _positions select 5;
 {
 	_ffvPositions set [_forEachIndex, _vehicle turretUnit _x];
 } forEach _ffvPositions;
 
-_cargo = _positions select 6;
-_coDrivers = _positions select 7;
+_cargo = + _positions select 6;
+_coDrivers = + _positions select 7;
 {
 	private ["_cargoIndex", "_index"];
 	_cargoIndex = _vehicle getCargoIndex _x;

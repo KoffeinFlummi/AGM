@@ -220,12 +220,14 @@ class CfgFunctions {
       class getPitchBankYaw;
       class getStringFromMissionSQM;
       class getVehiclePositions;
-      class getVehicleUnits;
+      class getVehiclePositionsUnits;
+      class getVehiclePositionsUnitsLocked;
       class getTargetAzimuthAndInclination;
       class getTargetDistance;
       class getTargetObject;
       class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretCopilot;
       class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
