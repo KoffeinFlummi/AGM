@@ -214,7 +214,6 @@ class CfgFunctions {
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
-      class getCopilotTurret;
       class getDoorTurrets;
       class getInPosition;
       class getMarkerType;

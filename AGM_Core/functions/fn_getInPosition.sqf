@@ -8,13 +8,16 @@
  * 1: The vehicle to be entered (Object)
  * 2: Position. Can be "Driver", "Pilot", "Gunner", "Commander", "Copilot", "Turret", "FFV", "Codriver" or "Cargo" (String)
  * 3: Index. "Turret", "FFV", "Codriver" and "Cargo" support this optional parameter. Which position should be taken.
- *    Note: This index is diffrent from Armas "cargoIndex". (Number, optinal Default: next free index)
+ *    Note: This index is diffrent from Armas "cargoIndex". (Number, optional default: next free index)
  *
  * Return Value:
  * Nothing
  */
 
-private ["_unit", "_vehicle", "_position", "_index", "_isInside"];
+#define CANGETINDRIVER      (isNull (driver _vehicle)             || {!alive driver _vehicle})               && {!lockedDriver _vehicle}           && {getNumber (_config >> "isUav") != 1}
+#define CANGETINTURRETINDEX (isNull (_vehicle turretUnit _turret) || {!alive (_vehicle turretUnit _turret)}) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+
+private ["_unit", "_vehicle", "_position", "_index"];
 
 _unit = _this select 0;
 _vehicle = _this select 1;
@@ -23,53 +26,76 @@ _index = _this select 3;	// optional, please don't use
 
 if (isNil "_index") then {_index = -1};
 
+// general
+if (!alive _vehicle || {locked _vehicle > 1}) exitWith {false};
+
+private ["_config", "_isInside"];
+
+_config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+
 _isInside = vehicle _unit == _vehicle;
 
 switch (toLower _position) do {
 	case "driver" : {
-		_unit action [
-			["GetInDriver", "MoveToDriver"] select _isInside,
-			_vehicle
-		];
+		if (CANGETINDRIVER) then {
+			_unit action [
+				["GetInDriver", "MoveToDriver"] select _isInside,
+				_vehicle
+			];
+		};
 	};
 
 	case "pilot" : {
-		_unit action [
-			["GetInPilot", "MoveToPilot"] select _isInside,
-			_vehicle
-		];
+		if (CANGETINDRIVER) then {
+			_unit action [
+				["GetInPilot", "MoveToPilot"] select _isInside,
+				_vehicle
+			];
+		};
 	};
 
 	case "gunner" : {
-		_unit action [
-			["GetInGunner", "MoveToGunner"] select _isInside,
-			_vehicle
-		];
+		private "_turret";
+		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretGunner;
+
+		if (CANGETINTURRETINDEX) then {
+			_unit action [
+				["GetInGunner", "MoveToGunner"] select _isInside,
+				_vehicle
+			];
+		};
 	};
 
 	case "commander" : {
-		_unit action [
-			["GetInCommander", "MoveToCommander"] select _isInside,
-			_vehicle
-		];
+		private "_turret";
+		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
+
+		if (CANGETINTURRETINDEX) then {
+			_unit action [
+				["GetInCommander", "MoveToCommander"] select _isInside,
+				_vehicle
+			];
+		};
 	};
 
 	case "copilot" : {
 		private "_turret";
 		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCopilot;
 
-		_unit action [
-			["GetInTurret", "moveToTurret"] select _isInside,
-			_vehicle,
-			_turret
-		];
+		if (CANGETINTURRETINDEX) then {
+			_unit action [
+				["GetInTurret", "moveToTurret"] select _isInside,
+				_vehicle,
+				_turret
+			];
+		};
 	};
 
 	case "turret" : {
 		private ["_turrets", "_turret"];
 		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsOther;
 
-		if (_index != -1 && {_turret = _turrets select _index; isNull (_vehicle turretUnit _turret)}) then {
+		if (_index != -1 && {_turret = _turrets select _index; CANGETINTURRETINDEX}) then {
 
 			_unit action [
 				["GetInTurret", "moveToTurret"] select _isInside,
@@ -80,7 +106,7 @@ switch (toLower _position) do {
 
 			for "_index" from 0 to (count _turrets - 1) do {
 				_turret = _turrets select _index;
-				if (isNull (_vehicle turretUnit _turret)) exitWith {
+				if (CANGETINTURRETINDEX) exitWith {
 
 					_unit action [
 						["GetInTurret", "moveToTurret"] select _isInside,
@@ -96,7 +122,7 @@ switch (toLower _position) do {
 		private ["_turrets", "_turret"];
 		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsFFV;
 
-		if (_index != -1 && {_turret = _turrets select _index; isNull (_vehicle turretUnit _turret)}) then {
+		if (_index != -1 && {_turret = _turrets select _index; CANGETINTURRETINDEX}) then {
 
 			_unit action [
 				["GetInTurret", "moveToTurret"] select _isInside,
@@ -107,7 +133,7 @@ switch (toLower _position) do {
 
 			for "_index" from 0 to (count _turrets - 1) do {
 				_turret = _turrets select _index;
-				if (isNull (_vehicle turretUnit _turret)) exitWith {
+				if (CANGETINTURRETINDEX) exitWith {
 
 					_unit action [
 						["GetInTurret", "moveToTurret"] select _isInside,
@@ -124,7 +150,7 @@ switch (toLower _position) do {
 		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCodriver;
 
 		{
-			_positions deleteAt (_positions find (_vehicle getCargoIndex _x));
+			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
 		} forEach crew _vehicle;
 
 		if (_index != -1 && {_index in _positions}) then {
@@ -152,7 +178,7 @@ switch (toLower _position) do {
 		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCargo;
 
 		{
-			_positions deleteAt (_positions find (_vehicle getCargoIndex _x));
+			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
 		} forEach crew _vehicle;
 
 		if (_index != -1 && {_index in _positions}) then {

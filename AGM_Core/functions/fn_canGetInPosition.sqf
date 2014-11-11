@@ -1,18 +1,22 @@
 /*
  * Author: commy2
  *
- * Move unit into given vehicle position. Or switch to that position if the unit is already inside the vehicle.
+ * Is the unit able to enter the vehicle in the given position?
  *
  * Arguments:
  * 0: Unit to enter the vehicle (Object)
  * 1: The vehicle to be entered (Object)
  * 2: Position. Can be "Driver", "Pilot", "Gunner", "Commander", "Copilot", "Turret", "FFV", "Codriver" or "Cargo" (String)
- * 3: Index. "Turret", "FFV", "Codriver" and "Cargo" support this optional parameter. Which position should be taken.
- *    Note: This index is diffrent from Armas "cargoIndex". (Number, optinal Default: next free index)
+ * 3: Check current distance to vehicles memory point? (Bool, optional default: false)
+ * 4: Index. "Turret", "FFV", "Codriver" and "Cargo" support this optional parameter. Which position should be taken.
+ *    Note: This index is diffrent from Armas "cargoIndex". (Number, optional default: next free index)
  *
  * Return Value:
  * Nothing
  */
+
+#define CANGETINDRIVER      (isNull (driver _vehicle)             || {!alive driver _vehicle})               && {!lockedDriver _vehicle}           && {getNumber (_config >> "isUav") != 1}
+#define CANGETINTURRETINDEX (isNull (_vehicle turretUnit _turret) || {!alive (_vehicle turretUnit _turret)}) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
 
 private ["_unit", "_vehicle", "_position", "_checkDistance", "_index"];
 
@@ -43,14 +47,14 @@ switch (toLower _position) do {
 		_selection = getText (_config >> "memoryPointsGetInDriver");
 		_radius = getNumber (_config >> "getInRadius");
 
-		isNull (driver _vehicle) && {!lockedDriver _vehicle} && {getNumber (_config >> "isUav") != 1}
+		_return = CANGETINDRIVER;
 	};
 
 	case "pilot" : {
 		_selection = getText (_config >> "memoryPointsGetInDriver");
 		_radius = getNumber (_config >> "getInRadius");
 
-		_return = isNull (driver _vehicle) && {!lockedDriver _vehicle} && {getNumber (_config >> "isUav") != 1}
+		_return = CANGETINDRIVER;
 	};
 
 	case "gunner" : {
@@ -63,7 +67,7 @@ switch (toLower _position) do {
 		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
 		_radius = getNumber (_config >> "getInRadius");
 
-		_return = isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+		_return = CANGETINTURRETINDEX
 	};
 
 	case "commander" : {
@@ -76,7 +80,7 @@ switch (toLower _position) do {
 		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
 		_radius = getNumber (_config >> "getInRadius");
 
-		_return = isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+		_return = CANGETINTURRETINDEX
 	};
 
 	case "copilot" : {
@@ -89,7 +93,7 @@ switch (toLower _position) do {
 		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
 		_radius = getNumber (_config >> "getInRadius");
 
-		_return = isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+		_return = CANGETINTURRETINDEX
 	};
 
 	case "turret" : {
@@ -97,7 +101,7 @@ switch (toLower _position) do {
 		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsOther;
 
 		if (_index != -1 && {_turret = _turrets select _index; 
-			isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+			CANGETINTURRETINDEX
 		}) then {
 			_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
@@ -108,7 +112,7 @@ switch (toLower _position) do {
 		} else {
 			for "_index" from 0 to (count _turrets - 1) do {
 				_turret = _turrets select _index;
-				if (isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}) exitWith {
+				if (CANGETINTURRETINDEX) exitWith {
 					_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
 					_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
@@ -125,7 +129,7 @@ switch (toLower _position) do {
 		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsFFV;
 
 		if (_index != -1 && {_turret = _turrets select _index; 
-			isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}
+			CANGETINTURRETINDEX
 		}) then {
 			_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
@@ -136,7 +140,7 @@ switch (toLower _position) do {
 		} else {
 			for "_index" from 0 to (count _turrets - 1) do {
 				_turret = _turrets select _index;
-				if (isNull (_vehicle turretUnit _turret) && {!(_vehicle lockedTurret _turret)} && {getNumber (_config >> "isUav") != 1}) exitWith {
+				if (CANGETINTURRETINDEX) exitWith {
 					_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
 					_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
@@ -153,7 +157,7 @@ switch (toLower _position) do {
 		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCodriver;
 
 		{
-			_positions deleteAt (_positions find (_vehicle getCargoIndex _x));
+			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
 		} forEach crew _vehicle;
 
 		if (_index != -1 && {_index in _positions}) then {
@@ -178,7 +182,7 @@ switch (toLower _position) do {
 		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCargo;
 
 		{
-			_positions deleteAt (_positions find (_vehicle getCargoIndex _x));
+			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
 		} forEach crew _vehicle;
 
 		if (_index != -1 && {_index in _positions}) then {
