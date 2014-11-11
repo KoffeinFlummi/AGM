@@ -215,6 +215,7 @@ class CfgFunctions {
       class getConfigGunner;
       class getCopilotTurret;
       class getDoorTurrets;
+      class getInPosition;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
@@ -230,6 +231,8 @@ class CfgFunctions {
       class getTurrets;
       class getTurretsFFV;
       class getTurretsOther;
+      class getVehicleCargo;
+      class getVehicleCodriver;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
