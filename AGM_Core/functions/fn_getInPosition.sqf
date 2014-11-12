@@ -37,7 +37,10 @@ _turret = [];
 _isInside = vehicle _unit == _vehicle;
 
 _script = {};
-_enemiesInVehicle = side _unit getFriend side _vehicle < 0.6;   //Possible Side Restriction
+_enemiesInVehicle = false;   //Possible Side Restriction
+{
+	if (side _unit getFriend side _x < 0.6) exitWith {_enemiesInVehicle = true};
+} forEach crew _vehicle;
 
 switch (_position) do {
 	case "driver" : {
