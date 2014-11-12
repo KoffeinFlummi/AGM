@@ -23,9 +23,9 @@ _turret = [];
   _config = [_config, _x] call AGM_Core_fnc_getTurretConfigPath;
 
   if (  getNumber (_config >> "isCopilot") != 1
-  	&& {getNumber (_config >> "primaryGunner") != 1}
-  	&& {getNumber (_config >> "primaryObserver") != 1}
-  	&& {getNumber (_config >> "isPersonTurret") != 1}
+    && {getNumber (_config >> "primaryGunner") != 1}
+    && {getNumber (_config >> "primaryObserver") != 1}
+    && {getNumber (_config >> "isPersonTurret") != 1}
   ) then {
     _turret pushBack _x;
   };

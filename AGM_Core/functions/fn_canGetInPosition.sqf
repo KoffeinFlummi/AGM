@@ -26,7 +26,7 @@ _unit = _this select 0;
 _vehicle = _this select 1;
 _position = _this select 2;
 _checkDistance = _this select 3;
-_index = _this select 4;	// optional, please don't use
+_index = _this select 4;  // optional, please don't use
 
 if (isNil "_checkDistance") then {_checkDistance = false};
 if (isNil "_index") then {_index = -1};
@@ -43,166 +43,166 @@ _radius = 0;
 
 _return = false;
 switch (toLower _position) do {
-	case "driver" : {
-		_selection = getText (_config >> "memoryPointsGetInDriver");
-		_radius = getNumber (_config >> "getInRadius");
+  case "driver" : {
+    _selection = getText (_config >> "memoryPointsGetInDriver");
+    _radius = getNumber (_config >> "getInRadius");
 
-		_return = CANGETINDRIVER;
-	};
+    _return = CANGETINDRIVER;
+  };
 
-	case "pilot" : {
-		_selection = getText (_config >> "memoryPointsGetInDriver");
-		_radius = getNumber (_config >> "getInRadius");
+  case "pilot" : {
+    _selection = getText (_config >> "memoryPointsGetInDriver");
+    _radius = getNumber (_config >> "getInRadius");
 
-		_return = CANGETINDRIVER;
-	};
+    _return = CANGETINDRIVER;
+  };
 
-	case "gunner" : {
-		private ["_turret", "_turretConfig"];
-		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretGunner;
-		if (_turret isEqualTo []) exitWith {false};
+  case "gunner" : {
+    private ["_turret", "_turretConfig"];
+    _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretGunner;
+    if (_turret isEqualTo []) exitWith {false};
 
-		_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+    _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-		_radius = getNumber (_config >> "getInRadius");
+    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+    _radius = getNumber (_config >> "getInRadius");
 
-		_return = CANGETINTURRETINDEX
-	};
+    _return = CANGETINTURRETINDEX
+  };
 
-	case "commander" : {
-		private ["_turret", "_turretConfig"];
-		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
-		if (_turret isEqualTo []) exitWith {false};
+  case "commander" : {
+    private ["_turret", "_turretConfig"];
+    _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
+    if (_turret isEqualTo []) exitWith {false};
 
-		_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+    _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-		_radius = getNumber (_config >> "getInRadius");
+    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+    _radius = getNumber (_config >> "getInRadius");
 
-		_return = CANGETINTURRETINDEX
-	};
+    _return = CANGETINTURRETINDEX
+  };
 
-	case "copilot" : {
-		private ["_turret", "_turretConfig"];
-		_turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCopilot;
-		if (_turret isEqualTo []) exitWith {false};
+  case "copilot" : {
+    private ["_turret", "_turretConfig"];
+    _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCopilot;
+    if (_turret isEqualTo []) exitWith {false};
 
-		_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+    _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-		_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-		_radius = getNumber (_config >> "getInRadius");
+    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+    _radius = getNumber (_config >> "getInRadius");
 
-		_return = CANGETINTURRETINDEX
-	};
+    _return = CANGETINTURRETINDEX
+  };
 
-	case "turret" : {
-		private ["_turrets", "_turret", "_turretConfig"];
-		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsOther;
+  case "turret" : {
+    private ["_turrets", "_turret", "_turretConfig"];
+    _turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsOther;
 
-		if (_index != -1 && {_turret = _turrets select _index; 
-			CANGETINTURRETINDEX
-		}) then {
-			_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+    if (_index != -1 && {_turret = _turrets select _index;
+      CANGETINTURRETINDEX
+    }) then {
+      _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-			_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-			_radius = getNumber (_config >> "getInRadius");
+      _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+      _radius = getNumber (_config >> "getInRadius");
 
-			_return = true
-		} else {
-			for "_index" from 0 to (count _turrets - 1) do {
-				_turret = _turrets select _index;
-				if (CANGETINTURRETINDEX) exitWith {
-					_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+      _return = true
+    } else {
+      for "_index" from 0 to (count _turrets - 1) do {
+        _turret = _turrets select _index;
+        if (CANGETINTURRETINDEX) exitWith {
+          _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-					_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-					_radius = getNumber (_config >> "getInRadius");
+          _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+          _radius = getNumber (_config >> "getInRadius");
 
-					_return = true
-				};
-			};
-		};
-	};
+          _return = true
+        };
+      };
+    };
+  };
 
-	case "ffv" : {
-		private ["_turrets", "_turret", "_turretConfig"];
-		_turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsFFV;
+  case "ffv" : {
+    private ["_turrets", "_turret", "_turretConfig"];
+    _turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsFFV;
 
-		if (_index != -1 && {_turret = _turrets select _index; 
-			CANGETINTURRETINDEX
-		}) then {
-			_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+    if (_index != -1 && {_turret = _turrets select _index;
+      CANGETINTURRETINDEX
+    }) then {
+      _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-			_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-			_radius = getNumber (_config >> "getInRadius");
+      _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+      _radius = getNumber (_config >> "getInRadius");
 
-			_return = true
-		} else {
-			for "_index" from 0 to (count _turrets - 1) do {
-				_turret = _turrets select _index;
-				if (CANGETINTURRETINDEX) exitWith {
-					_turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
+      _return = true
+    } else {
+      for "_index" from 0 to (count _turrets - 1) do {
+        _turret = _turrets select _index;
+        if (CANGETINTURRETINDEX) exitWith {
+          _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-					_selection = getText (_turretConfig >> "memoryPointsGetInGunner");
-					_radius = getNumber (_config >> "getInRadius");
+          _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
+          _radius = getNumber (_config >> "getInRadius");
 
-					_return = true
-				};
-			};
-		};
-	};
+          _return = true
+        };
+      };
+    };
+  };
 
-	case "codriver" : {
-		private "_positions";
-		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCodriver;
+  case "codriver" : {
+    private "_positions";
+    _positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCodriver;
 
-		{
-			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
-		} forEach crew _vehicle;
+    {
+      if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
+    } forEach crew _vehicle;
 
-		if (_index != -1 && {_index in _positions}) then {
-			_selection = getText (_config >> "memoryPointsGetInCargo");
-			_radius = getNumber (_config >> "getInRadius");
+    if (_index != -1 && {_index in _positions}) then {
+      _selection = getText (_config >> "memoryPointsGetInCargo");
+      _radius = getNumber (_config >> "getInRadius");
 
-			_return = true
-		} else {
+      _return = true
+    } else {
 
-			_index = _positions select 0;
-			if (!isNil "_index") then {
-				_selection = getText (_config >> "memoryPointsGetInCargo");
-				_radius = getNumber (_config >> "getInRadius");
+      _index = _positions select 0;
+      if (!isNil "_index") then {
+        _selection = getText (_config >> "memoryPointsGetInCargo");
+        _radius = getNumber (_config >> "getInRadius");
 
-				_return = true
-			};
-		};
-	};
+        _return = true
+      };
+    };
+  };
 
-	case "cargo" : {
-		private "_positions";
-		_positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCargo;
+  case "cargo" : {
+    private "_positions";
+    _positions = [typeOf _vehicle] call AGM_Core_fnc_getVehicleCargo;
 
-		{
-			if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
-		} forEach crew _vehicle;
+    {
+      if (alive _x) then {_positions deleteAt (_positions find (_vehicle getCargoIndex _x))};
+    } forEach crew _vehicle;
 
-		if (_index != -1 && {_index in _positions}) then {
-			_selection = getText (_config >> "memoryPointsGetInCargo");
-			_radius = getNumber (_config >> "getInRadius");
+    if (_index != -1 && {_index in _positions}) then {
+      _selection = getText (_config >> "memoryPointsGetInCargo");
+      _radius = getNumber (_config >> "getInRadius");
 
-			_return = true
-		} else {
+      _return = true
+    } else {
 
-			_index = _positions select 0;
-			if (!isNil "_index") then {
-				_selection = getText (_config >> "memoryPointsGetInCargo");
-				_radius = getNumber (_config >> "getInRadius");
+      _index = _positions select 0;
+      if (!isNil "_index") then {
+        _selection = getText (_config >> "memoryPointsGetInCargo");
+        _radius = getNumber (_config >> "getInRadius");
 
-				_return = true
-			};
-		};
-	};
+        _return = true
+      };
+    };
+  };
 
-	default {};
+  default {};
 };
 
 if (!_checkDistance || {_radius == 0} || {_vehicle == vehicle _unit}) exitWith {_return};
