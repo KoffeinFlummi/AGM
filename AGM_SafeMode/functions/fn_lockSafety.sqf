@@ -8,7 +8,7 @@ _weapon = _this select 1;
 _safedWeapons = _unit getVariable ["AGM_SafeMode_safedWeapons", []];
 
 if (_weapon in _safedWeapons) exitWith {
-	_this call AGM_SafeMode_fnc_unlockSafety;
+  _this call AGM_SafeMode_fnc_unlockSafety;
 };
 
 _safedWeapons pushBack _weapon;

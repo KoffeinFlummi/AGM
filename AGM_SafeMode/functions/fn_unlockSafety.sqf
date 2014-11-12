@@ -13,7 +13,7 @@ if (_weapon in _safedWeapons) then {
   _unit setVariable ["AGM_SafeMode_safedWeapons", _safedWeapons];
 
   if (count _safedWeapons == 0) then {
-  	private "_actionIDs";
+    private "_actionIDs";
 
     _actionIDs = _unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]];
     //_unit removeAction _actionID;
