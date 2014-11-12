@@ -22,5 +22,5 @@ _logic = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
 _units = [_this, 1, [], [[]]] call BIS_fnc_param;
 
 if (isServer) then {
-	[_logic, "AGM_GetIn_canBoardEnemyVehicle", "CanBoardHostileVehicle"] call AGM_Core_fnc_readNumericParameterFromModule;
+  [_logic, "AGM_GetIn_canBoardEnemyVehicle", "CanBoardHostileVehicle"] call AGM_Core_fnc_readNumericParameterFromModule;
 };
