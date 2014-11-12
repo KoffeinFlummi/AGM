@@ -12,7 +12,7 @@ if (isNil "AGM_itemFix") then {
     showMap     (AGM_isMapEnabled     && {"ItemMap"     in _items});
     showCompass (AGM_isCompassEnabled && {"ItemCompass" in _items});
     showWatch   (AGM_isWatchEnabled   && {"ItemWatch"   in _items});
-    showRadio   (AGM_isRadioEnabled   && {"ItemRadio"   in _items});
+  //showRadio   (AGM_isRadioEnabled   && {"ItemRadio"   in _items});
     showGPS     (AGM_isGPSEnabled     && {"ItemGPS"     in _items});
   }] call BIS_fnc_addStackedEventHandler;
 };
