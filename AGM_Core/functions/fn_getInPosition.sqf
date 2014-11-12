@@ -22,7 +22,7 @@ private ["_unit", "_vehicle", "_position", "_index"];
 _unit = _this select 0;
 _vehicle = _this select 1;
 _position = toLower (_this select 2);
-_index = _this select 3;	// optional, please don't use
+_index = _this select 3;  // optional, please don't use
 
 if (isNil "_index") then {_index = -1};
 
@@ -238,7 +238,7 @@ if (_enemiesInVehicle) then {   //Possible Side Restriction
       _isInside = _this select 5;
 
       if (_isInside) then {
-        moveOut _unit;		//need to moveOut before moving back in for a seat change
+        moveOut _unit;    //need to moveOut before moving back in for a seat change
       };
       call compile _overrideMoveInCode;
       sleep 0.1;
@@ -246,7 +246,7 @@ if (_enemiesInVehicle) then {   //Possible Side Restriction
         ["fn_getInPosition.sqf - Side Restriction, failed to move _unit into vehicle"] call bis_fnc_error;
         _unit moveInAny _vehicle;  //attempt to fail gracefully
       };
-      
+
       // this will execute all config based event handlers. Not script based ones unfortunately, but atleast we don't use any.
       private "_config";
       // config based getIn EHs are assigned to the soldier, not the vehicle. Why Bis? Why?
@@ -256,7 +256,7 @@ if (_enemiesInVehicle) then {   //Possible Side Restriction
         //getIn is local effects with global arguments. It doesn't trigger if the unit was already inside and only switched seats
         if !(_isInside) then {
           [_vehicle, _overridePosition, _unit, _turret] call compile getText (_config >> "getIn");
-		};
+		    };
       };
     };
   };

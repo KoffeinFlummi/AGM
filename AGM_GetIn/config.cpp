@@ -31,7 +31,7 @@ class CfgVehicles {
     class ArgumentsBaseUnits {};
     class ModuleDescription {};
   };
-  class AGM_GetIn_moduleAllowEnemies: Module_F {
+  class AGM_GetIn_ModuleAllowEnemies: Module_F {
     author = "Pabst Mirror";
     category = "AGM";
     displayName = "GetIn: Hostile Vehicles";

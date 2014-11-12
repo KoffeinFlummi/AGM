@@ -20,8 +20,8 @@ _cargo = [];
 _codrivers = getArray (_config >> "cargoIsCoDriver");
 
 for "_index" from 0 to (getNumber (_config >> "transportSoldier") - 1) do {
-	if (_index in _codrivers) then {
-		_cargo pushBack _index;
-	};
+  if (_index in _codrivers) then {
+    _cargo pushBack _index;
+  };
 };
 _cargo
