@@ -12,9 +12,9 @@ _config = (configfile >> "CfgMarkerColors") select _data;
 _color = getArray (_config >> "color");
 
 {
-	if (typeName _x != "SCALAR") then {
-		_color set [_forEachIndex, call compile _x];
-	};
+  if (typeName _x != "SCALAR") then {
+    _color set [_forEachIndex, call compile _x];
+  };
 } forEach _color;
 
 ((ctrlParent _ctrl) displayCtrl 102) ctrlSetTextColor _color;

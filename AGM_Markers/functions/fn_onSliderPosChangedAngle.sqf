@@ -9,7 +9,7 @@ uiNamespace setVariable ["AGM_Markers_curSelMarkerAngle", _data];
 
 _direction = round _data;
 if (_direction < 0) then {
-	_direction = _direction + 360;
+  _direction = _direction + 360;
 };
 
 ((ctrlParent _ctrl) displayCtrl 1221) ctrlSetText format [localize "STR_AGM_Markers_MarkerDirection", _direction];
