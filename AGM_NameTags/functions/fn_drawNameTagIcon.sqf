@@ -13,7 +13,7 @@
  */
 
 #define TEXTURES_RANKS [ \
-	"", \
+  "", \
   "\A3\Ui_f\data\GUI\Cfg\Ranks\private_gs.paa", \
   "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa", \
   "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa", \
