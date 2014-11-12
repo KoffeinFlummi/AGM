@@ -226,7 +226,7 @@ switch (toLower _position) do {
 if (_enemiesInVehicle) then {   //Possible Side Resctrion
   if ((!isNil "AGM_GetIn_canBoardEnemyVehicle") && {AGM_GetIn_canBoardEnemyVehicle == 1}) then {
     [_unit, _vehicle, _overrideGetInCode, _isInside] spawn {
-      private ["_unit", "_vehicle", "_overrideGetInCode"];
+      private ["_unit", "_vehicle", "_overrideGetInCode", "_isInside"];
       _unit = _this select 0;
       _vehicle = _this select 1;
       _overrideGetInCode = _this select 2;

@@ -16,7 +16,7 @@ Returns:
 Example:
 	called from module
 */
-private ["_logic","_units","_setLockState"];
+private ["_logic","_units"];
 
 _logic = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
 _units = [_this, 1, [], [[]]] call BIS_fnc_param;

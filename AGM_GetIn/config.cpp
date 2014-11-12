@@ -34,7 +34,7 @@ class CfgVehicles {
   class AGM_GetIn_ModuleAllowEnmies: Module_F {
     author = "Pabst Mirror";
     category = "AGM";
-    displayName = "Getin: Allow Enemies";
+    displayName = "GetIn: Hostile Vehicles";
     function = "AGM_GetIn_fnc_moduleAllowEnmies";
     scope = 2;
     isGlobal = 1;
@@ -42,7 +42,7 @@ class CfgVehicles {
     functionPriority = 0;
     class Arguments {
       class CanBoardHostileVehicle {
-        displayName = "Allow Getting In Enemy Vehicles"; // Argument label
+        displayName = "GetIn Hostile Vehicles"; // Argument label
         description = "Can use the GetIn Interaction on a hostile vehicle.  Default: No"; // Tooltip description
         typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
         class values {
@@ -52,7 +52,7 @@ class CfgVehicles {
       };
     };
     class ModuleDescription: ModuleDescription {
-      description = "Default ArmA3 prevents boarding a vehicle that has a hostile in it (or player with 'enemy' rating from teamkills.  This allows the GetIn Interaction menu to override.";
+      description = "Default ArmA3 prevents boarding a vehicle that has a hostile in it (or player with 'enemy' rating from teamkills).  This allows the GetIn Interaction menu to override.";
       sync[] = {};
     };
   };
