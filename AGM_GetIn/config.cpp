@@ -16,7 +16,7 @@ class CfgFunctions {
   class AGM_GetIn {
     class AGM_GetIn {
       file = "AGM_GetIn\functions";
-      class moduleAllowEnmies;
+      class moduleAllowEnemies;
     };
   };
 };
@@ -31,11 +31,11 @@ class CfgVehicles {
     class ArgumentsBaseUnits {};
     class ModuleDescription {};
   };
-  class AGM_GetIn_ModuleAllowEnmies: Module_F {
+  class AGM_GetIn_moduleAllowEnemies: Module_F {
     author = "Pabst Mirror";
     category = "AGM";
     displayName = "GetIn: Hostile Vehicles";
-    function = "AGM_GetIn_fnc_moduleAllowEnmies";
+    function = "AGM_GetIn_fnc_moduleAllowEnemies";
     scope = 2;
     isGlobal = 1;
     // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo

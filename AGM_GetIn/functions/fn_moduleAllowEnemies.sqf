@@ -16,10 +16,13 @@ Returns:
 Example:
 	called from module
 */
-private ["_logic","_units"];
+private ["_logic", "_units", "_activated"];
 
-_logic = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
-_units = [_this, 1, [], [[]]] call BIS_fnc_param;
+_logic = _this select 0;
+_units = _this select 1;
+_activated = _this select 2;
+
+if !(_activated) exitWith {};
 
 if (isServer) then {
   [_logic, "AGM_GetIn_canBoardEnemyVehicle", "CanBoardHostileVehicle"] call AGM_Core_fnc_readNumericParameterFromModule;
