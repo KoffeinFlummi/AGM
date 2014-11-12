@@ -1,5 +1,5 @@
 /*
-Name: AGM_GetIn_fnc_moduleAllowEnmies
+Name: AGM_GetIn_fnc_moduleAllowEnemies
 
 Author: Pabst Mirror
 
