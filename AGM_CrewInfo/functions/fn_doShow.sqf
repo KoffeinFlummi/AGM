@@ -20,7 +20,7 @@
 
 #define LINE(UNIT, IMAGE) format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", name UNIT, IMAGE]
 
-private["_text", "_vehicle", "_crew", "_config", "_role", "_player"];
+private["_text", "_vehicle", "_crew", "_config", "_player"];
 
 _text = "";	 
 _player = call AGM_Core_fnc_player;
@@ -32,7 +32,6 @@ _text = _text + format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow=
 {
 	if(alive _x && {format["%1", name _x] != ""} && {format["%1", name _x] != "Error: No unit"}) then {
 
-		_role = assignedVehicleRole _x;
 		switch (_x) do {				
 			case commander _vehicle: {
 				_text = _text + LINE(_x, COMMANDER_IMG);
@@ -42,16 +41,12 @@ _text = _text + format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow=
 			};					
 			case driver _vehicle: {	 
 				_text = _text + LINE(_x, DRIVER_IMG);
-			};					
+			};
 			default {
-				if(format["%1", (_role select 0)] != "Turret") then {
-					_text = _text + LINE(_x, CARGO_IMG);
+				if (_x in ([[typeOf _vehicle] call AGM_Core_fnc_getTurrets, {_vehicle turretUnit _x}] call AGM_Core_fnc_map)) then {
+					_text = _text + LINE(_x, GUNNER_IMG);
 				} else {
-					if(count (_vehicle weaponsTurret (_role select 1)) == 0) then {
-						_text = _text + LINE(_x, DRIVER_IMG);
-					} else {
-						_text = _text + LINE(_x, GUNNER_IMG);
-					};
+					_text = _text + LINE(_x, CARGO_IMG);
 				};
 			};
 		};
