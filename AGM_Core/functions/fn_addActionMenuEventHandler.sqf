@@ -11,12 +11,13 @@
  * 4: Code to execute by the action (Code or String)
  * 5: Condition for the menu action (Code or String)
  * 6: Code to execute from the menu (Code or String)
+ * 7: Priority of the action (Number, optional default: 10)
  *
  * Return value:
  * ID of the action (used to remove it later).
  */
 
-private ["_unit", "_displayName", "_action", "_condition", "_statement", "_condition2", "_statement2", "_name", "_actionsVar", "_id", "_actionIDs", "_actions", "_nameVar", "_addAction", "_actionID"];
+private ["_unit", "_displayName", "_action", "_condition", "_statement", "_condition2", "_statement2", "_priority", "_name", "_actionsVar", "_id", "_actionIDs", "_actions", "_nameVar", "_addAction", "_actionID"];
 
 _unit = _this select 0;
 _displayName = _this select 1;
@@ -25,6 +26,9 @@ _condition = _this select 3;
 _statement = _this select 4;
 _condition2 = _this select 5;
 _statement2 = _this select 6;
+_priority = _this select 7;
+
+if (isNil "_priority") then {_priority = 10}; // very high
 
 if (typeName _condition == "STRING") then {
   _condition = compile _condition;
@@ -60,7 +64,7 @@ _addAction = call compile format [
     '%2',
     {if (inputAction '%1' == 0) then {if (_this call (%3 select 2)) then {_this call (%3 select 3)}} else {_this call (%3 select 1)}},
     nil,
-    10,
+    %4,
     false,
     true,
     '%1',
@@ -68,7 +72,8 @@ _addAction = call compile format [
   ]",
   _action,
   _displayName,
-  _nameVar
+  _nameVar,
+  _priority
 ];
 
 _actionID = _unit addAction _addAction;

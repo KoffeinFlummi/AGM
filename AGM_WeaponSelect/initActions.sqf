@@ -35,4 +35,14 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
 };
 
 [_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
-[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
+//[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
+[
+  _this select 0,
+  localize "STR_AGM_WeaponSelect_TakeNextGrenade",
+  "CycleThrownItems",
+  {[_this select 1] call AGM_Core_fnc_canUseWeapon},
+  {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
+  {true},
+  {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
+  0
+] call AGM_Core_fnc_addActionMenuEventHandler;
