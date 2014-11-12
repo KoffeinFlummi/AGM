@@ -12,7 +12,51 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_GetIn {
+    class AGM_GetIn {
+      file = "AGM_GetIn\functions";
+      class moduleAllowEnmies;
+    };
+  };
+};
+
+class AGM_Parameters {
+  AGM_GetIn_canBoardEnemyVehicle = 0;
+};
+
 class CfgVehicles {
+  class Logic;
+  class Module_F: Logic {
+    class ArgumentsBaseUnits {};
+    class ModuleDescription {};
+  };
+  class AGM_GetIn_ModuleAllowEnmies: Module_F {
+    author = "Pabst Mirror";
+    category = "AGM";
+    displayName = "Getin: Allow Enemies";
+    function = "AGM_GetIn_fnc_moduleAllowEnmies";
+    scope = 2;
+    isGlobal = 1;
+    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo
+    functionPriority = 0;
+    class Arguments {
+      class CanBoardHostileVehicle {
+        displayName = "Allow Getting In Enemy Vehicles"; // Argument label
+        description = "Can use the GetIn Interaction on a hostile vehicle.  Default: No"; // Tooltip description
+        typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
+        class values {
+          class Yes { name = "Yes"; value = 1;};
+          class No { default = 1; name = "No"; value = 0; };
+        };
+      };
+    };
+    class ModuleDescription: ModuleDescription {
+      description = "Default ArmA3 prevents boarding a vehicle that has a hostile in it (or player with 'enemy' rating from teamkills.  This allows the GetIn Interaction menu to override.";
+      sync[] = {};
+    };
+  };
+  
   class LandVehicle;
   class Car: LandVehicle {
     class AGM_Actions {
