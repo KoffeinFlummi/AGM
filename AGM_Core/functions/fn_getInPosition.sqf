@@ -29,7 +29,13 @@ if (isNil "_index") then {_index = -1};
 // general
 if (!alive _vehicle || {locked _vehicle > 1}) exitWith {false};
 
-private ["_config", "_isInside"];
+private ["_config", "_isInside", "_overrideMoveInCode", "_enemiesInVehicle"];
+
+_overrideMoveInCode = "";
+_enemiesInVehicle = false;
+{//Test if enemies in vehicle
+  if (((side (group _unit)) getFriend (side _x)) < 0.6) exitWith {_enemiesInVehicle = true;};
+} forEach (crew _vehicle);
 
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 
@@ -42,6 +48,7 @@ switch (toLower _position) do {
 				["GetInDriver", "MoveToDriver"] select _isInside,
 				_vehicle
 			];
+			_overrideMoveInCode = format ["_unit moveInDriver _vehicle"];
 		};
 	};
 
@@ -51,6 +58,7 @@ switch (toLower _position) do {
 				["GetInPilot", "MoveToPilot"] select _isInside,
 				_vehicle
 			];
+			_overrideMoveInCode = format ["_unit moveInDriver _vehicle"];
 		};
 	};
 
@@ -63,6 +71,7 @@ switch (toLower _position) do {
 				["GetInGunner", "MoveToGunner"] select _isInside,
 				_vehicle
 			];
+			_overrideMoveInCode = format ["_unit moveInGunner _vehicle"];
 		};
 	};
 
@@ -75,6 +84,7 @@ switch (toLower _position) do {
 				["GetInCommander", "MoveToCommander"] select _isInside,
 				_vehicle
 			];
+			_overrideMoveInCode = format ["_unit moveInCommander _vehicle"];
 		};
 	};
 
@@ -88,6 +98,7 @@ switch (toLower _position) do {
 				_vehicle,
 				_turret
 			];
+			_overrideMoveInCode = format ["_unit moveInTurret [_vehicle, %1];", _turret];
 		};
 	};
 
@@ -102,6 +113,7 @@ switch (toLower _position) do {
 				_vehicle,
 				_turret
 			];
+			_overrideMoveInCode = format ["_unit moveInTurret [_vehicle, %1];", _turret];
 		} else {
 
 			for "_index" from 0 to (count _turrets - 1) do {
@@ -113,6 +125,7 @@ switch (toLower _position) do {
 						_vehicle,
 						_turret
 					];
+					_overrideMoveInCode = format ["_unit moveInTurret [_vehicle, %1];", _turret];
 				};
 			};
 		};
@@ -129,6 +142,7 @@ switch (toLower _position) do {
 				_vehicle,
 				_turret
 			];
+			_overrideMoveInCode = format ["_unit moveInTurret [_vehicle, %1];", _turret];
 		} else {
 
 			for "_index" from 0 to (count _turrets - 1) do {
@@ -140,6 +154,7 @@ switch (toLower _position) do {
 						_vehicle,
 						_turret
 					];
+					_overrideMoveInCode = format ["_unit moveInTurret [_vehicle, %1];", _turret];
 				};
 			};
 		};
@@ -159,6 +174,7 @@ switch (toLower _position) do {
 				_vehicle,
 				_index
 			];
+			_overrideMoveInCode = format ["_unit moveInCargo [_vehicle, %1];", _index];
 		} else {
 
 			_index = _positions select 0;
@@ -169,6 +185,7 @@ switch (toLower _position) do {
 					_vehicle,
 					_index
 				];
+				_overrideMoveInCode = format ["_unit moveInCargo [_vehicle, %1];", _index];
 			};
 		};
 	};
@@ -187,6 +204,7 @@ switch (toLower _position) do {
 				_vehicle,
 				_index
 			];
+			_overrideMoveInCode = format ["_unit moveInCargo [_vehicle, %1];", _index];
 		} else {
 
 			_index = _positions select 0;
@@ -197,9 +215,35 @@ switch (toLower _position) do {
 					_vehicle,
 					_index
 				];
+				_overrideMoveInCode = format ["_unit moveInCargo [_vehicle, %1];", _index];
 			};
 		};
 	};
 
 	default {};
+};
+
+if (_enemiesInVehicle) then {   //Possible Side Resctrion
+  if ((!isNil "AGM_GetIn_canBoardEnemyVehicle") && {AGM_GetIn_canBoardEnemyVehicle == 1}) then {
+    [_unit, _vehicle, _overrideMoveInCode, _isInside] spawn {
+      private ["_unit", "_vehicle", "_overrideMoveInCode", "_isInside"];
+      _unit = _this select 0;
+      _vehicle = _this select 1;
+      _overrideMoveInCode = _this select 2;
+      _isInside = _this select 3;
+	  
+      if (_isInside) then {
+        moveOut _unit;		//need to moveOut before moving back in for a seat change
+      };
+      call compile _overrideMoveInCode;
+      sleep 0.1;
+      if ((vehicle _unit) != _vehicle) then {
+        ["fn_getInPosition.sqf - Side Restriction, failed to move _unit into vehicle"] call bis_fnc_error;
+        _unit moveInAny _vehicle;  //attempt to fail gracefully
+      };
+      
+      //"getIn EH isn't triggered by moveInXXXX commands" so need to be carefull
+      if (_unit getVariable ["AGM_isEscorting", false]) then {_unit setVariable ["AGM_isEscorting", false, true]};
+    };
+  };
 };
