@@ -318,6 +318,15 @@ class CfgSounds {
   };
 };
 
+// Testing
+class Extended_GetIn_EventHandlers {
+  class All {
+    class AGM_GetInPosTest {
+      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
+    };
+  };
+};
+
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
     serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";

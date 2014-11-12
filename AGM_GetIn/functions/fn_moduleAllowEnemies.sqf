@@ -25,5 +25,5 @@ _activated = _this select 2;
 if !(_activated) exitWith {};
 
 if (isServer) then {
-  [_logic, "AGM_GetIn_canBoardEnemyVehicle", "CanBoardHostileVehicle"] call AGM_Core_fnc_readNumericParameterFromModule;
+  [_logic, "AGM_GetIn_canBoardEnemyVehicle", "CanBoardHostileVehicle"] call AGM_Core_fnc_readBooleanParameterFromModule;
 };
