@@ -4,17 +4,17 @@ Name: AGM_GetIn_fnc_moduleAllowEnmies
 Author: Pabst Mirror
 
 Description:
-	Function for setup module. Sets AGM_GetIn_canBoardEnemyVehicle, which allows the getIn interaction to force a moveIn on a hostile vehicle
+  Function for setup module. Sets AGM_GetIn_canBoardEnemyVehicle, which allows the getIn interaction to force a moveIn on a hostile vehicle
 
 Parameters:
-	0: OBJECT - logic
-	1: ARRAY - synced objects
+  0: OBJECT - logic
+  1: ARRAY - synced objects
 
 Returns:
-	Nothing
+  Nothing
 
 Example:
-	called from module
+  called from module
 */
 private ["_logic","_units"];
 
