@@ -24,7 +24,7 @@ _this resize 5;
 
 _unit = _this select 0;
 _vehicle = _this select 1;
-_position = _this select 2;
+_position = toLower (_this select 2);
 _checkDistance = _this select 3;
 _index = _this select 4;  // optional, please don't use
 
@@ -34,15 +34,21 @@ if (isNil "_index") then {_index = -1};
 // general
 if (!alive _vehicle || {locked _vehicle > 1}) exitWith {false};
 
-private ["_config", "_selection", "_radius", "_return"];
+private ["_config", "_turret", "_selection", "_radius", "_enemiesInVehicle", "_return"];
 
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
+_turret = [];
 
 _selection = "";
 _radius = 0;
 
+_enemiesInVehicle = false;   //Possible Side Restriction
+{
+  if (side _unit getFriend side _x < 0.6) exitWith {_enemiesInVehicle = true};
+} forEach crew _vehicle;
+
 _return = false;
-switch (toLower _position) do {
+switch (_position) do {
   case "driver" : {
     _selection = getText (_config >> "memoryPointsGetInDriver");
     _radius = getNumber (_config >> "getInRadius");
@@ -58,7 +64,7 @@ switch (toLower _position) do {
   };
 
   case "gunner" : {
-    private ["_turret", "_turretConfig"];
+    private "_turretConfig";
     _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretGunner;
     if (_turret isEqualTo []) exitWith {false};
 
@@ -71,7 +77,7 @@ switch (toLower _position) do {
   };
 
   case "commander" : {
-    private ["_turret", "_turretConfig"];
+    private "_turretConfig";
     _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCommander;
     if (_turret isEqualTo []) exitWith {false};
 
@@ -84,7 +90,7 @@ switch (toLower _position) do {
   };
 
   case "copilot" : {
-    private ["_turret", "_turretConfig"];
+    private "_turretConfig";
     _turret = [typeOf _vehicle] call AGM_Core_fnc_getTurretCopilot;
     if (_turret isEqualTo []) exitWith {false};
 
@@ -97,7 +103,7 @@ switch (toLower _position) do {
   };
 
   case "turret" : {
-    private ["_turrets", "_turret", "_turretConfig"];
+    private ["_turrets", "_turretConfig"];
     _turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsOther;
 
     if (_index != -1 && {_turret = _turrets select _index;
@@ -125,7 +131,7 @@ switch (toLower _position) do {
   };
 
   case "ffv" : {
-    private ["_turrets", "_turret", "_turretConfig"];
+    private ["_turrets", "_turretConfig"];
     _turrets = [typeOf _vehicle] call AGM_Core_fnc_getTurretsFFV;
 
     if (_index != -1 && {_turret = _turrets select _index;
@@ -208,3 +214,5 @@ switch (toLower _position) do {
 if (!_checkDistance || {_radius == 0} || {_vehicle == vehicle _unit}) exitWith {_return};
 
 _return && {(getPos _unit) distance (_vehicle modelToWorld (_vehicle selectionPosition _selection)) < _radius}
+
+//_enemiesInVehicle
