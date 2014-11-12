@@ -2,6 +2,7 @@
 	Author: aeroson
 	
 	Description:
+		Callback for mouse wheel change
 	
 	Parameters: 
 		None
@@ -21,7 +22,9 @@ if(vehicle _player != _player && {!(vehicle _player isKindOf "ParachuteBase")}) 
 	} else {
 		AGM_CrewInfo_timeToHide = AGM_CrewInfo_timeToHide + 0.5;
 	};
-	call AGM_CrewInfo_fnc_doShow;
+	if(call AGM_CrewInfo_fnc_canShow) then {
+		call AGM_CrewInfo_fnc_doShow;
+	};
 
 } else {
 

@@ -2,6 +2,7 @@
 	Author: aeroson
 	
 	Description:
+		Sets the text on the dialog
 	
 	Parameters: 
 		None
@@ -19,4 +20,4 @@ disableSerialization;
 _text = _this select 0;
 _ctrl = (uiNamespace getVariable "AGM_CrewInfo_dialog") displayCtrl AGM_CrewInfo_TextIDC;
 _ctrl ctrlSetStructuredText parseText _text;
-_ctrl ctrlCommit 0; 
+_ctrl ctrlCommit 0;

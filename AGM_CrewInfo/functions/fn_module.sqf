@@ -2,9 +2,10 @@
 	Author: aeroson
 	
 	Description:
+		Crew Info module handler
 	
 	Parameters: 
-		None
+		Whatever module provides
 	
 	Returns:
 		Nothing

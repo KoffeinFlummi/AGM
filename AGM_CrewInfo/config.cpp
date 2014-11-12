@@ -5,17 +5,18 @@
 
 
 	Credits:
-		Rewritten for AGM by aeroson
-
-		Original script by =[A*C]= code34 
-		Modified by [KH]Jman
-		Part is modified code from WINSE - Valhalla mission 
-		modified for MSO: 16/08/2012
+		Rewritten for AGM by aeroson with given permission from [KH]Jman
 
 		Created by [KH]Jman
 		Creation date: 31/03/2011
 		Email: jman@kellys-heroes.eu
 		Web: http://www.kellys-heroes.eu
+
+		Original script by =[A*C]= code34 
+		Modified by [KH]Jman
+		Part is modified code from WINSE - Valhalla mission 
+		modified for MSO: 16/08/2012
+		
 */
 
 
@@ -66,7 +67,6 @@ class AGM_Core_Options {
 		default = 1;
 	};
 };
-
 
 
 

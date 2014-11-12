@@ -36,7 +36,7 @@ class RscTitles
 				"(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])",
 				"(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"
 			};
-
+			text="";
 			class Attributes {
 				align = right;
 			};

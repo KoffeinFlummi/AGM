@@ -2,6 +2,7 @@
 	Author: aeroson
 	
 	Description:
+		Shows the actual text and sets text the crew info
 	
 	Parameters: 
 		None
@@ -59,6 +60,4 @@ _text = _text + format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow=
 } forEach _crew;
 
 cutRsc ["AGM_CrewInfo_dialog", "PLAIN", 1, false];
-[_text] call AGM_CrewInfo_fnc_setText;	
-
-
+[_text] call AGM_CrewInfo_fnc_setText;
