@@ -68,8 +68,9 @@ def check_file(projectpath, path, name):
         print("  !!! Attempted to fix indentation. Please check to confirm results.")
 
   classdefs = []
-  if name.split(".")[-1] == "cpp":
-    classdefs = re.findall(r"class(.*?)\{", content, re.DOTALL)
+  # broken ATM
+  #if name.split(".")[-1] == "cpp":
+  #  classdefs = re.findall(r"class(.*?)\{", content, re.DOTALL)
   for c in classdefs:
     if re.match(r" [a-zA-Z0-9\-_#]+(: [a-zA-Z0-9\-_#]+)? ", c) is None:
       warnings += 1
