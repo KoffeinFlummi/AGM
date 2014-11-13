@@ -36,7 +36,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
       AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
     };
 
-    //if (_nextMagazine == "") exitWith {systemChat "0"; false};systemChat "1";
+    if (_muzzle == "" && {_nextMagazine == ""}) exitWith {systemChat "0"; false};systemChat "1";
     if (_muzzle == "") exitWith {true};
 
     // fix auto muzzle swap after entering or leaving a vehicle
@@ -68,8 +68,19 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   };
 };
 
+//[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
 //[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
-[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
+[
+  _this select 0,
+  format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_WeaponSelect_TakeNextGrenade"],
+  "Throw",
+  AGM_WeaponSelect_actionThrowCondition,
+  AGM_WeaponSelect_actionThrow,
+  {true},
+  {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
+  10
+] call AGM_Core_fnc_addActionMenuEventHandler;
+
 _id = [
   _this select 0,
   localize "STR_AGM_WeaponSelect_TakeNextGrenade",
