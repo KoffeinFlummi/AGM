@@ -208,6 +208,7 @@ class CfgFunctions {
       class displayTextPicture;
       class displayTextStructured;
       class doAnimation;
+      class endRadioTransmission;
       class execRemoteFnc;
       class filter;
       class getBinocular;
