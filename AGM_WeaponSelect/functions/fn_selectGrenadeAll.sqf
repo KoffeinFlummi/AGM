@@ -42,7 +42,7 @@ if (_nextMuzzle != "") then {
   [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
 };
 
-if (_nextMuzzle in (uiNamespace getVariable "AGM_WeaponSelect_FragMuzzles")) then {
+if (_nextMuzzle in AGM_WeaponSelect_FragMuzzles) then {
   AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = _nextMuzzle;
   AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag = true;
 } else {
