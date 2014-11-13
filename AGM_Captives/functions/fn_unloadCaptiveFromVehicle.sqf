@@ -9,9 +9,9 @@ _cargo = crew _vehicle;  // Can also unload from driver, gunner, commander, turr
 
 _cargo = [_cargo, {_this getVariable ["AGM_isCaptive", false]}] call AGM_Core_fnc_filter;
 
-if (count _cargo == 0) exitWith {};
+if (count _cargo > 0) then {
+  _target = _cargo select 0;
 
-_target = _cargo select 0;
-
-moveOut _target;  //global?
-[_target, "{unassignVehicle _this}", _target] call AGM_Core_fnc_execRemoteFnc;
+  moveOut _target;  //global?
+  [_target, "{unassignVehicle _this}", _target] call AGM_Core_fnc_execRemoteFnc;
+};

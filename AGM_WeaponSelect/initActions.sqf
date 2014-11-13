@@ -32,7 +32,10 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
     };
 
     if (_nextMagazine != AGM_WeaponSelect_NextGrenadeMagazineName) then {
-      (_this select 1) setUserActionText [(_this select 1) getVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", -1], format [localize "STR_AGM_WeaponSelect_TakeGrenade", getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayNameShort")]];
+      _string = getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayNameShort");
+      if (_string == "") then {_string = getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayName")};
+
+      (_this select 1) setUserActionText [(_this select 1) getVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", -1], format [localize "STR_AGM_WeaponSelect_TakeGrenade", _string]];
       AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
     };
 
