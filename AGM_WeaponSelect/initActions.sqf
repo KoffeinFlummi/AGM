@@ -39,7 +39,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
       AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
     };
 
-    if (_muzzle == "" && {_nextMagazine == ""}) exitWith {systemChat "0"; false};systemChat "1";
+    if (_muzzle == "" && {_nextMagazine == ""}) exitWith {false};
     if (_muzzle == "") exitWith {true};
 
     // fix auto muzzle swap after entering or leaving a vehicle
