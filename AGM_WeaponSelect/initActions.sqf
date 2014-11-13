@@ -2,28 +2,62 @@
 
 // don't throw no nades if none selected!
 if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
-  AGM_WeaponSelect_actionThrowCondition = {
-    _muzzle = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
+  AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle = objNull;
+  AGM_WeaponSelect_NextGrenadeMagazineName = "";
 
+  AGM_WeaponSelect_actionThrowCondition = {
+    _muzzle = call AGM_WeaponSelect_fnc_getSelectedGrenade;
+
+    _magazines = magazines (_this select 1);
+
+    // get next mag for updated action name.
+    _nextMagazine = "";
+
+    _index = AGM_WeaponSelect_AllMuzzles find _muzzle;
+
+    scopeName "SearchMain";
+
+    for "_index" from (_index + 1) to (count AGM_WeaponSelect_AllMuzzles - 1) do {
+      {
+        if (_x in (AGM_WeaponSelect_AllMagazines select _index)) exitWith {_nextMagazine = _x; breakTo "SearchMain"};
+      } count _magazines;
+    };
+
+    if (_nextMagazine == "") then {
+      for "_index" from 0 to (_index - 1) do {
+        {
+          if (_x in (AGM_WeaponSelect_AllMagazines select _index)) exitWith {_nextMagazine = _x; breakTo "SearchMain"};
+        } count _magazines;
+      };
+    };
+
+    if (_nextMagazine != AGM_WeaponSelect_NextGrenadeMagazineName) then {
+      (_this select 1) setUserActionText [(_this select 1) getVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", -1], format [localize "STR_AGM_WeaponSelect_TakeGrenade", getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayNameShort")]];
+      AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
+    };
+
+    //if (_nextMagazine == "") exitWith {systemChat "0"; false};systemChat "1";
     if (_muzzle == "") exitWith {true};
 
     // fix auto muzzle swap after entering or leaving a vehicle
-    if (_this select 0 != missionNamespace getVariable ["AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle", objNull]) then {
+    if (_this select 0 != AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle) then {
       [_this select 1, _muzzle] call AGM_WeaponSelect_fnc_setNextGrenadeMuzzle;
       AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle = _this select 0;
     };
 
     if !([_this select 1] call AGM_Core_fnc_canUseWeapon) exitWith {false};
 
-    _magazines = magazines (_this select 1);
-
+    // check if there is still a magazine
     _result = true;
-    {
-      if (_x in _magazines) exitWith {_result = false};
-    } forEach getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+    with uiNamespace do {
+      {
+        if (_x in _magazines) exitWith {_result = false};
+      } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle)); // getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+    };
 
     if (_result) then {
       if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
+      [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
     };
     _result
   };
@@ -34,15 +68,18 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   };
 };
 
-[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
 //[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
-[
+[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
+_id = [
   _this select 0,
   localize "STR_AGM_WeaponSelect_TakeNextGrenade",
   "CycleThrownItems",
-  {[_this select 1] call AGM_Core_fnc_canUseWeapon},
+  {[_this select 1] call AGM_Core_fnc_canUseWeapon && {AGM_WeaponSelect_NextGrenadeMagazineName != ""}},
   {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
   {true},
   {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
   0
 ] call AGM_Core_fnc_addActionMenuEventHandler;
+
+// save actual add action id
+(_this select 0) setVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", ((_this select 0) getVariable "AGM_ActionMenu_CycleThrownItems") select 2 select _id select 0];

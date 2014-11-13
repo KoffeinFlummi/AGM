@@ -18,7 +18,10 @@ class CfgFunctions {
       file = "\AGM_WeaponSelect\functions";
       class countMagazinesForGrenadeMuzzle;
       class displayGrenadeTypeAndNumber;
+      class findNextGrenadeMagazine;
+      class findNextGrenadeMuzzle;
       class fireSmokeLauncher;
+      class getSelectedGrenade;
       class getWeaponModes;
       class getWeaponMuzzles;
       class playChangeFiremodeSound;
