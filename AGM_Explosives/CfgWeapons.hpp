@@ -20,6 +20,14 @@ class CfgWeapons {
 			mass = 3;
 			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
 		};
+		class AGM_InventoryActions {
+			class AGM_OpenClackerMenu {
+				displayName = "$STR_AGM_Explosives_DetonateMenu";
+				condition = "true";
+				statement = "[_player, _classname] call AGM_Explosives_fnc_openDetonateUI;";
+				closeInventory = 1;
+			};
+		};
 	};
 	class AGM_M26_Clacker: AGM_Clacker {
 		displayName = $STR_AGM_Explosives_M26_displayName;

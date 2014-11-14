@@ -200,7 +200,16 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 10;
     };
+    class AGM_InventoryActions {
+      class AGM_OpenClackerMenu {
+        displayName = "$STR_AGM_Overheating_SwapBarrel";
+        condition = "'AGM_SpareBarrel' in items _player && {getNumber (configFile >> 'CfgWeapons' >> currentWeapon _player >> 'AGM_Overheating_allowSwapBarrel') == 1}";
+        statement = "[_player, currentWeapon _player] call AGM_Overheating_fnc_swapBarrel;";
+        closeInventory = 1;
+      };
+    };
   };
+};
 
   class Rifle;
   class Rifle_Base_F : Rifle {

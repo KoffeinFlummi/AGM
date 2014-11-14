@@ -1,20 +1,4 @@
-class CfgWeapons {
-	class ItemCore;
-	class AGM_ItemCore;
 
-	//AGM_InventoryInteraction
-	//More of an example than something anyone needs
-	class ItemMap: ItemCore  {
-		class AGM_InventoryActions {
-			class OpenMap {
-				displayName = "Open Map";       		 //todo localize
-				condition = "(_idc == 6211)";  //show only when sloted in a specifc slot (based on control's IDC)
-				statement = "openMap true";        
-				closeInventory = 1;           			 //runs after closing inv display
-			};
-		};
-	};
-	
 	//AGM_Attach
 	class AGM_IR_Strobe_Item: AGM_ItemCore {
 		class AGM_InventoryActions {
@@ -83,8 +67,6 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
-	
-	//AGM_Backpacks 
 	class ReammoBox;
 	class Bag_Base: ReammoBox {
 		class AGM_InventoryActions {

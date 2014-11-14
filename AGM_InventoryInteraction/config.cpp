@@ -16,15 +16,15 @@ class CfgFunctions {
   class AGM_InventoryInteraction {
     class AGM_InventoryInteraction {
       file = "\AGM_InventoryInteraction\functions";
-			class actionButton;
-			class addItemAction;
-			class closeItemInfoBox;
-			class handleClickEquiped;
-			class handleClickInvList;
-			class handleSelChangeInvList;
-			class inventoryOpened;
-			class openItemInfoBox;
-			class removeItemAction;
+      class actionButton;
+      class addItemAction;
+      class closeItemInfoBox;
+      class handleClickEquiped;
+      class handleClickInvList;
+      class handleSelChangeInvList;
+      class inventoryOpened;
+      class openItemInfoBox;
+      class removeItemAction;
     };
   };
 };
@@ -46,4 +46,20 @@ class Extended_InventoryOpened_EventHandlers {
 
 #include "RscDisplayInventory.hpp"
 
-#include "actions_test.hpp"
+/* class CfgWeapons {
+  class ItemCore;
+  
+  //More of an example than something anyone needs
+  class ItemMap: ItemCore  {
+    class AGM_InventoryActions {
+      class OpenMap {
+        displayName = "Open Map";  //todo localize
+        condition = "(_idc == 6211)";  //show only when sloted in a specifc slot (based on control's IDC)
+        statement = "openMap true";        
+        closeInventory = 1;  //runs after closing inv display
+      };
+    };
+  };
+};
+// #include "actions_test.hpp"
+*/
