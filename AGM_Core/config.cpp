@@ -211,7 +211,6 @@ class CfgFunctions {
       class endRadioTransmission;
       class execRemoteFnc;
       class filter;
-      class getBinocular;
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;

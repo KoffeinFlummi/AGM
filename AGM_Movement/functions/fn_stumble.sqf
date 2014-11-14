@@ -7,7 +7,7 @@ _this spawn {
       case (primaryWeapon player) : {"AmovPpneMstpSrasWrflDnon"};
       case (secondaryWeapon player) : {"AmovPpneMstpSrasWrflDnon"};
       case (handgunWeapon player) : {"AmovPpneMstpSrasWpstDnon"};
-      case (player call AGM_Core_fnc_getBinocular) : {"AmovPpneMstpSrasWbinDnon"};
+      case (binocular player) : {"AmovPpneMstpSrasWbinDnon"};
       default {"AmovPpneMstpSnonWnonDnon"};
     };
     [player, _animation] call AGM_Core_fnc_doAnimation;
