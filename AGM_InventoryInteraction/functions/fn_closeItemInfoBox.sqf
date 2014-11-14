@@ -1,27 +1,28 @@
 /*
-  Name: AGM_InventoryInteraction_fnc_closeItemInfoBox
+Name: AGM_InventoryInteraction_fnc_closeItemInfoBox
+
+Author: Pabst Mirror
+
+Description:
+  Closes the item info box
+
+Parameters:
+  NONE
   
-  Author: Pabst Mirror
-  
-  Description:
-    Closes the item info box
-  
-  Parameters:
-    NONE
-    
-  Returns:
-    NONE
-  
-  Example:
-    internal use
+Returns:
+  NONE
+
+Example:
+  internal use
 */
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
-private ["_itemInfoBoxPos"];
+
+private ["_index", "_itemInfoBoxPos"];
 
 //remove old actions, won't be seen, but could possibly be tabbed to, better to just clean up everytime
 for "_index" from 0 to (MAX_ACTIONS - 1) do {
-	(DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _index)) ctrlRemoveAllEventHandlers "ButtonClick";
-	(DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _index)) ctrlSetText "";
+  (DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _index)) ctrlRemoveAllEventHandlers "ButtonClick";
+  (DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _index)) ctrlSetText "";
 };
 
 _itemInfoBoxPos = ctrlPosition (DISPLAY_INVENTORY displayCtrl IDC_ACTION_CONTROLGROUP);

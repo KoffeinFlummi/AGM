@@ -1,20 +1,20 @@
 /*
-  Name: AGM_InventoryInteraction_fnc_inventoryOpened
+Name: AGM_InventoryInteraction_fnc_inventoryOpened
+
+Author: Pabst Mirror
+
+Description:
+  Handles opening inventory event from CBA's Extended_inventoryOpened_EventHandlers
+
+Parameters:
+  0: OBJECT - ?
+  //todo
   
-  Author: Pabst Mirror
-  
-  Description:
-    Handles opening inventory event from CBA's Extended_inventoryOpened_EventHandlers
-  
-  Parameters:
-    0: OBJECT - ?
-    //todo
-    
-  Returns:
-    BOOL - handeled, always false
-  
-  Example:
-    internal use
+Returns:
+  BOOL - handeled, always false
+
+Example:
+  internal use
 */
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
 
@@ -28,7 +28,7 @@ if((_this select 0) == (call AGM_Core_fnc_player)) then {
       (diag_tickTime > _maxWait) || !(isNull DISPLAY_INVENTORY)
     };
     
-    if (isNull DISPLAY_INVENTORY) exitWith {};	//systemChat "must be locked???";
+    if (isNull DISPLAY_INVENTORY) exitWith {};  //systemChat "must be locked???";
     
     // Uniform Listbox
     (DISPLAY_INVENTORY displayCtrl IDC_CONTAINER_UNIFORM) ctrlAddEventHandler ["MouseButtonUp", {_this call AGM_InventoryInteraction_fnc_handleClickInvList;}];
@@ -60,9 +60,9 @@ if((_this select 0) == (call AGM_Core_fnc_player)) then {
     
     (DISPLAY_INVENTORY displayCtrl IDC_SLOT_WATCH) ctrlAddEventHandler ["MouseButtonClick",     {[_this, false] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
     (DISPLAY_INVENTORY displayCtrl IDC_SLOT_WATCH) ctrlAddEventHandler ["MouseButtonDblClick",   {[_this, true] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
- 
-	//Player's Containers Slots (Uniform, Vest, Backpack)
-	(DISPLAY_INVENTORY displayCtrl IDC_SLOT_BACKPACK) ctrlAddEventHandler ["MouseButtonClick",     {[_this, false] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
+
+    //Player's Containers Slots (Uniform, Vest, Backpack)
+    (DISPLAY_INVENTORY displayCtrl IDC_SLOT_BACKPACK) ctrlAddEventHandler ["MouseButtonClick",     {[_this, false] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
     (DISPLAY_INVENTORY displayCtrl IDC_SLOT_BACKPACK) ctrlAddEventHandler ["MouseButtonDblClick",   {[_this, true] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
 
     
@@ -71,11 +71,11 @@ if((_this select 0) == (call AGM_Core_fnc_player)) then {
       _path = (configFile >> "RscDisplayInventory" >> "controls") select _index;
       _idc = getNumber (_path >> "IDC");
       if (!(_idc in [
-	  IDC_ACTION_CONTROLGROUP, 
-	  IDC_CONTAINER_UNIFORM, IDC_CONTAINER_BACKPACK, IDC_CONTAINER_VEST, 
-	  IDC_SLOT_MAP, IDC_SLOT_GPS, IDC_SLOT_RADIO, IDC_SLOT_COMPASS, IDC_SLOT_WATCH,
-	  IDC_SLOT_BACKPACK
-	  ])) then {
+            IDC_ACTION_CONTROLGROUP, 
+            IDC_CONTAINER_UNIFORM, IDC_CONTAINER_BACKPACK, IDC_CONTAINER_VEST, 
+            IDC_SLOT_MAP, IDC_SLOT_GPS, IDC_SLOT_RADIO, IDC_SLOT_COMPASS, IDC_SLOT_WATCH,
+            IDC_SLOT_BACKPACK
+            ])) then {
         (DISPLAY_INVENTORY displayCtrl _idc) ctrlAddEventHandler ["MouseButtonDown", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
       };
       (DISPLAY_INVENTORY displayCtrl _idc) ctrlAddEventHandler ["LBDrag", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];

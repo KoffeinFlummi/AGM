@@ -4,18 +4,18 @@ Name: AGM_InventoryInteraction_fnc_openItemInfoBox
 Author: Pabst Mirror
 
 Description:
-  Opens the item info box
+Opens the item info box
 
 Parameters:
-  0: CONFIG - item's full path (could be CfgMagazines or CfgWeapons)
-  1: ARRAY - position of mouse
-  2: NUMBER - IDC
-  
+0: CONFIG - item's full path (could be CfgMagazines or CfgWeapons)
+1: ARRAY - position of mouse
+2: NUMBER - IDC
+
 Returns:
-  NONE
+NONE
 
 Example:
-  internal use
+internal use
 */
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
 #define FACTOR_POUND_TO_KILOGRAMM 1/2.2046
@@ -63,11 +63,11 @@ for "_index" from 0 to ((count (_pathToItemConfig >> "AGM_InventoryActions")) - 
   _statement = getText(_actionPath >> "statement");
   _closeInventory = getNumber (_actionPath >> "closeInventory");
   if (_condition == "") then {_condition = "true"};  
-  
+
   _condition = compile _condition;
   _statement = compile _statement;
   _closeInventory = (_closeInventory == 1);
-  
+
   _classnameActions pushBack [_displayName, _condition, _statement, _closeInventory];
 };
 
@@ -79,7 +79,7 @@ _parents = [_pathToItemConfig, true] call BIS_fnc_returnParents;
   _classnameActions = _classnameActions + (_actionsVar select 2);
 } forEach _parents;
 
-systemChat format ["debug: %1", _classnameActions];
+// systemChat format ["debug: %1", _classnameActions];
 
 //Process Actions (test condition, add to menu)
 _shownActions = 0;
