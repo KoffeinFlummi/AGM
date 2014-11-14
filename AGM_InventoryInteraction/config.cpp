@@ -3,7 +3,7 @@ class CfgPatches{
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.6;
-    requiredAddons[] = {"AGM_Core", "A3_UI_F", "A3_Weapons_F",      "AGM_Explosives", "AGM_Wind", "AGM_Hearing", "AGM_Overheating"};
+    requiredAddons[] = {"AGM_Core"};
 
     version = "0.99";
     versionStr = "0.99";
@@ -46,10 +46,11 @@ class Extended_InventoryOpened_EventHandlers {
 
 #include "RscDisplayInventory.hpp"
 
-/* class CfgWeapons {
+
+//More of an example than something anyone needs
+/* 
+class CfgWeapons {
   class ItemCore;
-  
-  //More of an example than something anyone needs
   class ItemMap: ItemCore  {
     class AGM_InventoryActions {
       class OpenMap {
@@ -60,6 +61,5 @@ class Extended_InventoryOpened_EventHandlers {
       };
     };
   };
-};
-// #include "actions_test.hpp"
+}; 
 */

@@ -35,8 +35,6 @@ _condition = [_this, 2, {false}, ["", {}]] call bis_fnc_param;
 _statement = [_this, 3, {false}, ["", {}]] call bis_fnc_param;
 _closeInventory = [_this, 4, false, [false, 0]] call bis_fnc_param;
 
-_classname = toLower _classname;  //find is case sensitive, array is all lower
-
 if (typeName _condition == "STRING") then {
   _condition = compile _condition;
 };

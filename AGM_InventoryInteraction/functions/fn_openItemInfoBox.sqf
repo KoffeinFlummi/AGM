@@ -29,7 +29,7 @@ _idc = _this select 2;
 _classname = configName _pathToItemConfig;
 _player = call AGM_Core_fnc_player;
 
-//Set classname text [1st row] (just classname for now, (as mission maker I kinda like))
+//Set classname text [1st row] (just classname for now, (as mission maker I kinda like, can be swtiched to display name))
 (DISPLAY_INVENTORY displayCtrl IDC_ACTION_HEADERTEXT) ctrlSetText format ["%1", _classname];
 
 //Set mass text [2nd row]

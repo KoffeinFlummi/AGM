@@ -5,6 +5,8 @@ Author: Pabst Mirror
 
 Description:
   Handles opening inventory event from CBA's Extended_inventoryOpened_EventHandlers
+  Adds the required event handlers to the inventory display.
+  -ALL might be able to be moved to the config-
 
 Parameters:
   0: OBJECT - ?
@@ -20,7 +22,7 @@ Example:
 
 if((_this select 0) == (call AGM_Core_fnc_player)) then {
   [] spawn {
-    private ["_maxWait", "_path", "_index", "_idc"];
+    private ["_maxWait", "_index", "_idc"];
     
     _maxWait = diag_tickTime + 3;
     //If inventory is locked, display will never open
@@ -66,10 +68,9 @@ if((_this select 0) == (call AGM_Core_fnc_player)) then {
     (DISPLAY_INVENTORY displayCtrl IDC_SLOT_BACKPACK) ctrlAddEventHandler ["MouseButtonDblClick",   {[_this, true] call AGM_InventoryInteraction_fnc_handleClickEquiped;}];
 
     
-    //Clicking on ANYTHING else will close the menu
+    //Clicking on ANYTHING else will close the menu (so it's not in the way)
     for "_index" from 0 to ((count (configFile >> "RscDisplayInventory" >> "controls")) - 1) do {
-      _path = (configFile >> "RscDisplayInventory" >> "controls") select _index;
-      _idc = getNumber (_path >> "IDC");
+      _idc = getNumber (((configFile >> "RscDisplayInventory" >> "controls") select _index) >> "IDC");
       if (!(_idc in [
             IDC_ACTION_CONTROLGROUP, 
             IDC_CONTAINER_UNIFORM, IDC_CONTAINER_BACKPACK, IDC_CONTAINER_VEST, 
@@ -79,7 +80,7 @@ if((_this select 0) == (call AGM_Core_fnc_player)) then {
         (DISPLAY_INVENTORY displayCtrl _idc) ctrlAddEventHandler ["MouseButtonDown", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
       };
       (DISPLAY_INVENTORY displayCtrl _idc) ctrlAddEventHandler ["LBDrag", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
-    };      
+    };  
   };
 };
 
