@@ -4,6 +4,7 @@
 if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle = objNull;
   AGM_WeaponSelect_NextGrenadeMagazineName = "";
+  AGM_WeaponSelect_AllMuzzlesCount = count AGM_WeaponSelect_AllMuzzles;
 
   AGM_WeaponSelect_actionThrowCondition = {
     _muzzle = call AGM_WeaponSelect_fnc_getSelectedGrenade;
@@ -17,7 +18,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
 
     scopeName "SearchMain";
 
-    for "_index" from (_index + 1) to (count AGM_WeaponSelect_AllMuzzles - 1) do {
+    for "_index" from (_index + 1) to (AGM_WeaponSelect_AllMuzzlesCount - 1) do {
       {
         if (_x in (AGM_WeaponSelect_AllMagazines select _index)) exitWith {_nextMagazine = _x; breakTo "SearchMain"};
       } count _magazines;
@@ -39,8 +40,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
       AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
     };
 
-    if (_muzzle == "" && {_nextMagazine == ""}) exitWith {false};
-    if (_muzzle == "") exitWith {true};
+    if (_muzzle == "") exitWith {_nextMagazine != ""};
 
     // fix auto muzzle swap after entering or leaving a vehicle
     if (_this select 0 != AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle) then {
@@ -55,7 +55,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
     with uiNamespace do {
       {
         if (_x in _magazines) exitWith {_result = false};
-      } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle)); // getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+      } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle));
     };
 
     if (_result) then {
