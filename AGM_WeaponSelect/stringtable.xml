@@ -129,6 +129,14 @@
       <Portuguese>Selecionar Mísseis</Portuguese>
       <Italian>Seleziona Missili</Italian>
     </Key>
+    <Key ID="STR_AGM_WeaponSelect_TakeGrenade">
+      <English>Take %1</English>
+      <German>%1 nehmen</German>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_TakeNextGrenade">
+      <English>Take next Grenade</English>
+      <German>Nächste Granate nehmen</German>
+    </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
       <German>Explosive Granate auswählen</German>

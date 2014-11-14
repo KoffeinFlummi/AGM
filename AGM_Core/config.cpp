@@ -208,9 +208,9 @@ class CfgFunctions {
       class displayTextPicture;
       class displayTextStructured;
       class doAnimation;
+      class endRadioTransmission;
       class execRemoteFnc;
       class filter;
-      class getBinocular;
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
@@ -315,6 +315,15 @@ class CfgSounds {
   class AGM_Sound_Click {
     sound[] = {"\AGM_Core\sounds\AGM_click.wav", 5, 1, 200};
     titles[] = {};
+  };
+};
+
+// Testing
+class Extended_GetIn_EventHandlers {
+  class All {
+    class AGM_GetInPosTest {
+      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
+    };
   };
 };
 

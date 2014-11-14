@@ -21,7 +21,7 @@ try {
       case (primaryWeapon _unit) : {throw "AmovPknlMstpSlowWrflDnon"};
       case (secondaryWeapon _unit) : {throw "AmovPknlMstpSrasWlnrDnon"};
       case (handgunWeapon _unit) : {throw "AmovPknlMstpSlowWpstDnon"};
-      case ([_unit] call AGM_Core_fnc_getBinocular) : {throw "AmovPknlMstpSoptWbinDnon"};
+      case (binocular _unit) : {throw "AmovPknlMstpSoptWbinDnon"};
     };
   };
 } catch {

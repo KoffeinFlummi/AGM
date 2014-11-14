@@ -23,7 +23,7 @@ if (currentWeapon _player != _weapon) exitWith {
 
 // unlock safety
 if (_weapon in (_player getVariable ["AGM_SafeMode_safedWeapons", []])) exitWith {
-	_this call AGM_SafeMode_fnc_unlockSafety;
+  _this call AGM_SafeMode_fnc_unlockSafety;
 };
 
 _muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
