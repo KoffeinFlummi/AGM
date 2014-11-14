@@ -7,7 +7,7 @@ Description:
 Opens the item info box
 
 Parameters:
-0: CONFIG - item's full path (could be CfgMagazines or CfgWeapons)
+0: CONFIG - item's full path (could be CfgMagazines, CfgWeapons, CfgGoggles, CfgVehicles)
 1: ARRAY - position of mouse
 2: NUMBER - IDC
 
