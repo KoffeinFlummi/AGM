@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-10-07 -->
+<Project name="AGM">
+  <Package name="InventoryInteraction">
+    <Key ID="STR_AGM_InventoryInteraction_UseDoubleClick">
+      <English>Inventory Ineraction: Use Double Click</English>
+    </Key>
+    <Key ID="STR_AGM_InventoryInteraction_Mass">
+      <English>Weight:</English>
+      <German>Gewicht:</German>
+      <Spanish>Peso:</Spanish>
+      <French>Poids:</French>
+      <Polish>Waga:</Polish>
+      <Czech>Váha:</Czech>
+      <Italian>Peso:</Italian>
+      <Portuguese>Peso:</Portuguese>
+      <Hungarian>Súly:</Hungarian>
+    </Key>
+  </Package>
+</Project>
