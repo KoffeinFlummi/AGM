@@ -4,7 +4,6 @@
 if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle = objNull;
   AGM_WeaponSelect_NextGrenadeMagazineName = "";
-  AGM_WeaponSelect_AllMuzzlesCount = count AGM_WeaponSelect_AllMuzzles;
 
   AGM_WeaponSelect_actionThrowCondition = {
     _muzzle = call AGM_WeaponSelect_fnc_getSelectedGrenade;
