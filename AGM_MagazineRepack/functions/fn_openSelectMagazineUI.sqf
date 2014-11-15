@@ -23,14 +23,7 @@ for "_index" from 0 to (_count - 1) do {
 
 [
   _actions,
-  {
-    _data = _this;
-    call AGM_Interaction_fnc_hideMenu;
-    if (isNil "_data") exitWith {};
-    _data set [1, [_data select 1] call AGM_Core_fnc_toNumber];
-    [_data select 1, _data, "AGM_MagazineRepack_fnc_magazineRepackCallback", localize "STR_AGM_MagazineRepack_RepackingMagazine"] call AGM_Core_fnc_progressBar;
-    [player] call AGM_core_fnc_goKneeling;
-  },
+  AGM_MagazineRepack_fnc_startPackingProgressBar,
   {
     call AGM_Interaction_fnc_hideMenu;
     if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenuSelf};

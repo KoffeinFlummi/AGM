@@ -19,6 +19,8 @@ class CfgFunctions {
       class magazineRepack;
       class magazineRepackCallback;
       class openSelectMagazineUI;
+      class selectFromInventory;
+      class startPackingProgressBar;
     };
   };
 };
@@ -31,7 +33,7 @@ class CfgVehicles {
       class AGM_RepackMagazines {
         displayName = "$STR_AGM_MagazineRepack_RepackMagazines";
         condition = "true";
-        statement = "call AGM_MagazineRepack_fnc_magazineRepack";
+        statement = "[true] call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;
         icon = "AGM_MagazineRepack\UI\repack_ca.paa";
@@ -45,4 +47,18 @@ class CfgVehicles {
 class AGM_Parameters {
   AGM_MagazineRepack_TimePerAmmo = 1.5;
   AGM_MagazineRepack_TimePerMagazine = 2.0;
+};
+
+class CfgMagazines {
+  class Default;
+  class CA_Magazine: Default {
+    class AGM_InventoryActions {
+      class AGM_RepackMag {
+        displayName = "$STR_AGM_MagazineRepack_RepackMagazines";
+        condition = "_classname in (([false] call AGM_MagazineRepack_fnc_magazineRepack) select 0)";
+        statement = "_this call AGM_MagazineRepack_fnc_selectFromInventory";        
+        closeInventory = 1;
+      };
+    };
+  };
 };
