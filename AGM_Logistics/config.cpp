@@ -1172,6 +1172,23 @@ class CfgVehicles {
     transportFuel = 0;
   };
 
+  // heli addon
+  class Helicopter_Base_H;
+  class Heli_Transport_04_base_F: Helicopter_Base_H {
+    class AGM_Actions;
+  };
+  class O_Heli_Transport_04_fuel_F: Heli_Transport_04_base_F {
+    class AGM_Actions: AGM_Actions {
+      MACRO_REFUELCARGO
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_SKYCRANE;
+    transportFuel = 0;
+  };
+  class O_Heli_Transport_04_repair_F: Heli_Transport_04_base_F {
+    AGM_canRepair = 1;
+    transportRepair = 0;
+  };
+
   //Hawkeye104 AGM Repair Module
   class Module_F;
   class AGM_ModuleRepair: Module_F {
