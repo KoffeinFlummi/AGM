@@ -3,14 +3,8 @@
   <Package name="CrewInfo">
     <Key ID="STR_AGM_CrewInfo_ShowVehicleCrewInfo">
       <English>Show vehicle crew info</English>
-      <Spanish>Show vehicle crew info</Spanish>
-      <French>Show vehicle crew info</French>
-      <Polish>Show vehicle crew info</Polish>
-      <German>Show vehicle crew info</German>
+      <German>Zeige Fahrzeugbesatzung</German>
       <Czech>Zobrazit info o posádce vozidla</Czech>
-      <Portuguese>Show vehicle crew info</Portuguese>
-      <Italian>Show vehicle crew info</Italian>
-      <Hungarian>Show vehicle crew info</Hungarian>
     </Key>
   </Package>
 </Project>
