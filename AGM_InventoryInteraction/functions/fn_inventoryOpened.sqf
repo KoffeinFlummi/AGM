@@ -8,13 +8,13 @@ Description:
   Adds the required event handlers to the inventory display.
 
 Parameters:
-0: DISPLAY - from RscDisplayInventory's onLoad
+  0: DISPLAY - from RscDisplayInventory's onLoad
 
 Returns:
-Nothing
+  Nothing
 
 Example:
-internal use
+  internal use
 */
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
 
@@ -65,14 +65,14 @@ if (isNil "_display" || {isNull _display}) exitWith {
 
 //Clicking on ANYTHING else will close the menu (so it's not in the way)
 for "_index" from 0 to ((count (configFile >> "RscDisplayInventory" >> "controls")) - 1) do {
-	_idc = getNumber (((configFile >> "RscDisplayInventory" >> "controls") select _index) >> "IDC");
-	if (!(_idc in [
-				IDC_ACTION_CONTROLGROUP, 
-				IDC_CONTAINER_UNIFORM, IDC_CONTAINER_BACKPACK, IDC_CONTAINER_VEST, 
-				IDC_SLOT_MAP, IDC_SLOT_GPS, IDC_SLOT_RADIO, IDC_SLOT_COMPASS, IDC_SLOT_WATCH,
-				IDC_SLOT_BACKPACK
-				])) then {
-		(_display displayCtrl _idc) ctrlAddEventHandler ["MouseButtonDown", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
-	};
-	(_display displayCtrl _idc) ctrlAddEventHandler ["LBDrag", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
+  _idc = getNumber (((configFile >> "RscDisplayInventory" >> "controls") select _index) >> "IDC");
+  if (!(_idc in [
+        IDC_ACTION_CONTROLGROUP, 
+        IDC_CONTAINER_UNIFORM, IDC_CONTAINER_BACKPACK, IDC_CONTAINER_VEST, 
+        IDC_SLOT_MAP, IDC_SLOT_GPS, IDC_SLOT_RADIO, IDC_SLOT_COMPASS, IDC_SLOT_WATCH,
+        IDC_SLOT_BACKPACK
+        ])) then {
+    (_display displayCtrl _idc) ctrlAddEventHandler ["MouseButtonDown", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
+  };
+  (_display displayCtrl _idc) ctrlAddEventHandler ["LBDrag", {[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;}];
 };  
