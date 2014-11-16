@@ -8,7 +8,7 @@ _weapon = _this select 1;
 _safedWeapons = _unit getVariable ["AGM_SafeMode_safedWeapons", []];
 
 if (_weapon in _safedWeapons) exitWith {
-	_this call AGM_SafeMode_fnc_unlockSafety;
+  _this call AGM_SafeMode_fnc_unlockSafety;
 };
 
 _safedWeapons pushBack _weapon;
@@ -19,8 +19,18 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
   private ["_condition", "_statement", "_actionIDs"];
 
   _condition = {
-    [_this select 1] call AGM_Core_fnc_canUseWeapon
-    && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])}
+    if (
+      [_this select 1] call AGM_Core_fnc_canUseWeapon
+      && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])}
+    ) then {
+      // player hud
+      [false] call AGM_SafeMode_fnc_setSafeModeVisual;
+      true
+    } else {
+      // player hud
+      [true] call AGM_SafeMode_fnc_setSafeModeVisual;
+      false
+    }
   };
 
   _statement = {
@@ -28,7 +38,8 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
   };
 
   _actionIDs = [
-    [_unit, "DefaultAction", _condition, {}] call AGM_Core_fnc_addActionEventHandler,
+    //[_unit, "DefaultAction", _condition, {}] call AGM_Core_fnc_addActionEventHandler,
+    [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement, 10] call AGM_Core_fnc_addActionMenuEventHandler,
     [_unit, "nextWeapon", {true}, _statement] call AGM_Core_fnc_addActionEventHandler
   ];
 
@@ -37,4 +48,9 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
 
 _unit selectWeapon _weapon;
 
-playSound "AGM_Sound_Click";
+// play fire mode selector sound
+[_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+
+private "_picture";
+_picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+[localize "STR_AGM_SafeMode_PutOnSafety", _picture] call AGM_Core_fnc_displayTextPicture;

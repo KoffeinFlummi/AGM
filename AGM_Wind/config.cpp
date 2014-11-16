@@ -251,11 +251,13 @@ class RscTitles {
         idc = 42005;
         type = 0;
         style = 1;
-        x = safeZoneX +0.068;
-        y = safeZoneY + safeZoneH -0.418;
+        //x = safeZoneX +0.068;
+        x = safeZoneX + 0.08;
+        y = safeZoneY + safeZoneH - 0.418;
         h = 0.09;
-        w = 0.138;
-        sizeEx = 0.035;
+        w = 0.108;
+        //w = 0.138;
+        sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = " 0000";

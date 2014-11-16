@@ -15,13 +15,15 @@
     Nothing
 */
 
-
-private ["_player", "_unit", "_listedItemClasses", "_allGear"];
+private ["_player", "_unit", "_weapon", "_listedItemClasses", "_actions", "_allGear"];
 
 _player = _this select 0;
 _unit = _this select 1;
 
-_player playMoveNow "AmovPercMstpSlowWrflDnon";
+_weapon = currentWeapon _player;
+if (_weapon == primaryWeapon _player && {_weapon != ""}) then {
+  [_player, "AmovPercMstpSlowWrflDnon", 0] call AGM_Core_fnc_doAnimation;
+};
 
 _listedItemClasses = [];
 
@@ -52,15 +54,15 @@ if (count (assignedItems _unit) > 0) then {
 // Assigned Items
 {
   if (!(_x in _listedItemClasses)) then {
+    private "_item";
     _item = configFile >> "CfgMagazines" >> _x;
-    if (isNil "_item" || str _item == "") then {
+    if (isNil "_item" || str _item == "") then {  //str _item ?
       _item = configFile >> "CfgWeapons" >> _x;
     };
     _actions = [_actions, getText(_item >> "displayName"), getText(_item >> "picture"), _x] call AGM_Interaction_fnc_addSelectableItem;
     _listedItemClasses pushBack _x;
   };
 } forEach (_allGear);
-
 
 [_actions, {call AGM_Interaction_fnc_hideMenu;}, {call AGM_Interaction_fnc_hideMenu;}] call AGM_Interaction_fnc_openSelectMenu;
 

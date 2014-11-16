@@ -10,10 +10,16 @@
  * All turret index arrays of the vehicle. E.g: [[0], [0,0]] (Array)
  */
 
-private ["_vehicle", "_config", "_turrets", "_fnc_addTurret"];
+private ["_type", "_config", "_turrets", "_fnc_addTurret"];
 
-_vehicle = _this select 0;
-_config = configFile >> "CfgVehicles" >> _vehicle;
+_type = _this select 0;
+
+_varName = format ["AGM_CachedTurrets_%1", _type];
+_turrets = + (uiNamespace getVariable _varName);
+
+if (!isNil "_turrets") exitWith {_turrets};
+
+_config = configFile >> "CfgVehicles" >> _type;
 
 _turrets = [];
 _fnc_addTurret = {
@@ -40,5 +46,7 @@ _fnc_addTurret = {
 };
 
 [_config, []] call _fnc_addTurret;
+
+uiNamespace setVariable [_varName, _turrets];
 
 _turrets

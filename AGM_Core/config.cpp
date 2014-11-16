@@ -182,6 +182,7 @@ class CfgFunctions {
     class AGM_Core {
       file = "AGM_Core\functions";
       class addActionEventHandler;
+      class addActionMenuEventHandler;
       class addCameraEventHandler;
       class addCustomEventHandler;
       class addInfoDisplayEventHandler;
@@ -192,6 +193,7 @@ class CfgFunctions {
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
+      class canGetInPosition;
       class canInteractWith;
       class canUseWeapon;
       class changeProjectileDirection;
@@ -206,14 +208,14 @@ class CfgFunctions {
       class displayTextPicture;
       class displayTextStructured;
       class doAnimation;
+      class endRadioTransmission;
       class execRemoteFnc;
       class filter;
-      class getBinocular;
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
-      class getCopilotTurret;
       class getDoorTurrets;
+      class getInPosition;
       class getMarkerType;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
@@ -223,9 +225,14 @@ class CfgFunctions {
       class getTargetObject;
       class getTurretCommander;
       class getTurretConfigPath;
+      class getTurretCopilot;
       class getTurretGunner;
       class getTurretIndex;
       class getTurrets;
+      class getTurretsFFV;
+      class getTurretsOther;
+      class getVehicleCargo;
+      class getVehicleCodriver;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
@@ -248,10 +255,12 @@ class CfgFunctions {
       class numberToDigitsString;
       class owned;
       class player;
+      class playerSide;
       class progressBar;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
+      class removeActionMenuEventHandler;
       class removeCameraEventHandler;
       class removeCustomEventHandler;
       class removeInfoDisplayEventHandler;
@@ -262,7 +271,6 @@ class CfgFunctions {
       class sanitizeString;
       class setCaptivityStatus;
       class setKeyDefault;
-      class setName;
       class setParameter;
       class setPitchBankYaw;
       class stringToColoredText;
@@ -271,6 +279,16 @@ class CfgFunctions {
       class toBitmask;
       class toHex;
       class toNumber;
+    };
+  };
+  class AGM_Identity {
+    class AGM_Identity {
+      file = "AGM_Core\functions\Identity";
+      class getName;
+      class getNameSide;
+      //class getRank;
+      class setName;
+      class setRank;
     };
   };
   class AGM_Debug {
@@ -300,6 +318,15 @@ class CfgSounds {
   };
 };
 
+// Testing
+class Extended_GetIn_EventHandlers {
+  class All {
+    class AGM_GetInPosTest {
+      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
+    };
+  };
+};
+
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
     serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
@@ -310,21 +337,22 @@ class Extended_PostInit_EventHandlers {
   class AGM_Core {
     Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
     disableModuload = true;
+    clientInit = "[call AGM_Core_fnc_player] spawn AGM_Identity_fnc_setName;";
   };
 };
 
+// Identity
 class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+      init = "if (local (_this select 0)) then {_this spawn AGM_Identity_fnc_setName};";
     };
   };
 };
-
 class Extended_Local_EventHandlers {
   class CAManBase {
     class AGM_SetName {
-      local = "if (_this select 1) then {_this call AGM_Core_fnc_setName};";
+      local = "if (_this select 1) then {_this spawn AGM_Identity_fnc_setName};";
     };
   };
 };
@@ -410,7 +438,9 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Core_MiscItems";
+    transportMaxWeapons = 9001;
     transportMaxMagazines = 9001;
+    transportMaxItems = 9001;
     maximumload = 2000;
 
     class TransportWeapons {};

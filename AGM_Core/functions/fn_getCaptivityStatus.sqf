@@ -2,10 +2,10 @@
  * Author: commy2
  *
  * Return the captivity status of an unit.
- * 
+ *
  * Argument:
  * 0: Unit (Object)
- * 
+ *
  * Return value:
  * Reasons, why the unit is a captive. An empty array is returned if the unit is not a captive (Array of Strings)
  */
@@ -20,9 +20,9 @@ _unitCaptivityStatus = [captiveNum _unit, count _captivityReasons] call AGM_Core
 
 _unitCaptivityReasons = [];
 {
-	if (_unitCaptivityStatus select _forEachIndex) then {
-		_unitCaptivityReasons pushBack _x;
-	};
+  if (_unitCaptivityStatus select _forEachIndex) then {
+    _unitCaptivityReasons pushBack _x;
+  };
 } forEach _captivityReasons;
 
 _unitCaptivityReasons

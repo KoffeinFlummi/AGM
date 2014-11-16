@@ -68,15 +68,16 @@ if (_this select 2) then {
 	if (profileNamespace getVariable ["AGM_Interaction_AutoCenterCursor", true]) then {setMousePosition [0.5, 0.5]};
 	if !(_subMenu) then {
 		if (_target isKindOf "Man") then {
-			_ctrlInteractionDialog ctrlSetText (if (alive _target) then {name _target} else {_target getVariable ["AGM_Name", "Unknown"]});
+			_ctrlInteractionDialog ctrlSetText ([_target] call AGM_Identity_fnc_getNameSide);
 		} else {
-			_ctrlInteractionDialog ctrlSetText (getText (configFile >> "CfgVehicles" >> (typeOf _target) >> "displayName"));
+			_ctrlInteractionDialog ctrlSetText getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName");
 		};
 	} else {
-		_ctrlInteractionDialog ctrlSetText "<< " + localize "STR_AGM_Interaction_Back";
+		_ctrlInteractionDialog ctrlSetText localize "STR_AGM_Interaction_Back";
 	};
 
-	_count = count AGM_Interaction_Buttons;
+	_buttons = AGM_Interaction_Buttons;
+	_count = count _buttons;
 
 	for "_i" from 0 to 9 do {
 		_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
@@ -86,7 +87,7 @@ if (_this select 2) then {
 		_ctrlInteractionDialogShortcut = _dlgInteractionDialog displayCtrl (30 + _i);
 		//_ctrlInteractionDialogBackground = _dlgInteractionDialog displayCtrl (40 + _i);
 		if (_i < _count) then {
-			_action = AGM_Interaction_Buttons select _i;
+			_action = _buttons select _i;
 			_ctrlInteractionDialog ctrlSetText (_action select 0);
 			_ctrlInteractionDialog ctrlEnable ([_target, _player] call (_action select 2));
 			_ctrlInteractionDialog ctrlSetTooltip (_action select 6);
