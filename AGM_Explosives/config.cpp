@@ -68,6 +68,7 @@ class CfgFunctions
         priority = 4;\
         icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
         subMenu[] = {"AGM_Explosives", 1};\
+        hotkey = "X";\
         class AGM_Detonate {\
           displayName = $STR_AGM_Explosives_Detonate;\
           condition = "[_player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([_player] call AGM_Explosives_fnc_getDetonators) > 0}";\
@@ -75,6 +76,7 @@ class CfgFunctions
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
           showDisabled = 1;\
           priority = 2;\
+          hotkey = "T";\
         };\
       };\
     };
@@ -92,6 +94,7 @@ class CfgVehicles {
         priority = 4;
         icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";     
         subMenu[] = {"AGM_Explosives", 1};
+        hotkey = "X";
         //Sub-menu items
         class AGM_Detonate {
           displayName = $STR_AGM_Explosives_Detonate;
@@ -100,6 +103,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
           priority = 2;
+          hotkey = "T";
         };
         class AGM_Place {
           displayName = $STR_AGM_Explosives_Place;
@@ -108,6 +112,7 @@ class CfgVehicles {
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Place_Explosive_ca.paa";
           priority = 1;
+          hotkey = "P";
         };
         class AGM_Defuse {
           displayName = $STR_AGM_Explosives_Defuse;
@@ -116,6 +121,7 @@ class CfgVehicles {
           showDisabled = 0;
           icon = "AGM_Explosives\UI\defuse_ca.paa";
           priority = 0.8;
+          hotkey = "F";
         };
       };
     };

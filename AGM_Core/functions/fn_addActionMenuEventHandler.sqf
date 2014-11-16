@@ -11,7 +11,7 @@
  * 4: Code to execute by the action (Code or String)
  * 5: Condition for the menu action (Code or String)
  * 6: Code to execute from the menu (Code or String)
- * 7: Priority of the action (Number, optional default: 10)
+ * 7: Priority of the action (Number, optional default: 0)
  *
  * Return value:
  * ID of the action (used to remove it later).
@@ -28,7 +28,7 @@ _condition2 = _this select 5;
 _statement2 = _this select 6;
 _priority = _this select 7;
 
-if (isNil "_priority") then {_priority = 10}; // very high
+if (isNil "_priority") then {_priority = 0};
 
 if (typeName _condition == "STRING") then {
   _condition = compile _condition;

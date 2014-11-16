@@ -17,7 +17,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
 
     scopeName "SearchMain";
 
-    for "_index" from (_index + 1) to (count AGM_WeaponSelect_AllMuzzles - 1) do {
+    for "_index" from (_index + 1) to (AGM_WeaponSelect_AllMuzzlesCount - 1) do {
       {
         if (_x in (AGM_WeaponSelect_AllMagazines select _index)) exitWith {_nextMagazine = _x; breakTo "SearchMain"};
       } count _magazines;
@@ -32,12 +32,14 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
     };
 
     if (_nextMagazine != AGM_WeaponSelect_NextGrenadeMagazineName) then {
-      (_this select 1) setUserActionText [(_this select 1) getVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", -1], format [localize "STR_AGM_WeaponSelect_TakeGrenade", getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayNameShort")]];
+      _string = getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayNameShort");
+      if (_string == "") then {_string = getText (configFile >> "CfgMagazines" >> _nextMagazine >> "displayName")};
+
+      (_this select 1) setUserActionText [(_this select 1) getVariable ["AGM_WeaponSelect_actionCycleThrownItems_ID", -1], format [localize "STR_AGM_WeaponSelect_TakeGrenade", _string]];
       AGM_WeaponSelect_NextGrenadeMagazineName = _nextMagazine;
     };
 
-    //if (_nextMagazine == "") exitWith {systemChat "0"; false};systemChat "1";
-    if (_muzzle == "") exitWith {true};
+    if (_muzzle == "") exitWith {_nextMagazine != ""};
 
     // fix auto muzzle swap after entering or leaving a vehicle
     if (_this select 0 != AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle) then {
@@ -52,7 +54,7 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
     with uiNamespace do {
       {
         if (_x in _magazines) exitWith {_result = false};
-      } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle)); // getArray (configFile >> "CfgWeapons" >> "Throw" >> _muzzle >> "magazines");
+      } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle));
     };
 
     if (_result) then {
@@ -68,8 +70,19 @@ if (isNil "AGM_WeaponSelect_actionThrowCondition") then {
   };
 };
 
+//[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
 //[_this select 0, "CycleThrownItems", {[_this select 1] call AGM_Core_fnc_canUseWeapon}, {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll}] call AGM_Core_fnc_addActionEventHandler;
-[_this select 0, "Throw", AGM_WeaponSelect_actionThrowCondition, AGM_WeaponSelect_actionThrow] call AGM_Core_fnc_addActionEventHandler;
+[
+  _this select 0,
+  format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_WeaponSelect_TakeNextGrenade"],
+  "Throw",
+  AGM_WeaponSelect_actionThrowCondition,
+  AGM_WeaponSelect_actionThrow,
+  {true},
+  {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
+  10
+] call AGM_Core_fnc_addActionMenuEventHandler;
+
 _id = [
   _this select 0,
   localize "STR_AGM_WeaponSelect_TakeNextGrenade",

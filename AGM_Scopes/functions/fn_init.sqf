@@ -43,6 +43,7 @@ AGM_Scopes_inventoryCheck = {
 0 spawn {
   _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
   while {True} do {
+    waitUntil {[0,0] call AGM_Scopes_fnc_canAdjustScope};
     _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
     sleep 3;
     _layer cutFadeOut 2;

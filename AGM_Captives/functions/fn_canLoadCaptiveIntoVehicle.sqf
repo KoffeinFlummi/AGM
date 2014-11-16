@@ -13,12 +13,11 @@ if (isNull _target) then {
 };
 
 if (isNull _vehicle) then {
-  _objects = nearestObjects [_unit, ["Car_F", "Tank_F", "Helicopter_F"], 10];
+  _objects = nearestObjects [_unit, ["Car", "Tank", "Helicopter", "Plane", "Ship_F"], 10];
   _vehicle = _objects select 0;
 };
 
 _unit getVariable ["AGM_isEscorting", false]
-&& {count _objects > 0}
-&& {!isNull _vehicle}
-&& {_vehicle emptyPositions "Cargo" > 0}
-&& {!(_vehicle lockedCargo 0)}
+&& {!isNil "_target"}
+&& {!isNil "_vehicle"}
+&& {[_target, _vehicle, "Cargo"] call AGM_Core_fnc_canGetInPosition}

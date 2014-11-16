@@ -39,7 +39,7 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
 
   _actionIDs = [
     //[_unit, "DefaultAction", _condition, {}] call AGM_Core_fnc_addActionEventHandler,
-    [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement] call AGM_Core_fnc_addActionMenuEventHandler,
+    [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement, 10] call AGM_Core_fnc_addActionMenuEventHandler,
     [_unit, "nextWeapon", {true}, _statement] call AGM_Core_fnc_addActionEventHandler
   ];
 

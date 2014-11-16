@@ -72,15 +72,6 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-//release escorted captive if when entering a vehicle
-class Extended_GetIn_EventHandlers {
-  class AllVehicles {
-    class AGM_DetachCaptive {
-      clientGetIn = "if (player == _this select 2 && {player getVariable ['AGM_isEscorting', false]}) then {player setVariable ['AGM_isEscorting', false, true]}";
-    };
-  };
-};
-
 class AGM_Core_Default_Keys {
   class openInteractionMenuNew {
     displayName = "$STR_AGM_Interaction_InteractionMenu";

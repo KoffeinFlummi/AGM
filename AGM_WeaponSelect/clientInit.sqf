@@ -42,6 +42,8 @@ AGM_WeaponSelect_FragMagazines =    uiNamespace getVariable "AGM_WeaponSelect_Fr
 AGM_WeaponSelect_NonFragMagazines = uiNamespace getVariable "AGM_WeaponSelect_NonFragMagazines";
 AGM_WeaponSelect_AllMagazines =     uiNamespace getVariable "AGM_WeaponSelect_AllMagazines";
 
+AGM_WeaponSelect_AllMuzzlesCount = count AGM_WeaponSelect_AllMuzzles;
+
 // hide grenade count if none is selected
 [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
 ["Soldier", {[_this select 0, call AGM_WeaponSelect_fnc_getSelectedGrenade != ""] call AGM_WeaponSelect_fnc_toggleGrenadeCount}] call AGM_Core_fnc_addInfoDisplayEventHandler;

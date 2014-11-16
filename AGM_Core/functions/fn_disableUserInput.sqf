@@ -21,6 +21,12 @@ if (_state) then {
 
   if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) exitWith {};
 
+  // end TFAR and ACRE2 radio transmissions
+  0 spawn AGM_Core_fnc_endRadioTransmission;
+
+  // Close map
+  if (visibleMap) then {openMap false};
+
   closeDialog 0;
   createDialog "AGM_Core_DisableMouse_Dialog";
 
