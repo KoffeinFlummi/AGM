@@ -36,11 +36,9 @@ class AGM_Core_Options {
   };
 };
 
-class Extended_InventoryOpened_EventHandlers {
-  class CAManBase {
-    class AGM_OpenedInventory {
-      clientInventoryOpened = "_this call AGM_InventoryInteraction_fnc_inventoryOpened;";
-    };
+class Extended_PostInit_EventHandlers {
+  class AGM_OpenedInventory {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_InventoryInteraction\clientInit.sqf'";
   };
 };
 
