@@ -5,6 +5,9 @@ private ["_unit", "_weapon", "_safedWeapons"];
 _unit = _this select 0;
 _weapon = _this select 1;
 
+// don't immediately switch back
+if (inputAction "nextWeapon" > 0) exitWith {};
+
 _safedWeapons = _unit getVariable ["AGM_SafeMode_safedWeapons", []];
 
 if (_weapon in _safedWeapons) exitWith {
