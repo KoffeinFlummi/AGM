@@ -55,7 +55,7 @@ if (_state) then {
       _ctrl ctrlSetText "ABORT";
       _ctrl ctrlSetTooltip "Abort.";
 
-      _ctrl = _dlg displayctrl 104;
+      _ctrl = _dlg displayctrl ([104, 199] select (isMultiplayer && {isClass (configFile >> "RscDisplayMPInterrupt" >> "controls" >> "ALIVEButtonAbort")}));
       _ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; player setDamage 1; [false] call AGM_Core_fnc_disableUserInput;"];
       _ctrl ctrlEnable (call {_config = missionConfigFile >> "respawnButton"; !isNumber _config || {getNumber _config == 1}});
       _ctrl ctrlSetText "RESPAWN";
