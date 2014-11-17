@@ -2,20 +2,18 @@
 	Author: aeroson
 	
 	Description:
-		Shows the actual text and sets text the crew info
-		What really does make difference for the engine is simulation of CfgAmmo
-		Priority of roles is: gunner, codriver, commander, ffv, cargo
-	
+		Shows the actual text and sets text the crew info		
+
 	Parameters: 
 		None
-	
+
 	Returns:
 		Nothing
 */
 
 #include "common.sqf"
 
-private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text", "_data", "_isAir", "_turretUnits", "_turretRoles", "_index", "_cargoIsCoDriver", "_roleType"];
+private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text", "_data", "_isAir", "_turretUnits", "_turretRoles", "_index", "_roleType"];
 
 
 
@@ -47,15 +45,10 @@ _data = _data select 1;
 _turretUnits = [_data, { _vehicle turretUnit (_x select 0) } ] call AGM_Core_fnc_map;
 _turretRoles = [_data, { _x select 1 } ] call AGM_Core_fnc_map;
 
-
-
-_cargoIsCoDriver = getArray (_config >> "cargoIsCoDriver");
+_roleType = CARGO;
 
 {
 	if(alive _x && {format["%1", name _x] != ""} && {format["%1", name _x] != "Error: No unit"}) then {
-
-		_roleType = DEFAULT;		
-
 		switch (_x) do {				
 			case commander _vehicle: {
 				_roleType = COMMANDER;
@@ -64,7 +57,7 @@ _cargoIsCoDriver = getArray (_config >> "cargoIsCoDriver");
 				_roleType = GUNNER;
 			};					
 			case driver _vehicle: {	 
-				_roleType = DRIVER;
+				_roleType = if(_isAir) then { PILOT } else { DRIVER };
 			};					
 			default {
 				_index = _turretUnits find _x;

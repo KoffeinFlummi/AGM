@@ -3,6 +3,8 @@
 	
 	Description:
 		Gathers and caches data needed by AGM_CrewInfo_fnc_doShow
+		What really does make difference for the engine is simulation of CfgAmmo
+		Priority of roles is: driver/pilot, gunner, copilot, commander, ffv, cargo
 	
 	Parameters: 
 		None
@@ -71,7 +73,7 @@ _fnc_addTurretUnit = {
 		_role = GUNNER;
 	};
 	if (_role == CARGO && {getNumber (_config >> "isCopilot") == 1}) then {
-		_role = CODRIVER;
+		_role = COPILOT;
 	};
 	if (_role == CARGO && {_simulationLaserDesignate>0 || getNumber (_config >> "primaryObserver") == 1}) then {
 		_role = COMMANDER;
