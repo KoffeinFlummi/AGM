@@ -33,20 +33,9 @@ _data = [];
 
 
 
-private ["_isAir", "_config", "_safe", "_fnc_addTurret", "_fnc_addTurretUnit"];
+private ["_isAir", "_config", "_fnc_addTurret", "_fnc_addTurretUnit"];
 
-_isAir = false;
-
-_safe = 100; // you never know
-_config = configFile >> "CfgVehicles" >> (typeOf _vehicle);
-while{_safe>0 && {configName _config != "Air"} && {configName _config != "All"} } do {
-	_safe = _safe - 1;
-	_config = inheritsFrom _config;
-};
-if(configName _config == "Air") then {
-	_isAir = true;
-};
-
+_isAir = _type isKindOf "Air";
 
 _fnc_addTurretUnit = {
 
