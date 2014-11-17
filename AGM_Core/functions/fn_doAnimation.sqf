@@ -15,18 +15,22 @@
  * Nothing
  */
 
-private ["_unit", "_animation", "_priority"];
+private ["_unit", "_animation", "_priority", "_force"];
 
 _unit = _this select 0;
 _animation = _this select 1;
 _priority = _this select 2;
+_force = False;
 
 if (isNil "_priority") then {
   _priority = 0;
 };
+if (count _this > 3) then {
+  _force = _this select 3;
+};
 
 // don't overwrite more important animations
-if (_unit getVariable ["AGM_Unconscious", false]) exitWith {};
+if (_unit getVariable ["AGM_isUnconscious", false] and !_force) exitWith {};
 
 switch (_priority) do {
   case 0 : {
