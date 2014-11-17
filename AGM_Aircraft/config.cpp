@@ -1357,6 +1357,8 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
+      class CargoTurret_01;
+      class CargoTurret_02;
     };
   };
   class I_Plane_Fighter_03_CAS_F: Plane_Fighter_03_base_F {
@@ -1401,9 +1403,6 @@ class CfgVehicles {
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
     class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
@@ -1428,6 +1427,10 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
+      class MainTurret;
+      class RightDoorGun;
+      class CargoTurret_01;
+      class CargoTurret_02;
     };
   };
   class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {
@@ -1443,6 +1446,10 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
+      class MainTurret;
+      class RightDoorGun;
+      class CargoTurret_01;
+      class CargoTurret_02;
     };
   };
 
@@ -1451,7 +1458,6 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
       class LoadmasterTurret: MainTurret {};
-      class MainTurret: MainTurret {};
     };
   };
   class O_Heli_Transport_04_F: Heli_Transport_04_base_F {
@@ -1463,9 +1469,6 @@ class CfgVehicles {
         canEject = 1;
       };
       class LoadmasterTurret: MainTurret {
-        canEject = 1;
-      };
-      class MainTurret: MainTurret {
         canEject = 1;
       };
     };
@@ -1481,9 +1484,6 @@ class CfgVehicles {
       class LoadmasterTurret: LoadmasterTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
     };
   };
   class O_Heli_Transport_04_covered_F: Heli_Transport_04_base_F {
@@ -1495,9 +1495,6 @@ class CfgVehicles {
         canEject = 1;
       };
       class LoadmasterTurret: LoadmasterTurret {
-        canEject = 1;
-      };
-      class MainTurret: MainTurret {
         canEject = 1;
       };
     };
@@ -1513,9 +1510,6 @@ class CfgVehicles {
       class LoadmasterTurret: MainTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
     };
   };
   class O_Heli_Transport_04_ammo_F: Heli_Transport_04_base_F {
@@ -1527,9 +1521,6 @@ class CfgVehicles {
         canEject = 1;
       };
       class LoadmasterTurret: MainTurret {
-        canEject = 1;
-      };
-      class MainTurret: MainTurret {
         canEject = 1;
       };
     };
@@ -1545,9 +1536,6 @@ class CfgVehicles {
       class LoadmasterTurret: MainTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
     };
   };
   class O_Heli_Transport_04_repair_F: Heli_Transport_04_base_F {
@@ -1559,9 +1547,6 @@ class CfgVehicles {
         canEject = 1;
       };
       class LoadmasterTurret: MainTurret {
-        canEject = 1;
-      };
-      class MainTurret: MainTurret {
         canEject = 1;
       };
     };
@@ -1577,9 +1562,6 @@ class CfgVehicles {
       class LoadmasterTurret: MainTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {
-        canEject = 1;
-      };
     };
   };
 
@@ -1587,16 +1569,12 @@ class CfgVehicles {
   class Heli_Light_01_civil_base_F: Heli_Light_01_base_F {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
-      class MainTurret: MainTurret {};
     };
   };
   class C_Heli_Light_01_civil_F: Heli_Light_01_civil_base_F {
     driverCanEject = 1;
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
-        canEject = 1;
-      };
-      class MainTurret: MainTurret {
         canEject = 1;
       };
     };

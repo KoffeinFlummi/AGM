@@ -238,20 +238,20 @@ class CfgVehicles {
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
+      class MainTurret: MainTurret {};
       class CommanderTurret: CommanderTurret {
         stabilizedInAxes = 3;
       };
-      class MainTurret: MainTurret {};
     };
   };
   class I_MRAP_03_gmg_F: MRAP_03_gmg_base_F {
     smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
+      class MainTurret: MainTurret {};
       class CommanderTurret: CommanderTurret {
         stabilizedInAxes = 3;
       };
-      class MainTurret: MainTurret {};
     };
   };
   class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
