@@ -13,21 +13,21 @@
 		Nothing
 */
 
-
-private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text"];
-
 #include "common.sqf"
 
-_roleImages = [
-	"a3\ui_f\data\IGUI\Cfg\Actions\getincargo_ca.paa",
-	"a3\ui_f\data\IGUI\Cfg\Actions\getinpilot_ca.paa",
-	"a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa",
-	"a3\ui_f\data\IGUI\Cfg\Actions\getincommander_ca.paa",
-	"a3\ui_f\data\IGUI\Cfg\Actions\getingunner_ca.paa",
-	"AGM_CrewInfo\UI\icon_position_ffv.paa"/**/,
-	"a3\ui_f\data\IGUI\Cfg\Actions\refuel_ca.paa" //DEFAULT DEBUG
-];
+private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text", "_data", "_isAir", "_turretUnits", "_turretRoles", "_index", "_cargoIsCoDriver", "_roleType"];
 
+
+
+#define ROLE_IMAGES [ \
+	"a3\ui_f\data\IGUI\Cfg\Actions\getincargo_ca.paa", \
+	"a3\ui_f\data\IGUI\Cfg\Actions\getinpilot_ca.paa", \
+	"a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa", \
+	"a3\ui_f\data\IGUI\Cfg\Actions\getincommander_ca.paa", \
+	"a3\ui_f\data\IGUI\Cfg\Actions\getingunner_ca.paa", \
+	"AGM_CrewInfo\UI\icon_position_ffv.paa" \
+]
+_roleImages = ROLE_IMAGES;
 
 
 
@@ -39,23 +39,15 @@ _text = format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow='true'>%
 
 
 
-
-private ["_data", "_isAir"];
-
 _data = [_type] call AGM_CrewInfo_fnc_getVehicleData;
 
 _isAir = _data select 0;
 _data = _data select 1;
 
-
-turretUnits = [_data, { _vehicle turretUnit (_x select 0) } ] call AGM_Core_fnc_map;
-turretRoleTypes = [_data, { _x select 1 } ] call AGM_Core_fnc_map;
-
+_turretUnits = [_data, { _vehicle turretUnit (_x select 0) } ] call AGM_Core_fnc_map;
+_turretRoles = [_data, { _x select 1 } ] call AGM_Core_fnc_map;
 
 
-
-
-private["_index", "_cargoIndex", "_cargoIsCoDriver", "_roleType"];
 
 _cargoIsCoDriver = getArray (_config >> "cargoIsCoDriver");
 
@@ -75,9 +67,9 @@ _cargoIsCoDriver = getArray (_config >> "cargoIsCoDriver");
 				_roleType = DRIVER;
 			};					
 			default {
-				_index = turretUnits find _x;
+				_index = _turretUnits find _x;
 				if(_index !=-1 ) then {
-					_roleType = turretRoleTypes select _index;
+					_roleType = _turretRoles select _index;
 				} else {
 					_roleType = CARGO;
 				};
@@ -87,6 +79,7 @@ _cargoIsCoDriver = getArray (_config >> "cargoIsCoDriver");
 		_text = _text + format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", name _x, _roleImages select _roleType];
 	};
 } forEach crew _vehicle;
+
 
 
 cutRsc ["AGM_CrewInfo_dialog", "PLAIN", 1, false];

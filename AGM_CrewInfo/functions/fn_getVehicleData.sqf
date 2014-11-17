@@ -14,20 +14,13 @@
 		]
 */
 
-
-
-
 #include "common.sqf"
-
-
 
 
 
 private ["_type", "_varName", "_data"];
 
-
 _type = _this select 0;
-
 
 _varName = format ["AGM_CrewInfo_Cache_%1", _type];
 _data = + (uiNamespace getVariable _varName);
@@ -39,11 +32,10 @@ if (!isNil "_data") exitWith {
 _data = [];
 
 
-private ["_isAir", "_config", "_fnc_addTurret", "_fnc_addTurretUnit"];
 
+private ["_isAir", "_config", "_data", "_fnc_addTurret", "_fnc_addTurretUnit"];
 
 _isAir = false;
-
 
 _config = configFile >> "CfgVehicles" >> (typeOf _vehicle);
 while{configName _config != "Air" && configName _config != "All"} do {
@@ -56,7 +48,7 @@ if(configName _config == "Air") then {
 
 _fnc_addTurretUnit = {
 
-	private  ["_config", "_path", "_role", "_simulationEmpty", "_simulationLaserDesignate", "_simulationOther"];
+	private  ["_config", "_path", "_role", "_simulationEmpty", "_simulationLaserDesignate", "_simulationOther", "_magazine", "_ammo", "_simulation"];
 
 	_config = _this select 0;
 	_path = _this select 1;
@@ -112,7 +104,6 @@ _fnc_addTurret = {
 	_config = _config >> "Turrets";
 	_count = count _config;
 
-
 	_offset = 0;	
 
 	for "_index" from 0 to (_count - 1) do {
@@ -137,4 +128,3 @@ _data = [_isAir, _data];
 uiNamespace setVariable [_varName, _data];
 
 _data
-
