@@ -4,7 +4,7 @@
 	Description:
 		Gathers and caches data needed by AGM_CrewInfo_fnc_doShow
 		What really does make difference for the engine is simulation of CfgAmmo
-		Priority of roles is: driver/pilot, gunner, copilot, commander, ffv, cargo
+		Priority of roles  is: driver/pilot, gunner, copilot, commander, ffv, cargo
 	
 	Parameters: 
 		None
