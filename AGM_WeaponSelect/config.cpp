@@ -53,11 +53,18 @@ class Extended_Init_EventHandlers {
     };
   };
 };
-
-class Extended_FiredBis_EventHandlers {
+class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_WeaponSelect_ThrowGrenade {
-      clientFiredBis = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
+      respawn = "[_this, ""{_this call compile preprocessFileLineNumbers '\AGM_WeaponSelect\initActions.sqf';}""] call AGM_Core_fnc_execRemoteFnc;";
+    };
+  };
+};
+
+class Extended_FiredBIS_EventHandlers {
+  class CAManBase {
+    class AGM_WeaponSelect_ThrowGrenade {
+      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
     };
   };
 };
