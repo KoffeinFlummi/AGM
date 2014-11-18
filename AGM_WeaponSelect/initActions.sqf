@@ -49,7 +49,7 @@ _fnc_actionThrow = {
 
 _id = [
   _unit,
-  format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_WeaponSelect_ReadyGrenade"],
+  format ["<t color=""#FFFFFF"" >%1</t>", localize "STR_AGM_WeaponSelect_ReadyGrenade"],
   "Throw",
   _fnc_actionThrowCondition,
   _fnc_actionThrow,
