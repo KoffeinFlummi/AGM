@@ -534,6 +534,7 @@ class CfgFunctions {
       class displayTextStructured;
       class doAnimation;
       class endRadioTransmission;
+      class execPersistentFnc;
       class execRemoteFnc;
       class filter;
       class getCaptivityStatus;
