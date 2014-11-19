@@ -55,7 +55,7 @@ _id = [
   _fnc_actionThrow,
   {true},
   {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
-  10
+  2
 ] call AGM_Core_fnc_addActionMenuEventHandler;
 
 _unit setVariable ["AGM_WeaponSelect_ThrowActionID", _id];
