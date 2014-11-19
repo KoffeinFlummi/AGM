@@ -14,6 +14,16 @@
   } forEach (missionNamespace getVariable ["AGM_Core_persistentFnc", []]);
 };
 
+// check previous version number from profile
+_currentVersion = getText (configFile >> "CfgPatches" >> "AGM_Core" >> "version");
+_previousVersion = profileNamespace getVariable ["AGM_VersionNumberString", ""];
+
+if (_currentVersion != _previousVersion) then {
+  // do something
+
+  profileNamespace setVariable ["AGM_VersionNumberString", _currentVersion];
+};
+
 call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
 if (!hasInterface) exitWith {};
