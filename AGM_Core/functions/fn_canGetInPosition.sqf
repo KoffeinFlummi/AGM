@@ -34,12 +34,11 @@ if (isNil "_index") then {_index = -1};
 // general
 if (!alive _vehicle || {locked _vehicle > 1}) exitWith {false};
 
-private ["_config", "_turret", "_selection", "_radius", "_enemiesInVehicle", "_return"];
+private ["_config", "_turret", "_radius", "_selectionPosition", "_selectionPosition2", "_enemiesInVehicle", "_return"];
 
 _config = configFile >> "CfgVehicles" >> typeOf _vehicle;
 _turret = [];
 
-_selection = "";
 _radius = 0;
 
 _enemiesInVehicle = false;   //Possible Side Restriction
@@ -50,15 +49,19 @@ _enemiesInVehicle = false;   //Possible Side Restriction
 _return = false;
 switch (_position) do {
   case "driver" : {
-    _selection = getText (_config >> "memoryPointsGetInDriver");
     _radius = getNumber (_config >> "getInRadius");
+    _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
+
+    if (_vehicle isKindOf "Tank") then {
+      _selectionPosition2 = [-(_selectionPosition select 0), _selectionPosition select 1, _selectionPosition select 2];
+    };
 
     _return = CANGETINDRIVER;
   };
 
   case "pilot" : {
-    _selection = getText (_config >> "memoryPointsGetInDriver");
     _radius = getNumber (_config >> "getInRadius");
+    _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
 
     _return = CANGETINDRIVER;
   };
@@ -70,8 +73,8 @@ switch (_position) do {
 
     _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
     _radius = getNumber (_config >> "getInRadius");
+    _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
     _return = CANGETINTURRETINDEX
   };
@@ -83,8 +86,8 @@ switch (_position) do {
 
     _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
     _radius = getNumber (_config >> "getInRadius");
+    _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
     _return = CANGETINTURRETINDEX
   };
@@ -96,8 +99,8 @@ switch (_position) do {
 
     _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-    _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
     _radius = getNumber (_config >> "getInRadius");
+    _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
     _return = CANGETINTURRETINDEX
   };
@@ -111,8 +114,8 @@ switch (_position) do {
     }) then {
       _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-      _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
       _radius = getNumber (_config >> "getInRadius");
+      _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
       _return = true
     } else {
@@ -121,8 +124,8 @@ switch (_position) do {
         if (CANGETINTURRETINDEX) exitWith {
           _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-          _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
           _radius = getNumber (_config >> "getInRadius");
+          _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
           _return = true
         };
@@ -139,8 +142,8 @@ switch (_position) do {
     }) then {
       _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-      _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
       _radius = getNumber (_config >> "getInRadius");
+      _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
       _return = true
     } else {
@@ -149,8 +152,8 @@ switch (_position) do {
         if (CANGETINTURRETINDEX) exitWith {
           _turretConfig = [_config, _turret] call AGM_Core_fnc_getTurretConfigPath;
 
-          _selection = getText (_turretConfig >> "memoryPointsGetInGunner");
           _radius = getNumber (_config >> "getInRadius");
+          _selectionPosition = _vehicle selectionPosition (getText (_turretConfig >> "memoryPointsGetInGunner"));
 
           _return = true
         };
@@ -167,16 +170,26 @@ switch (_position) do {
     } forEach crew _vehicle;
 
     if (_index != -1 && {_index in _positions}) then {
-      _selection = getText (_config >> "memoryPointsGetInCargo");
       _radius = getNumber (_config >> "getInRadius");
+      _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInCargo"));
+
+      if (_vehicle isKindOf "Car" && {!(_vehicle isKindOf "Wheeled_APC_F")}) then {
+        _selectionPosition2 = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
+        _selectionPosition2 set [0, -(_selectionPosition2 select 0)];
+      };
 
       _return = true
     } else {
 
       _index = _positions select 0;
       if (!isNil "_index") then {
-        _selection = getText (_config >> "memoryPointsGetInCargo");
         _radius = getNumber (_config >> "getInRadius");
+        _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInCargo"));
+
+        if (_vehicle isKindOf "Car" && {!(_vehicle isKindOf "Wheeled_APC_F")}) then {
+          _selectionPosition2 = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
+          _selectionPosition2 set [0, -(_selectionPosition2 select 0)];
+        };
 
         _return = true
       };
@@ -192,16 +205,26 @@ switch (_position) do {
     } forEach crew _vehicle;
 
     if (_index != -1 && {_index in _positions}) then {
-      _selection = getText (_config >> "memoryPointsGetInCargo");
       _radius = getNumber (_config >> "getInRadius");
+      _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInCargo"));
+
+      if (_vehicle isKindOf "Car" && {!(_vehicle isKindOf "Wheeled_APC_F")}) then {
+        _selectionPosition2 = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
+        _selectionPosition2 set [0, -(_selectionPosition2 select 0)];
+      };
 
       _return = true
     } else {
 
       _index = _positions select 0;
       if (!isNil "_index") then {
-        _selection = getText (_config >> "memoryPointsGetInCargo");
         _radius = getNumber (_config >> "getInRadius");
+        _selectionPosition = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInCargo"));
+
+        if (_vehicle isKindOf "Car" && {!(_vehicle isKindOf "Wheeled_APC_F")}) then {
+          _selectionPosition2 = _vehicle selectionPosition (getText (_config >> "memoryPointsGetInDriver"));
+          _selectionPosition2 set [0, -(_selectionPosition2 select 0)];
+        };
 
         _return = true
       };
@@ -211,8 +234,29 @@ switch (_position) do {
   default {};
 };
 
-if (!_checkDistance || {_radius == 0} || {_vehicle == vehicle _unit}) exitWith {_return};
+private "_fnc_isInRange";
+_fnc_isInRange = {
+  if (_radius == 0) exitWith {true};
 
-_return && {(getPos _unit) distance (_vehicle modelToWorld (_vehicle selectionPosition _selection)) < _radius}
+  private ["_unitPosition", "_distance"];
+  _unitPosition = getPos _unit;
+
+  _distance = _unitPosition distance (_vehicle modelToWorld _selectionPosition);
+
+  if (!isNil "_selectionPosition2") then {
+    _distance = _distance min (_unitPosition distance (_vehicle modelToWorld _selectionPosition2));
+  };
+
+  _distance < _radius
+};
+
+// if you want into the cargo and you can't, then check ffv turrets aswell
+if (_position == "cargo") exitWith {
+  if (_return && {!_checkDistance || {_vehicle == vehicle _unit} || _fnc_isInRange}) then {true} else {
+    [_unit, _vehicle, "ffv", _checkDistance] call AGM_Core_fnc_canGetInPosition;
+  }
+};
+
+_return && {!_checkDistance || {_vehicle == vehicle _unit} || _fnc_isInRange}
 
 //_enemiesInVehicle

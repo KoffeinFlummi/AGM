@@ -154,6 +154,16 @@ class CfgVehicles {
       };
     };
   };
+  class Car_F: Car {};
+  class Wheeled_APC_F: Car_F {
+    class AGM_Actions: AGM_Actions {
+      delete AGM_GetInCoDriver;
+    };
+    class AGM_SelfActions: AGM_SelfActions {
+      delete AGM_MoveToCoDriver;
+    };
+  };
+
   class Tank: LandVehicle {
     class AGM_Actions {
       class AGM_GetInDriver {
