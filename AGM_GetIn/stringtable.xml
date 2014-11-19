@@ -3,15 +3,15 @@
 <Project name="AGM">
   <Package name="GetIn">
     <Key ID="STR_AGM_GetInVehicle">
-      <English>Get in</English>
-      <German>Einsteigen</German>
-      <Spanish>Entrar en</Spanish>
-      <French>Embarquer</French>
-      <Polish>Wejdź</Polish>
-      <Czech>Nastoupit</Czech>
-      <Italian>Sali</Italian>
-      <Portuguese>Entrar</Portuguese>
-      <Hungarian>Beszállás</Hungarian>
+      <English>Get in &gt;&gt;</English>
+      <German>Einsteigen &gt;&gt;</German>
+      <Spanish>Entrar en &gt;&gt;</Spanish>
+      <French>Embarquer &gt;&gt;</French>
+      <Polish>Wejdź &gt;&gt;</Polish>
+      <Czech>Nastoupit &gt;&gt;</Czech>
+      <Italian>Sali &gt;&gt;</Italian>
+      <Portuguese>Entrar &gt;&gt;</Portuguese>
+      <Hungarian>Beszállás &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDriver">
       <English>Get in as Driver</English>
