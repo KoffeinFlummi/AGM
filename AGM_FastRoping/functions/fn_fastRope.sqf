@@ -46,7 +46,7 @@ _unit disableCollisionWith _helper;
   _helper = _this select 6;
 
   _unit allowDamage False;
-  _unit action ["getOut", _vehicle];
+  moveOut _unit;
   waitUntil {vehicle _unit == _unit};
 
   _helper setVectorUp [0,0,1];
