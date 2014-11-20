@@ -46,7 +46,7 @@ class Extended_PostInit_EventHandlers {
 
 
 //More of an example than something anyone needs
-/* 
+/*
 class CfgWeapons {
   class ItemCore;
   class ItemMap: ItemCore  {
@@ -54,10 +54,10 @@ class CfgWeapons {
       class OpenMap {
         displayName = "Open Map";  //todo localize
         condition = "(_idc == 6211)";  //show only when sloted in a specifc slot (based on control's IDC)
-        statement = "openMap true";        
+        statement = "openMap true";
         closeInventory = 1;  //runs after closing inv display
       };
     };
   };
-}; 
+};
 */

@@ -9,7 +9,7 @@ Description:
 Parameters:
   0: ARRAY - ctrl event
   1: BOOL - was double click
-  
+
 Returns:
   BOOL - handeled, always false
 

@@ -12,13 +12,13 @@ Parameters:
   2: STRING or CODE - Condition
   3: STRING or CODE - Statement
   4: BOOL or NUMBER (Optional) - Close the inventory dialog before processing action
-  
+
 Returns:
   NONE
 
 Note:
   Both condition and statement are passed _this = [_classname, _idc, _player, _vehicle]
-  
+
 Example:
   ["ItemMap", "Open Map", {"ItemMap" in (assignedItems _player)}, {openMap true}, true] call AGM_InventoryInteraction_fnc_addItemAction;
   ["ItemRadio", "Show Radio Info", {!isNil "TFAR_fnc_ShowRadioInfo"}, {[_classname, false] call TFAR_fnc_ShowRadioInfo;}, false] call AGM_InventoryInteraction_fnc_addItemAction;

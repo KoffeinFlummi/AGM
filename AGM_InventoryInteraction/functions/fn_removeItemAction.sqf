@@ -9,7 +9,7 @@ Description:
 Parameters:
   0: STRING - classname of item/weapon/magazine
   1: NUMBER - ID of previously added action
-  
+
 Returns:
   NONE
 
