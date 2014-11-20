@@ -1,14 +1,14 @@
 class CfgPatches{
-  class AGM_InventoryInteraction  {
+  class AGM_Inventory {
     units[] = {};
     weapons[] = {};
     requiredVersion = 0.6;
-    requiredAddons[] = {"AGM_Core"};	//A3_UI_F
-
-    version = "0.99";
-    versionStr = "0.99";
-    versionAr[] = {0,99,0};
+    requiredAddons[] = {"AGM_Core"};
+    version = "0.94.1";
+    versionStr = "0.94.1";
+    versionAr[] = {0,94,1};
     author[] = {"Pabst Mirror"};
+    authorUrl = "https://github.com/PabstMirror/";
   };
 };
 
