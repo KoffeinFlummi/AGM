@@ -20,7 +20,7 @@ internal use
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
 #define FACTOR_POUND_TO_KILOGRAMM 1/2.2046
 
-private ["_pathToItemConfig", "_mousePos", "_idc", "_classname", "_player", "_mass", "_index", "_displayName", "_condition", "_statement", "_closeInventory", "_classnameActions", "_actionPath", "_parents", "_variableName", "_actionsVar", "_shownActions", "_height", "_positionY", "_itemInfoBoxPos"];
+private ["_pathToItemConfig", "_mousePos", "_idc", "_classname", "_player", "_vehicle", "_mass", "_index", "_displayName", "_condition", "_statement", "_closeInventory", "_classnameActions", "_actionPath", "_parents", "_variableName", "_actionsVar", "_shownActions", "_height", "_positionY", "_positionX", "_itemInfoBoxPos"];
 
 _pathToItemConfig = _this select 0;
 _mousePos = _this select 1;
@@ -28,6 +28,7 @@ _idc = _this select 2;
 
 _classname = configName _pathToItemConfig;
 _player = call AGM_Core_fnc_player;
+_vehicle = vehicle _player;
 
 //Set classname text [1st row] (just classname for now, (as mission maker I kinda like, can be swtiched to display name))
 (DISPLAY_INVENTORY displayCtrl IDC_ACTION_HEADERTEXT) ctrlSetText format ["%1", _classname];
@@ -62,7 +63,8 @@ for "_index" from 0 to ((count (_pathToItemConfig >> "AGM_InventoryActions")) - 
   _condition = getText(_actionPath >> "condition");
   _statement = getText(_actionPath >> "statement");
   _closeInventory = getNumber (_actionPath >> "closeInventory");
-  if (_condition == "") then {_condition = "true"};  
+  if (_condition == "") then {_condition = "true"};
+  _condition = _condition + format [" && {%1 call AGM_Core_canInteract}", []];
 
   _condition = compile _condition;
   _statement = compile _statement;
@@ -88,9 +90,9 @@ _shownActions = 0;
   _condition = _x select 1;
   _statement = _x select 2;
   _closeInventory = _x select 3;
-  if ([_classname, _idc, _player] call _condition) then {
+  if ([_classname, _idc, _player, _vehicle] call _condition) then {
     if (_shownActions >= MAX_ACTIONS) exitWith {["AGM_InventoryActions - Too many actions for %1", _classname] call bis_fnc_error;};
-    _statement = format ["[%1, %2, '%3', %4] call AGM_InventoryInteraction_fnc_actionButton;", _statement, _closeInventory, _classname, _idc];
+    _statement = format ["[%1, %2, %3, '%4', %5] call AGM_InventoryInteraction_fnc_actionButton;", _condition, _statement, _closeInventory, _classname, _idc];
     (DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _shownActions)) ctrlSetText _displayName;
     (DISPLAY_INVENTORY displayCtrl (IDC_ACTION_ACTION_BASE + _shownActions)) ctrlAddEventHandler ["ButtonClick", _statement];
     _shownActions = _shownActions + 1;
@@ -100,12 +102,9 @@ _shownActions = 0;
 //Set Position of controlGroup
 _height = 0.7 * (2 + _shownActions);  //Two Header rows + number of actions
 _positionY = (_mousePos select 1) min (safeZoneH -  (_height *   ((safeZoneH / 1.2) / 25)));  //if list is too tall, move up to top
+_positionX = (getNumber (configFile >> "RscDisplayInventory" >> "controls" >> "UniformContainer" >> "x")) + (getNumber (configFile >> "RscDisplayInventory" >> "controls" >> "UniformContainer" >> "w"));
 
-_itemInfoBoxPos = [];
-_itemInfoBoxPos pushBack (26.6 *   (safeZoneH / 40) + (safezoneX + (safezoneW - safeZoneH)/2));
-_itemInfoBoxPos pushBack (_positionY);
-_itemInfoBoxPos pushBack (6 *     (safeZoneH / 40));
-_itemInfoBoxPos pushBack (_height *   ((safeZoneH / 1.2) / 25));
+_itemInfoBoxPos = [_positionX, _positionY, (6 * (safeZoneH / 40)), (_height * ((safeZoneH / 1.2) / 25))];
 
 (DISPLAY_INVENTORY displayCtrl IDC_ACTION_CONTROLGROUP) ctrlSetPosition _itemInfoBoxPos;
 (DISPLAY_INVENTORY displayCtrl IDC_ACTION_CONTROLGROUP) ctrlCommit TIME_COMMIT;

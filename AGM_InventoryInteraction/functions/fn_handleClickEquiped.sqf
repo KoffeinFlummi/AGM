@@ -4,17 +4,17 @@ Name: AGM_InventoryInteraction_fnc_handleClickEquiped
 Author: Pabst Mirror
 
 Description:
-Handles clicking (or double clicking) on the 5 assigned item slots
+   Handles clicking (or double clicking) on the 5 assigned item slots
 
 Parameters:
-0: ARRAY - ctrl event
-1: BOOL - was double click
+  0: ARRAY - ctrl event
+  1: BOOL - was double click
 
 Returns:
-BOOL - handeled, always false
+  BOOL - handeled, always false
 
 Example:
-internal use
+  internal use
 */
 #include "\AGM_InventoryInteraction\scriptDefines.sqf"
 
@@ -53,7 +53,7 @@ _baseClassname = _searchArray select 2;
 
 _clickedClassName = "";
 {
-  //finds the assigned item that inherits the baseClass (should allows selecting TFR/ACRE small radios)
+  //finds the assigned item that inherits the baseClass (should allows selecting altimeter-Watch, TFR, ACRE radios)
   if ((_configPath >> _baseClassname) in ([(_configPath >> _x), false] call BIS_fnc_returnParents)) exitWith {
     _clickedClassName = _x;
   };

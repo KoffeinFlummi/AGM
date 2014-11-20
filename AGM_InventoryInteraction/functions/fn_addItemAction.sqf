@@ -17,7 +17,7 @@ Returns:
   NONE
 
 Note:
-  Both condition and statement are passed _this = [_classname, _idc, _player]
+  Both condition and statement are passed _this = [_classname, _idc, _player, _vehicle]
   
 Example:
   ["ItemMap", "Open Map", {"ItemMap" in (assignedItems _player)}, {openMap true}, true] call AGM_InventoryInteraction_fnc_addItemAction;

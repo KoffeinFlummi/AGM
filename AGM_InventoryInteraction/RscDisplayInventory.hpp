@@ -577,7 +577,7 @@ class RscDisplayInventory {
         }; 
 
         class ItemSelectedButtonClose: RscActiveText  {
-          onButtonClick = "[] call AGM_Interaction_fnc_closeItemInfoBox;";
+          onButtonClick = "[] call AGM_InventoryInteraction_fnc_closeItemInfoBox;";
           idc = -1;
           style = 48;
           color[] = {1,1,1,0.7};
