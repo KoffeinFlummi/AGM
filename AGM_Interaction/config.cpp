@@ -79,7 +79,7 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_Interaction_fnc_onButtonDown";
     conditionUp = "!isNull (findDisplay 1713999) && {profileNamespace getVariable ['AGM_Interaction_AutoCloseMenu', false]}";
     statementUp = "if (AGM_Interaction_MenuType mod 2 == 0) then {call AGM_Interaction_fnc_onButtonUp};";
-    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting", "AGM_Interaction_isNotSwimming"};
     key = 219;
     shift = 0;
     control = 0;
@@ -91,7 +91,7 @@ class AGM_Core_Default_Keys {
     statement = "call AGM_Interaction_fnc_onButtonDownSelf";
     conditionUp = "!isNull (findDisplay 1713999) && {profileNamespace getVariable ['AGM_Interaction_AutoCloseMenu', false]}";
     statementUp = "if (AGM_Interaction_MenuType mod 2 == 1) then {call AGM_Interaction_fnc_onButtonUp};";
-    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting", "AGM_Core_notOnMap"};
+    exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Medical_canTreat", "AGM_Interaction_isNotEscorting", "AGM_Interaction_isNotSwimming", "AGM_Core_notOnMap"};
     key = 219;
     shift = 0;
     control = 1;
@@ -181,34 +181,6 @@ class AGM_Core_canInteractConditions {
   };
   class AGM_Interaction_isNotSwimming {
     condition = "!underwater _player";
-  };
-};
-
-class CfgMovesBasic;
-class CfgMovesMaleSdr: CfgMovesBasic {
-  /*class Actions {     // This is ReadOnlyVerified
-    class RifleStandSaluteActions;
-    class AGM_RifleStandSaluteActions: RifleStandSaluteActions {
-      getOver = "";
-    };
-  };*/
-  class States {
-    class CutSceneAnimationBase;
-    class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
-      //actions = "AGM_RifleStandSaluteActions";
-      head = "headDefault";
-      static = 1;
-      disableWeapons = 0;
-      forceAim = 0;
-      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
-    };
-    class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
-      looped = 0;
-      InterpolateTo[] = {"Unconscious",0.1};
-    };
-    class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
-      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
-    };
   };
 };
 

@@ -43,3 +43,8 @@ if (_state) then {
 } else {
   _unit setVariable ["AGM_isSurrender", false, true];
 };
+
+/*
+player playMove "AmovPercMstpSsurWnonDnon"
+player switchMove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"
+*/
