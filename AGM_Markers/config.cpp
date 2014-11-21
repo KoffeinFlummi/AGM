@@ -42,5 +42,6 @@ class RscButtonMenu;
 class RscEdit;
 class RscCombo;
 class RscSlider;
+class RscXSliderH;
 
 #include <InsertMarker.hpp>

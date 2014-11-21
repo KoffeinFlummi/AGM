@@ -24,6 +24,25 @@ with uinamespace do {
     _angleText = _display displayctrl 1221;
 
     ctrlSetFocus _text;
+	
+	//Change ok button's text based on current channel
+	if (!isNull (findDisplay 63)) then {  //if display is up, update
+	  missionNamespace setVariable ["AGM_Markers_currentChatChannel", ctrlText ((findDisplay 63) displayCtrl 101)];
+	};
+	_currentChannel = missionNamespace getVariable ["AGM_Markers_currentChatChannel", ""];
+	_currentChannel = switch (true) do {
+	  case ([(localize "STR_AGM_Markers_ChannelGlobalShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelGlobalShort";};
+	  case ([(localize "STR_AGM_Markers_ChannelSideShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelSideShort";};
+	  case ([(localize "STR_AGM_Markers_ChannelGroupShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelGroupShort";};
+	  case ([(localize "STR_AGM_Markers_ChannelVehicleShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelVehicleShort";};
+	  case ([(localize "STR_AGM_Markers_ChannelDirectShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelDirectShort";};
+	  case ([(localize "STR_AGM_Markers_ChannelCommandShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelCommandShort";};
+	  default {""};
+	};
+	//If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
+	if (_currentChannel != "") then {
+	  _buttonOK ctrlSetText format ["%1: %2", (localize "STR_AGM_Markers_PlaceIn"), _currentChannel];
+	};
 
     //--- Background
     _pos = ctrlposition _text;
@@ -31,7 +50,9 @@ with uinamespace do {
     _posY = _pos select 1;
     _posW = _pos select 2;
     _posH = _pos select 3;
+	_posY = _posY min ((safeZoneH + safeZoneY) - (6 * _posH + 8 * BORDER));  //prevent buttons being placed below bottom edge of screen
     _pos set [0,_posX];
+    _pos set [1,_posY];
     _text ctrlsetposition _pos;
     _text ctrlcommit 0;
 
@@ -41,6 +62,7 @@ with uinamespace do {
     _title ctrlsetposition _pos;
     _title ctrlcommit 0;
 
+	//--- Description
     _pos set [1,_posY - 1*_posH];
     _pos set [3,6*_posH + 6 * BORDER];
     _description ctrlsetposition _pos;
@@ -76,13 +98,13 @@ with uinamespace do {
 
     //--- ButtonOK
     _pos set [1,_posY + 5 * _posH + 7 * BORDER];
-    _pos set [2,_posW / 2 - BORDER];
+    _pos set [2,_posW * (8.9/10) - BORDER];
     _buttonOk ctrlsetposition _pos;
     _buttonOk ctrlcommit 0;
 
     //--- ButtonCancel
-    _pos set [0,_posX + _posW / 2];
-    _pos set [2,_posW / 2];
+    _pos set [0,_posX + _posW * (8.9 / 10)];
+    _pos set [2,_posW * (1.1 / 10)];
     _buttonCancel ctrlsetposition _pos;
     _buttonCancel ctrlcommit 0;
 
