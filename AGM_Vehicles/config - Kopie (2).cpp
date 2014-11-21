@@ -54,6 +54,7 @@ class CfgVehicles {
     class NewTurret {
       class Turrets {};
     };
+    class CargoTurret: NewTurret {};
   };
 
   class Land: AllVehicles {};
