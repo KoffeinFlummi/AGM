@@ -79,34 +79,27 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgVehicles {
-  class All;
+  class All {
+    class Turrets {};
+  };
+
   class AllVehicles: All {
-    class NewTurret;
     AGM_FCSEnabled = 0;
     AGM_FCSMinDistance = 200;
     AGM_FCSMaxDistance = 9990;
     AGM_FCSDistanceInterval = 5;
+    class NewTurret {
+      class Turrets {};
+    };
+    class CargoTurret: NewTurret {};
   };
 
   class Land: AllVehicles {};
-  class LandVehicle: Land {};
-  class Tank: LandVehicle {
-    AGM_FCSEnabled = 1; // all tracked vehicles get one by default
-    class AGM_SelfActions {
-      class AGM_ResetFCS {
-        displayName = "$STR_AGM_FireControlSystem_ResetFCS";
-        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
-        statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
-        showDisabled = 0;
-        priority = -1;
-      };
-    };
+
+  class LandVehicle: Land {
+    class CommanderOptics: NewTurret {};
   };
-  class Tank_F: Tank {
-    class Turrets {
-      class MainTurret: NewTurret {};
-    };
-  };
+
   class Car: LandVehicle {
     class AGM_SelfActions {
       class AGM_ResetFCS {
@@ -118,139 +111,613 @@ class CfgVehicles {
       };
     };
   };
-  class Car_F: Car {};
-  class Wheeled_APC_F: Car_F {
-    class Turrets;
+
+  class Tank: LandVehicle {
+    AGM_FCSEnabled = 1; // all tracked vehicles get one by default
+    class AGM_SelfActions {
+      class AGM_ResetFCS {
+        displayName = "$STR_AGM_FireControlSystem_ResetFCS";
+        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
+        statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
+        showDisabled = 0;
+        priority = -1;
+      };
+    };
+    class Turrets {
+      class MainTurret: NewTurret {
+        class Turrets {
+          class CommanderOptics: NewTurret {};
+        };
+      };
+    };
   };
-  class Helicopter;
+
+  class APC: Tank {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class Air: AllVehicles {};
+
+  class Helicopter: Air {
+    class Turrets {
+      class MainTurret: NewTurret {};
+    };
+  };
+
+  class Plane: Air {};
+
+  class Ship: AllVehicles {
+    class Turrets {
+      class MainTurret: NewTurret {};
+    };
+  };
+
   class Helicopter_Base_F: Helicopter {
-    class Turrets;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+      class CopilotTurret {};
+    };
   };
 
-  // REMOVE STANDARD ZEROING FOR AFFECTED VEHICLES
+  class Helicopter_Base_H: Helicopter_Base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: MainTurret {};
+      class MainTurret: MainTurret {};
+    };
+  };
 
-  // BLUFOR Inheritance
-  class MBT_01_base_F: Tank_F {
+  class Heli_Light_01_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+    };
+  };
+
+  class B_Heli_Light_01_F: Heli_Light_01_base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+      class CargoTurret_03: CargoTurret_02 {};
+      class CargoTurret_04: CargoTurret_01 {};
+    };
+  };
+
+  class Heli_Light_01_armed_base_F: Heli_Light_01_base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+    };
+  };
+
+  class Heli_Light_02_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+    };
+  };
+
+  class Plane_Base_F: Plane {
+    class Turrets {
+      class CopilotTurret: NewTurret {};
+    };
+  };
+
+  class Heli_Attack_01_base_F: Helicopter_Base_F {
+    AGM_FCSEnabled = 1;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+
+  class Heli_Attack_02_base_F: Helicopter_Base_F {
+    AGM_FCSEnabled = 1;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+      };
+    };
+  };
+
+  class Heli_Transport_01_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class MainTurret: MainTurret {};
+      class RightDoorGun: MainTurret {};
+    };
+  };
+
+  class Heli_Transport_02_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class I_Heli_light_03_base_F: Helicopter_Base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
   };
-  class B_MBT_01_base_F: MBT_01_base_F {
+
+  class I_Heli_light_03_F: I_Heli_light_03_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
     };
   };
-  class B_MBT_01_mlrs_base_F;
-  class B_MBT_01_arty_base_F;
+
+  class Plane_CAS_01_base_F: Plane_Base_F {
+    class Turrets {};
+  };
+
+  class Plane_CAS_02_base_F: Plane_Base_F {
+    class Turrets {};
+  };
+
+  class Plane_Fighter_03_base_F: Plane_Base_F {
+    class Turrets {};
+  };
+
+  class Tank_F: Tank {
+    class Turrets {
+      class MainTurret: NewTurret {
+        class Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class Car_F: Car {
+    class Turrets {
+      class MainTurret: NewTurret {};
+    };
+  };
+
+  class Wheeled_APC_F: Car_F {
+    class Turrets {
+      class MainTurret: NewTurret {
+        class Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
 
   class APC_Tracked_01_base_F: Tank_F {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
+      class MainTurret: MainTurret {
+        class Turrets {};
+      };
     };
   };
+
   class B_APC_Tracked_01_base_F: APC_Tracked_01_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
   };
 
-  class APC_Wheeled_01_base_F: Wheeled_APC_F {
-    class Turrets: Turrets {
-      class MainTurret;
-    };
-  };
-  class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
-
-  class Heli_Attack_01_base_F: Helicopter_Base_F {
-    class Turrets: Turrets {
-      class MainTurret;
-    };
-  };
-
-  // Independent Inheritance
-  class MBT_03_base_F: Tank_F {
+  class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
+    AGM_FCSEnabled = 0;
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
-  };
-  class I_MBT_03_base_F: MBT_03_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
+      class CommanderOptics: CommanderOptics {};
     };
   };
 
-  class APC_Wheeled_03_base_F: Wheeled_APC_F {
-    class Turrets: Turrets {
-      class MainTurret;
-    };
-  };
-  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {};
-
-  class APC_Tracked_03_base_F: Tank_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-    };
-  };
-  class I_APC_tracked_03_base_F: APC_Tracked_03_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-    };
+  class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
+    AGM_FCSEnabled = 0;
   };
 
-  // OPFOR Inheritance
-  class MBT_02_base_F: Tank_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-    };
-  };
-  class O_MBT_02_base_F: MBT_02_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-    };
-  };
-  class O_MBT_02_arty_base_F;
-
-  class APC_Tracked_02_base_F: Tank_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
-  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
-
-  class Heli_Attack_02_base_F: Helicopter_Base_F {
-    class Turrets: Turrets {
-      class MainTurret;
-    };
-  };
-
-  // BLUFOR
-  class B_MBT_01_cannon_F: B_MBT_01_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
-  class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
   class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
       };
     };
   };
+
+  class APC_Tracked_02_base_F: Tank_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class O_APC_Tracked_02_base_F: APC_Tracked_02_base_F {};
+
+  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class APC_Tracked_03_base_F: Tank_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class MBT_03_base_F: Tank_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class MBT_01_base_F: Tank_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class B_MBT_01_base_F: MBT_01_base_F {};
+
+  class B_MBT_01_cannon_F: B_MBT_01_base_F {};
+
+  class MBT_01_arty_base_F: MBT_01_base_F {
+    AGM_FCSEnabled = 0;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class MBT_01_mlrs_base_F: MBT_01_base_F {
+    AGM_FCSEnabled = 0;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets {};
+      };
+    };
+  };
+
+  class MBT_02_base_F: Tank_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        discreteDistance[] = {};
+        discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class MBT_02_arty_base_F: MBT_02_base_F {
+    AGM_FCSEnabled = 0;
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class Ship_F: Ship {};
+
+  class Boat_F: Ship_F {};
+
+  class Boat_Armed_01_base_F: Boat_F {
+    class Turrets: Turrets {
+      class FrontTurret: NewTurret {};
+      class RearTurret: FrontTurret {};
+    };
+  };
+
+  class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
+    class Turrets: Turrets {
+      class FrontTurret: FrontTurret {};
+      class RearTurret: RearTurret {};
+    };
+  };
+
+  class Truck_F: Car_F {
+    class Turrets: Turrets {};
+  };
+
+  class MRAP_01_base_F: Car_F {};
+
+  class MRAP_01_gmg_base_F: MRAP_01_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class MRAP_01_hmg_base_F: MRAP_01_gmg_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class B_MRAP_01_F: MRAP_01_base_F {
+    class Turrets {};
+  };
+
+  class MRAP_02_base_F: Car_F {};
+
+  class MRAP_02_hmg_base_F: MRAP_02_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class MRAP_02_gmg_base_F: MRAP_02_hmg_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+    };
+  };
+
+  class O_MRAP_02_F: MRAP_02_base_F {
+    class Turrets {};
+  };
+
+  class Offroad_01_base_F: Car_F {};
+
+  class C_Offroad_01_F: Offroad_01_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+      class CargoTurret_03: CargoTurret_01 {};
+      class CargoTurret_04: CargoTurret_03 {};
+    };
+  };
+
+  class Offroad_01_repair_base_F: Offroad_01_base_F {
+    class Turrets {};
+  };
+
+  class I_G_Offroad_01_F: Offroad_01_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+      class CargoTurret_03: CargoTurret_01 {};
+      class CargoTurret_04: CargoTurret_03 {};
+    };
+  };
+
+  class Offroad_01_armed_base_F: Offroad_01_base_F {
+    class Turrets: Turrets {
+      class M2_Turret: MainTurret {};
+    };
+  };
+
+  class MRAP_03_base_F: Car_F {
+    class Turrets: Turrets {
+      class CommanderTurret: MainTurret {};
+    };
+  };
+
+  class MRAP_03_hmg_base_F: MRAP_03_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+      class CommanderTurret: CommanderTurret {};
+    };
+  };
+
+  class MRAP_03_gmg_base_F: MRAP_03_hmg_base_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+      class CommanderTurret: CommanderTurret {};
+    };
+  };
+
+  class Truck_01_base_F: Truck_F {
+    class Turrets {};
+  };
+
+  class B_Truck_01_transport_F: Truck_01_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class Truck_02_base_F: Truck_F {
+    class Turrets {};
+  };
+
+  class O_Truck_02_covered_F: Truck_02_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class O_Truck_02_transport_F: Truck_02_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class I_Truck_02_covered_F: Truck_02_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class I_Truck_02_transport_F: Truck_02_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class Truck_03_base_F: Truck_F {
+    class Turrets {};
+  };
+
+  class O_Truck_03_transport_F: Truck_03_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class O_Truck_03_covered_F: Truck_03_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class Hatchback_01_base_F: Car_F {
+    class Turrets {};
+  };
+
+  class SUV_01_base_F: Car_F {
+    class Turrets {};
+  };
+
+  class B_Truck_01_mover_F: B_Truck_01_transport_F {
+    class Turrets {};
+  };
+
+  class Van_01_base_F: Truck_F {
+    class Turrets {};
+  };
+
+  class C_Van_01_transport_F: Van_01_base_F {
+    class Turrets: Turrets {};
+  };
+
+  class I_G_Van_01_transport_F: Van_01_base_F {
+    class Turrets: Turrets {
+      class CargoTurret_L1: CargoTurret {};
+      class CargoTurret_L2: CargoTurret_L1 {};
+      class CargoTurret_L3: CargoTurret_L1 {};
+      class CargoTurret_L4: CargoTurret_L1 {};
+      class CargoTurret_L5: CargoTurret_L1 {};
+
+      class CargoTurret_R1: CargoTurret_L1 {};
+      class CargoTurret_R2: CargoTurret_L1 {};
+      class CargoTurret_R3: CargoTurret_L1 {};
+      class CargoTurret_R4: CargoTurret_L1 {};
+      class CargoTurret_R5: CargoTurret_L1 {};
+    };
+  };
+
+  class Kart_01_Base_F: Car_F {
+    class Turrets {};
+  };
+
+  class B_Heli_Transport_03_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class MainTurret: MainTurret {};
+      class RightDoorGun: MainTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class MainTurret: MainTurret {};
+      class RightDoorGun: MainTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class Heli_Transport_04_base_F: Helicopter_Base_H {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class LoadmasterTurret: MainTurret {};
+    };
+  };
+
+  class O_Heli_Transport_04_bench_F: Heli_Transport_04_base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class LoadmasterTurret: LoadmasterTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+      class CargoTurret_03: CargoTurret_01 {};
+      class CargoTurret_04: CargoTurret_01 {};
+      class CargoTurret_05: CargoTurret_01 {};
+      class CargoTurret_06: CargoTurret_05 {};
+      class CargoTurret_07: CargoTurret_05 {};
+      class CargoTurret_08: CargoTurret_05 {};
+    };
+  };
+
+  class O_Heli_Transport_04_covered_F: Heli_Transport_04_base_F {
+    class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+      class LoadmasterTurret: LoadmasterTurret {};
+
+      class CargoTurret_01: CargoTurret {};
+      class CargoTurret_02: CargoTurret_01 {};
+    };
+  };
+
+  class APC_Wheeled_01_base_F: Wheeled_APC_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
+      };
+    };
+  };
+
+  class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
+
   class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
     AGM_FCSEnabled = 1;
     class Turrets: Turrets {
@@ -260,103 +727,47 @@ class CfgVehicles {
       };
     };
   };
-  class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
-    AGM_FCSEnabled = 0;
+
+  class APC_Wheeled_02_base_F: Wheeled_APC_F {
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        class Turrets {};
+      };
+
+      class CommanderOptics: CommanderOptics {};
+    };
   };
-  class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {
-    AGM_FCSEnabled = 0;
-  };
-  class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
-    AGM_FCSEnabled = 0;
-  };
-  class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
-    AGM_FCSEnabled = 0;
-  };
-  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
-    AGM_FCSEnabled = 1;
-    AGM_FCSMinDistance = 200;
-    AGM_FCSMaxDistance = 9990;
-    AGM_FCSDistanceInterval = 5;
+
+  class B_MBT_01_TUSK_F: B_MBT_01_cannon_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
       };
     };
   };
 
-  // Independent
-  class I_MBT_03_cannon_F: I_MBT_03_base_F {
+  class APC_Wheeled_03_base_F: Wheeled_APC_F {
+    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {};
+        };
       };
     };
   };
-  class I_APC_tracked_03_cannon_F: I_APC_tracked_03_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
+
+  class I_APC_Wheeled_03_base_F: APC_Wheeled_03_base_F {};
+
   class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
-    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
-
-  // OPFOR
-  class O_MBT_02_cannon_F: O_MBT_02_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
-  /*
-  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };*/
-  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {};
-  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {};
-  class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
-    AGM_FCSEnabled = 0;
-  };
-  class O_Heli_Attack_02_F: Heli_Attack_02_base_F {
-    AGM_FCSEnabled = 1;
-    AGM_FCSMinDistance = 200;
-    AGM_FCSMaxDistance = 9990;
-    AGM_FCSDistanceInterval = 5;
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
-    };
-  };
-  class O_Heli_Attack_02_black_F: Heli_Attack_02_base_F {
-    AGM_FCSEnabled = 1;
-    AGM_FCSMinDistance = 200;
-    AGM_FCSMaxDistance = 9990;
-    AGM_FCSDistanceInterval = 5;
-    class Turrets: Turrets {
-      class MainTurret: MainTurret {
-        discreteDistance[] = {};
-        discreteDistanceInitIndex = 0;
-      };
+      class MainTurret: MainTurret {};
     };
   };
 };
