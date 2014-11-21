@@ -253,7 +253,7 @@ class CfgVehicles {
 
   class MRAP_03_base_F: Car_F {
     fuelCapacity = 860 * FUEL_FACTOR;
-    smokeLauncherGrenadeCount = 3;//@check
+    smokeLauncherGrenadeCount = 3;
     smokeLauncherAngle = 80;
     class Turrets: Turrets {
       class CommanderTurret: MainTurret {
