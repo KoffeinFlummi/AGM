@@ -16,6 +16,9 @@ class CfgFunctions {
   class AGM_Captives {
     class AGM_Captives {
       file = "\AGM_Captives\functions";
+      class animCaptiveLeaveVehicle;
+      class animCaptiveStateIn;
+      class animCaptiveStateOut;
       class canFriskPerson;
       class canLoadCaptiveIntoVehicle;
       class canUnloadCaptiveFromVehicle;
