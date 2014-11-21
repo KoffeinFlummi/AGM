@@ -23,17 +23,15 @@ _newUnit = _this select 1;
 if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player != _newUnit && !(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
     
   _newUnit spawn {
-    private ["_unit", "_oldUnit", "_respawnEhId"];
+    private ["_unit", "_originalOwner", "_oldUnit", "_respawnEhId"];
     _unit = _this;
     
-    // should switch locality
+    _originalOwner = owner _unit;
     
+    // should switch locality
     // This doesn't work anymore, because one's now able to switch to units from a different side
     //[_unit] joinSilent group player;
-    
     [[_unit, player], "{(_this select 0) setOwner owner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
-    
-    // @todo set owner back to original owner
     
     _oldUnit = player;
     waitUntil {sleep 0.2; local _unit};
@@ -48,6 +46,7 @@ if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player !=
     
     selectPlayer _unit;
     
+    _unit setVariable ["AGM_SwitchUnits_OriginalOwner", _originalOwner, true];
     _unit setVariable ["AGM_SwitchUnits_IsPlayerControlled", true, true];
     _unit setVariable ["AGM_SwitchUnits_PlayerControlledName", AGM_SwitchUnits_OriginalName, true];
     
@@ -56,6 +55,9 @@ if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player !=
     }];
     _unit setVariable ["AGM_SwitchUnits_RespawnEhId", _respawnEhId, true];
     
+    // set owner back to original owner
+    _oldOwner = _oldUnit getVariable["AGM_SwitchUnits_OriginalOwner", -1];
+    [[_oldUnit, _oldOwner], "{(_this select 0) setOwner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
     
     ["Localize: Switched unit."] call AGM_Core_fnc_displayTextStructured;
   };
