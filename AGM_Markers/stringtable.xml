@@ -13,13 +13,14 @@
     <Key ID="STR_AGM_Markers_PlaceIn">
       <English>Place in</English>
       <German>Platz in</German>
-      <Spanish>Lugar In</Spanish>
-      <Czech>Place in</Czech>
-      <Polish>Place in</Polish>
-      <French>Place in</French>
-      <Portuguese>Place in</Portuguese>
-      <Hungarian>Place in</Hungarian>
-      <Italian>Place in</Italian>
+      <Spanish>Colocar en</Spanish>
+      <Czech></Czech>
+      <Polish></Polish>
+      <French></French>
+      <Portuguese></Portuguese>
+      <Hungarian></Hungarian>
+      <Italian></Italian>
+      <Russian></Russian>
     </Key>
     <!-- Don't guess translations!  These need to be an exact substring of AGM_Markers_currentChatChannel -->
     <Key ID="STR_AGM_Markers_ChannelGlobalShort">
@@ -32,7 +33,8 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
-    </Key>    
+      <Russian></Russian>
+    </Key>
     <Key ID="STR_AGM_Markers_ChannelSideShort">
       <English>Side</English>
       <German>Seiten</German>
@@ -43,6 +45,7 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
+      <Russian></Russian>
     </Key>
     <Key ID="STR_AGM_Markers_ChannelGroupShort">
       <English>Group</English>
@@ -54,7 +57,8 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
-    </Key>    
+      <Russian></Russian>
+    </Key>
     <Key ID="STR_AGM_Markers_ChannelVehicleShort">
       <English>Vehicle</English>
       <German>Fahrzeug</German>
@@ -65,7 +69,8 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
-    </Key>    
+      <Russian></Russian>
+    </Key>
     <Key ID="STR_AGM_Markers_ChannelDirectShort">
       <English>Direct</English>
       <German>Direkte</German>
@@ -76,6 +81,7 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
+      <Russian></Russian>
     </Key>
     <Key ID="STR_AGM_Markers_ChannelCommandShort">
       <English>Command</English>
@@ -87,6 +93,7 @@
       <Portuguese></Portuguese>
       <Hungarian></Hungarian>
       <Italian></Italian>
+      <Russian></Russian>
     </Key>
   </Package>
 </Project>
