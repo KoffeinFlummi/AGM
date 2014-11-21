@@ -19,45 +19,50 @@ _projectile    = _this select 4;
 // It's already dead, who cares?
 if (damage _vehicle >= 1) exitWith {};
 
-// Determine type of vehicle.
+// Find out what hitpoint the selection belongs to.
+_hitpoint = [_vehicle, _selectionName] call AGM_Armour_fnc_getHitPointBySelection;
+
+// Determine type of vehicle and whether the selection is critical.
 _type = "";
+_critical = True; // @todo
 if (_vehicle isKindOf "Car_F") then {
   if (_vehicle isKindOf "Wheeled_APC_F") then {
     _type = "tank";
   } else {
     _type = "car";
   };
+  _critical = _hitpoint in ["HitHull", "HitFuel", ""];
 };
 if (_vehicle isKindOf "Tank_F") then {
   _type = "tank";
+  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Helicopter") then {
   _type = "heli";
+  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Plane") then {
   _type = "plane";
+  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Ship_F") then {
   _type = "ship";
+  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "StaticWeapon") then {
   _type = "static";
+  _critical = _hitpoint in ["HitHull", ""];
 };
 
 // Are we doing anything with this type of vehicle?
 if !(_type in ["tank", "car"]) exitWith {};
-
-// Do nothing for uncritical parts (wheels, gun, etc.)
-_critical = True; // @todo
-if !(_critical) exitWith {};
 
 // Change in damage
 _newDamage = _damage - (_vehicle getHit _selectionName);
 
 // Prevent total destruction of car unless round used is explosive
 if (_type == "car") exitWith {
-  _explosive = True; // @todo
-  if (_explosive) then {
+  if (!_critical or (getNumber (configFile >> "CfgAmmo" >> _projectile >> "explosive") > 0.5)) then {
     _damage
   } else {
     _damage min 0.89
@@ -67,22 +72,25 @@ if (_type == "car") exitWith {
 // Prevent total destruction of tank unless ammo storage is hit
 if (_type == "tank") exitWith {
 
-  // Check if ammo storage was hit.
+  // Determine ammo storage location
   _target = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_AmmoLocation");
-  if (isClass (configFile >> "CfgVehicles" >> typeOf _vehicle >> "HitPoints" >> _target)) then {
-    _target = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "HitPoints" >> _target >> "name");
-  } else {
-    // @todo: more complex turret structures?
-    _target = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "HitPoints" >> _target >> "name");
+
+  // Ammo was hit, high chance for cook-off
+  if (_hitpoint == _target and _damage > 0.5 and random 1 > 0.3) then {
+    [_vehicle] call AGM_Armour_fnc_cookOff;
   };
 
-  // Trigger cook-off
-  if (_target == _selectionName and _newDamage > 0.3) then {
+  // Ammo wasn't hit, slim chance for cook-off (only for high-damage weapons)
+  if (_hitpoint != target and _hitpoint in ["HitBody", "HitTurret", ""] and _newDamage > (0.6 + random 0.3)) then {
     [_vehicle] call AGM_Armour_fnc_cookOff;
   };
 
   // Prevent destruction, let cook-off handle it if necessary
-  _damage min 0.89
+  if (_critical) then {
+    _damage min 0.89
+  } else {
+    _damage;
+  };
 };
 
 // this shouldn't happen, but who knows
