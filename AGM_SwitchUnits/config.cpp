@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"jodav"};
     authorUrl = "https://github.com/jodav/";
   };
@@ -46,6 +46,51 @@ class CfgVehicles {
     isGlobal = 1;
     //icon = "\AGM_SwitchUnits\UI\IconSwitchUnits_ca.paa";
     class Arguments {
+      class SwitchToWest {
+        displayName = "Switch to West?";
+        description = "Allow switching to west units?";
+        typeName = "BOOL";
+        class values {
+          class Yes {name = "Yes"; value = 1;};
+          class No {default = 1; name = "No"; value = 0;};
+        };
+      };
+      class SwitchToEast {
+        displayName = "Switch to East?";
+        description = "Allow switching to east units?";
+        typeName = "BOOL";
+        class values {
+          class Yes {name = "Yes"; value = 1;};
+          class No {default = 1; name = "No"; value = 0;};
+        };
+      };
+      class SwitchToIndependent {
+        displayName = "Switch to Independent?";
+        description = "Allow switching to independent units?";
+        typeName = "BOOL";
+        class values {
+          class Yes {name = "Yes"; value = 1;};
+          class No {default = 1; name = "No"; value = 0;};
+        };
+      };
+      class SwitchToCivilian {
+        displayName = "Switch to Civilian?";
+        description = "Allow switching to civilian units?";
+        typeName = "BOOL";
+        class values {
+          class Yes {name = "Yes"; value = 1;};
+          class No {default = 1; name = "No"; value = 0;};
+        };
+      };
+      class SafeZoneRadius {
+        displayName = "Safe Zone Radius";
+        description = "The safe zone around players from a different team. Default: 200";
+        typeName = "NUMBER";
+        defaultValue = 100;
+      };
+    
+      /*
+      
       class EnableSwitchUnits {
         displayName = "Enable SwitchUnits?";
         description = "Enable to switch to AI units? Default: No";
@@ -55,6 +100,7 @@ class CfgVehicles {
           class No {default = 1; name = "No"; value = 0;};
         };
       };
+      
       class SwitchUnitsAllowedForSide {
         displayName = "Allow for which side?";
         description = "Which side should be allowed to switch to AI units?";
@@ -65,12 +111,16 @@ class CfgVehicles {
           class Independent {name = "Independent"; value = 2;};
           class Civilian {name = "Civilian"; value = 3;};
         };
-      };
+      };*/
     };
   };
 };
 
 class AGM_Parameters {
   AGM_SwitchUnits_EnableSwitchUnits = 0;
-  AGM_SwitchUnits_SwitchUnitsAllowedForSide = "east";
+  AGM_SwitchUnits_SwitchToWest = 0;
+  AGM_SwitchUnits_SwitchToEast = 0;
+  AGM_SwitchUnits_SwitchToIndependent = 0;
+  AGM_SwitchUnits_SwitchToCivilian = 0;
+  AGM_SwitchUnits_SafeZoneRadius = 100;
 };

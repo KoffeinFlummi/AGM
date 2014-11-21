@@ -9,20 +9,20 @@
   
   Parameters:
     0: OBJECT - player
-    1: OBJECT - side
+    1: ARRAY<OBJECT> - Array containing selected sides
   
   Returns:
     VOID
 */
 
-private ["_playerUnit", "_side"];
+private ["_playerUnit", "_sides"];
 
 _playerUnit = _this select 0;
-_side = _this select 1;
+_sides = _this select 1;
 
 if (vehicle _playerUnit == _playerUnit) then {
 
-  [_side] call AGM_SwitchUnits_fnc_markAiOnMap;
+  [_sides] call AGM_SwitchUnits_fnc_markAiOnMap;
 
   _playerUnit setVariable ["AGM_SwitchUnits_IsPlayerUnit", true];
   _playerUnit allowDamage false;
@@ -44,5 +44,5 @@ if (vehicle _playerUnit == _playerUnit) then {
   
   _playerUnit forceWalk true;
   
-  [_playerUnit] call AGM_SwitchUnits_fnc_addMapFunction;
+  [_playerUnit, _sides] call AGM_SwitchUnits_fnc_addMapFunction;
 };

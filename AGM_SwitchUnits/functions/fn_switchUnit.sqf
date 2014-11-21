@@ -27,8 +27,13 @@ if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player !=
     _unit = _this;
     
     // should switch locality
-    // maybe replace it with: [[_unit, player], "{(_this select 0) setOwner owner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
-    [_unit] joinSilent SwitchUnits_OriginalGroup;
+    
+    // This doesn't work anymore, because one's now able to switch to units from a different side
+    //[_unit] joinSilent group player;
+    
+    [[_unit, player], "{(_this select 0) setOwner owner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
+    
+    // @todo set owner back to original owner
     
     _oldUnit = player;
     waitUntil {sleep 0.2; local _unit};
@@ -40,8 +45,6 @@ if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player !=
     if (_respawnEhId != -1) then {
       _oldUnit removeEventHandler ["Respawn", _respawnEhId];
     };
-    
-    
     
     selectPlayer _unit;
     

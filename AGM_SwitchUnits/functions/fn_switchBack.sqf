@@ -20,6 +20,8 @@ private ["_originalPlayerUnit", "_currentUnit"];
 _originalPlayerUnit = _this select 0;
 _currentUnit = _this select 1;
 
+[_originalPlayerUnit] joinSilent AGM_SwitchUnits_OriginalGroup;
+
 waitUntil {local _originalPlayerUnit};
 
 selectPlayer _originalPlayerUnit;
