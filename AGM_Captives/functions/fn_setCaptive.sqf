@@ -85,3 +85,8 @@ if (_state) then {
 } else {
   _unit setVariable ["AGM_isCaptive", false, true];
 };
+
+/*
+playMove "AmovPercMstpSnonWnonDnon_Ease";
+playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
+*/

@@ -184,34 +184,6 @@ class AGM_Core_canInteractConditions {
   };
 };
 
-class CfgMovesBasic;
-class CfgMovesMaleSdr: CfgMovesBasic {
-  /*class Actions {     // This is ReadOnlyVerified
-    class RifleStandSaluteActions;
-    class AGM_RifleStandSaluteActions: RifleStandSaluteActions {
-      getOver = "";
-    };
-  };*/
-  class States {
-    class CutSceneAnimationBase;
-    class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
-      //actions = "AGM_RifleStandSaluteActions";
-      head = "headDefault";
-      static = 1;
-      disableWeapons = 0;
-      forceAim = 0;
-      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
-    };
-    class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
-      looped = 0;
-      InterpolateTo[] = {"Unconscious",0.1};
-    };
-    class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
-      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
-    };
-  };
-};
-
 #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
   name = #ITEM; \
   count = COUNT; \
