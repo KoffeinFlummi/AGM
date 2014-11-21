@@ -64,6 +64,7 @@ class CfgFunctions
         displayName = $STR_AGM_Explosives_Menu;\
         condition = "true";\
         statement = "";\
+        exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
         showDisabled = 1;\
         priority = 4;\
         icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
@@ -73,6 +74,7 @@ class CfgFunctions
           displayName = $STR_AGM_Explosives_Detonate;\
           condition = "[_player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([_player] call AGM_Explosives_fnc_getDetonators) > 0}";\
           statement = "[_player] call AGM_Explosives_fnc_openTransmitterUI;";\
+          exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa"; \
           showDisabled = 1;\
           priority = 2;\
@@ -90,6 +92,7 @@ class CfgVehicles {
         displayName = $STR_AGM_Explosives_Menu;
         condition = "!(_player getVariable ['AGM_PlantingExplosive', false])";
         statement = "";
+        exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
         showDisabled = 1;
         priority = 4;
         icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";     
@@ -100,6 +103,7 @@ class CfgVehicles {
           displayName = $STR_AGM_Explosives_Detonate;
           condition = "[_player] call AGM_Explosives_fnc_hasPlacedExplosives and {count ([_player] call AGM_Explosives_fnc_getDetonators) > 0}";
           statement = "[_player] call AGM_Explosives_fnc_openTransmitterUI;";
+          exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
           priority = 2;
@@ -109,6 +113,7 @@ class CfgVehicles {
           displayName = $STR_AGM_Explosives_Place;
           condition = "(vehicle _player == _player) and {[_player] call AGM_Explosives_fnc_hasExplosives}";
           statement = "[_player] call AGM_Explosives_fnc_openPlaceUI;";
+          exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
           showDisabled = 1;
           icon = "AGM_Explosives\UI\Place_Explosive_ca.paa";
           priority = 1;
@@ -118,6 +123,7 @@ class CfgVehicles {
           displayName = $STR_AGM_Explosives_Defuse;
           condition = "[_player] call AGM_Explosives_fnc_CanDefuse";
           statement = "[_player, AGM_Interaction_Target] call AGM_Explosives_fnc_StartDefuse;";
+          exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
           showDisabled = 0;
           icon = "AGM_Explosives\UI\defuse_ca.paa";
           priority = 0.8;
