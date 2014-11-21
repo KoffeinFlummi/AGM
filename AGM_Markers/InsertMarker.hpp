@@ -29,6 +29,8 @@ class RscDisplayInsertMarker {
 			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
 			w = "8.9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			// size = "0.85 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+			// sizeEx = "0.85 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		};
 		class ButtonMenuCancel: RscButtonMenuCancel {
 			x = "(14 + 8.9) * 	(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";

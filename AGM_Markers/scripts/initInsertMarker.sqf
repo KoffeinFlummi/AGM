@@ -26,22 +26,52 @@ with uinamespace do {
     ctrlSetFocus _text;
 
     //Change ok button's text based on current channel
-    if (!isNull (findDisplay 63)) then {  //if display is up, update
-      missionNamespace setVariable ["AGM_Markers_currentChatChannel", ctrlText ((findDisplay 63) displayCtrl 101)];
-    };
-    _currentChannel = missionNamespace getVariable ["AGM_Markers_currentChatChannel", ""];
-    _currentChannel = switch (true) do {
-    case ([(localize "STR_AGM_Markers_ChannelGlobalShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelGlobalShort";};
-    case ([(localize "STR_AGM_Markers_ChannelSideShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelSideShort";};
-    case ([(localize "STR_AGM_Markers_ChannelGroupShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelGroupShort";};
-    case ([(localize "STR_AGM_Markers_ChannelVehicleShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelVehicleShort";};
-    case ([(localize "STR_AGM_Markers_ChannelDirectShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelDirectShort";};
-    case ([(localize "STR_AGM_Markers_ChannelCommandShort"), _currentChannel] call BIS_fnc_inString): {localize "STR_AGM_Markers_ChannelCommandShort";};
-      default {""};
-    };
-    //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
-    if (_currentChannel != "") then {
-      _buttonOK ctrlSetText format ["%1: %2", (localize "STR_AGM_Markers_PlaceIn"), _currentChannel];
+    [_buttonOK] spawn {
+	  disableserialization;
+      private ["_buttonOK", "_currentChannel", "_textColor"];
+      _buttonOK = _this select 0;
+
+      waitUntil {
+        if (isNull _buttonOK) exitWith {true};
+        if (!isNull (findDisplay 63)) then {  //if channel display is up, update now
+          missionNamespace setVariable ["AGM_Markers_currentChatChannel", ctrlText ((findDisplay 63) displayCtrl 101)];
+        };
+        _currentChannel = missionNamespace getVariable ["AGM_Markers_currentChatChannel", ""];
+		_textColor = [1,1,1,1];
+        switch (true) do {
+        case ([(localize "STR_AGM_Markers_ChannelGlobalShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelGlobalShort";
+			_textColor = [(216/255),(216/255),(216/255),1];
+          };
+        case ([(localize "STR_AGM_Markers_ChannelSideShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelSideShort";
+			_textColor = [(70/255),(211/255),(252/255),1];
+          };
+        case ([(localize "STR_AGM_Markers_ChannelGroupShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelGroupShort";
+			_textColor = [(181/255),(248/255),(98/255),1];
+          };
+        case ([(localize "STR_AGM_Markers_ChannelVehicleShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelVehicleShort";
+			_textColor = [(255/255),(208/255),(0/255),1];
+          };
+        case ([(localize "STR_AGM_Markers_ChannelDirectShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelDirectShort";
+			_textColor = [(255/255),(255/255),(255/255),1];
+          };
+        case ([(localize "STR_AGM_Markers_ChannelCommandShort"), _currentChannel] call BIS_fnc_inString): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelCommandShort";
+			_textColor = [(255/255),(255/255),(70/255),1];
+          };
+          default {""};
+        };
+        //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
+        if (_currentChannel != "") then {
+		  _buttonOK ctrlSetTextColor _textColor;
+          _buttonOK ctrlSetText format ["%1: %2", (localize "STR_AGM_Markers_PlaceIn"), _currentChannel];
+        };
+        false
+      };
     };
 
     //--- Background
