@@ -43,10 +43,10 @@ class CfgFunctions {
 			file = "\AGM_CrewInfo\functions";
 			class canShow;
 			class doShow;
-			class setText;
-			class onMouseZChanged;
+			class getVehicleData;
 			class module;
-			//class postInit { postInit = 1; };
+			class onMouseZChanged;
+			class setText;
 		};
 	};
 };

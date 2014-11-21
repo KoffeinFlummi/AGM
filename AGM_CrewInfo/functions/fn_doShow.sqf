@@ -2,57 +2,84 @@
 	Author: aeroson
 	
 	Description:
-		Shows the actual text and sets text the crew info
-	
+		Shows the actual text and sets text the crew info		
+
 	Parameters: 
 		None
-	
+
 	Returns:
 		Nothing
 */
 
-#define QUOTE(A) #A
+#include "common.sqf"
 
-#define COMMANDER_IMG QUOTE(a3\ui_f\data\IGUI\Cfg\Actions\getincommander_ca.paa)
-#define GUNNER_IMG QUOTE(a3\ui_f\data\IGUI\Cfg\Actions\getingunner_ca.paa)
-#define DRIVER_IMG QUOTE(a3\ui_f\data\IGUI\Cfg\Actions\getindriver_ca.paa)
-#define CARGO_IMG QUOTE(a3\ui_f\data\IGUI\Cfg\Actions\getincargo_ca.paa)
+private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text", "_data", "_isAir", "_turretUnits", "_turretRoles", "_index", "_roleType", "_unit", "_toShow"];
 
-#define LINE(UNIT, IMAGE) format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", name UNIT, IMAGE]
 
-private["_text", "_vehicle", "_crew", "_config", "_player"];
-
-_text = "";	 
 _player = call AGM_Core_fnc_player;
 _vehicle = vehicle _player;
-_crew = crew _vehicle;
-_config = configFile >> "CfgVehicles" >> (typeOf _vehicle);
-_text = _text + format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow='true'>%2</t><br/>", getText(_config>>"picture"), getText (_config >> "DisplayName")];
+_type = typeOf _vehicle;
+_config = configFile >> "CfgVehicles" >> _type;
+_text = format["<t size='1.4'><img image='%1'></t> <t size='1.7' shadow='true'>%2</t><br/>", getText(_config>>"picture"), getText (_config >> "DisplayName")];
 
+
+
+_data = [_type] call AGM_CrewInfo_fnc_getVehicleData;
+
+_isAir = _data select 0;
+_data = _data select 1;
+
+_turretUnits = [_data, { _vehicle turretUnit (_x select 0) } ] call AGM_Core_fnc_map;
+_turretRoles = [_data, { _x select 1 } ] call AGM_Core_fnc_map;
+
+
+_roleType = CARGO;
+_toShow = [];
 {
-	if(alive _x && {format["%1", name _x] != ""} && {format["%1", name _x] != "Error: No unit"}) then {
-
-		switch (_x) do {				
-			case commander _vehicle: {
-				_text = _text + LINE(_x, COMMANDER_IMG);
-			};
-			case gunner _vehicle: {
-				_text = _text + LINE(_x, GUNNER_IMG);
-			};					
-			case driver _vehicle: {	 
-				_text = _text + LINE(_x, DRIVER_IMG);
-			};
-			default {
-				if (_x in ([[typeOf _vehicle] call AGM_Core_fnc_getTurrets, {_vehicle turretUnit _x}] call AGM_Core_fnc_map)) then {
-					_text = _text + LINE(_x, GUNNER_IMG);
-				} else {
-					_text = _text + LINE(_x, CARGO_IMG);
-				};
+	switch (_x) do {				
+		case commander _vehicle: {
+			_roleType = COMMANDER;
+		};
+		case gunner _vehicle: {
+			_roleType = GUNNER;
+		};					
+		case driver _vehicle: {	 
+			_roleType = if(_isAir) then { PILOT } else { DRIVER };
+		};					
+		default {
+			_index = _turretUnits find _x;
+			if(_index !=-1 ) then {
+				_roleType = _turretRoles select _index;
+			} else {
+				_roleType = CARGO;
 			};
 		};
-
 	};
-} forEach _crew;
+	_toShow pushBack [_x, _roleType];
+} forEach crew _vehicle;
+
+
+_toShow = [
+	_toShow,
+	[],
+	{
+		_x select 1	
+	},
+	"ASCEND",
+	{
+		_unit = _x select 0;
+		alive _unit && {format["%1", name _unit] != ""} && {format["%1", name _unit] != "Error: No unit"}
+	}
+] call BIS_fnc_sortBy;
+
+
+_roleImages = ROLE_IMAGES;
+{	
+	_unit = _x select 0;
+	_roleType = _x select 1;
+	_text = _text + format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", name _unit, _roleImages select _roleType];
+} forEach _toShow;
+
 
 cutRsc ["AGM_CrewInfo_dialog", "PLAIN", 1, false];
 [_text] call AGM_CrewInfo_fnc_setText;
