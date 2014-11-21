@@ -21,6 +21,12 @@ if (_state) then {
 
   if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) exitWith {};
 
+  // end TFAR and ACRE2 radio transmissions
+  0 spawn AGM_Core_fnc_endRadioTransmission;
+
+  // Close map
+  if (visibleMap) then {openMap false};
+
   closeDialog 0;
   createDialog "AGM_Core_DisableMouse_Dialog";
 
@@ -49,7 +55,7 @@ if (_state) then {
       _ctrl ctrlSetText "ABORT";
       _ctrl ctrlSetTooltip "Abort.";
 
-      _ctrl = _dlg displayctrl 104;
+      _ctrl = _dlg displayctrl ([104, 199] select (isMultiplayer && {isClass (configFile >> "RscDisplayMPInterrupt" >> "controls" >> "ALIVEButtonAbort")}));
       _ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; player setDamage 1; [false] call AGM_Core_fnc_disableUserInput;"];
       _ctrl ctrlEnable (call {_config = missionConfigFile >> "respawnButton"; !isNumber _config || {getNumber _config == 1}});
       _ctrl ctrlSetText "RESPAWN";

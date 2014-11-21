@@ -10,6 +10,8 @@
  * None
  */
 
+AGM_Scopes_fadeScript = scriptNull;
+
 AGM_Scopes_Optics = [] call AGM_Scopes_fnc_getOptics;
 AGM_Scopes_Adjustment = [[0,0], [0,0], [0,0]]; // primary, secondary, handgun
 
@@ -37,14 +39,29 @@ AGM_Scopes_inventoryCheck = {
   [] call AGM_Scopes_inventoryCheck;
 }];
 
+// show overlay after changing weapon/optic
 0 spawn {
+  _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
   while {True} do {
-    waitUntil {[0,0] call AGM_Scopes_fnc_canAdjustScope and cameraView != "GUNNER" and !(weaponLowered player)};
-    _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
+    waitUntil {[0,0] call AGM_Scopes_fnc_canAdjustScope};
     _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
+    sleep 3;
+    _layer cutFadeOut 2;
+
     _weapon = currentWeapon player;
     _optics = [] call AGM_Scopes_fnc_getOptics;
-    waitUntil {!([0,0] call AGM_Scopes_fnc_canAdjustScope) or cameraView == "GUNNER" or !(_optics isEqualTo ([] call AGM_Scopes_fnc_getOptics)) or (currentWeapon player != _weapon) or (weaponLowered player)};
+    waitUntil {sleep 0.05; !(_optics isEqualTo ([] call AGM_Scopes_fnc_getOptics)) or (currentWeapon player != _weapon)};
+  };
+};
+
+// instantly hide when scoping in
+0 spawn {
+  _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
+  while {True} do {
+    waitUntil {sleep 0.05; cameraView == "GUNNER"};
+    if !(isNull AGM_Scopes_fadeScript) then {
+      terminate AGM_Scopes_fadeScript;
+    };
     _layer cutText ["", "PLAIN", 0];
   };
 };

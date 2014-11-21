@@ -14,14 +14,14 @@ AGM_NewStrength = 0;
     if (AGM_NewStrength * STRENGHTODEAFNESS > AGM_CurrentDeafness) then {
       AGM_CurrentDeafness = AGM_NewStrength * STRENGHTODEAFNESS min MAXDEAFNESS;
 
-      // icon
-      if (AGM_CurrentDeafness > 0.4) then {
+      // icon is CUT
+      /*if (AGM_CurrentDeafness > 0.4) then {
         if (AGM_CurrentDeafness > 0.8) then {
           [parseText "<img align='center' size='2.5' color='#FF0000' image='AGM_Hearing\UI\deafness_x_ca.paa'/>"] call AGM_Core_fnc_displayTextStructured;
         } else {
           [parseText "<img align='center' size='2.5' color='#FFFF00' image='AGM_Hearing\UI\deafness_x_ca.paa'/>"] call AGM_Core_fnc_displayTextStructured;
         };
-      };
+      };*/
     };
     AGM_NewStrength = 0;
 

@@ -30,7 +30,7 @@ playSound (["AGM_Scopes_Click_1", "AGM_Scopes_Click_2", "AGM_Scopes_Click_3"] se
 // slightly rotate the player if looking through optic
 if (cameraView == "GUNNER") then {
   _pitchbankyaw = [player] call AGM_Core_fnc_getPitchBankYaw;
-  // these are not exact mil-to-degree conversions, but instead chosen 
+  // these are not exact mil-to-degree conversions, but instead chosen
   // to minimize the effect of rounding errors
   _pitch = (_pitchbankyaw select 0) + ((_this select 1) * -0.04);
   _bank = _pitchbankyaw select 1;
@@ -44,6 +44,18 @@ if !(isNull _display) then {
   _horizontal = _display displayCtrl 925003;
   _vertical ctrlSetText (str (_zeroing select 1));
   _horizontal ctrlSetText (str (_zeroing select 0));
+};
+
+if !(isNull AGM_Scopes_fadeScript) then {
+  terminate AGM_Scopes_fadeScript;
+};
+if (cameraView != "GUNNER") then {
+  AGM_Scopes_fadeScript = 0 spawn {
+    _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
+    _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
+    sleep 3;
+    _layer cutFadeOut 2;
+  };
 };
 
 true

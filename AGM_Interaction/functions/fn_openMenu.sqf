@@ -1,2 +1,6 @@
 // by commy2
-[0, cursorTarget, ""] call AGM_Interaction_fnc_showMenu;
+
+private "_target";
+_target = [cursorTarget, AGM_Interaction_Target] select (_this == "Default");
+
+[0, _target, ""] call AGM_Interaction_fnc_showMenu;

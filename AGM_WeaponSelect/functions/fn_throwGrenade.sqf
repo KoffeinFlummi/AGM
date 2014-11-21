@@ -14,5 +14,6 @@ _count = {_x == _magazine} count magazines _unit;
 [_magazine, _count] call AGM_WeaponSelect_fnc_displayGrenadeTypeAndNumber;
 
 if (_count == 0) then {
+  if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
   [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
 };

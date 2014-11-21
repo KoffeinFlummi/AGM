@@ -19,8 +19,16 @@ class CfgFunctions {
       file = "AGM_SafeMode\functions";
       class firstMode;
       class lockSafety;
+      class playChangeFiremodeSound;
+      class setSafeModeVisual;
       class unlockSafety;
     };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_SafeMode {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_SafeMode\clientInit.sqf';";
   };
 };
 

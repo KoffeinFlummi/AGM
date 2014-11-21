@@ -13,16 +13,50 @@ if (_weapon in _safedWeapons) then {
   _unit setVariable ["AGM_SafeMode_safedWeapons", _safedWeapons];
 
   if (count _safedWeapons == 0) then {
-  	private "_actionIDs";
+    private "_actionID";
+    _actionID = _unit getVariable ["AGM_SafeWeapon_actionID", -1];
 
-    _actionIDs = _unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]];
-    //_unit removeAction _actionID;
-    [_unit, "DefaultAction", _actionIDs select 0] call AGM_Core_fnc_removeActionEventHandler;
-    [_unit, "nextWeapon",    _actionIDs select 1] call AGM_Core_fnc_removeActionEventHandler;
-    _unit setVariable ["AGM_SafeWeaponActionIDs", [-1, -1]];
+    [_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionMenuEventHandler;
+    _unit setVariable ["AGM_SafeWeapon_actionID", -1];
   };
 };
 
 _unit selectWeapon _weapon;
 
-playSound "AGM_Sound_Click";
+if (inputAction "nextWeapon" > 0) then {
+  // switch to the last mode to roll over to first after the default nextWeapon action
+  private ["_modes", "_mode", "_index"];
+
+  // get weapon modes
+  _modes = [];
+  {
+    if (getNumber (configFile >> "CfgWeapons" >> _weapon >> _x >> "showToPlayer") == 1) then {
+      _modes pushBack _x;
+    };
+    if (_x == "this") then {
+      _modes pushBack _weapon;
+    };
+  } forEach getArray (configfile >> "CfgWeapons" >> _weapon >> "modes");
+
+  // select last mode
+  _mode = _modes select (count _modes - 1);
+
+  // switch to last mode
+  _index = 0;
+  while {
+    _index < 100 && {currentMuzzle _unit != _weapon || {currentWeaponMode _unit != _mode}}
+  } do {
+    _unit action ["SwitchWeapon", _unit, _unit, _index];
+    _index = _index + 1;
+  };
+} else {
+  // play fire mode selector sound
+  [_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+};
+
+// player hud
+[true] call AGM_SafeMode_fnc_setSafeModeVisual;
+
+private "_picture";
+_picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+[localize "STR_AGM_SafeMode_TookOffSafety", _picture] call AGM_Core_fnc_displayTextPicture;

@@ -11,6 +11,8 @@ _weapons = [
   handgunWeapon player
 ];
 
-_zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
-_horizontal ctrlSetText (str (_zeroing select 0));
-_vertical ctrlSetText (str (_zeroing select 1));
+if ((currentWeapon player) in _weapons) then {
+  _zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
+  _horizontal ctrlSetText (str (_zeroing select 0));
+  _vertical ctrlSetText (str (_zeroing select 1));
+};

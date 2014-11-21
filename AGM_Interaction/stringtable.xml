@@ -143,16 +143,16 @@
       <Italian>Smetti di ballare</Italian>
     </Key>
     <Key ID="STR_AGM_Interaction_Back">
-      <English>Back</English>
-      <German>Zurück</German>
-      <Spanish>Atrás</Spanish>
-      <Polish>Wstecz</Polish>
-      <Czech>Zpět</Czech>
-      <French>Retour</French>
-      <Russian>Назад</Russian>
-      <Hungarian>Vissza</Hungarian>
-      <Portuguese>Voltar</Portuguese>
-      <Italian>Indietro</Italian>
+      <English>&lt;&lt; Back</English>
+      <German>&lt;&lt; Zurück</German>
+      <Spanish>&lt;&lt; Atrás</Spanish>
+      <Polish>&lt;&lt; Wstecz</Polish>
+      <Czech>&lt;&lt; Zpět</Czech>
+      <French>&lt;&lt; Retour</French>
+      <Russian>&lt;&lt; Назад</Russian>
+      <Hungarian>&lt;&lt; Vissza</Hungarian>
+      <Portuguese>&lt;&lt; Voltar</Portuguese>
+      <Italian>&lt;&lt; Indietro</Italian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures">
       <English>Gestures &gt;&gt;</English>

@@ -4,7 +4,7 @@
  * Add a unit info type handler.
  *
  * Argument:
- * 0: Type. Can be "Soldier", "Vehicle", "Aircraft" or "Parachute" (String)
+ * 0: Type. Can be "Soldier", "Vehicle", "Aircraft", "Ship", "Parachute" or "Any". "Any" will execute for any compatible display (String)
  * 1: Code to execute (Code or String)
  *
  * Return value:
