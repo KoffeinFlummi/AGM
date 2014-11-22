@@ -42,7 +42,7 @@ _marker setMarkerTypeLocal _type;
 _marker setMarkerColorLocal _color;
 _marker setMarkerTextLocal format ["%1", _text];
 _marker setMarkerDir _selectedDir;
-AGM_Tablet_Markers set [count AGM_Tablet_Markers, [_position, format ["AGM_Marker_ID:%1", _index], _text, _color, _type, _selectedDir]]; //_type geht in showMarker nicht 
+AGM_Tablet_Markers set [count AGM_Tablet_Markers, [_position, format ["AGM_Marker_ID:%1", _index], _text, _color, _type, _selectedDir]];
 
 ((uiNamespace getVariable "AGM_tablet_dlg") displayCtrl 1612) ctrlShow false;
 ((uiNamespace getVariable "AGM_tablet_dlg") displayCtrl 1613) ctrlShow false;

@@ -14,12 +14,14 @@ if ((_action == "delete") && (AGM_Tablet_Marker_Selected > -1) && ((count AGM_Ta
 			_markerCount = AGM_Tablet_Waypoint_Markers find _marker;
 			_waypointDelete = AGM_Tablet_Waypoint_WP select _markerCount;
 
-			deleteWaypoint _waypointDelete;
+			//deleteWaypoint _waypointDelete;
+			[_waypointDelete, "{deleteWaypoint _this}", 2] call AGM_Core_fnc_execRemoteFnc;
 
 		} forEach allGroups;
 
 	};
-	deleteMarkerLocal format ["%1", _marker];
+	//deleteMarkerLocal format ["%1", _marker];
+	[_marker, "{deleteMarkerLocal _this}", 2] call AGM_Core_fnc_execRemoteFnc;
 	AGM_Tablet_Markers set [AGM_Tablet_Marker_Selected, "delete"];
 	AGM_Tablet_Markers = AGM_Tablet_Markers - ["delete"];
 	AGM_Tablet_Marker_Selected = AGM_Tablet_Marker_Selected - 1;

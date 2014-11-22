@@ -9,7 +9,6 @@ _keyButton = _this select 3;
 
 _side = side player;
 _groups = [allGroups, {side leader _this == _side}] call AGM_Core_fnc_filter;
-hint format ["%1", _this select 3];
 
 if(_mouseButton == 0 && _keyButton) then {
 	((uiNamespace getVariable "AGM_tablet_dlg") displayCtrl 1620) ctrlSetPosition [_posx - 0.1, _posy + 0.05];
