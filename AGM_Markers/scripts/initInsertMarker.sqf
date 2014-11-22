@@ -27,43 +27,43 @@ with uinamespace do {
 
     //Change ok button's text based on current channel
     [_buttonOK] spawn {
-	  disableserialization;
+      disableserialization;
       private ["_buttonOK", "_currentChannel", "_textColor"];
       _buttonOK = _this select 0;
 
       waitUntil {
         if (isNull _buttonOK) exitWith {true};
         _currentChannel = missionNamespace getVariable ["AGM_currentChannel", ""];
-		_textColor = [1,1,1,1];
+        _textColor = [1,1,1,1];
         switch (true) do {
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGlobalShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGlobalShort";
-			_textColor = [(216/255),(216/255),(216/255),1];
+            _textColor = [(216/255),(216/255),(216/255),1];
           };
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelSideShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelSideShort";
-			_textColor = [(70/255),(211/255),(252/255),1];
+            _textColor = [(70/255),(211/255),(252/255),1];
           };
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGroupShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGroupShort";
-			_textColor = [(181/255),(248/255),(98/255),1];
+            _textColor = [(181/255),(248/255),(98/255),1];
           };
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelVehicleShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelVehicleShort";
-			_textColor = [(255/255),(208/255),(0/255),1];
+            _textColor = [(255/255),(208/255),(0/255),1];
           };
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelDirectShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelDirectShort";
-			_textColor = [(255/255),(255/255),(255/255),1];
+            _textColor = [(255/255),(255/255),(255/255),1];
           };
         case ((_currentChannel find (localize "STR_AGM_Markers_ChannelCommandShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelCommandShort";
-			_textColor = [(255/255),(255/255),(70/255),1];
+            _textColor = [(255/255),(255/255),(70/255),1];
           };
         };
         //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
         if (_currentChannel != "") then {
-		  _buttonOK ctrlSetTextColor _textColor;
+          _buttonOK ctrlSetTextColor _textColor;
           _buttonOK ctrlSetText format ["%1: %2", (localize "STR_AGM_Markers_PlaceIn"), _currentChannel];
         };
         false
