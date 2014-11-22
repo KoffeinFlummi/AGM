@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.94.1";
     versionStr = "0.94.1";
     versionAr[] = {0,94,1};
-    author[] = {"KoffeinFlummi"};
+    author[] = {"KoffeinFlummi", "Adanteh"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
 };
@@ -26,7 +26,7 @@ class CfgFunctions {
 
 class Extended_Init_EventHandlers {
   class AllVehicles {
-    class AGM_Medical {
+    class AGM_Armour {
       init = "_this call AGM_Armour_fnc_init";
     };
   };
@@ -40,15 +40,14 @@ class CfgVehicles {
 
   class Land;
   class LandVehicle: Land {
-    explosionEffect = "";
     AGM_Armour_AmmoLocation = "HitTurret";
-    AGM_Armour_CookOffLocations[] = {{0,0,0}};
+    AGM_Armour_CookOffLocations[] = {{0,-0.2,0}};
     AGM_Armour_CookOffOnTurret[]  = {0};
+    explosionEffect = "";
   };
   class Tank: LandVehicle {
-    AGM_Armour_CookOffLocations[] = {{-0.6,0,1.65}, {0.5,0,1.65}};
-    AGM_Armour_CookOffOnTurret[]  = {1,             1         };
-    //AGM_Armour_CookOffLocations[] = {{-0.6,2.4,1.65}, {0.5,2.4,1.65}}; // leopard
+    AGM_Armour_CookOffLocations[] = {{-0.6,-0.3,1.65}, {0.5,-0.3,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {1,                1              };
   };
 
   class MRAP_01_gmg_base_F;
@@ -77,5 +76,56 @@ class CfgVehicles {
   };
   class APC_Wheeled_02_base_F: Wheeled_APC_F {
     explosionEffect = "FuelExplosionBig";
+  };
+
+  class B_MBT_01_cannon_F;
+  class BWA3_Leopard2A6M_Fleck: B_MBT_01_cannon_F {
+    AGM_Armour_CookOffLocations[] = {{-0.6,2.2,1.65}, {0.5,2.2,1.65}};
+  };
+};
+
+class CfgCloudlets {
+  class FireBallBright;
+  class AGM_CookOff: FireBallBright {
+    interval = 0.004;
+    circleRadius = 0;
+    circleVelocity[] = {2,2,2};
+    angle =0;
+    angleVar =0;
+    animationName = "";
+    particleType = "Billboard";
+    timerPeriod = 1 ;
+    lifeTime = 1;
+    moveVelocity[] = {0, 4, 0};
+    moveVelocityVar[] = {1, 2, 1};
+    rotationVelocity = 1;
+    weight = 0.4;
+    volume = 0.45;
+    rubbing = 0;
+    animationSpeed[] = {1};
+    lifeTimeVar = 0;
+    positionVar[] = {0, 0, 0};
+    positionVarConst[] = {0, 0, 0};
+    moveVelocityVarConst[] = {0, 0, 0};
+    rotationVelocityVar = 3;
+    sizeVar = 0.1;
+    randomDirectionPeriodVar = 1;
+    randomDirectionIntensityVar = 2;
+    sizeCoef = 1;
+    animationSpeedCoef = 1;
+    destroyOnWaterSurface = 0;
+    destroyOnWaterSurfaceOffset = 0;
+    onSurface = 1;
+    keepOnSurface = 0;
+    surfaceOffset = 0;
+    bounceOnSurface = 0.6;
+    bounceOnSurfaceVar = 0.0;
+    postEffects = "";
+    particleEffects = "";
+    size[] = {0.01, 0.5, 1, 1, 1.5, 0.01, 0.001};
+    randomDirectionPeriod = 5;
+    randomDirectionIntensity = 1;
+    onTimerScript = "";
+    beforeDestroyScript = "";
   };
 };
