@@ -16,6 +16,9 @@ class CfgFunctions {
   class AGM_Captives {
     class AGM_Captives {
       file = "\AGM_Captives\functions";
+      class animCaptiveLeaveVehicle;
+      class animCaptiveStateIn;
+      class animCaptiveStateOut;
       class canFriskPerson;
       class canLoadCaptiveIntoVehicle;
       class canUnloadCaptiveFromVehicle;
@@ -228,6 +231,40 @@ class CfgWeapons {
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
+    };
+  };
+};
+
+class CfgMovesBasic;
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class States {
+    class CutSceneAnimationBase;
+    class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
+      head = "headDefault";
+      static = 1;
+      disableWeapons = 0;
+      forceAim = 0;
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
+      looped = 1;
+      InterpolateTo[] = {"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
+    };
+
+    class AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon: CutSceneAnimationBase {
+      InterpolateTo[] = {"Unconscious",0.01,"AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+    };
+
+    class AmovPercMstpSsurWnonDnon: AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon {
+      looped = 1;
+      InterpolateTo[] = {"Unconscious",0.01};
+    };
+
+    class AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon {
+      InterpolateTo[] = {"Unconscious",0.01,"AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon",0.1};
     };
   };
 };
