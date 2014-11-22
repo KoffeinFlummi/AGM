@@ -44,13 +44,11 @@ class CfgVehicles {
     AGM_Armour_AmmoLocation = "HitTurret";
     AGM_Armour_CookOffLocations[] = {{0,0,0}};
     AGM_Armour_CookOffOnTurret[]  = {0};
-    AGM_Armour_CookOffGun = 0;
   };
   class Tank: LandVehicle {
-    AGM_Armour_CookOffLocations[] = {{-0.6,2.4,0}, {0.5,2.4,0}};
-    //AGM_Armour_CookOffLocations[] = {{-0.6,2.4,1.65}, {0.5,2.4,1.65}};
-    AGM_Armour_CookOffOnTurret[]  = {1,               1             };
-    AGM_Armour_CookOffGun = 1;
+    AGM_Armour_CookOffLocations[] = {{-0.6,0,1.65}, {0.5,0,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {1,             1         };
+    //AGM_Armour_CookOffLocations[] = {{-0.6,2.4,1.65}, {0.5,2.4,1.65}}; // leopard
   };
 
   class MRAP_01_gmg_base_F;
