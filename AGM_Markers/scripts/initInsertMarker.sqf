@@ -7,6 +7,11 @@ with uinamespace do {
     disableserialization;
     _display = _this select 0;
 
+    //Prevent Captive Players from placing markers
+    if ((call AGM_Core_fnc_player) getVariable ["AGM_isCaptive", false]) exitWith {
+      _display closeDisplay 2;  //emulate "Cancel" button
+    };
+
     // display vanilla key input
     _display displayAddEventHandler ["KeyDown", {(_this select 1) in [200, 208]}];
 
