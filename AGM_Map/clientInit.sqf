@@ -31,7 +31,8 @@ if (!hasInterface) exitWith{};
         _group1 = _groups select _i;
         
         _markerType = [_group1] call AGM_Core_fnc_getMarkerType;
-        _colour = ["ColorGUER", "ColorWEST", "ColorEAST"] select (([resistance, west, east] find (side _group1)) max 0);
+
+        _colour = format ["Color%1", side _group1];
 
         _marker = createMarkerLocal [format ["AGM_BFT_%1", _i], [(getPos leader _group1) select 0, (getPos leader _group1) select 1]];
         _marker setMarkerTypeLocal _markerType;
