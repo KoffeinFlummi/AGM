@@ -29,7 +29,7 @@ class RscDisplayOptionsLayout {
 class RscDisplayChannel {
 	class controls {
 		class CameraView: RscMapControl {
-			onDraw = "systemChat str time; missionNamespace setVariable ['AGM_currentChannel', ctrlText ((ctrlParent (_this select 0)) displayCtrl 101)];";
+			onDraw = "missionNamespace setVariable ['AGM_currentChannel', ctrlText ((ctrlParent (_this select 0)) displayCtrl 101)];";
 			idc = -1;
 			w = 0;
 			h = 0;
