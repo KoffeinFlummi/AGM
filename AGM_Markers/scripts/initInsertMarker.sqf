@@ -33,37 +33,33 @@ with uinamespace do {
 
       waitUntil {
         if (isNull _buttonOK) exitWith {true};
-        if (!isNull (findDisplay 63)) then {  //if channel display is up, update now
-          missionNamespace setVariable ["AGM_Markers_currentChatChannel", ctrlText ((findDisplay 63) displayCtrl 101)];
-        };
-        _currentChannel = missionNamespace getVariable ["AGM_Markers_currentChatChannel", ""];
+        _currentChannel = missionNamespace getVariable ["AGM_currentChannel", ""];
 		_textColor = [1,1,1,1];
         switch (true) do {
-        case ([(localize "STR_AGM_Markers_ChannelGlobalShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGlobalShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGlobalShort";
 			_textColor = [(216/255),(216/255),(216/255),1];
           };
-        case ([(localize "STR_AGM_Markers_ChannelSideShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelSideShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelSideShort";
 			_textColor = [(70/255),(211/255),(252/255),1];
           };
-        case ([(localize "STR_AGM_Markers_ChannelGroupShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGroupShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGroupShort";
 			_textColor = [(181/255),(248/255),(98/255),1];
           };
-        case ([(localize "STR_AGM_Markers_ChannelVehicleShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelVehicleShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelVehicleShort";
 			_textColor = [(255/255),(208/255),(0/255),1];
           };
-        case ([(localize "STR_AGM_Markers_ChannelDirectShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelDirectShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelDirectShort";
 			_textColor = [(255/255),(255/255),(255/255),1];
           };
-        case ([(localize "STR_AGM_Markers_ChannelCommandShort"), _currentChannel] call BIS_fnc_inString): {
+        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelCommandShort")) != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelCommandShort";
 			_textColor = [(255/255),(255/255),(70/255),1];
           };
-          default {""};
         };
         //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
         if (_currentChannel != "") then {
