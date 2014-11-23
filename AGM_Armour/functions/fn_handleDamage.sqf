@@ -24,7 +24,7 @@ _hitpoint = [_vehicle, _selectionName] call AGM_Armour_fnc_getHitPointBySelectio
 
 // Determine type of vehicle and whether the selection is critical.
 _type = "";
-_critical = True; // @todo
+_critical = True;
 if (_vehicle isKindOf "Car_F") then {
   if (_vehicle isKindOf "Wheeled_APC_F") then {
     _type = "tank";

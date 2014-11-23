@@ -80,8 +80,19 @@ _this spawn {
   [_fires, {deleteVehicle _this}] call AGM_Core_fnc_map;
 
   (_this select 0) setVariable ["AGM_Armour_isCookingOff", False];
-  if (local _vehicle) then {
+  if (local _vehicle and damage _vehicle < 1) then {
     _vehicle setDamage 1;
+    _turretClass = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_TurretObject");
+    if (_turretClass != "") then {
+      _turretPos = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_TurretPosition");
+      _position = [
+        - (_turretPos select 0),
+        - (_turretPos select 2),
+        (_turretPos select 1)
+      ];
+      _turret = _turretClass createVehicle (_vehicle modelToWorld _position);
+      //_turret setVectorUp [random 1, random 1, 1];
+      //_turret setVelocity [random 7, random 7, 8 + random 5];
+    };
   };
 };
-

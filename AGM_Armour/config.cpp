@@ -33,10 +33,20 @@ class Extended_Init_EventHandlers {
 };
 
 class CfgVehicles {
-  // @todo: explosionEffects for all ground vehicles
-  //        - cars get only flames.
-  //        - armed vehicles get explosions,
-  //          only triggered when appropriate
+  /*
+   * AGM_Armour_AmmoLocation:
+   *   HitPoint classname that holds the magazine of the vehicle
+   * AGM_Armour_CookOffLocations:
+   *   Positions to spawn cookoff particle effects at
+   * AGM_Armour_CookOffOnTurret:
+   *   Positions placed on turret?
+   * AGM_Armour_TurretObject:
+   *   Object to spawn to simulate turret flying off; "" to not spawn enything
+   * AGM_Armour_TurretPosition:
+   *   Position to spawn turret at
+   *
+   * All positions are Y-up, just like in Oxygen/Object Builder.
+   */
 
   class Land;
   class LandVehicle: Land {
@@ -46,10 +56,12 @@ class CfgVehicles {
     explosionEffect = "";
   };
   class Tank: LandVehicle {
+    // 2 hatches on the turret; fits most tanks
     AGM_Armour_CookOffLocations[] = {{-0.6,-0.3,1.65}, {0.5,-0.3,1.65}};
     AGM_Armour_CookOffOnTurret[]  = {1,                1              };
   };
 
+  // Small explosions for cars with explosive ammunition
   class MRAP_01_gmg_base_F;
   class B_MRAP_01_gmg_F: MRAP_01_gmg_base_F {
     explosionEffect = "FuelExplosion";
@@ -63,11 +75,14 @@ class CfgVehicles {
     explosionEffect = "FuelExplosion";
   };
 
+  // Big explosions for tracked vehicles and wheeled APCs
   class Tank_F: Tank {
     explosionEffect = "FuelExplosionBig";
   };
-
-  class Wheeled_APC_F;
+  class Car_F;
+  class Wheeled_APC_F: Car_F {
+    explosionEffect = "FuelExplosionBig";
+  };
   class APC_Wheeled_03_base_F: Wheeled_APC_F {
     explosionEffect = "FuelExplosionBig";
   };
@@ -78,8 +93,38 @@ class CfgVehicles {
     explosionEffect = "FuelExplosionBig";
   };
 
-  class B_MBT_01_cannon_F;
+
+  class B_MBT_01_base_F;
+  class B_MBT_01_cannon_F: B_MBT_01_base_F {
+    AGM_Armour_AmmoLocation = "HitHull";
+    AGM_Armour_TurretObject = "AGM_Turret_MBT_01";
+    AGM_Armour_TurretPosition[] = {3,3,0};
+    AGM_Armour_CookOffLocations[] = {{0,-0.3,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {1};
+  };
+
+  class O_MBT_02_base_F;
+  class O_MBT_02_cannon_F: O_MBT_02_base_F {
+    AGM_Armour_TurretObject = "AGM_Turret_MBT_02";
+    AGM_Armour_TurretPosition[] = {0.9,3,1.5};
+  };
+
+  // Turret Objects
+  class thingX;
+  class AGM_Turret_MBT_01: thingX {
+    scope = 1;
+    model = "\A3\Structures_F\Wrecks\Wreck_Slammer_turret_F.p3d";
+  };
+  class AGM_Turret_MBT_02: thingX {
+    scope = 1;
+    model = "\A3\Structures_F\Wrecks\Wreck_T72_turret_F.p3d";
+  };
+
+  // Compatibility
+  // @todo: move to AGM_Comp once inheritance for BWMod is sorted out
   class BWA3_Leopard2A6M_Fleck: B_MBT_01_cannon_F {
+    AGM_Armour_AmmoLocation = "HitTurret";
+    AGM_Armour_TurretObject = "";
     AGM_Armour_CookOffLocations[] = {{-0.6,2.2,1.65}, {0.5,2.2,1.65}};
   };
 };
