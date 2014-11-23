@@ -34,7 +34,7 @@ _sidesToShow = _this select 0;
 
     // create markers
     {
-      if ((side group _x in (_this select 0) && vehicle _x == _x && !(_x getVariable ["AGM_SwitchUnits_IsPlayerUnit", false])) || (_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
+      if ((!([_x] call AGM_Core_fnc_isPlayer) && side group _x in (_this select 0) && vehicle _x == _x && !(_x getVariable ["AGM_SwitchUnits_IsPlayerUnit", false])) || (_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
         private ["_markerName", "_marker", "_markerColor"];
 
         //_markerName = format ["%1", (name _x)];

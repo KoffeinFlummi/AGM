@@ -21,6 +21,7 @@ class CfgFunctions {
       class initPlayer;
       class markAiOnMap;
       class module;
+      class nearestPlayers;
       class switchBack;
       class switchUnit;
     };
@@ -82,6 +83,15 @@ class CfgVehicles {
           class No {default = 1; name = "No"; value = 0;};
         };
       };
+      class EnableSafeZone {
+        displayName = "Enable Safe Zone?";
+        description = "Enable a safe zone around enemy units? Players can't switch to units inside of the safe zone.";
+        typeName = "BOOL";
+        class values {
+          class Yes {default = 1; name = "Yes"; value = 1;};
+          class No {name = "No"; value = 0;};
+        };
+      };
       class SafeZoneRadius {
         displayName = "Safe Zone Radius";
         description = "The safe zone around players from a different team. Default: 200";
@@ -122,5 +132,6 @@ class AGM_Parameters {
   AGM_SwitchUnits_SwitchToEast = 0;
   AGM_SwitchUnits_SwitchToIndependent = 0;
   AGM_SwitchUnits_SwitchToCivilian = 0;
+  AGM_SwitchUnits_EnableSafeZone = 1;
   AGM_SwitchUnits_SafeZoneRadius = 100;
 };

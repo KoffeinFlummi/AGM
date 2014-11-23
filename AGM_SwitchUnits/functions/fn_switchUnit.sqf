@@ -20,13 +20,29 @@ _newUnit = _this select 1;
 
 
 // don't switch to original player units
-if (!(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player != _newUnit && !(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
+if (!([_newUnit] call AGM_Core_fnc_isPlayer) && !(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) && player != _newUnit && !(_newUnit getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
     
   _newUnit spawn {
-    private ["_unit", "_originalOwner", "_oldUnit", "_respawnEhId"];
+    private ["_unit", "_allNearestPlayers", "_oldUnit", "_respawnEhId", "_oldOwner", "_leave"];
+    
     _unit = _this;
     
-    //_originalOwner = owner _unit;
+    _leave = false;
+    
+    if (AGM_SwitchUnits_EnableSafeZone == 1) then {
+    
+      _allNearestPlayers = [position _unit, AGM_SwitchUnits_SafeZoneRadius] call AGM_SwitchUnits_fnc_nearestPlayers;
+      _nearestEnemyPlayers = [_allNearestPlayers, {((side AGM_SwitchUnits_OriginalGroup) getFriend (side _this) < 0.6) && !(_this getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])}] call AGM_Core_fnc_filter;
+            
+      if (count _nearestEnemyPlayers > 0) exitWith {
+        _leave = true;
+      };
+    };
+    
+    // exitWith doesn't exit past the "if(EnableSafeZone)" block
+    if (_leave) exitWith {
+      ["Localize: This unit is too close to the enemy."] call AGM_Core_fnc_displayTextStructured;
+    };
     
     // should switch locality
     // This doesn't work anymore, because one's now able to switch to units from a different side

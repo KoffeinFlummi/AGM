@@ -32,7 +32,7 @@ if (vehicle _playerUnit == _playerUnit) then {
   AGM_SwitchUnits_OriginalGroup = group _playerUnit;
   
   // remove all starting gear of a player
-  removeallweapons _playerUnit;
+  removeAllWeapons _playerUnit;
   removeGoggles _playerUnit;
   removeHeadgear _playerUnit;
   removeVest _playerUnit;
