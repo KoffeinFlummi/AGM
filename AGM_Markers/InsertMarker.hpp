@@ -27,14 +27,22 @@ class RscDisplayInsertMarker {
 		class ButtonMenuOK: RscButtonMenuOK {
 			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
 			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
-			w = "5 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
+			w = "8.9 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			// size = "0.85 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
+			// sizeEx = "0.85 * (			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 		};
 		class ButtonMenuCancel: RscButtonMenuCancel {
-			x = "19 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
+			x = "(14 + 8.9) * 	(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
+			x = "23 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
 			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
-			w = "5 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
+			w = "1.1 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
+			
+			text = "X";
+			colorBackground[] = {0.75,0,0,0.5};
+			colorBackgroundFocused[] = {0.75,0,0,0.5};
+			colorBackground2[] = {1,0,0,0.5};
 		};
 		/*class ButtonMenuInfo: RscButtonMenu {
 			idc = 2400;
@@ -109,7 +117,7 @@ class RscDisplayInsertMarker {
 			w = "10 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";
 			h = "1 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 		};
-		class MarkerAngle: RscSlider {
+		class MarkerAngle: RscXSliderH {
 			idc = 1220;
 			text = "10";
 			x = "14 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
