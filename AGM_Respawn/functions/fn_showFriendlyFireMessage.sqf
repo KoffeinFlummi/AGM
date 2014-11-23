@@ -5,7 +5,7 @@ private ["_unit", "_killer"];
 _unit = _this select 0;
 _killer = _this select 1;
 
-if (_unit != _killer && side group _unit in [call AGM_Core_fnc_playerSide, civilian] && {side group _killer == call AGM_Core_fnc_playerSide}) then {
+if (_unit != _killer && side group _unit in [AGM_playerSide, civilian] && {side group _killer == AGM_playerSide}) then {
   systemChat format ["%1 was killed by %2", name _unit, name _killer];
 };
 

@@ -8,7 +8,7 @@ AGM_NewStrength = 0;
 // Spawn volume updating process
 0 spawn {
   while {true} do {
-    _player = call AGM_Core_fnc_player;
+    _player = AGM_player;
 
     // Check if new noises increase deafness
     if (AGM_NewStrength * STRENGHTODEAFNESS > AGM_CurrentDeafness) then {

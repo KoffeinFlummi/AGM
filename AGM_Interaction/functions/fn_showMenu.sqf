@@ -25,7 +25,7 @@
 private ["_player", "_vehicle", "_mainButtonAction", "_object", "_index", "_actions", "_result", "_menuType"];
 #define DEFAULT_ICON "\AGM_Interaction\UI\dot_ca.paa"
 #define DEFAULT_DISTANCE 4 // seems to be 4
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 
 AGM_Interaction_MenuType = _this select 0;	// 0 Interaction, 1 Self Interaction

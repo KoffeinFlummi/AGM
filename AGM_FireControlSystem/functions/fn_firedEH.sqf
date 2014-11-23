@@ -21,7 +21,7 @@ _round = _this select 6;
 _FCSMagazines = _unit getVariable "AGM_FCSMagazines";
 _FCSElevation = _unit getVariable "AGM_FCSElevation";
 
-if ((call AGM_Core_fnc_player) != gunner _unit) exitWith {};
+if (AGM_player != gunner _unit) exitWith {};
 if !(_magazineType in _FCSMagazines) exitWith {};
 
 // GET ELEVATION OFFSET OF CURRENT MAGAZINE

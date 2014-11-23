@@ -16,7 +16,7 @@
 		call AGM_Parachute_fnc_onEachFrame;
 */
 private "_player";
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 if (isNull _player) exitWith {["AGM_ParachuteFix", "OnEachFrame"] call BIS_fnc_removeStackedEventHandler;AGM_Parachuting_PFH = false;};
 if !((vehicle _player) isKindOf "ParachuteBase") exitWith {};
 if (isTouchingGround _player) exitWith {};

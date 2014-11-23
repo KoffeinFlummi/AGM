@@ -44,7 +44,7 @@ class Extended_Init_EventHandlers {
 class Extended_FiredNear_EventHandlers {
   class CAManBase {
     class AGM_Hearing_FiredNear {
-      clientFiredNear = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Hearing_fnc_firedNear};";
+      clientFiredNear = "if (_this select 0 == AGM_player) then {_this call AGM_Hearing_fnc_firedNear};";
     };
   };
 };
@@ -52,7 +52,7 @@ class Extended_FiredNear_EventHandlers {
 class Extended_Explosion_EventHandlers {
   class CAManBase {
     class AGM_Hearing_ExplosionNear {
-      clientExplosion = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Hearing_fnc_explosionNear};";
+      clientExplosion = "if (_this select 0 == AGM_player) then {_this call AGM_Hearing_fnc_explosionNear};";
     };
   };
 };

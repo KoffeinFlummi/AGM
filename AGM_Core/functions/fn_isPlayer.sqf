@@ -14,4 +14,4 @@
 private "_unit";
 _unit = _this select 0;
 
-(isPlayer _unit) || (_unit == (call AGM_Core_fnc_player))
+(isPlayer _unit) || (_unit == AGM_player)

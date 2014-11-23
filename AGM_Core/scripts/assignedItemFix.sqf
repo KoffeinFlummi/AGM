@@ -8,7 +8,7 @@ if (isNil "AGM_itemFix") then {
   AGM_isGPSEnabled     = call {_config = missionConfigFile >> "showGPS";     !isNumber _config || {getNumber _config == 1}};
 
   AGM_itemFix = ["AGM_itemFix", "onEachFrame", {
-    _items = assignedItems (call AGM_Core_fnc_player);
+    _items = assignedItems AGM_player;
     showMap     (AGM_isMapEnabled     && {"ItemMap"     in _items});
     showCompass (AGM_isCompassEnabled && {"ItemCompass" in _items});
     showWatch   (AGM_isWatchEnabled   && {"ItemWatch"   in _items});

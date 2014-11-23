@@ -39,7 +39,7 @@ if (count _detonators == 0) then {
 	[
 		_actions,
 		{
-			[call AGM_Core_fnc_player, _this] call AGM_Explosives_fnc_openDetonateUI;
+			[AGM_player, _this] call AGM_Explosives_fnc_openDetonateUI;
 		},
 		{
 			call AGM_Interaction_fnc_hideMenu;

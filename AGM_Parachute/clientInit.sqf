@@ -21,7 +21,7 @@
 		sleep 1;
 		// I believe this doesn't work for Zeus.
 		// vehicle _player
-		if (!AGM_Parachuting_PFH && {(vehicle (call AGM_Core_fnc_player)) isKindOf "ParachuteBase"}) then {
+		if (!AGM_Parachuting_PFH && {(vehicle AGM_player) isKindOf "ParachuteBase"}) then {
 			AGM_Parachuting_PFH = true;
 			["AGM_ParachuteFix", "OnEachFrame", {call AGM_Parachute_fnc_onEachFrame;}] call BIS_fnc_addStackedEventHandler;
 		};

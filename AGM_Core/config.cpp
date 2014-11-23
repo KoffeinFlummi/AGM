@@ -665,7 +665,7 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
-    clientInit = "[call AGM_Core_fnc_player] spawn AGM_Identity_fnc_setName;";
+    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
   };
 };

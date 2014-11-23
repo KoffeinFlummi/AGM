@@ -23,7 +23,7 @@ _count = (count AGM_Interaction_Buttons)- 1;
 AGM_Interaction_SelectedButton = CLAMP(AGM_Interaction_SelectedButton + _this, 0, _count);
 
 _target = AGM_Interaction_Target;
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 
 disableSerialization;

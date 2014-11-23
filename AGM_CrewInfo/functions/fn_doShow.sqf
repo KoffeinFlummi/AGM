@@ -16,7 +16,7 @@
 private["_roleImages", "_player", "_vehicle", "_type", "_config", "_text", "_data", "_isAir", "_turretUnits", "_turretRoles", "_index", "_roleType", "_unit", "_toShow"];
 
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 _type = typeOf _vehicle;
 _config = configFile >> "CfgVehicles" >> _type;

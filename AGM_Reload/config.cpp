@@ -24,7 +24,7 @@ class CfgFunctions {
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_AmmoIndicatorReload {
-      clientTake = "if (_this select 0 == call AGM_Core_fnc_player && {(_this select 1) in [uniformContainer (_this select 0), vestContainer (_this select 0), backpackContainer (_this select 0)]} && {_this select 2 == currentMagazine (_this select 0)}) then {[_this select 0, currentWeapon (_this select 0), currentMuzzle (_this select 0), currentMagazine (_this select 0), true] call AGM_Reload_fnc_checkAmmo};";
+      clientTake = "if (_this select 0 == AGM_player && {(_this select 1) in [uniformContainer (_this select 0), vestContainer (_this select 0), backpackContainer (_this select 0)]} && {_this select 2 == currentMagazine (_this select 0)}) then {[_this select 0, currentWeapon (_this select 0), currentMuzzle (_this select 0), currentMagazine (_this select 0), true] call AGM_Reload_fnc_checkAmmo};";
     };
   };
 };
