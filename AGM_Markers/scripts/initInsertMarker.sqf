@@ -8,7 +8,7 @@ with uinamespace do {
     _display = _this select 0;
 
     //Prevent Captive Players from placing markers
-    if ((call AGM_Core_fnc_player) getVariable ["AGM_isCaptive", false]) exitWith {
+    if (AGM_player getVariable ["AGM_isCaptive", false]) exitWith {
       _display closeDisplay 2;  //emulate "Cancel" button
     };
 
@@ -41,27 +41,27 @@ with uinamespace do {
         _currentChannel = missionNamespace getVariable ["AGM_currentChannel", ""];
         _textColor = [1,1,1,1];
         switch (true) do {
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGlobalShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelGlobalShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGlobalShort";
             _textColor = [(216/255),(216/255),(216/255),1];
           };
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelSideShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelSideShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelSideShort";
             _textColor = [(70/255),(211/255),(252/255),1];
           };
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelGroupShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelGroupShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelGroupShort";
             _textColor = [(181/255),(248/255),(98/255),1];
           };
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelVehicleShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelVehicleShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelVehicleShort";
             _textColor = [(255/255),(208/255),(0/255),1];
           };
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelDirectShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelDirectShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelDirectShort";
             _textColor = [(255/255),(255/255),(255/255),1];
           };
-        case ((_currentChannel find (localize "STR_AGM_Markers_ChannelCommandShort")) != -1): {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelCommandShort" != -1): {
             _currentChannel = localize "STR_AGM_Markers_ChannelCommandShort";
             _textColor = [(255/255),(255/255),(70/255),1];
           };
@@ -69,7 +69,7 @@ with uinamespace do {
         //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
         if (_currentChannel != "") then {
           _buttonOK ctrlSetTextColor _textColor;
-          _buttonOK ctrlSetText format ["%1: %2", (localize "STR_AGM_Markers_PlaceIn"), _currentChannel];
+          _buttonOK ctrlSetText format [localize "STR_AGM_Markers_PlaceIn", _currentChannel];
         };
         false
       };
