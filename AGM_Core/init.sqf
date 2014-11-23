@@ -6,7 +6,7 @@
 };
 
 0 spawn {
-  if (hasInterface) then {waitUntil {!isNull player}} else {sleep 1};
+  waitUntil {time > 0};
   {
     if (typeName _x == "ARRAY") then {
       (_x select 0) call (_x select 1);

@@ -12,9 +12,20 @@ class CfgPatches {
   };
 };
 
+class CfgFunctions {
+  class AGM_NoRadio {
+    class AGM_NoRadio {
+      file = "\AGM_NoRadio\functions";
+      class muteUnit;
+      class unmuteUnit;
+    };
+  };
+};
+
 class Extended_PostInit_EventHandlers {
     class AGM_NoRadio {
         clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
+        serverInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\serverInit.sqf'";
     };
 };
 
