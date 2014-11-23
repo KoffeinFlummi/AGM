@@ -44,6 +44,13 @@ if (!hasInterface) exitWith{};
 
       sleep AGM_Map_BFT_Interval;
     };
+    
+    if(!AGM_Map_BFT_Enabled) then {
+      {
+        deleteMarkerLocal _x;
+      } forEach _markers;
+    };
+    
   };
 };
 
