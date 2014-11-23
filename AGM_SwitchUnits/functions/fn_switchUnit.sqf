@@ -41,7 +41,7 @@ if (!([_newUnit] call AGM_Core_fnc_isPlayer) && !(_newUnit getVariable ["AGM_Swi
     
     // exitWith doesn't exit past the "if(EnableSafeZone)" block
     if (_leave) exitWith {
-      ["Localize: This unit is too close to the enemy."] call AGM_Core_fnc_displayTextStructured;
+      [localize "STR_AGM_SwitchUnits_TooCloseToEnemy"] call AGM_Core_fnc_displayTextStructured;
     };
     
     // should switch locality
@@ -76,6 +76,6 @@ if (!([_newUnit] call AGM_Core_fnc_isPlayer) && !(_newUnit getVariable ["AGM_Swi
       [[_oldUnit, _oldOwner], "{(_this select 0) setOwner (_this select 1)}", 1] call AGM_Core_fnc_execRemoteFnc;
     };
     
-    ["Localize: Switched unit."] call AGM_Core_fnc_displayTextStructured;
+    [localize "STR_AGM_SwitchUnits_SwitchedUnit"] call AGM_Core_fnc_displayTextStructured;
   };
 };
