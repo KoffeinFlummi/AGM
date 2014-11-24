@@ -32,7 +32,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class AllVehicles {
     class AGM_NightVision_Blending {
-      clientFiredBIS = "if (_this select 0 == vehicle (call AGM_Core_fnc_player) && {currentVisionMode (_this select 0) == 1}) then {_this call AGM_NightVision_fnc_blending};";
+      clientFiredBIS = "if (_this select 0 == vehicle AGM_player && {currentVisionMode (_this select 0) == 1}) then {_this call AGM_NightVision_fnc_blending};";
     };
   };
 };

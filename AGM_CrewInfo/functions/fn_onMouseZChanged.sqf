@@ -13,7 +13,7 @@
 
 private["_player"];
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 if(vehicle _player != _player && {!(vehicle _player isKindOf "ParachuteBase")}) then {
 	

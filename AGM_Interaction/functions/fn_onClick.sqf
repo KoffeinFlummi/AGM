@@ -2,7 +2,7 @@
 
 private ["_player", "_vehicle", "_target", "_count", "_index", "_action", "_subMenu", "_statement", "_condition", "_conditionShow", "_exceptions", "_distance"];
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 _target = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
 

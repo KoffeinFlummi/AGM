@@ -30,7 +30,7 @@ publicVariable "AGM_Core_remoteFnc";
 private "_persistentFnc";
 _persistentFnc = missionNamespace getVariable ["AGM_Core_persistentFnc", []];
 
-if (isNil "_id") then {_id = count _persistentFnc};
+if (isNil "_id" || {_id < 0}) then {_id = count _persistentFnc};
 _persistentFnc set [_id, [_arguments, _function]];
 
 AGM_Core_persistentFnc = _persistentFnc;

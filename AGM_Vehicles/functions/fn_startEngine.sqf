@@ -7,7 +7,7 @@ private ["_vehicle", "_isEngineOn", "_player"];
 _vehicle = _this select 0;
 _isEngineOn = _this select 1;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 if (_isEngineOn && {_player == driver _vehicle} && {speed _vehicle == 0}) then {
   [_vehicle] spawn {

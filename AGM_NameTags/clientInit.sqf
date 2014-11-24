@@ -9,7 +9,7 @@ addMissionEventHandler ["Draw3D", {
 
   if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
 
-    _player = call AGM_Core_fnc_player;
+    _player = AGM_player;
 
     _target = cursorTarget;
     _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};

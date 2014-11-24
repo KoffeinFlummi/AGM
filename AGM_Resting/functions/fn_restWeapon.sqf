@@ -171,7 +171,7 @@ if (true in _intersects) then {
       _intersects = call _fnc_getIntersection;
 
       if (
-        _unit != call AGM_Core_fnc_player
+        _unit != AGM_player
         || {_vehicle != vehicle _unit}
         || {inputAction "reloadMagazine" != 0}
         || {weaponLowered _unit}

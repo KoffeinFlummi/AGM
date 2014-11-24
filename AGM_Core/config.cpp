@@ -656,15 +656,17 @@ class Extended_GetIn_EventHandlers {
 
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
+    init = "call compile preprocessFileLineNumbers '\AGM_Core\preInit.sqf'";
     serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
+    disableModuload = true;
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
-    Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
-    clientInit = "[call AGM_Core_fnc_player] spawn AGM_Identity_fnc_setName;";
   };
 };
 

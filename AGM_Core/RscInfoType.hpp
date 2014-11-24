@@ -28,7 +28,7 @@ class RscDisplayOptionsLayout {
 
 class RscDisplayChannel {
 	class controls {
-		class CameraView: RscMapControl {
+		class AGM_GetChannel: RscMapControl {
 			onDraw = "missionNamespace setVariable ['AGM_currentChannel', ctrlText ((ctrlParent (_this select 0)) displayCtrl 101)];";
 			idc = -1;
 			w = 0;

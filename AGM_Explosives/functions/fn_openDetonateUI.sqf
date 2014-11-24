@@ -45,17 +45,17 @@ if (_count > 0) then {
 		_actions,
 		{
 			[
-				call AGM_Core_fnc_player,
+				AGM_player,
 				[_this select 1] call AGM_Core_fnc_toNumber,
-				(call AGM_Core_fnc_player getVariable ["AGM_Clacker", []]) select ([_this select 0] call AGM_Core_fnc_toNumber),
+				(AGM_player getVariable ["AGM_Clacker", []]) select ([_this select 0] call AGM_Core_fnc_toNumber),
 				false
 			] call AGM_Explosives_fnc_DetonateExplosive;
 			call AGM_Interaction_fnc_hideMenu;
 		},
-		{[call AGM_Core_fnc_player] call AGM_Explosives_fnc_openTransmitterUI;}
+		{[AGM_player] call AGM_Explosives_fnc_openTransmitterUI;}
 	] call AGM_Interaction_fnc_openSelectMenu;
 }else{
 	call AGM_Interaction_fnc_hideMenu;
-	[call AGM_Core_fnc_player] call AGM_Explosives_fnc_openTransmitterUI;
+	[AGM_player] call AGM_Explosives_fnc_openTransmitterUI;
 	[localize "STR_AGM_Explosives_NoExplosivesAvailable"] call AGM_Core_fnc_displayTextStructured;
 };

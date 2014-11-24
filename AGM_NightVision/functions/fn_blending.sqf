@@ -7,7 +7,7 @@ _weapon = _this select 1;
 _ammo = _this select 4;
 _magazine = _this select 5;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 if (_player != _vehicle && {!(_weapon in (_vehicle weaponsTurret ([_player] call AGM_Core_fnc_getTurretIndex)))}) exitWith {};
 

@@ -7,7 +7,7 @@ _scope = _this select 0;	//"All", "Frag" or "NonFrag"
 _allMags = missionNamespace getVariable [format ["AGM_WeaponSelect_%1Magazines", _scope], []];
 _allMuzzles = missionNamespace getVariable [format ["AGM_WeaponSelect_%1Muzzles", _scope], []];
 
-_magazines = magazines (call AGM_Core_fnc_player);
+_magazines = magazines AGM_player;
 
 _start = [AGM_WeaponSelect_CurrentGrenadeMuzzleOther, AGM_WeaponSelect_CurrentGrenadeMuzzleFrag] select AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag;
 _index = _allMuzzles find _start;

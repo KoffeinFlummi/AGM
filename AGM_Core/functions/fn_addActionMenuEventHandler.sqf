@@ -68,7 +68,7 @@ _addAction = call compile format [
     false,
     true,
     '%1',
-    ""if (_this != call AGM_Core_fnc_player || {vehicle _this != _target}) exitWith {false}; [_target, _this] call (%3 select 0)""
+    ""if (_this != AGM_player || {vehicle _this != _target}) exitWith {false}; [_target, _this] call (%3 select 0)""
   ]",
   _action,
   _displayName,

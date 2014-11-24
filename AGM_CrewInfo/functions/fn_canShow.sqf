@@ -14,7 +14,7 @@
 private["_player"];
 
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 // AGM_CrewInfo_Visibility -1 force NO, 0 doesnt care, 1 force YES
 

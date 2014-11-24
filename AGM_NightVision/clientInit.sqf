@@ -3,7 +3,7 @@
 if (!hasInterface) exitWith {};
 
 AGM_NightVision_ppEffect = ppEffectCreate ["FilmGrain", 1235];
-AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, 2.5, 2.5, false];
+AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, 2.5*0.3, 2.5*0.3, false];
 AGM_NightVision_ppEffect ppEffectCommit 0;
 
 AGM_NightVision_ppEffectNVGBrightness = ppEffectCreate ["ColorCorrections", 1236];

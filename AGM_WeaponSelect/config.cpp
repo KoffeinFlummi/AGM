@@ -64,7 +64,7 @@ class Extended_Respawn_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
     class AGM_WeaponSelect_ThrowGrenade {
-      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
+      clientFiredBIS = "if (_this select 0 == AGM_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
     };
   };
 };

@@ -25,7 +25,7 @@ _setup = AGM_Explosives_Setup;
 AGM_Explosives_Setup = objNull;
 AGM_Explosives_placer forceWalk false;
 AGM_Explosives_placer = objNull;
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 [_player, "DefaultAction", _player getVariable ["AGM_Explosive_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;
 [_player, "MenuBack", _player getVariable ["AGM_Explosive_Cancel", -1]] call AGM_Core_fnc_removeActionEventHandler;
 call AGM_Interaction_fnc_hideMouseHint;
@@ -41,7 +41,7 @@ if ((_setup getVariable ["AGM_Class", ""]) != "") then {
 	_setup addEventHandler ["EpeContactStart", {
 		if (!((_this select 0) getVariable ["AGM_Handled", false])) then {
 			private ["_player", "_pos", "_attachTo"];
-			_player = call AGM_Core_fnc_player;
+			_player = AGM_player;
 			_pos = getPosATL (_this select 0);
 			(_this select 0) enableSimulationGlobal false;
 			if (surfaceIsWater _pos) then {
@@ -59,7 +59,7 @@ if ((_setup getVariable ["AGM_Class", ""]) != "") then {
 			[(_this select 0),_attachTo, _pos] spawn {
 				private ["_mag", "_setup", "_dir", "_player"];
 				_setup = _this select 0;
-				_player = call AGM_Core_fnc_player;
+				_player = AGM_player;
 				_mag = _setup getVariable ["AGM_Class", ""];
 				_dir = _setup getVariable ["AGM_Dir", 0];
 				
@@ -83,7 +83,7 @@ if ((_setup getVariable ["AGM_Class", ""]) != "") then {
 	[_setup] spawn {
 		private ["_setup", "_player"];
 		_setup = _this select 0;
-		_player = call AGM_Core_fnc_player;
+		_player = AGM_player;
 		sleep 5;
 		if (!isNull _setup) then {
 			private ["_mag", "_dir", "_delayTime"];
