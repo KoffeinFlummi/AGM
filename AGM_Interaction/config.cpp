@@ -25,8 +25,9 @@ class CfgFunctions {
       class canLockDoor;
       class canTapShoulder;
       class getActions2;
-      class GetActions;      
+      class GetActions;
       class getDoor;
+      class getDoorAnimations;
       class getDown;
       class getSelectedButton;
       class hideMenu;
@@ -100,7 +101,7 @@ class AGM_Core_Default_Keys {
   };
   class openDoor {
     displayName = "$STR_AGM_Interaction_OpenDoor";
-    condition = "!AGM_Interaction_isOpeningDoor";
+    condition = "!AGM_Interaction_isOpeningDoor && {[2] call AGM_Interaction_fnc_getDoor select 1 != ''}";
     statement = "call AGM_Interaction_fnc_openDoor";
     conditionUp = "AGM_Interaction_isOpeningDoor";
     statementUp = "AGM_Interaction_isOpeningDoor = false";
