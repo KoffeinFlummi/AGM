@@ -10,10 +10,15 @@
  * none
  */
 
-private ["_ammoType", "_round", "_dispersion", "_additionalVel"];
+private ["_unit", "_ammoType", "_round", "_dispersion", "_additionalVel"];
 
+_unit = _this select 0;
 _ammoType = _this select 4;
 _round = _this select 5;
+
+if !(local _unit) exitWith {};
+if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {};
+if (_round isKindOf "GrenadeHand") exitWith {};
 
 // Additional dispersion
 _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
@@ -28,10 +33,6 @@ _this spawn {
   _weaponType = _this select 1;
   _ammoType = _this select 4;
   _round = _this select 5;
-
-  if !(local _unit) exitwith {};
-  if !([_unit] call AGM_Core_fnc_isPlayer) exitwith {};
-  if (_round isKindOf "GrenadeHand") exitWith {};
 
   _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
   _airFrictionWind = - _airFriction;
