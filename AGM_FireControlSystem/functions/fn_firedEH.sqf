@@ -45,15 +45,13 @@ if (getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Airburst") == 1) the
 		if (_distance < 50) exitWith {};
 		if (_distance > 1500) exitWith {};
 
-		_projectilePosition = [];
-		waitUntil {
-			_projectilePosition = getPosATL _projectile;
-			_projectile distance _vehicle > _distance || {!alive _projectile}
-		};
+		waitUntil {_projectile distance _vehicle > _distance || {!alive _projectile}};
 		if (!alive _projectile) exitWith {};
 
-		_subMunition = createVehicle ["AGM_B_35mm_ABM_Helper", _projectilePosition, [], 0, "FLY"];
-		_subMunition setPosATL _projectilePosition;
+		_position = getPosATL _projectile;
+
+		_subMunition = createVehicle ["AGM_B_35mm_ABM_Helper", _position, [], 0, "FLY"];
+		_subMunition setPosATL _position;
 		_subMunition setVelocity [0, 0, -10];
 
 		deleteVehicle _projectile;
