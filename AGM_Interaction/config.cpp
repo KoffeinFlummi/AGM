@@ -41,6 +41,7 @@ class CfgFunctions {
       class onButtonDownSelf;
       class onButtonUp;
       class onClick;
+      class onSelectMenuDblClick;
       class openDoor;
       class openMenu;
       class openMenuSelf;
