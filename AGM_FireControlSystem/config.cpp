@@ -17,6 +17,7 @@ class CfgFunctions {
     class AGM_FCS {
       file = "AGM_FireControlSystem\functions";
       class adjustRange;
+      class canUseFCS;
       class canUseRangefinder;
       class firedEH;
       class getAngle;
@@ -46,15 +47,10 @@ class Extended_Init_EventHandlers {
 class AGM_Core_Default_Keys {
   class laseTarget {
     displayName = "$STR_AGM_FireControlSystem_LaseTarget";
-    /*condition = "!AGM_FCSEnabled && {player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
-    statement = "[_vehicle] call AGM_FCS_fnc_keyDown";
-    conditionUp = "player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
-    statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";*/
-
-    condition = "call AGM_FCS_fnc_canUseRangefinder || {!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}}";
-    statement = "call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && {_player == gunner _vehicle} && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}) then {[_vehicle] call AGM_FCS_fnc_keyDown};";
-    conditionUp = "_player == gunner _vehicle && {getNumber (configFile >> 'CfgVehicles' >> (typeOf _vehicle) >> 'AGM_FCSEnabled') == 1}";
-    statementUp = "[_vehicle] call AGM_FCS_fnc_keyUp";
+    condition   = "call AGM_FCS_fnc_canUseRangefinder  || {!AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS}";
+    statement   = "_range = call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyDown};";
+    conditionUp = "                                         AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS";
+    statementUp = "_range = call AGM_FCS_fnc_getRange; if  (AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyUp};";
 
     key = 15;
     shift = 0;

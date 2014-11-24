@@ -14,22 +14,28 @@
 private ["_ammoType", "_viewDiff", "_posArrival", "_airFriction", "_timeToLive", "_maxElev", "_vehicle", "_posTarget", "_distance", "_simulationStep", "_posX", "_velocityMagnitude", "_magazines", "_movingAzimuth", "_FCSElevation", "_velocityX", "_velocityY", "_weaponDirection", "_velocityTarget", "_FCSAzimuth", "_FCSMagazines", "_dirArrival", "_i", "_magazineType", "_angleTarget", "_offset", "_timeToTarget", "_initSpeed"];
 
 _vehicle = _this select 0;
+_distance = _this select 1;
+
 _magazines = magazines _vehicle;
 
-_distance = [
-  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSDistanceInterval")),
-  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSMaxDistance")),
-  (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_FCSMinDistance"))] call AGM_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
-_weaponDirection = _vehicle weaponDirection (currentWeapon _vehicle);
+if (_distance == 0) then {
+  _distance = [
+    getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_FCSDistanceInterval"),
+    getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_FCSMaxDistance"),
+    getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_FCSMinDistance")
+  ] call AGM_Core_fnc_getTargetDistance; // maximum distance: 5000m, 5m precision
+};
+
+_weaponDirection = _vehicle weaponDirection currentWeapon _vehicle;
 _angleTarget = asin (_weaponDirection select 2);
 
-if (count _this > 1) then {
-  _distance = _this select 1;
+if (count _this > 2) then {
+  _distance = _this select 2;
 };
 
 // MOVING TARGETS
 _movingAzimuth = 0;
-if (time - AGM_FCSTime > 1 and AGM_FCSTime != -1 and count _this < 2) then {
+if (time - AGM_FCSTime > 1 and AGM_FCSTime != -1 and count _this < 3) then {
   // calculate speed of target
   _posTarget = [
     (getPos _vehicle select 0) + _distance * (_weaponDirection select 0),
