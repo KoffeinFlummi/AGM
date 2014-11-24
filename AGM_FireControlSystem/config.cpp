@@ -324,6 +324,7 @@ class CfgVehicles {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
+        magazines[] += {"AGM_120Rnd_35mm_ABM_shells_Tracer_Red"};
         class Turrets: Turrets {
           class CommanderOptics: CommanderOptics {};
         };
@@ -352,6 +353,7 @@ class CfgVehicles {
   class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        magazines[] += {"AGM_120Rnd_35mm_ABM_shells_Tracer_Green"};
         class Turrets: Turrets {
           class CommanderOptics: CommanderOptics {};
         };
@@ -769,6 +771,75 @@ class CfgVehicles {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
+  };
+};
+
+class CfgWeapons {
+  class CannonCore;
+  class autocannon_35mm: CannonCore {
+    magazines[] += {"AGM_120Rnd_35mm_ABM_shells","AGM_120Rnd_35mm_ABM_shells_Tracer_Red","AGM_120Rnd_35mm_ABM_shells_Tracer_Green","AGM_120Rnd_35mm_ABM_shells_Tracer_Yellow"};
+  };
+};
+
+class CfgMagazines {
+  class 680Rnd_35mm_AA_shells;
+  class 680Rnd_35mm_AA_shells_Tracer_Red;
+  class 680Rnd_35mm_AA_shells_Tracer_Green;
+  class 680Rnd_35mm_AA_shells_Tracer_Yellow;
+
+  class AGM_120Rnd_35mm_ABM_shells: 680Rnd_35mm_AA_shells {
+    ammo = "AGM_B_35mm_ABM";
+    count = 120;
+    displayName = "35mm ABM Shells";
+    displayNameShort = "35mm ABM";
+  };
+  class AGM_120Rnd_35mm_ABM_shells_Tracer_Red: 680Rnd_35mm_AA_shells_Tracer_Red {
+    ammo = "AGM_B_35mm_ABM_Tracer_Red";
+    count = 120;
+    displayName = "35mm ABM Shells";
+    displayNameShort = "35mm ABM-T";
+  };
+  class AGM_120Rnd_35mm_ABM_shells_Tracer_Green: 680Rnd_35mm_AA_shells_Tracer_Green {
+    ammo = "AGM_B_35mm_ABM_Tracer_Green";
+    count = 120;
+    displayName = "35mm ABM Shells";
+    displayNameShort = "35mm ABM-T";
+  };
+  class AGM_120Rnd_35mm_ABM_shells_Tracer_Yellow: 680Rnd_35mm_AA_shells_Tracer_Yellow {
+    ammo = "AGM_B_35mm_ABM_Tracer_Yellow";
+    count = 120;
+    displayName = "35mm ABM Shells";
+    displayNameShort = "35mm ABM-T";
+  };
+};
+
+class CfgAmmo {
+  class B_35mm_AA;
+  class B_35mm_AA_Tracer_Red;
+  class B_35mm_AA_Tracer_Green;
+  class B_35mm_AA_Tracer_Yellow;
+
+  class AGM_B_35mm_ABM: B_35mm_AA {
+    AGM_Airburst = 1;
+    deflecting = 0;
+  };
+  class AGM_B_35mm_ABM_Tracer_Red: B_35mm_AA_Tracer_Red {
+    AGM_Airburst = 1;
+    deflecting = 0;
+  };
+  class AGM_B_35mm_ABM_Tracer_Green: B_35mm_AA_Tracer_Green {
+    AGM_Airburst = 1;
+    deflecting = 0;
+  };
+  class AGM_B_35mm_ABM_Tracer_Yellow: B_35mm_AA_Tracer_Yellow {
+    AGM_Airburst = 1;
+    deflecting = 0;
+  };
+
+  class AGM_B_35mm_ABM_Helper: B_35mm_AA {
+    indirectHitRange = 6;
+    simulation = "shotRocket";
+    timeToLive = 0;
   };
 };
 
