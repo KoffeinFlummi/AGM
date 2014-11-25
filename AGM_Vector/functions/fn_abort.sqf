@@ -1,5 +1,7 @@
 // by commy2
 
+private["_dlgVector", "_ctrlVectorCenter", "_ctrlVectorCrosshair", "_ctrlDigit0", "_ctrlDigit1", "_ctrlDigit2", "_ctrlDigit3", "_ctrlDigit4", "_ctrlDigit5", "_ctrlDigit6", "_ctrlDigit7", "_ctrlDigit8", "_ctrlDigit9", "_ctrlDigitE1", "_ctrlDigitE2", "_ctrlDigitE3", "_ctrlDigitE4", "_allControls"];
+
 waitUntil {currentWeapon player != "AGM_Vector" || {cameraView != "Gunner"}};
 
 terminate AGM_Vector_scriptHandle;

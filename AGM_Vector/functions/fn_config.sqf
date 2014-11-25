@@ -1,5 +1,7 @@
 // by commy2
 
+private["_dlgVector", "_ctrlVectorCenter", "_ctrlVectorCrosshair", "_ctrlDigit0", "_ctrlDigit1", "_ctrlDigit2", "_ctrlDigit3", "_ctrlDigit4", "_ctrlDigit5", "_ctrlDigit6", "_ctrlDigit7", "_ctrlDigit8", "_ctrlDigit9", "_ctrlDigitE1", "_ctrlDigitE2", "_ctrlDigitE3", "_ctrlDigitE4", "_allControls", "_isReticle", "_isNVG", "_time", "_theCount"];
+
 disableSerialization;
 _dlgVector = uiNamespace getVariable "AGM_dlgVector";
 _ctrlVectorCenter = _dlgVector displayCtrl 1;
@@ -141,18 +143,18 @@ waitUntil {
   !(AGM_vectorKey select 1) || {time > _time + 1}
 };
 
-_count = 1;
+_theCount = 1;
 waitUntil {
   if (AGM_vectorKey select 1) then {
-    _count = _count + 1;
+    _theCount = _theCount + 1;
     _time = time;
     waitUntil {!(AGM_vectorKey select 1) || {time > _time + 1}};
   };
   if (AGM_vectorKey select 0) then {_time = -1};
-  time > _time + 1 || {_count >= 5}
+  time > _time + 1 || {_theCount >= 5}
 };
 
-if (_count >= 5) then {
+if (_theCount >= 5) then {
   _ctrlDigitE1 ctrlSetText "\AGM_Vector\rsc\d5.paa";
   _ctrlDigitE2 ctrlSetText "\AGM_Vector\rsc\dt.paa";
   _ctrlDigitE3 ctrlSetText "\AGM_Vector\rsc\dq.paa";

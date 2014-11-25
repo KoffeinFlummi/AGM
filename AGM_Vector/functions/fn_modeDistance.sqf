@@ -1,5 +1,7 @@
 // by commy2
 
+private["_dlgVector", "_ctrlVectorCenter", "_ctrlDigit1", "_ctrlDigit2", "_ctrlDigit3", "_ctrlDigit4", "_ctrlDigit5", "_ctrlDigit6", "_ctrlDigit7", "_ctrlDigit8", "_exit", "_distance", "_digits"];
+
 disableSerialization;
 _dlgVector = uiNamespace getVariable "AGM_dlgVector";
 _ctrlVectorCenter = _dlgVector displayCtrl 1;
@@ -21,32 +23,16 @@ waitUntil {
 };
 if (_exit) exitWith {
   waitUntil {!(AGM_vectorKey select 0)};
-  AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeRelativeDistanceHeight;
+  AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_modeRelativeDistance;
 };
 
-_distance = call AGM_Vector_getDistance;
-_direction = call AGM_Vector_getDirection;
-_azimuth = _direction select 0;
-_inclination = _direction select 1;
+_distance = call AGM_Vector_fnc_getDistance;
 
-_height = sin _inclination * _distance;
-_lenght = cos _inclination * _distance;
-if (_distance == -9999) then {
-  _height = -9999;
-  _lenght = -9999;
-};
-
-_digits = _height call AGM_Vector_convertDistance;
+_digits = _distance call AGM_Vector_fnc_convertDistance;
 _ctrlDigit1 ctrlSetText (_digits select 0);
 _ctrlDigit2 ctrlSetText (_digits select 1);
 _ctrlDigit3 ctrlSetText (_digits select 2);
 _ctrlDigit4 ctrlSetText (_digits select 3);
-
-_digits = _lenght call AGM_Vector_convertDistance;
-_ctrlDigit5 ctrlSetText (_digits select 0);
-_ctrlDigit6 ctrlSetText (_digits select 1);
-_ctrlDigit7 ctrlSetText (_digits select 2);
-_ctrlDigit8 ctrlSetText (_digits select 3);
 
 _ctrlVectorCenter ctrlShow false;
 

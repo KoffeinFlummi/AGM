@@ -5,6 +5,8 @@ ask us nicely at http://www.bwmod.de/ if you want to re-use any of this script
 we don't support changed code based on this work
 */
 
+private["_number", "_coordinate", "_isNegative", "_digit0", "_digit1", "_digit2", "_digit3", "_digit4"];
+
 _number = _this select 0;
 _coordinate = _this select 1;
 
