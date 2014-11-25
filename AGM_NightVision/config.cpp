@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_NightVision {
     units[] = {};
-    weapons[] = {};
+    weapons[] = {"AGM_NVG_Gen1", "AGM_NVG_Gen2", "AGM_NVG_Gen3", "AGM_NVG_Gen4", "AGM_NVG_WIDE"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.94.1";
@@ -57,5 +57,52 @@ class AGM_Core_Default_Keys {
     control = 0;
     alt = 1;
     allowHolding = 1;
+  };
+};
+
+class cfgWeapons {
+  class Binocular;
+  class NVGoggles: Binocular {
+    AGM_NightVision_grain = 0.75;
+    AGM_NightVision_blur = 0;
+  };
+  class NVGoggles_OPFOR: NVGoggles {};
+  class NVGoggles_INDEP: NVGoggles {};
+
+  class AGM_NVG_Gen1: NVGoggles_OPFOR {
+    author = "AGM Team";
+    modelOptics = "\A3\weapons_f\reticle\optics_night";
+    displayName = "$STR_AGM_NightVision_NVG_Gen1";
+    AGM_NightVision_grain = 2.25;
+    AGM_NightVision_blur = 0.22;
+  };
+  class AGM_NVG_Gen2: NVGoggles_INDEP {
+    author = "AGM Team";
+    modelOptics = "\A3\weapons_f\reticle\optics_night";
+    displayName = "$STR_AGM_NightVision_NVG_Gen2";
+    AGM_NightVision_grain = 1.5;
+    AGM_NightVision_blur = 0.11;
+  };
+  class AGM_NVG_Gen3: NVGoggles {
+    author = "AGM Team";
+    modelOptics = "\A3\weapons_f\reticle\optics_night";
+    displayName = "$STR_AGM_NightVision_NVG_Gen3";
+    AGM_NightVision_grain = 0.75;
+    AGM_NightVision_blur = 0.055;
+  };
+  class AGM_NVG_Gen4: NVGoggles {
+    author = "AGM Team";
+    modelOptics = "\A3\weapons_f\reticle\optics_night";
+    displayName = "$STR_AGM_NightVision_NVG_Gen4";
+    AGM_NightVision_grain = 0.0;
+    AGM_NightVision_blur = 0.0;
+  };
+  class AGM_NVG_WIDE: NVGoggles {
+    author = "AGM Team";
+    // modelOptics = "\AGM_NightVision\weapons\agm_nvg_wide";
+    modelOptics = "\A3\weapons_f\reticle\optics_empty";
+    displayName = "$STR_AGM_NightVision_NVG_FullScreen";
+    AGM_NightVision_grain = 0.75;
+    AGM_NightVision_blur = 0.055;
   };
 };
