@@ -46,7 +46,7 @@ AGM_NewStrength = 0;
     };
 
     // Reduce volume if player is unconscious
-    if (_player getVariable ["AGM_Unconscious", false]) then {
+    if (_player getVariable ["AGM_isUnconscious", false]) then {
       _volume = _volume min 0.4;
     };
 
