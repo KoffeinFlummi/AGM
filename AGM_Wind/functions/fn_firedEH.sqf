@@ -29,8 +29,6 @@ _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTempe
 [_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
 
 _this spawn {
-  _unit = _this select 0;
-  _weaponType = _this select 1;
   _ammoType = _this select 4;
   _round = _this select 5;
 
