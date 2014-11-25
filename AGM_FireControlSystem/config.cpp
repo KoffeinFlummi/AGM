@@ -47,11 +47,10 @@ class Extended_Init_EventHandlers {
 class AGM_Core_Default_Keys {
   class laseTarget {
     displayName = "$STR_AGM_FireControlSystem_LaseTarget";
-    condition   = "call AGM_FCS_fnc_canUseRangefinder  || {!AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS}";
-    statement   = "_range = call AGM_FCS_fnc_getRange; if (!AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyDown};";
-    conditionUp = "                                         AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS";
-    statementUp = "_range = call AGM_FCS_fnc_getRange; if  (AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyUp};";
-
+    condition   = "call AGM_FCS_fnc_canUseRangefinder  || AGM_FCS_fnc_canUseFCS";
+    statement   = "_range = call AGM_FCS_fnc_getRange; if (call AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyDown};";
+    conditionUp = "AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS";
+    statementUp = "_range = call AGM_FCS_fnc_getRange; if (AGM_FCSEnabled && AGM_FCS_fnc_canUseFCS) then {[_vehicle, _range] call AGM_FCS_fnc_keyUp};";
     key = 15;
     shift = 0;
     control = 0;

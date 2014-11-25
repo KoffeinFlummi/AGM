@@ -11,6 +11,7 @@ _fnc_actionThrowCondition = {
   if !(_isInput isEqualTo (missionNamespace getVariable ["AGM_WeaponSelect_CycleThrownItemsState", false])) then {
     if (_isInput && {_muzzle == ""}) then {
       // @todo select last muzzle to roll over
+      [_this select 0] spawn AGM_WeaponSelect_fnc_selectGrenadeAll;//
     };
     AGM_WeaponSelect_CycleThrownItemsState = _isInput;
   };
@@ -25,21 +26,12 @@ _fnc_actionThrowCondition = {
     AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle = _this select 0;
   };
 
-  _magazines = magazines (_this select 1);
-
-  // check if there is still a magazine
-  _result = true;
-  with uiNamespace do {
-    {
-      if (_x in _magazines) exitWith {_result = false};
-    } forEach (AGM_WeaponSelect_AllMagazines select (AGM_WeaponSelect_AllMuzzles find _muzzle));
-  };
-
-  if (_result) then {
+  if ((_this select 1) ammo _muzzle == 0) exitWith {
     if (AGM_WeaponSelect_CurrentGrenadeMuzzleIsFrag) then {AGM_WeaponSelect_CurrentGrenadeMuzzleFrag = ""} else {AGM_WeaponSelect_CurrentGrenadeMuzzleOther = ""};
     [uiNamespace getVariable "AGM_dlgSoldier", false] call AGM_WeaponSelect_fnc_toggleGrenadeCount;
+    true
   };
-  _result
+  false
 };
 
 _fnc_actionThrow = {

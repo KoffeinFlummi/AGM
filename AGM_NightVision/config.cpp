@@ -76,6 +76,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_NVG_Gen1,6)
       MACRO_ADDITEM(AGM_NVG_Gen2,6)
+    //MACRO_ADDITEM(AGM_NVG_Gen3,6)
       MACRO_ADDITEM(AGM_NVG_Gen4,6)
       MACRO_ADDITEM(AGM_NVG_Wide,6)
     };
