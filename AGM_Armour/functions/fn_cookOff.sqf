@@ -10,19 +10,11 @@
  * Boom.
  */
 
-#define SMOKE_ITERATIONS 6
-#define SMOKE_PARTICLECOUNT 3000
-#define COOKOFF_ITERATIONS 6
-#define COOKOFF_PARTICLECOUNT 3000
-
-if ((_this select 0) getVariable ["AGM_Armour_isCookingOff", False]) exitWith {};
-
-if (count _this < 2) then {
-  [_this + [True], "AGM_Armour_fnc_cookOff"] call AGM_Core_fnc_execRemoteFnc;
-} else {
-  if (local (_this select 0)) exitWith {};
+if !(local (_this select 0)) then {
+  [_this, "AGM_Armour_fnc_cookOff", (_this select 0)] call AGM_Core_fnc_execRemoteFnc;
 };
 
+if ((_this select 0) getVariable ["AGM_Armour_isCookingOff", False]) exitWith {};
 (_this select 0) setVariable ["AGM_Armour_isCookingOff", True];
 
 _this spawn {
@@ -35,7 +27,7 @@ _this spawn {
   sleep 0.5 + (random 0.3);
 
   // Smoke out of cannon and hatches
-  _smokeBarrel = "#particlesource" createVehicleLocal [0,0,0];
+  _smokeBarrel = "#particlesource" createVehicle [0,0,0];
   _smokeBarrel setParticleClass "MediumDestructionSmoke";
   _smokeBarrel attachTo [_vehicle, _vehicle selectionPosition (getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "gunBeg"))];
 
@@ -46,7 +38,7 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
-    _smoke = "#particlesource" createVehicleLocal [0,0,0];
+    _smoke = "#particlesource" createVehicle [0,0,0];
     _smoke setParticleClass "ObjectDestructionSmoke1_2Smallx";
     _smoke attachTo [_vehicle, _position];
     _smokes pushBack _smoke;
@@ -55,9 +47,7 @@ _this spawn {
   sleep 3 + (random 2);
 
   // this shit is busy being on fire, can't go driving around all over the place
-  if (local _vehicle) then {
-    _vehicle setFuel 0;
-  };
+  _vehicle setFuel 0;
 
   // CookOffs
   _fires = [];
@@ -67,7 +57,7 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
-    _fire = "#particlesource" createVehicleLocal [0,0,0];
+    _fire = "#particlesource" createVehicle [0,0,0];
     _fire setParticleClass "AGM_CookOff";
     _fire attachTo [_vehicle, _position];
     _fires pushBack _fire;
@@ -91,6 +81,7 @@ _this spawn {
         (_turretPos select 1)
       ];
       _turret = _turretClass createVehicle (_vehicle modelToWorld _position);
+      // @todo
       //_turret setVectorUp [random 1, random 1, 1];
       //_turret setVelocity [random 7, random 7, 8 + random 5];
     };
