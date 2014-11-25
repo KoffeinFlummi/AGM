@@ -5,6 +5,8 @@ ask us nicely at http://www.bwmod.de/ if you want to re-use any of this script
 we don't support changed code based on this work
 */
 
+private["_number", "_return", "_isNegative", "_digit1", "_digit2", "_digit3", "_digit4"];
+
 _number = _this;
 
 _return = [];
@@ -12,7 +14,7 @@ if (AGM_vectorSettings select 2) then {
   _number = round (6400 / 360 * _number);
   if (_number == 6400) then {_number = 0};
 
-  _return = _number call AGM_Vector_convertDistance;
+  _return = _number call AGM_Vector_fnc_convertDistance;
 } else {
   _number = round _number;
   _isNegative = if (_number < 0) then {true} else {false};
@@ -60,4 +62,5 @@ if (AGM_vectorSettings select 2) then {
   };
   _return = [_digit1, _digit2, _digit3, _digit4];
 };
+
 _return

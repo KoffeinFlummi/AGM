@@ -2,6 +2,8 @@
 
 #define DELAY 0.3
 
+private["_rscLayer", "_dlgVector", "_ctrlVectorCenter", "_ctrlVectorCrosshair", "_ctrlDigit0", "_ctrlDigit1", "_ctrlDigit2", "_ctrlDigit3", "_ctrlDigit4", "_ctrlDigit5", "_ctrlDigit6", "_ctrlDigit7", "_ctrlDigit8", "_ctrlDigit9", "_ctrlDigitE1", "_ctrlDigitE2", "_ctrlDigitE3", "_ctrlDigitE4", "_allControls", "_hold", "_time", "_theCount"];
+
 disableSerialization;
 _rscLayer = ["AGM_Vector"] call BIS_fnc_rscLayer;
 _rscLayer cutRsc ["AGM_Vector", "PLAIN", 0, false];
@@ -57,51 +59,51 @@ _hold = true;
 _time = time;
 
 waitUntil {
-  if !(AGM_vectorKey select 0) then {
+  if !(AGM_vectorKey select 1) then {
     _hold = false;
   };
   time > _time + DELAY || {!_hold}
 };
 
 if (_hold) then {
-  if (AGM_vectorKey select 1) then {
-    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeDistanceAzimuth;
+  if (AGM_vectorKey select 0) then {
+    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_modeDistanceAzimuth;
   } else {
-    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeAzimuth;
+    AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_modeDistance;
   };
 } else {
   waitUntil {time > _time + DELAY};
-  if (AGM_vectorKey select 0) then {
-    if (AGM_vectorKey select 1) then {
-      //L tab + (L + R) hold
-      waitUntil {!(AGM_vectorKey select 0)};
+  if (AGM_vectorKey select 1) then {
+    if (AGM_vectorKey select 0) then {
+      //R tab + (L + R) hold
+      waitUntil {!(AGM_vectorKey select 1)};
       AGM_isVectorReady = true;
     } else {
-      AGM_Vector_scriptHandle = 0 spawn AGM_Vector_modeAzimuthInclination;
+      AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_modeDistanceHeight;
     };
   } else {
-    if (AGM_vectorKey select 1) then {
-      //L tab + R hold
-      waitUntil {!(AGM_vectorKey select 0)};
+    if (AGM_vectorKey select 0) then {
+      //R tab + L hold
+      waitUntil {!(AGM_vectorKey select 1)};
       AGM_isVectorReady = true;
     } else {
-      //L tab
-      waitUntil {!(AGM_vectorKey select 0)};
+      //R tab
+      waitUntil {!(AGM_vectorKey select 1)};
 
-      _count = AGM_vectorConfig select 0;
+      _theCount = AGM_vectorConfig select 0;
       _time = AGM_vectorConfig select 1;
 
-      if (time < _time + 1 && {_count <= 0}) then {
-        _count = _count - 1;
-        if (_count <= -5) then {
+      if (time < _time + 1 && {_theCount >= 0}) then {
+        _theCount = _theCount + 1;
+        if (_theCount >= 5) then {
           AGM_vectorConfig = [0, time];
-          0 spawn AGM_Vector_settings;
+          0 spawn AGM_Vector_config;
         } else {
-          AGM_vectorConfig = [_count, time];
+          AGM_vectorConfig = [_theCount, time];
           AGM_isVectorReady = true;
         };
       } else {
-        AGM_vectorConfig = [-1, time];
+        AGM_vectorConfig = [1, time];
         AGM_isVectorReady = true;
       };
     };

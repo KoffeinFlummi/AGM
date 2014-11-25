@@ -1,5 +1,7 @@
 // by commy2
 
+private["_dlgVector", "_ctrlVectorCenter", "_ctrlDigit1", "_ctrlDigit2", "_ctrlDigit3", "_ctrlDigit4", "_ctrlDigit5", "_ctrlDigit6", "_ctrlDigit7", "_ctrlDigit8", "_ctrlDigit9", "_ctrlDigitE1", "_ctrlDigitE2", "_ctrlDigitE3", "_distanceP1", "_directionP1", "_azimuthP1", "_inclinationP1", "_directionP2", "_azimuthP2", "_abscissa", "_ordinate", "_applicate", "_distanceP2", "_digits", "_inclinationP2", "_height", "_lenght", "_digits0", "_digits1", "_digits2"];
+
 disableSerialization;
 _dlgVector = uiNamespace getVariable "AGM_dlgVector";
 _ctrlVectorCenter = _dlgVector displayCtrl 1;
@@ -19,8 +21,8 @@ _ctrlDigitE3 = _dlgVector displayCtrl 23;
 
 _ctrlVectorCenter ctrlSetText "\AGM_Vector\rsc\Vector_Center.paa";
 
-_distanceP1 = call AGM_Vector_getDistance;
-_directionP1 = call AGM_Vector_getDirection;
+_distanceP1 = call AGM_Vector_fnc_getDistance;
+_directionP1 = call AGM_Vector_fnc_getDirection;
 _azimuthP1 = _directionP1 select 0;
 _inclinationP1 = _directionP1 select 1;
 
@@ -30,8 +32,8 @@ _ctrlDigitE3 ctrlSetText "\AGM_Vector\rsc\dP.paa";
 
 waitUntil {!(AGM_vectorKey select 0)};
 
-_distanceP2 = call AGM_Vector_getDistance;
-_directionP2 = call AGM_Vector_getDirection;
+_distanceP2 = call AGM_Vector_fnc_getDistance;
+_directionP2 = call AGM_Vector_fnc_getDirection;
 _azimuthP2 = _directionP2 select 0;
 _inclinationP2 = _directionP2 select 1;
 
@@ -44,9 +46,9 @@ if (_distanceP1 == -9999 || {_distanceP2 == -9999}) then {
   _applicate = -9999;
 };
 
-_digits0 = [_ordinate, 0] call AGM_Vector_convertFOS;
-_digits1 = [_abscissa, 1] call AGM_Vector_convertFOS;
-_digits2 = [_applicate, 2] call AGM_Vector_convertFOS;
+_digits0 = [_ordinate, 0] call AGM_Vector_fnc_convertFOS;
+_digits1 = [_abscissa, 1] call AGM_Vector_fnc_convertFOS;
+_digits2 = [_applicate, 2] call AGM_Vector_fnc_convertFOS;
 
 _ctrlVectorCenter ctrlShow false;
 

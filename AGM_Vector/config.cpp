@@ -7,8 +7,35 @@ class CfgPatches {
     version = "0.94.1";
     versionStr = "0.94.1";
     versionAr[] = {0,94,1};
-    author[] = {"Ghost", "Hamburger SV", "commy2"};
+    author[] = {"Ghost", "Hamburger SV", "commy2", "bux578"};
     authorUrl = "https://github.com/commy2/";
+  };
+};
+
+class CfgFunctions {
+  class AGM_Vector {
+    class AGM_Vector {
+      file = "AGM_Vector\functions";
+      class abort;
+      class config;
+      class convertDegree;
+      class convertDistance;
+      class convertFOS;
+      class getDirection;
+      class getDistance;
+      class modeAzimuth;
+      class modeAzimuthInclination;
+      class modeDistance;
+      class modeDistanceAzimuth;
+      class modeDistanceHeight;
+      class modeFallOfShort;
+      class modeRelativeAzimuthDistance;
+      class modeRelativeDistance;
+      class modeRelativeDistanceHeight;
+      class settings;
+      class tabAzimuthKey;
+      class tabDistanceKey;
+    };
   };
 };
 
@@ -22,7 +49,7 @@ class AGM_Core_Default_Keys {
   class vectorAzimuth {
     displayName = "$STR_AGM_Vector_AzimuthKey";
     condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
-    statement = "AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabAzimuthKey; 0 spawn AGM_Vector_abort;};";
+    statement = "AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_tabAzimuthKey; 0 spawn AGM_Vector_fnc_abort;};";
     conditionUp = "true";
     statementUp = "AGM_vectorKey set [0, false];";
     key = 15;
@@ -33,7 +60,7 @@ class AGM_Core_Default_Keys {
   class vectorDistance {
     displayName = "$STR_AGM_Vector_DistanceKey";
     condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
-    statement = "AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabDistanceKey; 0 spawn AGM_Vector_abort;};";
+    statement = "AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_tabDistanceKey; 0 spawn AGM_Vector_fnc_abort;};";
     conditionUp = "true";
     statementUp = "AGM_vectorKey set [1, false];";
     key = 19;
