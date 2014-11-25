@@ -73,11 +73,11 @@ AGM_GForces_CC ppEffectCommit 0.4;
       hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
     };
 
-    if (((_average * _upTolerance) > MAXVIRTUALG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_Unconscious", false])}}) then {
+    if (((_average * _upTolerance) > MAXVIRTUALG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_isUnconscious", false])}}) then {
       [_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 
-    if ((abs _average > 2) and !(_player getVariable ["AGM_Unconscious", false])) then {
+    if ((abs _average > 2) and !(_player getVariable ["AGM_isUnconscious", false])) then {
       if (_average > 0) then {
         _strength = 1.2 - (((_average - 2) * _upTolerance) / (MAXVIRTUALG - 2));
         AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];

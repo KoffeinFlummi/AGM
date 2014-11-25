@@ -21,6 +21,7 @@ _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
 
 _unit setVariable ["AGM_Unconscious", false, true];
+_unit setVariable ["AGM_isUnconscious", false, true]; // prep for rewrite
 _unit setVariable ["AGM_CanTreat", true, true];
 
 _position = getPosASL _unit;

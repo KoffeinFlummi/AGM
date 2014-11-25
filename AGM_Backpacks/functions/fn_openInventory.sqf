@@ -12,7 +12,7 @@ if (_isBackpack) then {
   private "_unit";
   _unit = [_target] call AGM_Backpacks_fnc_getBackpackAssignedUnit;
 
-  if (!alive _unit || {_unit getVariable ["AGM_Unconscious", false]}) exitWith {false};
+  if (!alive _unit || {_unit getVariable ["AGM_isUnconscious", false]}) exitWith {false};
 
   if (_isLocked) then {
     // target is a locked backpack

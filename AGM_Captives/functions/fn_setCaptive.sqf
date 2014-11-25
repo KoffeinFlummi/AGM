@@ -42,7 +42,7 @@ if (_state) then {
 
       if (isPlayer _this) then {showHUD false};
 
-      waitUntil {!(_this getVariable ["AGM_Unconscious", false])};
+      waitUntil {!(_this getVariable ["AGM_isUnconscious", false])};
 
       if (isPlayer _this) then {
         if (!_inputDisabled) then {
@@ -68,7 +68,7 @@ if (_state) then {
     // fix grenade throwing
     [_this, "Throw", _actionID] call AGM_Core_fnc_removeActionEventHandler;
 
-    if !(_this getVariable ["AGM_Unconscious", false]) then {
+    if !(_this getVariable ["AGM_isUnconscious", false]) then {
       _this playMoveNow "AmovPercMstpSnonWnonDnon_EaseOut";
     } else {
       _this playMoveNow "unconscious";

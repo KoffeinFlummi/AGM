@@ -22,6 +22,7 @@ if (count _this > 1) then {
 if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {};
 
 _unit setVariable ["AGM_Unconscious", true, true];
+_unit setVariable ["AGM_isUnconscious", true, true]; // prep for rewrite
 _unit setVariable ["AGM_CanTreat", false, true];
 
 if (_unit == player) then {

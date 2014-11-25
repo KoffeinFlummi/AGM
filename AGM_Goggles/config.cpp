@@ -250,7 +250,7 @@ class SniperCloud {
 class AGM_Core_Default_Keys {
 	class wipeGlasses {
 		displayName = $STR_AGM_Goggles_WipeGlasses;
-		condition = "!(player getVariable['AGM_Unconscious', false])";
+		condition = "!(player getVariable['AGM_isUnconscious', false])";
 		statement = "call AGM_Goggles_fnc_ClearGlasses;";
 		key = 20; // T
 		shift = 1;
