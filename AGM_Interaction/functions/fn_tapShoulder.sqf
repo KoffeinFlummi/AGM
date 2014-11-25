@@ -5,7 +5,7 @@ private ["_unit", "_message"];
 _tapper = _this select 0;
 _target = _this select 1;
 
-if (_target != player) exitWith {
+if (_target != AGM_player) exitWith {
   addCamShake [4, 0.5, 5];
   if !(local _target) then {
     [[_tapper, _target], 'AGM_Interaction_fnc_tapShoulder', _target] call AGM_Core_fnc_execRemoteFnc
