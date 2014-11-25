@@ -33,6 +33,10 @@ if (count _this > 2) then {
   _distance = _this select 2;
 };
 
+if (!(isNil "AGM_FCS_backgroundCalculation") and {!(scriptDone AGM_FCS_backgroundCalculation)}) then {
+  terminate AGM_FCS_backgroundCalculation;
+};
+
 // MOVING TARGETS
 _movingAzimuth = 0;
 if (time - AGM_FCSTime > 1 and AGM_FCSTime != -1 and count _this < 3) then {
@@ -123,7 +127,7 @@ _vehicle setVariable ["AGM_FCSElevation", _FCSElevation, true];
 _vehicle setVariable ["AGM_FCSAzimuth",   _FCSAzimuth,   true];
 
 // CALCULATE OFFSETS FOR OTHER WEAPONS IN THE BACKGROUND
-[_vehicle, _magazines, _distance, _angleTarget, _FCSMagazines, _FCSElevation] spawn {
+AGM_FCS_backgroundCalculation = [_vehicle, _magazines, _distance, _angleTarget, _FCSMagazines, _FCSElevation] spawn {
   _vehicle      = _this select 0;
   _magazines    = _this select 1;
   _distance     = _this select 2;
