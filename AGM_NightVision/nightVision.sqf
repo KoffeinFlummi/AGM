@@ -1,6 +1,9 @@
 //by commy2
 
-private ["_currentVeh", "_grainSetting", "_blurSetting"];
+private ["_currentVeh", "_currentHMD", "_grainSetting", "_blurSetting"];
+
+_currentVeh = objNull;
+_currentHMD = "";
 
 while {true} do {
   AGM_NightVision_ppEffectBlur ppEffectEnable false;
@@ -13,25 +16,39 @@ while {true} do {
   AGM_NightVision_ppEffectBlur ppEffectEnable true;
   AGM_NightVision_ppEffectNVGBrightness ppEffectEnable true;
 
-  _currentVeh = objNull;
-  while {currentVisionMode AGM_player == 1} do {
+  waitUntil {
+    if (cameraView == "GUNNER" && {AGM_player != vehicle AGM_player}) then {
 
-    if ((vehicle AGM_player) != _currentVeh) then {
-      _currentVeh = vehicle AGM_player;
-      _grainSetting = 0;
-      _blurSetting = 0;
-      if (_currentVeh != AGM_player) then {  //In a vehicle use defaults, can override with setVariable
-        _grainSetting = _currentVeh getVariable ["AGM_NightVision_grain", 0.75];
-        _blurSetting = _currentVeh getVariable ["AGM_NightVision_blur", 0];
-      } else {  //load from config, if not found use defaults
-        _grainSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGM_NightVision_grain", 0.75] call BIS_fnc_returnConfigEntry;
-        _blurSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGM_NightVision_blur", 0] call BIS_fnc_returnConfigEntry;
+      // in vehicle and not using hmd
+      if (_currentVeh != vehicle AGM_player) then {
+        _currentVeh = vehicle AGM_player;
+
+        _grainSetting = _currentVeh getVariable ["AGM_NightVision_grain", getNumber (configFile >> "CfgVehicles" >> typeOf _currentVeh >> "AGM_NightVision_grain")];
+        _blurSetting = _currentVeh getVariable ["AGM_NightVision_blur", getNumber (configFile >> "CfgVehicles" >> typeOf _currentVeh >> "AGM_NightVision_blur")];
+
+        AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, _grainSetting, _grainSetting, false];
+        AGM_NightVision_ppEffect ppEffectCommit 0;
+        AGM_NightVision_ppEffectBlur ppEffectAdjust [_blurSetting];
+        AGM_NightVision_ppEffectBlur ppEffectCommit 0;
       };
-	  // systemChat format ["Debug: %1 gain - %2 blur", _grainSetting, _blurSetting];
-      AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, _grainSetting, _grainSetting, false];
-      AGM_NightVision_ppEffect ppEffectCommit 0;
-      AGM_NightVision_ppEffectBlur ppEffectAdjust [_blurSetting];
-      AGM_NightVision_ppEffectBlur ppEffectCommit 0;
+
+      _currentHMD = "";  // force change if unmounting vehicle
+    } else {
+
+      // on foot or in vehicle using hmd
+      if (hmd AGM_player != _currentHMD) then {
+        _currentHMD = hmd AGM_player;
+
+        _grainSetting = getNumber (configFile >> "CfgWeapons" >> _currentHMD >> "AGM_NightVision_grain");
+        _blurSetting = getNumber (configFile >> "CfgWeapons" >> _currentHMD >> "AGM_NightVision_blur");
+
+        AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, _grainSetting, _grainSetting, false];
+        AGM_NightVision_ppEffect ppEffectCommit 0;
+        AGM_NightVision_ppEffectBlur ppEffectAdjust [_blurSetting];
+        AGM_NightVision_ppEffectBlur ppEffectCommit 0;
+      };
+
+      _currentVeh = objNull;  // force change if mounting vehicle
     };
 
     // Detect if curator interface is open and disable effects
@@ -46,6 +63,7 @@ while {true} do {
       AGM_NightVision_ppEffectBlur ppEffectEnable true;
       AGM_NightVision_ppEffectNVGBrightness ppEffectEnable true;
     };
-    sleep 0.1;
+
+    currentVisionMode AGM_player != 1
   };
 };

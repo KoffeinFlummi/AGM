@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_NightVision {
     units[] = {};
-    weapons[] = {"AGM_NVG_Gen1", "AGM_NVG_Gen2", "AGM_NVG_Gen3", "AGM_NVG_Gen4", "AGM_NVG_WIDE"};
+    weapons[] = {"AGM_NVG_Gen1", "AGM_NVG_Gen2", /*"AGM_NVG_Gen3",*/ "AGM_NVG_Gen4", "AGM_NVG_Wide"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.94.1";
@@ -60,45 +60,72 @@ class AGM_Core_Default_Keys {
   };
 };
 
-class cfgWeapons {
+class CfgVehicles {
+  class All {
+    AGM_NightVision_grain = 0.75;
+    AGM_NightVision_blur = 0.055;
+  };
+
+  #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
+    name = #ITEM; \
+    count = COUNT; \
+  };
+
+  class Box_NATO_Support_F;
+  class AGM_Box_Misc: Box_NATO_Support_F {
+    class TransportItems {
+      MACRO_ADDITEM(AGM_NVG_Gen1,6)
+      MACRO_ADDITEM(AGM_NVG_Gen2,6)
+      MACRO_ADDITEM(AGM_NVG_Gen4,6)
+      MACRO_ADDITEM(AGM_NVG_Wide,6)
+    };
+  };
+};
+
+class CfgWeapons {
   class Binocular;
   class NVGoggles: Binocular {
+    displayName = "$STR_AGM_NightVision_NVG_Gen3_brown";
     AGM_NightVision_grain = 0.75;
-    AGM_NightVision_blur = 0;
+    AGM_NightVision_blur = 0.055;
   };
-  class NVGoggles_OPFOR: NVGoggles {};
-  class NVGoggles_INDEP: NVGoggles {};
+  class NVGoggles_OPFOR: NVGoggles {
+    displayName = "$STR_AGM_NightVision_NVG_Gen3_black";
+  };
+  class NVGoggles_INDEP: NVGoggles {
+    displayName = "$STR_AGM_NightVision_NVG_Gen3_green";
+  };
 
   class AGM_NVG_Gen1: NVGoggles_OPFOR {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     modelOptics = "\A3\weapons_f\reticle\optics_night";
     displayName = "$STR_AGM_NightVision_NVG_Gen1";
     AGM_NightVision_grain = 2.25;
     AGM_NightVision_blur = 0.22;
   };
   class AGM_NVG_Gen2: NVGoggles_INDEP {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     modelOptics = "\A3\weapons_f\reticle\optics_night";
     displayName = "$STR_AGM_NightVision_NVG_Gen2";
     AGM_NightVision_grain = 1.5;
     AGM_NightVision_blur = 0.11;
   };
-  class AGM_NVG_Gen3: NVGoggles {
-    author = "AGM Team";
+  /*class AGM_NVG_Gen3: NVGoggles {
+    author = "$STR_AGM_Core_AGMTeam";
     modelOptics = "\A3\weapons_f\reticle\optics_night";
     displayName = "$STR_AGM_NightVision_NVG_Gen3";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
-  };
+  };*/
   class AGM_NVG_Gen4: NVGoggles {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     modelOptics = "\A3\weapons_f\reticle\optics_night";
     displayName = "$STR_AGM_NightVision_NVG_Gen4";
     AGM_NightVision_grain = 0.0;
     AGM_NightVision_blur = 0.0;
   };
-  class AGM_NVG_WIDE: NVGoggles {
-    author = "AGM Team";
+  class AGM_NVG_Wide: NVGoggles {
+    author = "$STR_AGM_Core_AGMTeam";
     // modelOptics = "\AGM_NightVision\weapons\agm_nvg_wide";
     modelOptics = "\A3\weapons_f\reticle\optics_empty";
     displayName = "$STR_AGM_NightVision_NVG_FullScreen";
