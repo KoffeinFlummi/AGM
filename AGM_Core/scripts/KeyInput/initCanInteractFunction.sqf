@@ -2,7 +2,7 @@
 
 private ["_function", "_configFile", "_count", "_index", "_config", "_configName", "_condition"];
 
-_function = "private '_exceptions'; _exceptions = _this; alive player";
+_function = "private '_exceptions'; _exceptions = _this; alive AGM_player";
 
 _configFile = configFile >> "AGM_Core_canInteractConditions";
 _count = count _configFile;
