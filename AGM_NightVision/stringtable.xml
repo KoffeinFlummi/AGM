@@ -2,6 +2,53 @@
 <Project name="AGM">
   <Package name="NightVision">
 
+    <Key ID="STR_AGM_NightVision_NVG_Gen1">
+      <English>NV Goggles (Gen1)</English>
+      <Czech>Noktovizor (Gen1)</Czech>
+      <French>JVN (Gen1)</French>
+      <German>NS-Brille (Gen1)</German>
+      <Italian>Occhiali notturni (Gen1)</Italian>
+      <Polish>Gogle noktowizyjne (Gen1)</Polish>
+      <Portuguese>Óculos de visão noturna (Gen1)</Portuguese>
+      <Russian>ПНВ (Gen1)</Russian>
+      <Spanish>Sistema de visión nocturna (Gen1)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_NightVision_NVG_Gen2">
+      <English>NV Goggles (Gen2)</English>
+      <Czech>Noktovizor (Gen2)</Czech>
+      <French>JVN (Gen2)</French>
+      <German>NS-Brille (Gen2)</German>
+      <Italian>Occhiali notturni (Gen2)</Italian>
+      <Polish>Gogle noktowizyjne (Gen2)</Polish>
+      <Portuguese>Óculos de visão noturna (Gen2)</Portuguese>
+      <Russian>ПНВ (Gen2)</Russian>
+      <Spanish>Sistema de visión nocturna (Gen2)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_NightVision_NVG_Gen3">
+      <English>NV Goggles (Gen3)</English>
+      <Czech>Noktovizor (Gen3)</Czech>
+      <French>JVN (Gen3)</French>
+      <German>NS-Brille (Gen3)</German>
+      <Italian>Occhiali notturni (Gen3)</Italian>
+      <Polish>Gogle noktowizyjne (Gen3)</Polish>
+      <Portuguese>Óculos de visão noturna (Gen3)</Portuguese>
+      <Russian>ПНВ (Gen3)</Russian>
+      <Spanish>Sistema de visión nocturna (Gen3)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_NightVision_NVG_Gen4">
+      <English>NV Goggles (Gen4)</English>
+      <Czech>Noktovizor (Gen4)</Czech>
+      <French>JVN (Gen4)</French>
+      <German>NS-Brille (Gen4)</German>
+      <Italian>Occhiali notturni (Gen4)</Italian>
+      <Polish>Gogle noktowizyjne (Gen4)</Polish>
+      <Portuguese>Óculos de visão noturna (Gen4)</Portuguese>
+      <Russian>ПНВ (Gen4)</Russian>
+      <Spanish>Sistema de visión nocturna (Gen4)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_NightVision_NVG_FullScreen">
+      <English>NV Goggles (Wide)</English>
+    </Key>
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
       <German>Helligkeit: %1</German>
