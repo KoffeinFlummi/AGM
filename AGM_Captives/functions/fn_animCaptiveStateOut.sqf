@@ -10,7 +10,7 @@ if !(_unit in _allCaptives) exitWith {};
 _allCaptives deleteAt (_allCaptives find _unit);
 
 if (count _allCaptives == 0) then {
-  ["AGM_ForceAnimationForCaptives", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+  ["AGM_ForceAnimationForCaptives", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;systemChat "1";
 };
 
 AGM_allCaptives = _allCaptives;

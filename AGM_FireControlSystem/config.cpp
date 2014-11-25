@@ -773,6 +773,7 @@ class CfgVehicles {
 class CfgWeapons {
   class CannonCore;
   class autocannon_35mm: CannonCore {
+    canLock = 0;
     magazines[] += {"AGM_120Rnd_35mm_ABM_shells","AGM_120Rnd_35mm_ABM_shells_Tracer_Red","AGM_120Rnd_35mm_ABM_shells_Tracer_Green","AGM_120Rnd_35mm_ABM_shells_Tracer_Yellow"};
   };
 };

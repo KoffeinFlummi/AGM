@@ -12,6 +12,9 @@ if (_allCaptives pushBack _unit == 0) then {
 
   _fnc_doAnim = {
     {
+      if (isNull _x) then {
+        [_x] call AGM_Captives_fnc_animCaptiveStateOut;
+      };
       if !([_x] call AGM_Core_fnc_inTransitionAnim || {_x getVariable ["AGM_isUnconscious", false]}) then {
         _x playMove "AmovPercMstpSnonWnonDnon_Ease";
       };

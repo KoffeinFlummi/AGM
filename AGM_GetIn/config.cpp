@@ -116,6 +116,15 @@ class CfgVehicles {
           priority = -1.94;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
         };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
     };
     class AGM_SelfActions {
@@ -127,8 +136,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        subMenu[] = {"AGM_MoveTo", 0};
+        subMenu[] = {"AGM_MoveTo", 1};
         hotkey = "G";
+        enableInside = 1;
 
         class AGM_MoveToDriver {
           displayName = "$STR_AGM_MoveToDriver";
@@ -173,6 +183,15 @@ class CfgVehicles {
           showDisabled = 0;
           priority = -1.94;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+          enableInside = 1;
+        };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
@@ -241,6 +260,15 @@ class CfgVehicles {
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
         };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
     };
     class AGM_SelfActions {
@@ -252,8 +280,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        subMenu[] = {"AGM_MoveTo", 0};
+        subMenu[] = {"AGM_MoveTo", 1};
         hotkey = "G";
+        enableInside = 1;
 
         class AGM_MoveToDriver {
           displayName = "$STR_AGM_MoveToDriver";
@@ -289,6 +318,15 @@ class CfgVehicles {
           showDisabled = 0;
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+          enableInside = 1;
+        };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
@@ -345,6 +383,15 @@ class CfgVehicles {
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
         };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
     };
     class AGM_SelfActions {
@@ -356,8 +403,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        subMenu[] = {"AGM_MoveTo", 0};
+        subMenu[] = {"AGM_MoveTo", 1};
         hotkey = "G";
+        enableInside = 1;
 
         class AGM_MoveToPilot {
           displayName = "$STR_AGM_MoveToPilot";
@@ -393,6 +441,15 @@ class CfgVehicles {
           showDisabled = 0;
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+          enableInside = 1;
+        };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
@@ -438,6 +495,15 @@ class CfgVehicles {
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
         };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
     };
     class AGM_SelfActions {
@@ -449,8 +515,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        subMenu[] = {"AGM_MoveTo", 0};
+        subMenu[] = {"AGM_MoveTo", 1};
         hotkey = "G";
+        enableInside = 1;
 
         class AGM_MoveToPilot {
           displayName = "$STR_AGM_MoveToPilot";
@@ -477,6 +544,15 @@ class CfgVehicles {
           showDisabled = 0;
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+          enableInside = 1;
+        };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
@@ -533,6 +609,15 @@ class CfgVehicles {
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
         };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
       };
     };
     class AGM_SelfActions {
@@ -544,8 +629,9 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
-        subMenu[] = {"AGM_MoveTo", 0};
+        subMenu[] = {"AGM_MoveTo", 1};
         hotkey = "G";
+        enableInside = 1;
 
         class AGM_MoveToDriver {
           displayName = "$STR_AGM_MoveToDriver";
@@ -581,6 +667,15 @@ class CfgVehicles {
           showDisabled = 0;
           priority = -1.93;
           icon = "\A3\ui_f\data\igui\cfg\actions\getincargo_ca.paa";
+          enableInside = 1;
+        };
+        class AGM_Dummy {
+          displayName = "";
+          condition = "false";
+          statement = "";
+          showDisabled = 1;
+          priority = -99;
+          icon = "AGM_Core\UI\blank_CO.paa";
           enableInside = 1;
         };
       };
