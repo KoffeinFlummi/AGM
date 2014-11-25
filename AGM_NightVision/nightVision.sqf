@@ -24,8 +24,8 @@ while {true} do {
         _grainSetting = _currentVeh getVariable ["AGM_NightVision_grain", 0.75];
         _blurSetting = _currentVeh getVariable ["AGM_NightVision_blur", 0];
       } else {  //load from config, if not found use defaults
-        _grainSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGN_NightVision_grain", 0.75] call BIS_fnc_returnConfigEntry;
-        _blurSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGN_NightVision_blur", 0] call BIS_fnc_returnConfigEntry;
+        _grainSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGM_NightVision_grain", 0.75] call BIS_fnc_returnConfigEntry;
+        _blurSetting = [(configFile >> "CfgWeapons" >> (hmd AGM_player)), "AGM_NightVision_blur", 0] call BIS_fnc_returnConfigEntry;
       };
 	  // systemChat format ["Debug: %1 gain - %2 blur", _grainSetting, _blurSetting];
       AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, _grainSetting, _grainSetting, false];
