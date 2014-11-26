@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-10-20 -->
+<Project name="AGM">
+  <Package name="Markers">
+    <Key ID="STR_AGM_Markers_MarkerDirection">
+      <English>Direction: %1°</English>
+      <German>Drehung: %1°</German>
+      <French>Direction: %1°</French>
+      <Czech>Směr: %1°</Czech>
+      <Polish>Kierunek: %1°</Polish>
+      <Spanish>Dirección: %1°</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_PlaceIn">
+      <English>Place in: %1</English>
+      <German>Platz in: %1</German>
+      <Spanish>Colocar en: %1</Spanish>
+    </Key>
+    <!-- Don't guess translations!  These need to be an exact substring of AGM_Markers_currentChatChannel -->
+    <Key ID="STR_AGM_Markers_ChannelGlobalShort">
+      <English>Global</English>
+      <German>Globaler</German>
+      <Spanish>Global</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_ChannelSideShort">
+      <English>Side</English>
+      <German>Seiten</German>
+      <Spanish>Bando</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_ChannelGroupShort">
+      <English>Group</English>
+      <German>Gruppen</German>
+      <Spanish>Grupo</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_ChannelVehicleShort">
+      <English>Vehicle</English>
+      <German>Fahrzeug</German>
+      <Spanish>Vehículo</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_ChannelDirectShort">
+      <English>Direct</English>
+      <German>Direkte</German>
+      <Spanish>Directa</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Markers_ChannelCommandShort">
+      <English>Command</English>
+      <German>Befehls</German>
+      <Spanish>Mando</Spanish>
+    </Key>
+  </Package>
+</Project>

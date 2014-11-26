@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-11-03 -->
+<Project name="AGM">
+  <Package name="Aircraft">
+    <Key ID="STR_AGM_Aircraft_CMFlareLauncher_Burst_Name">
+      <English>Burst</English>
+      <German>Feuerstoß</German>
+      <Spanish>Ráfaga</Spanish>
+      <Polish>Seria</Polish>
+      <Czech>Dávka</Czech>
+      <French>Rafale</French>
+      <Russian>Очередь</Russian>
+      <Hungarian>Sorozat</Hungarian>
+      <Portuguese>Rajada</Portuguese>
+      <Italian>Raffica</Italian>
+    </Key>
+    <Key ID="STR_AGM_Aircraft_OpenCargoRamp">
+      <English>Open Cargo Door</English>
+      <German>Laderampe öffnen</German>
+      <French>Ourvir Rampe Cargo</French>
+      <Polish>Otwórz drzwi ładowni</Polish>
+    </Key>
+    <Key ID="STR_AGM_Aircraft_CloseCargoRamp">
+      <English>Close Cargo Door</English>
+      <German>Laderampe schließen</German>
+      <French>Fermer Rampe Cargo</French>
+      <Polish>Zamknij drzwi ładowni</Polish>
+    </Key>
+  </Package>
+</Project>
