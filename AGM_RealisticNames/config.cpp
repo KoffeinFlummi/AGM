@@ -20,6 +20,8 @@ class CfgVehicles {
   class GMG_TriPod;
   class AT_01_base_F;
   class AA_01_base_F;
+  class UAV_02_base_F;
+  class UAV_02_CAS_base_F: UAV_02_base_F {};
 
   // BLUFOR Inheritance
   class MRAP_01_base_F;
@@ -170,6 +172,13 @@ class CfgVehicles {
     displayName = "$STR_AGM_RealisticNames_Plane_CAS_01_Name";
   };
 
+  class B_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class B_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
+  };
+
   class B_static_AT_F: AT_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AT_Name";
   };
@@ -232,6 +241,13 @@ class CfgVehicles {
   };
   class I_Plane_Fighter_03_AA_F: I_Plane_Fighter_03_CAS_F {
     displayName = "$STR_AGM_RealisticNames_Plane_Fighter_03_AA_Name";
+  };
+
+  class I_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class I_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
   };
 
   class I_static_AT_F: AT_01_base_F {
@@ -318,6 +334,13 @@ class CfgVehicles {
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Plane_CAS_02_Name";
+  };
+
+  class O_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class O_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
   };
 
   class O_static_AT_F: AT_01_base_F {

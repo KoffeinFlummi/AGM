@@ -98,6 +98,22 @@
       <Hungarian>Mini-Spike rakétarendszer (légvédelmi)</Hungarian>
       <Italian>Lanciatore Mini-Spike (AA)</Italian>
     </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_Name">
+      <English>YABHON-R3</English>
+      <German>YABHON-R3</German>
+      <Spanish>YABHON-R3</Spanish>
+      <Polish>YABHON-R3</Polish>
+      <Czech>YABHON-R3</Czech>
+      <French>YABHON-R3</French>
+      <Russian>YABHON-R3</Russian>
+      <Portuguese>YABHON-R3</Portuguese>
+      <Hungarian>YABHON-R3</Hungarian>
+      <Italian>YABHON-R3</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_CAS_Name">
+      <English>YABHON-R3 (CAS)</English>
+      <German>YABHON-R3 (Luftnahunterstützung)</German>
+    </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
       <German>M-ATV</German>
