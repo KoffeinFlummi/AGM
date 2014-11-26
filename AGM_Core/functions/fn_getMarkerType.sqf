@@ -18,7 +18,7 @@ _side = side _leader;
 if (_vehicle == _leader) exitWith {
   if (
       (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "detectSkill") > 20) or
-      (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "camouflage") < 10)
+      (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "camouflage") < 1)
       ) then {
     ["n_recon", "b_recon", "o_recon"] select ((["GUER", "WEST", "EAST"] find (str _side)) max 0)
   } else {
