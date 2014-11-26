@@ -1116,12 +1116,16 @@ class CfgVehicles {
     class Turrets {
       class MainTurret: NewTurret {};
     };
+    weapons[] = {"missiles_SCALPEL"};
+    magazines[] = {"6Rnd_LG_scalpel"};
   };
 
   class UAV_02_CAS_base_F: UAV_02_base_F {
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };
+    weapons[] = {"GBU12BombLauncher"};
+    magazines[] = {"2Rnd_GBU12_LGB"};
   };
 
   class B_Heli_Transport_03_base_F: Helicopter_Base_H {
