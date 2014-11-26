@@ -184,18 +184,18 @@ class Binarizer:
     except:
       print("  FAILED to move {} to modfolder.".format(module_name))
 
-    if self.paths["privatekey"] != "":
-      bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
-        ".build")
-      bisignlocation = os.path.join(bisignlocation,
-        module_name+".pbo."+PROJECTNAME+".bisign")
-      try:
-        shutil.move(
-          bisignlocation,
-          os.path.join(destinationpath, module_name+".pbo."+PROJECTNAME+".bisign")
-          )
-      except:
-        print("  FAILED to move {}'s signature to modfolder.".format(module_name))
+    #if self.paths["privatekey"] != "":
+     # bisignlocation = os.path.join(os.path.dirname(self.scriptpath),
+     #   ".build")
+     # bisignlocation = os.path.join(bisignlocation,
+     #   module_name+".pbo."+PROJECTNAME+".bisign")
+     # try:
+     #   shutil.move(
+     #     bisignlocation,
+     #     os.path.join(destinationpath, module_name+".pbo."+PROJECTNAME+".bisign")
+     #     )
+     # except:
+     #   print("  FAILED to move {}'s signature to modfolder.".format(module_name))
 
   def check_paths(self):
     assert self.paths["arma"] != ""
