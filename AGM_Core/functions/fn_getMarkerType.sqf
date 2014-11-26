@@ -22,7 +22,12 @@ if (_vehicle == _leader) exitWith {
 if (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "attendant") == 1) exitWith {
   ["n_med", "b_med", "o_med"] select ((["GUER", "WEST", "EAST"] find (str _side)) max 0);
 };
-if ((getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportRepair") > 0) or (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportFuel") > 0)) exitWith {
+if (
+    (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportRepair") > 0) or
+    (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportFuel") > 0) or
+    (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_canRepair") > 0) or
+    (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_fuelCapacityCargo") > 0)
+    ) exitWith {
   ["n_maint", "b_maint", "o_maint"] select ((["GUER", "WEST", "EAST"] find (str _side)) max 0);
 };
 
