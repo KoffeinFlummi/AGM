@@ -16,23 +16,20 @@ class CfgFunctions {
   class AGM_Captives {
     class AGM_Captives {
       file = "\AGM_Captives\functions";
-      class animCaptiveLeaveVehicle;
-      class animCaptiveStateIn;
-      class animCaptiveStateOut;
       class canFriskPerson;
-      class canLoadCaptiveIntoVehicle;
-      class canUnloadCaptiveFromVehicle;
+      class canLoadCaptive;
+      class canUnloadCaptive;
       class escortCaptive;
-      class loadCaptiveIntoVehicle;
+      class loadCaptive;
       class openFriskMenu;
       class setCaptive;
       class surrender;
-      class unloadCaptiveFromVehicle;
+      class unloadCaptive;
     };
   };
 };
 
-//release escorted captive if when entering a vehicle, getting killed
+//release escorted captive when entering a vehicle
 class Extended_GetIn_EventHandlers {
   class All {
     class AGM_Captives_AutoDetachCaptive {
@@ -41,10 +38,20 @@ class Extended_GetIn_EventHandlers {
   };
 };
 
+//reset captive animation after leaving vehicle
+class Extended_GetOut_EventHandlers {
+  class All {
+    class AGM_Captives_LeaveVehicle {
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {[_this select 2, 'AGM_AmovPercMstpScapWnonDnon', 2] call AGM_Core_fnc_doAnimation;}";
+    };
+  };
+};
+
+//reset captivity and escorting status when getting killed
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Captives_AutoDetachCaptive {
-      killed = "if ((_this select 2) getVariable ['AGM_isEscorting', false]) then {(_this select 2) setVariable ['AGM_isEscorting', false, true]}";
+      killed = "if ((_this select 0) getVariable ['AGM_isCaptive', false]) then {(_this select 0) setVariable ['AGM_isCaptive', false, true]}; if ((_this select 0) getVariable ['AGM_isEscorting', false]) then {(_this select 0) setVariable ['AGM_isEscorting', false, true]};";
     };
   };
 };
@@ -69,7 +76,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Captives_SetCaptive";
         distance = 4;
         condition = "'AGM_CableTie' in items _player && {alive _target} && {!(_target getVariable ['AGM_isCaptive', false])}";
-        statement = "[_target, true] call AGM_Captives_fnc_setCaptive";
+        statement = "player removeItem 'AGM_CableTie'; [_target, true] call AGM_Captives_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
         icon = "\AGM_Captives\UI\handcuff_ca.paa";
@@ -111,8 +118,8 @@ class CfgVehicles {
       class AGM_LoadCaptive {
         displayName = "$STR_AGM_Captives_LoadCaptive";
         distance = 4;
-        condition = "[_player, _target, objNull] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[_player, _target, objNull] call AGM_Captives_fnc_loadCaptiveIntoVehicle";
+        condition = "[_player, _target, objNull] call AGM_Captives_fnc_canLoadCaptive";
+        statement = "[_player, _target, objNull] call AGM_Captives_fnc_loadCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         icon = "\AGM_Captives\UI\captive_ca.paa";
@@ -158,8 +165,8 @@ class CfgVehicles {
       class AGM_LoadCaptive { \
         displayName = "$STR_AGM_Captives_LoadCaptive"; \
         distance = 4; \
-        condition = "[_player, objNull, _target] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle"; \
-        statement = "[_player, objNull, _target] call AGM_Captives_fnc_loadCaptiveIntoVehicle"; \
+        condition = "[_player, objNull, _target] call AGM_Captives_fnc_canLoadCaptive"; \
+        statement = "[_player, objNull, _target] call AGM_Captives_fnc_loadCaptive"; \
         exceptions[] = {"AGM_Interaction_isNotEscorting"}; \
         showDisabled = 0; \
         priority = 1.2; \
@@ -168,8 +175,8 @@ class CfgVehicles {
       class AGM_UnloadCaptive { \
         displayName = "$STR_AGM_Captives_UnloadCaptive"; \
         distance = 4; \
-        condition = "[_player, _target] call AGM_Captives_fnc_canUnloadCaptiveFromVehicle"; \
-        statement = "[_player, _target] call AGM_Captives_fnc_unloadCaptiveFromVehicle"; \
+        condition = "[_player, _target] call AGM_Captives_fnc_canUnloadCaptive"; \
+        statement = "[_player, _target] call AGM_Captives_fnc_unloadCaptive"; \
         showDisabled = 0; \
         priority = 1.2; \
         hotkey = "C"; \

@@ -20,4 +20,4 @@ if (isNull _vehicle) then {
 _unit getVariable ["AGM_isEscorting", false]
 && {!isNil "_target"}
 && {!isNil "_vehicle"}
-&& {[_target, _vehicle, "Cargo"] call AGM_Core_fnc_canGetInPosition}
+&& {_vehicle emptyPositions "cargo" > 0}

@@ -19,5 +19,5 @@ if (isNull _vehicle) then {
 
 if (!isNil "_target" && {!isNil "_vehicle"}) then {
   _unit setVariable ["AGM_isEscorting", false];
-  [[_target, _vehicle, "Cargo"], "AGM_Core_fnc_getInPosition", _target] call AGM_Core_fnc_execRemoteFnc;
+  [[_target, _vehicle], "{(_this select 0) moveInCargo (_this select 1)}", _target] call AGM_Core_fnc_execRemoteFnc;
 };

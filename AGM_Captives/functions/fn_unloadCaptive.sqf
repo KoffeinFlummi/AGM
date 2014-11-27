@@ -13,5 +13,6 @@ if (count _cargo > 0) then {
   _target = _cargo select 0;
 
   moveOut _target;  //global?
+  [_target, "AGM_AmovPercMstpScapWnonDnon", 2] call AGM_Core_fnc_doAnimation;
   [_target, "{unassignVehicle _this}", _target] call AGM_Core_fnc_execRemoteFnc;
 };
