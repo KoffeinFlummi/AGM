@@ -113,6 +113,7 @@
     <Key ID="STR_AGM_RealisticNames_UAV_02_CAS_Name">
       <English>YABHON-R3 (CAS)</English>
       <German>YABHON-R3 (Luftnahunterstützung)</German>
+      <Czech>YABHON-R3 (CAS)</Czech>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
