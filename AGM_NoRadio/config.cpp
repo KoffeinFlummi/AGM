@@ -204,12 +204,12 @@ class CfgVoice {
         scope = 2;
         voiceType = "";
         icon = "\a3\Ui_f\data\Map\Markers\Flags\nato_ca.paa";
-        displayName = "No Voice";
+        displayName = "$STR_AGM_NoRadio_NoVoice";
     };
 };
 class CfgVoiceTypes {
 	class AGM_NoVoice {
-		name = "No Voice";
+        name = "$STR_AGM_NoRadio_NoVoice";
 		voices[] = {"AGM_NoVoice","AGM_NoVoice","AGM_NoVoice"};
 		preview = "AGM_NoVoice";
 		alternative = "";
