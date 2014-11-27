@@ -235,7 +235,7 @@ class CfgWeapons {
   };
 };
 
-class CfgMovesBasic;
+/*class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
   class States {
     class CutSceneAnimationBase;
@@ -267,4 +267,58 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       InterpolateTo[] = {"Unconscious",0.01,"AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon",0.1};
     };
   };
+};*/
+
+class CfgMovesBasic {
+  class Actions {
+    class CivilStandActions;
+    class AGM_CivilStandCaptiveActions: CivilStandActions {
+      turnL = "";
+      turnR = "";
+      stop = "AGM_AmovPercMstpScapWnonDnon";
+      StopRelaxed = "AGM_AmovPercMstpScapWnonDnon";
+      default = "AGM_AmovPercMstpScapWnonDnon";
+      getOver = "";
+    };
+  };
 };
+
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class StandBase;
+  class States {
+    class AmovPercMstpSnonWnonDnon: StandBase {
+      ConnectTo[] += {"AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon",0.1};
+    };
+
+    class CutSceneAnimationBase;
+    class AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon: CutSceneAnimationBase {
+      actions = "AGM_CivilStandCaptiveActions";
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_EaseIn";
+      speed = 1;
+      looped = 0;
+      interpolationRestart = 2;
+      ConnectTo[] = {"AGM_AmovPercMstpScapWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01,"AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+    };
+
+    class AGM_AmovPercMstpScapWnonDnon: AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_Ease";
+      speed = 0;
+      ConnectTo[] = {"AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01};
+      looped = 1;
+    };
+
+    class AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon: AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
+      actions = "CivilStandActions";
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\amovpercmstpsnonwnondnon_easeout";
+      ConnectTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01,"AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon",0.1};
+    };
+  };
+};
+
+/*
+player playMove "AGM_AmovPercMstpScapWnonDnon";
+player switchMove "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon";
+*/
