@@ -537,6 +537,7 @@ class CfgFunctions {
       class execPersistentFnc;
       class execRemoteFnc;
       class filter;
+      class fixLoweredRifleAnimation;
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
