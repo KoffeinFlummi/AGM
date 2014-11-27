@@ -56,6 +56,12 @@ class Extended_Killed_EventHandlers {
   };
 };
 
+class Extended_PostInit_EventHandlers {
+  class AGM_Captives {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Captives\clientInit.sqf'";
+  };
+};
+
 class AGM_Core_canInteractConditions {
   class AGM_Interaction_isNotEscorting {
     condition = "!(_player getVariable ['AGM_isEscorting', false])";
