@@ -40,6 +40,8 @@ class CfgVehicles {
    *   Positions to spawn cookoff particle effects at
    * AGM_Armour_CookOffOnTurret:
    *   Positions placed on turret?
+   *
+   * These 2 will be introduced in v0.96:
    * AGM_Armour_TurretObject:
    *   Object to spawn to simulate turret flying off; "" to not spawn enything
    * AGM_Armour_TurretPosition:
@@ -97,19 +99,21 @@ class CfgVehicles {
   class B_MBT_01_base_F;
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
     AGM_Armour_AmmoLocation = "HitHull";
-    AGM_Armour_TurretObject = "AGM_Turret_MBT_01";
-    AGM_Armour_TurretPosition[] = {3,3,0};
+    //AGM_Armour_TurretObject = "AGM_Turret_MBT_01";
+    //AGM_Armour_TurretPosition[] = {3,3,0};
     AGM_Armour_CookOffLocations[] = {{0,-0.3,1.65}};
     AGM_Armour_CookOffOnTurret[]  = {1};
   };
 
+  /*
   class O_MBT_02_base_F;
   class O_MBT_02_cannon_F: O_MBT_02_base_F {
     AGM_Armour_TurretObject = "AGM_Turret_MBT_02";
     AGM_Armour_TurretPosition[] = {0.9,3,1.5};
-  };
+  };*/
 
   // Turret Objects
+  /*
   class thingX;
   class AGM_Turret_MBT_01: thingX {
     scope = 1;
@@ -119,12 +123,13 @@ class CfgVehicles {
     scope = 1;
     model = "\A3\Structures_F\Wrecks\Wreck_T72_turret_F.p3d";
   };
+  */
 
   // Compatibility
   // @todo: move to AGM_Comp once inheritance for BWMod is sorted out
   class BWA3_Leopard2A6M_Fleck: B_MBT_01_cannon_F {
     AGM_Armour_AmmoLocation = "HitTurret";
-    AGM_Armour_TurretObject = "";
+    //AGM_Armour_TurretObject = "";
     AGM_Armour_CookOffLocations[] = {{-0.6,2.2,1.65}, {0.5,2.2,1.65}};
   };
 };

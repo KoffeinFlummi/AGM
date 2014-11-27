@@ -72,6 +72,7 @@ _this spawn {
   (_this select 0) setVariable ["AGM_Armour_isCookingOff", False];
   if (local _vehicle and damage _vehicle < 1) then {
     _vehicle setDamage 1;
+    /* @todo: this is for v0.96
     _turretClass = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_TurretObject");
     if (_turretClass != "") then {
       _turretPos = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_TurretPosition");
@@ -84,6 +85,6 @@ _this spawn {
       // @todo
       //_turret setVectorUp [random 1, random 1, 1];
       //_turret setVelocity [random 7, random 7, 8 + random 5];
-    };
+    };*/
   };
 };
