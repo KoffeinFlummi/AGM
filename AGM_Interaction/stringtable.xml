@@ -390,6 +390,9 @@
       <Portuguese>Abaixe-se!</Portuguese>
       <Italian>A Terra!</Italian>
     </Key>
+    <Key ID="STR_AGM_Interaction_Disarm">
+      <English>Disarm</English>
+    </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
       <German>Team Management &gt;&gt;</German>

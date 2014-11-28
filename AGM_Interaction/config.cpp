@@ -24,6 +24,7 @@ class CfgFunctions {
       class canInteractWith;
       class canLockDoor;
       class canTapShoulder;
+      class disarm;
       class getActions2;
       class GetActions;
       class getDoor;
@@ -302,6 +303,15 @@ class CfgVehicles {
         statement = "[_target, '{_this addRating -rating _this}', _target] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 0;
         priority = 2.5;
+      };
+
+      class AGM_Disarm {
+        displayName = "$STR_AGM_Interaction_Disarm";
+        distance = 4;
+        condition = "_target getVariable ['AGM_isUnconscious' false] || _target getVariable ['AGM_isCaptive' false]";
+        statement = "[[_target, _player], AGM_Interacion_fnc_disarm, _target] call AGM_Core_fnc_execRemoteFnc";
+        showDisabled = 0;
+        priority = 1.5;
       };
     };
 
