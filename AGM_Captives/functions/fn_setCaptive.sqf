@@ -1,5 +1,15 @@
-// by commy2, Nic547
-// Makes a civilian unable to move
+/*
+ * Author: Nic547, commy2
+ *
+ * Makes a civilian unable to move.
+ * 
+ * Argument:
+ * 0: Unit (Object)
+ * 1: True to take captive, false to release captive (Object)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_state"];
 

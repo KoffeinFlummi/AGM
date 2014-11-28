@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Select the next throwing mode and display message.
+ * 
+ * Argument:
+ * Nothing
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_mode", "_hint"];
 

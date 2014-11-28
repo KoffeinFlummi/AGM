@@ -1,4 +1,18 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Count the ammo of the currently loaded magazine or count rifle grenades. Play animation and display message.
+ * 
+ * Argument:
+ * 0: The player (Object)
+ * 1: The weapon to check (String)
+ * 2: The muzzle to check (String)
+ * 3: Currently loaded magazine (String)
+ * 4: Skip the animation? Used after reloading (Bool)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 #define COUNT_BARS 12
 

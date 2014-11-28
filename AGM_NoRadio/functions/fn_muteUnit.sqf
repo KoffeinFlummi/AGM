@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Mutes the unit. It won't trigger auto generated chat messages either.
+ * 
+ * Argument:
+ * 0: Unit (Object)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_speaker", "_id"];
 

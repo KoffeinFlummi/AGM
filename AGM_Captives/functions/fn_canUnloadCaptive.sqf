@@ -1,4 +1,15 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if the unit can unload a captive from the vehicle.
+ * 
+ * Argument:
+ * 0: Unit that wants to unload a captive (Object)
+ * 1: Vehicle to unload a captive from. (Object)
+ * 
+ * Return value:
+ * Boolean (Bool)
+ */
 
 private ["_unit", "_vehicle", "_cargo"];
 

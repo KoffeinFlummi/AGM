@@ -2,7 +2,6 @@
 // (C) 2013 Ryan Schultz. See LICENSE.
 // Edited prefixes for compatability in AGM_Realism by KoffeinFlummi
 // Edited by commy2
-// Note: Not zeus ready!
 
 private ["_unit", "_weapon", "_projectile"];
 

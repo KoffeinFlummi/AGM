@@ -1,4 +1,16 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if the unit can load the target object into a vehicle.
+ * 
+ * Argument:
+ * 0: Unit that wants to load a captive (Object)
+ * 1: A captive. ObjNull for the first escorted captive (Object)
+ * 2: Vehicle to load the captive into. ObjNull for the nearest vehicle (Object)
+ * 
+ * Return value:
+ * Boolean (Bool)
+ */
 
 private ["_unit", "_target", "_vehicle", "_objects"];
 
