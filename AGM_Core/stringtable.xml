@@ -436,6 +436,7 @@
     <Key ID="STR_AGM_Core_Unknown">
       <English>Unknown</English>
       <German>Unbekannt</German>
+      <Polish>Nieznany</Polish>
       <Czech>Neznámý</Czech>
     </Key>
   </Package>
