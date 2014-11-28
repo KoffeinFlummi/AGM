@@ -42,7 +42,7 @@ class AGM_Core_Default_Keys {
   class showNames {
     displayName = "$STR_AGM_NameTags_ShowNames";
     condition = "true";
-    statement = "AGM_NameTags_ShowNamesTime = time";
+    statement = "AGM_NameTags_ShowNamesTime = time; if (call AGM_CrewInfo_fnc_canShow) then {call AGM_CrewInfo_fnc_doShow;};";
     key = 29;
     shift = 0;
     control = 0;
