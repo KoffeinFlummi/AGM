@@ -81,5 +81,12 @@ _roleImages = ROLE_IMAGES;
 } forEach _toShow;
 
 
-cutRsc ["AGM_CrewInfo_dialog", "PLAIN", 1, false];
+("AGM_CrewInfo_CrewInfo" call BIS_fnc_rscLayer) cutRsc ["AGM_CrewInfo_dialog", "PLAIN", 1, false];
+
+terminate (missionNamespace getVariable ["AGM_CrewInfo_hideCrewInfoHandle", scriptNull]);
+AGM_CrewInfo_hideCrewInfoHandle = 0 spawn {
+    sleep 2;
+    ("AGM_CrewInfo_CrewInfo" call BIS_fnc_rscLayer) cutFadeOut 2;
+};
+
 [_text] call AGM_CrewInfo_fnc_setText;

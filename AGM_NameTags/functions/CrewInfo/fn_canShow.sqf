@@ -18,8 +18,7 @@ _player = AGM_player;
 
 // AGM_CrewInfo_Visibility -1 force NO, 0 doesnt care, 1 force YES
 
-AGM_CrewInfo_timeToHide > time &&
-{vehicle _player != _player} &&
+vehicle _player != _player &&
 {
 	(AGM_CrewInfo_Visibility==1) ||
 	(AGM_CrewInfo_Visibility!=-1 && profileNamespace getVariable ["AGM_CrewInfo_ShowVehicleCrewInfo", false])

@@ -3,18 +3,14 @@
 #define CT_STRUCTURED_TEXT 13 
 #define ST_LEFT 0
 
-class RscTitles 
-{
-
+class RscTitles {
 	titles[]={"AGM_CrewInfo_dialog"};
-	class AGM_CrewInfo_dialog
-	{
-
+	class AGM_CrewInfo_dialog {
 		idd = -1;
 		movingEnable = 1;
 		duration = 1; 
 		fadein = 0;
-		fadeout = 1;		
+		fadeout = 999999;		
 		name = "AGM_CrewInfo_dialog";
 		controlsBackground[] = {"AGM_CrewInfo_text"};
 		onLoad = "uiNamespace setVariable ['AGM_CrewInfo_dialog', _this select 0]";
@@ -41,7 +37,5 @@ class RscTitles
 				align = right;
 			};
 		};
-
 	};
-	
 };
