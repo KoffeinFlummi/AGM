@@ -9,4 +9,4 @@ if (_unit != _killer && side group _unit in [side group AGM_player, civilian] &&
   systemChat format ["%1 was killed by %2", name _unit, name _killer];
 };
 
-[_unit, "FriendlyFire", [_unit, _killer]] call AGM_Core_fnc_callCustomEventHandlers;
+[_unit, "friendlyFire", [_unit, _killer]] call AGM_Core_fnc_callCustomEventHandlers;

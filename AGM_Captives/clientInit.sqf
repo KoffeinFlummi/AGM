@@ -1,6 +1,6 @@
 // by commy2
 
-[missionNamespace, "AGM_Core_playerChanged", {
+[missionNamespace, "playerChanged", {
 	_unit = _this select 0;
 
 	if (_unit getVariable ["AGM_isCaptive", false]) then {
