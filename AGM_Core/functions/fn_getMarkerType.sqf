@@ -18,7 +18,8 @@ _side = side _leader;
 if (_vehicle == _leader) exitWith {
   if (
       (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "detectSkill") > 20) or
-      (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "camouflage") < 1)
+      (getNumber (configFile >> "CfgVehicles" >> (typeOf _leader) >> "camouflage") < 1) or
+      (getText (configFile >> "CfgVehicles" >> (typeOf _leader) >> "textsingular") == "diver")
       ) then {
     ["n_recon", "b_recon", "o_recon"] select ((["GUER", "WEST", "EAST"] find (str _side)) max 0)
   } else {
@@ -32,6 +33,7 @@ if (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "attendant") 
 if (
     (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportRepair") > 0) or
     (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportFuel") > 0) or
+    (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "transportAmmo") > 0) or
     (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_canRepair") > 0) or
     (getNumber (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "AGM_fuelCapacityCargo") > 0)
     ) exitWith {
