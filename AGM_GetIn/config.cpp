@@ -129,7 +129,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {
       class AGM_MoveTo {
-        displayName = "$STR_AGM_GetInVehicle";
+        displayName = "$STR_AGM_MoveTo";
         distance = 4;
         condition = "";
         statement = "";
@@ -137,7 +137,7 @@ class CfgVehicles {
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
         subMenu[] = {"AGM_MoveTo", 1};
-        hotkey = "G";
+        hotkey = "N";
         enableInside = 1;
 
         class AGM_MoveToDriver {
@@ -273,7 +273,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {
       class AGM_MoveTo {
-        displayName = "$STR_AGM_GetInVehicle";
+        displayName = "$STR_AGM_MoveTo";
         distance = 4;
         condition = "";
         statement = "";
@@ -281,7 +281,7 @@ class CfgVehicles {
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
         subMenu[] = {"AGM_MoveTo", 1};
-        hotkey = "G";
+        hotkey = "N";
         enableInside = 1;
 
         class AGM_MoveToDriver {
@@ -396,7 +396,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {
       class AGM_MoveTo {
-        displayName = "$STR_AGM_GetInVehicle";
+        displayName = "$STR_AGM_MoveTo";
         distance = 4;
         condition = "";
         statement = "";
@@ -404,7 +404,7 @@ class CfgVehicles {
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
         subMenu[] = {"AGM_MoveTo", 1};
-        hotkey = "G";
+        hotkey = "N";
         enableInside = 1;
 
         class AGM_MoveToPilot {
@@ -508,7 +508,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {
       class AGM_MoveTo {
-        displayName = "$STR_AGM_GetInVehicle";
+        displayName = "$STR_AGM_MoveTo";
         distance = 4;
         condition = "";
         statement = "";
@@ -516,7 +516,7 @@ class CfgVehicles {
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
         subMenu[] = {"AGM_MoveTo", 1};
-        hotkey = "G";
+        hotkey = "N";
         enableInside = 1;
 
         class AGM_MoveToPilot {
@@ -622,7 +622,7 @@ class CfgVehicles {
     };
     class AGM_SelfActions {
       class AGM_MoveTo {
-        displayName = "$STR_AGM_GetInVehicle";
+        displayName = "$STR_AGM_MoveTo";
         distance = 4;
         condition = "";
         statement = "";
@@ -630,7 +630,7 @@ class CfgVehicles {
         priority = 1.9;
         icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
         subMenu[] = {"AGM_MoveTo", 1};
-        hotkey = "G";
+        hotkey = "N";
         enableInside = 1;
 
         class AGM_MoveToDriver {
@@ -676,6 +676,37 @@ class CfgVehicles {
           showDisabled = 1;
           priority = -99;
           icon = "AGM_Core\UI\blank_CO.paa";
+          enableInside = 1;
+        };
+      };
+    };
+  };
+
+  class Helicopter_Base_F: Helicopter {};
+  class Helicopter_Base_H: Helicopter_Base_F {};
+  class Heli_Transport_01_base_F: Helicopter_Base_H {
+    class AGM_Actions: AGM_Actions {
+      class AGM_GetIn: AGM_GetIn {
+        class AGM_GetInDoorgunner {
+          displayName = "$STR_AGM_GetInVehicleAsDoorGunnerRight";
+          distance = 4;
+          condition = "[_player, _target, 'Turret', true] call AGM_Core_fnc_canGetInPosition";
+          statement = "[_player, _target, 'Turret'] call AGM_Core_fnc_getInPosition";
+          showDisabled = 0;
+          priority = -1.90;
+          icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
+        };
+      };
+    };
+    class AGM_SelfActions: AGM_SelfActions {
+      class AGM_MoveTo: AGM_MoveTo {
+        class AGM_MoveToDoorgunner {
+          displayName = "$STR_AGM_MoveToDoorGunnerRight";
+          condition = "[_player, _vehicle, 'Turret', true] call AGM_Core_fnc_canGetInPosition";
+          statement = "[_player, _vehicle, 'Turret'] call AGM_Core_fnc_getInPosition";
+          showDisabled = 0;
+          priority = -1.90;
+          icon = "\A3\ui_f\data\igui\cfg\actions\getingunner_ca.paa";
           enableInside = 1;
         };
       };
