@@ -991,11 +991,13 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    #include <mfd_wildcat.hpp>
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        showHMD = 1;
         gunBeg = "commanderview";
         gunEnd = "laserstart";
         memoryPointGun = "laserstart";
@@ -1010,7 +1012,7 @@ class CfgVehicles {
 
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
+      //class MainTurret: MainTurret {};
 
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
