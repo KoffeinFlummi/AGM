@@ -942,9 +942,11 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    #include <mfd_merlin.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
 
       class CargoTurret_01: CargoTurret {};
