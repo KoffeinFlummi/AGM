@@ -852,7 +852,7 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_comanche.hpp>
+    class MFD {};
     class AnimationSources: AnimationSources {
       class HitGlass1 {
         source = "Hit";
@@ -890,6 +890,10 @@ class CfgVehicles {
         magazines[] = {"AGM_500Rnd_20mm_shells_Comanche","4Rnd_AAA_missiles","24Rnd_PG_missiles"};
       };
     };
+  };
+
+  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    #include <mfd_comanche.hpp>
   };
 
   class Heli_Attack_02_base_F: Helicopter_Base_F {
@@ -943,7 +947,7 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_merlin.hpp>
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -988,11 +992,15 @@ class CfgVehicles {
     };*/
   };
 
+  class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
+    #include <mfd_merlin.hpp>
+  };
+
   class I_Heli_light_03_base_F: Helicopter_Base_F {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_wildcat.hpp>
+    class MFD {};
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
@@ -1012,10 +1020,18 @@ class CfgVehicles {
   };
 
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
+    #include <mfd_wildcat.hpp>
     class Turrets: Turrets {
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
     };
+  };
+
+  class I_Heli_light_03_unarmed_base_F: I_Heli_light_03_base_F {
+    class MFD {};
+  };
+  class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+    //#include <mfd_wildcat_unarmed.hpp>  @todo
   };
 
   class Plane_CAS_01_base_F: Plane_Base_F {
