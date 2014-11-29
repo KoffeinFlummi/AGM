@@ -799,17 +799,17 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    #include <mfd_littlebird.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
     };
   };
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
     class Turrets: Turrets {
-      //class CopilotTurret: CopilotTurret {};
-
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
       class CargoTurret_03: CargoTurret_02 {};
@@ -821,7 +821,7 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird.hpp>
+    #include <mfd_littlebird_armed.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -837,6 +837,7 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
     };
   };
@@ -1012,8 +1013,6 @@ class CfgVehicles {
 
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     class Turrets: Turrets {
-      //class MainTurret: MainTurret {};
-
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
     };
@@ -1070,7 +1069,6 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      //class MainTurret: MainTurret {};
       class RightDoorGun: MainTurret {};
 
       class CargoTurret_01: CargoTurret {};
