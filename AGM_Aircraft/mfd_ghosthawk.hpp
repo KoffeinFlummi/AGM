@@ -1003,7 +1003,12 @@ class MFD {
       class HorizonBankRot {
         type = "line";
         width = 3;
-        points[] = {{"HorizonBankRot",{0,0.25},1},{"HorizonBankRot",{-0.01,0.23},1},{"HorizonBankRot",{0.01,0.23},1},{"HorizonBankRot",{0,0.25},1}};
+        points[] = {
+          {"HorizonBankRot",{0,0.25},1},
+          {"HorizonBankRot",{-0.01,0.23},1},
+          {"HorizonBankRot",{0.01,0.23},1},
+          {"HorizonBankRot",{0,0.25},1}
+        };
       };
 
       class Centerline {
