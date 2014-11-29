@@ -1,3 +1,5 @@
+//#include <mfd_comanche.hpp>
+
 class CfgPatches {
   class AGM_Aircraft {
     units[] = {};
@@ -757,14 +759,11 @@ class CfgWeapons {
 
 class CfgVehicles {
   class All {
-    class Turrets {};
+    class Turrets;
   };
 
   class AllVehicles: All {
-    class NewTurret {
-      class Turrets {};
-    };
-    class CargoTurret: NewTurret {};
+    class CargoTurret;
   };
 
   class Air: AllVehicles {
@@ -773,30 +772,27 @@ class CfgVehicles {
 
   class Helicopter: Air {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
-    class AnimationSources: AnimationSources {};
   };
 
   class Plane: Air {};
 
   class ParachuteBase: Helicopter {
-    class Turrets {};
+    class Turrets;
   };
 
   class UAV: Plane {};
 
   class Helicopter_Base_F: Helicopter {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-      class CopilotTurret {};
+      class CopilotTurret;
     };
   };
 
   class Helicopter_Base_H: Helicopter_Base_F {
     class Turrets: Turrets {
-      class CopilotTurret: MainTurret {};
-      class MainTurret: MainTurret {};
+      class CopilotTurret;
     };
     //class UserActions;
   };
@@ -814,7 +810,7 @@ class CfgVehicles {
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
     class Turrets: Turrets {
-      class CopilotTurret: CopilotTurret {};
+      //class CopilotTurret: CopilotTurret {};
 
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
@@ -849,7 +845,7 @@ class CfgVehicles {
 
   class Plane_Base_F: Plane {
     class Turrets {
-      class CopilotTurret: NewTurret {};
+      class CopilotTurret;
     };
   };
 
@@ -857,7 +853,7 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    // #include <mfd_comanche.hpp>
+    #include <mfd_comanche.hpp>
     class AnimationSources: AnimationSources {
       class HitGlass1 {
         source = "Hit";
@@ -890,6 +886,7 @@ class CfgVehicles {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        showHMD = 1;
         weapons[] = {"AGM_gatling_20mm_Comanche","missiles_DAGR","missiles_ASRAAM"};
         magazines[] = {"AGM_500Rnd_20mm_shells_Comanche","4Rnd_AAA_missiles","24Rnd_PG_missiles"};
       };
@@ -1107,23 +1104,23 @@ class CfgVehicles {
   };
 
   class UAV_01_base_F: Helicopter_Base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
+    };*/
   };
 
   class UAV_02_base_F: UAV {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
     weapons[] = {};
     magazines[] = {};
   };
 
   class UAV_02_CAS_base_F: UAV_02_base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
+    };*/
     weapons[] = {};
     magazines[] = {};
   };
@@ -1136,7 +1133,7 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {};
+      //class MainTurret: MainTurret {};
       class RightDoorGun: MainTurret {};
 
       class CargoTurret_01: CargoTurret {};
@@ -1149,11 +1146,11 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {};
-      class RightDoorGun: MainTurret {};
+      //class MainTurret: MainTurret {};
+      //class RightDoorGun: MainTurret {};
 
-      class CargoTurret_01: CargoTurret {};
-      class CargoTurret_02: CargoTurret_01 {};
+      //class CargoTurret_01: CargoTurret {};
+      //class CargoTurret_02: CargoTurret_01 {};
     };
   };
 
