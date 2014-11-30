@@ -584,6 +584,7 @@ class CfgFunctions {
       class player;
       class playerSide;
       class progressBar;
+      class queueAnimation;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
