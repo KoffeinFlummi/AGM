@@ -36,14 +36,14 @@ class MFD {
         pos10[] = {0.85,0.85};
       };
 
-      class VelocityVector {
+      class Velocity {
         type = "vector";
         source = "velocity";
         pos0[] = {0.5,0.5};
         pos10[] = {0.65,0.65};
       };
 
-      class VerticalSpeedBone {
+      class VspeedBone {
         type = "linear";
         source = "vspeed";
         sourceScale = 1;
@@ -74,7 +74,7 @@ class MFD {
         aspectRatio = 1;
       };
 
-      class ForwardVector {
+      class ForwardVec {
         type = "vector";
         source = "forward";
         pos0[] = {0,0};
@@ -532,7 +532,7 @@ class MFD {
             down[] = {"LevelP20",{0.22,0.085},1};
           };
 
-          /*class LevelM25: Level0 {
+        /*class LevelM25: Level0 {
             type = "line";
             width = 3;
             points[] = {

@@ -1031,7 +1031,7 @@ class CfgVehicles {
     class MFD {};
   };
   class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
-    //#include <mfd_wildcat_unarmed.hpp>  @todo
+    #include <mfd_wildcat_unarmed.hpp>
   };
 
   class Plane_CAS_01_base_F: Plane_Base_F {
