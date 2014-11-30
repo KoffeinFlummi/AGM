@@ -145,7 +145,7 @@ class CfgVehicles {
 
   class Ship: AllVehicles {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
   };
 
@@ -445,17 +445,17 @@ class CfgVehicles {
 
   class Boat_Armed_01_base_F: Boat_F {
     class Turrets: Turrets {
-      class FrontTurret: NewTurret {};
+      class FrontTurret;
       class RearTurret: FrontTurret {};
     };
   };
 
-  class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
+  /*class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
     class Turrets: Turrets {
       class FrontTurret: FrontTurret {};
       class RearTurret: RearTurret {};
     };
-  };
+  };*/
 
   class Truck_F: Car_F {
     class Turrets: Turrets {};

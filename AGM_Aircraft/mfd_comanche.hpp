@@ -17,7 +17,7 @@ class MFD {
     color[] = {0.15,1,0.15,1};
     enableParallax = 0;
     class Bones {
-      class HUDCenter {
+      class PlaneOrientation {
         type = "fixed";
         pos[] = {0.5,0.54};
       };
