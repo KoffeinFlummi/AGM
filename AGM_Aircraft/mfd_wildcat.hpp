@@ -22,8 +22,18 @@ class MFD {
         pos[] = {0.5,0.5};
       };
 
-      class Target: Pos10Vector {
+      class GunnerAim {
+        type = "vector";
+        source = "weapon";
+        pos0[] = {0,0};
+        pos10[] = {0.011,0.0027};
+      };
+
+      class Target {
+        type = "vector";
         source = "target";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.85,0.85};
       };
 
       class Velocity {
@@ -68,14 +78,14 @@ class MFD {
         type = "vector";
         source = "forward";
         pos0[] = {0,0};
-        pos10[] = {0.1,0.1};
+        pos10[] = {0.2193,0.2193};
       };
 
       class WeaponAim {
         type = "vector";
         source = "weapon";
         pos0[] = {0.5,0.5};
-        pos10[] = {0.65,0.65};
+        pos10[] = {0.75,0.75};
       };
 
       class Level0 {
@@ -134,9 +144,8 @@ class MFD {
         type = "line";
         width = 3;
         points[] = {
-          ////////////////////////////////////////////////////// LEFT
-          {{0.4782,0.2510},1},
-          {{0.4773,0.2410},1},{}, 
+          {{0.4782,0.251},1},
+          {{0.4773,0.241},1},{},
           {{0.4566,0.2538},1},
           {{0.4549,0.2439},1},{},
           {{0.4353,0.2585},1},
@@ -145,15 +154,14 @@ class MFD {
           {{0.4111,0.2557},1},{},
           {{0.3943,0.2734},1},
           {{0.3901,0.2644},1},{},
-          {{0.3750,0.2835},1},
-          {{0.3650,0.2662},1},{},
+          {{0.375,0.2835},1},
+          {{0.365,0.2662},1},{},
           {{0.3232,0.3232},1},
           {{0.3091,0.3091},1},{},
-          {{0.2835,0.3750},1},
-          {{0.2662,0.3650},1},{},
-          /////////////////////////////////////////////////////// RIGHT
-          {{"0.5 + (0.5- 0.4782)",0.2510},1},
-          {{"0.5 + (0.5- 0.4773)",0.2410},1},{},
+          {{0.2835,0.375},1},
+          {{0.2662,0.365},1},{},
+          {{"0.5 + (0.5- 0.4782)",0.251},1},
+          {{"0.5 + (0.5- 0.4773)",0.241},1},{},
           {{"0.5 + (0.5- 0.4566)",0.2538},1},
           {{"0.5 + (0.5- 0.4549)",0.2439},1},{},
           {{"0.5 + (0.5- 0.4353)",0.2585},1},
@@ -166,9 +174,8 @@ class MFD {
           {{"0.5 + (0.5- 0.3650)",0.2662},1},{},
           {{"0.5 + (0.5- 0.3232)",0.3232},1},
           {{"0.5 + (0.5- 0.3091)",0.3091},1},{},
-          {{"0.5 + (0.5- 0.2835)",0.3750},1},
-          {{"0.5 + (0.5- 0.2662)",0.3650},1},{},
-          /////////////////////////////////////////////////////// CENTER
+          {{"0.5 + (0.5- 0.2835)",0.375},1},
+          {{"0.5 + (0.5- 0.2662)",0.365},1},{},
           {{0.5,"0.5 - 0.25"},1},
           {{0.5,"0.5 - 0.28"},1}
         };
@@ -177,37 +184,104 @@ class MFD {
       class HorizonBankRot {
         type = "line";
         width = 3;
-        points[] = {
-          {"HorizonBankRot",{0,0.25},1},
-          {"HorizonBankRot",{-0.01,0.23},1},
-          {"HorizonBankRot",{0.01,0.23},1},
-          {"HorizonBankRot",{0,0.25},1}
-        };
+        points[] = {{"HorizonBankRot",{0,0.25},1},{"HorizonBankRot",{-0.01,0.23},1},{"HorizonBankRot",{0.01,0.23},1},{"HorizonBankRot",{0,0.25},1}};
+      };
+
+      class Static {
+        clipTL[] = {0,1};
+        clipBR[] = {1,0};
+        type = "line";
+        width = 5;
+        points[] = {{{"0.5-0.1","0.9-0.04"},1},{{"0.5-0.1","0.9+0.04"},1},{{"0.5+0.1","0.9+0.04"},1},{{"0.5+0.1","0.9-0.04"},1},{{"0.5-0.1","0.9-0.04"},1},{},{{"0.5-0.1",0.9},1},{{"0.5-0.092",0.9},1},{},{{"0.5+0.1",0.9},1},{{"0.5+0.092",0.9},1},{},{{0.5,"0.9-0.04"},1},{{0.5,"0.9-0.032"},1},{},{{0.5,"0.9+0.04"},1},{{0.5,"0.9+0.032"},1},{}};
       };
 
       class Centerline {
         type = "line";
         width = 7;
-        points[] = {
-          {{0.45,0.5},1},
-          {{0.48,0.5},1},
-          {{0.49,0.525},1},
-          {{0.5,0.5},1},
-          {{0.51,0.525},1},
-          {{0.52,0.5},1},
-          {{0.55,0.5},1}
+        points[] = {{{0.5,0.49},1},{{0.5,0.47},1},{},{{0.5,0.51},1},{{0.5,0.53},1},{},{{0.49,0.5},1},{{0.47,0.5},1},{},{{0.51,0.5},1},{{0.53,0.5},1},{}};
+      };
+
+      class GunCross_CIRCLE {
+        type = "group";
+        class CCIP_circle {
+          type = "line";
+          width = 4;
+          points[] = {
+            {"ForwardVec",1,"PlaneOrientation",1,{"-1.2000 * 0.04","-0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-1.0000 * 0.04","-0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.9877 * 0.04","-0.1736 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.9397 * 0.04","-0.3420 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.8660 * 0.04","-0.5000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.7660 * 0.04","-0.6428 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.6428 * 0.04","-0.7660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.5000 * 0.04","-0.8660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.3420 * 0.04","-0.9397 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.1736 * 0.04","-0.9877 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","-1.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.1736 * 0.04","-0.9877 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.3420 * 0.04","-0.9397 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.5000 * 0.04","-0.8660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.6428 * 0.04","-0.7660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.7660 * 0.04","-0.6428 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.8660 * 0.04","-0.5000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.9397 * 0.04","-0.3420 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.9877 * 0.04","-0.1736 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"1.0000 * 0.04","-0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"1.2000 * 0.04","-0.0000 * 0.04"},1},{},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-1.2000 * 0.04","0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-1.0000 * 0.04","0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.9877 * 0.04","0.1736 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.9397 * 0.04","0.3420 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.8660 * 0.04","0.5000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.7660 * 0.04","0.6428 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.6428 * 0.04","0.7660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.5000 * 0.04","0.8660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.3420 * 0.04","0.9397 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.1736 * 0.04","0.9877 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","1.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.1736 * 0.04","0.9877 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.3420 * 0.04","0.9397 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.5000 * 0.04","0.8660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.6428 * 0.04","0.7660 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.7660 * 0.04","0.6428 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.8660 * 0.04","0.5000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.9397 * 0.04","0.3420 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"0.9877 * 0.04","0.1736 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"1.0000 * 0.04","0.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"1.2000 * 0.04","0.0000 * 0.04"},1},{},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","-1.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","-1.2000 * 0.04"},1},{},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","1.0000 * 0.04"},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{"-0.0000 * 0.04","1.2000 * 0.04"},1},{},
+            {"ForwardVec",1,"PlaneOrientation",1,{0.005,0},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{-0.005,0},1},{},
+            {"ForwardVec",1,"PlaneOrientation",1,{0,0.005},1},
+            {"ForwardVec",1,"PlaneOrientation",1,{0,-0.005},1}
+          };
         };
       };
 
-    /*class WeaponName {
+      class Gunner {
+        type = "line";
+        width = 6;
+        points[] = {
+          {"GunnerAim",{"0.5-0.015","0.9-0.008"},1},
+          {"GunnerAim",{"0.5-0.015","0.9+0.008"},1},
+          {"GunnerAim",{"0.5+0.015","0.9+0.008"},1},
+          {"GunnerAim",{"0.5+0.015","0.9-0.008"},1},
+          {"GunnerAim",{"0.5-0.015","0.9-0.008"},1}
+        };
+      };
+
+      class WeaponName {
         type = "text";
         source = "weapon";
         sourceScale = 1;
         align = "right";
         scale = 1;
-        pos[] = {{0.03,0.86},1};
-        right[] = {{0.07,0.86},1};
-        down[] = {{0.03,0.90},1};
+        pos[] = {{0.61,0.86},1};
+        right[] = {{0.65,0.86},1};
+        down[] = {{0.61,0.9},1};
       };
 
       class AmmoCount {
@@ -216,10 +290,10 @@ class MFD {
         sourceScale = 1;
         align = "right";
         scale = 1;
-        pos[] = {{0.03,0.89},1};
-        right[] = {{0.07,0.89},1};
-        down[] = {{0.03,0.93},1};
-      };*/
+        pos[] = {{0.61,0.89},1};
+        right[] = {{0.65,0.89},1};
+        down[] = {{0.61,0.93},1};
+      };
 
       class LightsGroup {
         type = "group";
@@ -251,6 +325,54 @@ class MFD {
         };
       };
 
+      class ATMissileTOFGroup {
+        condition = "ATmissile";
+        type = "group";
+        class TOFtext {
+          type = "text";
+          align = "right";
+          source = "static";
+          text = "TOF=";
+          scale = 1;
+          pos[] = {{0.61,0.92},1};
+          right[] = {{0.65,0.92},1};
+          down[] = {{0.61,0.96},1};
+        };
+
+        class TOFnumber {
+          type = "text";
+          source = "targetDist";
+          sourcescale = 0.0025;
+          align = "right";
+          scale = 1;
+          pos[] = {{0.69,0.92},1};
+          right[] = {{0.73,0.92},1};
+          down[] = {{0.69,0.96},1};
+        };
+      };
+
+      class RangeNumber {
+        type = "text";
+        source = "targetDist";
+        sourceScale = 1;
+        align = "left";
+        scale = 1;
+        pos[] = {{0.39,0.89},1};
+        right[] = {{0.43,0.89},1};
+        down[] = {{0.39,0.93},1};
+      };
+
+      class RangeText {
+        type = "text";
+        source = "static";
+        text = "RNG";
+        align = "left";
+        scale = 1;
+        pos[] = {{0.39,0.86},1};
+        right[] = {{0.43,0.86},1};
+        down[] = {{0.39,0.9},1};
+      };
+
       class SpeedNumber {
         type = "text";
         align = "right";
@@ -267,7 +389,7 @@ class MFD {
         align = "left";
         scale = 1;
         source = "rtdRotorTorque";
-        sourceScale = 110;
+        sourceScale = 363;
         pos[] = {{0.065,0.175},1};
         right[] = {{0.115,0.175},1};
         down[] = {{0.065,0.225},1};
@@ -405,7 +527,10 @@ class MFD {
       class HeadingArrow {
         type = "line";
         width = 7;
-        points[] = {{{"0.5","0.128 + 0.03"},1},{{0.5,0.128},1}};
+        points[] = {
+          {{"0.5","0.128 + 0.03"},1},
+          {{0.5,0.128},1}
+        };
       };
 
       class HeadingScale {
@@ -427,9 +552,9 @@ class MFD {
         stepSize = "0.05";
         align = "center";
         scale = 1;
-        pos[] = {0.12,"0.0 + 0.065"};
-        right[] = {0.16,"0.0 + 0.065"};
-        down[] = {0.12,"0.04 + 0.065"};
+        pos[] = {0.119,"0.0 + 0.065"};
+        right[] = {0.159,"0.0 + 0.065"};
+        down[] = {0.119,"0.04 + 0.065"};
       };
 
       class Fuel_Text {
@@ -438,9 +563,9 @@ class MFD {
         text = "Fuel";
         align = "right";
         scale = 1;
-        pos[] = {{0.85,0.86},1};
-        right[] = {{0.89,0.86},1};
-        down[] = {{0.85,0.9},1};
+        pos[] = {{0.03,0.9},1};
+        right[] = {{0.07,0.9},1};
+        down[] = {{0.03,0.94},1};
       };
 
       class Fuel_Number {
@@ -449,9 +574,9 @@ class MFD {
         sourceScale = 100;
         align = "right";
         scale = 1;
-        pos[] = {{0.92,0.86},1};
-        right[] = {{0.96,0.86},1};
-        down[] = {{0.92,0.9},1};
+        pos[] = {{0.1,0.9},1};
+        right[] = {{0.14,0.9},1};
+        down[] = {{0.1,0.94},1};
       };
     };
 
@@ -553,6 +678,100 @@ class MFD {
           {"ForwardVec1",1,"Velocity",1,{-0.02,0},1},{},
           {"ForwardVec1",1,"Velocity",1,{0,-0.04},1},
           {"ForwardVec1",1,"Velocity",1,{0,-0.02},1}
+        };
+      };
+
+      class TargetACQ {
+        type = "line";
+        width = 2;
+        points[] = {
+          //////////////////////////////////////////////// UP
+          /*{"ForwardVec1",1,"target",{0,-0.1},1},
+          {"ForwardVec1",1,"target",{0,-0.095},1},{},
+          {"ForwardVec1",1,"target",{0,-0.09},1},
+          {"ForwardVec1",1,"target",{0,-0.085},1},{},
+          {"ForwardVec1",1,"target",{0,-0.08},1},
+          {"ForwardVec1",1,"target",{0,-0.075},1},{},
+          {"ForwardVec1",1,"target",{0,-0.07},1},
+          {"ForwardVec1",1,"target",{0,-0.065},1},{},*/
+          {"ForwardVec",1,"target",{0,-0.06},1},
+          {"ForwardVec",1,"target",{0,-0.055},1},{},
+          {"ForwardVec",1,"target",{0,-0.05},1},
+          {"ForwardVec",1,"target",{0,-0.045},1},{},
+          {"ForwardVec",1,"target",{0,-0.04},1},
+          {"ForwardVec",1,"target",{0,-0.035},1},{},
+          {"ForwardVec",1,"target",{0,-0.03},1},
+          {"ForwardVec",1,"target",{0,-0.025},1},{},
+          {"ForwardVec",1,"target",{0,-0.02},1},
+          {"ForwardVec",1,"target",{0,-0.015},1},{},
+          {"ForwardVec",1,"target",{0,-0.01},1},
+          {"ForwardVec",1,"target",{0,-0.005},1},{},
+          //////////////////////////////////////////////// center
+          {"ForwardVec",1,"target",{0,0},1},
+          {"ForwardVec",1,"target",{0,0},1},{},
+          /////////////////////////////////////////////// DOWN
+          /*{"ForwardVec1",1,"target",{0,0.1},1},
+          {"ForwardVec1",1,"target",{0,0.095},1},{},
+          {"ForwardVec1",1,"target",{0,0.09},1},
+          {"ForwardVec1",1,"target",{0,0.085},1},{},
+          {"ForwardVec1",1,"target",{0,0.080},1},
+          {"ForwardVec1",1,"target",{0,0.075},1},{},
+          {"ForwardVec1",1,"target",{0,0.070},1},
+          {"ForwardVec1",1,"target",{0,0.065},1},{},*/
+          {"ForwardVec",1,"target",{0,0.060},1},
+          {"ForwardVec",1,"target",{0,0.055},1},{},
+          {"ForwardVec",1,"target",{0,0.050},1},
+          {"ForwardVec",1,"target",{0,0.045},1},{},
+          {"ForwardVec",1,"target",{0,0.040},1},
+          {"ForwardVec",1,"target",{0,0.035},1},{},
+          {"ForwardVec",1,"target",{0,0.030},1},
+          {"ForwardVec",1,"target",{0,0.025},1},{},
+          {"ForwardVec",1,"target",{0,0.020},1},
+          {"ForwardVec",1,"target",{0,0.015},1},{},
+          {"ForwardVec",1,"target",{0,0.010},1},
+          {"ForwardVec",1,"target",{0,0.005},1},{},
+          /////////////////////////////////////////////// LEFT
+          /*{"ForwardVec1",1,"target",{-0.10, 0},1},
+          {"ForwardVec1",1,"target",{-0.095, 0},1},{},
+          {"ForwardVec1",1,"target",{-0.09, 0},1},
+          {"ForwardVec1",1,"target",{-0.085, 0},1},{},
+          {"ForwardVec1",1,"target",{-0.080, 0},1},
+          {"ForwardVec1",1,"target",{-0.075, 0},1},{},
+          {"ForwardVec1",1,"target",{-0.070, 0},1},
+          {"ForwardVec1",1,"target",{-0.065, 0},1},{},*/
+          {"ForwardVec",1,"target",{-0.060, 0},1},
+          {"ForwardVec",1,"target",{-0.055, 0},1},{},
+          {"ForwardVec",1,"target",{-0.050, 0},1},
+          {"ForwardVec",1,"target",{-0.045, 0},1},{},
+          {"ForwardVec",1,"target",{-0.040, 0},1},
+          {"ForwardVec",1,"target",{-0.035, 0},1},{},
+          {"ForwardVec",1,"target",{-0.030, 0},1},
+          {"ForwardVec",1,"target",{-0.025, 0},1},{},
+          {"ForwardVec",1,"target",{-0.020, 0},1},
+          {"ForwardVec",1,"target",{-0.015, 0},1},{},
+          {"ForwardVec",1,"target",{-0.010, 0},1},
+          {"ForwardVec",1,"target",{-0.005, 0},1},{},
+          /////////////////////////////////////////////// RIGHT
+          /*{"ForwardVec1",1,"target",{0.10, 0},1},
+          {"ForwardVec1",1,"target",{0.095, 0},1},{},
+          {"ForwardVec1",1,"target",{0.09, 0},1},
+          {"ForwardVec1",1,"target",{0.085, 0},1},{},
+          {"ForwardVec1",1,"target",{0.080, 0},1},
+          {"ForwardVec1",1,"target",{0.075, 0},1},{},
+          {"ForwardVec1",1,"target",{0.070, 0},1},
+          {"ForwardVec1",1,"target",{0.065, 0},1},{},*/
+          {"ForwardVec",1,"target",{0.060, 0},1},
+          {"ForwardVec",1,"target",{0.055, 0},1},{},
+          {"ForwardVec",1,"target",{0.050, 0},1},
+          {"ForwardVec",1,"target",{0.045, 0},1},{},
+          {"ForwardVec",1,"target",{0.040, 0},1},
+          {"ForwardVec",1,"target",{0.035, 0},1},{},
+          {"ForwardVec",1,"target",{0.030, 0},1},
+          {"ForwardVec",1,"target",{0.025, 0},1},{},
+          {"ForwardVec",1,"target",{0.020, 0},1},
+          {"ForwardVec",1,"target",{0.015, 0},1},{},
+          {"ForwardVec",1,"target",{0.010, 0},1},
+          {"ForwardVec",1,"target",{0.005, 0},1},{}
         };
       };
     };

@@ -80,7 +80,7 @@
       <Hungarian>Beszállás ajtólövészként (bal oldal)</Hungarian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
-      <English>Get in as Door gunner (right)</English>
+      <English>Get in as Doorgunner (right)</English>
       <German>Einsteigen als Bordschütze (rechts)</German>
       <Spanish>Entrar como artillero de puerta (derecha)</Spanish>
       <French>Embarquer (Artilleur droite)</French>
@@ -120,6 +120,10 @@
       <Spanish>Entrar como copiloto</Spanish>
       <Hungarian>Beszállás másodpilótaként</Hungarian>
       <French>Embarquer (Co-pilote)</French>
+    </Key>
+    <Key ID="STR_AGM_MoveTo">
+      <English>Move to &gt;&gt;</English>
+      <German>Wechsel zu &gt;&gt;</German>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>

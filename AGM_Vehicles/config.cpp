@@ -82,7 +82,7 @@ class CfgVehicles {
 
   class Ship: AllVehicles {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
   };
 
@@ -203,20 +203,16 @@ class CfgVehicles {
 
   class Boat_Armed_01_base_F: Boat_F {
     class Turrets: Turrets {
-      class FrontTurret: NewTurret {};
+      class FrontTurret;
       class RearTurret: FrontTurret {};
     };
   };
 
-  class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {
-    class Turrets: Turrets {
-      class FrontTurret: FrontTurret {};
-      class RearTurret: RearTurret {};
-    };
-  };
+  class Boat_Armed_01_minigun_base_F: Boat_Armed_01_base_F {};
 
   class B_Boat_Armed_01_minigun_F: Boat_Armed_01_minigun_base_F {
     class Turrets: Turrets {
+      class FrontTurret: FrontTurret {};
       class RearTurret: RearTurret {
         magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
       };
@@ -225,6 +221,7 @@ class CfgVehicles {
 
   class I_Boat_Armed_01_minigun_F: Boat_Armed_01_minigun_base_F {
     class Turrets: Turrets {
+      class FrontTurret: FrontTurret {};
       class RearTurret: RearTurret {
         magazines[] = {"2000Rnd_762x51_Belt_T_Yellow"};
       };
