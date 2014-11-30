@@ -7,10 +7,8 @@ AGM_NameTags_ShowNamesTime = -10;
 addMissionEventHandler ["Draw3D", {
   if !(profileNamespace getVariable ["AGM_showPlayerNames", true]) exitWith {};
 
+  _player = AGM_player;
   if (profileNamespace getVariable ["AGM_showPlayerNamesOnlyOnCursor", true]) then {
-
-    _player = AGM_player;
-
     _target = cursorTarget;
     _target = if (_target in allUnitsUAV) then {objNull} else {effectiveCommander _target};
 
@@ -23,7 +21,6 @@ addMissionEventHandler ["Draw3D", {
       [_player, _target, _alpha, _distance * 0.026] call AGM_NameTags_fnc_drawNameTagIcon;
     };
   } else {
-
     _pos = positionCameraToWorld [0, 0, 0];
     _targets = _pos nearObjects ["Man", AGM_NameTags_PlayerNamesViewDistance + 5];
 
