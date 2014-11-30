@@ -761,6 +761,9 @@ class CfgVehicles {
   };
 
   class AllVehicles: All {
+    class NewTurret {
+      class Turrets;
+    };
     class CargoTurret;
   };
 
@@ -809,12 +812,14 @@ class CfgVehicles {
   };
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
+      class CopilotTurret: CopilotTurret {};
+
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
       class CargoTurret_03: CargoTurret_02 {};
       class CargoTurret_04: CargoTurret_01 {};
-    };
+    };*/
   };
 
   class Heli_Light_01_armed_base_F: Heli_Light_01_base_F {
@@ -1022,6 +1027,8 @@ class CfgVehicles {
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
     #include <mfd_wildcat.hpp>
     class Turrets: Turrets {
+      class MainTurret: MainTurret {};
+
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
     };
@@ -1085,6 +1092,7 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
+      //class MainTurret: MainTurret {};
       class RightDoorGun: MainTurret {};
 
       class CargoTurret_01: CargoTurret {};
