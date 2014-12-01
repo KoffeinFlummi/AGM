@@ -4,6 +4,7 @@
     <Key ID="STR_AGM_NoRadio_NoVoice">
       <English>No Voice</English>
       <Czech>Žádný hlas</Czech>
+      <German>Keine Stimme</German>
     </Key>
   </Package>
 </Project>
