@@ -282,6 +282,8 @@ def main():
     else:
       result = "\33[31m" + result + "\33[39m"
     print(result)
+  print("")
+  print("[Finished at {}]".format(time.ctime()))
 
   if getattr(sys, "frozen", False):
     input("\nPress any key to exit...\n")
