@@ -1044,8 +1044,14 @@ class CfgVehicles {
   class Plane_CAS_01_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
+    class MFD {};
     class Turrets;
     #include <flightmodel_thunderbolt.hpp>
+  };
+
+  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+    #include <mfd_thunderbolt.hpp>
+    //#include <hmd_thunderbolt.hpp>
   };
 
   class Plane_CAS_02_base_F: Plane_Base_F {
