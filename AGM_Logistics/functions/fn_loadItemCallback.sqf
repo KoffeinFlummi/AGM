@@ -54,7 +54,9 @@ if (!_magicMenu) then {
 if (_Loaded) then {
 	//0 spawn AGM_Logistics_dropItem;
 	_item attachTo [_dummy, _attachPos, _attachPoint];
-	
+	_item enableSimulationGlobal false;
+	_item hideObjectGlobal true;
+
 	_itemName = getText (configFile >> "CfgVehicles" >> typeOf _item >> "displayName");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
 
