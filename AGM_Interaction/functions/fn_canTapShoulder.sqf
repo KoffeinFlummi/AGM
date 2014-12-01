@@ -8,4 +8,4 @@ _target = _this select 1;
 _target isKindOf "CAManBase" &&
 {alive _target} &&
 {_unit distance _target < 4} &&
-{!(_target getVariable ["AGM_Unconscious", false])}
+{!(_target getVariable ["AGM_isUnconscious", false])}

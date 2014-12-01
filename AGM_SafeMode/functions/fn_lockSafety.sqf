@@ -5,6 +5,9 @@ private ["_unit", "_weapon", "_safedWeapons"];
 _unit = _this select 0;
 _weapon = _this select 1;
 
+// don't immediately switch back
+if (inputAction "nextWeapon" > 0) exitWith {};
+
 _safedWeapons = _unit getVariable ["AGM_SafeMode_safedWeapons", []];
 
 if (_weapon in _safedWeapons) exitWith {
@@ -15,13 +18,18 @@ _safedWeapons pushBack _weapon;
 
 _unit setVariable ["AGM_SafeMode_safedWeapons", _safedWeapons];
 
-if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then {
-  private ["_condition", "_statement", "_actionIDs"];
+if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
+  private ["_condition", "_statement", "_actionID"];
 
   _condition = {
     if (
       [_this select 1] call AGM_Core_fnc_canUseWeapon
-      && {currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])}
+      && {
+        if (inputAction "nextWeapon" > 0) then {
+          [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
+        };
+        currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])
+      }
     ) then {
       // player hud
       [false] call AGM_SafeMode_fnc_setSafeModeVisual;
@@ -37,13 +45,9 @@ if (_unit getVariable ["AGM_SafeWeaponActionIDs", [-1, -1]] select 0 == -1) then
     [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
   };
 
-  _actionIDs = [
-    //[_unit, "DefaultAction", _condition, {}] call AGM_Core_fnc_addActionEventHandler,
-    [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement] call AGM_Core_fnc_addActionMenuEventHandler,
-    [_unit, "nextWeapon", {true}, _statement] call AGM_Core_fnc_addActionEventHandler
-  ];
+  _actionID = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement, 10] call AGM_Core_fnc_addActionMenuEventHandler;
 
-  _unit setVariable ["AGM_SafeWeaponActionIDs", _actionIDs];
+  _unit setVariable ["AGM_SafeWeapon_actionID", _actionID];
 };
 
 _unit selectWeapon _weapon;

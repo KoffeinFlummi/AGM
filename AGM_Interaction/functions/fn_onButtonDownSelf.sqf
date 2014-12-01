@@ -10,3 +10,5 @@ if (isNull (findDisplay 1713999)) then {
 } else {
 	(findDisplay 1713999) closeDisplay 1;
 };
+
+[_player, "interactionMenuOpened", [_player, AGM_Interaction_Target, 1]] call AGM_Core_fnc_callCustomEventHandlers;

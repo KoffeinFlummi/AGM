@@ -32,9 +32,14 @@ private "_fnc_unRestWeapon";
 _fnc_unRestWeapon = {
   addCamShake CAMSHAKE;
 
+  private "_animation";
+  _animation = animationState _unit;
+
   if (_unit getVariable ["AGM_bipodDeployed", false]) then {
     _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / BIPODRECOIL);
-    [_unit, [animationState _unit, "_agm_deploy", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+    if (_animation find "_agm_deploy" != -1) then {
+      [_unit, [_animation, "_agm_deploy", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+    };
 
     private "_picture";
     _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
@@ -42,7 +47,9 @@ _fnc_unRestWeapon = {
 
   } else {
     _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / RESTEDRECOIL);
-    [_unit, [animationState _unit, "_agm_rested", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+    if (_animation find "_agm_rested" != -1) then {
+      [_unit, [_animation, "_agm_rested", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+    };
 
     private "_picture";
     _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
@@ -164,7 +171,7 @@ if (true in _intersects) then {
       _intersects = call _fnc_getIntersection;
 
       if (
-        _unit != call AGM_Core_fnc_player
+        _unit != AGM_player
         || {_vehicle != vehicle _unit}
         || {inputAction "reloadMagazine" != 0}
         || {weaponLowered _unit}

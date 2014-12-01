@@ -2,10 +2,14 @@
 
 #define STARTUP_DELAY 1.3
 
+private ["_vehicle", "_isEngineOn", "_player"];
+
 _vehicle = _this select 0;
 _isEngineOn = _this select 1;
 
-if (_isEngineOn && {call AGM_Core_fnc_player == driver _vehicle} && {speed _vehicle == 0}) then {
+_player = AGM_player;
+
+if (_isEngineOn && {_player == driver _vehicle} && {speed _vehicle == 0}) then {
   [_vehicle] spawn {
     _vehicle = _this select 0;
 

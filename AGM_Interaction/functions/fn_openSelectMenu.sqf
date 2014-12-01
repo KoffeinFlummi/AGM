@@ -39,5 +39,5 @@ if (!(profileNamespace getVariable ["AGM_Interaction_FlowMenu", false])) then {
 		_action set [1, (_this select 1)];
 	};
 	AGM_Interaction_Buttons = _customActions;
-	[(_this select 2), true, true, false, call AGM_Core_fnc_player] call AGM_Interaction_fnc_initialiseInteraction;
+	[(_this select 2), true, true, false, AGM_player] call AGM_Interaction_fnc_initialiseInteraction;
 };

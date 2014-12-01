@@ -26,7 +26,7 @@ class CfgFunctions {
 class Extended_InventoryOpened_EventHandlers {
   class CAManBase {
     class AGM_Backpacks_openInventory {
-      clientInventoryOpened = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Backpacks_fnc_openInventory};";
+      clientInventoryOpened = "if (_this select 0 == AGM_player) then {_this call AGM_Backpacks_fnc_openInventory};";
     };
   };
 };

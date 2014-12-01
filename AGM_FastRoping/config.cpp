@@ -24,8 +24,8 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class B_UAV_01_F; // don't ask.
-  class AGM_FastRoping_Helper: B_UAV_01_F {
+  class Slingload_base_F;
+  class AGM_FastRoping_Helper: Slingload_base_F {
     scope = 1;
     model = "agm_fastroping\agm_fastroping_helper.p3d";
   };
@@ -38,8 +38,8 @@ class CfgVehicles {
       class AGM_DeployRopes {
         displayName = "Deploy Ropes";
         enableInside = 1;
-        condition = "!((vehicle _player) getVariable ['AGM_RopesDeployed', False]) and (getPos (vehicle _player) select 2) > 5 and (getNumber (configFile >> 'CfgVehicles' >> typeOf (vehicle _player) >> 'AGM_FastRoping')) == 1";
-        statement = "[(vehicle _player)] call AGM_FastRoping_fnc_deployRopes";
+        condition = "!(_vehicle getVariable ['AGM_RopesDeployed', False]) and (getPos _vehicle select 2) > 5 and (getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'AGM_FastRoping')) == 1";
+        statement = "[_vehicle] call AGM_FastRoping_fnc_deployRopes";
         showDisabled = 0;
         priority = 1;
         icon = "";
@@ -47,8 +47,8 @@ class CfgVehicles {
       class AGM_FastRope {
         displayName = "Fast Rope";
         enableInside = 1;
-        condition = "((vehicle _player) getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity (vehicle _player)) < 4)";
-        statement = "[call AGM_Core_fnc_player, (vehicle _player)] call AGM_FastRoping_fnc_fastRope";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4)";
+        statement = "[_player, _vehicle] call AGM_FastRoping_fnc_fastRope";
         showDisabled = 0;
         priority = 1;
         icon = "";
@@ -56,8 +56,8 @@ class CfgVehicles {
       class AGM_CutRopes {
         displayName = "Cut Ropes";
         enableInside = 1;
-        condition = "((vehicle _player) getVariable ['AGM_RopesDeployed', False])";
-        statement = "[(vehicle _player)] call AGM_FastRoping_fnc_cutRopes";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False])";
+        statement = "[_vehicle] call AGM_FastRoping_fnc_cutRopes";
         showDisabled = 0;
         priority = 1;
         icon = "";

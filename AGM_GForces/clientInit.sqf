@@ -1,5 +1,6 @@
 #define AVERAGEDURATION 6
 #define INTERVAL 0.25
+#define MAXVIRTUALG 5.4
 
 if !(hasInterface) exitWith {};
 
@@ -14,7 +15,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
 
 0 spawn {
   while {True} do {
-    _player = call AGM_Core_fnc_player;
+    _player = AGM_player;
 
     if !((vehicle _player isKindOf "Air") or ((getPos _player select 2) > 5)) then {
       AGM_GForces = [];
@@ -51,10 +52,9 @@ AGM_GForces_CC ppEffectCommit 0.4;
  */
 
 0 spawn {
-  _maxVirtualG = 5.4;
   while {True} do {
     sleep INTERVAL;
-    _player = call AGM_Core_fnc_player;
+    _player = AGM_player;
 
     _average = 0;
     if (count AGM_GForces > 0) then {
@@ -65,29 +65,25 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _average = _sum / (count AGM_GForces);
     };
 
-    _downTolerance = _player getVariable ["AGM_GForceCoef", nil];
-    if (isNil "_downTolerance") then {
-      _downTolerance = getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef");
-    };
+    _downTolerance = _player getVariable ["AGM_GForceCoef",
+      getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef")];
     _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform _player) >> "AGM_GForceCoef");
 
-    if (!isNil "AGM_Debug") then {
-      if ("GForces" in AGM_Debug) then {
-        hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
-      };
+    if (!isNil "AGM_Debug" and {"GForces" in AGM_Debug}) then {
+      hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
     };
 
-    if (((_average * _upTolerance) > _maxVirtualG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_Unconscious", false])}}) then {
-      [_player, (12 - 2 + floor(random 5))] call AGM_Medical_fnc_knockOut;
+    if (((_average * _upTolerance) > MAXVIRTUALG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_isUnconscious", false])}}) then {
+      [_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 
-    if ((abs _average > 2) and !(_player getVariable ["AGM_Unconscious", false])) then {
+    if ((abs _average > 2) and !(_player getVariable ["AGM_isUnconscious", false])) then {
       if (_average > 0) then {
-        _strength = 1.2 - (((_average - 2) * _upTolerance) / (_maxVirtualG - 2));
+        _strength = 1.2 - (((_average - 2) * _upTolerance) / (MAXVIRTUALG - 2));
         AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
         addCamShake [((abs _average) - 2) / 3, 1, 15];
       } else {
-        _strength = 1.2 - ((((-1 * _average) - 2) * _downTolerance) / (_maxVirtualG - 2));
+        _strength = 1.2 - ((((-1 * _average) - 2) * _downTolerance) / (MAXVIRTUALG - 2));
         AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
         addCamShake [((abs _average) - 2) / 5, 1, 15];
       };
@@ -95,6 +91,6 @@ AGM_GForces_CC ppEffectCommit 0.4;
       AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
     };
 
-    AGM_GForces_CC ppEffectCommit 0.25;
+    AGM_GForces_CC ppEffectCommit INTERVAL;
   };
 };

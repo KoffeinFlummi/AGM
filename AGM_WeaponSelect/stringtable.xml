@@ -100,7 +100,7 @@
       <English>Select Main Gun</English>
       <German>Hauptgeschütz auswählen</German>
       <Spanish>Seleccionar arma principal</Spanish>
-      <Polish>Wybierz główne działo</Polish>
+      <Polish>Wybierz główną broń</Polish>
       <French>Sélectionner l'Arme Principale</French>
       <Hungarian>Elsődleges Fegyver Kiválasztása</Hungarian>
       <Czech>Zvolit Hlavní Zbraň</Czech>
@@ -128,6 +128,18 @@
       <Czech>Zvolit Rakety</Czech>
       <Portuguese>Selecionar Mísseis</Portuguese>
       <Italian>Seleziona Missili</Italian>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_LoadGrenade">
+      <English>Grenade %1</English>
+      <German>Granate %1</German>
+      <Polish>Granat %1</Polish>
+      <Czech>Granát %1</Czech>
+    </Key>
+    <Key ID="STR_AGM_WeaponSelect_ReadyGrenade">
+      <English>Ready Grenade</English>
+      <German>Granate nehmen</German>
+      <Polish>Przygotuj granat</Polish>
+      <Czech>Odjištěný granát</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
@@ -167,6 +179,7 @@
       <German>Keine Granaten übrig</German>
       <French>Plus de grenades</French>
       <Polish>Brak granatów</Polish>
+      <Czech>Žádné granáty</Czech>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
       <English>No frags left</English>

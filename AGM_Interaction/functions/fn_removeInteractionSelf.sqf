@@ -16,7 +16,7 @@ private ["_id", "_actionsVar", "_currentID", "_actionIDs", "_actions"];
 
 _id = _this select 0;
 
-_actionsVar = player getVariable ["AGM_InteractionsSelf", [-1, [], []]];
+_actionsVar = AGM_player getVariable ["AGM_InteractionsSelf", [-1, [], []]];
 
 _currentID = _actionsVar select 0;
 _actionIDs = _actionsVar select 1;
@@ -32,4 +32,4 @@ _actionIDs = _actionIDs - [-1];
 _actions set [_id, []];
 _actions = _actions - [[]];
 
-player setVariable ["AGM_InteractionsSelf", [_currentID, _actionIDs, _actions], false];
+AGM_player setVariable ["AGM_InteractionsSelf", [_currentID, _actionIDs, _actions], false];

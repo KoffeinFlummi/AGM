@@ -19,12 +19,14 @@
       <German>Laderampe öffnen</German>
       <French>Ourvir Rampe Cargo</French>
       <Polish>Otwórz drzwi ładowni</Polish>
+      <Czech>Otevřít nákladní prostor</Czech>
     </Key>
     <Key ID="STR_AGM_Aircraft_CloseCargoRamp">
       <English>Close Cargo Door</English>
       <German>Laderampe schließen</German>
       <French>Fermer Rampe Cargo</French>
       <Polish>Zamknij drzwi ładowni</Polish>
+      <Czech>Zavřít nákladní prostor</Czech>
     </Key>
   </Package>
 </Project>

@@ -21,6 +21,12 @@ if (_state) then {
 
   if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) exitWith {};
 
+  // end TFAR and ACRE2 radio transmissions
+  0 spawn AGM_Core_fnc_endRadioTransmission;
+
+  // Close map
+  if (visibleMap) then {openMap false};
+
   closeDialog 0;
   createDialog "AGM_Core_DisableMouse_Dialog";
 
@@ -49,7 +55,7 @@ if (_state) then {
       _ctrl ctrlSetText "ABORT";
       _ctrl ctrlSetTooltip "Abort.";
 
-      _ctrl = _dlg displayctrl 104;
+      _ctrl = _dlg displayctrl ([104, 199] select (isMultiplayer && {isClass (configFile >> "RscDisplayMPInterrupt" >> "controls" >> "ALIVEButtonAbort")}));
       _ctrl ctrlSetEventHandler ["buttonClick", "closeDialog 0; player setDamage 1; [false] call AGM_Core_fnc_disableUserInput;"];
       _ctrl ctrlEnable (call {_config = missionConfigFile >> "respawnButton"; !isNumber _config || {getNumber _config == 1}});
       _ctrl ctrlSetText "RESPAWN";
@@ -59,7 +65,7 @@ if (_state) then {
     if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
     if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
 
-    if (serverCommandAvailable "#missions" || {player getVariable ["AGM_isUnconscious", false] && {(call AGM_Core_fnc_player) getVariable ["AGM_Medical_AllowChatWhileUnconscious", AllowChatWhileUnconscious] > 0}})  then {
+    if (serverCommandAvailable "#missions" || {player getVariable ["AGM_isUnconscious", false] && {(call AGM_Core_fnc_player) getVariable ["AGM_Medical_AllowChatWhileUnconscious", missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", 0]] > 0}})  then {
       if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) then {
         _key = 0;
       };

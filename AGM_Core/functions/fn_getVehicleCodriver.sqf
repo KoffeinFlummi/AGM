@@ -20,7 +20,7 @@ _cargo = [];
 _codrivers = getArray (_config >> "cargoIsCoDriver");
 
 for "_index" from 0 to (getNumber (_config >> "transportSoldier") - 1) do {
-  if (_index in _codrivers) then {
+  if (_index in _codrivers && {_vehicle isKindOf "Car"} && {!(_vehicle isKindOf "Wheeled_APC_F")}) then {
     _cargo pushBack _index;
   };
 };

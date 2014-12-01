@@ -36,7 +36,7 @@ if (_unit != _vehicle) then {
     _beta = sqrt (1 - _angle / _dangerZoneAngle);
 
     _damage = 2 * _alpha * _beta * _dangerZoneDamage;
-    if (_unit == (call AGM_Core_fnc_player)) then {[_damage * 100] call BIS_fnc_bloodEffect};
+    if (_unit == AGM_player) then {[_damage * 100] call BIS_fnc_bloodEffect};
 
     if (isClass (configFile >> "CfgPatches" >> "AGM_Medical")) then {
       [_unit, "HitBody", ([_unit, "", ((_unit getHitPointDamage "HitBody") + _damage), objNull, objNull] call AGM_Medical_fnc_handleDamage)] call AGM_Medical_fnc_setHitPointDamage;

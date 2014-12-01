@@ -4,7 +4,7 @@
  * Add a custom event to a unit. The event scripts are called by AGM_Core_fnc_callCustomEventHandlers.
  *
  * Argument:
- * 0: Object the event should be assigned to (Object)
+ * 0: Object the event should be assigned to or namespace (Object OR Namespace)
  * 1: Name of the event (String)
  * 2: Code to execute (Code or String)
  *

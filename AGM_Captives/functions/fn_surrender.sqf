@@ -24,13 +24,13 @@ if (_state) then {
 
       if (isPlayer _this) then {showHUD false};
 
-      if (!alive _this || {_this getVariable ["AGM_Unconscious", false]}) then {
+      if (!alive _this || {_this getVariable ["AGM_isUnconscious", false]}) then {
         _this setVariable ["AGM_isSurrender", false, true];
       } else {
         _this playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
       };
     };
-    if !(_this getVariable ["AGM_Unconscious", false]) then {
+    if !(_this getVariable ["AGM_isUnconscious", false]) then {
       _this playMoveNow "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon";
     } else {
       _this playMoveNow "unconscious";
@@ -43,3 +43,8 @@ if (_state) then {
 } else {
   _unit setVariable ["AGM_isSurrender", false, true];
 };
+
+/*
+player playMove "AmovPercMstpSsurWnonDnon"
+player switchMove "AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon"
+*/

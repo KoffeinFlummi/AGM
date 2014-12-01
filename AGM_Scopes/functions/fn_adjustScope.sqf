@@ -49,11 +49,13 @@ if !(isNull _display) then {
 if !(isNull AGM_Scopes_fadeScript) then {
   terminate AGM_Scopes_fadeScript;
 };
-AGM_Scopes_fadeScript = 0 spawn {
-  _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
-  _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
-  sleep 3;
-  _layer cutFadeOut 2;
+if (cameraView != "GUNNER") then {
+  AGM_Scopes_fadeScript = 0 spawn {
+    _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
+    _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
+    sleep 3;
+    _layer cutFadeOut 2;
+  };
 };
 
 true

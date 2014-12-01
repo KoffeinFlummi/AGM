@@ -27,9 +27,11 @@ _subMenu = _this select 1;
 _selfMenu = _this select 3;
 _target = _this select 4;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 //_object = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
+
+if !([_target, 5] call AGM_Interaction_fnc_isInRange) exitWith {};
 
 AGM_Interaction_Shortcuts = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
 
@@ -41,7 +43,7 @@ if (_this select 2) then {
 	if (_player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(-(_this select 0) / 1.2) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = call AGM_Core_fnc_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if(count _action == 12) then{(_action select 11) call (_action select 1);}else{[_target, _player] call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = AGM_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if(count _action == 12) then{(_action select 11) call (_action select 1);}else{[_target, _player] call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
 		_player setVariable ["AGM_AcceptAction", [_player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
@@ -76,7 +78,8 @@ if (_this select 2) then {
 		_ctrlInteractionDialog ctrlSetText localize "STR_AGM_Interaction_Back";
 	};
 
-	_count = count AGM_Interaction_Buttons;
+	_buttons = AGM_Interaction_Buttons;
+	_count = count _buttons;
 
 	for "_i" from 0 to 9 do {
 		_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl (10 + _i);
@@ -86,7 +89,7 @@ if (_this select 2) then {
 		_ctrlInteractionDialogShortcut = _dlgInteractionDialog displayCtrl (30 + _i);
 		//_ctrlInteractionDialogBackground = _dlgInteractionDialog displayCtrl (40 + _i);
 		if (_i < _count) then {
-			_action = AGM_Interaction_Buttons select _i;
+			_action = _buttons select _i;
 			_ctrlInteractionDialog ctrlSetText (_action select 0);
 			_ctrlInteractionDialog ctrlEnable ([_target, _player] call (_action select 2));
 			_ctrlInteractionDialog ctrlSetTooltip (_action select 6);
@@ -110,16 +113,20 @@ if (_this select 2) then {
 	// Update Buttons
 	if (_subMenu) exitWith {};
 
-	_updateLoop = 0 spawn {
+	0 spawn {
 		disableSerialization;
 		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
 		_ctrlTooltip = _dlgMenu displayCtrl 40;
 
-		_player = call AGM_Core_fnc_player;
+		_player = AGM_player;
 		_vehicle = vehicle _player;
 		_target = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
 
 		waitUntil {
+			if !([_target, 5] call AGM_Interaction_fnc_isInRange) exitWith {
+				(findDisplay 1713999) closeDisplay 1
+			};
+
 			AGM_Interaction_Tooltips = [[], [], [], [], [], [], [], [], [], []];
 			{
 				_ctrlText = _dlgMenu displayCtrl (10 + _forEachIndex);
@@ -160,41 +167,5 @@ if (_this select 2) then {
 			sleep 0.5;
 			isNull (findDisplay 1713999)
 		};
-	};
-
-	_updateLoop spawn {
-		disableSerialization;
-		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
-		_ctrlTooltip = _dlgMenu displayCtrl 40;
-
-		_selectedButton = -1;
-		waitUntil {
-			/*if (_selectedButton != call AGM_Interaction_fnc_getSelectedButton) then {
-				_selectedButton = call AGM_Interaction_fnc_getSelectedButton;
-
-				_showTooltip = false;
-				_tooltip = if (_selectedButton < 0 || {_selectedButton >= count AGM_Interaction_Buttons}) then {text ""} else {
-					_text = AGM_Interaction_Buttons select _selectedButton select 6;
-
-					_showTooltip = _text != "";
-
-					_text = text _text;
-
-					{
-						_showTooltip = true;
-						_text = composeText [_text, lineBreak, _x];
-					} forEach (AGM_Interaction_Tooltips select _selectedButton);
-
-					_text
-				};
-
-				_ctrlTooltip ctrlSetStructuredText _tooltip;
-				_ctrlTooltip ctrlShow _showTooltip;
-			};*/
-			sleep 0.01;
-			isNull (findDisplay 1713999)
-		};
-
-		terminate _this;
 	};
 };

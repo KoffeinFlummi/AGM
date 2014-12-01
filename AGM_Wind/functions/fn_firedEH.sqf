@@ -1,12 +1,36 @@
+/*
+ * Authors: KoffeinFlummi, esteldunedain
+ *
+ * Changes the bullet trajectory depending on wind, density and temperature.
+ *
+ * Arguments:
+ * Fired EH
+ *
+ * Return Value:
+ * none
+ */
+
+private ["_unit", "_ammoType", "_round", "_dispersion", "_additionalVel"];
+
+_unit = _this select 0;
+_ammoType = _this select 4;
+_round = _this select 5;
+
+if !(local _unit) exitWith {};
+if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {};
+if (_round isKindOf "GrenadeHand") exitWith {};
+
+// Additional dispersion
+_dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
+
+// Powder temp effect
+_additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
+
+[_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
+
 _this spawn {
-  _unit = _this select 0;
-  _weaponType = _this select 1;
   _ammoType = _this select 4;
   _round = _this select 5;
-
-  if !(local _unit) exitwith {};
-  if !([_unit] call AGM_Core_fnc_isPlayer) exitwith {};
-  if (_round isKindOf "GrenadeHand") exitWith {};
 
   _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
   _airFrictionWind = - _airFriction;
@@ -17,12 +41,6 @@ _this spawn {
     _airFriction = 0;
     _airFrictionWind = 0.0007;
   };
-
-  // Additional dispersion
-   _dispersion = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "AGM_Bullet_Dispersion");
-  // Powder temp effect
-  _additionalVel = (vectorMagnitude (velocity _round)) * ((((AGM_Wind_currentTemperature + 273.13) / 288.13 - 1) / 2.5 + 1 ) - 1);
-  [_round, ((random 2) - 1) * _dispersion, ((random 2) - 1) * _dispersion, _additionalVel] call AGM_Core_fnc_changeProjectileDirection;
 
   // WIND
   _time = time;

@@ -4,7 +4,7 @@
  * Execute all custom event script assigned to this object.
  *
  * Argument:
- * 0: Object the event handlers are assigned to (Object)
+ * 0: Object the eventhandlers are assigned to or namespace (Object or Namespace)
  * 1: Name of the event (String)
  * 2: Arguments passed to the eventhandler script (Array, optional default: [Object the event handlers are assigned to])
  *

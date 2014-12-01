@@ -62,12 +62,14 @@
       <German>Gefangenen einladen</German>
       <French>Embarquer le prisonnier</French>
       <Polish>Załaduj więźnia</Polish>
+      <Czech>Naložit zajatce</Czech>
     </Key>
     <Key ID="STR_AGM_Captives_UnloadCaptive">
       <English>Unload Captive</English>
       <German>Gefangenen ausladen</German>
       <French>Débarquer le prisonnier</French>
       <Polish>Wyładuj więźnia</Polish>
+      <Czech>Vyložit zajatce</Czech>
     </Key>
     <Key ID="STR_AGM_Captives_CableTie">
       <English>Cable Tie</English>

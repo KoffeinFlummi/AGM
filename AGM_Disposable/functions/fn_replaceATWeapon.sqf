@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Replace the disposable launcher with the used dummy.
+ * 
+ * Argument:
+ * Input from "Fired" eventhandler
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_tube", "_projectile"];
 

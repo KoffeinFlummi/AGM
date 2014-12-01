@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: bux, commy2
+ *
+ * Hide or show the secondary weapon magazine inventory slot to prevent unloading of dummy magazines.
+ * 
+ * Argument:
+ * 0: The player. (Object)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_player", "_display"];
 

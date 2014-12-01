@@ -17,24 +17,48 @@ class CfgFunctions {
     class AGM_Captives {
       file = "\AGM_Captives\functions";
       class canFriskPerson;
-      class canLoadCaptiveIntoVehicle;
-      class canUnloadCaptiveFromVehicle;
+      class canLoadCaptive;
+      class canUnloadCaptive;
       class escortCaptive;
-      class loadCaptiveIntoVehicle;
+      class loadCaptive;
       class openFriskMenu;
       class setCaptive;
       class surrender;
-      class unloadCaptiveFromVehicle;
+      class unloadCaptive;
     };
   };
 };
 
-//release escorted captive if when entering a vehicle
+//release escorted captive when entering a vehicle
 class Extended_GetIn_EventHandlers {
-  class AllVehicles {
-    class AGM_DetachCaptive {
-      clientGetIn = "if (player == _this select 2 && {player getVariable ['AGM_isEscorting', false]}) then {player setVariable ['AGM_isEscorting', false, true]}";
+  class All {
+    class AGM_Captives_AutoDetachCaptive {
+      getIn = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isEscorting', false]}) then {(_this select 2) setVariable ['AGM_isEscorting', false, true]}";
     };
+  };
+};
+
+//reset captive animation after leaving vehicle
+class Extended_GetOut_EventHandlers {
+  class All {
+    class AGM_Captives_LeaveVehicle {
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {[_this select 2, 'AGM_AmovPercMstpScapWnonDnon', 2] call AGM_Core_fnc_doAnimation;}";
+    };
+  };
+};
+
+//reset captivity and escorting status when getting killed
+class Extended_Killed_EventHandlers {
+  class CAManBase {
+    class AGM_Captives_AutoDetachCaptive {
+      killed = "if ((_this select 0) getVariable ['AGM_isCaptive', false]) then {(_this select 0) setVariable ['AGM_isCaptive', false, true]}; if ((_this select 0) getVariable ['AGM_isEscorting', false]) then {(_this select 0) setVariable ['AGM_isEscorting', false, true]};";
+    };
+  };
+};
+
+class Extended_PostInit_EventHandlers {
+  class AGM_Captives {
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Captives\clientInit.sqf'";
   };
 };
 
@@ -57,102 +81,113 @@ class CfgVehicles {
       class AGM_SetCaptive {
         displayName = "$STR_AGM_Captives_SetCaptive";
         distance = 4;
-        condition = "'AGM_CableTie' in items player && {alive AGM_Interaction_Target} && {!(AGM_Interaction_Target getVariable ['AGM_isCaptive', false])}";
-        statement = "[AGM_Interaction_Target, true] call AGM_Captives_fnc_setCaptive";
+        condition = "'AGM_CableTie' in items _player && {alive _target} && {!(_target getVariable ['AGM_isCaptive', false])}";
+        statement = "player removeItem 'AGM_CableTie'; [_target, true] call AGM_Captives_fnc_setCaptive";
         showDisabled = 0;
         priority = 2.4;
         icon = "\AGM_Captives\UI\handcuff_ca.paa";
+        hotkey = "C";
       };
       class AGM_ReleaseCaptive {
         displayName = "$STR_AGM_Captives_ReleaseCaptive";
         distance = 4;
-        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {isNull attachedTo AGM_Interaction_Target}";
-        statement = "[AGM_Interaction_Target, false] call AGM_Captives_fnc_setCaptive";
+        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)}";
+        statement = "[_target, false] call AGM_Captives_fnc_setCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.4;
         icon = "\AGM_Captives\UI\handcuff_ca.paa";
+        hotkey = "R";
       };
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Captives_EscortCaptive";
         distance = 4;
-        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {isNull attachedTo AGM_Interaction_Target}";
-        statement = "[AGM_Interaction_Target, true] call AGM_Captives_fnc_escortCaptive";
+        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)}";
+        statement = "[_target, true] call AGM_Captives_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         icon = "\AGM_Captives\UI\captive_ca.paa";
         priority = 2.3;
+        hotkey = "E";
       };
       class AGM_StopEscorting {
         displayName = "$STR_AGM_Captives_StopEscorting";
         distance = 4;
-        condition = "AGM_Interaction_Target getVariable ['AGM_isCaptive', false] && {AGM_Interaction_Target in attachedObjects player}";
-        statement = "[AGM_Interaction_Target, false] call AGM_Captives_fnc_escortCaptive";
+        condition = "_target getVariable ['AGM_isCaptive', false] && {_target in attachedObjects _player}";
+        statement = "[_target, false] call AGM_Captives_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         icon = "\AGM_Captives\UI\captive_ca.paa";
         priority = 2.3;
+        hotkey = "E";
       };
       class AGM_LoadCaptive {
         displayName = "$STR_AGM_Captives_LoadCaptive";
         distance = 4;
-        condition = "[player, AGM_Interaction_Target, objNull] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[player, AGM_Interaction_Target, objNull] call AGM_Captives_fnc_loadCaptiveIntoVehicle";
+        condition = "[_player, _target, objNull] call AGM_Captives_fnc_canLoadCaptive";
+        statement = "[_player, _target, objNull] call AGM_Captives_fnc_loadCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         icon = "\AGM_Captives\UI\captive_ca.paa";
         priority = 2.2;
+        hotkey = "L";
       };
       class AGM_FriskPerson {
         displayName = "$STR_AGM_Captives_FriskPerson";
         distance = 2;
-        condition = "[_player, AGM_Interaction_Target] call AGM_Captives_fnc_canFriskPerson";
-        statement = "[_player, AGM_Interaction_Target] call AGM_Captives_fnc_openFriskMenu";
+        condition = "[_player, _target] call AGM_Captives_fnc_canFriskPerson";
+        statement = "[_player, _target] call AGM_Captives_fnc_openFriskMenu";
         showDisabled = 0;
+        //icon = "";  //@todo
         priority = 3;
-        //icon = "\AGM_Captives\UI\team\team_management_ca.paa";
+        hotkey = "F";
       };
     };
 
     class AGM_SelfActions {
       class AGM_StopEscortingSelf {
         displayName = "$STR_AGM_Captives_StopEscorting";
-        condition = "(player getVariable ['AGM_escortedUnit', objNull]) getVariable ['AGM_isCaptive', false] && {(player getVariable ['AGM_escortedUnit', objNull]) in attachedObjects player}";
-        statement = "[player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Captives_fnc_escortCaptive;";
+        condition = "(_player getVariable ['AGM_escortedUnit', objNull]) getVariable ['AGM_isCaptive', false] && {(_player getVariable ['AGM_escortedUnit', objNull]) in attachedObjects _player}";
+        statement = "[_player getVariable ['AGM_escortedUnit', objNull], false] call AGM_Captives_fnc_escortCaptive;";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.3;
+        hotkey = "C";
       };
-      class AGM_LoadCaptiveSelf {
+      /*class AGM_LoadCaptiveSelf {
         displayName = "$STR_AGM_Captives_LoadCaptive";
-        condition = "[player, objNull, objNull] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle";
-        statement = "[player, objNull, objNull] call AGM_Captives_fnc_loadCaptiveIntoVehicle";
+        condition = "[_player, objNull, objNull] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle";
+        statement = "[_player, objNull, objNull] call AGM_Captives_fnc_loadCaptiveIntoVehicle";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
         priority = 2.2;
-      };
+        hotkey = "K";
+      };*/
     };
   };
 
-  #define MACRO_LOADUNLOADCAPTIVE class AGM_Actions { \
-    class AGM_LoadCaptive { \
-      displayName = "$STR_AGM_Captives_LoadCaptive"; \
-      distance = 4; \
-      condition = "[player, objNull, AGM_Interaction_Target] call AGM_Captives_fnc_canLoadCaptiveIntoVehicle"; \
-      statement = "[player, objNull, AGM_Interaction_Target] call AGM_Captives_fnc_loadCaptiveIntoVehicle"; \
-      exceptions[] = {"AGM_Interaction_isNotEscorting"}; \
-      showDisabled = 0; \
-      priority = 1.2; \
-    }; \
-    class AGM_UnloadCaptive { \
-      displayName = "$STR_AGM_Captives_UnloadCaptive"; \
-      distance = 4; \
-      condition = "[player, AGM_Interaction_Target] call AGM_Captives_fnc_canUnloadCaptiveFromVehicle"; \
-      statement = "[player, AGM_Interaction_Target] call AGM_Captives_fnc_unloadCaptiveFromVehicle"; \
-      showDisabled = 0; \
-      priority = 1.2; \
-    }; \
-  };
+  #define MACRO_LOADUNLOADCAPTIVE \
+    class AGM_Actions { \
+      class AGM_LoadCaptive { \
+        displayName = "$STR_AGM_Captives_LoadCaptive"; \
+        distance = 4; \
+        condition = "[_player, objNull, _target] call AGM_Captives_fnc_canLoadCaptive"; \
+        statement = "[_player, objNull, _target] call AGM_Captives_fnc_loadCaptive"; \
+        exceptions[] = {"AGM_Interaction_isNotEscorting"}; \
+        showDisabled = 0; \
+        priority = 1.2; \
+        hotkey = "L"; \
+      }; \
+      class AGM_UnloadCaptive { \
+        displayName = "$STR_AGM_Captives_UnloadCaptive"; \
+        distance = 4; \
+        condition = "[_player, _target] call AGM_Captives_fnc_canUnloadCaptive"; \
+        statement = "[_player, _target] call AGM_Captives_fnc_unloadCaptive"; \
+        showDisabled = 0; \
+        priority = 1.2; \
+        hotkey = "C"; \
+      }; \
+    };
 
   class LandVehicle;
   class Car: LandVehicle {
@@ -212,3 +247,91 @@ class CfgWeapons {
     };
   };
 };
+
+/*class CfgMovesBasic;
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class States {
+    class CutSceneAnimationBase;
+    class AmovPercMstpSnonWnonDnon_EaseIn: CutSceneAnimationBase {
+      head = "headDefault";
+      static = 1;
+      disableWeapons = 0;
+      forceAim = 0;
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseOut",0.02,"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_Ease: AmovPercMstpSnonWnonDnon_EaseIn {
+      looped = 1;
+      InterpolateTo[] = {"Unconscious",0.1};
+    };
+    class AmovPercMstpSnonWnonDnon_EaseOut: AmovPercMstpSnonWnonDnon_EaseIn {
+      InterpolateTo[] = {"AmovPercMstpSnonWnonDnon_EaseIn",0.02,"Unconscious",0.1};
+    };
+
+    class AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon: CutSceneAnimationBase {
+      InterpolateTo[] = {"Unconscious",0.01,"AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+    };
+
+    class AmovPercMstpSsurWnonDnon: AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon {
+      looped = 1;
+      InterpolateTo[] = {"Unconscious",0.01};
+    };
+
+    class AmovPercMstpSsurWnonDnon_AmovPercMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon {
+      InterpolateTo[] = {"Unconscious",0.01,"AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon",0.1};
+    };
+  };
+};*/
+
+class CfgMovesBasic {
+  class Actions {
+    class CivilStandActions;
+    class AGM_CivilStandCaptiveActions: CivilStandActions {
+      turnL = "";
+      turnR = "";
+      stop = "AGM_AmovPercMstpScapWnonDnon";
+      StopRelaxed = "AGM_AmovPercMstpScapWnonDnon";
+      default = "AGM_AmovPercMstpScapWnonDnon";
+      getOver = "";
+    };
+  };
+};
+
+class CfgMovesMaleSdr: CfgMovesBasic {
+  class StandBase;
+  class States {
+    class AmovPercMstpSnonWnonDnon: StandBase {
+      ConnectTo[] += {"AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon",0.1};
+    };
+
+    class CutSceneAnimationBase;
+    class AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon: CutSceneAnimationBase {
+      actions = "AGM_CivilStandCaptiveActions";
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_EaseIn";
+      speed = 1;
+      looped = 0;
+      interpolationRestart = 2;
+      ConnectTo[] = {"AGM_AmovPercMstpScapWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01,"AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+    };
+
+    class AGM_AmovPercMstpScapWnonDnon: AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\AmovPercMstpSnonWnonDnon_Ease";
+      speed = 0;
+      ConnectTo[] = {"AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01};
+      looped = 1;
+    };
+
+    class AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon: AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon {
+      actions = "CivilStandActions";
+      file = "\A3\anims_f\Data\Anim\Sdr\mov\erc\stp\non\non\amovpercmstpsnonwnondnon_easeout";
+      ConnectTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+      InterpolateTo[] = {"Unconscious",0.01,"AGM_AmovPercMstpSnonWnonDnon_AmovPercMstpScapWnonDnon",0.1};
+    };
+  };
+};
+
+/*
+player playMove "AGM_AmovPercMstpScapWnonDnon";
+player switchMove "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon";
+*/

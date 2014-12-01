@@ -17,7 +17,6 @@ class CfgFunctions {
     class AGM_Respawn {
       file = "AGM_Respawn\functions";
       class canMoveRallypoint;
-      class checkFriendlyFire;
       class getAllGear;
       class handleKilled;
       class handleRespawn;
@@ -38,17 +37,14 @@ class CfgFunctions {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Respawn_HandleGear {
-      killed = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleKilled};";
-    };
-    class AGM_Respawn_FirendlyFireMessage {
-      killed = "_this call AGM_Respawn_fnc_checkFriendlyFire;";
+      killed = "if (_this select 0 == AGM_player) then {_this call AGM_Respawn_fnc_handleKilled};";
     };
   };
 };
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Respawn_HandleGear {
-      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+      respawn = "if (_this select 0 == AGM_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
     };
   };
 };
@@ -85,16 +81,16 @@ class CfgVehicles {
           class No { default = 1; name = "No"; value = 0; };
         };
       };
-      /*class RemoveDeadBodies {
+      class RemoveDeadBodiesDisonncected {
         displayName = "Remove bodies?";
-        description = "Remove player bodies after respawn?";
+        description = "Remove player bodies after disconnect?";
         typeName = "BOOL";
         class values {
           class Yes { default = 1; name = "Yes"; value = 1;};
           class No { name = "No"; value = 0; };
         };
       };
-      class BodyRemoveTimer {
+      /*class BodyRemoveTimer {
         displayName = "Time to remove bodies.";
         description = "The amount of time (in seconds) after that a unit's body gets removed. Default: 90";
         typeName = "NUMBER";
@@ -283,5 +279,5 @@ class AGM_Parameters {
   //AGM_Respawn_BodyRemoveTimer = 90;
   // Boolean Parameters (0/1)
   AGM_Respawn_SavePreDeathGear = 0;
-  //AGM_Respawn_RemoveDeadBodies = 1;
+  AGM_Respawn_RemoveDeadBodiesDisonncected = 1;
 };

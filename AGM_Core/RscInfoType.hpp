@@ -25,3 +25,14 @@ class RscDisplayInventory {
 class RscDisplayOptionsLayout {
 	onLoad = "uiNamespace setVariable ['AGM_dlgActionMenu', _this select 0]; [""onLoad"",_this,""RscDisplayOptionsLayout"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; {_this call _x} forEach ((missionNamespace getVariable ['AGM_onLoadActionMenu', [-1, [], []]]) select 2);";
 };
+
+class RscDisplayChannel {
+	class controls {
+		class AGM_GetChannel: RscMapControl {
+			onDraw = "missionNamespace setVariable ['AGM_currentChannel', ctrlText ((ctrlParent (_this select 0)) displayCtrl 101)];";
+			idc = -1;
+			w = 0;
+			h = 0;
+		};
+	};
+};
