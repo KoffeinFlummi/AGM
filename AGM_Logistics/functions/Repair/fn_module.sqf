@@ -21,10 +21,10 @@ if !(_activated) exitWith {};
 
 AGM_Repair_Module = true;
 
-[_logic, "AGM_Repair_TimeRepair",                 "TimeRepair"                ] call AGM_Core_fnc_readNumericParameterFromModule;
-[_logic, "AGM_Repair_TimeWheelRepair",                 "TimeWheelRepair"                ] call AGM_Core_fnc_readNumericParameterFromModule;
-[_logic, "AGM_Repair_TimeTrackRepair",                 "TimeTrackRepair"                ] call AGM_Core_fnc_readNumericParameterFromModule;
-[_logic, "AGM_Repair_MaxDamageRepair",                 "MaxDamageRepair"                ] call AGM_Core_fnc_readNumericParameterFromModule;
+[_logic, "AGM_Repair_TimeRepair",      "TimeRepair"     ] call AGM_Core_fnc_readNumericParameterFromModule;
+[_logic, "AGM_Repair_TimeWheelRepair", "TimeWheelRepair"] call AGM_Core_fnc_readNumericParameterFromModule;
+[_logic, "AGM_Repair_TimeTrackRepair", "TimeTrackRepair"] call AGM_Core_fnc_readNumericParameterFromModule;
+[_logic, "AGM_Repair_MaxDamageRepair", "MaxDamageRepair"] call AGM_Core_fnc_readNumericParameterFromModule;
 
 
 diag_log text "[AGM]: Repair Module Initialized.";

@@ -6,9 +6,9 @@ _unit = _this select 0;
 
 _nearObjects = nearestObjects [_unit, ["Car", "Tank", "ReammoBox_F"], 10];
 {
-	if !(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "AGM_canRepair") > 0) then {
-		_nearObjects set [_forEachIndex, objNull];
-	};
+  if !(getNumber (configFile >> "CfgVehicles" >> typeOf _x >> "AGM_canRepair") > 0) then {
+    _nearObjects set [_forEachIndex, objNull];
+  };
 } forEach _nearObjects;
 _nearObjects = _nearObjects - [objNull];
 

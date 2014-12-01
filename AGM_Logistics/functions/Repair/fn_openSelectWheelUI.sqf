@@ -12,30 +12,30 @@ _count = count _wheels;
 
 _actions = [localize "STR_AGM_Repair_SelectWheelMenu", localize "STR_AGM_Repair_SelectWheel"] call AGM_Interaction_fnc_prepareSelectMenu;
 for "_index" from 0 to (_count - 1) do {
-	_wheel = _wheels select _index;
-	//_name = [_wheel] call AGM_Repair_fnc_getHitPointName;
-	_name = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_WheelsLocalized") select (getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Wheels") find _wheel);
-	_picture = "AGM_Interaction\UI\IconInteraction_ca.paa";
+  _wheel = _wheels select _index;
+  //_name = [_wheel] call AGM_Repair_fnc_getHitPointName;
+  _name = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_WheelsLocalized") select (getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Wheels") find _wheel);
+  _picture = "AGM_Interaction\UI\IconInteraction_ca.paa";
 
-	if (_vehicle getHitPointDamage _wheel == 1) then {
-		_actions = [
-			_actions,
-			_name,
-			_picture,
-			_wheel
-		] call AGM_Interaction_fnc_AddSelectableItem;
-	};
+  if (_vehicle getHitPointDamage _wheel == 1) then {
+    _actions = [
+      _actions,
+      _name,
+      _picture,
+      _wheel
+    ] call AGM_Interaction_fnc_AddSelectableItem;
+  };
 };
 
 [
-	_actions,
-	{
-		call AGM_Interaction_fnc_hideMenu;
-		_vehicle = AGM_Interaction_Target;
-		[_vehicle, _this] call AGM_Repair_fnc_repairWheel;
-	},
-	{
-		call AGM_Interaction_fnc_hideMenu;
-		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};
-	}
+  _actions,
+  {
+    call AGM_Interaction_fnc_hideMenu;
+    _vehicle = AGM_Interaction_Target;
+    [_vehicle, _this] call AGM_Repair_fnc_repairWheel;
+  },
+  {
+    call AGM_Interaction_fnc_hideMenu;
+    if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};
+  }
 ] call AGM_Interaction_fnc_openSelectMenu;

@@ -12,10 +12,10 @@ if (_damage == 1) exitWith {};
 
 [_vehicle, _part, 1, true] call AGM_Repair_fnc_setHitPointDamage;
 
-[player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+[AGM_player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 
-_wheel = ['AGM_SpareWheel', getPosASL player] call AGM_Logistics_fnc_spawnObject;
-_wheel setdamage _damage;
+_wheel = ['AGM_SpareWheel', getPosASL AGM_player] call AGM_Logistics_fnc_spawnObject;
+_wheel setDamage _damage;
 
 _name = [_part] call AGM_Repair_fnc_getHitPointName;
 _string = format [localize "STR_AGM_Repair_RemovedWheel", _name];

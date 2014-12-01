@@ -244,8 +244,8 @@ class CfgVehicles {
       // Adding a self option to release will fix this.
       class AGM_ReleaseItemSelf {
         displayName = "$STR_AGM_Drag_EndDrag";
-        condition = "player call AGM_Drag_fnc_isDraggingObject";
-        statement = "player call AGM_Drag_fnc_releaseObject";
+        condition = "_player call AGM_Drag_fnc_isDraggingObject";
+        statement = "_player call AGM_Drag_fnc_releaseObject";
         exceptions[] = {"AGM_Drag_isNotDragging"};
         showDisabled = 0;
         priority = 2.1;
@@ -880,8 +880,8 @@ class CfgVehicles {
       class AGM_PlaceFortification {
         displayName = "Place Fortification";
         distance = 4;
-        condition = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_canSetupBarrier";
-        statement = "[player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_openSelectBarrierlUI";
+        condition = "[_player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_canSetupBarrier";
+        statement = "[_player, AGM_Interaction_Target, ['Land_BagFence_Long_F', 'Land_BagFence_Round_F']] call AGM_Fortifications_fnc_openSelectBarrierlUI";
         showDisabled = 0;
         priority = 0.5;
         icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
@@ -895,8 +895,8 @@ class CfgVehicles {
       class AGM_PlaceFortification {
         displayName = "Place Fortification";
         distance = 4;
-        condition = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_canSetupBarrier";
-        statement = "[player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_setupBarrier";
+        condition = "[_player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_canSetupBarrier";
+        statement = "[_player, AGM_Interaction_Target, 'Land_Razorwire_F'] call AGM_Fortifications_fnc_setupBarrier";
         showDisabled = 0;
         priority = 0.5;
         icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";

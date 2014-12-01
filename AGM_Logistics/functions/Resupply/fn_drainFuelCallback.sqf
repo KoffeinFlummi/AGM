@@ -15,17 +15,17 @@ _capacity = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_fu
 _fuelVehicle = fuel _vehicle * _capacity;
 
 if (_fuel + _fuelVehicle < 20) then {
-	_fuel = _fuel + _fuelVehicle;
-	_fuelVehicle = 0;
+  _fuel = _fuel + _fuelVehicle;
+  _fuelVehicle = 0;
 } else {
-	_fuelVehicle = _fuelVehicle + _fuel - 20;
-	_fuel = 20;
+  _fuelVehicle = _fuelVehicle + _fuel - 20;
+  _fuel = 20;
 };
 
 [[_vehicle, _fuelVehicle / _capacity], "{(_this select 0) setFuel (_this select 1)}", _vehicle] call AGM_Core_fnc_execRemoteFnc;
 _item setVariable ["AGM_amountFuel", _fuel, true];
 
-_displayName = getText (configfile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+_displayName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
 
 _text = format [localize "STR_AGM_Resupply_DrainedFuel", _displayName];
 [_text] call AGM_Core_fnc_displayTextStructured;

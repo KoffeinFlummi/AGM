@@ -9,7 +9,7 @@ _wheels = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Wheel
 
 _wheels = [_wheels, {_vehicle getHitPointDamage _this == 1}] call AGM_Core_fnc_filter;
 
-_spareWheel = [player] call AGM_Repair_fnc_getNearestWheel;
+_spareWheel = [AGM_player] call AGM_Repair_fnc_getNearestWheel;
 
 count _wheels > 0
 && {alive _vehicle}

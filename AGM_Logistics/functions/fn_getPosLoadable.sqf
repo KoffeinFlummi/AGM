@@ -14,9 +14,9 @@ private "_theCrate";
 
 _theCrate = _this select 0;
 {
-	if (_theCrate in (_x getVariable ["AGM_Logistics_loadedItems", []])) exitWith {
-		_theCrate = _x;
-	};
+  if (_theCrate in (_x getVariable ["AGM_Logistics_loadedItems", []])) exitWith {
+    _theCrate = _x;
+  };
 } forEach vehicles;
 
 getPos _theCrate
