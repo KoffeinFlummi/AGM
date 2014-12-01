@@ -5,13 +5,13 @@ private ["_vehicle", "_part", "_isEngineer", "_time", "_name", "_string"];
 _vehicle = _this select 0;
 _part = _this select 1;
 
-_isEngineer = [player] call AGM_Core_fnc_isEngineer;
+_isEngineer = [AGM_player] call AGM_Core_fnc_isEngineer;
 
 _time = 10;
 _time = _time + 10 * (_vehicle getHitPointDamage _part);
 if !(_isEngineer) then {_time = _time + 10};
 
-[player, "AinvPknlMstpSnonWnonDr_medic5", 0] call AGM_Core_fnc_doAnimation;
+[AGM_player, "AinvPknlMstpSnonWnonDr_medic5", 0] call AGM_Core_fnc_doAnimation;
 
 _name = [_part] call AGM_Repair_fnc_getHitPointName;
 _string = format [localize "STR_AGM_Repair_RemovingWheel", _name];

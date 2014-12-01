@@ -19,4 +19,4 @@ isNull (gunner _vehicle) &&
 {alive _vehicle} &&
 {!(_vehicle lockedTurret _turret)} &&
 {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "isUav") != 1} &&
-{player distance (_vehicle modeltoworld (_vehicle selectionPosition _memoryPointGunner)) < _distance || {vehicle player == _vehicle}}
+{AGM_player distance (_vehicle modelToWorld (_vehicle selectionPosition _memoryPointGunner)) < _distance || {vehicle AGM_player == _vehicle}}

@@ -2,7 +2,7 @@
 
 _vehicle = _this select 0;
 
-player action [
-	["GetInGunner", "MoveToGunner"] select (vehicle player == _vehicle),
-	_vehicle
+AGM_player action [
+  ["GetInGunner", "MoveToGunner"] select (vehicle AGM_player == _vehicle),
+  _vehicle
 ];

@@ -10,11 +10,11 @@ if (isNil "_magazine") exitWith {[]};
 _weapons = weapons _vehicle;
 _weaponMagazines = [];
 {
-	_weaponMagazines set [_forEachIndex, getArray (configFile >> "CfgWeapons" >> _x >> "AGM_Magazines")]
+  _weaponMagazines set [_forEachIndex, getArray (configFile >> "CfgWeapons" >> _x >> "AGM_Magazines")]
 } forEach _weapons;
 
 _magazineWeapons = [];
 {
-	if (_magazine in _x) then {_magazineWeapons pushBack (_weapons select _forEachIndex);};
+  if (_magazine in _x) then {_magazineWeapons pushBack (_weapons select _forEachIndex);};
 } forEach _weaponMagazines;
 _magazineWeapons

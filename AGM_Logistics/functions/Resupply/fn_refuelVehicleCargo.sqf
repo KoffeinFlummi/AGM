@@ -6,7 +6,7 @@ private ["_vehicle", "_source", "_fuelCargo", "_fuel", "_capacity", "_time"];
 
 _vehicle = _this select 0;
 
-_source = [player] call AGM_Resupply_fnc_getNearestRefueler;
+_source = [AGM_player] call AGM_Resupply_fnc_getNearestRefueler;
 if (isNull _source) exitWith {};
 
 _fuelCargo = _source getVariable ["AGM_amountFuelCargo", getNumber (configFile >> "CfgVehicles" >> typeOf _source >> "AGM_fuelCapacityCargo")];

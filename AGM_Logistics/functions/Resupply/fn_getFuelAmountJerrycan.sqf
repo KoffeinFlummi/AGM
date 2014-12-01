@@ -6,7 +6,7 @@ _unit = _this select 0;
 _item = _this select 1;
 
 if (isNil "_item") then {
-	_item = _unit getVariable "AGM_carriedItem";
+  _item = _unit getVariable "AGM_carriedItem";
 };
 if (isNil "_item") exitWith {};
 

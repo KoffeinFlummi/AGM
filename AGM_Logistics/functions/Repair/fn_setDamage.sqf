@@ -21,14 +21,14 @@ _damage = _this select 1;
 
 _hitPoints = [];
 {
-	_damageHitPoint = _vehicle getHitPointDamage _x;
-	if (isNil "_damageHitPoint") then {_damageHitPoint = 0};
+  _damageHitPoint = _vehicle getHitPointDamage _x;
+  if (isNil "_damageHitPoint") then {_damageHitPoint = 0};
 
-	_hitPoints set [_forEachIndex, _damageHitPoint];
+  _hitPoints set [_forEachIndex, _damageHitPoint];
 } forEach ALL_HITPOINTS;
 
 _vehicle setDamage _damage;
 
 {
-	_vehicle setHitPointDamage [_x, _hitPoints select _forEachIndex];
+  _vehicle setHitPointDamage [_x, _hitPoints select _forEachIndex];
 } forEach ALL_HITPOINTS;
