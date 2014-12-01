@@ -34,7 +34,6 @@ class RscDisplayInsertMarker {
 			text = "";
 		};
 		class ButtonMenuCancel: RscButtonMenuCancel {
-			x = "(14 + 8.9) * 	(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
 			x = "23 * 			(			((safezoneW / safezoneH) min 1.2) / 40) + 			(safezoneX)";
 			y = "15.5 * 			(			(			((safezoneW / safezoneH) min 1.2) / 1.2) / 25) + 			(safezoneY + safezoneH - 			(			((safezoneW / safezoneH) min 1.2) / 1.2))";
 			w = "1.1 * 			(			((safezoneW / safezoneH) min 1.2) / 40)";

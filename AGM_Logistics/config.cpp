@@ -1012,7 +1012,7 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_PATRIA;
 
     AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
-    AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+    AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
   };
   class APC_Wheeled_02_base_F: Wheeled_APC_F {
     AGM_fuelCapacity = AGM_FUELCAPACITY_ARMA;
@@ -1021,7 +1021,7 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_PANDUR;
 
     AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
-    AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+    AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
   };
   class APC_Tracked_01_base_F: Tank_F {
     AGM_fuelCapacity = AGM_FUELCAPACITY_NAMER;
