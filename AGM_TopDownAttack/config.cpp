@@ -35,7 +35,7 @@ class Extended_FiredBIS_EventHandlers {
 
 class AGM_Core_Default_Keys {
   class toggleTopDownAttack {
-    displayName = "Toggle Top Down Attack";
+    displayName = "$STR_AGM_ToggleTopDownAttack";
     condition = "[_player] call AGM_TopDownAttack_fnc_canToggleTopDownAttack";
     statement = "[_player] call AGM_TopDownAttack_fnc_toggleTopDownAttack";
     key = 25;
