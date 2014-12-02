@@ -26,6 +26,8 @@ _this spawn {
 
   sleep 0.5 + (random 0.3);
 
+  // @todo: visual indicator(s) for crew members.
+
   // Smoke out of cannon and hatches
   _smokeBarrel = "#particlesource" createVehicle [0,0,0];
   _smokeBarrel setParticleClass "MediumDestructionSmoke";
@@ -45,6 +47,9 @@ _this spawn {
   } forEach _positions;
 
   sleep 3 + (random 2);
+
+  // @todo sound
+  // @todo light
 
   // this shit is busy being on fire, can't go driving around all over the place
   _vehicle setFuel 0;
