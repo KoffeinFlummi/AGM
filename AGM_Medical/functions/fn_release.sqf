@@ -10,51 +10,25 @@
  * none
  */
 
-#define DRAGGINGMOVE ""
-#define DRAGGEDMOVE "Unconscious"
+private ["_unit"];
 
-_this spawn {
-  _unit = _this select 0;
+_unit = _this select 0;
 
-  player removeWeapon "AGM_FakePrimaryWeapon";
+AGM_player removeWeapon "AGM_FakePrimaryWeapon";
+AGM_player setVariable ["AGM_Transporting", objNull, True];
+AGM_player setVariable ["AGM_canTreat", true, false];
+_unit setVariable ["AGM_isTreatable", True, True];
 
-  if isNull (player getVariable "AGM_Carrying") then {
-    _unit = player getVariable "AGM_Dragging";
+detach _unit;
 
-    _unit setVariable ["AGM_Treatable", true, true];
-    player setVariable ["AGM_Dragging", objNull, false];
-  } else {
-    _unit = player getVariable "AGM_Carrying";
+AGM_player removeAction (AGM_player getVariable "AGM_Medical_ReleaseID");
 
-    _unit setVariable ["AGM_Treatable", true, true];
-    player setVariable ["AGM_Carrying", objNull, false];
-  };
+// animation was already handled by fnc_loadIntoVehicle
+if (vehicle _unit != _unit) exitWith {};
 
-  detach _unit;
-  player setVariable ["AGM_CanTreat", true, false];
-
-  player removeAction (player getVariable "AGM_Medical_ReleaseID");
-
-  if (vehicle _unit != _unit) exitWith {};
-
-  [-2, {
-    if (vehicle (_this select 0) == (_this select 0)) then {
-      (_this select 0) switchMove DRAGGINGMOVE;
-    };
-    if ((_this select 1) getVariable "AGM_Unconscious") then {
-      (_this select 1) switchMove DRAGGEDMOVE;
-    };
-  }, [player, _unit]] call CBA_fnc_globalExecute;
-
-  /*[-2, {
-    if (local _this) then {
-      _this spawn {
-        _this enableSimulation true;
-        sleep 3.8;
-        if (_this getVariable "AGM_Unconscious") then {
-          _this enableSimulation false;
-        };
-      };
-    };
-  }, _unit] call CBA_fnc_globalExecute;*/
+if (vehicle AGM_player == AGM_player) then {
+  [AGM_player, "", 2, True] call AGM_Core_fnc_doAnimation;
+};
+if (_unit getVariable "AGM_isUnconscious") then {
+  [_unit, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
 };

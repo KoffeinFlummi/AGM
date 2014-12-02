@@ -14,44 +14,38 @@
  * Damage value to be inflicted (optional)
  */
 
-#define UNCONSCIOUSNESSTHRESHOLD 0.5
+#define UNCONSCIOUSNESSTRESHOLD 0.6
 
-#define LEGDAMAGETHRESHOLD1 1
-#define LEGDAMAGETHRESHOLD2 2
-#define ARMDAMAGETHRESHOLD 2
-
-#define PAINKILLERTHRESHOLD 0.1
+#define PAINKILLERTRESHOLD 0.1
 #define PAINLOSS 0.0001
 
-#define BLOODTHRESHOLD1 0.35
-#define BLOODTHRESHOLD2 0
-#define BLOODLOSSRATE 0.02
+#define BLOODTRESHOLD1 0.35
+#define BLOODTRESHOLD2 0
+#define BLOODLOSSRATE 0.04
 
-private ["_unit", "_selectionName", "_damage", "_source", "_source", "_projectile", "_hitSelections", "_hitPoints", "_newDamage", "_found", "_preventDeath"];
+private ["_unit", "_selectionName", "_damage", "_source", "_source", "_projectile", "_hitSelections", "_hitPoints", "_newDamage", "_found", "_cache_projectiles", "_cache_hitpoints", "_cache_damages"];
 
-_unit = _this select 0;
+_unit          = _this select 0;
 _selectionName = _this select 1;
-_damage = _this select 2;
-_source = _this select 3;
-_projectile = _this select 4;
-
-//systemChat format ["1: %1", _damage];
+_damage        = _this select 2;
+_source        = _this select 3;
+_projectile    = _this select 4;
 
 // Prevent unnecessary processing
-if (damage _unit == 1) exitWith {};
+if (damage _unit >= 1) exitWith {};
+
+_unit setVariable ["AGM_isDiagnosed", False, True];
+
+// @todo: figure out if this still applies.
 
 // For some reason, everything is backwards in MP,
 // so we need to untangle some things.
 if (isMultiplayer) then {
-  // If you add something to this, remember not to replace something twice.
-  if (_selectionName == "hand_r") then {
-    _selectionName = "leg_l";
-  };
-  if (_selectionName == "leg_r") then {
-    _selectionName = "hand_l";
-  };
-  if (_selectionName == "legs") then {
-    _selectionName = "hand_r";
+  _selectionName = switch (_selectionName) do {
+    case "hand_r" : {"leg_l"};
+    case "leg_r"  : {"hand_l"};
+    case "legs"   : {"hand_r"};
+    default         {_selectionName};
   };
 };
 
@@ -61,25 +55,12 @@ if (_selectionName == "r_femur_hit") then {
   _selectionName = "leg_r";
 };
 
-_hitSelections = [
-  "head",
-  "body",
-  "hand_l",
-  "hand_r",
-  "leg_l",
-  "leg_r"
-];
-_hitPoints = [
-  "HitHead",
-  "HitBody",
-  "HitLeftArm",
-  "HitRightArm",
-  "HitLeftLeg",
-  "HitRightLeg"
-];
+_hitSelections = ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"];
+_hitPoints = ["HitHead", "HitBody", "HitLeftArm", "HitRightArm", "HitLeftLeg", "HitRightLeg"];
 
 // If the damage is being weird, we just tell it to fuck off.
-if !((_selectionName in _hitSelections) or (_selectionName == "")) exitWith {0};
+// (Returning 0 seems to cause issues though, so return 0.01)
+if !(_selectionName in (_hitSelections + [""])) exitWith {0.01};
 
 // Calculate change in damage.
 _newDamage = _damage - (damage _unit);
@@ -87,232 +68,190 @@ if (_selectionName in _hitSelections) then {
   _newDamage = _damage - (_unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName)));
 };
 
-// Exclude falling damage to anything other than legs, reduce overall fall damage.
-if (((velocity _unit) select 2 < -10) and (vehicle player == player)) then {
-  AGM_Medical_IsFalling = true;
-};
-if (AGM_Medical_IsFalling and !(_selectionName in ["", "leg_l", "leg_r"])) exitWith {
-  if (_selectionName in _hitSelections) then {
-    _unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))
-  } else {
-    0
-  };
-};
-
-// Prevent multiple damages by same hit.
-if !(AGM_Medical_IsFalling or (_selectionName == "")) then {
-  _found = false;
-  for "_i" from 0 to (count AGM_Medical_Hits - 1) do {
-    if (((AGM_Medical_Hits select _i) select 2) == _projectile) then {
-      _found = true;
-      if (((AGM_Medical_Hits select _i) select 1) < _newDamage) then {
-        AGM_Medical_Hits set [_i, [_hitPoints select (_hitSelections find _selectionName), _newDamage, _projectile]];
-      };
+// Finished with the current frame, reset variables
+// Note: sometimes handleDamage spans over 2 or even 3 frames.
+if (diag_frameno > (_unit getVariable ["AGM_Medical_FrameNo", -3]) + 2) then {
+  _unit setVariable ["AGM_Medical_FrameNo", diag_frameno];
+  _unit setVariable ["AGM_Medical_isFalling", False];
+  _unit setVariable ["AGM_Medical_Projectiles", []];
+  _unit setVariable ["AGM_Medical_HitPoints", []];
+  _unit setVariable ["AGM_Medical_Damages", []];
+  _unit setVariable ["AGM_Medical_PreventDeath", False];
+  if (([_unit] call AGM_Core_fnc_isPlayer) or _unit getVariable ["AGM_allowUnconscious", False]) then {
+    if (!(_unit getVariable "AGM_isUnconscious") and
+        {_unit getVariable ["AGM_Medical_PreventInstaDeath", AGM_Medical_PreventInstaDeath > 0]}) then {
+      _unit setVariable ["AGM_Medical_PreventDeath", True];
     };
-  };
-  if !(_found) then {
-    AGM_Medical_Hits = AGM_Medical_Hits + [[(_hitPoints select (_hitSelections find _selectionName)), _newDamage, _projectile]];
+    if ((_unit getVariable "AGM_isUnconscious") and
+        {_unit getVariable ["AGM_Medical_PreventDeathWhileUnconscious", AGM_Medical_PreventDeathWhileUnconscious > 0]}) then {
+      _unit setVariable ["AGM_Medical_PreventDeath", True];
+    };
   };
 };
 
-// Code to be executed AFTER damage was dealt
-if ((count AGM_Medical_Hits > 0) or AGM_Medical_IsFalling or (_selectionName == "")) then {
-  null = [_unit, damage _unit, (_unit getVariable "AGM_Pain")] spawn {
-    _unit = _this select 0;
-    _damageold = _this select 1;
-    _painold = _this select 2;
+_damage = _damage - _newDamage;
 
-    sleep 0.00001;
+if !(_unit getVariable ["AGM_allowDamage", True]) exitWith {_damage max 0.01};
 
-    _preventDeath = false;
-    // Only prevent death if we are going to handle unconciousness
-    if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
-      if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-        _preventDeath = true;
-      };
-      if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-        _preventDeath = true;
-      };
-    };
+_newDamage = _newDamage * (_unit getVariable ["AGM_Medical_CoefDamage", AGM_Medical_CoefDamage]);
 
-    if !(AGM_Medical_IsFalling) then {
-      {
-        _hitPointDamage = (_x select 1) * AGM_Medical_CoefDamage;
-        if (_preventDeath and ((_x select 0) in ["HitHead", "HitBody"])) then {
-          _unit setHitPointDamage [(_x select 0), (_hitPointDamage min 0.89)];
-        } else {
-          _unit setHitPointDamage [(_x select 0), _hitPointDamage];
-        };
-      } count AGM_Medical_Hits;
-    };
+// Exclude falling damage to everything other than legs; reduce structural damage.
+// @todo: figure out why this still doesn't work in MP
+if (((velocity _unit) select 2 < -5) and (vehicle _unit == _unit)) then {
+  _unit setVariable ["AGM_Medical_isFalling", True];
+};
+if (_unit getVariable "AGM_Medical_isFalling" and !(_selectionName in ["", "leg_l", "leg_r"])) exitWith {
+  (_unit getHitPointDamage (_hitPoints select (_hitSelections find _selectionName))) max 0.01;
+};
+if (_unit getVariable "AGM_Medical_isFalling") then {
+  _newDamage = _newDamage * 0.7;
+};
 
-    // reset things.
-    AGM_Medical_Hits = [];
-    AGM_Medical_IsFalling = false;
-
-    _unit setVariable ["AGM_Diagnosed", false, true];
-
-    _armdamage = (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitRightArm");
-    _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
-
-    // Reset "unused" hitpoints.
-    [_unit, "HitHands", 0, true] call AGM_Medical_fnc_setHitPointDamage;
-
-    // Account for unassigned structural damage, like when you crash into something with a vehicle
-    if ((damage _unit > 0) and (_unit getHitPointDamage "HitHead" < 0.01) and (_unit getHitPointDamage "HitBody" < 0.01) and (_unit getHitPointDamage "HitLeftArm" < 0.01) and (_unit getHitPointDamage "HitRightArm" < 0.01) and (_unit getHitPointDamage "HitLeftLeg" < 0.01) and (_unit getHitPointDamage "HitRightLeg" < 0.01)) then {
-      [_unit, "HitBody", (damage _unit), true] call AGM_Medical_fnc_setHitPointDamage;
-    };
-
-    // Handle death and unconsciousness
-    if (damage _unit > UNCONSCIOUSNESSTHRESHOLD and damage _unit < 1 and !(_unit getVariable "AGM_Unconscious")) then {
-      [_unit] call AGM_Medical_fnc_knockOut;
-    };
-
-    // Handle leg damage symptoms
-    if (_legdamage >= LEGDAMAGETHRESHOLD1) then {
-      // lightly wounded, limit walking speed
-      [_unit, "HitLegs", 1, true] call AGM_Medical_fnc_setHitPointDamage;
+// Make sure there's only one damaged selection per projectile per frame.
+_cache_projectiles = _unit getVariable "AGM_Medical_Projectiles";
+_cache_hitpoints = _unit getVariable "AGM_Medical_HitPoints";
+_cache_damages = _unit getVariable "AGM_Medical_Damages";
+if (_selectionName != "" and !(_unit getVariable "AGM_Medical_isFalling")) then {
+  if (_projectile in _cache_projectiles) then {
+    _index = _cache_projectiles find _projectile;
+    _otherDamage = (_cache_damages select _index);
+    if (_otherDamage > _newDamage) then {
+      _newDamage = 0;
     } else {
-      [_unit, "HitLegs", 0, true] call AGM_Medical_fnc_setHitPointDamage;
+      _hitPoint = _cache_hitpoints select _index;
+      _restore = ((_unit getHitPointDamage _hitPoint) - _otherDamage) max 0;
+      _unit setHitPointDamage [_hitPoint, _restore];
+      // Make entry unfindable
+      _cache_projectiles set [_index, objNull];
+      _cache_projectiles pushBack _projectile;
+      _cache_hitpoints pushBack (_hitPoints select (_hitSelections find _selectionName));
+      _cache_damages pushBack _newDamage;
     };
-    /* DEAL WITH THIS LATER
-      if (_legdamage >= LEGDAMAGETHRESHOLD2) then {
-        // heavily wounded, stop unit from walking alltogether
-        if !(_unit getVariable "AGM_NoLegs") then {
-          _unit setVariable ["AGM_NoLegs", true, true];
-          _unit spawn {
-            _unit = _this;
-            _unit setUnitPos "DOWN";
-            [_unit] call AGM_Medical_fnc_forceProne;
-            while {true} do {
-              _legdamage = (_unit getHitPointDamage "HitLeftUpLeg") + (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitLeftFoot") + (_unit getHitPointDamage "HitRightUpLeg") + (_unit getHitPointDamage "HitRightLeg") + (_unit getHitPointDamage "HitRightFoot");
-              if (_legdamage < LEGDAMAGETHRESHOLD2) exitWith {
-                _unit setUnitPos "AUTO";
-                _unit setVariable ["AGM_NoLegs", false, true];
-              };
-              if (stance _unit != "PRONE") then {
-                [_unit] call AGM_Medical_fnc_forceProne;
-              };
-              sleep 1;
-            };
-          };
-        };
-      };
+  } else {
+    _cache_projectiles pushBack _projectile;
+    _cache_hitpoints pushBack (_hitPoints select (_hitSelections find _selectionName));
+    _cache_damages pushBack _newDamage;
+  };
+};
+_unit setVariable ["AGM_Medical_Projectiles", _cache_projectiles];
+_unit setVariable ["AGM_Medical_HitPoints", _cache_hitpoints];
+_unit setVariable ["AGM_Medical_Damages", _cache_damages];
 
-      // Handle arm damage symptoms
-      if (_armdamage >= ARMDAMAGETHRESHOLD) then {
-        if !(_unit getVariable "AGM_NoArms") then {
-          _unit setVariable ["AGM_NoArms", true, true];
-          _unit spawn {
-            _unit = _this;
-            _unit setUnitPos "DOWN";
-            [_unit] call AGM_Medical_fnc_dropWeapon;
-            while {true} do {
-              _armdamage = (_unit getHitPointDamage "HitLeftShoulder") + (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitLeftForeArm") + (_unit getHitPointDamage "HitRightShoulder") + (_unit getHitPointDamage "HitRightArm") + (_unit getHitPointDamage "HitRightForeArm");
-              if (_armdamage < ARMDAMAGETHRESHOLD) exitWith {
-                _unit setVariable ["AGM_NoArms", false, true];
-              };
-              if (currentWeapon player != "") then {
-                [_unit] call AGM_Medical_fnc_dropWeapon;
-              };
-              sleep 3;
-            };
-          };
-        };
-      };
-    */
+// we want to move damage to another selection; have to do it ourselves.
+// this is only the case for limbs, so this will not impact the killed EH.
+if (_selectionName != (_this select 1)) then {
+  _unit setHitPointDamage [_hitPoints select (_hitSelections find _selectionName), _damage + _newDamage];
+  _newDamage = 0;
+};
 
-    if (damage _unit * (_unit getVariable "AGM_Painkiller") > _unit getVariable "AGM_Pain") then {
-      _unit setVariable ["AGM_Pain", (damage _unit) * (_unit getVariable "AGM_Painkiller"), true];
-    };
+_damage = _damage + _newDamage;
 
-    // Pain
-    if (_unit == player and !(_unit getVariable "AGM_InPain")) then {
-      player setVariable ["AGM_InPain", true, true];
-      0 spawn {
-        _time = time;
-        "chromAberration" ppEffectEnable true;
-        while {(player getVariable "AGM_Pain") > 0 && {alive player}} do {
-          _strength = player getVariable "AGM_Pain";
-          _strength = _strength * AGM_Medical_CoefPain;
-          "chromAberration" ppEffectAdjust [0.035 * _strength, 0.035 * _strength, false];
-          "chromAberration" ppEffectCommit 1;
-          sleep (1.5 - (player getVariable "AGM_Pain"));
-          "chromAberration" ppEffectAdjust [0.35 * _strength, 0.35 * _strength, false];
-          "chromAberration" ppEffectCommit 1;
-          sleep 0.15;
+// Assign orphan structural damage to torso;
+// using spawn with custom damage handling here, but since I just
+// move damage, this shouldn't be any issue for the Killed EH
+_unit spawn {
+  sleep 0.001;
 
-          _pain = ((player getVariable "AGM_Pain") - PAINLOSS * ((time - _time) / 1)) max 0;
-          player setVariable ["AGM_Pain", _pain, true];
-          _time = time;
-        };
-        "chromAberration" ppEffectEnable false;
-        player setVariable ["AGM_InPain", false, true];
-      };
-    };
-
-    // Bleeding
-    if !(_unit getVariable "AGM_Bleeding") then {
-      _unit setVariable ["AGM_Bleeding", true, true];
-      _unit spawn {
-        while {_this getVariable "AGM_Blood" > 0 and (_this getVariable "AGM_Bleeding") and damage _this > 0 and damage _this < 1} do {
-
-          if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
-            if (_this == player) then {[(damage _this) * 500] call BIS_fnc_bloodEffect;};
-            _blood = _this getVariable "AGM_Blood";
-            _blood = _blood - BLOODLOSSRATE * AGM_Medical_CoefBleeding * (damage _this);
-            _blood = _blood max 0;
-            _this setVariable ["AGM_Blood", _blood, true];
-            if (_blood <= BLOODTHRESHOLD1 and !(_this getVariable "AGM_Unconscious")) then {
-              [_this] call AGM_Medical_fnc_knockOut;
-            };
-            if (_blood <= BLOODTHRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
-              _this setDamage 1;
-            };
-          };
-
-          sleep 10;
-        };
-        _this setVariable ["AGM_Bleeding", false, true];
-      };
-    };
-
+  _damagesum = (_this getHitPointDamage "HitHead")
+    + (_this getHitPointDamage "HitBody")
+    + (_this getHitPointDamage "HitLeftArm")
+    + (_this getHitPointDamage "HitRightArm")
+    + (_this getHitPointDamage "HitLeftLeg")
+    + (_this getHitPointDamage "HitRightLeg");
+  if (_damagesum <= 0.06 and (damage _this) > 0.01) then {
+    _damage = damage _this;
+    _this setDamage 0;
+    _this setHitPointDamage ["HitBody", (_damage min 0.89)]; // just to be sure.
   };
 };
 
-_preventDeath = false;
-// Only prevent death if we are going to handle unconciousness
-if (isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) then {
-  if (!(_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventInstaDeath > 0}) then {
-    _preventDeath = true;
-  };
-  if ((_unit getVariable "AGM_Unconscious") and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
-    _preventDeath = true;
+// Leg & Arm Damage
+_legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
+if (_selectionName == "leg_l") then {
+  _legdamage = _damage + (_unit getHitPointDamage "HitRightLeg");
+};
+if (_selectionName == "leg_r") then {
+  _legdamage = (_unit getHitPointDamage "HitLeftLeg") + _damage;
+};
+_armdamage = 0;
+[_unit, _legdamage, _armdamage] call AGM_Medical_fnc_checkDamage;
+
+// Unconsciousness
+if (_selectionName == "" and
+    _damage >= UNCONSCIOUSNESSTRESHOLD and
+    _damage < 1 and
+    !(_unit getVariable ["AGM_isUnconscious", False]
+  )) then {
+  // random chance to kill AI instead of knocking them out, otherwise
+  // there'd be shittons of unconscious people after every firefight,
+  // causing executions. And nobody likes executions.
+  if (!(_unit getVariable ["AGM_allowUnconscious", [_unit] call AGM_Core_fnc_isPlayer]) and
+      {random 1 > 0.5}
+    ) then {
+    _damage = 1;
+  } else {
+    [_unit] call AGM_Medical_fnc_knockOut;
   };
 };
 
-if (_preventDeath and vehicle _unit != _unit and damage (vehicle _unit) >= 1) exitWith {
-  _unit setPosATL [(getPos _unit select 0) + (random 3) - 1.5, (getPos _unit select 1) + (random 3) - 1.5, 0];
-  [_unit, "HitBody", 0.89, true] call AGM_Medical_fnc_setHitPointDamage;
-  [_unit] call AGM_Medical_fnc_knockOut;
-  _unit allowDamage false;
+// Bleeding
+if (_selectionName == "" and damage _unit == 0) then {
+  _unit spawn {
+    while {damage _this > 0 and damage _this < 1} do {
+      if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
+        _blood = _this getVariable ["AGM_Blood", 1];
+        _blood = _blood - BLOODLOSSRATE * (_this getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]) * (damage _this);
+        _this setVariable ["AGM_Blood", _blood max 0, true];
+        if (_blood <= BLOODTRESHOLD1 and !(_this getVariable "AGM_isUnconscious")) then {
+          [_this] call AGM_Medical_fnc_knockOut;
+        };
+        if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
+          _this setDamage 1;
+        };
+      };
+      sleep 10;
+    };
+  };
+};
+
+// Pain Reduction
+if (_unit getVariable "AGM_Pain" == 0) then {
+  _unit spawn {
+    while {_this getVariable "AGM_Pain" > 0} do {
+      sleep 1;
+      _pain = ((_this getVariable ["AGM_Pain", 0]) - 0.001) max 0;
+      _this setVariable ["AGM_Pain", _pain, True];
+    };
+  };
+};
+// Set Pain
+_potentialPain = _damage * (_unit getVariable "AGM_Painkiller");
+if ((_selectionName == "") and (_potentialPain > _unit getVariable "AGM_Pain")) then {
+  _unit setVariable ["AGM_Pain", (_damage * (_unit getVariable "AGM_Painkiller")) min 1, True];
+};
+
+// again, using spawn, but there shouldn't be any death, so the killed EH should be fine.
+if ((_unit getVariable "AGM_Medical_PreventDeath") and {vehicle _unit != _unit} and {damage (vehicle _unit) >= 1}) then {
+  _unit setPosATL [
+    (getPos _unit select 0) + (random 3) - 1.5,
+    (getPos _unit select 1) + (random 3) - 1.5,
+    0
+  ];
+  if !(_unit getVariable ["AGM_isUnconscious", False]) then {
+    [_unit] call AGM_Medical_fnc_knockOut;
+  };
+  _unit setVariable ["AGM_allowDamage", False];
   _unit spawn {
     sleep 1;
-    _this allowDamage true;
+    _this setVariable ["AGM_allowDamage", True];
   };
 };
 
-if (_preventDeath) then {
-  _damage = _damage min 0.89;
+if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
+  if (_damage > 0.89) then {
+    _damage = 0.89;
+    [_unit, "AGM_preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
+  };
 };
 
-if (AGM_Medical_IsFalling or (_selectionName == "")) then {
-  _damage = _damage - _newDamage;
-  _newDamage = _newDamage * AGM_Medical_CoefDamage;
-  if (AGM_Medical_IsFalling and (_selectionName == "")) then {
-    _newDamage = _newDamage * 0.5;
-  };
-  _damage + _newDamage
-} else {
-  _damage - _newDamage
-};
+_damage

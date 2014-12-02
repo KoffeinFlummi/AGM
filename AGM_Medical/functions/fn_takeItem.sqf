@@ -11,31 +11,32 @@
  * True if item was successfully take, false otherwise.
  */
 
-private ["_unit", "_item", "_displayName"];
+private ["_unit", "_item", "_config", "_displayName"];
 
 _unit = _this select 0;
 _item = _this select 1;
-_displayName = getText (configFile >> "CfgWeapons" >> _item >> "displayName");
+_config = configFile >> "CfgWeapons" >> _item >> "displayName";
+_displayName = getText _config;
 
 if ((_unit == player) and (_item in items player)) exitWith {
   player removeItem _item;
-  true
+  True
 };
 
 if (_item in (items _unit)) exitWith {
   systemChat format [localize "STR_AGM_Medical_TakingItemPatient", _displayName];
   _unit removeItem _item;
   if (!(local _unit) and isPlayer _unit) then {
-    [[player, _item, _displayName, _unit], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', ((_this select 0) getVariable ['AGM_Name', (name (_this select 0))]), (_this select 2)];}", _unit] call AGM_Core_fnc_execRemoteFnc;
+    [[player, _item, _config, _unit], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', ((_this select 0) getVariable ['AGM_Name', (name (_this select 0))]), getText (_this select 2)];}", _unit] call AGM_Core_fnc_execRemoteFnc;
   };
-  true
+  True
 };
 
 if (_item in (items player)) exitWith {
   player removeItem _item;
   systemChat format [localize "STR_AGM_Medical_TakingItemSelf", _displayName];
-  true
+  True
 };
 
 [localize "STR_AGM_Medical_NoItem"] call AGM_Core_fnc_displayTextStructured;
-false
+False

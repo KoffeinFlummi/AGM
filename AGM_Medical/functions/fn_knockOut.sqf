@@ -4,7 +4,9 @@
  * Knocks the given player out.
  *
  * Arguments:
- * 0: Unit to be knocked out (Object)
+ * 0: Unit to be knocked out
+ * 1: Duration of knockout (optional)
+ *    (if not set or set to -1, value depending on damage is chosen)
  *
  * Return Values:
  * None
@@ -14,43 +16,38 @@ private ["_unit", "_duration", "_deadman", "_newGroup", "_wakeUpTimer", "_uncons
 
 _unit = _this select 0;
 _duration = -1;
-
 if (count _this > 1) then {
   _duration = _this select 1;
 };
 
-if !(isPlayer _unit or _unit getVariable ["AGM_AllowUnconscious", false]) exitWith {};
+if (_unit getVariable ["AGM_isUnconscious", False]) exitWith {};
 
-_unit setVariable ["AGM_Unconscious", true, true];
-_unit setVariable ["AGM_isUnconscious", true, true]; // prep for rewrite
-_unit setVariable ["AGM_CanTreat", false, true];
+// If an AI unit shoots a player, hand it off to him to calculate things.
+// Puts less strain on the server.
+if (!(local _unit) and ([_unit] call AGM_Core_fnc_isPlayer)) exitWith {
+  [_this, "AGM_Medical_fnc_knockOut", _unit] call AGM_Core_fnc_execRemoteFnc;
+};
+
+_unit setVariable ["AGM_Unconscious", True, True]; // deprecated since 0.95
+_unit setVariable ["AGM_isUnconscious", True, True];
+_unit setVariable ["AGM_canTreat", False, True];
 
 if (_unit == player) then {
   player setVariable ["tf_globalVolume", 0.4];
-  player setVariable ["tf_voiceVolume", 0, true];
-  player setVariable ["tf_unable_to_use_radio", true, true];
+  player setVariable ["tf_voiceVolume", 0, True];
+  player setVariable ["tf_unable_to_use_radio", True, True];
 
-  player setVariable ["acre_sys_core_isDisabled", true, true];
+  player setVariable ["acre_sys_core_isDisabled", True, True];
   player setVariable ["acre_sys_core_globalVolume", 0.4];
 
+  if (visibleMap) then {openMap false};
   closeDialog 0;
   call AGM_Interaction_fnc_hideMenu;
 
-  [true, true] call AGM_Core_fnc_disableUserInput;
-
-  if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
-    call AGM_Explosives_fnc_Place_Cancel;
-  };
+  [True, True] call AGM_Core_fnc_disableUserInput;
 };
 
-if (isClass (configFile >> "CfgPatches" >> "AGM_Explosives")) then {
-  _deadman = [(_this select 0), "DeadManSwitch"] call AGM_Explosives_fnc_getPlacedExplosives;
-  {
-    [(_this select 0), -1, _x, true] call AGM_Explosives_fnc_DetonateExplosive;
-  } count _deadman;
-};
-
-[_unit, "AGM_Unconscious", true] call AGM_Core_fnc_setCaptivityStatus;
+[_unit, "AGM_Unconscious", True] call AGM_Core_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
 _unit disableAI "ANIM";
@@ -58,31 +55,45 @@ _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 
-if (vehicle _unit != _unit && {animationState _unit != "Unconscious"}) then {   // don't lock into unconsciousness state after waking up
-  _unit setVariable ["AGM_OriginalAnim", animationState _unit, true];
-  [player, format ["{_this playMoveNow '%1'}", ((configfile >> 'CfgMovesMaleSdr' >> 'States' >> animationState _unit >> 'interpolateTo') call BIS_fnc_getCfgData) select 0], 2] call AGM_Core_fnc_execRemoteFnc;
+// play appropriate anim
+if (vehicle _unit != _unit) then {
+  _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
+  [
+    _player,
+    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
+    1,
+    True
+  ] call AGM_Core_fnc_doAnimation;
 } else {
-  _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
-};
-
-_unit spawn {
-  waitUntil {isTouchingGround _this};
-  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
-  _this playMoveNow "Unconscious";
-};
-
-_wakeUpTimer = [_unit, _duration] spawn {
-  _unit = _this select 0;
-  _duration = _this select 1;
-  if (_duration != -1) then {
-    sleep _duration;
-  } else {
-    sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
+  _unit setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
+  _unit spawn {
+    waitUntil {isTouchingGround _this};
+    waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
+    [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
+    sleep 2;
+    if (animationState _this != "Unconscious") then {
+      [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
+    };
   };
-  [_unit] call AGM_Medical_fnc_wakeUp;
+};
+
+// wake up unit after certain amount of time
+_wakeUpTimer = [_unit, _duration] spawn {};
+if (_unit getVariable ["AGM_Medical_AutomaticWakeup", AGM_Medical_AutomaticWakeup > 0]) then {
+  _wakeUpTimer = [_unit, _duration] spawn {
+    _unit = _this select 0;
+    _duration = _this select 1;
+    if (_duration != -1) then {
+      sleep _duration;
+    } else {
+      sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
+    };
+    [_unit] call AGM_Medical_fnc_wakeUp;
+  };
 };
 _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
 
+// kill unit if the max uncon. time module option is used
 _unconsciousnessTimer = [_unit] spawn {
   _unit = _this select 0;
   if (AGM_Medical_MaxUnconsciousnessTime >= 0) then {
@@ -94,3 +105,5 @@ _unconsciousnessTimer = [_unit] spawn {
   };
 };
 _unit setVariable ["AGM_UnconsciousnessTimer", _unconsciousnessTimer];
+
+[_unit, "AGM_knockedOut", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
