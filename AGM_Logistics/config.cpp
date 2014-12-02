@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.94.1";
     versionStr = "0.94.1";
     versionAr[] = {0,94,1};
-    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
+    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp", "nic547"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -1188,7 +1188,31 @@ class CfgVehicles {
     AGM_canRepair = 1;
     transportRepair = 0;
   };
-
+  // Fuel tanks
+  class CargoNet_01_base_F;
+  class CargoNet_01_barrels_F:CargoNet_01_base_F {
+    class AGM_Actions{
+      MACRO_REFUELCARGO
+      MACRO_LOADABLE
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_4BARREL;
+  };
+  class Items_Base_F;
+  class Land_MetalBarrel_F:Items_Base_F {
+    class AGM_Actions {
+      MACRO_REFUELCARGO
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_BARREL;
+  };
+  class Slingload_01_Base_F;
+  class B_Slingload_01_Fuel_F:Slingload_01_Base_F {
+    class AGM_Actions {
+      MACRO_REFUELCARGO
+      MACRO_LOADABLE
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_ISOCONT;
+    transportFuel = 0;
+  };
   //Hawkeye104 AGM Repair Module
   class Module_F;
   class AGM_ModuleRepair: Module_F {
