@@ -3,7 +3,7 @@
   <Package name="TopDownAttack">
     <Key ID="STR_AGM_ToggleTopDownAttack">
       <English>Toggle Top Down Attack</English>
-      <German>Überhöhten Zielanflug umschalten</German>
+      <German>Angriffsmodus umschalten</German>
     </Key>
   </Package>
 </Project>
