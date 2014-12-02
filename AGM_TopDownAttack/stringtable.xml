@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="AGM">
+  <Package name="TopDownAttack">
+    <Key ID="STR_AGM_ToggleTopDownAttack">
+      <English>Toggle Top Down Attack</English>
+      <German>Überhöhten Zielanflug umschalten</German>
+    </Key>
+  </Package>
+ </Project>
