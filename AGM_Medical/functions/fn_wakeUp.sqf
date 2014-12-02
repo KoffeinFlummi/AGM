@@ -13,7 +13,6 @@
 private ["_unit", "_position"];
 
 _unit = _this select 0;
-_player = call AGM_Core_fnc_player;
 
 // Hand it off to local unit
 if !(local _unit) exitWith {
@@ -30,13 +29,13 @@ _unit setVariable ["AGM_Unconscious", False, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", False, True];
 _unit setVariable ["AGM_canTreat", True, True];
 
-if (_unit == _player) then {
-  _player setVariable ["tf_globalVolume", 1];
-  _player setVariable ["tf_voiceVolume", 1, True];
-  _player setVariable ["tf_unable_to_use_radio", False, True];
+if (_unit == AGM_player) then {
+  AGM_player setVariable ["tf_globalVolume", 1];
+  AGM_player setVariable ["tf_voiceVolume", 1, True];
+  AGM_player setVariable ["tf_unable_to_use_radio", False, True];
 
-  _player setVariable ["acre_sys_core_isDisabled", False, True];
-  _player setVariable ["acre_sys_core_globalVolume", 1];
+  AGM_player setVariable ["acre_sys_core_isDisabled", False, True];
+  AGM_player setVariable ["acre_sys_core_globalVolume", 1];
 
   [False] call AGM_Core_fnc_disableUserInput;
 };

@@ -26,7 +26,7 @@ private ["_unit", "_type", "_player"];
 _unit = _this select 0;
 _type = _this select 1;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 if ((_unit != _player or _type != "diagnose") and (vehicle _player == _player)) then {
   [_player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 };

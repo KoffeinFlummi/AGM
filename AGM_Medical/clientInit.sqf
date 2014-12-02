@@ -1,6 +1,6 @@
 // by CAA-Picard
 
-private ["_currentBlood", "_player", "_time", "_timeBlood", "_strength", "_currentBlood"];
+private ["_currentBlood", "_time", "_timeBlood", "_strength", "_currentBlood"];
 
 if (!hasInterface) exitWith {};
 
@@ -29,11 +29,9 @@ AGM_Pain_CC ppEffectCommit 0;
 
 // Spawn a thread to handle graphical effects for player, regardless of which unit he's controlling
 0 spawn {
-  _player = call AGM_Core_fnc_player;
   _time = time;
   _timeBlood = 0;
   while {True} do {
-
     // Detect if curator interface is open and then disable effects an enable input
     if (!isNull(findDisplay 312)) then {
       AGM_BloodLevel_CC ppEffectEnable False;
@@ -46,18 +44,18 @@ AGM_Pain_CC ppEffectCommit 0;
     };
 
     // Detect if player is not alive and then disable effects and enable input
-    if (!(alive _player)) then {
+    if (!(alive AGM_player)) then {
       AGM_BloodLevel_CC ppEffectEnable False;
       AGM_Unconscious_CC ppEffectEnable False;
       AGM_Unconscious_RB ppEffectEnable False;
       if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [False] call AGM_Core_fnc_disableUserInput;
       };
-      waitUntil {alive _player};
+      waitUntil {alive AGM_player};
     };
 
     // Unconciousness Effect
-    if (_player getVariable ["AGM_isUnconscious", False]) then {
+    if (AGM_player getVariable ["AGM_isUnconscious", False]) then {
       AGM_Unconscious_CC ppEffectEnable True;
       AGM_Unconscious_RB ppEffectEnable True;
       if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
@@ -72,15 +70,15 @@ AGM_Pain_CC ppEffectCommit 0;
     };
 
     // Pain Effect
-    _strength = _player getVariable ["AGM_Pain", 0];
-    _strength = _strength * (_player getVariable ["AGM_Medical_CoefPain", AGM_Medical_CoefPain]);
+    _strength = AGM_player getVariable ["AGM_Pain", 0];
+    _strength = _strength * (AGM_player getVariable ["AGM_Medical_CoefPain", AGM_Medical_CoefPain]);
     if (profileNamespace getVariable ["AGM_alternativePainEffect", False]) then {
       AGM_Pain_CA ppEffectEnable False;
-      if ((_player getVariable "AGM_Pain") > 0 && {alive _player}) then {
+      if ((AGM_player getVariable "AGM_Pain") > 0 && {alive AGM_player}) then {
         AGM_Pain_CC ppEffectEnable True;
         AGM_Pain_CC ppEffectAdjust [1,1,0, [1,1,1,1], [0,0,0,0], [1,1,1,1], [(1 - _strength * 0.17) max 0,(1 - _strength * 0.17) max 0,0,0,0,0.2,2]];
         AGM_Pain_CC ppEffectCommit 1;
-        sleep (1.5 - (_player getVariable "AGM_Pain"));
+        sleep (1.5 - (AGM_player getVariable "AGM_Pain"));
         AGM_Pain_CC ppEffectAdjust [1,1,0, [1,1,1,1], [0,0,0,0], [1,1,1,1], [(1 - _strength * 1.7) max 0,(1 - _strength * 1.7) max 0,0,0,0,0.2,2]];
         AGM_Pain_CC ppEffectCommit 1;
         sleep 0.15;
@@ -90,11 +88,11 @@ AGM_Pain_CC ppEffectCommit 0;
       };
     } else {
       AGM_Pain_CC ppEffectEnable False;
-      if ((_player getVariable "AGM_Pain") > 0 && {alive _player}) then {
+      if ((AGM_player getVariable "AGM_Pain") > 0 && {alive AGM_player}) then {
         AGM_Pain_CA ppEffectEnable True;
         AGM_Pain_CA ppEffectAdjust [0.035 * _strength, 0.035 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
-        sleep (1.5 - (_player getVariable "AGM_Pain"));
+        sleep (1.5 - (AGM_player getVariable "AGM_Pain"));
         AGM_Pain_CA ppEffectAdjust [0.35 * _strength, 0.35 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
         sleep 0.15;
@@ -105,13 +103,13 @@ AGM_Pain_CC ppEffectCommit 0;
     };
 
     // Bleeding Effect
-    if (damage _player > 0.1 and _timeBlood + 6 < time) then {
+    if (damage AGM_player > 0.1 and _timeBlood + 6 < time) then {
       _timeBlood = time;
-      [(damage _player) * 500] call BIS_fnc_bloodEffect;
+      [(damage AGM_player) * 500] call BIS_fnc_bloodEffect;
     };
 
     // Blood Level Effect
-    _currentBlood = _player getVariable ["AGM_Blood", 1];
+    _currentBlood = AGM_player getVariable ["AGM_Blood", 1];
     if (_currentBlood > 0.99) then {
       AGM_BloodLevel_CC ppEffectEnable False;
     } else {
@@ -121,6 +119,6 @@ AGM_Pain_CC ppEffectCommit 0;
     };
 
     _time = time;
-    _damage = damage _player;
+    _damage = damage AGM_player;
   };
 };

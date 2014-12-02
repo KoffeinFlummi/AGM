@@ -21,7 +21,7 @@ private ["_unit", "_type", "_player", "_triggers", "_inTrigger", "_item", "_anim
 
 _unit = _this select 0;
 _type = _this select 1;
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 // check if unit is medic and if that's even necessary
 if (_type in ["epipen", "bloodbag"] and
@@ -44,7 +44,7 @@ if (_type == "epipen" and (_player getVariable ["AGM_Medical_RequireMEDEVAC", AG
 
 // morphine warning
 if (_type == "morphine" and
-    _unit != call AGM_Core_fnc_player and
+    _unit != AGM_player and
     [_unit] call AGM_Core_fnc_isPlayer) then {
   [[], "systemChat localize 'STR_AGM_Medical_GivingYouMorphine';", _unit] call AGM_Core_fnc_execRemoteFnc;
 };
@@ -61,18 +61,17 @@ if (_item != "" and {!([_unit, _item] call AGM_Medical_fnc_takeItem)}) exitWith 
 
 // code to be executed if action is aborted
 AGM_Medical_treatmentAbort = {
-  _player = call AGM_Core_fnc_player;
-  if (vehicle _player == _player) then {
-    [_player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+  if (vehicle AGM_player == AGM_player) then {
+    [AGM_player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
   };
-  _player setVariable ["AGM_canTreat", True, False];
+  AGM_player setVariable ["AGM_canTreat", True, False];
 };
 
 player setVariable ["AGM_canTreat", False, False];
 
 // self-diagnosis is instant
 if (
-    (_unit == call AGM_Core_fnc_player) and
+    (_unit == AGM_player) and
     (_type == "diagnose")
   ) exitWith {
   _this call AGM_Medical_fnc_treatmentCallback;
@@ -109,7 +108,7 @@ if (_player == _unit) then {
 };
 
 if (vehicle _player == _player) then {
-  [call AGM_Core_fnc_player, _animation, 1] call AGM_Core_fnc_doAnimation;
+  [_player, _animation, 1] call AGM_Core_fnc_doAnimation;
 };
 
 // get time required for action to be completed
@@ -121,8 +120,8 @@ _time = switch (_type) do {
   case "bloodbag" : {20};
   default           {10};
 };
-if !([call AGM_Core_fnc_player] call AGM_Core_fnc_isMedic) then {
-  _time = _time * ((call AGM_Core_fnc_player) getVariable ["AGM_Medical_CoefNonMedic", AGM_Medical_CoefNonMedic]);
+if !([_player] call AGM_Core_fnc_isMedic) then {
+  _time = _time * (_player getVariable ["AGM_Medical_CoefNonMedic", AGM_Medical_CoefNonMedic]);
 };
 // increase treatment time when treating while prone or in (non-medical) vehicle
 // (it's hard to bandage yourself in a tank you know)

@@ -10,27 +10,26 @@
  * -
  */
 
-private ["_unit", "_vehicle", "_player"];
+private ["_unit", "_vehicle"];
 
 _vehicle = _this select 0;
-_player = call AGM_Core_fnc_player;
-_unit = _player getVariable "AGM_Transporting";
+_unit = AGM_player getVariable "AGM_Transporting";
 
 if ((count _this < 2) and {!(local _unit)}) exitWith {
-  [[_this select 0, _player], "AGM_Medical_fnc_loadIntoVehicle", _unit] call AGM_Core_fnc_execRemoteFnc;
+  [[_this select 0, AGM_player], "AGM_Medical_fnc_loadIntoVehicle", _unit] call AGM_Core_fnc_execRemoteFnc;
 };
 
 if (count _this > 1) then {
-  _player = _this select 1;
-  _unit = _player getVariable "AGM_Transporting";
+  AGM_player = _this select 1;
+  _unit = AGM_player getVariable "AGM_Transporting";
 };
 
-_player setVariable ["AGM_Transporting", objNull, True];
+AGM_player setVariable ["AGM_Transporting", objNull, True];
 
 detach _unit;
 _unit moveInCargo _vehicle;
 
-[_player, "", 2, True] call AGM_Core_fnc_doAnimation;
+[AGM_player, "", 2, True] call AGM_Core_fnc_doAnimation;
 _unit spawn {
   sleep 0.5;
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
@@ -42,6 +41,6 @@ _unit spawn {
   ] call AGM_Core_fnc_doAnimation;
 };
 
-_player removeWeapon "AGM_FakePrimaryWeapon";
-_player setVariable ["AGM_canTreat", True, True];
+AGM_player removeWeapon "AGM_FakePrimaryWeapon";
+AGM_player setVariable ["AGM_canTreat", True, True];
 _unit setVariable ["AGM_isTreatable", True, True];

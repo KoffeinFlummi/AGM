@@ -10,7 +10,7 @@ _this spawn {
   sleep 1;
   if !(local _unit) exitWith {};
 
-  if (_unit == call AGM_Core_fnc_player) then {
+  if (_unit == AGM_player) then {
     _unit setVariable ["tf_globalVolume", 1];
     _unit setVariable ["tf_voiceVolume", 1, True];
     _unit setVariable ["tf_unable_to_use_radio", False, True];
