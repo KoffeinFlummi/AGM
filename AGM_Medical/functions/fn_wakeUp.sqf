@@ -51,4 +51,4 @@ if !(scriptDone (_unit getVariable "AGM_UnconsciousnessTimer")) then {
 
 [_unit, _unit getVariable "AGM_OriginalAnim", 2, True] call AGM_Core_fnc_doAnimation;
 
-[_unit, "AGM_Medical_wokeUp", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
+[_unit, "AGM_wokeUp", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
