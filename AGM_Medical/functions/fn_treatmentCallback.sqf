@@ -4,14 +4,15 @@
  * Code to be executed upon the successfull treatment.
  *
  * Arguments:
- * 0: Unit to be treated
- * 1: Type of treatment:
+ * 0: Unit that does the treatment (Object)
+ * 1: Unit to be treated (Object)
+ * 2: Type of treatment:
  *    - "diagnose"
  *    - "bandage"
  *    - "morphine"
  *    - "epipen"
  *    - "bloodbag"
- * 2+: additional parameters
+ * 3+: additional parameters
  *
  * Return Value:
  * None
@@ -21,37 +22,37 @@
 #define MORPHINEHEAL 0.4
 #define BLOODBAGHEAL 0.7
 
-private ["_unit", "_type", "_player"];
+private ["_unit", "_target", "_type"];
 
 _unit = _this select 0;
-_type = _this select 1;
+_target = _this select 1;
+_type = _this select 2;
 
-_player = AGM_player;
-if ((_unit != _player or _type != "diagnose") and (vehicle _player == _player)) then {
-  [_player, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+if ((_target != _unit or _type != "diagnose") and (vehicle _unit == _unit)) then {
+  [_unit, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
 };
-_player setVariable ["AGM_canTreat", True, False];
+_unit setVariable ["AGM_canTreat", True, False];
 
 switch (_type) do {
   case "diagnose" : {
     // this is way too messy to all do here.
-    [_unit] call AGM_Medical_fnc_diagnose;
+    [_target] call AGM_Medical_fnc_diagnose;
   };
 
   case "bandage" : {
     private ["_selection", "_damage"];
 
-    _selection = _this select 2;
+    _selection = _this select 3;
     if (_selection == "All") then {
-      _unit setDamage ((damage _unit - BANDAGEHEAL) max 0);
+      _target setDamage ((damage _target - BANDAGEHEAL) max 0);
     } else {
-      _damage = ((_unit getHitPointDamage _selection) - BANDAGEHEAL) max 0;
-      [_unit, _selection, _damage] call AGM_Medical_fnc_setHitPointDamage;
+      _damage = ((_target getHitPointDamage _selection) - BANDAGEHEAL) max 0;
+      [_target, _selection, _damage] call AGM_Medical_fnc_setHitPointDamage;
 
       [
-        _unit,
-        (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg"),
-        (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitRightArm"),
+        _target,
+        (_target getHitPointDamage "HitLeftLeg") + (_target getHitPointDamage "HitRightLeg"),
+        (_target getHitPointDamage "HitLeftArm") + (_target getHitPointDamage "HitRightArm"),
         True
       ] call AGM_Medical_fnc_checkDamage;
     };
@@ -60,22 +61,22 @@ switch (_type) do {
   case "morphine" : {
     private ["_painkillerOld", "_painkiller"];
 
-    _painkillerOld = _unit getVariable "AGM_Painkiller";
+    _painkillerOld = _target getVariable "AGM_Painkiller";
 
     // reduce pain, pain sensitivity
     _painkiller = (_painkillerOld - MORPHINEHEAL) max 0;
-    _pain = ((_unit getVariable "AGM_Pain") - MORPHINEHEAL) max 0;
-    _unit setVariable ["AGM_Painkiller", _painkiller, True];
-    _unit setVariable ["AGM_Pain", _pain, True];
+    _pain = ((_target getVariable "AGM_Pain") - MORPHINEHEAL) max 0;
+    _target setVariable ["AGM_Painkiller", _painkiller, True];
+    _target setVariable ["AGM_Pain", _pain, True];
 
     // overdose if necessary (unit was already full of painkillers)
-    if (_painkillerOld < 0.05 and _unit getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing] > 0) then {
-      [_unit] call AGM_Medical_fnc_overdose;
+    if (_painkillerOld < 0.05 and _target getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing] > 0) then {
+      [_target] call AGM_Medical_fnc_overdose;
     };
 
     // Painkiller Reduction
     if (_painkillerOld == 1) then {
-      _unit spawn {
+      _target spawn {
         while {_this getVariable "AGM_Painkiller" < 1} do {
           sleep 1;
           _painkiller = ((_this getVariable ["AGM_Painkiller", 1]) + 0.0015) min 1;
@@ -86,14 +87,14 @@ switch (_type) do {
   };
 
   case "epipen" : {
-    [_unit] call AGM_Medical_fnc_wakeUp; // short and sweet
+    [_target] call AGM_Medical_fnc_wakeUp; // short and sweet
   };
 
   case "bloodbag" : {
     private ["_blood"];
 
-    _blood = ((_unit getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
-    _unit setVariable ["AGM_Blood", _blood, True];
+    _blood = ((_target getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
+    _target setVariable ["AGM_Blood", _blood, True];
   };
 
   default {};
@@ -101,9 +102,9 @@ switch (_type) do {
 
 // reopen menu if desired
 if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", False]) then {
-  if (_unit == _player) then {
-    [1, _unit, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+  if (_target == _unit) then {
+    [1, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
   } else {
-    [0, _unit, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+    [0, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
   };
 };
