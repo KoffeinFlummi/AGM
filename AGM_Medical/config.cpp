@@ -570,13 +570,13 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
         condition = "return = false; {if (_x getVariable 'AGM_isUnconscious') exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
-        statement = "[_target] call AGM_Medical_fnc_unloadPatients;";
+        statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
         condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
-        statement = "[_target] call AGM_Medical_fnc_loadIntoVehicle;";
+        statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
     };
@@ -587,13 +587,13 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
         condition = "return = false; {if (_x getVariable 'AGM_isUnconscious') exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
-        statement = "[_target] call AGM_Medical_fnc_unloadPatients;";
+        statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
         condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
-        statement = "[_target] call AGM_Medical_fnc_loadIntoVehicle;";
+        statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
     };
@@ -605,13 +605,13 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
         condition = "return = false; {if (_x getVariable 'AGM_isUnconscious') exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
-        statement = "[_target] call AGM_Medical_fnc_unloadPatients;";
+        statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
         condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
-        statement = "[_target] call AGM_Medical_fnc_loadIntoVehicle;";
+        statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
     };
@@ -623,13 +623,13 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
         condition = "return = false; {if (_x getVariable 'AGM_isUnconscious') exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
-        statement = "[_target] call AGM_Medical_fnc_unloadPatients;";
+        statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
         condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
-        statement = "[_target] call AGM_Medical_fnc_loadIntoVehicle;";
+        statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
     };
