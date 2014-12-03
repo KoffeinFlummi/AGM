@@ -4,43 +4,45 @@
  * Loads the carried/dragged unit into a vehicle for transport.
  *
  * Arguments:
- * 0: The vehicle
+ * 0: The unit that does the loading
+ * 1: The vehicle
  *
  * Return Value:
  * -
  */
 
-private ["_unit", "_vehicle"];
+private ["_unit", "_target", "_vehicle"];
 
-_vehicle = _this select 0;
-_unit = AGM_player getVariable "AGM_Transporting";
+_unit = _this select 0;
+_vehicle = _this select 1;
+_target = _unit getVariable "AGM_Transporting";
 
-if ((count _this < 2) and {!(local _unit)}) exitWith {
-  [[_this select 0, AGM_player], "AGM_Medical_fnc_loadIntoVehicle", _unit] call AGM_Core_fnc_execRemoteFnc;
+if ((count _this < 3) and {!(local _target)}) exitWith {
+  [[_this select 0, _unit], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
 };
 
-if (count _this > 1) then {
-  AGM_player = _this select 1;
-  _unit = AGM_player getVariable "AGM_Transporting";
+if (count _this > 2) then {
+  _unit = _this select 2;
+  _target = _unit getVariable "AGM_Transporting";
 };
 
-AGM_player setVariable ["AGM_Transporting", objNull, True];
+_unit setVariable ["AGM_Transporting", objNull, True];
 
-detach _unit;
-_unit moveInCargo _vehicle;
+detach _target;
+_target moveInCargo _vehicle;
 
-[AGM_player, "", 2, True] call AGM_Core_fnc_doAnimation;
-_unit spawn {
+[_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
+_target spawn {
   sleep 0.5;
-  _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
+  _target setVariable ["AGM_OriginalAnim", animationState _target, True];
   [
-    _unit,
-    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
+    _target,
+    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _target >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
     2,
     True
   ] call AGM_Core_fnc_doAnimation;
 };
 
-AGM_player removeWeapon "AGM_FakePrimaryWeapon";
-AGM_player setVariable ["AGM_canTreat", True, True];
-_unit setVariable ["AGM_isTreatable", True, True];
+_unit removeWeapon "AGM_FakePrimaryWeapon";
+_unit setVariable ["AGM_canTreat", True, True];
+_target setVariable ["AGM_isTreatable", True, True];
