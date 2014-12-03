@@ -31,7 +31,6 @@ class CfgPatches {
       "a3_air_f_heli_heli_transport_04",
       "a3_air_f_heli_light_01",
       "a3_air_f_heli_light_02",
-      "a3_air_f_rtd",
       "a3_animals_f",
       "a3_animals_f_animconfig",
       "a3_animals_f_chicken",
