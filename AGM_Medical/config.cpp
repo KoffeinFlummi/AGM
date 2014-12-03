@@ -298,7 +298,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Drag";
         distance = 4;
         condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable 'AGM_isTreatable' and _target getVariable 'AGM_isUnconscious' and isNull (_player getVariable 'AGM_Transporting')";
-        statement = "[_target, 'drag'] call AGM_Medical_fnc_transport;";
+        statement = "[_player, _target, 'drag'] call AGM_Medical_fnc_transport;";
         priority = 2.1;
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "R";
@@ -307,7 +307,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Carry";
         distance = 4;
         condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable 'AGM_isTreatable' and _target getVariable 'AGM_isUnconscious' and isNull (_player getVariable 'AGM_Transporting')";
-        statement = "[_target, 'carry'] call AGM_Medical_fnc_transport;";
+        statement = "[_player, _target, 'carry'] call AGM_Medical_fnc_transport;";
         priority = 2.0;
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "C";
@@ -414,7 +414,7 @@ class CfgVehicles {
         displayName = "$STR_AGM_Medical_Release";
         distance = 4;
         condition = "vehicle _player == _player and ((_player getVariable 'AGM_Transporting') isKindOf 'Man')";
-        statement = "[(_player getVariable 'AGM_Transporting')] call AGM_Medical_fnc_release;";
+        statement = "[_player, (_player getVariable 'AGM_Transporting')] call AGM_Medical_fnc_release;";
         exceptions[] = {"AGM_Medical_canTreat"};
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
         hotkey = "R";

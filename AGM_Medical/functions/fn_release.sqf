@@ -10,25 +10,26 @@
  * none
  */
 
-private ["_unit"];
+private ["_unit", "_target"];
 
 _unit = _this select 0;
+_target = _this select 1;
 
-AGM_player removeWeapon "AGM_FakePrimaryWeapon";
-AGM_player setVariable ["AGM_Transporting", objNull, True];
-AGM_player setVariable ["AGM_canTreat", true, false];
-_unit setVariable ["AGM_isTreatable", True, True];
+_unit removeWeapon "AGM_FakePrimaryWeapon";
+_unit setVariable ["AGM_Transporting", objNull, True];
+_unit setVariable ["AGM_canTreat", true, false];
+_target setVariable ["AGM_isTreatable", True, True];
 
-detach _unit;
+detach _target;
 
-AGM_player removeAction (AGM_player getVariable "AGM_Medical_ReleaseID");
+_unit removeAction (_unit getVariable "AGM_Medical_ReleaseID");
 
 // animation was already handled by fnc_loadIntoVehicle
-if (vehicle _unit != _unit) exitWith {};
+if (vehicle _target != _target) exitWith {};
 
-if (vehicle AGM_player == AGM_player) then {
-  [AGM_player, "", 2, True] call AGM_Core_fnc_doAnimation;
+if (vehicle _unit == _unit) then {
+  [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
 };
-if (_unit getVariable "AGM_isUnconscious") then {
-  [_unit, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
+if (_target getVariable "AGM_isUnconscious") then {
+  [_target, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
 };
