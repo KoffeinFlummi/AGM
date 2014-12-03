@@ -32,6 +32,9 @@ if (count _this > 3) then {
 // don't overwrite more important animations
 if (_unit getVariable ["AGM_isUnconscious", false] and !_force) exitWith {};
 
+// don't go unconscious if the unit isn't unconscious
+if (_animation == "Unconscious" && {!(_unit getVariable ["AGM_isUnconscious", false])}) exitWith {};
+
 switch (_priority) do {
   case 0 : {
     if (_unit == vehicle _unit) then {
