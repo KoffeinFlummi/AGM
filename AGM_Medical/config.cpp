@@ -24,7 +24,6 @@ class CfgFunctions {
       class init;
       class isDiagnosed;
       class isInMedicalVehicle;
-      class isMedic;
       class itemCheck;
       class knockOut;
       class loadIntoVehicle;
