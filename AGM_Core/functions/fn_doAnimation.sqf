@@ -55,3 +55,7 @@ switch (_priority) do {
   };
   default {};
 };
+
+if (!isNil "AGM_Debug" && {"Anim" in AGM_Debug}) then {
+  systemChat format ["%1 %2", _priority, str _animation];
+};
