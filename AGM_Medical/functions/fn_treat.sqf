@@ -58,7 +58,7 @@ _item = switch (_type) do {
   case "bloodbag" : {"AGM_Bloodbag"};
   default           {""};
 };
-if (_item != "" and {!([_target, _item] call AGM_Medical_fnc_takeItem)}) exitWith {};
+if (_item != "" and {!([_unit, _target, _item] call AGM_Medical_fnc_takeItem)}) exitWith {};
 
 // code to be executed if action is aborted
 AGM_Medical_treatmentAbort = {
