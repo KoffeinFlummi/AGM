@@ -35,7 +35,7 @@ class CfgGlasses {
 		COMBAT_GOGGLES
 	};
 
-	class G_Diving:None {
+	class G_Diving {
 		AGM_Overlay="AGM_Goggles\textures\HUD\DivingGoggles.paa";
 		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
 		AGM_Resistance = 2;
