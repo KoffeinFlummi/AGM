@@ -58,11 +58,3 @@ addMissionEventHandler ["Draw3D", {
     } forEach _targets;
   };
 }];
-
-// crew info
-
-//[{_this call AGM_CrewInfo_fnc_onMouseZChanged}] call AGM_Core_fnc_addScrollWheelEventHandler;
-
-if(isNil{AGM_CrewInfo_Visibility}) then {
-  AGM_CrewInfo_Visibility=0;
-};
