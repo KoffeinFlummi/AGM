@@ -34,9 +34,9 @@ _this spawn {
   detach _parachute;
   _item attachTo [_parachute, [0, 0, -1]];
 
-  //_smoke = [] call _fnc_smoke;
   _light = [] call _fnc_light;
 
   waitUntil {sleep 0.1; position _item select 2 < 1};
   detach _item;
+  _smoke = [] call _fnc_smoke;
 };
