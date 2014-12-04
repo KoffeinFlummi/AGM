@@ -26,6 +26,10 @@ _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
 _unit disableConversation false;
 
+if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
+  [_unit] call AGM_Core_fnc_unmuteUnit;
+};
+
 _unit setVariable ["AGM_Unconscious", False, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", False, True];
 _unit setVariable ["AGM_canTreat", True, True];

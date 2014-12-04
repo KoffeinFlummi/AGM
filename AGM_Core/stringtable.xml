@@ -439,5 +439,11 @@
       <Polish>Nieznany</Polish>
       <Czech>Neznámý</Czech>
     </Key>
+
+    <Key ID="STR_AGM_Core_NoVoice">
+      <English>No Voice</English>
+      <Czech>Žádný hlas</Czech>
+      <German>Keine Stimme</German>
+    </Key>
   </Package>
 </Project>

@@ -32,13 +32,13 @@ _unit setVariable ["AGM_Unconscious", True, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", True, True];
 _unit setVariable ["AGM_canTreat", False, True];
 
-if (_unit == player) then {
-  player setVariable ["tf_globalVolume", 0.4];
-  player setVariable ["tf_voiceVolume", 0, True];
-  player setVariable ["tf_unable_to_use_radio", True, True];
+if (_unit == AGM_player) then {
+  _unit setVariable ["tf_globalVolume", 0.4];
+  _unit setVariable ["tf_voiceVolume", 0, True];
+  _unit setVariable ["tf_unable_to_use_radio", True, True];
 
-  player setVariable ["acre_sys_core_isDisabled", True, True];
-  player setVariable ["acre_sys_core_globalVolume", 0.4];
+  _unit setVariable ["acre_sys_core_isDisabled", True, True];
+  _unit setVariable ["acre_sys_core_globalVolume", 0.4];
 
   if (visibleMap) then {openMap false};
   closeDialog 0;
@@ -56,11 +56,15 @@ _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
 _unit disableConversation true;
 
+if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
+  [_unit] call AGM_Core_fnc_muteUnit;
+};
+
 // play appropriate anim
 if (vehicle _unit != _unit) then {
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
   [
-    _player,
+    _unit,
     ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
     1,
     True

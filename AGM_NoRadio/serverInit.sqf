@@ -1,5 +1,8 @@
 // by commy2
 
 addMissionEventHandler ["HandleDisconnect", {
-	_this call AGM_NoRadio_fnc_unmuteUnit;
+	if !((_this select 0) getVariable ["AGM_isUnconscious", false]) then {
+		_this call AGM_Core_fnc_unmuteUnit;
+		(_this select 0) setVariable ["AGM_NoRadio_isMuted", false, true];
+	};
 }];

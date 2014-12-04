@@ -577,6 +577,7 @@ class CfgFunctions {
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
+      class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
       class owned;
@@ -606,6 +607,7 @@ class CfgFunctions {
       class toBitmask;
       class toHex;
       class toNumber;
+      class unmuteUnit;
     };
   };
   class AGM_Identity {
@@ -872,3 +874,4 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
 #include <RscInfoType.hpp>
 #include <FixPickup.hpp>
 #include <FixAnimations.hpp>
+#include <NoVoice.hpp>
