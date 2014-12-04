@@ -30,6 +30,7 @@ _unit setVariable ["AGM_Transporting", objNull, True];
 
 detach _target;
 _target moveInCargo _vehicle;
+_target assignAsCargo _vehicle;
 
 [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
 _target spawn {
