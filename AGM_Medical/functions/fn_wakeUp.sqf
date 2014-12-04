@@ -24,6 +24,7 @@ _unit enableAI "ANIM";
 _unit enableAI "TARGET";
 _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";
+_unit disableConversation false;
 
 _unit setVariable ["AGM_Unconscious", False, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", False, True];

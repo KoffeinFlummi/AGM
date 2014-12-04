@@ -54,6 +54,7 @@ _unit disableAI "ANIM";
 _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
+_unit disableConversation true;
 
 // play appropriate anim
 if (vehicle _unit != _unit) then {
