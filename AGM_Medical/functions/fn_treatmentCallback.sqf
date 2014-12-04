@@ -101,10 +101,10 @@ switch (_type) do {
 };
 
 // reopen menu if desired
-if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", False]) then {
+if (profileNamespace getVariable ["AGM_keepMedicalMenuOpen", False] and _unit == AGM_player) then {
   if (_target == _unit) then {
-    [1, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+    [3, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
   } else {
-    [0, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
+    [2, _target, "AGM_Medical"] call AGM_Interaction_fnc_showMenu;
   };
 };
