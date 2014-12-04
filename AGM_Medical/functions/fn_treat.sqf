@@ -77,7 +77,7 @@ if (
     (_target == _unit) and
     (_type == "diagnose")
   ) exitWith {
-  _this call AGM_Medical_fnc_treatmentCallback;
+  _this spawn AGM_Medical_fnc_treatmentCallback;
 };
 
 // play appropriate animation
