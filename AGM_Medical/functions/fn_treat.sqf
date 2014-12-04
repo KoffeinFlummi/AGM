@@ -47,7 +47,7 @@ if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_
 if (_type == "morphine" and
     _target != _unit and
     [_target] call AGM_Core_fnc_isPlayer) then {
-  [[], "systemChat localize 'STR_AGM_Medical_GivingYouMorphine';", _target] call AGM_Core_fnc_execRemoteFnc;
+  [[name _unit], "systemChat format ['%1 %2', _this select 0, localize 'STR_AGM_Medical_GivingYouMorphine'];", _target] call AGM_Core_fnc_execRemoteFnc;
 };
 
 // remove item if necessary
