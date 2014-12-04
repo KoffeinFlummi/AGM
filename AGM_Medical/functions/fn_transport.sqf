@@ -14,6 +14,8 @@
  * none
  */
 
+#define ANIM_CARRY ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "amovpercmstpsraswpstdnon_acinpknlmwlksnonwpstdb_2", "amovpercmstpsnonwnondnon_acinpknlmwlksnonwnondb_2", "acinpknlmstpsraswrfldnon", "acinpknlmstpsnonwpstdnon", "acinpknlmstpsnonwnondnon"];
+
 _this spawn {
   _unit = _this select 0;
   _target = _this select 1;
@@ -34,13 +36,24 @@ _this spawn {
     [_unit, "AcinPknlMstpSrasWrflDnon", 1, True] call AGM_Core_fnc_doAnimation;
     [_target, "AinjPpneMrunSnonWnonDb_grab", 2, True] call AGM_Core_fnc_doAnimation;
     sleep 1.8;
+
+    /*_unit playActionNow "grabDrag";
+    [_target, "{_this playActionNow 'grabDragged'}", _target] call AGM_Core_fnc_execRemoteFnc;
+    waitUntil {animationState _unit in ANIM_CARRY};*/
   } else {
     _target setDir (getDir _unit + 180) % 360;
     _target setPos ((getPos _unit) vectorAdd (vectorDir _unit));
     [_unit, "AcinPknlMstpSnonWnonDnon_AcinPercMrunSnonWnonDnon", 2, True] call AGM_Core_fnc_doAnimation;
     [_target, "AinjPfalMstpSnonWrflDnon_carried_Up", 2, True] call AGM_Core_fnc_doAnimation;
     sleep 15;
+
+    /*_unit playActionNow "grabCarry";
+    [_target, "{_this playActionNow 'grabCarried'}", _target] call AGM_Core_fnc_execRemoteFnc;
+    waitUntil {animationState _unit in ANIM_CARRY};*/
   };
+
+  /*// exit here if the player releases the unit before the animation is finished
+  if (isNull (_unit getVariable "AGM_Transporting")) exitWith {};*/
 
   // unit woke up while picking him up, abandon ship
   if !(_target getVariable "AGM_isUnconscious") exitWith {

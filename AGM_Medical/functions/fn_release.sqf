@@ -28,7 +28,7 @@ _unit removeAction (_unit getVariable "AGM_Medical_ReleaseID");
 if (vehicle _target != _target) exitWith {};
 
 if (vehicle _unit == _unit) then {
-  [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
+  _unit playAction "released";
 };
 if (_target getVariable "AGM_isUnconscious") then {
   [_target, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
