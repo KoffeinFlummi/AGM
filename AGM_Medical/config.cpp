@@ -574,7 +574,7 @@ class CfgVehicles {
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
-        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
+        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and (_player getVariable 'AGM_Transporting') isKindOf 'Man' and _target emptyPositions 'cargo' > 0";
         statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
@@ -591,7 +591,7 @@ class CfgVehicles {
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
-        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
+        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and (_player getVariable 'AGM_Transporting') isKindOf 'Man' and _target emptyPositions 'cargo' > 0";
         statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
@@ -609,7 +609,7 @@ class CfgVehicles {
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
-        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
+        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and (_player getVariable 'AGM_Transporting') isKindOf 'Man' and _target emptyPositions 'cargo' > 0";
         statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };
@@ -627,7 +627,7 @@ class CfgVehicles {
       class AGM_Load {
         displayName = "$STR_AGM_Medical_Load";
         distance = 4;
-        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and ((_player getVariable 'AGM_Dragging') isKindOf 'Man' or (_player getVariable 'AGM_Carrying') isKindOf 'Man') and _target emptyPositions 'cargo' > 0";
+        condition = "!(_target isKindOf 'Man') and vehicle _player == _player and (_player getVariable 'AGM_Transporting') isKindOf 'Man' and _target emptyPositions 'cargo' > 0";
         statement = "[_player, _target] call AGM_Medical_fnc_loadIntoVehicle;";
         exceptions[] = {"AGM_Medical_canTreat"};
       };

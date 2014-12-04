@@ -62,6 +62,8 @@ if (_item != "" and {!([_unit, _target, _item] call AGM_Medical_fnc_takeItem)}) 
 
 // code to be executed if action is aborted
 AGM_Medical_treatmentAbort = {
+  _unit = _this select 0;
+
   if (vehicle _unit == _unit) then {
     [_unit, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
   };

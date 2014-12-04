@@ -18,7 +18,7 @@ _vehicle = _this select 1;
 _target = _unit getVariable "AGM_Transporting";
 
 if ((count _this < 3) and {!(local _target)}) exitWith {
-  [[_this select 0, _unit], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
+  [[_this select 0, _this select 1, _unit], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
 };
 
 if (count _this > 2) then {
@@ -34,10 +34,10 @@ _target moveInCargo _vehicle;
 [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
 _target spawn {
   sleep 0.5;
-  _target setVariable ["AGM_OriginalAnim", animationState _target, True];
+  _this setVariable ["AGM_OriginalAnim", animationState _this, True];
   [
-    _target,
-    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _target >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
+    _this,
+    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
     2,
     True
   ] call AGM_Core_fnc_doAnimation;
