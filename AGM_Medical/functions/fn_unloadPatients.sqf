@@ -17,7 +17,7 @@ _unit = _this select 0;
 _vehicle = _this select 1;
 
 {
-  if (_x getVariable "AGM_isUnconscious") then {
+  if (_x getVariable ["AGM_isUnconscious", false]) then {
     _pos = [
       (getPos _unit select 0) + (random 2) - 1,
       (getPos _unit select 1) + (random 2) - 1,

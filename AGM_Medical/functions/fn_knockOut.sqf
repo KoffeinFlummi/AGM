@@ -76,7 +76,7 @@ if (vehicle _unit != _unit) then {
     waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
     [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
     sleep 2;
-    if (animationState _this != "Unconscious" and _this getVariable "AGM_isUnconscious") then {
+    if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
       [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
     };
   };

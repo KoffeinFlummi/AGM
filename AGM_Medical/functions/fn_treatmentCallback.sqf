@@ -61,11 +61,11 @@ switch (_type) do {
   case "morphine" : {
     private ["_painkillerOld", "_painkiller"];
 
-    _painkillerOld = _target getVariable "AGM_Painkiller";
+    _painkillerOld = _target getVariable ["AGM_Painkiller", 1];
 
     // reduce pain, pain sensitivity
     _painkiller = (_painkillerOld - MORPHINEHEAL) max 0;
-    _pain = ((_target getVariable "AGM_Pain") - MORPHINEHEAL) max 0;
+    _pain = ((_target getVariable ["AGM_Pain", 0]) - MORPHINEHEAL) max 0;
     _target setVariable ["AGM_Painkiller", _painkiller, True];
     _target setVariable ["AGM_Pain", _pain, True];
 
@@ -77,7 +77,7 @@ switch (_type) do {
     // Painkiller Reduction
     if (_painkillerOld == 1) then {
       _target spawn {
-        while {_this getVariable "AGM_Painkiller" < 1} do {
+        while {_this getVariable ["AGM_Painkiller", 1] < 1} do {
           sleep 1;
           _painkiller = ((_this getVariable ["AGM_Painkiller", 1]) + 0.0015) min 1;
           _this setVariable ["AGM_Painkiller", _painkiller, True];
@@ -93,7 +93,7 @@ switch (_type) do {
   case "bloodbag" : {
     private ["_blood"];
 
-    _blood = ((_target getVariable "AGM_Blood") + BLOODBAGHEAL) min 1;
+    _blood = ((_target getVariable ["AGM_Blood", 1]) + BLOODBAGHEAL) min 1;
     _target setVariable ["AGM_Blood", _blood, True];
   };
 

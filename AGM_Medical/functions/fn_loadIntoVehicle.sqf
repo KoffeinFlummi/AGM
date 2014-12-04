@@ -15,7 +15,7 @@ private ["_unit", "_target", "_vehicle"];
 
 _unit = _this select 0;
 _vehicle = _this select 1;
-_target = _unit getVariable "AGM_Transporting";
+_target = _unit getVariable ["AGM_Transporting", objNull];
 
 if ((count _this < 3) and {!(local _target)}) exitWith {
   [[_this select 0, _this select 1, _unit], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
@@ -23,7 +23,7 @@ if ((count _this < 3) and {!(local _target)}) exitWith {
 
 if (count _this > 2) then {
   _unit = _this select 2;
-  _target = _unit getVariable "AGM_Transporting";
+  _target = _unit getVariable ["AGM_Transporting", objNull];
 };
 
 _unit setVariable ["AGM_Transporting", objNull, True];

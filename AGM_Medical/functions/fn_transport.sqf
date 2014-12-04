@@ -53,10 +53,10 @@ _this spawn {
   };
 
   /*// exit here if the player releases the unit before the animation is finished
-  if (isNull (_unit getVariable "AGM_Transporting")) exitWith {};*/
+  if (isNull (_unit getVariable ["AGM_Transporting", objNull])) exitWith {};*/
 
   // unit woke up while picking him up, abandon ship
-  if !(_target getVariable "AGM_isUnconscious") exitWith {
+  if !(_target getVariable ["AGM_isUnconscious", False]) exitWith {
     detach _target;
     _target setVariable ["AGM_isTreatable", True, True];
     _unit setVariable ["AGM_canTreat", True, False];
@@ -66,7 +66,7 @@ _this spawn {
   };
 
   _unit setVariable ["AGM_Transporting", _target, False];
-  _releaseID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Medical_Release"], "[(_this select 1), ((_this select 1) getVariable 'AGM_Transporting')] call AGM_Medical_fnc_release;", nil, 20, false, true, "", "!isNull (_this getVariable ['AGM_Transporting', objNull])"];
+  _releaseID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Medical_Release"], "[(_this select 1), ((_this select 1) getVariable ['AGM_Transporting', objNull])] call AGM_Medical_fnc_release;", nil, 20, false, true, "", "!isNull (_this getVariable ['AGM_Transporting', objNull])"];
   _unit setVariable ["AGM_Medical_ReleaseID", _releaseID];
 
   if (_type == "drag") then {
@@ -84,14 +84,14 @@ _this spawn {
   // (player getting in vehicle, either person dying etc.)
   waitUntil {sleep 0.5;
     vehicle _unit != _unit or
-    isNull (_unit getVariable "AGM_Transporting") or
+    isNull (_unit getVariable ["AGM_Transporting", objNull]) or
     !(alive _unit) or
     !(alive _target) or
-    (_unit getVariable "AGM_isUnconscious") or
-    !(_target getVariable "AGM_isUnconscious")
+    (_unit getVariable ["AGM_isUnconscious", False]) or
+    !(_target getVariable ["AGM_isUnconscious", False])
   };
   // release was properly done, do nothing
-  if (isNull (_unit getVariable "AGM_Transporting")) exitWith {};
+  if (isNull (_unit getVariable ["AGM_Transporting", objNull])) exitWith {};
   // weird shit happened, properly release unit
-  [_unit, _unit getVariable "AGM_Transporting"] call AGM_Medical_fnc_release;
+  [_unit, _unit getVariable ["AGM_Transporting", objNull]] call AGM_Medical_fnc_release;
 };

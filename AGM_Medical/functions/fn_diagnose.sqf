@@ -43,7 +43,7 @@ if (damage _unit >= 1) exitWith {
 };
 
 // Consciousness
-if (_unit getVariable "AGM_isUnconscious") then {
+if (_unit getVariable ["AGM_isUnconscious", false]) then {
   _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientIsUnconscious" + "</t>";
 } else {
   _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsAwake";
@@ -94,7 +94,7 @@ if ((AGM_Medical_SingleBandage > 0 and damage _unit > 0) or (_heavyinjuries != "
 };
 
 // Blood
-_blood = _unit getVariable "AGM_Blood";
+_blood = _unit getVariable ["AGM_Blood", 1];
 _string = _string + (switch True do {
   case (_blood < 0.4): {"<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientLostBlood" + "</t>"};
   case (_blood < 1):   {"<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLostSomeBlood" + "</t>"};
@@ -102,7 +102,7 @@ _string = _string + (switch True do {
 });
 
 // Painkillers
-_painkiller = _unit getVariable "AGM_Painkiller";
+_painkiller = _unit getVariable ["AGM_Painkiller", 1];
 _string = _string + (switch True do {
   case (_painkiller < 0.4): {"<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientPainkillers" + "</t> "};
   case (_painkiller < 0.9): {"<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientSomePainkillers" + "</t> "};
@@ -110,7 +110,7 @@ _string = _string + (switch True do {
 });
 
 // Pain
-_pain = _unit getVariable "AGM_Pain";
+_pain = _unit getVariable ["AGM_Pain", 0];
 _string = _string + (switch True do {
   case (_pain > 0.4): {"<t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavyPain" + "</t>"};
   case (_pain > 0.1): {"<t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightPain" + "</t>"};
