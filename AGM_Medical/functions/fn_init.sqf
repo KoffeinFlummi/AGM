@@ -32,6 +32,10 @@ _unit setVariable ["AGM_Unconscious", False, True];   // deprecated since v0.95
 _unit setVariable ["AGM_isOverdosing", False];
 _unit setVariable ["AGM_Transporting", objNull];
 
+if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
+  [_unit] call AGM_Core_fnc_unmuteUnit;
+};
+
 _unit spawn {
   while {alive _this} do {
     [_this] call AGM_Medical_fnc_itemCheck;
