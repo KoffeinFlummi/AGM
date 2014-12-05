@@ -364,7 +364,7 @@ class CfgVehicles {
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
-          condition = "AGM_Medical_SingleBandage == 0 and and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitBody'] call AGM_Medical_fnc_treat;";
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
