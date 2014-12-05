@@ -23,6 +23,8 @@
 #define BLOODTRESHOLD2 0
 #define BLOODLOSSRATE 0.04
 
+#define ARMOURCOEF 3 // @todo: figure out if this is a realistic number
+
 private ["_unit", "_selectionName", "_damage", "_source", "_source", "_projectile", "_hitSelections", "_hitPoints", "_newDamage", "_found", "_cache_projectiles", "_cache_hitpoints", "_cache_damages"];
 
 _unit          = _this select 0;
@@ -105,6 +107,14 @@ if (_unit getVariable "AGM_Medical_isFalling" and !(_selectionName in ["", "leg_
 };
 if (_unit getVariable "AGM_Medical_isFalling") then {
   _newDamage = _newDamage * 0.7;
+};
+
+// Increase damage for kinetic penetrators for people inside vehicles
+// to simulate hot spikey things flying around (generally unpleasant).
+// (only if AGM_Armour is used)
+if (isClass (configFile >> "CfgPatches" >> "AGM_Armour") and {_projectile != ""}) then {
+  _hit = getNumber (configFile >> "CfgAmmo" >> _projectile >> "hit");
+  _newDamage = _newDamage * (1 + ARMOURCOEF * (_hit / 100));
 };
 
 // Make sure there's only one damaged selection per projectile per frame.
