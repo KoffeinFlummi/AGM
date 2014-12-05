@@ -70,7 +70,7 @@ AGM_Medical_treatmentAbort = {
   _unit setVariable ["AGM_canTreat", True, False];
 };
 
-player setVariable ["AGM_canTreat", False, False];
+_unit setVariable ["AGM_canTreat", False, False];
 
 // self-diagnosis is instant
 if (
@@ -128,7 +128,7 @@ if !([_unit] call AGM_Core_fnc_isMedic) then {
 };
 // increase treatment time when treating while prone or in (non-medical) vehicle
 // (it's hard to bandage yourself in a tank you know)
-if (stance _unit == "PRONE" or (vehicle _unit != _unit and !([_vehicle] call AGM_Core_fnc_isMedic))) then {
+if (stance _unit == "PRONE" or (vehicle _unit != _unit and !([vehicle _unit] call AGM_Core_fnc_isMedic))) then {
   _time = _time * 1.2;
 };
 
@@ -147,6 +147,14 @@ _string = switch (_type) do {
   case "epipen"   : {localize "STR_AGM_Medical_Injecting_Epinephrine"};
   case "bloodbag" : {localize "STR_AGM_Medical_Transfusing_Blood"};
   default           {"Tell Flummi he's a dumbass ..."};
+};
+
+// ai treat
+if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {
+  [_this, _time] spawn {
+    sleep (_this select 1) / 2;
+    (_this select 0) call AGM_Medical_fnc_treatmentCallback;
+  };
 };
 
 [

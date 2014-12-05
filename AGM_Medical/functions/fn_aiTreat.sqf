@@ -1,53 +1,71 @@
 // by commy2
 
-terminate (missionNamespace getVariable ["AGM_Medical_AITask", scriptNull]);
+terminate ((_this select 0) getVariable ["AGM_Medical_AITask", scriptNull]);
 
-AGM_Medical_AITask = _this spawn {
+private "_scriptHandle";
+_scriptHandle = _this spawn {
   _medic = _this select 0;
   _patient = _this select 1;
 
-  // goto position patient
-  waitUntil {
-    _medic doMove getPosASL _patient;
-
-    sleep 1;
-    _medic distanceSqr _patient < 5
-  };
-
-  // halt
-  doStop _medic;
-
-  // treat everything
   while {true} do {
+    // wait until ready again
+    waitUntil {
+      // exit if dead
+      if (!alive _medic || {!alive _patient}) exitWith {};
+
+      sleep 0.15;
+      _medic getVariable ["AGM_canTreat", true]
+    };
+
+    if (_medic distanceSqr _patient > 5) then {
+      _doMoveLoop = _this spawn {
+        while {true} do {
+          (_this select 0) doMove getPosASL (_this select 1);
+          sleep 5;
+        };
+      };
+
+      waitUntil {
+        // exit if dead
+        if (!alive _medic || {!alive _patient}) exitWith {};
+
+        sleep 0.15;
+        getPosASL _medic distanceSqr getPosASL _patient < 4
+      };
+
+      terminate _doMoveLoop;
+    };
+
+    // exit if dead
+    if (!alive _medic || {!alive _patient}) exitWith {};
+
+    // halt
+    doStop _medic;
+
+    // treat everything
     _items = items _medic;
 
     _isDone = switch (true) do {
       case (damage _patient > 0 && {"AGM_Bandage" in _items}): {
         [_medic, _patient, "bandage", "All"] call AGM_Medical_fnc_treat;
-        systemChat "give bandage";
         false
       };
 
       case (_patient getVariable ["AGM_Pain", 0] > 0 && {"AGM_Morphine" in _items}): {
         [_medic, _patient, "morphine"] call AGM_Medical_fnc_treat;
-        systemChat "give morphine";
         false
       };
 
       case (_patient getVariable ["AGM_isUnconscious", false] && {"AGM_Epipen" in _items}): {
         [_medic, _patient, "epipen"] call AGM_Medical_fnc_treat;
-        systemChat "give epipen";
         false
       };
 
       case (_patient getVariable ["AGM_Blood", 1] < 1 && {"AGM_Bloodbag" in _items}): {
         [_medic, _patient, "bloodbag"] call AGM_Medical_fnc_treat;
-        systemChat "give bloodbag";
         false
       };
     };
-
-    sleep 5;
 
     if (_isDone) exitWith {};
   };
@@ -55,3 +73,5 @@ AGM_Medical_AITask = _this spawn {
   // continue walking freely
   _medic doMove getPosASL _medic;
 };
+
+(_this select 0) setVariable ["AGM_Medical_AITask", _scriptHandle];
