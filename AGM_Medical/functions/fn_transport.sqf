@@ -14,7 +14,7 @@
  * none
  */
 
-#define ANIM_CARRY ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "amovpercmstpsraswpstdnon_acinpknlmwlksnonwpstdb_2", "amovpercmstpsnonwnondnon_acinpknlmwlksnonwnondb_2", "acinpknlmstpsraswrfldnon", "acinpknlmstpsnonwpstdnon", "acinpknlmstpsnonwnondnon"];
+#define ANIM_DRAG ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "amovpercmstpsraswpstdnon_acinpknlmwlksnonwpstdb_2", "amovpercmstpsnonwnondnon_acinpknlmwlksnonwnondb_2", "acinpknlmstpsraswrfldnon", "acinpknlmstpsnonwpstdnon", "acinpknlmstpsnonwnondnon"]
 
 _this spawn {
   _unit = _this select 0;
@@ -36,7 +36,7 @@ _this spawn {
 
     _unit playActionNow "grabDrag";
     [_target, "{_this playActionNow 'grabDragged'}", _target] call AGM_Core_fnc_execRemoteFnc;
-    waitUntil {animationState _unit in ANIM_CARRY};
+    waitUntil {animationState _unit in ANIM_DRAG};
   } else {
     _target setDir (getDir _unit + 180) % 360;
     _target setPos ((getPos _unit) vectorAdd (vectorDir _unit));

@@ -540,6 +540,7 @@ class CfgFunctions {
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
+      class getDefaultAnim;
       class getDoorTurrets;
       class getInPosition;
       class getMarkerType;
