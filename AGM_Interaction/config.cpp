@@ -25,8 +25,9 @@ class CfgFunctions {
       class canLockDoor;
       class canTapShoulder;
       class getActions2;
-      class GetActions;      
+      class GetActions;
       class getDoor;
+      class getDoorAnimations;
       class getDown;
       class getSelectedButton;
       class hideMenu;
@@ -41,6 +42,7 @@ class CfgFunctions {
       class onButtonDownSelf;
       class onButtonUp;
       class onClick;
+      class onSelectMenuDblClick;
       class openDoor;
       class openMenu;
       class openMenuSelf;
@@ -72,6 +74,22 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
+class Extended_GetIn_EventHandlers {
+  class All {
+    class AGM_AutoCloseMenu {
+      clientGetIn = "if (_this select 2 == AGM_player && {!isNull (findDisplay 1713999)}) then {(findDisplay 1713999) closeDisplay 1}";
+    };
+  };
+};
+
+class Extended_GetOut_EventHandlers {
+  class All {
+    class AGM_AutoCloseMenu {
+      clientGetOut = "if (_this select 2 == AGM_player && {!isNull (findDisplay 1713999)}) then {(findDisplay 1713999) closeDisplay 1}";
+    };
+  };
+};
+
 class AGM_Core_Default_Keys {
   class openInteractionMenuNew {
     displayName = "$STR_AGM_Interaction_InteractionMenu";
@@ -99,7 +117,7 @@ class AGM_Core_Default_Keys {
   };
   class openDoor {
     displayName = "$STR_AGM_Interaction_OpenDoor";
-    condition = "!AGM_Interaction_isOpeningDoor";
+    condition = "!AGM_Interaction_isOpeningDoor && {[2] call AGM_Interaction_fnc_getDoor select 1 != ''}";
     statement = "call AGM_Interaction_fnc_openDoor";
     conditionUp = "AGM_Interaction_isOpeningDoor";
     statementUp = "AGM_Interaction_isOpeningDoor = false";

@@ -7,6 +7,11 @@ with uinamespace do {
     disableserialization;
     _display = _this select 0;
 
+    //Prevent Captive Players from placing markers
+    if (AGM_player getVariable ["AGM_isCaptive", false]) exitWith {
+      _display closeDisplay 2;  //emulate "Cancel" button
+    };
+
     // display vanilla key input
     _display displayAddEventHandler ["KeyDown", {(_this select 1) in [200, 208]}];
 
@@ -25,13 +30,60 @@ with uinamespace do {
 
     ctrlSetFocus _text;
 
+    //Change ok button's text based on current channel
+    [_buttonOK] spawn {
+      disableserialization;
+      private ["_buttonOK", "_currentChannel", "_textColor"];
+      _buttonOK = _this select 0;
+
+      waitUntil {
+        if (isNull _buttonOK) exitWith {true};
+        _currentChannel = missionNamespace getVariable ["AGM_currentChannel", ""];
+        _textColor = [1,1,1,1];
+        switch (true) do {
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelGlobalShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelGlobalShort";
+            _textColor = [(216/255),(216/255),(216/255),1];
+          };
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelSideShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelSideShort";
+            _textColor = [(70/255),(211/255),(252/255),1];
+          };
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelGroupShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelGroupShort";
+            _textColor = [(181/255),(248/255),(98/255),1];
+          };
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelVehicleShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelVehicleShort";
+            _textColor = [(255/255),(208/255),(0/255),1];
+          };
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelDirectShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelDirectShort";
+            _textColor = [(255/255),(255/255),(255/255),1];
+          };
+          case (_currentChannel find localize "STR_AGM_Markers_ChannelCommandShort" != -1): {
+            _currentChannel = localize "STR_AGM_Markers_ChannelCommandShort";
+            _textColor = [(255/255),(255/255),(70/255),1];
+          };
+        };
+        //If localization not found, then don't touch anything (default is RscButtonMenuOK's localized text)
+        if (_currentChannel != "") then {
+          _buttonOK ctrlSetTextColor _textColor;
+          _buttonOK ctrlSetText format [localize "STR_AGM_Markers_PlaceIn", _currentChannel];
+        };
+        false
+      };
+    };
+
     //--- Background
     _pos = ctrlposition _text;
     _posX = (_pos select 0) + 0.01;
     _posY = _pos select 1;
     _posW = _pos select 2;
     _posH = _pos select 3;
+    _posY = _posY min ((safeZoneH + safeZoneY) - (6 * _posH + 8 * BORDER));  //prevent buttons being placed below bottom edge of screen
     _pos set [0,_posX];
+    _pos set [1,_posY];
     _text ctrlsetposition _pos;
     _text ctrlcommit 0;
 
@@ -41,6 +93,7 @@ with uinamespace do {
     _title ctrlsetposition _pos;
     _title ctrlcommit 0;
 
+    //--- Description
     _pos set [1,_posY - 1*_posH];
     _pos set [3,6*_posH + 6 * BORDER];
     _description ctrlsetposition _pos;
@@ -76,13 +129,13 @@ with uinamespace do {
 
     //--- ButtonOK
     _pos set [1,_posY + 5 * _posH + 7 * BORDER];
-    _pos set [2,_posW / 2 - BORDER];
+    _pos set [2,_posW * (8.9/10) - BORDER];
     _buttonOk ctrlsetposition _pos;
     _buttonOk ctrlcommit 0;
 
     //--- ButtonCancel
-    _pos set [0,_posX + _posW / 2];
-    _pos set [2,_posW / 2];
+    _pos set [0,_posX + _posW * (8.9 / 10)];
+    _pos set [2,_posW * (1.1 / 10)];
     _buttonCancel ctrlsetposition _pos;
     _buttonCancel ctrlcommit 0;
 

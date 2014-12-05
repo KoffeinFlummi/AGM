@@ -1,10 +1,23 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if the given backpack is an actual backpack that can store items. Parachute backpacks will return false for example.
+ * 
+ * Argument:
+ * 0: A backpack (Object or String)
+ * 
+ * Return value:
+ * Boolean (Bool)
+ */
 
-private ["_object", "_config"];
+private ["_backpack", "_config"];
 
-_object = _this select 0;
+_backpack = _this select 0;
 
-_config = configFile >> "CfgVehicles" >> typeOf _object;
+if (typeName _backpack == "OBJECT") then {
+	_backpack = typeName _backpack;
+};
 
-getText (_config >> "vehicleClass") == "backpacks"
-&& {getNumber (_config >> "maximumLoad") > 0}
+_config = configFile >> "CfgVehicles" >> _backpack;
+
+getText (_config >> "vehicleClass") == "backpacks" && {getNumber (_config >> "maximumLoad") > 0}

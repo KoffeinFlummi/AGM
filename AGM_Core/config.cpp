@@ -31,7 +31,6 @@ class CfgPatches {
       "a3_air_f_heli_heli_transport_04",
       "a3_air_f_heli_light_01",
       "a3_air_f_heli_light_02",
-      "a3_air_f_rtd",
       "a3_animals_f",
       "a3_animals_f_animconfig",
       "a3_animals_f_chicken",
@@ -537,9 +536,11 @@ class CfgFunctions {
       class execPersistentFnc;
       class execRemoteFnc;
       class filter;
+      class fixLoweredRifleAnimation;
       class getCaptivityStatus;
       class getConfigCommander;
       class getConfigGunner;
+      class getDefaultAnim;
       class getDoorTurrets;
       class getInPosition;
       class getMarkerType;
@@ -577,12 +578,14 @@ class CfgFunctions {
       class map;
       class moduleCheckPBOs;
       class moduleLSDVehicles;
+      class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
       class owned;
       class player;
       class playerSide;
       class progressBar;
+      class queueAnimation;
       class readBooleanParameterFromModule;
       class readNumericParameterFromModule;
       class removeActionEventHandler;
@@ -605,6 +608,7 @@ class CfgFunctions {
       class toBitmask;
       class toHex;
       class toNumber;
+      class unmuteUnit;
     };
   };
   class AGM_Identity {
@@ -656,15 +660,17 @@ class Extended_GetIn_EventHandlers {
 
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
+    init = "call compile preprocessFileLineNumbers '\AGM_Core\preInit.sqf'";
     serverInit = "call compile preprocessFileLineNumbers '\AGM_Core\scripts\readParameters.sqf'";
+    disableModuload = true;
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
-    Init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
+    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
-    clientInit = "[call AGM_Core_fnc_player] spawn AGM_Identity_fnc_setName;";
   };
 };
 
@@ -867,4 +873,6 @@ class RscAttributeInventory: RscControlsGroupNoScrollbars {
 */
 
 #include <RscInfoType.hpp>
-#include <PickupFix.hpp>
+#include <FixPickup.hpp>
+#include <FixAnimations.hpp>
+#include <NoVoice.hpp>

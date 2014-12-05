@@ -15,18 +15,30 @@
  * Nothing
  */
 
-private ["_unit", "_animation", "_priority"];
+private ["_unit", "_animation", "_priority", "_force"];
 
 _unit = _this select 0;
 _animation = _this select 1;
 _priority = _this select 2;
+_force = False;
 
 if (isNil "_priority") then {
   _priority = 0;
 };
+if (count _this > 3) then {
+  _force = _this select 3;
+};
 
 // don't overwrite more important animations
-if (_unit getVariable ["AGM_Unconscious", false]) exitWith {};
+if (_unit getVariable ["AGM_isUnconscious", false] and !_force) exitWith {};
+
+// don't go unconscious if the unit isn't unconscious
+if (_animation == "Unconscious" && {!(_unit getVariable ["AGM_isUnconscious", false])}) exitWith {};
+
+// switchMove "" no longer works in dev 1.37
+if (_animation == "") then {
+  _animation = [_unit] call AGM_Core_fnc_getDefaultAnim;
+};
 
 switch (_priority) do {
   case 0 : {
@@ -50,4 +62,8 @@ switch (_priority) do {
     [_unit, format ["{_this switchMove '%1'}", _animation]] call AGM_Core_fnc_execRemoteFnc;
   };
   default {};
+};
+
+if (!isNil "AGM_Debug" && {"Anim" in AGM_Debug}) then {
+  systemChat format ["%1 %2", _priority, str _animation];
 };

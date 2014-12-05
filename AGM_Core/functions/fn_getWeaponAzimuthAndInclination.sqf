@@ -15,7 +15,7 @@ private ["_weapon", "_direction", "_azimuth", "_inclination"];
 
 _weapon = _this select 0;
 
-_direction = player weaponDirection _weapon;
+_direction = AGM_player weaponDirection _weapon;
 
 _azimuth = (_direction select 0) atan2 (_direction select 1);
 _inclination = asin (_direction select 2);

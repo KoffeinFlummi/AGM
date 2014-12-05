@@ -16,7 +16,7 @@ private ["_vehicle", "_distance", "_player"];
 _vehicle = _this select 0;
 _distance = _this select 1;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 if (_vehicle isKindOf "Man") exitWith {_player distance _vehicle < _distance};
 

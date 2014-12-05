@@ -1,9 +1,17 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Check if a unit has an item attached and if it can remove that item.
+ * 
+ * Argument:
+ * 0: Unit that wants to detach something (Object)
+ * 
+ * Return value:
+ * Boolean (Bool)
+ */
 
-private ["_player"];
+private "_unit";
 
-_player = _this select 0;
+_unit = _this select 0;
 
-canStand _player &&
-{alive _player} &&
-{_player getVariable ["AGM_AttachedItemName", ""] != ""}
+canStand _unit && {_unit getVariable ["AGM_AttachedItemName", ""] != ""}

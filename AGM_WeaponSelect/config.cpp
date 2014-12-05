@@ -64,7 +64,7 @@ class Extended_Respawn_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
     class AGM_WeaponSelect_ThrowGrenade {
-      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
+      clientFiredBIS = "if (_this select 0 == AGM_player) then {_this call AGM_WeaponSelect_fnc_throwGrenade;};";
     };
   };
 };
@@ -196,7 +196,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMainGun";
     condition = "_player != _vehicle";
     statement = "[_player, _vehicle, 0] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    key = 3;
+    key = 4;
     shift = 0;
     control = 0;
     alt = 0;
@@ -205,7 +205,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMachineGun";
     condition = "_player != _vehicle";
     statement = "[_player, _vehicle, 1] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    key = 4;
+    key = 5;
     shift = 0;
     control = 0;
     alt = 0;
@@ -214,7 +214,7 @@ class AGM_Core_Default_Keys {
     displayName = "$STR_AGM_WeaponSelect_SelectMissiles";
     condition = "_player != _vehicle";
     statement = "[_player, _vehicle, 2] call AGM_WeaponSelect_fnc_selectWeaponVehicle";
-    key = 5;
+    key = 6;
     shift = 0;
     control = 0;
     alt = 0;

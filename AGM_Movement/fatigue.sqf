@@ -6,7 +6,7 @@
 
 // init onEachFrame EH
 AGM_UpdatePlayerFatigue_EHID = ["AGM_UpdatePlayerFatigue", "onEachFrame", {
-  _player = call AGM_Core_fnc_player;
+  _player = AGM_player;
 
   // calc new fatigue
   _fatigue = getFatigue _player;
@@ -34,7 +34,7 @@ _handleStumble = scriptNull;
 
 // apply fatigue effects
 while {true} do {
-  _fatigue = getFatigue (call AGM_Core_fnc_player);
+  _fatigue = getFatigue AGM_player;
 
   if (_fatigue > THRESHOLD_1) then {
     if (scriptDone _handleHeartbeat) then {

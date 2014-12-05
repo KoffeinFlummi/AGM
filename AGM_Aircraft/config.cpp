@@ -757,14 +757,14 @@ class CfgWeapons {
 
 class CfgVehicles {
   class All {
-    class Turrets {};
+    class Turrets;
   };
 
   class AllVehicles: All {
     class NewTurret {
-      class Turrets {};
+      class Turrets;
     };
-    class CargoTurret: NewTurret {};
+    class CargoTurret;
   };
 
   class Air: AllVehicles {
@@ -773,30 +773,27 @@ class CfgVehicles {
 
   class Helicopter: Air {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
-    class AnimationSources: AnimationSources {};
   };
 
   class Plane: Air {};
 
   class ParachuteBase: Helicopter {
-    class Turrets {};
+    class Turrets;
   };
 
   class UAV: Plane {};
 
   class Helicopter_Base_F: Helicopter {
     class Turrets: Turrets {
-      class MainTurret: MainTurret {};
-      class CopilotTurret {};
+      class CopilotTurret;
     };
   };
 
   class Helicopter_Base_H: Helicopter_Base_F {
     class Turrets: Turrets {
-      class CopilotTurret: MainTurret {};
-      class MainTurret: MainTurret {};
+      class CopilotTurret;
     };
     //class UserActions;
   };
@@ -805,29 +802,31 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    #include <mfd_littlebird.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
     };
   };
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
 
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
       class CargoTurret_03: CargoTurret_02 {};
       class CargoTurret_04: CargoTurret_01 {};
-    };
+    };*/
   };
 
   class Heli_Light_01_armed_base_F: Heli_Light_01_base_F {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird.hpp>
+    #include <mfd_littlebird_armed.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -843,13 +842,14 @@ class CfgVehicles {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
     };
   };
 
   class Plane_Base_F: Plane {
     class Turrets {
-      class CopilotTurret: NewTurret {};
+      class CopilotTurret;
     };
   };
 
@@ -857,7 +857,7 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    // #include <mfd_comanche.hpp>
+    class MFD {};
     class AnimationSources: AnimationSources {
       class HitGlass1 {
         source = "Hit";
@@ -890,10 +890,15 @@ class CfgVehicles {
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        showHMD = 1;
         weapons[] = {"AGM_gatling_20mm_Comanche","missiles_DAGR","missiles_ASRAAM"};
         magazines[] = {"AGM_500Rnd_20mm_shells_Comanche","4Rnd_AAA_missiles","24Rnd_PG_missiles"};
       };
     };
+  };
+
+  class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
+    #include <mfd_comanche.hpp>
   };
 
   class Heli_Attack_02_base_F: Helicopter_Base_F {
@@ -911,9 +916,11 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    #include <mfd_ghosthawk.hpp>
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
       class MainTurret: MainTurret {
         magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
@@ -945,9 +952,11 @@ class CfgVehicles {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
+        showHMD = 1;
       };
 
       class CargoTurret_01: CargoTurret {};
@@ -988,15 +997,21 @@ class CfgVehicles {
     };*/
   };
 
+  class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
+    #include <mfd_merlin.hpp>
+  };
+
   class I_Heli_light_03_base_F: Helicopter_Base_F {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
+    class MFD {};
     weapons[] = {"M134_minigun","missiles_DAR","CMFlareLauncher"};
     magazines[] = {"5000Rnd_762x51_Yellow_Belt","24Rnd_missiles","168Rnd_CMFlare_Chaff_Magazine"};
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         canEject = 1;
+        showHMD = 1;
         gunBeg = "commanderview";
         gunEnd = "laserstart";
         memoryPointGun = "laserstart";
@@ -1010,6 +1025,7 @@ class CfgVehicles {
   };
 
   class I_Heli_light_03_F: I_Heli_light_03_base_F {
+    #include <mfd_wildcat.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
 
@@ -1018,110 +1034,60 @@ class CfgVehicles {
     };
   };
 
+  class I_Heli_light_03_unarmed_base_F: I_Heli_light_03_base_F {
+    class MFD {};
+  };
+  class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+    #include <mfd_wildcat_unarmed.hpp>
+  };
+
   class Plane_CAS_01_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
-    class Turrets {};
-    maxSpeed = 736;
-    aileronSensitivity = 0.85;
-    elevatorSensitivity = 0.75;
-    rudderInfluence = 0.001;
-    aileronControlsSensitivityCoef = 3;
-    elevatorControlsSensitivity = 2;
-    rudderControlsSensitivityoef = 4;
-    elevatorCoef[] = {0.7,0.75,0.75,0.65,0.55,0.45,0.35};
-    aileronCoef[] = {0.6,0.85,0.88,0.92,0.95,0.97,1};
-    rudderCoef[] = {0.8,0.75,0.65,0.5,0.4,0.33,0.3};
-    flapsFrictionCoef = 0.35;
-    angleOfIndicence = 0.0523599;
-    draconicForceXCoef = 9.5;
-    draconicForceYCoef = 0.56;
-    draconicForceZCoef = 0.1;
-    draconicTorqueXCoef = 0.58;
-    draconicTorqueYCoef = 0.00013;
-    envelope[] = {0,0,0.75,2.4,3.6,3.8,3.7,3.2,2.2,1.7,0.9};
-    thrustCoef[] = {1,1.2,1.3,1.25,1.06,1.01,1,0.92,0.75,0.65,0.5,0.25,0};
-    acceleration = 265;
-    landingSpeed = 220;
-    gunAimDown = 0.087266463;
+    class MFD {};
+    class Turrets;
+    #include <flightmodel_thunderbolt.hpp>
+  };
+
+  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+    #include <mfd_thunderbolt.hpp>
+    //#include <hmd_thunderbolt.hpp>
   };
 
   class Plane_CAS_02_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
-    class Turrets {};
-    maxSpeed = 1059;
-    acceleration = 300;
-    aileronSensitivity = 0.635;
-    elevatorSensitivity = 0.814;
-    rudderInfluence = 0.001;
-    aileronControlsSensitivityCoef = 3;
-    elevatorControlsSensitivity = 2;
-    rudderControlsSensitivityoef = 4;
-    elevatorCoef[] = {0.6,0.76,0.7,0.65,0.58,0.47,0.43};
-    aileronCoef[] = {0.5,0.85,0.87,0.89,0.92,0.95,1};
-    rudderCoef[] = {0.8,0.7,0.6,0.5,0.4,0.32,0.27};
-    angleOfIndicence = 0.0523599;
-    draconicForceXCoef = 7.6;
-    draconicForceYCoef = 0.75;
-    draconicForceZCoef = 0.085;
-    draconicTorqueXCoef = 0.815;
-    draconicTorqueYCoef = 0.000152;
-    envelope[] = {0,0.446,1.5,3.9,5.2,4.8,4.2,3.5,2,1,0.5};
-    thrustCoef[] = {1,1.2,1.7,1.7,1.65,1.54,1.32,1.1,0.95,0.75,0.5,0.35,0};
-    flapsFrictionCoef = 0.32;
+    class Turrets;
+    #include <flightmodel_yak.hpp>
   };
 
   class Plane_Fighter_03_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
-    class Turrets {};
-    acceleration = 300;
-    maxSpeed = 936;
-    irScanRangeMin = 500;
-    irScanRangeMax = 5000;
-    aileronSensitivity = 0.64;
-    elevatorSensitivity = 0.682;
-    rudderInfluence = 0.001;
-    aileronControlsSensitivityCoef = 3;
-    elevatorControlsSensitivity = 2;
-    rudderControlsSensitivityoef = 4;
-    elevatorCoef[] = {0.6,0.73,0.62,0.52,0.39,0.33,0.28};
-    aileronCoef[] = {0.5,0.68,0.75,0.86,0.92,0.96,1};
-    rudderCoef[] = {0.9,0.75,0.58,0.45,0.38,0.35,0.3};
-    envelope[] = {0,0.06,1.2,3,3.6,3.75,3.65,3.45,3.3,2.8,2.4,1.9,1.5};
-    angleOfIndicence = 0.0523599;
-    //determines velocity vector behaviour, how quickly it catches up with where your nose is pointing, I think
-    draconicForceXCoef = 7.5;
-    //max angle of attack, lower value gives higher aoa
-    draconicForceYCoef = 0.2198;
-    //Something to do with bleed off of speed, low values seem to increase bleed off
-    draconicForceZCoef = 5.12;
-    //????
-    draconicTorqueXCoef = 0.18;
-    //resistance to elevator input, also impacts speed degradation
-    draconicTorqueYCoef = 0.000017;
-    thrustCoef[] = {1.3,1.27,1.24,1.2,1.17,1.15,1.13,1.1,1.06,1,0.94,0.72,0.51,0.4,0.25,0};
-    gunAimDown = 0.029;
-    flapsFrictionCoef = 0.32;
+    class Turrets;
+    #include <flightmodel_alca.hpp>
   };
 
   class UAV_01_base_F: Helicopter_Base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
+    };*/
   };
 
   class UAV_02_base_F: UAV {
     class Turrets {
-      class MainTurret: NewTurret {};
+      class MainTurret;
     };
+    weapons[] = {};
+    magazines[] = {};
   };
 
   class UAV_02_CAS_base_F: UAV_02_base_F {
-    class Turrets: Turrets {
+    /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
-    };
+    };*/
+    weapons[] = {};
+    magazines[] = {};
   };
 
   class B_Heli_Transport_03_base_F: Helicopter_Base_H {
@@ -1132,7 +1098,7 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {};
+      //class MainTurret: MainTurret {};
       class RightDoorGun: MainTurret {};
 
       class CargoTurret_01: CargoTurret {};
@@ -1145,11 +1111,11 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
-      class MainTurret: MainTurret {};
-      class RightDoorGun: MainTurret {};
+      //class MainTurret: MainTurret {};
+      //class RightDoorGun: MainTurret {};
 
-      class CargoTurret_01: CargoTurret {};
-      class CargoTurret_02: CargoTurret_01 {};
+      //class CargoTurret_01: CargoTurret {};
+      //class CargoTurret_02: CargoTurret_01 {};
     };
   };
 

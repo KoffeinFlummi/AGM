@@ -36,7 +36,7 @@ while {
   _laser set [2, (_laser select 2) - (getTerrainHeightASL _laser min 0)];
   _line set [1, _laser];
 
-  _distance = _distance + (([1, -1] select (lineIntersects (_line + [vehicle player]) || {terrainIntersectASL _line})) * _iteration);
+  _distance = _distance + (([1, -1] select (lineIntersects (_line + [vehicle AGM_player]) || {terrainIntersectASL _line})) * _iteration);
 };
 
 _distance = _interval * round (_distance / _interval);

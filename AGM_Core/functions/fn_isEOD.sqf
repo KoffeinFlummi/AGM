@@ -23,5 +23,4 @@ private "_unit";
 
 _unit = _this select 0;
 
-_unit getVariable ["AGM_isEOD", false]
-|| {getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "canDeactivateMines") == 1}
+_unit getVariable ["AGM_isEOD", getNumber (configFile >> "CfgVehicles" >> typeOf _unit >> "canDeactivateMines") == 1]

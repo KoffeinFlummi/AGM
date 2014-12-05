@@ -35,7 +35,21 @@ _fnc_logEntries = {
     };
 
     if (typeName _e2 != "BOOL") then {
-      _t = format ["%1 = %2;", configName _e1, str _e2];
+      if (typeName _e2 == "ARRAY") then {
+        _e2 = toArray str _e2;
+        {
+          if (_x == toArray "[" select 0) then {
+            _e2 set [_forEachIndex, toArray "{" select 0];
+          };
+          if (_x == toArray "]" select 0) then {
+            _e2 set [_forEachIndex, toArray "}" select 0];
+          };
+        } forEach _e2;
+        _e2 = toString _e2;
+        _t = format ["%1[] = %2;", configName _e1, _e2];
+      } else {
+        _t = format ["%1 = %2;", configName _e1, str _e2];
+      };
       for "_a" from 0 to _d do {
         _t = "  " + _t;
       };

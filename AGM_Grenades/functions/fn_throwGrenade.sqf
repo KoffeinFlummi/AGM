@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Adjust the grenades throwing direction and speed to the selected throwing mode.
+ * 
+ * Argument:
+ * input from "Fired" eventhandler
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_weapon", "_projectile"];
 

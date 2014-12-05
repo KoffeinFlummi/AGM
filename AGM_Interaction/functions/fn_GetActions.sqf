@@ -77,7 +77,7 @@ for "_i" from 0 to (_count - 1) do {
 					_condition = getText (_action >> "condition");
 					if (_condition == "") then {_condition = "true"};
 
-					_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[call AGM_Core_fnc_player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
+					_condition = _condition + format [" && {%1 call AGM_Core_canInteract} && {[AGM_player, AGM_Interaction_Target] call AGM_Core_fnc_canInteractWith}", getArray (_action >> "exceptions")];
 					if (_enableInside != 1) then {_condition = _condition + " && {_player == _vehicle}"};
 
 					_condition = compile _condition;

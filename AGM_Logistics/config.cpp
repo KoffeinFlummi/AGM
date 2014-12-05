@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.94.1";
     versionStr = "0.94.1";
     versionAr[] = {0,94,1};
-    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp"};
+    author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp", "nic547"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -1012,7 +1012,7 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_PATRIA;
 
     AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
-    AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+    AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
   };
   class APC_Wheeled_02_base_F: Wheeled_APC_F {
     AGM_fuelCapacity = AGM_FUELCAPACITY_ARMA;
@@ -1021,7 +1021,7 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_PANDUR;
 
     AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"};
-    AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+    AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
   };
   class APC_Tracked_01_base_F: Tank_F {
     AGM_fuelCapacity = AGM_FUELCAPACITY_NAMER;
@@ -1188,7 +1188,31 @@ class CfgVehicles {
     AGM_canRepair = 1;
     transportRepair = 0;
   };
-
+  // Fuel tanks
+  class CargoNet_01_base_F;
+  class CargoNet_01_barrels_F:CargoNet_01_base_F {
+    class AGM_Actions{
+      MACRO_REFUELCARGO
+      MACRO_LOADABLE
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_4BARREL;
+  };
+  class Items_Base_F;
+  class Land_MetalBarrel_F:Items_Base_F {
+    class AGM_Actions {
+      MACRO_REFUELCARGO
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_BARREL;
+  };
+  class Slingload_01_Base_F;
+  class B_Slingload_01_Fuel_F:Slingload_01_Base_F {
+    class AGM_Actions {
+      MACRO_REFUELCARGO
+      MACRO_LOADABLE
+    };
+    AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_ISOCONT;
+    transportFuel = 0;
+  };
   //Hawkeye104 AGM Repair Module
   class Module_F;
   class AGM_ModuleRepair: Module_F {

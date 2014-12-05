@@ -1,258 +1,565 @@
 
 class MFD {
   class AirplaneHUD {
-    borderBottom = 0;
+    class Pos10Vector {
+      type = "vector";
+      pos0[] = {0.5,0.5};
+      pos10[] = {0.85,0.85};
+    };
+
+    topLeft = "HUD_top_left";
+    topRight = "HUD_top_right";
+    bottomLeft = "HUD_bottom_left";
     borderLeft = 0;
     borderRight = 0;
     borderTop = 0;
-    bottomLeft = "HUD LD";
-    color[] = {0,1,0,0.1};
-    helmetDown[] = {-0,-0.05,0};
-    helmetMountedDisplay = 1;
-    helmetPosition[] = {-0.0276,0.024,0.1};
-    helmetRight[] = {0.055,0,0};
-    topLeft = "HUD LH";
-    topRight = "HUD PH";
-    class Pos10Vector {
-      pos0[] = {0.502,0.49};
-      pos10[] = {1.112,1.03};
-      type = "vector";
-    };
+    borderBottom = 0;
+    color[] = {0.15,1,0.15,1};
+    enableParallax = 0;
     class Bones {
-      /*
-      class GunnerAim: Pos10Vector {
-        pos0[] = {0,-0.0025};
-        pos10[] = {0.01,0.0025};
-        source = "weapon";
-      };*/
-      class ILS_H {
-        pos0[] = {0.5,0.49};
-        pos3[] = {0.683,0.49};
-        type = "ils";
-      };
-      class ILS_W: ILS_H {
-        pos0[] = {0.5,0.49};
-        pos3[] = {0.5,0.652};
-        type = "ils";
-      };
-      class Level0: Pos10Vector {
-        angle = 0;
-        pos0[] = {0.5,0.49};
-        pos10[] = {1.11,1.03};
-        type = "horizon";
-      };
-      class LevelM10: Level0 {
-        angle = -10;
-      };
-      class LevelM20: Level0 {
-        angle = -20;
-      };
-      class LevelM30: Level0 {
-        angle = -30;
-      };
-      class LevelM40: Level0 {
-        angle = -40;
-      };
-      class LevelM50: Level0 {
-        angle = -50;
-      };
-      class LevelP10: Level0 {
-        angle = 10;
-      };
-      class LevelP20: Level0 {
-        angle = 20;
-      };
-      class LevelP30: Level0 {
-        angle = 30;
-      };
-      class LevelP40: Level0 {
-        angle = 40;
-      };
-      class LevelP50: Level0 {
-        angle = 50;
-      };
-      class PlaneW {
-        pos[] = {0.502,0.49};
+      class PlaneOrientation {
         type = "fixed";
+        pos[] = {0.5,0.5};
       };
+
       class Target: Pos10Vector {
         source = "target";
       };
-      class Velocity: Pos10Vector {
-        pos0[] = {0.5,0.49};
-        pos10[] = {1.11,1.03};
-        source = "velocity";
+
+      class Velocity {
         type = "vector";
+        source = "velocity";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.65,0.65};
       };
-      class WeaponAim: Pos10Vector {
+
+      class VspeedBone {
+        type = "linear";
+        source = "vspeed";
+        sourceScale = 1;
+        min = -10;
+        max = 10;
+        minPos[] = {0.93,0.2};
+        maxPos[] = {0.93,0.8};
+      };
+
+      class RadarAltitudeBone {
+        type = "linear";
+        source = "altitudeAGL";
+        sourceScale = 1;
+        min = 0;
+        max = 60;
+        minPos[] = {0.965,0.2};
+        maxPos[] = {0.965,0.8};
+      };
+
+      class HorizonBankRot {
+        type = "rotational";
+        source = "horizonBank";
+        center[] = {0.5,0.5};
+        min = -3.1416;
+        max = 3.1416;
+        minAngle = -180;
+        maxAngle = 180;
+        aspectRatio = 1;
+      };
+
+      class ForwardVec {
+        type = "vector";
+        source = "forward";
+        pos0[] = {0,0};
+        pos10[] = {0.1,0.1};
+      };
+
+      class WeaponAim {
+        type = "vector";
         source = "weapon";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.65,0.65};
+      };
+
+      class Level0 {
+        type = "horizon";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.78,0.78};
+        angle = 0;
       };
     };
+
     class Draw {
-      class AAMissile {
-        condition = "AAmissile";
-        class Circle {
-          points[] = {{"WeaponAim",{0,-0.221311},1},{"WeaponAim",{0.125,-0.192541},1},{"WeaponAim",{0.2175,-0.110656},1},{"WeaponAim",{0.25,0},1},{"WeaponAim",{0.2175,0.110656},1},{"WeaponAim",{0.125,0.192541},1},{"WeaponAim",{0,0.221311},1},{"WeaponAim",{-0.125,0.192541},1},{"WeaponAim",{-0.2175,0.110656},1},{"WeaponAim",{-0.25,0},1},{"WeaponAim",{-0.2175,-0.110656},1},{"WeaponAim",{-0.125,-0.192541},1},{"WeaponAim",{0,-0.221311},1},{},{"Target",{0,-0.0619672},1},{"Target",{0.07,0},1},{"Target",{0,0.0619672},1},{"Target",{-0.07,0},1},{"Target",{0,-0.0619672},1}};
-          type = "line";
-          width = 4;
+      color[] = {0.18,1,0.18};
+      alpha = 1;
+      condition = "on";
+      class Horizont {
+        clipTL[] = {0.15,0.15};
+        clipBR[] = {0.85,0.85};
+        class Dimmed {
+          class Level0 {
+            type = "line";
+            points[] = {
+              {"Level0",{-0.42,0},1},
+              {"Level0",{-0.38,0},1},{},
+              {"Level0",{-0.37,0},1},
+              {"Level0",{-0.33,0},1},{},
+              {"Level0",{-0.32,0},1},
+              {"Level0",{-0.28,0},1},{},
+              {"Level0",{-0.27,0},1},
+              {"Level0",{-0.23,0},1},{},
+              {"Level0",{-0.22,0},1},
+              {"Level0",{-0.18,0},1},{},
+              {"Level0",{-0.17,0},1},
+              {"Level0",{-0.13,0},1},{},
+              {"Level0",{-0.12,0},1},
+              {"Level0",{-0.08,0},1},{},
+              {"Level0",{0.42,0},1},
+              {"Level0",{0.38,0},1},{},
+              {"Level0",{0.37,0},1},
+              {"Level0",{0.33,0},1},{},
+              {"Level0",{0.32,0},1},
+              {"Level0",{0.28,0},1},{},
+              {"Level0",{0.27,0},1},
+              {"Level0",{0.23,0},1},{},
+              {"Level0",{0.22,0},1},
+              {"Level0",{0.18,0},1},{},
+              {"Level0",{0.17,0},1},
+              {"Level0",{0.13,0},1},{},
+              {"Level0",{0.12,0},1},
+              {"Level0",{0.08,0},1}
+            };
+          };
         };
       };
-      class SpeedNumber {
+
+    /*class StaticBank {
+        type = "line";
+        width = 3;
+        points[] = {
+          ////////////////////////////////////////////////////// LEFT
+          {{0.4782,0.2510},1},
+          {{0.4773,0.2410},1},{}, 
+          {{0.4566,0.2538},1},
+          {{0.4549,0.2439},1},{},
+          {{0.4353,0.2585},1},
+          {{0.4301,0.2392},1},{},
+          {{0.4145,0.2651},1},
+          {{0.4111,0.2557},1},{},
+          {{0.3943,0.2734},1},
+          {{0.3901,0.2644},1},{},
+          {{0.3750,0.2835},1},
+          {{0.3650,0.2662},1},{},
+          {{0.3232,0.3232},1},
+          {{0.3091,0.3091},1},{},
+          {{0.2835,0.3750},1},
+          {{0.2662,0.3650},1},{},
+          /////////////////////////////////////////////////////// RIGHT
+          {{"0.5 + (0.5- 0.4782)",0.2510},1},
+          {{"0.5 + (0.5- 0.4773)",0.2410},1},{},
+          {{"0.5 + (0.5- 0.4566)",0.2538},1},
+          {{"0.5 + (0.5- 0.4549)",0.2439},1},{},
+          {{"0.5 + (0.5- 0.4353)",0.2585},1},
+          {{"0.5 + (0.5- 0.4301)",0.2392},1},{},
+          {{"0.5 + (0.5- 0.4145)",0.2651},1},
+          {{"0.5 + (0.5- 0.4111)",0.2557},1},{},
+          {{"0.5 + (0.5- 0.3943)",0.2734},1},
+          {{"0.5 + (0.5- 0.3901)",0.2644},1},{},
+          {{"0.5 + (0.5- 0.3750)",0.2835},1},
+          {{"0.5 + (0.5- 0.3650)",0.2662},1},{},
+          {{"0.5 + (0.5- 0.3232)",0.3232},1},
+          {{"0.5 + (0.5- 0.3091)",0.3091},1},{},
+          {{"0.5 + (0.5- 0.2835)",0.3750},1},
+          {{"0.5 + (0.5- 0.2662)",0.3650},1},{},
+          /////////////////////////////////////////////////////// CENTER
+          {{0.5,"0.5 - 0.25"},1},
+          {{0.5,"0.5 - 0.28"},1}
+        };
+      };*/
+
+      class HorizonBankRot {
+        type = "line";
+        width = 3;
+        points[] = {
+          {"HorizonBankRot",{0,0.25},1},
+          {"HorizonBankRot",{-0.01,0.23},1},
+          {"HorizonBankRot",{0.01,0.23},1},
+          {"HorizonBankRot",{0,0.25},1}
+        };
+      };
+
+      class Centerline {
+        type = "line";
+        width = 7;
+        points[] = {
+          {{0.45,0.5},1},
+          {{0.48,0.5},1},
+          {{0.49,0.525},1},
+          {{0.5,0.5},1},
+          {{0.51,0.525},1},
+          {{0.52,0.5},1},
+          {{0.55,0.5},1}
+        };
+      };
+
+    /*class WeaponName {
+        type = "text";
+        source = "weapon";
+        sourceScale = 1;
         align = "right";
-        down[] = {{0.06,0.52},1};
-        pos[] = {{0.06,0.47},1};
-        right[] = {{"0.14-0.02",0.47},1};
+        scale = 1;
+        pos[] = {{0.03,0.86},1};
+        right[] = {{0.07,0.86},1};
+        down[] = {{0.03,0.90},1};
+      };
+
+      class AmmoCount {
+        type = "text";
+        source = "ammo";
+        sourceScale = 1;
+        align = "right";
+        scale = 1;
+        pos[] = {{0.03,0.89},1};
+        right[] = {{0.07,0.89},1};
+        down[] = {{0.03,0.93},1};
+      };*/
+
+      class LightsGroup {
+        type = "group";
+        condition = "lights";
+        class LightsText {
+          type = "text";
+          source = "static";
+          text = "LIGHTS";
+          align = "right";
+          scale = 1;
+          pos[] = {{0.03,"0.53 + 0.055"},1};
+          right[] = {{0.07,"0.53 + 0.055"},1};
+          down[] = {{0.03,"0.53 + 0.095"},1};
+        };
+      };
+
+      class CollisionLightsGroup {
+        type = "group";
+        condition = "collisionlights";
+        class CollisionLightsText {
+          type = "text";
+          source = "static";
+          text = "A-COL";
+          align = "right";
+          scale = 1;
+          pos[] = {{0.03,"0.53 + 0.105"},1};
+          right[] = {{0.07,"0.53 + 0.105"},1};
+          down[] = {{0.03,"0.53 + 0.145"},1};
+        };
+      };
+
+      class SpeedNumber {
+        type = "text";
+        align = "right";
         scale = 1;
         source = "speed";
         sourceScale = 3.6;
+        pos[] = {{0.03,0.475},1};
+        right[] = {{0.08,0.475},1};
+        down[] = {{0.03,0.525},1};
+      };
+
+      class TorqueNumber {
         type = "text";
+        align = "left";
+        scale = 1;
+        source = "rtdRotorTorque";
+        sourceScale = 110;
+        pos[] = {{0.065,0.175},1};
+        right[] = {{0.115,0.175},1};
+        down[] = {{0.065,0.225},1};
       };
-      class AltNumber: SpeedNumber {
-        down[] = {{"0.86-0.15",0.52},1};
-        pos[] = {{"0.86-0.15",0.47},1};
-        right[] = {{"0.94-0.15-0.02",0.47},1};
-        source = "altitudeAGL";
-        sourceScale = 1;
-      };
-      class AltScale {
+
+      class Torquetext {
+        type = "text";
+        source = "static";
+        text = "%";
         align = "right";
-        bottom = 0.2;
-        center = 0.5;
-        down[] = {0.86,0.87};
-        horizontal = 0;
-        lineXleft = 0.825;
-        lineXleftMajor = 0.825;
-        lineYright = 0.835;
-        lineYrightMajor = 0.845;
-        majorLineEach = 5;
-        max = "none";
-        min = "none";
-        numberEach = 5;
-        pos[] = {0.86,0.82};
-        right[] = {"0.94-0.02",0.82};
+        scale = 1;
+        pos[] = {{0.07,0.175},1};
+        right[] = {{0.12,0.175},1};
+        down[] = {{0.07,0.225},1};
+      };
+
+      class AltNumber {
+        type = "text";
+        align = "right";
         scale = 1;
         source = "altitudeAGL";
         sourceScale = 1;
-        step = 20;
-        StepSize = "(0.85- 0.2)/20";
-        top = 0.85;
-        type = "scale";
-        width = 4;
+        pos[] = {{0.83,0.475},1};
+        right[] = {{0.88,0.475},1};
+        down[] = {{0.83,0.525},1};
       };
-      class ammo {
-        align = "right";
-        down[] = {{0.1,0.97},1};
-        pos[] = {{0.1,0.93},1};
-        right[] = {{"0.16-0.02",0.93},1};
-        scale = 0.5;
-        source = "ammo";
-        sourceScale = 1;
+
+      class ASLNumber {
         type = "text";
+        source = "altitudeASL";
+        sourceScale = 1;
+        align = "right";
+        scale = 1;
+        pos[] = {{0.835,0.18},1};
+        right[] = {{0.875,0.18},1};
+        down[] = {{0.835,0.22},1};
       };
-      class ATMissile {
-        condition = "ATmissile";
-        class Circle {
-          points[] = {{"WeaponAim",{-0.15,-0.15},1},{"WeaponAim",{-0.15,"-0.15+0.02"},1},{},{"WeaponAim",{-0.15,0.15},1},{"WeaponAim",{-0.15,"+0.15-0.02"},1},{},{"WeaponAim",{0.15,-0.15},1},{"WeaponAim",{0.15,"-0.15+0.02"},1},{},{"WeaponAim",{0.15,0.15},1},{"WeaponAim",{0.15,"+0.15-0.02"},1},{},{"WeaponAim",{-0.15,-0.15},1},{"WeaponAim",{"-0.15+0.02",-0.15},1},{},{"WeaponAim",{-0.15,0.15},1},{"WeaponAim",{"-0.15+0.02",0.15},1},{},{"WeaponAim",{0.15,-0.15},1},{"WeaponAim",{"0.15-0.02",-0.15},1},{},{"WeaponAim",{0.15,0.15},1},{"WeaponAim",{"0.15-0.02",0.15},1},{}};
-          type = "line";
-          width = 4;
-        };
-      };
-      class Bomb {
-        condition = "bomb";
-        class Circle {
-          points[] = {{"WeaponAim",{0,-0.0885246},1},{"WeaponAim",{0.05,-0.0770164},1},{"WeaponAim",{0.087,-0.0442623},1},{"WeaponAim",{0.1,0},1},{"WeaponAim",{0.087,0.0442623},1},{"WeaponAim",{0.05,0.0770164},1},{"WeaponAim",{0,0.0885246},1},{"WeaponAim",{-0.05,0.0770164},1},{"WeaponAim",{-0.087,0.0442623},1},{"WeaponAim",{-0.1,0},1},{"WeaponAim",{-0.087,-0.0442623},1},{"WeaponAim",{-0.05,-0.0770164},1},{"WeaponAim",{0,-0.0885246},1},{},{"Velocity",0.001,"WeaponAim",{0,0},1},{"Velocity",{0,0},1},{},{"Target",{0,-0.0619672},1},{"Target",{0.07,0},1},{"Target",{0,0.0619672},1},{"Target",{-0.07,0},1},{"Target",{0,-0.0619672},1}};
-          type = "line";
-          width = 4;
-        };
-      };/*
-      class Gunner {
-        points[] = {{"GunnerAim",{"0.5-0.015","0.9-0.008"},1},{"GunnerAim",{"0.5-0.015","0.9+0.008"},1},{"GunnerAim",{"0.5+0.015","0.9+0.008"},1},{"GunnerAim",{"0.5+0.015","0.9-0.008"},1},{"GunnerAim",{"0.5-0.015","0.9-0.008"},1}};
+
+      class VspeedScalePosta {
         type = "line";
-        width = 4;
-      };*/
-      class HeadingScale {
+        width = 5;
+        points[] = {
+          {{0.98,0.2},1},
+          {{1,0.2},1},{},
+          {{0.93,0.2},1},
+          {{0.95,0.2},1},{},
+          {{0.98,0.35},1},
+          {{1,0.35},1},{},
+          {{0.93,0.35},1},
+          {{0.95,0.35},1},{},
+          {{0.94,0.38},1},
+          {{0.95,0.38},1},{},
+          {{0.94,0.41},1},
+          {{0.95,0.41},1},{},
+          {{0.94,0.44},1},
+          {{0.95,0.44},1},{},
+          {{0.94,0.47},1},
+          {{0.95,0.47},1},{},
+          {{0.98,0.5},1},
+          {{1,0.5},1},{},
+          {{0.93,0.5},1},
+          {{0.95,0.5},1},{},
+          {{0.94,0.53},1},
+          {{0.95,0.53},1},{},
+          {{0.94,0.56},1},
+          {{0.95,0.56},1},{},
+          {{0.94,0.59},1},
+          {{0.95,0.59},1},{},
+          {{0.94,0.62},1},
+          {{0.95,0.62},1},{},
+          {{0.98,0.65},1},
+          {{1,0.65},1},{},
+          {{0.93,0.65},1},
+          {{0.95,0.65},1},{},
+          {{0.99,0.68},1},
+          {{0.98,0.68},1},{},
+          {{0.99,0.71},1},
+          {{0.98,0.71},1},{},
+          {{0.99,0.74},1},
+          {{0.98,0.74},1},{},
+          {{0.99,0.77},1},
+          {{0.98,0.77},1},{},
+          {{0.98,0.8},1},
+          {{1,0.8},1},{},
+          {{0.93,0.8},1},
+          {{0.95,0.8},1},{}
+        };
+      };
+
+      class RadarAltitudeBand {
+        clipTL[] = {0,0.2};
+        clipBR[] = {1,0.8};
+        class radarbanda {
+          type = "line";
+          width = 17;
+          points[] = {
+            {"RadarAltitudeBone",{0,0},1},
+            {"RadarAltitudeBone",{0,0.6},1}
+          };
+        };
+      };
+
+      class VspeedBand {
+        type = "line";
+        width = 3;
+        points[] = {
+          {"VspeedBone",{-0.01,0},1},
+          {"VspeedBone",{-0.025,-0.015},1},
+          {"VspeedBone",{-0.025,0.015},1},
+          {"VspeedBone",{-0.01,0},1},{}
+        };
+      };
+
+      class HeadingNumber: SpeedNumber {
+        source = "heading";
+        sourceScale = 1;
         align = "center";
-        bottom = 0.7;
-        center = 0.5;
-        down[] = {"0.30-0.00","0.04+0.05"};
-        horizontal = 1;
-        lineXleft = "0.06+0.05";
-        lineXleftMajor = "0.07+0.05";
-        lineYright = "0.05+0.05";
-        lineYrightMajor = "0.04+0.05";
-        majorLineEach = 3;
-        max = "none";
-        min = "none";
-        numberEach = 3;
-        pos[] = {"0.30-0.00","0.0+0.05"};
-        right[] = {"0.36-0.00","0.0+0.05"};
-        scale = 1;
-        source = "Heading";
-        sourceScale = 1;
-        step = 10;
-        StepSize = "(0.70- 0.3)/15";
-        top = 0.3;
+        pos[] = {{0.5,0.01},1};
+        right[] = {{0.56,0.01},1};
+        down[] = {{0.5,0.06},1};
+      };
+
+      class Center_box {
+        type = "line";
+        width = 3;
+        points[] = {
+          {{0.44,0.005},1},
+          {{"0.44 + 0.12",0.005},1},
+          {{"0.44 + 0.12","0.005 + 0.06"},1},
+          {{0.44,"0.005 + 0.06"},1},
+          {{0.44,0.005},1}
+        };
+      };
+
+      class HeadingArrow {
+        type = "line";
+        width = 7;
+        points[] = {{{"0.5","0.128 + 0.03"},1},{{0.5,0.128},1}};
+      };
+
+      class HeadingScale {
         type = "scale";
-        width = 4;
-      };
-      class HorizontalLine {
-        clipBR[] = {0.8,0.96};
-        clipTL[] = {0.2,0.12};
-        class HorizontalLineDraw {
-          points[] = {{"Level0",{"-6*0.075/2",0.02},1},{"Level0",{"-5*0.075/2",0.02},1},{},{"Level0",{"-4*0.075/2",0.02},1},{"Level0",{"-3*0.075/2",0.02},1},{},{"Level0",{"-2*0.075/2",0.02},1},{"Level0",{"-1*0.075/2",0.02},1},{},{"Level0",{"1*0.075/2",0.02},1},{"Level0",{"2*0.075/2",0.02},1},{},{"Level0",{"3*0.075/2",0.02},1},{"Level0",{"4*0.075/2",0.02},1},{},{"Level0",{"5*0.075/2",0.02},1},{"Level0",{"6*0.075/2",0.02},1}};
-          source = "Level0";
-          type = "line";
-        };
-      };
-      class MGun {
-        condition = "mgun";
-        class Circle {
-          points[] = {{"WeaponAim",{0.05,0},1},{"WeaponAim",{0.015,0},1},{},{"WeaponAim",{0,0.0442623},1},{"WeaponAim",{0,0.0132787},1},{},{"WeaponAim",{-0.05,0},1},{"WeaponAim",{-0.015,0},1},{},{"WeaponAim",{0,-0.0442623},1},{"WeaponAim",{0,-0.0132787},1},{}};
-          type = "line";
-          width = 4;
-        };
-      };
-      class PlaneHeading {
-        clipBR[] = {1,0};
-        clipTL[] = {0,1};
-        points[] = {{"Velocity",{0,-0.0177049},1},{"Velocity",{0.014,-0.0123934},1},{"Velocity",{0.02,0},1},{"Velocity",{0.014,0.0123934},1},{"Velocity",{0,0.0177049},1},{"Velocity",{-0.014,0.0123934},1},{"Velocity",{-0.02,0},1},{"Velocity",{-0.014,-0.0123934},1},{"Velocity",{0,-0.0177049},1},{},{"Velocity",{0.04,0},1},{"Velocity",{0.02,0},1},{},{"Velocity",{-0.04,0},1},{"Velocity",{-0.02,0},1},{},{"Velocity",{0,-0.0354098},1},{"Velocity",{0,-0.0177049},1},{}};
-        type = "line";
-        width = 4;
-      };
-      class PlaneW {
-        clipBR[] = {1,0};
-        clipTL[] = {0,1};
-        points[] = {{"PlaneW",{0,-0.0177049},1},{"PlaneW",{0.014,-0.0123934},1},{"PlaneW",{0.02,0},1},{"PlaneW",{0.014,0.0123934},1},{"PlaneW",{0,0.0177049},1},{"PlaneW",{-0.014,0.0123934},1},{"PlaneW",{-0.02,0},1},{"PlaneW",{-0.014,-0.0123934},1},{"PlaneW",{0,-0.0177049},1},{}};
-        type = "line";
-        width = 4;
-      };
-      class Rockets {
-        condition = "Rocket";
-        class Circle {
-          points[] = {{"WeaponAim",{-0.25,-0.25},1},{"WeaponAim",{-0.25,"-0.25+0.05"},1},{},{"WeaponAim",{-0.25,0.25},1},{"WeaponAim",{-0.25,"+0.25-0.05"},1},{},{"WeaponAim",{0.25,-0.25},1},{"WeaponAim",{0.25,"-0.25+0.05"},1},{},{"WeaponAim",{0.25,0.25},1},{"WeaponAim",{0.25,"+0.25-0.05"},1},{},{"WeaponAim",{-0.25,-0.25},1},{"WeaponAim",{"-0.25+0.05",-0.25},1},{},{"WeaponAim",{-0.25,0.25},1},{"WeaponAim",{"-0.25+0.05",0.25},1},{},{"WeaponAim",{0.25,-0.25},1},{"WeaponAim",{"0.25-0.05",-0.25},1},{},{"WeaponAim",{0.25,0.25},1},{"WeaponAim",{"0.25-0.05",0.25},1},{}};
-          type = "line";
-          width = 4;
-        };
-      };
-      /*
-      class Static {
-        clipBR[] = {1,0};
-        clipTL[] = {0,0.1};
-        points[] = {{{0.79,0.52},1},{{0.81,0.5},1},{{0.79,0.48},1},{},{{0.52,"0.08+0.06"},1},{{0.5,"0.06+0.06"},1},{{0.48,"0.08+0.06"},1},{},{{"0.5-0.1","0.9-0.04"},1},{{"0.5-0.1","0.9+0.04"},1},{{"0.5+0.1","0.9+0.04"},1},{{"0.5+0.1","0.9-0.04"},1},{{"0.5-0.1","0.9-0.04"},1},{},{{"0.5-0.1",0.9},1},{{"0.5-0.092",0.9},1},{},{{"0.5+0.1",0.9},1},{{"0.5+0.092",0.9},1},{},{{0.5,"0.9-0.04"},1},{{0.5,"0.9-0.032"},1},{},{{0.5,"0.9+0.04"},1},{{0.5,"0.9+0.032"},1},{}};
-        type = "line";
-        width = 4;
-      };
-      */
-      class weapons {
-        align = "right";
-        down[] = {{0.1,0.92},1};
-        pos[] = {{0.1,0.88},1};
-        right[] = {{"0.16-0.02",0.88},1};
-        scale = 0.5;
-        source = "weapon";
+        horizontal = 1;
+        source = "heading";
         sourceScale = 1;
+        width = 5;
+        top = 0.12;
+        center = 0.5;
+        bottom = 0.88;
+        lineXleft = "0.03 + 0.085";
+        lineYright = "0.02 + 0.085";
+        lineXleftMajor = "0.04 + 0.085";
+        lineYrightMajor = "0.02 + 0.085";
+        majorLineEach = 3;
+        numberEach = 3;
+        step = 10;
+        stepSize = "0.05";
+        align = "center";
+        scale = 1;
+        pos[] = {0.12,"0.0 + 0.065"};
+        right[] = {0.16,"0.0 + 0.065"};
+        down[] = {0.12,"0.04 + 0.065"};
+      };
+
+      class Fuel_Text {
         type = "text";
+        source = "static";
+        text = "Fuel";
+        align = "right";
+        scale = 1;
+        pos[] = {{0.85,0.86},1};
+        right[] = {{0.89,0.86},1};
+        down[] = {{0.85,0.9},1};
+      };
+
+      class Fuel_Number {
+        type = "text";
+        source = "fuel";
+        sourceScale = 100;
+        align = "right";
+        scale = 1;
+        pos[] = {{0.92,0.86},1};
+        right[] = {{0.96,0.86},1};
+        down[] = {{0.92,0.9},1};
       };
     };
+
+    helmetMountedDisplay = 1;
+    helmetPosition[] = {-0.04,0.04,0.1};
+    helmetRight[] = {0.08,0,0};
+    helmetDown[] = {0,-0.08,0};
+  };
+
+  class LittleHUD {
+    class Pos10Vector {
+      type = "vector";
+      pos0[] = {0.5,0.5};
+      pos10[] = {0.722,0.722};
+    };
+
+    topLeft = "HUD_top_left";
+    topRight = "HUD_top_right";
+    bottomLeft = "HUD_bottom_left";
+    borderLeft = 0;
+    borderRight = 0;
+    borderTop = 0;
+    borderBottom = 0;
+    color[] = {0.15,1,0.15,1};
+    enableParallax = 0;
+    class Bones {
+      class Velocity {
+        type = "vector";
+        source = "velocity";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.75,0.75};
+      };
+
+      class ForwardVec1 {
+        type = "vector";
+        source = "forward";
+        pos0[] = {0,0};
+        pos10[] = {0.25,0.25};
+      };
+
+      class ForwardVec {
+        type = "vector";
+        source = "forward";
+        pos0[] = {0,0};
+        pos10[] = {0.253,0.253};
+      };
+
+      class WeaponAim {
+        type = "vector";
+        source = "weapon";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.753,0.753};
+      };
+
+      class WeaponAim1 {
+        type = "vector";
+        source = "weapon";
+        pos0[] = {0,0};
+        pos10[] = {0.253,0.23};
+      };
+
+      class Target {
+        type = "vector";
+        source = "target";
+        pos0[] = {0.5,0.5};
+        pos10[] = {0.753,0.753};
+      };
+
+      class RadarContact {
+        type = "fixed";
+        pos[] = {0,0};
+      };
+    };
+
+    class Draw {
+      color[] = {0.18,1,0.18};
+      alpha = 1;
+      condition = "on";
+      class PlaneMovementCrosshair {
+        type = "line";
+        width = 7;
+        points[] = {
+          {"ForwardVec1",1,"Velocity",1,{0,-0.02},1},
+          {"ForwardVec1",1,"Velocity",1,{0.01,-0.01732},1},
+          {"ForwardVec1",1,"Velocity",1,{0.01732,-0.01},1},
+          {"ForwardVec1",1,"Velocity",1,{0.02,0},1},
+          {"ForwardVec1",1,"Velocity",1,{0.01732,0.01},1},
+          {"ForwardVec1",1,"Velocity",1,{0.01,0.01732},1},
+          {"ForwardVec1",1,"Velocity",1,{0,0.02},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.01,0.01732},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.01732,0.01},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.02,0},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.01732,-0.01},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.01,-0.01732},1},
+          {"ForwardVec1",1,"Velocity",1,{0,-0.02},1},{},
+          {"ForwardVec1",1,"Velocity",1,{0.04,0},1},
+          {"ForwardVec1",1,"Velocity",1,{0.02,0},1},{},
+          {"ForwardVec1",1,"Velocity",1,{-0.04,0},1},
+          {"ForwardVec1",1,"Velocity",1,{-0.02,0},1},{},
+          {"ForwardVec1",1,"Velocity",1,{0,-0.04},1},
+          {"ForwardVec1",1,"Velocity",1,{0,-0.02},1}
+        };
+      };
+    };
+
+    helmetMountedDisplay = 1;
+    helmetPosition[] = {-0.035,0.035,0.1};
+    helmetRight[] = {0.07,0,0};
+    helmetDown[] = {0,-0.07,0};
   };
 };

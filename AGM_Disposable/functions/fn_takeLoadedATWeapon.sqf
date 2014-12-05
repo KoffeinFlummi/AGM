@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Handle the take event. Add a dummy magazine if a disposable rocket launcher is taken.
+ * 
+ * Argument:
+ * Input from "Take" eventhandler
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_launcher", "_config"];
 

@@ -27,37 +27,37 @@ class CfgFunctions {
 class Extended_FiredBis_EventHandlers {
   class CAManBase {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Recoil_fnc_camshake; _this call AGM_Recoil_fnc_burstDispersion;};";
+      clientFiredBis = "if (_this select 0 == AGM_player) then {_this call AGM_Recoil_fnc_camshake; _this call AGM_Recoil_fnc_burstDispersion;};";
     };
   };
   class Tank {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Car {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Helicopter {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Plane {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Ship_F {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class StaticWeapon {
     class AGM_Recoil_CamShake {
-      clientFiredBis = "if (_this select 0 == vehicle (call AGM_Core_fnc_player)) then {_this call AGM_Recoil_fnc_camshake;};";
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
 };

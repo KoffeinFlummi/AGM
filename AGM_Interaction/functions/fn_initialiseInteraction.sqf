@@ -27,7 +27,7 @@ _subMenu = _this select 1;
 _selfMenu = _this select 3;
 _target = _this select 4;
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 _vehicle = vehicle _player;
 //_object = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
 
@@ -43,7 +43,7 @@ if (_this select 2) then {
 	if (_player getVariable ["AGM_AcceptAction", -1] == -1) then {
 		[{if(isNil {AGM_Interaction_MainButton} || {!(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])})exitWith{false};(-(_this select 0) / 1.2) call AGM_Interaction_fnc_MoveDown;true}] call AGM_Core_fnc_addScrollWheelEventHandler;
 
-		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = call AGM_Core_fnc_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if(count _action == 12) then{(_action select 11) call (_action select 1);}else{[_target, _player] call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
+		_player setVariable ["AGM_AcceptAction", [_player, "DefaultAction", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {_action = AGM_Interaction_Buttons select AGM_Interaction_SelectedButton;_target = AGM_Interaction_Target;_player = AGM_player;_vehicle = vehicle _player;if ([_target, _player] call (_action select 2)) then {call AGM_Interaction_fnc_hideMenu;if(count _action == 12) then{(_action select 11) call (_action select 1);}else{[_target, _player] call (_action select 1);};};}] call AGM_core_fnc_addActionEventHandler];
 		_player setVariable ["AGM_AcceptAction", [_player, "menuBack", {(!isNil {AGM_Interaction_MainButton}) && {(profileNamespace getVariable ['AGM_Interaction_FlowMenu', false])}}, {call AGM_Interaction_MainButton;}] call AGM_core_fnc_addActionEventHandler];
 	};
 	0 call AGM_Interaction_fnc_moveDown;
@@ -54,7 +54,7 @@ if (_this select 2) then {
 		(uiNameSpace getVariable "AGM_Flow_Display") closeDisplay 0;
 		call AGM_Interaction_fnc_hideMouseHint;
 	};
-	if !(_subMenu) then {
+	if (!_subMenu || {isNull (findDisplay 1713999)}) then {
 		(findDisplay 1713999) closeDisplay 1;
 
 		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
@@ -111,14 +111,14 @@ if (_this select 2) then {
 	};
 
 	// Update Buttons
-	if (_subMenu) exitWith {};
+	terminate (missionNamespace getVariable ["AGM_Interaction_updateMenuHandle", scriptNull]);
 
-	0 spawn {
+	AGM_Interaction_updateMenuHandle = 0 spawn {
 		disableSerialization;
 		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
 		_ctrlTooltip = _dlgMenu displayCtrl 40;
 
-		_player = call AGM_Core_fnc_player;
+		_player = AGM_player;
 		_vehicle = vehicle _player;
 		_target = [AGM_Interaction_Target, _player] select (AGM_Interaction_MenuType % 2 == 1);
 

@@ -20,6 +20,16 @@ class CfgFunctions {
       class moduleNameTags;
     };
   };
+  class AGM_CrewInfo {
+    class AGM_CrewInfo {
+      file = "AGM_NameTags\functions\CrewInfo";
+      class canShow;
+      class doShow;
+      class getVehicleData;
+      class onMouseZChanged;
+      class setText;
+    };
+  };
 };
 
 class Extended_PostInit_EventHandlers {
@@ -32,7 +42,7 @@ class AGM_Core_Default_Keys {
   class showNames {
     displayName = "$STR_AGM_NameTags_ShowNames";
     condition = "true";
-    statement = "AGM_NameTags_ShowNamesTime = time";
+    statement = "AGM_NameTags_ShowNamesTime = time; if (call AGM_CrewInfo_fnc_canShow) then {call AGM_CrewInfo_fnc_doShow;};";
     key = 29;
     shift = 0;
     control = 0;
@@ -58,12 +68,17 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_NameTags_ShowPlayerRanks";
     default = 1;
   };
+  class showVehicleCrewInfo {
+    displayName = "$STR_AGM_CrewInfo_ShowVehicleCrewInfo";
+    default = 1;
+  };
 };
 
 class AGM_Parameters {
   AGM_NameTags_PlayerNamesViewDistance = 5;
   AGM_NameTags_ShowNamesForAI = 0;
   AGM_NameTags_PlayerNamesMaxAlpha = 0.8;
+  AGM_NameTags_CrewInfoVisibility = 0;
 };
 
 class CfgVehicles {
@@ -72,7 +87,7 @@ class CfgVehicles {
     author = "AGM Team";
     category = "AGM";
     displayName = "Name Tags";
-    function = "AGM_NameTag_fnc_moduleNameTag";
+    function = "AGM_NameTags_fnc_moduleNameTags";
     scope = 2;
     isGlobal = 1;
     icon = "\AGM_NameTags\UI\IconInteraction_ca.paa";
@@ -99,6 +114,28 @@ class CfgVehicles {
           };
         };
       };
+      class Visibility {
+        displayName = "Visibility of crew info";
+        description = "Forces visibility of vehicle crew info, or by default allows players to choose it on their own. Default: Do Not Force";
+        typeName = "INT";
+        class values {
+          class DoNotForce {
+            default = 1;
+            name = "Do Not Force";
+            value = 0;
+          };
+          class ForceShow {           
+            name = "Force Show";
+            value = 1;
+          };
+          class ForceHide {
+            name = "Force Hide";
+            value = -1;
+          };
+        };
+      };
     };
   };
 };
+
+#include <RscTitles.hpp>

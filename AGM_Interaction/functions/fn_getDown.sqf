@@ -16,9 +16,9 @@ private ["_unit", "_chance", "_x"];
 
 _unit = _this select 0;
 
-player playActionNow "GestureGo"; // put something else here.
+AGM_player playActionNow "GestureGo"; // put something else here.
 
-if (count (weapons player) > 0) then {
+if (count (weapons AGM_player) > 0) then {
   _chance = 0.8;
 } else {
   _chance = 0.5;

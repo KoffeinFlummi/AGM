@@ -17,9 +17,9 @@ private ["_unit", "_chance", "_x"];
 
 _unit = _this select 0;
 
-player playActionNow "GestureGo";
+AGM_player playActionNow "GestureGo";
 
-if (count (weapons player) > 0) then {
+if (count weapons AGM_player > 0) then {
   _chance = 0.8;
 } else {
   _chance = 0.5;
@@ -30,6 +30,6 @@ if (count (weapons player) > 0) then {
     [-2, {
       (_this select 0) setUnitPos "AUTO";
       (_this select 0) doMove [(getPos (_this select 0) select 0) + DISTANCE * (eyeDirection (_this select 1) select 0), (getPos (_this select 0) select 1) + DISTANCE * (eyeDirection (_this select 1) select 1), 0];
-    }, [_x, player]] call CBA_fnc_globalExecute;
+    }, [_x, AGM_player]] call CBA_fnc_globalExecute;
   };
 } foreach (_unit nearEntities ["Civilian", RADIUS]);

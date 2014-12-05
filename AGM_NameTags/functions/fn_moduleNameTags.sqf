@@ -22,5 +22,6 @@ AGM_NameTags_Module = true;
 
 [_logic, "AGM_NameTags_PlayerNamesViewDistance",  "PlayerNamesViewDistance"     ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_NameTags_ShowNamesForAI",           "ShowNamesForAI"              ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_NameTags_CrewInfoVisibility",       "Visibility"                  ] call AGM_Core_fnc_readNumericParameterFromModule;
 
 diag_log text "[AGM]: NameTags Module Initialized.";

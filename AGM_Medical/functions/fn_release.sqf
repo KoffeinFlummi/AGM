@@ -10,51 +10,32 @@
  * none
  */
 
-#define DRAGGINGMOVE ""
-#define DRAGGEDMOVE "Unconscious"
+#define ANIM_DRAG ["amovpercmstpslowwrfldnon_acinpknlmwlkslowwrfldb_2", "amovpercmstpsraswpstdnon_acinpknlmwlksnonwpstdb_2", "amovpercmstpsnonwnondnon_acinpknlmwlksnonwnondb_2", "acinpknlmstpsraswrfldnon", "acinpknlmstpsnonwpstdnon", "acinpknlmstpsnonwnondnon"]
 
-_this spawn {
-  _unit = _this select 0;
+private ["_unit", "_target"];
 
-  player removeWeapon "AGM_FakePrimaryWeapon";
+_unit = _this select 0;
+_target = _this select 1;
 
-  if isNull (player getVariable "AGM_Carrying") then {
-    _unit = player getVariable "AGM_Dragging";
+_unit removeWeapon "AGM_FakePrimaryWeapon";
+_unit setVariable ["AGM_Transporting", objNull, True];
+_unit setVariable ["AGM_canTreat", true, false];
+_target setVariable ["AGM_isTreatable", True, True];
 
-    _unit setVariable ["AGM_Treatable", true, true];
-    player setVariable ["AGM_Dragging", objNull, false];
+detach _target;
+
+_unit removeAction (_unit getVariable "AGM_Medical_ReleaseID");
+
+// animation was already handled by fnc_loadIntoVehicle
+if (vehicle _target != _target) exitWith {};
+
+if (vehicle _unit == _unit) then {
+  if (animationState _unit in ANIM_DRAG) then {
+    _unit playAction "released";
   } else {
-    _unit = player getVariable "AGM_Carrying";
-
-    _unit setVariable ["AGM_Treatable", true, true];
-    player setVariable ["AGM_Carrying", objNull, false];
+    [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
   };
-
-  detach _unit;
-  player setVariable ["AGM_CanTreat", true, false];
-
-  player removeAction (player getVariable "AGM_Medical_ReleaseID");
-
-  if (vehicle _unit != _unit) exitWith {};
-
-  [-2, {
-    if (vehicle (_this select 0) == (_this select 0)) then {
-      (_this select 0) switchMove DRAGGINGMOVE;
-    };
-    if ((_this select 1) getVariable "AGM_Unconscious") then {
-      (_this select 1) switchMove DRAGGEDMOVE;
-    };
-  }, [player, _unit]] call CBA_fnc_globalExecute;
-
-  /*[-2, {
-    if (local _this) then {
-      _this spawn {
-        _this enableSimulation true;
-        sleep 3.8;
-        if (_this getVariable "AGM_Unconscious") then {
-          _this enableSimulation false;
-        };
-      };
-    };
-  }, _unit] call CBA_fnc_globalExecute;*/
+};
+if (_target getVariable ["AGM_isUnconscious", False]) then {
+  [_target, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
 };

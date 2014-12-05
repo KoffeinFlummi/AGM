@@ -35,7 +35,7 @@ class CfgGlasses {
 		COMBAT_GOGGLES
 	};
 
-	class G_Diving:None {
+	class G_Diving {
 		AGM_Overlay="AGM_Goggles\textures\HUD\DivingGoggles.paa";
 		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
 		AGM_Resistance = 2;
@@ -250,7 +250,7 @@ class SniperCloud {
 class AGM_Core_Default_Keys {
 	class wipeGlasses {
 		displayName = $STR_AGM_Goggles_WipeGlasses;
-		condition = "!(player getVariable['AGM_Unconscious', false])";
+		condition = "!(player getVariable['AGM_isUnconscious', false])";
 		statement = "call AGM_Goggles_fnc_ClearGlasses;";
 		key = 20; // T
 		shift = 1;

@@ -32,7 +32,7 @@ class Extended_PostInit_EventHandlers {
 class Extended_FiredBIS_EventHandlers {
   class CAManBase {
     class AGM_Grenades_ThrowGrenade {
-      clientFiredBIS = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Grenades_fnc_throwGrenade;};";
+      clientFiredBIS = "if (_this select 0 == AGM_player) then {_this call AGM_Grenades_fnc_throwGrenade;};";
     };
   };
 };

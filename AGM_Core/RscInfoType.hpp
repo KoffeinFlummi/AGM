@@ -25,3 +25,39 @@ class RscDisplayInventory {
 class RscDisplayOptionsLayout {
 	onLoad = "uiNamespace setVariable ['AGM_dlgActionMenu', _this select 0]; [""onLoad"",_this,""RscDisplayOptionsLayout"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; {_this call _x} forEach ((missionNamespace getVariable ['AGM_onLoadActionMenu', [-1, [], []]]) select 2);";
 };
+
+class RscDisplayChannel {
+	onLoad = "uiNamespace setVariable ['AGM_ctrlChannel', (_this select 0) displayCtrl 101];";
+};
+
+class RscDisplayMainMap {
+	class controlsBackground {
+		class CA_Map: RscMapControl {
+			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+		};
+	};
+};
+
+class RscDisplayGetReady: RscDisplayMainMap {
+	class controlsBackground {
+		class CA_Map: RscMapControl {
+			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+		};
+	};
+};
+
+class RscDisplayClientGetReady: RscDisplayGetReady {
+	class controlsBackground {
+		class CA_Map: RscMapControl {
+			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+		};
+	};
+};
+
+class RscDisplayServerGetReady: RscDisplayGetReady {
+	class controlsBackground {
+		class CA_Map: RscMapControl {
+			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+		};
+	};
+};

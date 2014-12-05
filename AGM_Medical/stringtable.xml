@@ -794,7 +794,7 @@
       <Portuguese>está lhe dando morfina.</Portuguese>
       <Italian>ti sta iniettando la morfina.</Italian>
     </Key>
-    <Key ID="STR_AGM_Medical_keepMenuOpen">
+    <Key ID="STR_AGM_Medical_KeepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
       <Spanish>Reabrir el menú médico después de tratar</Spanish>
@@ -848,6 +848,14 @@
       <Italian>Il paziente non ha nessun %1, userai il tuo.</Italian>
       <Portuguese>O paciente não possui %1, usando o seu...</Portuguese>
       <Hungarian>A páciensnek nincs %1, a sajátodat használod.</Hungarian>
+    </Key>
+    <Key ID="STR_AGM_Medical_AlternativePainEffect">
+      <English>Alternative Pain Effect</English>
+      <German>Alternativer Schmerzeffekt</German>
+    </Key>
+    <Key ID="STR_AGM_Medical_NotInMEDEVAC">
+      <English>This is not possible here.</English>
+      <German>Das ist hier nicht möglich.</German>
     </Key>
   </Package>
 </Project>

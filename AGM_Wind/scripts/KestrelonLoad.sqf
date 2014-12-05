@@ -12,7 +12,7 @@ AGM_Kestrel_wind_Head=0;
 //unIFormItems _player+backpackItems _player+vestItems _player
 //assigneditems _player
 
-_player = call AGM_Core_fnc_player;
+_player = AGM_player;
 
 IF (!("AGM_ItemKestrel" in  items _player )) THEN {AGM_isKestrel = FALSE;};
 IF (underwater _player) THEN {AGM_isKestrel = FALSE;};

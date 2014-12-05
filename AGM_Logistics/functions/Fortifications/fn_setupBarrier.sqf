@@ -28,7 +28,7 @@ _this spawn {
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0]);
 		_pos set [2, 0];
 
-		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_Unconscious", false]} || {player != vehicle player}) exitWith {
+		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_isUnconscious", false]} || {player != vehicle player}) exitWith {
 			call AGM_Fortifications_fnc_setupCancel;
 		};
 

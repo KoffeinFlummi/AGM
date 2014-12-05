@@ -589,18 +589,21 @@
       <English>Auto Center Cursor</English>
       <German>Cursor automatisch zentrieren</German>
       <Polish>Automatycznie centruj kursor </Polish>
+      <Czech>Vycentrování kurzoru</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>
       <French>Équipment &gt;&gt;</French>
       <Polish>Ekwipunek &gt;&gt;</Polish>
+      <Czech>Vybavení &gt;&gt;</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_Push">
       <English>Push</English>
       <German>Schieben</German>
       <French>Pousser</French>
       <Polish>Pchnij</Polish>
+      <Czech>Odstrčit</Czech>
     </Key>
   </Package>
 </Project>

@@ -47,7 +47,7 @@ _this spawn {
   AGM_Explosives_TweakedAngle = 180;
   ["AGM_Explosives_Placement","OnEachFrame", {
     private "_player";
-    _player = call AGM_Core_fnc_player;
+    _player = AGM_player;
     if (AGM_Explosives_placer != _player) exitWith {
       call AGM_Explosives_fnc_Place_Cancel;
     };
