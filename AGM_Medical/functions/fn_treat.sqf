@@ -152,7 +152,7 @@ _string = switch (_type) do {
 // ai treat
 if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {
   [_this, _time] spawn {
-    sleep (_this select 1) / 2;
+    sleep (_this select 1) / 4;
     (_this select 0) call AGM_Medical_fnc_treatmentCallback;
   };
 };

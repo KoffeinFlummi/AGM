@@ -3,7 +3,7 @@
 private "_unit";
 _unit = _this select 0;
 
-if ([_unit] call AGM_Core_fnc_isPlayer) then {
+if ([_unit] call AGM_Core_fnc_isPlayer || {_unit getVariable ["AGM_isUnconscious", false]}) then {
   private ["_units", "_medic"];
   _units = units group _unit;
   _units deleteAt (_units find _unit);

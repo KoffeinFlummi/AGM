@@ -69,7 +69,7 @@ class Extended_Hit_EventHandlers {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Medical {
-      killed = "[False] call AGM_Core_fnc_disableUserInput;"
+      killed = "if (_this select 0 == AGM_player) then {[False] call AGM_Core_fnc_disableUserInput};"
     };
   };
 };
@@ -83,6 +83,7 @@ class Extended_Take_EventHandlers {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {
+    init = "call compile preprocessFileLineNumbers '\AGM_Medical\init.sqf'";
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
   };
 };

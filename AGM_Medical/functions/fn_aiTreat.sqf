@@ -1,6 +1,7 @@
 // by commy2
 
-terminate ((_this select 0) getVariable ["AGM_Medical_AITask", scriptNull]);
+if (!isNull ((_this select 0) getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};
+//terminate ((_this select 0) getVariable ["AGM_Medical_AITask", scriptNull]);
 
 private "_scriptHandle";
 _scriptHandle = _this spawn {
