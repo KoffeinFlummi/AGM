@@ -255,20 +255,6 @@ if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
 };
 
 // start ai self treatment
-if ([_unit] call AGM_Core_fnc_isPlayer) then {
-  private ["_units", "_medic"];
-  _units = units group _unit;
-  _units deleteAt (_units find _unit);
-
-  if (count _units == 0) exitWith {};
-
-  _medic = [_units, {[_this] call AGM_Core_fnc_isMedic}] call AGM_Core_fnc_filter select 0;
-
-  if (isNil "_medic") then {_medic = _units select 0};
-
-  [_medic, _unit] call AGM_Medical_fnc_aiTreat;
-} else {
-  [_unit, _unit] call AGM_Medical_fnc_aiTreat;
-};
+[_unit] call AGM_Medical_fnc_aiInitTask;
 
 _damage

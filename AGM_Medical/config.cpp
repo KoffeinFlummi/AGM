@@ -17,6 +17,7 @@ class CfgFunctions {
   class AGM_Medical {
     class AGM_Medical {
       file = "AGM_Medical\functions";
+      class aiInitTask;
       class aiTreat;
       class checkDamage;
       class diagnose;
