@@ -14,8 +14,8 @@ private ["_unit", "_speaker", "_id"];
 
 _unit = _this select 0;
 
-_speaker = _unit getVariable ["AGM_OriginalSpeaker", speaker _unit];
-
+_speaker = _unit getVariable ["AGM_OriginalSpeaker", ""];
+if (_speaker == "") exitWith {};
 
 _id = _unit getVariable ["AGM_PersistentID_Speaker", -1];
 
