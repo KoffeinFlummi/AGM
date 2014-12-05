@@ -78,11 +78,11 @@ if (diag_frameno > (_unit getVariable ["AGM_Medical_FrameNo", -3]) + 2) then {
   _unit setVariable ["AGM_Medical_Damages", []];
   _unit setVariable ["AGM_Medical_PreventDeath", False];
   if (([_unit] call AGM_Core_fnc_isPlayer) or _unit getVariable ["AGM_allowUnconscious", False]) then {
-    if (!(_unit getVariable "AGM_isUnconscious") and
+    if (!(_unit getVariable ["AGM_isUnconscious", False]) and
         {_unit getVariable ["AGM_Medical_PreventInstaDeath", AGM_Medical_PreventInstaDeath > 0]}) then {
       _unit setVariable ["AGM_Medical_PreventDeath", True];
     };
-    if ((_unit getVariable "AGM_isUnconscious") and
+    if ((_unit getVariable ["AGM_isUnconscious", False]) and
         {_unit getVariable ["AGM_Medical_PreventDeathWhileUnconscious", AGM_Medical_PreventDeathWhileUnconscious > 0]}) then {
       _unit setVariable ["AGM_Medical_PreventDeath", True];
     };
@@ -202,7 +202,7 @@ if (_selectionName == "" and damage _unit == 0) then {
         _blood = _this getVariable ["AGM_Blood", 1];
         _blood = _blood - BLOODLOSSRATE * (_this getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]) * (damage _this);
         _this setVariable ["AGM_Blood", _blood max 0, true];
-        if (_blood <= BLOODTRESHOLD1 and !(_this getVariable "AGM_isUnconscious")) then {
+        if (_blood <= BLOODTRESHOLD1 and !(_this getVariable ["AGM_isUnconscious", False])) then {
           [_this] call AGM_Medical_fnc_knockOut;
         };
         if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
@@ -215,9 +215,9 @@ if (_selectionName == "" and damage _unit == 0) then {
 };
 
 // Pain Reduction
-if (_unit getVariable "AGM_Pain" == 0) then {
+if (_unit getVariable ["AGM_Pain", 0] == 0) then {
   _unit spawn {
-    while {_this getVariable "AGM_Pain" > 0} do {
+    while {_this getVariable ["AGM_Pain", 0] > 0} do {
       sleep 1;
       _pain = ((_this getVariable ["AGM_Pain", 0]) - 0.001) max 0;
       _this setVariable ["AGM_Pain", _pain, True];
@@ -225,9 +225,9 @@ if (_unit getVariable "AGM_Pain" == 0) then {
   };
 };
 // Set Pain
-_potentialPain = _damage * (_unit getVariable "AGM_Painkiller");
-if ((_selectionName == "") and (_potentialPain > _unit getVariable "AGM_Pain")) then {
-  _unit setVariable ["AGM_Pain", (_damage * (_unit getVariable "AGM_Painkiller")) min 1, True];
+_potentialPain = _damage * (_unit getVariable ["AGM_Painkiller", 1]);
+if ((_selectionName == "") and (_potentialPain > _unit getVariable ["AGM_Pain", 0])) then {
+  _unit setVariable ["AGM_Pain", (_damage * (_unit getVariable ["AGM_Painkiller", 1])) min 1, True];
 };
 
 // again, using spawn, but there shouldn't be any death, so the killed EH should be fine.

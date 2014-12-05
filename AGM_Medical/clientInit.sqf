@@ -74,11 +74,11 @@ AGM_Pain_CC ppEffectCommit 0;
     _strength = _strength * (AGM_player getVariable ["AGM_Medical_CoefPain", AGM_Medical_CoefPain]);
     if (profileNamespace getVariable ["AGM_alternativePainEffect", False]) then {
       AGM_Pain_CA ppEffectEnable False;
-      if ((AGM_player getVariable "AGM_Pain") > 0 && {alive AGM_player}) then {
+      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0 && {alive AGM_player}) then {
         AGM_Pain_CC ppEffectEnable True;
         AGM_Pain_CC ppEffectAdjust [1,1,0, [1,1,1,1], [0,0,0,0], [1,1,1,1], [(1 - _strength * 0.17) max 0,(1 - _strength * 0.17) max 0,0,0,0,0.2,2]];
         AGM_Pain_CC ppEffectCommit 1;
-        sleep (1.5 - (AGM_player getVariable "AGM_Pain"));
+        sleep (1.5 - (AGM_player getVariable ["AGM_Pain", 0]));
         AGM_Pain_CC ppEffectAdjust [1,1,0, [1,1,1,1], [0,0,0,0], [1,1,1,1], [(1 - _strength * 1.7) max 0,(1 - _strength * 1.7) max 0,0,0,0,0.2,2]];
         AGM_Pain_CC ppEffectCommit 1;
         sleep 0.15;
@@ -88,11 +88,11 @@ AGM_Pain_CC ppEffectCommit 0;
       };
     } else {
       AGM_Pain_CC ppEffectEnable False;
-      if ((AGM_player getVariable "AGM_Pain") > 0 && {alive AGM_player}) then {
+      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0 && {alive AGM_player}) then {
         AGM_Pain_CA ppEffectEnable True;
         AGM_Pain_CA ppEffectAdjust [0.035 * _strength, 0.035 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
-        sleep (1.5 - (AGM_player getVariable "AGM_Pain"));
+        sleep (1.5 - (AGM_player getVariable ["AGM_Pain", 0]));
         AGM_Pain_CA ppEffectAdjust [0.35 * _strength, 0.35 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
         sleep 0.15;

@@ -30,6 +30,6 @@ if (vehicle _target != _target) exitWith {};
 if (vehicle _unit == _unit) then {
   _unit playAction "released";
 };
-if (_target getVariable "AGM_isUnconscious") then {
+if (_target getVariable ["AGM_isUnconscious", False]) then {
   [_target, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
 };
