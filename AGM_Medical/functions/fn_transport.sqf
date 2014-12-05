@@ -33,13 +33,10 @@ _this spawn {
   if (_type == "drag") then {
     _target setDir (getDir _unit + 180) % 360;
     _target setPos ((getPos _unit) vectorAdd ((vectorDir _unit) vectorMultiply 1.5));
-    [_unit, "AcinPknlMstpSrasWrflDnon", 1, True] call AGM_Core_fnc_doAnimation;
-    [_target, "AinjPpneMrunSnonWnonDb_grab", 2, True] call AGM_Core_fnc_doAnimation;
-    sleep 1.8;
 
-    /*_unit playActionNow "grabDrag";
+    _unit playActionNow "grabDrag";
     [_target, "{_this playActionNow 'grabDragged'}", _target] call AGM_Core_fnc_execRemoteFnc;
-    waitUntil {animationState _unit in ANIM_CARRY};*/
+    waitUntil {animationState _unit in ANIM_CARRY};
   } else {
     _target setDir (getDir _unit + 180) % 360;
     _target setPos ((getPos _unit) vectorAdd (vectorDir _unit));
@@ -52,22 +49,20 @@ _this spawn {
     waitUntil {animationState _unit in ANIM_CARRY};*/
   };
 
-  /*// exit here if the player releases the unit before the animation is finished
-  if (isNull (_unit getVariable ["AGM_Transporting", objNull])) exitWith {};*/
+  _unit setVariable ["AGM_Transporting", _target, False];
+  _releaseID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Medical_Release"], "[(_this select 1), ((_this select 1) getVariable ['AGM_Transporting', objNull])] call AGM_Medical_fnc_release;", nil, 20, false, true, "", "!isNull (_this getVariable ['AGM_Transporting', objNull])"];
+  _unit setVariable ["AGM_Medical_ReleaseID", _releaseID];
 
   // unit woke up while picking him up, abandon ship
-  if !(_target getVariable ["AGM_isUnconscious", False]) exitWith {
+  if !(_target getVariable ["AGM_isUnconscious", False] || {isNull (_unit getVariable ["AGM_Transporting", objNull])}) exitWith {
     detach _target;
     _target setVariable ["AGM_isTreatable", True, True];
     _unit setVariable ["AGM_canTreat", True, False];
     _unit removeWeapon "AGM_FakePrimaryWeapon";
     [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
-    _unit removeAction (_unit getVariable "AGM_Medical_Release");
+    _unit removeAction (_unit getVariable "AGM_Medical_ReleaseID");
+    _unit setVariable ["AGM_Transporting", objNull, False];
   };
-
-  _unit setVariable ["AGM_Transporting", _target, False];
-  _releaseID = _unit addAction [format ["<t color='#FF0000'>%1</t>", localize "STR_AGM_Medical_Release"], "[(_this select 1), ((_this select 1) getVariable ['AGM_Transporting', objNull])] call AGM_Medical_fnc_release;", nil, 20, false, true, "", "!isNull (_this getVariable ['AGM_Transporting', objNull])"];
-  _unit setVariable ["AGM_Medical_ReleaseID", _releaseID];
 
   if (_type == "drag") then {
     _target attachTo [_unit, [0, 1.1, 0.092]];
