@@ -43,7 +43,7 @@ if (damage _unit >= 1) exitWith {
 };
 
 // Consciousness
-if (_unit getVariable ["AGM_isUnconscious", false]) then {
+if (_unit getVariable ["AGM_isUnconscious", False]) then {
   _string = _string + "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientIsUnconscious" + "</t>";
 } else {
   _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientIsAwake";

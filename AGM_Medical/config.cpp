@@ -212,7 +212,7 @@ class CfgVehicles {
         };
         class AGM_Epipen {
           displayName = "$STR_AGM_Medical_Inject_Epinephrine";
-          condition = "([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and alive _target and 'AGM_Epipen' in itemsWithMagazines _player and _target getVariable ['AGM_isUnconscious', false]";
+          condition = "([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and alive _target and 'AGM_Epipen' in itemsWithMagazines _player and _target getVariable ['AGM_isUnconscious', False]";
           statement = "[_player, _target, 'epipen'] call AGM_Medical_fnc_treat;";
           showDisabled = 1;
           enableInside = 1;
@@ -296,7 +296,7 @@ class CfgVehicles {
       class AGM_Medical_Drag {
         displayName = "$STR_AGM_Medical_Drag";
         distance = 4;
-        condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable ['AGM_isTreatable', true] and _target getVariable ['AGM_isUnconscious', false] and isNull (_player getVariable ['AGM_Transporting', objNull])";
+        condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable ['AGM_isTreatable', true] and _target getVariable ['AGM_isUnconscious', False] and isNull (_player getVariable ['AGM_Transporting', objNull])";
         statement = "[_player, _target, 'drag'] call AGM_Medical_fnc_transport;";
         priority = 2.1;
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
@@ -305,7 +305,7 @@ class CfgVehicles {
       class AGM_Medical_Carry {
         displayName = "$STR_AGM_Medical_Carry";
         distance = 4;
-        condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable ['AGM_isTreatable', true] and _target getVariable ['AGM_isUnconscious', false] and isNull (_player getVariable ['AGM_Transporting', objNull])";
+        condition = "vehicle _player == _player and vehicle _target == _target and alive _target and _target getVariable ['AGM_isTreatable', true] and _target getVariable ['AGM_isUnconscious', False] and isNull (_player getVariable ['AGM_Transporting', objNull])";
         statement = "[_player, _target, 'carry'] call AGM_Medical_fnc_transport;";
         priority = 2.0;
         icon = "AGM_Medical\UI\Medical_Icon_ca.paa";
@@ -568,7 +568,7 @@ class CfgVehicles {
       class AGM_Unload {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
-        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', false]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
+        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', False]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
         statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
@@ -585,7 +585,7 @@ class CfgVehicles {
       class AGM_Unload {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
-        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', false]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
+        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', False]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
         statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
@@ -603,7 +603,7 @@ class CfgVehicles {
       class AGM_Unload {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
-        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', false]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
+        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', False]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
         statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
@@ -621,7 +621,7 @@ class CfgVehicles {
       class AGM_Unload {
         displayName = "$STR_AGM_Medical_Unload";
         distance = 4;
-        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', false]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
+        condition = "return = false; {if (_x getVariable ['AGM_isUnconscious', False]) exitWith {return = true;};} foreach (crew _target); return and vehicle _player == _player and !(_target isKindOf 'Man')";
         statement = "[_player, _target] call AGM_Medical_fnc_unloadPatients;";
       };
       class AGM_Load {
