@@ -7,7 +7,7 @@ _patient = _this select 1;
 _task = _this select 2;
 
 // exit if the unit already has a task
-if (!scriptDone (_medic getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};systemChat str _this;//
+if (!scriptDone (_medic getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};//systemChat str _this;//
 
 // exit if the medic can't do te treatment
 if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
