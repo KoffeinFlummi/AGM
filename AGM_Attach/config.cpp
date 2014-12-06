@@ -29,9 +29,9 @@ class CfgFunctions {
 };
 
 #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-    name = #ITEM; \
-    count = COUNT; \
-  };
+  name = #ITEM; \
+  count = COUNT; \
+};
 
 #define MACRO_ATTACHTOVEHICLE \
   class AGM_Actions { \

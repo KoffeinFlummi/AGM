@@ -33,7 +33,7 @@ _attachPosition = if (_unit == _attachToVehicle) then {
 
 _attachedItem = objNull;
 
-// Attach item
+
 switch true do {
   case (_itemName == "AGM_IR_Strobe_Item"): {
     _attachedItem = "AGM_IR_Strobe_Effect" createVehicle [0,0,0];
@@ -63,6 +63,7 @@ switch true do {
 
 if (isNull _attachedItem) exitWith {["AGM_Attach_fnc_attach - could not createVehicle from Item [%1]", _itemName] call bis_fnc_error;};
 
+// Attach item
 _attachedItem attachTo _attachPosition;
 
 // Remove item

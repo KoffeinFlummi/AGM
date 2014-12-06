@@ -59,7 +59,7 @@ _actions,
 compile format ["
   [AGM_player, AGM_Interaction_Target, '%1', _this] call AGM_Attach_fnc_attach;
   call AGM_Interaction_fnc_hideMenu;
-  ", _attachToPointName], //ugh, compile
+", _attachToPointName], //ugh, compile
 {
   call AGM_Interaction_fnc_hideMenu;
   if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenuSelf};
