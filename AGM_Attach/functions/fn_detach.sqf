@@ -4,16 +4,20 @@ Author: eRazeri and CAA-Picard
 Detach an item from a unit
 
 Arguments:
-unit
+  0: OBJECT - unit doing the attaching (player)
+  1: OBJECT - vehicle that it will be attached to (player or vehicle)
+  2: STRING - placement point name (self, right, left, back)
 
 Return Value:
-none
+  none
 */
-
-private ["_unit", "_itemName", "_count", "_attachedItem"];
+private ["_unit", "_attachToVehicle", "_attachToPointName", "_itemName", "_count", "_attachedItem"];
 
 _unit = _this select 0;
-_itemName = _unit getVariable ["AGM_AttachedItemName", ""];
+_attachToVehicle = _this select 1;
+_attachToPointName = _this select 2;
+
+_itemName = _attachToVehicle getVariable [(format ["AGM_AttachedItemName_%1", _attachToPointName]), ""];
 
 // Check if unit has an attached item
 if (_itemName == "") exitWith {};
@@ -27,7 +31,7 @@ if ((count items _unit) + (count magazines _unit) <= _count) exitWith {
 
 if (_itemName == "B_IR_Grenade" or _itemName == "O_IR_Grenade" or _itemName == "I_IR_Grenade") then {
   // Hack for dealing with X_IR_Grenade effect not dissapearing on deleteVehicle
-  [_unit getVariable "AGM_AttachedItem", _unit] spawn {
+  [(_attachToVehicle getVariable [(format ["AGM_AttachedItem_%1", _attachToPointName]), objNull]), _unit] spawn {
     _attachedItem = _this select 0;
     _unit = _this select 1;
     detach _attachedItem;
@@ -39,12 +43,12 @@ if (_itemName == "B_IR_Grenade" or _itemName == "O_IR_Grenade" or _itemName == "
 else
 {
   // Delete attached item
-  deleteVehicle (_unit getVariable "AGM_AttachedItem");
+  deleteVehicle (_attachToVehicle getVariable [(format ["AGM_AttachedItem_%1", _attachToPointName]), objNull]);
 };
 
 // Reset unit variables
-_unit setVariable ["AGM_AttachedItemName","", true];
-_unit setVariable ["AGM_AttachedItem",nil, true];
+_attachToVehicle setVariable [(format ["AGM_AttachedItemName_%1", _attachToPointName]), "", true];
+_attachToVehicle setVariable [(format ["AGM_AttachedItem_%1", _attachToPointName]), nil, true];
 
 // Display message
 switch true do {
