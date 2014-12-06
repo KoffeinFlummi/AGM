@@ -23,7 +23,7 @@ switch (_task) do {
     _result = _patient getVariable ["AGM_isUnconscious", false]
       && {"AGM_Epipen" in items _medic}
       && {[_medic] call AGM_Core_fnc_isMedic || {_patient getVariable ["AGM_Medical_AllowNonMedics", AGM_Medical_AllowNonMedics > 0]}}
-      && {_medic getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]}
+      && {!(_medic getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0])}
   };
   case ("bloodbag"): {
     _result = _patient getVariable ["AGM_Blood", 1] < 1

@@ -10,7 +10,10 @@ _task = _this select 2;
 if (!scriptDone (_medic getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};//systemChat str _this;//
 
 // exit if the medic can't do te treatment
-if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
+if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {
+  // continue walking freely
+  _medic doMove getPosASL _medic
+};
 
 // do treatment
 private "_scriptHandle";
@@ -49,7 +52,10 @@ _scriptHandle = _this spawn {
   };
 
   // exit if the medic can't do te treatment
-  if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
+  if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {
+    // continue walking freely
+    _medic doMove getPosASL _medic
+  };
 
   // halt
   doStop _medic;
