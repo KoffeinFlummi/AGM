@@ -50,6 +50,26 @@ class AGM_Core_Default_Keys {
 };
 
 class CfgAmmo {
+
+  class Grenade;
+  class GrenadeBase;
+  
+  class GrenadeHand: Grenade{
+    indirectHit = 20;
+    indirectHitRange = 8;
+  };
+
+  class G_40mm_HE: GrenadeBase {
+    indirectHit = 25;
+    indirectHitRange = 12;
+  };
+
+  class G_40mm_HEDP: G_40mm_HE {
+    indirectHit = 18;
+    indirectHitRange = 12;
+  };
+
+  
   class FlareCore;
   class FlareBase: FlareCore {
     intensity = 20000;
