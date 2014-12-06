@@ -1104,7 +1104,6 @@ class CfgWeapons {
 
   /* Vests */
 
-  class VestItem;
   #include <VestNerf.hpp>
 };
 
