@@ -32,7 +32,7 @@ _scriptHandle = _this spawn {
   };
 
   // wait until medic next to patient
-  if (_medic distanceSqr _patient > 5) then {
+  if (_medic distanceSqr _patient > 4) then {
     _doMoveLoop = _this spawn {
       while {true} do {
         (_this select 0) doMove getPosASL (_this select 1);
@@ -45,7 +45,7 @@ _scriptHandle = _this spawn {
       if (!alive _medic || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {true};
 
       sleep 0.15;
-      getPosASL _medic distanceSqr getPosASL _patient < 4
+      getPosASL _medic distanceSqr getPosASL _patient < 5
     };
 
     terminate _doMoveLoop;
