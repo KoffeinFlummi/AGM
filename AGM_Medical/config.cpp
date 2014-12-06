@@ -17,6 +17,9 @@ class CfgFunctions {
   class AGM_Medical {
     class AGM_Medical {
       file = "AGM_Medical\functions";
+      class aiCanTreat;
+      class aiInitTask;
+      class aiTreat;
       class checkDamage;
       class diagnose;
       class displayText;
@@ -67,7 +70,7 @@ class Extended_Hit_EventHandlers {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Medical {
-      killed = "[False] call AGM_Core_fnc_disableUserInput;"
+      killed = "if (_this select 0 == AGM_player) then {[False] call AGM_Core_fnc_disableUserInput};"
     };
   };
 };
@@ -81,6 +84,7 @@ class Extended_Take_EventHandlers {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {
+    init = "call compile preprocessFileLineNumbers '\AGM_Medical\init.sqf'";
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
   };
 };
@@ -1025,7 +1029,7 @@ class AGM_Parameters {
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
   AGM_Medical_EnableOverdosing = 1;
-  AGM_Medical_RequireMEDEVAC = 1;
+  AGM_Medical_RequireMEDEVAC = 0;
   AGM_Medical_AutomaticWakeup = 1;
 };
 #include <HintConfig.hpp>
