@@ -21,6 +21,7 @@ class CfgFunctions {
       class canUseRangefinder;
       class firedEH;
       class getAngle;
+      class getImpactPoint;
       class getRange;
       class keyDown;
       class keyUp;
