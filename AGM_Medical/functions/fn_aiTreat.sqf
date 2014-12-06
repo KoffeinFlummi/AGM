@@ -10,13 +10,7 @@ _task = _this select 2;
 if (!scriptDone (_medic getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};systemChat str _this;//
 
 // exit if the medic can't do te treatment
-private "_items";
-_items = items _medic;
-
-if (_task == "bandage"  && {!("AGM_Bandage"  in _items)}) exitWith {};
-if (_task == "morphine" && {!("AGM_Morphine" in _items)}) exitWith {};
-if (_task == "epipen"   && {!("AGM_Epipen"   in _items) || {!(([_medic] call AGM_Core_fnc_isMedic) || {_unit getVariable ["AGM_Medical_AllowNonMedics", AGM_Medical_AllowNonMedics > 0]})} || {_medic getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]}}) exitWith {};
-if (_task == "bloodbag" && {!("AGM_Bloodbag" in _items) || {!(([_medic] call AGM_Core_fnc_isMedic) || {_unit getVariable ["AGM_Medical_AllowNonMedics", AGM_Medical_AllowNonMedics > 0]})}}) exitWith {};
+if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
 
 // do treatment
 private "_scriptHandle";
@@ -28,7 +22,7 @@ _scriptHandle = _this spawn {
   // wait until ready again
   waitUntil {
     // exit if dead
-    if (!alive _medic || {!alive _patient}) exitWith {};
+    if (!alive _medic || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {true};
 
     sleep 0.15;
     _medic getVariable ["AGM_canTreat", true]
@@ -39,13 +33,13 @@ _scriptHandle = _this spawn {
     _doMoveLoop = _this spawn {
       while {true} do {
         (_this select 0) doMove getPosASL (_this select 1);
-        sleep 5;
+        sleep 30;
       };
     };
 
     waitUntil {
       // exit if dead
-      if (!alive _medic || {!alive _patient}) exitWith {};
+      if (!alive _medic || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {true};
 
       sleep 0.15;
       getPosASL _medic distanceSqr getPosASL _patient < 4
@@ -54,8 +48,8 @@ _scriptHandle = _this spawn {
     terminate _doMoveLoop;
   };
 
-  // exit if dead
-  if (!alive _medic || {!alive _patient}) exitWith {};
+  // exit if the medic can't do te treatment
+  if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
 
   // halt
   doStop _medic;
@@ -92,13 +86,30 @@ _scriptHandle = _this spawn {
   // wait until ready again
   waitUntil {
     // exit if dead
-    if (!alive _medic || {!alive _patient}) exitWith {};
+    if (!alive _medic || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {true};
 
     sleep 0.15;
     _medic getVariable ["AGM_canTreat", true]
   };
 
-  // continue walking freely
+  // check for next task on this patient
+  if (damage _patient > 0) exitWith {
+    [_medic, _patient, "bandage"] spawn AGM_Medical_fnc_aiTreat;
+  };
+
+  if (_patient getVariable ["AGM_Pain", 0] > 0) exitWith {
+    [_medic, _patient, "morphine"] spawn AGM_Medical_fnc_aiTreat;
+  };
+
+  if (_patient getVariable ["AGM_isUnconscious", false]) exitWith {
+    [_medic, _patient, "epipen"] spawn AGM_Medical_fnc_aiTreat;
+  };
+
+  if (_patient getVariable ["AGM_Blood", 1] < 1) exitWith {
+    [_medic, _patient, "bloodbag"] spawn AGM_Medical_fnc_aiTreat;
+  };
+
+  // otherwise continue walking freely
   _medic doMove getPosASL _medic;
 };
 
