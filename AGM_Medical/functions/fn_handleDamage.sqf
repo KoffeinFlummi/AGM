@@ -254,7 +254,4 @@ if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
   };
 };
 
-// start ai self treatment
-//[_unit] call AGM_Medical_fnc_aiInitTask;
-
 _damage

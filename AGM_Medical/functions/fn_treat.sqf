@@ -28,7 +28,9 @@ _type = _this select 2;
 if (_type in ["epipen", "bloodbag"] and
     !(([_unit] call AGM_Core_fnc_isMedic) or
     (_unit getVariable ["AGM_Medical_AllowNonMedics", AGM_Medical_AllowNonMedics > 0]))) exitWith {
-  [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
+  if ([_unit] call AGM_Core_fnc_isPlayer) then {
+    [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
+  };
 };
 
 // check MEDEVAC conditions
@@ -40,7 +42,9 @@ _inTrigger = False;
   };
 } forEach _triggers;
 if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]) and !_inTrigger) exitWith {
-  [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
+  if ([_unit] call AGM_Core_fnc_isPlayer) then {
+    [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
+  };
 };
 
 // morphine warning
@@ -91,13 +95,17 @@ _animation = switch (_type) do {
 };
 if (stance _unit == "PRONE") then {
   _animation = switch (currentWeapon _target) do {
+    case (""):                    {"AinvPpneMstpSlayWnonDnon_medic"};
     case (primaryWeapon _target): {"AinvPpneMstpSlayWrflDnon_medic"};
     case (handgunWeapon _target): {"AinvPpneMstpSlayWpstDnon_medic"};
-    default                     {"AinvPpneMstpSlayWnonDnon_medic"};
+    default                       {"AinvPpneMstpSlayWnonDnon_medic"};
   };
 };
 if (_unit == _target) then {
   _animation = switch (currentWeapon _target) do {
+    case (""): {
+      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _target == "PRONE")
+    };
     case (primaryWeapon _target): {
       ["AinvPknlMstpSlayWrflDnon_medic", "AinvPpneMstpSlayWrflDnon_medic"] select (stance _target == "PRONE")
     };
@@ -152,7 +160,7 @@ _string = switch (_type) do {
 // ai treat
 if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {
   [_this, _time] spawn {
-    sleep (_this select 1) / 4;
+    sleep ((_this select 1) * 0.6);
     (_this select 0) call AGM_Medical_fnc_treatmentCallback;
   };
 };

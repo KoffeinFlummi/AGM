@@ -1,7 +1,8 @@
 // by commy2
 
-private "_unit";
+private ["_unit", "_need"];
 _unit = _this select 0;
+_need = _this select 1;
 
 if ([_unit] call AGM_Core_fnc_isPlayer || {_unit getVariable ["AGM_isUnconscious", false]}) then {
   private ["_units", "_medic"];
@@ -10,17 +11,14 @@ if ([_unit] call AGM_Core_fnc_isPlayer || {_unit getVariable ["AGM_isUnconscious
 
   if (count _units == 0) exitWith {};
 
-  _medic = [_units, {[_this] call AGM_Core_fnc_isMedic}] call AGM_Core_fnc_filter select 0;
+  _medic = [_units, {[_this] call AGM_Core_fnc_isMedic}] call AGM_Core_fnc_filter;
+  _medic = _medic select floor random count _medic;
 
-  if (isNil "_medic") then {_medic = _units select 0};
-
-  [_medic, _unit] spawn {
-    sleep 5;
-    _this call AGM_Medical_fnc_aiTreat;
+  if (isNil "_medic") then {
+    _medic = _units select floor random count _units;
   };
+
+  [_medic, _unit, _need] call AGM_Medical_fnc_aiTreat;
 } else {
-  [_unit, _unit] spawn {
-    sleep 5;
-    _this call AGM_Medical_fnc_aiTreat;
-  };
+  [_unit, _unit, _need] call AGM_Medical_fnc_aiTreat;
 };

@@ -1028,7 +1028,7 @@ class AGM_Parameters {
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
   AGM_Medical_EnableOverdosing = 1;
-  AGM_Medical_RequireMEDEVAC = 1;
+  AGM_Medical_RequireMEDEVAC = 0;
   AGM_Medical_AutomaticWakeup = 1;
 };
 #include <HintConfig.hpp>
