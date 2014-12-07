@@ -54,7 +54,6 @@ class CfgFunctions {
       showDisabled = 0; \
       priority = 0; \
       icon = "\AGM_Attach\UI\detach_ca.paa"; \
-      hotkey = "T"; \
     }; \
   };
 
