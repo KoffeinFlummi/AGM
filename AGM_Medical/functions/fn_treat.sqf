@@ -101,7 +101,7 @@ if (stance _unit == "PRONE") then {
     default                       {"AinvPpneMstpSlayWnonDnon_medic"};
   };
 };
-if (_unit == _unit) then {
+if (_unit == _target) then {
   _animation = switch (currentWeapon _unit) do {
     case (""): {
       ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _unit == "PRONE")
