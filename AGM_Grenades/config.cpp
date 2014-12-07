@@ -55,12 +55,12 @@ class CfgAmmo {
   class GrenadeBase;
   
   class GrenadeHand: Grenade {
-    indirectHit = 15;
-    indirectHitRange = 7;
+    indirectHit = 12;
+    indirectHitRange = 5;
   };
 
   class G_40mm_HE: GrenadeBase {
-    indirectHit = 19;
+    indirectHit = 16;
     indirectHitRange = 8;
   };
 
