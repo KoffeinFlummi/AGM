@@ -32,24 +32,24 @@ _itemVehClass = "";
 _onAtachText = "";
 
 switch true do {
-case (_itemName == "AGM_IR_Strobe_Item"): {
+  case (_itemName == "AGM_IR_Strobe_Item"): {
     _itemVehClass = "AGM_IR_Strobe_Effect";
     _onAtachText = localize "STR_AGM_Attach_IrStrobe_Attached";
     _selfAttachPosition = [_unit,[0,-0.11,0.16],"pilot"];  //makes it attach to the head a bit better, shoulder is not good for visibility - eRazeri
   };
-case (_itemName == "B_IR_Grenade"): {
+  case (_itemName == "B_IR_Grenade"): {
     _itemVehClass = "B_IRStrobe";
     _onAtachText = localize "STR_AGM_Attach_IrGrenade_Attached";
   };
-case (_itemName == "O_IR_Grenade"): {
+  case (_itemName == "O_IR_Grenade"): {
     _itemVehClass = "O_IRStrobe";
     _onAtachText = localize "STR_AGM_Attach_IrGrenade_Attached";
   };
-case (_itemName == "I_IR_Grenade"): {
+  case (_itemName == "I_IR_Grenade"): {
     _itemVehClass = "I_IRStrobe";
     _onAtachText = localize "STR_AGM_Attach_IrGrenade_Attached";
   };
-case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}): {
+  case (_itemName == "Chemlight_blue" or {_itemName == "Chemlight_green"} or {_itemName == "Chemlight_red"} or {_itemName == "Chemlight_yellow"}): {
     _itemVehClass = _itemName;
     _onAtachText = localize "STR_AGM_Attach_Chemlight_Attached";
   };
@@ -79,7 +79,7 @@ if (_unit == _attachToVehicle) then {  //Self Attachment
   ["AGM_Attach_Placement","OnEachFrame", {
     private "_player";
     _player = AGM_player;
-	//Stop if player switch or player gets to far from vehicle
+    //Stop if player switch or player gets to far from vehicle
     if ((AGM_Attach_placer != _player) || ((_player distance AGM_Attach_SetupAttachVehicle) > 9)) exitWith {
       call AGM_Attach_fnc_Place_Cancel;
     };

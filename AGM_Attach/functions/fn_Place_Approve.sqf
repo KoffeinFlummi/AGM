@@ -1,18 +1,18 @@
 /*
   Name: AGM_Attach_fnc_Place_Approve
-  
+
   Author(s):
     Pabst Mirror (based on Explosive attach by Garth de Wet (LH))
-  
+
   Description:
     Approves placement of the lightObject, releases the placement object for it to settle in a location
-  
+
   Parameters:
     Nothing
-  
+
   Returns:
     Nothing
-  
+
   Example:
     call AGM_Attach_fnc_Place_Approve;
 */
@@ -58,11 +58,11 @@ while {_keepGoingCloser} do {
       _position1 = [(_offset select 0) * _closeInRatio, (_offset select 1) * _closeInRatio, (_offset select 2)];
       _position1 = _attachToVehicle modelToWorld _position1;
       _position1 = _position1 vectorAdd _x;
-	  //Uncomment to see the lazor show, and see how the scanning works:
+      //Uncomment to see the lazor show, and see how the scanning works:
       // drawLine3D [_pos0temp, _position1, [1,0,0,1]];
       if (_attachToVehicle in lineIntersectsWith [(ATLToASL _pos0temp), (ATLToASL _position1), player, _setupObject]) exitWith {_keepGoingCloser = false};
-    } forEach [[0,0,0], [0,0,0.075], [0,0,-0.075], [0,0.075,0], [0,-0.075,0], [0.075,0,0], [-.075,0,0]];  
-  } forEach [[0,0,0], [0,0,0.075], [0,0,-0.075]];   
+    } forEach [[0,0,0], [0,0,0.075], [0,0,-0.075], [0,0.075,0], [0,-0.075,0], [0.075,0,0], [-.075,0,0]];
+  } forEach [[0,0,0], [0,0,0.075], [0,0,-0.075]];
 };
 //Move it out slightly, for visability sake (better to look a little funny than be embedded//sunk in the hull)
 _closeInRatio = (_closeInRatio + 0.006) min 1;
@@ -75,11 +75,11 @@ _attachedObject = _setupClassname createVehicle (getPos _player);
 _attachedObject attachTo [_attachToVehicle, [(_offset select 0) * _closeInRatio, (_offset select 1) * _closeInRatio, (_offset select 2)]];
 
 //Remove Item from inventory
-_player removeItem _itemClassname;  
+_player removeItem _itemClassname;
 
 //Add Object to AGM_AttachedObjects and AGM_AttachedItemNames
 _currentObjects = _attachToVehicle getVariable ["AGM_AttachedObjects", []];
-_currentObjects pushBack _attachedObject;    
+_currentObjects pushBack _attachedObject;
 _attachToVehicle setVariable ["AGM_AttachedObjects", _currentObjects, true];
 _currentItemNames = _attachToVehicle getVariable ["AGM_AttachedItemNames", []];
 _currentItemNames pushBack _itemClassname;
