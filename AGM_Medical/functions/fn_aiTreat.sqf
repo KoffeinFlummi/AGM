@@ -10,7 +10,10 @@ _task = _this select 2;
 if (!scriptDone (_medic getVariable ["AGM_Medical_AITask", scriptNull])) exitWith {};//systemChat str _this;//
 
 // exit if the medic can't do te treatment
-if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
+if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {
+  // continue walking freely
+  _medic doMove getPosASL _medic
+};
 
 // do treatment
 private "_scriptHandle";
@@ -29,7 +32,7 @@ _scriptHandle = _this spawn {
   };
 
   // wait until medic next to patient
-  if (_medic distanceSqr _patient > 5) then {
+  if (_medic distanceSqr _patient > 4) then {
     _doMoveLoop = _this spawn {
       while {true} do {
         (_this select 0) doMove getPosASL (_this select 1);
@@ -42,14 +45,17 @@ _scriptHandle = _this spawn {
       if (!alive _medic || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {true};
 
       sleep 0.15;
-      getPosASL _medic distanceSqr getPosASL _patient < 4
+      getPosASL _medic distanceSqr getPosASL _patient < 5
     };
 
     terminate _doMoveLoop;
   };
 
   // exit if the medic can't do te treatment
-  if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {};
+  if !(_this call AGM_Medical_fnc_aiCanTreat) exitWith {
+    // continue walking freely
+    _medic doMove getPosASL _medic
+  };
 
   // halt
   doStop _medic;

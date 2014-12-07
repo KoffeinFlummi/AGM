@@ -67,13 +67,6 @@ class Extended_Hit_EventHandlers {
     };
   };
 };
-class Extended_Killed_EventHandlers {
-  class CAManBase {
-    class AGM_Medical {
-      killed = "if (_this select 0 == AGM_player) then {[False] call AGM_Core_fnc_disableUserInput};"
-    };
-  };
-};
 class Extended_Take_EventHandlers {
   class CAManBase {
     class AGM_Medical {

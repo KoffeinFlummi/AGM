@@ -25,10 +25,13 @@ if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
     if (
       [_this select 1] call AGM_Core_fnc_canUseWeapon
       && {
-        if (inputAction "nextWeapon" > 0) then {
-          [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
-        };
-        currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])
+        if (currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])) then {
+          if (inputAction "nextWeapon" > 0) exitWith {
+            [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
+            false
+          };
+          true
+        } else {false}
       }
     ) then {
       // player hud
