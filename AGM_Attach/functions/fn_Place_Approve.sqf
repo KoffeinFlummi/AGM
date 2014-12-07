@@ -16,6 +16,8 @@
   Example:
     call AGM_Attach_fnc_Place_Approve;
 */
+private ["_setupObject", "_setupClassname", "_itemClassname", "_placementText", "_attachToVehicle", "_player", "_position0", "_closeInRatio", "_offset", "_keepGoingCloser", "_pos0temp", "_position1", "_attachedObject", "_currentObjects", "_currentItemNames"];
+
 if (AGM_Attach_pfeh_running) then {
   ["AGM_Attach_Placement","OnEachFrame"] call BIS_fnc_removeStackedEventHandler;
   AGM_Attach_pfeh_running = false;

@@ -12,7 +12,8 @@ Arguments:
 Return Value:
   none
 */
-private ["_unit", "_attachToVehicle", "_attachToPointName", "_itemName", "_count", "_attachedItem"];
+private ["_unit", "_attachToVehicle", "_attachedObjectsArray", "_attachedItemsArray", "_attachedObject", "_itemName", "_minDistance", "_unitPos", "_objectPos", "_count", "_attachedItem"];
+
 
 _unit = _this select 0;
 _attachToVehicle = _this select 1;

@@ -13,7 +13,7 @@ Arguments:
 Return Value:
 none
 */
-private ["_unit", "_attachToVehicle", "_attachToPointName", "_itemName", "_attachPosition", "_attachedItem"];
+private ["_unit", "_attachToVehicle", "_itemName", "_selfAttachPosition", "_itemVehClass", "_onAtachText", "_attachedItem", "_player"];
 
 _unit = _this select 0;
 _attachToVehicle = _this select 1;

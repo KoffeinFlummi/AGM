@@ -16,7 +16,7 @@ Returns:
 Example:
   [player, tank] call AGM_Attach_fnc_vehicleCanDetach
 */
-private ["_unit", "_attachToVehicle", "_attachToPointName", "_modelPosition", "_worldPos", "_unitPos", "_minDistance"];
+private ["_unit", "_attachToVehicle", "_attachedObjects", "_unitPos", "_minDistance", "_objectPos"];
 
 _unit = _this select 0;
 _attachToVehicle = _this select 1;
