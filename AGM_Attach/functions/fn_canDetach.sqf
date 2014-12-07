@@ -1,4 +1,5 @@
-/*
+/* AGM_Attach_fnc_canDetach
+ *
  * Author: commy2
  *
  * Check if a unit has an item attached and if it can remove that item.
@@ -14,4 +15,4 @@ private "_unit";
 
 _unit = _this select 0;
 
-canStand _unit && {_unit getVariable ["AGM_AttachedItemName_self", ""] != ""}
+canStand _unit && {(count (_unit getVariable ["AGM_AttachedObjects", []])) != 0}

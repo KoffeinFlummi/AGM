@@ -21,9 +21,10 @@ class CfgFunctions {
       class canDetach;
       class detach;
       class openAttachUI;
+      class Place_Approve;
+      class Place_Cancel;
       class vehicleCanAttach;
       class vehicleCanDetach;
-      class vehicleGetAttachPoint;
     };
   };
 };
@@ -37,8 +38,8 @@ class CfgFunctions {
   class AGM_Actions { \
     class AGM_Attach_right { \
       displayName = "$STR_AGM_Attach_AttachDetach"; \
-      condition = "[_player, AGM_Interaction_Target, 'right'] call AGM_Attach_fnc_vehicleCanAttach"; \
-      statement = "[_player, AGM_Interaction_Target, 'right'] call AGM_Attach_fnc_openAttachUI;"; \
+      condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanAttach"; \
+      statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_openAttachUI;"; \
       exceptions[] = {"AGM_Drag_isNotDragging"}; \
       showDisabled = 0; \
       priority = 0; \
@@ -47,48 +48,8 @@ class CfgFunctions {
     }; \
     class AGM_Attach_Detach_right { \
       displayName = "$STR_AGM_Attach_Detach"; \
-      condition = "[_player, AGM_Interaction_Target, 'right'] call AGM_Attach_fnc_vehicleCanDetach"; \
-      statement = "[_player, AGM_Interaction_Target, 'right'] call AGM_Attach_fnc_detach"; \
-      exceptions[] = {"AGM_Drag_isNotDragging"}; \
-      showDisabled = 0; \
-      priority = 0; \
-      icon = "\AGM_Attach\UI\detach_ca.paa"; \
-      hotkey = "T"; \
-    }; \
-    class AGM_Attach_left { \
-      displayName = "$STR_AGM_Attach_AttachDetach"; \
-      condition = "[_player, AGM_Interaction_Target, 'left'] call AGM_Attach_fnc_vehicleCanAttach"; \
-      statement = "[_player, AGM_Interaction_Target, 'left'] call AGM_Attach_fnc_openAttachUI;"; \
-      exceptions[] = {"AGM_Drag_isNotDragging"}; \
-      showDisabled = 0; \
-      priority = 0; \
-      icon = "\AGM_Attach\UI\attach_ca.paa"; \
-      hotkey = "T"; \
-    }; \
-    class AGM_Attach_Detach_left { \
-      displayName = "$STR_AGM_Attach_Detach"; \
-      condition = "[_player, AGM_Interaction_Target, 'left'] call AGM_Attach_fnc_vehicleCanDetach"; \
-      statement = "[_player, AGM_Interaction_Target, 'left'] call AGM_Attach_fnc_detach"; \
-      exceptions[] = {"AGM_Drag_isNotDragging"}; \
-      showDisabled = 0; \
-      priority = 0; \
-      icon = "\AGM_Attach\UI\detach_ca.paa"; \
-      hotkey = "T"; \
-    };       \
-    class AGM_Attach_rear { \
-      displayName = "$STR_AGM_Attach_AttachDetach"; \
-      condition = "[_player, AGM_Interaction_Target, 'rear'] call AGM_Attach_fnc_vehicleCanAttach"; \
-      statement = "[_player, AGM_Interaction_Target, 'rear'] call AGM_Attach_fnc_openAttachUI;"; \
-      exceptions[] = {"AGM_Drag_isNotDragging"}; \
-      showDisabled = 0; \
-      priority = 0; \
-      icon = "\AGM_Attach\UI\attach_ca.paa"; \
-      hotkey = "T"; \
-    }; \
-    class AGM_Attach_Detach_rear { \
-      displayName = "$STR_AGM_Attach_Detach"; \
-      condition = "[_player, AGM_Interaction_Target, 'rear'] call AGM_Attach_fnc_vehicleCanDetach"; \
-      statement = "[_player, AGM_Interaction_Target, 'rear'] call AGM_Attach_fnc_detach"; \
+      condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanDetach"; \
+      statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_detach"; \
       exceptions[] = {"AGM_Drag_isNotDragging"}; \
       showDisabled = 0; \
       priority = 0; \
@@ -105,7 +66,7 @@ class CfgVehicles {
         class AGM_Attach {
           displayName = "$STR_AGM_Attach_AttachDetach";
           condition = "[_player, ''] call AGM_Attach_fnc_canAttach";
-          statement = "[_player, _player, 'self'] call AGM_Attach_fnc_openAttachUI;";
+          statement = "[_player, _player] call AGM_Attach_fnc_openAttachUI;";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 5;
@@ -115,7 +76,7 @@ class CfgVehicles {
         class AGM_Attach_Detach {
           displayName = "$STR_AGM_Attach_Detach";
           condition = "[_player] call AGM_Attach_fnc_canDetach";
-          statement = "[_player, _player, 'self'] call AGM_Attach_fnc_detach";
+          statement = "[_player, _player] call AGM_Attach_fnc_detach";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 5;
@@ -143,19 +104,6 @@ class CfgVehicles {
   class Ship;
   class Ship_F: Ship {
     MACRO_ATTACHTOVEHICLE
-  };
-
-  class Car_F: Car {};
-  class Hatchback_01_base_F: Car_F {
-    AGM_AttachPoint_left[] = {-0.929688,0.789063,-0.23848};
-    AGM_AttachPoint_right[] = {0.741211,0.85791,-0.224247};
-    AGM_AttachPoint_rear[] = {0,-2.095,0.182854};
-  };
-  class Truck_F: Car_F {};
-  class Truck_03_base_F: Truck_F {
-    AGM_AttachPoint_left[] = {-1.16321,3.62256,0.0160751};
-    AGM_AttachPoint_right[] = {1.28906,3.63965,-0.033287};
-    AGM_AttachPoint_rear[] = {0,-4.65674,-0.80201};
   };
 
   class All;
