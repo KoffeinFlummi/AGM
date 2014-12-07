@@ -69,7 +69,7 @@ AGM_Medical_treatmentAbort = {
   _unit = _this select 0;
 
   if (vehicle _unit == _unit) then {
-    [_unit, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+    [_unit, "", 1] call AGM_Core_fnc_doAnimation;
   };
   _unit setVariable ["AGM_canTreat", True, False];
 };
@@ -94,26 +94,26 @@ _animation = switch (_type) do {
   default           {""};
 };
 if (stance _unit == "PRONE") then {
-  _animation = switch (currentWeapon _target) do {
+  _animation = switch (currentWeapon _unit) do {
     case (""):                    {"AinvPpneMstpSlayWnonDnon_medic"};
-    case (primaryWeapon _target): {"AinvPpneMstpSlayWrflDnon_medic"};
-    case (handgunWeapon _target): {"AinvPpneMstpSlayWpstDnon_medic"};
+    case (primaryWeapon _unit): {"AinvPpneMstpSlayWrflDnon_medic"};
+    case (handgunWeapon _unit): {"AinvPpneMstpSlayWpstDnon_medic"};
     default                       {"AinvPpneMstpSlayWnonDnon_medic"};
   };
 };
-if (_unit == _target) then {
-  _animation = switch (currentWeapon _target) do {
+if (_unit == _unit) then {
+  _animation = switch (currentWeapon _unit) do {
     case (""): {
-      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _target == "PRONE")
+      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _unit == "PRONE")
     };
-    case (primaryWeapon _target): {
-      ["AinvPknlMstpSlayWrflDnon_medic", "AinvPpneMstpSlayWrflDnon_medic"] select (stance _target == "PRONE")
+    case (primaryWeapon _unit): {
+      ["AinvPknlMstpSlayWrflDnon_medic", "AinvPpneMstpSlayWrflDnon_medic"] select (stance _unit == "PRONE")
     };
-    case (handgunWeapon _target): {
-      ["AinvPknlMstpSlayWpstDnon_medic", "AinvPpneMstpSlayWpstDnon_medic"] select (stance _target == "PRONE")
+    case (handgunWeapon _unit): {
+      ["AinvPknlMstpSlayWpstDnon_medic", "AinvPpneMstpSlayWpstDnon_medic"] select (stance _unit == "PRONE")
     };
     default {
-      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _target == "PRONE")
+      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _unit == "PRONE")
     };
   };
 };
