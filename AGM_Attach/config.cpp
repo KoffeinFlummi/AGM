@@ -36,7 +36,7 @@ class CfgFunctions {
 
 #define MACRO_ATTACHTOVEHICLE \
   class AGM_Actions { \
-    class AGM_Attach_right { \
+    class AGM_AttachVehicle { \
       displayName = "$STR_AGM_Attach_AttachDetach"; \
       condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanAttach"; \
       statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_openAttachUI;"; \
@@ -46,7 +46,7 @@ class CfgFunctions {
       icon = "\AGM_Attach\UI\attach_ca.paa"; \
       hotkey = "T"; \
     }; \
-    class AGM_Attach_Detach_right { \
+    class AGM_Attach_DetachVehicle { \
       displayName = "$STR_AGM_Attach_Detach"; \
       condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanDetach"; \
       statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_detach"; \
