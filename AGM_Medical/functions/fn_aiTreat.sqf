@@ -89,6 +89,14 @@ _scriptHandle = _this spawn {
     };
   };
 
+  if (side _medic != side _patient) then {
+    //[_unit, true] call AGM_Captive_surrender;
+    _patient allowFleeing 0;
+    doStop _unit;
+    _patient action ["Surrender", _unit];
+    _patient setCaptive true;
+  };
+
   // wait until ready again
   waitUntil {
     // exit if dead
