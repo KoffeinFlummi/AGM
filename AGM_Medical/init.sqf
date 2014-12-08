@@ -11,7 +11,7 @@
         _unit = _x;
         _task = _unit call AGM_Medical_fnc_checkRequiredTreatment;
         if (_task != "") then {
-          systemChat format ["%1 needs %2", _unit, _task];
+          //systemChat format ["%1 needs %2", _unit, _task];
           if ([_unit, _unit, _task] call AGM_Medical_fnc_aiCanTreat) then {
             //systemChat format ["%1 : %2", [_unit, _unit, _need] call AGM_Medical_fnc_aiTreat, [_unit, _unit, _need]];
             //systemChat format ["%1 heals itself", _unit];
