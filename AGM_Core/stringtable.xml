@@ -436,14 +436,16 @@
     <Key ID="STR_AGM_Core_Unknown">
       <English>Unknown</English>
       <German>Unbekannt</German>
+      <Spanish>Desconocido</Spanish>
       <Polish>Nieznany</Polish>
       <Czech>Neznámý</Czech>
     </Key>
 
     <Key ID="STR_AGM_Core_NoVoice">
       <English>No Voice</English>
-      <Czech>Žádný hlas</Czech>
       <German>Keine Stimme</German>
+      <Spanish>Sin voz</Spanish>
+      <Czech>Žádný hlas</Czech>
     </Key>
   </Package>
 </Project>
