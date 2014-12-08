@@ -59,6 +59,7 @@
     <Key ID="STR_AGM_CrewInfo_ShowVehicleCrewInfo">
       <English>Show vehicle crew info</English>
       <German>Zeige Fahrzeugbesatzung</German>
+      <Spanish>Mostrar tripulantes</Spanish>
       <Polish>Pokaż informacje o załodze pojazdu</Polish>
       <Czech>Zobrazit info o posádce vozidla</Czech>
     </Key>
