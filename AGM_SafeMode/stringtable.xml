@@ -4,24 +4,28 @@
     <Key ID="STR_AGM_SafeMode_SafeMode">
       <English>Safe Mode</English>
       <German>Waffe sichern</German>
+      <Spanish>Seguro puesto</Spanish>
       <Polish>Bezpiecznik</Polish>
       <Czech>Pojistka</Czech>
     </Key>
     <Key ID="STR_AGM_SafeMode_TakeOffSafety">
       <English>Take off Safety</English>
       <German>Waffe entsichern</German>
+      <Spanish>Quitar seguro</Spanish>
       <Polish>Zwolnij bezpiecznik</Polish>
       <Czech>Uvolnit pojistku</Czech>
     </Key>
     <Key ID="STR_AGM_SafeMode_PutOnSafety">
       <English>Put on Safety</English>
       <German>Waffe gesichert</German>
+      <Spanish>Poner seguro</Spanish>
       <Polish>Zabezpiecz broń</Polish>
       <Czech>Přepnout pojistku</Czech>
     </Key>
     <Key ID="STR_AGM_SafeMode_TookOffSafety">
       <English>Took off Safety</English>
       <German>Waffe entsichert</German>
+      <Spanish>Seguro quitado</Spanish>
       <Polish>Odbezpieczono broń</Polish>
       <Czech>Odstranit pojistku</Czech>
     </Key>
