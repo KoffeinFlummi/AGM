@@ -113,6 +113,7 @@
     <Key ID="STR_AGM_RealisticNames_UAV_02_CAS_Name">
       <English>YABHON-R3 (CAS)</English>
       <German>YABHON-R3 (Luftnahunterstützung)</German>
+      <Spanish>YABHON-R3 (CAS)</Spanish>
       <Czech>YABHON-R3 (CAS)</Czech>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
@@ -718,6 +719,7 @@
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name">
       <English>CH-47I Chinook (unarmed)</English>
       <German>CH-47I Chinook (unbewaffnet)</German>
+      <Spanish>CH-47I Chinnok (Desarmado)</Spanish>
       <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
