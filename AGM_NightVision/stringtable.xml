@@ -85,6 +85,7 @@
     <Key ID="STR_AGM_NightVision_NVG_FullScreen">
       <English>NV Goggles (Wide)</English>
       <German>NS-Brille (Weitwinkel)</German>
+      <Spanish>Sistema de visión nocturna (Panorámicas)</Spanish>
     </Key>
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
