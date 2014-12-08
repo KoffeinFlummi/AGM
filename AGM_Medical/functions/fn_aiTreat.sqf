@@ -90,11 +90,13 @@ _scriptHandle = _this spawn {
   };
 
   if (side _medic != side _patient) then {
-    //[_unit, true] call AGM_Captive_surrender;
-    _patient allowFleeing 0;
-    doStop _unit;
-    _patient action ["Surrender", _unit];
-    _patient setCaptive true;
+    if (local _patient) then {
+      //[_patient, "AGM_Surrendered", true] call AGM_Core_fnc_setCaptivityStatus;
+      [_patient, true] call AGM_Captives_fnc_surrender;
+      //[_patient, true] call AGM_Captives_setCaptive;
+    } else {
+      [[_patient, true], "AGM_Captives_fnc_surrender", _patient] call AGM_Core_fnc_execRemoteFnc;
+    };
   };
 
   // wait until ready again
