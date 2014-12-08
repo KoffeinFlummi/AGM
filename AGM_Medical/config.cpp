@@ -21,6 +21,7 @@ class CfgFunctions {
       class aiInitTask;
       class aiTreat;
       class checkDamage;
+      class checkRequiredTreatment;
       class diagnose;
       class displayText;
       class handleDamage;
