@@ -4,6 +4,7 @@
     <Key ID="STR_AGM_ToggleTopDownAttack">
       <English>Toggle Top Down Attack</English>
       <German>Angriffsmodus umschalten</German>
+      <Spanish>Canviar a ataque vertical</Spanish>
     </Key>
   </Package>
 </Project>
