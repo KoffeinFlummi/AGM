@@ -74,6 +74,13 @@ class Extended_Take_EventHandlers {
     };
   };
 };
+class Extended_GetOut_EventHandlers {
+  class All {
+    class AGM_Medical_LeaveVehicle {
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isUnconscious', false]}) then {[_this select 2, 'unconscious', 2, true] call AGM_Core_fnc_doAnimation;}";
+    };
+  };
+};
 
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {

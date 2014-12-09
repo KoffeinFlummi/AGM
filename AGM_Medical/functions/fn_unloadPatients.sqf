@@ -24,7 +24,7 @@ _vehicle = _this select 1;
       0
     ];
     // messy, but who cares?
-    [[_x, _vehicle, _unit, _pos], "{moveOut (_this select 0); unassignVehicle (_this select 0); waitUntil {vehicle (_this select 0) == (_this select 0)}; (_this select 0) setPosATL (_this select 3); [(_this select 0), 'Unconscious', 2, True] call AGM_Core_fnc_doAnimation;}", _x] call AGM_Core_fnc_execRemoteFnc;
+    [[_x, _vehicle, _unit, _pos], "{moveOut (_this select 0); unassignVehicle (_this select 0); waitUntil {vehicle (_this select 0) == (_this select 0)}; (_this select 0) setPosATL (_this select 3);}", _x] call AGM_Core_fnc_execRemoteFnc;
     _x setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
   };
 } forEach crew _vehicle;
