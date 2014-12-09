@@ -49,10 +49,14 @@ _this spawn {
   sleep 3 + (random 2);
 
   // @todo sound
-  // @todo light
 
   // this shit is busy being on fire, can't go driving around all over the place
   _vehicle setFuel 0;
+
+  _light = "#lightpoint" createVehicle [0,0,0];
+  _light lightAttachObject [_vehicle, [0,0,4]];
+
+  [_light, "{_this setLightBrightness 0.7; _this setLightAmbient [1,0.4,0.15]; _this setLightColor [1,0.4,0.15];}"] call AGM_Core_fnc_execRemoteFnc;
 
   // CookOffs
   _fires = [];
@@ -73,6 +77,7 @@ _this spawn {
   deleteVehicle _smokeBarrel;
   [_smokes, {deleteVehicle _this}] call AGM_Core_fnc_map;
   [_fires, {deleteVehicle _this}] call AGM_Core_fnc_map;
+  deleteVehicle _light;
 
   (_this select 0) setVariable ["AGM_Armour_isCookingOff", False];
   if (local _vehicle and damage _vehicle < 1) then {
