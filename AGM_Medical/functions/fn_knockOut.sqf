@@ -73,6 +73,10 @@ if (vehicle _unit != _unit) then {
 } else {
   _unit setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
   _unit spawn {
+    if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
+      _this action ["LadderOff", nearestObject [position _this, "House"]];
+    };
+
     waitUntil {isTouchingGround _this};
     waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
     [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
