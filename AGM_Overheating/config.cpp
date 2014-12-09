@@ -46,8 +46,8 @@ class Extended_Take_EventHandlers {
 class AGM_Core_Default_Keys {
   class clearJam {
     displayName = "$STR_AGM_Overheating_UnjamWeapon";
-    condition = "_player == _vehicle && {currentWeapon _vehicle in (_vehicle getVariable ['AGM_Overheating_jammedWeapons', []])}";
-    statement = "[_vehicle, currentWeapon _vehicle, false] call AGM_Overheating_fnc_clearJam;";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon && {currentWeapon _player in (_player getVariable ['AGM_Overheating_jammedWeapons', []])}";
+    statement = "[_player, currentMuzzle _player, false] call AGM_Overheating_fnc_clearJam;";
     key = 19;
     shift = 1;
     control = 0;
