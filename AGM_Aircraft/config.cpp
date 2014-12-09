@@ -802,7 +802,7 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird.hpp>
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -812,6 +812,7 @@ class CfgVehicles {
   };
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
+    #include <mfd_littlebird.hpp>
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
 
@@ -826,12 +827,16 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird_armed.hpp>
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
     };
+  };
+
+  class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
+    #include <mfd_littlebird_armed.hpp>
   };
 
   class Heli_Light_02_base_F: Helicopter_Base_H {
@@ -1049,10 +1054,10 @@ class CfgVehicles {
     #include <flightmodel_thunderbolt.hpp>
   };
 
-  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+  /*class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
     #include <mfd_thunderbolt.hpp>
     //#include <hmd_thunderbolt.hpp>
-  };
+  };*/
 
   class Plane_CAS_02_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
