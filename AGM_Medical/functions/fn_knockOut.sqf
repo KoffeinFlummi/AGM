@@ -62,6 +62,21 @@ if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
 };
 
 // play appropriate anim
+private "_fnc_playAnim";
+_fnc_playAnim = {
+  if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
+    _this action ["LadderOff", nearestObject [position _this, "House"]];
+  };
+
+  waitUntil {isTouchingGround _this};
+  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
+  [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
+  sleep 2;
+  if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
+    [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
+  };
+};
+
 if (vehicle _unit != _unit) then {
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
   [
@@ -70,21 +85,13 @@ if (vehicle _unit != _unit) then {
     1,
     True
   ] call AGM_Core_fnc_doAnimation;
-} else {
-  _unit setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
-  _unit spawn {
-    if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
-      _this action ["LadderOff", nearestObject [position _this, "House"]];
-    };
 
-    waitUntil {isTouchingGround _this};
-    waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
-    [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
-    sleep 2;
-    if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
-      [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
-    };
+  // handle parachute
+  if (vehicle _unit isKindOf "ParachuteBase") then {
+    _unit spawn _fnc_playAnim;
   };
+} else {
+  _unit spawn _fnc_playAnim;
 };
 
 // wake up unit after certain amount of time
