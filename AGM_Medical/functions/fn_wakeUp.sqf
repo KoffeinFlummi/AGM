@@ -20,7 +20,7 @@ if !(local _unit) exitWith {
 };
 
 _unit enableAI "MOVE";
-_unit enableAI "ANIM";
+//_unit enableAI "ANIM";
 _unit enableAI "TARGET";
 _unit enableAI "AUTOTARGET";
 _unit enableAI "FSM";

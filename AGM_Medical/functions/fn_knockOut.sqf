@@ -51,7 +51,7 @@ if (_unit == AGM_player) then {
 [_unit, "AGM_Unconscious", True] call AGM_Core_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
-_unit disableAI "ANIM";
+//_unit disableAI "ANIM";
 _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
