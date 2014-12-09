@@ -20,6 +20,9 @@ class CfgFunctions {
       class canLoadCaptive;
       class canUnloadCaptive;
       class escortCaptive;
+      class handleKnockedOut;
+      class handleWokeUp;
+      class initUnit;
       class loadCaptive;
       class openFriskMenu;
       class setCaptive;
@@ -52,6 +55,15 @@ class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Captives_AutoDetachCaptive {
       killed = "if ((_this select 0) getVariable ['AGM_isCaptive', false]) then {(_this select 0) setVariable ['AGM_isCaptive', false, true]}; if ((_this select 0) getVariable ['AGM_isEscorting', false]) then {(_this select 0) setVariable ['AGM_isEscorting', false, true]};";
+    };
+  };
+};
+
+//handle captive and unconsciousness state
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Captives_AutoDetachCaptive {
+      init = "_this call AGM_Captives_fnc_initUnit";
     };
   };
 };

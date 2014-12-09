@@ -20,6 +20,7 @@ if (count _this > 1) then {
   _duration = _this select 1;
 };
 
+//if (_unit getVariable ["AGM_isCaptive", False]) exitWith {_unit setDamage 1};
 if (_unit getVariable ["AGM_isUnconscious", False]) exitWith {};
 
 // If an AI unit shoots a player, hand it off to him to calculate things.
