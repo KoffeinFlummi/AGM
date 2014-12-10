@@ -64,7 +64,7 @@ if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
 // play appropriate anim
 private "_fnc_playAnim";
 _fnc_playAnim = {
-  if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
+  /*if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
     _this action ["LadderOff", nearestObject [position _this, "House"]];
   };
 
@@ -72,7 +72,7 @@ _fnc_playAnim = {
   waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim) or !(alive _this)};
   if !(alive _this and _this getVariable "AGM_isUnconscious") exitWith {};
   [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
-  sleep 2;
+  sleep 2;*/
   if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
     [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
   };

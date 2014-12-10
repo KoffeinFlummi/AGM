@@ -53,6 +53,13 @@ class Extended_Init_EventHandlers {
     };
   };
 };
+class Extended_AnimStateChanged_EventHandlers {
+  class CAManBase {
+    class AGM_Medical_ForceUnconsciousAnim {
+      AnimStateChanged = "if ((_this select 0) getVariable ['AGM_isUnconscious', false] && {_this select 1 != 'unconscious'}) then {(_this select 0) switchMove 'unconscious'}";
+    };
+  };
+};
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Medical {
