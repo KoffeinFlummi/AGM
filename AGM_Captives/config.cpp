@@ -22,6 +22,7 @@ class CfgFunctions {
       class escortCaptive;
       class handleGetOut;
       class handleKnockedOut;
+      class handlePlayerChanged;
       class handleWokeUp;
       class initUnit;
       class loadCaptive;
@@ -115,7 +116,7 @@ class CfgVehicles {
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Captives_EscortCaptive";
         distance = 4;
-        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)}";
+        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)} && {alive _target} && {!(_target getVariable ['AGM_isUnconscious', false])}";
         statement = "[_target, true] call AGM_Captives_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;

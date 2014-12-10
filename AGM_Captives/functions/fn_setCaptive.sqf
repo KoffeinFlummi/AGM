@@ -27,11 +27,9 @@ if (_state) then {
   //[_unit, "AGM_AmovPercMstpScapWnonDnon", 0] call AGM_Core_fnc_doAnimation;
 
   // fix anim on mission start
-  if (time == 0) then {
-    _unit spawn {
-      if (_this getVariable ["AGM_isCaptive", false]) then {
-        [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
-      };
+  _unit spawn {
+    if (_this getVariable ["AGM_isCaptive", false]) then {
+      [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
     };
   };
 
