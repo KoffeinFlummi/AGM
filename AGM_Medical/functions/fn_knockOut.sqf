@@ -62,38 +62,7 @@ if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
 };
 
 // play appropriate anim
-private "_fnc_playAnim";
-_fnc_playAnim = {
-  /*if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
-    _this action ["LadderOff", nearestObject [position _this, "House"]];
-  };
-
-  waitUntil {isTouchingGround _this};
-  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim) or !(alive _this)};
-  if !(alive _this and _this getVariable "AGM_isUnconscious") exitWith {};
-  [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
-  sleep 2;*/
-  if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
-    [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
-  };
-};
-
-if (vehicle _unit != _unit) then {
-  _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
-  [
-    _unit,
-    ((configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _unit >> "interpolateTo") call BIS_fnc_getCfgData) select 0,
-    1,
-    True
-  ] call AGM_Core_fnc_doAnimation;
-
-  // handle parachute
-  if (vehicle _unit isKindOf "ParachuteBase") then {
-    _unit spawn _fnc_playAnim;
-  };
-} else {
-  _unit spawn _fnc_playAnim;
-};
+[[_unit], "AGM_Medical_fnc_animUnconscious", 2] call AGM_Core_fnc_execRemoteFnc;
 
 // wake up unit after certain amount of time
 _wakeUpTimer = [_unit, _duration] spawn {};
