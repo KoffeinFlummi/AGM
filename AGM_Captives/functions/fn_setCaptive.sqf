@@ -28,7 +28,7 @@ if (_state) then {
 
   // fix anim on mission start
   _unit spawn {
-    if (_this getVariable ["AGM_isCaptive", false]) then {
+    if (_this getVariable ["AGM_isCaptive", false] && {vehicle _this == _this}) then {
       [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
     };
   };
@@ -43,7 +43,9 @@ if (_state) then {
 
   _unit setVariable ["AGM_isCaptive", false, true];
   [_unit, "AGM_Handcuffed", false] call AGM_Core_fnc_setCaptivityStatus;
-  [_unit, "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon", 2] call AGM_Core_fnc_doAnimation;
+  if (vehicle _unit == _unit) then {
+    [_unit, "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon", 2] call AGM_Core_fnc_doAnimation;
+  };
 
   if (_unit getVariable ["AGM_Captives_CargoIndex", -1] != -1) then {
     _unit setVariable ["AGM_Captives_CargoIndex", -1, true];
