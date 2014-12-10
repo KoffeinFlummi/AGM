@@ -20,6 +20,7 @@ class CfgFunctions {
       class canLoadCaptive;
       class canUnloadCaptive;
       class escortCaptive;
+      class handleGetOut;
       class handleKnockedOut;
       class handleWokeUp;
       class initUnit;
@@ -45,7 +46,7 @@ class Extended_GetIn_EventHandlers {
 class Extended_GetOut_EventHandlers {
   class All {
     class AGM_Captives_LeaveVehicle {
-      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {[_this select 2, 'AGM_AmovPercMstpScapWnonDnon', 2] call AGM_Core_fnc_doAnimation;}";
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {_this call AGM_Captives_fnc_handleGetOut}";
     };
   };
 };
@@ -304,6 +305,8 @@ class CfgMovesBasic {
       StopRelaxed = "AGM_AmovPercMstpScapWnonDnon";
       default = "AGM_AmovPercMstpScapWnonDnon";
       getOver = "";
+      throwPrepare = "";
+      throwGrenade[] = {"","Gesture"};
     };
   };
 };
