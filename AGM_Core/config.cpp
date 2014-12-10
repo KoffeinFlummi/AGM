@@ -699,7 +699,7 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
-  class Man;
+  /*class Man;
   class CAManBase: Man {
     // @todo
     class UserActions {
@@ -719,7 +719,7 @@ class CfgVehicles {
         userActionID = 100;
       };
     };
-  };
+  };*/
 
   // += needs a non inherited entry in that class, otherwise it simply overwrites
   //#include <DefaultItems.hpp>
