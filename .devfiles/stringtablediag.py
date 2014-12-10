@@ -82,7 +82,7 @@ def main():
       print("  %s %s / %i" % ((languages[i]+":").ljust(10), str(localized[i]).ljust(3), keynumber))
       localizedsum[i] += localized[i]
       if localized[i] < keynumber:
-        missing[i].append(module)
+        missing[i].append(module[4:])
 
   print("\n###########")
   print("# RESULTS #")
