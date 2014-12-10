@@ -69,7 +69,8 @@ _fnc_playAnim = {
   };
 
   waitUntil {isTouchingGround _this};
-  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
+  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim) or !(alive _this)};
+  if !(alive _this and _this getVariable "AGM_isUnconscious") exitWith {};
   [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
   sleep 2;
   if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
