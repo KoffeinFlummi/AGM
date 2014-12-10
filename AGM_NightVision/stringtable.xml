@@ -36,7 +36,6 @@
       <Spanish>Sistema de visión nocturna (Gen3)</Spanish>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_brown">
-      <Original>NV Goggles (Gen3, Brown)</Original>
       <English>NV Goggles (Gen3, Brown)</English>
       <Czech>Noktovizor (Gen3, hnědý)</Czech>
       <French>JVN (Gen3, marron)</French>
@@ -48,7 +47,6 @@
       <Spanish>Sistema de visión nocturna (Gen3, marrón)</Spanish>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_green">
-      <Original>NV Goggles (Gen3, Green)</Original>
       <English>NV Goggles (Gen3, Green)</English>
       <Czech>Noktovizor (Gen3, zelený)</Czech>
       <French>JVN (Gen3, vertes)</French>
@@ -60,7 +58,6 @@
       <Spanish>Sistema de visión nocturna (Gen3, verde)</Spanish>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_black">
-      <Original>NV Goggles (Gen3, Black)</Original>
       <English>NV Goggles (Gen3, Black)</English>
       <Czech>Noktovizor (Gen3, černý)</Czech>
       <French>JVN (Gen3, noires)</French>
