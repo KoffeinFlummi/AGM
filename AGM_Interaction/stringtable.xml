@@ -591,6 +591,7 @@
       <Spanish>Auto-centrar cursor</Spanish>
       <Polish>Automatycznie centruj kursor </Polish>
       <Czech>Vycentrování kurzoru</Czech>
+      <Hungarian>Egér auto-centrírozása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
@@ -599,6 +600,7 @@
       <French>Équipment &gt;&gt;</French>
       <Polish>Ekwipunek &gt;&gt;</Polish>
       <Czech>Vybavení &gt;&gt;</Czech>
+      <Hungarian>Felszerelés &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_Push">
       <English>Push</English>
@@ -607,6 +609,7 @@
       <French>Pousser</French>
       <Polish>Pchnij</Polish>
       <Czech>Odstrčit</Czech>
+      <Hungarian>Tolás</Hungarian>
     </Key>
   </Package>
 </Project>
