@@ -20,6 +20,7 @@
       <French>Ourvir Rampe Cargo</French>
       <Polish>Otwórz drzwi ładowni</Polish>
       <Czech>Otevřít nákladní prostor</Czech>
+      <Hungarian>Rámpát kinyitni</Hungarian>
     </Key>
     <Key ID="STR_AGM_Aircraft_CloseCargoRamp">
       <English>Close Cargo Door</English>
@@ -27,6 +28,7 @@
       <French>Fermer Rampe Cargo</French>
       <Polish>Zamknij drzwi ładowni</Polish>
       <Czech>Zavřít nákladní prostor</Czech>
+      <Hungarian>Rámpát zárni</Hungarian>
     </Key>
   </Package>
 </Project>
