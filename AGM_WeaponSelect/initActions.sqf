@@ -10,8 +10,7 @@ _fnc_actionThrowCondition = {
   _isInput = inputAction "CycleThrownItems" > 0;
   if !(_isInput isEqualTo (missionNamespace getVariable ["AGM_WeaponSelect_CycleThrownItemsState", false])) then {
     if (_isInput && {_muzzle == ""}) then {
-      // @todo select last muzzle to roll over
-      [_this select 1] spawn AGM_WeaponSelect_fnc_selectGrenadeAll;//
+      [_this select 1] spawn AGM_WeaponSelect_fnc_selectGrenadeAll;
     };
     AGM_WeaponSelect_CycleThrownItemsState = _isInput;
   };
