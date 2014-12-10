@@ -81,6 +81,7 @@
     <French>Une clé qui ouvrira la plupart des véhicules EAST.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów WSCHODU.</Polish>
     <Hungarian>Általános kulcs EAST járművekhez</Hungarian>
+    <Czech>Klíč který by měl otevřít vetšinu Východních vozidel.</Czech>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Indp_Description">
     <English>A key that should open most INDEP vehicle.</English>
@@ -89,6 +90,7 @@
     <French>Une clé qui ouvrira la plupart des véhicules INDEP.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów INDFOR.</Polish>
     <Hungarian>Általános kulcs INDEPENDENT járművekhez</Hungarian>
+    <Czech>Klíč který by měl otevřít většinu Nezávislých vozidel.</Czech>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Civ_Description">
     <English>A key that should open most CIV vehicle.</English>
