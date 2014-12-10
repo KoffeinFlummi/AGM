@@ -101,14 +101,18 @@ def main():
 
   print("\nTotal number of keys: %i\n" % (keysum))
 
-  print("| Language | Missing Entries | Relevant Modules |")
-  print("|----------|----------------:|------------------|")
+  print("| Language | Missing Entries | Relevant Modules | % done |")
+  print("|----------|----------------:|------------------|--------|")
 
   for i, language in enumerate(languages):
     if localizedsum[i] == keysum:
-      print("| {} | 0 | - |".format(language))
+      print("| {} | 0 | - | 100% |".format(language))
     else:
-      print("| {} | {} | {} |".format(language, keysum - localizedsum[i], ", ".join(missing[i])))
+      print("| {} | {} | {} | {}% |".format(
+        language,
+        keysum - localizedsum[i],
+        ", ".join(missing[i]),
+        round(100 * localizedsum[i] / keysum)))
 
 
 if __name__ == "__main__":
