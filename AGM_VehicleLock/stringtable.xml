@@ -8,6 +8,7 @@
     <French>Déverrouiller le véhicule</French>
     <Polish>Odblokuj pojazd</Polish>
     <Czech>Odemknout vozidlo</Czech>
+    <Hungarian>Jármű nyitása</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Action_Lock">
     <English>Lock Vehicle</English>
@@ -16,6 +17,7 @@
     <French>Verrouiller le véhicule</French>
     <Polish>Zablokuj pojazd</Polish>
     <Czech>Zamknout vozidlo</Czech>
+    <Hungarian>Jármű zárása</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Action_Lockpick">
     <English>Lockpick Vehicle</English>
@@ -24,6 +26,7 @@
     <French>Crocheter le véhicule</French>
     <Polish>Otwórz zamek</Polish>
     <Czech>Vypáčit vozidlo</Czech>
+    <Hungarian>Jármű feltörése</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Action_LockpickInUse">
     <English>Picking Lock....</English>
@@ -32,6 +35,7 @@
     <French>Crochetage...</French>
     <Polish>Otwieranie zamka...</Polish>
     <Czech>Páčim vozidlo...</Czech>
+    <Hungarian>Feltörés...</Hungarian>
   </Key>
 
   <Key ID="STR_AGM_Vehicle_Item_Custom_Description">
@@ -41,6 +45,7 @@
     <French>Une clé propre à un seul véhicule.</French>
     <Polish>Unikatowy klucz który otworzy konkretny pojazd.</Polish>
     <Czech>Vlastní klíč, který otevře konkrétní vozidlo.</Czech>
+    <Hungarian>Kulcs egy járműhez</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Master_Description">
     <English>A Master Key will open any lock, no matter what!</English>
@@ -49,6 +54,7 @@
     <French>Un passe-partout qui ouvrira n'importe quelle serrure.</French>
     <Polish>Uniwersalny klucz który otworzy każdy zamek.</Polish>
     <Czech>Hlavní klíč otevře libovolný zámek, bez vyjímek!</Czech>
+    <Hungarian>Általános kulcs minden járműhez</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Lockpick_Description">
     <English>A lockpick set that can pick the locks of most vehicles.</English>
@@ -57,6 +63,7 @@
     <French>Un crochet qui ouvrira la plupart des véhicules.</French>
     <Polish>Zestaw wytrychów dzięki któremu można otworzyć zamki w większości pojazdów.</Polish>
     <Czech>Sada paklíčů, která dokáže odemknout zámky u většiny vozidel.</Czech>
+    <Hungarian>Álkulcs melyik minden járműt nyitni tud</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_West_Description">
     <English>A key that should open most WEST vehicles.</English>
@@ -65,6 +72,7 @@
     <French>Une clé qui ouvrira la plupart des véhicules WEST.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów ZACHODU.</Polish>
     <Czech>Klíč který by měl otevřít většinou Západních vozidel.</Czech>
+    <Hungarian>Általános kulcs WEST járművekhez</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_East_Description">
     <English>A key that should open most EAST vehicle.</English>
@@ -72,7 +80,7 @@
     <Spanish>Una llave que puede abrir la mayoría de vehículos orientales.</Spanish>
     <French>Une clé qui ouvrira la plupart des véhicules EAST.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów WSCHODU.</Polish>
-    <Czech>Klíč který by měl otevřít vetšinu Východních vozidel.</Czech>
+    <Hungarian>Általános kulcs EAST járművekhez</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Indp_Description">
     <English>A key that should open most INDEP vehicle.</English>
@@ -80,7 +88,7 @@
     <Spanish>Una llave que puede abrir la mayoría de vehículos independientes.</Spanish>
     <French>Une clé qui ouvrira la plupart des véhicules INDEP.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów INDFOR.</Polish>
-    <Czech>Klíč který by měl otevřít většinu Nezávislých vozidel.</Czech>
+    <Hungarian>Általános kulcs INDEPENDENT járművekhez</Hungarian>
   </Key>
   <Key ID="STR_AGM_Vehicle_Item_Civ_Description">
     <English>A key that should open most CIV vehicle.</English>
@@ -89,6 +97,7 @@
     <French>Une clé qui ouvrira la plupart des véhicules CIV.</French>
     <Polish>Klucz który powinien otworzyć większość pojazdów CYWILNYCH.</Polish>
     <Czech>Klíč který by měl otevřít většinu Civilních vozidel.</Czech>
+    <Hungarian>Általános kulcs CIVILIAN járművekhez</Hungarian>
   </Key>
 </Package>
 </Project>
