@@ -439,6 +439,7 @@
       <Spanish>Desconocido</Spanish>
       <Polish>Nieznany</Polish>
       <Czech>Neznámý</Czech>
+      <Hungarian>Ismeretlen</Hungarian>
     </Key>
 
     <Key ID="STR_AGM_Core_NoVoice">
@@ -446,6 +447,7 @@
       <German>Keine Stimme</German>
       <Spanish>Sin voz</Spanish>
       <Czech>Žádný hlas</Czech>
+      <Hungarian>Nincs hang</Hungarian>
     </Key>
   </Package>
 </Project>

@@ -15,7 +15,7 @@
     </Key>
     <Key ID="STR_AGM_Captives_ReleaseCaptive">
       <English>Free Prisoner</English>
-      <German>Gefangen freilassen</German>
+      <German>Gefangenen freilassen</German>
       <Spanish>Liberar prisionero</Spanish>
       <Polish>Wypuść więźnia</Polish>
       <French>Libérer le prisonnier</French>
@@ -64,6 +64,7 @@
       <French>Embarquer le prisonnier</French>
       <Polish>Załaduj więźnia</Polish>
       <Czech>Naložit zajatce</Czech>
+      <Hungarian>Fogoly berakása</Hungarian>
     </Key>
     <Key ID="STR_AGM_Captives_UnloadCaptive">
       <English>Unload Captive</English>
@@ -72,6 +73,7 @@
       <French>Débarquer le prisonnier</French>
       <Polish>Wyładuj więźnia</Polish>
       <Czech>Vyložit zajatce</Czech>
+      <Hungarian>Fogoly kivevése</Hungarian>
     </Key>
     <Key ID="STR_AGM_Captives_CableTie">
       <English>Cable Tie</English>
@@ -86,7 +88,7 @@
     </Key>
     <Key ID="STR_AGM_Captives_CableTieDescription">
       <English>Cable ties that allow you to restrain prisoners.</English>
-      <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
+      <German>Kabelbinder ermöglichen es, Gefangene zu fesseln.</German>
       <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
       <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
       <French>Les Serflex permettent de menotter les prisonniers.</French>

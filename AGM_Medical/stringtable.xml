@@ -853,11 +853,13 @@
       <English>Alternative Pain Effect</English>
       <German>Alternativer Schmerzeffekt</German>
       <Spanish>Efecto de dolor alternativo</Spanish>
+      <Hungarian>Alternativ fájdalomeffektus</Hungarian>
     </Key>
     <Key ID="STR_AGM_Medical_NotInMEDEVAC">
       <English>This is not possible here.</English>
       <German>Das ist hier nicht möglich.</German>
       <Spanish>Esto no es posible aquí.</Spanish>
+      <Hungarian>Ezt nem lehet itten.</Hungarian>
     </Key>
   </Package>
 </Project>
