@@ -92,6 +92,7 @@
       <Polish>Prawy Shift</Polish>
       <French>Shift Droite</French>
       <Czech>Pravý Shift</Czech>
+      <Russian>Правый Shift</Russian>
       <Portuguese>Shift da Direita</Portuguese>
       <Hungarian>Jobb Shift</Hungarian>
       <Italian>Shift destro</Italian>
@@ -103,6 +104,7 @@
       <Polish>Prawy Ctrl</Polish>
       <French>Ctrl Droite</French>
       <Czech>Pravý Ctrl</Czech>
+      <Russian>Правый Ctrl</Russian>
       <Portuguese>Ctrl da Direita</Portuguese>
       <Hungarian>Jobb Ctrl</Hungarian>
       <Italian>Ctrl destro</Italian>
@@ -114,6 +116,7 @@
       <Polish>Prawy Alt</Polish>
       <French>Alt Droite</French>
       <Czech>Pravý Alt</Czech>
+      <Russian>Правый Alt</Russian>
       <Portuguese>Alt da Direita</Portuguese>
       <Hungarian>Alt Gr</Hungarian>
       <Italian>Alt Gr</Italian>
@@ -125,6 +128,7 @@
       <Polish>Domyślne</Polish>
       <French>Défaut</French>
       <Czech>Výchozí</Czech>
+      <Russian>По умолчанию</Russian>
       <Portuguese>Padrão</Portuguese>
       <Hungarian>Alapértelmezett</Hungarian>
       <Italian>Standard</Italian>
@@ -136,6 +140,7 @@
       <Polish>Brak</Polish>
       <French>Aucun</French>
       <Czech>Žádný</Czech>
+      <Russian>Не назначено</Russian>
       <Portuguese>Nenhuma</Portuguese>
       <Hungarian>Semmi</Hungarian>
       <Italian>Non assegnato</Italian>
@@ -147,6 +152,7 @@
       <Polish>2x %1</Polish>
       <French>2x %1</French>
       <Czech>2x %1</Czech>
+      <Russian>2x %1</Russian>
       <Portuguese>2x %1</Portuguese>
       <Hungarian>2x %1</Hungarian>
       <Italian>2x %1</Italian>
@@ -158,6 +164,7 @@
       <Polish>Przytrzymać %1</Polish>
       <French>Tenir %1</French>
       <Czech>Držet %1</Czech>
+      <Russian>Удерживая %1</Russian>
       <Portuguese>Segurar %1</Portuguese>
       <Hungarian>%1 Nyomvatartása</Hungarian>
       <Italian>Tieni premuto %1</Italian>
@@ -385,6 +392,7 @@
       <Spanish>Acción cancelada.</Spanish>
       <French>Action annulée.</French>
       <Polish>Przerwano czynność</Polish>
+      <Russian>Действие отменено.</Russian>
       <Portuguese>Ação cancelada.</Portuguese>
       <Czech>Akce přerušena</Czech>
       <Hungarian>Művelet megszakítva.</Hungarian>
@@ -397,6 +405,7 @@
       <Polish>&lt; Poprzedni</Polish>
       <French>&lt; Préc</French>
       <Hungarian>&lt; Előző</Hungarian>
+      <Russian>&lt; Пред.</Russian>      
       <Portuguese>&lt; Anterior</Portuguese>
       <Czech>&lt; Předchozí</Czech>
       <Italian>&lt; Prec</Italian>
@@ -408,6 +417,7 @@
       <Polish>Następny &gt;</Polish>
       <French>Suivant &gt;</French>
       <Hungarian>Következő &gt;</Hungarian>
+      <Russian>След. &gt;</Russian>
       <Portuguese>Próximo &gt;</Portuguese>
       <Czech>Další &gt;</Czech>
       <Italian>Prossimo &gt;</Italian>
@@ -419,6 +429,7 @@
       <Czech>[AGM] Ostatní předměty</Czech>
       <Polish>[AGM] Różne przedmioty</Polish>
       <French>[AGM] Objets divers</French>
+      <Russian>[AGM] Различные предметы</Russian>
       <Portuguese>[AGM] Itens diversos</Portuguese>
       <Hungarian>[AGM] Egyéb tárgyak</Hungarian>
       <Italian>[AGM] Oggetti vari</Italian>
@@ -430,6 +441,7 @@
       <Czech>Vypnout velící menu</Czech>
       <Polish>Wyłącz menu dowodzenia</Polish>
       <Spanish>Desactivar menú de mando</Spanish>
+      <Russian>Выключить командное меню</Russian>
       <Hungarian>Parancsnoki menü kikapcsolása</Hungarian>
     </Key>
 
@@ -440,6 +452,7 @@
       <Polish>Nieznany</Polish>
       <Czech>Neznámý</Czech>
       <Hungarian>Ismeretlen</Hungarian>
+      <Russian>Неизвестно</Russian>
     </Key>
 
     <Key ID="STR_AGM_Core_NoVoice">
@@ -448,6 +461,7 @@
       <Spanish>Sin voz</Spanish>
       <Czech>Žádný hlas</Czech>
       <Hungarian>Nincs hang</Hungarian>
+      <Russian>Без голоса</Russian>
     </Key>
   </Package>
 </Project>
