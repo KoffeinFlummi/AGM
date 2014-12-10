@@ -433,6 +433,7 @@ class RscAGM_SelectAnItem {
       text = "";
     };
     class itemList:RscListBox {
+      onMouseButtonDblClick = "_this call AGM_Interaction_fnc_onSelectMenuDblClick";
       idc = 8866;
       x = X_OFFSET + 0.005;
       w = 0.59;

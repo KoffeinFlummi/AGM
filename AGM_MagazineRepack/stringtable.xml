@@ -18,7 +18,7 @@
       <German>Magazinauswahlmenü</German>
       <Spanish>Menú de selección de cargador</Spanish>
       <French>Sélectionner menu des chargeurs</French>
-      <Polish>Wybierz menu magazynków</Polish>
+      <Polish>Menu wyboru magazynków</Polish>
       <Czech>Zvolit Menu Zásobníků</Czech>
       <Italian>Seleziona Menù di Ricarica</Italian>
       <Portuguese>Menu de Seleção de Carregador</Portuguese>
@@ -60,7 +60,7 @@
     <Key ID="STR_AGM_MagazineRepack_RepackedMagazinesDetail">
       <English>%1 full mag(s) and %2 extra round(s)</English>
       <German>%1 volle(s) Magazin(e) und %2 übrig gebliebene Patrone(n)</German>
-      <Spanish>%1 cargador(es) completo y %2 bala(s) extra(s)</Spanish>
+      <Spanish>%1 cargador(es) completo(s) y %2 bala(s) extra(s)</Spanish>
       <French>%1 chargeur(s) plein(s) et %2 cartouche(s) en rab</French>
       <Polish>%1 pełnych magazynków i %2 dodatkowych naboi</Polish>
       <Czech>%1 plný zásobník(y) a %2 munice navíc</Czech>

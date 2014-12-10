@@ -100,7 +100,7 @@
       <English>Select Main Gun</English>
       <German>Hauptgeschütz auswählen</German>
       <Spanish>Seleccionar arma principal</Spanish>
-      <Polish>Wybierz główne działo</Polish>
+      <Polish>Wybierz główną broń</Polish>
       <French>Sélectionner l'Arme Principale</French>
       <Hungarian>Elsődleges Fegyver Kiválasztása</Hungarian>
       <Czech>Zvolit Hlavní Zbraň</Czech>
@@ -132,10 +132,18 @@
     <Key ID="STR_AGM_WeaponSelect_LoadGrenade">
       <English>Grenade %1</English>
       <German>Granate %1</German>
+      <Spanish>Granada %1</Spanish>
+      <Polish>Granat %1</Polish>
+      <Czech>Granát %1</Czech>
+      <Hungarian>Gránát Kiválasztása</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ReadyGrenade">
       <English>Ready Grenade</English>
       <German>Granate nehmen</German>
+      <Spanish>Granada lista</Spanish>
+      <Polish>Przygotuj granat</Polish>
+      <Czech>Odjištěný granát</Czech>
+      <Hungarian>Kész Gránát</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
@@ -173,8 +181,11 @@
     <Key ID="STR_AGM_WeaponSelect_NoGrenadesLeft">
       <English>No grenades left</English>
       <German>Keine Granaten übrig</German>
+      <Spanish>No quedan granadas</Spanish>
       <French>Plus de grenades</French>
       <Polish>Brak granatów</Polish>
+      <Czech>Žádné granáty</Czech>
+      <Hungarian>Nincs több gránát</Hungarian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
       <English>No frags left</English>
@@ -212,10 +223,11 @@
     <Key ID="STR_AGM_WeaponSelect_FireSmokeLauncher">
       <English>Fire Smoke Launcher</English>
       <German>Rauchwand abfeuern</German>
+      <Spanish>Disparar lanzador de humo</Spanish>
       <Czech>Kouřový odpalovač</Czech>
       <French>Tirer le lance-pots fumigènes</French>
       <Polish>Wystrzel granat dymny</Polish>
-      <Spanish>Disparar lanzador de humo</Spanish>
+      <Hungarian>Füst kilövése</Hungarian>
     </Key>
 
   </Package>

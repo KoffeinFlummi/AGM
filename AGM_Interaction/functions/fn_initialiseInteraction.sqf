@@ -54,7 +54,7 @@ if (_this select 2) then {
 		(uiNameSpace getVariable "AGM_Flow_Display") closeDisplay 0;
 		call AGM_Interaction_fnc_hideMouseHint;
 	};
-	if !(_subMenu) then {
+	if (!_subMenu || {isNull (findDisplay 1713999)}) then {
 		(findDisplay 1713999) closeDisplay 1;
 
 		(findDisplay 46) createDisplay "AGM_Interaction_Dialog";
@@ -111,9 +111,9 @@ if (_this select 2) then {
 	};
 
 	// Update Buttons
-	if (_subMenu) exitWith {};
+	terminate (missionNamespace getVariable ["AGM_Interaction_updateMenuHandle", scriptNull]);
 
-	0 spawn {
+	AGM_Interaction_updateMenuHandle = 0 spawn {
 		disableSerialization;
 		_dlgMenu = uiNamespace getVariable ["AGM_Interaction_Dialog", displayNull];
 		_ctrlTooltip = _dlgMenu displayCtrl 40;

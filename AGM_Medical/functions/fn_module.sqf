@@ -7,7 +7,7 @@
  * Whatever the module provides. (I dunno.)
  *
  * Return Value:
- * None 
+ * None
  */
 
 private ["_logic", "_units", "_activated"];
@@ -20,7 +20,9 @@ _activated = _this select 2;
 
 if !(_activated) exitWith {};
 
-AGM_Medical_Module = true;
+AGM_Medical_Module = True;
+
+AGM_Medical_MEDEVACTriggers = synchronizedObjects _logic;
 
 [_logic, "AGM_Medical_CoefDamage",                   "CoefDamage"                  ] call AGM_Core_fnc_readNumericParameterFromModule;
 [_logic, "AGM_Medical_CoefBleeding",                 "CoefBleeding"                ] call AGM_Core_fnc_readNumericParameterFromModule;
@@ -35,5 +37,7 @@ AGM_Medical_Module = true;
 [_logic, "AGM_Medical_SingleBandage",                "SingleBandage"               ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_AllowChatWhileUnconscious",    "AllowChatWhileUnconscious"   ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_EnableOverdosing",             "EnableOverdosing"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Medical_RequireMEDEVAC",               "RequireMEDEVAC"              ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Medical_AutomaticWakeup",              "AutomaticWakeup"             ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Medical Module Initialized.";

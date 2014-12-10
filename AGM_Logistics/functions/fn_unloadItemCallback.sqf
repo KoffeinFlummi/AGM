@@ -13,6 +13,9 @@ _vehicle setVariable [_itemHolder, _loadedItems, true];
 
 player allowDamage false;
 detach _item;
+_item enableSimulationGlobal true;
+_item hideObjectGlobal false;
+[_item, "{{_x reveal _this} forEach allUnits}", 2] call AGM_Core_fnc_execRemoteFnc;
 
 _position = getPosASL player findEmptyPosition [0, 4, typeOf _item];
 if (count _position == 0) then {_position = getPosASL player};

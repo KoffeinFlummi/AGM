@@ -41,7 +41,7 @@ _this spawn {
 
   _time = time + _time;
   waitUntil {
-    !dialog || {!alive player} || {time > _time}
+    !dialog || {!alive AGM_player} || {time > _time}
   };
 
   closeDialog 0;

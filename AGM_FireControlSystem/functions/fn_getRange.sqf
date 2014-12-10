@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Read laser distance measurement from engine and update compatible info elements. 
+ * 
+ * Argument:
+ * Nothing
+ * 
+ * Return value:
+ * Measured distance (Number)
+ */
 
 private ["_dlgRangefinder", "_range"];
 

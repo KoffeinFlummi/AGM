@@ -4,30 +4,27 @@
  * Unloads the wounded units from the vehicle.
  *
  * Arguments:
- * 0: The vehicle
+ * 0: The unit that does the unloading
+ * 1: The vehicle
  *
  * Return Value:
  * -
  */
 
- private ["_unit", "_vehicle"];
+ private ["_unit", "_vehicle", "_pos"];
 
-_vehicle = _this select 0;
+_unit = _this select 0;
+_vehicle = _this select 1;
 
 {
-  if (_x getVariable "AGM_Unconscious") then {
-    [-2, {
-      _unit = _this select 0;
-      _player = _this select 1;
-      _unit setPosATL [(getPos _player select 0) + (random 2) - 1, (getPos _player select 1) + (random 2) - 1, 0];
-      /*if (local _unit) then {
-        _unit spawn {
-          sleep 0.1;
-          _this enableSimulation false;
-        };
-      };*/
-      _unit switchMove "Unconscious";
-      _unit setVariable ["AGM_OriginalAnim", "amovppnemstpsnonwnondnon", true];
-    }, [_x, player]] call CBA_fnc_globalExecute;
+  if (_x getVariable ["AGM_isUnconscious", False]) then {
+    _pos = [
+      (getPos _unit select 0) + (random 2) - 1,
+      (getPos _unit select 1) + (random 2) - 1,
+      0
+    ];
+    // messy, but who cares?
+    [[_x, _vehicle, _unit, _pos], "{moveOut (_this select 0); unassignVehicle (_this select 0); waitUntil {vehicle (_this select 0) == (_this select 0)}; (_this select 0) setPosATL (_this select 3);}", _x] call AGM_Core_fnc_execRemoteFnc;
+    _x setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
   };
 } forEach crew _vehicle;

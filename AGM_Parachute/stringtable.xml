@@ -32,8 +32,11 @@
     <Key ID="STR_AGM_Parachute_NonSteerableParachute">
       <English>Non-Steerable Parachute</English>
       <German>Ungelenkter Fallschirm</German>
+      <Spanish>Paracaídas no dirigible</Spanish>
       <French>Parachute non manœuvrable</French>
       <Polish>Niesterowalny spadochron</Polish>
+      <Czech>Neříditelný padák</Czech>
+      <Hungarian>Irányithatatlan ejtőernyő</Hungarian>
     </Key>
   </Package>
 </Project>

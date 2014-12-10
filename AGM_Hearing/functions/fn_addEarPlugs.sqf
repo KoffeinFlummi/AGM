@@ -1,4 +1,14 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Called on unit initialization. Adds earplugs if the unit is equipped with either a really loud primary weapon or a rocket launcher.
+ * 
+ * Argument:
+ * 0: A Soldier (Object)
+ * 
+ * Return value:
+ * Nothing
+ */
 
 private ["_unit", "_launcher"];
 

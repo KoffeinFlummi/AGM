@@ -98,6 +98,24 @@
       <Hungarian>Mini-Spike rakétarendszer (légvédelmi)</Hungarian>
       <Italian>Lanciatore Mini-Spike (AA)</Italian>
     </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_Name">
+      <English>YABHON-R3</English>
+      <German>YABHON-R3</German>
+      <Spanish>YABHON-R3</Spanish>
+      <Polish>YABHON-R3</Polish>
+      <Czech>YABHON-R3</Czech>
+      <French>YABHON-R3</French>
+      <Russian>YABHON-R3</Russian>
+      <Portuguese>YABHON-R3</Portuguese>
+      <Hungarian>YABHON-R3</Hungarian>
+      <Italian>YABHON-R3</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_CAS_Name">
+      <English>YABHON-R3 (CAS)</English>
+      <German>YABHON-R3 (Luftnahunterstützung)</German>
+      <Spanish>YABHON-R3 (CAS)</Spanish>
+      <Czech>YABHON-R3 (CAS)</Czech>
+    </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
       <German>M-ATV</German>
@@ -701,6 +719,7 @@
     <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name">
       <English>CH-47I Chinook (unarmed)</English>
       <German>CH-47I Chinook (unbewaffnet)</German>
+      <Spanish>CH-47I Chinnok (Desarmado)</Spanish>
       <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
