@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="TopDownAttack">
     <Key ID="STR_AGM_ToggleTopDownAttack">
@@ -7,6 +8,7 @@
       <Spanish>Cambiar a ataque vertical</Spanish>
       <Hungarian>Fentröl-támadás kapcsolása</Hungarian>
       <Polish>Przełącznik trybu ataku</Polish>
+      <Russian>Переключить режим атаки</Russian>
     </Key>
   </Package>
 </Project>

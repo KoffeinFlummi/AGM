@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="SwitchUnits">
     <Key ID="STR_AGM_SwitchUnits_SwitchedUnit">
       <English>Switched unit</English>
       <German>Einheit gewechselt</German>
+      <Russian>Юнит переключен</Russian>
     </Key>
     <Key ID="STR_AGM_SwitchUnits_TooCloseToEnemy">
       <English>This unit is too close to the enemy.</English>
       <German>Diese Einheit ist zu nah am Feind.</German>
+      <Russian>Юнит слишком близок к противнику</Russian>
     </Key>
   </Package>
 </Project>
