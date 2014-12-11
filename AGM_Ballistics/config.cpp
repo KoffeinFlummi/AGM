@@ -52,7 +52,7 @@ AGM_20Rnd_762x51_Mag_AP
 
 class CfgPatches {
   class AGM_Ballistics {
-    units[] = {};
+    units[] = {"AGM_TargetWall"};
     weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
@@ -1119,6 +1119,7 @@ class CfgWeapons {
 
 class CfgVehicles {
   #include <UniformNerf.hpp>
+  #include <HelmetNerf.hpp>
 
   class NATO_Box_Base;
   class EAST_Box_Base;
@@ -1300,6 +1301,15 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_muzzle_mzls_L,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,2)
+    };
+  };
+
+  class Sign_F;
+  class AGM_TargetWall: Sign_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    class Eventhandlers {
+      init = "_this call compile preprocessFileLineNumbers '\AGM_Ballistics\scripts\initTargetWall.sqf'";
+      hitPart = "systemChat str _this";
     };
   };
 };
