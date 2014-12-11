@@ -28,6 +28,10 @@ if (isNil "_unit") then {
   _unit = 2;
 };
 
+if (!isNil "AGM_Debug" && {"remote" in AGM_Debug}) then {
+  diag_log text format ["AGM: AGM_Core_fnc_execRemoteFnc: %1 call %2 to: %3", _arguments, _function, _unit];
+};
+
 if (typeName _unit == "SCALAR") exitWith {
   switch (_unit) do {
     case 0 : {
