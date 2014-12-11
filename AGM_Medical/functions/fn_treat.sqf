@@ -36,17 +36,14 @@ if (_type in ["epipen", "bloodbag"] and
 // check MEDEVAC conditions
 _inTrigger = False;
 {
-  if ([_x, _target] call BIS_fnc_inTrigger) then {
-    _inTrigger = True;
-  };
+  if (_inTrigger) exitWith {};
+  _inTrigger = [_x, _target] call BIS_fnc_inTrigger;
 } forEach missionNamespace getVariable ["AGM_Medical_MEDEVACTriggers", []];
-if !(_inTrigger) then {
-  {
-    if (_target distance _x < 10) then {
-      _inTrigger = True;
-    };
-  } forEach missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []];
-};
+{
+  if (_inTrigger) exitWith {};
+  _inTrigger = _target distance _x < 10;
+} forEach missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []];
+
 if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]) and !_inTrigger) exitWith {
   if ([_unit] call AGM_Core_fnc_isPlayer) then {
     [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
