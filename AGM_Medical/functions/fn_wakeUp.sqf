@@ -34,14 +34,14 @@ _unit setVariable ["AGM_Unconscious", False, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", False, True];
 _unit setVariable ["AGM_canTreat", True, True];
 
+_unit setVariable ["tf_globalVolume", 1];
+_unit setVariable ["tf_voiceVolume", 1, True];
+_unit setVariable ["tf_unable_to_use_radio", False, True];
+
+_unit setVariable ["acre_sys_core_isDisabled", False, True];
+_unit setVariable ["acre_sys_core_globalVolume", 1];
+
 if (_unit == AGM_player) then {
-  AGM_player setVariable ["tf_globalVolume", 1];
-  AGM_player setVariable ["tf_voiceVolume", 1, True];
-  AGM_player setVariable ["tf_unable_to_use_radio", False, True];
-
-  AGM_player setVariable ["acre_sys_core_isDisabled", False, True];
-  AGM_player setVariable ["acre_sys_core_globalVolume", 1];
-
   [False] call AGM_Core_fnc_disableUserInput;
 };
 

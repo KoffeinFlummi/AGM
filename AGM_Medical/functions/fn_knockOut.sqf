@@ -33,14 +33,14 @@ _unit setVariable ["AGM_Unconscious", True, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", True, True];
 _unit setVariable ["AGM_canTreat", False, True];
 
+_unit setVariable ["tf_globalVolume", 0.4];
+_unit setVariable ["tf_voiceVolume", 0, True];
+_unit setVariable ["tf_unable_to_use_radio", True, True];
+
+_unit setVariable ["acre_sys_core_isDisabled", True, True];
+_unit setVariable ["acre_sys_core_globalVolume", 0.4];
+
 if (_unit == AGM_player) then {
-  _unit setVariable ["tf_globalVolume", 0.4];
-  _unit setVariable ["tf_voiceVolume", 0, True];
-  _unit setVariable ["tf_unable_to_use_radio", True, True];
-
-  _unit setVariable ["acre_sys_core_isDisabled", True, True];
-  _unit setVariable ["acre_sys_core_globalVolume", 0.4];
-
   if (visibleMap) then {openMap false};
   closeDialog 0;
   call AGM_Interaction_fnc_hideMenu;
