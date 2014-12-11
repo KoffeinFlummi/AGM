@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Vector">
     <Key ID="STR_AGM_Vector_VectorName">
@@ -24,7 +24,7 @@
       <Italian>Telemetro</Italian>
       <Hungarian>Távolságmérő</Hungarian>
       <Portuguese>Telêmetro</Portuguese>
-      <Russian>Лазерный дальномер</Russian>
+      <Russian>Дальномер</Russian>
     </Key>
     <Key ID="STR_AGM_Vector_AzimuthKey">
       <English>Vector - Azimuth Key</English>
@@ -36,6 +36,7 @@
       <Italian>Vector - Tasto Azimuth</Italian>
       <Portuguese>Vector - Tecla de Azimute</Portuguese>
       <Hungarian>Vector - Irányszög gomb</Hungarian>
+      <Russian>Vector – Азимут</Russian>
     </Key>
     <Key ID="STR_AGM_Vector_DistanceKey">
       <English>Vector - Distance Key</English>
@@ -47,6 +48,7 @@
       <Italian>Vecto - Tasto Distanza</Italian>
       <Portuguese>Vector - Tecla de Distância</Portuguese>
       <Hungarian>Vector - Távolság gomb</Hungarian>
+      <Russian>Vector – Расстояние</Russian>
     </Key>
   </Package>
 </Project>

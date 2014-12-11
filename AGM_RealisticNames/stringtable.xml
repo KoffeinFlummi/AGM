@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-11 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="RealisticNames">
     <Key ID="STR_AGM_RealisticNames_HMG_01_Name">
@@ -116,6 +116,7 @@
       <Spanish>YABHON-R3 (CAS)</Spanish>
       <Polish>YABHON-R3 (CAS)</Polish>
       <Czech>YABHON-R3 (CAS)</Czech>
+      <Russian>YABHON-R3 (штурмовик)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
@@ -722,6 +723,7 @@
       <German>CH-47I Chinook (unbewaffnet)</German>
       <Spanish>CH-47I Chinnok (Desarmado)</Spanish>
       <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
+      <Russian>CH-47I Chinook (невооруженный)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
       <English>A-10D Thunderbolt II</English>
