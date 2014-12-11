@@ -56,9 +56,9 @@ class CfgPatches {
     weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"TaoSensai", "commy2"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };

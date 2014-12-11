@@ -5,9 +5,9 @@ class CfgPatches {
     requiredVersion = 0.6;
     requiredAddons[] = {"AGM_Core", "AGM_Interaction"};
 
-    version = "0.99";
-    versionStr = "0.99";
-    versionAr[] = {0, 99, 0};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"PabstMirror"};
     authorUrl = "bourbonwarfare.com";
   };
