@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-20 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Scopes">
     <Key ID="STR_AGM_Scopes_AdjustUp">
@@ -11,6 +11,7 @@
       <Polish>Regulacja krzyża w pionie +</Polish>
       <Czech>Zvýšit náměr</Czech>
       <Spanish>Ajustar elevación arriba</Spanish>
+      <Russian>Вверх по вертикали</Russian>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustDown">
       <English>Adjust Elevation Down</English>
@@ -21,6 +22,7 @@
       <Polish>Regulacja krzyża w pionie -</Polish>
       <Czech>Snížit náměr</Czech>
       <Spanish>Ajustar elevación abajo</Spanish>
+      <Russian>Вниз по вертикали</Russian>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustRight">
       <English>Adjust Windage Right</English>
@@ -31,6 +33,7 @@
       <Polish>Regulacja krzyża w poziomie +</Polish>
       <Czech>Náměr doprava (vítr)</Czech>
       <Spanish>Ajustar deriva a la derecha</Spanish>
+      <Russian>Вправо на уровне</Russian>
     </Key>
     <Key ID="STR_AGM_Scopes_AdjustLeft">
       <English>Adjust Windage Left</English>
@@ -41,6 +44,7 @@
       <Polish>Regulacja krzyża w poziomie -</Polish>
       <Czech>Náměr doleva (vítr)</Czech>
       <Spanish>Ajustar deriva a la izquierda</Spanish>
+      <Russian>Влево на уровне</Russian>
     </Key>
   </Package>
 </Project>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-11-03 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Parachute">
     <Key ID="STR_AGM_Parachute_showAltimeter">
@@ -10,6 +10,7 @@
       <Polish>Wysokościomierz</Polish>
       <Spanish>Altímetro</Spanish>
       <Hungarian>Magasságmérő</Hungarian>
+      <Russian>Высотомер</Russian>
     </Key>
     <Key ID="STR_AGM_Parachute_AltimeterDisplayName">
       <English>Altimeter Watch</English>
@@ -19,6 +20,7 @@
       <Polish>Zegarek z wysokościomierzem</Polish>
       <Spanish>Reloj altímetro</Spanish>
       <Hungarian>Magasságmérő</Hungarian>
+      <Russian>Часы с высотомером</Russian>
     </Key>
     <Key ID="STR_AGM_Parachute_AltimeterDescription">
       <English>Used to show height, descent rate and the time.</English>
@@ -28,6 +30,7 @@
       <Polish>Używany przez spadochroniarzy, pokazuje wysokość, prędkość opadania oraz czas.</Polish>
       <Spanish>Utilizado para mostrar altura, tasa de descenso y hora.</Spanish>
       <Hungarian>Mutatja a magasságot, zuhanás sebességét és az időt.</Hungarian>
+      <Russian>Используется для определения высоты, скорости снижения и времени.</Russian>
     </Key>
     <Key ID="STR_AGM_Parachute_NonSteerableParachute">
       <English>Non-Steerable Parachute</English>
@@ -37,6 +40,7 @@
       <Polish>Niesterowalny spadochron</Polish>
       <Czech>Neříditelný padák</Czech>
       <Hungarian>Irányithatatlan ejtőernyő</Hungarian>
+      <Russian>Неуправляемый парашют</Russian>
     </Key>
   </Package>
 </Project>
