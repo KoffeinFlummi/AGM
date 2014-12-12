@@ -15,7 +15,8 @@
 
 #define LEGDAMAGETRESHOLD1 1
 #define LEGDAMAGETRESHOLD2 1.7
-#define ARMDAMAGETRESHOLD 1.7
+#define ARMDAMAGETRESHOLD1 1
+#define ARMDAMAGETRESHOLD2 1.7
 
 private ["_unit", "_legdamage", "_armdamage", "_damagesum"];
 
@@ -26,14 +27,19 @@ _armdamage = _this select 2;
 // Leg Damage
 // lightly wounded, only limit walking speed (forceWalk is for suckers)
 if (_legdamage >= LEGDAMAGETRESHOLD1) then {
-  _unit setHitPointDamage ["HitLegs", 1];
+  if (_unit getHitPointDamage "HitLegs" != 1) then {_unit setHitPointDamage ["HitLegs", 1]};
 } else {
-  _unit setHitPointDamage ["HitLegs", 0];
+  if (_unit getHitPointDamage "HitLegs" != 0) then {_unit setHitPointDamage ["HitLegs", 0]};
 };
 // @ŧodo: force prone for completely fucked up legs.
 
 // Arm Damage
-_unit setHitPointDamage ["HitHands", 0];
+// fx only
+if (_armdamage >= ARMDAMAGETRESHOLD1) then {
+  if (_unit getHitPointDamage "HitHands" != 1) then {_unit setHitPointDamage ["HitHands", 1]};
+} else {
+  if (_unit getHitPointDamage "HitHands" != 0) then {_unit setHitPointDamage ["HitHands", 0]};
+};
 
 // remove leftover structural damage if unit is already fully healed
 if (count _this > 3 and _this select 3) then {

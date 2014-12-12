@@ -1309,7 +1309,7 @@ class CfgVehicles {
     author = "$STR_AGM_Core_AGMTeam";
     class Eventhandlers {
       init = "_this call compile preprocessFileLineNumbers '\AGM_Ballistics\scripts\initTargetWall.sqf'";
-      hitPart = "systemChat str _this";
+      //hitPart = "systemChat str _this";
     };
   };
 };

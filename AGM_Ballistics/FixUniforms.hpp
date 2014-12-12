@@ -1,230 +1,214 @@
 
-// INTEGER
-#define ARMOR_BASE            2
-#define ARMORSTRUCTURAL_BASE  5
-
-// INTEGER
-#define ARMOR_HEAD            2
-#define ARMOR_BODY            5
-#define ARMOR_HANDS           3
-#define ARMOR_LEGS            3
-
-// FLOAT, 0-1
-#define PASSTHROUGH_HEAD      1
-#define PASSTHROUGH_BODY      1
-#define PASSTHROUGH_HANDS     1
-#define PASSTHROUGH_LEGS      1
-
 class Man;
 class CAManBase: Man {
   class HitPoints {
     class HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*radius = 0.1;
+      /*armor = 1;
+      passThrough = 1;
+      radius = 0.1;
       explosionShielding = 0.5;
       minimalHit = 0;*/
     };
 
     class HitBody {
-      armor = ARMOR_BODY; //1;
-      passThrough = PASSTHROUGH_BODY; //1;
-      /*radius = 0.15;
+      /*armor = 1;
+      passThrough = 1;
+      radius = 0.15;
       explosionShielding = 10;
       minimalHit = 0;*/
     };
 
     class HitHands {
-      armor = ARMOR_HANDS; //1;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*radius = 0.08;
+      /*armor = 1;
+      passThrough = 1;
+      radius = 0.08;
       explosionShielding = 1;
       minimalHit = 0;*/
     };
 
     class HitLegs {
-      armor = ARMOR_LEGS; //1;
-      passThrough = PASSTHROUGH_LEGS; //1;
-      /*radius = 0.1;
+      /*armor = 1;
+      passThrough = 1;
+      radius = 0.1;
       explosionShielding = 1;
       minimalHit = 0;*/
     };
   };
 
-  armor = ARMOR_BASE; //2;
-  armorStructural = ARMORSTRUCTURAL_BASE; //5;
+  /*armor = 2;
+  armorStructural = 5;*/
 };
 
 class Civilian: CAManBase {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 };
 
-class Civilian_F: Civilian {};
-class C_man_1: Civilian_F {};
+/*class Civilian_F: Civilian {};
+class C_man_1: Civilian_F {};*/
 
 class SoldierWB: CAManBase {};
 class SoldierEB: CAManBase {};
 class SoldierGB: CAManBase {};
 
 class B_Soldier_base_F: SoldierWB {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
   };
 
-  armor = ARMOR_BASE; //2;
-  armorStructural = ARMORSTRUCTURAL_BASE; //5;
+  armor = 2;
+  armorStructural = 5;*/
 };
 
 class B_Soldier_02_f: B_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //1;
+      armor = 1;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //1;
+      armor = 1;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 
-  armorStructural = ARMORSTRUCTURAL_BASE; //7;
+  armorStructural = 5; //7;
 };
 
 class B_Soldier_03_f: B_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //1;
+      armor = 1;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 
-  armorStructural = ARMORSTRUCTURAL_BASE; //7;
+  armorStructural = 5; //7;
 };
 
 class B_Soldier_04_f: B_Soldier_base_F {
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      /*armor = 2;*/
+      passThrough = 1; //0.5;
       /*explosionShielding = 2.4;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //0.5;
+      armor = 2; //8;
+      passThrough = 1; //0.5;
       /*explosionShielding = 1.2;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //0.5;
+      armor = 2; //8;
+      passThrough = 1; //0.5;
       /*explosionShielding = 1.2;*/
     };
   };
 };
 
 class B_Soldier_05_f: B_Soldier_base_F {
-  armorStructural = ARMORSTRUCTURAL_BASE; //3;
+  armorStructural = 5; //3;
 
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      armor = 3; //2;
+      passThrough = 1; //0.5;
       /*explosionShielding = 2.4;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*explosionShielding = 1.2;*/
+      armor = 3; //8;
+      /*passThrough = 1;
+      explosionShielding = 1.2;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //1;
-      /*explosionShielding = 1.2;*/
+      armor = 3; //8;
+      /*passThrough = 1;
+      explosionShielding = 1.2;*/
     };
   };
 };
 
 class B_Soldier_diver_base_F: B_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //2;
+      armor = 2;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 };
 
 // these appear to be broken, remnants from A2?
@@ -297,289 +281,289 @@ class C_man_pilot_F: C_man_1 {
 };*/
 
 class I_Soldier_base_F: SoldierGB {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 
-  armor = ARMOR_BASE; //2;
-  armorStructural = ARMORSTRUCTURAL_BASE; //7;
+  /*armor = 2;*/
+  armorStructural = 5; //7;
 };
 
 class I_Soldier_02_F: I_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
+      armor = 1;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //1;
+      armor = 1;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 };
 
 class I_Soldier_03_F: I_Soldier_base_F {
-  armorStructural = ARMORSTRUCTURAL_BASE; //5;
+  /*armorStructural = 5;*/
 
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      /*armor = 2;*/
+      passThrough = 1; //0.5;
       /*explosionShielding = 2.4;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //0.5;
+      armor = 2; //8;
+      passThrough = 1; //0.5;
       /*explosionShielding = 1.2;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //0.5;
+      armor = 2; //8;
+      passThrough = 1; //0.5;
       /*explosionShielding = 1.2;*/
     };
   };
 };
 
 class I_Soldier_04_F: I_Soldier_base_F {
-  armorStructural = ARMORSTRUCTURAL_BASE; //3;
+  armorStructural = 5; //3;
 
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      armor = 3; //2;
+      passThrough = 1; //0.5;
       /*explosionShielding = 2.4;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*explosionShielding = 1.2;*/
+      armor = 3; //8;
+      /*passThrough = 1;
+      explosionShielding = 1.2;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //1;
-      /*explosionShielding = 1.2;*/
+      armor = 3; //8;
+      /*passThrough = 1;
+      explosionShielding = 1.2;*/
     };
   };
 };
 
 class I_Soldier_diver_base_F: I_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //2;
+      armor = 2;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 };
 
 class O_Soldier_base_F: SoldierEB {
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //6;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      armor = 4; //6;
+      passThrough = 0.75; //0.5;
       /*explosionShielding = 1.5;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //0.5;
+      armor = 4; //8;
+      passThrough = 0.75; //0.5;
       /*explosionShielding = 0.8;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //0.5;
+      armor = 4; //8;
+      passThrough = 0.75; //0.5;
       /*explosionShielding = 0.8;*/
     };
   };
 
-  armor = ARMOR_BASE; //2;
-  armorStructural = ARMORSTRUCTURAL_BASE; //5;
+  /*armor = 2;
+  armorStructural = 5;*/
 };
 
 class O_officer_F: O_Soldier_base_F {
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //1;
-      /*explosionShielding = 10;*/
+      /*armor = 2;
+      passThrough = 1;
+      explosionShielding = 10;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*explosionShielding = 1;*/
+      /*armor = 2;
+      passThrough = 1;
+      explosionShielding = 1;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //0.5;
+      armor = 2; //8;
+      passThrough = 1; //0.5;
       /*explosionShielding = 1;*/
     };
   };
 };
 
 class O_Soldier_02_F: O_Soldier_base_F {
-  armorStructural = ARMORSTRUCTURAL_BASE; //3;
+  armorStructural = 5; //3;
 
   class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      /*armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;*/
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //6;
-      passThrough = PASSTHROUGH_BODY; //0.5;
+      armor = 4; //6;
+      passThrough = 0.75; //0.5;
       /*explosionShielding = 1.5;*/
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //8;
-      passThrough = PASSTHROUGH_HANDS; //1;
+      armor = 4; //8;
+      passThrough = 0.75; //1;
       /*explosionShielding = 0.8;*/
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //8;
-      passThrough = PASSTHROUGH_LEGS; //1;
+      armor = 4; //8;
+      passThrough = 0.75; //1;
       /*explosionShielding = 0.8;*/
     };
   };
 };
 
 class O_Soldier_diver_base_F: O_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //2;
+      armor = 2;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
+      armor = 2;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
+      armor = 2;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
+      armor = 2;
     };
-  };
+  };*/
 };
 
 class O_Soldier_VR_F: O_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //1;
-      /*explosionShielding = 10;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 10;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*explosionShielding = 1;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 1;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
-      passThrough = PASSTHROUGH_LEGS; //1;
-      /*explosionShielding = 1;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 1;
     };
-  };
+  };*/
 };
 
 class O_Protagonist_VR_F: O_Soldier_base_F {
-  class HitPoints: HitPoints {
+  /*class HitPoints: HitPoints {
     class HitHead: HitHead {
-      armor = ARMOR_HEAD; //1;
-      passThrough = PASSTHROUGH_HEAD; //1;
-      /*explosionShielding = 0.5;*/
+      armor = 1;
+      passThrough = 1;
+      explosionShielding = 0.5;
     };
 
     class HitBody: HitBody {
-      armor = ARMOR_BODY; //2;
-      passThrough = PASSTHROUGH_BODY; //1;
-      /*explosionShielding = 10;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 10;
     };
 
     class HitHands: HitHands {
-      armor = ARMOR_HANDS; //2;
-      passThrough = PASSTHROUGH_HANDS; //1;
-      /*explosionShielding = 1;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 1;
     };
 
     class HitLegs: HitLegs {
-      armor = ARMOR_LEGS; //2;
-      passThrough = PASSTHROUGH_LEGS; //1;
-      /*explosionShielding = 1;*/
+      armor = 2;
+      passThrough = 1;
+      explosionShielding = 1;
     };
-  };
+  };*/
 };

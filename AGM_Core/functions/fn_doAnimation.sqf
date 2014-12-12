@@ -22,6 +22,11 @@ _animation = _this select 1;
 _priority = _this select 2;
 _force = False;
 
+// no animation given
+if (isNil "_animation") exitWith {
+  diag_log format ["[AGM] ERROR: No animation specified in %1", _fnc_scriptNameParent];
+};
+
 if (isNil "_priority") then {
   _priority = 0;
 };
