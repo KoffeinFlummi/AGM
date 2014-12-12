@@ -1104,7 +1104,7 @@ class CfgWeapons {
 
   /* Vests */
 
-  #include <VestNerf.hpp>
+  #include <FixVests.hpp>
 };
 
 #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
@@ -1118,8 +1118,8 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
-  #include <UniformNerf.hpp>
-  #include <HelmetNerf.hpp>
+  #include <FixUniforms.hpp>
+  #include <FixHelmets.hpp>
 
   class NATO_Box_Base;
   class EAST_Box_Base;

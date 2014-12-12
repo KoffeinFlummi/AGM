@@ -156,7 +156,7 @@ class CfgVehicles {
         visual = "injury_body";
       };
       class HitLeftArm {
-        armor = 2;
+        armor = 3; //2;
         explosionShielding = 1.2; //1;
         material = -1;
         minimalHit = 0;
@@ -169,7 +169,7 @@ class CfgVehicles {
         name = "hand_r";
       };
       class HitLeftLeg {
-        armor = 2;
+        armor = 3; //2;
         explosionShielding = 1.2; //1;
         material = -1;
         minimalHit = 0;
