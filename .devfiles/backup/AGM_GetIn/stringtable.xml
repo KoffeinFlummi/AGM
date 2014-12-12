@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-11-03 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-12 -->
 <Project name="AGM">
   <Package name="GetIn">
     <Key ID="STR_AGM_GetInVehicle">
@@ -12,6 +12,7 @@
       <Italian>Sali &gt;&gt;</Italian>
       <Portuguese>Entrar &gt;&gt;</Portuguese>
       <Hungarian>Beszállás &gt;&gt;</Hungarian>
+      <Russian>Сесть за &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDriver">
       <English>Get in as Driver</English>
@@ -23,6 +24,7 @@
       <Italian>Sali come Guidatore</Italian>
       <Portuguese>Entrar como Motorista</Portuguese>
       <Hungarian>Beszállás vezetőként</Hungarian>
+      <Russian>За водителя</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsGunner">
       <English>Get in as Gunner</English>
@@ -34,6 +36,7 @@
       <Italian>Sali come Mitragliere</Italian>
       <Portuguese>Entrar como Atirador</Portuguese>
       <Hungarian>Beszállás lövészként</Hungarian>
+      <Russian>За стрелка</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsCommander">
       <English>Get in as Commander</English>
@@ -45,6 +48,7 @@
       <Italian>Sali come Comandante</Italian>
       <Portuguese>Entrar como Comandante</Portuguese>
       <Hungarian>Beszállás parancsnokként</Hungarian>
+      <Russian>За командира</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsLoader">
       <English>Get in as Loader</English>
@@ -56,6 +60,7 @@
       <Italian>Sali come Servente</Italian>
       <Portuguese>Entrar como Carregador</Portuguese>
       <Hungarian>Beszállás töltőkezelőként</Hungarian>
+      <Russian>За заряжающего</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsPilot">
       <English>Get in as Pilot</English>
@@ -67,6 +72,7 @@
       <Italian>Sali come Pilota</Italian>
       <Portuguese>Entrar como Piloto</Portuguese>
       <Hungarian>Beszállás pilótaként</Hungarian>
+      <Russian>За пилота</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerLeft">
       <English>Get in as Door gunner (left)</English>
@@ -78,6 +84,7 @@
       <Italian>Sali come Mitragliere (sinistro)</Italian>
       <Portuguese>Entrar como Atirador da Porta (esquerda)</Portuguese>
       <Hungarian>Beszállás ajtólövészként (bal oldal)</Hungarian>
+      <Russian>За пулемёт (слева)</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsDoorGunnerRight">
       <English>Get in as Doorgunner (right)</English>
@@ -89,6 +96,7 @@
       <Italian>Sali come Mitragliere (destro)</Italian>
       <Portuguese>Entrar como Atirador da Porta (direita)</Portuguese>
       <Hungarian>Beszállás ajtólövészként (jobb oldal)</Hungarian>
+      <Russian>За пулемёт (справа)</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsCargo">
       <English>Get in as Cargo</English>
@@ -100,6 +108,7 @@
       <Italian>Sali sul sedile posteriore</Italian>
       <Portuguese>Entrar como Passageiro</Portuguese>
       <Hungarian>Beszállás hátulra</Hungarian>
+      <Russian>За пассажира</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsCoDriver">
       <English>Get in as Co-driver</English>
@@ -111,6 +120,7 @@
       <Italian>Sali come Copilota</Italian>
       <Portuguese>Entrar como Copiloto</Portuguese>
       <Hungarian>Beszállás másodvezetőként</Hungarian>
+      <Russian>За штурмана</Russian>
     </Key>
     <Key ID="STR_AGM_GetInVehicleAsCoPilot">
       <English>Get in as Co-pilot</English>
@@ -120,10 +130,12 @@
       <Spanish>Entrar como copiloto</Spanish>
       <Hungarian>Beszállás másodpilótaként</Hungarian>
       <French>Embarquer (Co-pilote)</French>
+      <Russian>За второго пилота</Russian>
     </Key>
     <Key ID="STR_AGM_MoveTo">
       <English>Move to &gt;&gt;</English>
       <German>Wechsel zu &gt;&gt;</German>
+      <Russian>Пересесть на &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToDriver">
       <English>Move to Driver</English>
@@ -135,6 +147,7 @@
       <Italian>Spostati come Guidatore</Italian>
       <Portuguese>Mudar para Motorista</Portuguese>
       <Hungarian>Átülés sofőrnek</Hungarian>
+      <Russian>Место водителя</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToGunner">
       <English>Move to Gunner</English>
@@ -146,6 +159,7 @@
       <Italian>Spostati come Mitragliere</Italian>
       <Portuguese>Mudar para Atirador</Portuguese>
       <Hungarian>Átülés lövésznek</Hungarian>
+      <Russian>Место стрелка</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToCommander">
       <English>Move to Commander</English>
@@ -157,6 +171,7 @@
       <Italian>Spostati come Comandante</Italian>
       <Portuguese>Mudar para Comandante</Portuguese>
       <Hungarian>Átülés parancsnoknak</Hungarian>
+      <Russian>Место командира</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToLoader">
       <English>Move to Loader</English>
@@ -168,6 +183,7 @@
       <Italian>Spostati come Servente</Italian>
       <Portuguese>Mudar para Carregador</Portuguese>
       <Hungarian>Átülés töltőkezelőnek</Hungarian>
+      <Russian>Место заряжающего</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToPilot">
       <English>Move to Pilot</English>
@@ -179,6 +195,7 @@
       <Italian>Spostati come Pilota</Italian>
       <Portuguese>Mudar para Piloto</Portuguese>
       <Hungarian>Átülés pilótának</Hungarian>
+      <Russian>Место пилота</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerLeft">
       <English>Move to Door gunner (left)</English>
@@ -190,6 +207,7 @@
       <Italian>Spostati come Mitragliere (sinistro)</Italian>
       <Portuguese>Mudar para Atirador da Porta (esquerda)</Portuguese>
       <Hungarian>Átülés ajtólövésznek (bal oldal)</Hungarian>
+      <Russian>На пулемёт (слева)</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToDoorGunnerRight">
       <English>Move to Door gunner (right)</English>
@@ -201,6 +219,7 @@
       <Italian>Spostati come Mitragliere (destro)</Italian>
       <Portuguese>Mudar para Atirador da Porta (direita)</Portuguese>
       <Hungarian>Átülés ajtólövésznek (jobb oldal)</Hungarian>
+      <Russian>На  пулемёт (справа)</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToCargo">
       <English>Move to Cargo</English>
@@ -212,6 +231,7 @@
       <Italian>Spostati sul sedile posteriore</Italian>
       <Portuguese>Mudar para Passageiro</Portuguese>
       <Hungarian>Átülés hátulra</Hungarian>
+      <Russian>Место пассажира</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToCoDriver">
       <English>Move to Co-driver</English>
@@ -223,6 +243,7 @@
       <Italian>Spostati come Copilota</Italian>
       <Portuguese>Mudar para Copiloto</Portuguese>
       <Hungarian>Átülés másodvezetőnek</Hungarian>
+      <Russian>Место штурмана</Russian>
     </Key>
     <Key ID="STR_AGM_MoveToCoPilot">
       <English>Move to Co-pilot</English>
@@ -232,6 +253,7 @@
       <Spanish>Mover a copiloto</Spanish>
       <Hungarian>Átülés másodpilótának</Hungarian>
       <French>Passer en Co-pilote</French>
+      <Russian>Место второго пилота</Russian>
     </Key>
   </Package>
 </Project>
