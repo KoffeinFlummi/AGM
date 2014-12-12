@@ -20,6 +20,10 @@ _arguments = _this select 0;
 _function = call compile (_this select 1);
 _id = _this select 2;
 
+if (!isNil "AGM_Debug" && {"remote" in AGM_Debug}) then {
+  diag_log text format ["[AGM]: execPersistentFnc: %1 call %2 id: %3", _arguments, _this select 1, _id];
+};
+
 // execute function on every machine
 _arguments call _function;
 
