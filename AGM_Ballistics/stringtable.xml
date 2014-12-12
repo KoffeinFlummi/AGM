@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-17 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-12 -->
 <Project name="AGM">
   <Package name="Ballistics">
     <!-- MX -->
@@ -13,6 +13,7 @@
       <Czech>6.5mm 30ks Svítící IR-DIM Zásobník</Czech>
       <Portuguese>Carregador de 30 projéteis traçantes IR-DIM de 6,5mm</Portuguese>
       <Italian>Caricatore 6.5mm 30Rnd Traccianti IR-DIM</Italian>
+      <Russian>30 трассирующих IR-DIM патронов калибра 6.5 мм</Russian>
     </Key>
     <Key ID="STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort">
       <English>6.5mm IR-DIM</English>
