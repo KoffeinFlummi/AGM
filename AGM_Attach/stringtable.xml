@@ -24,7 +24,7 @@
       <Portuguese>Acoplar</Portuguese>
       <Italian>Attacca</Italian>
       <Hungarian>Hozzácsatolás</Hungarian>
-      <Russian>Прицепить</Russian>
+      <Russian>Присоединить</Russian>
     </Key>
     <Key ID="STR_AGM_Attach_Detach">
       <English>Detach item</English>
@@ -36,7 +36,7 @@
       <Portuguese>Separar item</Portuguese>
       <Italian>Stacca l'oggetto</Italian>
       <Hungarian>Tárgy lecsatolása</Hungarian>
-      <Russian>Отцепить</Russian>
+      <Russian>Отсоединить</Russian>
     </Key>
     <Key ID="STR_AGM_Attach_IrStrobe_Attached">
       <English>IR Strobe Attached</English>
