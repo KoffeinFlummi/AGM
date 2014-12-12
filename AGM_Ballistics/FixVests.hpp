@@ -53,32 +53,32 @@ class V_BandollierB_oli: V_BandollierB_khk {
 class V_PlateCarrier1_rgr: Vest_NoCamo_Base {   // lite
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
-    mass = 80;
-    armor = 20;*/
+    mass = 80;*/
+    armor = 8; //20;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrier2_rgr: V_PlateCarrier1_rgr {  // heavy
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
-    mass = 100;
-    armor = 30;*/
+    mass = 100;*/
+    armor = 12; //30;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrier3_rgr: Vest_NoCamo_Base {   // heavy (us)
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
-    mass = 100;
-    armor = 30;*/
+    mass = 100;*/
+    armor = 12; //30;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierGL_rgr: Vest_NoCamo_Base {   // lite (gl)
   class ItemInfo: ItemInfo {
-    /*containerClass = "Supply140";*/
-    mass = 80; //100;
-    armor = 20; //100;
+    containerClass = "Supply160"; //"Supply140";
+    /*mass = 100;*/
+    armor = 8; //100;
     passThrough = 0.75; //0.7;
   };
 };
@@ -86,15 +86,15 @@ class V_PlateCarrier1_blk: Vest_Camo_Base {     // heavy (black)
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";*/
     mass = 100; //80;
-    armor = 30; //20;
+    armor = 12; //20;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierSpec_rgr: Vest_NoCamo_Base {  // lite (special)
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply100";
-    mass = 120;
-    armor = 40;*/
+    mass = 120;*/
+    armor = 16; //40;
     passThrough = 0.75; //0.1;
   };
 };
@@ -123,9 +123,9 @@ class V_Chestrig_oli: Vest_Camo_Base {
 class V_TacVest_khk: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply100";
-    mass = 40;
-    armor = 20;
-    passThrough = 1;*/
+    mass = 40;*/
+    armor = 8; //20;
+    /*passThrough = 1;*/
   };
 };
 class V_TacVest_brn: V_TacVest_khk {};
@@ -134,16 +134,16 @@ class V_TacVest_blk: V_TacVest_khk {};
 class V_TacVest_camo: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply100";
-    mass = 40;
-    armor = 20;
-    passThrough = 1;*/
+    mass = 40;*/
+    armor = 8; //20;
+    /*passThrough = 1;*/
   };
 };
 class V_TacVest_blk_POLICE: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply100";*/
     mass = 40; //60;
-    armor = 20; //100;
+    armor = 8; //100;
     passThrough = 1; //0.7;
   };
 };
@@ -151,16 +151,16 @@ class V_TacVestIR_blk: Vest_NoCamo_Base { // raven vest
   class ItemInfo: VestItem {
     /*containerClass = "Supply100";
     mass = 50;*/
-    armor = 20;
+    armor = 8; //20;
     passThrough = 0.85; //0.5;
   };
 };
 class V_TacVestCamo_khk: Vest_Camo_Base {
   class ItemInfo: VestItem {
     /*containerClass = "Supply100";
-    mass = 40;
-    armor = 20;
-    passThrough = 1;*/
+    mass = 40;*/
+    armor = 8; //20;
+    /*passThrough = 1;*/
   };
 };
 
@@ -218,24 +218,24 @@ class V_HarnessOSpec_gry: V_HarnessO_gry {
 class V_PlateCarrierIA1_dgtl: Vest_NoCamo_Base {  // lite
   class ItemInfo: VestItem {
     /*containerClass = "Supply120";
-    mass = 60;
-    armor = 20;*/
+    mass = 60;*/
+    armor = 8; //20;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierIA2_dgtl: V_PlateCarrierIA1_dgtl {  // heavy
   class ItemInfo: VestItem {
     /*containerClass = "Supply120";
-    mass = 80;
-    armor = 30;*/
+    mass = 80;*/
+    armor = 12; //30;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierIAGL_dgtl: V_PlateCarrierIA2_dgtl { // heavy (gl)
   class ItemInfo: VestItem {
-    /*containerClass = "Supply120";
-    mass = 80;*/
-    armor = 30; //100;
+    containerClass = "Supply140"; //"Supply120";
+    mass = 100; //80;
+    armor = 12; //100;
     passThrough = 0.75; //0.7;
   };
 };
@@ -257,23 +257,23 @@ class V_PlateCarrier_Kerry: V_PlateCarrier1_rgr {   // lighter
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
     mass = 80;*/
-    armor = 20; //30;
+    armor = 8; //30;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierL_CTRG: V_PlateCarrier1_rgr {   // lite
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
-    mass = 80;
-    armor = 20;*/
+    mass = 80;*/
+    armor = 8; //20;
     passThrough = 0.75; //0.5;
   };
 };
 class V_PlateCarrierH_CTRG: V_PlateCarrier2_rgr {   // heavy
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply140";
-    mass = 100;
-    armor = 30;*/
+    mass = 100;*/
+    armor = 12; //30;
     passThrough = 0.75; //0.5;
   };
 };
@@ -288,7 +288,7 @@ class V_Press_F: Vest_Camo_Base {
   class ItemInfo: ItemInfo {
     /*containerClass = "Supply40";
     mass = 20;*/
-    armor = 20; //0;  ?
+    armor = 8; //0;  ?
     /*passThrough = 1;*/
   };
 };

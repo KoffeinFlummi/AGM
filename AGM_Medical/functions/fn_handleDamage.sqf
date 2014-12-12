@@ -166,11 +166,6 @@ _unit spawn {
   };
 };
 
-// Body Damage
-if (_selectionName == "body") then {
-  _damage = _damage / 2;
-};
-
 // Leg & Arm Damage
 _legdamage = (_unit getHitPointDamage "HitLeftLeg") + (_unit getHitPointDamage "HitRightLeg");
 if (_selectionName == "leg_l") then {

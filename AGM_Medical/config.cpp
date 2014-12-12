@@ -531,22 +531,22 @@ class CfgVehicles {
 
       class HitLeftArm: HitLeftArm {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitRightArm: HitRightArm {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitLeftLeg: HitLeftLeg {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitRightLeg: HitRightLeg {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
     };
   };
@@ -560,22 +560,22 @@ class CfgVehicles {
 
       class HitLeftArm: HitLeftArm {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitRightArm: HitRightArm {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitLeftLeg: HitLeftLeg {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
 
       class HitRightLeg: HitRightLeg {
         armor = ARM_LEG_ARMOR_CSAT;
-        passThrough = 0.75;
+        passThrough = 0.85;
       };
     };
   };
