@@ -11,4 +11,4 @@
  * Bool: is unit a player?
  */
 
-_this select 0 == call AGM_Core_fnc_player
+isPlayer (_this select 0) || {_this select 0 == call AGM_Core_fnc_player}
