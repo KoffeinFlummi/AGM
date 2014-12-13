@@ -14,6 +14,8 @@ private ["_unit", "_speaker", "_id"];
 
 _unit = _this select 0;
 
+if (isNull _unit) exitWith {};
+
 _speaker = speaker _unit;
 if (_speaker == "AGM_NoVoice") exitWith {};
 
