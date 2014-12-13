@@ -16,7 +16,7 @@ while {count (itemsWithMagazines _unit) > count (itemsWithMagazines _unit - ["Fi
   _unit removeItem "FirstAidKit";
   _unit addItem "AGM_Bandage";
   _unit addItem "AGM_Bandage";
-  _unit addItemToBackpack "AGM_Morphine";
+  _unit addItem "AGM_Morphine";
 };
 while {count (itemsWithMagazines _unit) > count (itemsWithMagazines _unit - ["Medikit"])} do {
   _unit removeItem "Medikit";
