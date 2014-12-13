@@ -640,5 +640,10 @@
       <Hungarian>Tolás</Hungarian>
       <Russian>Толкать</Russian>
     </Key>
+
+    <Key ID="STR_AGM_Interaction_Interact">
+      <English>Interact</English>
+      <German>Interagiere</German>
+    </Key>
   </Package>
 </Project>
