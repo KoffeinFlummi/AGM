@@ -45,7 +45,7 @@ class CfgVehicles {
     function = "AGM_SwitchUnits_fnc_module";
     scope = 2;
     isGlobal = 1;
-    //icon = "\AGM_SwitchUnits\UI\IconSwitchUnits_ca.paa";
+    icon = "\AGM_SwitchUnits\UI\IconSwitchUnits_ca.paa";
     class Arguments {
       class SwitchToWest {
         displayName = "Switch to West?";
