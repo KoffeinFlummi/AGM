@@ -90,7 +90,7 @@ class CfgVehicles {
     function = "AGM_NameTags_fnc_moduleNameTags";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_NameTags\UI\IconInteraction_ca.paa";
+    icon = "\AGM_NameTags\UI\IconNameTags_ca.paa";
     class Arguments {
       class PlayerNamesViewDistance {
         displayName = "Player Names View Dist.";
