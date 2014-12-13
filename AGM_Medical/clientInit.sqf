@@ -88,7 +88,7 @@ AGM_Pain_CC ppEffectCommit 0;
       };
     } else {
       AGM_Pain_CC ppEffectEnable False;
-      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0 && {alive AGM_player}) then {
+      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0.05 && {alive AGM_player}) then {
         AGM_Pain_CA ppEffectEnable True;
         AGM_Pain_CA ppEffectAdjust [0.035 * _strength, 0.035 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
@@ -98,7 +98,7 @@ AGM_Pain_CC ppEffectCommit 0;
         sleep 0.15;
       } else {
         AGM_Pain_CA ppEffectEnable False;
-        sleep 1;
+        sleep 0.75;
       };
     };
 
