@@ -5,14 +5,7 @@
   (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
-0 spawn {
-  waitUntil {time > 0};
-  {
-    if (typeName _x == "ARRAY") then {
-      (_x select 0) call (_x select 1);
-    };
-  } forEach (missionNamespace getVariable ["AGM_Core_persistentFnc", []]);
-};
+[missionNamespace] call AGM_Core_fnc_executePersistent;
 
 // check previous version number from profile
 _currentVersion = getText (configFile >> "CfgPatches" >> "AGM_Core" >> "version");

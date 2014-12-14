@@ -535,6 +535,7 @@ class CfgFunctions {
       class endRadioTransmission;
       class execPersistentFnc;
       class execRemoteFnc;
+      class executePersistent;
       class filter;
       class fixLoweredRifleAnimation;
       class getCaptivityStatus;
@@ -672,6 +673,14 @@ class Extended_PostInit_EventHandlers {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
     clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
+  };
+};
+
+class Extended_InitPost_EventHandlers {
+  class All {
+    class AGM_SetName2 {
+      init = "[_this select 0] call AGM_Core_fnc_executePersistent;";
+    };
   };
 };
 
