@@ -560,6 +560,7 @@ class CfgFunctions {
       class getTurretsOther;
       class getVehicleCargo;
       class getVehicleCodriver;
+      class getVehicleCrew;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
