@@ -8,7 +8,7 @@ Description:
 
 Parameters:
   0: OBJECT - Unit
-  
+
 Returns:
   ARRAY(of strings) - Reason why the unit is force walking
 

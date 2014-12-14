@@ -11,7 +11,7 @@ Parameters:
   0: OBJECT - Unit
   1: STRING - Reason for forcing walking
   2: BOOL - Is the reason still valid.  True to force walk, false to remove restriction.
-  
+
 Returns:
   None
 
