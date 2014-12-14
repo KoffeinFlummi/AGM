@@ -25,7 +25,6 @@ class CfgFunctions {
 
 class CfgVehicles {
   class B_UAV_01_F;
-  //class AGM_FastRoping_Helper: Slingload_base_F {
   class AGM_FastRoping_Helper: B_UAV_01_F {
     scope = 1;
     model = "agm_fastroping\agm_fastroping_helper.p3d";
