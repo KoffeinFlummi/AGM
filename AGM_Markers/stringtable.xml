@@ -17,48 +17,5 @@
       <Polish>Umieść na: %1</Polish>
       <Czech>Umístit do: %1</Czech>
     </Key>
-    <!-- Don't guess translations!  These need to be an exact substring of AGM_Markers_currentChatChannel -->
-    <Key ID="STR_AGM_Markers_ChannelGlobalShort">
-      <English>Global</English>
-      <German>Globaler</German>
-      <Spanish>Global</Spanish>
-      <Polish>Globalny</Polish>
-      <Czech>Globální</Czech>
-    </Key>
-    <Key ID="STR_AGM_Markers_ChannelSideShort">
-      <English>Side</English>
-      <German>Seiten</German>
-      <Spanish>Bando</Spanish>
-      <Polish>Strona</Polish>
-      <Czech>Strana</Czech>
-    </Key>
-    <Key ID="STR_AGM_Markers_ChannelGroupShort">
-      <English>Group</English>
-      <German>Gruppen</German>
-      <Spanish>Grupo</Spanish>
-      <Polish>Grupa</Polish>
-      <Czech>Skupina</Czech>
-    </Key>
-    <Key ID="STR_AGM_Markers_ChannelVehicleShort">
-      <English>Vehicle</English>
-      <German>Fahrzeug</German>
-      <Spanish>Vehículo</Spanish>
-      <Polish>Pojazd</Polish>
-      <Czech>Vozidlo</Czech>
-    </Key>
-    <Key ID="STR_AGM_Markers_ChannelDirectShort">
-      <English>Direct</English>
-      <German>Direkte</German>
-      <Spanish>Directa</Spanish>
-      <Polish>Bezpośredni</Polish>
-      <Czech>Přímá komunikace</Czech>
-    </Key>
-    <Key ID="STR_AGM_Markers_ChannelCommandShort">
-      <English>Command</English>
-      <German>Befehls</German>
-      <Spanish>Mando</Spanish>
-      <Polish>Dowodzenie</Polish>
-      <Czech>Velitelský</Czech>
-    </Key>
   </Package>
 </Project>

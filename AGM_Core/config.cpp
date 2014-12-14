@@ -527,6 +527,7 @@ class CfgFunctions {
       class codeToLetter;
       class codeToString;
       class convertKeyCode;
+      class currentChannel;
       class disableUserInput;
       class displayText;
       class displayTextPicture;
@@ -583,6 +584,7 @@ class CfgFunctions {
       class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
+      class onDrawSetChannel;
       class owned;
       class player;
       class playerSide;
