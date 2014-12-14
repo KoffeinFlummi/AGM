@@ -2,7 +2,7 @@
   Name: AGM_SwitchUnits_fnc_switchUnit
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Selects the new given player unit
@@ -19,11 +19,7 @@ private ["_newUnit"];
 _newUnit = _this select 1;
 
 // don't switch to original player units
-if ( ([_newUnit] call AGM_Core_fnc_isPlayer) ||
-     (_newUnit getVariable ["AGM_SwitchUnits_IsPlayerUnit", false]) || 
-     (player == _newUnit) || 
-     (_newUnit getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])
-   ) exitWith {};
+if (!([_newUnit] call AGM_SwitchUnits_fnc_isValidAi)) exitWith {};
 
 _newUnit spawn {
   private ["_unit", "_allNearestPlayers", "_oldUnit", "_respawnEhId", "_oldOwner", "_leave"];

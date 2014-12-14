@@ -1,7 +1,7 @@
 /*
   Name: AGM_Captives_fnc_openFriskMenu
   
-  Author: jodav
+  Author: bux578
   
   Description:
     Open the select menu with the "personal" items of a frisked unit

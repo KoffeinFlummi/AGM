@@ -2,7 +2,7 @@
   Name: AGM_Respawn_fnc_handleRespawn
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Handles the XEH Respawn event
