@@ -1,5 +1,5 @@
 /*
- * By: jodav
+ * By: bux578
  *
  * Checks the conditions for being able to frisk a unit
  *

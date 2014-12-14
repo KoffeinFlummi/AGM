@@ -2,7 +2,7 @@
   Name: AGM_SwitchUnits_fnc_initPlayer
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Initializes the player

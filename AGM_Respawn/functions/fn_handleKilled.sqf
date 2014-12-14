@@ -2,7 +2,7 @@
   Name: AGM_Respawn_fnc_handleKilled
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Handles the XEH Killed event

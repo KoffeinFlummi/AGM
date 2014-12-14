@@ -7,8 +7,8 @@ class CfgPatches {
     version = "0.95";
     versionStr = "0.95";
     versionAr[] = {0,95,0};
-    author[] = {"jodav"};
-    authorUrl = "https://github.com/jodav/";
+    author[] = {"bux578"};
+    authorUrl = "https://github.com/bux578/";
   };
 };
 
@@ -19,6 +19,7 @@ class CfgFunctions {
       class addMapFunction;
       class handleMapClick;
       class initPlayer;
+      class isValidAi;
       class markAiOnMap;
       class module;
       class nearestPlayers;

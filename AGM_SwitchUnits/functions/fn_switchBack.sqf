@@ -2,7 +2,7 @@
   Name: AGM_SwitchUnits_fnc_switchBack
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Switches back to the original player unit
