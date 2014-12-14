@@ -5,15 +5,15 @@ private ["_unit", "_anim"];
 _unit = _this select 0;
 
 // only play animation when standing due to lack of animations, sry
-if (stance _unit != "STAND") exitWith {};
+if !(stance _unit in ["CROUCH", "STAND"]) exitWith {};
 
 // get correct animation by weapon
 _anim = switch (currentWeapon _unit) do {
   case (""): {"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon"};
   case (primaryWeapon _unit): {
     [
-      "AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon",
-      "AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon",
+      ["AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon_2", "AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon"] select (speed _unit > 1),
+      ["AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon_2", "AmovPercMsprSlowWrfldf_AmovPpneMstpSrasWrflDnon"] select (speed _unit > 1),
       "AmovPercMstpSrasWrflDnon_AadjPpneMstpSrasWrflDleft",
       "AmovPercMstpSrasWrflDnon_AadjPpneMstpSrasWrflDright"
     ] select floor random 4;
