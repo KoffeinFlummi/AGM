@@ -63,7 +63,7 @@ class Extended_Respawn_EventHandlers {
 class Extended_Hit_EventHandlers {
   class CAManBase {
     class AGM_Medical {
-      hit = "if (alive (_this select 0) and !((_this select 0) getVariable ['AGM_isUnconscious', False]) and !([(_this select 0)] call AGM_Core_fnc_isPlayer)) then {[(_this select 0)] call AGM_Medical_fnc_scream;};"
+      hit = "if (alive (_this select 0) and !((_this select 0) getVariable ['AGM_isUnconscious', False]) and !([(_this select 0)] call AGM_Core_fnc_isPlayer)) then {[(_this select 0)] call AGM_Medical_fnc_scream;};";
     };
   };
 };
