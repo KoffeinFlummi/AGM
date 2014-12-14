@@ -17,7 +17,7 @@ if (isNil {AGM_Fortifications_placer}) then {
 	AGM_Fortifications_placer = objNull;
 };
 
-AGM_Fortifications_placer forceWalk false;
+[AGM_Fortifications_placer, "AGM_Logistics", false] call AGM_Core_fnc_setForceWalkStatus;
 AGM_Fortifications_placer = objNull;
 call AGM_Interaction_fnc_hideMouseHint;
 

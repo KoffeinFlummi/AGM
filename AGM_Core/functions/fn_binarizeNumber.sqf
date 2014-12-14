@@ -8,7 +8,10 @@
  * 1: Minimum length of the returned Array, note: returned array can be larger (Number, optional default 8)
  *
  * Return value:
- * Booleans (Array)
+ * Booleans (Array) - (least significant bit first//little-endian)
+ * 
+ * Example:
+ * [5, 8] call AGM_Core_fnc_binarizeNumber = [true,false,true,false,false,false,false,false]
  */
 
 private ["_number", "_minLength", "_array", "_index", "_rest"];
