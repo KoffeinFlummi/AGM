@@ -142,6 +142,18 @@ if (_count == 0) then {
 
 _jamChance = [_jamChance, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray;
 
+// increase jam chance on dusty grounds if prone
+if (stance _unit == "PRONE") then {
+  private "_surface";
+  _surface = toArray (surfaceType getPosASL _unit);
+  _surface deleteAt 0;
+
+  _surface = configFile >> "CfgSurfaces" >> toString _surface;
+  if (isClass _surface) then {
+    _jamChance = _jamChance + (getNumber (_surface >> "dust")) * _jamChance;
+  };
+};
+
 if (!isNil "AGM_Debug") then {
   if ("Jam" in AGM_Debug) then {
     _jamChance = 0.5;
