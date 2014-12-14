@@ -38,7 +38,8 @@ _fnc_unRestWeapon = {
   if (_unit getVariable ["AGM_bipodDeployed", false]) then {
     _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / BIPODRECOIL);
     if (_animation find "_agm_deploy" != -1) then {
-      [_unit, [_animation, "_agm_deploy", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      //[_unit, [_animation, "_agm_deploy", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      _unit switchMove ([_animation, "_agm_deploy", ""] call CBA_fnc_replace);
     };
 
     private "_picture";
@@ -48,7 +49,8 @@ _fnc_unRestWeapon = {
   } else {
     _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / RESTEDRECOIL);
     if (_animation find "_agm_rested" != -1) then {
-      [_unit, [_animation, "_agm_rested", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      //[_unit, [_animation, "_agm_rested", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      _unit switchMove ([_animation, "_agm_rested", ""] call CBA_fnc_replace);
     };
 
     private "_picture";
@@ -141,7 +143,8 @@ if (true in _intersects) then {
     _unit setVariable ["AGM_bipodDeployed", true];
 
     _unit setUnitRecoilCoefficient (BIPODRECOIL * unitRecoilCoefficient _unit);
-    [_unit, format ["%1_agm_deploy", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    //[_unit, format ["%1_agm_deploy", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    _unit switchMove format ["%1_agm_deploy", animationState _unit];
 
     private "_picture";
     _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
@@ -151,7 +154,8 @@ if (true in _intersects) then {
     _unit setVariable ["AGM_bipodDeployed", false];
 
     _unit setUnitRecoilCoefficient (RESTEDRECOIL * unitRecoilCoefficient _unit);
-    [_unit, format ["%1_agm_rested", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    //[_unit, format ["%1_agm_rested", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    _unit switchMove format ["%1_agm_rested", animationState _unit];
 
     private "_picture";
     _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
