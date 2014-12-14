@@ -12,7 +12,6 @@
  */
 
 #define ROPELENGTH 35
-#define SPEED 6
 
 _unit = _this select 0;
 _vehicle = _this select 1;
@@ -50,26 +49,25 @@ _unit disableCollisionWith _helper;
   waitUntil {vehicle _unit == _unit};
 
   _helper setVectorUp [0,0,1];
-  _unit attachTo [_helper, [0,0,-1.35]];
+  _unit attachTo [_helper, [0,0,0]];
 
   _vector = (getPos _unit) vectorFromTo (getPos _vehicle);
   _unit setVectorDir _vector;
 
-  ropeUnwind [_rope1, SPEED, ROPELENGTH];
-  ropeUnwind [_rope2, SPEED, 0];
+  [[_rope1, _rope2], "{ropeUnwind [_this select 0, 6, 35];ropeUnwind [_this select 1, 6, 0];}", _helper] call AGM_Core_fnc_execRemoteFnc;
 
   sleep 0.1;
   _unit allowDamage True;
   _unit switchMove "AGM_FastRoping";
 
   sleep 2;
-  waitUntil {(isTouchingGround _helper) or (time >= (_time + ROPELENGTH / SPEED)) or (vectorMagnitude (velocity _vehicle) > 5)};
+  waitUntil {(isTouchingGround _helper) or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5)};
 
   detach player;
   player switchMove "";
+  player setVectorUp [0,0,1];
 
-  ropeUnwind [_rope1, ROPELENGTH * 2, 1.5];
-  ropeUnwind [_rope2, ROPELENGTH * 2, ROPELENGTH - 1.5];
+  [[_rope1, _rope2], "{ropeUnwind [_this select 0, 12, 2];ropeUnwind [_this select 1, 12, 33];}", _helper] call AGM_Core_fnc_execRemoteFnc;
 
   waitUntil {(ropeLength _rope1) < 2};
 
