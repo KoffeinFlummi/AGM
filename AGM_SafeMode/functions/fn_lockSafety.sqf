@@ -46,7 +46,7 @@ if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
   };
 
   _statement = {
-    [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
+    [_this select 1, currentWeapon (_this select 1), currentMuzzle (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
   };
 
   _actionID = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement, 10] call AGM_Core_fnc_addActionMenuEventHandler;
