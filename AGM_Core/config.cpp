@@ -514,6 +514,7 @@ class CfgFunctions {
       class addInventoryDisplayLoadedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
+      class ambientBrightness;
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
