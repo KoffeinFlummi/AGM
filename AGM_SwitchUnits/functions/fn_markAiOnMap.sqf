@@ -2,7 +2,7 @@
   Name: AGM_SwitchUnits_fnc_markAiOnMap
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Creates markers for AI units for given sides
@@ -18,10 +18,10 @@
 private ["_sidesToShow"];
 _sidesToShow = _this select 0;
 
-[_sidesToShow] spawn {
+_sidesToShow spawn {
 
-  private ["_allMarkerNames"];
-
+  private ["_sides", "_allMarkerNames"];
+  _sides = _this;
   _allMarkerNames = [];
 
   while { true } do {
@@ -34,10 +34,10 @@ _sidesToShow = _this select 0;
 
     // create markers
     {
-      if ((!([_x] call AGM_Core_fnc_isPlayer) && side group _x in (_this select 0) && vehicle _x == _x && !(_x getVariable ["AGM_SwitchUnits_IsPlayerUnit", false])) || (_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
+      if ([_x] call AGM_SwitchUnits_fnc_isValidAi && (side group _x in _sides)) then {
         private ["_markerName", "_marker", "_markerColor"];
 
-        //_markerName = format ["%1", (name _x)];
+        //_markerName = format ["%1", [_x] call AGM_Core_fnc_getName];
         _markerName = str _x;
 
         _marker = createMarkerLocal [_markerName, position _x];

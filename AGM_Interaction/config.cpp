@@ -45,7 +45,7 @@ class CfgFunctions {
       class onSelectMenuDblClick;
       class openDoor;
       class openMenu;
-      class openMenuSelectUI {scope = 0;};
+      class openMenuSelectUI;
       class openMenuSelf;
       class openSelectMenu;
       class openSubMenu;

@@ -33,7 +33,7 @@ class RscDisplayChannel {
 class RscDisplayMainMap {
 	class controlsBackground {
 		class CA_Map: RscMapControl {
-			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
 		};
 	};
 };
@@ -41,7 +41,7 @@ class RscDisplayMainMap {
 class RscDisplayGetReady: RscDisplayMainMap {
 	class controlsBackground {
 		class CA_Map: RscMapControl {
-			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
 		};
 	};
 };
@@ -49,7 +49,7 @@ class RscDisplayGetReady: RscDisplayMainMap {
 class RscDisplayClientGetReady: RscDisplayGetReady {
 	class controlsBackground {
 		class CA_Map: RscMapControl {
-			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
 		};
 	};
 };
@@ -57,7 +57,7 @@ class RscDisplayClientGetReady: RscDisplayGetReady {
 class RscDisplayServerGetReady: RscDisplayGetReady {
 	class controlsBackground {
 		class CA_Map: RscMapControl {
-			onDraw = "if (ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull]) != '') then {missionNamespace setVariable ['AGM_currentChannel', ctrlText (uiNamespace getVariable ['AGM_ctrlChannel', controlNull])]};";
+			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
 		};
 	};
 };

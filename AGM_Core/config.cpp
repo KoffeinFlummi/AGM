@@ -527,6 +527,7 @@ class CfgFunctions {
       class codeToLetter;
       class codeToString;
       class convertKeyCode;
+      class currentChannel;
       class disableUserInput;
       class displayText;
       class displayTextPicture;
@@ -535,6 +536,7 @@ class CfgFunctions {
       class endRadioTransmission;
       class execPersistentFnc;
       class execRemoteFnc;
+      class executePersistent;
       class filter;
       class fixLoweredRifleAnimation;
       class getCaptivityStatus;
@@ -542,8 +544,10 @@ class CfgFunctions {
       class getConfigGunner;
       class getDefaultAnim;
       class getDoorTurrets;
+      class getForceWalkStatus;
       class getInPosition;
       class getMarkerType;
+      class getName;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
       class getStringFromMissionSQM;
@@ -582,6 +586,7 @@ class CfgFunctions {
       class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
+      class onDrawSetChannel;
       class owned;
       class player;
       class playerSide;
@@ -600,7 +605,9 @@ class CfgFunctions {
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setCaptivityStatus;
+      class setForceWalkStatus;
       class setKeyDefault;
+      class setName;
       class setParameter;
       class setPitchBankYaw;
       class stringToColoredText;
@@ -610,16 +617,6 @@ class CfgFunctions {
       class toHex;
       class toNumber;
       class unmuteUnit;
-    };
-  };
-  class AGM_Identity {
-    class AGM_Identity {
-      file = "AGM_Core\functions\Identity";
-      class getName;
-      class getNameSide;
-      //class getRank;
-      class setName;
-      class setRank;
     };
   };
   class AGM_Debug {
@@ -650,15 +647,6 @@ class CfgSounds {
   };
 };
 
-// Testing
-class Extended_GetIn_EventHandlers {
-  class All {
-    class AGM_GetInPosTest {
-      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
-    };
-  };
-};
-
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\preInit.sqf'";
@@ -670,23 +658,19 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
-    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
   };
 };
 
-// Identity
-class Extended_Init_EventHandlers {
-  class CAManBase {
-    class AGM_SetName {
-      init = "if (local (_this select 0)) then {_this spawn AGM_Identity_fnc_setName};";
+class Extended_InitPost_EventHandlers {
+  class All {
+    class AGM_Core_executePersistent {
+      init = "[_this select 0] call AGM_Core_fnc_executePersistent";
     };
   };
-};
-class Extended_Local_EventHandlers {
   class CAManBase {
-    class AGM_SetName {
-      local = "if (_this select 1) then {_this spawn AGM_Identity_fnc_setName};";
+    class AGM_Core_setName {
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };

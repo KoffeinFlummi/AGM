@@ -2,7 +2,7 @@
   Name: AGM_SwitchUnits_fnc_handleMapClick
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Finds the clicked unit
@@ -25,7 +25,7 @@ _pos = _this select 1;
 _sideNearest = [];
 
 {
-  if (side _x in _sides && alive _x && !isPlayer _x) then {
+  if ([_x] call AGM_SwitchUnits_fnc_isValidAi && (side group _x in _sides)) then {
     _sideNearest pushBack _x;
   };
 } forEach (nearestObjects [_pos, ["Man"], 20]);

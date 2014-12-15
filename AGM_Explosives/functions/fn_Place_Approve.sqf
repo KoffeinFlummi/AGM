@@ -23,7 +23,7 @@ if (AGM_Explosives_pfeh_running) then {
 private ["_mag", "_setup", "_player"];
 _setup = AGM_Explosives_Setup;
 AGM_Explosives_Setup = objNull;
-AGM_Explosives_placer forceWalk false;
+[AGM_Explosives_placer, "AGM_Explosives", false] call AGM_Core_fnc_setForceWalkStatus;
 AGM_Explosives_placer = objNull;
 _player = AGM_player;
 [_player, "DefaultAction", _player getVariable ["AGM_Explosive_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;

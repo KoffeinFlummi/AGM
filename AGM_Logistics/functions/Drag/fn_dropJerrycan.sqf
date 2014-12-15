@@ -11,7 +11,7 @@ _target setVariable ["AGM_isUsedBy", objNull, true];
 
 _unit allowDamage false;
 detach _target;
-_unit forceWalk false;
+[_unit, "AGM_Logistics", false] call AGM_Core_fnc_setForceWalkStatus;
 _unit allowDamage true;
 
 _unit removeAction (_unit getVariable ["AGM_Drag_ReleaseActionID", -1]);

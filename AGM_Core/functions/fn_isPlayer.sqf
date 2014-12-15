@@ -1,5 +1,5 @@
 /*
- * Author: jodav, commy2
+ * Author: bux578, commy2
  *
  * Checks if a unit is a player / curator controlled unit.
  * Currently returns false for non-local remote controlled zeus units. (Remotes from another zeus machine)

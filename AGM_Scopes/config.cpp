@@ -85,7 +85,6 @@ class CfgSounds {
   };
 };
 
-// TODO: check other scopes, realistic values, check inheritance
 class CfgWeapons {
   class ItemCore;
   class InventoryOpticsItem_Base_F;

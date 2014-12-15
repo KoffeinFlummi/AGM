@@ -17,15 +17,16 @@ _weapon = _this select 1;
 
 if (_weapon == "") exitWith {};
 
-// unlock safety
-if (_weapon in (_player getVariable ["AGM_SafeMode_safedWeapons", []])) exitWith {
-  _this call AGM_SafeMode_fnc_unlockSafety;
-};
-
 _muzzles = [_weapon] call AGM_WeaponSelect_fnc_getWeaponMuzzles;
 
 if (currentWeapon _player != _weapon) exitWith {
   if (count _muzzles > 1) then {
+
+    // unlock safety
+    /*if (_weapon in (_player getVariable ["AGM_SafeMode_safedWeapons", []])) exitWith {
+      [_player, _weapon, _muzzles select 1] call AGM_SafeMode_fnc_unlockSafety;
+    };*/
+
     _player selectWeapon (_muzzles select 1);
   };
 };

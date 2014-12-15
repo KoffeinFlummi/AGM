@@ -1,9 +1,10 @@
 // by commy2
 
-private ["_unit", "_weapon", "_safedWeapons"];
+private ["_unit", "_weapon", "_muzzle", "_safedWeapons"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
+_muzzle = _this select 2;
 
 // don't immediately switch back
 if (inputAction "nextWeapon" > 0) exitWith {};
@@ -27,7 +28,7 @@ if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
       && {
         if (currentMuzzle (_this select 1) in ((_this select 1) getVariable ["AGM_SafeMode_safedWeapons", []])) then {
           if (inputAction "nextWeapon" > 0) exitWith {
-            [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
+            [_this select 1, currentWeapon (_this select 1), currentMuzzle (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
             false
           };
           true
@@ -45,7 +46,7 @@ if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
   };
 
   _statement = {
-    [_this select 1, currentWeapon (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
+    [_this select 1, currentWeapon (_this select 1), currentMuzzle (_this select 1)] call AGM_SafeMode_fnc_unlockSafety;
   };
 
   _actionID = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_SafeMode_TakeOffSafety"], "DefaultAction", _condition, {}, {true}, _statement, 10] call AGM_Core_fnc_addActionMenuEventHandler;
@@ -53,10 +54,10 @@ if (_unit getVariable ["AGM_SafeWeapon_actionID", -1] == -1) then {
   _unit setVariable ["AGM_SafeWeapon_actionID", _actionID];
 };
 
-_unit selectWeapon _weapon;
+_unit selectWeapon _muzzle;//_weapon
 
 // play fire mode selector sound
-[_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+[_unit, _weapon, _muzzle] call AGM_SafeMode_fnc_playChangeFiremodeSound;
 
 private "_picture";
 _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");

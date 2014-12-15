@@ -11,7 +11,7 @@
  * Crew (Array)
  */
 
-private ["_vehicle", "_types", "_includeFFV", "_crew"];
+private ["_vehicle", "_types", "_crew"];
 
 _vehicle = _this select 0;
 _types = _this select 1;

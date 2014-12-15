@@ -36,7 +36,7 @@ class AGM_Core_Default_Keys {
   class safeWeapon {
     displayName = "$STR_AGM_SafeMode_SafeMode";
     condition = "[_player] call AGM_Core_fnc_canUseWeapon";
-    statement = "[_player, currentWeapon _player] call AGM_SafeMode_fnc_lockSafety";
+    statement = "[_player, currentWeapon _player, currentMuzzle _player] call AGM_SafeMode_fnc_lockSafety";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 41;
     shift = 0;

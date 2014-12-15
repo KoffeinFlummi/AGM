@@ -31,7 +31,7 @@ if (_item in (items _target)) exitWith {
   };
   _target removeItem _item;
   if (!(local _target) and isPlayer _target) then {
-    [[_unit, _item, _config, _target], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', ((_this select 0) getVariable ['AGM_Name', (name (_this select 0))]), getText (_this select 2)];}", _target] call AGM_Core_fnc_execRemoteFnc;
+    [[_unit, _item, _config, _target], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', [_this select 0] call AGM_Core_fnc_getName, getText (_this select 2)];}", _target] call AGM_Core_fnc_execRemoteFnc;
   };
   True
 };
