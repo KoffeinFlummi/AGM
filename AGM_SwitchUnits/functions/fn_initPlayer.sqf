@@ -42,7 +42,7 @@ if (vehicle _playerUnit == _playerUnit) then {
   _playerUnit linkItem  "ItemMap";
   removeUniform _playerUnit;
 
-  _playerUnit forceWalk true;
+  [_playerUnit, "AGM_SwitchUnits", true] call AGM_Core_fnc_setForceWalkStatus;
 
   [_playerUnit, _sides] call AGM_SwitchUnits_fnc_addMapFunction;
 };

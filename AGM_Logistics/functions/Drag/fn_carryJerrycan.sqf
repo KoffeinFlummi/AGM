@@ -27,7 +27,7 @@ _this spawn {
 	_target attachTo [_unit, ATTACH_POINT, "RightHand"];
 	[_target, "{_this setDir 273}", _target] call AGM_Core_fnc_execRemoteFnc;	// the setPos getPos trick doesn't work for attached objects
 
-	_unit forceWalk true;
+	[_unit, "AGM_Logistics", true] call AGM_Core_fnc_setForceWalkStatus;
 
 	_actionID = _unit getVariable ["AGM_Drag_ReleaseActionID", -1];
 

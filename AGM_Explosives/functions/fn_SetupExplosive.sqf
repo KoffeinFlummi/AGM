@@ -43,7 +43,7 @@ _this spawn {
     AGM_Explosives_Setup setVariable ["AGM_Timer", _timer];
   };
   
-  _unit forceWalk true;
+  [_unit, "AGM_Explosives", true] call AGM_Core_fnc_setForceWalkStatus;
   AGM_Explosives_TweakedAngle = 180;
   ["AGM_Explosives_Placement","OnEachFrame", {
     private "_player";
