@@ -19,6 +19,7 @@ if (_currentVersion != _previousVersion) then {
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
+// everything that only player controlled machines need, goes below this
 if (!hasInterface) exitWith {};
 
 call compile preprocessFileLineNumbers "\AGM_core\scripts\assignedItemFix.sqf";
@@ -57,4 +58,4 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWhe
 
 enableCamShake true;
 
-[player] call AGM_Core_fnc_setName;
+[missionNamespace, "playerChanged", "{[_this select 0] call AGM_Core_fnc_setName; [_this select 1] call AGM_Core_fnc_setName;}"] call AGM_Core_fnc_addCustomEventhandler;
