@@ -199,6 +199,22 @@ class RscTitles {
         colorBackground[] = {1, 1, 1, 1};
         shadow = 0;
       };
+	  class AGM_KestrelHUDpic_Night: RscPicture {
+        idc = 42006;
+        type = 0;
+        text = "AGM_Wind\data\4500NV2.paa";
+        style = 48 + 0x800;
+        x = safeZoneX -0.25;
+        y = safeZoneY + safeZoneH - 0.8;
+        h = 0.75;
+        w = 0.75;
+        scale = 1;
+        font = "PuristaMedium";
+        sizeEx = 1;
+        colorText[] = {0,0,0,1-(sunOrMoon*sunOrMoon+(moonIntensity/5))};
+        colorBackground[] = {1, 1, 1, 1};
+        shadow = 0;
+      };
       class AGM_KestrelHUD1: RscText {
         idc = 42002;
         type = 0;
