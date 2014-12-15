@@ -544,6 +544,7 @@ class CfgFunctions {
       class getConfigGunner;
       class getDefaultAnim;
       class getDoorTurrets;
+      class getForceWalkStatus;
       class getInPosition;
       class getMarkerType;
       class getName;
@@ -604,6 +605,7 @@ class CfgFunctions {
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setCaptivityStatus;
+      class setForceWalkStatus;
       class setKeyDefault;
       class setName;
       class setParameter;
