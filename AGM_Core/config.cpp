@@ -546,6 +546,7 @@ class CfgFunctions {
       class getDoorTurrets;
       class getInPosition;
       class getMarkerType;
+      class getName;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
       class getStringFromMissionSQM;
@@ -604,6 +605,7 @@ class CfgFunctions {
       class sanitizeString;
       class setCaptivityStatus;
       class setKeyDefault;
+      class setName;
       class setParameter;
       class setPitchBankYaw;
       class stringToColoredText;
@@ -653,15 +655,6 @@ class CfgSounds {
   };
 };
 
-// Testing
-class Extended_GetIn_EventHandlers {
-  class All {
-    class AGM_GetInPosTest {
-      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
-    };
-  };
-};
-
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\preInit.sqf'";
@@ -673,31 +666,20 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
-    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
+    //clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
   };
 };
 
 class Extended_InitPost_EventHandlers {
   class All {
-    class AGM_SetName2 {
-      init = "[_this select 0] call AGM_Core_fnc_executePersistent;";
+    class AGM_Core_executePersistent {
+      init = "[_this select 0] call AGM_Core_fnc_executePersistent";
     };
   };
-};
-
-// Identity
-class Extended_Init_EventHandlers {
   class CAManBase {
-    class AGM_SetName {
-      init = "if (local (_this select 0)) then {_this spawn AGM_Identity_fnc_setName};";
-    };
-  };
-};
-class Extended_Local_EventHandlers {
-  class CAManBase {
-    class AGM_SetName {
-      local = "if (_this select 1) then {_this spawn AGM_Identity_fnc_setName};";
+    class AGM_Core_setName {
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
     };
   };
 };
