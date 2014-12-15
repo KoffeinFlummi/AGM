@@ -5,27 +5,26 @@
  *
  * Argument:
  * 0: True to disable key inputs, false to re-enable them (Bool)
- * 1: Allow Zeus and Team Switch? (Optional; default: no)  !OBSOLETE
  *
  * Return value:
  * Nothing
  */
 
-private ["_state", "_allowTeamSwitch", "_dlg"];
+private ["_state", "_dlg"];
 
 _state = _this select 0;
-_allowTeamSwitch = _this select 1;
 
 if (_state) then {
   disableSerialization;
 
   if (!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) exitWith {};
+  if ("AGM_DisableUserInput" in ([BIS_stackedEventHandlers_onEachFrame, {_this select 0}] call AGM_Core_fnc_map)) exitWith {};
 
   // end TFAR and ACRE2 radio transmissions
   0 spawn AGM_Core_fnc_endRadioTransmission;
 
   // Close map
-  if (visibleMap) then {openMap false};
+  if (visibleMap && {!(player getVariable ["AGM_canSwitchUnits", false])}) then {openMap false};
 
   closeDialog 0;
   createDialog "AGM_Core_DisableMouse_Dialog";
@@ -62,8 +61,9 @@ if (_state) then {
       _ctrl ctrlSetTooltip "Respawn.";
     };
 
-    if (_key in actionKeys "TeamSwitch" && {teamSwitchEnabled}) then {_acc = accTime; teamSwitch; setAccTime _acc};
-    if (_key in actionKeys "CuratorInterface" && {player in allCurators}) then {openCuratorInterface};
+    if (_key in actionKeys "TeamSwitch"       && {teamSwitchEnabled})                                then {(uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0; teamSwitch};//_acc = accTime; teamSwitch; setAccTime _acc};
+    if (_key in actionKeys "CuratorInterface" && {getAssignedCuratorLogic player in allCurators})    then {(uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0; openCuratorInterface};
+    if (_key in actionKeys "ShowMap"          && {player getVariable ["AGM_canSwitchUnits", false]}) then {(uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0; openMap true};
 
     if (serverCommandAvailable "#missions" || {player getVariable ["AGM_isUnconscious", false] && {(call AGM_Core_fnc_player) getVariable ["AGM_Medical_AllowChatWhileUnconscious", missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", 0]] > 0}})  then {
       if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) then {
@@ -75,7 +75,16 @@ if (_state) then {
   }];
   _dlg displayAddEventHandler ["KeyUp", {true}];
 
-  //  diag_log text "[AGM] Debug: User Input disabled";
+  ["AGM_DisableUserInput", "onEachFrame", {
+    if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) && {!visibleMap && isNull findDisplay 49 && isNull findDisplay 312 && isNull findDisplay 632}) then {
+      ["AGM_DisableUserInput", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+      [true] call AGM_Core_fnc_disableUserInput;
+    };
+  }] call BIS_fnc_addStackedEventHandler;
 } else {
-  while {!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])} do {closeDialog 0};
+  if ("AGM_DisableUserInput" in ([BIS_stackedEventHandlers_onEachFrame, {_this select 0}] call AGM_Core_fnc_map)) then {
+    ["AGM_DisableUserInput", "onEachFrame"] call BIS_fnc_removeStackedEventHandler;
+  };
+
+  (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0;
 };

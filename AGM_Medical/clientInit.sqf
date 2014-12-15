@@ -37,15 +37,12 @@ AGM_Pain_CC ppEffectCommit 0;
   _timeBlood = 0;
   _blind = False;
   while {True} do {
-    // Detect if curator interface is open and then disable effects an enable input
+    // Detect if curator interface is open and then disable effects
     if (!isNull(findDisplay 312)) then {
       AGM_BloodLevel_CC ppEffectEnable False;
       AGM_Unconscious_CC ppEffectEnable False;
       AGM_Unconscious_RB ppEffectEnable False;
-      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
-        [False] call AGM_Core_fnc_disableUserInput;
-      };
-      waitUntil {!isNull(findDisplay 312)};
+      waitUntil {isNull(findDisplay 312)};
     };
 
     // Detect if player is not alive and then disable effects and enable input
