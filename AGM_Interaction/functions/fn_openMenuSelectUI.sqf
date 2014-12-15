@@ -22,7 +22,7 @@ _actions = [localize "STR_AGM_Interaction_InteractionMenu", localize "STR_AGM_In
   if (_x != _unit) then {
     _actions = [
       _actions,
-      [_x] call AGM_Identity_fnc_getName,
+      [_x] call AGM_Core_fnc_getName,
       "\AGM_Interaction\UI\dot_ca.paa",
       _forEachIndex
     ] call AGM_Interaction_fnc_AddSelectableItem;

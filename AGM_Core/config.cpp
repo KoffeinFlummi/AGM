@@ -617,16 +617,6 @@ class CfgFunctions {
       class unmuteUnit;
     };
   };
-  class AGM_Identity {
-    class AGM_Identity {
-      file = "AGM_Core\functions\Identity";
-      class getName;
-      class getNameSide;
-      //class getRank;
-      class setName;
-      class setRank;
-    };
-  };
   class AGM_Debug {
     class AGM_Debug {
       file = "AGM_Core\functions\Debug";
@@ -666,7 +656,6 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
-    //clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
   };
 };

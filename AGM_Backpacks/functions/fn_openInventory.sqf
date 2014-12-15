@@ -27,7 +27,7 @@ if (_isBackpack) then {
 
   if (_isLocked) then {
     // target is a locked backpack
-    [format [localize "STR_AGM_Backpacks_BackpackLocked", name _unit]] call AGM_Core_fnc_displayTextStructured;
+    [format [localize "STR_AGM_Backpacks_BackpackLocked", [_unit] call AGM_Core_fnc_getName]] call AGM_Core_fnc_displayTextStructured;
     _return = true;
   } else {
     // target is a not-locked backpack

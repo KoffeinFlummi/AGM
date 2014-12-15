@@ -26,11 +26,11 @@ if (vehicle _playerUnit == _playerUnit) then {
 
   _playerUnit setVariable ["AGM_SwitchUnits_IsPlayerUnit", true];
   _playerUnit allowDamage false;
-  
+
   AGM_SwitchUnits_OriginalUnit = _playerUnit;
-  AGM_SwitchUnits_OriginalName = name _playerUnit;
+  AGM_SwitchUnits_OriginalName = [_playerUnit] call AGM_Core_fnc_getName;
   AGM_SwitchUnits_OriginalGroup = group _playerUnit;
-  
+
   // remove all starting gear of a player
   removeAllWeapons _playerUnit;
   removeGoggles _playerUnit;
@@ -41,8 +41,8 @@ if (vehicle _playerUnit == _playerUnit) then {
   removeBackpack _playerUnit;
   _playerUnit linkItem  "ItemMap";
   removeUniform _playerUnit;
-  
+
   _playerUnit forceWalk true;
-  
+
   [_playerUnit, _sides] call AGM_SwitchUnits_fnc_addMapFunction;
 };
