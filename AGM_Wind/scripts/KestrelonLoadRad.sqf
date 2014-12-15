@@ -14,6 +14,8 @@ while {AGM_isKestrelWheel} do {
   if (_rad1 > 9) then { _rad1=_rad1-9;  };
   waitUntil {preloadTitleRsc ["AGM_KestrelWheel_Preload", "PLAIN"]};
   _ctrl10 ctrlSetText format["AGM_Wind\data\kestrel_%1.paa",round _rad1];
+  _Night = (sunOrMoon*sunOrMoon+(moonIntensity/5));
+  _ctrl10 ctrlsettextcolor [_Night,_Night,_Night,1];
   sleep 0.01;
   _i = 0; waitUntil {_i = _i + 1; _i > 1};
 };
