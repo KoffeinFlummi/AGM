@@ -37,7 +37,7 @@ _sidesToShow spawn {
       if ([_x] call AGM_SwitchUnits_fnc_isValidAi && (side group _x in _sides)) then {
         private ["_markerName", "_marker", "_markerColor"];
 
-        //_markerName = format ["%1", (name _x)];
+        //_markerName = format ["%1", [_x] call AGM_Core_fnc_getName];
         _markerName = str _x;
 
         _marker = createMarkerLocal [_markerName, position _x];
