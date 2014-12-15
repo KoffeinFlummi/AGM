@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, edited by commy2
  *
  * Adjusts the direction of a shell.
  *
@@ -21,7 +21,10 @@ _round = _this select 6;
 _FCSMagazines = _unit getVariable "AGM_FCSMagazines";
 _FCSElevation = _unit getVariable "AGM_FCSElevation";
 
-if (AGM_player != gunner _unit) exitWith {};
+private "_gunner";
+_gunner = [_unit, _weaponType] call AGM_Core_fnc_getGunner; systemChat str (AGM_player != _gunner);
+
+if (AGM_player != _gunner) exitWith {};
 if !(_magazineType in _FCSMagazines) exitWith {};
 
 // GET ELEVATION OFFSET OF CURRENT MAGAZINE

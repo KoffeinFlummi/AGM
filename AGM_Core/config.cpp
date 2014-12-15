@@ -544,6 +544,7 @@ class CfgFunctions {
       class getConfigGunner;
       class getDefaultAnim;
       class getDoorTurrets;
+      class getGunner;
       class getInPosition;
       class getMarkerType;
       class getNumberFromMissionSQM;

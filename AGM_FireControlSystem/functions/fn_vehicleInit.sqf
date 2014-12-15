@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, edited by commy2
  *
  * Checks if a vehicle is equipped with an FCS and if so, adds the fired event handler
  *
@@ -12,7 +12,19 @@
 
 private ["_gunBeg", "_gunnerView", "_gunBegPos", "_gunnerViewPos", "_viewDiff"];
 
-if (getNumber (configFile >> "CfgVehicles" >> (typeOf (_this select 0)) >> "AGM_FCSEnabled") == 1) then {
+// iterate through all turrets and check if they have any compatible with FCS
+private "_turrets";
+_turrets = [typeOf (_this select 0)] call AGM_Core_fnc_getTurrets;
+
+_hasTurretWithFCSEnabled = false;
+{
+  private "_turret";
+  _turret = [configFile >> "CfgVehicles" >> typeOf (_this select 0), _x] call AGM_Core_fnc_getTurretConfigPath;
+
+  if (getNumber (_turret >> "AGM_FCSEnabled") == 1) exitWith {_hasTurretWithFCSEnabled = true};
+} forEach _turrets;
+
+if (_hasTurretWithFCSEnabled) then {
   (_this select 0) addEventHandler ["Fired", {_this call AGM_FCS_fnc_firedEH}];
 
   (_this select 0) setVariable ["AGM_FCSDistance",  0,   true];

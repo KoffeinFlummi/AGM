@@ -80,11 +80,11 @@ class CfgVehicles {
   };
 
   class AllVehicles: All {
-    AGM_FCSEnabled = 0;
-    AGM_FCSMinDistance = 200;
-    AGM_FCSMaxDistance = 9990;
-    AGM_FCSDistanceInterval = 5;
     class NewTurret {
+      AGM_FCSEnabled = 0;
+      AGM_FCSMinDistance = 200;
+      AGM_FCSMaxDistance = 9990;
+      AGM_FCSDistanceInterval = 5;
       class Turrets;
     };
     class CargoTurret;
@@ -109,7 +109,6 @@ class CfgVehicles {
   };
 
   class Tank: LandVehicle {
-    AGM_FCSEnabled = 1; // all tracked vehicles get one by default
     class AGM_SelfActions {
       class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
@@ -121,6 +120,7 @@ class CfgVehicles {
     };
     class Turrets {
       class MainTurret: NewTurret {
+        AGM_FCSEnabled = 1; // all tracked vehicles get one by default
         class Turrets {
           class CommanderOptics;
         };
@@ -198,9 +198,9 @@ class CfgVehicles {
   };
 
   class Heli_Attack_01_base_F: Helicopter_Base_F {
-    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        AGM_FCSEnabled = 1;
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
       };
@@ -208,9 +208,9 @@ class CfgVehicles {
   };
 
   class Heli_Attack_02_base_F: Helicopter_Base_F {
-    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        AGM_FCSEnabled = 1;
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
       };
@@ -264,6 +264,7 @@ class CfgVehicles {
   class Tank_F: Tank {
     class Turrets {
       class MainTurret: NewTurret {
+        AGM_FCSEnabled = 1; // all tracked vehicles get one by default
         class Turrets {
           class CommanderOptics;//: CommanderOptics {};
         };
@@ -302,15 +303,16 @@ class CfgVehicles {
   };
 
   class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
-    AGM_FCSEnabled = 0;
-    /*class Turrets: Turrets {
-      class MainTurret: MainTurret {};
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        AGM_FCSEnabled = 0;
+      };
       class CommanderOptics: CommanderOptics {};
-    };*/
+    };
   };
 
   class B_APC_Tracked_01_CRV_F: B_APC_Tracked_01_base_F {
-    AGM_FCSEnabled = 0;
+    //AGM_FCSEnabled = 0; @todo
   };
 
   class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
@@ -396,23 +398,23 @@ class CfgVehicles {
   class B_MBT_01_cannon_F: B_MBT_01_base_F {};
 
   class MBT_01_arty_base_F: MBT_01_base_F {
-    AGM_FCSEnabled = 0;
-    /*class Turrets: Turrets {
+    class Turrets: Turrets {
       class MainTurret: MainTurret {
-        class Turrets: Turrets {
+        AGM_FCSEnabled = 0;
+        /*class Turrets: Turrets {
           class CommanderOptics: CommanderOptics {};
-        };
+        };*/
       };
-    };*/
+    };
   };
 
   class MBT_01_mlrs_base_F: MBT_01_base_F {
-    AGM_FCSEnabled = 0;
-    /*class Turrets: Turrets {
+    class Turrets: Turrets {
       class MainTurret: MainTurret {
-        class Turrets;
+        AGM_FCSEnabled = 0;
+        //class Turrets;
       };
-    };*/
+    };
   };
 
   class MBT_02_base_F: Tank_F {
@@ -428,14 +430,14 @@ class CfgVehicles {
   };
 
   class MBT_02_arty_base_F: MBT_02_base_F {
-    AGM_FCSEnabled = 0;
-    /*class Turrets: Turrets {
+    class Turrets: Turrets {
       class MainTurret: MainTurret {
-        class Turrets: Turrets {
+        AGM_FCSEnabled = 0;
+        /*class Turrets: Turrets {
           class CommanderOptics: CommanderOptics {};
-        };
+        };*/
       };
-    };*/
+    };
   };
 
   class Ship_F: Ship {};
@@ -715,9 +717,9 @@ class CfgVehicles {
   class B_APC_Wheeled_01_base_F: APC_Wheeled_01_base_F {};
 
   class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
-    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        AGM_FCSEnabled = 1;
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
       };
@@ -739,17 +741,19 @@ class CfgVehicles {
       class MainTurret: MainTurret {
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
-        /*class Turrets: Turrets {
-          class CommanderOptics: CommanderOptics {};
-        };*/
+        class Turrets: Turrets {
+          class CommanderOptics: CommanderOptics {
+            AGM_FCSEnabled = 1;
+          };
+        };
       };
     };
   };
 
   class APC_Wheeled_03_base_F: Wheeled_APC_F {
-    AGM_FCSEnabled = 1;
     class Turrets: Turrets {
       class MainTurret: MainTurret {
+        AGM_FCSEnabled = 1;
         discreteDistance[] = {};
         discreteDistanceInitIndex = 0;
         /*class Turrets: Turrets {

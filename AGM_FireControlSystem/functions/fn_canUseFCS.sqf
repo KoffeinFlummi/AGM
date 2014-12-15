@@ -10,4 +10,10 @@
  * Boolean (Bool)
  */
 
-_player == gunner _vehicle && {getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_FCSEnabled") == 1}
+_player in _vehicle && {
+	private "_turret";
+	_turret = [_player] call AGM_Core_fnc_getTurretIndex;
+	_turret = [configFile >> "CfgVehicles" >> typeOf _vehicle, _turret] call AGM_Core_fnc_getTurretConfigPath;
+
+	getNumber (_turret >> "AGM_FCSEnabled") == 1
+}
