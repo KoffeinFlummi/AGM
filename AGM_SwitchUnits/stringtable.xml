@@ -6,11 +6,13 @@
       <English>Switched unit</English>
       <German>Einheit gewechselt</German>
       <Russian>Юнит переключен</Russian>
+      <Czech>Prohozená jednotka</Czech>
     </Key>
     <Key ID="STR_AGM_SwitchUnits_TooCloseToEnemy">
       <English>This unit is too close to the enemy.</English>
       <German>Diese Einheit ist zu nah am Feind.</German>
       <Russian>Юнит слишком близок к противнику</Russian>
+      <Czech>Tato jednotka je moc blízko k nepříteli.</Czech>
     </Key>
   </Package>
 </Project>
