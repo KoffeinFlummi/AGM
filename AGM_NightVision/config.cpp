@@ -128,7 +128,7 @@ class CfgWeapons {
   class AGM_NVG_Wide: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
     // modelOptics = "\AGM_NightVision\weapons\agm_nvg_wide";
-    modelOptics = "\A3\weapons_f\reticle\optics_empty";
+    modelOptics = "\agm_nightvision\agm_nvg_wide_optics.p3d";
     displayName = "$STR_AGM_NightVision_NVG_FullScreen";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
