@@ -740,6 +740,30 @@ class CfgVehicles {
           };
         };
       };
+      class CheckAll {
+        displayName = "Check all addons";
+        description = "Check all addons instead of only those of AGM?";
+        typeName = "BOOL";
+        class values {
+          class WarnOnce {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+          class Warn {
+            name = "Yes";
+            value = 1;
+          };
+        };
+      };
+      class Whitelist {
+        displayName = "Whitelist";
+        description = "What addons are allowed regardless?";
+        typeName = "STRING";
+        class values {
+            default = "[]";
+        };
+      };
     };
   };
 

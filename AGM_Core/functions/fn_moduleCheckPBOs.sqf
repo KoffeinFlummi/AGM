@@ -17,10 +17,23 @@ _activated = _this select 2;
 if !(_activated) exitWith {};
 
 _mode = parseNumber (_logic getVariable "Action");
+_checkAll = _logic getVariable ["CheckAll", false];
+_whitelist = call compile (_logic getVariable ["Whitelist", "[]"]);
+
+if (isNil "_whitelist") then {
+  _whitelist = [];
+};
+
+_whitelist = [_whitelist, {toLower _this}] call AGM_Core_fnc_map;
+
+AGM_Version_CheckAll = _checkAll;
+AGM_Version_Whitelist = _whitelist;
 
 if (!isServer) then {
-  _mode spawn {
-    _mode = _this;
+  [_mode, _checkAll, _whitelist] spawn {
+    _mode = _this select 0;
+    _checkAll = _this select 1;
+    _whitelist = _this select 2;
 
     waitUntil {
       sleep 1;

@@ -17,7 +17,7 @@ if (_currentVersion != _previousVersion) then {
   profileNamespace setVariable ["AGM_VersionNumberString", _currentVersion];
 };
 
-call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+0 spawn compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
 
 // everything that only player controlled machines need, goes below this
 if (!hasInterface) exitWith {};
