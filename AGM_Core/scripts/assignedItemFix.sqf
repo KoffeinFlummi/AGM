@@ -9,10 +9,12 @@ if (isNil "AGM_itemFix") then {
 
   AGM_itemFix = ["AGM_itemFix", "onEachFrame", {
     _items = assignedItems AGM_player;
+    //If player is activly controling a UAV, showGPS controls showing the map (m key)
+    _playerUavPos = [AGM_Player] call AGM_Core_fnc_getUavControlPosition;
     showMap     (AGM_isMapEnabled     && {"ItemMap"     in _items});
     showCompass (AGM_isCompassEnabled && {"ItemCompass" in _items});
     showWatch   (AGM_isWatchEnabled   && {"ItemWatch"   in _items});
   //showRadio   (AGM_isRadioEnabled   && {"ItemRadio"   in _items});
-    showGPS     (AGM_isGPSEnabled     && {"ItemGPS"     in _items});
+    showGPS     (AGM_isGPSEnabled     && {("ItemGPS"    in _items) || {_playerUavPos != ""}});
   }] call BIS_fnc_addStackedEventHandler;
 };

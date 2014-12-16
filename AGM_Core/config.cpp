@@ -563,6 +563,7 @@ class CfgFunctions {
       class getTurrets;
       class getTurretsFFV;
       class getTurretsOther;
+      class getUavControlPosition;
       class getVehicleCargo;
       class getVehicleCodriver;
       class getVehicleCrew;
