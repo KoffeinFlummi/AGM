@@ -25,10 +25,10 @@ if (_state) then {
 
   // fix anim on mission start (should work on dedicated servers)
   _unit spawn {
-    waitUntil {time > 0};
     [_this, "AGM_Handcuffed", true] call AGM_Core_fnc_setCaptivityStatus;
-    [_this] call AGM_Core_fnc_fixLoweredRifleAnimation;
+
     if (_this getVariable ["AGM_isCaptive", false] && {vehicle _this == _this}) then {
+      [_this] call AGM_Core_fnc_fixLoweredRifleAnimation;
       [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
     };
   };
