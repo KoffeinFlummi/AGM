@@ -32,6 +32,15 @@ class Extended_Init_EventHandlers {
   };
 };
 
+class CfgSFX {
+  class AGM_CookOff {
+    name = "Cook-Off";
+    sounds[] = {"cookoff"};
+    cookoff[] = {"\AGM_Armour\sounds\cookoff.wav",8,1.8,400,1,0,0,0};
+    empty[] = {"",0,0,0,0,0,0,0};
+  };
+};
+
 class CfgVehicles {
   /*
    * AGM_Armour_AmmoLocation:
@@ -49,6 +58,12 @@ class CfgVehicles {
    *
    * All positions are Y-up, just like in Oxygen/Object Builder.
    */
+
+  class Sound;
+  class AGM_Sound_CookOff: Sound {
+    sound = "AGM_CookOff";
+    scope = 2;
+  };
 
   class Land;
   class LandVehicle: Land {

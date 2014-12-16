@@ -72,12 +72,15 @@ _this spawn {
     _fires pushBack _fire;
   } forEach _positions;
 
+  _sound = createSoundSource ["AGM_Sound_CookOff", getPos _vehicle, [], 0];
+
   sleep (4 + random 1);
 
   deleteVehicle _smokeBarrel;
   [_smokes, {deleteVehicle _this}] call AGM_Core_fnc_map;
   [_fires, {deleteVehicle _this}] call AGM_Core_fnc_map;
   deleteVehicle _light;
+  deleteVehicle _sound;
 
   (_this select 0) setVariable ["AGM_Armour_isCookingOff", False];
   if (local _vehicle and damage _vehicle < 1) then {
