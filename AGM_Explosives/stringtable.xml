@@ -280,7 +280,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_DetonateMenu">
       <English>Detonate Menu</English>
-      <German>"Zünden"-Menü</German>
+      <German>&quot;Zünden&quot;-Menü</German>
       <Spanish>Menú de detonación</Spanish>
       <Polish>Menu detonowania</Polish>
       <French>Menu de mise à feu</French>
@@ -292,7 +292,7 @@
     </Key>
     <Key ID="STR_AGM_Explosives_PlaceMenu">
       <English>Place Menu</English>
-      <German>"Platzieren"-Menü</German>
+      <German>&quot;Platzieren&quot;-Menü</German>
       <Spanish>Menú de colocación</Spanish>
       <Polish>Menu umieszczania</Polish>
       <French>Menu Placement</French>
