@@ -644,6 +644,7 @@
     <Key ID="STR_AGM_Interaction_Interact">
       <English>Interact</English>
       <German>Interagiere</German>
+      <Czech>Interakce</Czech>
     </Key>
   </Package>
 </Project>
