@@ -22,12 +22,12 @@ if (_state) then {
   if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
 
   _unit setVariable ["AGM_isCaptive", true, true];
-  [_unit, "AGM_Handcuffed", true] call AGM_Core_fnc_setCaptivityStatus;
-  [_unit] call AGM_Core_fnc_fixLoweredRifleAnimation;
-  //[_unit, "AGM_AmovPercMstpScapWnonDnon", 0] call AGM_Core_fnc_doAnimation;
 
-  // fix anim on mission start
+  // fix anim on mission start (should work on dedicated servers)
   _unit spawn {
+    waitUntil {time > 0};
+    [_this, "AGM_Handcuffed", true] call AGM_Core_fnc_setCaptivityStatus;
+    [_this] call AGM_Core_fnc_fixLoweredRifleAnimation;
     if (_this getVariable ["AGM_isCaptive", false] && {vehicle _this == _this}) then {
       [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
     };
