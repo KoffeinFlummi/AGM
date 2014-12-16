@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-20 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-16 -->
 <Project name="AGM">
   <Package name="Core">
     <Key ID="STR_AGM_Core_AGMTeam">
@@ -13,6 +13,7 @@
       <Portuguese>AGM-Team</Portuguese>
       <Hungarian>AGM-Team</Hungarian>
       <Italian>AGM-Team</Italian>
+      <Russian>Команда AGM</Russian>
     </Key>
     <Key ID="STR_AGM_Core_Save">
       <English>Save</English>
