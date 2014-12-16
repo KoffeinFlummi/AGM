@@ -24,6 +24,7 @@ class CfgFunctions {
       class handleKnockedOut;
       class handlePlayerChanged;
       class handleWokeUp;
+      class initPost;
       class initUnit;
       class loadCaptive;
       class openFriskMenu;
@@ -66,6 +67,15 @@ class Extended_Init_EventHandlers {
   class CAManBase {
     class AGM_Captives_AutoDetachCaptive {
       init = "_this call AGM_Captives_fnc_initUnit";
+    };
+  };
+};
+
+//mission start
+class Extended_InitPost_EventHandlers {
+  class CAManBase {
+    class AGM_Captives_InitPost {
+      init = "if (local (_this select 0)) then {_this call AGM_Captives_fnc_initPost};";
     };
   };
 };
