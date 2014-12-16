@@ -73,7 +73,7 @@ class CfgWeapons {
     author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
-    magazines[] = {"AGM_UsedTube_F"};             // This will disable the used launcher class from being fired again.
+    magazines[] = {"AGM_PreloadedMissileDummy"};  // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
     weaponPoolAvailable = 0;
@@ -98,6 +98,7 @@ class CfgMagazines {
     count = 0;
     weaponPoolAvailable = 0;
     modelSpecial = "";
+    mass = 0;
   };
 };
 
