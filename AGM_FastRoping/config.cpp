@@ -16,6 +16,7 @@ class CfgFunctions {
   class AGM_FastRoping {
     class AGM_FastRoping {
       file = "\AGM_FastRoping\functions";
+      class createRope;
       class cutRopes;
       class deployRopes;
       class fastRope;
@@ -24,10 +25,12 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class B_UAV_01_F;
-  class AGM_FastRoping_Helper: B_UAV_01_F {
+  //class AGM_FastRoping_Helper: B_UAV_01_F {
+  class UAV_01_base_F;
+  class AGM_FastRoping_Helper: UAV_01_base_F {
     scope = 1;
     model = "agm_fastroping\agm_fastroping_helper.p3d";
+    isUav = 0;
   };
 
   class Air;

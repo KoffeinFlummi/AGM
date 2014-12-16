@@ -14,7 +14,7 @@ _vehicle = _this select 0;
 
 _ropes = _vehicle getVariable "AGM_Ropes";
 {
-  (_x select 2) ropeDetach (_x select 0);
+  (_x select 3) ropeDetach (_x select 0);
   ropeDestroy (_x select 0);
 } forEach _ropes;
 
