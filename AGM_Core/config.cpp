@@ -515,6 +515,7 @@ class CfgFunctions {
       class addScrollWheelEventHandler;
       class adminKick;
       class ambientBrightness;
+      class applyForceWalkStatus;
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
@@ -673,6 +674,9 @@ class Extended_InitPost_EventHandlers {
   class CAManBase {
     class AGM_Core_setName {
       init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+    };
+    class AGM_Core_forceWalk {
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_applyForceWalkStatus;};";
     };
   };
 };
