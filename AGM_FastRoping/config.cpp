@@ -50,7 +50,7 @@ class CfgVehicles {
       class AGM_FastRope {
         displayName = "Fast Rope";
         enableInside = 1;
-        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4)";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {!_this}] call AGM_Core_fnc_filter) > 0)";
         statement = "[_player, _vehicle] call AGM_FastRoping_fnc_fastRope";
         showDisabled = 0;
         priority = 1;
@@ -59,7 +59,7 @@ class CfgVehicles {
       class AGM_CutRopes {
         displayName = "Cut Ropes";
         enableInside = 1;
-        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False])";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {_this}] call AGM_Core_fnc_filter) == 0)";
         statement = "[_vehicle] call AGM_FastRoping_fnc_cutRopes";
         showDisabled = 0;
         priority = 1;

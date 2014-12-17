@@ -56,7 +56,7 @@ _helper3 setPosATL (getPosATL _helper1);
 _rope1 = ropeCreate [_helper1, [0,0,0], _helper2, [0,0,0], OFFSET];
 _rope2 = ropeCreate [_helper2, [0,0,0], _helper3, [0,0,0], ROPELENGTH - OFFSET];
 
-_helper1 attachTo [_vehicle, _pos];
+_helper1 attachTo [_vehicle, _position];
 _helper2 setPosATL [
   (getPosATL _helper1) select 0,
   (getPosATL _helper1) select 1,

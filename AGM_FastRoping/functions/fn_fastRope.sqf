@@ -61,7 +61,7 @@ _unit disableCollisionWith _helper;
 
   sleep 0.1;
   _unit allowDamage True;
-  _unit switchMove "AGM_FastRoping";
+  [_unit, "AGM_FastRoping", 2] call AGM_Core_fnc_doAnimation;
 
   _time = time;
   waitUntil {
