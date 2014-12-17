@@ -72,7 +72,7 @@ AGM_Pain_CC ppEffectCommit 0;
       };
       if (_blind) then {
         // blinding strength depedent on light level
-        _strength = ((((12 - (abs (12 - (date select 3)))) min 9) max 3) - 3) * 0.13;
+        _strength = 0.78 * (call AGM_Core_fnc_ambientBrightness);
         AGM_Blinding_CC ppEffectEnable True;
         AGM_Blinding_CC ppEffectAdjust [1,1,_strength, [1,1,1,0], [0,0,0,1], [0,0,0,0]];
         AGM_Blinding_CC ppEffectCommit 0.01;
