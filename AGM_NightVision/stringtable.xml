@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-17 -->
 <Project name="AGM">
   <Package name="NightVision">
-
     <Key ID="STR_AGM_NightVision_NVG_Gen1">
       <English>NV Goggles (Gen1)</English>
       <Czech>Noktovizor (Gen1)</Czech>
@@ -84,6 +84,7 @@
       <German>NS-Brille (Weitwinkel)</German>
       <Spanish>Sistema de visión nocturna (Panorámicas)</Spanish>
       <Polish>Gogle noktowizyjne (panoramiczne)</Polish>
+      <Russian>ПНВ (Широкий)</Russian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
@@ -97,7 +98,6 @@
       <Portuguese>Luminosidade: %1</Portuguese>
       <Italian>Luminosità: %1</Italian>
     </Key>
-
     <Key ID="STR_AGM_NightVision_IncreaseNVGBrightness">
       <English>Increase NVG Brightness</English>
       <German>Nachtsichtgerätshelligkeit erhöhen</German>
@@ -122,6 +122,5 @@
       <Portuguese>Diminuir Luminosidade do EVN</Portuguese>
       <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>
-
   </Package>
 </Project>

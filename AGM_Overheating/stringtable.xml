@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-17 -->
 <Project name="AGM">
   <Package name="Overheating">
-
     <Key ID="STR_AGM_Overheating_SpareBarrelName">
       <English>Spare barrel</English>
       <German>Ersatzlauf</German>
@@ -98,8 +98,6 @@
       <Portuguese>Cano substituído</Portuguese>
       <Italian>Canna sostituita</Italian>
     </Key>
-
-
     <Key ID="STR_AGM_Overheating_CheckTemperature">
       <English>Check weapons temperature</English>
       <German>Temperatur der Waffe prüfen</German>
@@ -110,8 +108,8 @@
       <Czech>Zjistit teplotu zbraně</Czech>
       <Portuguese>Conferir temperatura da arma</Portuguese>
       <Italian>Controlla la temperatura della canna</Italian>
+      <Russian>Проверить температуру оружия</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
       <English>Check temperature</English>
       <German>Temperatur prüfen</German>
@@ -122,8 +120,8 @@
       <Czech>Zjistit teplotu</Czech>
       <Portuguese>Conferir temperatura</Portuguese>
       <Italian>Controlla la temperatura</Italian>
+      <Russian>Проверить температуру</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
       <English>Checking temperature ...</English>
       <German>Prüfe Temperatur ...</German>
@@ -134,8 +132,8 @@
       <Czech>Zjišťuju teplotu ...</Czech>
       <Portuguese>Conferindo temperatura ...</Portuguese>
       <Italian>Sto controllando la temperatura ...</Italian>
+      <Russian>Проверка температуры ...</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_Temperature">
       <English>Temperature</English>
       <German>Temperatur</German>
@@ -146,7 +144,7 @@
       <Czech>Teplota</Czech>
       <Portuguese>Temperatura</Portuguese>
       <Italian>Temperatura</Italian>
+      <Russian>Температура</Russian>
     </Key>
-
   </Package>
 </Project>
