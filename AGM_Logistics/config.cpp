@@ -909,7 +909,7 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
       class _xx_AGM_UAVBattery {
-        count = 24;
+        count = 6;
         name = "AGM_UAVBattery";
       };
     };

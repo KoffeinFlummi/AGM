@@ -177,10 +177,10 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_Clacker,24)
-      MACRO_ADDITEM(AGM_M26_Clacker,12)
-      MACRO_ADDITEM(AGM_DefusalKit,24)
-      MACRO_ADDITEM(AGM_Deadmanswitch,10)
+      MACRO_ADDITEM(AGM_Clacker,12)
+      MACRO_ADDITEM(AGM_M26_Clacker,6)
+      MACRO_ADDITEM(AGM_DefusalKit,12)
+      MACRO_ADDITEM(AGM_Deadmanswitch,6)
     };
   };
 

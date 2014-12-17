@@ -125,7 +125,7 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_IR_Strobe_Item,24)
+      MACRO_ADDITEM(AGM_IR_Strobe_Item,12)
     };
   };
 };

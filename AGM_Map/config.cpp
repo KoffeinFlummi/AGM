@@ -195,7 +195,7 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_MapTools,24)
+      MACRO_ADDITEM(AGM_MapTools,12)
     };
   };
 

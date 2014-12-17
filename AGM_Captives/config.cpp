@@ -251,7 +251,7 @@ class CfgVehicles {
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_CableTie,24)
+      MACRO_ADDITEM(AGM_CableTie,12)
     };
   };
 };

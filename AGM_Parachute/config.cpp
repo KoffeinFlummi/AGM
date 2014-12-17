@@ -66,7 +66,7 @@ class CfgVehicles {
 		class TransportBackpacks {
 			class _xx_AGM_NonSteerableParachute {
 				backpack = "AGM_NonSteerableParachute";
-				count = 6;
+				count = 4;
 			};
 		};
 	};
