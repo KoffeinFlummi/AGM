@@ -1080,7 +1080,7 @@ class CfgVehicles {
 
   // Trucks INDEP
   class Truck_02_base_F: Truck_F {
-    KEY_WHEEL_6X6_REAR
+    KEY_WHEEL_6X6_REAR_KAMAZ
     AGM_fuelCapacity = AGM_FUELCAPACITY_KAMAZ;
     class AGM_Actions: AGM_Actions {};
   };

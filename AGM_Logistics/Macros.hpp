@@ -11,6 +11,10 @@
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
 	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
 
+#define KEY_WHEEL_6X6_REAR_KAMAZ \
+	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLMWheel", "HitRMWheel", "HitLF2Wheel", "HitRF2Wheel"}; \
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
+
 #define KEY_WHEEL_8X8 \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
 	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};

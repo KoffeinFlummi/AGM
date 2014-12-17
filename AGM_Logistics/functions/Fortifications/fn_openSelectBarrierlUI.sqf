@@ -13,7 +13,7 @@ for "_index" from 0 to (_count - 1) do {
 	_type = _types select _index;
 	
 	_name = getText (configFile >> "CfgVehicles" >> _type >> "displayName");
-	_picture = "AGM_Interaction\UI\IconInteraction_ca.paa";
+	_picture = "AGM_Interaction\UI\dot_ca.paa";
 
 	_actions = [
 		_actions,
