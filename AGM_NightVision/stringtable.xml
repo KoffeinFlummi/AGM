@@ -85,6 +85,7 @@
       <Spanish>Sistema de visión nocturna (Panorámicas)</Spanish>
       <Polish>Gogle noktowizyjne (panoramiczne)</Polish>
       <Russian>ПНВ (Широкий)</Russian>
+      <Czech>Noktovizor (Široký)</Czech>
     </Key>
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
