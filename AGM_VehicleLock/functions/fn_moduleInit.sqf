@@ -8,7 +8,6 @@
 
   Parameters:
     0: OBJECT - logic
-    1: ARRAY - synced objects
 
   Returns:
     Nothing
@@ -16,12 +15,11 @@
   Example:
     called from module
 */
-private ["_logic","_sideKeysAssignment","_setLockState","_lock","_giveSideKey","_keyClassName"];
 
 _this spawn {
 
+  private ["_logic", "_sideKeysAssignment", "_setLockState", "_lock", "_giveSideKey", "_keyClassName"];
   _logic = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
-  _units = [_this, 1, [], [[]]] call BIS_fnc_param;
 
   _sideKeysAssignment = _logic getVariable["SideKeysAssignment", 0];
   _setLockState = _logic getVariable["SetLockState", 0];
@@ -43,11 +41,8 @@ _this spawn {
 
   if (hasInterface) then {
     waitUntil {player == player};
-    sleep 3;
-    waitUntil {
-      sleep 1;
-      (alive player)
-    };
+    waitUntil {alive player};
+    sleep 5;  //need to wait for other gear-assign scripts to finish
 
     _giveSideKey =
       switch (_sideKeysAssignment) do {

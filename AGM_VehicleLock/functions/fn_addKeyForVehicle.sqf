@@ -41,7 +41,7 @@ if (_useCustom) then {
     ["AGM_VehicleLock_fnc_addKeyForVehicle: failed to add magazine (inventory full?)"] call BIS_fnc_error;
   };
   _keyMagazine = _newMags select 0;
-  [[_veh, _keyMagazine], "AGM_VehicleLock_fnc_serverSetupCustomKey", false] call bis_fnc_mp;
+  [[_veh, _keyMagazine], "AGM_VehicleLock_fnc_serverSetupCustomKey", 1] call AGM_Core_fnc_execRemoteFnc;
 } else {
   _keyName = [_veh] call AGM_VehicleLock_fnc_getVehicleSideKey;
   _unit addItem _keyName;

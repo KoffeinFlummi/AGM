@@ -25,7 +25,5 @@ _isLocked = [_this, 1, false, [false]] call bis_fnc_param;
 if (isNull _veh) exitWith {["AGM_VehicleLock_fnc_setVehicleLock: null vehicle"] call BIS_fnc_error;};
 
 _lockNumber = if (_isLocked) then {2} else {0};
-
-//this will work on people without this mod
-[[_veh, _lockNumber], "lock", _veh] call BIS_fnc_MP;
+[[_veh, _lockNumber], "{(_this select 0) lock (_this select 1)}", 2] call AGM_Core_fnc_execRemoteFnc;
 _veh setVariable ["AGM_LockedInventory", _isLocked, true];
