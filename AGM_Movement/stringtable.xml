@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-17 -->
 <Project name="AGM">
   <Package name="Movement">
     <Key ID="STR_AGM_Movement_UseImperial">
@@ -12,6 +12,7 @@
       <Italian>Mostra peso in libbre</Italian>
       <Portuguese>Mostrar peso em libras</Portuguese>
       <Hungarian>Súly megjelenítése fontban.</Hungarian>
+      <Russian>Показать вес в фунтах</Russian>
     </Key>
     <Key ID="STR_AGM_Movement_Weight">
       <English>Weight:</English>
@@ -23,6 +24,7 @@
       <Italian>Peso:</Italian>
       <Portuguese>Peso:</Portuguese>
       <Hungarian>Súly:</Hungarian>
+      <Russian>Вес:</Russian>
     </Key>
   </Package>
 </Project>
