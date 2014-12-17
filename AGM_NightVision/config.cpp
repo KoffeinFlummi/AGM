@@ -89,6 +89,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen3_brown";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };
   class NVGoggles_OPFOR: NVGoggles {
     displayName = "$STR_AGM_NightVision_NVG_Gen3_black";
@@ -103,6 +104,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen1";
     AGM_NightVision_grain = 2.25;
     AGM_NightVision_blur = 0.22;
+    AGM_NightVision_radBlur = 0.004;
   };
   class AGM_NVG_Gen2: NVGoggles_INDEP {
     author = "$STR_AGM_Core_AGMTeam";
@@ -110,6 +112,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen2";
     AGM_NightVision_grain = 1.5;
     AGM_NightVision_blur = 0.11;
+    AGM_NightVision_radBlur = 0.002;
   };
   /*class AGM_NVG_Gen3: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
@@ -117,6 +120,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen3";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };*/
   class AGM_NVG_Gen4: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
@@ -124,6 +128,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen4";
     AGM_NightVision_grain = 0.0;
     AGM_NightVision_blur = 0.0;
+    AGM_NightVision_radBlur = 0.0;
   };
   class AGM_NVG_Wide: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
@@ -132,5 +137,6 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_FullScreen";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };
 };

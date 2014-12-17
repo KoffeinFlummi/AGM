@@ -7,6 +7,11 @@ AGM_NightVision_ppEffectBlur ppEffectForceInNVG true;
 AGM_NightVision_ppEffectBlur ppEffectAdjust [0]; 
 AGM_NightVision_ppEffectBlur ppEffectCommit 0;  
 
+AGM_NightVision_ppEffectRadialBlur = ppEffectCreate ["radialBlur", 1238];
+AGM_NightVision_ppEffectRadialBlur ppEffectForceInNVG true;
+AGM_NightVision_ppEffectRadialBlur ppEffectAdjust [0, 0, 0, 0];
+AGM_NightVision_ppEffectRadialBlur ppEffectCommit 0;
+
 AGM_NightVision_ppEffect = ppEffectCreate ["FilmGrain", 1235];
 AGM_NightVision_ppEffect ppEffectAdjust [0.25, 2.5, 2.5, 2.5*0.3, 2.5*0.3, false];
 AGM_NightVision_ppEffect ppEffectCommit 0;

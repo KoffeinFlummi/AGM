@@ -11,7 +11,7 @@ _player = AGM_player;
 
 if (_player != _vehicle && {!(_weapon in (_vehicle weaponsTurret ([_player] call AGM_Core_fnc_getTurretIndex)))}) exitWith {};
 
-private ["_silencer", "_visibleFireCoef", "_visibleFireTimeCoef", "_visibleFire", "_visibleFireTime", "_nvgBrightnessCoef", "_fnc_isTracer"];
+private ["_silencer", "_visibleFireCoef", "_visibleFireTimeCoef", "_visibleFire", "_visibleFireTime", "_nvgBrightnessCoef", "_fnc_isTracer", "_darkness"];
 
 _silencer = switch (_weapon) do {
   case (primaryWeapon _player) : {primaryWeaponItems _player select 0};
@@ -53,8 +53,10 @@ if (call _fnc_isTracer) then {
   _visibleFireTime = _visibleFireTime + 2;
 };
 
-_visibleFire = _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10 min 1;
-_visibleFireTime = _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10 min 0.5;
+_darkness = 1 - (call AGM_Core_fnc_ambientBrightness);
+
+_visibleFire = _darkness * _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10 min 1;
+_visibleFireTime = _darkness * _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10 min 0.5;
 
 if (!isNil "AGM_Debug" && {"NightVision" in AGM_Debug}) then {
     systemChat format ["visibleFire: %1", _visibleFire];
