@@ -225,24 +225,3 @@ class CfgVoiceTypes {
     alternative = "";
   };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
