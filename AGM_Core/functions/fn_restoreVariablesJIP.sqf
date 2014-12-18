@@ -22,3 +22,6 @@ _respawnVariables pushBack "AGM_PersistentFunctions";
 {
   _unit setVariable [_x, _unit getVariable _x, true];
 } forEach _respawnVariables;
+
+// fix speaker after respawn
+[_unit, format ["{_this setSpeaker '%1'}", speaker _unit], 2] call AGM_Core_fnc_execRemoteFnc;
