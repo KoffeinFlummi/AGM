@@ -12,69 +12,62 @@
  * Array:
  *   0: rope 1
  *   1: rope 2
- *   2-4: helper objects
+ *   2-3: helper objects
  *
- * __/X <- helper 1
+ * __/|
  *    | <- rope 1
  *    |
- *    X <- helper 2; attached to player
+ *    X <- helper 1; attached to player
  *    |
  *    | <- rope 2
  *    |
- *    X <- helper 3
+ *    X <- helper 2
  */
 
 #define HELPER "AGM_FastRoping_Helper"
 #define ROPELENGTH 35
 #define OFFSET 2
 
-private ["_vehicle", "_position", "_inPlace", "_helper1", "_helper2", "_helper3", "_rope1", "_rope2"];
+private ["_vehicle", "_pos", "_inPlace", "_helper1", "_helper1", "_helper2", "_rope1", "_rope2"];
 
 _vehicle = _this select 0;
-_position = _this select 1;
+_pos = _this select 1;
 _inPlace = False;
-if (count _this > 2 and {_this select 2}) then {
-  _inPlace = True;
+if (count _this > 2) then {
+  _inPlace = _this select 2;
 };
 
-_helper1 = HELPER createVehicle [0,0,0];
-_helper1 allowDamage False;
-_helper1 setPosATL [
-  (getPosATL _vehicle) select 0,
-  (getPosATL _vehicle) select 1,
-  ((getPosATL _vehicle) select 2) - OFFSET * 2
-];
+_posWorld = _vehicle modelToWorld _pos;
 
-_helper2 = HELPER createVehicle [0,0,0];
-_helper2 allowDamage False;
-_helper2 setPosATL (getPosATL _helper1);
+// modelToWorld seems to ignore buildings; let's fix that.
+diag_log ((getPosATL _vehicle) vectorDiff (getPos _vehicle));
+_posWorld = _posWorld vectorDiff ((getPosATL _vehicle) vectorDiff (getPos _vehicle));
+_posWorld set [2, (_posWorld select 2) - OFFSET];
 
-_helper3 = HELPER createVehicle [0,0,0];
-_helper3 allowDamage False;
-_helper3 setPosATL (getPosATL _helper1);
-
-_rope1 = ropeCreate [_helper1, [0,0,0], _helper2, [0,0,0], OFFSET];
-_rope2 = ropeCreate [_helper2, [0,0,0], _helper3, [0,0,0], ROPELENGTH - OFFSET];
-
-_helper1 attachTo [_vehicle, _position];
-_helper2 setPosATL [
-  (getPosATL _helper1) select 0,
-  (getPosATL _helper1) select 1,
-  ((getPosATL _helper1) select 2) - OFFSET
-];
+_posWorld2 =+ _posWorld;
 if (_inPlace) then {
-  _building = (getPosATL _helper1 select 2) - (getPos _helper1 select 2);
-  _helper3 setPosATL [
+  _posWorld2 set [2, ((_posWorld select 2) - (ROPELENGTH - OFFSET)) max 0];
+};
+
+_helper1 = HELPER createVehicle _posWorld;
+_helper1 allowDamage False;
+
+_helper2 = HELPER createVehicle _posWorld2;
+_helper2 allowDamage False;
+
+//_rope1 = ropeCreate [_helper1, [0,0,0], _helper1, [0,0,0], OFFSET];
+_rope1 = ropeCreate [_vehicle, _pos, _helper1, [0,0,0], OFFSET + 1];
+_rope2 = ropeCreate [_helper1, [0,0,0], _helper2, [0,0,0], ROPELENGTH - (OFFSET + 1)];
+
+if (_inPlace) then {
+  _roof = ((getPosATL _vehicle) vectorDiff (getPos _vehicle)) select 2;
+  _helper2 setPosATL [
     (getPosATL _helper1) select 0,
     (getPosATL _helper1) select 1,
-    (((getPosATL _helper1) select 2) - ROPELENGTH) max _building
+    (((getPosATL _helper1) select 2) - ROPELENGTH) max (_roof + 1)
   ];
 } else {
-  _helper3 setPosATL [
-    (getPosATL _helper1) select 0,
-    (getPosATL _helper1) select 1,
-    ((getPosATL _helper1) select 2) - OFFSET
-  ];
+  _helper2 setPosATL (getPosATL _helper1);
 };
 
-[_rope1, _rope2, _helper1, _helper2, _helper3]
+[_rope1, _rope2, _helper1, _helper2]

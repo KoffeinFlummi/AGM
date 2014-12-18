@@ -32,7 +32,7 @@ _vehicle setVariable ["AGM_RopesOccupied", _occupied, True];
 _rope = _ropes select _index;
 _rope1 = _rope select 0;
 _rope2 = _rope select 1;
-_helper = _rope select 3;
+_helper = _rope select 2;
 _unit disableCollisionWith _helper;
 
 [time, _unit, _vehicle, _index, _rope, _index] spawn {
@@ -45,7 +45,7 @@ _unit disableCollisionWith _helper;
 
   _rope1 = _rope select 0;
   _rope2 = _rope select 1;
-  _helper = _rope select 3;
+  _helper = _rope select 2;
 
   _unit allowDamage False;
   moveOut _unit;
@@ -70,7 +70,7 @@ _unit disableCollisionWith _helper;
   };
 
   detach player;
-  player switchMove "";
+  [_unit, "", 2] call AGM_Core_fnc_doAnimation;
   player setVectorUp [0,0,1];
 
   // delete and recreate rope
@@ -82,8 +82,6 @@ _unit disableCollisionWith _helper;
     "{_ropes = (_this select 0) getVariable 'AGM_Ropes';_ropes set [(_this select 2), [(_this select 0), (_this select 1), True] call AGM_FastRoping_fnc_createRope];(_this select 0) setVariable ['AGM_Ropes', _ropes, True];}",
     _vehicle
   ] call AGM_Core_fnc_execRemoteFnc;
-
-  [[_rope1, _rope2], "{ropeUnwind [_this select 0, 12, 2];ropeUnwind [_this select 1, 12, 33];}", _helper] call AGM_Core_fnc_execRemoteFnc;
 
   // free rope for next unit
   _occupied = _vehicle getVariable "AGM_RopesOccupied";
