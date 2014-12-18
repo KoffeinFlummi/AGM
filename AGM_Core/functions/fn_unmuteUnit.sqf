@@ -19,4 +19,4 @@ if (isNull _unit) exitWith {};
 _speaker = _unit getVariable ["AGM_OriginalSpeaker", ""];
 if (_speaker == "") exitWith {};
 
-[_unit, format ["{_this setSpeaker '%1'}", _speaker], _unit, "AGM_Speaker"] call AGM_Core_fnc_execPersistentFnc;
+[0, format ["{(_this select 1) setSpeaker '%1'}", _speaker], _unit, "AGM_Speaker"] call AGM_Core_fnc_execPersistentFnc;

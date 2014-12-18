@@ -19,7 +19,7 @@ if (isNull _unit || {!alive _unit}) exitWith {};
 if (_unit isKindOf "CAManBase") then {
   _name = [name _unit, true] call AGM_Core_fnc_sanitizeString;
 
-  if (_name != _unit getVariable ["AGM_Name", ""]) then {
+  //if (_name != _unit getVariable ["AGM_Name", ""]) then {
     _unit setVariable ["AGM_Name", _name, true];
-  };
+  //};
 };

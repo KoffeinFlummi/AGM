@@ -1,7 +1,7 @@
 /*
  * Author: commy2
  *
- * Execute a function on every machine. Function will also be called upon JIP (postInit).
+ * Execute a function on every machine. Function will also be called upon JIP (postInit). The arguments are stored in (_this select 0), while the assigned namespace is stored in (_this select 1).
  *
  * Argument:
  * 0: Function arguments (Array)
@@ -27,7 +27,7 @@ if (!isNil "AGM_Debug" && {"remote" in AGM_Debug}) then {
 };
 
 // execute function on every currently connected machine
-[_arguments, _this select 1, 2] call AGM_Core_fnc_execRemoteFnc;
+[[_arguments, _unit], _this select 1, 2] call AGM_Core_fnc_execRemoteFnc;
 
 // save persistent function for JIP
 private ["_persistentFunctions", "_index"];

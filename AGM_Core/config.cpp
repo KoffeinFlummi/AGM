@@ -589,7 +589,7 @@ class CfgFunctions {
       class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
-      class onDrawSetChannel;
+      class onLoadRscDisplayChannel;
       class owned;
       class player;
       class playerSide;
@@ -605,6 +605,7 @@ class CfgFunctions {
       class removeInventoryDisplayLoadedEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
+      class restoreVariablesJIP;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setCaptivityStatus;
@@ -613,6 +614,7 @@ class CfgFunctions {
       class setName;
       class setParameter;
       class setPitchBankYaw;
+      class setVariableJIP;
       class stringToColoredText;
       class subString;
       class toBin;
@@ -677,6 +679,17 @@ class Extended_InitPost_EventHandlers {
     };
     class AGM_Core_forceWalk {
       init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_applyForceWalkStatus;};";
+    };
+  };
+};
+
+class Extended_Respawn_EventHandlers {
+  class All {
+    class AGM_Core_restoreVariablesJIP {
+      respawn = "_this call AGM_Core_fnc_restoreVariablesJIP";
+    };
+    class AGM_Core_setName {
+      respawn = "_this call AGM_Core_fnc_setName";
     };
   };
 };
