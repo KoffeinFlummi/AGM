@@ -19,6 +19,6 @@ if (isNull _unit) exitWith {};
 _speaker = speaker _unit;
 if (_speaker == "AGM_NoVoice") exitWith {};
 
-[_unit, "{_this setSpeaker 'AGM_NoVoice'}", _unit, "AGM_Speaker"] call AGM_Core_fnc_execPersistentFnc;
+[0, "{(_this select 1) setSpeaker 'AGM_NoVoice'}", _unit, "AGM_Speaker"] call AGM_Core_fnc_execPersistentFnc;
 
 _unit setVariable ["AGM_OriginalSpeaker", _speaker, true];
