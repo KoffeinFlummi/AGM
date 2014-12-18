@@ -23,37 +23,5 @@ class RscDisplayInventory {
 };
 
 class RscDisplayChannel {
-	onLoad = "uiNamespace setVariable ['AGM_ctrlChannel', (_this select 0) displayCtrl 101];";
-};
-
-class RscDisplayMainMap {
-	class controlsBackground {
-		class CA_Map: RscMapControl {
-			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
-		};
-	};
-};
-
-class RscDisplayGetReady: RscDisplayMainMap {
-	class controlsBackground {
-		class CA_Map: RscMapControl {
-			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
-		};
-	};
-};
-
-class RscDisplayClientGetReady: RscDisplayGetReady {
-	class controlsBackground {
-		class CA_Map: RscMapControl {
-			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
-		};
-	};
-};
-
-class RscDisplayServerGetReady: RscDisplayGetReady {
-	class controlsBackground {
-		class CA_Map: RscMapControl {
-			onDraw = "_this call AGM_Core_fnc_onDrawSetChannel";
-		};
-	};
+  onLoad = "_this call AGM_Core_fnc_onLoadRscDisplayChannel;";
 };

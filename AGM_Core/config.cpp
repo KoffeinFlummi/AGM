@@ -589,7 +589,7 @@ class CfgFunctions {
       class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
-      class onDrawSetChannel;
+      class onLoadRscDisplayChannel;
       class owned;
       class player;
       class playerSide;
