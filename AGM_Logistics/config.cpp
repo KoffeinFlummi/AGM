@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp", "nic547"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -909,7 +909,7 @@ class CfgVehicles {
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
       class _xx_AGM_UAVBattery {
-        count = 24;
+        count = 6;
         name = "AGM_UAVBattery";
       };
     };
@@ -1080,7 +1080,7 @@ class CfgVehicles {
 
   // Trucks INDEP
   class Truck_02_base_F: Truck_F {
-    KEY_WHEEL_6X6_REAR
+    KEY_WHEEL_6X6_REAR_KAMAZ
     AGM_fuelCapacity = AGM_FUELCAPACITY_KAMAZ;
     class AGM_Actions: AGM_Actions {};
   };

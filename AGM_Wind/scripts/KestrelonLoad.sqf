@@ -7,6 +7,7 @@ _ctrl2 = _display displayCtrl 42002;
 _ctrl3 = _display displayCtrl 42003;
 _ctrl4 = _display displayCtrl 42004;
 _ctrl5 = _display displayCtrl 42005;
+_ctrl6 = _display displayCtrl 42006;
 _sleep1 = 0.5;
 AGM_Kestrel_wind_Head=0;
 //unIFormItems _player+backpackItems _player+vestItems _player
@@ -102,7 +103,8 @@ WHILE {AGM_isKestrel} DO {
   _ctrl3 ctrlSetText _windrBB;
   _ctrl4 ctrlSetText FORMAT["%1",round (direction _player)];
   _ctrl5 ctrlSetText FORMAT["%1", (round (AGM_Wind_currentTemperature * 10)) / 10];
-
+  _ctrl6 ctrlsettextcolor [0,0,0,1-(sunOrMoon*sunOrMoon+(moonIntensity/5))];
+  
   IF (!("AGM_ItemKestrel" in items _player)) THEN {AGM_isKestrel = FALSE;};
   IF (
     underwater _player ||
@@ -120,3 +122,4 @@ _ctrl2 ctrlShow false;
 _ctrl3 ctrlShow false;
 _ctrl4 ctrlShow false;
 _ctrl5 ctrlShow false;
+_ctrl6 ctrlShow false;

@@ -12,7 +12,6 @@
  */
 
 #define ROPELENGTH 35
-#define SPEED 6
 
 _unit = _this select 0;
 _vehicle = _this select 1;
@@ -36,43 +35,55 @@ _rope2 = _rope select 1;
 _helper = _rope select 2;
 _unit disableCollisionWith _helper;
 
-[time, _unit, _vehicle, _index, _rope1, _rope2, _helper] spawn {
+[time, _unit, _vehicle, _index, _rope, _index] spawn {
   _time = _this select 0;
   _unit = _this select 1;
   _vehicle = _this select 2;
   _index = _this select 3;
-  _rope1 = _this select 4;
-  _rope2 = _this select 5;
-  _helper = _this select 6;
+  _rope = _this select 4;
+  _index = _this select 5;
+
+  _rope1 = _rope select 0;
+  _rope2 = _rope select 1;
+  _helper = _rope select 2;
 
   _unit allowDamage False;
   moveOut _unit;
   waitUntil {vehicle _unit == _unit};
 
   _helper setVectorUp [0,0,1];
-  _unit attachTo [_helper, [0,0,-1.35]];
+  _unit attachTo [_helper, [0,0,0]];
 
   _vector = (getPos _unit) vectorFromTo (getPos _vehicle);
   _unit setVectorDir _vector;
 
-  ropeUnwind [_rope1, SPEED, ROPELENGTH];
-  ropeUnwind [_rope2, SPEED, 0];
+  [[_rope1, _rope2], "{ropeUnwind [_this select 0, 6, 35];ropeUnwind [_this select 1, 6, 0];}", _helper] call AGM_Core_fnc_execRemoteFnc;
 
   sleep 0.1;
   _unit allowDamage True;
-  _unit switchMove "AGM_FastRoping";
+  [_unit, "AGM_FastRoping", 2] call AGM_Core_fnc_doAnimation;
 
-  sleep 2;
-  waitUntil {(isTouchingGround _helper) or (time >= (_time + ROPELENGTH / SPEED)) or (vectorMagnitude (velocity _vehicle) > 5)};
+  _time = time;
+  waitUntil {
+    ([_unit] + ([[_helper] call AGM_Core_fnc_getPitchBankYaw, {_this * -1}] call AGM_Core_fnc_map)) call AGM_Core_fnc_setPitchBankYaw;
+    _time + 1 < time and ((isTouchingGround _helper) or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
+  };
 
   detach player;
-  player switchMove "";
+  [_unit, "", 2] call AGM_Core_fnc_doAnimation;
+  player setVectorUp [0,0,1];
 
-  ropeUnwind [_rope1, ROPELENGTH * 2, 1.5];
-  ropeUnwind [_rope2, ROPELENGTH * 2, ROPELENGTH - 1.5];
+  // delete and recreate rope
+  {deleteVehicle _x;} forEach _rope;
+  _ropePositions = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_FastRoping_Positions");
+  _pos = _ropePositions select _index;
+  [
+    [_vehicle, _pos, _index],
+    "{_ropes = (_this select 0) getVariable 'AGM_Ropes';_ropes set [(_this select 2), [(_this select 0), (_this select 1), True] call AGM_FastRoping_fnc_createRope];(_this select 0) setVariable ['AGM_Ropes', _ropes, True];}",
+    _vehicle
+  ] call AGM_Core_fnc_execRemoteFnc;
 
-  waitUntil {(ropeLength _rope1) < 2};
-
+  // free rope for next unit
   _occupied = _vehicle getVariable "AGM_RopesOccupied";
   _occupied set [_index, False];
   _vehicle setVariable ["AGM_RopesOccupied", _occupied, True];

@@ -10,7 +10,7 @@ private "_setup";
 _setup = AGM_Fortifications_Setup;
 
 AGM_Fortifications_Setup = objNull;
-AGM_Fortifications_placer forceWalk false;
+[AGM_Fortifications_placer, "AGM_Logistics", false] call AGM_Core_fnc_setForceWalkStatus;
 AGM_Fortifications_placer = objNull;
 
 [player, "DefaultAction", player getVariable ["AGM_Fortifications_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;

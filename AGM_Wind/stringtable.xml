@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-11-03 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Wind">
     <Key ID="STR_AGM_Wind_ApproximateTemp">
       <English>Approximate Temperature</English>
       <German>Ungefähre Temperatur</German>
+      <Spanish>Temperatura aproximada</Spanish>
       <French>Estimer la température</French>
       <Polish>Przybliżona temperatura</Polish>
       <Czech>Odhadovaná teplota</Czech>
+      <Hungarian>Hőmérséklet nagyábol</Hungarian>
+      <Russian>Примерная температура </Russian>
     </Key>
     <Key ID="STR_AGM_Kestrel_Name">
       <English>Kestrel 4500NV</English>
@@ -43,6 +46,7 @@
       <Portuguese>Abrir Kestrel</Portuguese>
       <Italian>Apri Kestrel</Italian>
       <Hungarian>Kestrel bekapcsolása</Hungarian>
+      <Russian>Открыть Kestrel</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
@@ -54,6 +58,7 @@
       <Portuguese>Fechar Kestrel</Portuguese>
       <Italian>Chiudi Kestrel</Italian>
       <Hungarian>Kestrel kikapcsolása</Hungarian>
+      <Russian>Закрыть Kestrel</Russian>
     </Key>
   </Package>
 </Project>

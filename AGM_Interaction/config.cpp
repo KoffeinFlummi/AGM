@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -45,6 +45,7 @@ class CfgFunctions {
       class onSelectMenuDblClick;
       class openDoor;
       class openMenu;
+      class openMenuSelectUI;
       class openMenuSelf;
       class openSelectMenu;
       class openSubMenu;
@@ -221,6 +222,7 @@ class CfgVehicles {
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         subMenu[] = {"AGM_TeamManagement", 0};
         hotkey = "M";
+        enableInside = 1;
 
         class AGM_JoinTeamRed {
           displayName = "$STR_AGM_Interaction_JoinTeamRed";
@@ -231,6 +233,7 @@ class CfgVehicles {
           icon = "\AGM_Interaction\UI\team\team_red_ca.paa";
           priority = 2.4;
           hotkey = "R";
+          enableInside = 1;
         };
         class AGM_JoinTeamGreen {
           displayName = "$STR_AGM_Interaction_JoinTeamGreen";
@@ -241,6 +244,7 @@ class CfgVehicles {
           icon = "\AGM_Interaction\UI\team\team_green_ca.paa";
           priority = 2.3;
           hotkey = "G";
+          enableInside = 1;
         };
         class AGM_JoinTeamBlue {
           displayName = "$STR_AGM_Interaction_JoinTeamBlue";
@@ -251,6 +255,7 @@ class CfgVehicles {
           icon = "\AGM_Interaction\UI\team\team_blue_ca.paa";
           priority = 2.2;
           hotkey = "B";
+          enableInside = 1;
         };
         class AGM_JoinTeamYellow {
           displayName = "$STR_AGM_Interaction_JoinTeamYellow";
@@ -261,6 +266,7 @@ class CfgVehicles {
           icon = "\AGM_Interaction\UI\team\team_yellow_ca.paa";
           priority = 2.1;
           hotkey = "Y";
+          enableInside = 1;
         };
 
         class AGM_LeaveTeam {
@@ -272,6 +278,7 @@ class CfgVehicles {
           icon = "\AGM_Interaction\UI\team\team_white_ca.paa";
           priority = 2.5;
           hotkey = "N";
+          enableInside = 1;
         };
       };
 
@@ -283,6 +290,7 @@ class CfgVehicles {
         showDisabled = 1;
         priority = 2.8;
         hotkey = "Q";
+        enableInside = 1;
       };
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";
@@ -293,6 +301,7 @@ class CfgVehicles {
         priority = 2.6;
         icon = "\AGM_Interaction\UI\team\team_management_ca.paa";
         hotkey = "J";
+        enableInside = 1;
       };
 
       class AGM_GetDown {
@@ -318,6 +327,7 @@ class CfgVehicles {
         statement = "[_target, '{_this addRating -rating _this}', _target] call AGM_Core_fnc_execRemoteFnc";
         showDisabled = 0;
         priority = 2.5;
+        enableInside = 1;
       };
     };
 

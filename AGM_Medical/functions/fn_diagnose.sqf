@@ -27,15 +27,15 @@ _unit setVariable ["AGM_Diagnosed", True, False];
 
 // Tell bystanders what's up if necessary
 if (AGM_Medical_RequireDiagnosis > 0) then {
-  _bystanders = nearestObjects [player, ["Man"], 10];
+  _bystanders = nearestObjects [AGM_player, ["CAManBase"], 10];
   [-1, {
-    if (player in (_this select 1)) then {
+    if (AGM_player in (_this select 1)) then {
       (_this select 0) setVariable ["AGM_Diagnosed", true, false];
     };
   }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
 };
 
-_string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", (_unit getVariable ["AGM_Name", (name _unit)])];
+_string = format ["<t align='center' size='0.8'>%1: %2", localize "STR_AGM_Medical_Patient", [_unit] call AGM_Core_fnc_getName];
 
 if (damage _unit >= 1) exitWith {
   _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientIsDead" + "</t></t>";

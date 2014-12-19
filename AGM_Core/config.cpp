@@ -493,9 +493,9 @@ class CfgPatches {
       "extended_eventhandlers",
       "cba_extended_eventhandlers"
     };
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -514,6 +514,8 @@ class CfgFunctions {
       class addInventoryDisplayLoadedEventHandler;
       class addScrollWheelEventHandler;
       class adminKick;
+      class ambientBrightness;
+      class applyForceWalkStatus;
       class binarizeNumber;
       class callCustomEventHandlers;
       class callCustomEventHandlersGlobal;
@@ -527,6 +529,7 @@ class CfgFunctions {
       class codeToLetter;
       class codeToString;
       class convertKeyCode;
+      class currentChannel;
       class disableUserInput;
       class displayText;
       class displayTextPicture;
@@ -535,6 +538,7 @@ class CfgFunctions {
       class endRadioTransmission;
       class execPersistentFnc;
       class execRemoteFnc;
+      class executePersistent;
       class filter;
       class fixLoweredRifleAnimation;
       class getCaptivityStatus;
@@ -542,8 +546,10 @@ class CfgFunctions {
       class getConfigGunner;
       class getDefaultAnim;
       class getDoorTurrets;
+      class getForceWalkStatus;
       class getInPosition;
       class getMarkerType;
+      class getName;
       class getNumberFromMissionSQM;
       class getPitchBankYaw;
       class getStringFromMissionSQM;
@@ -558,8 +564,10 @@ class CfgFunctions {
       class getTurrets;
       class getTurretsFFV;
       class getTurretsOther;
+      class getUavControlPosition;
       class getVehicleCargo;
       class getVehicleCodriver;
+      class getVehicleCrew;
       class getWeaponAzimuthAndInclination;
       class getWeaponType;
       class getWindDirection;
@@ -581,6 +589,7 @@ class CfgFunctions {
       class muteUnit;
       class numberToDigits;
       class numberToDigitsString;
+      class onLoadRscDisplayChannel;
       class owned;
       class player;
       class playerSide;
@@ -596,12 +605,16 @@ class CfgFunctions {
       class removeInventoryDisplayLoadedEventHandler;
       class removeMapMarkerCreatedEventHandler;
       class removeScrollWheelEventHandler;
+      class restoreVariablesJIP;
       class revertKeyCodeLocalized;
       class sanitizeString;
       class setCaptivityStatus;
+      class setForceWalkStatus;
       class setKeyDefault;
+      class setName;
       class setParameter;
       class setPitchBankYaw;
+      class setVariableJIP;
       class stringToColoredText;
       class subString;
       class toBin;
@@ -609,16 +622,6 @@ class CfgFunctions {
       class toHex;
       class toNumber;
       class unmuteUnit;
-    };
-  };
-  class AGM_Identity {
-    class AGM_Identity {
-      file = "AGM_Core\functions\Identity";
-      class getName;
-      class getNameSide;
-      //class getRank;
-      class setName;
-      class setRank;
     };
   };
   class AGM_Debug {
@@ -649,15 +652,6 @@ class CfgSounds {
   };
 };
 
-// Testing
-class Extended_GetIn_EventHandlers {
-  class All {
-    class AGM_GetInPosTest {
-      getIn = "if ('GetInPos' in (missionNamespace getVariable ['AGM_Debug', []])) then {systemChat str _this};";
-    };
-  };
-};
-
 class Extended_PreInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\preInit.sqf'";
@@ -669,23 +663,33 @@ class Extended_PreInit_EventHandlers {
 class Extended_PostInit_EventHandlers {
   class AGM_Core {
     init = "call compile preprocessFileLineNumbers '\AGM_Core\init.sqf'";
-    clientInit = "[AGM_player] spawn AGM_Identity_fnc_setName;";
     disableModuload = true;
   };
 };
 
-// Identity
-class Extended_Init_EventHandlers {
+class Extended_InitPost_EventHandlers {
+  class All {
+    class AGM_Core_executePersistent {
+      init = "[_this select 0] call AGM_Core_fnc_executePersistent";
+    };
+  };
   class CAManBase {
-    class AGM_SetName {
-      init = "if (local (_this select 0)) then {_this spawn AGM_Identity_fnc_setName};";
+    class AGM_Core_setName {
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_setName};";
+    };
+    class AGM_Core_forceWalk {
+      init = "if (local (_this select 0)) then {_this call AGM_Core_fnc_applyForceWalkStatus;};";
     };
   };
 };
-class Extended_Local_EventHandlers {
-  class CAManBase {
-    class AGM_SetName {
-      local = "if (_this select 1) then {_this spawn AGM_Identity_fnc_setName};";
+
+class Extended_Respawn_EventHandlers {
+  class All {
+    class AGM_Core_restoreVariablesJIP {
+      respawn = "_this call AGM_Core_fnc_restoreVariablesJIP";
+    };
+    class AGM_Core_setName {
+      respawn = "_this call AGM_Core_fnc_setName";
     };
   };
 };
@@ -699,7 +703,7 @@ class CfgFactionClasses {
 };
 
 class CfgVehicles {
-  class Man;
+  /*class Man;
   class CAManBase: Man {
     // @todo
     class UserActions {
@@ -719,7 +723,7 @@ class CfgVehicles {
         userActionID = 100;
       };
     };
-  };
+  };*/
 
   // += needs a non inherited entry in that class, otherwise it simply overwrites
   //#include <DefaultItems.hpp>
@@ -751,6 +755,30 @@ class CfgVehicles {
             name = "Kick";
             value = 2;
           };
+        };
+      };
+      class CheckAll {
+        displayName = "Check all addons";
+        description = "Check all addons instead of only those of AGM?";
+        typeName = "BOOL";
+        class values {
+          class WarnOnce {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+          class Warn {
+            name = "Yes";
+            value = 1;
+          };
+        };
+      };
+      class Whitelist {
+        displayName = "Whitelist";
+        description = "What addons are allowed regardless?";
+        typeName = "STRING";
+        class values {
+            default = "[]";
         };
       };
     };

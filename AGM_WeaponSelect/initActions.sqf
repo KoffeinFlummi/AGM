@@ -10,15 +10,14 @@ _fnc_actionThrowCondition = {
   _isInput = inputAction "CycleThrownItems" > 0;
   if !(_isInput isEqualTo (missionNamespace getVariable ["AGM_WeaponSelect_CycleThrownItemsState", false])) then {
     if (_isInput && {_muzzle == ""}) then {
-      // @todo select last muzzle to roll over
-      [_this select 0] spawn AGM_WeaponSelect_fnc_selectGrenadeAll;//
+      [_this select 1] spawn AGM_WeaponSelect_fnc_selectGrenadeAll;
     };
     AGM_WeaponSelect_CycleThrownItemsState = _isInput;
   };
 
   if !([_this select 1] call AGM_Core_fnc_canUseWeapon) exitWith {false};
 
-  if (_muzzle == "") exitWith {true};
+  if (_muzzle == "") exitWith {["All"] call AGM_WeaponSelect_fnc_findNextGrenadeMagazine != ""};
 
   // fix auto muzzle swap after entering or leaving a vehicle
   if (_this select 0 != missionNamespace getVariable ["AGM_WeaponSelect_CurrentGrenadeMuzzleVehicle", objNull]) then {

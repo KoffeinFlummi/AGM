@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-11-03 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-19 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -44,6 +44,7 @@
       <Spanish>Bloquear puerta</Spanish>
       <French>Verrouiller Porte</French>
       <Italian>Blocca la porta</Italian>
+      <Russian>Заблокировать дверь</Russian>
       <Portuguese>Trancar Porta</Portuguese>
       <Hungarian>Ajtó bezárása</Hungarian>
       <Polish>Zablokuj drzwi</Polish>
@@ -55,6 +56,7 @@
       <Spanish>Desbloquear puerta</Spanish>
       <French>Déverrouiller Porte</French>
       <Italian>Sblocca la porta</Italian>
+      <Russian>Разблокировать дверь</Russian>
       <Portuguese>Destrancar Porta</Portuguese>
       <Hungarian> Zár kinyitása</Hungarian>
       <Polish>Odblokuj drzwi</Polish>
@@ -66,6 +68,7 @@
       <Spanish>Puerta bloqueada</Spanish>
       <French>Porte Verrouillée</French>
       <Italian>Porta bloccata</Italian>
+      <Russian>Дверь заблокирована</Russian>
       <Portuguese>Porta Trancada</Portuguese>
       <Hungarian>Zárt ajtó</Hungarian>
       <Polish>Zablokowano drzwi</Polish>
@@ -77,6 +80,7 @@
       <Spanish>Puerta desbloqueada</Spanish>
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
+      <Russian>Дверь разблокирована</Russian>
       <Portuguese>Porta Destrancada</Portuguese>
       <Hungarian>Nyitott ajtó</Hungarian>
       <Polish>Odblokowano drzwi</Polish>
@@ -342,6 +346,7 @@
       <Polish>Zostałeś klepnięty po ramieniu</Polish>
       <Hungarian>Vállonveregettek</Hungarian>
       <Czech>Někdo tě poklepal na rameno.</Czech>
+      <Russian>Вас похлопали по плечу</Russian>
       <Portuguese>Você foi tocado no ombro.</Portuguese>
       <Italian>Ti è stato dato un colpetto sulla spalla</Italian>
     </Key>
@@ -353,6 +358,7 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
+      <Russian>Отменить</Russian>
       <Portuguese>Cancelar</Portuguese>
       <Hungarian>Mégse</Hungarian>
     </Key>
@@ -364,6 +370,7 @@
       <French>Sélectionner</French>
       <Czech>Zvolit</Czech>
       <Italian>Seleziona</Italian>
+      <Russian>Выбрать</Russian>
       <Portuguese>Selecionar</Portuguese>
       <Hungarian>Kiválaszt</Hungarian>
     </Key>
@@ -387,6 +394,7 @@
       <Czech>K zemi!</Czech>
       <French>A terre!</French>
       <Hungarian>A földre!</Hungarian>
+      <Russian>Ложись!</Russian>
       <Portuguese>Abaixe-se!</Portuguese>
       <Italian>A Terra!</Italian>
     </Key>
@@ -397,6 +405,7 @@
       <French>Gestion d'équipe &gt;&gt;</French>
       <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
       <Czech>Správa týmu &gt;&gt;</Czech>
+      <Russian>Управление группой &gt;&gt;</Russian>
       <Portuguese>Gerenciamento de Equipe &gt;&gt;</Portuguese>
       <Italian>Organizzazione Squadra &gt;&gt;</Italian>
       <Hungarian>Csapat kezelés &gt;&gt;</Hungarian>
@@ -408,6 +417,7 @@
       <French>Rouge</French>
       <Polish>Czerwony</Polish>
       <Czech>Červený</Czech>
+      <Russian>Красный</Russian>
       <Portuguese>Vermelha</Portuguese>
       <Italian>Rosso</Italian>
       <Hungarian>Piros</Hungarian>
@@ -419,6 +429,7 @@
       <French>Vert</French>
       <Polish>Zielony</Polish>
       <Czech>Zelený</Czech>
+      <Russian>Зеленый</Russian>
       <Portuguese>Verde</Portuguese>
       <Italian>Verde</Italian>
       <Hungarian>Zöld</Hungarian>
@@ -430,6 +441,7 @@
       <French>Bleu</French>
       <Polish>Niebieski</Polish>
       <Czech>Modrý</Czech>
+      <Russian>Синий</Russian>
       <Portuguese>Azul</Portuguese>
       <Italian>Blu</Italian>
       <Hungarian>Kék</Hungarian>
@@ -441,6 +453,7 @@
       <French>Jaune</French>
       <Polish>Żółty</Polish>
       <Czech>Žlutý</Czech>
+      <Russian>Желтый</Russian>
       <Portuguese>Amarela</Portuguese>
       <Italian>Giallo</Italian>
       <Hungarian>Sárga</Hungarian>
@@ -452,6 +465,7 @@
       <French>Rejoindre Rouge</French>
       <Polish>Dołącz do drużyny czerwonej</Polish>
       <Czech>Připojit do Červeného Týmu</Czech>
+      <Russian>Присоединиться к красной группе</Russian>
       <Portuguese>Unir-se à Equipe Vermelha</Portuguese>
       <Italian>Entra nella Squadra Rossa</Italian>
       <Hungarian>Csatlakozás a piros csapathoz</Hungarian>
@@ -463,6 +477,7 @@
       <French>Rejoindre Verte</French>
       <Polish>Dołącz do drużyny zielonej</Polish>
       <Czech>Připojit do Zeleného Týmu</Czech>
+      <Russian>Присоединиться к зеленой группе</Russian>
       <Portuguese>Unir-se à Equipe Verde</Portuguese>
       <Italian>Entra nella Squadra Verde</Italian>
       <Hungarian>Csatlakozás a zöld csapathoz</Hungarian>
@@ -474,6 +489,7 @@
       <French>Rejoindre Bleue</French>
       <Polish>Dołącz do drużyny niebieskiej</Polish>
       <Czech>Připojit do Modrého Týmu</Czech>
+      <Russian>Присоединиться к синей группе</Russian>
       <Portuguese>Unir-se à Equipe Azul</Portuguese>
       <Italian>Entra nella Squadra Blu</Italian>
       <Hungarian>Csatlakozás a kék csapathoz</Hungarian>
@@ -485,6 +501,7 @@
       <French>Rejoindre Jaune</French>
       <Polish>Dołącz do drużyny żółtej</Polish>
       <Czech>Připojit do Žlutého Týmu</Czech>
+      <Russian>Присоединиться к желтой группе</Russian>
       <Portuguese>Unir-se à Equipe Amarela</Portuguese>
       <Italian>Entra nella Squadra Gialla</Italian>
       <Hungarian>Csatlakozás a sárga csapathoz</Hungarian>
@@ -496,6 +513,7 @@
       <French>Tu as rejoint l'équipe %1</French>
       <Polish>Dołączyłeś do drużyny %1</Polish>
       <Czech>Připojil ses do Týmu %1</Czech>
+      <Russian>Вы присоединились к группе %1</Russian>
       <Portuguese>Você uniu-se à Equipe %1</Portuguese>
       <Italian>Sei entrato nella Squadra %1</Italian>
       <Hungarian>Csatlakoztál a %1 csapathoz</Hungarian>
@@ -507,6 +525,7 @@
       <French>Quitter l'équipe</French>
       <Polish>Opuść drużynę</Polish>
       <Czech>Opustit tým</Czech>
+      <Russian>Покинуть группу</Russian>
       <Portuguese>Deixar Equipe</Portuguese>
       <Italian>Lascia la Squadra</Italian>
       <Hungarian>Csapat elhagyása</Hungarian>
@@ -518,6 +537,7 @@
       <French>Tu as quitté l'équipe</French>
       <Polish>Opuściłeś drużynę</Polish>
       <Czech>Opustil si tým</Czech>
+      <Russian>Вы покинули группу</Russian>
       <Portuguese>Você deixou a Equipe</Portuguese>
       <Italian>Hai lasciato la squadra</Italian>
       <Hungarian>Elhagytad a csapatot</Hungarian>
@@ -529,6 +549,7 @@
       <Polish>Przebacz</Polish>
       <French>Pardon</French>
       <Czech>Pardon</Czech>
+      <Russian>Извините</Russian>
       <Portuguese>Perdão</Portuguese>
       <Italian>Perdona</Italian>
       <Hungarian>Megbocsátás</Hungarian>
@@ -540,6 +561,7 @@
       <Spanish>Menú desplegable</Spanish>
       <French>Menu Déroulant</French>
       <Czech>Flow Menu</Czech>
+      <Russian>Выпадающее меню</Russian>
       <Portuguese>Flow Menu</Portuguese>
       <Italian>Menù a Scorrimento</Italian>
       <Hungarian>Legördülő menü</Hungarian>
@@ -550,6 +572,7 @@
       <Polish>Przewiń</Polish>
       <French>Défilement</French>
       <Spanish>Desplazar</Spanish>
+      <Russian>Пролистать</Russian>
       <Portuguese>Rolar</Portuguese>
       <Italian>Scorri</Italian>
       <Hungarian>Görgetés</Hungarian>
@@ -561,6 +584,7 @@
       <Polish>Modyfikator</Polish>
       <French>Modifier la touche</French>
       <Spanish>Tecla modificadora</Spanish>
+      <Russian>клавиша-модификатор</Russian>
       <Portuguese>Tecla Modificadora</Portuguese>
       <Italian>Modifica Tasto</Italian>
       <Hungarian>Módosító billentyű</Hungarian>
@@ -571,6 +595,7 @@
       <German>Außer Reichweite</German>
       <French>Hors de portée.</French>
       <Spanish>Fuera de rango</Spanish>
+      <Russian>Слишком далеко</Russian>
       <Portuguese>Fora do Alcançe</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
       <Polish>Poza zasięgiem</Polish>
@@ -583,27 +608,43 @@
       <French>Fermer le menu en relâchant la touche</French>
       <Spanish>Cerrar menú al soltar la tecla</Spanish>
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
+      <Russian>Закрывать меню при отжатии клавиши</Russian>
       <Czech>Menu interakce (Na držení)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_AutoCenterCursor">
       <English>Auto Center Cursor</English>
-      <German>Cursor automatisch zentrieren</German>
+      <German>Mauszeiger automatisch zentrieren</German>
+      <Spanish>Auto-centrar cursor</Spanish>
       <Polish>Automatycznie centruj kursor </Polish>
       <Czech>Vycentrování kurzoru</Czech>
+      <Hungarian>Egér auto-centrírozása</Hungarian>
+      <Russian>Автоцентрирование курсора</Russian>
     </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
       <German>Ausrüstung &gt;&gt;</German>
+      <Spanish>Equipamiento &gt;&gt;</Spanish>
       <French>Équipment &gt;&gt;</French>
       <Polish>Ekwipunek &gt;&gt;</Polish>
       <Czech>Vybavení &gt;&gt;</Czech>
+      <Hungarian>Felszerelés &gt;&gt;</Hungarian>
+      <Russian>Снаряжение &gt;&gt;</Russian>
     </Key>
     <Key ID="STR_AGM_Interaction_Push">
       <English>Push</English>
       <German>Schieben</German>
+      <Spanish>Empujar</Spanish>
       <French>Pousser</French>
       <Polish>Pchnij</Polish>
       <Czech>Odstrčit</Czech>
+      <Hungarian>Tolás</Hungarian>
+      <Russian>Толкать</Russian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_Interact">
+      <English>Interact</English>
+      <German>Interagiere</German>
+      <Czech>Interakce</Czech>
+      <Russian>Взаимодействовать</Russian>
     </Key>
   </Package>
 </Project>

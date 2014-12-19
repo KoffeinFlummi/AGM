@@ -1,5 +1,5 @@
 /*
- * Author: jodav
+ * Author: bux578
  *
  * Gets the turret index of door gunners
  * 
@@ -14,7 +14,7 @@
   Name: AGM_Core_fnc_getDoorTurrets
   
   Author(s):
-    jodav
+    bux578
   
   Description:
     Returns the turret indices of door gunners

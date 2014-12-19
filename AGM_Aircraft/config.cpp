@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi", "Crusty"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -802,7 +802,7 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird.hpp>
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
@@ -812,6 +812,7 @@ class CfgVehicles {
   };
 
   class B_Heli_Light_01_F: Heli_Light_01_base_F {
+    #include <mfd_littlebird.hpp>
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
 
@@ -826,12 +827,16 @@ class CfgVehicles {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
-    #include <mfd_littlebird_armed.hpp>
+    class MFD {};
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;
       };
     };
+  };
+
+  class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
+    #include <mfd_littlebird_armed.hpp>
   };
 
   class Heli_Light_02_base_F: Helicopter_Base_H {
@@ -1044,15 +1049,15 @@ class CfgVehicles {
   class Plane_CAS_01_base_F: Plane_Base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
-    class MFD {};
+    //class MFD {};
     class Turrets;
     #include <flightmodel_thunderbolt.hpp>
   };
 
-  class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
+  /*class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
     #include <mfd_thunderbolt.hpp>
     //#include <hmd_thunderbolt.hpp>
-  };
+  };*/
 
   class Plane_CAS_02_base_F: Plane_Base_F {
     lockDetectionSystem = 12;

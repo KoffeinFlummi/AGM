@@ -8,7 +8,7 @@
 
   Parameters:
     0: OBJECT - logic
-    1: ARRAY - synced objects
+    1: ARRAY - synced objects (only objects at mission start, so JIP without AI won't be present)
 
   Returns:
     Nothing
@@ -16,6 +16,7 @@
   Example:
     called from module
 */
+
 _this spawn {
   private ["_logic","_syncedObjects","_listOfVehicles"];
 
@@ -24,11 +25,8 @@ _this spawn {
 
   if (hasInterface) then {
     waitUntil {player == player};
-    sleep 3;
-    waitUntil {
-      sleep 1;
-      (alive player)
-    };
+    waitUntil {alive player};
+    sleep 5;  //need to wait for other gear-assign scripts to finish
 
     _listOfVehicles = []; {
       if ((_x isKindOf "Car") || (_x isKindOf "Tank") || (_x isKindOf "Helicopter")) then {
@@ -42,9 +40,7 @@ _this spawn {
 
     if (player in _syncedObjects) then {
       {
-        if (!([player, _x] call AGM_VehicleLock_fnc_hasKeyForVehicle)) then {
-          [player, _x, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
-        };
+        [player, _x, true] call AGM_VehicleLock_fnc_addKeyForVehicle;
       } forEach _listOfVehicles;
     };
   };

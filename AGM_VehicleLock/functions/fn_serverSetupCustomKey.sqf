@@ -23,7 +23,7 @@ _veh =  [_this, 0, objNull, [objNull]] call bis_fnc_param;
 _key =   [_this, 1, "", [""]] call bis_fnc_param;
 
 if (!isServer) exitWith {["AGM_VehicleLock_fnc_serverSetupCustomKey: only run on server"] call BIS_fnc_error;};
-if (_key == "") exitWith {["AGM_VehicleLock_fnc_serverSetupCustomKey: null key string"] call BIS_fnc_error;};
+if (_key == "") exitWith {["AGM_VehicleLock_fnc_serverSetupCustomKey: empty key string"] call BIS_fnc_error;};
 
 //Want this as atomic as possible
 

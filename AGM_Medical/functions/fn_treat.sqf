@@ -18,7 +18,7 @@
  * none
  */
 
-private ["_unit", "_target", "_type", "_triggers", "_inTrigger", "_item", "_animation", "_time", "_string"];
+private ["_unit", "_target", "_type", "_inTrigger", "_item", "_animation", "_time", "_string"];
 
 _unit = _this select 0;
 _target = _this select 1;
@@ -28,26 +28,33 @@ _type = _this select 2;
 if (_type in ["epipen", "bloodbag"] and
     !(([_unit] call AGM_Core_fnc_isMedic) or
     (_unit getVariable ["AGM_Medical_AllowNonMedics", AGM_Medical_AllowNonMedics > 0]))) exitWith {
-  [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
+  if ([_unit] call AGM_Core_fnc_isPlayer) then {
+    [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
+  };
 };
 
 // check MEDEVAC conditions
-_triggers = missionNamespace getVariable ["AGM_Medical_MEDEVACTriggers", []];
 _inTrigger = False;
 {
-  if ([_x, _target] call BIS_fnc_inTrigger) then {
-    _inTrigger = True;
-  };
-} forEach _triggers;
+  if (_inTrigger) exitWith {};
+  _inTrigger = [_x, _target] call BIS_fnc_inTrigger;
+} forEach (missionNamespace getVariable ["AGM_Medical_MEDEVACTriggers", []]);
+{
+  if (_inTrigger) exitWith {};
+  _inTrigger = _target distance _x < 10;
+} forEach (missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []]);
+
 if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]) and !_inTrigger) exitWith {
-  [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
+  if ([_unit] call AGM_Core_fnc_isPlayer) then {
+    [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
+  };
 };
 
 // morphine warning
 if (_type == "morphine" and
     _target != _unit and
     [_target] call AGM_Core_fnc_isPlayer) then {
-  [[name _unit], "systemChat format ['%1 %2', _this select 0, localize 'STR_AGM_Medical_GivingYouMorphine'];", _target] call AGM_Core_fnc_execRemoteFnc;
+  [[_unit] call AGM_Core_fnc_getName, "{systemChat format ['%1 %2', _this, localize 'STR_AGM_Medical_GivingYouMorphine'];}", _target] call AGM_Core_fnc_execRemoteFnc;
 };
 
 // remove item if necessary
@@ -65,12 +72,12 @@ AGM_Medical_treatmentAbort = {
   _unit = _this select 0;
 
   if (vehicle _unit == _unit) then {
-    [_unit, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+    [_unit, "", 1] call AGM_Core_fnc_doAnimation;
   };
   _unit setVariable ["AGM_canTreat", True, False];
 };
 
-player setVariable ["AGM_canTreat", False, False];
+_unit setVariable ["AGM_canTreat", False, False];
 
 // self-diagnosis is instant
 if (
@@ -90,22 +97,26 @@ _animation = switch (_type) do {
   default           {""};
 };
 if (stance _unit == "PRONE") then {
-  _animation = switch (currentWeapon _target) do {
-    case (primaryWeapon _target): {"AinvPpneMstpSlayWrflDnon_medic"};
-    case (handgunWeapon _target): {"AinvPpneMstpSlayWpstDnon_medic"};
-    default                     {"AinvPpneMstpSlayWnonDnon_medic"};
+  _animation = switch (currentWeapon _unit) do {
+    case (""):                    {"AinvPpneMstpSlayWnonDnon_medic"};
+    case (primaryWeapon _unit): {"AinvPpneMstpSlayWrflDnon_medic"};
+    case (handgunWeapon _unit): {"AinvPpneMstpSlayWpstDnon_medic"};
+    default                       {"AinvPpneMstpSlayWnonDnon_medic"};
   };
 };
 if (_unit == _target) then {
-  _animation = switch (currentWeapon _target) do {
-    case (primaryWeapon _target): {
-      ["AinvPknlMstpSlayWrflDnon_medic", "AinvPpneMstpSlayWrflDnon_medic"] select (stance _target == "PRONE")
+  _animation = switch (currentWeapon _unit) do {
+    case (""): {
+      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _unit == "PRONE")
     };
-    case (handgunWeapon _target): {
-      ["AinvPknlMstpSlayWpstDnon_medic", "AinvPpneMstpSlayWpstDnon_medic"] select (stance _target == "PRONE")
+    case (primaryWeapon _unit): {
+      ["AinvPknlMstpSlayWrflDnon_medic", "AinvPpneMstpSlayWrflDnon_medic"] select (stance _unit == "PRONE")
+    };
+    case (handgunWeapon _unit): {
+      ["AinvPknlMstpSlayWpstDnon_medic", "AinvPpneMstpSlayWpstDnon_medic"] select (stance _unit == "PRONE")
     };
     default {
-      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _target == "PRONE")
+      ["AinvPknlMstpSlayWnonDnon_medic", "AinvPpneMstpSlayWnonDnon_medic"] select (stance _unit == "PRONE")
     };
   };
 };
@@ -128,7 +139,7 @@ if !([_unit] call AGM_Core_fnc_isMedic) then {
 };
 // increase treatment time when treating while prone or in (non-medical) vehicle
 // (it's hard to bandage yourself in a tank you know)
-if (stance _unit == "PRONE" or (vehicle _unit != _unit and !([_vehicle] call AGM_Core_fnc_isMedic))) then {
+if (stance _unit == "PRONE" or (vehicle _unit != _unit and !([vehicle _unit] call AGM_Core_fnc_isMedic))) then {
   _time = _time * 1.2;
 };
 
@@ -147,6 +158,14 @@ _string = switch (_type) do {
   case "epipen"   : {localize "STR_AGM_Medical_Injecting_Epinephrine"};
   case "bloodbag" : {localize "STR_AGM_Medical_Transfusing_Blood"};
   default           {"Tell Flummi he's a dumbass ..."};
+};
+
+// ai treat
+if !([_unit] call AGM_Core_fnc_isPlayer) exitWith {
+  [_this, _time] spawn {
+    sleep ((_this select 1) * 0.6);
+    (_this select 0) call AGM_Medical_fnc_treatmentCallback;
+  };
 };
 
 [

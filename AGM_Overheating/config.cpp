@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_SpareBarrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -46,8 +46,8 @@ class Extended_Take_EventHandlers {
 class AGM_Core_Default_Keys {
   class clearJam {
     displayName = "$STR_AGM_Overheating_UnjamWeapon";
-    condition = "_player == _vehicle && {currentWeapon _vehicle in (_vehicle getVariable ['AGM_Overheating_jammedWeapons', []])}";
-    statement = "[_vehicle, currentWeapon _vehicle, false] call AGM_Overheating_fnc_clearJam;";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon && {currentWeapon _player in (_player getVariable ['AGM_Overheating_jammedWeapons', []])}";
+    statement = "[_player, currentMuzzle _player, false] call AGM_Overheating_fnc_clearJam;";
     key = 19;
     shift = 1;
     control = 0;

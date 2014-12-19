@@ -26,17 +26,21 @@ if ((_target == _unit) and (_item in items _unit)) exitWith {
 };
 
 if (_item in (items _target)) exitWith {
-  systemChat format [localize "STR_AGM_Medical_TakingItemPatient", _displayName];
+  if ([_target] call AGM_Core_fnc_isPlayer) then {
+    systemChat format [localize "STR_AGM_Medical_TakingItemPatient", _displayName];
+  };
   _target removeItem _item;
   if (!(local _target) and isPlayer _target) then {
-    [[_unit, _item, _config, _target], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', ((_this select 0) getVariable ['AGM_Name', (name (_this select 0))]), getText (_this select 2)];}", _target] call AGM_Core_fnc_execRemoteFnc;
+    [[_unit, _item, _config, _target], "{systemChat format [localize 'STR_AGM_Medical_TakingYourItem', [_this select 0] call AGM_Core_fnc_getName, getText (_this select 2)];}", _target] call AGM_Core_fnc_execRemoteFnc;
   };
   True
 };
 
 if (_item in (items _unit)) exitWith {
   _unit removeItem _item;
-  systemChat format [localize "STR_AGM_Medical_TakingItemSelf", _displayName];
+  if ([_unit] call AGM_Core_fnc_isPlayer) then {
+    systemChat format [localize "STR_AGM_Medical_TakingItemSelf", _displayName];
+  };
   True
 };
 

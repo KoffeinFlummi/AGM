@@ -4,11 +4,11 @@ class CfgPatches {
     weapons[] = {"AGM_Rallypoint_West", "AGM_Rallypoint_East", "AGM_Rallypoint_Independent", "AGM_RallypointExit_West", "AGM_RallypointExit_East", "AGM_RallypointExit_Independent"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
-    author[] = {"jodav", "commy2"};
-    authorUrl = "https://github.com/jodav/";
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
+    author[] = {"bux578", "commy2"};
+    authorUrl = "https://github.com/bux578/";
   };
 };
 
@@ -37,14 +37,14 @@ class CfgFunctions {
 class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Respawn_HandleGear {
-      killed = "if (_this select 0 == AGM_player) then {_this call AGM_Respawn_fnc_handleKilled};";
+      killed = "_this call AGM_Respawn_fnc_handleKilled";
     };
   };
 };
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Respawn_HandleGear {
-      respawn = "if (_this select 0 == AGM_player) then {_this call AGM_Respawn_fnc_handleRespawn};";
+      respawn = "_this call AGM_Respawn_fnc_handleRespawn";
     };
   };
 };

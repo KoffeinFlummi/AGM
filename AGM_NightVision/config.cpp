@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_NVG_Gen1", "AGM_NVG_Gen2", /*"AGM_NVG_Gen3",*/ "AGM_NVG_Gen4", "AGM_NVG_Wide"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -89,6 +89,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen3_brown";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };
   class NVGoggles_OPFOR: NVGoggles {
     displayName = "$STR_AGM_NightVision_NVG_Gen3_black";
@@ -103,6 +104,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen1";
     AGM_NightVision_grain = 2.25;
     AGM_NightVision_blur = 0.22;
+    AGM_NightVision_radBlur = 0.004;
   };
   class AGM_NVG_Gen2: NVGoggles_INDEP {
     author = "$STR_AGM_Core_AGMTeam";
@@ -110,6 +112,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen2";
     AGM_NightVision_grain = 1.5;
     AGM_NightVision_blur = 0.11;
+    AGM_NightVision_radBlur = 0.002;
   };
   /*class AGM_NVG_Gen3: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
@@ -117,6 +120,7 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen3";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };*/
   class AGM_NVG_Gen4: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
@@ -124,13 +128,15 @@ class CfgWeapons {
     displayName = "$STR_AGM_NightVision_NVG_Gen4";
     AGM_NightVision_grain = 0.0;
     AGM_NightVision_blur = 0.0;
+    AGM_NightVision_radBlur = 0.0;
   };
   class AGM_NVG_Wide: NVGoggles {
     author = "$STR_AGM_Core_AGMTeam";
     // modelOptics = "\AGM_NightVision\weapons\agm_nvg_wide";
-    modelOptics = "\A3\weapons_f\reticle\optics_empty";
+    modelOptics = "\agm_nightvision\agm_nvg_wide_optics.p3d";
     displayName = "$STR_AGM_NightVision_NVG_FullScreen";
     AGM_NightVision_grain = 0.75;
     AGM_NightVision_blur = 0.055;
+    AGM_NightVision_radBlur = 0.001;
   };
 };

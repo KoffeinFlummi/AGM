@@ -1,9 +1,10 @@
 // by commy2
 
-private ["_unit", "_weapon", "_safedWeapons"];
+private ["_unit", "_weapon", "_muzzle", "_safedWeapons"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
+_muzzle = _this select 2;
 
 _safedWeapons = _unit getVariable ["AGM_SafeMode_safedWeapons", []];
 
@@ -21,7 +22,7 @@ if (_weapon in _safedWeapons) then {
   };
 };
 
-_unit selectWeapon _weapon;
+_unit selectWeapon _muzzle;
 
 if (inputAction "nextWeapon" > 0) then {
   // switch to the last mode to roll over to first after the default nextWeapon action
@@ -51,7 +52,7 @@ if (inputAction "nextWeapon" > 0) then {
   };
 } else {
   // play fire mode selector sound
-  [_unit, _weapon] call AGM_SafeMode_fnc_playChangeFiremodeSound;
+  [_unit, _weapon, _muzzle] call AGM_SafeMode_fnc_playChangeFiremodeSound;
 };
 
 // player hud

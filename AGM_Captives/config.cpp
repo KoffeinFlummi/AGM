@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_CableTie"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -20,6 +20,12 @@ class CfgFunctions {
       class canLoadCaptive;
       class canUnloadCaptive;
       class escortCaptive;
+      class handleGetOut;
+      class handleKnockedOut;
+      class handlePlayerChanged;
+      class handleWokeUp;
+      class initPost;
+      class initUnit;
       class loadCaptive;
       class openFriskMenu;
       class setCaptive;
@@ -42,7 +48,7 @@ class Extended_GetIn_EventHandlers {
 class Extended_GetOut_EventHandlers {
   class All {
     class AGM_Captives_LeaveVehicle {
-      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {[_this select 2, 'AGM_AmovPercMstpScapWnonDnon', 2] call AGM_Core_fnc_doAnimation;}";
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isCaptive', false]}) then {_this call AGM_Captives_fnc_handleGetOut}";
     };
   };
 };
@@ -52,6 +58,24 @@ class Extended_Killed_EventHandlers {
   class CAManBase {
     class AGM_Captives_AutoDetachCaptive {
       killed = "if ((_this select 0) getVariable ['AGM_isCaptive', false]) then {(_this select 0) setVariable ['AGM_isCaptive', false, true]}; if ((_this select 0) getVariable ['AGM_isEscorting', false]) then {(_this select 0) setVariable ['AGM_isEscorting', false, true]};";
+    };
+  };
+};
+
+//handle captive and unconsciousness state
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Captives_AutoDetachCaptive {
+      init = "_this call AGM_Captives_fnc_initUnit";
+    };
+  };
+};
+
+//mission start
+class Extended_InitPost_EventHandlers {
+  class CAManBase {
+    class AGM_Captives_InitPost {
+      init = "if (local (_this select 0)) then {_this call AGM_Captives_fnc_initPost};";
     };
   };
 };
@@ -102,7 +126,7 @@ class CfgVehicles {
       class AGM_EscortCaptive {
         displayName = "$STR_AGM_Captives_EscortCaptive";
         distance = 4;
-        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)}";
+        condition = "_target getVariable ['AGM_isCaptive', false] && {isNull (attachedTo _target)} && {alive _target} && {!(_target getVariable ['AGM_isUnconscious', false])}";
         statement = "[_target, true] call AGM_Captives_fnc_escortCaptive";
         exceptions[] = {"AGM_Interaction_isNotEscorting"};
         showDisabled = 0;
@@ -227,7 +251,7 @@ class CfgVehicles {
   class Box_NATO_Support_F;
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_CableTie,24)
+      MACRO_ADDITEM(AGM_CableTie,12)
     };
   };
 };
@@ -292,6 +316,8 @@ class CfgMovesBasic {
       StopRelaxed = "AGM_AmovPercMstpScapWnonDnon";
       default = "AGM_AmovPercMstpScapWnonDnon";
       getOver = "";
+      throwPrepare = "";
+      throwGrenade[] = {"","Gesture"};
     };
   };
 };

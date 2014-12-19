@@ -34,6 +34,11 @@ while {true} do {
 
   if (_temperature < 0) exitWith {0};
 
+  if (isNil "_temperature") exitWith {
+    diag_log text format ["[AGM] ERROR: _totalTime = %1; _time = %2; _deltaTime = %3;", _totalTime, _time, _deltaTime];
+    0
+  };
+
   _time = _time + _deltaTime;
   if (_time >= _totalTime) exitWith { _temperature max 0 };
 };

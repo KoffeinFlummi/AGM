@@ -10,7 +10,7 @@ _this spawn {
 
   _unit = vehicle AGM_player;
   waitUntil {
-    if (getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}} || {_unit != vehicle AGM_player}) then {
+    if (getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}} || {_unit != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}) then {
       closeDialog 0;
       call AGM_Interaction_fnc_hideMenu;
     };

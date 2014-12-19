@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi";
   };
@@ -85,7 +85,6 @@ class CfgSounds {
   };
 };
 
-// TODO: check other scopes, realistic values, check inheritance
 class CfgWeapons {
   class ItemCore;
   class InventoryOpticsItem_Base_F;

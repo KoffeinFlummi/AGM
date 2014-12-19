@@ -14,6 +14,9 @@ private ["_player", "_display"];
 
 _player = _this select 0;
 
+_player removeMagazines "AGM_PreloadedMissileDummy";
+_player removeMagazines "AGM_FiredMissileDummy";
+
 disableSerialization;
 _display = _this select 1;
 

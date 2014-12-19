@@ -69,11 +69,7 @@ if (_this select 2) then {
 	_ctrlInteractionDialog = _dlgInteractionDialog displayCtrl 3;
 	if (profileNamespace getVariable ["AGM_Interaction_AutoCenterCursor", true]) then {setMousePosition [0.5, 0.5]};
 	if !(_subMenu) then {
-		if (_target isKindOf "Man") then {
-			_ctrlInteractionDialog ctrlSetText ([_target] call AGM_Identity_fnc_getNameSide);
-		} else {
-			_ctrlInteractionDialog ctrlSetText getText (configFile >> "CfgVehicles" >> typeOf _target >> "displayName");
-		};
+		_ctrlInteractionDialog ctrlSetText ([_target] call AGM_Core_fnc_getName);
 	} else {
 		_ctrlInteractionDialog ctrlSetText localize "STR_AGM_Interaction_Back";
 	};

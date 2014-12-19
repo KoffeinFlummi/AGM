@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -70,10 +70,12 @@ class CfgWeapons {
     magazines[] = {"AGM_PreloadedMissileDummy"};  // The dummy magazine
   };
   class AGM_launch_NLAW_Used_F: launch_NLAW_F {   // the used tube should be a sub class of the disposable launcher
+    scope = 1;
+    AGM_isUsedLauncher = 1;
     author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Disposable_UsedTube";
     descriptionShort = "$STR_AGM_Disposable_UsedTubeDescription";
-    magazines[] = {"AGM_UsedTube_F"};             // This will disable the used launcher class from being fired again.
+    magazines[] = {"AGM_FiredMissileDummy"};  // This will disable the used launcher class from being fired again.
     //picture = "";              @todo
     //model = "";                @todo
     weaponPoolAvailable = 0;
@@ -90,6 +92,9 @@ class CfgMagazines {
     weaponPoolAvailable = 0;
     mass = 0;
   };
+  class AGM_FiredMissileDummy: AGM_PreloadedMissileDummy {
+    count = 0;
+  };
   class AGM_UsedTube_F: NLAW_F {
     author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Disposable_UsedTube";
@@ -98,6 +103,7 @@ class CfgMagazines {
     count = 0;
     weaponPoolAvailable = 0;
     modelSpecial = "";
+    mass = 0;
   };
 };
 

@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -36,7 +36,7 @@ class AGM_Core_Default_Keys {
   class safeWeapon {
     displayName = "$STR_AGM_SafeMode_SafeMode";
     condition = "[_player] call AGM_Core_fnc_canUseWeapon";
-    statement = "[_player, currentWeapon _player] call AGM_SafeMode_fnc_lockSafety";
+    statement = "[_player, currentWeapon _player, currentMuzzle _player] call AGM_SafeMode_fnc_lockSafety";
     exceptions[] = {"AGM_Interaction_isNotEscorting"};
     key = 41;
     shift = 0;

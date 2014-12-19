@@ -13,6 +13,6 @@ if (isNil "AGM_itemFix") then {
     showCompass (AGM_isCompassEnabled && {"ItemCompass" in _items});
     showWatch   (AGM_isWatchEnabled   && {"ItemWatch"   in _items});
   //showRadio   (AGM_isRadioEnabled   && {"ItemRadio"   in _items});
-    showGPS     (AGM_isGPSEnabled     && {"ItemGPS"     in _items});
+    showGPS     (AGM_isGPSEnabled     && {"ItemGPS"     in _items || {cameraOn == getConnectedUAV AGM_player}});  //If player is activly controling a UAV, showGPS controls showing the map (m key)
   }] call BIS_fnc_addStackedEventHandler;
 };

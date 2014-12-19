@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_Clacker", "AGM_DefusalKit", "AGM_M26_Clacker", "AGM_DeadManSwitch"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"Garth 'L-H' de Wet"};
     authorUrl = "https://github.com/corruptedheart/";
   };
@@ -177,10 +177,10 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_Clacker,24)
-      MACRO_ADDITEM(AGM_M26_Clacker,12)
-      MACRO_ADDITEM(AGM_DefusalKit,24)
-      MACRO_ADDITEM(AGM_Deadmanswitch,10)
+      MACRO_ADDITEM(AGM_Clacker,12)
+      MACRO_ADDITEM(AGM_M26_Clacker,6)
+      MACRO_ADDITEM(AGM_DefusalKit,12)
+      MACRO_ADDITEM(AGM_Deadmanswitch,6)
     };
   };
 

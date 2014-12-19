@@ -18,7 +18,7 @@
     BOOL
 
   Example:
-    [player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick
+    [AGM_player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick
 */
 private ["_unit","_veh","_funcType","_vehLockpickStrenth","_returnValue"];
 

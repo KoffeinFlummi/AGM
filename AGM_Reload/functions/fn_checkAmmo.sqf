@@ -5,10 +5,8 @@
  * 
  * Argument:
  * 0: The player (Object)
- * 1: The weapon to check (String)
- * 2: The muzzle to check (String)
- * 3: Currently loaded magazine (String)
- * 4: Skip the animation? Used after reloading (Bool)
+ * 1: The vehicle (Object)
+ * 2: Skip the animation? Used after reloading (Bool)
  * 
  * Return value:
  * Nothing
@@ -16,13 +14,24 @@
 
 #define COUNT_BARS 12
 
-_this spawn {
+
+private ["_unit", "_vehicle"];
+
+_unit = _this select 0;
+_vehicle = _this select 1;
+
+if (_unit != _vehicle && !(_vehicle isKindOf "StaticWeapon")) then {
+  _vehicle = _unit;
+};
+
+[_vehicle, currentWeapon _vehicle, currentMuzzle _vehicle, currentMagazine _vehicle, _this select 2] spawn {
   _vehicle = _this select 0;
   _weapon = _this select 1;
   _muzzle = _this select 2;
   _magazine = _this select 3;
   _skipDelay = _this select 4;
 
+  if (currentWeapon _vehicle == "") exitWith {};
   if (typeName _muzzle != "STRING") then {_muzzle = _weapon};
 
   _showNumber = false;

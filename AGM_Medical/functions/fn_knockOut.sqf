@@ -20,6 +20,7 @@ if (count _this > 1) then {
   _duration = _this select 1;
 };
 
+//if (_unit getVariable ["AGM_isCaptive", False]) exitWith {_unit setDamage 1};
 if (_unit getVariable ["AGM_isUnconscious", False]) exitWith {};
 
 // If an AI unit shoots a player, hand it off to him to calculate things.
@@ -32,14 +33,14 @@ _unit setVariable ["AGM_Unconscious", True, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", True, True];
 _unit setVariable ["AGM_canTreat", False, True];
 
+_unit setVariable ["tf_globalVolume", 0.4];
+_unit setVariable ["tf_voiceVolume", 0, True];
+_unit setVariable ["tf_unable_to_use_radio", True, True];
+
+_unit setVariable ["acre_sys_core_isDisabled", True, True];
+_unit setVariable ["acre_sys_core_globalVolume", 0.4];
+
 if (_unit == AGM_player) then {
-  _unit setVariable ["tf_globalVolume", 0.4];
-  _unit setVariable ["tf_voiceVolume", 0, True];
-  _unit setVariable ["tf_unable_to_use_radio", True, True];
-
-  _unit setVariable ["acre_sys_core_isDisabled", True, True];
-  _unit setVariable ["acre_sys_core_globalVolume", 0.4];
-
   if (visibleMap) then {openMap false};
   closeDialog 0;
   call AGM_Interaction_fnc_hideMenu;
@@ -50,7 +51,7 @@ if (_unit == AGM_player) then {
 [_unit, "AGM_Unconscious", True] call AGM_Core_fnc_setCaptivityStatus;
 
 _unit disableAI "MOVE";
-_unit disableAI "ANIM";
+//_unit disableAI "ANIM";
 _unit disableAI "TARGET";
 _unit disableAI "AUTOTARGET";
 _unit disableAI "FSM";
@@ -61,6 +62,22 @@ if !(_unit getVariable ["AGM_NoRadio_isMuted", false]) then {
 };
 
 // play appropriate anim
+private "_fnc_playAnim";
+_fnc_playAnim = {
+  if (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> animationState _this >> "AGM_isLadder") == 1) then {
+    _this action ["LadderOff", nearestObject [position _this, "House"]];
+  };
+
+  waitUntil {isTouchingGround _this};
+  waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim) or !(alive _this)};
+  if !(alive _this and _this getVariable "AGM_isUnconscious") exitWith {};
+  [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
+  sleep 2;
+  if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
+    [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
+  };
+};
+
 if (vehicle _unit != _unit) then {
   _unit setVariable ["AGM_OriginalAnim", animationState _unit, True];
   [
@@ -69,17 +86,13 @@ if (vehicle _unit != _unit) then {
     1,
     True
   ] call AGM_Core_fnc_doAnimation;
-} else {
-  _unit setVariable ["AGM_OriginalAnim", "AmovPpneMstpSnonWnonDnon", True];
-  _unit spawn {
-    waitUntil {isTouchingGround _this};
-    waitUntil {!([_this] call AGM_Core_fnc_inTransitionAnim)};
-    [_this, "Unconscious", 1, True] call AGM_Core_fnc_doAnimation;
-    sleep 2;
-    if (animationState _this != "Unconscious" and _this getVariable ["AGM_isUnconscious", False]) then {
-      [_this, "Unconscious", 2, True] call AGM_Core_fnc_doAnimation;
-    };
+
+  // handle parachute
+  if (vehicle _unit isKindOf "ParachuteBase") then {
+    _unit spawn _fnc_playAnim;
   };
+} else {
+  _unit spawn _fnc_playAnim;
 };
 
 // wake up unit after certain amount of time
@@ -93,7 +106,9 @@ if (_unit getVariable ["AGM_Medical_AutomaticWakeup", AGM_Medical_AutomaticWakeu
     } else {
       sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
     };
-    [_unit] call AGM_Medical_fnc_wakeUp;
+    if (!isNull _unit && {alive _unit}) then {
+      [_unit] call AGM_Medical_fnc_wakeUp;
+    };
   };
 };
 _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
@@ -111,4 +126,4 @@ _unconsciousnessTimer = [_unit] spawn {
 };
 _unit setVariable ["AGM_UnconsciousnessTimer", _unconsciousnessTimer];
 
-[_unit, "AGM_knockedOut", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
+[_unit, "AGM_knockedOut", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;

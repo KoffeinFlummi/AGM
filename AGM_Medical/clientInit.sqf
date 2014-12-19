@@ -1,6 +1,6 @@
 // by CAA-Picard
 
-private ["_currentBlood", "_time", "_timeBlood", "_strength", "_currentBlood"];
+private ["_currentBlood", "_time", "_blind", "_timeBlood", "_strength", "_currentBlood"];
 
 if (!hasInterface) exitWith {};
 
@@ -12,6 +12,10 @@ AGM_Unconscious_RB = ppEffectCreate ["RadialBlur", 4207];
 AGM_Unconscious_RB ppEffectForceInNVG True;
 AGM_Unconscious_RB ppEffectAdjust [0.4, 0.4, 0, 0];
 AGM_Unconscious_RB ppEffectCommit 0;
+AGM_Blinding_CC = ppEffectCreate ["ColorCorrections", 4211];
+AGM_Blinding_CC ppEffectForceInNVG True;
+AGM_Blinding_CC ppEffectAdjust [1,1,0, [1,1,1,0], [0,0,0,1], [0,0,0,0]];
+AGM_Blinding_CC ppEffectCommit 0;
 
 AGM_BloodLevel_CC = ppEffectCreate ["ColorCorrections", 4208];
 AGM_BloodLevel_CC ppEffectForceInNVG True;
@@ -31,16 +35,14 @@ AGM_Pain_CC ppEffectCommit 0;
 0 spawn {
   _time = time;
   _timeBlood = 0;
+  _blind = False;
   while {True} do {
-    // Detect if curator interface is open and then disable effects an enable input
+    // Detect if curator interface is open and then disable effects
     if (!isNull(findDisplay 312)) then {
       AGM_BloodLevel_CC ppEffectEnable False;
       AGM_Unconscious_CC ppEffectEnable False;
       AGM_Unconscious_RB ppEffectEnable False;
-      if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
-        [False] call AGM_Core_fnc_disableUserInput;
-      };
-      waitUntil {!isNull(findDisplay 312)};
+      waitUntil {isNull(findDisplay 312)};
     };
 
     // Detect if player is not alive and then disable effects and enable input
@@ -58,6 +60,7 @@ AGM_Pain_CC ppEffectCommit 0;
     if (AGM_player getVariable ["AGM_isUnconscious", False]) then {
       AGM_Unconscious_CC ppEffectEnable True;
       AGM_Unconscious_RB ppEffectEnable True;
+      _blind = True;
       if (isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [True, True] call AGM_Core_fnc_disableUserInput;
       };
@@ -66,6 +69,21 @@ AGM_Pain_CC ppEffectCommit 0;
       AGM_Unconscious_RB ppEffectEnable False;
       if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [False] call AGM_Core_fnc_disableUserInput;
+      };
+      if (_blind) then {
+        // blinding strength depedent on light level
+        _strength = 0.78 * (call AGM_Core_fnc_ambientBrightness);
+        AGM_Blinding_CC ppEffectEnable True;
+        AGM_Blinding_CC ppEffectAdjust [1,1,_strength, [1,1,1,0], [0,0,0,1], [0,0,0,0]];
+        AGM_Blinding_CC ppEffectCommit 0.01;
+        waitUntil {ppEffectCommitted AGM_Blinding_CC};
+        AGM_Blinding_CC ppEffectAdjust [1,1,0, [1,1,1,0], [0,0,0,1], [0,0,0,0]];
+        AGM_Blinding_CC ppEffectCommit (_strength * 2);
+        (_strength * 2) spawn {
+          sleep _this;
+          AGM_Blinding_CC ppEffectEnable False;
+        };
+        _blind = False;
       };
     };
 
@@ -88,7 +106,7 @@ AGM_Pain_CC ppEffectCommit 0;
       };
     } else {
       AGM_Pain_CC ppEffectEnable False;
-      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0 && {alive AGM_player}) then {
+      if ((AGM_player getVariable ["AGM_Pain", 0]) > 0.05 && {alive AGM_player}) then {
         AGM_Pain_CA ppEffectEnable True;
         AGM_Pain_CA ppEffectAdjust [0.035 * _strength, 0.035 * _strength, False];
         AGM_Pain_CA ppEffectCommit 1;
@@ -98,7 +116,7 @@ AGM_Pain_CC ppEffectCommit 0;
         sleep 0.15;
       } else {
         AGM_Pain_CA ppEffectEnable False;
-        sleep 1;
+        sleep 0.75;
       };
     };
 

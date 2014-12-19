@@ -1,5 +1,5 @@
 /*
-Author: jodav
+Author: bux578
 
 Description:
 Restores previously saved gear

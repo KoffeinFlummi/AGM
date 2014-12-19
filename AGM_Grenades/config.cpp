@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -240,7 +240,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_White,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
@@ -248,7 +248,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Red,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
@@ -256,17 +256,17 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_HandFlare_White,24)
-      MACRO_ADDITEM(AGM_HandFlare_Red,24)
-      MACRO_ADDITEM(AGM_HandFlare_Green,24)
-      MACRO_ADDITEM(AGM_HandFlare_Yellow,24)
-      MACRO_ADDITEM(AGM_M84, 24)
+      MACRO_ADDITEM(AGM_HandFlare_White,12)
+      MACRO_ADDITEM(AGM_HandFlare_Red,12)
+      MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 };

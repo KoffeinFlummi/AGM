@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_ItemKestrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"Falke", "commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -196,6 +196,22 @@ class RscTitles {
         font = "PuristaMedium";
         sizeEx = 1;
         colorText[] = {1, 1, 1, 1};
+        colorBackground[] = {1, 1, 1, 1};
+        shadow = 0;
+      };
+	  class AGM_KestrelHUDpic_Night: RscPicture {
+        idc = 42006;
+        type = 0;
+        text = "AGM_Wind\data\4500NV2.paa";
+        style = 48 + 0x800;
+        x = safeZoneX -0.25;
+        y = safeZoneY + safeZoneH - 0.8;
+        h = 0.75;
+        w = 0.75;
+        scale = 1;
+        font = "PuristaMedium";
+        sizeEx = 1;
+        colorText[] = {0,0,0,1-(sunOrMoon*sunOrMoon+(moonIntensity/5))};
         colorBackground[] = {1, 1, 1, 1};
         shadow = 0;
       };

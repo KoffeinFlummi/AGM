@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"commy2", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -90,7 +90,7 @@ class CfgVehicles {
     function = "AGM_NameTags_fnc_moduleNameTags";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_NameTags\UI\IconInteraction_ca.paa";
+    icon = "\AGM_NameTags\UI\IconNameTags_ca.paa";
     class Arguments {
       class PlayerNamesViewDistance {
         displayName = "Player Names View Dist.";

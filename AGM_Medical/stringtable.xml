@@ -852,10 +852,18 @@
     <Key ID="STR_AGM_Medical_AlternativePainEffect">
       <English>Alternative Pain Effect</English>
       <German>Alternativer Schmerzeffekt</German>
+      <Spanish>Efecto de dolor alternativo</Spanish>
+      <Hungarian>Alternativ fájdalomeffektus</Hungarian>
+      <Polish>Alternatywny efekt bólu</Polish>
+      <Czech>Alternativní efekt bolesti</Czech>
     </Key>
     <Key ID="STR_AGM_Medical_NotInMEDEVAC">
       <English>This is not possible here.</English>
       <German>Das ist hier nicht möglich.</German>
+      <Spanish>Esto no es posible aquí.</Spanish>
+      <Hungarian>Ezt nem lehet itten.</Hungarian>
+      <Polish>Nie możesz tego zrobić tutaj.</Polish>
+      <Czech>Zde to není možné.</Czech>
     </Key>
   </Package>
 </Project>

@@ -4,9 +4,9 @@ class CfgPatches {
 		weapons[] = {"AGM_Altimeter"};
 		requiredVersion = 0.60;
 		requiredAddons[] = {AGM_Core};
-		version = "0.94.1";
-		versionStr = "0.94.1";
-		versionAr[] = {0,94,1};
+		version = "0.95";
+		versionStr = "0.95";
+		versionAr[] = {0,95,0};
 		author[] = {"Garth 'LH' de Wet"};
 	};
 };
@@ -66,7 +66,7 @@ class CfgVehicles {
 		class TransportBackpacks {
 			class _xx_AGM_NonSteerableParachute {
 				backpack = "AGM_NonSteerableParachute";
-				count = 6;
+				count = 4;
 			};
 		};
 	};

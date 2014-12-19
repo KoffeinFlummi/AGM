@@ -31,5 +31,5 @@ if (isNull _vehicle) then {
 
 if (!isNil "_target" && {!isNil "_vehicle"}) then {
   _unit setVariable ["AGM_isEscorting", false];
-  [[_target, _vehicle], "{(_this select 0) moveInCargo (_this select 1)}", _target] call AGM_Core_fnc_execRemoteFnc;
+  [[_target, _vehicle], "{(_this select 0) moveInCargo (_this select 1); (_this select 0) assignAsCargo (_this select 1); (_this select 0) setVariable ['AGM_Captives_CargoIndex', (_this select 1) getCargoIndex (_this select 0), true];}", _target] call AGM_Core_fnc_execRemoteFnc;
 };

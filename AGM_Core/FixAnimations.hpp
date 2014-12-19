@@ -3,6 +3,9 @@ class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
   class AgonyBase;
   class AgonyBaseRfl;
+  class Default;
+  class StandBase;
+
   class States {
     class AinjPfalMstpSnonWnonDnon_carried_Down: AgonyBase {
       canReload = 0;
@@ -24,6 +27,14 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class AmovPpneMstpSrasWrflDnon_injured;
     class AinjPpneMstpSnonWrflDnon: AmovPpneMstpSrasWrflDnon_injured {
       canReload = 0;
+    };
+
+    class LadderCivilStatic: StandBase {
+      AGM_isLadder = 1;
+    };
+
+    class Unconscious: Default {
+      ConnectTo[] = {};
     };
   };
 };

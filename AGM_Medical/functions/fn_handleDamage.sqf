@@ -42,14 +42,15 @@ _unit setVariable ["AGM_isDiagnosed", False, True];
 
 // For some reason, everything is backwards in MP,
 // so we need to untangle some things.
-if (isMultiplayer) then {
+// -- seems fixed as of v1.36
+/*if (isMultiplayer) then {
   _selectionName = switch (_selectionName) do {
     case "hand_r" : {"leg_l"};
     case "leg_r"  : {"hand_l"};
     case "legs"   : {"hand_r"};
     default         {_selectionName};
   };
-};
+};*/
 
 // This seems to only show up in MP too, but since it doesn't
 // collide with anything, I'll check it in SP as well.
@@ -183,7 +184,15 @@ if (_selectionName == "leg_l") then {
 if (_selectionName == "leg_r") then {
   _legdamage = (_unit getHitPointDamage "HitLeftLeg") + _damage;
 };
-_armdamage = 0;
+
+_armdamage = (_unit getHitPointDamage "HitLeftArm") + (_unit getHitPointDamage "HitRightArm");
+if (_selectionName == "hand_l") then {
+  _armdamage = _damage + (_unit getHitPointDamage "HitRightArm");
+};
+if (_selectionName == "hand_r") then {
+  _armdamage = (_unit getHitPointDamage "HitLeftArm") + _damage;
+};
+
 [_unit, _legdamage, _armdamage] call AGM_Medical_fnc_checkDamage;
 
 // Unconsciousness
@@ -216,7 +225,8 @@ if (_selectionName == "" and damage _unit == 0) then {
           [_this] call AGM_Medical_fnc_knockOut;
         };
         if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
-          _this setDamage 1;
+          //_this setDamage 1;
+          _this setHitPointDamage ["HitHead", 1]; // fx: don't get the uniform bloody if there are no wounds
         };
       };
       sleep 10;
@@ -260,7 +270,7 @@ if ((_unit getVariable "AGM_Medical_PreventDeath") and {vehicle _unit != _unit} 
 if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
   if (_damage > 0.89) then {
     _damage = 0.89;
-    [_unit, "AGM_preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlers;
+    [_unit, "AGM_preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
   };
 };
 

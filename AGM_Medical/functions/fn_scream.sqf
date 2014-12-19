@@ -71,7 +71,7 @@ playSound3D [
   _unit,
   False,
   _position,
-  3,
+  18,
   1,
-  0
+  200
 ];

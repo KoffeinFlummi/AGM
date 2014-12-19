@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,6 +16,7 @@ class CfgFunctions {
   class AGM_FastRoping {
     class AGM_FastRoping {
       file = "\AGM_FastRoping\functions";
+      class createRope;
       class cutRopes;
       class deployRopes;
       class fastRope;
@@ -24,10 +25,12 @@ class CfgFunctions {
 };
 
 class CfgVehicles {
-  class Slingload_base_F;
-  class AGM_FastRoping_Helper: Slingload_base_F {
+  //class AGM_FastRoping_Helper: B_UAV_01_F {
+  class UAV_01_base_F;
+  class AGM_FastRoping_Helper: UAV_01_base_F {
     scope = 1;
     model = "agm_fastroping\agm_fastroping_helper.p3d";
+    isUav = 0;
   };
 
   class Air;
@@ -47,7 +50,7 @@ class CfgVehicles {
       class AGM_FastRope {
         displayName = "Fast Rope";
         enableInside = 1;
-        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4)";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {!_this}] call AGM_Core_fnc_filter) > 0)";
         statement = "[_player, _vehicle] call AGM_FastRoping_fnc_fastRope";
         showDisabled = 0;
         priority = 1;
@@ -56,7 +59,7 @@ class CfgVehicles {
       class AGM_CutRopes {
         displayName = "Cut Ropes";
         enableInside = 1;
-        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False])";
+        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {_this}] call AGM_Core_fnc_filter) == 0)";
         statement = "[_vehicle] call AGM_FastRoping_fnc_cutRopes";
         showDisabled = 0;
         priority = 1;

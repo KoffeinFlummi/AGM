@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {"AGM_Bandage", "AGM_Morphine", "AGM_Epipen", "AGM_Bloodbag"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -17,6 +17,9 @@ class CfgFunctions {
   class AGM_Medical {
     class AGM_Medical {
       file = "AGM_Medical\functions";
+      class aiCanTreat;
+      class aiInitTask;
+      class aiTreat;
       class checkDamage;
       class diagnose;
       class displayText;
@@ -60,14 +63,7 @@ class Extended_Respawn_EventHandlers {
 class Extended_Hit_EventHandlers {
   class CAManBase {
     class AGM_Medical {
-      hit = "if (alive (_this select 0) and !((_this select 0) getVariable ['AGM_isUnconscious', False]) and !([(_this select 0)] call AGM_Core_fnc_isPlayer)) then {[(_this select 0)] call AGM_Medical_fnc_scream;};"
-    };
-  };
-};
-class Extended_Killed_EventHandlers {
-  class CAManBase {
-    class AGM_Medical {
-      killed = "[False] call AGM_Core_fnc_disableUserInput;"
+      hit = "if (alive (_this select 0) and !((_this select 0) getVariable ['AGM_isUnconscious', False]) and !([(_this select 0)] call AGM_Core_fnc_isPlayer)) then {[(_this select 0)] call AGM_Medical_fnc_scream;};";
     };
   };
 };
@@ -78,9 +74,17 @@ class Extended_Take_EventHandlers {
     };
   };
 };
+class Extended_GetOut_EventHandlers {
+  class All {
+    class AGM_Medical_LeaveVehicle {
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isUnconscious', false]}) then {[_this select 2, 'unconscious', 2, true] call AGM_Core_fnc_doAnimation;}";
+    };
+  };
+};
 
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {
+    init = "call compile preprocessFileLineNumbers '\AGM_Medical\init.sqf'";
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Medical\clientInit.sqf'";
   };
 };
@@ -109,9 +113,15 @@ class AGM_Core_Options {
 };
 
 class CfgVehicles {
+  #define ARM_LEG_ARMOR_DEFAULT 2
+  #define ARM_LEG_ARMOR_BETTER  3
+  #define ARM_LEG_ARMOR_CSAT    4
+
   class Man;
   class CAManBase: Man {
     class HitPoints {
+      class HitHead;
+      class HitBody;
       // "DEACTIVE" DEFAULT HITPOINTS
       class HitHands {
         armor = 999; //armor = 2;
@@ -134,26 +144,9 @@ class CfgVehicles {
         visual = "injury_legs";
       };
 
-      class HitHead {
-        explosionShielding = 0.5;
-        material = -1;
-        minimalHit = 0;
-        name = "head";
-        passThrough = 1;
-        radius = 0.1;
-      };
-      class HitBody {
-        explosionShielding = 2.4; //10;
-        material = -1;
-        minimalHit = 0;
-        name = "body";
-        passThrough = 1;
-        radius = 0.15;
-        visual = "injury_body";
-      };
       class HitLeftArm {
-        armor = 2;
-        explosionShielding = 1.2; //1;
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
         material = -1;
         minimalHit = 0;
         name = "hand_l";
@@ -165,8 +158,8 @@ class CfgVehicles {
         name = "hand_r";
       };
       class HitLeftLeg {
-        armor = 2;
-        explosionShielding = 1.2; //1;
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
         material = -1;
         minimalHit = 0;
         name = "leg_l";
@@ -421,143 +414,168 @@ class CfgVehicles {
     };
   };
 
-  // NATO
   class SoldierWB: CAManBase {};
+  class SoldierEB: CAManBase {};
+  class SoldierGB: CAManBase {};
+
   class B_Soldier_base_F: SoldierWB {};
+
+  class B_Soldier_04_f: B_Soldier_base_F {
+    class HitPoints: HitPoints {
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_BETTER;
+      };
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_BETTER;
+      };
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
+      };
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
+      };
+    };
+  };
+
   class B_Soldier_05_f: B_Soldier_base_F {
     class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitBody: HitBody {
-        explosionShielding = 2.4;
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitHands: HitHands {
-        explosionShielding = 1.2;
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2;
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
     };
   };
 
-  // AAF
-  class SoldierGB: CAManBase {};
   class I_Soldier_base_F: SoldierGB {};
+
   class I_Soldier_03_F: I_Soldier_base_F {
     class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitBody: HitBody {
-        explosionShielding = 2.4;
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitHands: HitHands {
-        explosionShielding = 1.2;
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2;
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
     };
   };
+
   class I_Soldier_04_F: I_Soldier_base_F {
     class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitBody: HitBody {
-        explosionShielding = 2.4;
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitHands: HitHands {
-        explosionShielding = 1.2;
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2;
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_BETTER;
       };
     };
   };
 
-  // CSAT
-  class SoldierEB: CAManBase {};
   class O_Soldier_base_F: SoldierEB {
     class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitBody: HitBody {
-        explosionShielding = 2.4; //1.5;
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitHands: HitHands {
-        explosionShielding = 1.2; //0.8;
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2; //0.8;
-      };
-    };
-  };
-  class O_officer_F: O_Soldier_base_F {
-    class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
-      };
-      class HitBody: HitBody {
-        explosionShielding = 2.4; //10;
-      };
-      class HitHands: HitHands {
-        explosionShielding = 1.2; //1;
-      };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2; //1;
-      };
-    };
-  };
-  class O_Soldier_02_F: O_Soldier_base_F {
-    class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
-      };
-      class HitBody: HitBody {
-        explosionShielding = 2.4; //1.5;
-      };
-      class HitHands: HitHands {
-        explosionShielding = 1.2; //0.8;
-      };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2; //0.8;
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
     };
   };
 
-  // VR
-  class O_Soldier_VR_F: O_Soldier_base_F {
+  class O_Soldier_02_F: O_Soldier_base_F {
     class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
+      class HitHead: HitHead {};
+      class HitBody: HitBody {};
+      class HitHands: HitHands {};
+      class HitLegs: HitLegs {};
+
+      class HitLeftArm: HitLeftArm {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitBody: HitBody {
-        explosionShielding = 2.4; //6;
+
+      class HitRightArm: HitRightArm {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitHands: HitHands {
-        explosionShielding = 1.2; //1;
+
+      class HitLeftLeg: HitLeftLeg {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2; //1;
-      };
-    };
-  };
-  class O_Protagonist_VR_F: O_Soldier_base_F {
-    class HitPoints: HitPoints {
-      class HitHead: HitHead {
-        explosionShielding = 0.5;
-      };
-      class HitBody: HitBody {
-        explosionShielding = 2.4; //6;
-      };
-      class HitHands: HitHands {
-        explosionShielding = 1.2; //1;
-      };
-      class HitLegs: HitLegs {
-        explosionShielding = 1.2; //1;
+
+      class HitRightLeg: HitRightLeg {
+        armor = ARM_LEG_ARMOR_CSAT;
+        passThrough = 0.85;
       };
     };
   };
@@ -1025,7 +1043,7 @@ class AGM_Parameters {
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
   AGM_Medical_EnableOverdosing = 1;
-  AGM_Medical_RequireMEDEVAC = 1;
+  AGM_Medical_RequireMEDEVAC = 0;
   AGM_Medical_AutomaticWakeup = 1;
 };
 #include <HintConfig.hpp>

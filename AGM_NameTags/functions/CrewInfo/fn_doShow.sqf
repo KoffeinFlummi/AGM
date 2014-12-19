@@ -68,7 +68,7 @@ _toShow = [
 	"ASCEND",
 	{
 		_unit = _x select 0;
-		alive _unit && {format["%1", name _unit] != ""} && {format["%1", name _unit] != "Error: No unit"}
+		alive _unit
 	}
 ] call BIS_fnc_sortBy;
 
@@ -77,7 +77,7 @@ _roleImages = ROLE_IMAGES;
 {	
 	_unit = _x select 0;
 	_roleType = _x select 1;
-	_text = _text + format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", name _unit, _roleImages select _roleType];
+	_text = _text + format["<t size='1.5' shadow='true'>%1</t> <t size='1.3'><img image='%2'></t><br/>", [_unit] call AGM_Core_fnc_getName, _roleImages select _roleType];
 } forEach _toShow;
 
 

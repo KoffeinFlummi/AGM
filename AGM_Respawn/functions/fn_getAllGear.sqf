@@ -1,5 +1,5 @@
 /*
-Author: jodav
+Author: bux578
 
 Description:
 Returns an array containing all items of a given unit

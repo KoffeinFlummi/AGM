@@ -4,12 +4,11 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.6;
     requiredAddons[] = {"AGM_Core", "AGM_Interaction"};
-
-    version = "0.99";
-    versionStr = "0.99";
-    versionAr[] = {0, 99, 0};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"PabstMirror"};
-    authorUrl = "bourbonwarfare.com";
+    authorUrl = "https://github.com/PabstMirror/";
   };
 };
 
@@ -47,7 +46,7 @@ class CfgWeapons {
   class AGM_ItemCore;
 
   class AGM_item_key_master: AGM_ItemCore {
-    author = "Pabst Mirror";
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "Vehicle Key: Master";
     descriptionShort = "$STR_AGM_Vehicle_Item_Master_Description";
     model = "\A3\weapons_F\ammo\mag_univ.p3d";
@@ -84,6 +83,34 @@ class CfgWeapons {
   };
 };
 
+#define MACRO_LOCK_ACTIONS \
+  class AGM_unlockVehicle { \
+    displayName = "$STR_AGM_Vehicle_Action_UnLock"; \
+    distance = 4; \
+    condition = "([_player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && {(locked AGM_Interaction_Target) in [2, 3]}"; \
+    statement = "[AGM_Interaction_Target, false] call AGM_VehicleLock_fnc_setVehicleLock"; \
+    showDisabled = 1; \
+    priority = 0.3; \
+    icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa"; \
+  }; \
+  class AGM_lockVehicle { \
+    displayName = "$STR_AGM_Vehicle_Action_Lock"; \
+    distance = 4; \
+    condition = "([_player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && {(locked AGM_Interaction_Target) in [0, 1]}"; \
+    statement = "[AGM_Interaction_Target, true] call AGM_VehicleLock_fnc_setVehicleLock"; \
+    showDisabled = 1; \
+    priority = 0.2; \
+    icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa"; \
+  }; \
+  class AGM_lockpickVehicle { \
+    displayName = "$STR_AGM_Vehicle_Action_Lockpick"; \
+    distance = 4; \
+    condition = "[_player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick"; \
+    statement = "[_player, AGM_Interaction_Target, 'startLockpick'] call AGM_VehicleLock_fnc_lockpick"; \
+    showDisabled = 0; \
+    priority = 0.1; \
+  };
+
 class CfgVehicles {
   class Logic;
   class Module_F: Logic {
@@ -91,14 +118,13 @@ class CfgVehicles {
     class ModuleDescription {};
   };
   class AGM_VehicleLock_ModuleSetup: Module_F {
-    author = "Pabst Mirror";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Vehicle Lock Setup";
-
     function = "AGM_VehicleLock_fnc_moduleInit";
     scope = 2;
     isGlobal = 1;
-    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo
+    icon = "\AGM_VehicleLock\ui\IconLock_ca.paa";
     functionPriority = 0;
     class Arguments {
       class SideKeysAssignment {
@@ -154,19 +180,17 @@ class CfgVehicles {
   };
 
   class AGM_VehicleLock_ModuleSyncedAssign: Module_F {
-    author = "Pabst Mirror";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Vehicle Key Assign";
-
     function = "AGM_VehicleLock_fnc_moduleSync";
     scope = 2;
     isGlobal = 1;
-    // icon = "\AGM_Explosives\UI\IconExplosives_ca.paa";  //todo
+    icon = "\AGM_VehicleLock\ui\IconLock_ca.paa";
     functionPriority = 0;
-
     class Arguments {};
     class ModuleDescription: ModuleDescription {
-      description = "Sync with vehicles and players.  Will handout custom keys to players for every synced vehicle.";
+      description = "Sync with vehicles and players.  Will handout custom keys to players for every synced vehicle. Only valid for objects present at mission start.";
       sync[] = {"AnyPlayer", "AnyVehicle"};
     };
   };
@@ -174,93 +198,18 @@ class CfgVehicles {
   class LandVehicle;
   class Car: LandVehicle {
     class AGM_Actions {
-      class AGM_unlockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_UnLock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [2, 3])";
-        statement = "[AGM_Interaction_Target, false] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.3;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [0, 1])";
-        statement = "[AGM_Interaction_Target, true] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.2;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockpickVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lockpick";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        statement = "[player, AGM_Interaction_Target, 'startLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        showDisabled = 0;
-        priority = 0.1;
-      };
+      MACRO_LOCK_ACTIONS
     };
   };
   class Tank: LandVehicle {
     class AGM_Actions {
-      class AGM_unlockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_UnLock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [2, 3])";
-        statement = "[AGM_Interaction_Target, false] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.3;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [0, 1])";
-        statement = "[AGM_Interaction_Target, true] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.2;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockpickVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lockpick";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        statement = "[player, AGM_Interaction_Target, 'startLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        showDisabled = 0;
-        priority = 0.1;
-      };
+      MACRO_LOCK_ACTIONS
     };
   };
   class Air;
   class Helicopter: Air {
     class AGM_Actions {
-      class AGM_unlockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_UnLock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [2, 3])";
-        statement = "[AGM_Interaction_Target, false] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.3;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lock";
-        distance = 4;
-        condition = "([player, AGM_Interaction_Target] call AGM_VehicleLock_fnc_hasKeyForVehicle) && ((locked AGM_Interaction_Target) in [0, 1])";
-        statement = "[AGM_Interaction_Target, true] call AGM_VehicleLock_fnc_setVehicleLock";
-        showDisabled = 1;
-        priority = 0.2;
-        icon = "\AGM_vehicleLock\ui\key_menuIcon_ca.paa";
-      };
-      class AGM_lockpickVehicle {
-        displayName = "$STR_AGM_Vehicle_Action_Lockpick";
-        distance = 4;
-        condition = "[player, AGM_Interaction_Target, 'canLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        statement = "[player, AGM_Interaction_Target, 'startLockpick'] call AGM_VehicleLock_fnc_lockpick";
-        showDisabled = 0;
-        priority = 0.1;
-      };
+      MACRO_LOCK_ACTIONS
     };
   };
 };

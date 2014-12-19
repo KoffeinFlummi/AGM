@@ -52,13 +52,13 @@ AGM_20Rnd_762x51_Mag_AP
 
 class CfgPatches {
   class AGM_Ballistics {
-    units[] = {};
+    units[] = {"AGM_TargetWall"};
     weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"TaoSensai", "commy2"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -1104,8 +1104,7 @@ class CfgWeapons {
 
   /* Vests */
 
-  class VestItem;
-  #include <VestNerf.hpp>
+  #include <FixVests.hpp>
 };
 
 #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
@@ -1119,7 +1118,8 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
-  #include <UniformNerf.hpp>
+  #include <FixUniforms.hpp>
+  #include <FixHelmets.hpp>
 
   class NATO_Box_Base;
   class EAST_Box_Base;
@@ -1301,6 +1301,15 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_muzzle_mzls_L,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,2)
+    };
+  };
+
+  class Sign_F;
+  class AGM_TargetWall: Sign_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    class Eventhandlers {
+      init = "_this call compile preprocessFileLineNumbers '\AGM_Ballistics\scripts\initTargetWall.sqf'";
+      //hitPart = "systemChat str _this";
     };
   };
 };

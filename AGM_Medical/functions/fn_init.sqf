@@ -8,16 +8,17 @@ _unit = _this select 0;
 
 if !(local _unit) exitWith {};
 
-if (_unit == AGM_player) then {
-  _unit setVariable ["tf_globalVolume", 1];
-  _unit setVariable ["tf_voiceVolume", 1, True];
-  _unit setVariable ["tf_unable_to_use_radio", False, True];
+_unit setVariable ["tf_globalVolume", 1];
+_unit setVariable ["tf_voiceVolume", 1, True];
+_unit setVariable ["tf_unable_to_use_radio", False, True];
 
-  _unit setVariable ["acre_sys_core_isDisabled", False, True];
-  _unit setVariable ["acre_sys_core_globalVolume", 1];
+_unit setVariable ["acre_sys_core_isDisabled", False, True];
+_unit setVariable ["acre_sys_core_globalVolume", 1];
+
+if ("AGM_Unconscious" in ([_unit] call AGM_Core_fnc_getCaptivityStatus)) then {
+  [_unit, "AGM_Unconscious", false] call AGM_Core_fnc_setCaptivityStatus;
 };
 
-[_unit, "AGM_Unconscious", false] call AGM_Core_fnc_setCaptivityStatus;
 _unit setVariable ["AGM_isDiagnosed", False, True];   // Is the unit diagnosed?
 _unit setVariable ["AGM_canTreat", True, False];      // Can unit treat others?
 _unit setVariable ["AGM_isTreatable", True, True];    // Can unit be treated/diagnosed?

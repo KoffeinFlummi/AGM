@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi, jodav, CAA-Picard, commy2
+ * Author: KoffeinFlummi, bux578, CAA-Picard, commy2
  *
  * Initializes the respawn module.
  *

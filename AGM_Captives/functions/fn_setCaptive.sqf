@@ -22,12 +22,20 @@ if (_state) then {
   if (_unit getVariable ["AGM_isCaptive", false]) exitWith {};
 
   _unit setVariable ["AGM_isCaptive", true, true];
-  [_unit, "AGM_Handcuffed", true] call AGM_Core_fnc_setCaptivityStatus;
-  [_unit] call AGM_Core_fnc_fixLoweredRifleAnimation;
-  [_unit, "AGM_AmovPercMstpScapWnonDnon", 0] call AGM_Core_fnc_doAnimation;
 
-  if (_unit == AGM_player) then {//moveto loop
-    [false] call AGM_Core_fnc_disableUserInput;
+  // fix anim on mission start (should work on dedicated servers)
+  _unit spawn {
+    [_this, "AGM_Handcuffed", true] call AGM_Core_fnc_setCaptivityStatus;
+
+    if (_this getVariable ["AGM_isCaptive", false] && {vehicle _this == _this}) then {
+      [_this] call AGM_Core_fnc_fixLoweredRifleAnimation;
+      [_this, "AGM_AmovPercMstpScapWnonDnon", 0] spawn AGM_Core_fnc_doAnimation;
+    };
+  };
+
+  _unit setVariable ["AGM_Captives_CargoIndex", vehicle _unit getCargoIndex _unit, true];
+
+  if (_unit == AGM_player) then {
     showHUD false;
   };
 } else {
@@ -35,10 +43,15 @@ if (_state) then {
 
   _unit setVariable ["AGM_isCaptive", false, true];
   [_unit, "AGM_Handcuffed", false] call AGM_Core_fnc_setCaptivityStatus;
-  [_unit, "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon", 2] call AGM_Core_fnc_doAnimation;
+  if (vehicle _unit == _unit) then {
+    [_unit, "AGM_AmovPercMstpScapWnonDnon_AmovPercMstpSnonWnonDnon", 2] call AGM_Core_fnc_doAnimation;
+  };
 
-  if (_unit == AGM_player) then {//moveto loop
-    [true] call AGM_Core_fnc_disableUserInput;
+  if (_unit getVariable ["AGM_Captives_CargoIndex", -1] != -1) then {
+    _unit setVariable ["AGM_Captives_CargoIndex", -1, true];
+  };
+
+  if (_unit == AGM_player) then {
     showHUD true;
   };
 };

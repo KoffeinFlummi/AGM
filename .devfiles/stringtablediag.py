@@ -82,7 +82,7 @@ def main():
       print("  %s %s / %i" % ((languages[i]+":").ljust(10), str(localized[i]).ljust(3), keynumber))
       localizedsum[i] += localized[i]
       if localized[i] < keynumber:
-        missing[i].append(module)
+        missing[i].append(module[4:])
 
   print("\n###########")
   print("# RESULTS #")
@@ -101,14 +101,18 @@ def main():
 
   print("\nTotal number of keys: %i\n" % (keysum))
 
-  print("| Language | Missing Entries | Relevant Modules |")
-  print("|----------|----------------:|------------------|")
+  print("| Language | Missing Entries | Relevant Modules | % done |")
+  print("|----------|----------------:|------------------|--------|")
 
   for i, language in enumerate(languages):
     if localizedsum[i] == keysum:
-      print("| {} | 0 | - |".format(language))
+      print("| {} | 0 | - | 100% |".format(language))
     else:
-      print("| {} | {} | {} |".format(language, keysum - localizedsum[i], ", ".join(missing[i])))
+      print("| {} | {} | {} | {}% |".format(
+        language,
+        keysum - localizedsum[i],
+        ", ".join(missing[i]),
+        round(100 * localizedsum[i] / keysum)))
 
 
 if __name__ == "__main__":

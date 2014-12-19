@@ -10,16 +10,13 @@
  * Nothing
  */
 
-private ["_unit", "_speaker", "_id"];
+private ["_unit", "_speaker"];
 
 _unit = _this select 0;
+
+if (isNull _unit) exitWith {};
 
 _speaker = _unit getVariable ["AGM_OriginalSpeaker", ""];
 if (_speaker == "") exitWith {};
 
-_id = _unit getVariable ["AGM_PersistentID_Speaker", -1];
-
-_id = [_unit, format ["{_this setSpeaker '%1'}", _speaker], _id] call AGM_Core_fnc_execPersistentFnc;
-
-
-_unit setVariable ["AGM_PersistentID_Speaker", _id, true];
+[0, format ["{(_this select 1) setSpeaker '%1'}", _speaker], _unit, "AGM_Speaker"] call AGM_Core_fnc_execPersistentFnc;

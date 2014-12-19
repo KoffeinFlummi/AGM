@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.94.1";
-    versionStr = "0.94.1";
-    versionAr[] = {0,94,1};
+    version = "0.95";
+    versionStr = "0.95";
+    versionAr[] = {0,95,0};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -153,7 +153,7 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_EarBuds,24)
+      MACRO_ADDITEM(AGM_EarBuds,12)
     };
   };
 };

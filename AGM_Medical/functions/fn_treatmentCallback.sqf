@@ -29,7 +29,7 @@ _target = _this select 1;
 _type = _this select 2;
 
 if ((_target != _unit or _type != "diagnose") and (vehicle _unit == _unit)) then {
-  [_unit, "AmovPknlMstpSrasWrflDnon", 1] call AGM_Core_fnc_doAnimation;
+  [_unit, "", 1] call AGM_Core_fnc_doAnimation;
 };
 _unit setVariable ["AGM_canTreat", True, False];
 
