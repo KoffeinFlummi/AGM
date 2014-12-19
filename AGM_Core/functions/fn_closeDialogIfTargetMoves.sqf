@@ -6,11 +6,17 @@ _this spawn {
 
   if (isNil "_ignoreDead") then {_ignoreDead = false};
 
+  _unit = AGM_player;
+  _vehicle = vehicle AGM_player;
   _position = getPosASL _target;
 
-  _unit = vehicle AGM_player;
+  _fnc_check = [
+    {getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}} || {_vehicle != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}},
+    {_target in _vehicle                         || {!alive _target && {!_ignoreDead}} || {_vehicle != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}}
+  ] select (_unit != AGM_player);
+
   waitUntil {
-    if (getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}} || {_unit != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}) then {
+    if (call _fnc_check) then {
       closeDialog 0;
       call AGM_Interaction_fnc_hideMenu;
     };
