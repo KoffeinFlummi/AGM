@@ -63,8 +63,8 @@ class Binarizer:
       if inp != "":
         self.paths[k] = inp
 
-  def get_modules(self):
-    if len(sys.argv) > 1:
+  def get_modules(self, check = False):
+    if len(sys.argv) > 1 and not check:
       return sys.argv[1:]
 
     # Nothing was specifed, binarize all new PBOs.
@@ -76,6 +76,9 @@ class Binarizer:
           self.check_for_changes(module) and \
           not os.path.exists(os.path.join(root, module, ".DONTPACK")):
         modules.append(module)
+
+    if len(sys.argv) > 1 and check:
+      modules = list(filter(lambda x: x in sys.argv, modules))
 
     return modules
 
@@ -232,7 +235,7 @@ class Binarizer:
     return len(modules)
 
   def verify(self):
-    newmodules = self.get_modules()
+    newmodules = self.get_modules(True)
     if len(newmodules) == 0:
       return 0
     else:
