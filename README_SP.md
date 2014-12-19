@@ -4,7 +4,7 @@
 
 ---
 
-[![](http://img.shields.io/badge/release-0.94.1-green.svg)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-20_MB-blue.svg)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar) [![](http://img.shields.io/badge/license-GPLv2-red.svg)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg)](https://github.com/KoffeinFlummi/AGM/issues)
+[![](http://img.shields.io/badge/release-0.94.1-green.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-20_MB-blue.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar) [![](http://img.shields.io/badge/license-GPLv2-red.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/issues)
 
 Un mod modular de autenticidad/realismo para ArmA 3, parcialmente basado en el trabajo de Taosenai con [TMR](https://github.com/Taosenai/tmr).
 
