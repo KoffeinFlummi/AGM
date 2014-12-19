@@ -22,7 +22,7 @@ if !(_activated) exitWith {};
 
 AGM_Medical_Module = True;
 
-AGM_Medical_MEDEVACTriggers = synchronizedObjects _logic;
+AGM_Medical_MEDEVACTriggers = [synchronizedObjects _logic, {triggerType _this != ""}] call AGM_Core_fnc_filter;
 AGM_Medical_MEDEVACVehicles = _units;
 
 [_logic, "AGM_Medical_CoefDamage",                   "CoefDamage"                  ] call AGM_Core_fnc_readNumericParameterFromModule;

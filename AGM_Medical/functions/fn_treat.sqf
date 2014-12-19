@@ -38,11 +38,11 @@ _inTrigger = False;
 {
   if (_inTrigger) exitWith {};
   _inTrigger = [_x, _target] call BIS_fnc_inTrigger;
-} forEach missionNamespace getVariable ["AGM_Medical_MEDEVACTriggers", []];
+} forEach (missionNamespace getVariable ["AGM_Medical_MEDEVACTriggers", []]);
 {
   if (_inTrigger) exitWith {};
   _inTrigger = _target distance _x < 10;
-} forEach missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []];
+} forEach (missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []]);
 
 if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC > 0]) and !_inTrigger) exitWith {
   if ([_unit] call AGM_Core_fnc_isPlayer) then {
