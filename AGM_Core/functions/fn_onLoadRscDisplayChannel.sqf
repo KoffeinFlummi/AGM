@@ -1,7 +1,7 @@
 /*
   Name: AGM_Core_fnc_onLoadRscDisplayChannel
 
-  Author: Pabst Mirror
+  Author: Pabst Mirror, commy2
 
   Description:
     When the RscDisplayChannel is loaded, this will constantly uiNamespace variable "AGM_currentChannel"
@@ -14,6 +14,7 @@
     Nothing
 */
 
+/*
 _this spawn {
   private "_display";
   disableSerialization;
@@ -26,4 +27,12 @@ _this spawn {
     false
   };
 };
+*/
 
+uiNamespace setVariable ["AGM_ctrlChannel", (_this select 0) displayCtrl 101];
+
+["AGM_currentChannel", "onEachFrame", {
+  if (ctrlText (uiNamespace getVariable ["AGM_ctrlChannel", controlNull]) != "") then {
+    uiNamespace setVariable ["AGM_currentChannel", ctrlText (uiNamespace getVariable ["AGM_ctrlChannel", controlNull])];
+  };
+}] call BIS_fnc_addStackedEventhandler;

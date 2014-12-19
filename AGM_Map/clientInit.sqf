@@ -8,28 +8,31 @@ if (!hasInterface) exitWith{};
   while {true} do {
     sleep 5;
     _markers = [];
-    while {AGM_Map_BFT_Enabled and {alive player}} do {
-    
+
+    while {AGM_Map_BFT_Enabled and {(!isNil "AGM_player") and {alive AGM_player}}} do {
+
       _groups = [];
+      _playerSide = call AGM_Core_fnc_playerSide;
+
       if (AGM_Map_BFT_HideAiGroups == 0) then {
-        _groups = [allGroups, {side _this == playerSide}] call AGM_Core_fnc_filter;
+        _groups = [allGroups, {side _this == _playerSide}] call AGM_Core_fnc_filter;
       } else {
         _groups = [allGroups, {
           _anyPlayers = {
             [_x] call AGM_Core_fnc_isPlayer
           } count units _this;
-          (side _this == playerSide) && _anyPlayers > 0
+          (side _this == _playerSide) && _anyPlayers > 0
         }] call AGM_Core_fnc_filter;
       };
-      
+
       {
         deleteMarkerLocal _x;
       } forEach _markers;
       _markers = [];
-      
+
       for "_i" from 0 to (count _groups - 1) do {
         _group1 = _groups select _i;
-        
+
         _markerType = [_group1] call AGM_Core_fnc_getMarkerType;
 
         _colour = format ["Color%1", side _group1];
@@ -44,13 +47,11 @@ if (!hasInterface) exitWith{};
 
       sleep AGM_Map_BFT_Interval;
     };
-    
-    if(!AGM_Map_BFT_Enabled) then {
-      {
-        deleteMarkerLocal _x;
-      } forEach _markers;
-    };
-    
+
+    // Delete markers as soon as the player dies
+    {
+      deleteMarkerLocal _x;
+    } forEach _markers;
   };
 };
 

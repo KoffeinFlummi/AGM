@@ -58,4 +58,4 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWhe
 
 enableCamShake true;
 
-[missionNamespace, "playerChanged", "{[_this select 0] call AGM_Core_fnc_setName; [_this select 1] call AGM_Core_fnc_setName;}"] call AGM_Core_fnc_addCustomEventhandler;
+[missionNamespace, "playerChanged", "{if (alive (_this select 0)) then {[_this select 0] call AGM_Core_fnc_setName}; if (alive (_this select 1)) then {[_this select 1] call AGM_Core_fnc_setName};}"] call AGM_Core_fnc_addCustomEventhandler;
