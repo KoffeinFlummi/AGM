@@ -106,7 +106,9 @@ if (_unit getVariable ["AGM_Medical_AutomaticWakeup", AGM_Medical_AutomaticWakeu
     } else {
       sleep (60 * (1 + (random 8)) * ((damage _unit) max 0.5));
     };
-    [_unit] call AGM_Medical_fnc_wakeUp;
+    if (!isNull _unit && {alive _unit}) then {
+      [_unit] call AGM_Medical_fnc_wakeUp;
+    };
   };
 };
 _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
