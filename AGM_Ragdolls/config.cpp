@@ -24,19 +24,19 @@ class PhysXParams {
   impulseTorqueRagdollCoef = 100;
   maxRagdollImpulseForceMagnitude = 500;
   maxRagdollImpulseTorqueMagnitude = 150;
-  ragdollUnderwaterBuoyancyCoef = 9.7;
-  ragdollUnderwaterResistanceCoef = 0.005;
-  ragdollOnCollideSpeedLimit = "2500.0f";
-  ragdollOnCollideMassLimit = "0.0f";
+  ragdollHitDmgLimit = "0f";
+  ragdollHitForceCoef = "20f";
+  ragdollHitTime = "0.05f";
   ragdollOnCollideForceCoef = "20.0f";
+  ragdollOnCollideMassLimit = "0.0f";
   ragdollOnCollideMaxForce = "25.0f";
   ragdollOnCollideMaxOffset = "2.0f";
   ragdollOnCollideMaxOffsetSpeed = "50.0f";
+  ragdollOnCollideSpeedLimit = "2500.0f";
   ragdollOnCollideVehicleImpulseCoef = "0.5f";
   ragdollUnconsciousSleepCoef = "0f";
-  ragdollHitTime = "10f";
-  ragdollHitForceCoef = "800f";
-  ragdollHitDmgLimit = "10000f";
+  ragdollUnderwaterBuoyancyCoef = 9.7;
+  ragdollUnderwaterResistanceCoef = 0.005;
   ragdollVehicleCollision = 1;
 };
 
