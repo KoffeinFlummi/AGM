@@ -73,7 +73,7 @@ _unit disableCollisionWith _helper;
   _unit spawn {
     sleep 0.5;
     _this allowDamage True;
-  }
+  };
 
   detach _unit;
   [_unit, "", 2] call AGM_Core_fnc_doAnimation;
