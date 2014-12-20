@@ -17,18 +17,19 @@ _unit = _this select 0;
 _vehicle = _this select 1;
 _target = _unit getVariable ["AGM_Transporting", objNull];
 
-if ((count _this < 3) and {!(local _target)}) exitWith {
-  [[_this select 0, _this select 1, _unit], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
+if (count _this < 3 and {!(local _target)}) exitWith {
+  [_this + [_target], "AGM_Medical_fnc_loadIntoVehicle", _target] call AGM_Core_fnc_execRemoteFnc;
 };
 
 if (count _this > 2) then {
-  _unit = _this select 2;
-  _target = _unit getVariable ["AGM_Transporting", objNull];
+  _target = _this select 2;
 };
 
 _unit setVariable ["AGM_Transporting", objNull, True];
 
-[[_target, _vehicle], "{detach (_this select 0); (_this select 0) moveInCargo (_this select 1); (_this select 0) assignAsCargo (_this select 1);}", _target] call AGM_Core_fnc_execRemoteFnc;
+detach _target;
+_target moveInCargo _vehicle;
+_target assignAsCargo _vehicle;
 
 [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
 _target spawn {
