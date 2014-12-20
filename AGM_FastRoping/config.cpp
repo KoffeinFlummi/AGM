@@ -39,25 +39,25 @@ class CfgVehicles {
     AGM_FastRoping_Positions[] = {};
     class AGM_SelfActions {
       class AGM_DeployRopes {
-        displayName = "Deploy Ropes";
+        displayName = "$STR_AGM_FastRoping_DeployRopes";
         enableInside = 1;
-        condition = "!(_vehicle getVariable ['AGM_RopesDeployed', False]) and (getPos _vehicle select 2) > 5 and (getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'AGM_FastRoping')) == 1";
+        condition = "(locked _vehicle <= 1) and !(_vehicle getVariable ['AGM_RopesDeployed', False]) and (getPos _vehicle select 2) > 5 and (getNumber (configFile >> 'CfgVehicles' >> typeOf _vehicle >> 'AGM_FastRoping')) == 1";
         statement = "[_vehicle] call AGM_FastRoping_fnc_deployRopes";
         showDisabled = 0;
         priority = 1;
         icon = "";
       };
       class AGM_FastRope {
-        displayName = "Fast Rope";
+        displayName = "$STR_AGM_FastRoping_FastRope";
         enableInside = 1;
-        condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {!_this}] call AGM_Core_fnc_filter) > 0)";
+        condition = "(locked _vehicle <= 1) and (_vehicle getVariable ['AGM_RopesDeployed', False]) and (vectorMagnitude (velocity _vehicle) < 4) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {!_this}] call AGM_Core_fnc_filter) > 0)";
         statement = "[_player, _vehicle] call AGM_FastRoping_fnc_fastRope";
         showDisabled = 0;
         priority = 1;
         icon = "";
       };
       class AGM_CutRopes {
-        displayName = "Cut Ropes";
+        displayName = "$STR_AGM_FastRoping_CutRopes";
         enableInside = 1;
         condition = "(_vehicle getVariable ['AGM_RopesDeployed', False]) and (count ([_vehicle getVariable ['AGM_RopesOccupied', []], {_this}] call AGM_Core_fnc_filter) == 0)";
         statement = "[_vehicle] call AGM_FastRoping_fnc_cutRopes";

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="AGM">
+  <Package name="FastRoping">
+    <Key ID="STR_AGM_FastRoping_DeployRopes">
+      <English>Deploy Ropes</English>
+      <German>Seile vorbereiten</German>
+    </Key>
+    <Key ID="STR_AGM_FastRoping_FastRope">
+      <English>Fast Rope</English>
+      <German>Abseilen</German>
+    </Key>
+    <Key ID="STR_AGM_FastRoping_CutRopes">
+      <English>Cut Ropes</English>
+      <German>Seile trennen</German>
+    </Key>
+  </Package>
+</Project>
