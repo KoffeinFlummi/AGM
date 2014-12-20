@@ -28,8 +28,7 @@ if (count _this > 2) then {
 
 _unit setVariable ["AGM_Transporting", objNull, True];
 
-detach _target;
-[[_target, _vehicle], "{(_this select 0) moveInCargo (_this select 1); (_this select 0) assignAsCargo (_this select 1);}", _target] call AGM_Core_fnc_execRemoteFnc;
+[[_target, _vehicle], "{detach (_this select 0); (_this select 0) moveInCargo (_this select 1); (_this select 0) assignAsCargo (_this select 1);}", _target] call AGM_Core_fnc_execRemoteFnc;
 
 [_unit, "", 2, True] call AGM_Core_fnc_doAnimation;
 _target spawn {
