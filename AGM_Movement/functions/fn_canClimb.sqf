@@ -6,7 +6,7 @@ _unit = _this select 0;
 
 _pos = getPosASL _unit;
 _dir = getDir _unit;
-_dir = [sin _dir, cos _dir, 0];
+_dir = [sin _dir, cos _dir, 0] vectorMultiply 1.3;
 
 private ["_checkPos0beg", "_checkPos0end", "_checkPos1beg", "_checkPos1end"];
 

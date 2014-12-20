@@ -106,6 +106,10 @@ class CfgVehicles {
 };
 
 class CfgMovesBasic {
+  class ManActions {
+    AGM_Climb = "AGM_Climb";
+  };
+
   class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
@@ -144,6 +148,7 @@ class CfgMovesBasic {
 };
 
 class CfgMovesMaleSdr: CfgMovesBasic {
+  class StandBase;
   class States {
     // better slow walk with lowered rifle animation
     class AmovPercMstpSrasWrflDnon;
@@ -203,5 +208,13 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class AadjPpneMstpSrasWpstDdown: AadjPpneMstpSrasWpstDup {
       enableOptics = 2;
     };
+
+    // climb animation
+    class AmovPercMstpSnonWnonDnon: StandBase {
+      ConnectTo[] += {"AGM_Climb",0.02};
+    };
+
+    class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium;
+    class AGM_Climb: AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium {};
   };
 };
