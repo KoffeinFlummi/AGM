@@ -63,7 +63,6 @@ _unit disableCollisionWith _helper;
   _unit allowDamage True;
   [_unit, "AGM_FastRoping", 2] call AGM_Core_fnc_doAnimation;
 
-  _time = time;
   waitUntil {
     ([_unit] + ([[_helper] call AGM_Core_fnc_getPitchBankYaw, {_this * -1}] call AGM_Core_fnc_map)) call AGM_Core_fnc_setPitchBankYaw;
     _time + 1 < time and ((getPos _helper select 2) < 1 or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
