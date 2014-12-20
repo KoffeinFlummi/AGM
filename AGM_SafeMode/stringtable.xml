@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-12-11 -->
+<!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="SafeMode">
     <Key ID="STR_AGM_SafeMode_SafeMode">
@@ -9,7 +9,7 @@
       <Polish>Bezpiecznik</Polish>
       <Czech>Pojistka</Czech>
       <Hungarian>Veszélytelenités</Hungarian>
-      <Portuguese>Предохранитель</Portuguese>
+      <Russian>Предохранитель</Russian>
     </Key>
     <Key ID="STR_AGM_SafeMode_TakeOffSafety">
       <English>Take off Safety</English>
@@ -18,7 +18,7 @@
       <Polish>Zwolnij bezpiecznik</Polish>
       <Czech>Uvolnit pojistku</Czech>
       <Hungarian>Veszélyesités</Hungarian>
-      <Portuguese>Снять с предохранителя</Portuguese>
+      <Russian>Снять с предохранителя</Russian>
     </Key>
     <Key ID="STR_AGM_SafeMode_PutOnSafety">
       <English>Put on Safety</English>
@@ -27,7 +27,7 @@
       <Polish>Zabezpiecz broń</Polish>
       <Czech>Přepnout pojistku</Czech>
       <Hungarian>Veszélytelenitve</Hungarian>
-      <Portuguese>Поставить на предохранитель</Portuguese>
+      <Russian>Поставить на предохранитель</Russian>
     </Key>
     <Key ID="STR_AGM_SafeMode_TookOffSafety">
       <English>Took off Safety</English>
@@ -36,7 +36,7 @@
       <Polish>Odbezpieczono broń</Polish>
       <Czech>Odstranit pojistku</Czech>
       <Hungarian>veszélyes</Hungarian>
-      <Portuguese>Снят с предохранителя</Portuguese>
+      <Russian>Снят с предохранителя</Russian>
     </Key>
   </Package>
 </Project>

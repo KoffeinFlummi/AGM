@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-20 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="WeaponSelect">
     <Key ID="STR_AGM_WeaponSelect_SelectPistol">
@@ -84,6 +84,7 @@
       <Czech>Zapnout motor</Czech>
       <Portuguese>Ligar Motor</Portuguese>
       <Italian>Motore acceso</Italian>
+      <Russian>Включить двигатель</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_EngineOff">
       <English>Engine off</English>
@@ -95,6 +96,7 @@
       <Czech>Vypnout motor</Czech>
       <Portuguese>Desligar Motor</Portuguese>
       <Italian>Motore spento</Italian>
+      <Russian>Выключить двигатель</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMainGun">
       <English>Select Main Gun</English>
@@ -106,6 +108,7 @@
       <Czech>Zvolit Hlavní Zbraň</Czech>
       <Portuguese>Selecionar Arma Principal</Portuguese>
       <Italian>Seleziona Arma Primaria</Italian>
+      <Russian>Выбрать основное оружие</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMachineGun">
       <English>Select Machine Gun</English>
@@ -117,6 +120,7 @@
       <Czech>Zvolit Kulomet</Czech>
       <Portuguese>Selecionar Metralhadora</Portuguese>
       <Italian>Seleziona Mitragliatrice</Italian>
+      <Russian>Выбрать пулемёт</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectMissiles">
       <English>Select Missiles</English>
@@ -128,6 +132,7 @@
       <Czech>Zvolit Rakety</Czech>
       <Portuguese>Selecionar Mísseis</Portuguese>
       <Italian>Seleziona Missili</Italian>
+      <Russian>Выбрать ракеты</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_LoadGrenade">
       <English>Grenade %1</English>
@@ -136,6 +141,7 @@
       <Polish>Granat %1</Polish>
       <Czech>Granát %1</Czech>
       <Hungarian>Gránát Kiválasztása</Hungarian>
+      <Russian>Граната %1</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ReadyGrenade">
       <English>Ready Grenade</English>
@@ -144,6 +150,7 @@
       <Polish>Przygotuj granat</Polish>
       <Czech>Odjištěný granát</Czech>
       <Hungarian>Kész Gránát</Hungarian>
+      <Russian>Подготовить гранату</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">
       <English>Select Frag Grenade</English>
@@ -155,6 +162,7 @@
       <Czech>Zvolit Výbušný Granát</Czech>
       <Portuguese>Selecionar Granada de Fragmentação</Portuguese>
       <Italian>Seleziona Granata a Frammentazione</Italian>
+      <Russian>Выбрать осколочную гранату</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeOther">
       <English>Select Non-Frag Grenade</English>
@@ -166,6 +174,7 @@
       <Czech>Zvolit Ne-Výbušný Granát</Czech>
       <Portuguese>Selecionar Granada</Portuguese>
       <Italian>Seleziona Altre Granate</Italian>
+      <Russian>Выбрать гранату</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_ThrowGrenade">
       <English>Throw Selected Grenade</English>
@@ -177,6 +186,7 @@
       <Czech>Hodit Zvolený Granát</Czech>
       <Portuguese>Lançar Granada Selecionada</Portuguese>
       <Italian>Lancia la Granata Selezionata</Italian>
+      <Russian>Бросить выбранную гранату</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoGrenadesLeft">
       <English>No grenades left</English>
@@ -186,6 +196,7 @@
       <Polish>Brak granatów</Polish>
       <Czech>Žádné granáty</Czech>
       <Hungarian>Nincs több gránát</Hungarian>
+      <Russian>Гранат не осталось</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoFragsLeft">
       <English>No frags left</English>
@@ -197,6 +208,7 @@
       <Czech>Už nejsou granáty</Czech>
       <Portuguese>Não há granadas de fragmentação restantes</Portuguese>
       <Italian>Nessuna granata a frammentazione rimanente</Italian>
+      <Russian>Осколочныких гранат нет</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoMiscGrenadeLeft">
       <English>No misc. grenades left</English>
@@ -208,6 +220,7 @@
       <Czech>Už nejsou žádné ostatní granáty</Czech>
       <Portuguese>Não há outras granadas restantes</Portuguese>
       <Italian>Nessun'altra granata rimanente.</Italian>
+      <Russian>Невзрывоопасные гранаты закончились</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_NoGrenadeSelected">
       <English>No grenade selected</English>
@@ -219,6 +232,7 @@
       <Czech>Není zvolen žádný granát</Czech>
       <Portuguese>Nenhuma granada selecionada</Portuguese>
       <Italian>Nessuna granata selezionata</Italian>
+      <Russian>Нет выбранной гранаты</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_FireSmokeLauncher">
       <English>Fire Smoke Launcher</English>
@@ -228,7 +242,7 @@
       <French>Tirer le lance-pots fumigènes</French>
       <Polish>Wystrzel granat dymny</Polish>
       <Hungarian>Füst kilövése</Hungarian>
+      <Russian>Запустить дымовую завесу</Russian>
     </Key>
-
   </Package>
 </Project>
