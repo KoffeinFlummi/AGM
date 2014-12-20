@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-12-19 -->
+<!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -646,6 +646,7 @@
       <Czech>Interakce</Czech>
       <Russian>Взаимодействовать</Russian>
       <Polish>Interakcja</Polish>
+      <Spanish>Interactuar</Spanish>
     </Key>
   </Package>
 </Project>
