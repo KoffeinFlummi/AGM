@@ -1,10 +1,14 @@
 // by commy2
 
-#define CLIMB_ANIM "AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium" //"AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInHigh"
+#define CLIMB_ANIM "AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium"
 
 private "_unit";
 
 _unit = _this select 0;
+
+if !([_unit] call AGM_Movement_fnc_canClimb) exitWith {
+	[localize "STR_AGM_Movement_CanNotClimb"] call AGM_Core_fnc_displayTextStructured;
+};
 
 if !(_unit getVariable ["AGM_isClimbInit", false]) then {
 	_unit addEventHandler ["AnimDone", {

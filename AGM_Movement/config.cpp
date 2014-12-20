@@ -40,11 +40,11 @@ class Extended_PostInit_EventHandlers {
 class AGM_Core_Default_Keys {
   class climb {
     displayName = "$STR_AGM_Movement_Climb";
-    condition = "_player == _vehicle && {[_player] call AGM_Movement_fnc_canClimb}";
+    condition = "_player == _vehicle";
     statement = "[_player] call AGM_Movement_fnc_climb";
     key = 47;
-    shift = 1;
-    control = 0;
+    shift = 0;
+    control = 1;
     alt = 0;
   };
 };
