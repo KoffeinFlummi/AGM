@@ -13,7 +13,7 @@ _this spawn {
   _fnc_check = [
     {getPosASL _target distanceSqr _position > 1 || {!alive _target && {!_ignoreDead}} || {_vehicle != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}},
     {_target in _vehicle                         || {!alive _target && {!_ignoreDead}} || {_vehicle != vehicle AGM_player} || {_unit getVariable ["AGM_isUnconscious", false]}}
-  ] select (_unit != AGM_player);
+  ] select (_vehicle != AGM_player);
 
   waitUntil {
     if (call _fnc_check) then {
