@@ -26,5 +26,9 @@
       <Hungarian>Súly:</Hungarian>
       <Russian>Вес:</Russian>
     </Key>
+    <Key ID="STR_AGM_Movement_Climb">
+      <English>Climb</English>
+      <German>Klettern</German>
+    </Key>
   </Package>
 </Project>
