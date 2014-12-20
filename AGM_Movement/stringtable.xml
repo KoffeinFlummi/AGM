@@ -26,5 +26,13 @@
       <Hungarian>Súly:</Hungarian>
       <Russian>Вес:</Russian>
     </Key>
+    <Key ID="STR_AGM_Movement_Climb">
+      <English>Climb</English>
+      <German>Klettern</German>
+    </Key>
+    <Key ID="STR_AGM_Movement_CanNotClimb">
+      <English>Can't climb here</English>
+      <German>Kann hier nicht klettern</German>
+    </Key>
   </Package>
 </Project>

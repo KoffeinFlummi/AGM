@@ -18,9 +18,12 @@ class CfgFunctions {
     class AGM_Movement {
       file = "AGM_Movement\functions";
       class blinking;
+      class canClimb;
+      class climb;
       class fatigueModule;
       class heartbeat;
       class getWeight;
+      class handleClimb;
       class recoil;
       class stumble;
       class vision;
@@ -31,6 +34,18 @@ class CfgFunctions {
 class Extended_PostInit_EventHandlers {
   class AGM_Movement {
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Movement\clientInit.sqf'";
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class climb {
+    displayName = "$STR_AGM_Movement_Climb";
+    condition = "_player == _vehicle";
+    statement = "[_player] call AGM_Movement_fnc_climb";
+    key = 47;
+    shift = 0;
+    control = 1;
+    alt = 0;
   };
 };
 
@@ -91,6 +106,10 @@ class CfgVehicles {
 };
 
 class CfgMovesBasic {
+  class ManActions {
+    AGM_Climb = "AGM_Climb";
+  };
+
   class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
@@ -129,6 +148,7 @@ class CfgMovesBasic {
 };
 
 class CfgMovesMaleSdr: CfgMovesBasic {
+  class StandBase;
   class States {
     // better slow walk with lowered rifle animation
     class AmovPercMstpSrasWrflDnon;
@@ -188,5 +208,13 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class AadjPpneMstpSrasWpstDdown: AadjPpneMstpSrasWpstDup {
       enableOptics = 2;
     };
+
+    // climb animation
+    class AmovPercMstpSnonWnonDnon: StandBase {
+      ConnectTo[] += {"AGM_Climb",0.02};
+    };
+
+    class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium;
+    class AGM_Climb: AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium {};
   };
 };
