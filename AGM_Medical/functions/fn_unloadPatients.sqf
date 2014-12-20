@@ -23,6 +23,7 @@ if (count _this > 2) exitWith {
     (getPos _unit select 1) + (random 2) - 1,
     0
   ];
+  moveOut _target;
   unassignVehicle _target;
   _target setPosATL _pos;
 };
