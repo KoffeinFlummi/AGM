@@ -17,6 +17,6 @@ if (hasInterface) then {
 };
 
 // remove this for the release
-if (isNil "AGM_Debug") then {
+/*if (isNil "AGM_Debug") then {
 	AGM_Debug = ["remote"];
-};
+};*/
