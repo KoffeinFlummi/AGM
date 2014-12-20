@@ -175,7 +175,7 @@ class CfgCameraShake {
 // Go through all modes that have a camshakefire defined and change it to ours.
 class CfgMovesBasic {
   class Default {
-    camShakeFire = AGM_CAMSHAKEFIRE_NORMAL;
+    camShakeFire = AGM_CAMSHAKEFIRE_BASE;
   };
 };
 class CfgMovesMaleSdr : CfgMovesBasic {
@@ -225,7 +225,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
     };
     class AmovPknlMstpSrasWrflDnon;
     class AmovPknlMwlkSrasWrflDf : AmovPknlMstpSrasWrflDnon {
-      camShakeFire = AGM_CAMSHAKEFIRE_NORMAL;
+      camShakeFire = AGM_CAMSHAKEFIRE_BASE;
     };
     class AmovPknlMrunSrasWrflDf;
     class AmovPknlMtacSrasWrflDf : AmovPknlMrunSrasWrflDf {
