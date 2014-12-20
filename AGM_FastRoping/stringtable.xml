@@ -4,14 +4,17 @@
     <Key ID="STR_AGM_FastRoping_DeployRopes">
       <English>Deploy Ropes</English>
       <German>Seile vorbereiten</German>
+      <Polish>Rozwiń liny</Polish>
     </Key>
     <Key ID="STR_AGM_FastRoping_FastRope">
       <English>Fast Rope</English>
       <German>Abseilen</German>
+      <Polish>Zjedź na linie</Polish>
     </Key>
     <Key ID="STR_AGM_FastRoping_CutRopes">
       <English>Cut Ropes</English>
       <German>Seile trennen</German>
+      <Polish>Odetnij liny</Polish>
     </Key>
   </Package>
 </Project>
