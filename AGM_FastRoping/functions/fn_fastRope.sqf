@@ -66,12 +66,18 @@ _unit disableCollisionWith _helper;
   _time = time;
   waitUntil {
     ([_unit] + ([[_helper] call AGM_Core_fnc_getPitchBankYaw, {_this * -1}] call AGM_Core_fnc_map)) call AGM_Core_fnc_setPitchBankYaw;
-    _time + 1 < time and ((isTouchingGround _helper) or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
+    _time + 1 < time and ((getPos _helper select 2) < 1 or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
   };
 
-  detach player;
+  _unit allowDamage False;
+  _unit spawn {
+    sleep 0.5;
+    _this allowDamage True;
+  }
+
+  detach _unit;
   [_unit, "", 2] call AGM_Core_fnc_doAnimation;
-  player setVectorUp [0,0,1];
+  _unit setVectorUp [0,0,1];
 
   // delete and recreate rope
   {deleteVehicle _x;} forEach _rope;
