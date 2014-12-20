@@ -47,13 +47,6 @@ if (_unit == AGM_player) then {
 
 [_unit, "AGM_Unconscious", False] call AGM_Core_fnc_setCaptivityStatus;
 
-if !(scriptDone (_unit getVariable "AGM_WakeUpTimer")) then {
-  terminate (_unit getVariable "AGM_WakeUpTimer");
-};
-if !(scriptDone (_unit getVariable "AGM_UnconsciousnessTimer")) then {
-  terminate (_unit getVariable "AGM_UnconsciousnessTimer");
-};
-
 // handle parachute
 if (vehicle _unit == _unit) then {
   _unit setVariable ["AGM_OriginalAnim", "", True];
@@ -62,3 +55,10 @@ if (vehicle _unit == _unit) then {
 [_unit, _unit getVariable "AGM_OriginalAnim", 2, True] call AGM_Core_fnc_doAnimation;
 
 [_unit, "AGM_wokeUp", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
+
+if !(scriptDone (_unit getVariable "AGM_UnconsciousnessTimer")) then {
+  terminate (_unit getVariable "AGM_UnconsciousnessTimer");
+};
+if !(scriptDone (_unit getVariable "AGM_WakeUpTimer")) then {
+  terminate (_unit getVariable "AGM_WakeUpTimer");
+};
