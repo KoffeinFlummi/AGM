@@ -33,29 +33,42 @@ _this spawn {
   _round = _this select 5;
 
   _airFriction = getNumber (configFile >> "CfgAmmo" >> _ammoType >> "airFriction");
-  _airFrictionWind = - _airFriction;
-
   _simulation = getText (configFile >> "CfgAmmo" >> _ammoType >> "simulation");
-  if (_airFriction > 0 || {_simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
-    // Do not correct for airDensity y airFriction is not logical on the first place
-    _airFriction = 0;
-    _airFrictionWind = 0.0007;
-  };
-
-  // WIND
   _time = time;
-  while {!isNull _round and alive _round} do {
-    // Use actual time delay between iterations instead of a set interval to account for ultra-low framerates.
-    _deltaTime = time - _time;
 
-    // See https://github.com/KoffeinFlummi/AGM/issues/996
-    _velocity = velocity _round;
-    _velocityNew = _velocity vectorAdd (_velocity vectorMultiply (vectorMagnitude _velocity * (AGM_Wind_currentRelativeDensity - 1) * _airFriction * _deltaTime))
-                             vectorAdd (wind vectorMultiply (vectorMagnitude (_velocity vectorAdd wind) * AGM_Wind_currentRelativeDensity * _airFrictionWind * _deltaTime));
+  if (_airFriction >= 0 || {_simulation == "shotMissile"} || {_simulation == "shotRocket"}) then {
+    // Do not correct for airDensity if airFriction is not logical on the first place
+    _airFriction = -0.0007;
+    while {!isNull _round and alive _round} do {
+      _deltaTime = time - _time;
 
-    _round setVelocity _velocityNew;
+      _velocity = velocity _round;
+      _velocityNew =  _velocity
+                      // Calculate approximate wind drag
+                      vectorDiff (wind vectorMultiply (vectorMagnitude (_velocity vectorDiff wind) * AGM_Wind_currentRelativeDensity * _airFriction * _deltaTime));
+      _round setVelocity _velocityNew;
 
-    _time = time;
-    sleep 0.05;
+      _time = time;
+      sleep 0.05;
+    };
+  } else {
+    // Calculate total drag based on aparent wind
+    while {!isNull _round and alive _round} do {
+      _deltaTime = time - _time;
+
+      // See https://github.com/KoffeinFlummi/AGM/issues/996 and See https://github.com/KoffeinFlummi/AGM/issues/1732
+      _velocity = velocity _round;
+      _aparentWind = wind vectorDiff _velocity;
+      _velocityNew = (_velocity
+                      // Undo engine's drag calculation (airFriction * V^2 * dt)
+                      vectorDiff (_velocity vectorMultiply (vectorMagnitude _velocity * _airFriction * _deltaTime)))
+                      // Calculate total drag based on aparent wind
+                      vectorDiff (_aparentWind vectorMultiply (vectorMagnitude _aparentWind * AGM_Wind_currentRelativeDensity * _airFriction * _deltaTime));
+
+      _round setVelocity _velocityNew;
+
+      _time = time;
+      sleep 0.05;
+    };
   };
 };
