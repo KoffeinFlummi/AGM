@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-12-20 -->
+<!-- Edited with tabler - 2014-12-21 -->
 <Project name="AGM">
   <Package name="FastRoping">
     <Key ID="STR_AGM_FastRoping_DeployRopes">
@@ -7,18 +7,21 @@
       <German>Seile vorbereiten</German>
       <Polish>Rozwiń liny</Polish>
       <Spanish>Desplegar cuerdas</Spanish>
+      <Russian>Развернуть веревку</Russian>
     </Key>
     <Key ID="STR_AGM_FastRoping_FastRope">
       <English>Fast Rope</English>
       <German>Abseilen</German>
       <Polish>Zjedź na linie</Polish>
       <Spanish>Descender por cuerda</Spanish>
+      <Russian>Спуститься по веревке</Russian>
     </Key>
     <Key ID="STR_AGM_FastRoping_CutRopes">
       <English>Cut Ropes</English>
       <German>Seile trennen</German>
       <Polish>Odetnij liny</Polish>
       <Spanish>Cortar cuerdas</Spanish>
+      <Russian>Перерезать веревку</Russian>
     </Key>
   </Package>
 </Project>
