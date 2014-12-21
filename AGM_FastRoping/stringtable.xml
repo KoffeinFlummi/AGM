@@ -8,6 +8,7 @@
       <Polish>Rozwiń liny</Polish>
       <Spanish>Desplegar cuerdas</Spanish>
       <Russian>Развернуть веревку</Russian>
+      <Czech>Připravit lana</Czech>
     </Key>
     <Key ID="STR_AGM_FastRoping_FastRope">
       <English>Fast Rope</English>
@@ -15,6 +16,7 @@
       <Polish>Zjedź na linie</Polish>
       <Spanish>Descender por cuerda</Spanish>
       <Russian>Спуститься по веревке</Russian>
+      <Czech>Slanování</Czech>
     </Key>
     <Key ID="STR_AGM_FastRoping_CutRopes">
       <English>Cut Ropes</English>
@@ -22,6 +24,7 @@
       <Polish>Odetnij liny</Polish>
       <Spanish>Cortar cuerdas</Spanish>
       <Russian>Перерезать веревку</Russian>
+      <Czech>Odstranit lana</Czech>
     </Key>
   </Package>
 </Project>
