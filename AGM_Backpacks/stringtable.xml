@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-12-12 -->
+<!-- Edited with tabler - 2014-12-21 -->
 <Project name="AGM">
   <Package name="Backpacks">
     <Key ID="STR_AGM_Backpacks_BackpackVentralTake">
@@ -34,7 +34,7 @@
       <Czech>Zamknout batoh</Czech>
       <Polish>Zablokuj plecak</Polish>
       <Hungarian>Táska zárolása</Hungarian>
-      <Russian>Закрыть рюкзак</Russian>
+      <Russian>Запереть рюкзак</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_UnlockBackpack">
       <English>Unlock Backpack</English>
@@ -44,7 +44,7 @@
       <Czech>Odemknout batoh</Czech>
       <Polish>Odblokuj plecak</Polish>
       <Hungarian>Táska nyitása</Hungarian>
-      <Russian>Открыть рюкзак</Russian>
+      <Russian>Отпереть рюкзак</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_BackpackLocked">
       <English>Backpack of %1 is locked</English>
@@ -54,7 +54,7 @@
       <Czech>%1 má zamčený batoh</Czech>
       <Polish>Plecak %1 jest zablokowany</Polish>
       <Hungarian>%1 táskája zárolva</Hungarian>
-      <Russian>У %1 рюкзак закрыт</Russian>
+      <Russian>Рюкзак %1 заперт</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_InventoryLocked">
       <English>Inventory is locked</English>
@@ -64,7 +64,7 @@
       <Czech>Inventář je zamčený</Czech>
       <Polish>Ekwipunek jest zablokowany</Polish>
       <Hungarian>Felszerelés zárolt</Hungarian>
-      <Russian>Инвентарь закрыт</Russian>
+      <Russian>Инвентарь заперт</Russian>
     </Key>
   </Package>
 </Project>
