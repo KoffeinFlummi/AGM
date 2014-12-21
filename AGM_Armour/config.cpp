@@ -36,7 +36,7 @@ class CfgSFX {
   class AGM_CookOff {
     name = "Cook-Off";
     sounds[] = {"cookoff"};
-    cookoff[] = {"\AGM_Armour\sounds\cookoff.wav",8,1.8,400,1,0,0,0};
+    cookoff[] = {"\AGM_Armour\sounds\cookoff.wav",6,1.8,400,1,0,0,0};
     empty[] = {"",0,0,0,0,0,0,0};
   };
 };
