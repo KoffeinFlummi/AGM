@@ -64,18 +64,18 @@ AGM_FCS_traceBullet = {
     if (_posX >= _posTargetX) exitWith {}; // bullet passed the target
   };
 
-
   _posY - _posTargetY
 };
 
 if ((_this + [_maxElev]) call AGM_FCS_traceBullet < 0) exitWith {_maxElev - _angleTarget};
-  
+
 // Newton Method / Secand Method
 _angle1 = _angleTarget;
 _angle2 = _maxElev;
 _it2 = 0;
 _f1 = (_this + [_angle1]) call AGM_FCS_traceBullet;
 
+if ((abs _f1) <= PRECISION) exitWith {0};
 while {(abs _f1) > PRECISION} do {
   _f2 = (_this + [_angle2]) call AGM_FCS_traceBullet;
   _temp = _angle2-_f2*(_angle2-_angle1)/(_f2-_f1);
