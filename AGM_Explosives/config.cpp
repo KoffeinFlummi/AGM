@@ -12,43 +12,42 @@ class CfgPatches {
   };
 };
 
-class CfgFunctions
-{
+class CfgFunctions {
   class AGM_Explosives {
     class Explosives {
       file="AGM_Explosives\functions";
-      
+
       class AddClacker;
       class CanDefuse;
       class DefuseExplosive;
       class DetonateExplosive;
       class HandleScrollWheel;
-      
+
       class hasExplosives;
       class hasPlacedExplosives;
-      
+
       class getDetonators;
       class getPlacedExplosives;
-      
+
       class initialise{postInit=1;};
       //class JammerInit;
-      
+
       class openDetonateUI;
       class openPlaceUI;
       class openTransmitterUI;
       class openTimerSetUI;
       class openTriggerSelectionUI;
-      
+
       class Place_Approve;
       class Place_Cancel;
       class PlaceExplosive;
-      
+
       class SelectTrigger;
       class SetupExplosive;
       class SetPos;
       class StartDefuse;
       class StartTimer;
-      
+
       class TriggerType;
     };
   };
@@ -95,7 +94,7 @@ class CfgVehicles {
         exceptions[] = {"AGM_Interaction_isNotSwimming"}; \
         showDisabled = 1;
         priority = 4;
-        icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";     
+        icon = "AGM_Explosives\UI\Icon_Explosive_ca.paa";
         subMenu[] = {"AGM_Explosives", 1};
         hotkey = "X";
         //Sub-menu items
@@ -132,7 +131,7 @@ class CfgVehicles {
       };
     };
   };
-  
+
   #include "CfgVehicles.hpp"
 
   class NATO_Box_Base;
@@ -223,9 +222,9 @@ class CfgVehicles {
       };
     };
   };
-  
+
   #include "Module.hpp"
-  
+
   // Add AGM_Clacker and AGM_DefusalKit to every explosive unit.
   #define MACRO_ADDMINEKIT \
     items[] = {"FirstAidKit", "AGM_Clacker", "AGM_DefusalKit"}; \
