@@ -768,12 +768,60 @@ class CfgVehicles {
   };
 };
 
+// disable locking, so it doesn't interfere with our system
 class CfgWeapons {
   class CannonCore;
+  class cannon_120mm: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };
+  class autocannon_Base_F: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };
   class autocannon_35mm: CannonCore {
     canLock = 0;
+    ballisticsComputer = 0;
     magazines[] += {"AGM_120Rnd_35mm_ABM_shells","AGM_120Rnd_35mm_ABM_shells_Tracer_Red","AGM_120Rnd_35mm_ABM_shells_Tracer_Green","AGM_120Rnd_35mm_ABM_shells_Tracer_Yellow"};
   };
+  /*class Cannon_30mm_Plane_CAS_02_F: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };*/
+
+  /*class gatling_20mm: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };
+  class gatling_25mm: CannonCore {
+    canLock = 0;
+  };
+  class gatling_30mm: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };
+  class Gatling_30mm_Plane_CAS_01_F: CannonCore {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };*/
+
+  /*class MGunCore;
+  class M134_minigun: MGunCore {
+    canLock = 0;
+  };
+
+  class MGun: MGunCore {};
+  class LMG_RCWS: MGun {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };
+  class HMG_127: LMG_RCWS {
+    ballisticsComputer = 0;
+  };
+  class GMG_F: MGun {
+    canLock = 0;
+    ballisticsComputer = 0;
+  };*/
 };
 
 class CfgMagazines {
