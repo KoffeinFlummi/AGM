@@ -110,15 +110,77 @@ class CfgVehicles {
     explosionEffect = "FuelExplosionBig";
   };
 
-
   class B_MBT_01_base_F;
   class B_MBT_01_cannon_F: B_MBT_01_base_F {
     AGM_Armour_AmmoLocation = "HitHull";
     //AGM_Armour_TurretObject = "AGM_Turret_MBT_01";
     //AGM_Armour_TurretPosition[] = {3,3,0};
-    AGM_Armour_CookOffLocations[] = {{0,-0.3,1.65}};
+    AGM_Armour_CookOffLocations[] = {{-0.3,-0.3,1.8}};
     AGM_Armour_CookOffOnTurret[]  = {1};
   };
+  class B_MBT_01_arty_base_F;
+  class B_MBT_01_arty_F: B_MBT_01_arty_base_F {
+    AGM_Armour_CookOffLocations[] = {{0.7,-0.3,3.5}};
+    AGM_Armour_CookOffOnTurret[]  = {1};
+  };
+  class B_MBT_01_mlrs_base_F;
+  class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {
+    AGM_Armour_CookOffLocations[] = {{0,-0.3,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {0};
+  };
+  class B_APC_Tracked_01_base_F;
+  class B_APC_Tracked_01_rcws_F: B_APC_Tracked_01_base_F {
+    AGM_Armour_AmmoLocation = "HitHull";
+    AGM_Armour_CookOffLocations[] = {{0.5,-0.3,1.3}};
+    AGM_Armour_CookOffOnTurret[]  = {0};
+  };
+  class B_APC_Tracked_01_AA_F: B_APC_Tracked_01_base_F {
+    AGM_Armour_CookOffLocations[] = {{-0.4,-0.3,1.9}, {0.3,-0.3,1.9}};
+    AGM_Armour_CookOffOnTurret[]  = {1,                1            };
+  };
+  class B_APC_Wheeled_01_base_F;
+  class B_APC_Wheeled_01_cannon_F: B_APC_Wheeled_01_base_F {
+    AGM_Armour_CookOffLocations[] = {{-0.3,0,1.85}, {0.3,0,1.85}};
+    AGM_Armour_CookOffOnTurret[]  = {1,             1           };
+  };
+
+  class I_APC_tracked_03_base_F;
+  class I_APC_tracked_03_cannon_F: I_APC_tracked_03_base_F {
+    AGM_Armour_CookOffLocations[] = {{-0.4,-0.3,1.5}, {0.7,-0.3,1.5}};
+    AGM_Armour_CookOffOnTurret[]  = {1,               1             };
+  };
+  class I_APC_Wheeled_03_base_F;
+  class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
+    AGM_Armour_CookOffLocations[] = {{0,-0.6,0}};
+    AGM_Armour_CookOffOnTurret[]  = {0};
+  };
+
+  class O_MBT_02_base_F;
+  class O_MBT_02_cannon_F: O_MBT_02_base_F {
+    AGM_Armour_CookOffLocations[] = {{-0.6,-0.3,1.65}, {0.5,-0.3,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {1,                1              };
+  };
+  class O_MBT_02_arty_base_F;
+  class O_MBT_02_arty_F: O_MBT_02_arty_base_F {
+    AGM_Armour_CookOffLocations[] = {{0.7,-0.3,3.5}};
+    AGM_Armour_CookOffOnTurret[]  = {1};
+  };
+  class O_APC_Tracked_02_base_F;
+  class O_APC_Tracked_02_AA_F: O_APC_Tracked_02_base_F {
+    AGM_Armour_CookOffLocations[] = {{-0.4,0.2,3.6}, {0.3,0.2,3.6}};
+    AGM_Armour_CookOffOnTurret[]  = {1,              1            };
+  };
+  class O_APC_Tracked_02_cannon_F: O_APC_Tracked_02_base_F {
+    AGM_Armour_CookOffLocations[] = {{0,-0.5,1.65}};
+    AGM_Armour_CookOffOnTurret[]  = {1};
+  };
+  class O_APC_Wheeled_02_base_F;
+  class O_APC_Wheeled_02_rcws_F: O_APC_Wheeled_02_base_F {
+    AGM_Armour_AmmoLocation = "HitHull";
+    AGM_Armour_CookOffLocations[] = {{0,-0.4,1}};
+    AGM_Armour_CookOffOnTurret[]  = {0};
+  };
+
 
   /*
   class O_MBT_02_base_F;

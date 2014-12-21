@@ -1,7 +1,7 @@
 class CfgPatches {
   class AGM_Interaction {
     units[] = {};
-    weapons[] = {"AGM_CableTie"};
+    weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.95";
