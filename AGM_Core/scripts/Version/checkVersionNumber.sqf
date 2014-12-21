@@ -41,7 +41,7 @@ if (isServer) then {
   AGM_Version_ServerVersions = [_files, _versions];
   publicVariable "AGM_Version_ServerVersions";
 } else {
-  diag_log text format ["[AGM] Client: AGM_Core is Version %1.", _versionMain];
+  diag_log text format ["[AGM] Client: agm_core is Version %1.", _versionMain];
 
   {
     if (toLower _x find "agm_" == 0) then {//
