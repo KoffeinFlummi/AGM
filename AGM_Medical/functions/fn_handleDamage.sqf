@@ -8,7 +8,7 @@
  * 1: Name of the selection that was hit (String); "" for structural damage
  * 2: Amount of damage inflicted (Number)
  * 3: Shooter (Object); Null for explosion damage, falling, fire etc.
- * 4: Projectile (Object)
+ * 4: Projectile (Object or String)
  *
  * Return value:
  * Damage value to be inflicted (optional)
@@ -32,6 +32,10 @@ _selectionName = _this select 1;
 _damage        = _this select 2;
 _source        = _this select 3;
 _projectile    = _this select 4;
+
+if (typeName _projectile == "OBJECT") then {
+  _projectile = typeOf _projectile;
+};
 
 // Prevent unnecessary processing
 if (damage _unit >= 1) exitWith {};
