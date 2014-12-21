@@ -26,7 +26,15 @@ _this spawn {
 
   sleep 0.5 + (random 0.3);
 
-  // @todo: visual indicator(s) for crew members.
+  // guesstimate turret center; intersect weapon direction with front axis.
+  // if you find a better method, yell at me.
+  _gunBeg = _vehicle selectionPosition (getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "gunBeg"));
+  _gunEnd = _vehicle selectionPosition (getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "gunEnd"));
+  _weaponDir = _gunEnd vectorFromTo _gunBeg; // this may seem counterintuitive, but it's BIS we're talking about.
+  _turretAxis = [0,0];
+  if (_weaponDir select 0 != 0) then {
+    _turretAxis set [1, (_gunBeg select 1) - ((_gunBeg select 0) / (_weaponDir select 0)) * (_weaponDir select 1)];
+  };
 
   // Smoke out of cannon and hatches
   _smokeBarrel = "#particlesource" createVehicle [0,0,0];
@@ -40,6 +48,16 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
+    if (_onTurret select _forEachIndex == 1) then {
+      _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
+      _posX = (_position select 0) - (_turretAxis select 0);
+      _posY = (_position select 1) - (_turretAxis select 1);
+      _posNewX = _posX * cos _weaponDirDeg - _posY * sin _weaponDirDeg;
+      _posNewY = _posX * sin _weaponDirDeg - _posY * cos _weaponDirDeg;
+      _position set [0, _posNewX + (_turretAxis select 0)];
+      _position set [1, _posNewY + (_turretAxis select 1)];
+    };
+
     _smoke = "#particlesource" createVehicle [0,0,0];
     _smoke setParticleClass "ObjectDestructionSmoke1_2Smallx";
     _smoke attachTo [_vehicle, _position];
@@ -47,8 +65,6 @@ _this spawn {
   } forEach _positions;
 
   sleep 3 + (random 2);
-
-  // @todo sound
 
   // this shit is busy being on fire, can't go driving around all over the place
   _vehicle setFuel 0;
@@ -66,6 +82,16 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
+    if (_onTurret select _forEachIndex == 1) then {
+      _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
+      _posX = (_position select 0) - (_turretAxis select 0);
+      _posY = (_position select 1) - (_turretAxis select 1);
+      _posNewX = _posX * cos _weaponDirDeg - _posY * sin _weaponDirDeg;
+      _posNewY = _posX * sin _weaponDirDeg - _posY * cos _weaponDirDeg;
+      _position set [0, _posNewX + (_turretAxis select 0)];
+      _position set [1, _posNewY + (_turretAxis select 1)];
+    };
+
     _fire = "#particlesource" createVehicle [0,0,0];
     _fire setParticleClass "AGM_CookOff";
     _fire attachTo [_vehicle, _position];
@@ -73,6 +99,13 @@ _this spawn {
   } forEach _positions;
 
   _sound = createSoundSource ["AGM_Sound_CookOff", getPos _vehicle, [], 0];
+
+  // indicator for the crew - yo, your shit's on fire
+  {
+    if ([_x] call AGM_Core_fnc_isPlayer) then {
+      [[], "{0 spawn {for '_i' from 0 to 11 do {[] call BIS_fnc_flamesEffect; sleep 0.4;};};}", _x] call AGM_Core_fnc_execRemoteFnc;
+    };
+  } forEach (crew _vehicle);
 
   sleep (4 + random 1);
 

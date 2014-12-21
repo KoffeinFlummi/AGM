@@ -65,7 +65,11 @@ if (_type == "car") exitWith {
   if (!_critical or (getNumber (configFile >> "CfgAmmo" >> _projectile >> "explosive") > 0.5)) then {
     if (!(_vehicle getVariable ["AGM_Armour_isEngineSmoking", False]) and _hitpoint == "HitEngine" and _damage > 0.9) then {
       _vehicle setVariable ["AGM_Armour_isEngineSmoking", True, True];
-      _pos = [0,0,0]; // @todo
+      _pos = [
+        0,
+        (((boundingBoxReal _vehicle) select 1) select 1) - 4,
+        (((boundingBoxReal _vehicle) select 0) select 2) + 2
+      ];
       _smoke = "#particlesource" createVehicle [0,0,0];
       _smoke setParticleClass "ObjectDestructionSmoke1_2Smallx";
       _smoke attachTo [_vehicle, _pos];
@@ -73,7 +77,7 @@ if (_type == "car") exitWith {
         _vehicle = _this select 0;
         _smoke = _this select 1;
         _time = time;
-        waitUntil {sleep 5; isNull _vehicle or !(alive _vehicle) or ((_vehicle getHitPointDamage "HitEngine") < 0.9) or (_time + 120 < time)};
+        waitUntil {sleep 5; isNull _vehicle or !(alive _vehicle) or ((_vehicle getHitPointDamage "HitEngine") < 0.9) or (_time + 240 < time)};
         deleteVehicle _smoke;
       };
     };
