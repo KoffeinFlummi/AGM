@@ -16,6 +16,10 @@ _damage        = _this select 2;
 _source        = _this select 3;
 _projectile    = _this select 4;
 
+if (typeName _projectile == "OBJECT") then {
+  _projectile = typeOf _projectile;
+};
+
 // It's already dead, who cares?
 if (damage _vehicle >= 1) exitWith {};
 
@@ -107,7 +111,7 @@ if (_type == "tank") exitWith {
   if (_critical) then {
     _damage min 0.89
   } else {
-    _damage;
+    _damage
   };
 };
 
