@@ -8,7 +8,7 @@
  * 1: Name of the selection that was hit (String); "" for structural damage
  * 2: Amount of damage inflicted (Number)
  * 3: Shooter (Object); Null for explosion damage, falling, fire etc.
- * 4: Projectile (String) - Classname of the projectile that caused inflicted the damage.
+ * 4: Projectile (Object)
  *
  * Return value:
  * Damage value to be inflicted (optional)
@@ -136,7 +136,7 @@ if (_selectionName != "" and !(_unit getVariable "AGM_Medical_isFalling")) then 
       _restore = ((_unit getHitPointDamage _hitPoint) - _otherDamage) max 0;
       _unit setHitPointDamage [_hitPoint, _restore];
       // Make entry unfindable
-      _cache_projectiles set [_index, "null"];
+      _cache_projectiles set [_index, objNull];
       _cache_projectiles pushBack _projectile;
       _cache_hitpoints pushBack (_hitPoints select (_hitSelections find _selectionName));
       _cache_damages pushBack _newDamage;

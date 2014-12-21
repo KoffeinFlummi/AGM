@@ -39,10 +39,10 @@ if (_unit != _vehicle) then {
     if (_unit == AGM_player) then {[_damage * 100] call BIS_fnc_bloodEffect};
 
     if (isClass (configFile >> "CfgPatches" >> "AGM_Medical")) then {
-      [_unit, "HitBody", ([_unit, "", ((_unit getHitPointDamage "HitBody") + _damage), objNull, ""] call AGM_Medical_fnc_handleDamage)] call AGM_Medical_fnc_setHitPointDamage;
+      [_unit, "HitBody", ([_unit, "", ((_unit getHitPointDamage "HitBody") + _damage), objNull, objNull] call AGM_Medical_fnc_handleDamage)] call AGM_Medical_fnc_setHitPointDamage;
       _unit spawn {
         sleep 0.5;
-        [_this, "", 0, objNull, ""] call AGM_Medical_fnc_handleDamage;
+        [_this, "", 0, objNull, objNull] call AGM_Medical_fnc_handleDamage;
       };
     } else {
       _unit setDamage (damage _unit + _damage);
