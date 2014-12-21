@@ -103,7 +103,7 @@ _this spawn {
   // indicator for the crew - yo, your shit's on fire
   {
     if ([_x] call AGM_Core_fnc_isPlayer) then {
-      [[], "{0 spawn {for '_i' from 0 to 11 do {[] call BIS_fnc_flamesEffect; sleep 0.4;};};}", _x] call AGM_Core_fnc_execRemoteFnc;
+      [[_vehicle], "{(_this select 0) spawn {for '_i' from 0 to 11 do {if (vehicle AGM_player != _this) exitWith {}; [] call BIS_fnc_flamesEffect; sleep 0.4;};};}", _x] call AGM_Core_fnc_execRemoteFnc;
     };
   } forEach (crew _vehicle);
 
