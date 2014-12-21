@@ -86,11 +86,5 @@ while {(abs _f1) > PRECISION} do {
 };
 //player globalChat format ["it1: %1 | _angle1: %2 | it2: %3 | _angle2: %4",_it1, _angle-_angleTarget, _it2, _angle2-_angleTarget];
 
-/*_angle=_angle2;
-_angle - _angleTarget*/
-
-// @todo Why does this return values > 20 when the projectile is fast and the target is close?
-_angle = _angle2 - _angleTarget;
-
-if (_angle > 10) exitWith {0};
-_angle
+_angle=_angle2;
+_angle - _angleTarget
