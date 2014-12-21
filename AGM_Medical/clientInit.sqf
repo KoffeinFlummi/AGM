@@ -42,6 +42,9 @@ AGM_Pain_CC ppEffectCommit 0;
       AGM_BloodLevel_CC ppEffectEnable False;
       AGM_Unconscious_CC ppEffectEnable False;
       AGM_Unconscious_RB ppEffectEnable False;
+      AGM_Blinding_CC ppEffectEnable False;
+      AGM_Pain_CC ppEffectEnable False;
+      AGM_Pain_CA ppEffectEnable False;
       waitUntil {isNull(findDisplay 312)};
     };
 
@@ -50,6 +53,9 @@ AGM_Pain_CC ppEffectCommit 0;
       AGM_BloodLevel_CC ppEffectEnable False;
       AGM_Unconscious_CC ppEffectEnable False;
       AGM_Unconscious_RB ppEffectEnable False;
+      AGM_Blinding_CC ppEffectEnable False;
+      AGM_Pain_CC ppEffectEnable False;
+      AGM_Pain_CA ppEffectEnable False;
       if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [False] call AGM_Core_fnc_disableUserInput;
       };
