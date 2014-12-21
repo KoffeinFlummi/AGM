@@ -31,9 +31,20 @@ _this spawn {
   _gunBeg = _vehicle selectionPosition (getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "gunBeg"));
   _gunEnd = _vehicle selectionPosition (getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "gunEnd"));
   _weaponDir = _gunEnd vectorFromTo _gunBeg; // this may seem counterintuitive, but it's BIS we're talking about.
-  _turretAxis = [0,0];
-  if (_weaponDir select 0 != 0) then {
-    _turretAxis set [1, (_gunBeg select 1) - ((_gunBeg select 0) / (_weaponDir select 0)) * (_weaponDir select 1)];
+  _turretAxis = [-1,-1];
+  if (abs (_weaponDir select 0) > 0.05 and !(isArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "Turrets" >> "MainTurret" >> "memoryPointGun"))) then {
+    _y = (_gunBeg select 1) - ((_gunBeg select 0) / (_weaponDir select 0)) * (_weaponDir select 1);
+    if (_y < 5) then {
+      _turretAxis set [0, 0];
+      _turretAxis set [1, _y];
+    };
+  };
+
+  if (!isNil "AGM_Debug" and {"Armour" in AGM_Debug}) then {
+    AGM_TurretAxis = _turretAxis;
+    addMissionEventHandler ["Draw3D", {
+      drawLine3D [(vehicle player) modelToWorld (AGM_TurretAxis + [-5]), (vehicle player) modelToWorld (AGM_TurretAxis + [10]), [1,0,0,1]];
+    }];
   };
 
   // Smoke out of cannon and hatches
@@ -48,7 +59,7 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
-    if (_onTurret select _forEachIndex == 1) then {
+/*    if (_onTurret select _forEachIndex == 1 and _turretAxis select 0 != -1) then {
       _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
       _posX = (_position select 0) - (_turretAxis select 0);
       _posY = (_position select 1) - (_turretAxis select 1);
@@ -56,7 +67,7 @@ _this spawn {
       _posNewY = _posX * sin _weaponDirDeg - _posY * cos _weaponDirDeg;
       _position set [0, _posNewX + (_turretAxis select 0)];
       _position set [1, _posNewY + (_turretAxis select 1)];
-    };
+    };*/
 
     _smoke = "#particlesource" createVehicle [0,0,0];
     _smoke setParticleClass "ObjectDestructionSmoke1_2Smallx";
@@ -82,7 +93,7 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
-    if (_onTurret select _forEachIndex == 1) then {
+    if (_onTurret select _forEachIndex == 1 and _turretAxis select 0 != -1) then {
       _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
       _posX = (_position select 0) - (_turretAxis select 0);
       _posY = (_position select 1) - (_turretAxis select 1);
