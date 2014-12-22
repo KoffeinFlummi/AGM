@@ -24,7 +24,7 @@ The components themselves, like the medical system, also include various customi
 
 More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki#features).
 
-## Features
+### Features
 
 *   Improved medical system
 *   Logistics system including cargo transport and vehicle maintenance
@@ -39,13 +39,13 @@ and more...
 
 For a full list, look at the [wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
-## Guides & How-Tos
+### Guides & How-Tos
 
 You installed AGM, but you have no idea how it works, or where to start?
 
 Get started [here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 
-## Contributing
+### Contributing
 
 If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author array of any .pbo you might be editing.
 
@@ -53,7 +53,7 @@ If you find a bug or want to request a feature, please use the [Issue Tracker](h
 
 You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out [this](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) page.
 
-## Testing & Building
+### Testing & Building
 
 If you want to help development by testing and reporting bugs, feel free to download the current version of this repository either using git (if you know what you're doing) or using the download button on the right.
 
