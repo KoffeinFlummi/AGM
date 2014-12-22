@@ -19,8 +19,7 @@
 
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
 
-It is **built modularly**; Every PBO (with some exceptions) can be removed, so that groups can maintain their own configurations of AGM, excluding components that they don't like, or that might clash with other addons.
-The components themselves, like the medical system, also include various customization options, allowing mission designers to tweak the experience.
+The mod is **built modularly** — almost any PBO can be removed, thus a team can maintain its own tailored version of AGM, which excludes a select number of components that they don't like, or which conflict with other add-ons. Components themselves, like e.g. the medical system, also include various customization options, allowing mission designers to tweak the pverall experience.
 
 More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki#features).
 
