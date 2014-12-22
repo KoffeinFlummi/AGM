@@ -24,7 +24,7 @@ class PhysXParams {
   impulseTorqueRagdollCoef = 100;
   maxRagdollImpulseForceMagnitude = 500;
   maxRagdollImpulseTorqueMagnitude = 150;
-  ragdollHitDmgLimit = "0f";
+  ragdollHitDmgLimit = "0.01f";
   ragdollHitForceCoef = "20f";
   ragdollHitTime = "0.05f";
   ragdollOnCollideForceCoef = "20.0f";
