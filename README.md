@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="148px" /><br />
+  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
     <img src="http://img.shields.io/badge/release-0.95-green.svg?style=flat" alt="AGM version">
   </a>
@@ -13,16 +13,9 @@
     <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat" alt="AGM license">
   </a>
 </p>
+<p align="center"><sup><strong>Requires the latest version of <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://makearmanotwar.com/entry/7jnWM53S2e">Make Arma Not War</a> | <a href="http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification">BIF thread</a></strong></sup></p>
 
 **AGM** is a modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
-
-**Make Arma Not War:** http://makearmanotwar.com/entry/7jnWM53S2e
-
-**BIF Thread:** http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification
-
-**Get Latest Version:** https://github.com/KoffeinFlummi/AGM/releases
-
-***The Authentic Gameplay Modification requires [CBA A3](http://www.armaholic.com/page.php?id=18767).***
 
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
 
@@ -30,8 +23,6 @@ It is **built modularly**; Every PBO (with some exceptions) can be removed, so t
 The components themselves, like the medical system, also include various customization options, allowing mission designers to tweak the experience.
 
 More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki#features).
-
-<p align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HPAXPTVCNLDZS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a></p>
 
 ## Features
 
@@ -74,6 +65,4 @@ In order for the addons to be correctly binarized, you need to exclude the follo
 ```
 
 ---
-
-"THE NEW HOTNESS FOR ARMA3"
-~ An0n3
+<p align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HPAXPTVCNLDZS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a></p>
