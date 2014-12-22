@@ -38,7 +38,7 @@ _fnc_actionThrow = {
   [composeText [lineBreak, _text]] call AGM_Core_fnc_displayTextStructured;
 };
 
-_id = [
+/*_id = [
   _unit,
   format ["<t color=""#FFFFFF"" >%1</t>", localize "STR_AGM_WeaponSelect_ReadyGrenade"],
   "Throw",
@@ -47,6 +47,13 @@ _id = [
   {true},
   {[_this select 1] call AGM_WeaponSelect_fnc_selectGrenadeAll},
   2
-] call AGM_Core_fnc_addActionMenuEventHandler;
+] call AGM_Core_fnc_addActionMenuEventHandler;*/
+
+_id = [
+  _unit,
+  "Throw",
+  _fnc_actionThrowCondition,
+  _fnc_actionThrow
+] call AGM_Core_fnc_addActionEventHandler;
 
 _unit setVariable ["AGM_WeaponSelect_ThrowActionID", _id];
