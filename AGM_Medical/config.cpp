@@ -870,6 +870,22 @@ class CfgVehicles {
           };
         };
       };
+      class DisableScreams {
+        displayName = "Disable Screams?";
+        description = "Disable screaming on hit? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
     };
   };
 };
@@ -1045,5 +1061,6 @@ class AGM_Parameters {
   AGM_Medical_EnableOverdosing = 1;
   AGM_Medical_RequireMEDEVAC = 0;
   AGM_Medical_AutomaticWakeup = 1;
+  AGM_Medical_DisableScreams = 0;
 };
 #include <HintConfig.hpp>
