@@ -1,12 +1,21 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" />
+  <img src="ttps://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" width="256px" /><br />
+  <h2 align="center">Authentic Gameplay Modification</h2><br />
+  <a href="https://github.com/KoffeinFlummi/AGM/releases">
+    <img src="http://img.shields.io/badge/release-0.95-green.svg?style=flat" alt="AGM version">
+  </a>
+    <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
+    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat" alt="AGM download">
+  </a>
+    <a href="https://github.com/KoffeinFlummi/AGM/issues">
+    <img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat" alt="AGM issues">
+  </a>
+    <a href="https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat" alt="AGM license">
+  </a>
 </p>
 
----
-
-[![](http://img.shields.io/badge/release-0.95-green.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-22_MB-blue.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar) [![](http://img.shields.io/badge/license-GPLv2-red.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/issues)
-
-A modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
+**AGM** is a modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
 **Make Arma Not War:** http://makearmanotwar.com/entry/7jnWM53S2e
 
