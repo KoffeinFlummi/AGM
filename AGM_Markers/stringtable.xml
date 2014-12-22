@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-10-20 -->
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-22 -->
 <Project name="AGM">
   <Package name="Markers">
     <Key ID="STR_AGM_Markers_MarkerDirection">
@@ -9,6 +9,7 @@
       <Czech>Směr: %1°</Czech>
       <Polish>Kierunek: %1°</Polish>
       <Spanish>Dirección: %1°</Spanish>
+      <Russian>Направление: %1</Russian>
     </Key>
     <Key ID="STR_AGM_Markers_PlaceIn">
       <English>Place in: %1</English>
@@ -16,6 +17,7 @@
       <Spanish>Colocar en: %1</Spanish>
       <Polish>Umieść na: %1</Polish>
       <Czech>Umístit do: %1</Czech>
+      <Russian>Место в: %1</Russian>
     </Key>
   </Package>
 </Project>

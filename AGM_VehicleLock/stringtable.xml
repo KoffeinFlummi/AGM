@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-12-11 -->
+<!-- Edited with tabler - 2014-12-22 -->
 <Project name="AGM">
   <Package name="VehicleLock">
     <Key ID="STR_AGM_Vehicle_Action_UnLock">
@@ -50,6 +50,7 @@
       <Polish>Unikatowy klucz który otworzy konkretny pojazd.</Polish>
       <Czech>Vlastní klíč, který otevře konkrétní vozidlo.</Czech>
       <Hungarian>Kulcs egy járműhez</Hungarian>
+      <Russian>Специфический ключ, для открытия конкретной машины.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Master_Description">
       <English>A Master Key will open any lock, no matter what!</English>
@@ -59,6 +60,7 @@
       <Polish>Uniwersalny klucz który otworzy każdy zamek.</Polish>
       <Czech>Hlavní klíč otevře libovolný zámek, bez vyjímek!</Czech>
       <Hungarian>Általános kulcs minden járműhez</Hungarian>
+      <Russian>Универсальный ключ, который открывает любой замок.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Lockpick_Description">
       <English>A lockpick set that can pick the locks of most vehicles.</English>
@@ -68,6 +70,7 @@
       <Polish>Zestaw wytrychów dzięki któremu można otworzyć zamki w większości pojazdów.</Polish>
       <Czech>Sada paklíčů, která dokáže odemknout zámky u většiny vozidel.</Czech>
       <Hungarian>Álkulcs melyik minden járműt nyitni tud</Hungarian>
+      <Russian>Набор отмычек, которым можно взламывать замки на большинстве машин.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_West_Description">
       <English>A key that should open most WEST vehicles.</English>
@@ -77,6 +80,7 @@
       <Polish>Klucz który powinien otworzyć większość pojazdów ZACHODU.</Polish>
       <Czech>Klíč který by měl otevřít většinou Západních vozidel.</Czech>
       <Hungarian>Általános kulcs WEST járművekhez</Hungarian>
+      <Russian>Ключ для открытия большинства машин принадлежащих Западу.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_East_Description">
       <English>A key that should open most EAST vehicle.</English>
@@ -86,6 +90,7 @@
       <Polish>Klucz który powinien otworzyć większość pojazdów WSCHODU.</Polish>
       <Hungarian>Általános kulcs EAST járművekhez</Hungarian>
       <Czech>Klíč který by měl otevřít vetšinu Východních vozidel.</Czech>
+      <Russian>Ключ для открытия большинства машин принадлежащих Востоку.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Indp_Description">
       <English>A key that should open most INDEP vehicle.</English>
@@ -95,6 +100,7 @@
       <Polish>Klucz który powinien otworzyć większość pojazdów INDFOR.</Polish>
       <Hungarian>Általános kulcs INDEPENDENT járművekhez</Hungarian>
       <Czech>Klíč který by měl otevřít většinu Nezávislých vozidel.</Czech>
+      <Russian>Ключ для открытия большинства машин принадлежащих Независимым.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Civ_Description">
       <English>A key that should open most CIV vehicle.</English>
@@ -104,6 +110,7 @@
       <Polish>Klucz który powinien otworzyć większość pojazdów CYWILNYCH.</Polish>
       <Czech>Klíč který by měl otevřít většinu Civilních vozidel.</Czech>
       <Hungarian>Általános kulcs CIVILIAN járművekhez</Hungarian>
+      <Russian>Ключ для открытия большинства машин принадлежащих Гражданским.</Russian>
     </Key>
   </Package>
 </Project>
