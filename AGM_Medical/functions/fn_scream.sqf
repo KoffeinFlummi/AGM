@@ -12,6 +12,8 @@
 
 private ["_unit", "_screams", "_position"];
 
+if (AGM_Medical_DisableScreams == 1) exitWith {};
+
 _unit = _this select 0;
 
 _screams = [

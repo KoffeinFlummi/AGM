@@ -42,5 +42,6 @@ publicVariable "AGM_Medical_MEDEVACVehicles";
 [_logic, "AGM_Medical_EnableOverdosing",             "EnableOverdosing"            ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_RequireMEDEVAC",               "RequireMEDEVAC"              ] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_Medical_AutomaticWakeup",              "AutomaticWakeup"             ] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Medical_DisableScreams",               "DisableScreams"              ] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Medical Module Initialized.";
