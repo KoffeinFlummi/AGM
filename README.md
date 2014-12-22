@@ -1,6 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="144px" /><br />
-  <h2 align="center">Authentic Gameplay Modification</h2><br />
+  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="148px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
     <img src="http://img.shields.io/badge/release-0.95-green.svg?style=flat" alt="AGM version">
   </a>
