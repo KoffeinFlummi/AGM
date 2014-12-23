@@ -70,10 +70,10 @@ _position set [2, (_position select 2) + ((getPosASLW _unit select 2) - (getPosA
 
 playSound3D [
   _screams select (floor random (count _screams)),
-  _unit,
+  objNull,
   False,
   _position,
-  18,
+  2,
   1,
-  200
+  300
 ];
