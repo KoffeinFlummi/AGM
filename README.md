@@ -45,9 +45,9 @@ Get started [here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 ### Contributing
 If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author array of any .pbo you might be editing.
 
-If you find a bug or want to request a feature, please use the [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
+If you find a bug or want to request a feature, please use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-You are a content creator and want to know how to make your weapons or vehicles compatible with AGM? Check out [this](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) page.
+For documentation on how to make your weapons or vehicles compatible with AGM, see the following article — [For Add-on Maker](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers).
 
 ### Testing & Building
 If you want to help development by testing and reporting bugs, feel free to download the current version of this repository either using git (if you know what you're doing) or using the download button on the right.
