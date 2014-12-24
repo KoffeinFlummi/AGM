@@ -35,19 +35,19 @@ More information on the purpose of the different components of AGM and which one
 *   A fire control system for armored vehicles and helicopters  
 *   ***and more...***
 
-For a full list of current features — see [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
+For a full list of current features, check [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
-### Guides & How-Tos
-If you installed AGM, but have trouble understanding how it all works, or where to start — [get started here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
+#### Guides & How-Tos
+If you installed AGM, but have trouble understanding how it all works, or where to start — see [Getting Started](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 
-### Contributing
+#### Contributing
 If you want to help put with the ongoing development, you can do so by looking for possible bugs or by contributing new features. To become one of the developers, simply fork this repository and submit your pull requests for review by other collaborators. In the process, feel free to add yourself to the author array of any .pbo you will be editing.
 
 To report a bug, propose a feature, or suggest a change to the existing one — please, use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
 For detailed information on how to make your weapons or vehicles compatible with AGM — read [this article](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers).
 
-### Testing & Building
+#### Testing & Building
 If you want to help us test the latest development changes, feel free to download our master branch, using either git — if familiar with the process — or directly, by following [this link](https://github.com/KoffeinFlummi/AGM/archive/master.zip).
 
 To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
