@@ -106,38 +106,95 @@ class CfgVehicles {
 
   // Ghosthawk
   class Heli_Transport_01_base_F: Helicopter_Base_H {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
   };
 
   // Chinook
   class B_Heli_Transport_03_base_F: Helicopter_Base_H {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
   };
 
   // Wildcat
   class I_Heli_light_03_base_F: Helicopter_Base_F {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
   };
 
   // Merlin
   class Heli_Transport_02_base_F: Helicopter_Base_H {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{1.4, 2.5, 0.25}, {-1.2, 2.5, 0.25}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.4, 2.5, 0.25}, {-1.2, 2.5, 0.25}};
   };
 
   // Kasatka
   class Heli_Light_02_base_F: Helicopter_Base_H {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{1.4, 1.4, 0.05}, {-1.4, 1.4, 0.05}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.4, 1.4, 0.05}, {-1.4, 1.4, 0.05}};
   };
 
   // Kajman
   class Heli_Attack_02_base_F: Helicopter_Base_F {
-    AGM_FastRoping = 1;
-    AGM_FastRoping_Positions[] = {{1.4, 1.4, 0}, {-1.2, 1.4, 0}};
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.4, 1.4, 0}, {-1.2, 1.4, 0}};
+  };
+  // RHS US Pack
+  // UH60
+  class rhs_uh60m: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
+  };
+  // UH60 Desert
+  class rhs_uh60m_d: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
+  };
+  // Chinook
+  class rhs_ch47f: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  };
+  // Chinook light
+  class rhs_ch47f_light: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  };
+  // US Helicopter
+  // Chinook
+  class ch_47f: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  };
+  // chinook desert
+  class ch_47F_des: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
+  };
+  // Huey (old)
+  class UH1H: Helicopter_Base_F {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
+  };
+  // Huey (modern)
+  class UH1Y: Helicopter_Base_F {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
+  };
+  // blackhawk
+  class UH60M: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
+  };
+  // Blackhawk green
+  class UH60M: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
+  };
+  // Pavehawk
+  class USAF_HH60G: Helicopter_Base_H {
+  AGM_FastRoping = 1;
+  AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}}
   };
 };
 
