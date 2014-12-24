@@ -19,7 +19,7 @@
 
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
 
-The mod is **built modularly** — almost any PBO can be removed, thus a team can maintain its own tailored version of AGM, which excludes a select number of components that they don't like, or which conflict with other add-ons. Components themselves, like e.g. the medical system, also include various customization options, allowing mission designers to tweak the pverall experience.
+The mod is **built modularly** — almost any PBO can be removed, thus a team can maintain its own tailored version of AGM, which excludes a select number of components that they don't like, or which conflict with other add-ons. Components themselves, like e.g. the medical system, also include various customization options, allowing mission designers to tweak the overall experience.
 
 More information on the purpose of the different components of AGM and which ones they rely on can be found [here](https://github.com/KoffeinFlummi/AGM/wiki#features).
 
@@ -33,7 +33,7 @@ More information on the purpose of the different components of AGM and which one
 *   Backblast simulation
 *   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
-*   **and more...**
+*   ***and more...***
 
 For a full list of current features, see [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
@@ -45,10 +45,10 @@ If you want to help put with the ongoing development, you can do so by looking f
 
 To report a bug, propose a feature, or suggest a change to the existing one — please use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-For detailed information on how to make your weapons or vehicles compatible with AGM, see the following article — [For Addon Maker](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers).
+For detailed information on how to make your weapons or vehicles compatible with AGM — read the [For Addon Makers](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) article.
 
 ### Testing & Building
-If you want to help with testing the most ongoing development by testing and/or reporting bugs, feel free to download the master branch of this repository, using either git — if familiar with the process — or directly, by following [this link](https://github.com/KoffeinFlummi/AGM/archive/master.zip).
+If you want to help us test the latest development changes, feel free to download our master branch, using either git — if familiar with the process — or directly, by following [this link](https://github.com/KoffeinFlummi/AGM/archive/master.zip).
 
 To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
 
