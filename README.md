@@ -33,31 +33,29 @@ More information on the purpose of the different components of AGM and which one
 *   Backblast simulation
 *   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
-and more...
+*   **and more...**
 
-For a full list, check the [wiki](https://github.com/KoffeinFlummi/AGM/wiki).
+For a full list of current features, see [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
 ### Guides & How-Tos
-You installed AGM, but you have no idea how it works, or where to start?
-
-Get started [here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
+If you installed AGM, but have trouble understanding how it all works, or where to start — [get started here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 
 ### Contributing
-If you want to help out by fixing a bug or adding a feature, fork this repo and create a pull request. Also feel free to add yourself to the author array of any .pbo you might be editing.
+If you want to help put with the ongoing development, you can do so by looking for possible bugs or by contributing new features. To become one of the developers, simply fork this repository and subbmit your pull requests for review by other collaborators. In the process, feel free to add yourself to the author array of any .pbo you will be editing.
 
-If you find a bug or want to request a feature, please use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
+To report a bug, propose a feature, or suggest a change to the existing one — please use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-For documentation on how to make your weapons or vehicles compatible with AGM, see the following article — [For Add-on Maker](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers).
+For detailed information on how to make your weapons or vehicles compatible with AGM, see the following article — [For Addon Maker](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers).
 
 ### Testing & Building
-If you want to help development by testing and reporting bugs, feel free to download the current version of this repository either using git (if you know what you're doing) or using the download button on the right.
+If you want to help with testing the most ongoing development by testing and/or reporting bugs, feel free to download the master branch of this repository, using either git — if familiar with the process — or directly, by following [this link](https://github.com/KoffeinFlummi/AGM/archive/master.zip).
 
 To binarize the addon for testing you can use the `binarizer.exe` in the main folder or, if you have [Python 3](https://www.python.org/) installed, use the python script for some more options. Alternatively you can manually binarize every PBO using Addon Builder or any other binarizer. All of those methods require the Arma 3 Tools to be installed, which can be found on Steam.
 
-> In order for the addons to be correctly binarized, you need to exclude the following file types from binarization (the binarizer script does this for you):
-> ```
-> *.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf;
-> ```
+In order for the addons to be correctly binarized, you need to exclude the following file types from binarization (the binarizer script does this for you):
+```
+*.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf;
+```
 
 ---
 <p align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HPAXPTVCNLDZS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a></p>
