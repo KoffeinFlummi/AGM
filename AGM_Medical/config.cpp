@@ -1010,6 +1010,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 
     class Unconscious: Default {
       head = "headNo";
+      forceAim = 1;
       static = 1;
     };
 
