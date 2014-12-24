@@ -35,7 +35,7 @@ More information on the purpose of the different components of AGM and which one
 *   A fire control system for armored vehicles and helicopters  
 *   ***and more...***
 
-For a full list of current features, see [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
+For a full list of current features — see [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
 ### Guides & How-Tos
 If you installed AGM, but have trouble understanding how it all works, or where to start — [get started here](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
