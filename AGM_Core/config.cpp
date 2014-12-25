@@ -630,6 +630,7 @@ class CfgFunctions {
       class exportConfig;
       class getChildren;
       class getDisplayConfigName;
+      class log;
       class logControls;
       class logDisplays;
       class monitor;

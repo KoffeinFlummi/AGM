@@ -49,9 +49,7 @@ if (time - _lastFired < 0.45) then {
     _elevAngle = (_burst / 300) - random (_burst / 300) * 2;
     _travAngle = (_burst / 260) - random (_burst / 260) * 2;
 
-    if (!isNil "AGM_Debug" && {"Burst" in AGM_Debug}) then {
-      systemChat str [_travAngle, _elevAngle];
-    };
+    ["Burst", [_travAngle, _elevAngle]] call AGM_Debug_fnc_log;
 
     [_projectile, _travAngle, _elevAngle] call AGM_Core_fnc_changeProjectileDirection;
   };

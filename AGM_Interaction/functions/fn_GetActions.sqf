@@ -129,9 +129,9 @@ for "_i" from 0 to (_count - 1) do {
 					_cacheIndices pushBack _indexCache;
 
 					_cache = [_cacheConfigs, _cacheActions, _cacheIndices];
-					if (!isNil "AGM_Debug" && {"InteractionMenu" in AGM_Debug}) then {diag_log text format ["%1 loaded into cache", _action]};
+					["InteractionMenu", _action, {format ["%1 loaded into cache", _this]}] call AGM_Debug_fnc_log;
 				} else {
-					if (!isNil "AGM_Debug" && {"InteractionMenu" in AGM_Debug}) then {diag_log text format ["%1 loaded from cache", _action]};
+					["InteractionMenu", _action, {format ["%1 loaded from cache", _this]}] call AGM_Debug_fnc_log;
 
 					_cachedAction = _cacheActions select (_cacheIndices select _indexCache);
 

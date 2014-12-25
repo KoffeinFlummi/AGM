@@ -154,14 +154,11 @@ if (stance _unit == "PRONE") then {
   };
 };
 
-if (!isNil "AGM_Debug") then {
-  if ("Jam" in AGM_Debug) then {
-    _jamChance = 0.5;
-  };
-  if ("Overheating" in AGM_Debug) then {
-    hintSilent format ["Temperature/JamChance: %1, %2", _temperature, 1.0 / _jamChance];
-  };
+if ("Jam" in (missionNamespace getvariable ["AGM_Debug", []])) then {
+  _jamChance = 0.5;
 };
+
+["Overheating", [_temperature, _jamChance], {format ["Temperature: %1 - JamChance: %2", _this select 0, _this select 1]}] call AGM_Debug_fnc_log;
 
 if (random 1 < _jamChance) then {
   [_unit, _weapon] call AGM_Overheating_fnc_jamWeapon;

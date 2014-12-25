@@ -40,12 +40,12 @@ _this spawn {
     };
   };
 
-  if (!isNil "AGM_Debug" and {"Armour" in AGM_Debug}) then {
+  ["Armour", nil, {
     AGM_TurretAxis = _turretAxis;
     addMissionEventHandler ["Draw3D", {
       drawLine3D [(vehicle player) modelToWorld (AGM_TurretAxis + [-5]), (vehicle player) modelToWorld (AGM_TurretAxis + [10]), [1,0,0,1]];
     }];
-  };
+  }] call AGM_Debug_fnc_log;
 
   // Smoke out of cannon and hatches
   _smokeBarrel = "#particlesource" createVehicle [0,0,0];

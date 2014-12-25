@@ -22,9 +22,7 @@ _function = call compile (_this select 1);
 _unit = _this select 2;
 _name = _this select 3;
 
-if (!isNil "AGM_Debug" && {"remote" in AGM_Debug}) then {
-  diag_log text format ["[AGM]: execPersistentFnc: %1 call %2 id: %3", _arguments, _this select 1, _name];
-};
+["Remote", [_arguments, _this select 1, _name], {format ["%1 call %2 id: %3", _this select 0, _this select 1, _this select 2]}, false] call AGM_Debug_fnc_log;
 
 // execute function on every currently connected machine
 [[_arguments, _unit], _this select 1, 2] call AGM_Core_fnc_execRemoteFnc;

@@ -58,10 +58,7 @@ _darkness = 1 - (call AGM_Core_fnc_ambientBrightness);
 _visibleFire = _darkness * _visibleFireCoef * _visibleFire * _nvgBrightnessCoef / 10 min 1;
 _visibleFireTime = _darkness * _visibleFireTimeCoef * _visibleFireTime * _nvgBrightnessCoef / 10 min 0.5;
 
-if (!isNil "AGM_Debug" && {"NightVision" in AGM_Debug}) then {
-    systemChat format ["visibleFire: %1", _visibleFire];
-    systemChat format ["visibleFireTime: %1", _visibleFireTime];
-};
+["NightVision", [_visibleFire, _visibleFireTime], {format ["visibleFire: %1 - visibleFireTime: %2", _this select 0, _this select 1]}] call AGM_Debug_fnc_log;
 
 AGM_NightVision_ppEffectMuzzleFlash ppEffectAdjust [1, 1, _visibleFire, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 1]];
 AGM_NightVision_ppEffectMuzzleFlash ppEffectCommit 0;
