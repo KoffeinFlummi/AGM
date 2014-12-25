@@ -25,5 +25,5 @@ if ((_this select 0) in (missionNamespace getVariable ["AGM_Debug", []])) then {
     systemChat format ["%1", _result];
   };
 
-  diag_log text format ["[AGM] Debug: %1 : %2 - %3 : %4", _this select 0, diag_frameno, _fnc_scriptNameParent, _result];
+  diag_log text format ["[AGM] Debug: %1 : %2 - %3 : %4", _type, diag_frameno, _fnc_scriptNameParent, _result];
 };
