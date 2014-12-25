@@ -169,6 +169,148 @@
       <Spanish>Oficial</Spanish>
     </Key>
 
+    <Key ID="STR_AGM_PMC_Security_Contractor">
+      <English>Security Contractor</English>
+      <Czech>Bezpečnostní kontraktor</Czech>
+      <German>Sicherheitsdienst</German>
+      <Russian>Стрелок</Russian>
+      <Polish>Security Contractor</Polish>
+      <Italian>Security Contractor</Italian>
+      <Spanish>Security Contractor</Spanish>
+      <French>Agent de sécurité</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Security_Contractor_lite">
+      <English>Security Contractor (Light)</English>
+      <Czech>Bezpečnostní kontraktor (lehká výstroj)</Czech>
+      <German>Sicherheitsdienst (leicht)</German>
+      <Russian>Стрелок (легк.)</Russian>
+      <Polish>Security Contractor (lekki)</Polish>
+      <Italian>Security Contractor (leggero)</Italian>
+      <Spanish>Security Contractor (ligero)</Spanish>
+      <French>Agent de sécurité (léger)</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Security_Contractor_GL">
+      <English>Security Contractor (GL)</English>
+      <Czech>Bezpečnostní kontraktor (GL)</Czech>
+      <German>Sicherheitsdienst (GL)</German>
+      <Russian>Стрелок (GL)</Russian>
+      <Polish>Security Contractor (GL)</Polish>
+      <Italian>Security Contractor (GL)</Italian>
+      <Spanish>Security Contractor (GL)</Spanish>
+      <French>Agent de sécurité (GL)</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Squad_Coordinator">
+      <English>Squad Coordinator</English>
+      <Czech>družstva koordinátor</Czech>
+      <German>Squad-Koordinator</German>
+      <Russian>Командир отделения</Russian>
+      <Polish>Squad Coordinator</Polish>
+      <Italian>Squad Coordinator</Italian>
+      <Spanish>Squad Coordinator</Spanish>
+      <French>Coordinateur de pelotón</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Team_Coordinator">
+      <English>Team Coordinator</English>
+      <Czech>Týmový koordinátor</Czech>
+      <German>Team-Koordinator</German>
+      <Russian>Командир группы</Russian>
+      <Polish>Team Coordinator</Polish>
+      <Italian>Team Coordinator</Italian>
+      <Spanish>Team Coordinator</Spanish>
+      <French>Coordinateur d’équipe</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Tactical_Specialist_AR">
+      <English>Tactical Specialist (LMG)</English>
+      <Czech>Taktický specialista (LMG)</Czech>
+      <German>Taktischer Spezialist (LMG)</German>
+      <Russian>Снайпер (LMG)</Russian>
+      <Polish>Tactical Specialist (LMG)</Polish>
+      <Italian>Tactical Specialist (LMG)</Italian>
+      <Spanish>Tactical Specialist (LMG)</Spanish>
+      <French>Spécialiste tactique (LMG)</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Field_Medic">
+      <English>Field Medic</English>
+      <Czech>Polní medik</Czech>
+      <German>Feldsanitäter</German>
+      <Russian>Санинструктор</Russian>
+      <Polish>Field Medic</Polish>
+      <Italian>Field Medic</Italian>
+      <Spanish>Field Medic</Spanish>
+      <French>Infirmier de terrain</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Field_Technician">
+      <English>Field Technician</English>
+      <Czech>Polní technik</Czech>
+      <German>Feldingenieur</German>
+      <Russian>Сапер</Russian>
+      <Polish>Field Technician</Polish>
+      <Italian>Field Technician</Italian>
+      <Spanish>Field Technician</Spanish>
+      <French>Technicien de terrain</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Field_Specialist_exp">
+      <English>Field Specialist (EOD)</English>
+      <Czech>Polní specialista (EOD)</Czech>
+      <German>Feldspezialist (EOD)</German>
+      <Russian>Пулеметчик (EOD)</Russian>
+      <Polish>Field Specialist (EOD)</Polish>
+      <Italian>Field Specialist (EOD)</Italian>
+      <Spanish>Field Specialist (EOD)</Spanish>
+      <French>Spécialiste de terrain (EOD)</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Field_Specialist_AT">
+      <English>Field Specialist (AT)</English>
+      <Czech>Polní specialista (protitankový)</Czech>
+      <German>Feldspezialist (Panzerabwehr)</German>
+      <Russian>Стрелок (ПТ)</Russian>
+      <Polish>Field Specialist (ppanc)</Polish>
+      <Italian>Field Specialist (AC)</Italian>
+      <Spanish>Field Specialist (AT)</Spanish>
+      <French>Spécialiste de terrain (AC)</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Defensive_Marksman">
+      <English>Defensive Marksman</English>
+      <Czech>Obranný odstřelovač</Czech>
+      <German>Sicherungsschütze</German>
+      <Russian>Снайпер</Russian>
+      <Polish>Defensive Marksman</Polish>
+      <Italian>Defensive Marksman</Italian>
+      <Spanish>Defensive Marksman</Spanish>
+      <French>Tireur d’élite défensif</French>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Bodyguard">
+      <English>Bodyguard</English>
+      <Czech>Bodyguard</Czech>
+      <German>Leibwächter</German>
+      <Russian>Телохранитель</Russian>
+      <Polish>Bodyguard</Polish>
+      <Italian>Bodyguard</Italian>
+      <Spanish>Bodyguard</Spanish>
+      <French>Garde du corps</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Tactical_Driver">
+      <English>Tactical Driver</English>
+      <Czech>Taktický řidič</Czech>
+      <German>Taktischer Fahrer</German>
+      <Russian>Водитель</Russian>
+      <Polish>Tactical Driver</Polish>
+      <Italian>Tactical Driver</Italian>
+      <Spanish>Tactical Driver</Spanish>
+      <French>Pilote tactique</French>
+    </Key>
+    <Key ID="STR_AGM_PMC_Tactical_Pilot">
+      <English>Tactical Pilot</English>
+      <Czech>Taktický pilot</Czech>
+      <German>Taktischer Pilot</German>
+      <Russian>Летчик</Russian>
+      <Polish>Tactical Pilot</Polish>
+      <Italian>Tactical Pilot</Italian>
+      <Spanish>Tactical Pilot</Spanish>
+      <French>Pilote tactique</French>
+    </Key>
+
     <Key ID="STR_AGM_PMC_Vehicle_SUV">
       <English>SUV</English>
       <Czech>SUV</Czech>
@@ -179,6 +321,16 @@
       <Portuguese>SUV</Portuguese>
       <Russian>Внедорожник</Russian>
       <Spanish>Todoterreno</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Vehicle_SUV_armored">
+      <English>SUV (Armored)</English>
+      <Czech>SUV (obrněné)</Czech>
+      <German>SUV (Gepanzert)</German>
+      <Russian>Внедорожник SUV (M134)</Russian>
+      <Polish>SUV (Armored)</Polish>
+      <Italian>SUV (Armored)</Italian>
+      <Spanish>SUV (Armored)</Spanish>
+      <French>SUV (blindé)</French>
     </Key>
 
     <Key ID="STR_AGM_PMC_Groups">

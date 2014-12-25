@@ -3,19 +3,17 @@
 New classes:
 
     CfgVehicles
-  AGM_I_PMC_Soldier_F
-  AGM_I_PMC_Soldier_lite_F
-  AGM_I_PMC_Soldier_SL_F
-  AGM_I_PMC_Soldier_TL_F
-  AGM_I_PMC_Soldier_AR_F
-  AGM_I_PMC_medic_F
-  AGM_I_PMC_engineer_F
-  AGM_I_PMC_Soldier_exp_F
-  AGM_I_PMC_Soldier_GL_F
-  AGM_I_PMC_Soldier_M_F
-  AGM_I_PMC_Soldier_AT_F
-  AGM_I_PMC_Soldier_A_F
-  AGM_I_PMC_officer_F
+  AGM_I_PMC_Security_Contractor_F
+  AGM_I_PMC_Security_Contractor_lite_F
+  AGM_I_PMC_Squad_Coordinator_F
+  AGM_I_PMC_Team_Coordinator_F
+  AGM_I_PMC_Tactical_Specialist_AR_F
+  AGM_I_PMC_Field_Medic_F
+  AGM_I_PMC_Field_Technician_F
+  AGM_I_PMC_Field_Specialist_exp_F
+  AGM_I_PMC_Security_Contractor_GL_F
+  AGM_I_PMC_Defensive_Marksman_F
+  AGM_I_PMC_Field_Specialist_AT_F
 
   AGM_I_PMC_SUV_01_F
   AGM_I_PMC_Quadbike_01_F
@@ -62,19 +60,17 @@ New classes:
 class CfgPatches {
   class AGM_PMC {
     units[] = {
-      "AGM_I_PMC_Soldier_F",
-      "AGM_I_PMC_Soldier_lite_F",
-      "AGM_I_PMC_Soldier_SL_F",
-      "AGM_I_PMC_Soldier_TL_F",
-      "AGM_I_PMC_Soldier_AR_F",
-      "AGM_I_PMC_medic_F",
-      "AGM_I_PMC_engineer_F",
-      "AGM_I_PMC_Soldier_exp_F",
-      "AGM_I_PMC_Soldier_GL_F",
-      "AGM_I_PMC_Soldier_M_F",
-      "AGM_I_PMC_Soldier_AT_F",
-      "AGM_I_PMC_Soldier_A_F",
-      "AGM_I_PMC_officer_F",
+      "AGM_I_PMC_Security_Contractor_F",
+      "AGM_I_PMC_Security_Contractor_lite_F",
+      "AGM_I_PMC_Squad_Coordinator_F",
+      "AGM_I_PMC_Team_Coordinator_F",
+      "AGM_I_PMC_Tactical_Specialist_AR_F",
+      "AGM_I_PMC_Field_Medic_F",
+      "AGM_I_PMC_Field_Technician_F",
+      "AGM_I_PMC_Field_Specialist_exp_F",
+      "AGM_I_PMC_Security_Contractor_GL_F",
+      "AGM_I_PMC_Defensive_Marksman_F",
+      "AGM_I_PMC_Field_Specialist_AT_F",
       "AGM_I_PMC_SUV_01_F",
       "AGM_I_PMC_Quadbike_01_F",
       "AGM_I_PMC_Heli_Light_01_F",
@@ -595,9 +591,9 @@ class CfgVehicles {
     class Wounds;
   };
 
-  class AGM_I_PMC_Soldier_base_F: SoldierGB {
+  class AGM_I_PMC_Security_Contractor_base_F: SoldierGB {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_base_F";
+    _generalMacro = "AGM_I_PMC_Security_Contractor_base_F";
     expansion = 1;
     identityTypes[] = {"LanguageENG_F", "Head_NATO", "G_NATO_default"};
     faceType = "Man_A3";
@@ -642,20 +638,20 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
-  class AGM_I_PMC_Soldier_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Security_Contractor_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_F";
+    _generalMacro = "AGM_I_PMC_Security_Contractor_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier";
+    displayName = "$STR_AGM_PMC_Security_Contractor";
   };
 
-  class AGM_I_PMC_Soldier_lite_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Security_Contractor_lite_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "I_Soldier_lite_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_lite";
+    displayName = "$STR_AGM_PMC_Security_Contractor_lite";
     cost = 90000;
     camouflage = 1.2;
     weapons[] = {"AGM_arifle_MXC_Black_ACO_F","Throw","Put"};
@@ -669,20 +665,20 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
   };
 
-  class AGM_I_PMC_Soldier_SL_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Squad_Coordinator_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_SL_F";
+    _generalMacro = "AGM_I_PMC_Squad_Coordinator_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_SL";
+    displayName = "$STR_AGM_PMC_Squad_Coordinator";
     cost = 500000;
     camouflage = 1.6;
     sensitivity = 3.2;
     icon = "iconManLeader";
-    weapons[] = {"AGM_arifle_MXC_Black_ACO_pointer_F","hgun_P07_F","Throw","Put","Binocular"};
-    respawnWeapons[] = {"AGM_arifle_MXC_Black_ACO_pointer_F","hgun_P07_F","Throw","Put","Binocular"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
-    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    weapons[] = {"AGM_arifle_MXC_Black_ACO_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put","Binocular"};
+    respawnWeapons[] = {"AGM_arifle_MXC_Black_ACO_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put","Binocular"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
     linkedItems[] = {"V_TacVest_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_TacVest_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     model = "\A3\characters_F_gamma\Guerrilla\ig_guerrilla2_1.p3d";
@@ -690,20 +686,20 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
   };
 
-  class AGM_I_PMC_Soldier_TL_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Team_Coordinator_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_TL_F";
+    _generalMacro = "AGM_I_PMC_Team_Coordinator_F";
     scope = 2;
     scopeCurator = 2;
     cost = 450000;
     sensitivity = 3.2;
     threat[] = {1,0.3,0.1};
     icon = "iconManLeader";
-    displayName = "$STR_AGM_PMC_Soldier_TL";
-    weapons[] = {"AGM_arifle_MX_GL_Black_ACO_F","hgun_P07_F","Throw","Put"};
-    respawnWeapons[] = {"AGM_arifle_MX_GL_Black_ACO_F","hgun_P07_F","Throw","Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"};
-    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"};
+    displayName = "$STR_AGM_PMC_Team_Coordinator";
+    weapons[] = {"AGM_arifle_MX_GL_Black_ACO_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    respawnWeapons[] = {"AGM_arifle_MX_GL_Black_ACO_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"};
+    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag_Tracer","30Rnd_65x39_caseless_mag_Tracer","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"};
     linkedItems[] = {"V_TacVest_blk","H_Booniehat_khk_hs","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_TacVest_blk","H_Booniehat_khk_hs","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     model = "\A3\characters_F_gamma\Guerrilla\ig_guerrilla2_1.p3d";
@@ -711,7 +707,7 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
   };
 
-  class AGM_I_PMC_Soldier_AR_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Tactical_Specialist_AR_F: AGM_I_PMC_Security_Contractor_base_F {
     class SpeechVariants {
       class Default {
         speechSingular[] = {"veh_infantry_MG_s"};
@@ -723,10 +719,10 @@ class CfgVehicles {
     textPlural = "$STR_A3_nameSound_veh_infantry_MG_p";
     nameSound = "veh_infantry_MG_s";
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_AR_F";
+    _generalMacro = "AGM_I_PMC_Tactical_Specialist_AR_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_AR";
+    displayName = "$STR_AGM_PMC_Tactical_Specialist_AR";
     weapons[] = {"AGM_arifle_MX_SW_Black_Hamr_pointer_F","Throw","Put"};
     respawnWeapons[] = {"AGM_arifle_MX_SW_Black_Hamr_pointer_F","Throw","Put"};
     magazines[] = {"100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","100Rnd_65x39_caseless_mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
@@ -740,7 +736,7 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
   };
 
-  class AGM_I_PMC_medic_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Field_Medic_F: AGM_I_PMC_Security_Contractor_base_F {
     class SpeechVariants {
       class Default {
         speechSingular[] = {"veh_infantry_medic_s"};
@@ -752,15 +748,15 @@ class CfgVehicles {
     textPlural = "$STR_A3_nameSound_veh_infantry_medic_p";
     nameSound = "veh_infantry_medic_s";
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_medic_F";
+    _generalMacro = "AGM_I_PMC_Field_Medic_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_medic";
+    displayName = "$STR_AGM_PMC_Field_Medic";
     backpack = "AGM_I_FieldPack_blk_Medic";
-    weapons[] = {"AGM_arifle_MX_Black_ACO_pointer_F","hgun_P07_F","Throw","Put"};
-    respawnWeapons[] = {"AGM_arifle_MX_Black_ACO_pointer_F","hgun_P07_F","Throw","Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
-    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    weapons[] = {"AGM_arifle_MX_Black_ACO_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    respawnWeapons[] = {"AGM_arifle_MX_Black_ACO_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","MiniGrenade","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
     linkedItems[] = {"V_TacVestIR_blk","H_Booniehat_khk_hs","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_TacVestIR_blk","H_Booniehat_khk_hs","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     attendant = 1;
@@ -772,12 +768,12 @@ class CfgVehicles {
     cost = 300000;
   };
 
-  class AGM_I_PMC_engineer_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Field_Technician_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_engineer_F";
+    _generalMacro = "AGM_I_PMC_Field_Technician_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_engineer";
+    displayName = "$STR_AGM_PMC_Field_Technician";
     backpack = "AGM_I_TacticalPack_blk_Eng";
     canDeactivateMines = 1;
     engineer = 1;
@@ -796,12 +792,12 @@ class CfgVehicles {
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
   };
 
-  class AGM_I_PMC_Soldier_exp_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Field_Specialist_exp_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "I_Soldier_exp_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_exp";
+    displayName = "$STR_AGM_PMC_Field_Specialist_exp";
     cost = 115000;
     camouflage = 1.6;
     sensitivity = 2.8;
@@ -819,12 +815,12 @@ class CfgVehicles {
     picture = "pictureExplosive";
   };
 
-  class AGM_I_PMC_Soldier_GL_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Security_Contractor_GL_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_GL_F";
+    _generalMacro = "AGM_I_PMC_Security_Contractor_GL_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_GL";
+    displayName = "$STR_AGM_PMC_Security_Contractor_GL";
     weapons[] = {"AGM_arifle_MX_GL_Black_Hamr_pointer_F","Throw","Put"};
     respawnWeapons[] = {"AGM_arifle_MX_GL_Black_Hamr_pointer_F","Throw","Put"};
     magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","HandGrenade","HandGrenade","MiniGrenade","MiniGrenade","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","1Rnd_HE_Grenade_shell","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue","1Rnd_Smoke_Grenade_shell","1Rnd_Smoke_Grenade_shell","1Rnd_SmokeOrange_Grenade_shell","1Rnd_SmokeRed_Grenade_shell","1Rnd_SmokeBlue_Grenade_shell"};
@@ -834,12 +830,12 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_TacVest_blk","H_Watchcap_camo","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
-  class AGM_I_PMC_Soldier_M_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Defensive_Marksman_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_M_F";
+    _generalMacro = "AGM_I_PMC_Defensive_Marksman_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_M";
+    displayName = "$STR_AGM_PMC_Defensive_Marksman";
     weapons[] = {"AGM_arifle_MXM_Black_SOS_pointer_F","Throw","Put"};
     respawnWeapons[] = {"AGM_arifle_MXM_Black_SOS_pointer_F","Throw","Put"};
     magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","HandGrenade","MiniGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
@@ -849,7 +845,7 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Watchcap_camo","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
-  class AGM_I_PMC_Soldier_AT_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Field_Specialist_AT_F: AGM_I_PMC_Security_Contractor_base_F {
     class SpeechVariants {
       class Default {
         speechSingular[] = {"veh_infantry_AT_s"};
@@ -861,10 +857,10 @@ class CfgVehicles {
     textPlural = "$STR_A3_nameSound_veh_infantry_AT_p";
     nameSound = "veh_infantry_AT_s";
     author = "$STR_A3_Bohemia_Interactive";
-    _generalMacro = "AGM_I_PMC_Soldier_AT_F";
+    _generalMacro = "AGM_I_PMC_Field_Specialist_AT_F";
     scope = 2;
     scopeCurator = 2;
-    displayName = "$STR_AGM_PMC_Soldier_AT";
+    displayName = "$STR_AGM_PMC_Field_Specialist_AT";
     backpack = "AGM_I_FieldPack_blk_AT";
     weapons[] = {"AGM_arifle_MX_Black_Hamr_pointer_F","launch_I_Titan_short_F","Throw","Put"};
     respawnWeapons[] = {"AGM_arifle_MX_Black_Hamr_pointer_F","launch_I_Titan_short_F","Throw","Put"};
@@ -875,11 +871,11 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
-  class AGM_I_PMC_Soldier_A_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_Soldier_A_F: AGM_I_PMC_Security_Contractor_base_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_I_PMC_Soldier_A_F";
-    scope = 2;
-    scopeCurator = 2;
+    scope = 0;
+    scopeCurator = 0;
     displayName = "$STR_AGM_PMC_Soldier_ammo";
     cost = 50000;
     backpack = "AGM_I_TacticalPack_blk_Ammo";
@@ -891,7 +887,7 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
-  class AGM_I_PMC_officer_F: AGM_I_PMC_Soldier_base_F {
+  class AGM_I_PMC_officer_F: AGM_I_PMC_Security_Contractor_base_F {
     class SpeechVariants {
       class Default {
         speechSingular[] = {"veh_infantry_officer_s"};
@@ -914,13 +910,13 @@ class CfgVehicles {
     camouflage = 1.6;
     sensitivity = 3;
     icon = "iconManOfficer";
-    scope = 2;
-    scopeCurator = 2;
+    scope = 0;
+    scopeCurator = 0;
     displayName = "$STR_AGM_PMC_Soldier_Officer";
-    weapons[] = {"AGM_arifle_MX_Black_pointer_F","hgun_P07_F","Throw","Put"};
-    respawnweapons[] = {"AGM_arifle_MX_Black_pointer_F","hgun_P07_F","Throw","Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
-    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    weapons[] = {"AGM_arifle_MX_Black_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    respawnweapons[] = {"AGM_arifle_MX_Black_pointer_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
+    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","SmokeShell","SmokeShellBlue","SmokeShellRed","SmokeShellOrange","Chemlight_blue","Chemlight_blue"};
     linkedItems[] = {"V_BandollierB_blk","H_MilCap_gry","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_BandollierB_blk","H_MilCap_gry","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
@@ -930,8 +926,8 @@ class CfgVehicles {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_I_PMC_SUV_01_F";
     scope = 2;
-    crew = "AGM_I_PMC_Soldier_F";
-    typicalCargo[] = {"AGM_I_PMC_Soldier_F"};
+    crew = "AGM_I_PMC_Security_Contractor_F";
+    typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F"};
     side = 2;
     displayName = "$STR_AGM_PMC_Vehicle_SUV";
     faction = "AGM_I_PMC_F";
@@ -1012,8 +1008,8 @@ class CfgVehicles {
     scope = 2;
     side = 2;
     faction = "AGM_I_PMC_F";
-    crew = "AGM_I_PMC_Soldier_F";
-    typicalCargo[] = {"AGM_I_PMC_Soldier_F"};
+    crew = "AGM_I_PMC_Security_Contractor_F";
+    typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F"};
     hiddenSelectionsTextures[] = {"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_CIV_BLACK_CO.paa","\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_wheel_CIVBLACK_CO.paa"};
   };
 
@@ -1025,7 +1021,7 @@ class CfgVehicles {
     accuracy = 1;
     side = 2;
     faction = "AGM_I_PMC_F";
-    crew = "AGM_I_PMC_Soldier_F";
+    crew = "AGM_I_PMC_Security_Contractor_F";
     hiddenSelectionsTextures[] = {"\A3\Air_F\Heli_Light_01\Data\Skins\Heli_Light_01_ext_wasp_co.paa"};
     class TransportBackpacks {
       /*class _xx_B_Parachute {
@@ -1106,10 +1102,10 @@ class CfgVehicles {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_I_PMC_Boat_Transport_01_F";
     scope = 2;
-    crew = "AGM_I_PMC_Soldier_F";
+    crew = "AGM_I_PMC_Security_Contractor_F";
     faction = "AGM_I_PMC_F";
     side = 2;
-    typicalCargo[] = {"AGM_I_PMC_Soldier_F","AGM_I_PMC_Soldier_F"};
+    typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F","AGM_I_PMC_Security_Contractor_F"};
   };
 };
 
@@ -1125,49 +1121,49 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_SL_F";
+            vehicle = "AGM_I_PMC_Squad_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AR_F";
+            vehicle = "AGM_I_PMC_Tactical_Specialist_AR_F";
             rank = "CORPORAL";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_GL_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_GL_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
           class Unit4 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_A_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {-10,-10,0};
           };
           class Unit5 {
             side = 2;
-            vehicle = "AGM_I_PMC_medic_F";
+            vehicle = "AGM_I_PMC_Field_Medic_F";
             rank = "CORPORAL";
             position[] = {15,-15,0};
           };
           class Unit6 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {-15,-15,0};
           };
           class Unit7 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {20,-20,0};
           };
@@ -1179,49 +1175,49 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_SL_F";
+            vehicle = "AGM_I_PMC_Squad_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_M_F";
+            vehicle = "AGM_I_PMC_Defensive_Marksman_F";
             rank = "SERGEANT";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AR_F";
+            vehicle = "AGM_I_PMC_Tactical_Specialist_AR_F";
             rank = "CORPORAL";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_GL_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_GL_F";
             rank = "SERGEANT";
             position[] = {10,-10,0};
           };
           class Unit4 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AT_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_AT_F";
             rank = "CORPORAL";
             position[] = {-10,-10,0};
           };
           class Unit6 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_A_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {15,-15,0};
           };
           class Unit5 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {-15,-15,0};
           };
           class Unit7 {
             side = 2;
-            vehicle = "AGM_I_PMC_medic_F";
+            vehicle = "AGM_I_PMC_Field_Medic_F";
             rank = "PRIVATE";
             position[] = {20,-20,0};
           };
@@ -1233,25 +1229,25 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AR_F";
+            vehicle = "AGM_I_PMC_Tactical_Specialist_AR_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_GL_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_GL_F";
             rank = "PRIVATE";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
@@ -1263,25 +1259,25 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AT_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_AT_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AT_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_AT_F";
             rank = "PRIVATE";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
@@ -1293,13 +1289,13 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "CORPORAL";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "PRIVATE";
             position[] = {5,-5,0};
           };
@@ -1311,13 +1307,13 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_M_F";
+            vehicle = "AGM_I_PMC_Defensive_Marksman_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
@@ -1332,25 +1328,25 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AR_F";
+            vehicle = "AGM_I_PMC_Tactical_Specialist_AR_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_medic_F";
+            vehicle = "AGM_I_PMC_Field_Medic_F";
             rank = "PRIVATE";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_medic_F";
+            vehicle = "AGM_I_PMC_Field_Medic_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
@@ -1362,25 +1358,25 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_exp_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_exp_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_exp_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_exp_F";
             rank = "PRIVATE";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_exp_F";
+            vehicle = "AGM_I_PMC_Field_Specialist_exp_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
@@ -1392,25 +1388,25 @@ class CfgGroups {
           faction = "AGM_I_PMC_F";
           class Unit0 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {0,0,0};
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "CORPORAL";
             position[] = {5,-5,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_engineer_F";
+            vehicle = "AGM_I_PMC_Field_Technician_F";
             rank = "PRIVATE";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_engineer_F";
+            vehicle = "AGM_I_PMC_Field_Technician_F";
             rank = "PRIVATE";
             position[] = {10,-10,0};
           };
@@ -1431,31 +1427,31 @@ class CfgGroups {
           };
           class Unit1 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_TL_F";
+            vehicle = "AGM_I_PMC_Team_Coordinator_F";
             rank = "SERGEANT";
             position[] = {13,-12,0};
           };
           class Unit2 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_AR_F";
+            vehicle = "AGM_I_PMC_Tactical_Specialist_AR_F";
             rank = "CORPORAL";
             position[] = {-5,-5,0};
           };
           class Unit3 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F"; //"AGM_I_PMC_Soldier_AT_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F"; //"AGM_I_PMC_Field_Specialist_AT_F";
             rank = "CORPORAL";
             position[] = {25,-25,2};
           };
           /*class Unit4 {
             side = 2;
-            vehicle = "AGM_I_PMC_medic_F";
+            vehicle = "AGM_I_PMC_Field_Medic_F";
             rank = "CORPORAL";
             position[] = {-10,-10,0};
           };
           class Unit5 {
             side = 2;
-            vehicle = "AGM_I_PMC_Soldier_F";
+            vehicle = "AGM_I_PMC_Security_Contractor_F";
             rank = "CORPORAL";
             position[] = {30,-30,1};
           };*/
