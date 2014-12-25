@@ -1,10 +1,11 @@
 // by commy2
 
-private ["_magazines", "_ammos", "_repackTime", "_magazine", "_ammo", "_count", "_index",   "_i", "_j", "_ammoToTransfer", "_ammoAvailable", "_ammoNeeded"];
+private ["_magazines", "_ammos", "_repackTime", "_openSelectMagazineDialog", "_magazine", "_ammo", "_count", "_index",   "_i", "_j", "_ammoToTransfer", "_ammoAvailable", "_ammoNeeded"];
 
 _magazines = [];
 _ammos = [];
 _repackTime = [];
+_openSelectMagazineDialog = [_this, 0, true] call bis_fnc_param;  //open the UI dialog normaly, otherwise just return the data (for Inventory)
 
 // get all mags and ammo count
 {
@@ -74,4 +75,9 @@ if (!isNil "AGM_Debug" && {"MagazineRepack" in AGM_Debug}) then {
   systemChat str _magazines;
   systemChat str _repackTime;
 };
-[_magazines, _repackTime] call AGM_MagazineRepack_fnc_openSelectMagazineUI;
+
+if (_openSelectMagazineDialog) then {
+  [_magazines, _repackTime] call AGM_MagazineRepack_fnc_openSelectMagazineUI;
+};
+
+[_magazines, _repackTime]

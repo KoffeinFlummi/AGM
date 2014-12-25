@@ -59,4 +59,22 @@ class CfgVehicles {
       };
     };
   };
+
+  class ReammoBox;
+  class Bag_Base: ReammoBox {
+    class AGM_InventoryActions {
+      class AGM_LockBackpack {
+        displayName = "$STR_AGM_Backpacks_LockBackpack";
+        condition = "[backpackContainer _player] call AGM_Backpacks_fnc_isBackpack && {!((backpackContainer _player) getVariable ['AGM_LockedInventory', false])}";
+        statement = "(backpackContainer _player) setVariable ['AGM_LockedInventory', true, true]";
+        closeInventory = 0;
+      };
+      class AGM_UnlockBackpack {
+        displayName = "$STR_AGM_Backpacks_UnlockBackpack";
+        condition = "[backpackContainer _player] call AGM_Backpacks_fnc_isBackpack && {(backpackContainer _player) getVariable ['AGM_LockedInventory', false]}";
+        statement = "(backpackContainer _player) setVariable ['AGM_LockedInventory', false, true]";
+        closeInventory = 0;
+      };
+    };
+  };
 };

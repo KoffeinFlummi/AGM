@@ -62,6 +62,20 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 2;
     };
+    class AGM_InventoryActions {
+      class AGM_OpenKestrel {
+        displayName = "$STR_AGM_Wind_OpenKestrel";
+        condition = "'AGM_ItemKestrel' in items player && {!underwater player} && {cameraView != 'Gunner'} && {!AGM_isKestrel}";
+        statement = "call AGM_Wind_fnc_openKestrel";        
+        closeInventory = 0;
+      };
+      class AGM_CloseKestrel {
+        displayName = "$STR_AGM_Wind_CloseKestrel";
+        condition = "AGM_isKestrel";
+        statement = "AGM_isKestrel = false";        
+        closeInventory = 0;
+      };
+    };
   };
 };
 

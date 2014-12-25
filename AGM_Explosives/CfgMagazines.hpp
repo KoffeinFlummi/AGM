@@ -11,6 +11,14 @@ class CfgMagazines {
 				digDistance = 0.1;
 			};
 		};
+		class AGM_InventoryActions {
+			class OpenTriggerSelection {  
+				displayName = "$STR_AGM_Explosives_Place";
+				condition = "(vehicle _player == _player) && (getNumber(configFile >> 'CfgMagazines' >> _classname >> 'AGM_Placeable') == 1)";
+				statement = "[_classname] call AGM_Explosives_fnc_openTriggerSelectionUI;";
+				closeInventory = 1;
+			};
+		};
 	};
 	class APERSBoundingMine_Range_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSBoundingMine";
@@ -49,6 +57,14 @@ class CfgMagazines {
 				FuseTime = 0.5;
 			};
 		};
+		class AGM_InventoryActions {
+			class OpenTriggerSelection {  
+				displayName = "$STR_AGM_Explosives_Place";
+				condition = "(vehicle _player == _player) && (getNumber(configFile >> 'CfgMagazines' >> _classname >> 'AGM_Placeable') == 1)";
+				statement = "[_classname] call AGM_Explosives_fnc_openTriggerSelectionUI;";
+				closeInventory = 1;
+			};
+		};	
 	};
 	
 	class SatchelCharge_Remote_Mag:CA_Magazine{
@@ -66,6 +82,14 @@ class CfgMagazines {
 			};
 			class MK16_Transmitter:Command{};
 			class DeadmanSwitch:Command{};
+		};
+		class AGM_InventoryActions {
+			class OpenTriggerSelection {  
+				displayName = "$STR_AGM_Explosives_Place";
+				condition = "(vehicle _player == _player) && (getNumber(configFile >> 'CfgMagazines' >> _classname >> 'AGM_Placeable') == 1)";
+				statement = "[_classname] call AGM_Explosives_fnc_openTriggerSelectionUI;";
+				closeInventory = 1;
+			};
 		};
 	};
 	class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{

@@ -186,6 +186,14 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
     };
+    class AGM_InventoryActions {
+      class AGM_EarbudsIn {
+        displayName = "$STR_AGM_Hearing_Earbuds_On";
+        condition = "!([_player] call AGM_Hearing_fnc_hasEarPlugsIn) && {'AGM_EarBuds' in items _player}";
+        statement = "[_player] call AGM_Hearing_fnc_putInEarPlugs";
+        closeInventory = 0;
+      };
+    };
   };
 };
 

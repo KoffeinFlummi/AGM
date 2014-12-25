@@ -144,6 +144,14 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
     };
+    class AGM_InventoryActions {
+      class AGM_Attach {
+        displayName = "$STR_AGM_Attach_Attach";
+        condition = "[_player, _classname] call AGM_Attach_fnc_canAttach";
+        statement = "[_player, _classname] call AGM_Attach_fnc_attach";
+        closeInventory = 0;
+      };
+    };
   };
 };
 
@@ -151,9 +159,25 @@ class CfgMagazines {
   class CA_Magazine;
   class B_IR_Grenade: CA_Magazine {
     AGM_Attachable = 1;
+    class AGM_InventoryActions {
+      class AGM_Attach {
+        displayName = "$STR_AGM_Attach_Attach";
+        condition = "[_player, _classname] call AGM_Attach_fnc_canAttach";
+        statement = "[_player, _classname] call AGM_Attach_fnc_attach";
+        closeInventory = 0;
+      };
+    };
   };
   class SmokeShell;
   class Chemlight_green: SmokeShell {
     AGM_Attachable = 1;
+    class AGM_InventoryActions {
+      class AGM_Attach {
+        displayName = "$STR_AGM_Attach_Attach";
+        condition = "[_player, _classname] call AGM_Attach_fnc_canAttach";
+        statement = "[_player, _classname] call AGM_Attach_fnc_attach";
+        closeInventory = 0;
+      };
+    };
   };
 };
