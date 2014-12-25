@@ -1009,6 +1009,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
 
     class Unconscious: Default {
+      ConnectTo[] = {};
       head = "headNo";
       forceAim = 1;
       static = 1;
