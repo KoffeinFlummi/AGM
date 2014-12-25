@@ -14,6 +14,8 @@ New classes:
   AGM_I_PMC_Security_Contractor_GL_F
   AGM_I_PMC_Defensive_Marksman_F
   AGM_I_PMC_Field_Specialist_AT_F
+  AGM_I_PMC_Tactical_Driver
+  AGM_I_PMC_Tactical_Pilot
 
   AGM_I_PMC_SUV_01_F
   AGM_I_PMC_Quadbike_01_F
@@ -74,7 +76,9 @@ class CfgPatches {
       "AGM_I_PMC_SUV_01_F",
       "AGM_I_PMC_Quadbike_01_F",
       "AGM_I_PMC_Heli_Light_01_F",
-      "AGM_I_PMC_Boat_Transport_01_F"
+      "AGM_I_PMC_Boat_Transport_01_F",
+      "AGM_I_PMC_Tactical_Driver",
+      "AGM_I_PMC_Tactical_Pilot"
     };
     weapons[] = {};
     requiredVersion = 0.60;
@@ -441,6 +445,7 @@ class CfgWeapons {
   };
 };
 
+class UniformSlotInfo;
 class CfgVehicles {
   class B_FieldPack_blk;
   class AGM_I_FieldPack_blk_AT: B_FieldPack_blk {
@@ -921,12 +926,62 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_BandollierB_blk","H_MilCap_gry","ItemGPS","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
   };
 
+  class AGM_I_PMC_Tactical_Driver: AGM_I_PMC_Security_Contractor_base_F {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_I_PMC_Tactical_Driver";
+    class UniformInfo {
+      class SlotsInfo {
+        class Googles: UniformSlotInfo {
+          slotType = 603;
+        };
+        class Headgear: UniformSlotInfo {
+          slotType = 605;
+        };
+      };
+    };
+
+    scope = 2;
+    displayName = "$STR_AGM_PMC_Tactical_Driver";
+    weapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    respawnWeapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    cost = 90000;
+    camouflage = 1.6;
+    sensitivity = 2.5;
+    linkedItems[] = {"V_BandollierB_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+    respawnLinkedItems[] = {"V_BandollierB_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+  };
+
+  class AGM_I_PMC_Tactical_Pilot: AGM_I_PMC_Security_Contractor_base_F {
+    class SpeechVariants {
+      class Default {
+        speechSingular[] = {"veh_infantry_pilot_s"};
+        speechPlural[] = {"veh_infantry_pilot_p"};
+      };
+    };
+
+    textSingular = "$STR_A3_nameSound_veh_infantry_pilot_s";
+    textPlural = "$STR_A3_nameSound_veh_infantry_pilot_p";
+    nameSound = "veh_infantry_pilot_s";
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_I_PMC_Tactical_Pilot";
+    scope = 2;
+    displayName = "$STR_AGM_PMC_Tactical_Pilot";
+    weapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    respawnWeapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    linkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+    respawnLinkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+  };
+
   class SUV_01_base_F;
   class AGM_I_PMC_SUV_01_F: SUV_01_base_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_I_PMC_SUV_01_F";
     scope = 2;
-    crew = "AGM_I_PMC_Security_Contractor_F";
+    crew = "AGM_I_PMC_Tactical_Driver";
     typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F"};
     side = 2;
     displayName = "$STR_AGM_PMC_Vehicle_SUV";
@@ -1008,7 +1063,7 @@ class CfgVehicles {
     scope = 2;
     side = 2;
     faction = "AGM_I_PMC_F";
-    crew = "AGM_I_PMC_Security_Contractor_F";
+    crew = "AGM_I_PMC_Tactical_Driver";
     typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F"};
     hiddenSelectionsTextures[] = {"\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_CIV_BLACK_CO.paa","\A3\Soft_F_Beta\Quadbike_01\Data\Quadbike_01_wheel_CIVBLACK_CO.paa"};
   };
@@ -1021,7 +1076,7 @@ class CfgVehicles {
     accuracy = 1;
     side = 2;
     faction = "AGM_I_PMC_F";
-    crew = "AGM_I_PMC_Security_Contractor_F";
+    crew = "AGM_I_PMC_Tactical_Pilot";
     hiddenSelectionsTextures[] = {"\A3\Air_F\Heli_Light_01\Data\Skins\Heli_Light_01_ext_wasp_co.paa"};
     class TransportBackpacks {
       /*class _xx_B_Parachute {
@@ -1102,7 +1157,7 @@ class CfgVehicles {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_I_PMC_Boat_Transport_01_F";
     scope = 2;
-    crew = "AGM_I_PMC_Security_Contractor_F";
+    crew = "AGM_I_PMC_Tactical_Driver";
     faction = "AGM_I_PMC_F";
     side = 2;
     typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F","AGM_I_PMC_Security_Contractor_F"};
