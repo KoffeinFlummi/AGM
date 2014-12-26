@@ -23,14 +23,14 @@ _damages = [
   ["HitRightLeg",  floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
 ];
 
-_unit setVariable ["AGM_Diagnosed", True, False];
+_unit setVariable ["AGM_isDiagnosed", True, False];
 
 // Tell bystanders what's up if necessary
 if (AGM_Medical_RequireDiagnosis > 0) then {
   _bystanders = nearestObjects [AGM_player, ["CAManBase"], 10];
   [-1, {
     if (AGM_player in (_this select 1)) then {
-      (_this select 0) setVariable ["AGM_Diagnosed", true, false];
+      (_this select 0) setVariable ["AGM_isDiagnosed", true, false];
     };
   }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
 };

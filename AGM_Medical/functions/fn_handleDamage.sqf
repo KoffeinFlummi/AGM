@@ -210,12 +210,10 @@ if (_selectionName == "" and
   // random chance to kill AI instead of knocking them out, otherwise
   // there'd be shittons of unconscious people after every firefight,
   // causing executions. And nobody likes executions.
-  if (!(_unit getVariable ["AGM_allowUnconscious", [_unit] call AGM_Core_fnc_isPlayer]) and
-      {random 1 > 0.5}
-    ) then {
-    _damage = 1;
-  } else {
+  if (_unit getVariable ["AGM_allowUnconscious", ([_unit] call AGM_Core_fnc_isPlayer) or random 1 > 0.5]) then {
     [_unit] call AGM_Medical_fnc_knockOut;
+  } else {
+    _damage = 1;
   };
 };
 
