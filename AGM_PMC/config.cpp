@@ -22,6 +22,10 @@ New classes:
   AGM_I_PMC_Heli_Light_01_F
   AGM_I_PMC_Boat_Transport_01_F
 
+  AGM_PMC_Box_Wps_F
+  AGM_PMC_Box_Ammo_F
+  AGM_PMC_Box_Support_F
+
   AGM_I_FieldPack_blk_AT
   AGM_I_FieldPack_blk_Medic
   AGM_I_TacticalPack_blk_Ammo
@@ -78,7 +82,10 @@ class CfgPatches {
       "AGM_I_PMC_Heli_Light_01_F",
       "AGM_I_PMC_Boat_Transport_01_F",
       "AGM_I_PMC_Tactical_Driver",
-      "AGM_I_PMC_Tactical_Pilot"
+      "AGM_I_PMC_Tactical_Pilot",
+      "AGM_PMC_Box_Wps_F",
+      "AGM_PMC_Box_Ammo_F",
+      "AGM_PMC_Box_Support_F"
     };
     weapons[] = {};
     requiredVersion = 0.60;
@@ -884,8 +891,8 @@ class CfgVehicles {
     backpack = "AGM_I_FieldPack_blk_AT";
     weapons[] = {"AGM_arifle_MX_Black_Hamr_pointer_F","launch_I_Titan_short_F","Throw","Put"};
     respawnWeapons[] = {"AGM_arifle_MX_Black_Hamr_pointer_F","launch_I_Titan_short_F","Throw","Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","RPG32_F","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
-    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","RPG32_F","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","Titan_AT","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    respawnmagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","Titan_AT","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
     icon = "iconManAT";
     linkedItems[] = {"V_PlateCarrier1_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Cap_blk_ION","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
@@ -1179,6 +1186,239 @@ class CfgVehicles {
     faction = "AGM_I_PMC_F";
     side = 2;
     typicalCargo[] = {"AGM_I_PMC_Security_Contractor_F","AGM_I_PMC_Security_Contractor_F"};
+  };
+
+  class ReammoBox_F;
+  class AGM_PMC_Box_Base: ReammoBox_F {
+    scope = 0;
+    hiddenSelections[] = {"Camo_Signs","Camo"};
+    hiddenSelectionsTextures[] = {"A3\Weapons_F\Ammoboxes\data\AmmoBox_signs_CA.paa","A3\Weapons_F\Ammoboxes\data\AmmoBox_CO.paa"};
+  };
+
+  class AGM_PMC_Box_Wps_F: AGM_PMC_Box_Base {
+    mapSize = 1.81;
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_PMC_Box_Wps_F";
+    scope = 2;
+    displayName = "$STR_AGM_PMC_Box_wps";
+    model = "\A3\weapons_F\AmmoBoxes\WpnsBox_F";
+    icon = "iconCrateWpns";
+    transportMaxWeapons = 12;
+    transportMaxMagazines = 64;
+
+    class TransportMagazines {
+      class _xx_100Rnd_65x39_caseless_mag {
+        magazine = "100Rnd_65x39_caseless_mag";
+        count = 8;
+      };
+      class _xx_30Rnd_65x39_caseless_mag {
+        magazine = "30Rnd_65x39_caseless_mag";
+        count = 40;
+      };
+      class _xx_1Rnd_HE_Grenade_shell {
+        magazine = "1Rnd_HE_Grenade_shell";
+        count = 10;
+      };
+      class _xx_Titan_AT {
+        magazine = "Titan_AT";
+        count = 4;
+      };
+    };
+    class TransportWeapons {
+      class _xx_arifle_MXC_Black_F {
+        weapon = "arifle_MXC_Black_F";
+        count = 2;
+      };
+      class _xx_arifle_MX_Black_F {
+        weapon = "arifle_MX_Black_F";
+        count = 2;
+      };
+      class _xx_arifle_MX_GL_Black_F {
+        weapon = "arifle_MX_GL_Black_F";
+        count = 1;
+      };
+      class _xx_arifle_MX_SW_Black_F {
+        weapon = "arifle_MX_SW_Black_F";
+        count = 1;
+      };
+      class _xx_arifle_MXM_Black_F {
+        weapon = "arifle_MXM_Black_F";
+        count = 1;
+      };
+      class _xx_launch_I_Titan_short_F {
+        weapon = "launch_I_Titan_short_F";
+        count = 2;
+      };
+    };
+    class TransportItems{};
+  };
+
+  class AGM_PMC_Box_Ammo_F: AGM_PMC_Box_Base {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_PMC_Box_Ammo_F";
+    scope = 2;
+    displayName = "$STR_AGM_PMC_Box_ammo";
+    model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F";
+    icon = "iconCrateAmmo";
+    transportMaxWeapons = 12;
+    transportMaxMagazines = 64;
+
+    class TransportMagazines {
+      class _xx_100Rnd_65x39_caseless_mag {
+        magazine = "100Rnd_65x39_caseless_mag";
+        count = 8;
+      };
+      class _xx_30Rnd_65x39_caseless_mag {
+        magazine = "30Rnd_65x39_caseless_mag";
+        count = 24;
+      };
+      class _xx_30Rnd_65x39_caseless_mag_Tracer {
+        magazine = "30Rnd_65x39_caseless_mag_Tracer";
+        count = 6;
+      };
+      class _xx_HandGrenade {
+        magazine = "HandGrenade";
+        count = 10;
+      };
+      class _xx_MiniGrenade {
+        magazine = "MiniGrenade";
+        count = 10;
+      };
+      class _xx_1Rnd_HE_Grenade_shell {
+        magazine = "1Rnd_HE_Grenade_shell";
+        count = 10;
+      };
+      class _xx_Chemlight_blue {
+        magazine = "Chemlight_blue";
+        count = 15;
+      };
+      class _xx_Titan_AT {
+        magazine = "Titan_AT";
+        count = 4;
+      };
+      class _xx_SmokeShell {
+        magazine = "SmokeShell";
+        count = 6;
+      };
+      class _xx_SmokeShellBlue {
+        magazine = "SmokeShellBlue";
+        count = 6;
+      };
+      class _xx_APERSTripMine_Wire_Mag {
+        magazine = "APERSTripMine_Wire_Mag";
+        count = 4;
+      };
+      class _xx_ClaymoreDirectionalMine_Remote_Mag {
+        magazine = "ClaymoreDirectionalMine_Remote_Mag";
+        count = 2;
+      };
+      class _xx_DemoCharge_Remote_Mag {
+        magazine = "DemoCharge_Remote_Mag";
+        count = 2;
+      };
+    };
+    class TransportWeapons{};
+    class TransportItems{};
+
+    class AnimationSources {
+      class Ammo_source {
+        source = "user";
+        animPeriod = 1;
+        initPhase = 0;
+      };
+      class AmmoOrd_source {
+        source = "user";
+        animPeriod = 1;
+        initPhase = 1;
+      };
+      class Grenades_source {
+        source = "user";
+        animPeriod = 1;
+        initPhase = 1;
+      };
+      class Support_source {
+        source = "user";
+        animPeriod = 1;
+        initPhase = 1;
+      };
+    };
+  };
+
+  class AGM_PMC_Box_Support_F: AGM_PMC_Box_Base {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_PMC_Box_Support_F";
+    scope = 2;
+    displayName = "$STR_AGM_PMC_Box_support";
+    model = "\A3\weapons_F\AmmoBoxes\AmmoBox_F";
+    icon = "iconCrateSupp";
+    transportMaxWeapons = 12;
+    transportMaxMagazines = 64;
+
+    class TransportMagazines{};
+    class TransportWeapons{};
+    class TransportItems {
+      class _xx_Binocular {
+        name = "Binocular";
+        count = 2;
+      };
+      class _xx_FirstAidKit {
+        name = "FirstAidKit";
+        count = 10;
+      };
+      class _xx_MineDetector {
+        name = "MineDetector";
+        count = 1;
+      };
+      class _xx_acc_flashlight {
+        name = "acc_flashlight";
+        count = 5;
+      };
+      class _xx_optic_ACO {
+        name = "optic_ACO";
+        count = 5;
+      };
+      class _xx_optic_MRCO {
+        name = "optic_MRCO";
+        count = 2;
+      };
+      class _xx_V_TacVest_blk {
+        name = "V_TacVest_blk";
+        count = 2;
+      };
+      class _xx_V_Chestrig_blk {
+        name = "V_Chestrig_blk";
+        count = 2;
+      };
+    };
+    class TransportBackpacks {
+      class _xx_B_Bergen_blk {
+        backpack = "B_Bergen_blk";
+        count = 2;
+      };
+    };
+
+    class AnimationSources {
+      class Ammo_source {
+        source = "user";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class AmmoOrd_source {
+        source = "user";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class Grenades_source {
+        source = "user";
+        initPhase = 1;
+        animPeriod = 1;
+      };
+      class Support_source {
+        source = "user";
+        initPhase = 0;
+        animPeriod = 1;
+      };
+    };
   };
 };
 

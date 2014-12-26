@@ -491,5 +491,39 @@
       <Spanish>Patrulla motorizada</Spanish>
     </Key>
 
+    <Key ID="STR_AGM_PMC_Box_wps">
+      <English>[PMC] Basic Weapons</English>
+      <Czech>[PMC] Základní zbraně</Czech>
+      <French>[PMC] Armes standard</French>
+      <German>[PMC] Standardwaffen</German>
+      <Italian>[PMC] Basic Weapons</Italian>
+      <Polish>[PMC] Broń podstawowa</Polish>
+      <Portuguese>[PMC] Armas Básicas</Portuguese>
+      <Russian>[PMC] Базовое оружие</Russian>
+      <Spanish>[PMC] Armas básicas</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Box_ammo">
+      <English>[PMC] Basic Ammo</English>
+      <Czech>[PMC] Základní munice</Czech>
+      <French>[PMC] Munitions standard</French>
+      <German>[PMC] Standardmunition</German>
+      <Italian>[PMC] Basic Ammo</Italian>
+      <Polish>[PMC] Amunicja podstawowa</Polish>
+      <Portuguese>[PMC] Munição Básica</Portuguese>
+      <Russian>[PMC] Базовые боеприпасы</Russian>
+      <Spanish>[PMC] Munición básica</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Box_support">
+      <English>[PMC] Support</English>
+      <Czech>[PMC] Podpora</Czech>
+      <French>[PMC] Appui</French>
+      <German>[PMC] Unterstützung</German>
+      <Italian>[PMC] Support</Italian>
+      <Polish>[PMC] Wsparcie</Polish>
+      <Portuguese>[PMC] Suporte</Portuguese>
+      <Russian>[PMC] Поддержка</Russian>
+      <Spanish>[PMC] Apoyo</Spanish>
+    </Key>
+
   </Package>
 </Project>
