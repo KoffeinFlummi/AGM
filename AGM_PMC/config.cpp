@@ -446,6 +446,7 @@ class CfgWeapons {
 };
 
 class UniformSlotInfo;
+
 class CfgVehicles {
   class B_FieldPack_blk;
   class AGM_I_FieldPack_blk_AT: B_FieldPack_blk {
@@ -594,6 +595,15 @@ class CfgVehicles {
   class SoldierGB: CAManBase {
     class HeadLimits: HeadLimits {};
     class Wounds;
+  };
+
+  // fix side
+  class B_RangeMaster_F;
+  class B_Competitor_F: B_RangeMaster_F {
+    modelSides[] = {3,2};
+  };
+  class C_Marshal_F: B_RangeMaster_F {
+    modelSides[] = {3,2};
   };
 
   class AGM_I_PMC_Security_Contractor_base_F: SoldierGB {
@@ -973,12 +983,15 @@ class CfgVehicles {
     _generalMacro = "AGM_I_PMC_Tactical_Pilot";
     scope = 2;
     displayName = "$STR_AGM_PMC_Tactical_Pilot";
-    weapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
-    respawnWeapons[] = {"arifle_MXC_black_F","hgun_Pistol_heavy_01_MRD_F","Throw","Put"};
-    magazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
-    respawnMagazines[] = {"30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","11Rnd_45ACP_Mag","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    weapons[] = {"SMG_01_Holo_F","Throw","Put"};
+    respawnWeapons[] = {"SMG_01_Holo_F","Throw","Put"};
+    magazines[] = {"30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
+    respawnMagazines[] = {"30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
     linkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     respawnLinkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+    model = "\A3\Characters_F\Civil\c_poloshirtpants.p3d";
+    uniformClass = "U_Marshal";
+    hiddenSelectionsTextures[] = {"\A3\Characters_F_Kart\Civil\Data\c_poloshirtpants_2_co.paa"};
   };
 
   class SUV_01_base_F;
