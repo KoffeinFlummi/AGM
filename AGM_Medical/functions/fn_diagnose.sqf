@@ -23,7 +23,7 @@ _damages = [
   ["HitRightLeg",  floor ((_unit getHitPointDamage "HitRightLeg") * 100) / 100]
 ];
 
-_unit setVariable ["AGM_Diagnosed", True, False];
+_unit setVariable ["AGM_isDiagnosed", True, False];
 
 // Tell bystanders what's up if necessary
 if (AGM_Medical_RequireDiagnosis > 0) then {
