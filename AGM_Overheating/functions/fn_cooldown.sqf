@@ -12,6 +12,8 @@
  * New temperature (number)
  */
 
+private ["_temperature", "_barrelMass", "_totalTime", "_barrelSurface", "_time", "_deltaTime"];
+
 _temperature = _this select 0;
 _barrelMass  = _this select 1;
 _totalTime   = _this select 2;

@@ -1,6 +1,6 @@
 // by commy2 and CAA-Picard
 
-private ["_unit", "_weapon", "_ammo", "_projectile", "_variableName", "_overheat", "_temperature", "_time", "_energyIncrement", "_barrelMass", "_scaledTemperature"];
+private ["_unit", "_weapon", "_ammo", "_projectile", "_velocity", "_variableName", "_overheat", "_temperature", "_time", "_energyIncrement", "_barrelMass", "_scaledTemperature"];
 
 _unit = _this select 0;
 _weapon = _this select 1;
@@ -33,7 +33,7 @@ _temperature = _temperature + _energyIncrement / (_barrelMass * 466); // Steel H
 // set updated values
 _time = time;
 _unit setVariable [_variableName, [_temperature, _time], false];
-_scaledTemperature = (_temperature / 1000) min 1;
+_scaledTemperature = (_temperature / 1000) min 1 max 0;
 
 // Smoke SFX, beginning at TEMP 0.15
 private "_intensity";
@@ -95,20 +95,15 @@ if (_intensity > 0) then {
 
 
 // dispersion and bullet slow down
-private ["_dispersion", "_velocity", "_slowdownFactor", "_count"];
+private ["_dispersion", "_slowdownFactor", "_count"];
 
 _dispersion = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_Dispersion");
 
 _count = count _dispersion;
 if (_count > 0) then {
   _dispersion = ([_dispersion, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
-
-  // @todo FUNCTION for projectile dispersion and slowdown, Placeholder
-  _velocity = [
-    (_velocity select 0) * (1 - _dispersion + 2 * random _dispersion),
-    (_velocity select 1) * (1 - _dispersion + 2 * random _dispersion),
-    (_velocity select 2) * (1 - _dispersion + 2 * random _dispersion)
-  ];
+} else {
+  _dispersion = 0;
 };
 
 _slowdownFactor = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overheating_slowdownFactor");
@@ -116,17 +111,11 @@ _slowdownFactor = getArray (configFile >> "CfgWeapons" >> _weapon >> "AGM_Overhe
 _count = count _slowdownFactor;
 if (_count > 0) then {
   _slowdownFactor = ([_slowdownFactor, (_count - 1) * _scaledTemperature] call AGM_Core_fnc_interpolateFromArray) max 0;
-
-  // @todo FUNCTION for projectile dispersion and slowdown, Placeholder
-  // Value EX: _slowdownFactor = 1 - 0.05 * (_scaledTemperature - 1);
-  _velocity = [
-    _slowdownFactor * (_velocity select 0),
-    _slowdownFactor * (_velocity select 1),
-    _slowdownFactor * (_velocity select 2)
-  ];
+} else {
+  _slowdownFactor = 1;
 };
 
-_projectile setVelocity _velocity;
+[_projectile, _dispersion - 2 * random _dispersion, _dispersion - 2 * random _dispersion, (_slowdownFactor - 1) * vectorMagnitude _velocity] call AGM_Core_fnc_changeProjectileDirection;
 
 
 // jamming

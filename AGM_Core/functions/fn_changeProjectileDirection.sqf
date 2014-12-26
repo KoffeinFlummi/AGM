@@ -20,11 +20,11 @@ _adjustDir = _this select 1;
 _adjustUp = _this select 2;
 _adjustSpeed = _this select 3;
 
-["CPD", _fnc_scriptNameParent] call AGM_Debug_fnc_log;
-
 if (isNil "_adjustSpeed") then {
   _adjustSpeed = 0;
 };
+
+["CPD", [_fnc_scriptNameParent, _adjustDir, _adjustUp, _adjustSpeed], nil, false] call AGM_Debug_fnc_log;
 
 // get old direction vector
 _vdir = vectorDir _projectile;
