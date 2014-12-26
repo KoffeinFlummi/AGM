@@ -1,6 +1,6 @@
 class CfgPatches{
   class AGM_Artillery  {
-    units[] = {"B_AGM_Artillery_backpack_tube", "B_AGM_Artillery_backpack_baseplate", "B_AGM_advancedMortar"};
+    units[] = {"B_AGM_advancedMortar", "B_AGM_advancedMortar_NoOptics", "B_AGM_Artillery_backpack_tube", "B_AGM_Artillery_backpack_tube_NoOptics", "B_AGM_Artillery_backpack_baseplate"};
     weapons[] = {"AGM_RangeTable_81mm"};
     requiredVersion = 0.6;
     //Wind for air density/temp, Vector for the assets (scope view and digital numbers)
@@ -42,20 +42,15 @@ class CfgFunctions {
       class firedEH;
       class formatNumber;
       class getPosFromMapCords;
-
       class mapCompEventClickOnMap;
       class mapCompEventDrawMap;
       class mapCompEventEnterCords;
       class mapCompOpen;
-
       class onHudLoad;
-
       class rangerFinderStart;
-
       class rangeTableOpen;
       class rangeTablePageChange;
       class rangeTablePreCalculatedValues;
-
       class simulateCalcRangeTableLine;
       class simulateFindSolution;
       class simulateShot;
@@ -246,7 +241,7 @@ class CfgVehicles {
   class Weapon_Bag_Base: Bag_Base {class assembleInfo;};
   class B_AGM_Artillery_backpack_tube: Weapon_Bag_Base {
     author = "Pabst Mirror";
-    displayName = "AGM Mortar Tube (M253)";
+    displayName = "AGM Mortar Tube"; //  (M253)
 
     faction = "BLU_F";
     scope = 2;
@@ -263,9 +258,15 @@ class CfgVehicles {
       base[] = {"B_AGM_Artillery_backpack_baseplate"};
     };
   };
+  class B_AGM_Artillery_backpack_tube_NoOptics: B_AGM_Artillery_backpack_tube {
+    displayName = "AGM Mortar Tube (No Optics)"; //  (M253)
+    class assembleInfo: assembleInfo {
+      assembleTo = "B_AGM_advancedMortar_NoOptics";
+    };
+  };
   class B_AGM_Artillery_backpack_baseplate: Bag_Base {
     author = "Pabst Mirror";
-    displayName = "AGM Mortar Baseplate (M177)";
+    displayName = "AGM Mortar Baseplate"; // (M177)
 
     faction = "BLU_F";
     scope = 2;
@@ -303,10 +304,13 @@ class CfgVehicles {
     class assembleInfo;
   };
 
+  //Define the Mortar's Base Class
   class AGM_advancedMortar_base : Mortar_01_base_F {
-    displayname = "AGM Advanced Mortar (M252A1)";
-    artilleryScanner = 0;
-    hiddenSelectionsTextures[] = {"\AGM_Artillery\data\mortar_01_grey_co.paa"};
+    _generalMacro = "AGM_advancedMortar_base";
+    author = "Pabst Mirror";
+    displayname = "AGM Advanced Mortar";
+    artilleryScanner = 0;  //disable BIS's Artillery Computer
+    hiddenSelectionsTextures[] = {"\AGM_Artillery\data\mortar_01_grey_co.paa"};  //Simple recoloring of the skin
 
     //add Artillery Computer Action
     class UserActions {
@@ -326,9 +330,7 @@ class CfgVehicles {
       class MainTurret: MainTurret {
         weapons[] = {"AGM_Artillery_81mm"};
         magazines[] = {"AGM_8Rnd_81mmShell_HE", "AGM_8Rnd_81mmShell_airburst", "AGM_8Rnd_81mmShell_smokeWhite", "AGM_8Rnd_81mmShell_smokeRed", "AGM_8Rnd_81mmShell_flareWhite"};
-
         elevationMode = 1;
-        // gunnerForceOptics = 0;
         turretInfoType = "AGM_Artillery_RscWeaponRangeArtilleryCustom";
         class ViewOptics: ViewOptics {
           visionMode[] = {"Normal"};
@@ -359,9 +361,37 @@ class CfgVehicles {
       };
     };
   };
+  //Base Class Without super zoom optics
+  class AGM_advancedMortar_NoOptics_base: AGM_advancedMortar_base {
+    _generalMacro = "AGM_advancedMortar_NoOptics_base";
+    displayname = "AGM Advanced Mortar (No Optics)";
+    class Turrets: Turrets {
+      class MainTurret: MainTurret {
+        gunnerForceOptics = 0;
+        class OpticsIn: OpticsIn {
+          class Wide: Wide {};
+          delete Medium;
+        };
+      };
+    };
+  };
 
+  //Side specific mortar implementation (is this needed?)
   class B_AGM_advancedMortar : AGM_advancedMortar_base {
     author = "Pabst Mirror";
+    _generalMacro = "B_AGM_advancedMortar";
+    scope = 2;
+    side = 1;
+    faction = "BLU_F";
+    crew = "B_Soldier_F";  //AI are never going to know how to use this
+    availableForSupportTypes[] = {"Artillery"};
+
+    class assembleInfo: assembleInfo {
+      dissasembleTo[] = {"B_AGM_Artillery_backpack_tube", "B_AGM_Artillery_backpack_baseplate"};
+    };
+  };
+
+  class B_AGM_advancedMortar_NoOptics: AGM_advancedMortar_NoOptics_base {
     _generalMacro = "B_AGM_advancedMortar";
     scope = 2;
     side = 1;
@@ -370,7 +400,7 @@ class CfgVehicles {
     availableForSupportTypes[] = {"Artillery"};
 
     class assembleInfo: assembleInfo {
-      dissasembleTo[] = {"B_AGM_Artillery_backpack_tube", "B_AGM_Artillery_backpack_baseplate"};
+      dissasembleTo[] = {"B_AGM_Artillery_backpack_tube_NoOptics", "B_AGM_Artillery_backpack_baseplate"};
     };
   };
 };
