@@ -767,9 +767,10 @@ class CfgVehicles {
     attendant = 1;
     icon = "iconManMedic";
     picture = "pictureHeal";
-    model = "\A3\characters_F_gamma\Guerrilla\ig_guerrilla2_1.p3d";
-    uniformClass = "U_IG_Guerilla2_1";
-    hiddenSelectionsTextures[] = {"\A3\Characters_F_Gamma\Guerrilla\Data\ig_guerrilla2_1_co.paa"};
+    model = "\A3\Characters_F\Civil\c_poloshirtpants.p3d";
+    uniformClass = "U_Competitor";
+    hiddenSelections[] = {"camo","insignia"};
+    hiddenSelectionsTextures[] = {"\A3\Characters_F_Beta\Civil\Data\c_competitor_co.paa"};
     cost = 300000;
   };
 
@@ -818,6 +819,10 @@ class CfgVehicles {
     respawnLinkedItems[] = {"V_PlateCarrier1_blk","H_Booniehat_khk_hs","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     icon = "iconManExplosive";
     picture = "pictureExplosive";
+    model = "\A3\Characters_F\Civil\c_poloshirtpants.p3d";
+    uniformClass = "U_Competitor";
+    hiddenSelections[] = {"camo","insignia"};
+    hiddenSelectionsTextures[] = {"\A3\Characters_F_Beta\Civil\Data\c_competitor_co.paa"};
   };
 
   class AGM_I_PMC_Security_Contractor_GL_F: AGM_I_PMC_Security_Contractor_base_F {
