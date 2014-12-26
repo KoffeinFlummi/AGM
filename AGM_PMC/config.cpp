@@ -87,7 +87,9 @@ class CfgPatches {
       "AGM_PMC_Box_Ammo_F",
       "AGM_PMC_Box_Support_F"
     };
-    weapons[] = {};
+    weapons[] = {
+      "AGM_V_Rangemaster_belt_blk"
+    };
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
     version = "0.95";
@@ -124,6 +126,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_Holo_pointer_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_Holo_pointer_F";
@@ -138,6 +141,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_Hamr_pointer_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_Hamr_pointer_F";
@@ -152,6 +156,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_ACO_pointer_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_ACO_pointer_F";
@@ -166,6 +171,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_ACO_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_ACO_F";
@@ -176,6 +182,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_GL_Black_ACO_F: arifle_MX_GL_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_GL_ACO_F";
@@ -186,6 +193,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_GL_Black_ACO_pointer_F: arifle_MX_GL_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_GL_ACO_pointer_F";
@@ -200,6 +208,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_GL_Black_Hamr_pointer_F: arifle_MX_GL_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_GL_Hamr_pointer_F";
@@ -214,6 +223,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_Holo_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_Holo_F";
@@ -224,6 +234,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_Holo_pointer_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_Holo_pointer_F";
@@ -238,6 +249,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_SW_Black_pointer_F: arifle_MX_SW_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_SW_pointer_F";
@@ -248,6 +260,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_SW_Black_Hamr_pointer_F: arifle_MX_SW_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_SW_Hamr_pointer_F";
@@ -262,6 +275,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXM_Black_Hamr_pointer_F: arifle_MXM_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXM_Hamr_pointer_F";
@@ -276,6 +290,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_ACO_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_ACO_F";
@@ -286,6 +301,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_Holo_pointer_snds_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_Holo_pointer_snds_F";
@@ -304,6 +320,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_SOS_point_snds_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_SOS_point_snds_F";
@@ -322,6 +339,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_ACO_pointer_snds_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_ACO_pointer_snds_F";
@@ -340,6 +358,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXC_Black_ACO_pointer_F: arifle_MXC_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXC_ACO_pointer_F";
@@ -354,6 +373,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_ACO_pointer_snds_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_ACO_pointer_snds_F";
@@ -372,6 +392,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_Black_RCO_pointer_snds_F: arifle_MX_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_RCO_pointer_snds_F";
@@ -390,6 +411,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MX_GL_Black_Holo_pointer_snds_F: arifle_MX_GL_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MX_GL_Holo_pointer_snds_F";
@@ -408,6 +430,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXM_Black_SOS_pointer_F: arifle_MXM_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXM_SOS_pointer_F";
@@ -422,6 +445,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXM_Black_RCO_pointer_snds_F: arifle_MXM_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXM_RCO_pointer_snds_F";
@@ -440,6 +464,7 @@ class CfgWeapons {
       };
     };
   };
+
   class AGM_arifle_MXM_Black_DMS_F: arifle_MXM_Black_F {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "arifle_MXM_DMS_F";
@@ -448,6 +473,23 @@ class CfgWeapons {
         slot = "CowsSlot";
         item = "optic_DMS";
       };
+    };
+  };
+
+  class Vest_NoCamo_Base;
+  class V_Rangemaster_belt {
+    class ItemInfo;
+  };
+  class AGM_V_Rangemaster_belt_blk: V_Rangemaster_belt {
+    author = "$STR_A3_Bohemia_Interactive";
+    _generalMacro = "AGM_V_Rangemaster_belt_blk";
+
+    displayName = "$STR_V_Rangemaster_belt0";
+    hiddenSelections[] = {"camo"};
+    hiddenSelectionsTextures[] = {"\A3\Characters_F\BLUFOR\Data\vests_blk_co.paa"};
+    class ItemInfo: ItemInfo {
+      hiddenSelections[] = {"camo"};
+      hiddenSelectionsTextures[] = {"\A3\Characters_F\BLUFOR\Data\vests_blk_co.paa"};
     };
   };
 };
@@ -994,8 +1036,8 @@ class CfgVehicles {
     respawnWeapons[] = {"SMG_01_Holo_F","Throw","Put"};
     magazines[] = {"30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
     respawnMagazines[] = {"30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","30Rnd_45ACP_Mag_SMG_01","HandGrenade","HandGrenade","SmokeShell","SmokeShellBlue","Chemlight_blue","Chemlight_blue"};
-    linkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
-    respawnLinkedItems[] = {"V_BandollierB_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+    linkedItems[] = {"AGM_V_Rangemaster_belt_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
+    respawnLinkedItems[] = {"AGM_V_Rangemaster_belt_blk","H_PilotHelmetHeli_B","ItemMap","ItemCompass","ItemWatch","ItemRadio"};
     model = "\A3\Characters_F\Civil\c_poloshirtpants.p3d";
     uniformClass = "U_Marshal";
     hiddenSelectionsTextures[] = {"\A3\Characters_F_Kart\Civil\Data\c_poloshirtpants_2_co.paa"};
