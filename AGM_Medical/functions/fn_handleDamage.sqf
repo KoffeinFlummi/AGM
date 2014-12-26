@@ -103,7 +103,6 @@ if !(_unit getVariable ["AGM_allowDamage", True]) exitWith {_damage max 0.01};
 _newDamage = _newDamage * (_unit getVariable ["AGM_Medical_CoefDamage", AGM_Medical_CoefDamage]);
 
 // Exclude falling damage to everything other than legs; reduce structural damage.
-// @todo: figure out why this still doesn't work in MP
 if (((velocity _unit) select 2 < -5) and (vehicle _unit == _unit)) then {
   _unit setVariable ["AGM_Medical_isFalling", True];
 };
