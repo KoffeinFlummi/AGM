@@ -30,7 +30,7 @@ if (AGM_Medical_RequireDiagnosis > 0) then {
   _bystanders = nearestObjects [AGM_player, ["CAManBase"], 10];
   [-1, {
     if (AGM_player in (_this select 1)) then {
-      (_this select 0) setVariable ["AGM_Diagnosed", true, false];
+      (_this select 0) setVariable ["AGM_isDiagnosed", true, false];
     };
   }, [_unit, _bystanders]] call CBA_fnc_globalExecute;
 };
