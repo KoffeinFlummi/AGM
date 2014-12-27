@@ -41,7 +41,6 @@ class AGM_Artillery_MapComputer_Dialog
       y = 0 * safeZoneH + safeZoneY;
       w = safeZoneW - (0.2475 * safeZoneH);
       h = 1 * safeZoneH;
-
       onMouseButtonClick = "_this call AGM_Artillery_fnc_mapCompEventClickOnMap";
       onDraw = "_this call AGM_Artillery_fnc_mapCompEventDrawMap";
     };
@@ -53,10 +52,9 @@ class AGM_Artillery_MapComputer_Dialog
       w = 5.475 * (safeZoneH / 40);
       h = 5 * ((safeZoneH / 1.2) / 25);
     };
-
     class MapCordsFrame: RscFrame {
       idc = -1;
-      text = "Load Map Cords"; //--- ToDo: Localize;
+      text = "$STR_AGM_Artillery_LoadMapCords"; //--- ToDo: Localize;
       x = 0.1125 * safeZoneH + safezoneX;
       y = 15.25 * ((safeZoneH / 1.2) / 25) + (safezoneY + (safezoneH - (safeZoneH / 1.2))/2);
       w = 5.3 * (safeZoneH / 40);
@@ -72,22 +70,27 @@ class AGM_Artillery_MapComputer_Dialog
     };
     class MapCordsButton: RscButton {
       idc = -1;
-      text = "Load"; //--- ToDo: Localize;
+      text = "$STR_AGM_Artillery_LoadShort"; //--- ToDo: Localize;
       x = 0.195 * safeZoneH + safezoneX;
       y = 15.75 * ((safeZoneH / 1.2) / 25) + (safezoneY + (safezoneH - (safeZoneH / 1.2))/2);
       w = 1.9 * (safeZoneH / 40);
       h = 0.9 * ((safeZoneH / 1.2) / 25);
       action = "[] spawn AGM_Artillery_fnc_mapCompEventEnterCords";
+      colorBackground[] = {0.8,0.8,0.8,1};
+      colorBackgroundActive[] = {1,1,1,1};
+      colorFocused[] = {1,1,1,1};
     };
-
     class CloseButton: RscButton {
       idc = -1;
       x = 0.11625 * safeZoneH + safezoneX;
       y = 17.0 * ((safeZoneH / 1.2) / 25) + (safezoneY + (safezoneH - (safeZoneH / 1.2))/2);
       w = 5 * (safeZoneH / 40);
       h = 1 * ((safeZoneH / 1.2) / 25);
-      text = "Close";
+      text = "$STR_AGM_Core_Cancel";
       action = "closeDialog 0;";
+      colorBackground[] = {0.8,0.8,0.8,1};
+      colorBackgroundActive[] = {1,1,1,1};
+      colorFocused[] = {1,1,1,1};
     };
   };
 };

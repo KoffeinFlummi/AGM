@@ -42,7 +42,7 @@ _muzzleVelocities = [];
   _showToPlayer = getNumber (configFile >> "CfgWeapons" >> _weaponName >> _x >> "showToPlayer");
   if (_showToPlayer == 1) then {
     _artilleryCharge = getNumber (configFile >> "CfgWeapons" >> _weaponName >> _x >> "artilleryCharge");
-    LIST_CHARGE lbAdd format ["Charge %1 [%2m/s]", (count _muzzleVelocities), (_initSpeed * _artilleryCharge)];
+    LIST_CHARGE lbAdd format ["%1: %2 [%3m/s]", (localize "STR_AGM_Artillery_Charge"), (count _muzzleVelocities), (_initSpeed * _artilleryCharge)];
     LIST_CHARGE lbSetData [(count _muzzleVelocities), str (_artilleryCharge * _initSpeed)];
     _muzzleVelocities pushBack _artilleryCharge;
   };
