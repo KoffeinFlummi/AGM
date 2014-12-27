@@ -24,7 +24,7 @@ AGM_NewStrength = AGM_NewStrength max _strength;
 if (missionNamespace getVariable ["AGM_isEarRingingPlaying", false]) exitWith {};
 
 if (_strength > 0.75) exitWith {
-  playSound ["AGM_EarRinging_Heavy", true];
+  playSound "AGM_EarRinging_Heavy";
   AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 7;
@@ -32,7 +32,7 @@ if (_strength > 0.75) exitWith {
   };
 };
 if (_strength > 0.5) exitWith {
-  playSound ["AGM_EarRinging_Medium", true];
+  playSound "AGM_EarRinging_Medium";
   AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 5;
@@ -40,7 +40,7 @@ if (_strength > 0.5) exitWith {
   };
 };
 if (_strength > 0.2) exitWith {
-  playSound ["AGM_EarRinging_Weak", true];
+  playSound "AGM_EarRinging_Weak";
   AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 3;
