@@ -29,4 +29,4 @@ private "_position";
 _position = _unit modelToWorld (_unit selectionPosition "RightHand");
 _position set [2, (_position select 2) + ((getPosASLW _unit select 2) - (getPosATL _unit select 2) max 0)];
 
-playSound3D [_sound select 0, _unit, false, _position, _sound select 1, _sound select 2, _sound select 3];
+playSound3D [_sound select 0, objNull, false, _position, _sound select 1, _sound select 2, _sound select 3];
