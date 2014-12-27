@@ -21,21 +21,53 @@ class CfgFunctions {
       class firedEH;
       class getOptics;
       class hideZeroing;
-      class init;
+      class inventoryCheck;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Scopes {
-    clientInit = "[player] call AGM_Scopes_fnc_init;";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_SafeMode\clientInit.sqf';";
   };
 };
 
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Scopes {
-      clientFired = "_this call AGM_Scopes_fnc_firedEH";
+      clientFired = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_firedEH};";
+    };
+  };
+};
+
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      clientTake = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_Put_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      clientPut = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_InitPost_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      init = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
     };
   };
 };
@@ -43,8 +75,8 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustUp";
-    condition = "[0, 0.1] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0, 0.1] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0, 0.1] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0, 0.1] call AGM_Scopes_fnc_adjustScope;";
     allowHolding = 1;
     key = 201;
     shift = 0;
@@ -53,21 +85,21 @@ class AGM_Core_Default_Keys {
   };
   class adjustScopeDown: adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustDown";
-    condition = "[0, -0.1] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0, -0.1] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0, -0.1] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0, -0.1] call AGM_Scopes_fnc_adjustScope;";
     key = 209;
   };
   class adjustScopeLeft: adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustLeft";
-    condition = "[-0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[-0.1, 0] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, -0.1, 0] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, -0.1, 0] call AGM_Scopes_fnc_adjustScope;";
     key = 209;
     control = 1;
   };
   class adjustScopeRight: adjustScopeLeft {
     displayName = "$STR_AGM_Scopes_AdjustRight";
-    condition = "[0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0.1, 0] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0.1, 0] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0.1, 0] call AGM_Scopes_fnc_adjustScope;";
     key = 201;
   };
 };
