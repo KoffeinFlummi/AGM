@@ -129,6 +129,8 @@ class RscInGameUI
         h = 0.4 / 9 * safezoneH;
         text = "\AGM_Vector\rsc\Vector_Center.paa";
       };
+
+      //Charge display will sit on the weapon/ammo part of the hud, can move anywhere so get cords from profilenamespace
       class ChargeText: RscStructuredText {
         idc = 800859;
         colorText[] = {"(profilenamespace getvariable ['IGUI_TEXT_RGB_R',0])","(profilenamespace getvariable ['IGUI_TEXT_RGB_G',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_B',1])","(profilenamespace getvariable ['IGUI_TEXT_RGB_A',0.8])"};
@@ -149,18 +151,17 @@ class RscInGameUI
       };
       class Text_Elevation: RscStructuredText {
         idc = 800855;
-        text = "Elevation:"; //--- ToDo: Localize;
+        text = "";
         x = 0 * safezoneW + safezoneX;
         y = (1 * safezoneH + safezoneY) - ((4/3) * (COMPASS_SCALE)) + 0.5 * (COMPASS_SCALE * .2) * (4/3);
-        // y = (0.5 * safezoneH + safezoneY) - ((4/3) * (COMPASS_SCALE / 2));
         w = (COMPASS_SCALE * .2);
         h = 0.5 * (COMPASS_SCALE * .2) * (4/3);
         colorBackground[] = {1,1,1,0.01};
-        size = ((COMPASS_SCALE * .2) * (4/3)) / 7;  //safeZoneH * 0.01
+        size = ((COMPASS_SCALE * .2) * (4/3)) / 7;
       };
       class Text_az: RscStructuredText {
         idc = 800856;
-        text = "Azimuth:"; //--- ToDo: Localize;
+        text = "";
         x = (0.5 * safezoneW + safezoneX) - (COMPASS_SCALE / 2);
         y = (1 * safezoneH + safezoneY) - ((COMPASS_SCALE * .2) * (4/3));
         w = (COMPASS_SCALE * .2);
@@ -196,14 +197,12 @@ class RscInGameUI
         idc = 800853;
         x = (0 * safezoneW + safezoneX - (0.3 * COMPASS_SCALE));
         y = (1 * safezoneH + safezoneY) - ((4/3) * (COMPASS_SCALE / 2));
-        // y = (0.5 * safezoneH + safezoneY);
         up[] = {0, 0, -1};
       };
       class Elevation_Base: Azimuth_Base {
         idc = 800854;
         x = (0 * safezoneW + safezoneX - (0.3 * COMPASS_SCALE));
         y = (1 * safezoneH + safezoneY) - ((4/3) * (COMPASS_SCALE / 2));
-        // y = (0.5 * safezoneH + safezoneY);
         up[] = {1, 0, 0};
       };
     };

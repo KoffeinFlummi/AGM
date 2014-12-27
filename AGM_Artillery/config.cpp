@@ -188,7 +188,7 @@ class CfgWeapons {
     class Charge1: Single1 {
       artilleryDispersion = 1.9;
       artilleryCharge = 0.2;
-      displayName = "Charge 0";
+      displayName = "Charge 0";  //I think these are just used in the default BIS comp, so no need to translate
     };
     class Charge2: Charge1 {
       artilleryCharge = 0.4;
@@ -225,7 +225,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_Equipment {
         class AGM_RangeTable {
-          displayName = "81 mm Range Table";
+          displayName = "$STR_AGM_Artillery_Mortar_RangeTable";
           condition = "'AGM_RangeTable_81mm' in (items _player)";
           statement = "['AGM_Artillery_81mm'] call AGM_Artillery_fnc_rangeTableOpen;";
           showDisabled = 0;
@@ -241,7 +241,7 @@ class CfgVehicles {
   class Weapon_Bag_Base: Bag_Base {class assembleInfo;};
   class B_AGM_Artillery_backpack_tube: Weapon_Bag_Base {
     author = "Pabst Mirror";
-    displayName = "AGM Mortar Tube"; //  (M253)
+    displayName = "$STR_AGM_Artillery_Mortar_Backpack_Tube"; //  (M253)
 
     faction = "BLU_F";
     scope = 2;
@@ -253,20 +253,20 @@ class CfgVehicles {
     maximumLoad = 0;
 
     class assembleInfo: assembleInfo {
-      displayName = "Assemble AGM Mortar";
+      displayName = "$STR_AGM_Artillery_Mortar_Assemble";
       assembleTo = "B_AGM_advancedMortar";
       base[] = {"B_AGM_Artillery_backpack_baseplate"};
     };
   };
   class B_AGM_Artillery_backpack_tube_NoOptics: B_AGM_Artillery_backpack_tube {
-    displayName = "AGM Mortar Tube (No Optics)"; //  (M253)
+    displayName = "$STR_AGM_Artillery_Mortar_Backpack_Tube_NoOptic"; //  (M253)
     class assembleInfo: assembleInfo {
       assembleTo = "B_AGM_advancedMortar_NoOptics";
     };
   };
   class B_AGM_Artillery_backpack_baseplate: Bag_Base {
     author = "Pabst Mirror";
-    displayName = "AGM Mortar Baseplate"; // (M177)
+    displayName = "STR_AGM_Artillery_Mortar_Backpack_Base"; // (M177)
 
     faction = "BLU_F";
     scope = 2;
@@ -308,14 +308,14 @@ class CfgVehicles {
   class AGM_advancedMortar_base : Mortar_01_base_F {
     _generalMacro = "AGM_advancedMortar_base";
     author = "Pabst Mirror";
-    displayname = "AGM Advanced Mortar";
+    displayname = "$STR_AGM_Artillery_Mortar_Name";
     artilleryScanner = 0;  //disable BIS's Artillery Computer
     hiddenSelectionsTextures[] = {"\AGM_Artillery\data\mortar_01_grey_co.paa"};  //Simple recoloring of the skin
 
     //add Artillery Computer Action
     class UserActions {
       class OpenComputer {
-        displayName = "Artillery Computer";
+        displayName = "$STR_AGM_Artillery_ArtilleryComputer";
         position = "";
         radius = 1;
         condition = "((gunner this) == AGM_player) && (this getVariable ['AGM_Artillery_mapComputerEnabled', false])";
@@ -364,7 +364,7 @@ class CfgVehicles {
   //Base Class Without super zoom optics
   class AGM_advancedMortar_NoOptics_base: AGM_advancedMortar_base {
     _generalMacro = "AGM_advancedMortar_NoOptics_base";
-    displayname = "AGM Advanced Mortar (No Optics)";
+    displayname = "$STR_AGM_Artillery_Mortar_Name_NoOptic";
     class Turrets: Turrets {
       class MainTurret: MainTurret {
         gunnerForceOptics = 0;
@@ -376,7 +376,7 @@ class CfgVehicles {
     };
   };
 
-  //Side specific mortar implementation (is this needed?)
+  //Side specific mortar implementation (are these needed for all sides?)
   class B_AGM_advancedMortar : AGM_advancedMortar_base {
     author = "Pabst Mirror";
     _generalMacro = "B_AGM_advancedMortar";

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-27 -->
+<Project name="AGM">
+  <Package name="Artillery">
+    <Key ID="STR_AGM_Artillery_Azimuth">
+      <English>Azimuth</English>
+      <German>Azimut</German>
+      <Spanish>Azimut</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Elevation">
+      <English>Elevation</English>
+      <German>Elevation</German>
+      <Spanish>Elevación</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Artillery_LoadMapCords">
+      <English>Load Map Cords</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_LoadShort">
+      <English>Load</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Range">
+      <English>Range</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Charge">
+      <English>Charge</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Target">
+      <English>Target</English>
+      <German>Ziel</German>
+      <Spanish>Objetivo</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Height">
+      <English>Height</English>
+      <German>Höhe</German>
+      <Spanish>Altura</Spanish>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Solution">
+      <English>Solution</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Time">
+      <English>Time</English>
+      <German>Zeit</German>
+      <Spanish>Tiempo</Spanish>
+      <Polish>Czas</Polish>
+      <French>Temps</French>
+      <Czech>Čas</Czech>
+      <Italian>Tempo</Italian>
+      <Hungarian>Idő</Hungarian>
+      <Portuguese>Tempo</Portuguese>
+      <Russian>Tемп</Russian>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Computing">
+      <English>Computing</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Name">
+      <English>AGM Advanced Mortar</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Name_NoOptic">
+      <English>AGM Advanced Mortar (No Optics)</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Backpack_Base">
+      <English>AGM Mortar Baseplate</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Backpack_Tube_NoOptic">
+      <English>AGM Mortar Tube (No Optics)</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Backpack_Tube">
+      <English>AGM Mortar Tube</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_RangeTable">
+      <English>AGM Mortar Rangetable</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_Mortar_Assemble">
+      <English>Assemble AGM Mortar</English>
+    </Key>
+    <Key ID="STR_AGM_Artillery_ArtilleryComputer">
+      <English>Artillery computer</English>
+      <Czech>Dělostřelecký Počítač</Czech>
+      <French>L'ordinateur Balistique</French>
+      <German>Artillerie-Computers</German>
+      <Italian>Computer Dell'Artiglieria</Italian>
+      <Polish>Komputera Artyleryjskiego</Polish>
+      <Portuguese>Computador de Artilharia</Portuguese>
+      <Russian>баллистический компьютер</Russian>
+      <Spanish>Ordenador de Artillería</Spanish>
+    </Key>
+  </Package>
+</Project>

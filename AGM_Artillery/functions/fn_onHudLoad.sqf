@@ -80,11 +80,11 @@ _this spawn {
     CTRL_VECTOR_DOT_PICTURE ctrlShow AGM_Artillery_rangefinderKeyDown;
 
     //Update: 'charge' text in upper right (default arma - ammo count)
-    _chargeText = format ["CHARGE  %1<img image='\AGM_Artillery\UI\ui_charges.paa'/>", _currentChargeMode];
+    _chargeText = format ["%1: %2<img image='\AGM_Artillery\UI\ui_charges.paa'/>", (toUpper localize "STR_AGM_Artillery_Charge"), _currentChargeMode];
     CTRL_AMMO_CHARGE_STRUCTEXT ctrlSetStructuredText parseText _chargeText;
 
     //Update: Elevation Text
-    _elevText = format ["<t font='EtelkaMonospacePro'><t align='left'>ELEVATION:</t><br/>"];
+    _elevText = format ["<t font='EtelkaMonospacePro'><t align='left'>%1:</t><br/>", toUpper (localize "STR_AGM_Artillery_Elevation")];
     if (_digialDisplayEnabled) then {
       _elevationString = [_elevationDegrees, "mil4", true] call AGM_Artillery_fnc_formatNumber;
       _elevText = _elevText + format ["<img image='\AGM_Vector\rsc\d%1.paa'/>", (_elevationString select [0, 1])];
@@ -95,7 +95,7 @@ _this spawn {
     CTRL_ELEVATION_STRUCTEXT  ctrlSetStructuredText parseText _elevText;
 
     //Update: Azimuth Text
-    _aziText = format ["<t font='EtelkaMonospacePro'>AZIMUTH:<br/>"];
+    _aziText = format ["<t font='EtelkaMonospacePro'><t align='left'>%1:</t><br/>", toUpper (localize "STR_AGM_Artillery_Azimuth")];
     if (_digialDisplayEnabled) then {
       _azimuthString = [_rotationDegrees, "mil4", true] call AGM_Artillery_fnc_formatNumber;
       _aziText = _aziText + format ["<img image='\AGM_Vector\rsc\d%1.paa'/>", (_azimuthString select [0, 1])];
@@ -119,21 +119,21 @@ _this spawn {
       _compDisplayTime = (_mortarVeh getVariable ["AGM_Artillery_solutionTime", 0]);
       _compDisplayTime = [_compDisplayTime, "sec", false] call AGM_Artillery_fnc_formatNumber;
 
-      _compText = format ["<t font='EtelkaMonospacePro'>TARGET:<t size='0.75'>" ];
-      _compText = _compText + format ["<br/><t align='left'>-AZIMUTH</t><t align='right'>%1</t>", _compDisplayAzimuth];
-      _compText = _compText + format ["<br/><t align='left'>-RANGE</t><t align='right'>%1</t>", _compDisplayDist];
-      _compText = _compText + format ["<br/><t align='left'>-HEIGHT</t><t align='right'>%1</t>", _compDisplayHeight];
-      _compText = _compText + format ["</t><br/>SOLUTION:<t size='0.75'>"];
+      _compText = format ["<t font='EtelkaMonospacePro'>%1:<t size='0.75'>", (toUpper localize "STR_AGM_Artillery_Target")];
+      _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Azimuth"), _compDisplayAzimuth];
+      _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Range"), _compDisplayDist];
+      _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Height"), _compDisplayHeight];  
+      _compText = _compText + format ["</t><br/>%1:<t size='0.75'>", toUpper (localize "STR_AGM_Artillery_Solution")];  
       if (AGM_Artillery_computingSolution) then {
-        _compText = _compText + format ["<br/><t align='center' color='#FF0000'>-COMPUTING-</t>"];
+        _compText = _compText + format ["<br/><t align='center' color='#FF0000'>-%1-</t>", toUpper (localize "STR_AGM_Artillery_Computing")];
       } else {
-        _compText = _compText + format ["<br/><t align='left'>-CHARGE</t><t align='right'>%1</t>", _compDisplayCharge];
+        _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Charge"), _compDisplayCharge];
         if ((_mortarVeh getVariable ["AGM_Artillery_solutionTime", -1]) != -1) then {
-          _compText = _compText + format ["<br/><t align='left'>-ELEVATION</t><t align='right'>%1</t>", _compDisplayElev];
-          _compText = _compText + format ["<br/><t align='left'>-TIME</t><t align='right'>%1</t>", _compDisplayTime];
+          _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Elevation"), _compDisplayElev];
+          _compText = _compText + format ["<br/><t align='left'>-%1</t><t align='right'>%2</t>", toUpper (localize "STR_AGM_Artillery_Time"), _compDisplayTime];
         } else {
-          _compText = _compText + format ["<br/><t align='center' color='#FF0000'>--RANGE--</t>"];
-          _compText = _compText + format ["<br/><t align='center' color='#FF0000'>--RANGE--</t>"];
+          _compText = _compText + format ["<br/><t align='center' color='#FF0000'>--%1--</t>", toUpper (localize "STR_AGM_Artillery_Range")];
+          _compText = _compText + format ["<br/><t align='center' color='#FF0000'>--%1--</t>", toUpper (localize "STR_AGM_Artillery_Range")];
         };
       };
       CTRL_SOLUTIONCOMP_STRUCTEXT ctrlSetStructuredText parseText _compText;

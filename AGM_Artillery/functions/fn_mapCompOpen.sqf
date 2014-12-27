@@ -45,7 +45,7 @@ _muzzleVelocities = [];
   _showToPlayer = getNumber (configFile >> "CfgWeapons" >> _weaponName >> _x >> "showToPlayer");
   if (_showToPlayer == 1) then {
     _artilleryCharge = getNumber (configFile >> "CfgWeapons" >> _weaponName >> _x >> "artilleryCharge");
-    MAP_CHARGE_LISTBOX lbAdd format ["Charge %1 [%2m/s]", (count _muzzleVelocities), (_artilleryCharge * _ammoMaxSpeed)];
+    MAP_CHARGE_LISTBOX lbAdd format ["%1: %2 [%3m/s]", (localize "STR_AGM_Artillery_Charge"), (count _muzzleVelocities), (_artilleryCharge * _ammoMaxSpeed)];
     MAP_CHARGE_LISTBOX lbSetData [(count _muzzleVelocities), str (_artilleryCharge * _ammoMaxSpeed)];
     _muzzleVelocities pushBack (_artilleryCharge * _ammoMaxSpeed);
   };
