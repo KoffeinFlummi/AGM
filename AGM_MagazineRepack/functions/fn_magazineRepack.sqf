@@ -1,4 +1,4 @@
-// by commy2
+// by commy2, esteldunedain
 
 private ["_magazines", "_ammos", "_repackTime", "_magazine", "_ammo", "_count", "_index",   "_i", "_j", "_ammoToTransfer", "_ammoAvailable", "_ammoNeeded"];
 
@@ -23,7 +23,7 @@ _repackTime = [];
       _ammos set [_index, (_ammos select _index) + [_ammo]];
     };
   };
-} forEach magazinesAmmoFull player;
+} forEach magazinesAmmoFull AGM_player;
 
 // Remove invalid magazines
 {
@@ -41,9 +41,8 @@ _ammos     = _ammos     - [[-1]];
 
   // Sort Ascending
   _list = _x call BIS_fnc_sortNum;
-  if (!isNil "AGM_Debug" && {"MagazineRepack" in AGM_Debug}) then {
-    systemChat str _list;
-  };
+
+  ["MagazineRepack", _list] call AGM_Debug_fnc_log;
 
   _i = 0;
   _j = count _x - 1;
@@ -70,8 +69,6 @@ _ammos     = _ammos     - [[-1]];
   _repackTime set [_forEachIndex, _ammoToTransfer * AGM_MagazineRepack_TimePerAmmo + (count _x) * AGM_MagazineRepack_TimePerMagazine];
 } forEach _ammos;
 
-if (!isNil "AGM_Debug" && {"MagazineRepack" in AGM_Debug}) then {
-  systemChat str _magazines;
-  systemChat str _repackTime;
-};
+["MagazineRepack", [_magazines, _repackTime]] call AGM_Debug_fnc_log;
+
 [_magazines, _repackTime] call AGM_MagazineRepack_fnc_openSelectMagazineUI;

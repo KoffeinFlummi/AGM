@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="AGM">
+  <Package name="PMC">
+
+    <Key ID="STR_AGM_PMC_Faction">
+      <English>Private Military Company</English>
+      <Czech>Private Military Company</Czech>
+      <French>Private Military Company</French>
+      <German>Private Military Company</German>
+      <Italian>Private Military Company</Italian>
+      <Polish>Private Military Company</Polish>
+      <Portuguese>Private Military Company</Portuguese>
+      <Russian>Private Military Company</Russian>
+      <Spanish>Private Military Company</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Soldier">
+      <English>Rifleman</English>
+      <Czech>Střelec</Czech>
+      <French>Fusilier</French>
+      <German>Schütze</German>
+      <Italian>Fuciliere</Italian>
+      <Polish>Strzelec</Polish>
+      <Portuguese>Fuzileiro</Portuguese>
+      <Russian>Стрелок</Russian>
+      <Spanish>Fusilero</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_lite">
+      <English>Rifleman (Light)</English>
+      <Czech>Střelec (lehká výstroj)</Czech>
+      <French>Fusilier (léger)</French>
+      <German>Schütze (leicht)</German>
+      <Italian>Fuciliere (leggero)</Italian>
+      <Polish>Strzelec (lekki)</Polish>
+      <Portuguese>Fuzileiro (leve)</Portuguese>
+      <Russian>Стрелок (легк.)</Russian>
+      <Spanish>Fusilero (ligero)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_SL">
+      <English>Squad Leader</English>
+      <Czech>Velitel družstva</Czech>
+      <French>Chef d'escouade</French>
+      <German>Truppführer</German>
+      <Italian>Caposquadra</Italian>
+      <Polish>Dowódca drużyny</Polish>
+      <Portuguese>Líder do grupo de combate</Portuguese>
+      <Russian>Командир отделения</Russian>
+      <Spanish>Líder de pelotón</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_TL">
+      <English>Team Leader</English>
+      <Czech>Velitel týmu</Czech>
+      <French>Chef d'équipe</French>
+      <German>Teamleader</German>
+      <Italian>Capogruppo</Italian>
+      <Polish>Dowódca zespołu</Polish>
+      <Portuguese>Líder da equipe</Portuguese>
+      <Russian>Командир звена</Russian>
+      <Spanish>Líder de equipo</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_AR">
+      <English>Autorifleman</English>
+      <Czech>Kulometčík</Czech>
+      <French>Fusilier auto</French>
+      <German>Automatik-Schütze</German>
+      <Italian>Fuciliere di supporto</Italian>
+      <Polish>Strzelec rkm</Polish>
+      <Portuguese>Fuzileiro automático</Portuguese>
+      <Russian>Пулеметчик</Russian>
+      <Spanish>Fusilero automático</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_medic">
+      <English>Combat Life Saver</English>
+      <Czech>Zdravotník</Czech>
+      <French>Infirmier</French>
+      <German>Sanitäter</German>
+      <Italian>Medico</Italian>
+      <Polish>Medyk</Polish>
+      <Portuguese>Combatente Salva-Vidas</Portuguese>
+      <Russian>Медик</Russian>
+      <Spanish>Médico</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_engineer">
+      <English>Engineer</English>
+      <Czech>Ženista</Czech>
+      <French>Sapeur</French>
+      <German>Ingenieur</German>
+      <Italian>Ingegnere</Italian>
+      <Polish>Saper</Polish>
+      <Portuguese>Engenheiro</Portuguese>
+      <Russian>Инженер</Russian>
+      <Spanish>Ingeniero</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_exp">
+      <English>Explosive Specialist</English>
+      <Czech>Specialista na výbušniny</Czech>
+      <French>Démolisseur</French>
+      <German>Sprengmeister</German>
+      <Italian>Specialista esplosivi</Italian>
+      <Polish>Miner</Polish>
+      <Portuguese>Especialista em explosivos</Portuguese>
+      <Russian>Сапер</Russian>
+      <Spanish>Especialista en explosivos</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_GL">
+      <English>Grenadier</English>
+      <Czech>Granátometčík</Czech>
+      <French>Grenadier</French>
+      <German>Grenadier</German>
+      <Italian>Granatiere</Italian>
+      <Polish>Grenadier</Polish>
+      <Portuguese>Granadeiro</Portuguese>
+      <Russian>Гренадер</Russian>
+      <Spanish>Granadero</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_M">
+      <English>Marksman</English>
+      <Czech>Ostrostřelec</Czech>
+      <French>Tireur d'élite</French>
+      <German>Scharfschütze</German>
+      <Italian>Tiratore scelto</Italian>
+      <Polish>Strzelec wyborowy</Polish>
+      <Portuguese>Atirador de elite</Portuguese>
+      <Russian>Снайпер</Russian>
+      <Spanish>Tirador</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_sniper">
+      <English>Sniper</English>
+      <Czech>Odstřelovač</Czech>
+      <French>Sniper</French>
+      <German>Sniper</German>
+      <Italian>Cecchino</Italian>
+      <Polish>Snajper</Polish>
+      <Portuguese>Atirador de elite</Portuguese>
+      <Russian>Снайпер</Russian>
+      <Spanish>Francotirador</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_AT">
+      <English>Rifleman (AT)</English>
+      <Czech>Střelec (protitankový)</Czech>
+      <French>Fusilier (AC)</French>
+      <German>Schütze (Panzerabwehr)</German>
+      <Italian>Fuciliere (AC)</Italian>
+      <Polish>Strzelec (ppanc)</Polish>
+      <Portuguese>Fuzileiro (AT)</Portuguese>
+      <Russian>Стрелок (ПТ)</Russian>
+      <Spanish>Fusilero (AT)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_ammo">
+      <English>Ammo Bearer</English>
+      <Czech>Nosič munice</Czech>
+      <French>Préposé aux munitions</French>
+      <German>Munitionsträger</German>
+      <Italian>Porta-munizioni</Italian>
+      <Polish>Amunicyjny</Polish>
+      <Portuguese>Portador de munição</Portuguese>
+      <Russian>Подносчик боеприпасов</Russian>
+      <Spanish>Portador de munición</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Soldier_Officer">
+      <English>Officer</English>
+      <Czech>Důstojník</Czech>
+      <French>Officier</French>
+      <German>Offizier</German>
+      <Italian>Ufficiale</Italian>
+      <Polish>Oficer</Polish>
+      <Portuguese>Oficial</Portuguese>
+      <Russian>Офицер</Russian>
+      <Spanish>Oficial</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Vehicle_SUV">
+      <English>SUV</English>
+      <Czech>SUV</Czech>
+      <French>SUV</French>
+      <German>SUV</German>
+      <Italian>SUV</Italian>
+      <Polish>SUV</Polish>
+      <Portuguese>SUV</Portuguese>
+      <Russian>Внедорожник</Russian>
+      <Spanish>Todoterreno</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Groups">
+      <English>PMC</English>
+      <Czech>PMC</Czech>
+      <French>PMC</French>
+      <German>PMC</German>
+      <Italian>PMC</Italian>
+      <Polish>PMC</Polish>
+      <Portuguese>PMC</Portuguese>
+      <Russian>PMC</Russian>
+      <Spanish>PMC</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Infantry">
+      <English>Infantry</English>
+      <Czech>Pěchota</Czech>
+      <French>Infanterie</French>
+      <German>Infanterie</German>
+      <Italian>Fanteria</Italian>
+      <Polish>Piechota</Polish>
+      <Portuguese>Infantaria</Portuguese>
+      <Russian>Пехота</Russian>
+      <Spanish>Infantería</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_InfSquad">
+      <English>Rifle Squad</English>
+      <Czech>Družstvo střelců</Czech>
+      <French>Escouade de fusiliers</French>
+      <German>Gewehrtrupp</German>
+      <Italian>Squadra di fucilieri</Italian>
+      <Polish>Drużyna piechoty</Polish>
+      <Portuguese>Grupo de combate de fuzileiros</Portuguese>
+      <Russian>Стрелковое отделение</Russian>
+      <Spanish>Pelotón de fusiles</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_InfSquad_Weapons">
+      <English>Weapons Squad</English>
+      <Czech>Družstvo palebné podpory</Czech>
+      <French>Escouade d'assaut</French>
+      <German>Waffentrupp</German>
+      <Italian>Squadra d'armi</Italian>
+      <Polish>Drużyna broni</Polish>
+      <Portuguese>Grupo de combate de armas</Portuguese>
+      <Russian>Отделение тяж. оружия</Russian>
+      <Spanish>Pelotón de armas</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_InfTeam">
+      <English>Fire Team</English>
+      <Czech>Tým</Czech>
+      <French>Unité</French>
+      <German>Feuerteam</German>
+      <Italian>Squadra di fuoco</Italian>
+      <Polish>Zespół ogniowy</Polish>
+      <Portuguese>Equipe de fogo</Portuguese>
+      <Russian>Огневая группа</Russian>
+      <Spanish>Equipo de fuego</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_InfTeam_AT">
+      <English>Anti-armor Team</English>
+      <Czech>Protipancéřový tým</Czech>
+      <French>Équipe anti-blindés</French>
+      <German>Panzerabwehrteam</German>
+      <Italian>Squadra anti-blindati</Italian>
+      <Polish>Sekcja przeciwpancerna</Polish>
+      <Portuguese>Equipe antiblindagem</Portuguese>
+      <Russian>Противотанковая группа</Russian>
+      <Spanish>Equipo antiblindados</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_ReconTeam">
+      <English>Recon Team</English>
+      <Czech>Průzkumný tým</Czech>
+      <French>Équipe reco</French>
+      <German>Spähteam</German>
+      <Italian>Squadra ricognitori</Italian>
+      <Polish>Drużyna zwiadu</Polish>
+      <Portuguese>Equipe de reconhecimento</Portuguese>
+      <Russian>Разведгруппа</Russian>
+      <Spanish>Equipo de reconocimiento</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_SniperTeam">
+      <English>Sniper Team</English>
+      <Czech>Odstřelovačský tým</Czech>
+      <French>Équipe de snipers</French>
+      <German>Sniper-Team</German>
+      <Italian>Squadra di cecchini</Italian>
+      <Polish>Dwójka snajperska</Polish>
+      <Portuguese>Equipe de franco-atiradores</Portuguese>
+      <Russian>Снайперская группа</Russian>
+      <Spanish>Equipo de francotiradores</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Support">
+      <English>Support Infantry</English>
+      <Czech>Podpůrná pěchota</Czech>
+      <French>Équipe d'appui</French>
+      <German>Unterstützungsinfanterie</German>
+      <Italian>Fanteria di supporto</Italian>
+      <Polish>Piechota wsparcia</Polish>
+      <Portuguese>Infantaria de apoio</Portuguese>
+      <Russian>Пехота поддержки</Russian>
+      <Spanish>Infantería de apoyo</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Support_CLS">
+      <English>Support Team (CLS)</English>
+      <Czech>Podpůrný tým (zdravotník)</Czech>
+      <French>Équipe d'appui (CLS)</French>
+      <German>Unterstützungsteam (Militärsani)</German>
+      <Italian>Squadra di supporto (soccorritori)</Italian>
+      <Polish>Sekcja wsparcia (CLS)</Polish>
+      <Portuguese>Equipe de apoio (CLS)</Portuguese>
+      <Russian>Группа поддержки (санитар)</Russian>
+      <Spanish>Pelotón de apoyo (médicos)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Support_EOD">
+      <English>Support Team (EOD)</English>
+      <Czech>Podpůrný tým (pyrotechnik)</Czech>
+      <French>Équipe d'appui (EOD)</French>
+      <German>Unterstützungsteam (Entschärfungstrupp)</German>
+      <Italian>Squadra di supporto (artificieri)</Italian>
+      <Polish>Sekcja wsparcia (EOD)</Polish>
+      <Portuguese>Equipe de apoio (DOE)</Portuguese>
+      <Russian>Группа поддержки (сапер)</Russian>
+      <Spanish>Pelotón de apoyo (explosivos)</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Support_ENG">
+      <English>Support Team (Engineer)</English>
+      <Czech>Podpůrný tým (ženista)</Czech>
+      <French>Équipe d'appui (sapeur)</French>
+      <German>Unterstützungsteam (Ingenieur)</German>
+      <Italian>Squadra di supporto (genieri)</Italian>
+      <Polish>Sekcja wsparcia (saper)</Polish>
+      <Portuguese>Equipe de apoio (engenheiro)</Portuguese>
+      <Russian>Группа поддержки (инженер)</Russian>
+      <Spanish>Pelotón de apoyo (ingeniería)</Spanish>
+    </Key>
+
+    <Key ID="STR_AGM_PMC_Motorized_MTP">
+      <English>Motorized Infantry</English>
+      <Czech>Motorizovaná pěchota</Czech>
+      <French>Infanterie motorisée</French>
+      <German>Motorisierte Infanterie</German>
+      <Italian>Fanteria motorizzata</Italian>
+      <Polish>Zmotoryzowana piechota</Polish>
+      <Portuguese>Infantaria motorizada</Portuguese>
+      <Russian>Мотопехота</Russian>
+      <Spanish>Infantería motorizada</Spanish>
+    </Key>
+    <Key ID="STR_AGM_PMC_Motorized_MTP_MotInfTeam">
+      <English>Motorized Patrol</English>
+      <Czech>Motorizovaná hlídka</Czech>
+      <French>Patrouille motorisée</French>
+      <German>Motorisierte Patrouille</German>
+      <Italian>Pattuglia motorizzata</Italian>
+      <Polish>Zmotoryzowany patrol</Polish>
+      <Portuguese>Patrulha motorizada</Portuguese>
+      <Russian>Моторизованный патруль</Russian>
+      <Spanish>Patrulla motorizada</Spanish>
+    </Key>
+
+  </Package>
+</Project>

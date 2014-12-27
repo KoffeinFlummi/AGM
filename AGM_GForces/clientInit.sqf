@@ -69,9 +69,7 @@ AGM_GForces_CC ppEffectCommit 0.4;
       getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef")];
     _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform _player) >> "AGM_GForceCoef");
 
-    if (!isNil "AGM_Debug" and {"GForces" in AGM_Debug}) then {
-      hintSilent format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _average, _average * _upTolerance];
-    };
+    ["GForces", [_average, _upTolerance], {format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _this select 0, (_this select 0) * (_this select 1)]}] call AGM_Debug_fnc_log;
 
     if (((_average * _upTolerance) > MAXVIRTUALG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_isUnconscious", false])}}) then {
       [_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;

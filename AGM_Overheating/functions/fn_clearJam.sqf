@@ -14,11 +14,12 @@ if (_weapon in _jammedWeapons) then {
   _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 
   if (count _jammedWeapons == 0) then {
-    private "_actionID";
+    private "_id";
 
-    _actionID = _unit getVariable ["AGM_JammingActionID", -1];
-    //_unit removeAction _actionID;
-    [_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionMenuEventHandler;
+    _id = _unit getVariable ["AGM_JammingActionID", -1];
+    //_unit removeAction _id;
+    //[_unit, "DefaultAction", _id] call AGM_Core_fnc_removeActionMenuEventHandler;
+    [_unit, "DefaultAction", _id] call AGM_Core_fnc_removeActionEventHandler;
     _unit setVariable ["AGM_JammingActionID", -1];
   };
 

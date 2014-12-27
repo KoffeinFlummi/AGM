@@ -56,9 +56,6 @@ _camshake = [
   BASE_FREQ + _freqMod max 0
 ];
 
-if (!isNil "AGM_Debug" && {"Recoil" in AGM_Debug}) then {
-  systemChat str _camshake;
-  copyToClipboard format ["addCamShake %1;", _camshake];
-};
+["CamShake", _camshake, {copyToClipboard format ["addCamShake %1;", _this]; _this}] call AGM_Debug_fnc_log;
 
 addCamShake _camshake;

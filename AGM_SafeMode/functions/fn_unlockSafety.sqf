@@ -14,10 +14,11 @@ if (_weapon in _safedWeapons) then {
   _unit setVariable ["AGM_SafeMode_safedWeapons", _safedWeapons];
 
   if (count _safedWeapons == 0) then {
-    private "_actionID";
-    _actionID = _unit getVariable ["AGM_SafeWeapon_actionID", -1];
+    private "_id";
+    _id = _unit getVariable ["AGM_SafeWeapon_actionID", -1];
 
-    [_unit, "DefaultAction", _actionID] call AGM_Core_fnc_removeActionMenuEventHandler;
+    //[_unit, "DefaultAction", _id] call AGM_Core_fnc_removeActionMenuEventHandler;
+    [_unit, "DefaultAction", _id] call AGM_Core_fnc_removeActionEventHandler;
     _unit setVariable ["AGM_SafeWeapon_actionID", -1];
   };
 };

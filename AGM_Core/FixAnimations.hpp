@@ -3,7 +3,6 @@ class CfgMovesBasic;
 class CfgMovesMaleSdr: CfgMovesBasic {
   class AgonyBase;
   class AgonyBaseRfl;
-  class Default;
   class StandBase;
 
   class States {
@@ -31,10 +30,6 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 
     class LadderCivilStatic: StandBase {
       AGM_isLadder = 1;
-    };
-
-    class Unconscious: Default {
-      ConnectTo[] = {};
     };
   };
 };

@@ -21,9 +21,7 @@ AGM_UpdatePlayerFatigue_EHID = ["AGM_UpdatePlayerFatigue", "onEachFrame", {
   _player setFatigue _fatigue;
   _player setVariable ["AGM_Fatigue", _fatigue];
 
-  if (!isNil "AGM_Debug" && {"Fatigue" in AGM_Debug}) then {
-    hintSilent str getFatigue _player;
-  };
+  ["Fatigue", _player, {getFatigue _this}] call AGM_Debug_fnc_log;
 }] call BIS_fnc_addStackedEventHandler;
 
 // init script ehids

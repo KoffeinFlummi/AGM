@@ -36,7 +36,7 @@ _unit setVariable ["AGM_Overheating_jammedWeapons", _jammedWeapons];
 AGM_Overheating_knowAboutJam = false;
 
 if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
-  private ["_condition", "_statement", "_condition2", "_statement2", "_actionID"];
+  private ["_condition", "_statement", "_condition2", "_statement2", "_id"];
 
   _condition = {
     [_this select 1] call AGM_Core_fnc_canUseWeapon
@@ -61,7 +61,8 @@ if (_unit getVariable ["AGM_JammingActionID", -1] == -1) then {
     [_this select 1, currentWeapon (_this select 1), false] call AGM_Overheating_fnc_clearJam;
   };
 
-  _actionID = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_Overheating_UnjamWeapon"], "DefaultAction", _condition, _statement, _condition2, _statement2, 10] call AGM_Core_fnc_addActionMenuEventHandler;//
+  //_id = [_unit, format ["<t color=""#FFFF00"" >%1</t>", localize "STR_AGM_Overheating_UnjamWeapon"], "DefaultAction", _condition, _statement, _condition2, _statement2, 10] call AGM_Core_fnc_addActionMenuEventHandler;
+  _id = [_unit, "DefaultAction", _condition, _statement] call AGM_Core_fnc_addActionEventHandler;
 
-  _unit setVariable ["AGM_JammingActionID", _actionID];
+  _unit setVariable ["AGM_JammingActionID", _id];
 };

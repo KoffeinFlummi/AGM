@@ -216,6 +216,7 @@ class CfgMagazines {
   };
 
   class AGM_30Rnd_65x39_caseless_mag_Tracer_Dim : 30Rnd_65x39_caseless_mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort";
@@ -223,6 +224,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_caseless_yellow_CA.paa";
   };
   class AGM_30Rnd_65x39_caseless_mag_SD : 30Rnd_65x39_caseless_mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_SD";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort";
@@ -231,6 +233,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_30Rnd_65x39_caseless_mag_AP : 30Rnd_65x39_caseless_mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_AP";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_APNameShort";
@@ -249,12 +252,14 @@ class CfgMagazines {
   };
 
   class AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim : 30Rnd_65x39_caseless_green_mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimNameShort";
     descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimDescription";
   };
   class AGM_30Rnd_65x39_caseless_green_mag_SD : 30Rnd_65x39_caseless_green {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_SD";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDNameShort";
@@ -262,6 +267,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_30Rnd_65x39_caseless_green_mag_AP : 30Rnd_65x39_caseless_green {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_AP";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APNameShort";
@@ -277,6 +283,7 @@ class CfgMagazines {
   class 30Rnd_556x45_Stanag_Tracer_Red; //picture = "\A3\weapons_f\data\ui\m_30stanag_red_ca.paa";
 
   class AGM_30Rnd_556x45_Stanag_Tracer_Dim : 30Rnd_556x45_Stanag_Tracer_Red {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimNameShort";
@@ -284,6 +291,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_yellow_ca.paa";
   };
   class AGM_30Rnd_556x45_Stanag_SD : 30Rnd_556x45_Stanag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_SD";
     displayName = "$STR_AGM_30Rnd_556x45_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_SDNameShort";
@@ -292,6 +300,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_green_ca.paa";
   };
   class AGM_30Rnd_556x45_Stanag_AP : 30Rnd_556x45_Stanag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_AP";
     displayName = "$STR_AGM_30Rnd_556x45_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_APNameShort";
@@ -312,6 +321,7 @@ class CfgMagazines {
   };
 
   class AGM_20Rnd_762x51_Mag_Tracer : 20Rnd_762x51_Mag {  //@todo Green tracers for opfor and yellow tracers for independent
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "B_762x51_Tracer_Red";
     displayName = "$STR_AGM_20Rnd_762x51_mag_TracerName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_TracerNameShort";
@@ -319,12 +329,14 @@ class CfgMagazines {
     tracersEvery = 1;
   };
   class AGM_20Rnd_762x51_Mag_Tracer_Dim : AGM_20Rnd_762x51_Mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Tracer_Dim";
     displayName = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimNameShort";
     descriptionShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimDescription";
   };
   class AGM_20Rnd_762x51_Mag_SD : 20Rnd_762x51_Mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Ball_SD";
     displayName = "$STR_AGM_20Rnd_762x51_mag_SDName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_SDNameShort";
@@ -332,6 +344,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_20Rnd_762x51_Mag_AP : 20Rnd_762x51_Mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Ball_AP";
     displayName = "$STR_AGM_20Rnd_762x51_mag_APName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_APNameShort";

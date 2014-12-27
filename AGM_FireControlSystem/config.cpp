@@ -822,6 +822,12 @@ class CfgWeapons {
     canLock = 0;
     ballisticsComputer = 0;
   };*/
+
+  // fix mrco having an invisible rangefinder
+  class ItemCore;
+  class optic_MRCO: ItemCore {
+    weaponInfoType = "RscWeaponZeroing";
+  };
 };
 
 class CfgMagazines {
