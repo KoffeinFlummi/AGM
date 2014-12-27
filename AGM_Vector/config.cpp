@@ -73,6 +73,7 @@ class AGM_Core_Default_Keys {
 class CfgWeapons {
   class Binocular;
   class AGM_Vector: Binocular {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Vector_VectorName";
     descriptionShort = "$STR_AGM_Vector_VectorDescription";
     model = "\AGM_Vector\agm_vector.p3d";
