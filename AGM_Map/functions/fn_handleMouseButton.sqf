@@ -48,6 +48,8 @@ if (_dir == 1) exitWith {
     if (AGM_Map_syncMarkers) then {
       deleteMarkerLocal (AGM_Map_tempLineMarker select 0);
       [AGM_Map_tempLineMarker, "AGM_Map_fnc_addLineMarker", 2] call AGM_Core_fnc_execRemoteFnc;
+      // Log who drew on the briefing screen
+      (text format ["[AGM] Server: Player %1 drew on the briefing screen", name player]) call AGM_Core_fnc_serverLog;
     } else {
       AGM_Map_tempLineMarker call AGM_Map_fnc_updateLineMarker;
       AGM_Map_lineMarkers pushBack (+AGM_Map_tempLineMarker);

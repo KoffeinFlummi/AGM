@@ -608,6 +608,7 @@ class CfgFunctions {
       class restoreVariablesJIP;
       class revertKeyCodeLocalized;
       class sanitizeString;
+      class serverLog;
       class setCaptivityStatus;
       class setForceWalkStatus;
       class setKeyDefault;
