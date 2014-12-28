@@ -20,6 +20,6 @@ _this spawn {
       closeDialog 0;
       call AGM_Interaction_fnc_hideMenu;
     };
-    (isNil "AGM_Interaction_MainButton" && !dialog)
+    (isNil "AGM_Interaction_MainButton" && !dialog) || {!isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])} //Exit loop if DisableMouse dialog open
   };
 };

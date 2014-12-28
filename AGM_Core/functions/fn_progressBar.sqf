@@ -41,7 +41,8 @@ _this spawn {
 
   _time = time + _time;
   waitUntil {
-    !dialog || {!alive AGM_player} || {time > _time}
+    //make sure the progressBar is still open, not just any dialog
+    (isNull (uiNamespace getVariable ["AGM_Core_ctrlProgressBar", controlNull])) || {!alive AGM_player} || {time > _time}
   };
 
   closeDialog 0;
