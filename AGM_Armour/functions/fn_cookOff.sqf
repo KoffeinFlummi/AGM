@@ -124,7 +124,7 @@ _this spawn {
   [_smokes, {deleteVehicle _this}] call AGM_Core_fnc_map;
   [_fires, {deleteVehicle _this}] call AGM_Core_fnc_map;
   deleteVehicle _light;
-  deleteVehicle _sound;
+  _sound setPosASL [-10000, -10000, 1000]; //deleteVehicle _sound;
 
   (_this select 0) setVariable ["AGM_Armour_isCookingOff", False];
   if (local _vehicle and damage _vehicle < 1) then {
