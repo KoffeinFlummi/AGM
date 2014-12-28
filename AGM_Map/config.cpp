@@ -413,6 +413,7 @@ class CfgMarkers {
 
 class AGM_Parameters {
   AGM_Map_BFT_Interval = 1;
+  AGM_Map_EveryoneCanDrawOnBriefing = 1;
 };
 
 #include "MapGpsUI.hpp"
