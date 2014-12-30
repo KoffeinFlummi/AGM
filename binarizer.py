@@ -31,6 +31,7 @@ import subprocess
 import winreg
 import threading
 import time
+import csv
 
 PROJECTNAME = "AGM"
 AUTHORS = ["KoffeinFlummi", "sutt0n"]
@@ -243,11 +244,22 @@ class Binarizer:
       print(", ".join(newmodules))
       return len(newmodules)
 
+def get_processes():
+  tasklist = subprocess.Popen("tasklist.exe /fo csv", stdout=subprocess.PIPE, universal_newlines=True)
+  tasklist = tasklist.stdout.read()
+  tasklist = tasklist.split("\n")
+  tasklist = list(map(lambda x: x.split(",")[0][1:-1].lower(), tasklist))
+  tasklist = list(filter(lambda x: x[-4:] == ".exe", tasklist))
+  return tasklist
+
 def main():
   if getattr(sys, "frozen", False):
     scriptpath = os.path.dirname(sys.executable)
   else:
     scriptpath = os.path.realpath(__file__)
+
+  if "steam.exe" not in get_processes():
+    print("WARNING: Steam is not running. Build will most likely fail.\n")
 
   print("{} Binarizer".format(PROJECTNAME))
   print("Authors: {}".format(", ".join(AUTHORS)))
