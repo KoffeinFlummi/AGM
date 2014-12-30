@@ -37,10 +37,13 @@ if (count _this > 2) then {
   _inPlace = _this select 2;
 };
 
+if (typeName _pos == "STRING") then {
+  _pos = _vehicle selectionPosition _pos;
+};
+
 _posWorld = _vehicle modelToWorld _pos;
 
 // modelToWorld seems to ignore buildings; let's fix that.
-diag_log ((getPosATL _vehicle) vectorDiff (getPos _vehicle));
 _posWorld = _posWorld vectorDiff ((getPosATL _vehicle) vectorDiff (getPos _vehicle));
 _posWorld set [2, (_posWorld select 2) - OFFSET];
 
