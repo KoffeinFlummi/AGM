@@ -10,7 +10,7 @@ AGM_Unconscious_CC ppEffectAdjust [1,1,0, [0,0,0,1], [0,0,0,0], [1,1,1,1], [0.4,
 AGM_Unconscious_CC ppEffectCommit 0;
 AGM_Unconscious_RB = ppEffectCreate ["RadialBlur", 4207];
 AGM_Unconscious_RB ppEffectForceInNVG True;
-AGM_Unconscious_RB ppEffectAdjust [0.4, 0.4, 0, 0];
+AGM_Unconscious_RB ppEffectAdjust [0.01, 0.01, 0, 0];
 AGM_Unconscious_RB ppEffectCommit 0;
 AGM_Blinding_CC = ppEffectCreate ["ColorCorrections", 4211];
 AGM_Blinding_CC ppEffectForceInNVG True;
