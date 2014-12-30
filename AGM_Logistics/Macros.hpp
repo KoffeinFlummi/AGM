@@ -114,6 +114,17 @@
 		icon = "AGM_Logistics\ui\rotate_ccw_ca.paa"; \
 	};
 
+#define MACRO_NOT_GETINABLE_STATIC \
+	class AGM_GetIn { \
+		condition = "false"; \
+	}; \
+	class AGM_RotateClockwise { \
+		condition = "false"; \
+	}; \
+	class AGM_RotateCounterclockwise { \
+		condition = "false"; \
+	}; \
+
 #define MACRO_CUTWIRE \
 	class AGM_Wirecutter_cut { \
 		displayName = "$STR_AGM_CutFence"; \

@@ -734,6 +734,15 @@ class CfgVehicles {
       MACRO_LOADABLE
     };
   };
+  
+  //remove actions from Taru Pods
+  class Pod_Heli_Transport_04_base_F: StaticWeapon {
+    class AGM_Actions: AGM_Actions {
+      MACRO_NOT_DRAGABLE
+      MACRO_NOT_GETINABLE_STATIC
+      MACRO_NOT_LOADABLE
+    };
+  };
 
   class StaticMortar;
   class Mortar_01_base_F: StaticMortar {
