@@ -764,6 +764,12 @@ class CfgVehicles {
     };
   };
 
+  class Slingload_base_F: ReammoBox_F {
+    class AGM_Actions: AGM_Actions {
+      MACRO_NOT_LOADABLE
+    };
+  };
+
   class EAST_Box_Base: ReammoBox_F {
     class AGM_Actions: AGM_Actions {
       MACRO_DRAGABLE
