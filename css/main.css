@@ -1,0 +1,122 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext);
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  padding-top: 0;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.navbar-brand, h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.navbar-brand {
+  text-transform: uppercase;
+}
+nav {
+  transform: translateZ(0);
+}
+.navbar-toggle {
+  border: 1px solid #c8c8c8;
+}
+.navbar-toggle .icon-bar {
+  background: #c8c8c8;
+}
+
+.page {
+  min-height: 100vh;
+}
+.white {
+  color: #333;
+}
+.page h1 {
+  margin-top: 150px;
+}
+.page h2 {
+  margin-top: 100px;
+}
+
+.bgwrapper {
+  position: relative;
+  overflow: hidden;
+}
+.parallaxwrapper {
+  position: absolute;
+  top: -20px; right: -20px; bottom: -20px; left: -20px;
+  z-index: -2;
+  overflow: hidden;
+  background: #000;
+}
+.white .parallaxwrapper {
+  background: #FFF;
+}
+.parallax {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter:         blur(15px);
+  -webkit-filter: blur(15px);
+  -moz-filter:    blur(15px);
+  -o-filter:      blur(15px);
+  -ms-filter:     blur(15px);
+  opacity: 0.4;
+}
+
+.pre-scrollable {
+  max-height: 600px;
+  overflow: auto;
+  padding: 20px;
+  border: 1px solid #0c0d0e;
+  background-color: #1c1e22;
+  color: #d8d8d8;
+}
+
+.row.icons {
+  margin-bottom: 30px;
+}
+.row.icons .col-md-4 {
+  text-align: center;
+}
+.row.icons p.icon {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  font-size: 60px;
+  padding: 15px;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+}
+.row.icons p:last-of-type {
+  text-align: left;
+}
+
+#home .row:first-of-type {
+  text-align: center;
+  margin-top: 150px;
+}
+#home h1 {
+  text-align: center;
+  font-size: 62px;
+}
+#home .row.icons {
+  margin-top: 150px;
+  padding-top: 50px;
+  border-top: 1px solid #333;
+}
+
+.github-ribbon img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  z-index: 9001;
+}
+@media (max-width: 991px) {
+  .github-ribbon {
+    display: none;
+  }
+}
