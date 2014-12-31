@@ -19,6 +19,8 @@ class CfgFunctions {
       class canFriskPerson;
       class canLoadCaptive;
       class canUnloadCaptive;
+      class disarmCallback;
+      class disarmUnit;
       class escortCaptive;
       class handleGetOut;
       class handleKnockedOut;
@@ -165,6 +167,14 @@ class CfgVehicles {
         //icon = "";  //@todo
         priority = 3;
         hotkey = "F";
+      };
+      class AGM_Disarm {
+        displayName = "$STR_AGM_Captives_Disarm";
+        distance = 4;
+        condition = "[_player, _target] call AGM_Captives_fnc_canFriskPerson"; //todo?
+        statement = "[_target, _player] call AGM_Captives_fnc_disarmUnit";
+        showDisabled = 0;
+        priority = 1.5;
       };
     };
 

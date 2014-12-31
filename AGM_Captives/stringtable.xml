@@ -126,5 +126,8 @@
       <Hungarian>Motozás</Hungarian>
       <Russian>Обыскать человека</Russian>
     </Key>
+    <Key ID="STR_AGM_Captives_Disarm">
+       <English>Disarm</English>
+    </Key>
   </Package>
 </Project>
