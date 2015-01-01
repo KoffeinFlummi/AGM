@@ -6,7 +6,7 @@ _medic = _this select 0;
 _patient = _this select 1;
 _task = _this select 2;
 
-if ([_medic] call AGM_Core_fnc_isPlayer || {!alive _medic} || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]}) exitWith {false};
+if ([_medic] call AGM_Core_fnc_isPlayer || {!alive _medic} || {!alive _patient} || {_medic getVariable ["AGM_isUnconscious", false]} || {_medic getVariable ["AGM_isCaptive", false]}) exitWith {false};
 
 private "_result";
 _result = false;
