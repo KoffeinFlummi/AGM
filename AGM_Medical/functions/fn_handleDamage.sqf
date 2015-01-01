@@ -274,7 +274,7 @@ if ((_unit getVariable "AGM_Medical_PreventDeath") and {vehicle _unit != _unit} 
 if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
   if (_damage > 0.89) then {
     _damage = 0.89;
-    [_unit, "AGM_preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
+    [_unit, "preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
   };
 };
 

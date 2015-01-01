@@ -54,7 +54,7 @@ if (vehicle _unit == _unit) then {
 
 [_unit, _unit getVariable "AGM_OriginalAnim", 2, True] call AGM_Core_fnc_doAnimation;
 
-[_unit, "AGM_wokeUp", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
+[_unit, "wokeUp", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
 
 if !(scriptDone (_unit getVariable "AGM_UnconsciousnessTimer")) then {
   terminate (_unit getVariable "AGM_UnconsciousnessTimer");
