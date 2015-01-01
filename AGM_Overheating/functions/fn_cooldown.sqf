@@ -37,7 +37,7 @@ while {true} do {
                   - 273.15 * 273.15 * 273.15 *273.15 )
                   ) * _deltaTime / (_barrelMass * 466);
 
-  if (_temperature < 0) exitWith {0};
+  if (_temperature < 1) exitWith {0};
 
   if (isNil "_temperature") exitWith {
     diag_log text format ["[AGM] ERROR: _totalTime = %1; _time = %2; _deltaTime = %3;", _totalTime, _time, _deltaTime];
