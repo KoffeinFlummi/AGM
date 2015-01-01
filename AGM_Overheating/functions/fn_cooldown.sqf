@@ -18,6 +18,9 @@ _temperature = _this select 0;
 _barrelMass  = _this select 1;
 _totalTime   = _this select 2;
 
+// If a long time passed since the last shot, there's no need to calculate anything; the weapon should be cool
+if (_totalTime > 1800) exitWith {0};
+
 _barrelSurface = _barrelMass / 7850 / 0.003;
 
 _time = 0;
