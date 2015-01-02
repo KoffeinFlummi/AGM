@@ -14,14 +14,14 @@
 0 spawn {
   _layer = ["AGM_Scope_Zeroing"] call BIS_fnc_rscLayer;
   while {True} do {
-    waitUntil {[0,0] call AGM_Scopes_fnc_canAdjustScope};
+    waitUntil {[AGM_player, 0,0] call AGM_Scopes_fnc_canAdjustScope};
     _layer cutRsc ["AGM_Scope_Zeroing", "PLAIN", 0, false];
     sleep 3;
     _layer cutFadeOut 2;
 
     _weapon = currentWeapon AGM_player;
-    _optics = [] call AGM_Scopes_fnc_getOptics;
-    waitUntil {sleep 0.05; !(_optics isEqualTo ([] call AGM_Scopes_fnc_getOptics)) or (currentWeapon AGM_player != _weapon)};
+    _optics = [AGM_player] call AGM_Scopes_fnc_getOptics;
+    waitUntil {sleep 0.05; !(_optics isEqualTo ([AGM_player] call AGM_Scopes_fnc_getOptics)) or (currentWeapon AGM_player != _weapon)};
   };
 };
 
