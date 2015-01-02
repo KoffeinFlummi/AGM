@@ -28,7 +28,7 @@ class CfgFunctions {
 
 class Extended_PostInit_EventHandlers {
   class AGM_Scopes {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_SafeMode\clientInit.sqf';";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Scopes\clientInit.sqf';";
   };
 };
 
