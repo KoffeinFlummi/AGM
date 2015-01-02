@@ -9,6 +9,7 @@
  * Return Value:
  * None
  */
+AGM_Scopes_fadeScript = scriptNull;
 
 // show overlay after changing weapon/optic
 0 spawn {
