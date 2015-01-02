@@ -34,7 +34,7 @@ _sidesToShow spawn {
 
     // create markers
     {
-      if ([_x] call AGM_SwitchUnits_fnc_isValidAi && (side group _x in _sides)) then {
+      if (([_x] call AGM_SwitchUnits_fnc_isValidAi && (side group _x in _sides)) || (_x getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])) then {
         private ["_markerName", "_marker", "_markerColor"];
 
         //_markerName = format ["%1", [_x] call AGM_Core_fnc_getName];
@@ -58,7 +58,7 @@ _sidesToShow spawn {
         };
 
         _allMarkerNames pushBack _markerName;
-      }
+      };
     } forEach allUnits;
   };
 };
