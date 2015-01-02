@@ -381,6 +381,9 @@ class CfgVehicles {
   class Offroad_01_base_f: Car_F {
     AGM_fuelCapacity = AGM_FUELCAPACITY_OFFROARD;
   };
+  class UGV_01_base_F: Car_F {
+    KEY_WHEEL_6X6_STOMPER
+  };
 
   class Truck_F: Car_F {
     AGM_Vehicle_Cargo = 8;
