@@ -16,13 +16,6 @@
 
 #define UNCONSCIOUSNESSTRESHOLD 0.6
 
-#define PAINKILLERTRESHOLD 0.1
-#define PAINLOSS 0.0001
-
-#define BLOODTRESHOLD1 0.35
-#define BLOODTRESHOLD2 0
-#define BLOODLOSSRATE 0.04
-
 #define ARMOURCOEF 2
 
 private ["_unit", "_selectionName", "_damage", "_source", "_source", "_projectile", "_hitSelections", "_hitPoints", "_newDamage", "_found", "_cache_projectiles", "_cache_hitpoints", "_cache_damages"];
@@ -32,6 +25,9 @@ _selectionName = _this select 1;
 _damage        = _this select 2;
 _source        = _this select 3;
 _projectile    = _this select 4;
+
+diag_log "handleDamage";
+diag_log _this;
 
 if (typeName _projectile == "OBJECT") then {
   _projectile = typeOf _projectile;
@@ -217,42 +213,19 @@ if (_selectionName == "" and
   };
 };
 
-// Bleeding
-if (_selectionName == "" and damage _unit == 0) then {
-  _unit spawn {
-    while {damage _this > 0 and damage _this < 1} do {
-      if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
-        _blood = _this getVariable ["AGM_Blood", 1];
-        _blood = _blood - BLOODLOSSRATE * (_this getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]) * (damage _this);
-        _this setVariable ["AGM_Blood", _blood max 0, true];
-        if (_blood <= BLOODTRESHOLD1 and !(_this getVariable ["AGM_isUnconscious", False])) then {
-          [_this] call AGM_Medical_fnc_knockOut;
-        };
-        if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
-          //_this setDamage 1;
-          _this setHitPointDamage ["HitHead", 1]; // fx: don't get the uniform bloody if there are no wounds
-        };
-      };
-      sleep 10;
-    };
+
+// Bleeding and pain simulation
+if (_selectionName == "") then {
+
+  // Set Pain
+  _potentialPain = _damage * (1 - (_unit getVariable ["AGM_Painkiller", 0]));
+  if (_potentialPain > _unit getVariable ["AGM_Pain", 0]) then {
+    _unit setVariable ["AGM_Pain", _potentialPain min 1, True];
   };
+
+  [_unit] call AGM_Medical_fnc_simulateHealth;
 };
 
-// Pain Reduction
-if (_unit getVariable ["AGM_Pain", 0] == 0) then {
-  _unit spawn {
-    while {_this getVariable ["AGM_Pain", 0] > 0} do {
-      sleep 1;
-      _pain = ((_this getVariable ["AGM_Pain", 0]) - 0.001) max 0;
-      _this setVariable ["AGM_Pain", _pain, True];
-    };
-  };
-};
-// Set Pain
-_potentialPain = _damage * (_unit getVariable ["AGM_Painkiller", 1]);
-if ((_selectionName == "") and (_potentialPain > _unit getVariable ["AGM_Pain", 0])) then {
-  _unit setVariable ["AGM_Pain", (_damage * (_unit getVariable ["AGM_Painkiller", 1])) min 1, True];
-};
 
 // again, using spawn, but there shouldn't be any death, so the killed EH should be fine.
 if ((_unit getVariable "AGM_Medical_PreventDeath") and {vehicle _unit != _unit} and {damage (vehicle _unit) >= 1}) then {

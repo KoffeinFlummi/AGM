@@ -36,6 +36,7 @@ class CfgFunctions {
       class scream;
       class setDamage;
       class setHitPointDamage;
+      class simulateHealth;
       class takeItem;
       class transport;
       class treat;

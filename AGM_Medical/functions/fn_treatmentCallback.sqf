@@ -61,29 +61,22 @@ switch (_type) do {
   case "morphine" : {
     private ["_painkillerOld", "_painkiller"];
 
-    _painkillerOld = _target getVariable ["AGM_Painkiller", 1];
-
     // reduce pain, pain sensitivity
-    _painkiller = (_painkillerOld - MORPHINEHEAL) max 0;
+    _painkillerOld = _target getVariable ["AGM_Painkiller", 0];
+
+    // overdose if necessary (unit was already full of painkillers)
+    if (_painkillerOld > 0.95 and _target getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing] > 0) then {
+      [_target] call AGM_Medical_fnc_overdose;
+    };
+
+    _painkiller = (_painkillerOld + MORPHINEHEAL) min 1;
     _pain = ((_target getVariable ["AGM_Pain", 0]) - MORPHINEHEAL) max 0;
     _target setVariable ["AGM_Painkiller", _painkiller, True];
     _target setVariable ["AGM_Pain", _pain, True];
 
-    // overdose if necessary (unit was already full of painkillers)
-    if (_painkillerOld < 0.05 and _target getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing] > 0) then {
-      [_target] call AGM_Medical_fnc_overdose;
-    };
 
     // Painkiller Reduction
-    if (_painkillerOld == 1) then {
-      _target spawn {
-        while {_this getVariable ["AGM_Painkiller", 1] < 1} do {
-          sleep 1;
-          _painkiller = ((_this getVariable ["AGM_Painkiller", 1]) + 0.0015) min 1;
-          _this setVariable ["AGM_Painkiller", _painkiller, True];
-        };
-      };
-    };
+    [_target] call AGM_Medical_fnc_simulateHealth;
   };
 
   case "epipen" : {

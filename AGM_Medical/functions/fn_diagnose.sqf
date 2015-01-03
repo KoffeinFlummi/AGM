@@ -102,10 +102,10 @@ _string = _string + (switch True do {
 });
 
 // Painkillers
-_painkiller = _unit getVariable ["AGM_Painkiller", 1];
+_painkiller = _unit getVariable ["AGM_Painkiller", 0];
 _string = _string + (switch True do {
-  case (_painkiller < 0.4): {"<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientPainkillers" + "</t> "};
-  case (_painkiller < 0.9): {"<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientSomePainkillers" + "</t> "};
+  case (_painkiller > 0.6): {"<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientPainkillers" + "</t> "};
+  case (_painkiller > 0.1): {"<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientSomePainkillers" + "</t> "};
   default                   {"<br/><br/>" + localize "STR_AGM_Medical_PatientNoPainkillers" + " "};
 });
 
