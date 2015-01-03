@@ -272,9 +272,12 @@ if ((_unit getVariable "AGM_Medical_PreventDeath") and {vehicle _unit != _unit} 
 };
 
 if ((_unit getVariable "AGM_Medical_PreventDeath")) then {
-  if (_damage > 0.89) then {
+  if ((_damage > 0.89) && (_selectionName in ["", "head", "body"])) then { //only change damage on hits that would be lethal
     _damage = 0.89;
     [_unit, "preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
+    if (!(_unit getVariable ["AGM_isUnconscious", False])) then {
+      [_unit] call AGM_Medical_fnc_knockOut; //knockOut when taking damage that should be lethal
+    };
   };
 };
 
