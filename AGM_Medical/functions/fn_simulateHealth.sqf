@@ -20,10 +20,11 @@
 
 #define BLOODTRESHOLD1 0.35
 #define BLOODTRESHOLD2 0
-#define BLOODLOSSRATE 0.04
+#define BLOODLOSSRATE 0.003
+
 #define DELTATIME 5
 
-private ["_unit", "_script", "_blood", "_pain"];
+private ["_unit", "_script", "_blood", "_pain", "_painkiller", "_epinephrine", "_bloodLossRate"];
 
 _unit          = _this select 0;
 
@@ -54,11 +55,15 @@ if (isNull _script) then {
       _blood      = _unit getVariable ["AGM_Blood",      1];
       _pain       = _unit getVariable ["AGM_Pain",       0];
       _painkiller = _unit getVariable ["AGM_Painkiller", 0];
+      _epinephrine= _unit getVariable ["AGM_Epinephrine", 0];
 
       // Bleeding
       if !([_unit] call AGM_Medical_fnc_isInMedicalVehicle) then {
         _bloodLossRate = (damage _unit) * BLOODLOSSRATE *
-                         (_unit getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]);
+                         (_unit getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]) *
+                         (1 + 5 * getFatigue _unit) *
+                         (1 + 5 * _epinephrine);
+
         _blood = _blood - _bloodLossRate * DELTATIME;
         _blood = _blood max 0;
       };
@@ -69,11 +74,13 @@ if (isNull _script) then {
       // Pain killer Reduction
       _painkiller = (_painkiller - 0.0015 * DELTATIME) max 0;
 
+      // Epinephrine Reduction
+      _epinephrine = (_epinephrine - 0.015 * DELTATIME) max 0;
 
       _unit setVariable ["AGM_Blood",      _blood,      True];
       _unit setVariable ["AGM_Pain",       _pain,       True];
       _unit setVariable ["AGM_Painkiller", _painkiller, True];
-
+      _unit setVariable ["AGM_Epinephrine",_epinephrine, True];
 
       // Pass out due to low blood
       if (_blood <= BLOODTRESHOLD1 and !(_unit getVariable ["AGM_isUnconscious", False])) then {

@@ -80,7 +80,8 @@ switch (_type) do {
   };
 
   case "epipen" : {
-    [_target] call AGM_Medical_fnc_wakeUp; // short and sweet
+    _target setVariable ["AGM_Epinephrine", 1, True];
+    [_target] call AGM_Medical_fnc_wakeUp;
   };
 
   case "bloodbag" : {

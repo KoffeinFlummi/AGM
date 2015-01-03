@@ -25,6 +25,7 @@ _unit setVariable ["AGM_isTreatable", True, True];    // Can unit be treated/dia
 
 _unit setVariable ["AGM_Blood", 1, True];             // Amount of blood in the body.
 _unit setVariable ["AGM_Painkiller", 0, True];        // How much painkillers the guy is on. (bigger = more)
+_unit setVariable ["AGM_Epinephrine", 0, True];       // How much epinephrine the guy is on. (bigger = more)
 _unit setVariable ["AGM_Pain", 0, True];              // Amount of pain the unit is in.
 
 _unit setVariable ["AGM_isUnconscious", False, True]; // figure it out
