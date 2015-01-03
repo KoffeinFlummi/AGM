@@ -17,6 +17,8 @@
 
 	Example:
 */
+private ["_container", "_displayName", "_picture", "_data", "_index"];
+
 _container = _this select 0;
 _displayName = _this select 1;
 _picture = _this select 2;
