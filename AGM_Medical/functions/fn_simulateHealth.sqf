@@ -21,6 +21,7 @@
 #define BLOODTRESHOLD1 0.35
 #define BLOODTRESHOLD2 0
 #define BLOODLOSSRATE 0.04
+#define DELTATIME 5
 
 private ["_unit", "_script", "_blood", "_pain"];
 
@@ -56,15 +57,17 @@ if (isNull _script) then {
 
       // Bleeding
       if !([_unit] call AGM_Medical_fnc_isInMedicalVehicle) then {
-        _blood = _blood - BLOODLOSSRATE * (_unit getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]) * (damage _unit);
+        _bloodLossRate = (damage _unit) * BLOODLOSSRATE *
+                         (_unit getVariable ["AGM_Medical_CoefBleeding", AGM_Medical_CoefBleeding]);
+        _blood = _blood - _bloodLossRate * DELTATIME;
         _blood = _blood max 0;
       };
 
       // Pain Reduction
-      _pain = (_pain - 0.01) max 0;
+      _pain = (_pain - 0.001 * DELTATIME) max 0;
 
       // Pain killer Reduction
-      _painkiller = (_painkiller - 0.015) max 0;
+      _painkiller = (_painkiller - 0.0015 * DELTATIME) max 0;
 
 
       _unit setVariable ["AGM_Blood",      _blood,      True];
@@ -83,7 +86,7 @@ if (isNull _script) then {
         _unit setHitPointDamage ["HitHead", 1];
       };
 
-      sleep 10;
+      sleep DELTATIME;
     };
 
   }];
