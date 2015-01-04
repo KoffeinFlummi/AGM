@@ -791,6 +791,22 @@ class CfgVehicles {
           };
         };
       };
+      class PreventDeathFromBleeout {
+        displayName = "Prevent death from bleedout?";
+        description = "Make bleeout non-letal? Default: No";
+        typeName = "BOOL";
+        class values {
+          class Yes {
+            name = "Yes";
+            value = 1;
+          };
+          class No {
+            default = 1;
+            name = "No";
+            value = 0;
+          };
+        };
+      };
       class SingleBandage {
         displayName = "Single Bandage";
         description = "Use one bandage to heal the entire body? Default: No";
@@ -1059,6 +1075,7 @@ class AGM_Parameters {
   AGM_Medical_RequireDiagnosis = 0;
   AGM_Medical_PreventInstaDeath = 0;
   AGM_Medical_PreventDeathWhileUnconscious = 0;
+  AGM_Medical_PreventDeathFromBleeout = 0;
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
   AGM_Medical_EnableOverdosing = 1;

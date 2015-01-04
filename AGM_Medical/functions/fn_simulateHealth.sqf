@@ -93,9 +93,13 @@ if (isNull _script) then {
       };
 
       // Die from low blood
-      if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
-        // fx: don't get the uniform bloody if there are no wounds
-        _unit setHitPointDamage ["HitHead", 1];
+      if (_blood <= BLOODTRESHOLD2) then {
+        if (_unit getVariable ["AGM_Medical_PreventDeathFromBleeout", AGM_Medical_PreventDeathFromBleeout == 0]) then {
+          // fx: don't get the uniform bloody if there are no wounds
+          _unit setHitPointDamage ["HitHead", 1];
+        } else {
+          [_unit, "preventedDeath", [_unit]] call AGM_Core_fnc_callCustomEventHandlersGlobal;
+        };
       };
 
       sleep DELTATIME;
