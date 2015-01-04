@@ -18,7 +18,8 @@
 #define PAINKILLERTRESHOLD 0.1
 #define PAINLOSS 0.0001
 
-#define BLOODTRESHOLD1 0.35
+#define BLOODTRESHOLD0 0.5
+#define BLOODTRESHOLD1 0.2
 #define BLOODTRESHOLD2 0
 #define BLOODLOSSRATE 0.003
 
@@ -83,8 +84,11 @@ if (isNull _script) then {
       _unit setVariable ["AGM_Epinephrine",_epinephrine, True];
 
       // Pass out due to low blood
-      if (_blood <= BLOODTRESHOLD1 and !(_unit getVariable ["AGM_isUnconscious", False])) then {
-        [_unit] call AGM_Medical_fnc_knockOut;
+      if (_blood <= BLOODTRESHOLD0 and !(_unit getVariable ["AGM_isUnconscious", False])) then {
+        _passoutFatigue = ((_blood - BLOODTRESHOLD0) / (BLOODTRESHOLD1 - BLOODTRESHOLD0)) max 0.01;
+        if ((getFatigue _unit) - 0.1 * _epinephrine > _passoutFatigue) then {
+          [_unit] call AGM_Medical_fnc_knockOut;
+        };
       };
 
       // Die from low blood
