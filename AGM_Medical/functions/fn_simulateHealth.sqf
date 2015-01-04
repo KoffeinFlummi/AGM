@@ -43,7 +43,7 @@ if (isNull _script) then {
 
     // If the unit is completely healed terminate the loop
     while {alive _unit and
-           (damage _unit < 1 or
+           (damage _unit > 0 or
            _unit getVariable ["AGM_Pain", 0] > 0 or
            _unit getVariable ["AGM_Painkiller", 0] > 0)
           } do {
