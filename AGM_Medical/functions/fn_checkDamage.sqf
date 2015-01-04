@@ -49,7 +49,7 @@ if (count _this > 3 and _this select 3) then {
     (_unit getHitPointDamage "HitRightArm") +
     (_unit getHitPointDamage "HitLeftLeg") +
     (_unit getHitPointDamage "HitRightLeg");
-  if (_damagesum >= 0.06) then {
+  if (_damagesum <= 0.06) then {
     _unit setDamage 0;
   };
 };
