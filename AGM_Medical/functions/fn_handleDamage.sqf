@@ -26,9 +26,6 @@ _damage        = _this select 2;
 _source        = _this select 3;
 _projectile    = _this select 4;
 
-diag_log "handleDamage";
-diag_log _this;
-
 if (typeName _projectile == "OBJECT") then {
   _projectile = typeOf _projectile;
 };
