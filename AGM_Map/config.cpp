@@ -24,11 +24,13 @@ class CfgFunctions {
       class canUseMapTools;
       class canUseMapGPS;
       class copyMapMarkers;
+      class drawLaserOnMap;
       class handleKeyDown;
       class handleMouseButton;
       class handleMouseMove;
       class handleMouseZChanged;
       class isInsideMapTool;
+      class moduleLaserSync;
       class openMapGps;
       class removeLineMarker;
       class sendMapMarkers;
@@ -199,7 +201,38 @@ class CfgVehicles {
     };
   };
 
-  class Module_F;
+  class Logic;
+  class Module_F: Logic {
+    class ModuleDescription {};
+  };
+
+  class AGM_Map_ModuleLaserOnMap: Module_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    category = "AGM";
+    displayName = "Laser On Map";
+    function = "AGM_Map_fnc_moduleLaserSync";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Map\UI\IconLaserMarker_ca.paa";
+    functionPriority = 0;
+    class Arguments {
+      class showLaserTargetTo {
+        displayName = "Show Laser Marker"; // Argument label
+        description = "Vehicles which will show the laser designator on the map"; // Tooltip description
+        typeName = "NUMBER"; // Value type, can be "NUMBER", "STRING" or "BOOL"
+        class values {
+          class SyncedOnly  {name = "Synced Objects Only";      value = 0; default = 1;};
+          class AllVehicles {name = "All Vehicles";             value = 1;};
+          class Everything  {name = "All Vehicles and Players"; value = 2;};
+        };
+      };
+    };
+    class ModuleDescription: ModuleDescription {
+      description = "Controls which vehicles/players will have the laser designator location shown on the map.<br />Source: AGM_Map";
+      sync[] = {"AnyPlayer", "AnyVehicle"};
+    };
+  };
+
   class AGM_ModuleBlueForceTracking: Module_F {
     author = "AGM Team";
     category = "AGM";
@@ -414,6 +447,7 @@ class CfgMarkers {
 class AGM_Parameters {
   AGM_Map_BFT_Interval = 1;
   AGM_Map_EveryoneCanDrawOnBriefing = 1;
+  AGM_Map_showLaserTargetTo = 0;
 };
 
 #include "MapGpsUI.hpp"
