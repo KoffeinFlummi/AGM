@@ -45,7 +45,8 @@ if (isNull _script) then {
     while {alive _unit and
            (damage _unit > 0 or
            _unit getVariable ["AGM_Pain", 0] > 0 or
-           _unit getVariable ["AGM_Painkiller", 0] > 0)
+           _unit getVariable ["AGM_Painkiller", 0] > 0 or
+           _unit getVariable ["AGM_Epinephrine", 0] > 0)
           } do {
 
       // Unit has changed locality, so kill this thread and respawn it elsewhere
