@@ -12,6 +12,8 @@ class CfgPatches {
   };
 };
 
+// @todo: clean up inheritance and remove old code
+
 class CfgFunctions {
   class AGM_FCS {
     class AGM_FCS {
@@ -113,10 +115,12 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_ResetFCS {
         displayName = "$STR_AGM_FireControlSystem_ResetFCS";
-        condition = "(count (vehicle _player getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner (vehicle _player))";
+        enableInside = 1;
+        condition = "(count (_vehicle getVariable ['AGM_FCSMagazines', []]) > 1) and (_player == gunner _vehicle)";
         statement = "[vehicle _player] call AGM_FCS_fnc_reset;";
         showDisabled = 0;
-        priority = -1;
+        priority = 1;
+        icon = "";
       };
     };
     class Turrets {
