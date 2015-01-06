@@ -92,4 +92,4 @@ _unit disableCollisionWith _helper;
   _occupied = _vehicle getVariable "AGM_RopesOccupied";
   _occupied set [_index, False];
   _vehicle setVariable ["AGM_RopesOccupied", _occupied, True];
-}
+};
