@@ -115,8 +115,8 @@ _unit setVariable ["AGM_WakeUpTimer", _wakeUpTimer];
 // kill unit if the max uncon. time module option is used
 _unconsciousnessTimer = [_unit] spawn {
   _unit = _this select 0;
-  if (AGM_Medical_MaxUnconsciousnessTime >= 0) then {
-    sleep AGM_Medical_MaxUnconsciousnessTime;
+  if (_unit getVariable ["AGM_Medical_MaxUnconsciousnessTime", AGM_Medical_MaxUnconsciousnessTime] >= 0) then {
+    sleep (_unit getVariable ["AGM_Medical_MaxUnconsciousnessTime", AGM_Medical_MaxUnconsciousnessTime]);
     if !(scriptDone (_unit getVariable "AGM_WakeUpTimer")) then {
       terminate (_unit getVariable "AGM_WakeUpTimer");
     };
