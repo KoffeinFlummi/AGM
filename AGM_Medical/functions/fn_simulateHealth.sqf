@@ -94,7 +94,7 @@ if (isNull _script) then {
 
       // Die from low blood
       if (_blood <= BLOODTRESHOLD2) then {
-        if (_unit getVariable ["AGM_Medical_PreventDeathFromBleeout", AGM_Medical_PreventDeathFromBleeout == 0]) then {
+        if (_unit getVariable ["AGM_Medical_PreventDeathFromBleedout", AGM_Medical_PreventDeathFromBleedout == 0]) then {
           // fx: don't get the uniform bloody if there are no wounds
           _unit setHitPointDamage ["HitHead", 1];
         } else {

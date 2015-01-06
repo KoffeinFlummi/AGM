@@ -809,9 +809,9 @@ class CfgVehicles {
           };
         };
       };
-      class PreventDeathFromBleeout {
+      class PreventDeathFromBleedout {
         displayName = "Prevent death from bleedout?";
-        description = "Make bleeout non-letal? Default: No";
+        description = "Make bleedout non-letal? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
@@ -1093,7 +1093,7 @@ class AGM_Parameters {
   AGM_Medical_RequireDiagnosis = 0;
   AGM_Medical_PreventInstaDeath = 0;
   AGM_Medical_PreventDeathWhileUnconscious = 0;
-  AGM_Medical_PreventDeathFromBleeout = 0;
+  AGM_Medical_PreventDeathFromBleedout = 0;
   AGM_Medical_SingleBandage = 0;
   AGM_Medical_AllowChatWhileUnconscious = 0;
   AGM_Medical_EnableOverdosing = 1;
