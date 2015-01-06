@@ -6,7 +6,7 @@
       <English>Private Military Company</English>
       <Czech>Private Military Company</Czech>
       <French>Private Military Company</French>
-      <German>Private Military Company</German>
+      <German>Privates Militärunternehmen</German>
       <Italian>Private Military Company</Italian>
       <Polish>Private Military Company</Polish>
       <Portuguese>Private Military Company</Portuguese>
@@ -51,7 +51,7 @@
       <English>Team Leader</English>
       <Czech>Velitel týmu</Czech>
       <French>Chef d'équipe</French>
-      <German>Teamleader</German>
+      <German>Gruppenführer</German>
       <Italian>Capogruppo</Italian>
       <Polish>Dowódca zespołu</Polish>
       <Portuguese>Líder da equipe</Portuguese>
@@ -117,7 +117,7 @@
       <English>Marksman</English>
       <Czech>Ostrostřelec</Czech>
       <French>Tireur d'élite</French>
-      <German>Scharfschütze</German>
+      <German>Gruppenscharfschütze</German>
       <Italian>Tiratore scelto</Italian>
       <Polish>Strzelec wyborowy</Polish>
       <Portuguese>Atirador de elite</Portuguese>
@@ -128,7 +128,7 @@
       <English>Sniper</English>
       <Czech>Odstřelovač</Czech>
       <French>Sniper</French>
-      <German>Sniper</German>
+      <German>Scharfschütze</German>
       <Italian>Cecchino</Italian>
       <Polish>Snajper</Polish>
       <Portuguese>Atirador de elite</Portuguese>
@@ -173,7 +173,7 @@
       <English>SUV</English>
       <Czech>SUV</Czech>
       <French>SUV</French>
-      <German>SUV</German>
+      <German>Geländewagen</German>
       <Italian>SUV</Italian>
       <Polish>SUV</Polish>
       <Portuguese>SUV</Portuguese>
@@ -185,7 +185,7 @@
       <English>PMC</English>
       <Czech>PMC</Czech>
       <French>PMC</French>
-      <German>PMC</German>
+      <German>PMU</German>
       <Italian>PMC</Italian>
       <Polish>PMC</Polish>
       <Portuguese>PMC</Portuguese>
@@ -241,7 +241,7 @@
       <English>Anti-armor Team</English>
       <Czech>Protipancéřový tým</Czech>
       <French>Équipe anti-blindés</French>
-      <German>Panzerabwehrteam</German>
+      <German>Panzerabwehrtrupp</German>
       <Italian>Squadra anti-blindati</Italian>
       <Polish>Sekcja przeciwpancerna</Polish>
       <Portuguese>Equipe antiblindagem</Portuguese>
@@ -252,7 +252,7 @@
       <English>Recon Team</English>
       <Czech>Průzkumný tým</Czech>
       <French>Équipe reco</French>
-      <German>Spähteam</German>
+      <German>Spähtrupp</German>
       <Italian>Squadra ricognitori</Italian>
       <Polish>Drużyna zwiadu</Polish>
       <Portuguese>Equipe de reconhecimento</Portuguese>
@@ -263,7 +263,7 @@
       <English>Sniper Team</English>
       <Czech>Odstřelovačský tým</Czech>
       <French>Équipe de snipers</French>
-      <German>Sniper-Team</German>
+      <German>Scharfschützengruppe</German>
       <Italian>Squadra di cecchini</Italian>
       <Polish>Dwójka snajperska</Polish>
       <Portuguese>Equipe de franco-atiradores</Portuguese>
@@ -286,7 +286,7 @@
       <English>Support Team (CLS)</English>
       <Czech>Podpůrný tým (zdravotník)</Czech>
       <French>Équipe d'appui (CLS)</French>
-      <German>Unterstützungsteam (Militärsani)</German>
+      <German>Unterstützungstrupp (Militärsani)</German>
       <Italian>Squadra di supporto (soccorritori)</Italian>
       <Polish>Sekcja wsparcia (CLS)</Polish>
       <Portuguese>Equipe de apoio (CLS)</Portuguese>
@@ -297,7 +297,7 @@
       <English>Support Team (EOD)</English>
       <Czech>Podpůrný tým (pyrotechnik)</Czech>
       <French>Équipe d'appui (EOD)</French>
-      <German>Unterstützungsteam (Entschärfungstrupp)</German>
+      <German>Unterstützungstrupp (Entschärfungstrupp)</German>
       <Italian>Squadra di supporto (artificieri)</Italian>
       <Polish>Sekcja wsparcia (EOD)</Polish>
       <Portuguese>Equipe de apoio (DOE)</Portuguese>
@@ -308,7 +308,7 @@
       <English>Support Team (Engineer)</English>
       <Czech>Podpůrný tým (ženista)</Czech>
       <French>Équipe d'appui (sapeur)</French>
-      <German>Unterstützungsteam (Ingenieur)</German>
+      <German>Unterstützungstrupp (Ingenieur)</German>
       <Italian>Squadra di supporto (genieri)</Italian>
       <Polish>Sekcja wsparcia (saper)</Polish>
       <Portuguese>Equipe de apoio (engenheiro)</Portuguese>
