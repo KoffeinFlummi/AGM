@@ -201,14 +201,6 @@ class CfgVehicles {
     model = "\A3\Structures_F\Wrecks\Wreck_T72_turret_F.p3d";
   };
   */
-
-  // Compatibility
-  // @todo: move to AGM_Comp once inheritance for BWMod is sorted out
-  class BWA3_Leopard2A6M_Fleck: B_MBT_01_cannon_F {
-    AGM_Armour_AmmoLocation = "HitTurret";
-    AGM_Armour_CookOffLocations[] = {{-0.6,2.2,1.65}, {0.5,2.2,1.65}};
-    AGM_Armour_CookOffOnTurret[]  = {1,1};
-  };
 };
 
 class CfgCloudlets {
