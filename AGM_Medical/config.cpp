@@ -408,7 +408,7 @@ class CfgVehicles {
           priority = 0.6;
           conditionShow = "AGM_Medical_SingleBandage == 0";
           enableInside = 1;
-          icon = "";
+          icon = "_empty";
         };
         class AGM_Dummy_1 {
           displayName = "";
@@ -417,7 +417,7 @@ class CfgVehicles {
           priority = 0.5;
           conditionShow = "AGM_Medical_SingleBandage == 0";
           enableInside = 1;
-          icon = "";
+          icon = "_empty";
         };
       };
 
