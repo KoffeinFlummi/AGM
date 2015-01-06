@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2015-01-06 -->
 <Project name="AGM">
   <Package name="PMC">
-
     <Key ID="STR_AGM_PMC_Faction">
       <English>Private Military Company</English>
       <Czech>Private Military Company</Czech>
@@ -10,10 +10,9 @@
       <Italian>Private Military Company</Italian>
       <Polish>Private Military Company</Polish>
       <Portuguese>Private Military Company</Portuguese>
-      <Russian>Private Military Company</Russian>
+      <Russian>Частная военная компания</Russian>
       <Spanish>Private Military Company</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Soldier">
       <English>Rifleman</English>
       <Czech>Střelec</Czech>
@@ -121,7 +120,7 @@
       <Italian>Tiratore scelto</Italian>
       <Polish>Strzelec wyborowy</Polish>
       <Portuguese>Atirador de elite</Portuguese>
-      <Russian>Снайпер</Russian>
+      <Russian>Марксман</Russian>
       <Spanish>Tirador</Spanish>
     </Key>
     <Key ID="STR_AGM_PMC_Soldier_sniper">
@@ -168,7 +167,6 @@
       <Russian>Офицер</Russian>
       <Spanish>Oficial</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Vehicle_SUV">
       <English>SUV</English>
       <Czech>SUV</Czech>
@@ -180,7 +178,6 @@
       <Russian>Внедорожник</Russian>
       <Spanish>Todoterreno</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Groups">
       <English>PMC</English>
       <Czech>PMC</Czech>
@@ -189,10 +186,9 @@
       <Italian>PMC</Italian>
       <Polish>PMC</Polish>
       <Portuguese>PMC</Portuguese>
-      <Russian>PMC</Russian>
+      <Russian>ЧВК</Russian>
       <Spanish>PMC</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Infantry">
       <English>Infantry</English>
       <Czech>Pěchota</Czech>
@@ -270,7 +266,6 @@
       <Russian>Снайперская группа</Russian>
       <Spanish>Equipo de francotiradores</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Support">
       <English>Support Infantry</English>
       <Czech>Podpůrná pěchota</Czech>
@@ -315,7 +310,6 @@
       <Russian>Группа поддержки (инженер)</Russian>
       <Spanish>Pelotón de apoyo (ingeniería)</Spanish>
     </Key>
-
     <Key ID="STR_AGM_PMC_Motorized_MTP">
       <English>Motorized Infantry</English>
       <Czech>Motorizovaná pěchota</Czech>
@@ -338,6 +332,5 @@
       <Russian>Моторизованный патруль</Russian>
       <Spanish>Patrulla motorizada</Spanish>
     </Key>
-
   </Package>
 </Project>

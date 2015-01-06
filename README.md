@@ -33,7 +33,7 @@ More information on the purpose of the different components of AGM and which one
 *   Backblast simulation
 *   Weapon resting and bipod deployment
 *   A fire control system for armored vehicles and helicopters  
-*   ***and more...***
+    ***and more...***
 
 For a full list of current features, check [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
 
