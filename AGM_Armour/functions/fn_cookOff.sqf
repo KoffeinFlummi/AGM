@@ -18,13 +18,11 @@ if ((_this select 0) getVariable ["AGM_Armour_isCookingOff", False]) exitWith {}
 (_this select 0) setVariable ["AGM_Armour_isCookingOff", True];
 
 _this spawn {
-  private ["_vehicle", "_positions", "_onTurret"];
-
   _vehicle = _this select 0;
   _positions = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_CookOffLocations");
   _onTurret = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "AGM_Armour_CookOffOnTurret");
 
-  sleep 0.5 + (random 0.3);
+  sleep (1 + random 4);
 
   // guesstimate turret center; intersect weapon direction with front axis.
   // if you find a better method, yell at me.
@@ -59,7 +57,9 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
-/*    if (_onTurret select _forEachIndex == 1 and _turretAxis select 0 != -1) then {
+
+    // rotate smoke positions around turret center if necessary
+    if (_onTurret select _forEachIndex == 1 and _turretAxis select 0 != -1) then {
       _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
       _posX = (_position select 0) - (_turretAxis select 0);
       _posY = (_position select 1) - (_turretAxis select 1);
@@ -67,7 +67,7 @@ _this spawn {
       _posNewY = _posX * sin _weaponDirDeg - _posY * cos _weaponDirDeg;
       _position set [0, _posNewX + (_turretAxis select 0)];
       _position set [1, _posNewY + (_turretAxis select 1)];
-    };*/
+    };
 
     _smoke = "#particlesource" createVehicle [0,0,0];
     _smoke setParticleClass "ObjectDestructionSmoke1_2Smallx";
@@ -75,7 +75,7 @@ _this spawn {
     _smokes pushBack _smoke;
   } forEach _positions;
 
-  sleep 3 + (random 2);
+  sleep (1 + random 9);
 
   // this shit is busy being on fire, can't go driving around all over the place
   _vehicle setFuel 0;
@@ -93,6 +93,8 @@ _this spawn {
       - (_x select 2),
       (_x select 1)
     ];
+
+    // rotate cookoff position around turret center if necessary
     if (_onTurret select _forEachIndex == 1 and _turretAxis select 0 != -1) then {
       _weaponDirDeg = ((_weaponDir select 0) atan2 (_weaponDir select 1)) * -1;
       _posX = (_position select 0) - (_turretAxis select 0);
@@ -114,11 +116,11 @@ _this spawn {
   // indicator for the crew - yo, your shit's on fire
   {
     if ([_x] call AGM_Core_fnc_isPlayer) then {
-      [[_vehicle], "{(_this select 0) spawn {for '_i' from 0 to 11 do {if (vehicle AGM_player != _this) exitWith {}; [] call BIS_fnc_flamesEffect; sleep 0.4;};};}", _x] call AGM_Core_fnc_execRemoteFnc;
+      [[_vehicle], "{(_this select 0) spawn {while {vehicle AGM_player == _this and alive _this} do {[] call BIS_fnc_flamesEffect; sleep 0.4;};};}", _x] call AGM_Core_fnc_execRemoteFnc;
     };
   } forEach (crew _vehicle);
 
-  sleep (4 + random 1);
+  sleep (1 + random 9);
 
   deleteVehicle _smokeBarrel;
   [_smokes, {deleteVehicle _this}] call AGM_Core_fnc_map;

@@ -28,7 +28,7 @@ _hitpoint = [_vehicle, _selectionName] call AGM_Armour_fnc_getHitPointBySelectio
 
 // Determine type of vehicle and whether the selection is critical.
 _type = "";
-_critical = True;
+_critical = _hitpoint in ["HitHull", ""];
 if (_vehicle isKindOf "Car_F") then {
   if (_vehicle isKindOf "Wheeled_APC_F") then {
     _type = "tank";
@@ -39,23 +39,18 @@ if (_vehicle isKindOf "Car_F") then {
 };
 if (_vehicle isKindOf "Tank_F") then {
   _type = "tank";
-  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Helicopter") then {
   _type = "heli";
-  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Plane") then {
   _type = "plane";
-  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "Ship_F") then {
   _type = "ship";
-  _critical = _hitpoint in ["HitHull", ""];
 };
 if (_vehicle isKindOf "StaticWeapon") then {
   _type = "static";
-  _critical = _hitpoint in ["HitHull", ""];
 };
 
 // Are we doing anything with this type of vehicle?
@@ -67,8 +62,11 @@ _newDamage = _damage - (_vehicle getHit _selectionName);
 // Prevent total destruction of car unless round used is explosive
 if (_type == "car") exitWith {
   if (!_critical or (getNumber (configFile >> "CfgAmmo" >> _projectile >> "explosive") > 0.5)) then {
+    // Make engine smoke
     if (!(_vehicle getVariable ["AGM_Armour_isEngineSmoking", False]) and _hitpoint == "HitEngine" and _damage > 0.9) then {
       _vehicle setVariable ["AGM_Armour_isEngineSmoking", True, True];
+      // if someone finds a better method of finding the engine position, let me know
+      // this seems to work fine for all vanilla vehicles at least.
       _pos = [
         0,
         (((boundingBoxReal _vehicle) select 1) select 1) - 4,
