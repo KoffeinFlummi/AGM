@@ -18,29 +18,17 @@
 
 private ["_object", "_displayName", "_distance", "_condition", "_statement", "_showDisabled", "_priority", "_actionsVar", "_id", "_actionIDs", "_actions"];
 
-_object = _this select 0;
-_displayName = _this select 1;
-_distance = _this select 2;
-_condition = _this select 3;
-_statement = _this select 4;
-_showDisabled = _this select 5;
-_priority = _this select 6;
+_object = [_this, 0, objNull, objNull] call BIS_fnc_param;
+_displayName = [_this, 1, "", ""] call BIS_fnc_param;
+_distance = [_this, 2, 0, 0] call BIS_fnc_param;
+_condition = [_this, 3, "", ""] call BIS_fnc_param;
+_statement = [_this, 4, "", ""] call BIS_fnc_param;
+_showDisabled = [_this, 5, 0, 0] call BIS_fnc_param;
+_priority = [_this, 6, 0, 0] call BIS_fnc_param;
 
-if (typeName _condition == "STRING") then {
-	_condition = compile _condition;
-};
-
-if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
-};
-
-if (typeName _showDisabled == "SCALAR") then {
-	_showDisabled = _showDisabled > 0;
-};
-
-if (isNil "_priority") then {
-	_priority = 0;
-};
+_condition = compile _condition;
+_statement = compile _statement;
+_showDisabled = _showDisabled > 0;
 
 _actionsVar = _object getVariable ["AGM_Interactions", [-1, [], []]];
 
