@@ -26,7 +26,7 @@ if ((!isNull (getConnectedUAV AGM_player)) && {[AGM_Player] call AGM_Core_fnc_ge
     _laserTarget = laserTarget (getConnectedUAV AGM_player);
   };
 } else {
-  if (player == (vehicle AGM_player)) then {
+  if (AGM_player == (vehicle AGM_player)) then {
     if (AGM_player getVariable ["AGM_showLaserTarget", (AGM_Map_showLaserTargetTo >= 2)]) then {
       _laserTarget = laserTarget AGM_player;
     };
