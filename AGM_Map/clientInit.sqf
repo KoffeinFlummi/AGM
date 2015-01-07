@@ -112,6 +112,9 @@ if (!hasInterface) exitWith{};
   AGM_Map_syncMarkers = false;
   12 call AGM_Map_fnc_installEvents;
 
+  //Add Laser Draw Event Handler
+  ((findDisplay 12) displayCtrl 51) ctrlAddEventHandler ["Draw", {_this call AGM_Map_fnc_drawLaserOnMap}];
+
   // Update the size and rotation of map tools
   [] call AGM_Map_fnc_updateMapToolMarkers;
 
