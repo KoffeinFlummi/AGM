@@ -215,7 +215,7 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive _target && {!isPlayer _target} && {_target in units group _player}";
+        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_enableTeamManagement', true]}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -334,7 +334,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
-        condition = "true";
+        condition = "missionNamespace getVariable ['AGM_enableTeamManagement', true]";
         statement = "";
         showDisabled = 1;
         priority = 3.2;
