@@ -17,11 +17,11 @@ _item enableSimulationGlobal true;
 _item hideObjectGlobal false;
 [_item, "{{_x reveal _this} forEach allUnits}", 2] call AGM_Core_fnc_execRemoteFnc;
 
-_position = getPosASL player findEmptyPosition [0, 4, typeOf _item];
+_position = getPos player findEmptyPosition [0, 4, typeOf _item];
 if (count _position == 0) then {_position = getPosASL player};
 _position set [2, 0];
 
-_item setPosATL _position;
+_item setPos _position;
 [_item, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _item] call AGM_Core_fnc_execRemoteFnc;
 
 player reveal _item;
