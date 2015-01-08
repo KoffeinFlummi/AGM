@@ -84,7 +84,7 @@ class AGM_Parameters {
 class CfgVehicles {
   class Module_F;
   class AGM_ModuleNameTags: Module_F {
-    author = "AGM Team";
+    author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
     displayName = "Name Tags";
     function = "AGM_NameTags_fnc_moduleNameTags";
