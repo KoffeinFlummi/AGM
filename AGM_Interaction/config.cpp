@@ -216,11 +216,11 @@ class CfgVehicles {
   class AGM_ModuleInteraction: Module_F {
     author = "$STR_AGM_Core_AGMTeam";
     category = "AGM";
-    displayName = "Interaction";
+    displayName = "Interaction System";
     function = "AGM_Interaction_fnc_moduleInteraction";
     scope = 2;
     isGlobal = 1;
-    icon = "\AGM_NameTags\UI\IconInteraction_ca.paa";
+    icon = "\AGM_Interaction\UI\IconInteraction_ca.paa";
     class Arguments {
       class EnableTeamManagement {
         displayName = "Enable TeamManagement";
@@ -240,7 +240,7 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_enableTeamManagement', true]}";
+        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_enableTeamManagement', 1] == 1}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -359,7 +359,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
-        condition = "missionNamespace getVariable ['AGM_enableTeamManagement', true]";
+        condition = "missionNamespace getVariable ['AGM_enableTeamManagement', 1] == 1";
         statement = "";
         showDisabled = 1;
         priority = 3.2;
