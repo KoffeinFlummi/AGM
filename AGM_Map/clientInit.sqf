@@ -12,7 +12,7 @@ if (!hasInterface) exitWith{};
       _groups = [];
       _playerSide = call AGM_Core_fnc_playerSide;
 
-      if (AGM_Map_BFT_HideAiGroups == 0) then {
+      if (AGM_Map_BFT_HideAiGroups) then {
         _groups = [allGroups, {side _this == _playerSide}] call AGM_Core_fnc_filter;
       } else {
         _groups = [allGroups, {

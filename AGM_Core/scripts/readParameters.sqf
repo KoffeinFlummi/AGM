@@ -18,7 +18,7 @@ for "_index" from 0 to (_count - 1) do {
 
   _name = configName _x;
   _value = _x call bis_fnc_getcfgdata;
-  [_name, _value > 0] call AGM_Core_fnc_setParameter;
+  [_name, _value] call AGM_Core_fnc_setParameter;
 };
 
 _config = configFile >> "AGM_Parameters_Boolean";
