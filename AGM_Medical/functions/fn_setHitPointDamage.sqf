@@ -66,11 +66,11 @@ if (_damageOld > 0) then {
 };
 
 if (_unit getVariable ["AGM_isUnconscious", False]) then {
-  if (_damageNew > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+  if (_damageNew > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious}) then {
     _damageNew = 0.89;
   };
 } else {
-  if (_damageNew > 0.9 and {AGM_Medical_PreventInstaDeath > 0}) then {
+  if (_damageNew > 0.9 and {AGM_Medical_PreventInstaDeath}) then {
     _damageNew = 0.89;
   };
 };
@@ -80,11 +80,11 @@ _unit setDamage _damageNew;
 {
   _damageFinal = (_damages select _forEachIndex);
   if (_unit getVariable ["AGM_isUnconscious", False]) then {
-    if (_damageFinal > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+    if (_damageFinal > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious}) then {
       _damageFinal = 0.89;
     };
   } else {
-    if (_damageFinal > 0.9 and {AGM_Medical_PreventInstaDeath > 0}) then {
+    if (_damageFinal > 0.9 and {AGM_Medical_PreventInstaDeath}) then {
       _damageFinal = 0.89;
     };
   };

@@ -411,8 +411,10 @@ class CfgMarkers {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
   AGM_Map_BFT_Interval = 1;
+};
+class AGM_Parameters_Boolean {
   AGM_Map_EveryoneCanDrawOnBriefing = 1;
 };
 

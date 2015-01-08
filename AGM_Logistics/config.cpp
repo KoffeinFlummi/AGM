@@ -1324,7 +1324,7 @@ class CfgWeapons {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
   AGM_Repair_TimeRepair = 10;
   AGM_Repair_TimeWheelRepair = 10;
   AGM_Repair_TimeTrackRepair = 10;

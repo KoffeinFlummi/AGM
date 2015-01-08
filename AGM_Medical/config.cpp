@@ -223,64 +223,64 @@ class CfgVehicles {
         };
         class AGM_Bandage {
           displayName = "$STR_AGM_Medical_Bandage";
-          condition = "AGM_Medical_SingleBandage > 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'All'] call AGM_Medical_fnc_treat;";
           priority = 0.6;
-          conditionShow = "AGM_Medical_SingleBandage > 0";
+          conditionShow = "AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitHead'] call AGM_Medical_fnc_treat;";
           priority = 0.6;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\head.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitBody'] call AGM_Medical_fnc_treat;";
           priority = 0.5;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitLeftArm'] call AGM_Medical_fnc_treat;";
           priority = 0.4;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\arm_left.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitRightArm'] call AGM_Medical_fnc_treat;";
           priority = 0.3;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\arm_right.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitLeftLeg'] call AGM_Medical_fnc_treat;";
           priority = 0.2;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\leg_left.paa";
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
-          condition = "AGM_Medical_SingleBandage == 0 and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
+          condition = "!AGM_Medical_SingleBandage and ([_target] call AGM_Medical_fnc_isDiagnosed) and (_target getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player and alive _target";
           statement = "[_player, _target, 'bandage', 'HitRightLeg'] call AGM_Medical_fnc_treat;";
           priority = 0.15;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\leg_right.paa";
         };
@@ -339,55 +339,55 @@ class CfgVehicles {
 
         class AGM_Bandage {
           displayName = "$STR_AGM_Medical_Bandage";
-          condition = "AGM_Medical_SingleBandage > 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'All'] call AGM_Medical_fnc_treat;";
           priority = 0.6;
-          conditionShow = "AGM_Medical_SingleBandage > 0";
+          conditionShow = "AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_Head {
           displayName = "$STR_AGM_Medical_Bandage_HitHead";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitHead'] call AGM_Medical_fnc_treat;";
           priority = 0.6;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\head.paa";
         };
         class AGM_Bandage_Body {
           displayName = "$STR_AGM_Medical_Bandage_HitBody";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitBody'] call AGM_Medical_fnc_treat;";
           priority = 0.5;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\body.paa";
         };
         class AGM_Bandage_LeftArm {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftArm";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitLeftArm'] call AGM_Medical_fnc_treat;";
           priority = 0.4;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\arm_left.paa";
         };
         class AGM_Bandage_RightArm {
           displayName = "$STR_AGM_Medical_Bandage_HitRightArm";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitRightArm'] call AGM_Medical_fnc_treat;";
           priority = 0.3;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\arm_right.paa";
         };
         class AGM_Bandage_LeftLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitLeftLeg";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitLeftLeg'] call AGM_Medical_fnc_treat;";
           priority = 0.2;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\leg_left.paa";
         };
@@ -1047,12 +1047,14 @@ class ImpactEffectsBlood {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
   AGM_Medical_CoefDamage = 1.0;
   AGM_Medical_CoefBleeding = 1.0;
   AGM_Medical_CoefPain = 1.0;
   AGM_Medical_CoefNonMedic = 2.0;
   AGM_Medical_MaxUnconsciousnessTime = -1;
+};
+class AGM_Parameters_Boolean {
   // Boolean Parameters (0/1)
   AGM_Medical_AllowNonMedics = 0;
   AGM_Medical_RequireDiagnosis = 0;

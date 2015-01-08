@@ -14,7 +14,7 @@ private ["_unit"];
 
 _unit = _this select 0;
 
-if !(AGM_player getVariable ["AGM_Medical_RequireDiagnosis", AGM_Medical_RequireDiagnosis > 0]) exitWith {true};
+if !(AGM_player getVariable ["AGM_Medical_RequireDiagnosis", AGM_Medical_RequireDiagnosis]) exitWith {true};
 if !(_unit getVariable ["AGM_isUnconscious", False]) exitWith {true};
 
 (_unit getVariable ["AGM_isDiagnosed", True])

@@ -26,7 +26,7 @@ _damages = [
 _unit setVariable ["AGM_isDiagnosed", True, False];
 
 // Tell bystanders what's up if necessary
-if (AGM_Medical_RequireDiagnosis > 0) then {
+if (AGM_Medical_RequireDiagnosis) then {
   _bystanders = nearestObjects [AGM_player, ["CAManBase"], 10];
   [-1, {
     if (AGM_player in (_this select 1)) then {
@@ -52,7 +52,7 @@ if (_unit getVariable ["AGM_isUnconscious", False]) then {
 // Injuries
 _lightinjuries = "";
 _heavyinjuries = "";
-if (AGM_Medical_SingleBandage > 0) then {
+if (AGM_Medical_SingleBandage) then {
   _string = _string + (switch True do {
     case (damage _unit >= 0.5): {"<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>"};
     case (damage _unit < 0.5):  {"<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightlyInjured" + "</t>"};
@@ -87,7 +87,7 @@ if (AGM_Medical_SingleBandage > 0) then {
 };
 
 // Bleeding
-if ((AGM_Medical_SingleBandage > 0 and damage _unit > 0) or (_heavyinjuries != "" or _lightinjuries != "")) then {
+if ((AGM_Medical_SingleBandage and damage _unit > 0) or (_heavyinjuries != "" or _lightinjuries != "")) then {
   _string = _string + "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientBleeding" + "</t> ";
 } else {
   _string = _string + "<br/><br/>" + localize "STR_AGM_Medical_PatientNotBleeding" + " ";

@@ -12,7 +12,7 @@
 
 _unit = _this select 0;
 
-if (AGM_Medical_EnableOverdosing < 1) exitWith {};
+if (!AGM_Medical_EnableOverdosing) exitWith {};
 
 if !(local _unit) exitWith {
   [_this, "AGM_Medical_fnc_overdose", _unit] call AGM_Core_fnc_execRemoteFnc;
