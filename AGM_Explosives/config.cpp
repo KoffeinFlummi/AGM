@@ -293,7 +293,7 @@ class CfgActions {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Boolean {
   // Boolean Parameters (0/1)
   AGM_Explosives_RequireSpecialist = 0;
   AGM_Explosives_PunishNonSpecialists = 1;

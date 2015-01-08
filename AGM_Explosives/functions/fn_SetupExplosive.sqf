@@ -28,7 +28,7 @@ _this spawn {
   AGM_Explosives_placer = _unit;
   // Commented out due to the fact there is a distinction between who can deactivate mines and who can plant them in standard configs.
   // Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
-  //if ((AGM_Explosives_RequireSpecialist > 0) && {!([_unit] call AGM_Core_fnc_isEOD)}) exitWith {};
+  //if (AGM_Explosives_RequireSpecialist && {!([_unit] call AGM_Core_fnc_isEOD)}) exitWith {};
   if (isNil "_config") then {
     _config = getArray(ConfigFile >> "CfgMagazines" >> _class >> "AGM_Triggers" >> "AGM_Triggers") select 0;
   };

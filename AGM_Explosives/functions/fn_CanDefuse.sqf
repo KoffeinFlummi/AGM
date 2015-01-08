@@ -20,7 +20,7 @@ _unit = _this select 0;
 if (vehicle _unit != _unit || {!("AGM_DefusalKit" in (items _unit))}) exitWith {false};
 _isSpecialist = ([_unit] call AGM_Core_fnc_isEOD);
 
-if ((AGM_Explosives_RequireSpecialist > 0) && {!_isSpecialist}) exitWith {false};
+if (AGM_Explosives_RequireSpecialist && {!_isSpecialist}) exitWith {false};
 
 _timeBombCore = nearestObject [_unit, "TimeBombCore"];
 _mineBase =  nearestObject [_unit, "MineBase"];
