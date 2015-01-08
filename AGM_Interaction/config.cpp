@@ -223,7 +223,7 @@ class CfgVehicles {
     icon = "\AGM_Interaction\UI\IconInteraction_ca.paa";
     class Arguments {
       class EnableTeamManagement {
-        displayName = "Enable TeamManagement";
+        displayName = "Enable Team Management";
         description = "Should players be allowed to use the Team Management Menu? Default: Yes";
         typeName = "BOOL";
         class values {
