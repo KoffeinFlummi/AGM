@@ -393,10 +393,10 @@ class CfgVehicles {
         };
         class AGM_Bandage_RightLeg {
           displayName = "$STR_AGM_Medical_Bandage_HitRightLeg";
-          condition = "AGM_Medical_SingleBandage == 0 and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
+          condition = "!AGM_Medical_SingleBandage and (_player getVariable ['AGM_isTreatable', true]) and 'AGM_Bandage' in itemsWithMagazines _player";
           statement = "[_player, _player, 'bandage', 'HitRightLeg'] call AGM_Medical_fnc_treat;";
           priority = 0.15;
-          conditionShow = "AGM_Medical_SingleBandage == 0";
+          conditionShow = "!AGM_Medical_SingleBandage";
           enableInside = 1;
           icon = "AGM_Medical\UI\parts\leg_right.paa";
         };
