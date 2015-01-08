@@ -29,6 +29,8 @@ if (!(local _unit) and ([_unit] call AGM_Core_fnc_isPlayer)) exitWith {
   [_this, "AGM_Medical_fnc_knockOut", _unit] call AGM_Core_fnc_execRemoteFnc;
 };
 
+if (!([_unit] call AGM_Core_fnc_isPlayer) && {vehicle _unit != _unit}) exitWith {};
+
 _unit setVariable ["AGM_Unconscious", True, True]; // deprecated since 0.95
 _unit setVariable ["AGM_isUnconscious", True, True];
 _unit setVariable ["AGM_canTreat", False, True];
