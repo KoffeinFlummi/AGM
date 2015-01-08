@@ -25,7 +25,7 @@ _this spawn {
   _setLockState = _logic getVariable["SetLockState", 0];
 
   if (isServer) then {
-    [_logic, "AGM_VEHICLELOCK_defaultLockpickStrength", "LockpickStrength"] call AGM_Core_fnc_readNumericParameterFromModule;
+    [_logic, "AGM_VehicleLock_DefaultLockpickStrength", "LockpickStrength"] call AGM_Core_fnc_readNumericParameterFromModule;
 
     { //set lock state
       _lock =

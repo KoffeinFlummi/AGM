@@ -26,11 +26,11 @@ Vehicle Lock Setup - Settings for lockpick strength, auto assigment of keys at s
 Vehicle Key Assign - Sync with vehicles and players.  Will handout custom keys to players for every synced vehicle.
 
 Global Variable: 
-AGM_VEHICLELOCK_defaultLockpickStrength - Time in seconds to lock pick globaly, can also set per-vehicle (-1 would disable)
+AGM_VehicleLock_DefaultLockpickStrength - Time in seconds to lock pick globaly, can also set per-vehicle (-1 would disable)
 
 Vehicle setVariables:
 agm_lock_side - SIDE: overrides a vehicle's side, allows indfor to use little-bird's with indp keys
-agm_vehicleLock_pickStr - NUMBER: secons, determines how long lockpicking with take, overrides AGM_VEHICLELOCK_defaultLockpickStrength
+agm_vehicleLock_pickStr - NUMBER: secons, determines how long lockpicking with take, overrides AGM_VehicleLock_DefaultLockpickStrength
 agm_lock_customKeys - ARRAY: array of strings of magazinesDetails, use the following function to modify
 
 [bob, car1, true] call AGM_VehicleLock_fnc_addKeyForVehicle;

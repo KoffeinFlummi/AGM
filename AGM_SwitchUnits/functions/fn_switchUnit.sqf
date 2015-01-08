@@ -28,7 +28,7 @@ _newUnit spawn {
   
   _leave = false;
   
-  if (AGM_SwitchUnits_EnableSafeZone == 1) then {
+  if (AGM_SwitchUnits_EnableSafeZone) then {
   
     _allNearestPlayers = [position _unit, AGM_SwitchUnits_SafeZoneRadius] call AGM_SwitchUnits_fnc_nearestPlayers;
     _nearestEnemyPlayers = [_allNearestPlayers, {((side AGM_SwitchUnits_OriginalGroup) getFriend (side _this) < 0.6) && !(_this getVariable ["AGM_SwitchUnits_IsPlayerControlled", false])}] call AGM_Core_fnc_filter;

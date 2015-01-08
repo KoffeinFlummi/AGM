@@ -22,7 +22,7 @@ AGM_Respawn_Module = true;
 [_logic, "AGM_Respawn_RemoveDeadBodiesDisonncected", "RemoveDeadBodiesDisonncected"] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 if (isServer) then {
-	if (AGM_Respawn_RemoveDeadBodiesDisonncected == 1) then {
+	if (AGM_Respawn_RemoveDeadBodiesDisonncected) then {
 		_fnc_deleteDisconnected = {
 			_this spawn {
 				_unit = _this select 0;

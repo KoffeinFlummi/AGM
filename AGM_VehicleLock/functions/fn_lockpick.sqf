@@ -40,7 +40,7 @@ if (!("AGM_item_key_lockpick" in (items _unit))) exitWith {
   false
 };
 
-_vehLockpickStrenth = _veh getVariable["agm_vehicleLock_pickStr", AGM_VEHICLELOCK_defaultLockpickStrength];
+_vehLockpickStrenth = _veh getVariable["agm_vehicleLock_pickStr", AGM_VehicleLock_DefaultLockpickStrength];
 if (typeName _vehLockpickStrenth != "SCALAR") exitWith {
   ["AGM_VehicleLock_fnc_lockpick: agm_vehicleLock_pickStr invalid: (%1)", _veh] call BIS_fnc_error;
   false
