@@ -416,6 +416,8 @@ class AGM_Parameters_Numeric {
 };
 class AGM_Parameters_Boolean {
   AGM_Map_EveryoneCanDrawOnBriefing = 1;
+  AGM_Map_BFT_Enabled = 0;
+  AGM_Map_BFT_HideAiGroups = 0;
 };
 
 #include "MapGpsUI.hpp"

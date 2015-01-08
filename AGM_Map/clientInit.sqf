@@ -3,8 +3,6 @@
 if (!hasInterface) exitWith{};
 
 [] spawn {
-  if (isNil "AGM_Map_BFT_Enabled") then { AGM_Map_BFT_Enabled = false; };
-  if (isNil "AGM_Map_BFT_HideAiGroups") then { AGM_Map_BFT_HideAiGroups = false; };
   while {true} do {
     sleep 5;
     _markers = [];
