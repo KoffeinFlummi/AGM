@@ -15,6 +15,6 @@ _activated = _this select 2;
 
 if !(_activated) exitWith {};
 
-[_logic, "AGM_enableTeamManagement", "EnableTeamManagement"] call AGM_Core_fnc_readBooleanParameterFromModule;
+[_logic, "AGM_Interaction_enableTeamManagement", "EnableTeamManagement"] call AGM_Core_fnc_readBooleanParameterFromModule;
 
 diag_log text "[AGM]: Interaction Module Initialized.";

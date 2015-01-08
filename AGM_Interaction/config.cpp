@@ -187,7 +187,7 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Modifier = 0;
-  AGM_enableTeamManagement = 1;
+  AGM_Interaction_enableTeamManagement = 1;
 };
 
 class AGM_Core_canInteractConditions {
@@ -240,7 +240,7 @@ class CfgVehicles {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_enableTeamManagement', 1] == 1}";
+        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_Interaction_enableTeamManagement', 1] == 1}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -359,7 +359,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
-        condition = "missionNamespace getVariable ['AGM_enableTeamManagement', 1] == 1";
+        condition = "missionNamespace getVariable ['AGM_Interaction_enableTeamManagement', 1] == 1";
         statement = "";
         showDisabled = 1;
         priority = 3.2;
