@@ -19,7 +19,7 @@ _item hideObjectGlobal false;
 
 _position = getPos player findEmptyPosition [0, 4, typeOf _item];
 if (count _position == 0) then {_position = getPosASL player};
-_position set [2, 0];
+//_position set [2, 0];
 
 _item setPos _position;
 [_item, "{_this setVectorUp (surfaceNormal getPosASL _this)}", _item] call AGM_Core_fnc_execRemoteFnc;
