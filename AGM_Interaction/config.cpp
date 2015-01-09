@@ -7,7 +7,7 @@ class CfgPatches {
     version = "0.95";
     versionStr = "0.95";
     versionAr[] = {0,95,0};
-    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard"};
+    author[] = {"commy2", "KoffeinFlummi", "CAA-Picard", "bux578"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -37,6 +37,7 @@ class CfgFunctions {
       class joinTeam;
       class lockDoor;
       class menuKeyInput;
+      class moduleInteraction;
       class moveDown;
       class onButtonDown;
       class onButtonDownSelf;
@@ -186,6 +187,7 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Modifier = 0;
+  AGM_Interaction_enableTeamManagement = 1;
 };
 
 class AGM_Core_canInteractConditions {
@@ -209,13 +211,36 @@ class AGM_Core_canInteractConditions {
 };
 
 class CfgVehicles {
+  
+  class Module_F;
+  class AGM_ModuleInteraction: Module_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    category = "AGM";
+    displayName = "Interaction System";
+    function = "AGM_Interaction_fnc_moduleInteraction";
+    scope = 2;
+    isGlobal = 1;
+    icon = "\AGM_Interaction\UI\IconInteraction_ca.paa";
+    class Arguments {
+      class EnableTeamManagement {
+        displayName = "Enable Team Management";
+        description = "Should players be allowed to use the Team Management Menu? Default: Yes";
+        typeName = "BOOL";
+        class values {
+          class Yes { default = 1; name = "Yes"; value = 1;};
+          class No { name = "No"; value = 0; };
+        };
+      };
+    };
+  };
+  
   class Man;
   class CAManBase: Man {
     class AGM_Actions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {missionNamespace getVariable ['AGM_enableTeamManagement', true]}";
+        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {AGM_Interaction_enableTeamManagement > 0}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -334,7 +359,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
-        condition = "missionNamespace getVariable ['AGM_enableTeamManagement', true]";
+        condition = "AGM_Interaction_enableTeamManagement > 0";
         statement = "";
         showDisabled = 1;
         priority = 3.2;
