@@ -57,7 +57,7 @@ class AGM_Core_Default_Keys {
 
 class CfgSounds {
   class AGM_BarrelSwap {
-    sound[] = {"\AGM_Overheating\sounds\barrelswap.ogg", 5, 1, 200};
+    sound[] = {"\AGM_Overheating\sounds\barrelswap.ogg",5,1,200};
     titles[] = {};
   };
 };
@@ -198,7 +198,7 @@ class CfgWeapons {
     picture = "\AGM_Overheating\UI\spare_barrel_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
-      mass = 10;
+      mass = 50;
     };
   };
 
