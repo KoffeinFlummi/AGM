@@ -127,12 +127,14 @@ class CfgVehicles {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
+  AGM_SwitchUnits_SafeZoneRadius = 100;
+};
+class AGM_Parameters_Boolean {
   AGM_SwitchUnits_EnableSwitchUnits = 0;
   AGM_SwitchUnits_SwitchToWest = 0;
   AGM_SwitchUnits_SwitchToEast = 0;
   AGM_SwitchUnits_SwitchToIndependent = 0;
   AGM_SwitchUnits_SwitchToCivilian = 0;
   AGM_SwitchUnits_EnableSafeZone = 1;
-  AGM_SwitchUnits_SafeZoneRadius = 100;
 };

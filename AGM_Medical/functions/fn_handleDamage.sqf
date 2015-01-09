@@ -88,11 +88,11 @@ if (diag_frameno > (_unit getVariable ["AGM_Medical_FrameNo", -3]) + 2) then {
   _unit setVariable ["AGM_Medical_PreventDeath", False];
   if (([_unit] call AGM_Core_fnc_isPlayer) or _unit getVariable ["AGM_allowUnconscious", False]) then {
     if (!(_unit getVariable ["AGM_isUnconscious", False]) and
-        {_unit getVariable ["AGM_Medical_PreventInstaDeath", AGM_Medical_PreventInstaDeath > 0]}) then {
+        {_unit getVariable ["AGM_Medical_PreventInstaDeath", AGM_Medical_PreventInstaDeath]}) then {
       _unit setVariable ["AGM_Medical_PreventDeath", True];
     };
     if ((_unit getVariable ["AGM_isUnconscious", False]) and
-        {_unit getVariable ["AGM_Medical_PreventDeathWhileUnconscious", AGM_Medical_PreventDeathWhileUnconscious > 0]}) then {
+        {_unit getVariable ["AGM_Medical_PreventDeathWhileUnconscious", AGM_Medical_PreventDeathWhileUnconscious]}) then {
       _unit setVariable ["AGM_Medical_PreventDeath", True];
     };
   };
@@ -230,7 +230,7 @@ if (_selectionName == "" and damage _unit == 0) then {
         if (_blood <= BLOODTRESHOLD1 and !(_this getVariable ["AGM_isUnconscious", False])) then {
           [_this] call AGM_Medical_fnc_knockOut;
         };
-        if (_blood <= BLOODTRESHOLD2 and {AGM_Medical_PreventDeathWhileUnconscious == 0}) then {
+        if (_blood <= BLOODTRESHOLD2 and {!AGM_Medical_PreventDeathWhileUnconscious}) then {
           //_this setDamage 1;
           _this setHitPointDamage ["HitHead", 1]; // fx: don't get the uniform bloody if there are no wounds
         };

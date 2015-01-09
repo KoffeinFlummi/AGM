@@ -70,7 +70,7 @@ switch (_type) do {
     _target setVariable ["AGM_Pain", _pain, True];
 
     // overdose if necessary (unit was already full of painkillers)
-    if (_painkillerOld < 0.05 and _target getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing] > 0) then {
+    if (_painkillerOld < 0.05 and _target getVariable ["AGM_Medical_EnableOverdosing", AGM_Medical_EnableOverdosing]) then {
       [_target] call AGM_Medical_fnc_overdose;
     };
 

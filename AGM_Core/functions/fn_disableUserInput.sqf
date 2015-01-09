@@ -65,7 +65,7 @@ if (_state) then {
     if (_key in actionKeys "CuratorInterface" && {getAssignedCuratorLogic player in allCurators})    then {(uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0; openCuratorInterface};
     if (_key in actionKeys "ShowMap"          && {player getVariable ["AGM_canSwitchUnits", false]}) then {(uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull]) closeDisplay 0; openMap true};
 
-    if (serverCommandAvailable "#missions" || {player getVariable ["AGM_isUnconscious", false] && {(call AGM_Core_fnc_player) getVariable ["AGM_Medical_AllowChatWhileUnconscious", missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", 0]] > 0}})  then {
+    if (serverCommandAvailable "#missions" || {player getVariable ["AGM_isUnconscious", false] && {(call AGM_Core_fnc_player) getVariable ["AGM_Medical_AllowChatWhileUnconscious", missionNamespace getVariable ["AGM_Medical_AllowChatWhileUnconscious", false]]}})  then {
       if (!(_key in (actionKeys "DefaultAction" + actionKeys "Throw")) && {_key in (actionKeys "Chat" + actionKeys "PrevChannel" + actionKeys "NextChannel")}) then {
         _key = 0;
       };

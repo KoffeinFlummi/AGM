@@ -25,7 +25,7 @@ if !(_activated) exitWith {};
 
 AGM_SwitchUnits_Module = true;
 
-["AGM_SwitchUnits_EnableSwitchUnits", 1] call AGM_Core_fnc_setParameter;
+["AGM_SwitchUnits_EnableSwitchUnits", true] call AGM_Core_fnc_setParameter;
 
 [_logic, "AGM_SwitchUnits_SwitchToWest", "SwitchToWest"] call AGM_Core_fnc_readBooleanParameterFromModule;
 [_logic, "AGM_SwitchUnits_SwitchToEast", "SwitchToEast"] call AGM_Core_fnc_readBooleanParameterFromModule;

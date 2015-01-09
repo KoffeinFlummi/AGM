@@ -74,11 +74,13 @@ class AGM_Core_Options {
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
   AGM_NameTags_PlayerNamesViewDistance = 5;
-  AGM_NameTags_ShowNamesForAI = 0;
   AGM_NameTags_PlayerNamesMaxAlpha = 0.8;
   AGM_NameTags_CrewInfoVisibility = 0;
+};
+class AGM_Parameters_Boolean {
+  AGM_NameTags_ShowNamesForAI = 0;
 };
 
 class CfgVehicles {

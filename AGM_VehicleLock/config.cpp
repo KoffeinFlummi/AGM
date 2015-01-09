@@ -12,8 +12,8 @@ class CfgPatches {
   };
 };
 
-class AGM_Parameters {
-  AGM_VEHICLELOCK_defaultLockpickStrength = 10;
+class AGM_Parameters_Numeric {
+  AGM_VehicleLock_DefaultLockpickStrength = 10;
 };
 
 class CfgFunctions {

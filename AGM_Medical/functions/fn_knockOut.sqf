@@ -98,7 +98,7 @@ if (vehicle _unit != _unit) then {
 };
 
 // wake up unit after certain amount of time
-if (_duration != -1 or _unit getVariable ["AGM_Medical_AutomaticWakeup", AGM_Medical_AutomaticWakeup > 0]) then {
+if (_duration != -1 or _unit getVariable ["AGM_Medical_AutomaticWakeup", AGM_Medical_AutomaticWakeup]) then {
   _wakeUpTimer = [_unit, _duration] spawn {
     _unit = _this select 0;
     _duration = _this select 1;

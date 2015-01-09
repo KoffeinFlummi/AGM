@@ -20,6 +20,6 @@ private ["_respawnedUnit"];
 _respawnedUnit = _this select 0;
 
 // Restores the gear when the player respawns
-if (AGM_Respawn_SavePreDeathGear > 0) then {
+if (AGM_Respawn_SavePreDeathGear) then {
   [_respawnedUnit, AGM_Respawn_unitGear] call AGM_Respawn_fnc_restoreGear;
 };
