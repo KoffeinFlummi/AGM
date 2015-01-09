@@ -221,6 +221,7 @@ if (_selectionName == "" and
 
 // Bleeding
 if (_selectionName == "" and damage _unit == 0) then {
+  [_unit, "{_this setBleedingRemaining 86400}", 2] call AGM_Core_fnc_execRemoteFnc;
   _unit spawn {
     while {damage _this > 0 and damage _this < 1} do {
       if !([_this] call AGM_Medical_fnc_isInMedicalVehicle) then {
