@@ -216,6 +216,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 
     class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium;
     class AGM_Climb: AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium {
+      canReload = 0;
       forceAim = 1;
     };
   };

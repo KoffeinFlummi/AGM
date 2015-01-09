@@ -153,6 +153,9 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     class AGM_FastRoping: Crew {
       file = "agm_fastroping\data\agm_fastroping.rtm";
       interpolateTo[] = {"Unconscious",1};
+      disableWeapons = 1;
+      disableWeaponsLong = 1;
+      canReload = 0;
     };
   };
 };
