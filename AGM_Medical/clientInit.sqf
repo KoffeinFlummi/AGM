@@ -56,6 +56,7 @@ AGM_Pain_CC ppEffectCommit 0;
       AGM_Blinding_CC ppEffectEnable False;
       AGM_Pain_CC ppEffectEnable False;
       AGM_Pain_CA ppEffectEnable False;
+      AGM_player setBleedingRemaining 0;
       if !(isNull (uiNamespace getVariable ["AGM_Core_dlgDisableMouse", displayNull])) then {
         [False] call AGM_Core_fnc_disableUserInput;
       };
@@ -129,6 +130,7 @@ AGM_Pain_CC ppEffectCommit 0;
     // Bleeding Effect
     if (damage AGM_player > 0.1 and _timeBlood + 6 < time) then {
       _timeBlood = time;
+      [AGM_player, "{_this setBleedingRemaining 6}", 2] call AGM_Core_fnc_execRemoteFnc;
       [(damage AGM_player) * 500] call BIS_fnc_bloodEffect;
     };
 
