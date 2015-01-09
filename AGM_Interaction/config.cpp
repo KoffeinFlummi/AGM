@@ -187,7 +187,9 @@ class AGM_Core_Options {
 
 class AGM_Parameters {
   AGM_Modifier = 0;
-  AGM_Interaction_enableTeamManagement = 1;
+};
+class AGM_Parameters_Boolean {
+  AGM_Interaction_EnableTeamManagement = 1;
 };
 
 class AGM_Core_canInteractConditions {
@@ -211,7 +213,7 @@ class AGM_Core_canInteractConditions {
 };
 
 class CfgVehicles {
-  
+
   class Module_F;
   class AGM_ModuleInteraction: Module_F {
     author = "$STR_AGM_Core_AGMTeam";
@@ -233,14 +235,14 @@ class CfgVehicles {
       };
     };
   };
-  
+
   class Man;
   class CAManBase: Man {
     class AGM_Actions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
         distance = 4;
-        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {AGM_Interaction_enableTeamManagement > 0}";
+        condition = "alive _target && {!isPlayer _target} && {_target in units group _player} && {AGM_Interaction_EnableTeamManagement}";
         statement = "";
         showDisabled = 0;
         priority = 3.2;
@@ -359,7 +361,7 @@ class CfgVehicles {
     class AGM_SelfActions {
       class AGM_TeamManagement {
         displayName = "$STR_AGM_Interaction_TeamManagement";
-        condition = "AGM_Interaction_enableTeamManagement > 0";
+        condition = "AGM_Interaction_EnableTeamManagement";
         statement = "";
         showDisabled = 1;
         priority = 3.2;
