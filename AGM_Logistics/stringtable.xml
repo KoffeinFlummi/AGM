@@ -43,7 +43,7 @@
       <German>Lade ab ...</German>
       <Spanish>Descargando ...</Spanish>
       <French>Déchargement ...</French>
-      <Polish>Rozładunku ...</Polish>
+      <Polish>Rozładunek ...</Polish>
       <Czech>Vykládání ...</Czech>
       <Portuguese>Descarregando ...</Portuguese>
       <Italian>Scaricamento ...</Italian>
@@ -67,7 +67,7 @@
       <German>%1 von %2 abgeladen</German>
       <Spanish>Descargado/a %1 de %2</Spanish>
       <French>Déchargé %1 de %2</French>
-      <Polish>Rozładowany %1 do %2</Polish>
+      <Polish>%1 rozładowano z %2</Polish>
       <Czech>Nezatížený %1 do %2</Czech>
       <Portuguese>%1 descarregado de %2</Portuguese>
       <Italian>Hai scaricato %1 da %2</Italian>
