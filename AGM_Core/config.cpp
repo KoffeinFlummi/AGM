@@ -547,6 +547,8 @@ class CfgFunctions {
       class getDefaultAnim;
       class getDoorTurrets;
       class getForceWalkStatus;
+      class getHitPoints;
+      class getHitPointsWithSelections;
       class getInPosition;
       class getMarkerType;
       class getName;

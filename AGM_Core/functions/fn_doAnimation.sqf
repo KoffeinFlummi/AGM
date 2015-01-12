@@ -45,9 +45,9 @@ if (_unit getVariable ["AGM_isUnconscious", false] && {!_force}) exitWith {
 if (_animation == "Unconscious" && {!(_unit getVariable ["AGM_isUnconscious", false])}) exitWith {};
 
 // switchMove "" no longer works in dev 1.37
-/*if (_animation == "") then {
+if (_animation == "") then {
   _animation = [_unit] call AGM_Core_fnc_getDefaultAnim;
-};*/
+};
 
 switch (_priority) do {
   case 0 : {
