@@ -728,7 +728,7 @@ class CfgVehicles {
       };
       class AllowNonmedics {
         displayName = "Allow non-medics?";
-        description = "Allow non-medics to use Epinephrines and Bloodbags? Default: No";
+        description = "Allow non-medics to use Epinephrine and Bloodbags? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
@@ -840,7 +840,7 @@ class CfgVehicles {
       };
       class RequireMEDEVAC {
         displayName = "Require MEDEVAC?";
-        description = "Only allow Epinephrines within synchronized triggers? Default: No";
+        description = "Only allow Epinephrine within synchronized triggers? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
