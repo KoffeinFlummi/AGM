@@ -52,7 +52,7 @@ _unit disableCollisionWith _helper;
   waitUntil {vehicle _unit == _unit};
 
   _helper setVectorUp [0,0,1];
-  _unit attachTo [_helper, [0,0,0]];
+  _unit attachTo [_helper, [0,0,-1.2]];
 
   _vector = (getPos _unit) vectorFromTo (getPos _vehicle);
   _unit setVectorDir _vector;
@@ -65,7 +65,7 @@ _unit disableCollisionWith _helper;
 
   waitUntil {
     ([_unit] + ([[_helper] call AGM_Core_fnc_getPitchBankYaw, {_this * -1}] call AGM_Core_fnc_map)) call AGM_Core_fnc_setPitchBankYaw;
-    _time + 1 < time and ((getPos _helper select 2) < 1 or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
+    _time + 1 < time and ((getPos _helper select 2) < 2.2 or (time >= (_time + ROPELENGTH / 6)) or (vectorMagnitude (velocity _vehicle) > 5))
   };
 
   _unit allowDamage False;
