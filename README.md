@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95-green.svg?style=flat" alt="AGM version">
+    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat" alt="AGM version">
   </a>
     <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
     <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat" alt="AGM download">
