@@ -6,9 +6,9 @@ class CfgPatches {
     weapons[] = {}; //{"AGM_acc_flashlight_tls"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.95";
-    versionStr = "0.95";
-    versionAr[] = {0,95,0};
+    version = "0.95.1";
+    versionStr = "0.95.1";
+    versionAr[] = {0,95,1};
     author[] = {"TaoSensai", "KoffeinFlummi"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };

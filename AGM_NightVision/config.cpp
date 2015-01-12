@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_NVG_Gen1", "AGM_NVG_Gen2", /*"AGM_NVG_Gen3",*/ "AGM_NVG_Gen4", "AGM_NVG_Wide"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.95";
-    versionStr = "0.95";
-    versionAr[] = {0,95,0};
+    version = "0.95.1";
+    versionStr = "0.95.1";
+    versionAr[] = {0,95,1};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
