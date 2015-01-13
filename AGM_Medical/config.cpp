@@ -728,7 +728,7 @@ class CfgVehicles {
       };
       class AllowNonmedics {
         displayName = "Allow non-medics?";
-        description = "Allow non-medics to use Epinephrine and Bloodbags? Default: No";
+        description = "Allow non-medics to use Epinephrine and Blood Bags? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
