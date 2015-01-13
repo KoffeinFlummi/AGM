@@ -14,7 +14,7 @@ pokertour
 11RDP-LoupVert <loupvert@11rdp.fr>
 MarcBook
 Legolasindar
-gienkov
+gienkov <gienkov.grzegorz@gmail.com>
 Jo David
 nic547 <nic547@outlook.com>
 BlackQwar
