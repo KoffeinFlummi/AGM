@@ -3,7 +3,7 @@
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
     <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat" alt="AGM version">
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
+    <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.1/AGM_v0.95.1.zip">
     <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat" alt="AGM download">
   </a>
     <a href="https://github.com/KoffeinFlummi/AGM/issues">
