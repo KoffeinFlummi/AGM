@@ -5,7 +5,7 @@
     <Key ID="STR_AGM_SafeMode_SafeMode">
       <English>Safe Mode</English>
       <German>Waffe sichern</German>
-      <Spanish>Seguro puesto</Spanish>
+      <Spanish>Poner seguro</Spanish>
       <Polish>Bezpiecznik</Polish>
       <Czech>Pojistka</Czech>
       <Hungarian>Veszélytelenités</Hungarian>
@@ -23,7 +23,7 @@
     <Key ID="STR_AGM_SafeMode_PutOnSafety">
       <English>Put on Safety</English>
       <German>Waffe gesichert</German>
-      <Spanish>Poner seguro</Spanish>
+      <Spanish>Seguro puesto</Spanish>
       <Polish>Zabezpiecz broń</Polish>
       <Czech>Přepnout pojistku</Czech>
       <Hungarian>Veszélytelenitve</Hungarian>
