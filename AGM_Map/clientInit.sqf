@@ -13,14 +13,14 @@ if (!hasInterface) exitWith{};
       _playerSide = call AGM_Core_fnc_playerSide;
 
       if (AGM_Map_BFT_HideAiGroups) then {
-        _groups = [allGroups, {side _this == _playerSide}] call AGM_Core_fnc_filter;
-      } else {
         _groups = [allGroups, {
           _anyPlayers = {
             [_x] call AGM_Core_fnc_isPlayer
           } count units _this;
           (side _this == _playerSide) && _anyPlayers > 0
         }] call AGM_Core_fnc_filter;
+      } else {
+        _groups = [allGroups, {side _this == _playerSide}] call AGM_Core_fnc_filter;
       };
 
       {
