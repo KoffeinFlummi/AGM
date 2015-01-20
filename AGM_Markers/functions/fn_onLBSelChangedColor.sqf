@@ -19,4 +19,4 @@ _color = getArray (_config >> "color");
 
 ((ctrlParent _ctrl) displayCtrl 102) ctrlSetTextColor _color;
 
-uiNamespace setVariable ["AGM_Markers_currentMarkerColor", _data];
+uiNamespace setVariable ["AGM_Markers_currentMarkerColorConfigName", (configName _config)];

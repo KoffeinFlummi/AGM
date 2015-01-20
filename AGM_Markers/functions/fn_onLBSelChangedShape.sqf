@@ -13,4 +13,4 @@ _icon = getText (_config >> "icon");
 
 ((ctrlParent _ctrl) displayCtrl 102) ctrlSetText _icon;
 
-uiNamespace setVariable ["AGM_Markers_currentMarkerShape", _data];
+uiNamespace setVariable ["AGM_Markers_currentMarkerConfigName", (configName _config)];

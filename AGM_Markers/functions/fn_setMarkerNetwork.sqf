@@ -5,10 +5,18 @@ private ["_marker", "_data", "_config"];
 _marker = _this select 0;
 _data = _this select 1;
 
-_config = (configfile >> "CfgMarkers") select (_data select 0);
+_config = (configfile >> "CfgMarkers") >> (_data select 0);
+if (!isClass _config) then {
+  //systemChat format ["MarkerName [%1] not found", (_data select 0)];
+  _config == (configFile >> "CfgMarkers" >> "MilDot");
+};
 _marker setMarkerTypeLocal configName _config;
 
-_config = (configfile >> "CfgMarkerColors") select (_data select 1);
+_config = (configfile >> "CfgMarkerColors") >> (_data select 1);
+if (!isClass _config) then {
+  //systemChat format ["MarkerColor [%1] not found", (_data select 1)];
+  _config == (configFile >> "CfgMarkerColors" >> "Default");
+};
 _marker setMarkerColorLocal configName _config;
 
 _marker setMarkerPosLocal (_data select 2);

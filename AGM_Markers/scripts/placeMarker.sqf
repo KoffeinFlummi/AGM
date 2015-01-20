@@ -40,8 +40,8 @@ if (_this select 1 == 1) then {
       [
         allMapMarkers select (count allMapMarkers - 1),
         [
-          uiNamespace getVariable ['AGM_Markers_currentMarkerShape', 0],
-          uiNamespace getVariable ['AGM_Markers_currentMarkerColor', 0],
+          uiNamespace getVariable ['AGM_Markers_currentMarkerConfigName', ""],
+          uiNamespace getVariable ['AGM_Markers_currentMarkerColorConfigName', ""],
           _this,
           uiNamespace getVariable ['AGM_Markers_currentMarkerAngle', 0]
         ]
