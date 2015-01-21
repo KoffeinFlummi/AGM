@@ -59,7 +59,7 @@ _halt = "if (!(_allowHold) || {_disallowHold}) then {AGM_Core_keyStates set [_ke
 _haltUp = "AGM_Core_keyStates set [_keyIndex, 0];";
 
 //_return = "_isInput";
-_return = "if (profileNamespace getVariable ['AGM_enableNumberHotkeys', true] && {_keyIndex < 12} && {_keyIndex > 1}) then {true} else {_isInput}";
+_return = "if (profileNamespace getVariable ['AGM_enableNumberHotkeys', true] && {_keyIndex < 12} && {_keyIndex > 1}) then {true} else {[_isInput, false] select (_keyIndex in [42, 54, 29, 157, 56, 184, 0, 183, 197, 1])}";
 
 _repeat = "if (!_isInput && {_keyCode mod 1 > 0.75} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; " + _onKeyDown + _return + "};";
 _repeatUp = "if (!_isInput && {_keyCode mod 1 > 0.75} && {_keyCode mod 1 < 0.85}) exitWith {_keyCode = _keyIndex; " + _onKeyUp + "};";
