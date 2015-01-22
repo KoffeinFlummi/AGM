@@ -37,7 +37,7 @@ class CfgMagazines {
     displaynameshort = "5.56mm";
 
     tracersEvery = 0;
-    lastRoundsTracer = 0;
+    lastRoundsTracer = 3;
   };
 
   class 30Rnd_556x45_Stanag_Tracer_Red: 30Rnd_556x45_Stanag {
@@ -67,7 +67,7 @@ class CfgMagazines {
     displaynameshort = "6.5mm";
 
     tracersEvery = 0;
-    lastRoundsTracer = 0;
+    lastRoundsTracer = 3;
   };
 
   class 30Rnd_65x39_caseless_mag_Tracer : 30Rnd_65x39_caseless_mag { // MX!!
@@ -80,7 +80,7 @@ class CfgMagazines {
     displaynameshort = "6.5mm";
 
     tracersEvery = 0;
-    lastRoundsTracer = 0;
+    lastRoundsTracer = 3;
   };
 
   class 30Rnd_65x39_caseless_green_Tracer : 30Rnd_65x39_caseless_green { // Katiba!!
@@ -147,7 +147,7 @@ class CfgMagazines {
     displayname = "9mm 30Rnd Mag";
     displaynameshort = "9mm";
 
-    lastRoundsTracer = 0;
+    lastRoundsTracer = 3;
   };
 
   class 16Rnd_9x21_Mag: 30Rnd_9x21_Mag {
@@ -166,7 +166,7 @@ class CfgMagazines {
     count = 25;
 
     tracersEvery = 0;
-    lastRoundsTracer = 0;
+    lastRoundsTracer = 3;
   };
 
   class 9Rnd_45ACP_Mag : 30Rnd_45ACP_Mag_SMG_01 {
