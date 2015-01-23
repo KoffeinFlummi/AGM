@@ -596,6 +596,10 @@
       <Hungarian>Farokrotor</Hungarian>
       <Russian>Рулевой винт</Russian>
     </Key>
+    <Key ID="STR_AGM_Repair_HitWinch">
+      <English>Winch</English>
+      <German>Seilwinde</German>
+    </Key>
     <Key ID="STR_AGM_Repair_HitRGlass">
       <English>Glass (right)</English>
       <German>Scheibe (rechts)</German>

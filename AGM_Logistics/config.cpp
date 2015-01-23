@@ -588,6 +588,16 @@ class CfgVehicles {
           priority = 0.1;
           icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
         };
+        class AGM_Repair_Winch {
+          displayName = "$STR_AGM_Repair_HitWinch";
+          distance = 4;
+          condition = "[AGM_Interaction_Target, 'HitWinch'] call AGM_Repair_fnc_canRepair";
+          statement = "[AGM_Interaction_Target, 'HitWinch'] call AGM_Repair_fnc_repair";
+          showDisabled = 0;
+          priority = 0.1;
+          icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
+        };
+        
       };
     };
     class AGM_SelfActions {
