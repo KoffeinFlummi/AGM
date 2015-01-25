@@ -1,6 +1,7 @@
 #define AVERAGEDURATION 6
-#define INTERVAL 0.25
-#define MAXVIRTUALG 5.4
+#define INTERVAL 0.20
+#define MAXVIRTUALG 5.0
+#define MINVIRTUALG 2.5
 
 if !(hasInterface) exitWith {};
 
@@ -39,17 +40,22 @@ AGM_GForces_CC ppEffectCommit 0.4;
 };
 
 
-/*
- * source: http://en.wikipedia.org/wiki/G-LOC
- * untrained persons without gsuit will fall unconscious between 4 and 6G
- * pilots in gsuits will sustain up to 9G
- * a person is for average 12 seconds unconscious
- * after being unconscious, a person is unable to do simple tasks for average 15 seconds
- *
- * _upTolerance converts the effective 9G of a pilot to virtual 5.4G (= 0.8*0.75*9G)
- * pilots with gsuit will get unconscious at an _average of 9G
- * normal men without gsuit will get unconscious at an _average of 5.4G
- */
+/* Source: https://github.com/KoffeinFlummi/AGM/issues/1774#issuecomment-70341573
+*
+* For untrained people without g-suits:
+* GLOC: 5G for 6 s
+* RedOut: 2.5G for 6 s
+*
+* For trained jet pilots without g-suits:
+* GLOC: 9G for 6 s
+* RedOut: 4.5G
+*
+* For trained jet pilots with g-suits:
+* GLOC: 10.5G for 6 s
+* RedOut: 4.5G
+*
+* Effects and camera shake start 30% the limit value, and build gradually
+*/
 
 0 spawn {
   while {True} do {
@@ -65,28 +71,33 @@ AGM_GForces_CC ppEffectCommit 0.4;
       _average = _sum / (count AGM_GForces);
     };
 
-    _downTolerance = _player getVariable ["AGM_GForceCoef",
-      getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "AGM_GForceCoef")];
-    _upTolerance = _downTolerance * getNumber (configFile >> "CfgWeapons" >> (uniform _player) >> "AGM_GForceCoef");
+    _classCoef = AGM_player getVariable ["AGM_GForceCoef",
+        getNumber (configFile >> "CfgVehicles" >> (typeOf AGM_player) >> "AGM_GForceCoef")];
+    _suitCoef = getNumber (configFile >> "CfgWeapons" >> (uniform AGM_player) >> "AGM_GForceCoef");
 
-    ["GForces", [_average, _upTolerance], {format ["_g _avgG _avgG*_upTol: %1, %2, %3", AGM_GForce_Current, _this select 0, (_this select 0) * (_this select 1)]}] call AGM_Debug_fnc_log;
+    _gBlackOut = MAXVIRTUALG / _classCoef + MAXVIRTUALG / _suitCoef - MAXVIRTUALG;
+    _gRedOut = MINVIRTUALG / _classCoef;
 
-    if (((_average * _upTolerance) > MAXVIRTUALG) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(_player getVariable ["AGM_isUnconscious", false])}}) then {
-      [_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
+    ["GForces", [], {format ["_g _gBO _coef: %1, %2, %3", _average, _gBlackOut, 2 * ((1.0 - ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) ^ 2) max 0) ]}] call AGM_Debug_fnc_log;
+
+    if ((_average > _gBlackOut) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(AGM_player getVariable ["AGM_isUnconscious", false])}}) then {
+      [AGM_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
     };
 
-    if ((abs _average > 2) and !(_player getVariable ["AGM_isUnconscious", false])) then {
-      if (_average > 0) then {
-        _strength = 1.2 - (((_average - 2) * _upTolerance) / (MAXVIRTUALG - 2));
-        AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
-        addCamShake [((abs _average) - 2) / 3, 1, 15];
+    AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
+
+    if !(AGM_player getVariable ["AGM_isUnconscious", false]) then {
+      if (_average > 0.30 * _gBlackOut) then {
+        _strength = ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) max 0;
+        AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
+        addCamShake [_strength, 1, 15];
       } else {
-        _strength = 1.2 - ((((-1 * _average) - 2) * _downTolerance) / (MAXVIRTUALG - 2));
-        AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[_strength,_strength,0,0,0,0.1,0.5]];
-        addCamShake [((abs _average) - 2) / 5, 1, 15];
+        if (_average < -0.30 * _gRedOut) then {
+          _strength = ((abs _average - 0.30 * _gRedOut) / (0.70 * _gRedOut)) max 0;
+          AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
+          addCamShake [_strength / 1.5, 1, 15];
+        };
       };
-    } else {
-      AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
     };
 
     AGM_GForces_CC ppEffectCommit INTERVAL;
