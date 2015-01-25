@@ -60,42 +60,46 @@ AGM_GForces_CC ppEffectCommit 0.4;
 0 spawn {
   while {True} do {
     sleep INTERVAL;
-    _player = AGM_player;
-
-    _average = 0;
-    if (count AGM_GForces > 0) then {
-      _sum = 0;
-      {
-        _sum = _sum + _x;
-      } forEach AGM_GForces;
-      _average = _sum / (count AGM_GForces);
-    };
-
-    _classCoef = AGM_player getVariable ["AGM_GForceCoef",
-        getNumber (configFile >> "CfgVehicles" >> (typeOf AGM_player) >> "AGM_GForceCoef")];
-    _suitCoef = getNumber (configFile >> "CfgWeapons" >> (uniform AGM_player) >> "AGM_GForceCoef");
-
-    _gBlackOut = MAXVIRTUALG / _classCoef + MAXVIRTUALG / _suitCoef - MAXVIRTUALG;
-    _gRedOut = MINVIRTUALG / _classCoef;
-
-    ["GForces", [], {format ["_g _gBO _coef: %1, %2, %3", _average, _gBlackOut, 2 * ((1.0 - ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) ^ 2) max 0) ]}] call AGM_Debug_fnc_log;
-
-    if ((_average > _gBlackOut) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(AGM_player getVariable ["AGM_isUnconscious", false])}}) then {
-      [AGM_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
-    };
 
     AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
 
-    if !(AGM_player getVariable ["AGM_isUnconscious", false]) then {
-      if (_average > 0.30 * _gBlackOut) then {
-        _strength = ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) max 0;
-        AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
-        addCamShake [_strength, 1, 15];
-      } else {
-        if (_average < -0.30 * _gRedOut) then {
-          _strength = ((abs _average - 0.30 * _gRedOut) / (0.70 * _gRedOut)) max 0;
-          AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
-          addCamShake [_strength / 1.5, 1, 15];
+    if !(isNull AGM_player) then {
+
+      _average = 0;
+      if (count AGM_GForces > 0) then {
+        _sum = 0;
+        {
+          _sum = _sum + _x;
+        } forEach AGM_GForces;
+        _average = _sum / (count AGM_GForces);
+      };
+
+      _classCoef = AGM_player getVariable ["AGM_GForceCoef",
+          getNumber (configFile >> "CfgVehicles" >> (typeOf AGM_player) >> "AGM_GForceCoef")];
+      _suitCoef = getNumber (configFile >> "CfgWeapons" >> (uniform AGM_player) >> "AGM_GForceCoef");
+
+      _gBlackOut = MAXVIRTUALG / _classCoef + MAXVIRTUALG / _suitCoef - MAXVIRTUALG;
+      _gRedOut = MINVIRTUALG / _classCoef;
+
+      ["GForces", [], {format ["_g _gBO _coef: %1, %2, %3", _average, _gBlackOut, 2 * ((1.0 - ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) ^ 2) max 0) ]}] call AGM_Debug_fnc_log;
+
+      if ((_average > _gBlackOut) and {isClass (configFile >> "CfgPatches" >> "AGM_Medical") and {!(AGM_player getVariable ["AGM_isUnconscious", false])}}) then {
+        [AGM_player, (10 + floor(random 5))] call AGM_Medical_fnc_knockOut;
+      };
+
+      AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[10,10,0,0,0,0.1,0.5]];
+
+      if !(AGM_player getVariable ["AGM_isUnconscious", false]) then {
+        if (_average > 0.30 * _gBlackOut) then {
+          _strength = ((_average - 0.30 * _gBlackOut) / (0.70 * _gBlackOut)) max 0;
+          AGM_GForces_CC ppEffectAdjust [1,1,0,[0,0,0,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
+          addCamShake [_strength, 1, 15];
+        } else {
+          if (_average < -0.30 * _gRedOut) then {
+            _strength = ((abs _average - 0.30 * _gRedOut) / (0.70 * _gRedOut)) max 0;
+            AGM_GForces_CC ppEffectAdjust [1,1,0,[1,0.2,0.2,1],[0,0,0,0],[1,1,1,1],[2*(1-_strength),2*(1-_strength),0,0,0,0.1,0.5]];
+            addCamShake [_strength / 1.5, 1, 15];
+          };
         };
       };
     };
