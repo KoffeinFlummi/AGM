@@ -78,6 +78,9 @@ AGM_GForces_CC ppEffectCommit 0.4;
           getNumber (configFile >> "CfgVehicles" >> (typeOf AGM_player) >> "AGM_GForceCoef")];
       _suitCoef = getNumber (configFile >> "CfgWeapons" >> (uniform AGM_player) >> "AGM_GForceCoef");
 
+      if (_classCoef == 0) then {_classCoef = 1;}
+      if (_suitCoef == 0) then {_suitCoef = 1;}
+
       _gBlackOut = MAXVIRTUALG / _classCoef + MAXVIRTUALG / _suitCoef - MAXVIRTUALG;
       _gRedOut = MINVIRTUALG / _classCoef;
 
