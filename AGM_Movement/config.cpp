@@ -162,6 +162,14 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
       leftHandIKCurve[] = {1};
     };
+    class AmovPercMtacSlowWrflDf: AmovPercMwlkSlowWrflDf
+    {
+      file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\ras\Rfl\AmovPercMrunSrasWrflDf_ldst";
+      leftHandIKCurve[] = {1};
+      speed = 0.684541;
+      duty = 0.3;
+      interpolationSpeed = 3.05;
+    };
     class AmovPercMwlkSlowWrflDfl: AmovPercMwlkSlowWrflDf {
       leftHandIKCurve[] = {};
     };
