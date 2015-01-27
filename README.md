@@ -1,16 +1,20 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat" alt="AGM version">
+    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat"
+         alt="AGM version" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.1/AGM_v0.95.1.zip">
-    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat" alt="AGM download">
+  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.1/AGM_v0.95.1.zip">
+    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat"
+         alt="AGM download" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/issues">
-    <img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat" alt="AGM issues">
+  <a href="https://github.com/KoffeinFlummi/AGM/issues">
+    <img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat"
+         alt="AGM issues" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE">
-    <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat" alt="AGM license">
+  <a href="https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat"
+         alt="AGM license" />
   </a>
 </p>
 <p align="center"><sup><strong>Requires the latest version of <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://makearmanotwar.com/entry/7jnWM53S2e">Make Arma Not War</a> | <a href="http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification">BIF thread</a></strong></sup></p>
@@ -32,7 +36,7 @@ More information on the purpose of the different components of AGM and which one
 *   Realistic ballistics including wind and humidity
 *   Backblast simulation
 *   Weapon resting and bipod deployment
-*   A fire control system for armored vehicles and helicopters  
+*   A fire control system for armored vehicles and helicopters<br />
     ***and more...***
 
 For a full list of current features, check [the official wiki](https://github.com/KoffeinFlummi/AGM/wiki).
@@ -41,7 +45,7 @@ For a full list of current features, check [the official wiki](https://github.co
 If you installed AGM, but have trouble understanding how it all works, or where to start — see [Getting Started](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 
 #### Contributing
-If you want to help put with the ongoing development, you can do so by looking for possible bugs or by contributing new features. To contribute something to AGM, simply fork this repository and submit your pull requests for review by other collaborators. In the process, feel free to add yourself to the author array of any .pbo you will be editing and the AUTHORS.txt file.
+If you want to help put with the ongoing development, you can do so by looking for possible bugs or by contributing new features. To contribute something to AGM, simply fork this repository and submit your pull requests for review by other collaborators. In the process, feel free to add yourself to the author array of any .pbo you will be editing and the `AUTHORS.txt` file.
 
 To report a bug, propose a feature, or suggest a change to the existing one — please, use our [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
