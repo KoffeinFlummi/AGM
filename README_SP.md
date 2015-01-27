@@ -47,7 +47,7 @@ Instalaste AGM, pero no tienes ni idea de cómo funciona, o por dónde empezar?
 Mira [Getting Started](https://github.com/KoffeinFlummi/AGM/wiki/Getting-Started).
 
 ### Contribuyendo
-Si quieres ayudar con el desarrollo, puedes hacerlo mediante la búsqueda de los posibles errores o contribuyendo con nuevas características. Para contribuir en algo con AGM, simplemente haz "fork" en este repositorio y envia tus "pull requests" para su revisión por otros colaboradores. En el proceso, no dudes en agregarte a la matriz de autor de cualquier .pbo editando el archivo AUTHORS.txt.
+Si quieres ayudar con el desarrollo, puedes hacerlo mediante la búsqueda de los posibles errores o contribuyendo con nuevas características. Para contribuir en algo con AGM, simplemente haz "fork" en este repositorio y envia tus "pull requests" para su revisión por otros colaboradores. En el proceso, no dudes en agregarte a la matriz de autor de cualquier .pbo editando el archivo `AUTHORS.txt`.
 
 Para informar de un fallo, proponer una característica, o sugerir un cambio a la ya existente – por favor, usa  nuestro [Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
