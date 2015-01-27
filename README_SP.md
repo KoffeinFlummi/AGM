@@ -63,8 +63,4 @@ A fin de que los addons sean binarizados correctamente, es necesario excluir los
 <p align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HPAXPTVCNLDZS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a></p>
 
 ---
-
-"La nueva especialidad de ArmA3"
-~ An0n3
-
 - Traducido al Castellano por Viper "Cavallers del Cel - Comunitat Catalana de Simulació"
