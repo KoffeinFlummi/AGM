@@ -36,7 +36,7 @@ addMissionEventHandler ["Draw3D", {
     {
       _target = if (_x in allUnitsUAV) then {objNull} else {effectiveCommander _x};
 
-      if (!isNull _target && {side group _target == playerSide} && {_target != _player} && {isPlayer _target || {AGM_NameTags_ShowNamesForAI}} && {!(_target getVariable ["AGM_hideName", false])}) then {
+      if (!isNull _target && {(side group _target) getFriend playerSide >= 0.6} && {_target != _player} && {isPlayer _target || {AGM_NameTags_ShowNamesForAI}} && {!(_target getVariable ["AGM_hideName", false])}) then {
         _relPos = (visiblePositionASL _target) vectorDiff _pos;
         _distance = vectorMagnitude _relPos;
         _projDist = _relPos vectorDistance (_vecy vectorMultiply (_relPos vectorDotProduct _vecy));
