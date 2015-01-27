@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_UAVBattery"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.95.1";
-    versionStr = "0.95.1";
-    versionAr[] = {0,95,1};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"commy2", "KoffeinFlummi", "Garth 'L-H' de Wet", "marc_book", "gpgpgpgp", "nic547"};
     authorUrl = "https://github.com/commy2/";
   };

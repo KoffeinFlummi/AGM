@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.6;
     requiredAddons[] = {"AGM_Core", "AGM_Interaction"};
-    version = "0.95.1";
-    versionStr = "0.95.1";
-    versionAr[] = {0,95,1};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"PabstMirror"};
     authorUrl = "https://github.com/PabstMirror/";
   };

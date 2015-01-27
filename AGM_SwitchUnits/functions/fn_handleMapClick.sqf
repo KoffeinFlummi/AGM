@@ -9,16 +9,18 @@
   
   Parameters:
     0: OBJECT - MapClickEventHandlerArgs
-      0: OBJECT - unit to switch to
+      0: OBJECT - unit // useless
       1: ARRAY<OBJECT> - sides
   
   Returns:
     VOID
 */
 
-private ["_args", "_currentPlayerUnit", "_sides", "_pos", "_sideNearest"];
+private ["_sides", "_pos", "_sideNearest"];
 
-_currentPlayerUnit = (_this select 0) select 0;
+// that's wrong
+//_currentPlayerUnit = (_this select 0) select 0;
+
 _sides = (_this select 0) select 1;
 _pos = _this select 1;
 
@@ -35,7 +37,7 @@ if (count _sideNearest > 0) then {
   private ["_switchUnit"];
   
   _switchUnit = _sideNearest select 0;
-  [_currentPlayerUnit, _switchUnit] call AGM_SwitchUnits_fnc_switchUnit;
+  [AGM_player, _switchUnit] call AGM_SwitchUnits_fnc_switchUnit;
   
   openMap false;
 };

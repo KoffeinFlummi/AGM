@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_IR_Strobe_Item"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.95.1";
-    versionStr = "0.95.1";
-    versionAr[] = {0,95,1};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi", "eRazeri", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
