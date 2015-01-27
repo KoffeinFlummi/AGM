@@ -1,21 +1,25 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat" alt="AGM version">
+    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat"
+         alt="AGM version" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
-    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat" alt="AGM download">
+  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
+    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat"
+         alt="AGM download" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/issues">
-    <img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat" alt="AGM issues">
+  <a href="https://github.com/KoffeinFlummi/AGM/issues">
+    <img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat"
+         alt="AGM issues" />
   </a>
-    <a href="https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE">
-    <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat" alt="AGM license">
+  <a href="https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-GPLv2-red.svg?style=flat"
+         alt="AGM license" />
   </a>
 </p>
 <p align="center"><sup><strong>Wymaga najnowszej wersji <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://makearmanotwar.com/entry/7jnWM53S2e">Make Arma Not War</a> | <a href="http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification">Temat na forum BIS</a></strong></sup></p>
 
-**AGM** jest modularnym modem realizmu / autentyczności dla ArmA 3, częścowo opartym na pracy Taosenai przy [TMR](https://github.com/Taosenai/tmr).
+**AGM** jest modularnym modem realizmu / autentyczności dla Arma 3, częścowo opartym na pracy Taosenai przy [TMR](https://github.com/Taosenai/tmr).
 
 Jest to mod **open-source**, każdy może zaproponować do niego zmiany bądź prowadzić swoją własną, zmodyfikowaną wersję dopóki zmiany, jakie ta osoba wprowadzi, będą publiczne zgodnie z licencją GNU General Public License (po więcej informacji sprawdź plik licencji dołączony do tego projektu).
 
@@ -32,7 +36,7 @@ Więcej informacji na temat działania i celu istnienia poszczególnych element�
 *   Realistyczna balistyka włączając w to wpływ wiatru oraz wilgotności powietrza
 *   Symulacja backblast-u
 *   Podpieranie broni oraz rozkładanie dwójnogów
-*   System kontroli ognia (FCS) dla pojazdów pancernych oraz śmigłowców
+*   System kontroli ognia (FCS) dla pojazdów pancernych oraz śmigłowców<br />
     ***i wiele wiele więcej...***
 
 W celu zdobycia pełnej listy aktualnych funkcji AGM, sprawdź [oficjalną wiki](https://github.com/KoffeinFlummi/AGM/wiki).
