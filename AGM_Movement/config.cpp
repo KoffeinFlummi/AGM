@@ -170,6 +170,8 @@ class CfgMovesMaleSdr: CfgMovesBasic {
       duty = 0.3;
       interpolationSpeed = 3.05;
     };
+
+    // Direction anims
     class AmovPercMwlkSlowWrflDfl: AmovPercMwlkSlowWrflDf {
       leftHandIKCurve[] = {};
     };
@@ -190,6 +192,44 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
     class AmovPercMwlkSlowWrflDr: AmovPercMwlkSlowWrflDf {
       leftHandIKCurve[] = {};
+    };
+    class AmovPercMtacSlowWrflDbl: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDbl";
+    };
+    class AmovPercMtacSlowWrflDb: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDb";
+    };
+    class AmovPercMtacSlowWrflDbr: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDbr";
+    };
+    class AmovPercMtacSlowWrflDfl: AmovPercMwlkSlowWrflDfl
+    {
+        speed = 0.684541;
+        duty = 0.3;
+        interpolationSpeed = 3.05;
+        leftHandIKCurve[] = {1};
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\ras\Rfl\AmovPercMrunSrasWrflDfl_ldst";
+    };
+    class AmovPercMtacSlowWrflDfr: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDfr";
+    };
+    class AmovPercMtacSlowWrflDl: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDl";
+    };
+    class AmovPercMtacSlowWrflDr: AmovPercMtacSlowWrflDf
+    {
+        speed = 0.684541;
+        file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\run\low\Rfl\AmovPercMrunSlowWrflDr";
     };
 
     // enable optics in prone left and right stance
