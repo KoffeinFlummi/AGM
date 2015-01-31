@@ -42,7 +42,10 @@ if (typeName _projectile == "OBJECT") then {
 // Prevent unnecessary processing
 if (damage _unit >= 1) exitWith {};
 
-_unit setVariable ["AGM_isDiagnosed", False, True];
+// Only broadcast the isDiagnosed status if it changed
+if (_unit getVariable ["AGM_isDiagnosed", False]) then {
+  _unit setVariable ["AGM_isDiagnosed", False, True];
+};
 
 // @todo: figure out if this still applies.
 

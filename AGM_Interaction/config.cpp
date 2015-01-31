@@ -322,7 +322,7 @@ class CfgVehicles {
       class AGM_JoinGroup {
         displayName = "$STR_AGM_Interaction_JoinGroup";
         distance = 4;
-        condition = "side group _player == side group _target && {group _player != group _target}";
+        condition = "side group _player == side group _target && {group _player != group _target} && {AGM_Interaction_EnableTeamManagement}";
         statement = "[_player] joinSilent group _target;";
         showDisabled = 0;
         priority = 2.6;
