@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="WeaponSelect">
@@ -149,7 +149,7 @@
       <Spanish>Granada lista</Spanish>
       <Polish>Przygotuj granat</Polish>
       <Czech>Odjistit granát</Czech>
-      <Hungarian>Kész Gránát</Hungarian>
+      <Hungarian>Gránát előkészítése</Hungarian>
       <Russian>Подготовить гранату</Russian>
     </Key>
     <Key ID="STR_AGM_WeaponSelect_SelectGrenadeFrag">

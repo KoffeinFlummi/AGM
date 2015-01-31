@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-17 -->
 <Project name="AGM">
   <Package name="NightVision">
@@ -12,6 +12,7 @@
       <Portuguese>Óculos de visão noturna (Gen1)</Portuguese>
       <Russian>ПНВ (Gen1)</Russian>
       <Spanish>Sistema de visión nocturna (Gen1)</Spanish>
+      <Hungarian>Éjjellátó (Gen1)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen2">
       <English>NV Goggles (Gen2)</English>
@@ -23,6 +24,7 @@
       <Portuguese>Óculos de visão noturna (Gen2)</Portuguese>
       <Russian>ПНВ (Gen2)</Russian>
       <Spanish>Sistema de visión nocturna (Gen2)</Spanish>
+      <Hungarian>Éjjellátó (Gen2)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3">
       <English>NV Goggles (Gen3)</English>
@@ -34,6 +36,7 @@
       <Portuguese>Óculos de visão noturna (Gen3)</Portuguese>
       <Russian>ПНВ (Gen3)</Russian>
       <Spanish>Sistema de visión nocturna (Gen3)</Spanish>
+      <Hungarian>Éjjellátó (Gen3)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_brown">
       <English>NV Goggles (Gen3, Brown)</English>
@@ -45,6 +48,7 @@
       <Portuguese>Óculos de visão noturna (Gen3, marrons)</Portuguese>
       <Russian>ПНВ (Gen3, коричневый)</Russian>
       <Spanish>Sistema de visión nocturna (Gen3, marrón)</Spanish>
+      <Hungarian>Éjjellátó (Gen3, Barna)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_green">
       <English>NV Goggles (Gen3, Green)</English>
@@ -56,6 +60,7 @@
       <Portuguese>Óculos de visão noturna (Gen3, verdes)</Portuguese>
       <Russian>ПНВ (Gen3, зеленый)</Russian>
       <Spanish>Sistema de visión nocturna (Gen3, verde)</Spanish>
+      <Hungarian>Éjjellátó (Gen3, Zöld)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen3_black">
       <English>NV Goggles (Gen3, Black)</English>
@@ -67,6 +72,7 @@
       <Portuguese>Óculos de visão noturna (Gen3, pretos)</Portuguese>
       <Russian>ПНВ (Gen3, черный)</Russian>
       <Spanish>Sistema de visión nocturna (Gen3, negro)</Spanish>
+      <Hungarian>Éjjellátó (Gen3, Fekete)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_Gen4">
       <English>NV Goggles (Gen4)</English>
@@ -78,6 +84,7 @@
       <Portuguese>Óculos de visão noturna (Gen4)</Portuguese>
       <Russian>ПНВ (Gen4)</Russian>
       <Spanish>Sistema de visión nocturna (Gen4)</Spanish>
+      <Hungarian>Éjjellátó (Gen4)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVG_FullScreen">
       <English>NV Goggles (Wide)</English>
@@ -86,6 +93,7 @@
       <Polish>Gogle noktowizyjne (panoramiczne)</Polish>
       <Czech>Noktovizor (Široký)</Czech>
       <Russian>ПНВ (Широкий)</Russian>
+      <Hungarian>Éjjellátó (Széles)</Hungarian>
     </Key>
     <Key ID="STR_AGM_NightVision_NVGBrightness">
       <English>Brightness: %1</English>
@@ -107,7 +115,7 @@
       <Czech>Zvýšení jasu noktovizoru</Czech>
       <French>Augmenter la luminosité des JVN</French>
       <Russian>Увеличить яркость ПНВ</Russian>
-      <Hungarian>Fényerő növelése</Hungarian>
+      <Hungarian>Éjjellátó fényerejének növelése</Hungarian>
       <Portuguese>Aumentar Luminosidade do EVN</Portuguese>
       <Italian>Aumenta la luminosità dell'NVG</Italian>
     </Key>
@@ -119,7 +127,7 @@
       <Czech>Snížení jasu noktovizoru</Czech>
       <French>Baisser la luminosité des JVN</French>
       <Russian>Уменьшить яркость ПНВ</Russian>
-      <Hungarian>Fényerő csökkentése</Hungarian>
+      <Hungarian>Éjjellátó fényerejének csökkentése</Hungarian>
       <Portuguese>Diminuir Luminosidade do EVN</Portuguese>
       <Italian>Riduci la luminosità dell'NVG</Italian>
     </Key>

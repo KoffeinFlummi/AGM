@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Wind">
@@ -9,7 +9,7 @@
       <French>Estimer la température</French>
       <Polish>Przybliżona temperatura</Polish>
       <Czech>Odhadovaná teplota</Czech>
-      <Hungarian>Hőmérséklet nagyábol</Hungarian>
+      <Hungarian>Becsült hőmérséklet</Hungarian>
       <Russian>Примерная температура </Russian>
     </Key>
     <Key ID="STR_AGM_Kestrel_Name">
@@ -32,7 +32,7 @@
       <Polish>Urządzenie do monitorowania pogody</Polish>
       <Czech>Zařízení pro měření vítru</Czech>
       <Italian>Monitoraggio Balistico Attivo</Italian>
-      <Hungarian>Applied Ballistics Meter</Hungarian>
+      <Hungarian>Kézi meteorológiai állomás</Hungarian>
       <Portuguese>Medidor Balístico Ativo</Portuguese>
       <Russian>метеостанция</Russian>
     </Key>

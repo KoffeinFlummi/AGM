@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-16 -->
 <Project name="AGM">
   <Package name="Core">
@@ -167,7 +167,7 @@
       <French>Tenir %1</French>
       <Russian>Удерживая %1</Russian>
       <Portuguese>Segurar %1</Portuguese>
-      <Hungarian>%1 Nyomvatartása</Hungarian>
+      <Hungarian>%1 nyomvatartása</Hungarian>
       <Italian>Tieni premuto %1</Italian>
     </Key>
     <Key ID="STR_AGM_Core_ProfileSaved">

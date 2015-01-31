@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="Interaction">
@@ -393,7 +393,7 @@
       <Polish>Padnij!</Polish>
       <Czech>K zemi!</Czech>
       <French>A terre!</French>
-      <Hungarian>A földre!</Hungarian>
+      <Hungarian>Földre!</Hungarian>
       <Russian>Ложись!</Russian>
       <Portuguese>Abaixe-se!</Portuguese>
       <Italian>A Terra!</Italian>
@@ -617,7 +617,7 @@
       <Spanish>Auto-centrar cursor</Spanish>
       <Polish>Automatycznie centruj kursor </Polish>
       <Czech>Vycentrování kurzoru</Czech>
-      <Hungarian>Egér auto-centrírozása</Hungarian>
+      <Hungarian>Kurzor auto-centrírozása</Hungarian>
       <Russian>Автоцентрирование курсора</Russian>
     </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
@@ -647,6 +647,7 @@
       <Russian>Взаимодействовать</Russian>
       <Polish>Interakcja</Polish>
       <Spanish>Interactuar</Spanish>
+      <Hungarian>Interakció</Hungarian>
     </Key>
   </Package>
 </Project>

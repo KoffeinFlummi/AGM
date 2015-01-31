@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-21 -->
 <Project name="AGM">
   <Package name="Backpacks">
@@ -22,7 +22,7 @@
       <Czech>Odložit batoh</Czech>
       <French>Enlever (Ventral)</French>
       <Russian>Снять рюкзак (передний)</Russian>
-      <Hungarian>Táska levétele</Hungarian>
+      <Hungarian>Hátizsák levétele</Hungarian>
       <Portuguese>Retirar Mochila</Portuguese>
       <Italian>Togliere zaino</Italian>
     </Key>
@@ -33,7 +33,7 @@
       <Spanish>Bloquear mochila</Spanish>
       <Czech>Zamknout batoh</Czech>
       <Polish>Zablokuj plecak</Polish>
-      <Hungarian>Táska zárolása</Hungarian>
+      <Hungarian>Hátizsák lezárása</Hungarian>
       <Russian>Запереть рюкзак</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_UnlockBackpack">
@@ -43,7 +43,7 @@
       <Spanish>Desbloquear mochila</Spanish>
       <Czech>Odemknout batoh</Czech>
       <Polish>Odblokuj plecak</Polish>
-      <Hungarian>Táska nyitása</Hungarian>
+      <Hungarian>Hátizsák nyitása</Hungarian>
       <Russian>Отпереть рюкзак</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_BackpackLocked">
@@ -53,7 +53,7 @@
       <Spanish>La mochila de %1 está bloqueada</Spanish>
       <Czech>%1 má zamčený batoh</Czech>
       <Polish>Plecak %1 jest zablokowany</Polish>
-      <Hungarian>%1 táskája zárolva</Hungarian>
+      <Hungarian>%1 hátizsákja lezárva</Hungarian>
       <Russian>Рюкзак %1 заперт</Russian>
     </Key>
     <Key ID="STR_AGM_Backpacks_InventoryLocked">
@@ -63,7 +63,7 @@
       <Spanish>Inventario bloqueado</Spanish>
       <Czech>Inventář je zamčený</Czech>
       <Polish>Ekwipunek jest zablokowany</Polish>
-      <Hungarian>Felszerelés zárolt</Hungarian>
+      <Hungarian>A felszerelés zárolt</Hungarian>
       <Russian>Инвентарь заперт</Russian>
     </Key>
   </Package>

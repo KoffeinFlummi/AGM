@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-16 -->
 <Project name="AGM">
   <Package name="Captives">
@@ -79,7 +79,7 @@
       <French>Débarquer le prisonnier</French>
       <Polish>Wyładuj więźnia</Polish>
       <Czech>Vyložit zajatce</Czech>
-      <Hungarian>Fogoly kivevése</Hungarian>
+      <Hungarian>Fogoly kiszedése</Hungarian>
       <Russian>Выгрузить пленного</Russian>
     </Key>
     <Key ID="STR_AGM_Captives_CableTie">
@@ -103,7 +103,7 @@
       <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
       <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
       <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
-      <Hungarian>Gyorskötöző emberek fogjulejtéséhez.</Hungarian>
+      <Hungarian>Gyorskötöző emberek foglyul ejtéséhez.</Hungarian>
       <Russian>Кабельные стяжки позволяют связывать пленников.</Russian>
     </Key>
     <Key ID="STR_AGM_Captives_FriskMenuHeader">

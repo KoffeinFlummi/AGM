@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-21 -->
 <Project name="AGM">
   <Package name="Logistics">
@@ -107,7 +107,7 @@
       <Czech>Zásobníky</Czech>
       <Portuguese>Carregadores</Portuguese>
       <Italian>Caricatori</Italian>
-      <Hungarian>Fegyvertár menü</Hungarian>
+      <Hungarian>Tárak</Hungarian>
       <Russian>Магазины</Russian>
     </Key>
     <Key ID="STR_AGM_Logistics_Unload">
@@ -119,7 +119,7 @@
       <Czech>Vyložit</Czech>
       <Portuguese>Descarregar</Portuguese>
       <Italian>Scarica</Italian>
-      <Hungarian>Tárkioldás</Hungarian>
+      <Hungarian>Kirakodás</Hungarian>
       <Russian>Разгрузить</Russian>
     </Key>
     <Key ID="STR_AGM_Logistics_ReloadMagazines">
@@ -717,7 +717,7 @@
       <Czech>Chybí kolo!</Czech>
       <Portuguese>Não há roda!</Portuguese>
       <Italian>Nessuna ruota disponibile!</Italian>
-      <Hungarian>Nincsen kerék!</Hungarian>
+      <Hungarian>Nincs kerék!</Hungarian>
       <Russian>Нет колеса!</Russian>
     </Key>
     <Key ID="STR_AGM_Repair_SelectWheelMenu">
@@ -999,7 +999,7 @@
       <Czech>Zkontrolovat Palivo</Czech>
       <Portuguese>Conferir Combustível</Portuguese>
       <Italian>Controlla il carburante</Italian>
-      <Hungarian>Üzemagyag státusz</Hungarian>
+      <Hungarian>Üzemagyag ellenőrzése</Hungarian>
       <Russian>Проверить топливо</Russian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelCargo">
@@ -1011,7 +1011,7 @@
       <Czech>Zkontrolovat Palivo (náklad)</Czech>
       <Portuguese>Conferir Combustível (carregado)</Portuguese>
       <Italian>Controlla il serbatoio</Italian>
-      <Hungarian>Üzemanyagtartály állapota</Hungarian>
+      <Hungarian>Üzemanyagtartály ellenőrzése</Hungarian>
       <Russian>Проверить топливо в грузове</Russian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckFuelJerryCan">
@@ -1023,7 +1023,7 @@
       <Czech>Zkontrolovat Kanystr</Czech>
       <Portuguese>Conferir Bidão</Portuguese>
       <Italian>Controlla la tanica</Italian>
-      <Hungarian>Üzemanyagkanna állapota</Hungarian>
+      <Hungarian>Üzemanyagkanna ellenőrzése</Hungarian>
       <Russian>Проверить канистру</Russian>
     </Key>
     <Key ID="STR_AGM_Resupply_CheckingFuel">

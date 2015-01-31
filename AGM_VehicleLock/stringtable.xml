@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-24 -->
 <Project name="AGM">
   <Package name="VehicleLock">
@@ -49,7 +49,7 @@
       <French>Une clé propre à un seul véhicule.</French>
       <Polish>Unikatowy klucz który otworzy konkretny pojazd.</Polish>
       <Czech>Vlastní klíč, který otevře konkrétní vozidlo.</Czech>
-      <Hungarian>Kulcs egy járműhez</Hungarian>
+      <Hungarian>Kulcs ami egy bizonyos járművet nyit.</Hungarian>
       <Russian>Ключ от конкретной машины.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Master_Description">
@@ -59,7 +59,7 @@
       <French>Un passe-partout qui ouvrira n'importe quelle serrure.</French>
       <Polish>Uniwersalny klucz który otworzy każdy zamek.</Polish>
       <Czech>Hlavní klíč otevře libovolný zámek, bez vyjímek!</Czech>
-      <Hungarian>Általános kulcs minden járműhez</Hungarian>
+      <Hungarian>Kulcs ami minden zárat nyit.</Hungarian>
       <Russian>Универсальный ключ, открывающий любой замок.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_Lockpick_Description">
@@ -69,7 +69,7 @@
       <French>Un crochet qui ouvrira la plupart des véhicules.</French>
       <Polish>Zestaw wytrychów dzięki któremu można otworzyć zamki w większości pojazdów.</Polish>
       <Czech>Sada paklíčů, která dokáže odemknout zámky u většiny vozidel.</Czech>
-      <Hungarian>Álkulcs melyik minden járműt nyitni tud</Hungarian>
+      <Hungarian>Álkulcs mely a legtöbb járművet nyitja</Hungarian>
       <Russian>Набор отмычек, которым можно взломать почти любую машину.</Russian>
     </Key>
     <Key ID="STR_AGM_Vehicle_Item_West_Description">

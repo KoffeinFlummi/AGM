@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-12 -->
 <Project name="AGM">
   <Package name="Attach">
@@ -107,7 +107,7 @@
       <Czech>Chemické světlo Odepnuto</Czech>
       <Portuguese>Chemlight Separada</Portuguese>
       <Italian>Chemlight staccata</Italian>
-      <Hungarian>Chemlight hozzácsatolva</Hungarian>
+      <Hungarian>Chemlight lecsatolva</Hungarian>
       <Russian>Химсвет отсоединён</Russian>
     </Key>
     <Key ID="STR_AGM_Attach_Inventory_Full">

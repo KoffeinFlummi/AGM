@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-19 -->
 <Project name="AGM">
   <Package name="FireControlSystem">
@@ -16,6 +16,7 @@
       <Italian>Designatore Laser</Italian>
       -->
       <Russian>Подсветить цель / Измерить расстояние</Russian>
+      <Hungarian>Lézeres célmegjelölés / Távolság mérés</Hungarian>
     </Key>
     <Key ID="STR_AGM_FireControlSystem_ZeroedTo">
       <English>Zeroed To</English>
@@ -25,7 +26,7 @@
       <Czech>Nastaveno na</Czech>
       <French>Zéroté à</French>
       <Russian>Зероинг</Russian>
-      <Hungarian>Nullázás</Hungarian>
+      <Hungarian>Zérózás</Hungarian>
       <Portuguese>Fixado em</Portuguese>
       <Italian>Azzeramento a</Italian>
     </Key>

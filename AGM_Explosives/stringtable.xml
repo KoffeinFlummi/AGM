@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Edited with tabler - 2014-12-16 -->
 <Project name="AGM">
   <Package name="Explosives">
@@ -10,7 +10,7 @@
       <French>Explosifs &gt;&gt;</French>
       <Czech>Výbušniny &gt;&gt;</Czech>
       <Italian>Esplosivi &gt;&gt;</Italian>
-      <Hungarian>Robbanóanyagok &gt;&gt;</Hungarian>
+      <Hungarian>Robbanószerek &gt;&gt;</Hungarian>
       <Portuguese>Explosivos &gt;&gt;</Portuguese>
       <Russian>Взрывчатка &gt;&gt;</Russian>
     </Key>
@@ -46,7 +46,7 @@
       <French>Code explosif: %1</French>
       <Czech>Kód výbušniny: %1</Czech>
       <Italian>Codice dell'esplosivo : %1</Italian>
-      <Hungarian>Robbanóanyag kódja: %1</Hungarian>
+      <Hungarian>Robbanószer kódja: %1</Hungarian>
       <Portuguese>Código do explosivo: %1</Portuguese>
       <Russian>Взрывная код: %1</Russian>
     </Key>
@@ -70,7 +70,7 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
-      <Hungarian>Mégsem</Hungarian>
+      <Hungarian>Mégse</Hungarian>
       <Portuguese>Cancelar</Portuguese>
       <Russian>Отмена</Russian>
     </Key>
@@ -118,7 +118,7 @@
       <French>Téléphone Portable</French>
       <Czech>Telefon</Czech>
       <Italian>Cellulare</Italian>
-      <Hungarian>Mobil</Hungarian>
+      <Hungarian>Mobiltelefon</Hungarian>
       <Portuguese>Celular</Portuguese>
       <Russian>Сотовый телефон</Russian>
     </Key>
@@ -130,7 +130,7 @@
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Používaný ke vzdálenému odpalování výbušnin</Czech>
       <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
-      <Hungarian>Robbanóanyagok távoli robbantásához</Hungarian>
+      <Hungarian>Robbanószerek távoli robbantásához</Hungarian>
       <Portuguese>Usado para acionar explosivos remotamente</Portuguese>
       <Russian>Используется для удаленного запуска взрывчатку</Russian>
     </Key>
@@ -154,7 +154,7 @@
       <French>Utilisé pour déclencher des explosifs à distance</French>
       <Czech>Použévané ke vzdálenému odpalování výbušnin</Czech>
       <Italian>Usato per l'attivazione a distanza degli esplosivi</Italian>
-      <Hungarian>Robbanóanyagok távoli robbantásához</Hungarian>
+      <Hungarian>Robbanószerek távoli robbantásához</Hungarian>
       <Portuguese>Usado para acionar explosivos remotamente</Portuguese>
       <Russian>Используется для удаленного запуска взрывчатку</Russian>
     </Key>
@@ -202,7 +202,7 @@
       <French>Permet de désamorçer des explosifs</French>
       <Czech>Dovoluje zneškodňování výbušnin</Czech>
       <Italian>Consente la disattivazione degli ordigni esplosivi</Italian>
-      <Hungarian>Robbanóanyagok hatástalanításához</Hungarian>
+      <Hungarian>Robbanószerek hatástalanításához</Hungarian>
       <Portuguese>Permite o desarme de explosivos</Portuguese>
       <Russian>Allows defusing of explosives</Russian>
     </Key>
@@ -274,7 +274,7 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
-      <Hungarian>Mégsem</Hungarian>
+      <Hungarian>Mégse</Hungarian>
       <Portuguese>Cancelar</Portuguese>
       <Russian>Отмена</Russian>
     </Key>
@@ -418,7 +418,7 @@
       <French>Capteur IR</French>
       <Czech>IR Značkovač</Czech>
       <Italian>Sensore IR</Italian>
-      <Hungarian>IR szenzor</Hungarian>
+      <Hungarian>Infravörös szenzor</Hungarian>
       <Portuguese>Sensor IV</Portuguese>
       <Russian>ИК</Russian>
     </Key>
@@ -430,7 +430,7 @@
       <French>Pas de mise à feu disponible pour %1</French>
       <Czech>Žádný detonátor k dispozici pro %1</Czech>
       <Italian>Nessun attivatore disponibile per %1</Italian>
-      <Hungarian>Nincs detonátor a %1</Hungarian>
+      <Hungarian>Nincs detonátor ehhez: %1</Hungarian>
       <Portuguese>Nenhum gatilho disponível para %1</Portuguese>
       <Russian>Нет защелка доступны для %1</Russian>
     </Key>
@@ -442,7 +442,7 @@
       <French>Capteur IR (de flanc)</French>
       <Czech>IR Značkovač (Výbuch stranou)</Czech>
       <Italian>Sensore IR (Attacco laterale)</Italian>
-      <Hungarian>IR Sensor (Side Attack)</Hungarian>
+      <Hungarian>Infravörös szenzor (Side Attack)</Hungarian>
       <Portuguese>Sensor infravermelho (ataque lateral)</Portuguese>
       <Russian>ИК (боковая атака)</Russian>
     </Key>
@@ -454,7 +454,7 @@
       <French>Capteur Magnétique (par le bas)</French>
       <Czech>Magnetický Senzor (Výbuch ze spoda)</Czech>
       <Italian>Sensore Magnetico di Prossimità (Attacco inferiore)</Italian>
-      <Hungarian>Mágneses (Bottom Attack)</Hungarian>
+      <Hungarian>Mágneses érzékelő (Bottom Attack)</Hungarian>
       <Portuguese>Influência magnética (ataque inferior)</Portuguese>
       <Russian>Магнитный (дно атака)</Russian>
     </Key>
@@ -465,7 +465,7 @@
       <French>Pas d'explosif à mettre à feu.</French>
       <Italian>Nessun esplosivo sul sensore.</Italian>
       <Czech>Žádná výbušnina k odpálení.</Czech>
-      <Hungarian>Nincs robbanóanyag a detonátorhoz.</Hungarian>
+      <Hungarian>Nincs robbanószer a detonátorhoz.</Hungarian>
       <Polish>Brak ładunków na zapalnik.</Polish>
       <Portuguese>Nenhum explosivo no gatilho.</Portuguese>
       <Russian>Нет взрывчатки на курок.</Russian>
@@ -477,7 +477,7 @@
       <Czech>Spínač mrtvého muže</Czech>
       <Polish>Czuwak</Polish>
       <Spanish>Detonador de hombre muerto</Spanish>
-      <Hungarian>Dead Man's Switch</Hungarian>
+      <Hungarian>Holtember kapcsoló</Hungarian>
       <Russian>Кнопка мертвеца</Russian>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
@@ -487,7 +487,7 @@
       <Czech>Používaný k vzdálenému odpálení, při uvolnění odpálí výbušniny</Czech>
       <Polish>Używany w celu zdalnej detonacji ładunków kiedy jego operator zostanie zabity.</Polish>
       <Spanish>Utilizado para detonar explosivos remotamente al soltarlo.</Spanish>
-      <Hungarian>Robbanóanyagok távoli robbantásához</Hungarian>
+      <Hungarian>Robbanószerek távoli robbantásához</Hungarian>
       <Russian>Используется для дистанционного подрыва, после смерти оператора.</Russian>
     </Key>
   </Package>
