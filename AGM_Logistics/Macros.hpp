@@ -273,7 +273,8 @@
 		distance = 4; \
 		condition = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_Paradrop') == 1 && {getPosATL vehicle player select 2 > 60} && {count (vehicle player getVariable ['AGM_Logistics_loadedItems', []]) > 0}"; \
 		conditionShow = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_Paradrop') == 1"; \
-		statement = "[vehicle player] call AGM_Paradrop_fnc_paradrop"; \
+		statement = "[AGM_Logistics_targetVehicle] call AGM_Paradrop_fnc_openParadropUI;"; \
 		priority = 1; \
 		enableInside = 1; \
+		hotkey = "D"; \
 	};
