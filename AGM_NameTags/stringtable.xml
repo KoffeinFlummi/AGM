@@ -11,6 +11,7 @@
       <Polish>Pokaż nazwy</Polish>
       <Hungarian>Nevek mutatása</Hungarian>
       <Russian>Показать имена</Russian>
+      <Portuguese>Mostrar Nomes</Portuguese>
     </Key>
     <Key ID="STR_AGM_NameTags_ShowPlayerNames">
       <English>Show player names</English>
@@ -45,6 +46,7 @@
       <Polish>Pokaż nazwę gracza tylko po przytrzymaniu klawisza</Polish>
       <Hungarian>Játékosnevek mutatása gombnyomásra(névcíme szükséges)</Hungarian>
       <Russian>Показать имена игроков только по нажатию клавиши (требует имен игроков)</Russian>
+      <Portuguese>Mostrar nome do jogador apenas ao pressionar tecla (requer nome de jogadores)</Portuguese>
     </Key>
     <Key ID="STR_AGM_NameTags_ShowPlayerRanks">
       <English>Show player ranks (requires player names)</English>
@@ -68,6 +70,7 @@
       <Czech>Zobrazit info o posádce vozidla</Czech>
       <Russian>Показать экипаж</Russian>
       <Hungarian>Járműben lévő játékosok nevének mutatása</Hungarian>
+      <Portuguese>Mostrar informação de tripulantes</Portuguese>
     </Key>
   </Package>
 </Project>
