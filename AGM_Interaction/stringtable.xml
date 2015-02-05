@@ -600,7 +600,7 @@
       <French>Tu as rejoint l'équipe %1</French>
       <Polish>Dołączyłeś do drużyny %1</Polish>
       <Czech>Připojil ses do Týmu %1</Czech>
-      <Portuguese>Você se uniu à Equipe %1</Portuguese>
+      <Portuguese>Você uniu-se à Equipe %1</Portuguese>
       <Italian>Sei entrato nella Squadra %1</Italian>
       <Hungarian>Csatlakoztál a %1 csapathoz</Hungarian>
     </Key>
@@ -694,7 +694,7 @@
       <English>Not in Range</English>
       <German>Außer Reichweite</German>
       <French>Hors de portée.</French>
-      <Portuguese>Fora de Alcance</Portuguese>
+      <Portuguese>Fora do Alcançe</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
     </Key>
   </Package>
