@@ -863,6 +863,7 @@
       <Polish>Alternatywny efekt bólu</Polish>
       <Czech>Alternativní efekt bolesti</Czech>
       <Russian>Альтернативный эффект боли</Russian>
+      <Portuguese>Efeito de Dor Alternativo</Portuguese>
     </Key>
     <Key ID="STR_AGM_Medical_NotInMEDEVAC">
       <English>This is not possible here.</English>
@@ -872,6 +873,7 @@
       <Polish>Nie możesz tego zrobić tutaj.</Polish>
       <Czech>Zde to není možné.</Czech>
       <Russian>Вы не можете сделать это здесь.</Russian>
+      <Portuguese>Isso não é possível aqui.</Portuguese>
     </Key>
   </Package>
 </Project>
