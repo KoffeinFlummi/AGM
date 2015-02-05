@@ -22,6 +22,7 @@
       <Polish>Otwórz drzwi ładowni</Polish>
       <Czech>Otevřít nákladní prostor</Czech>
       <Hungarian>Rámpa lenyitása</Hungarian>
+      <Portuguese>Abrir Porta de Carga</Portuguese>
       <Russian>Открыть грузовой отсек</Russian>
     </Key>
     <Key ID="STR_AGM_Aircraft_CloseCargoRamp">
@@ -32,6 +33,7 @@
       <Polish>Zamknij drzwi ładowni</Polish>
       <Czech>Zavřít nákladní prostor</Czech>
       <Hungarian>Rámpa zárása</Hungarian>
+      <Portuguese>Fechar Porta de Carga</Portuguese>
       <Russian>Закрыть грузовой отсек</Russian>
     </Key>
   </Package>
