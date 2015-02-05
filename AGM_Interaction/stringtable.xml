@@ -514,7 +514,7 @@
       <Polish>Dołączyłeś do drużyny %1</Polish>
       <Czech>Připojil ses do Týmu %1</Czech>
       <Russian>Вы присоединились к группе %1</Russian>
-      <Portuguese>Você uniu-se à Equipe %1</Portuguese>
+      <Portuguese>Você se uniu à Equipe %1</Portuguese>
       <Italian>Sei entrato nella Squadra %1</Italian>
       <Hungarian>Csatlakoztál a %1 csapathoz</Hungarian>
     </Key>
@@ -596,7 +596,7 @@
       <French>Hors de portée.</French>
       <Spanish>Fuera de rango</Spanish>
       <Russian>Слишком далеко</Russian>
-      <Portuguese>Fora do Alcançe</Portuguese>
+      <Portuguese>Fora de Alcance</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
       <Polish>Poza zasięgiem</Polish>
       <Czech>Mimo dosah</Czech>
@@ -609,6 +609,7 @@
       <Spanish>Cerrar menú al soltar la tecla</Spanish>
       <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
       <Russian>Закрывать меню при отжатии клавиши</Russian>
+      <Portuguese>Fechar Menu ao Soltar Tecla</Portuguese>
       <Czech>Menu interakce (Na držení)</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_AutoCenterCursor">
@@ -619,6 +620,7 @@
       <Czech>Vycentrování kurzoru</Czech>
       <Hungarian>Kurzor auto-centrírozása</Hungarian>
       <Russian>Автоцентрирование курсора</Russian>
+      <Portuguese>Centralizar Cursor Automaticamente</Portuguese>
     </Key>
     <Key ID="STR_AGM_Interaction_Equipment">
       <English>Equipment &gt;&gt;</English>
@@ -629,6 +631,7 @@
       <Czech>Vybavení &gt;&gt;</Czech>
       <Hungarian>Felszerelés &gt;&gt;</Hungarian>
       <Russian>Снаряжение &gt;&gt;</Russian>
+      <Portuguese>Equipamento &gt;&gt;</Portuguese>
     </Key>
     <Key ID="STR_AGM_Interaction_Push">
       <English>Push</English>
@@ -639,6 +642,7 @@
       <Czech>Odstrčit</Czech>
       <Hungarian>Tolás</Hungarian>
       <Russian>Толкать</Russian>
+      <Portuguese>Empurrar</Portuguese>
     </Key>
     <Key ID="STR_AGM_Interaction_Interact">
       <English>Interact</English>
@@ -648,6 +652,8 @@
       <Polish>Interakcja</Polish>
       <Spanish>Interactuar</Spanish>
       <Hungarian>Interakció</Hungarian>
+      <Portuguese>Interagir</Portuguese>
     </Key>
   </Package>
 </Project>
+
