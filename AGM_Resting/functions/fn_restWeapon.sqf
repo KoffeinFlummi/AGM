@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, edited by commy2
  *
  * Rests the player's weapon if possible.
  *
@@ -18,22 +18,67 @@
 #define MAXHEIGHT 0.45
 #define CAMSHAKE [1,0.5,5]
 
-private ["_weaponPos", "_weaponDir", "_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosUp", "_checkPosDown"];
+private ["_unit", "_vehicle", "_weapon"];
 
-if (currentWeapon player != primaryWeapon player or vehicle player != player) exitWith {};
-if !(player getVariable ["AGM_CanTreat", True]) exitWith {};
-if (weaponLowered player) exitWith {};
-if ([player] call AGM_Core_fnc_inTransitionAnim) exitWith {};
+_unit = _this select 0;
+_vehicle = _this select 1;
+_weapon = _this select 2;
+
+if (_weapon != primaryWeapon _unit) exitWith {};
+
+// UNREST THE WEAPON
+private "_fnc_unRestWeapon";
+
+_fnc_unRestWeapon = {
+  addCamShake CAMSHAKE;
+
+  private "_animation";
+  _animation = animationState _unit;
+
+  if (_unit getVariable ["AGM_bipodDeployed", false]) then {
+    _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / BIPODRECOIL);
+    if (_animation find "_agm_deploy" != -1) then {
+      //[_unit, [_animation, "_agm_deploy", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      _unit switchMove ([_animation, "_agm_deploy", ""] call CBA_fnc_replace);
+    };
+
+    private "_picture";
+    _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+    [localize "STR_AGM_Resting_BipodUndeployed", _picture] call AGM_Core_fnc_displayTextPicture;
+
+  } else {
+    _unit setUnitRecoilCoefficient (unitRecoilCoefficient _unit / RESTEDRECOIL);
+    if (_animation find "_agm_rested" != -1) then {
+      //[_unit, [_animation, "_agm_rested", ""] call CBA_fnc_replace, 2] call AGM_Core_fnc_doAnimation;
+      _unit switchMove ([_animation, "_agm_rested", ""] call CBA_fnc_replace);
+    };
+
+    private "_picture";
+    _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
+    [localize "STR_AGM_Resting_WeaponLifted", _picture] call AGM_Core_fnc_displayTextPicture;
+  };
+
+  _unit setVariable ["AGM_weaponRested", false];
+  _unit setVariable ["AGM_bipodDeployed", false];
+};
+
+if (_unit getVariable ["AGM_weaponRested", false]) exitWith {call _fnc_unRestWeapon};
+
+// exit if this is not an available animation
+if (!isClass (configFile >> "CfgMovesMaleSdr" >> "States" >> format ["%1_agm_deploy", animationState _unit])) exitWith {};
 
 // PREPARE INTERSECTS
-AGM_Resting_getIntersection = {
-  _weaponPos = ATLtoASL (player modelToWorld (player selectionPosition "RightHand"));
-  _weaponDir = player weaponDirection (currentWeapon player);
-  _weaponPosDown = [
-    _weaponPos select 0,
-    _weaponPos select 1,
-    (_weaponPos select 2) - MAXHEIGHT
-  ];
+private "_fnc_getIntersection";
+
+_fnc_getIntersection = {
+  private ["_weaponPos", "_weaponDir", "_weaponPosDown"];
+
+  _weaponPos = ATLtoASL (_unit modelToWorld (_unit selectionPosition "RightHand"));
+  _weaponDir = _unit weaponDirection _weapon;
+  _weaponPosDown = _weaponPos vectorAdd [0,0,-MAXHEIGHT];
+
+  private ["_checkPosMiddle", "_checkPosLeft", "_checkPosRight", "_checkPosDown"];
+
   _checkPosMiddle = [
     (_weaponPos select 0) + MAXDISTANCE * (_weaponDir select 0),
     (_weaponPos select 1) + MAXDISTANCE * (_weaponDir select 1),
@@ -70,43 +115,76 @@ AGM_Resting_getIntersection = {
     drawLine3D [weaponPosDown, checkPosDown, [1,0,0,1]];
   };*/
 
+  private ["_intersectsMiddle", "_intersectsLeft", "_intersectsRight", "_intersectsDown"];
+
   _intersectsMiddle = lineIntersects [_weaponPos, _checkPosMiddle];
   _intersectsLeft = lineIntersects [_weaponPos, _checkPosLeft];
   _intersectsRight = lineIntersects [_weaponPos, _checkPosRight];
-  _intersectsDown = lineIntersects [_weaponPos, _checkPosDown] or terrainIntersectASL [_weaponPosDown, _checkPosDown];
+  _intersectsDown = lineIntersects [_weaponPos, _checkPosDown] || {terrainIntersectASL [_weaponPosDown, _checkPosDown]};
 
   [_intersectsMiddle, _intersectsLeft, _intersectsRight, _intersectsDown]
 };
 
 // CHECK FOR APPROPRIATE SURFACE
-_intersects = [] call AGM_Resting_getIntersection;
-if (true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) then {
-  AGM_weaponRested = true;
-  AGM_restedPosition = getPos player;
+private "_intersects";
+
+_intersects = call _fnc_getIntersection;
+
+if (true in _intersects) then {
+  _unit setVariable ["AGM_weaponRested", true];
+
+  private "_restedPosition";
+  _restedPosition = getPosASL _unit;
 
   // REST THE WEAPON
   addCamShake CAMSHAKE;
-  if (((getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "AGM_Bipod") == 1) or (getNumber(configFile >> "CfgWeapons" >> (currentWeapon player) >> "tmr_autorest_deployable") == 1)) and (_intersects select 3)) then {
-    AGM_bipodDeployed = true;
-    player setUnitRecoilCoefficient (BIPODRECOIL * (unitRecoilCoefficient player));
-    [player, format ["%1_agm_deploy", (animationState player)], 2] call AGM_Core_fnc_doAnimation;
-    _picture = getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture");
+
+  if ([_weapon] call AGM_Resting_fnc_hasBipod && {_intersects select 3}) then {
+    _unit setVariable ["AGM_bipodDeployed", true];
+
+    _unit setUnitRecoilCoefficient (BIPODRECOIL * unitRecoilCoefficient _unit);
+    //[_unit, format ["%1_agm_deploy", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    _unit switchMove format ["%1_agm_deploy", animationState _unit];
+
+    private "_picture";
+    _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
     [localize "STR_AGM_Resting_BipodDeployed", _picture] call AGM_Core_fnc_displayTextPicture;
+
   } else {
-    AGM_bipodDeployed = false;
-    player setUnitRecoilCoefficient (RESTEDRECOIL * (unitRecoilCoefficient player));
-    [player, format ["%1_agm_rested", (animationState player)], 2] call AGM_Core_fnc_doAnimation;
-    _picture = getText (configFile >> "CfgWeapons" >> currentWeapon player >>  "picture");
+    _unit setVariable ["AGM_bipodDeployed", false];
+
+    _unit setUnitRecoilCoefficient (RESTEDRECOIL * unitRecoilCoefficient _unit);
+    //[_unit, format ["%1_agm_rested", animationState _unit], 2] call AGM_Core_fnc_doAnimation;
+    _unit switchMove format ["%1_agm_rested", animationState _unit];
+
+    private "_picture";
+    _picture = getText (configFile >> "CfgWeapons" >> _weapon >> "picture");
     [localize "STR_AGM_Resting_WeaponRested", _picture] call AGM_Core_fnc_displayTextPicture;
   };
 
   // CHECK FOR PLAYER MOVING AWAY, CHANGING WEAPONS ETC
-  0 spawn {
-    while {AGM_weaponRested} do {
-      _intersects = [] call AGM_Resting_getIntersection;
-      if (!(true in _intersects and (speed player) < 1 and currentWeapon player == primaryWeapon player and vehicle player == player) or (getPos player) distance AGM_restedPosition > 1 || {inputAction "reloadMagazine" > 0}) then {
-        [] call AGM_Resting_fnc_unRestWeapon;
-      };
+  [_unit, _vehicle, _weapon, _fnc_unRestWeapon, _fnc_getIntersection, _restedPosition] spawn {
+    _unit = _this select 0;
+    _vehicle = _this select 1;
+    _weapon = _this select 2;
+    _fnc_unRestWeapon = _this select 3;
+    _fnc_getIntersection = _this select 4;
+    _restedPosition = _this select 5;
+
+    while {_unit getVariable ["AGM_weaponRested", false]} do {
+      _intersects = call _fnc_getIntersection;
+
+      if (
+        _unit != AGM_player
+        || {_vehicle != vehicle _unit}
+        || {inputAction "reloadMagazine" != 0}
+        || {weaponLowered _unit}
+        || {speed _unit > 1}
+        || {currentWeapon _unit != _weapon}
+        || {getPosASL _unit distanceSqr _restedPosition > 1}
+        || {!(true in _intersects)}
+      ) exitWith {call _fnc_unRestWeapon};
+
       sleep 0.3;
     };
   };

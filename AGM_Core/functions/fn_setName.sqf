@@ -1,27 +1,25 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Sets the name variable of the object. Used to prevent issues with the name command.
+ *
+ * Argument:
+ * 0: Object (Object)
+ *
+ * Return value:
+ * Nothing.
+ */
 
-_this spawn {
-	sleep 1;
+private ["_unit", "_name"];
 
-	_unit = _this select 0;
+_unit = _this select 0;
 
-	if (!alive _unit) exitWith {};
+if (isNull _unit || {!alive _unit}) exitWith {};
 
-	_faction = getText (configFile >> "CfgVehicles" >> typeOf _unit >> "faction");
-	_ranks = getArray (configFile >> "CfgFactionClasses" >> _faction >> "AGM_Ranks");
-	if (count _ranks < 7) then {
-		_ranks = ["Pvt.", "Cpl.", "Sgt.", "Lt.", "Cpt.", "Maj.", "Col."];
-	};
+if (_unit isKindOf "CAManBase") then {
+  _name = [name _unit, true] call AGM_Core_fnc_sanitizeString;
 
-	_rank = _ranks select (["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _unit) max 0;
-	_name = name _unit;
-
-	if (_unit == player) then {
-		_rank = profileNamespace getVariable ["AGM_Rank", _rank];
-		_name = [_name, true] call AGM_Core_fnc_sanitizeString;
-	};
-
-	//_name = format ["%1 %2", _rank, _name];
-
-	_unit setVariable ["AGM_Name", _name, true];
+  //if (_name != _unit getVariable ["AGM_Name", ""]) then {
+    _unit setVariable ["AGM_Name", _name, true];
+  //};
 };

@@ -16,7 +16,7 @@ _this spawn {
 	AGM_Fortifications_Setup attachTo [_unit, _unit worldToModel ((ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0]))];
 	detach AGM_Fortifications_Setup;
 
-	_unit forceWalk true;
+	[_unit, "AGM_Logistics", true] call AGM_Core_fnc_setForceWalkStatus;
 	AGM_Fortifications_TweakedAngle = 180;
 
 	["AGM_Fortifications_Placement", "OnEachFrame", {
@@ -28,7 +28,7 @@ _this spawn {
 		_pos = (ASLtoATL eyePos player) vectorAdd (positionCameraToWorld [0, 0, 4] vectorDiff positionCameraToWorld [0, 0, 0]);
 		_pos set [2, 0];
 
-		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_Unconscious", false]} || {player != vehicle player}) exitWith {
+		if (getPosATL player distance _pos < 2 || {!alive player} || {player getVariable ["AGM_isUnconscious", false]} || {player != vehicle player}) exitWith {
 			call AGM_Fortifications_fnc_setupCancel;
 		};
 

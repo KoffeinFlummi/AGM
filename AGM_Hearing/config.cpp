@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_EarBuds"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi", "CAA-Picard", "HopeJ", "commy2"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -16,11 +16,13 @@ class CfgFunctions {
   class AGM_Hearing {
     class AGM_Hearing {
       file = "AGM_Hearing\functions";
+      class addEarPlugs;
       class earRinging;
-      class explosionEH;
-      class firedNearEH;
-      class putInEarplugs;
-      class removeEarplugs;
+      class explosionNear;
+      class firedNear;
+      class hasEarPlugsIn;
+      class putInEarPlugs;
+      class removeEarPlugs;
     };
   };
 };
@@ -31,17 +33,29 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-/*class AGM_Core_Default_Keys {
-  class Earplugs {
-    displayName = "$STR_AGM_Hearing_Earbuds_On";
-    condition = "alive player && {!(player getVariable ['AGM_Unconscious', false])}";
-    statement = "[] call AGM_Hearing_fnc_Earplugs";
-    key = 18;
-    shift = 0;
-    control = 0;
-    alt = 1;
+class Extended_Init_EventHandlers {
+  class CAManBase {
+    class AGM_Hearing_AddEarPlugs {
+      init = "if (local (_this select 0)) then {_this call AGM_Hearing_fnc_addEarPlugs};";
+    };
   };
-};*/
+};
+
+class Extended_FiredNear_EventHandlers {
+  class CAManBase {
+    class AGM_Hearing_FiredNear {
+      clientFiredNear = "if (_this select 0 == AGM_player) then {_this call AGM_Hearing_fnc_firedNear};";
+    };
+  };
+};
+
+class Extended_Explosion_EventHandlers {
+  class CAManBase {
+    class AGM_Hearing_ExplosionNear {
+      clientExplosion = "if (_this select 0 == AGM_player) then {_this call AGM_Hearing_fnc_explosionNear};";
+    };
+  };
+};
 
 #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
   name = #ITEM; \
@@ -52,21 +66,27 @@ class CfgVehicles {
   class Man;
   class CAManBase: Man {
     class AGM_SelfActions {
-      class AGM_PutInEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_On";
-        condition = "!AGM_EarPlugsIn && {'AGM_EarBuds' in items player} && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
-        statement = "call AGM_Hearing_fnc_putInEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
-      };
-      class AGM_RemoveEarplugs {
-        displayName = "$STR_AGM_Hearing_Earbuds_Off";
-        condition = "AGM_EarPlugsIn && {alive player} && {!(player getVariable ['AGM_Unconscious', false])}";
-        statement = "call AGM_Hearing_fnc_removeEarplugs";
-        showDisabled = 0;
-        priority = 2.5;
-        icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+      class AGM_Equipment {
+        class AGM_PutInEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_On";
+          condition = "!([_player] call AGM_Hearing_fnc_hasEarPlugsIn) && {'AGM_EarBuds' in items _player}";
+          statement = "[_player] call AGM_Hearing_fnc_putInEarPlugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+          enableInside = 1;
+        };
+        class AGM_RemoveEarplugs {
+          displayName = "$STR_AGM_Hearing_Earbuds_Off";
+          condition = "[_player] call AGM_Hearing_fnc_hasEarPlugsIn";
+          statement = "[_player] call AGM_Hearing_fnc_removeEarPlugs";
+          showDisabled = 0;
+          priority = 2.5;
+          icon = "AGM_Hearing\UI\agm_earplugs_x_ca.paa";
+          hotkey = "E";
+          enableInside = 1;
+        };
       };
     };
   };
@@ -133,7 +153,7 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_EarBuds,24)
+      MACRO_ADDITEM(AGM_EarBuds,12)
     };
   };
 };
@@ -166,5 +186,13 @@ class CfgWeapons {
     class ItemInfo: InventoryItem_Base_F {
       mass = 1;
     };
+  };
+};
+
+// Setting up old stuff for A3
+class CfgAmmo {
+  class BulletBase;
+  class B_127x108_Ball: BulletBase {
+    audibleFire = 15;
   };
 };

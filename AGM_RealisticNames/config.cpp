@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -20,6 +20,8 @@ class CfgVehicles {
   class GMG_TriPod;
   class AT_01_base_F;
   class AA_01_base_F;
+  class UAV_02_base_F;
+  class UAV_02_CAS_base_F: UAV_02_base_F {};
 
   // BLUFOR Inheritance
   class MRAP_01_base_F;
@@ -37,6 +39,8 @@ class CfgVehicles {
   class Heli_Attack_01_base_F;
   class Heli_Light_01_base_F;
   class Heli_Light_01_armed_base_F;
+  class B_Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {};
   class Plane_CAS_01_base_F;
 
   // INDEP Inheritance
@@ -158,8 +162,21 @@ class CfgVehicles {
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_armed_Name";
   };
+  class B_Heli_Transport_03_F: B_Heli_Transport_03_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_Name";
+  };
+  class B_Heli_Transport_03_unarmed_F: B_Heli_Transport_03_unarmed_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name";
+  };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
     displayName = "$STR_AGM_RealisticNames_Plane_CAS_01_Name";
+  };
+
+  class B_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class B_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
   };
 
   class B_static_AT_F: AT_01_base_F {
@@ -226,6 +243,13 @@ class CfgVehicles {
     displayName = "$STR_AGM_RealisticNames_Plane_Fighter_03_AA_Name";
   };
 
+  class I_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class I_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
+  };
+
   class I_static_AT_F: AT_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AT_Name";
   };
@@ -234,7 +258,7 @@ class CfgVehicles {
   };
 
 
-  //OPFOR
+  // OPFOR
   class O_MRAP_02_F: MRAP_02_base_F {
     displayName = "$STR_AGM_RealisticNames_MRAP_02_Name";
   };
@@ -312,11 +336,23 @@ class CfgVehicles {
     displayName = "$STR_AGM_RealisticNames_Plane_CAS_02_Name";
   };
 
+  class O_UAV_02_F: UAV_02_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_Name";
+  };
+  class O_UAV_02_CAS_F: UAV_02_CAS_base_F {
+    displayName = "$STR_AGM_RealisticNames_UAV_02_CAS_Name";
+  };
+
   class O_static_AT_F: AT_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AT_Name";
   };
   class O_static_AA_F: AA_01_base_F {
     displayName = "$STR_AGM_RealisticNames_static_AA_Name";
+  };
+
+  // Civilian
+  class Heli_Light_01_civil_base_F: Heli_Light_01_base_F {
+    displayName = "$STR_AGM_RealisticNames_Heli_Light_01_civil_Name";
   };
 
   // pistols

@@ -12,19 +12,19 @@ _laser = [];
 _line = [_position, _laser];
 
 while {
-	_iteration > 0.1
+  _iteration > 0.1
 } do {
-	_iteration = _iteration / 2;
+  _iteration = _iteration / 2;
 
-	_laser set [0, (_position select 0) - _distance * (_direction select 0)];
-	_laser set [1, (_position select 1) - _distance * (_direction select 1)];
-	_laser set [2, (_position select 2) - _distance * (_direction select 2)];
+  _laser set [0, (_position select 0) - _distance * (_direction select 0)];
+  _laser set [1, (_position select 1) - _distance * (_direction select 1)];
+  _laser set [2, (_position select 2) - _distance * (_direction select 2)];
 
-	_intersections = {
-		_x isKindOf "Static" || {_x isKindOf "AllVehicles"}
-	} count (lineIntersectsWith _line);
+  _intersections = {
+    _x isKindOf "Static" || {_x isKindOf "AllVehicles"}
+  } count (lineIntersectsWith _line);
 
-	_distance = _distance + ([1, -1] select (_intersections > 0)) * _iteration;
+  _distance = _distance + ([1, -1] select (_intersections > 0)) * _iteration;
 };
 
 if (_distance > _maxDistance) then {999} else {_distance}

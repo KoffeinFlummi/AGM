@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-12-22 -->
 <Project name="AGM">
   <Package name="Medical">
     <Key ID="STR_AGM_Medical_Treat">
@@ -82,7 +82,7 @@
       <Czech>Obvázat</Czech>
       <French>Pansement</French>
       <Italian>Benda</Italian>
-      <Hungarian>Kötözése</Hungarian>
+      <Hungarian>Kötözés</Hungarian>
       <Portuguese>Atadura</Portuguese>
       <Russian>Перевязать</Russian>
     </Key>
@@ -197,7 +197,7 @@
     <Key ID="STR_AGM_Medical_Load">
       <English>Load Patient Into</English>
       <German>Patient Einladen</German>
-      <Spanish>Introducir el paciente</Spanish>
+      <Spanish>Cargar el paciente en</Spanish>
       <Polish>Załaduj pacjenta</Polish>
       <Czech>Naložit pacianta do</Czech>
       <Russian>Погрузить пациента в</Russian>
@@ -209,7 +209,7 @@
     <Key ID="STR_AGM_Medical_Unload">
       <English>Unload Patient</English>
       <German>Patient Ausladen</German>
-      <Spanish>Extraer el paciente</Spanish>
+      <Spanish>Descargar el paciente</Spanish>
       <Polish>Wyładuj pacjenta</Polish>
       <Czech>Vyložit pacienta</Czech>
       <Russian>Выгрузить пациента</Russian>
@@ -274,7 +274,7 @@
       <Czech>Obvazuji ...</Czech>
       <French>Pansement ...</French>
       <Italian>Sto applicando la benda ...</Italian>
-      <Hungarian>Bekötözése...</Hungarian>
+      <Hungarian>Bekötözés...</Hungarian>
       <Portuguese>Atando ...</Portuguese>
       <Russian>Перевязывание....</Russian>
     </Key>
@@ -298,7 +298,7 @@
       <Czech>Obvazuji hruď ...</Czech>
       <Russian>Перевязывание торса...</Russian>
       <French>Pansement au Torse ...</French>
-      <Hungarian>Felsőtest bekötözése</Hungarian>
+      <Hungarian>Felsőtest bekötözése ...</Hungarian>
       <Portuguese>Atando Tronco ...</Portuguese>
       <Italian>Sto applicando la benda sul torso</Italian>
     </Key>
@@ -368,7 +368,7 @@
       <Spanish>Venda</Spanish>
       <Polish>Bandaż</Polish>
       <Czech>Obvaz</Czech>
-      <Russian>Бинты</Russian>
+      <Russian>Бинт</Russian>
       <French>Pansement</French>
       <Hungarian>Kötszer</Hungarian>
       <Portuguese>Atadura</Portuguese>
@@ -430,7 +430,7 @@
       <Czech>Používaný k probuzení člověka z bezvědomí</Czech>
       <Russian>Используется для возвращения в сознание.</Russian>
       <French>Utilisé pour réveiller un patient inconscient.</French>
-      <Hungarian>Ájultak felkeltéséhez.</Hungarian>
+      <Hungarian>Eszméletlenek felkeltéséhez.</Hungarian>
       <Portuguese>Usado para despertar indivíduos inconscientes.</Portuguese>
       <Italian>Usato per risvegliare le unità svenute.</Italian>
     </Key>
@@ -563,7 +563,7 @@
       <Czech>Pacient je v bezvědomí.</Czech>
       <Russian>Пациент без сознания.</Russian>
       <French>Le patient est inconscient.</French>
-      <Hungarian>Elájult.</Hungarian>
+      <Hungarian>Eszméletlen.</Hungarian>
       <Portuguese>O paciente está inconsciente.</Portuguese>
       <Italian>Il paziente è svenuto.</Italian>
     </Key>
@@ -707,7 +707,7 @@
       <Czech>Pacient je na těžkých sedativech </Czech>
       <Russian>У пациента высокая доза морфина в крови.</Russian>
       <French>Le patient est lourdement sédaté,</French>
-      <Hungarian>Erős fájdalomcsillapítót kapott.</Hungarian>
+      <Hungarian>Erős fájdalomcsillapítót kapott</Hungarian>
       <Portuguese>O paciente está sob efeito de fortes analgésicos</Portuguese>
       <Italian>Il paziente è sotto effetto di forti antidolorifici</Italian>
     </Key>
@@ -719,7 +719,7 @@
       <Czech>Pacient má v sobě morfium </Czech>
       <Russian>Пациенту введен морфин.</Russian>
       <French>Le patient est sédaté,</French>
-      <Hungarian>Kapot morfiumot.</Hungarian>
+      <Hungarian>Kapot morfiumot</Hungarian>
       <Portuguese>O paciente está sob efeito de morfina</Portuguese>
       <Italian>Il paziente è un po' fatto di morfina</Italian>
     </Key>
@@ -731,7 +731,7 @@
       <Czech>Pacient není na sedativech </Czech>
       <Russian>Обезболивающие не вводились.</Russian>
       <French>Le patient n'est pas sédaté,</French>
-      <Hungarian>Nem kapott fájdalomcsillapítót.</Hungarian>
+      <Hungarian>Nem kapott fájdalomcsillapítót</Hungarian>
       <Portuguese>O paciente não está sob efeito de analgésicos</Portuguese>
       <Italian>Il paziente non è sotto effetto di antidolorifici</Italian>
     </Key>
@@ -789,21 +789,23 @@
       <Spanish>está inyectandote morfina.</Spanish>
       <French>t'injecte de la morphine.</French>
       <Polish>podaje Tobie morfinę.</Polish>
-      <Hungarian>morfiumot ad neked.</Hungarian>
+      <Hungarian>morfiumot ad be neked.</Hungarian>
       <Czech>ti dává morfin.</Czech>
       <Portuguese>está lhe dando morfina.</Portuguese>
       <Italian>ti sta iniettando la morfina.</Italian>
+      <Russian>даёт вам морфин.</Russian>
     </Key>
-    <Key ID="STR_AGM_Medical_keepMenuOpen">
+    <Key ID="STR_AGM_Medical_KeepMenuOpen">
       <English>Reopen medical menu after treatment</English>
       <German>Sanitätsmenü nach Behandlung öffnen</German>
       <Spanish>Reabrir el menú médico después de tratar</Spanish>
-      <Hungarian>Orvosi menü újranyitása ellátás után</Hungarian>
+      <Hungarian>Orvosi menü újranyitása az ellátás után</Hungarian>
       <Czech>Po ošetření znovu otevřít zdravotnické menu</Czech>
       <Polish>Otwórz ponownie menu medyczne po zakończeniu akcji leczenia</Polish>
       <French>Réouvrir le menu médical après les soins</French>
       <Portuguese>Reabrir menu médico após tratamento</Portuguese>
       <Italian>Riapri il menù medico dopo il trattamento</Italian>
+      <Russian>По завершению лечения, снова открыть меню..</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_NoItem">
       <English>You don't have the required item anymore.</English>
@@ -815,39 +817,61 @@
       <Italian>Non hai più l'oggetto richiesto</Italian>
       <Portuguese>Você não possui mais o item médico requerido.</Portuguese>
       <Hungarian>Nem rendelkezel a szükséges eszközzel.</Hungarian>
+      <Russian>У вас больше нет требующихся предметов.</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemPatient">
-      <English>Taking the patient's %1...</English>
-      <German>%1 des Patienten wird benutzt...</German>
+      <English>Taking the patient's %1 ...</English>
+      <German>%1 des Patienten wird benutzt ...</German>
       <Spanish>Cogiendo al paciente %1...</Spanish>
-      <Polish>Pobrano od pacjenta: %1...</Polish>
-      <French>Prendre %1... du patient</French>
-      <Czech>Beru pacientův %1...</Czech>
+      <Polish>Pobrano od pacjenta: %1 ...</Polish>
+      <French>Prendre %1 ... du patient</French>
+      <Czech>Beru pacientův %1 ...</Czech>
       <Italian>Sto prendendo un %1 dal paziente ...</Italian>
       <Portuguese>Pegando %1 do paciente ...</Portuguese>
-      <Hungarian>Elveszed a páciens...</Hungarian>
+      <Hungarian>Elveszed a pácienstől ezt: %1 ...</Hungarian>
+      <Russian>Используем %1 пациента ...</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingYourItem">
-      <English>%1 is using your %2...</English>
-      <German>%1 benutzt dein(e) %2...</German>
+      <English>%1 is using your %2 ...</English>
+      <German>%1 benutzt dein(e) %2 ...</German>
       <Spanish>%1 está usando tu %2...</Spanish>
-      <Polish>%1 pobrał od Ciebie %2...</Polish>
-      <French>%1 utilise ton %2...</French>
-      <Czech>%1 používá tvůj %2...</Czech>
+      <Polish>%1 pobrał od Ciebie %2 ...</Polish>
+      <French>%1 utilise ton %2 ...</French>
+      <Czech>%1 používá tvůj %2 ...</Czech>
       <Italian>%1 sta usando il tuo %1 ...</Italian>
-      <Portuguese>%1 está usando seu %2...</Portuguese>
-      <Hungarian>%1 használja a %2</Hungarian>
+      <Portuguese>%1 está usando seu %2 ...</Portuguese>
+      <Hungarian>%1 használja ezt: %2 ...</Hungarian>
+      <Russian>%1 использует ваш %2 ...</Russian>
     </Key>
     <Key ID="STR_AGM_Medical_TakingItemSelf">
-      <English>Patient has no %1, using yours...</English>
-      <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt...</German>
+      <English>Patient has no %1, using yours ...</English>
+      <German>%1 beim Patienten nicht vorhanden, eigenes Material wird genutzt ...</German>
       <Spanish>El paciente no tiene %1, usando el tuyo...</Spanish>
-      <Polish>%1 nie znajduje się w ekwipunku pacjenta, używanie własnych zasobów...</Polish>
-      <French>Le patient n'a pas de %1, tu utilises ton matériel...</French>
-      <Czech>Pacient nemá žádný %1, používám vlastní...</Czech>
-      <Italian>Il paziente non ha nessun %1, userai il tuo.</Italian>
-      <Portuguese>O paciente não possui %1, usando o seu...</Portuguese>
-      <Hungarian>A páciensnek nincs %1, a sajátodat használod.</Hungarian>
+      <Polish>%1 nie znajduje się w ekwipunku pacjenta, używanie własnych zasobów ...</Polish>
+      <French>Le patient n'a pas de %1, tu utilises ton matériel ...</French>
+      <Czech>Pacient nemá žádný %1, používám vlastní ...</Czech>
+      <Italian>Il paziente non ha nessun %1, userai il tuo ...</Italian>
+      <Portuguese>O paciente não possui %1, usando o seu ...</Portuguese>
+      <Hungarian>A páciensnek nincs %1, a sajátodat használod ...</Hungarian>
+      <Russian>% 1 отсутствует в инвентаре пациента, используем собственный ...</Russian>
+    </Key>
+    <Key ID="STR_AGM_Medical_AlternativePainEffect">
+      <English>Alternative Pain Effect</English>
+      <German>Alternativer Schmerzeffekt</German>
+      <Spanish>Efecto de dolor alternativo</Spanish>
+      <Hungarian>Alternativ fájdalomeffektus</Hungarian>
+      <Polish>Alternatywny efekt bólu</Polish>
+      <Czech>Alternativní efekt bolesti</Czech>
+      <Russian>Альтернативный эффект боли</Russian>
+    </Key>
+    <Key ID="STR_AGM_Medical_NotInMEDEVAC">
+      <English>This is not possible here.</English>
+      <German>Das ist hier nicht möglich.</German>
+      <Spanish>Esto no es posible aquí.</Spanish>
+      <Hungarian>Ez nem lehetséges itt.</Hungarian>
+      <Polish>Nie możesz tego zrobić tutaj.</Polish>
+      <Czech>Zde to není možné.</Czech>
+      <Russian>Вы не можете сделать это здесь.</Russian>
     </Key>
   </Package>
 </Project>

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Edited with tabler - 2014-12-17 -->
 <Project name="AGM">
   <Package name="Overheating">
-
     <Key ID="STR_AGM_Overheating_SpareBarrelName">
       <English>Spare barrel</English>
       <German>Ersatzlauf</German>
@@ -46,7 +46,7 @@
       <Czech>Uvolnit zbraň</Czech>
       <French>Désenrayer l'arme</French>
       <Russian>Исправить клин оружия.</Russian>
-      <Hungarian>Hárítsd el az akadályt!</Hungarian>
+      <Hungarian>Akadály elhárítása</Hungarian>
       <Portuguese>Destravar arma</Portuguese>
       <Italian>Ripulisci l'arma</Italian>
     </Key>
@@ -58,7 +58,7 @@
       <Czech>Zbraň uvolněna</Czech>
       <French>Arme désenrayée</French>
       <Russian>Оружие исправлено</Russian>
-      <Hungarian>Akadály elhárítva!</Hungarian>
+      <Hungarian>Akadály elhárítva</Hungarian>
       <Portuguese>Arma destravada</Portuguese>
       <Italian>Arma pronta al fuoco</Italian>
     </Key>
@@ -70,7 +70,7 @@
       <Czech>Vyměnit hlaveň</Czech>
       <French>Changer de canon</French>
       <Russian>Сменить ствол</Russian>
-      <Hungarian>Cserélj csövet!</Hungarian>
+      <Hungarian>Cső cseréje</Hungarian>
       <Portuguese>Substituir cano</Portuguese>
       <Italian>Sostiuisci la canna</Italian>
     </Key>
@@ -82,7 +82,7 @@
       <Czech>Vyměňuji hlaveň ...</Czech>
       <French>Changement du canon...</French>
       <Russian>Смена ствола...</Russian>
-      <Hungarian>Cső cserélése...</Hungarian>
+      <Hungarian>Cső kicserélése...</Hungarian>
       <Portuguese>Substituindo cano...</Portuguese>
       <Italian>Sto sostituendo la canna ...</Italian>
     </Key>
@@ -94,12 +94,10 @@
       <Czech>Hlaveň vyměněna</Czech>
       <French>Canon changé</French>
       <Russian>Ствол сменен</Russian>
-      <Hungarian>Cső kicserélve!</Hungarian>
+      <Hungarian>Cső kicserélve</Hungarian>
       <Portuguese>Cano substituído</Portuguese>
       <Italian>Canna sostituita</Italian>
     </Key>
-
-
     <Key ID="STR_AGM_Overheating_CheckTemperature">
       <English>Check weapons temperature</English>
       <German>Temperatur der Waffe prüfen</German>
@@ -110,8 +108,8 @@
       <Czech>Zjistit teplotu zbraně</Czech>
       <Portuguese>Conferir temperatura da arma</Portuguese>
       <Italian>Controlla la temperatura della canna</Italian>
+      <Russian>Проверить температуру оружия</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckTemperatureShort">
       <English>Check temperature</English>
       <German>Temperatur prüfen</German>
@@ -122,8 +120,8 @@
       <Czech>Zjistit teplotu</Czech>
       <Portuguese>Conferir temperatura</Portuguese>
       <Italian>Controlla la temperatura</Italian>
+      <Russian>Проверить температуру</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_CheckingTemperature">
       <English>Checking temperature ...</English>
       <German>Prüfe Temperatur ...</German>
@@ -134,8 +132,8 @@
       <Czech>Zjišťuju teplotu ...</Czech>
       <Portuguese>Conferindo temperatura ...</Portuguese>
       <Italian>Sto controllando la temperatura ...</Italian>
+      <Russian>Проверка температуры ...</Russian>
     </Key>
-
     <Key ID="STR_AGM_Overheating_Temperature">
       <English>Temperature</English>
       <German>Temperatur</German>
@@ -146,7 +144,7 @@
       <Czech>Teplota</Czech>
       <Portuguese>Temperatura</Portuguese>
       <Italian>Temperatura</Italian>
+      <Russian>Температура</Russian>
     </Key>
-
   </Package>
 </Project>

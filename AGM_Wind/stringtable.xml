@@ -1,90 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-09 -->
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="Wind">
-    <Key ID="STR_AGM_Wind_NoMeasurableWind">
-      <English>No measurable wind</English>
-      <German>Kein messbarer Wind</German>
-      <Spanish>Sin viento apreciable</Spanish>
-      <Polish>Brak wiatru</Polish>
-      <Czech>Žádný měřitelný vítr</Czech>
-      <French>Pas de vent mesurable</French>
-      <Russian>Нет ветра</Russian>
-      <Portuguese>Nenhum vento mensurável</Portuguese>
-      <Hungarian>Nincs mérhető szél</Hungarian>
-      <Italian>Nessun vento misurabile</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_NoMeasurable">
-      <English>No measurable</English>
-      <German>Kein messbarer</German>
-      <Spanish>No apreciable</Spanish>
-      <Polish>Nie można zmierzyć</Polish>
-      <Czech>Není možné měřit</Czech>
-      <French>Non mesurable</French>
-      <Russian>Не заметный</Russian>
-      <Portuguese>Não mensurável</Portuguese>
-      <Hungarian>Nem mérhető</Hungarian>
-      <Italian>Non misurabile</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_VeryLight">
-      <English>Very light</English>
-      <German>Sehr leichter</German>
-      <Spanish>Muy ligero</Spanish>
-      <Polish>Bardzo słaby</Polish>
-      <Czech>Velmi slabý</Czech>
-      <French>Très léger</French>
-      <Russian>Очень слабый</Russian>
-      <Portuguese>Bem leve</Portuguese>
-      <Hungarian>Nagyon gyenge</Hungarian>
-      <Italian>Vento molto leggero</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_Light">
-      <English>Light</English>
-      <German>Leichter</German>
-      <Spanish>Ligero</Spanish>
-      <Polish>Słaby</Polish>
-      <Czech>Slabý</Czech>
-      <French>Léger</French>
-      <Russian>Слабый</Russian>
-      <Portuguese>Leve</Portuguese>
-      <Hungarian>Gyenge</Hungarian>
-      <Italian>Leggero</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_Moderate">
-      <English>Moderate</English>
-      <German>Mittelstarker</German>
-      <Spanish>Moderado</Spanish>
-      <Polish>Umiarkowany</Polish>
-      <Czech>Mírný</Czech>
-      <French>Moyen</French>
-      <Russian>Умеренный</Russian>
-      <Portuguese>Moderado</Portuguese>
-      <Hungarian>Közepes</Hungarian>
-      <Italian>Moderato</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_Strong">
-      <English>Strong</English>
-      <German>Starker</German>
-      <Spanish>Fuerte</Spanish>
-      <Polish>Silny</Polish>
-      <Czech>Silný</Czech>
-      <French>Fort</French>
-      <Russian>Сильный</Russian>
-      <Portuguese>Forte</Portuguese>
-      <Hungarian>Erős</Hungarian>
-      <Italian>Forte</Italian>
-    </Key>
-    <Key ID="STR_AGM_Wind_WindFromThe">
-      <English>wind from the</English>
-      <German>wind aus</German>
-      <Spanish>viento del</Spanish>
-      <Polish>wiatr z</Polish>
-      <Czech>vítr z</Czech>
-      <French>vent venant du</French>
-      <Russian>ветер с</Russian>
-      <Portuguese>Vento do</Portuguese>
-      <Hungarian>szélirány:</Hungarian>
-      <Italian>Vento da</Italian>
+    <Key ID="STR_AGM_Wind_ApproximateTemp">
+      <English>Approximate Temperature</English>
+      <German>Ungefähre Temperatur</German>
+      <Spanish>Temperatura aproximada</Spanish>
+      <French>Estimer la température</French>
+      <Polish>Przybliżona temperatura</Polish>
+      <Czech>Odhadovaná teplota</Czech>
+      <Hungarian>Becsült hőmérséklet</Hungarian>
+      <Russian>Примерная температура </Russian>
     </Key>
     <Key ID="STR_AGM_Kestrel_Name">
       <English>Kestrel 4500NV</English>
@@ -106,7 +32,7 @@
       <Polish>Urządzenie do monitorowania pogody</Polish>
       <Czech>Zařízení pro měření vítru</Czech>
       <Italian>Monitoraggio Balistico Attivo</Italian>
-      <Hungarian>Applied Ballistics Meter</Hungarian>
+      <Hungarian>Kézi meteorológiai állomás</Hungarian>
       <Portuguese>Medidor Balístico Ativo</Portuguese>
       <Russian>метеостанция</Russian>
     </Key>
@@ -120,6 +46,7 @@
       <Portuguese>Abrir Kestrel</Portuguese>
       <Italian>Apri Kestrel</Italian>
       <Hungarian>Kestrel bekapcsolása</Hungarian>
+      <Russian>Открыть Kestrel</Russian>
     </Key>
     <Key ID="STR_AGM_Wind_CloseKestrel">
       <English>Close Kestrel</English>
@@ -131,6 +58,7 @@
       <Portuguese>Fechar Kestrel</Portuguese>
       <Italian>Chiudi Kestrel</Italian>
       <Hungarian>Kestrel kikapcsolása</Hungarian>
+      <Russian>Закрыть Kestrel</Russian>
     </Key>
   </Package>
 </Project>

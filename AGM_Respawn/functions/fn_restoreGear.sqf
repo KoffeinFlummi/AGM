@@ -1,5 +1,5 @@
 /*
-Author: jodav
+Author: bux578
 
 Description:
 Restores previously saved gear
@@ -11,14 +11,14 @@ Return value:
 An array containing all inventory items
 */
 
-private ["_unit", "_allGear", "_headgear", "_goggles", "_uniform", "_uniformitems", "_vest", "_vestitems", "_backpack", "_backpackitems", "_primaryweapon", "_primaryweaponitems", "_primaryweaponmagazine", "_handgunweapon", "_handgunweaponitems", "_handgunweaponmagazine", "_assigneditems"];
+private ["_unit", "_allGear", "_headgear", "_goggles", "_uniform", "_uniformitems", "_vest", "_vestitems", "_backpack", "_backpackitems", "_primaryweapon", "_primaryweaponitems", "_primaryweaponmagazine", "_handgunweapon", "_handgunweaponitems", "_handgunweaponmagazine", "_assigneditems", "_binocular"];
 
 
 _unit = _this select 0;
 _allGear = _this select 1;
 
 // remove all starting gear of a player
-removeallweapons _unit;
+removeAllWeapons _unit;
 removeGoggles _unit;
 removeHeadgear _unit;
 removeVest _unit;
@@ -45,97 +45,101 @@ _handgunweapon = _allGear select 14;
 _handgunweaponitems = _allGear select 15;
 _handgunweaponmagazine = _allGear select 16;
 _assigneditems = _allGear select 17;
+_binocular = _allGear select 18;
 
 
 // start restoring the items
-_unit addHeadgear _headgear;
-_unit addUniform _uniform;
-_unit addVest _vest;
-_unit addGoggles _goggles;
+if (_headgear != "") then {
+  _unit addHeadgear _headgear;
+};
+if (_uniform != "") then {
+  _unit forceAddUniform _uniform;
+};
+if (_vest != "") then {
+  _unit addVest _vest;
+};
+if (_goggles != "") then {
+  _unit addGoggles _goggles;
+};
 
 {
-    _unit addItemToUniform _x;
-}foreach _uniformitems;
+  _unit addItemToUniform _x;
+}forEach _uniformitems;
 
 {
-    _unit addItemToVest _x;
-}foreach _vestitems;
+  _unit addItemToVest _x;
+}forEach _vestitems;
 
 
 if(format["%1", _backpack] != "") then {
-    _unit addbackpack _backpack;
-    _backpa = unitBackpack _unit;
-	clearMagazineCargoGlobal _backpa;
-	clearWeaponCargoGlobal _backpa;
-	clearItemCargoGlobal _backpa;
-    {
-        _unit addItemToBackpack _x;
-    } foreach _backpackitems;
+  _unit addBackpack _backpack;
+
+  _backpa = unitBackpack _unit;
+  clearMagazineCargoGlobal _backpa;
+  clearWeaponCargoGlobal _backpa;
+  clearItemCargoGlobal _backpa;
+  {
+    _unit addItemToBackpack _x;
+  } forEach _backpackitems;
 };
 
 
 // primaryWeapon
-{
-    _unit addMagazine _x;
-} foreach _primaryweaponmagazine;
-
 if (_primaryweapon != "") then {
-    _unit addweapon _primaryweapon;
-};
+  {
+    _unit addMagazine _x;
+  } forEach _primaryweaponmagazine;
 
-{
-    _unit addPrimaryWeaponItem _x;
-} foreach _primaryweaponitems;
+  _unit addWeapon _primaryweapon;
+
+  {
+    if (_x != "") then {
+      _unit addPrimaryWeaponItem _x;
+    };
+  } forEach _primaryweaponitems;
+};
 
 
 // secondaryWeapon
-{
-    _unit addMagazine _x;
-} foreach _secondaryweaponmagazine;
-
 if (_secondaryweapon != "") then {
-    _unit addweapon _secondaryweapon;
-};
+  {
+    _unit addMagazine _x;
+  } forEach _secondaryweaponmagazine;
 
-{
-    _unit addSecondaryWeaponItem _x;
-} foreach _secondaryweaponitems;
+  _unit addWeapon _secondaryweapon;
+
+  {
+    if (_x != "") then {
+      _unit addSecondaryWeaponItem _x;
+    };
+  } forEach _secondaryweaponitems;
+};
 
 
 // handgun
-{
-    _unit addMagazine _x;
-} foreach _handgunweaponmagazine;
-
 if (_handgunweapon != "") then {
-    _unit addweapon _handgunweapon;
+  {
+    _unit addMagazine _x;
+  } forEach _handgunweaponmagazine;
+
+  _unit addWeapon _handgunweapon;
+
+  {
+    if (_x != "") then {
+      _unit addHandgunItem _x;
+    };
+  } forEach _handgunweaponitems;
 };
 
-{
-    _unit addHandgunItem _x;
-} foreach _handgunweaponitems;
 
+_assignedItems = _assignedItems - [_binocular];
 
 // items
-{
-    _unit linkItem _x;
-} foreach _assigneditems;
-// items // einige ITEM gehen nur mit addWeapon
-{_unit addWeapon _x} forEach _assignedItems;
+{_unit linkItem _x} forEach _assignedItems;
 
-IF("Laserdesignator" in assignedItems _unit) then {
-	_unit selectWeapon "Laserdesignator";
-	IF(currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
+_unit addWeapon _binocular;
+
+if ("Laserdesignator" in assignedItems _unit) then {
+  _unit selectWeapon "Laserdesignator";
+  if (currentMagazine _unit == "") then {_unit addMagazine "Laserbatteries";};
 };
-
-
-/*
-Kann es sein, dass immer ein Magazin verschwindet beim ReSp. ? Dann das hier mit einbauen... Ich teste das nachher Flummi
-_primaryWeaponMagazineCount = _unit ammo (primaryWeapon _unit);
-_secondaryWeaponMagazineCount = _unit ammo (secondaryWeapon _unit);
-_handgunWeaponMagazineCount = _unit ammo (handgunWeapon _unit);
-
-{_unit addMagazine [_x,_primaryWeaponMagazineCount   ] ; } forEach _primaryWeaponMagazine;
-{_unit addMagazine [_x,_secondaryWeaponMagazineCount ] ; } forEach _secondaryWeaponMagazine;
-{_unit addMagazine [_x,_handgunWeaponMagazineCount   ] ; } forEach _handgunWeaponMagazine;
-*/

@@ -8,7 +8,7 @@
  * 0: unit
  * 1: selection
  * 2: damage
- * 4: disable overall damage adjustment (optional)
+ * 3: disable overall damage adjustment (optional)
  *
  * Return Value:
  * -
@@ -39,18 +39,12 @@ _selections = [
   "HitRightLeg"
 ];
 
-if (!(_selection in _selections) or (count _this > 3)) exitWith {
+if !(_selection in _selections) exitWith {
   _unit setHitPointDamage [_selection, _damage];
 };
 
-_damages = [
-  (_unit getHitPointDamage "HitHead"),
-  (_unit getHitPointDamage "HitBody"),
-  (_unit getHitPointDamage "HitLeftArm"),
-  (_unit getHitPointDamage "HitRightArm"),
-  (_unit getHitPointDamage "HitLeftLeg"),
-  (_unit getHitPointDamage "HitRightLeg")
-];
+AGM_Medical_Unit = _unit;
+_damages = [_selections, {AGM_Medical_Unit getHitPointDamage _this}] call AGM_Core_fnc_map;
 
 _damageOld = damage _unit;
 _damageSumOld = 0;
@@ -59,11 +53,7 @@ _damageSumOld = 0;
 } forEach _damages;
 _damageSumOld = _damageSumOld max 0.001;
 
-{
-  if (_x == _selection) then {
-    _damages set [_forEachIndex, _damage];
-  };
-} forEach _selections;
+_damages set [_selections find _selection, _damage];
 
 _damageSumNew = 0;
 {
@@ -75,12 +65,12 @@ if (_damageOld > 0) then {
   _damageNew = _damageOld * (_damageSumNew / _damageSumOld);
 };
 
-if (_unit getVariable "AGM_Unconscious") then {
-  if (_damageNew > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+if (_unit getVariable ["AGM_isUnconscious", False]) then {
+  if (_damageNew > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious}) then {
     _damageNew = 0.89;
   };
 } else {
-  if (_damageNew > 0.9 and {AGM_Medical_PreventInstaDeath > 0}) then {
+  if (_damageNew > 0.9 and {AGM_Medical_PreventInstaDeath}) then {
     _damageNew = 0.89;
   };
 };
@@ -89,12 +79,12 @@ _unit setDamage _damageNew;
 
 {
   _damageFinal = (_damages select _forEachIndex);
-  if (_unit getVariable "AGM_Unconscious") then {
-    if (_damageFinal > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious > 0}) then {
+  if (_unit getVariable ["AGM_isUnconscious", False]) then {
+    if (_damageFinal > 0.9 and {AGM_Medical_PreventDeathWhileUnconscious}) then {
       _damageFinal = 0.89;
     };
   } else {
-    if (_damageFinal > 0.9 and {AGM_Medical_PreventInstaDeath > 0}) then {
+    if (_damageFinal > 0.9 and {AGM_Medical_PreventInstaDeath}) then {
       _damageFinal = 0.89;
     };
   };

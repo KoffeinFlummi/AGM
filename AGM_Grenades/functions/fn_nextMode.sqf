@@ -1,6 +1,18 @@
-// by commy2
+/*
+ * Author: commy2
+ *
+ * Select the next throwing mode and display message.
+ * 
+ * Argument:
+ * Nothing
+ * 
+ * Return value:
+ * Nothing
+ */
 
-_mode = AGM_Grenades_Mode;
+private ["_mode", "_hint"];
+
+_mode = missionNamespace getVariable ["AGM_Grenades_Mode", 0];
 
 if (_mode == 4) then {
   _mode = 0;

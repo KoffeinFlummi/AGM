@@ -1,19 +1,27 @@
 
 #define KEY_WHEEL_4X4 \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel"}; \
-	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
 
 #define KEY_WHEEL_6X6_FRONT \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLBWheel", "HitRBWheel"}; \
-	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
 
 #define KEY_WHEEL_6X6_REAR \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
-	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
+
+#define KEY_WHEEL_6X6_REAR_KAMAZ \
+	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLMWheel", "HitRMWheel", "HitLF2Wheel", "HitRF2Wheel"}; \
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
+
+#define KEY_WHEEL_6X6_STOMPER \
+	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel"}; \
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
 
 #define KEY_WHEEL_8X8 \
 	AGM_Wheels[] = {"HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel"}; \
-	AGM_WheelsLocalized[] = {$STR_AGM_Repair_HitLFWheel, $STR_AGM_Repair_HitRFWheel, $STR_AGM_Repair_HitLF2Wheel, $STR_AGM_Repair_HitRF2Wheel, $STR_AGM_Repair_HitLMWheel, $STR_AGM_Repair_HitRMWheel, $STR_AGM_Repair_HitLBWheel, $STR_AGM_Repair_HitRBWheel};
+	AGM_WheelsLocalized[] = {STR_AGM_Repair_HitLFWheel, STR_AGM_Repair_HitRFWheel, STR_AGM_Repair_HitLF2Wheel, STR_AGM_Repair_HitRF2Wheel, STR_AGM_Repair_HitLMWheel, STR_AGM_Repair_HitRMWheel, STR_AGM_Repair_HitLBWheel, STR_AGM_Repair_HitRBWheel};
 
 
 #define MACRO_LOADABLE \
@@ -71,22 +79,12 @@
 		condition = "!(player call AGM_Drag_fnc_isDraggingObject)"; \
 		conditionShow = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_isDraggable"; \
 		statement = "[AGM_Interaction_Target, player] call AGM_Drag_fnc_dragObject"; \
-		tooltip = "Drag this object."; \
 		showDisabled = 0; \
 		priority = 3; \
 		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
-	}; \
-	class AGM_ReleaseItem { \
-		displayName = "$STR_AGM_Drag_EndDrag"; \
-		distance = 4; \
-		condition = "player call AGM_Drag_fnc_isDraggingObject && {AGM_Interaction_Target == player getVariable ['AGM_carriedItem', objNull]}"; \
-		statement = "player call AGM_Drag_fnc_releaseObject"; \
-		tooltip = "Release the dragged / carried object."; \
-		exceptions[] = {"AGM_Drag_isNotDragging"}; \
-		showDisabled = 0; \
-		priority = 3; \
-		icon = "\A3\ui_f\data\igui\cfg\actions\gear_ca.paa"; \
+		hotkey = "R"; \
 	};
+//		tooltip = "Drag this object."; \
 
 #define MACRO_NOT_DRAGABLE \
 	class AGM_DragItem { \
@@ -119,6 +117,17 @@
 		priority = 2; \
 		icon = "AGM_Logistics\ui\rotate_ccw_ca.paa"; \
 	};
+
+#define MACRO_NOT_GETINABLE_STATIC \
+	class AGM_GetIn { \
+		condition = "false"; \
+	}; \
+	class AGM_RotateClockwise { \
+		condition = "false"; \
+	}; \
+	class AGM_RotateCounterclockwise { \
+		condition = "false"; \
+	}; \
 
 #define MACRO_CUTWIRE \
 	class AGM_Wirecutter_cut { \
@@ -266,4 +275,5 @@
 		conditionShow = "getNumber(configFile >> 'CfgVehicles' >> typeOf vehicle player >> 'AGM_Paradrop') == 1"; \
 		statement = "[vehicle player] call AGM_Paradrop_fnc_paradrop"; \
 		priority = 1; \
+		enableInside = 1; \
 	};

@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {"AGM_ItemKestrel"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"Falke", "commy2", "KoffeinFlummi", "CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -76,6 +76,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2;
         icon = "AGM_Wind\data\4500NV1.paa";
+        hotkey = "K";
       };
       class AGM_CloseKestrel {
         displayName = "$STR_AGM_Wind_CloseKestrel";
@@ -84,6 +85,7 @@ class CfgVehicles {
         showDisabled = 0;
         priority = 2;
         icon = "AGM_Wind\data\4500NV1.paa";
+        hotkey = "K";
       };
     };
   };
@@ -114,6 +116,22 @@ class CfgVehicles {
   };
 };
 
+
+class CfgAmmo {
+  class Default;
+  class BulletCore;
+  class B_127x108_Ball;
+  class B_127x99_Ball;
+  class BulletBase : BulletCore {
+    AGM_Bullet_Dispersion = 0;
+  };
+  class B_127x108_APDS : B_127x108_Ball {
+    AGM_Bullet_Dispersion = 0.017;
+  };
+  class B_127x99_SLAP : B_127x99_Ball {
+    AGM_Bullet_Dispersion = 0.017;
+  };
+};
 
 class RscText;
 class AGM_Rsc_Control_Base;
@@ -181,6 +199,22 @@ class RscTitles {
         colorBackground[] = {1, 1, 1, 1};
         shadow = 0;
       };
+	  class AGM_KestrelHUDpic_Night: RscPicture {
+        idc = 42006;
+        type = 0;
+        text = "AGM_Wind\data\4500NV2.paa";
+        style = 48 + 0x800;
+        x = safeZoneX -0.25;
+        y = safeZoneY + safeZoneH - 0.8;
+        h = 0.75;
+        w = 0.75;
+        scale = 1;
+        font = "PuristaMedium";
+        sizeEx = 1;
+        colorText[] = {0,0,0,1-(sunOrMoon*sunOrMoon+(moonIntensity/5))};
+        colorBackground[] = {1, 1, 1, 1};
+        shadow = 0;
+      };
       class AGM_KestrelHUD1: RscText {
         idc = 42002;
         type = 0;
@@ -233,11 +267,13 @@ class RscTitles {
         idc = 42005;
         type = 0;
         style = 1;
-        x = safeZoneX +0.068;
-        y = safeZoneY + safeZoneH -0.418;
+        //x = safeZoneX +0.068;
+        x = safeZoneX + 0.08;
+        y = safeZoneY + safeZoneH - 0.418;
         h = 0.09;
-        w = 0.138;
-        sizeEx = 0.035;
+        w = 0.108;
+        //w = 0.138;
+        sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = " 0000";

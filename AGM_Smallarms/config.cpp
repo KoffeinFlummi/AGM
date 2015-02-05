@@ -3,12 +3,12 @@
 class CfgPatches {
   class AGM_Smallarms {
     units[] = {};
-    weapons[] = {"AGM_acc_flashlight_tls"};
+    weapons[] = {}; //{"AGM_acc_flashlight_tls"};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"TaoSensai", "KoffeinFlummi"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -185,13 +185,47 @@ class Mode_SemiAuto;
 class Mode_Burst;
 class Mode_FullAuto;
 
-class WeaponSlotsInfo;
-class PointerSlot;
+// config inheritance of weapon slot info v1.32
+class SlotInfo;
+class CowsSlot: SlotInfo {};
+class PointerSlot: SlotInfo {
+  //compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
+};
 
 class CfgWeapons {
-  class WeaponSlotsInfo;
-  class SlotInfo;
-  class Rifle_Base_F;
+
+  // config inheritance of weapon slot info v1.32 for launchers
+  class Launcher;
+  class Launcher_Base_F: Launcher {
+    class WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for assault rifles
+  class RifleCore;
+  class Rifle: RifleCore {
+    class WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+      class CowsSlot: CowsSlot {};
+      class PointerSlot: PointerSlot {};
+    };
+  };
+  class Rifle_Base_F: Rifle {};
+  class Rifle_Long_Base_F: Rifle_Base_F {
+    class WeaponSlotsInfo: WeaponSlotsInfo {};
+  };
+
+  // config inheritance of weapon slot info v1.32 for handguns
+  class PistolCore;
+  class Pistol: PistolCore {
+    class WeaponSlotsInfo {
+      class CowsSlot: SlotInfo {};
+    };
+  };
+  class Pistol_Base_F: Pistol {
+    class WeaponSlotsInfo: WeaponSlotsInfo {
+      class MuzzleSlot: SlotInfo {};
+    };
+  };
 
   ///////////////////////////////////////////////////////////////////////////////
   //////////// SMALL ARMS WEAPONS ///////////////////////////////////////////////
@@ -342,70 +376,19 @@ class CfgWeapons {
 
   // Pistols //////////////////////////////////////////////
 
-  class Pistol;
-  class Pistol_Base_F: Pistol {
-    class WeaponSlotsInfo;
-  };
   class hgun_P07_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
   };
 
   class hgun_Rook40_F : Pistol_Base_F {
     magazines[] = {"16Rnd_9x21_Mag"};
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
   };
 
-  class hgun_ACPC2_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
-
-  class hgun_Pistol_heavy_01_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
-
-  class hgun_Pistol_heavy_02_F: Pistol_Base_F {
-    class WeaponSlotsInfo: WeaponSlotsInfo {
-      class PointerSlot: PointerSlot {
-        access = 1;
-        compatibleItems[] = {"AGM_acc_flashlight_tls"};
-        linkProxy = "\A3\data_f\proxies\weapon_slots\SIDE";
-        scope = 0;
-      };
-    };
-  };
+  /*class hgun_ACPC2_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_01_F: Pistol_Base_F {};
+  class hgun_Pistol_heavy_02_F: Pistol_Base_F {};*/
 
   // LMGs //////////////////////////////////////////////
-
-  class Rifle_Long_Base_F;
 
   class LMG_Mk200_F : Rifle_Long_Base_F {
     modes[] = {"manual", "Single", "close", "short", "medium", "far_optic1", "far_optic2"};
@@ -474,7 +457,7 @@ class CfgWeapons {
   class AGM_acc_flashlight_tls: ItemCore {
     author = "$STR_A3_Bohemia_Interactive";
     _generalMacro = "AGM_acc_flashlight_tls";
-    scope = 2;
+    scope = 1; //2;
     displayName = "$STR_A3_cfgWeapons_acc_flashlight0";//
     descriptionUse = "$STR_A3_cfgWeapons_use_flashlight0";//
     picture = "\A3\weapons_F\Data\UI\gear_accv_flashlight_tls_ca.paa";
@@ -516,7 +499,7 @@ class CfgWeapons {
   count = COUNT; \
 };
 
-class CfgVehicles {
+/*class CfgVehicles {
   class NATO_Box_Base;
   class EAST_Box_Base;
   class IND_Box_Base;
@@ -544,8 +527,4 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_acc_flashlight_tls,2)
     };
   };
-};
-
-/*
-MACRO_ADDITEM(AGM_acc_flashlight_tls,2)
-*/
+};*/

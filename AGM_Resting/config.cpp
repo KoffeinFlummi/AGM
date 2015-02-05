@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi", "TaoSensai"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -17,24 +17,17 @@ class CfgFunctions {
   class AGM_Resting {
     class AGM_Resting {
       file = "AGM_Resting\functions";
-      class canRestWeapon;
+      class hasBipod;
       class restWeapon;
-      class unRestWeapon;
     };
-  };
-};
-
-class Extended_PostInit_EventHandlers {
-  class AGM_Resting {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_Resting\clientInit.sqf'";
   };
 };
 
 class AGM_Core_Default_Keys {
   class restWeapon {
     displayName = "$STR_AGM_Resting_RestWeapon";
-    condition = "call AGM_Resting_fnc_canRestWeapon";
-    statement = "call ([AGM_Resting_fnc_restWeapon, AGM_Resting_fnc_unRestWeapon] select AGM_weaponRested)";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon && {inputAction 'reloadMagazine' == 0} && {!weaponLowered _player} && {speed _player < 1}";
+    statement = "[_player, _vehicle, currentWeapon _player] call AGM_Resting_fnc_restWeapon";
     key = 15;
     shift = 0;
     control = 0;
@@ -375,6 +368,259 @@ class CfgMovesBasic {
       turnSpeed = AGM_DEPLOY_TURNSPEED;
       limitFast = 1;
     };
+
+    //////////////////////////////////////////////////////////////////////
+    // FFV
+    //////////////////////////////////////////////////////////////////////
+
+    class passenger_inside_1Actions;
+    class passenger_inside_1Actions_agm_deploy : passenger_inside_1Actions {
+      stop =    "passenger_inside_1_Aim_agm_deploy";
+      default = "passenger_inside_1_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_2Actions;
+    class passenger_inside_2Actions_agm_deploy : passenger_inside_2Actions {
+      stop =    "passenger_inside_2_Aim_agm_deploy";
+      default = "passenger_inside_2_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_3Actions;
+    class passenger_inside_3Actions_agm_deploy : passenger_inside_3Actions {
+      stop =    "passenger_inside_3_Aim_agm_deploy";
+      default = "passenger_inside_3_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_4Actions;
+    class passenger_inside_4Actions_agm_deploy : passenger_inside_4Actions {
+      stop =    "passenger_inside_4_Aim_agm_deploy";
+      default = "passenger_inside_4_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_bench_1Actions;
+    class passenger_bench_1Actions_agm_deploy : passenger_bench_1Actions {
+      stop =    "passenger_bench_1_Aim_agm_deploy";
+      default = "passenger_bench_1_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_1Actions;
+    class passenger_boat_1Actions_agm_deploy : passenger_boat_1Actions {
+      stop =    "passenger_boat_1_Aim_agm_deploy";
+      default = "passenger_boat_1_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_2Actions;
+    class passenger_boat_2Actions_agm_deploy : passenger_boat_2Actions {
+      stop =    "passenger_boat_2_Aim_agm_deploy";
+      default = "passenger_boat_2_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_3Actions;
+    class passenger_boat_3Actions_agm_deploy : passenger_boat_3Actions {
+      stop =    "passenger_boat_3_Aim_agm_deploy";
+      default = "passenger_boat_3_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_4Actions;
+    class passenger_boat_4Actions_agm_deploy : passenger_boat_4Actions {
+      stop =    "passenger_boat_4_Aim_agm_deploy";
+      default = "passenger_boat_4_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_1Actions;
+    class passenger_flatground_1Actions_agm_deploy : passenger_flatground_1Actions {
+      stop =    "passenger_flatground_1_Aim_agm_deploy";
+      default = "passenger_flatground_1_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_2Actions;
+    class passenger_flatground_2Actions_agm_deploy : passenger_flatground_2Actions {
+      stop =    "passenger_flatground_2_Aim_agm_deploy";
+      default = "passenger_flatground_2_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_3Actions;
+    class passenger_flatground_3Actions_agm_deploy : passenger_flatground_3Actions {
+      stop =    "passenger_flatground_3_Aim_agm_deploy";
+      default = "passenger_flatground_3_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_4Actions;
+    class passenger_flatground_4Actions_agm_deploy : passenger_flatground_4Actions {
+      stop =    "passenger_flatground_4_Aim_agm_deploy";
+      default = "passenger_flatground_4_Aim_agm_deploy";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    //////////////////////////////////////////////////////////////////////
+
+    class passenger_inside_1Actions_agm_rested : passenger_inside_1Actions {
+      stop =    "passenger_inside_1_Aim_agm_rested";
+      default = "passenger_inside_1_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_2Actions_agm_rested : passenger_inside_2Actions {
+      stop =    "passenger_inside_2_Aim_agm_rested";
+      default = "passenger_inside_2_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_3Actions_agm_rested : passenger_inside_3Actions {
+      stop =    "passenger_inside_3_Aim_agm_rested";
+      default = "passenger_inside_3_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_inside_4Actions_agm_rested : passenger_inside_4Actions {
+      stop =    "passenger_inside_4_Aim_agm_rested";
+      default = "passenger_inside_4_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_bench_1Actions_agm_rested : passenger_bench_1Actions {
+      stop =    "passenger_bench_1_Aim_agm_rested";
+      default = "passenger_bench_1_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_1Actions_agm_rested : passenger_boat_1Actions {
+      stop =    "passenger_boat_1_Aim_agm_rested";
+      default = "passenger_boat_1_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_2Actions_agm_rested : passenger_boat_2Actions {
+      stop =    "passenger_boat_2_Aim_agm_rested";
+      default = "passenger_boat_2_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_3Actions_agm_rested : passenger_boat_3Actions {
+      stop =    "passenger_boat_3_Aim_agm_rested";
+      default = "passenger_boat_3_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_boat_4Actions_agm_rested : passenger_boat_4Actions {
+      stop =    "passenger_boat_4_Aim_agm_rested";
+      default = "passenger_boat_4_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_1Actions_agm_rested : passenger_flatground_1Actions {
+      stop =    "passenger_flatground_1_Aim_agm_rested";
+      default = "passenger_flatground_1_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_2Actions_agm_rested : passenger_flatground_2Actions {
+      stop =    "passenger_flatground_2_Aim_agm_rested";
+      default = "passenger_flatground_2_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_3Actions_agm_rested : passenger_flatground_3Actions {
+      stop =    "passenger_flatground_3_Aim_agm_rested";
+      default = "passenger_flatground_3_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
+
+    class passenger_flatground_4Actions_agm_rested : passenger_flatground_4Actions {
+      stop =    "passenger_flatground_4_Aim_agm_rested";
+      default = "passenger_flatground_4_Aim_agm_rested";
+      turnL =   "";
+      turnR =   "";
+      turnSpeed = AGM_DEPLOY_TURNSPEED;
+      limitFast = 1;
+    };
   };
 };
 
@@ -607,7 +853,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
 
     /////////////////////////////////////////////////////////////////////////////
 
-        class AmovPercMstpSrasWrflDnon_agm_rested : AmovPercMstpSrasWrflDnon {
+    class AmovPercMstpSrasWrflDnon_agm_rested : AmovPercMstpSrasWrflDnon {
       aimPrecision = AGM_SWAY_RESTED;
       actions = "RifleStandActions_agm_rested";
       aiming = "aimingLying";
@@ -815,6 +1061,389 @@ class CfgMovesMaleSdr : CfgMovesBasic {
       ConnectFrom[] = {"aadjppnemstpsraswrfldright_agm_rested", 0.02};
       InterpolateFrom[] = {"aadjppnemstpsraswrfldright", 0.02};
       InterpolateTo[] = {"aadjppnemstpsraswrfldright", 0.02};
+    };
+
+    //////////////////////////////////////////////////////////////////////
+    // FFV
+    //////////////////////////////////////////////////////////////////////
+
+    class passenger_bench_1_Aim;
+    class passenger_bench_1_Aim_agm_deploy : passenger_bench_1_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_bench_1Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_bench_1_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_bench_1_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_bench_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_bench_1_Aim", 0.02};
+    };
+
+    class passenger_inside_1_Aim;
+    class passenger_inside_1_Aim_agm_deploy : passenger_inside_1_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_inside_1Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_1_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_inside_1_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_inside_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_1_Aim", 0.02};
+    };
+
+    class passenger_inside_2_Aim;
+    class passenger_inside_2_Aim_agm_deploy : passenger_inside_2_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_inside_2Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_2_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_inside_2_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_inside_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_2_Aim", 0.02};
+    };
+
+    class passenger_inside_3_Aim;
+    class passenger_inside_3_Aim_agm_deploy : passenger_inside_3_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_inside_3Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_3_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_inside_3_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_inside_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_3_Aim", 0.02};
+    };
+
+    class passenger_inside_4_Aim;
+    class passenger_inside_4_Aim_agm_deploy : passenger_inside_4_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_inside_4Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_4_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_inside_4_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_inside_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_4_Aim", 0.02};
+    };
+
+    class passenger_boat_1_Aim;
+    class passenger_boat_1_Aim_agm_deploy : passenger_boat_1_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_boat_1Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_1_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_boat_1_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_boat_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_1_Aim", 0.02};
+    };
+
+    class passenger_boat_2_Aim;
+    class passenger_boat_2_Aim_agm_deploy : passenger_boat_2_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_boat_2Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_2_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_boat_2_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_boat_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_2_Aim", 0.02};
+    };
+
+    class passenger_boat_3_Aim;
+    class passenger_boat_3_Aim_agm_deploy : passenger_boat_3_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_boat_3Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_3_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_boat_3_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_boat_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_3_Aim", 0.02};
+    };
+
+    class passenger_boat_4_Aim;
+    class passenger_boat_4_Aim_agm_deploy : passenger_boat_4_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_boat_4Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_4_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_boat_4_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_boat_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_4_Aim", 0.02};
+    };
+
+    class passenger_flatground_1_Aim;
+    class passenger_flatground_1_Aim_agm_deploy : passenger_flatground_1_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_flatground_1Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_1_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_flatground_1_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_1_Aim", 0.02};
+    };
+
+    class passenger_flatground_2_Aim;
+    class passenger_flatground_2_Aim_agm_deploy : passenger_flatground_2_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_flatground_2Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_2_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_flatground_2_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_2_Aim", 0.02};
+    };
+
+    class passenger_flatground_3_Aim;
+    class passenger_flatground_3_Aim_agm_deploy : passenger_flatground_3_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_flatground_3Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_3_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_flatground_3_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_3_Aim", 0.02};
+    };
+
+    class passenger_flatground_4_Aim;
+    class passenger_flatground_4_Aim_agm_deploy : passenger_flatground_4_Aim {
+      aimPrecision = AGM_SWAY_DEPLOY;
+      actions = "passenger_flatground_4Actions_agm_deploy";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_4_Aim_agm_deploy", 0.02};
+      ConnectFrom[] = {"passenger_flatground_4_Aim_agm_deploy", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_4_Aim", 0.02};
+    };
+
+    //////////////////////////////////////////////////////////////////////
+
+    class passenger_bench_1_Aim_agm_rested : passenger_bench_1_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_bench_1Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_bench_1_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_bench_1_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_bench_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_bench_1_Aim", 0.02};
+    };
+
+    class passenger_inside_1_Aim_agm_rested : passenger_inside_1_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_inside_1Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_1_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_inside_1_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_inside_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_1_Aim", 0.02};
+    };
+
+    class passenger_inside_2_Aim_agm_rested : passenger_inside_2_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_inside_2Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_2_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_inside_2_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_inside_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_2_Aim", 0.02};
+    };
+
+    class passenger_inside_3_Aim_agm_rested : passenger_inside_3_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_inside_3Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_3_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_inside_3_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_inside_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_3_Aim", 0.02};
+    };
+
+    class passenger_inside_4_Aim_agm_rested : passenger_inside_4_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_inside_4Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_inside_4_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_inside_4_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_inside_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_inside_4_Aim", 0.02};
+    };
+
+    class passenger_boat_1_Aim_agm_rested : passenger_boat_1_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_boat_1Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_1_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_boat_1_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_boat_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_1_Aim", 0.02};
+    };
+
+    class passenger_boat_2_Aim_agm_rested : passenger_boat_2_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_boat_2Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_2_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_boat_2_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_boat_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_2_Aim", 0.02};
+    };
+
+    class passenger_boat_3_Aim_agm_rested : passenger_boat_3_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_boat_3Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_3_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_boat_3_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_boat_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_3_Aim", 0.02};
+    };
+
+    class passenger_boat_4_Aim_agm_rested : passenger_boat_4_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_boat_4Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_boat_4_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_boat_4_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_boat_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_boat_4_Aim", 0.02};
+    };
+
+    class passenger_flatground_1_Aim_agm_rested : passenger_flatground_1_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_flatground_1Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_1_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_flatground_1_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_1_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_1_Aim", 0.02};
+    };
+
+    class passenger_flatground_2_Aim_agm_rested : passenger_flatground_2_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_flatground_2Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_2_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_flatground_2_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_2_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_2_Aim", 0.02};
+    };
+
+    class passenger_flatground_3_Aim_agm_rested : passenger_flatground_3_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_flatground_3Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_3_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_flatground_3_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_3_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_3_Aim", 0.02};
+    };
+
+    class passenger_flatground_4_Aim_agm_rested : passenger_flatground_4_Aim {
+      aimPrecision = AGM_SWAY_RESTED;
+      actions = "passenger_flatground_4Actions_agm_rested";
+      aiming = "aimingDefault";
+      speed = 0.01;
+      onLandEnd = false;
+      onLandBeg = false;
+
+      ConnectTo[] = {"passenger_flatground_4_Aim_agm_rested", 0.02};
+      ConnectFrom[] = {"passenger_flatground_4_Aim_agm_rested", 0.02};
+      InterpolateFrom[] = {"passenger_flatground_4_Aim", 0.02};
+      InterpolateTo[] = {"passenger_flatground_4_Aim", 0.02};
     };
   };
 };

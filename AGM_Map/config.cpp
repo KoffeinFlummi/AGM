@@ -3,10 +3,10 @@ class CfgPatches {
     units[] = {};
     weapons[] = {"AGM_MapTools"};
     requiredVersion = 0.60;
-    requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    requiredAddons[] = {AGM_Core, AGM_Interaction};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi","CAA-Picard"};
     authorUrl = "https://github.com/KoffeinFlummi/";
   };
@@ -40,7 +40,7 @@ class CfgFunctions {
 
 class Extended_PreInit_EventHandlers {
   class AGM_Map {
-    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverPreInit.sqf'";
+    serverInit = "call compile preprocessFileLineNumbers '\AGM_Map\serverInit.sqf'";
   };
 };
 
@@ -81,66 +81,74 @@ class CfgVehicles {
         displayName = "$STR_AGM_Map_MapTools_Menu";
         condition = "(call AGM_Map_fnc_canUseMapTools) || (call AGM_Map_fnc_canUseMapGPS)";
         statement = "";
-        exceptions[] = {"AGM_Drag_isNotDragging"};
+        exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
         showDisabled = 0;
         priority = 100;
         subMenu[] = {"AGM_MapTools", 1};
+        enableInside = 1;
 
         class AGM_MapToolsHide {
           displayName = "$STR_AGM_Map_MapToolsHide";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown > 0}";
           statement = "AGM_Map_mapToolsShown = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 5;
+          enableInside = 1;
         };
         class AGM_MapToolsShowNormal {
           displayName = "$STR_AGM_Map_MapToolsShowNormal";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 1}";
           statement = "AGM_Map_mapToolsShown = 1; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 4;
+          enableInside = 1;
         };
         class AGM_MapToolsShowSmall {
           displayName = "$STR_AGM_Map_MapToolsShowSmall";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 2}";
           statement = "AGM_Map_mapToolsShown = 2; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 3;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignNorth {
           displayName = "$STR_AGM_Map_MapToolsAlignNorth";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0}";
           statement = "AGM_Map_angle = 0; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 2;
+          enableInside = 1;
         };
         class AGM_MapToolsAlignCompass {
           displayName = "$STR_AGM_Map_MapToolsAlignCompass";
           condition = "(call AGM_Map_fnc_canUseMapTools) && {AGM_Map_mapToolsShown != 0} && {(""ItemCompass"" in assignedItems player) || {""ItemGPS"" in assignedItems player}}";
           statement = "AGM_Map_angle = getDir player; [] call AGM_Map_fnc_updateMapToolMarkers";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 1;
           priority = 1;
+          enableInside = 1;
         };
         class AGM_MapGpsShow {
           displayName = "$STR_AGM_Map_MapGpsShow";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && {!AGM_Map_mapGpsShow}";
           statement = "AGM_Map_mapGpsShow = true; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
         class AGM_MapGpsHide {
           displayName = "$STR_AGM_Map_MapGpsHide";
           condition = "(call AGM_Map_fnc_canUseMapGPS) && AGM_Map_mapGpsShow";
           statement = "AGM_Map_mapGpsShow = false; [AGM_Map_mapGpsShow] call AGM_Map_fnc_openMapGps";
-          exceptions[] = {"AGM_Drag_isNotDragging"};
+          exceptions[] = {"AGM_Drag_isNotDragging", "AGM_Core_notOnMap"};
           showDisabled = 0;
           priority = 0;
+          enableInside = 1;
         };
       };
     };
@@ -187,7 +195,7 @@ class CfgVehicles {
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_MapTools,24)
+      MACRO_ADDITEM(AGM_MapTools,12)
     };
   };
 
@@ -206,6 +214,15 @@ class CfgVehicles {
         description = "How often the markers should be refreshed (in seconds)";
         defaultValue = 1;
       };
+      class HideAiGroups {
+        displayName = "Hide AI groups?";
+        description = "Hide markers for 'AI only' groups?";
+        typeName = "BOOL";
+        class values {
+          class Yes { name = "Yes"; value = 1; };
+          class No { name = "No"; value = 0; default = 1; };
+        };
+      };
     };
   };
 };
@@ -216,6 +233,10 @@ class RscPicture;
 class RscText;
 class RscObject;
 class RscButton;
+class RscButtonMenuOK;
+class RscButtonMenuCancel;
+class RscButtonMenu;
+class RscEdit;
 
 class RscMapControl {
   sizeExGrid = 0.032;
@@ -326,17 +347,46 @@ class RscDisplayServerGetReady: RscDisplayGetReady {
 class CfgMarkers {
   class Flag;
 
-  class hd_objective: Flag {
-    name = "$STR_CFG_MARKERS_dot";
-    icon = "\A3\ui_f\data\map\markers\handdrawn\dot_CA.paa";
-  };
+  // Reenable NATO symbols ...
+  class b_unknown: Flag {scope = 2;};
 
-  class hd_dot: hd_objective {
-    name = "$STR_CFG_MARKERS_FLAG";
-    icon = "\A3\ui_f\data\map\markers\handdrawn\objective_CA.paa";
-  };
+  // ... and disable all the useless ones
+  // If you think that some of these are needed, create an issue; But until
+  // there's a better way to place markers, there should be only the most
+  // important markers here.
+  // Keep in mind that all of these can still be placed in the editor.
+  class b_hq: b_unknown {scope = 1;};
+  class b_installation: b_unknown {scope = 1;};
+  class b_maint: b_unknown {scope = 1;};
+  class b_med: b_unknown {scope = 1;};
+  class b_service: b_unknown {scope = 1;};
+  class b_support: b_unknown {scope = 1;};
 
-  class MapToolFixed {
+  class n_unknown: b_unknown {};
+  class n_hq: n_unknown {scope = 1;};
+  class n_installation: n_unknown {scope = 1;};
+  class u_installation: n_unknown {scope = 1;}; // i have no idea...
+  class n_maint: n_unknown {scope = 1;};
+  class n_med: n_unknown {scope = 1;};
+  class n_service: n_unknown {scope = 1;};
+  class n_support: n_unknown {scope = 1;};
+
+  class o_unknown: b_unknown {};
+  class o_hq: o_unknown {scope = 1;};
+  class o_installation: o_unknown {scope = 1;};
+  class o_maint: o_unknown {scope = 1;};
+  class o_med: o_unknown {scope = 1;};
+  class o_service: o_unknown {scope = 1;};
+  class o_support: o_unknown {scope = 1;};
+
+  // disable all civy markers (harbor etc.)
+  class c_unknown: b_unknown {scope = 1;};
+
+  // disable quantity indicators (fire team/squad/platoon ...)
+  class group_0: b_unknown {scope = 1;};
+
+
+  class AGM_MapToolFixed {
     name = "MapToolFixed";
     icon = "\AGM_Map\data\mapToolFixed.paa";
     scope = 0;
@@ -344,7 +394,7 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingNormal {
+  class AGM_MapToolRotatingNormal {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingNormal.paa";
     scope = 0;
@@ -352,13 +402,22 @@ class CfgMarkers {
     size = 32;
   };
 
-  class MapToolRotatingSmall {
+  class AGM_MapToolRotatingSmall {
     name = "MapToolRotating";
     icon = "\AGM_Map\data\mapToolRotatingSmall.paa";
     scope = 0;
     color[] = {1,1,1,1};
     size = 32;
   };
+};
+
+class AGM_Parameters_Numeric {
+  AGM_Map_BFT_Interval = 1;
+};
+class AGM_Parameters_Boolean {
+  AGM_Map_EveryoneCanDrawOnBriefing = 1;
+  AGM_Map_BFT_Enabled = 0;
+  AGM_Map_BFT_HideAiGroups = 0;
 };
 
 #include "MapGpsUI.hpp"

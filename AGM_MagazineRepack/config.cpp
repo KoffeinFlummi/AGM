@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core, AGM_Interaction};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"commy2", "CAA-Picard"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -34,13 +34,15 @@ class CfgVehicles {
         statement = "call AGM_MagazineRepack_fnc_magazineRepack";
         showDisabled = 0;
         priority = -2;
-		icon = "AGM_MagazineRepack\UI\repack_ca.paa";
+        icon = "AGM_MagazineRepack\UI\repack_ca.paa";
+        hotkey = "R";
+        enableInside = 1;
       };
     };
   };
 };
 
-class AGM_Parameters {
+class AGM_Parameters_Numeric {
   AGM_MagazineRepack_TimePerAmmo = 1.5;
   AGM_MagazineRepack_TimePerMagazine = 2.0;
 };

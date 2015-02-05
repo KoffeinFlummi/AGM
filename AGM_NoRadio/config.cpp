@@ -4,32 +4,17 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"commy2"};
     authorUrl = "https://github.com/commy2/";
   };
 };
 
 class Extended_PostInit_EventHandlers {
-  class AGM_NoRadio {
-    clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
-  };
-};
-
-class CfgVoice {
-  class Base;
-  class ENG: Base {
-    protocol = "";
-  };
-  class ENGB: Base {
-    protocol = "";
-  };
-  class GRE: Base {
-    protocol = "";
-  };
-  class PER: Base {
-    protocol = "";
-  };
+    class AGM_NoRadio {
+        clientInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\clientInit.sqf'";
+        serverInit = "call compile preprocessFileLineNumbers '\AGM_NoRadio\serverInit.sqf'";
+    };
 };

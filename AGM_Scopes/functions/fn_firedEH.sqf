@@ -19,11 +19,13 @@ _round = _this select 5;
 _magazineType = _this select 6;
 
 _weapons = [
-  primaryWeapon player,
-  secondaryWeapon player,
-  handgunWeapon player
+  primaryWeapon _unit,
+  secondaryWeapon _unit,
+  handgunWeapon _unit
 ];
-_zeroing = AGM_Scopes_Adjustment select (_weapons find (currentWeapon player));
+if !(_weaponType in _weapons) exitWith {};
+
+_zeroing = AGM_Scopes_Adjustment select (_weapons find _weaponType);
 
 // convert zeroing from mils to degrees
 _zeroing = [_zeroing, {_this * 0.05625}] call AGM_Core_fnc_map;

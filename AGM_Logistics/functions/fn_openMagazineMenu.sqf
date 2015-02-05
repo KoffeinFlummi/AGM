@@ -40,5 +40,5 @@ _actions = [localize "STR_AGM_Logistics_MagazineMenu", localize "STR_AGM_Logisti
 		call AGM_Interaction_fnc_hideMenu;
 		[player, AGM_Logistics_targetVehicle, _this] call AGM_Logistics_fnc_loadMagazine;
 	},
-	{"Default" call AGM_Interaction_fnc_openMenu;}
+	{if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};}
 ] call AGM_Interaction_fnc_openSelectMenu;

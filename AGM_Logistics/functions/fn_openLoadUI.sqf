@@ -44,7 +44,10 @@ if (isClass (configFile >> "CfgVehicles" >> typeOf(_vehicle) >> "AGM_Load")) exi
 			call AGM_Interaction_fnc_hideMenu;
 			[AGM_Interaction_Target, AGM_Logistics_targetVehicle, _this] call AGM_Logistics_fnc_loadItem;
 		},
-		{"Default" call AGM_Interaction_fnc_openMenu;}
+		{
+			call AGM_Interaction_fnc_hideMenu;
+			if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {"Default" call AGM_Interaction_fnc_openMenu};
+		}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };
 call AGM_Interaction_fnc_hideMenu;

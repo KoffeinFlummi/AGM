@@ -4,7 +4,7 @@
  * Remove a custom event handler from an object.
  *
  * Argument:
- * 0: Unit the event handler is assigned to (Object)
+ * 0: Unit the event handler is assigned to or namespace (Object OR Namespace)
  * 1: Name of the event (String)
  * 2: ID of the event handler (Number)
  *
@@ -12,7 +12,7 @@
  * None.
  */
 
-private ["_object", "_type", "_id", "_name", "_actionsVar", "_currentId", "_actionIDs", "_actions", "_id"];
+private ["_object", "_type", "_id", "_name", "_actionsVar", "_currentId", "_actionIDs", "_actions"];
 
 _object = _this select 0;
 _type = _this select 1;

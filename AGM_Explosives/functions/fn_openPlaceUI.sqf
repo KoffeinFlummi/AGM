@@ -33,7 +33,7 @@ _itemCount = [];
 			_itemCount pushBack 1;
 		};
 	};
-} count _mags;
+} forEach _mags;
 _actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosives_Place"] call AGM_Interaction_fnc_prepareSelectMenu;
 {
 	_actions = [
@@ -51,6 +51,8 @@ _actions = [localize "STR_AGM_Explosives_PlaceMenu", localize "STR_AGM_Explosive
 	},
 	{
 		call AGM_Interaction_fnc_hideMenu;
-		"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+		if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
+			"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+		};
 	}
 ] call AGM_Interaction_fnc_openSelectMenu;

@@ -4,7 +4,7 @@
   "HitTurret", "HitGun", \
   "HitLTrack", "HitRTrack", \
   "HitLFWheel", "HitRFWheel", "HitLF2Wheel", "HitRF2Wheel", "HitLMWheel", "HitRMWheel", "HitLBWheel", "HitRBWheel", \
-  "HitAvionics", "HitHRotor", "HitVRotor" \
+  "HitAvionics", "HitHRotor", "HitVRotor", "HitWinch" \
 ]
 
 #define ALL_HITPOINTS_GLASS [ \

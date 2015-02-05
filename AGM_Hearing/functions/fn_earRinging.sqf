@@ -1,5 +1,5 @@
 /*
- * Author: KoffeinFlummi
+ * Author: KoffeinFlummi, commy2
  *
  * Creates ear ringing effect with set strength.
  *
@@ -10,37 +10,40 @@
  * none
  */
 
-private ["_strength"];
+private ["_unit", "_strength"];
 
-_strength = _this select 0;
+_unit = _this select 0;
+_strength = _this select 1;
 
-if (player getVariable ["X39_MedSys_var_hasEarplugs", false] or AGM_EarPlugsIn) then {
+if (_unit getVariable ["AGM_hasEarPlugsin", false] || {_unit getVariable ["X39_MedSys_var_hasEarplugs", false]}) then {
   _strength = _strength / 4;
 };
 
 AGM_NewStrength = AGM_NewStrength max _strength;
 
-if (_strength > 0.75 and !AGM_EarRingingPlaying) exitWith {
-  playSound ["AGM_EarRinging_Heavy", true];
-  AGM_EarRingingPlaying = true;
+if (missionNamespace getVariable ["AGM_isEarRingingPlaying", false]) exitWith {};
+
+if (_strength > 0.75) exitWith {
+  playSound "AGM_EarRinging_Heavy";
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 7;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };
-if (_strength > 0.5 and !AGM_EarRingingPlaying) exitWith {
-  playSound ["AGM_EarRinging_Medium", true];
-  AGM_EarRingingPlaying = true;
+if (_strength > 0.5) exitWith {
+  playSound "AGM_EarRinging_Medium";
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 5;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };
-if (_strength > 0.2 and !AGM_EarRingingPlaying) exitWith {
-  playSound ["AGM_EarRinging_Weak", true];
-  AGM_EarRingingPlaying = true;
+if (_strength > 0.2) exitWith {
+  playSound "AGM_EarRinging_Weak";
+  AGM_isEarRingingPlaying = true;
   0 spawn {
     sleep 3;
-    AGM_EarRingingPlaying = false;
+    AGM_isEarRingingPlaying = false;
   };
 };

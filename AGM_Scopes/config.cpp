@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"KoffeinFlummi"};
     authorUrl = "https://github.com/KoffeinFlummi";
   };
@@ -20,21 +20,54 @@ class CfgFunctions {
       class canAdjustScope;
       class firedEH;
       class getOptics;
-      class init;
+      class hideZeroing;
+      class inventoryCheck;
     };
   };
 };
 
 class Extended_PostInit_EventHandlers {
   class AGM_Scopes {
-    clientInit = "[] call AGM_Scopes_fnc_init;";
+    clientInit = "call compile preprocessFileLineNumbers '\AGM_Scopes\clientInit.sqf';";
   };
 };
 
 class Extended_Fired_EventHandlers {
   class CAManBase {
     class AGM_Scopes {
-      clientFired = "_this call AGM_Scopes_fnc_firedEH";
+      clientFired = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_firedEH};";
+    };
+  };
+};
+
+class Extended_Take_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      clientTake = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_Put_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      clientPut = "if (_this select 0 == AGM_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_InitPost_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      init = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
+    };
+  };
+};
+
+class Extended_Respawn_EventHandlers {
+  class CAManBase {
+    class AGM_Scopes {
+      respawn = "if (_this select 0 == call AGM_Core_fnc_player) then {_this call AGM_Scopes_fnc_inventoryCheck};";
     };
   };
 };
@@ -42,8 +75,8 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustUp";
-    condition = "[0, 0.1] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0, 0.1] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0, 0.1] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0, 0.1] call AGM_Scopes_fnc_adjustScope;";
     allowHolding = 1;
     key = 201;
     shift = 0;
@@ -52,21 +85,21 @@ class AGM_Core_Default_Keys {
   };
   class adjustScopeDown: adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustDown";
-    condition = "[0, -0.1] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0, -0.1] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0, -0.1] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0, -0.1] call AGM_Scopes_fnc_adjustScope;";
     key = 209;
   };
   class adjustScopeLeft: adjustScopeUp {
     displayName = "$STR_AGM_Scopes_AdjustLeft";
-    condition = "[-0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[-0.1, 0] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, -0.1, 0] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, -0.1, 0] call AGM_Scopes_fnc_adjustScope;";
     key = 209;
     control = 1;
   };
   class adjustScopeRight: adjustScopeLeft {
     displayName = "$STR_AGM_Scopes_AdjustRight";
-    condition = "[0.1, 0] call AGM_Scopes_fnc_canAdjustScope;";
-    statement = "[0.1, 0] call AGM_Scopes_fnc_adjustScope;";
+    condition = "[_player] call AGM_Scopes_fnc_inventoryCheck; [_player, 0.1, 0] call AGM_Scopes_fnc_canAdjustScope";
+    statement = "[_player, 0.1, 0] call AGM_Scopes_fnc_adjustScope;";
     key = 201;
   };
 };
@@ -84,7 +117,6 @@ class CfgSounds {
   };
 };
 
-// TODO: check other scopes, realistic values, check inheritance
 class CfgWeapons {
   class ItemCore;
   class InventoryOpticsItem_Base_F;
@@ -95,8 +127,8 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -108,8 +140,21 @@ class CfgWeapons {
     class ItemInfo: InventoryOpticsItem_Base_F {
       class OpticsModes {
         class Snip {
-          discreteDistance[] = {};
-          discreteDistanceIndex = 0;
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
+        };
+      };
+    };
+  };
+
+  class optic_DMS: ItemCore {
+    AGM_ScopeAdjust_Horizontal[] = {-40,40};
+    AGM_ScopeAdjust_Vertical[] = {-40,40};
+    class ItemInfo: InventoryOpticsItem_Base_F {
+      class OpticsModes {
+        class Snip {
+          discreteDistance[] = {1};
+          discreteDistanceInitIndex = 0;
         };
       };
     };
@@ -122,7 +167,7 @@ class RscTitles {
     movingEnable = 0;
     enableSimulation = 1;
     enableDisplay = 1;
-    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'";
+    onLoad = "_this spawn compile preprocessFileLineNumbers '\AGM_Scopes\scripts\zeroingOnLoad.sqf'; uiNamespace setVariable ['AGM_Scope_Debug', _this];";
     duration = 1e+011;
     fadein = 0;
     fadeout = 0;
@@ -135,49 +180,59 @@ class RscTitles {
         type = 0;
         text = "AGM_Scopes\UI\scopes_bg.paa";
         style = 48 + 0x800;
-        x = (safeZoneX + 0.5 * safeZoneW) - (0.4 * safeZoneW / 2);
-        y = safezoneY + 0 * safezoneH;
-        w = 0.4 * safeZoneW;
-        h = 0.3 * safeZoneH;
         scale = 1;
         sizeEx = 1;
         font = "PuristaMedium";
         colorText[] = {1,1,1,1};
         colorBackground[] = {1,1,1,1};
         shadow = 1;
+
+        x = (0.5-0.4/2) * safezoneW + safezoneX;
+        y = 0 * safezoneH + safezoneY;
+        w = 0.4 * safezoneW;
+        h = 0.3 * safezoneH;
       };
-      class AGM_Scope_Zeroing_Horizontal: RscText {
+      class AGM_Scope_Zeroing_Vertical: RscText {
         idc = 925002;
         type = 0;
         style = 2;
-        x = (safeZoneX + 0.5 * safeZoneW) - (0.108 / 2);
-        y = safezoneY + 0.045 * safezoneH;
-        w = 0.108;
-        h = 0.09;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
-        colorText[] = {1,1,1,0.9};
-        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {1,1,1, 0.9};
+        colorBackground[] = {1,0,0, 0};
         shadow = 0;
+
+        x = (0.5-0.4/2 + 0.45*0.4) * safezoneW + safezoneX;
+        y = (0 + 0.19*0.3) * safezoneH + safezoneY;
+        w = 0.04 * safezoneW;
+        h = 0.025 * safezoneH;
       };
-      class AGM_Scope_Zeroing_Vertical: RscText {
+      class AGM_Scope_Zeroing_Horizontal: RscText {
         idc = 925003;
         type = 0;
         style = 0;
-        x = (safeZoneX + 0.5 * safeZoneW) + (0.04 * safeZoneW);
-        y = safezoneY + 0.13 * safezoneH;
-        w = 0.108;
-        h = 0.09;
         sizeEx = 0.04;
         lineSpacing = 1;
         font = "PuristaMedium";
         text = "";
-        colorText[] = {1,1,1,0.9};
-        colorBackground[] = {0, 0, 0, 0};
+        colorText[] = {1,1,1, 0.9};
+        colorBackground[] = {1,0,0, 0};
         shadow = 0;
+
+        x = (0.5-0.4/2 + 0.6*0.4) * safezoneW + safezoneX;
+        y = (0 + 0.47*0.3) * safezoneH + safezoneY;
+        w = 0.04 * safezoneW;
+        h = 0.025 * safezoneH;
       };
     };
+  };
+};
+
+class RscInGameUI {
+  class RscUnitInfo;
+  class RscWeaponZeroing: RscUnitInfo {
+    onLoad = "[""onLoad"",_this,""RscUnitInfo"",'IGUI'] call compile preprocessfilelinenumbers ""A3\ui_f\scripts\initDisplay.sqf""; uiNamespace setVariable ['AGM_dlgWeaponZeroing', _this select 0];";
   };
 };

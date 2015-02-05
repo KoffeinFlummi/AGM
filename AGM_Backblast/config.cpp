@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -35,12 +35,14 @@ class Extended_FiredNear_EventHandlers {
 };
 
 class CfgWeapons {
-  class Launcher;
-  class Launcher_Base_F: Launcher {
+
+  class LauncherCore;
+  class Launcher: LauncherCore {
     AGM_Backblast_Angle = 60;
     AGM_Backblast_Range = 10;
     AGM_Backblast_Damage = 0.7;
   };
+  class Launcher_Base_F: Launcher {};
 
   class launch_Titan_base: Launcher_Base_F {
     AGM_Backblast_Angle = 40;

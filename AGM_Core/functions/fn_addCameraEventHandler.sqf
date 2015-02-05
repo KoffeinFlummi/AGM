@@ -16,7 +16,7 @@ private ["_statement", "_actionsVar", "_id", "_actionIDs", "_actions"];
 _statement = _this select 0;
 
 if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
+  _statement = compile _statement;
 };
 
 _actionsVar = missionNamespace getVariable ["AGM_EventHandler_CameraMode", [-1, [], []]];
@@ -26,8 +26,8 @@ _actionIDs = _actionsVar select 1;
 _actions = _actionsVar select 2;
 
 if (_id == 0) then {
-	uiNamespace setVariable ['AGM_EventHandler_CameraMode', cameraView];
-	("AGM_EventHandlerHelper" call BIS_fnc_rscLayer) cutRsc ["AGM_EventHandlerHelper", "PLAIN"];
+  uiNamespace setVariable ["AGM_EventHandler_CameraMode", cameraView];
+  ("AGM_EventHandlerHelper" call BIS_fnc_rscLayer) cutRsc ["AGM_EventHandlerHelper", "PLAIN"];
 };
 
 _actionIDs pushBack _id;

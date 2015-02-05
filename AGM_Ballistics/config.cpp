@@ -50,18 +50,15 @@ AGM_20Rnd_762x51_Mag_SD
 AGM_20Rnd_762x51_Mag_AP
 */
 
-
-// SEE LICENSE.TXT FOR LICENSING INFORMATION
-
 class CfgPatches {
-	class AGM_Ballistics {
-		units[] = {};
-		weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
-		requiredVersion = 0.60;
-		requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+  class AGM_Ballistics {
+    units[] = {"AGM_TargetWall"};
+    weapons[] = {"AGM_muzzle_mzls_H", "AGM_muzzle_mzls_B", "AGM_muzzle_mzls_L", "AGM_muzzle_mzls_smg_01", "AGM_muzzle_mzls_smg_02"};
+    requiredVersion = 0.60;
+    requiredAddons[] = {AGM_Core};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"TaoSensai", "commy2"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
@@ -219,6 +216,7 @@ class CfgMagazines {
   };
 
   class AGM_30Rnd_65x39_caseless_mag_Tracer_Dim : 30Rnd_65x39_caseless_mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_Tracer_DimNameShort";
@@ -226,6 +224,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_caseless_yellow_CA.paa";
   };
   class AGM_30Rnd_65x39_caseless_mag_SD : 30Rnd_65x39_caseless_mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_SD";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_SDNameShort";
@@ -234,6 +233,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_30Rnd_65x39_caseless_mag_AP : 30Rnd_65x39_caseless_mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_AP";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_mag_APNameShort";
@@ -252,12 +252,14 @@ class CfgMagazines {
   };
 
   class AGM_30Rnd_65x39_caseless_green_mag_Tracer_Dim : 30Rnd_65x39_caseless_green_mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimNameShort";
     descriptionShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_Tracer_DimDescription";
   };
   class AGM_30Rnd_65x39_caseless_green_mag_SD : 30Rnd_65x39_caseless_green {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_SD";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_SDNameShort";
@@ -265,6 +267,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_30Rnd_65x39_caseless_green_mag_AP : 30Rnd_65x39_caseless_green {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_65x39_Caseless_AP";
     displayName = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_65x39_caseless_green_mag_APNameShort";
@@ -280,6 +283,7 @@ class CfgMagazines {
   class 30Rnd_556x45_Stanag_Tracer_Red; //picture = "\A3\weapons_f\data\ui\m_30stanag_red_ca.paa";
 
   class AGM_30Rnd_556x45_Stanag_Tracer_Dim : 30Rnd_556x45_Stanag_Tracer_Red {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_Tracer_Dim";
     displayName = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_Tracer_DimNameShort";
@@ -287,6 +291,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_yellow_ca.paa";
   };
   class AGM_30Rnd_556x45_Stanag_SD : 30Rnd_556x45_Stanag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_SD";
     displayName = "$STR_AGM_30Rnd_556x45_mag_SDName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_SDNameShort";
@@ -295,6 +300,7 @@ class CfgMagazines {
     picture = "\A3\weapons_f\data\ui\m_30stanag_green_ca.paa";
   };
   class AGM_30Rnd_556x45_Stanag_AP : 30Rnd_556x45_Stanag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_556x45_Ball_AP";
     displayName = "$STR_AGM_30Rnd_556x45_mag_APName";
     displayNameShort = "$STR_AGM_30Rnd_556x45_mag_APNameShort";
@@ -315,6 +321,7 @@ class CfgMagazines {
   };
 
   class AGM_20Rnd_762x51_Mag_Tracer : 20Rnd_762x51_Mag {  //@todo Green tracers for opfor and yellow tracers for independent
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "B_762x51_Tracer_Red";
     displayName = "$STR_AGM_20Rnd_762x51_mag_TracerName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_TracerNameShort";
@@ -322,12 +329,14 @@ class CfgMagazines {
     tracersEvery = 1;
   };
   class AGM_20Rnd_762x51_Mag_Tracer_Dim : AGM_20Rnd_762x51_Mag_Tracer {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Tracer_Dim";
     displayName = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimNameShort";
     descriptionShort = "$STR_AGM_20Rnd_762x51_mag_Tracer_DimDescription";
   };
   class AGM_20Rnd_762x51_Mag_SD : 20Rnd_762x51_Mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Ball_SD";
     displayName = "$STR_AGM_20Rnd_762x51_mag_SDName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_SDNameShort";
@@ -335,6 +344,7 @@ class CfgMagazines {
     initSpeed = 320;
   };
   class AGM_20Rnd_762x51_Mag_AP : 20Rnd_762x51_Mag {
+    author = "$STR_AGM_Core_AGMTeam";
     ammo = "AGM_B_762x51_Ball_AP";
     displayName = "$STR_AGM_20Rnd_762x51_mag_APName";
     displayNameShort = "$STR_AGM_20Rnd_762x51_mag_APNameShort";
@@ -416,7 +426,9 @@ class CfgWeapons {
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
       class MuzzleSlot: MuzzleSlot {
-        compatibleItems[] += {"AGM_muzzle_mzls_H"};
+        // Shit is broken again
+        //compatibleItems[] += {"AGM_muzzle_mzls_H"};
+        compatibleItems[] = {"muzzle_snds_H","muzzle_snds_H_SW","AGM_muzzle_mzls_H"};
       };
     };
   };
@@ -872,7 +884,7 @@ class CfgWeapons {
 
   // Flash suppressors
   class AGM_muzzle_mzls_H: ItemCore {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_H";
     htMin = 1;
     htMax = 600;
@@ -924,7 +936,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_B: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_B";
     displayName = "$STR_AGM_muzzle_mzls_B";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_h_ca.paa";
@@ -969,7 +981,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_L: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_L";
     displayName = "$STR_AGM_muzzle_mzls_L";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
@@ -1014,7 +1026,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_smg_01: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_smg_01";
     displayName = "$STR_AGM_muzzle_mzls_smg_01";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
@@ -1059,7 +1071,7 @@ class CfgWeapons {
   };
 
   class AGM_muzzle_mzls_smg_02: AGM_muzzle_mzls_H {
-    author = "$STR_A3_Bohemia_Interactive";
+    author = "$STR_AGM_Core_AGMTeam";
     _generalMacro = "AGM_muzzle_mzls_smg_02";
     displayName = "$STR_AGM_muzzle_mzls_smg_02";
     picture = "\A3\weapons_F\Data\UI\gear_acca_mzls_l_ca.paa";
@@ -1105,8 +1117,7 @@ class CfgWeapons {
 
   /* Vests */
 
-  class VestItem;
-  #include <VestNerf.hpp>
+  #include <FixVests.hpp>
 };
 
 #define MACRO_ADDMAGAZINE(MAGAZINE,COUNT) class _xx_##MAGAZINE { \
@@ -1120,7 +1131,8 @@ class CfgWeapons {
 };
 
 class CfgVehicles {
-  #include <UniformNerf.hpp>
+  #include <FixUniforms.hpp>
+  #include <FixHelmets.hpp>
 
   class NATO_Box_Base;
   class EAST_Box_Base;
@@ -1302,6 +1314,15 @@ class CfgVehicles {
       MACRO_ADDITEM(AGM_muzzle_mzls_L,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_01,2)
       MACRO_ADDITEM(AGM_muzzle_mzls_smg_02,2)
+    };
+  };
+
+  class Sign_F;
+  class AGM_TargetWall: Sign_F {
+    author = "$STR_AGM_Core_AGMTeam";
+    class Eventhandlers {
+      init = "_this call compile preprocessFileLineNumbers '\AGM_Ballistics\scripts\initTargetWall.sqf'";
+      //hitPart = "systemChat str _this";
     };
   };
 };

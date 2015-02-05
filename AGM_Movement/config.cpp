@@ -5,10 +5,10 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.10;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
-    author[] = {"commy2"};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
+    author[] = {"commy2", "KoffeinFlummi", "Tachii"};
     authorUrl = "https://github.com/commy2/";
   };
 };
@@ -18,9 +18,12 @@ class CfgFunctions {
     class AGM_Movement {
       file = "AGM_Movement\functions";
       class blinking;
+      class canClimb;
+      class climb;
       class fatigueModule;
       class heartbeat;
       class getWeight;
+      class handleClimb;
       class recoil;
       class stumble;
       class vision;
@@ -31,6 +34,18 @@ class CfgFunctions {
 class Extended_PostInit_EventHandlers {
   class AGM_Movement {
     clientInit = "call compile preprocessFileLineNumbers '\AGM_Movement\clientInit.sqf'";
+  };
+};
+
+class AGM_Core_Default_Keys {
+  class climb {
+    displayName = "$STR_AGM_Movement_Climb";
+    condition = "_player == _vehicle";
+    statement = "[_player] call AGM_Movement_fnc_climb";
+    key = 47;
+    shift = 0;
+    control = 1;
+    alt = 0;
   };
 };
 
@@ -48,30 +63,6 @@ class CfgFatigue {
   TotalLoadCoef = 1.1;
   MaxDuty = 10;
 };
-
-//DEFAULT (PRE BOOTCAMP!)
-/*
-MinValue1 = 0.1;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 1;
-FrequencyMin = 0.2;
-FrequencyMax = 1.0;
-TotalLoadCoef = 1.1;
-MaxDuty = 10;
-*/
-
-//DEFAULT (POST BOOTCAMP!)
-/*
-MinValue1 = 0.2;
-MinValue2 = 0.8;
-NormalRunSpeed = 7.2;
-TiredRunSpeedLimit = 0.6;
-FrequencyMin = 0.2;
-FrequencyMax = 1;
-TotalLoadCoef = 10;
-MaxDuty = 10;
-*/
 
 class CfgSounds {
   class AGM_Heartbeat {
@@ -115,6 +106,10 @@ class CfgVehicles {
 };
 
 class CfgMovesBasic {
+  class ManActions {
+    AGM_Climb = "AGM_Climb";
+  };
+
   class Actions {
     class RifleStandActionsNoAdjust;
     class RifleLowStandActionsNoAdjust;
@@ -153,14 +148,15 @@ class CfgMovesBasic {
 };
 
 class CfgMovesMaleSdr: CfgMovesBasic {
+  class StandBase;
   class States {
+    // better slow walk with lowered rifle animation
     class AmovPercMstpSrasWrflDnon;
-    class AmovPercMstpSlowWrflDnon;
-
     class AmovPercMrunSrasWrflDf: AmovPercMstpSrasWrflDnon {
-      InterpolateTo[] = {"AovrPercMrunSrasWrflDf",0.22,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMwlkSrasWrflDf",0.025,"AmovPknlMrunSrasWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDl",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDr",0.05,"AmovPercMrunSlowWrflDf_AmovPercMevaSrasWrflDb",0.05,"Unconscious",0.01,"AmovPercMtacSrasWrflDf",0.02,"AmovPercMrunSrasWrflDfl",0.02,"AmovPercMrunSrasWrflDfl_ldst",0.02,"AmovPercMrunSrasWrflDfr",0.02,"AmovPercMrunSrasWrflDfr_ldst",0.02,"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSrasWrflDl",0.02,"AmovPercMrunSrasWrflDbl",0.02,"AmovPercMrunSrasWrflDb",0.02,"AmovPercMrunSrasWrflDbr",0.02,"AmovPercMrunSrasWrflDr",0.02,"AmovPknlMstpSlowWrflDnon_relax",0.1,"AmovPercMrunSrasWrflDf_ldst",0.02,"AmovPercMrunSrasWrflDf",0.02};
+      InterpolateTo[] = {"AovrPercMrunSrasWrflDf",0.22,"AmovPercMrunSlowWrflDf",0.025,"AmovPercMwlkSrasWrflDf",0.025,"AmovPknlMrunSrasWrflDf",0.03,"AmovPercMrunSlowWrflDf_AmovPpneMstpSrasWrflDnon",0.02,"AmovPercMevaSrasWrflDf",0.025,"Unconscious",0.01,"AmovPercMtacSrasWrflDf",0.02,"AmovPercMrunSrasWrflDfl",0.02,"AmovPercMrunSrasWrflDfl_ldst",0.02,"AmovPercMrunSrasWrflDfr",0.02,"AmovPercMrunSrasWrflDfr_ldst",0.02,"AmovPercMstpSrasWrflDnon",0.02,"AmovPercMrunSrasWrflDl",0.02,"AmovPercMrunSrasWrflDbl",0.02,"AmovPercMrunSrasWrflDb",0.02,"AmovPercMrunSrasWrflDbr",0.02,"AmovPercMrunSrasWrflDr",0.02,"AmovPknlMstpSlowWrflDnon_relax",0.1,"AmovPercMrunSrasWrflDf_ldst",0.02,"AmovPercMrunSrasWrflDf",0.02};
     };
 
+    class AmovPercMstpSlowWrflDnon;
     class AmovPercMwlkSlowWrflDf: AmovPercMstpSlowWrflDnon {
       speed = 0.3; //0.206897;
       file = "\A3\anims_f\Data\Anim\Sdr\Mov\Erc\Wlk\Low\Rfl\AmovPercMwlkSlowWrflDf_ver2";
@@ -186,6 +182,42 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
     class AmovPercMwlkSlowWrflDr: AmovPercMwlkSlowWrflDf {
       leftHandIKCurve[] = {};
+    };
+
+    // enable optics in prone left and right stance
+    class AidlPpneMstpSrasWrflDnon_G0S;
+    class AadjPpneMstpSrasWrflDleft: AidlPpneMstpSrasWrflDnon_G0S {
+      enableOptics = 1;
+    };
+    class AadjPpneMstpSrasWrflDright: AidlPpneMstpSrasWrflDnon_G0S {
+      enableOptics = 1;
+    };
+    class AadjPpneMstpSrasWrflDup;
+    class AadjPpneMstpSrasWrflDdown: AadjPpneMstpSrasWrflDup {
+      enableOptics = 1;
+    };
+
+    class AidlPpneMstpSrasWpstDnon_G0S;
+    class AadjPpneMstpSrasWpstDleft: AidlPpneMstpSrasWpstDnon_G0S {
+      enableOptics = 2;
+    };
+    class AadjPpneMstpSrasWpstDright: AidlPpneMstpSrasWpstDnon_G0S {
+      enableOptics = 2;
+    };
+    class AadjPpneMstpSrasWpstDup;
+    class AadjPpneMstpSrasWpstDdown: AadjPpneMstpSrasWpstDup {
+      enableOptics = 2;
+    };
+
+    // climb animation
+    class AmovPercMstpSnonWnonDnon: StandBase {
+      ConnectTo[] += {"AGM_Climb",0.02};
+    };
+
+    class AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium;
+    class AGM_Climb: AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInMedium {
+      canReload = 0;
+      forceAim = 1;
     };
   };
 };

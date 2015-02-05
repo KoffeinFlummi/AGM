@@ -5,9 +5,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"Garth 'L-H' de Wet"};
     authorUrl = "https://github.com/CorruptedHeart";
   };
@@ -35,7 +35,7 @@ class CfgGlasses {
 		COMBAT_GOGGLES
 	};
 
-	class G_Diving:None {
+	class G_Diving {
 		AGM_Overlay="AGM_Goggles\textures\HUD\DivingGoggles.paa";
 		AGM_OverlayCracked = "AGM_Goggles\textures\HUD\DivingGogglesCracked.paa";
 		AGM_Resistance = 2;
@@ -250,7 +250,7 @@ class SniperCloud {
 class AGM_Core_Default_Keys {
 	class wipeGlasses {
 		displayName = $STR_AGM_Goggles_WipeGlasses;
-		condition = "!(player getVariable['AGM_Unconscious', false])";
+		condition = "!(player getVariable['AGM_isUnconscious', false])";
 		statement = "call AGM_Goggles_fnc_ClearGlasses;";
 		key = 20; // T
 		shift = 1;
@@ -263,5 +263,33 @@ class AGM_Core_Options {
 	class showInThirdPerson {
 		displayName = $STR_AGM_Goggles_ShowInThirdPerson;
 		default = 0;
+	};
+};
+
+class CfgCloudlets {
+	class Default;
+	class AGMRainEffect:Default {
+		interval = 0.001;
+		particleShape = "\A3\data_f\ParticleEffects\Universal\Refract";
+		particleFSNtieth = 1;
+		particleFSIndex = 0;
+		particleFSFrameCount = 1;
+		particleFSLoop = 1;
+
+		particleType = "Billboard";
+		lifeTime = 0.5;
+		rotationVelocity = 1;
+		weight = 100;
+		volume = 0.000;
+		rubbing = 1.7;
+		size[] = {0.1};
+		color[] = {{1,1,1,1}};
+		animationSpeed[] = {0,1};
+		randomDirectionPeriod = 0.2;
+		randomDirectionIntensity = 1.2;
+		positionVar[] = {2, 2, 2.5};
+		sizeVar = 0.01;
+		colorVar[] = {0, 0, 0, 0.1};
+		destroyOnWaterSurface = 1;
 	};
 };

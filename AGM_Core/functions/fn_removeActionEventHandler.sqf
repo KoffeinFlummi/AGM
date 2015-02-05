@@ -42,8 +42,8 @@ _actions set [_id, []];
 _actions = _actions - [[]];
 
 if (count _actions == 0) then {
-	_unit removeAction _actionID;
-	_actionID = -1;
+  _unit removeAction _actionID;
+  _actionID = -1;
 };
 
 _unit setVariable [_name, [_actionID, [_currentID, _actionIDs, _actions]], false];

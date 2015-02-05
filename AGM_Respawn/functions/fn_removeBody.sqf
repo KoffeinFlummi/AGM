@@ -1,5 +1,5 @@
 /*
- * Author: jodav
+ * Author: bux578
  *
  * removes the body
  *
@@ -15,7 +15,7 @@ private ["_body", "_forceRemove", "_bodyRemoveTimer"];
 _body = _this select 0;
 _forceRemove = _this select 1;
 
-_bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer min 0;
+_bodyRemoveTimer = AGM_Respawn_BodyRemoveTimer max 0;
 
 // could be used for SpecOps missions.
 if (_forceRemove) then {

@@ -6,14 +6,13 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
-    author[] = {"KoffeinFlummi", "TaoSensai"};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
+    author[] = {"KoffeinFlummi", "TaoSensai", "commy2"};
     authorUrl = "https://github.com/Taosenai/tmr";
   };
 };
-
 
 class CfgFunctions {
   class AGM_Recoil {
@@ -25,36 +24,43 @@ class CfgFunctions {
   };
 };
 
-
-// Fired EH
-class Extended_Fired_EventHandlers {
+class Extended_FiredBis_EventHandlers {
   class CAManBase {
-    class AGM_Recoil {
-      clientFired = "if (player == _this select 0) then {_this call AGM_Recoil_fnc_camshake; _this call AGM_Recoil_fnc_burstDispersion}";
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == AGM_player) then {_this call AGM_Recoil_fnc_camshake; _this call AGM_Recoil_fnc_burstDispersion;};";
     };
   };
   class Tank {
-    class AGM_Recoil {
-      clientFired = "if (vehicle player == _this select 0) then {_this call AGM_Recoil_fnc_camshake}";
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Car {
-    class AGM_Recoil {
-      clientFired = "if (vehicle player == _this select 0) then {_this call AGM_Recoil_fnc_camshake}";
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Helicopter {
-    class AGM_Recoil {
-      clientFired = "if (vehicle player == _this select 0) then {_this call AGM_Recoil_fnc_camshake}";
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
   class Plane {
-    class AGM_Recoil {
-      clientFired = "if (vehicle player == _this select 0) then {_this call AGM_Recoil_fnc_camshake}";
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
+    };
+  };
+  class Ship_F {
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
+    };
+  };
+  class StaticWeapon {
+    class AGM_Recoil_CamShake {
+      clientFiredBis = "if (_this select 0 == vehicle AGM_player) then {_this call AGM_Recoil_fnc_camshake;};";
     };
   };
 };
-
 
 // DOC: http://forums.bistudio.com/showthread.php?94464-explaining-the-cfgRecoils-array
 class CfgRecoils {
@@ -169,7 +175,7 @@ class CfgCameraShake {
 // Go through all modes that have a camshakefire defined and change it to ours.
 class CfgMovesBasic {
   class Default {
-    camShakeFire = AGM_CAMSHAKEFIRE_NORMAL;
+    camShakeFire = AGM_CAMSHAKEFIRE_BASE;
   };
 };
 class CfgMovesMaleSdr : CfgMovesBasic {
@@ -219,7 +225,7 @@ class CfgMovesMaleSdr : CfgMovesBasic {
     };
     class AmovPknlMstpSrasWrflDnon;
     class AmovPknlMwlkSrasWrflDf : AmovPknlMstpSrasWrflDnon {
-      camShakeFire = AGM_CAMSHAKEFIRE_NORMAL;
+      camShakeFire = AGM_CAMSHAKEFIRE_BASE;
     };
     class AmovPknlMrunSrasWrflDf;
     class AmovPknlMtacSrasWrflDf : AmovPknlMrunSrasWrflDf {
@@ -232,6 +238,129 @@ class CfgMovesMaleSdr : CfgMovesBasic {
   };
 };
 
-#include <Ammo_Config.hpp>
-#include <Vehicles_Config.hpp>
-#include <Weapons_Config.hpp>
+// Ammo
+class CfgAmmo {
+  class MissileCore;
+  class MissileBase: MissileCore {
+    AGM_Recoil_shakeMultiplier = 2;
+  };
+
+  class BombCore;
+  class LaserBombCore: BombCore {
+    AGM_Recoil_shakeMultiplier = 2;
+  };
+  class Bo_Mk82: BombCore {
+    AGM_Recoil_shakeMultiplier = 2;
+  };
+
+  class RocketCore;
+  class ArtilleryRocketCore: RocketCore {
+    AGM_Recoil_shakeMultiplier = 1.4;
+  };
+  class RocketBase: RocketCore {
+    AGM_Recoil_shakeMultiplier = 1.4;
+  };
+
+  class BulletCore;
+  class BulletBase: BulletCore {
+    AGM_Recoil_shakeMultiplier = 1;
+  };
+
+  class ShotgunCore;
+  class ShotgunBase: ShotgunCore {
+    AGM_Recoil_shakeMultiplier = 1.1;
+  };
+
+  class ShellCore;
+  class ShellBase: ShellCore {
+    AGM_Recoil_shakeMultiplier = 3;
+  };
+
+  class SubmunitionCore;
+  class SubmunitionBase: SubmunitionCore {
+    AGM_Recoil_shakeMultiplier = 3;
+  };
+
+  class ShotDeployCore;
+  class ShotDeployBase: ShotDeployCore {
+    AGM_Recoil_shakeMultiplier = 3;
+  };
+};
+
+// Weapons
+// 1. Set the recoil profiles for all fire modes.
+// 2. Set the shake multiplier. This determines the camshake for the weapon.
+//     Ex: agm_recoil_shakeMultiplier = 1;
+
+// disabled currently
+#define SHAKEMULTIPLIER_BASE 0
+
+class CfgWeapons {
+  class CannonCore;
+  class autocannon_Base_F: CannonCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  class autocannon_35mm: CannonCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  class cannon_120mm: CannonCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  class mortar_155mm_AMOS: CannonCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  class mortar_82mm: CannonCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+
+  // No camshake for gatlings
+  class gatling_20mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class gatling_25mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class gatling_30mm: CannonCore {
+    agm_recoil_shakeMultiplier = 0;
+  };
+
+  class MGunCore;
+  class MGun: MGunCore {
+    agm_recoil_shakeMultiplier = SHAKEMULTIPLIER_BASE;
+  };
+  // No camshake for smoke launchers
+  class SmokeLauncher: MGun {
+    agm_recoil_shakeMultiplier = 0;
+  };
+
+  // No camshake for coax machine guns
+  class LMG_RCWS;
+  class LMG_M200: LMG_RCWS {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class LMG_coax: LMG_RCWS {
+    agm_recoil_shakeMultiplier = 0;
+  };
+  class LMG_Minigun: LMG_RCWS {
+    agm_recoil_shakeMultiplier = 0;
+  };
+};
+
+// Vehicles
+class CfgVehicles {
+  class LandVehicle;
+  class Tank: LandVehicle {
+    AGM_enableCamshake = 1;
+  };
+  class Car: LandVehicle {
+    AGM_enableCamshake = 1;
+  };
+  class StaticWeapon: LandVehicle {
+    AGM_enableCamshake = 1;
+  };
+
+  class Allvehicles;
+  class Air: Allvehicles {
+    AGM_enableCamshake = 1;
+  };
+};

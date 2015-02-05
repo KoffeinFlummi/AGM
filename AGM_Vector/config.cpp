@@ -4,11 +4,38 @@ class CfgPatches {
     weapons[] = {"AGM_Vector"};
     requiredVersion = 0.1;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
-    author[] = {"Ghost", "Hamburger SV", "commy2"};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
+    author[] = {"Ghost", "Hamburger SV", "commy2", "bux578"};
     authorUrl = "https://github.com/commy2/";
+  };
+};
+
+class CfgFunctions {
+  class AGM_Vector {
+    class AGM_Vector {
+      file = "AGM_Vector\functions";
+      class abort;
+      class config;
+      class convertDegree;
+      class convertDistance;
+      class convertFOS;
+      class getDirection;
+      class getDistance;
+      class modeAzimuth;
+      class modeAzimuthInclination;
+      class modeDistance;
+      class modeDistanceAzimuth;
+      class modeDistanceHeight;
+      class modeFallOfShort;
+      class modeRelativeAzimuthDistance;
+      class modeRelativeDistance;
+      class modeRelativeDistanceHeight;
+      class settings;
+      class tabAzimuthKey;
+      class tabDistanceKey;
+    };
   };
 };
 
@@ -22,7 +49,7 @@ class AGM_Core_Default_Keys {
   class vectorAzimuth {
     displayName = "$STR_AGM_Vector_AzimuthKey";
     condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
-    statement = "AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabAzimuthKey; 0 spawn AGM_Vector_abort;};";
+    statement = "AGM_vectorKey set [0, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_tabAzimuthKey; 0 spawn AGM_Vector_fnc_abort;};";
     conditionUp = "true";
     statementUp = "AGM_vectorKey set [0, false];";
     key = 15;
@@ -33,7 +60,7 @@ class AGM_Core_Default_Keys {
   class vectorDistance {
     displayName = "$STR_AGM_Vector_DistanceKey";
     condition = "currentWeapon player == 'AGM_Vector' && {_vehicle == player} && {cameraView == 'Gunner'}";
-    statement = "AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_tabDistanceKey; 0 spawn AGM_Vector_abort;};";
+    statement = "AGM_vectorKey set [1, true]; if (AGM_isVectorReady) then {AGM_isVectorReady = false; AGM_Vector_scriptHandle = 0 spawn AGM_Vector_fnc_tabDistanceKey; 0 spawn AGM_Vector_fnc_abort;};";
     conditionUp = "true";
     statementUp = "AGM_vectorKey set [1, false];";
     key = 19;
@@ -46,6 +73,7 @@ class AGM_Core_Default_Keys {
 class CfgWeapons {
   class Binocular;
   class AGM_Vector: Binocular {
+    author = "$STR_AGM_Core_AGMTeam";
     displayName = "$STR_AGM_Vector_VectorName";
     descriptionShort = "$STR_AGM_Vector_VectorDescription";
     model = "\AGM_Vector\agm_vector.p3d";
@@ -54,6 +82,7 @@ class CfgWeapons {
     visionMode[] = {"Normal","NVG"};
     opticsZoomMax = 0.03;
     opticsZoomMin = 0.03;
+    weaponInfoType = "AGM_RscOptics_vector";
   };
 };
 
@@ -86,6 +115,31 @@ class CfgVehicles {
 
 class AGM_Rsc_Display_Base;
 class AGM_Rsc_Control_Base;
+class RSCText;
+
+class RscInGameUI {
+  class AGM_RscOptics_vector: AGM_Rsc_Display_Base {
+    idd = -1;
+    onLoad = "uiNamespace setVariable ['AGM_dlgVectorOptics', _this select 0];";
+    controls[] = {"CA_Distance","CA_Heading","CA_OpticsPitch"};
+
+    class CA_Distance: RSCText {
+      idc = 151;  // distance
+      w = 0;
+      h = 0;
+    };
+    class CA_Heading: RSCText {
+      idc = 156;  // azimuth
+      w = 0;
+      h = 0;
+    };
+    class CA_OpticsPitch: RSCText {
+      idc = 182;  // inclination
+      w = 0;
+      h = 0;
+    };
+  };
+};
 
 class RscTitles {
   class AGM_Vector : AGM_Rsc_Display_Base {

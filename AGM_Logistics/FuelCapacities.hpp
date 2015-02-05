@@ -28,3 +28,8 @@
 #define AGM_FUELCAPACITYCARGO_KAMAZ      7125  // guesswork based on relative size compared to HEMTT
 #define AGM_FUELCAPACITYCARGO_TYPHOON    7125  // guesswork based on relative size compared to HEMTT
 #define AGM_FUELCAPACITYCARGO_CRV        0     // this thing doesn't carry any fuel (I think)
+#define AGM_FUELCAPACITYCARGO_SKYCRANE   3000  // no idea
+
+#define AGM_FUELCAPACITYCARGO_ISOCONT    24000 //http://www.seacoglobal.com/equipment/tank-container/standards/ (a bit less due the ingame varriant)
+#define AGM_FUELCAPACITYCARGO_BARREL       200 //https://en.wikipedia.org/wiki/Drum_%28container%29
+#define AGM_FUELCAPACITYCARGO_4BARREL      800 //200*4

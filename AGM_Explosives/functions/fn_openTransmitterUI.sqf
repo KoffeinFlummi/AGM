@@ -20,7 +20,7 @@ _unit = _this select 0;
 _items = (items _unit);
 
 _actions = [localize "STR_AGM_Explosives_TriggerMenu", localize "STR_AGM_Explosives_SelectTrigger"] call AGM_Interaction_fnc_prepareSelectMenu;
-_detonators = [player] call AGM_Explosives_fnc_getDetonators;
+_detonators = [_unit] call AGM_Explosives_fnc_getDetonators;
 {
 	_config = ConfigFile >> "CfgWeapons" >> _x;
 	_actions = [
@@ -39,8 +39,13 @@ if (count _detonators == 0) then {
 	[
 		_actions,
 		{
-			[player, _this] call AGM_Explosives_fnc_openDetonateUI;
+			[AGM_player, _this] call AGM_Explosives_fnc_openDetonateUI;
 		},
-		{call AGM_Interaction_fnc_hideMenu;"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;}
+		{
+			call AGM_Interaction_fnc_hideMenu;
+			if !(profileNamespace getVariable ["AGM_Interaction_AutoCloseMenu", false]) then {
+				"AGM_Explosives" call AGM_Interaction_fnc_openMenuSelf;
+			};
+		}
 	] call AGM_Interaction_fnc_openSelectMenu;
 };

@@ -5,9 +5,24 @@
   (_this select 1) call AGM_Core_fnc_execRemoteFnc;
 };
 
-call compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+[missionNamespace] call AGM_Core_fnc_executePersistent;
 
+// check previous version number from profile
+_currentVersion = getText (configFile >> "CfgPatches" >> "AGM_Core" >> "version");
+_previousVersion = profileNamespace getVariable ["AGM_VersionNumberString", ""];
+
+if (_currentVersion != _previousVersion) then {
+  // do something
+
+  profileNamespace setVariable ["AGM_VersionNumberString", _currentVersion];
+};
+
+0 spawn compile preprocessFileLineNumbers "\AGM_core\scripts\Version\checkVersionNumber.sqf";
+
+// everything that only player controlled machines need, goes below this
 if (!hasInterface) exitWith {};
+
+call compile preprocessFileLineNumbers "\AGM_core\scripts\assignedItemFix.sqf";
 
 AGM_Core_keyInput  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyInput.sqf";
 AGM_Core_keyRelease  = compile preprocessFileLineNumbers "\AGM_core\scripts\keyRelease.sqf";
@@ -43,4 +58,4 @@ call compile preprocessFileLineNumbers "\AGM_core\scripts\KeyInput\initScrollWhe
 
 enableCamShake true;
 
-[player] call AGM_Core_fnc_setName;
+[missionNamespace, "playerChanged", "{if (alive (_this select 0)) then {[_this select 0] call AGM_Core_fnc_setName}; if (alive (_this select 1)) then {[_this select 1] call AGM_Core_fnc_setName};}"] call AGM_Core_fnc_addCustomEventhandler;

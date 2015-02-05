@@ -4,7 +4,7 @@
  * Add a custom event to a unit. The event scripts are called by AGM_Core_fnc_callCustomEventHandlers.
  *
  * Argument:
- * 0: Object the event should be assigned to (Object)
+ * 0: Object the event should be assigned to or namespace (Object OR Namespace)
  * 1: Name of the event (String)
  * 2: Code to execute (Code or String)
  *
@@ -19,7 +19,7 @@ _type = _this select 1;
 _statement = _this select 2;
 
 if (typeName _statement == "STRING") then {
-	_statement = compile _statement;
+  _statement = compile _statement;
 };
 
 _name = format ["AGM_CustomEventHandlers_%1", _type];

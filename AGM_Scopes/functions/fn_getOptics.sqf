@@ -1,21 +1,27 @@
 /*
- * Author: KoffeinFlummi
+ * Author: commy2
  *
  * Gets the optic classnames of all currently equipped weapons.
  *
  * Arguments:
- * None
+ * 0: Unit (Object)
  *
  * Return Value:
- * [optic of primary, optic of secondary, optic of handgun]
+ * [optic of primary, optic of secondary, optic of handgun] (Array)
  */
 
-private ["_array"];
+private ["_unit", "_array"];
 
-_array = [
-  [primaryWeaponItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
-  [secondaryWeaponItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter,
-  [handgunItems player, {getNumber (configFile >> "CfgWeapons" >> _this >> "ItemInfo" >> "type") == 201}] call AGM_Core_fnc_filter
-];
+_unit = _this select 0;
 
-[_array, {if (count _this > 0) then {_this select 0} else {""}}] call AGM_Core_fnc_map
+_array = ["", "", ""];
+
+if !(_unit isKindOf "CAManBase") exitWith {_array};
+
+{
+	if (count _x >= 2) then {
+		_array set [_forEachIndex, _x select 2];
+	};
+} forEach [primaryWeaponItems _unit, secondaryWeaponItems _unit, handgunItems _unit];
+
+_array

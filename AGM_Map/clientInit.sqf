@@ -3,6 +3,57 @@
 if (!hasInterface) exitWith{};
 
 [] spawn {
+  while {true} do {
+    sleep 5;
+    _markers = [];
+
+    while {AGM_Map_BFT_Enabled and {(!isNil "AGM_player") and {alive AGM_player}}} do {
+
+      _groups = [];
+      _playerSide = call AGM_Core_fnc_playerSide;
+
+      if (AGM_Map_BFT_HideAiGroups) then {
+        _groups = [allGroups, {
+          _anyPlayers = {
+            [_x] call AGM_Core_fnc_isPlayer
+          } count units _this;
+          (side _this == _playerSide) && _anyPlayers > 0
+        }] call AGM_Core_fnc_filter;
+      } else {
+        _groups = [allGroups, {side _this == _playerSide}] call AGM_Core_fnc_filter;
+      };
+
+      {
+        deleteMarkerLocal _x;
+      } forEach _markers;
+      _markers = [];
+
+      for "_i" from 0 to (count _groups - 1) do {
+        _group1 = _groups select _i;
+
+        _markerType = [_group1] call AGM_Core_fnc_getMarkerType;
+
+        _colour = format ["Color%1", side _group1];
+
+        _marker = createMarkerLocal [format ["AGM_BFT_%1", _i], [(getPos leader _group1) select 0, (getPos leader _group1) select 1]];
+        _marker setMarkerTypeLocal _markerType;
+        _marker setMarkerColorLocal _colour;
+        _marker setMarkerTextLocal (groupID _group1);
+
+        _markers pushBack _marker;
+      };
+
+      sleep AGM_Map_BFT_Interval;
+    };
+
+    // Delete markers as soon as the player dies
+    {
+      deleteMarkerLocal _x;
+    } forEach _markers;
+  };
+};
+
+[] spawn {
   // Init variables
   AGM_Map_mapToolsShown = 0;
   AGM_Map_pos = [0,0];
@@ -91,9 +142,9 @@ if (!hasInterface) exitWith{};
     // Hide GPS
     [false] call AGM_Map_fnc_openMapGps;
     // Hide Map tools
-    deleteMarkerLocal "MapToolFixed";
-    deleteMarkerLocal "MapToolRotatingNormal";
-    deleteMarkerLocal "MapToolRotatingSmall";
+    deleteMarkerLocal "AGM_MapToolFixed";
+    deleteMarkerLocal "AGM_MapToolRotatingNormal";
+    deleteMarkerLocal "AGM_MapToolRotatingSmall";
     AGM_Map_mapToolFixed = nil;
     AGM_Map_mapToolRotatingNormal = nil;
     AGM_Map_mapToolRotatingSmall = nil;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-11 -->
+<!-- Edited with tabler - 2014-12-11 -->
 <Project name="AGM">
   <Package name="RealisticNames">
     <Key ID="STR_AGM_RealisticNames_HMG_01_Name">
@@ -97,6 +97,26 @@
       <Portuguese>Lança-mísseis Mini-Spike (AA)</Portuguese>
       <Hungarian>Mini-Spike rakétarendszer (légvédelmi)</Hungarian>
       <Italian>Lanciatore Mini-Spike (AA)</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_Name">
+      <English>YABHON-R3</English>
+      <German>YABHON-R3</German>
+      <Spanish>YABHON-R3</Spanish>
+      <Polish>YABHON-R3</Polish>
+      <Czech>YABHON-R3</Czech>
+      <French>YABHON-R3</French>
+      <Russian>YABHON-R3</Russian>
+      <Portuguese>YABHON-R3</Portuguese>
+      <Hungarian>YABHON-R3</Hungarian>
+      <Italian>YABHON-R3</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_UAV_02_CAS_Name">
+      <English>YABHON-R3 (CAS)</English>
+      <German>YABHON-R3 (Luftnahunterstützung)</German>
+      <Spanish>YABHON-R3 (CAS)</Spanish>
+      <Polish>YABHON-R3 (CAS)</Polish>
+      <Czech>YABHON-R3 (CAS)</Czech>
+      <Russian>YABHON-R3 (штурмовик)</Russian>
     </Key>
     <Key ID="STR_AGM_RealisticNames_MRAP_01_Name">
       <English>M-ATV</English>
@@ -403,7 +423,7 @@
       <German>KamAZ Transport</German>
       <Spanish>KamAZ de transporte</Spanish>
       <Polish>KamAZ transportowy</Polish>
-      <Czech>KamAZ Valník</Czech>
+      <Czech>KAMAZ Valník</Czech>
       <French>KamAZ Transport</French>
       <Russian>КамАЗ Траспортный</Russian>
       <Portuguese>KamAZ Transporte</Portuguese>
@@ -415,7 +435,7 @@
       <German>KamAZ Transport (bedeckt)</German>
       <Spanish>KamAZ de transporte (cubierto)</Spanish>
       <Polish>KamAZ Transportowy (zakryty)</Polish>
-      <Czech>KamAZ Valník (krytý)</Czech>
+      <Czech>KAMAZ Valník (krytý)</Czech>
       <French>KamAZ Transport (bâché)</French>
       <Russian>КамАЗ Траспортный (Крытый)</Russian>
       <Portuguese>KamAZ Transporte (coberto)</Portuguese>
@@ -427,7 +447,7 @@
       <German>KamAZ Munition</German>
       <Spanish>KamAZ de munición</Spanish>
       <Polish>KamAZ Amunicyjny</Polish>
-      <Czech>KamAZ Muniční</Czech>
+      <Czech>KAMAZ Muniční</Czech>
       <French>KamAZ Munitions</French>
       <Russian>КамАЗ Боеприпасы</Russian>
       <Portuguese>KamAZ Munições</Portuguese>
@@ -439,7 +459,7 @@
       <German>KamAZ Treibstoff</German>
       <Spanish>KamAZ de combustible</Spanish>
       <Polish>KamAZ cysterna</Polish>
-      <Czech>KamAZ Cisterna</Czech>
+      <Czech>KAMAZ Cisterna</Czech>
       <French>KamAZ Citerne</French>
       <Russian>КамАЗ Заправщик</Russian>
       <Portuguese>KamAZ Combustível</Portuguese>
@@ -451,7 +471,7 @@
       <German>KamAZ Instandsetzung</German>
       <Spanish>KamAZ de reparación</Spanish>
       <Polish>KamAZ Naprawczy</Polish>
-      <Czech>KamAZ Opravárenský</Czech>
+      <Czech>KAMAZ Opravárenský</Czech>
       <French>KamAZ Réparation</French>
       <Russian>КамАЗ Ремонтный</Russian>
       <Portuguese>KamAZ Reparador</Portuguese>
@@ -463,7 +483,7 @@
       <German>KamAZ Sanitäter</German>
       <Spanish>KamAZ médico</Spanish>
       <Polish>KamAZ Medyczny</Polish>
-      <Czech>KamAZ Zdravotnický</Czech>
+      <Czech>KAMAZ Zdravotnický</Czech>
       <French>KamAZ Sanitaire</French>
       <Russian>КамАЗ Медицинский</Russian>
       <Portuguese>KamAZ Médico</Portuguese>
@@ -686,6 +706,26 @@
       <Hungarian>AH-6 Little Bird</Hungarian>
       <Italian>AH-6 Little Bird</Italian>
     </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_Name">
+      <English>CH-47I Chinook</English>
+      <German>CH-47I Chinook</German>
+      <Spanish>CH-47I Chinook</Spanish>
+      <Polish>CH-47I Chinook</Polish>
+      <Czech>CH-47I Chinook</Czech>
+      <French>CH-47I Chinook</French>
+      <Russian>CH-47I Chinook</Russian>
+      <Portuguese>CH-47I Chinook</Portuguese>
+      <Hungarian>CH-47I Chinook</Hungarian>
+      <Italian>CH-47I Chinook</Italian>
+    </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name">
+      <English>CH-47I Chinook (unarmed)</English>
+      <German>CH-47I Chinook (unbewaffnet)</German>
+      <Spanish>CH-47I Chinnok (Desarmado)</Spanish>
+      <Polish>CH-47I Chinook (nieuzbrojony)</Polish>
+      <Russian>CH-47I Chinook (невооруженный)</Russian>
+      <Czech>CH-47I Chinook (Neozbrojený)</Czech>
+    </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_CAS_01_Name">
       <English>A-10D Thunderbolt II</English>
       <German>A-10D Thunderbolt II</German>
@@ -794,6 +834,18 @@
       <Hungarian>Jak-130</Hungarian>
       <Italian>Yak-130</Italian>
     </Key>
+    <Key ID="STR_AGM_RealisticNames_Heli_Light_01_civil_Name">
+      <English>MD 500</English>
+      <German>MD 500</German>
+      <Spanish>MD 500</Spanish>
+      <Polish>MD 500</Polish>
+      <Czech>MD 500</Czech>
+      <French>MD 500</French>
+      <Russian>MD 500</Russian>
+      <Portuguese>MD 500</Portuguese>
+      <Hungarian>MD 500</Hungarian>
+      <Italian>MD 500</Italian>
+    </Key>
     <Key ID="STR_AGM_RealisticNames_SLAM_Name">
       <English>M4A1 SLAM</English>
       <German>M4A1 SLAM</German>
@@ -811,7 +863,7 @@
       <German>M18A1 Claymore</German>
       <Spanish>M18A1 Claymore</Spanish>
       <Polish>Mina kierunkowa M18A1 Claymore</Polish>
-      <Czech>M18A1 Claymore Mina</Czech>
+      <Czech>M18A1 Mina Claymore</Czech>
       <French>M18A1 Claymore Mine antipersonnel à effet dirigé</French>
       <Russian>M18A1 Клеймор</Russian>
       <Portuguese>M18A1 Claymore</Portuguese>
@@ -823,7 +875,7 @@
       <German>M183 Geballte Sprengladung</German>
       <Spanish>Conjunto de carga de demolición M183</Spanish>
       <Polish>Ładunek burzący M183</Polish>
-      <Czech>M183 Demolition Charge Assembly</Czech>
+      <Czech>M183 Demoliční nálož</Czech>
       <French>M183 Charge de Démolition</French>
       <Russian>M183 Комплектный подрывной заряд</Russian>
       <Portuguese>M183 Sacola de Demolição</Portuguese>
@@ -835,7 +887,7 @@
       <German>M112 Sprengladung</German>
       <Spanish>Bloque de demolición M112</Spanish>
       <Polish>Ładunek burzący M112</Polish>
-      <Czech>M112 Demoliční nálož</Czech>
+      <Czech>M112 Výbušná nálož</Czech>
       <French>Pétard M112</French>
       <Russian>M112 подрывной заряд</Russian>
       <Portuguese>M112 Carga de Demolição</Portuguese>
@@ -846,8 +898,8 @@
       <English>M67 Fragmentation Grenade</English>
       <German>M67 Splittergranate</German>
       <Spanish>Granada de fragmentación M67</Spanish>
-      <Polish>M67 Granat obronny</Polish>
-      <Czech>M67 Granát obranný</Czech>
+      <Polish>Granat obronny M67</Polish>
+      <Czech>M67 Granát</Czech>
       <French>M67 Grenade à fragmentation</French>
       <Russian>M67 ручная осколочная граната</Russian>
       <Portuguese>M67 Granada de fragmentação</Portuguese>
@@ -858,8 +910,8 @@
       <English>M83 Smoke Grenade (White)</English>
       <German>M83 Rauchgranate (Weiss)</German>
       <Spanish>Granada de humo M83 (Blanco)</Spanish>
-      <Polish>M83 Granat Dymny (Biała)</Polish>
-      <Czech>M83 Dýmový Granát (Bílá)</Czech>
+      <Polish>Granat dymny M83 (Biały)</Polish>
+      <Czech>M83 Kouřový Granát (Bílý)</Czech>
       <French>M83 Grenade fumigène (Blanche)</French>
       <Russian>M83 дымовой гранаты (Белый)</Russian>
       <Portuguese>M83 Granada de fumaça (Branca)</Portuguese>
@@ -870,8 +922,8 @@
       <English>M18 Smoke Grenade (Blue)</English>
       <German>M18 Rauchgranate (Blau)</German>
       <Spanish>Granada de humo M18 (Azul)</Spanish>
-      <Polish>M18 Granat Dymny (Niebieski)</Polish>
-      <Czech>M18 Dýmový Granát (Modrá)</Czech>
+      <Polish>Granat dymny M18 (Niebieski)</Polish>
+      <Czech>M18 Kouřový Granát (Modrý)</Czech>
       <French>M18 Grenade fumigène (Bleue)</French>
       <Russian>M18 дымовой гранаты (Синий)</Russian>
       <Portuguese>M18 Granada de fumaça (Azul)</Portuguese>
@@ -882,8 +934,8 @@
       <English>M18 Smoke Grenade (Green)</English>
       <German>M18 Rauchgranate (Grün)</German>
       <Spanish>Granada de humo M18 (Verde)</Spanish>
-      <Polish>M18 Granat Dymny (Zielony)</Polish>
-      <Czech>M18 Dýmový Granát (Zelená)</Czech>
+      <Polish>Granat dymny M18 (Zielony)</Polish>
+      <Czech>M18 Kouřový Granát (Zelený)</Czech>
       <French>M18 Grenade fumigène (Verte)</French>
       <Russian>M18 дымовой гранаты (Зелёный)</Russian>
       <Portuguese>M18 Granada de fumaça (Verde)</Portuguese>
@@ -894,8 +946,8 @@
       <English>M18 Smoke Grenade (Orange)</English>
       <German>M18 Rauchgranate (Orange)</German>
       <Spanish>Granada de humo M18 (Naranja)</Spanish>
-      <Polish>M18 Granat Dymny (Pomarańczowy)</Polish>
-      <Czech>M18 Dýmový Granát (Oranžová)</Czech>
+      <Polish>Granat dymny M18 (Pomarańczowy)</Polish>
+      <Czech>M18 Kouřový Granát (Oranžový)</Czech>
       <French>M18 Grenade fumigène (Orange)</French>
       <Russian>M18 дымовой гранаты (Оранжевый)</Russian>
       <Portuguese>M18 Granada de fumaça (Laranja)</Portuguese>
@@ -906,8 +958,8 @@
       <English>M18 Smoke Grenade (Purple)</English>
       <German>M18 Rauchgranate (Violett)</German>
       <Spanish>Granada de humo M18 (Púrpura)</Spanish>
-      <Polish>M18 Granat Dymny (Fioletowy)</Polish>
-      <Czech>M18 Dýmový Granát (Fialové)</Czech>
+      <Polish>Granat dymny M18 (Fioletowy)</Polish>
+      <Czech>M18 Kouřový Granát (Fialový)</Czech>
       <French>M18 Grenade fumigène (Pourpre)</French>
       <Russian>M18 дымовой гранаты (Пурпурный)</Russian>
       <Portuguese>M18 Granada de fumaça (Roxa)</Portuguese>
@@ -918,8 +970,8 @@
       <English>M18 Smoke Grenade (Red)</English>
       <German>M18 Rauchgranate (Rot)</German>
       <Spanish>Granada de humo M18 (Rojo)</Spanish>
-      <Polish>M18 Granat Dymny (Czerwony)</Polish>
-      <Czech>M18 Dýmový Granát (Červená)</Czech>
+      <Polish>Granat dymny M18 (Czerwony)</Polish>
+      <Czech>M18 Kouřový Granát (Červený)</Czech>
       <French>M18 Grenade fumigène (Rouge)</French>
       <Russian>M18 дымовой гранаты (Красный)</Russian>
       <Portuguese>M18 Granada de fumaça (Vermelha)</Portuguese>
@@ -930,8 +982,8 @@
       <English>M18 Smoke Grenade (Yellow)</English>
       <German>M18 Rauchgranate (Gelb)</German>
       <Spanish>Granada de humo M18 (Amarillo)</Spanish>
-      <Polish>M18 Granat Dymny (Żółty)</Polish>
-      <Czech>M18 Dýmový Granát (Žlutá)</Czech>
+      <Polish>Granat dymny M18 (Żółty)</Polish>
+      <Czech>M18 Kouřový Granát (Žlutý)</Czech>
       <French>M18 Grenade fumigène (Jaune)</French>
       <Russian>M183 дымовой гранаты (Жёлтые)</Russian>
       <Portuguese>M18 Granada de fumaça (Amarela)</Portuguese>
@@ -942,8 +994,8 @@
       <English>M15 Anti-Tank Mine</English>
       <German>M15 Panzerabwehrmine</German>
       <Spanish>Mina antitanque M15</Spanish>
-      <Polish>M15 Mina Przeciwpancerna</Polish>
-      <Czech>M15 Protitankové Mina</Czech>
+      <Polish>Mina przeciwpancerna M15</Polish>
+      <Czech>M15 Protitanková Mina</Czech>
       <French>M15 Mine antichar</French>
       <Russian>M15 противотанковая мина</Russian>
       <Portuguese>M15 Mina anticarro</Portuguese>
@@ -954,7 +1006,7 @@
       <English>VS-50 Anti-Personnel Mine</English>
       <German>VS-50 Antipersonenmine</German>
       <Spanish>Mina antipersona VS-50</Spanish>
-      <Polish>VS-50 Mina Przeciwpiechotna</Polish>
+      <Polish>Mina przeciwpiechotna VS-50</Polish>
       <Czech>VS-50 Protipěchotní Mina</Czech>
       <French>VS-50 Mine antipersonnel à pression</French>
       <Russian>VS-50 Противопехотная мина</Russian>
@@ -966,8 +1018,8 @@
       <English>M26 Anti-Personnel Bounding Mine</English>
       <German>M26 Antipersonensprungmine</German>
       <Spanish>Mina antipersona M26</Spanish>
-      <Polish>M26 Mina Przeciwpiechotna</Polish>
-      <Czech>M26 Protipěchotní Mina</Czech>
+      <Polish>Mina przeciwpiechotna M26</Polish>
+      <Czech>M26 Šrapnelová Mina</Czech>
       <French>M26  Mine antipersonnel bondissante</French>
       <Russian>M26 Противопехотная мина</Russian>
       <Portuguese>M26 Mina saltadora antipessoal</Portuguese>
@@ -978,8 +1030,8 @@
       <English>PMR-3 Anti-Personnel Tripwire Mine</English>
       <German>PMR-3 Antipersonenstolperdrahtmine</German>
       <Spanish>Mina antipersona de alambre PMR-3</Spanish>
-      <Polish>PMR-3 Mina Przeciwpiechotna</Polish>
-      <Czech>PMR-3 Protipěchotní Mina</Czech>
+      <Polish>Mina przeciwpiechotna PMR-3</Polish>
+      <Czech>PMR-3 Nástražná Mina</Czech>
       <French>PMR-3 Mine antipersonnel à traction</French>
       <Russian>PMR-3 Противопехотная мина</Russian>
       <Portuguese>PMR-3 Mina antipessoal (armadilha)</Portuguese>

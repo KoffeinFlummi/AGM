@@ -18,7 +18,4 @@ _vehicle = vehicle _unit;
 if (_unit == _vehicle) exitWith {false};
 if (_unit in [driver _vehicle, gunner _vehicle, commander _vehicle]) exitWith {false};
 
-if (getNumber(configFile >> "CfgVehicles" >> typeOf _vehicle >> "attendant") == 1 or _vehicle getVariable ["AGM_IsMedic", false]) exitWith {
-  true
-};
-false
+_vehicle getVariable ["AGM_isMedic", getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "attendant") == 1]

@@ -16,5 +16,12 @@
 _name = _this select 0;
 _value = _this select 1;
 
+// Hack to keep backward compatibility for the moment
+if ((typeName (missionNamespace getVariable _name)) == "BOOL") then {
+  if ((typeName _value) == "SCALAR") then {
+    _value = _value > 0;
+  };
+};
+
 missionNamespace setVariable [_name, _value];
 publicVariable _name;

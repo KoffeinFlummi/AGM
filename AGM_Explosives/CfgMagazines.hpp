@@ -57,15 +57,15 @@ class CfgMagazines {
 		AGM_SetupObject = "AGM_Explosives_Place_SatchelCharge"; // CfgVehicle class for setup object.
 		AGM_DelayTime = 1;
 		class AGM_Triggers {
-			AGM_Triggers[] = {"Timer","Command", "MK16_Transmitter"};
+			AGM_Triggers[] = {"Timer","Command", "MK16_Transmitter", "DeadmanSwitch"};
 			class Timer {
 				FuseTime = 0.5;
 			};
 			class Command {
 				FuseTime = 0.5;
 			};
-			class MK16_Transmitter:Command{
-			};
+			class MK16_Transmitter:Command{};
+			class DeadmanSwitch:Command{};
 		};
 	};
 	class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{
@@ -98,6 +98,15 @@ class CfgMagazines {
 };
 
 class CfgAGM_Triggers {
+/* onPlace parameters:
+	0: OBJECT - unit placing
+	1: OBJECT - Placed explosive
+	2: STRING - Magazine classname
+	3: ARRAY - vars
+		Last Index: CfgAGM_Triggers config of trigger type.
+  onSetup parameters:
+	0: STRING - Magazine Classname
+*/
 	class Command {
 		displayName = $STR_AGM_Explosives_clacker_displayName;
 		picture = "\AGM_Explosives\Data\UI\Clacker.paa";
@@ -107,13 +116,17 @@ class CfgAGM_Triggers {
 	class MK16_Transmitter:Command {
 		displayName = $STR_AGM_Explosives_MK16_displayName;
 		picture = "\AGM_Explosives\Data\UI\MK16_Reciever_ca.paa";
-		onPlace = "_this call AGM_Explosives_fnc_AddClacker;false";
 		requires[] = {"AGM_M26_Clacker"};
+	};
+	class DeadManSwitch:Command {
+		displayName = $STR_AGM_Explosives_DeadManSwitch_displayName;
+		picture = "\AGM_Explosives\Data\UI\DeadmanSwitch.paa";
+		requires[] = {"AGM_DeadManSwitch"};
 	};
 	class PressurePlate {
 		displayName = $STR_AGM_Explosives_PressurePlate;
 		picture = "AGM_Explosives\data\UI\Pressure_plate.paa";
-		onPlace = "_dist=GetNumber(ConfigFile >> 'CfgMagazines' >> (_this select 2) >> 'AGM_Triggers' >> 'PressurePlate' >> 'digDistance');_ex=_this select 1;_pos=getPosATL _ex;_pos=_pos vectorDiff ((VectorUp _ex)vectorCrossProduct [0,0,_dist]);_ex setPosATL _pos;false";
+		onPlace = "_dist=GetNumber(ConfigFile >> 'CfgMagazines' >> (_this select 2) >> 'AGM_Triggers' >> 'PressurePlate' >> 'digDistance');_ex=_this select 1;_ex setPosATL ((getPosATL _ex) vectorDiff ((VectorUp _ex) vectorCrossProduct [0,0,_dist]));false";
 	};
 	class IRSensor {
 		displayName = $STR_AGM_Explosives_IRSensor;
@@ -123,8 +136,8 @@ class CfgAGM_Triggers {
 	class Timer {
 		displayName = $STR_AGM_Explosives_timerName;
 		picture = "AGM_Explosives\data\UI\Timer.paa";
-		onPlace = "[_this select 1, (_this select 3) select 0] call AGM_Explosives_fnc_startTimer;false"; // _this = [_unit,_explosive,_mag,_vars];
-		onSetup = "_this call AGM_Explosives_fnc_openTimerSetUI;true";// _this = [Magazine]
+		onPlace = "[_this select 1, (_this select 3) select 0] call AGM_Explosives_fnc_startTimer;false";
+		onSetup = "_this call AGM_Explosives_fnc_openTimerSetUI;true";
 	};
 	class Tripwire {
 		displayName = $STR_AGM_Explosives_TripWire;

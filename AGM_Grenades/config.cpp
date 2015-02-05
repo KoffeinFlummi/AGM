@@ -4,9 +4,9 @@ class CfgPatches {
     weapons[] = {};
     requiredVersion = 0.60;
     requiredAddons[] = {AGM_Core};
-    version = "0.931";
-    versionStr = "0.931";
-    versionAr[] = {0,931,0};
+    version = "0.95.2";
+    versionStr = "0.95.2";
+    versionAr[] = {0,95,2};
     author[] = {"commy2", "KoffeinFlummi"};
     authorUrl = "https://github.com/commy2/";
   };
@@ -16,9 +16,9 @@ class CfgFunctions {
   class AGM_Grenades {
     class AGM_Grenades {
       file = "\AGM_Grenades\functions";
-      class firedEH;
       class flashbangEffect;
       class nextMode;
+      class throwGrenade;
     };
   };
 };
@@ -29,10 +29,10 @@ class Extended_PostInit_EventHandlers {
   };
 };
 
-class Extended_Fired_EventHandlers {
+class Extended_FiredBIS_EventHandlers {
   class CAManBase {
-    class AGM_Grenades {
-      clientFired = "if (player == (_this select 0)) then {_this call AGM_Grenades_fnc_firedEH}";
+    class AGM_Grenades_ThrowGrenade {
+      clientFiredBIS = "if (_this select 0 == AGM_player) then {_this call AGM_Grenades_fnc_throwGrenade;};";
     };
   };
 };
@@ -40,12 +40,12 @@ class Extended_Fired_EventHandlers {
 class AGM_Core_Default_Keys {
   class switchGrenadeMode {
     displayName = "$STR_AGM_Grenades_SwitchGrenadeMode";
-    condition = "player == vehicle player";
+    condition = "[_player] call AGM_Core_fnc_canUseWeapon";
     statement = "call AGM_Grenades_fnc_nextMode";
-    key = 34;
+    key = 9;//34;
     shift = 0;
     control = 0;
-    alt = 1;
+    alt = 0;//1;
   };
 };
 
@@ -240,7 +240,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_White,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
@@ -248,7 +248,7 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Red,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
@@ -256,17 +256,17 @@ class CfgVehicles {
     class TransportItems {
       MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
       MACRO_ADDITEM(AGM_HandFlare_Green,12)
-      MACRO_ADDITEM(AGM_M84, 12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 
   class AGM_Box_Misc: Box_NATO_Support_F {
     class TransportItems {
-      MACRO_ADDITEM(AGM_HandFlare_White,24)
-      MACRO_ADDITEM(AGM_HandFlare_Red,24)
-      MACRO_ADDITEM(AGM_HandFlare_Green,24)
-      MACRO_ADDITEM(AGM_HandFlare_Yellow,24)
-      MACRO_ADDITEM(AGM_M84, 24)
+      MACRO_ADDITEM(AGM_HandFlare_White,12)
+      MACRO_ADDITEM(AGM_HandFlare_Red,12)
+      MACRO_ADDITEM(AGM_HandFlare_Green,12)
+      MACRO_ADDITEM(AGM_HandFlare_Yellow,12)
+      MACRO_ADDITEM(AGM_M84,12)
     };
   };
 };

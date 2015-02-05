@@ -10,9 +10,9 @@ if !(_magazine in magazines player) exitWith {};
 // get current ammo count
 _ammo = 0;
 {
-	if (_x select 0 == _magazine) then {
-		_ammo = _ammo + (_x select 1);
-	};
+  if (_x select 0 == _magazine) then {
+    _ammo = _ammo + (_x select 1);
+  };
 } forEach magazinesAmmoFull player;
 
 // how many rounds fit in one mag
@@ -23,76 +23,76 @@ _fullMagazinesCount = floor (_ammo / _ammoCount);
 _restAmmo = _ammo - _fullMagazinesCount * _ammoCount;
 
 // remove old magazines
-player removeMagazines _magazine; 
+player removeMagazines _magazine;
 
 _isLoaded = false;
 // reload rifle
 if (_magazine in primaryWeaponMagazine player) then {
-	_weapon = primaryWeapon player;
+  _weapon = primaryWeapon player;
 
-	if (_fullMagazinesCount > 0) then {
-		player setAmmo [_weapon, _ammoCount];
-		_fullMagazinesCount = _fullMagazinesCount - 1;
-	} else {
-		player setAmmo [_weapon, _restAmmo];
-		_restAmmo = 0;
-	};
+  if (_fullMagazinesCount > 0) then {
+    player setAmmo [_weapon, _ammoCount];
+    _fullMagazinesCount = _fullMagazinesCount - 1;
+  } else {
+    player setAmmo [_weapon, _restAmmo];
+    _restAmmo = 0;
+  };
 
-	if (_weapon == currentWeapon player) then {
-		_reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
-		player playActionNow _reloadAction;
-	};
+  if (_weapon == currentWeapon player) then {
+    _reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+    player playActionNow _reloadAction;
+  };
 
-	_isLoaded = true;
+  _isLoaded = true;
 };
 
 // reload pistol
 if (_magazine in handgunMagazine player) then {
-	_weapon = handgunWeapon player;
+  _weapon = handgunWeapon player;
 
-	if (_fullMagazinesCount > 0) then {
-		player setAmmo [_weapon, _ammoCount];
-		_fullMagazinesCount = _fullMagazinesCount - 1;
-	} else {
-		player setAmmo [_weapon, _restAmmo];
-		_restAmmo = 0;
-	};
+  if (_fullMagazinesCount > 0) then {
+    player setAmmo [_weapon, _ammoCount];
+    _fullMagazinesCount = _fullMagazinesCount - 1;
+  } else {
+    player setAmmo [_weapon, _restAmmo];
+    _restAmmo = 0;
+  };
 
-	if (_weapon == currentWeapon player) then {
-		_reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
-		player playActionNow _reloadAction;
-	};
+  if (_weapon == currentWeapon player) then {
+    _reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+    player playActionNow _reloadAction;
+  };
 
-	_isLoaded = true;
+  _isLoaded = true;
 };
 
 // reload rocket launcher (just in case ...)
 if (_magazine in secondaryWeaponMagazine player) then {
-	_weapon = secondaryWeapon player;
+  _weapon = secondaryWeapon player;
 
-	if (_fullMagazinesCount > 0) then {
-		player setAmmo [_weapon, _ammoCount];
-		_fullMagazinesCount = _fullMagazinesCount - 1;
-	} else {
-		player setAmmo [_weapon, _restAmmo];
-		_restAmmo = 0;
-	};
+  if (_fullMagazinesCount > 0) then {
+    player setAmmo [_weapon, _ammoCount];
+    _fullMagazinesCount = _fullMagazinesCount - 1;
+  } else {
+    player setAmmo [_weapon, _restAmmo];
+    _restAmmo = 0;
+  };
 
-	if (_weapon == currentWeapon player) then {
-		_reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
-		player playActionNow _reloadAction;
-	};
+  if (_weapon == currentWeapon player) then {
+    _reloadAction = getText (configFile >> "CfgWeapons" >> _weapon >> "reloadAction");
+    player playActionNow _reloadAction;
+  };
 
-	_isLoaded = true;
+  _isLoaded = true;
 };
 
 // add new magazines
 for "_a" from 1 to _fullMagazinesCount do {
-	player addMagazine _magazine;
+  player addMagazine _magazine;
 };
 
 if (_restAmmo > 0) then {
-	player addMagazine [_magazine, _restAmmo];
+  player addMagazine [_magazine, _restAmmo];
 };
 
 // display text if successful

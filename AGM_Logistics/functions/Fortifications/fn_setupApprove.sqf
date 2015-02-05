@@ -10,7 +10,7 @@ private "_setup";
 _setup = AGM_Fortifications_Setup;
 
 AGM_Fortifications_Setup = objNull;
-AGM_Fortifications_placer forceWalk false;
+[AGM_Fortifications_placer, "AGM_Logistics", false] call AGM_Core_fnc_setForceWalkStatus;
 AGM_Fortifications_placer = objNull;
 
 [player, "DefaultAction", player getVariable ["AGM_Fortifications_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;
@@ -18,9 +18,10 @@ AGM_Fortifications_placer = objNull;
 
 call AGM_Interaction_fnc_hideMouseHint;
 _setup spawn {
+	_pos = getPosASL _this;
 	_dir = getDir _this;
 
-	_dir = if (_dir > 180) then {_dir - 180} else {180 + _dir};
+	//_dir = if (_dir > 180) then {_dir - 180} else {180 + _dir};	// ?
 
 	player setVariable ["AGM_PlantingExplosive", true];
 
@@ -29,6 +30,13 @@ _setup spawn {
 	sleep 5;
 
 	deleteVehicle AGM_Fortifications_crate;
+
+	// create global object
+	_type = typeOf _this;
+	_setup = _type createVehicle [0, 0, -10000];
+	deleteVehicle _this;
+	_setup setDir _dir;
+	_setup setPosASL _pos;
 
 	player setVariable ["AGM_PlantingExplosive", false];
 

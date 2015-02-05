@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Edited with tabler - 2014-09-11 -->
+<!-- Edited with tabler - 2014-12-20 -->
 <Project name="AGM">
   <Package name="Interaction">
     <Key ID="STR_AGM_Interaction_InteractionMenu">
@@ -41,38 +41,50 @@
     <Key ID="STR_AGM_Interaction_LockDoor">
       <English>Lock Door</English>
       <German>Tür sperren</German>
-      <Spanish>Trabar puerta</Spanish>
+      <Spanish>Bloquear puerta</Spanish>
       <French>Verrouiller Porte</French>
       <Italian>Blocca la porta</Italian>
+      <Russian>Заблокировать дверь</Russian>
       <Portuguese>Trancar Porta</Portuguese>
       <Hungarian>Ajtó bezárása</Hungarian>
+      <Polish>Zablokuj drzwi</Polish>
+      <Czech>Zamknout dveře</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockDoor">
       <English>Unlock Door</English>
       <German>Tür entsperren</German>
-      <Spanish>Destrabar puerta</Spanish>
+      <Spanish>Desbloquear puerta</Spanish>
       <French>Déverrouiller Porte</French>
       <Italian>Sblocca la porta</Italian>
+      <Russian>Разблокировать дверь</Russian>
       <Portuguese>Destrancar Porta</Portuguese>
       <Hungarian> Zár kinyitása</Hungarian>
+      <Polish>Odblokuj drzwi</Polish>
+      <Czech>Odemknout dveře</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_LockedDoor">
       <English>Locked Door</English>
       <German>Tür gesperrt</German>
-      <Spanish>Puerta trabada</Spanish>
+      <Spanish>Puerta bloqueada</Spanish>
       <French>Porte Verrouillée</French>
       <Italian>Porta bloccata</Italian>
+      <Russian>Дверь заблокирована</Russian>
       <Portuguese>Porta Trancada</Portuguese>
       <Hungarian>Zárt ajtó</Hungarian>
+      <Polish>Zablokowano drzwi</Polish>
+      <Czech>Zamčené dveře</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_UnlockedDoor">
       <English>Unlocked Door</English>
       <German>Tür entsperrt</German>
-      <Spanish>Puerta destrabada</Spanish>
+      <Spanish>Puerta desbloqueada</Spanish>
       <French>Porte Déverrouillée</French>
       <Italian>Porta sbloccata</Italian>
+      <Russian>Дверь разблокирована</Russian>
       <Portuguese>Porta Destrancada</Portuguese>
       <Hungarian>Nyitott ajtó</Hungarian>
+      <Polish>Odblokowano drzwi</Polish>
+      <Czech>Odemčené dveře</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_JoinGroup">
       <English>Join group</English>
@@ -87,7 +99,7 @@
       <Italian>Unisciti alla squadra</Italian>
     </Key>
     <Key ID="STR_AGM_Interaction_LeaveGroup">
-      <English>Leave group</English>
+      <English>Leave Group</English>
       <German>Gruppe verlassen</German>
       <Spanish>Dejar grupo</Spanish>
       <Polish>Opuść grupę</Polish>
@@ -135,16 +147,16 @@
       <Italian>Smetti di ballare</Italian>
     </Key>
     <Key ID="STR_AGM_Interaction_Back">
-      <English>Back</English>
-      <German>Zurück</German>
-      <Spanish>Atrás</Spanish>
-      <Polish>Wstecz</Polish>
-      <Czech>Zpět</Czech>
-      <French>Retour</French>
-      <Russian>Назад</Russian>
-      <Hungarian>Vissza</Hungarian>
-      <Portuguese>Voltar</Portuguese>
-      <Italian>Indietro</Italian>
+      <English>&lt;&lt; Back</English>
+      <German>&lt;&lt; Zurück</German>
+      <Spanish>&lt;&lt; Atrás</Spanish>
+      <Polish>&lt;&lt; Wstecz</Polish>
+      <Czech>&lt;&lt; Zpět</Czech>
+      <French>&lt;&lt; Retour</French>
+      <Russian>&lt;&lt; Назад</Russian>
+      <Hungarian>&lt;&lt; Vissza</Hungarian>
+      <Portuguese>&lt;&lt; Voltar</Portuguese>
+      <Italian>&lt;&lt; Indietro</Italian>
     </Key>
     <Key ID="STR_AGM_Interaction_Gestures">
       <English>Gestures &gt;&gt;</English>
@@ -326,30 +338,6 @@
       <Portuguese>Tocar ombro</Portuguese>
       <Italian>Dai un colpetto</Italian>
     </Key>
-    <Key ID="STR_AGM_Interaction_BackpackVentralTake">
-      <English>Take (Ventral)</English>
-      <German>Aufnehmen (Ventral)</German>
-      <Spanish>Coger (Mochila Ventral)</Spanish>
-      <Polish>Załóż (brzuch)</Polish>
-      <Czech>Vzít (ventrální)</Czech>
-      <French>Prendre (Ventral)</French>
-      <Russian>Взять рюкзак (передний)</Russian>
-      <Hungarian>Felvétel (előre)</Hungarian>
-      <Portuguese>Pegar (Mochila Ventral)</Portuguese>
-      <Italian>Prendi</Italian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_BackpackVentralPut">
-      <English>Take Off Backpack</English>
-      <German>Rucksack ablegen</German>
-      <Spanish>Dejar mochila</Spanish>
-      <Polish>Zdejmij (brzuch)</Polish>
-      <Czech>Odložit batoh</Czech>
-      <French>Enlever (Ventral)</French>
-      <Russian>Снять рюкзак (передний)</Russian>
-      <Hungarian>Táska levétele</Hungarian>
-      <Portuguese>Retirar Mochila</Portuguese>
-      <Italian>Togliere zaino</Italian>
-    </Key>
     <Key ID="STR_AGM_Interaction_YouWereTapped">
       <English>You were tapped on the shoulder.</English>
       <German>Dir wurde auf die Schulter geklopft</German>
@@ -358,41 +346,9 @@
       <Polish>Zostałeś klepnięty po ramieniu</Polish>
       <Hungarian>Vállonveregettek</Hungarian>
       <Czech>Někdo tě poklepal na rameno.</Czech>
+      <Russian>Вас похлопали по плечу</Russian>
       <Portuguese>Você foi tocado no ombro.</Portuguese>
       <Italian>Ti è stato dato un colpetto sulla spalla</Italian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_ShowPlayerNames">
-      <English>Show player names</English>
-      <German>Spielernamen anzeigen</German>
-      <Spanish>Mostrar nombres de jugadores</Spanish>
-      <Polish>Pokaż nazwy graczy</Polish>
-      <French>Afficher nom des joueurs</French>
-      <Hungarian>Játékosnevek mutatása</Hungarian>
-      <Czech>Zobrazit jména hráčů</Czech>
-      <Portuguese>Mostrar nomes de jogadores</Portuguese>
-      <Italian>Mostra i nomi dei giocatori</Italian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_ShowPlayerNamesOnlyOnCursor">
-      <English>Show player name only on cursor (requires player names)</English>
-      <Polish>Pokaż nazwę gracza tylko pod kursorem</Polish>
-      <Spanish>Mostrar nombres solo en el cursor (requiere Mostrar nombres)</Spanish>
-      <German>Zeige Spielernamen nur an, wenn die Maus auf sie gerrichtet ist (benötigt Spielernamen)</German>
-      <French>Noms uniquement sous le curseur (si noms affichés)</French>
-      <Czech>Zobrazit jméno hráče jenom na kurzor (potřeba jména hráčů)</Czech>
-      <Italian>Mostra i nomi solo se puntati (richiede i nomi dei giocatori abilitati)</Italian>
-      <Portuguese>Mostrar nome de jogador somente no cursor (requer nome de jogadores)</Portuguese>
-      <Hungarian>Játékosok nevének mutatása (névcímke szükséges)</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_ShowPlayerRanks">
-      <English>Show player ranks (requires player names)</English>
-      <German>Spielerränge anzeigen (benötig Spielernamen)</German>
-      <Polish>Pokaż rangi graczy (wymaga nazw graczy)</Polish>
-      <Spanish>Mostrar rango de los jugadores (requiere Mostrar nombres)</Spanish>
-      <French>Grade des joueurs  (si noms affichés)</French>
-      <Czech>Zobrazit hodnosti hráčů (potřeba jména hráčů)</Czech>
-      <Italian>Mostra i gradi (richiede i nomi dei giocatori abilitati)</Italian>
-      <Portuguese>Mostrar patente de jogadores (requer nome de jogadores)</Portuguese>
-      <Hungarian>Játékosok rendfokozatának mutatása (névcímke szükséges)</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_CancelSelection">
       <English>Cancel</English>
@@ -402,6 +358,7 @@
       <French>Annuler</French>
       <Czech>Zrušit</Czech>
       <Italian>Annulla</Italian>
+      <Russian>Отменить</Russian>
       <Portuguese>Cancelar</Portuguese>
       <Hungarian>Mégse</Hungarian>
     </Key>
@@ -413,6 +370,7 @@
       <French>Sélectionner</French>
       <Czech>Zvolit</Czech>
       <Italian>Seleziona</Italian>
+      <Russian>Выбрать</Russian>
       <Portuguese>Selecionar</Portuguese>
       <Hungarian>Kiválaszt</Hungarian>
     </Key>
@@ -435,64 +393,10 @@
       <Polish>Padnij!</Polish>
       <Czech>K zemi!</Czech>
       <French>A terre!</French>
-      <Hungarian>A földre!</Hungarian>
+      <Hungarian>Földre!</Hungarian>
+      <Russian>Ложись!</Russian>
       <Portuguese>Abaixe-se!</Portuguese>
       <Italian>A Terra!</Italian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_SetCaptive">
-      <English>Take Prisoner</English>
-      <German>Gefangen nehmen</German>
-      <Spanish>Tomar prisionero</Spanish>
-      <French>Capturer le prisonnier</French>
-      <Polish>Weź więźnia</Polish>
-      <Czech>Zajmout Osobu</Czech>
-      <Italian>Arresta il Prigioniero</Italian>
-      <Portuguese>Tomar Prisioneiro</Portuguese>
-      <Hungarian>Foglyul ejtés</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_ReleaseCaptive">
-      <English>Free Prisoner</English>
-      <German>Gefangen freilassen</German>
-      <Spanish>Liberar prisionero</Spanish>
-      <Polish>Wypuść więźnia</Polish>
-      <French>Libérer le prisonnier</French>
-      <Czech>Osvobodit Zajatce</Czech>
-      <Italian>Libera il Prigioniero</Italian>
-      <Portuguese>Libertar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly szabadon elengedése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_EscortCaptive">
-      <English>Escort Prisoner</English>
-      <German>Gefangenen eskortieren</German>
-      <Spanish>Escoltar prisionero</Spanish>
-      <Polish>Eskortuj więźnia</Polish>
-      <French>Escorter le prisonnier</French>
-      <Czech>Eskortovat Zajatce</Czech>
-      <Italian>Scorta il Prigioniero</Italian>
-      <Portuguese>Escoltar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly kísérése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_StopEscorting">
-      <English>Release Prisoner</English>
-      <German>Gefangenen loslassen</German>
-      <Spanish>Soltar prisionero</Spanish>
-      <Polish>Anuluj eskortowanie</Polish>
-      <French>Relâcher le prisonnier</French>
-      <Czech>Uvolnit Zajatce</Czech>
-      <Italian>Rilascia il Prigioniero</Italian>
-      <Portuguese>Largar Prisioneiro</Portuguese>
-      <Hungarian>Fogoly elengedése</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_NoCaptive">
-      <English>You need you take him as prisoner first!</English>
-      <German>Du must ihn zuerst gefangen nehmen.</German>
-      <Spanish>Necesitas hacerle prisionero primero!</Spanish>
-      <Polish>Najpierw musisz wziąć go jako więźnia!</Polish>
-      <French>Vous devez d'abord le capturer!</French>
-      <Czech>Musíš ho nejdříve zajmout!</Czech>
-      <Italian>Prima devi arrestarlo!</Italian>
-      <Portuguese>Você deve tomá-lo como prisioneiro primeiro!</Portuguese>
-      <Hungarian>Először foglyul kell ejtened!</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamManagement">
       <English>Team Management &gt;&gt;</English>
@@ -500,10 +404,11 @@
       <Spanish>Gestión de equipo &gt;&gt;</Spanish>
       <French>Gestion d'équipe &gt;&gt;</French>
       <Polish>Zarządzanie oddziałem &gt;&gt;</Polish>
-      <Czech>Správa týmu</Czech>
+      <Czech>Správa týmu &gt;&gt;</Czech>
+      <Russian>Управление группой &gt;&gt;</Russian>
       <Portuguese>Gerenciamento de Equipe &gt;&gt;</Portuguese>
-      <Italian>Organizzazione Squadra</Italian>
-      <Hungarian>Csapat kezelés</Hungarian>
+      <Italian>Organizzazione Squadra &gt;&gt;</Italian>
+      <Hungarian>Csapat kezelés &gt;&gt;</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_TeamRED">
       <English>Red</English>
@@ -512,6 +417,7 @@
       <French>Rouge</French>
       <Polish>Czerwony</Polish>
       <Czech>Červený</Czech>
+      <Russian>Красный</Russian>
       <Portuguese>Vermelha</Portuguese>
       <Italian>Rosso</Italian>
       <Hungarian>Piros</Hungarian>
@@ -523,6 +429,7 @@
       <French>Vert</French>
       <Polish>Zielony</Polish>
       <Czech>Zelený</Czech>
+      <Russian>Зеленый</Russian>
       <Portuguese>Verde</Portuguese>
       <Italian>Verde</Italian>
       <Hungarian>Zöld</Hungarian>
@@ -534,6 +441,7 @@
       <French>Bleu</French>
       <Polish>Niebieski</Polish>
       <Czech>Modrý</Czech>
+      <Russian>Синий</Russian>
       <Portuguese>Azul</Portuguese>
       <Italian>Blu</Italian>
       <Hungarian>Kék</Hungarian>
@@ -545,6 +453,7 @@
       <French>Jaune</French>
       <Polish>Żółty</Polish>
       <Czech>Žlutý</Czech>
+      <Russian>Желтый</Russian>
       <Portuguese>Amarela</Portuguese>
       <Italian>Giallo</Italian>
       <Hungarian>Sárga</Hungarian>
@@ -556,6 +465,7 @@
       <French>Rejoindre Rouge</French>
       <Polish>Dołącz do drużyny czerwonej</Polish>
       <Czech>Připojit do Červeného Týmu</Czech>
+      <Russian>Присоединиться к красной группе</Russian>
       <Portuguese>Unir-se à Equipe Vermelha</Portuguese>
       <Italian>Entra nella Squadra Rossa</Italian>
       <Hungarian>Csatlakozás a piros csapathoz</Hungarian>
@@ -567,6 +477,7 @@
       <French>Rejoindre Verte</French>
       <Polish>Dołącz do drużyny zielonej</Polish>
       <Czech>Připojit do Zeleného Týmu</Czech>
+      <Russian>Присоединиться к зеленой группе</Russian>
       <Portuguese>Unir-se à Equipe Verde</Portuguese>
       <Italian>Entra nella Squadra Verde</Italian>
       <Hungarian>Csatlakozás a zöld csapathoz</Hungarian>
@@ -578,6 +489,7 @@
       <French>Rejoindre Bleue</French>
       <Polish>Dołącz do drużyny niebieskiej</Polish>
       <Czech>Připojit do Modrého Týmu</Czech>
+      <Russian>Присоединиться к синей группе</Russian>
       <Portuguese>Unir-se à Equipe Azul</Portuguese>
       <Italian>Entra nella Squadra Blu</Italian>
       <Hungarian>Csatlakozás a kék csapathoz</Hungarian>
@@ -589,6 +501,7 @@
       <French>Rejoindre Jaune</French>
       <Polish>Dołącz do drużyny żółtej</Polish>
       <Czech>Připojit do Žlutého Týmu</Czech>
+      <Russian>Присоединиться к желтой группе</Russian>
       <Portuguese>Unir-se à Equipe Amarela</Portuguese>
       <Italian>Entra nella Squadra Gialla</Italian>
       <Hungarian>Csatlakozás a sárga csapathoz</Hungarian>
@@ -600,6 +513,7 @@
       <French>Tu as rejoint l'équipe %1</French>
       <Polish>Dołączyłeś do drużyny %1</Polish>
       <Czech>Připojil ses do Týmu %1</Czech>
+      <Russian>Вы присоединились к группе %1</Russian>
       <Portuguese>Você uniu-se à Equipe %1</Portuguese>
       <Italian>Sei entrato nella Squadra %1</Italian>
       <Hungarian>Csatlakoztál a %1 csapathoz</Hungarian>
@@ -611,6 +525,7 @@
       <French>Quitter l'équipe</French>
       <Polish>Opuść drużynę</Polish>
       <Czech>Opustit tým</Czech>
+      <Russian>Покинуть группу</Russian>
       <Portuguese>Deixar Equipe</Portuguese>
       <Italian>Lascia la Squadra</Italian>
       <Hungarian>Csapat elhagyása</Hungarian>
@@ -622,6 +537,7 @@
       <French>Tu as quitté l'équipe</French>
       <Polish>Opuściłeś drużynę</Polish>
       <Czech>Opustil si tým</Czech>
+      <Russian>Вы покинули группу</Russian>
       <Portuguese>Você deixou a Equipe</Portuguese>
       <Italian>Hai lasciato la squadra</Italian>
       <Hungarian>Elhagytad a csapatot</Hungarian>
@@ -629,43 +545,23 @@
     <Key ID="STR_AGM_Interaction_Pardon">
       <English>Pardon</English>
       <German>Begnadigen</German>
-      <Spanish>Rehabilitar</Spanish>
+      <Spanish>Perdonar</Spanish>
       <Polish>Przebacz</Polish>
       <French>Pardon</French>
       <Czech>Pardon</Czech>
+      <Russian>Извините</Russian>
       <Portuguese>Perdão</Portuguese>
       <Italian>Perdona</Italian>
       <Hungarian>Megbocsátás</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_CableTie_Name">
-      <English>Cable Tie</English>
-      <German>Kabelbinder</German>
-      <Polish>Opaska zaciskowa</Polish>
-      <Spanish>Precinto de seguridad</Spanish>
-      <French>Tyrap</French>
-      <Czech>Stahovací Pásek</Czech>
-      <Portuguese>Algema Plástica</Portuguese>
-      <Italian>Fascietta</Italian>
-      <Hungarian>Műanyag bilincs</Hungarian>
-    </Key>
-    <Key ID="STR_AGM_Interaction_CableTie_Description">
-      <English>Cable ties that allow you to restrain prisoners.</English>
-      <German>Kabelbinder, die es ermöglichen, Gefangene zu fesseln.</German>
-      <Polish>Opaska zaciskowa pozwala na skrępowanie dłoni u więźnia.</Polish>
-      <Spanish>Los precintos permiten maniatar prisioneros</Spanish>
-      <French>Les Tyrap permettent de menotter les prisonniers.</French>
-      <Czech>Stahovací pásky vám umožní zadržet vězně.</Czech>
-      <Portuguese>A algema plástica permite que você contenha prisioneiros.</Portuguese>
-      <Italian>Fascietta che ti consente di arrestare i prigionieri.</Italian>
-      <Hungarian>Műanyag bilincs a foglyok feltartóztatására.</Hungarian>
     </Key>
     <Key ID="STR_AGM_Interaction_FlowMenu">
       <English>Flow Menu</English>
       <German>Mausradmenü</German>
       <Polish>Flow Menu</Polish>
-      <Spanish>Flow Menu</Spanish>
+      <Spanish>Menú desplegable</Spanish>
       <French>Menu Déroulant</French>
       <Czech>Flow Menu</Czech>
+      <Russian>Выпадающее меню</Russian>
       <Portuguese>Flow Menu</Portuguese>
       <Italian>Menù a Scorrimento</Italian>
       <Hungarian>Legördülő menü</Hungarian>
@@ -676,9 +572,11 @@
       <Polish>Przewiń</Polish>
       <French>Défilement</French>
       <Spanish>Desplazar</Spanish>
+      <Russian>Пролистать</Russian>
       <Portuguese>Rolar</Portuguese>
       <Italian>Scorri</Italian>
       <Hungarian>Görgetés</Hungarian>
+      <Czech>Otáčení</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_ModifierKey">
       <English>Modifier Key</English>
@@ -686,16 +584,70 @@
       <Polish>Modyfikator</Polish>
       <French>Modifier la touche</French>
       <Spanish>Tecla modificadora</Spanish>
+      <Russian>клавиша-модификатор</Russian>
       <Portuguese>Tecla Modificadora</Portuguese>
       <Italian>Modifica Tasto</Italian>
       <Hungarian>Módosító billentyű</Hungarian>
+      <Czech>Modifikátor</Czech>
     </Key>
     <Key ID="STR_AGM_Interaction_NotInRange">
       <English>Not in Range</English>
       <German>Außer Reichweite</German>
       <French>Hors de portée.</French>
+      <Spanish>Fuera de rango</Spanish>
+      <Russian>Слишком далеко</Russian>
       <Portuguese>Fora do Alcançe</Portuguese>
       <Hungarian>Hatótávolságon kívül</Hungarian>
+      <Polish>Poza zasięgiem</Polish>
+      <Czech>Mimo dosah</Czech>
+    </Key>
+    <Key ID="STR_AGM_Interaction_AutoCloseMenu">
+      <English>Close Menu on Key Release</English>
+      <German>Menü nach Loslassen schließen</German>
+      <Polish>Zamknij menu automatycznie</Polish>
+      <French>Fermer le menu en relâchant la touche</French>
+      <Spanish>Cerrar menú al soltar la tecla</Spanish>
+      <Hungarian>Menü bezárása a billentyű elengedésekor</Hungarian>
+      <Russian>Закрывать меню при отжатии клавиши</Russian>
+      <Czech>Menu interakce (Na držení)</Czech>
+    </Key>
+    <Key ID="STR_AGM_Interaction_AutoCenterCursor">
+      <English>Auto Center Cursor</English>
+      <German>Mauszeiger automatisch zentrieren</German>
+      <Spanish>Auto-centrar cursor</Spanish>
+      <Polish>Automatycznie centruj kursor </Polish>
+      <Czech>Vycentrování kurzoru</Czech>
+      <Hungarian>Kurzor auto-centrírozása</Hungarian>
+      <Russian>Автоцентрирование курсора</Russian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_Equipment">
+      <English>Equipment &gt;&gt;</English>
+      <German>Ausrüstung &gt;&gt;</German>
+      <Spanish>Equipamiento &gt;&gt;</Spanish>
+      <French>Équipment &gt;&gt;</French>
+      <Polish>Ekwipunek &gt;&gt;</Polish>
+      <Czech>Vybavení &gt;&gt;</Czech>
+      <Hungarian>Felszerelés &gt;&gt;</Hungarian>
+      <Russian>Снаряжение &gt;&gt;</Russian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_Push">
+      <English>Push</English>
+      <German>Schieben</German>
+      <Spanish>Empujar</Spanish>
+      <French>Pousser</French>
+      <Polish>Pchnij</Polish>
+      <Czech>Odstrčit</Czech>
+      <Hungarian>Tolás</Hungarian>
+      <Russian>Толкать</Russian>
+    </Key>
+    <Key ID="STR_AGM_Interaction_Interact">
+      <English>Interact</English>
+      <German>Interagiere</German>
+      <Czech>Interakce</Czech>
+      <Russian>Взаимодействовать</Russian>
+      <Polish>Interakcja</Polish>
+      <Spanish>Interactuar</Spanish>
+      <Hungarian>Interakció</Hungarian>
     </Key>
   </Package>
 </Project>

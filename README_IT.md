@@ -1,11 +1,10 @@
-Authentic Gameplay Mod
-======================
-
 <p align="center">
-  <img src="http://puu.sh/9XcYf/99a85ec2f4.png" />
+  <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" />
 </p>
 
-[![](http://img.shields.io/badge/current_version-v0.93-green.png)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-10.5_MB-blue.png)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.93/AGM_v0.93.rar) [![](http://img.shields.io/badge/license-GPL-red.png)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) <a href="https://github.com/KoffeinFlummi/AGM/issues"><img src="http://img.shields.io/github/issues/KoffeinFlummi/AGM.png" /></a>
+---
+
+[![](http://img.shields.io/badge/release-0.94.1-green.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases) [![](http://img.shields.io/badge/download-20_MB-blue.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar) [![](http://img.shields.io/badge/license-GPLv2-red.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/blob/master/LICENSE) [![](http://img.shields.io/github/issues/KoffeinFlummi/AGM.svg?style=flat)](https://github.com/KoffeinFlummi/AGM/issues)
 
 Una mod il cui scopo è aumentare il realismo e l'autenticità di Arma 3, parzialmente basata sul lavoro di Taosenai con  [TMR](https://github.com/Taosenai/tmr).
 
@@ -17,7 +16,6 @@ La mod è **costruita modularmente**; Ogni PBO (con qualche eccezione) può esse
 I componenti presi singolarmente, come l'implementazione del sistema di cure, include anche delle opzioni di personalizzazione interne, proprio per facilitare i creatori delle missioni a migliorare la loro esperienza.
 
 Maggiori informazioni sui singoli scopi dei diversi componenti dell'AGM, e a quali questi ultimi si riferiscono possono essere trovate [qui](https://github.com/KoffeinFlummi/AGM/wiki#features).
-
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HPAXPTVCNLDZS)
 
@@ -48,7 +46,7 @@ Se vuoi aiutarce risolvendo un bug o aggiungendo una funzionalità, forka questa
 
 Se trovi un bug o vuoi richiedere una funzionalità, ti preghiamo di usare l'[Issue Tracker](https://github.com/KoffeinFlummi/AGM/issues).
 
-Sei un creatore di contenuti e vorresti sapere come rendere le tue armi o i tuoi veicoli compatibili con AGM? Guarda qui [qui](https://github.com/KoffeinFlummi/AGM/wiki/Compatibility) page.
+Sei un creatore di contenuti e vorresti sapere come rendere le tue armi o i tuoi veicoli compatibili con AGM? Guarda qui [qui](https://github.com/KoffeinFlummi/AGM/wiki/For-Addon-Makers) page.
 
 ## Testando e Costruendo
 
@@ -56,7 +54,7 @@ Se vuoi aiutare il progetto testando e riportando bug, sentiti libero di scarica
 
 Per binarizzare l'addon per il testing, puoi usare il `binarizer.exe` nella cartella principale, oppure se hai già installato [Python 3](https://www.python.org/), utilizza lo script in python per maggiori opzioni. Alternativamente puoi binarizzare manualmente ogni PBO usando l'Addon Builder od un qualsiasi altro binarizzatore. Tutti questi metodi richiedono l'installazione di Arma 3 Tools, che può essere trovato su steam nel pannello strumenti. 
 
-Per consentire una corretta binarizzazione delle addon, hai bisogno di escludere i seguenti filytypes dalla binarizzazione (lo script binarizzatore svolge questo compitono autonomamente):
+Per consentire una corretta binarizzazione delle addon, hai bisogno di escludere i seguenti tipi di file dalla binarizzazione (lo script binarizzatore svolge questo compitono autonomamente):
 ```
 *.pac;*.paa;*.sqf;*.sqs;*.bikb;*.fsm;*.wss;*.ogg;*.wav;*.fxy;*.csv;*.html;*.lip;*.txt;*.wrp;*.bisurf;*.xml;*.hqf
 ```

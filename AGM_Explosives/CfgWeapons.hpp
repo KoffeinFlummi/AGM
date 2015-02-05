@@ -38,4 +38,18 @@ class CfgWeapons {
 			uniformModel = "\A3\Structures_F\Items\Tools\Pliers_F.p3d";
 		};
 	};
+	class AGM_DeadManSwitch: AGM_ItemCore {
+		scope = 2;
+		displayName = $STR_AGM_Explosives_DeadManSwitch_displayName;
+		descriptionShort = $STR_AGM_Explosives_DeadManSwitch_description;
+		picture = "\AGM_Explosives\Data\UI\DeadmanSwitch.paa";
+		model = "\A3\weapons_F\ammo\mag_univ.p3d";
+		AGM_range = 100;
+		AGM_Detonator = 1;
+		
+		class ItemInfo: AGM_ExplosiveItem {
+			mass = 2;
+			uniformModel = "\A3\weapons_F\ammo\mag_univ.p3d";
+		};
+	};
 };

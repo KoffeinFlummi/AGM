@@ -1,6 +1,6 @@
 /*
  * Author: KoffeinFlummi
- * 
+ *
  * Checks if a unit is diagnosed and if that's even necessary.
  *
  * Arguments:
@@ -14,7 +14,7 @@ private ["_unit"];
 
 _unit = _this select 0;
 
-if (AGM_Medical_RequireDiagnosis == 0) exitWith {true};
-if !(_unit getVariable "AGM_Unconscious") exitWith {true};
+if !(AGM_player getVariable ["AGM_Medical_RequireDiagnosis", AGM_Medical_RequireDiagnosis]) exitWith {true};
+if !(_unit getVariable ["AGM_isUnconscious", False]) exitWith {true};
 
-(_unit getVariable ["AGM_Diagnosed", true])
+(_unit getVariable ["AGM_isDiagnosed", True])
