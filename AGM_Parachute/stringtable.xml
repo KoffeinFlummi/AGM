@@ -11,6 +11,7 @@
       <Spanish>Altímetro</Spanish>
       <Hungarian>Magasságmérő</Hungarian>
       <Russian>Высотомер</Russian>
+      <Portuguese>Altímetro</Portuguese>
     </Key>
     <Key ID="STR_AGM_Parachute_AltimeterDisplayName">
       <English>Altimeter Watch</English>
@@ -21,6 +22,7 @@
       <Spanish>Reloj altímetro</Spanish>
       <Hungarian>Magasságmérő</Hungarian>
       <Russian>Часы с высотомером</Russian>
+      <Portuguese>Relógio Altímetro</Portuguese>
     </Key>
     <Key ID="STR_AGM_Parachute_AltimeterDescription">
       <English>Used to show height, descent rate and the time.</English>
@@ -31,6 +33,7 @@
       <Spanish>Utilizado para mostrar altura, tasa de descenso y hora.</Spanish>
       <Hungarian>Mutatja a magasságot, zuhanás sebességét és az időt.</Hungarian>
       <Russian>Используется для определения высоты, скорости снижения и времени.</Russian>
+      <Portuguese>Usado para indicar altitude, taxa de descida e o horário.</Portuguese>
     </Key>
     <Key ID="STR_AGM_Parachute_NonSteerableParachute">
       <English>Non-Steerable Parachute</English>
@@ -41,6 +44,7 @@
       <Czech>Neříditelný padák</Czech>
       <Hungarian>Irányithatatlan ejtőernyő</Hungarian>
       <Russian>Неуправляемый парашют</Russian>
+      <Portuguese>Paraquedas Não-Manobrável</Portuguese>
     </Key>
   </Package>
 </Project>
