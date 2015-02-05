@@ -10,6 +10,7 @@
       <Polish>Przełącz jednostkę</Polish>
       <Spanish>Cambiado de unidad</Spanish>
       <Hungarian>Váltott egység</Hungarian>
+      <Portuguese>Mudou unidade</Portuguese>
     </Key>
     <Key ID="STR_AGM_SwitchUnits_TooCloseToEnemy">
       <English>This unit is too close to the enemy.</English>
@@ -19,6 +20,7 @@
       <Polish>Ta jednostka jest zbyt blisko przeciwnika.</Polish>
       <Spanish>Esta unidad está demasiado cerca del enemigo.</Spanish>
       <Hungarian>Ez az egység túl közel van az ellenséghez</Hungarian>
+      <Portuguese>A unidade está muito próxima aos inimigos.</Portuguese>
     </Key>
   </Package>
 </Project>
