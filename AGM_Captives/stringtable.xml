@@ -71,6 +71,7 @@
       <Czech>Naložit zajatce</Czech>
       <Hungarian>Fogoly berakása</Hungarian>
       <Russian>Загрузить пленного</Russian>
+      <Portuguese>Embarcar Prisioneiro</Portuguese>
     </Key>
     <Key ID="STR_AGM_Captives_UnloadCaptive">
       <English>Unload Captive</English>
@@ -81,6 +82,7 @@
       <Czech>Vyložit zajatce</Czech>
       <Hungarian>Fogoly kiszedése</Hungarian>
       <Russian>Выгрузить пленного</Russian>
+      <Portuguese>Desembarcar Prisioneiro</Portuguese>
     </Key>
     <Key ID="STR_AGM_Captives_CableTie">
       <English>Cable Tie</English>
@@ -115,6 +117,7 @@
       <Czech>Inventář prohledávané osoby</Czech>
       <Polish>Ekwipunek rewidowanej osoby</Polish>
       <Russian>Инвентарь обысканных лиц</Russian>
+      <Portuguese>Inventário da pessoa revistada</Portuguese>
     </Key>
     <Key ID="STR_AGM_Captives_FriskPerson">
       <English>Frisk person</English>
@@ -125,6 +128,7 @@
       <Polish>Rewiduj osobę</Polish>
       <Hungarian>Motozás</Hungarian>
       <Russian>Обыскать человека</Russian>
+      <Portuguese>Revistar</Portuguese>
     </Key>
   </Package>
 </Project>
