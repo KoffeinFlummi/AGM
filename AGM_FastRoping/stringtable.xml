@@ -10,6 +10,7 @@
       <Russian>Развернуть веревку</Russian>
       <Czech>Připravit lana</Czech>
       <Hungarian>Kötelek leengedése</Hungarian>
+      <Portuguese>Soltar Cordas</Portuguese>
     </Key>
     <Key ID="STR_AGM_FastRoping_FastRope">
       <English>Fast Rope</English>
@@ -19,6 +20,7 @@
       <Russian>Спуститься по веревке</Russian>
       <Czech>Slanování</Czech>
       <Hungarian>Leereszkedés</Hungarian>
+      <Portuguese>Descer por Corda</Portuguese>
     </Key>
     <Key ID="STR_AGM_FastRoping_CutRopes">
       <English>Cut Ropes</English>
@@ -28,6 +30,7 @@
       <Russian>Перерезать веревку</Russian>
       <Czech>Odstranit lana</Czech>
       <Hungarian>Kötelek elvágása</Hungarian>
+      <Portuguese>Cortar Cordas</Portuguese>
     </Key>
   </Package>
 </Project>

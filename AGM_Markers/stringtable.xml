@@ -11,6 +11,7 @@
       <Spanish>Dirección: %1°</Spanish>
       <Russian>Направление: %1</Russian>
       <Hungarian>Irány: %1</Hungarian>
+      <Portuguese>Direção: %1°</Portuguese>
     </Key>
     <Key ID="STR_AGM_Markers_PlaceIn">
       <English>Place in: %1</English>
@@ -20,6 +21,7 @@
       <Czech>Umístit do: %1</Czech>
       <Russian>Место в: %1</Russian>
       <Hungarian>Elhelyezés ide: %1</Hungarian>
+      <Portuguese>Colocar em: %1</Portuguese>
     </Key>
   </Package>
 </Project>

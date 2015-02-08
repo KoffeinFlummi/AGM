@@ -479,6 +479,7 @@
       <Spanish>Detonador de hombre muerto</Spanish>
       <Hungarian>Holtember kapcsoló</Hungarian>
       <Russian>Кнопка мертвеца</Russian>
+      <Portuguese>Detonador por Soltura de Pressão</Portuguese>
     </Key>
     <Key ID="STR_AGM_Explosives_DeadManSwitch_description">
       <English>Used to remotely trigger explosives when released.</English>
@@ -489,6 +490,7 @@
       <Spanish>Utilizado para detonar explosivos remotamente al soltarlo.</Spanish>
       <Hungarian>Robbanószerek távoli robbantásához</Hungarian>
       <Russian>Используется для дистанционного подрыва, после смерти оператора.</Russian>
+      <Portuguese>Usado para detonar explosivos remotamente quando solto.</Portuguese>
     </Key>
   </Package>
 </Project>

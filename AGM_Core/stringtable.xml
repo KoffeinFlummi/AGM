@@ -444,6 +444,7 @@
       <French>Désactiver Menu Commande</French>
       <Russian>Выключить командное меню</Russian>
       <Hungarian>Parancsnoki menü kikapcsolása</Hungarian>
+      <Portuguese>Desabilitar Menu de Comando</Portuguese>
     </Key>
     <Key ID="STR_AGM_Core_Unknown">
       <English>Unknown</English>
@@ -453,6 +454,7 @@
       <Czech>Neznámý</Czech>
       <Russian>Неизвестно</Russian>
       <Hungarian>Ismeretlen</Hungarian>
+      <Portuguese>Desconhecido</Portuguese>
     </Key>
     <Key ID="STR_AGM_Core_NoVoice">
       <English>No Voice</English>
@@ -462,6 +464,7 @@
       <Czech>Žádný hlas</Czech>
       <Russian>Без голоса</Russian>
       <Hungarian>Nincs hang</Hungarian>
+      <Portuguese>Sem Voz</Portuguese>
     </Key>
   </Package>
 </Project>
