@@ -1,7 +1,7 @@
 // by commy2
 
-private "_name";
+private "_player";
 
-_name = name (_this select 0);
+_player = _this select 0;
 
-[_name, "{if (serverCommandAvailable '#kick') then {serverCommand format['#kick %1', _this]}}"] call AGM_Core_fnc_execRemoteFnc;
+[_player, "{if (local _this && {!isServer}) then {findDisplay 46 closeDisplay 0}}", _player] call AGM_Core_fnc_execRemoteFnc;
