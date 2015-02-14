@@ -1,7 +1,7 @@
 /*
 	Name: AGM_Goggles_fnc_ExternalCamera
 	
-	Author: Garth de Wet (LH)
+	Author: Garth de Wet (LH), Sniperwolf572
 	
 	Description:
 	Returns if the camera is external or not.
@@ -16,4 +16,4 @@
 	call AGM_Goggles_fnc_ExternalCamera;
 */
 if (profileNamespace getVariable ["AGM_showInThirdPerson", false]) exitWith { false };
-(cameraView == "External")
+(cameraView == "EXTERNAL" || cameraView == "GROUP")
