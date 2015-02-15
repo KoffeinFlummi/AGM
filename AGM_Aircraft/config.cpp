@@ -645,8 +645,6 @@ class CfgWeapons {
     aiRateOfFire = 5;
     aiRateOfFireDistance = 500;
     autoFire = 0;
-    cursor = "EmptyCursor";
-    cursorAim = "missile";
     nameSound = "MissileLauncher";
     textureType = "fullAuto";
     weaponLockDelay = 3;
