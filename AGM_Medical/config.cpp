@@ -840,7 +840,7 @@ class CfgVehicles {
       };
       class RequireMEDEVAC {
         displayName = "Require MEDEVAC?";
-        description = "Only allow Epipens within synchronized triggers? Default: No";
+        description = "Only allow Bloodbags/Epipens within synchronized triggers? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
@@ -851,6 +851,22 @@ class CfgVehicles {
             default = 1;
             name = "No";
             value = 0;
+          };
+        };
+      };
+      class TypeMEDEVAC {
+        displayName = "Type for MEDEVAC";
+        description = "The type of medical item to restrict to a trigger? Default: Epipen";
+        typeName = "NUMBER";
+        class values {
+          class Epi {
+            default = 1;
+            name = "Epipen";
+            value = 0;
+          };
+          class Blood {
+            name = "Bloodbag";
+            value = 1;
           };
         };
       };
@@ -1053,6 +1069,7 @@ class AGM_Parameters_Numeric {
   AGM_Medical_CoefPain = 1.0;
   AGM_Medical_CoefNonMedic = 2.0;
   AGM_Medical_MaxUnconsciousnessTime = -1;
+  AGM_Medical_TypeMEDEVAC = 0;
 };
 class AGM_Parameters_Boolean {
   // Boolean Parameters (0/1)
