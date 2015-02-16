@@ -728,7 +728,7 @@ class CfgVehicles {
       };
       class AllowNonmedics {
         displayName = "Allow non-medics?";
-        description = "Allow non-medics to use epipens and bloodbags? Default: No";
+        description = "Allow non-medics to use Epinephrine and Blood Bags? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
@@ -808,7 +808,7 @@ class CfgVehicles {
       };
       class AllowChatWhileUnconscious {
         displayName = "Unconscious can chat?";
-        description = "Allow all players to use chat while unconcious? Admin can always use the chat regardless. Default: No";
+        description = "Allow all players to use chat while unconscious? Admins can always use the chat regardless. Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
@@ -840,7 +840,7 @@ class CfgVehicles {
       };
       class RequireMEDEVAC {
         displayName = "Require MEDEVAC?";
-        description = "Only allow Epipens within synchronized triggers? Default: No";
+        description = "Only allow Epinephrine within synchronized triggers? Default: No";
         typeName = "BOOL";
         class values {
           class Yes {
