@@ -34,12 +34,7 @@ if (_type in ["epipen", "bloodbag"] and
   };
 };
 
-switch(AGM_Medical_TypeMEDEVAC) do {
-  case 0 : {_typeMedevac = "epipen"};
-  case 1 : {_typeMedevac = "bloodbag"};
-  default {_typeMedevac = "epipen"};
-};
-
+_typeMedevac = ["epipen", "bloodbag"] select AGM_Medical_TypeMEDEVAC;
 
 // check MEDEVAC conditions
 _inTrigger = False;
