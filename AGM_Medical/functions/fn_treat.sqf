@@ -24,6 +24,7 @@ _unit = _this select 0;
 _target = _this select 1;
 _type = _this select 2;
 
+_typeMedevac = "epipen";
 // check if unit is medic and if that's even necessary
 if (_type in ["epipen", "bloodbag"] and
     !(([_unit] call AGM_Core_fnc_isMedic) or
@@ -32,6 +33,8 @@ if (_type in ["epipen", "bloodbag"] and
     [localize "STR_AGM_Medical_NotTrained"] call AGM_Core_fnc_displayTextStructured;
   };
 };
+
+_typeMedevac = ["epipen", "bloodbag"] select AGM_Medical_TypeMEDEVAC;
 
 // check MEDEVAC conditions
 _inTrigger = False;
@@ -44,7 +47,7 @@ _inTrigger = False;
   _inTrigger = _target distance _x < 10;
 } forEach (missionNamespace getVariable ["AGM_Medical_MEDEVACVehicles", []]);
 
-if (_type == "epipen" and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC]) and !_inTrigger) exitWith {
+if (_type == _typeMedevac and (_unit getVariable ["AGM_Medical_RequireMEDEVAC", AGM_Medical_RequireMEDEVAC]) and !_inTrigger) exitWith {
   if ([_unit] call AGM_Core_fnc_isPlayer) then {
     [localize "STR_AGM_Medical_NotInMEDEVAC"] call AGM_Core_fnc_displayTextStructured;
   };
