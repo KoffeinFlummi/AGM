@@ -16,7 +16,8 @@
   Example:
     [player, vehicle] call AGM_FastRoping_fnc_canDeployRopes;
 */
-private "_unit";
+private ["_unit", "_vehicle", "_isCrew"];
+
 _unit = _this select 0;
 _vehicle = _this select 1;
 
