@@ -10,7 +10,7 @@ class AGM_ModuleFastRoping: Module_F {
 	class Arguments {
 		class RequireCrew {
 			displayName = "Require Vehicle Crew?";
-			description = "Require vehicle crew to drop/cut ropes? Default: No";
+			description = "Require vehicle crew to deploy/cut ropes? Default: No";
 			typeName = "BOOL";
 			class values {
 				class Yes {
