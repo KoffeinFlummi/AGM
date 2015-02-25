@@ -16,10 +16,13 @@ class CfgFunctions {
   class AGM_FastRoping {
     class AGM_FastRoping {
       file = "\AGM_FastRoping\functions";
+      class canCutRopes;
+      class canDeployRopes;
       class createRope;
       class cutRopes;
       class deployRopes;
       class fastRope;
+      class module;
     };
   };
 };
