@@ -139,6 +139,9 @@ class CfgVehicles {
     AGM_FastRoping = 1;
     AGM_FastRoping_Positions[] = {{1.4, 1.4, 0}, {-1.2, 1.4, 0}};
   };
+  
+  #include "Module.hpp"
+  
 };
 
 class CfgMovesBasic {
