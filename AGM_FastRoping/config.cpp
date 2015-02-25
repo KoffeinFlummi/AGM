@@ -159,3 +159,8 @@ class CfgMovesMaleSdr: CfgMovesBasic {
     };
   };
 };
+
+class AGM_Parameters_Boolean {
+  // Boolean Parameters (0/1)
+  AGM_FastRoping_RequireCrew = 0;
+};
