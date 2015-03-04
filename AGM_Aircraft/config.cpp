@@ -1039,9 +1039,6 @@ class CfgVehicles {
     };
   };
   
-  class Heli_light_03_base_F: Helicopter_Base_F {
-      class MFD {};
-  };
   class Heli_light_03_unarmed_base_F: Heli_light_03_base_F {};
   class I_Heli_light_03_unarmed_F: Heli_light_03_unarmed_base_F {
     #include <mfd_wildcat_unarmed.hpp>

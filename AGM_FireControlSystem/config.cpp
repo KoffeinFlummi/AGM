@@ -659,7 +659,6 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-  class Heli_Transport_03_base_F;
   class B_Heli_Transport_03_unarmed_base_F: Heli_Transport_03_base_F {
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};

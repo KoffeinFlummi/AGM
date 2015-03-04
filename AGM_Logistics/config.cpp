@@ -1132,7 +1132,6 @@ class CfgVehicles {
   /*class O_Truck_02_ammo_F: Truck_02_base_F {
     transportAmmo = 30000;
   };*/
-  class Truck_02_box_base_F ;
   class I_Truck_02_box_F: Truck_02_box_base_F  { // this is the repair variant because fuck naming conventions
     AGM_canRepair = 1;
     transportRepair = 0;
