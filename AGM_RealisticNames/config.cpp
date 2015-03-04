@@ -40,7 +40,8 @@ class CfgVehicles {
   class Heli_Light_01_base_F;
   class Heli_Light_01_armed_base_F;
   class B_Heli_Transport_03_base_F;
-  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {};
+  class Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_unarmed_base_F: Heli_Transport_03_base_F {};
   class Plane_CAS_01_base_F;
 
   // INDEP Inheritance
@@ -156,16 +157,19 @@ class CfgVehicles {
   class B_Heli_Attack_01_F: Heli_Attack_01_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Attack_01_Name";
   };
-  class B_Heli_Light_01_F: Heli_Light_01_base_F {
+  class Heli_Light_01_unarmed_base_F;
+  class B_Heli_Light_01_F: Heli_Light_01_unarmed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_Name";
   };
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_armed_Name";
   };
-  class B_Heli_Transport_03_F: B_Heli_Transport_03_base_F {
+  class Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_F: Heli_Transport_03_base_F  {
     displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_Name";
   };
-  class B_Heli_Transport_03_unarmed_F: B_Heli_Transport_03_unarmed_base_F {
+  class Heli_Transport_03_unarmed_base_F ;
+  class B_Heli_Transport_03_unarmed_F: Heli_Transport_03_unarmed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_unarmed_Name";
   };
   class B_Plane_CAS_01_F: Plane_CAS_01_base_F {
@@ -207,30 +211,37 @@ class CfgVehicles {
   class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
     displayName = "$STR_AGM_RealisticNames_APC_Wheeled_03_cannon_Name";
   };
-
-  class I_Truck_02_transport_F: Truck_02_base_F {
+  class Truck_02_base_F;
+  class Truck_02_transport_base_F;
+  class I_Truck_02_transport_F: Truck_02_transport_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_transport_Name";
   };
+  class Truck_02_base_F;
   class I_Truck_02_covered_F: Truck_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_covered_Name";
   };
-  class I_Truck_02_ammo_F: Truck_02_base_F {
+  class Truck_02_Ammo_base_F;
+  class I_Truck_02_ammo_F: Truck_02_Ammo_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_ammo_Name";
   };
-  class I_Truck_02_fuel_F: Truck_02_base_F {
+  class Truck_02_fuel_base_F;
+  class I_Truck_02_fuel_F: Truck_02_fuel_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_fuel_Name";
   };
-  class I_Truck_02_box_F: Truck_02_base_F {
+  class Truck_02_box_base_F ;
+  class I_Truck_02_box_F: Truck_02_box_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_box_Name";
   };
-  class I_Truck_02_medical_F: I_Truck_02_box_F {
+  
+  class O_Truck_02_transport_F: Truck_02_transport_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_medical_Name";
   };
-
-  class I_Heli_light_03_F: I_Heli_light_03_base_F {
+  class Heli_light_03_base_F ;
+  class I_Heli_light_03_F: Heli_light_03_base_F  {
     displayName = "$STR_AGM_RealisticNames_Heli_light_03_Name";
   };
-  class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+  class Heli_light_03_unarmed_base_F;
+  class I_Heli_light_03_unarmed_F: Heli_light_03_unarmed_base_F  {
     displayName = "$STR_AGM_RealisticNames_Heli_light_03_unarmed_Name";
   };
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
@@ -291,16 +302,18 @@ class CfgVehicles {
   class O_Truck_02_covered_F: Truck_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_covered_Name";
   };
-  class O_Truck_02_ammo_F: Truck_02_base_F {
+   class Truck_02_Ammo_base_F;
+   class O_Truck_02_ammo_F: Truck_02_Ammo_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_ammo_Name";
   };
-  class O_Truck_02_fuel_F: Truck_02_base_F {
+  class O_Truck_02_fuel_F: Truck_02_fuel_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_fuel_Name";
   };
-  class O_Truck_02_box_F: Truck_02_base_F {
+  class O_Truck_02_box_F: Truck_02_box_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_box_Name";
   };
-  class O_Truck_02_medical_F: O_Truck_02_box_F {
+  class Truck_02_medical_base_F ;
+  class O_Truck_02_medical_F: Truck_02_medical_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_medical_Name";
   };
 
@@ -329,7 +342,8 @@ class CfgVehicles {
   class O_Heli_Light_02_F: Heli_Light_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_02_Name";
   };
-  class O_Heli_Light_02_unarmed_F: Heli_Light_02_base_F {
+  class Heli_Light_02_unarmed_base_F ;
+  class O_Heli_Light_02_unarmed_F: Heli_Light_02_unarmed_base_F  {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_02_unarmed_Name";
   };
   class O_Plane_CAS_02_F: Plane_CAS_02_base_F {
@@ -351,7 +365,7 @@ class CfgVehicles {
   };
 
   // Civilian
-  class Heli_Light_01_civil_base_F: Heli_Light_01_base_F {
+  class Heli_Light_01_civil_base_F: Heli_Light_01_unarmed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_civil_Name";
   };
 
@@ -737,7 +751,7 @@ class CfgWeapons {
     };
     class Rocket_04_AP_Plane_CAS_01_F: Rocket_04_HE_Plane_CAS_01_F {
       displayName = "Hydra 70";
-      class Burst: RocketPods {
+      class Burst: Burst {
         displayName = "Hydra 70";
       };
     };
@@ -749,9 +763,9 @@ class CfgWeapons {
     };
     class Rocket_03_AP_Plane_CAS_02_F: Rocket_04_AP_Plane_CAS_01_F {
       displayName = "S-8";
-      class Burst: Burst {
-        displayName = "S-8";
-      };
+      // class Burst: Burst { //I dunno
+        // displayName = "S-8";
+      // };
     };
     class rockets_Skyfire: RocketPods {
       displayName = "Skyfire-70";

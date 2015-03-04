@@ -446,8 +446,8 @@ class CfgWeapons {
 
 class CfgAmmo {
   class MissileBase;
-
-  class M_Mo_120mm_AT: MissileBase {
+  class Missile_AGM_02_F;
+  class M_Mo_120mm_AT: Missile_AGM_02_F {
     cost = 400000; // Stop it from aiming at FUCKING RABBITS.
     weaponLockSystem = 2;
   };

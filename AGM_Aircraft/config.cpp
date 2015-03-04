@@ -324,7 +324,8 @@ class CfgMagazines {
     displayNameShort = "$STR_A3_CfgMagazines_12Rnd_PG_missiles_dns";
     descriptionShort = "$STR_A3_CfgMagazines_12Rnd_PG_missiles1";
   };
-  class 12Rnd_missiles: VehicleMagazine {
+  class 24Rnd_missiles;
+  class 12Rnd_missiles: 24Rnd_missiles {
     scope = 2;
     count = 12;
     ammo = "M_AT";
@@ -539,7 +540,17 @@ class CfgWeapons {
       displayName = "$STR_AGM_Aircraft_CMFlareLauncher_Burst_Name";
     };
   };
-
+  class LMG_Minigun: LMG_RCWS {
+    magazines[] = {"1000Rnd_65x39_Belt","1000Rnd_65x39_Belt_Green","1000Rnd_65x39_Belt_Tracer_Green","1000Rnd_65x39_Belt_Tracer_Red","1000Rnd_65x39_Belt_Tracer_Yellow","1000Rnd_65x39_Belt_Yellow","2000Rnd_65x39_Belt","2000Rnd_65x39_Belt_Green","2000Rnd_65x39_Belt_Tracer_Green","2000Rnd_65x39_Belt_Tracer_Green_Splash","2000Rnd_65x39_Belt_Tracer_Red","2000Rnd_65x39_Belt_Tracer_Yellow","2000Rnd_65x39_Belt_Tracer_Yellow_Splash","2000Rnd_65x39_Belt_Yellow","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Yellow","200Rnd_65x39_Belt","200Rnd_65x39_Belt_Tracer_Green","200Rnd_65x39_Belt_Tracer_Red","200Rnd_65x39_Belt_Tracer_Yellow","5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt"};
+    class manual: MGun {
+      reloadTime = 0.015;
+      dispersion = 0.006;
+    };
+    class close: manual {};
+    class short: close {};
+    class medium: close {};
+    class far: close {};
+  };
   class gatling_20mm: CannonCore {
     magazines[] = {"2000Rnd_20mm_shells","1000Rnd_20mm_shells","300Rnd_20mm_shells","AGM_500Rnd_20mm_shells_Comanche"};
 
@@ -578,17 +589,7 @@ class CfgWeapons {
     };
   };
 
-  class LMG_Minigun: LMG_RCWS {
-    magazines[] = {"1000Rnd_65x39_Belt","1000Rnd_65x39_Belt_Green","1000Rnd_65x39_Belt_Tracer_Green","1000Rnd_65x39_Belt_Tracer_Red","1000Rnd_65x39_Belt_Tracer_Yellow","1000Rnd_65x39_Belt_Yellow","2000Rnd_65x39_Belt","2000Rnd_65x39_Belt_Green","2000Rnd_65x39_Belt_Tracer_Green","2000Rnd_65x39_Belt_Tracer_Green_Splash","2000Rnd_65x39_Belt_Tracer_Red","2000Rnd_65x39_Belt_Tracer_Yellow","2000Rnd_65x39_Belt_Tracer_Yellow_Splash","2000Rnd_65x39_Belt_Yellow","2000Rnd_762x51_Belt_T_Green","2000Rnd_762x51_Belt_T_Red","2000Rnd_762x51_Belt_T_Yellow","200Rnd_65x39_Belt","200Rnd_65x39_Belt_Tracer_Green","200Rnd_65x39_Belt_Tracer_Red","200Rnd_65x39_Belt_Tracer_Yellow","5000Rnd_762x51_Belt","5000Rnd_762x51_Yellow_Belt"};
-    class manual: MGun {
-      reloadTime = 0.015;
-      dispersion = 0.006;
-    };
-    class close: manual {};
-    class short: close {};
-    class medium: close {};
-    class far: close {};
-  };
+
   class LMG_Minigun_heli: LMG_Minigun {
     showAimCursorInternal = 0;
     class manual: manual {
@@ -809,7 +810,8 @@ class CfgVehicles {
     };
   };
 
-  class B_Heli_Light_01_F: Heli_Light_01_base_F {
+  class Heli_Light_01_unarmed_base_F;
+  class B_Heli_Light_01_F: Heli_Light_01_unarmed_base_F {
     #include <mfd_littlebird.hpp>
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
@@ -925,7 +927,7 @@ class CfgVehicles {
         canEject = 1;
         showHMD = 1;
       };
-      class MainTurret: MainTurret {
+      class MainTurret: MainTurret {   //No fucking clue!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         magazines[] = {"2000Rnd_762x51_Belt_T_Red"};
         canEject = 1;
       };
@@ -1003,8 +1005,8 @@ class CfgVehicles {
   class I_Heli_Transport_02_F: Heli_Transport_02_base_F {
     #include <mfd_merlin.hpp>
   };
-
-  class I_Heli_light_03_base_F: Helicopter_Base_F {
+  class Heli_light_03_base_F: Helicopter_Base_F {};
+  class I_Heli_light_03_base_F: Heli_light_03_base_F {
     lockDetectionSystem = 0;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
@@ -1026,21 +1028,22 @@ class CfgVehicles {
       };
     };
   };
-
-  class I_Heli_light_03_F: I_Heli_light_03_base_F {
+  
+  class I_Heli_light_03_F: Heli_light_03_base_F {
     #include <mfd_wildcat.hpp>
     class Turrets: Turrets {
       class MainTurret: MainTurret {};
 
-      class CargoTurret_01: CargoTurret {};
-      class CargoTurret_02: CargoTurret_01 {};
+      // class CargoTurret_01: CargoTurret {};
+      // class CargoTurret_02: CargoTurret_01 {};
     };
   };
-
-  class I_Heli_light_03_unarmed_base_F: I_Heli_light_03_base_F {
+  
+  class Heli_light_03_unarmed_base_F: Heli_light_03_base_F {};
+  class Heli_light_03_unarmed_base_F: Heli_light_03_unarmed_base_F {
     class MFD {};
   };
-  class I_Heli_light_03_unarmed_F: I_Heli_light_03_unarmed_base_F {
+  class I_Heli_light_03_unarmed_F: Heli_light_03_unarmed_base_F {
     #include <mfd_wildcat_unarmed.hpp>
   };
 
@@ -1093,7 +1096,8 @@ class CfgVehicles {
     magazines[] = {};
   };
 
-  class B_Heli_Transport_03_base_F: Helicopter_Base_H {
+  class Heli_Transport_03_base_F: Helicopter_Base_H {};
+  class B_Heli_Transport_03_base_F: Heli_Transport_03_base_F {
     lockDetectionSystem = 12;
     incomingMissileDetectionSystem = 16;
     driverCanEject = 1;
@@ -1109,7 +1113,7 @@ class CfgVehicles {
     };
   };
 
-  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {
+  class B_Heli_Transport_03_unarmed_base_F: Heli_Transport_03_base_F {
     class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {
         canEject = 1;

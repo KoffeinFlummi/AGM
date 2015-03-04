@@ -111,13 +111,15 @@ class CfgVehicles {
   };
 
   // Chinook
-  class B_Heli_Transport_03_base_F: Helicopter_Base_H {
+  class Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_base_F: Heli_Transport_03_base_F {
     AGM_FastRoping = 1;
     AGM_FastRoping_Positions[] = {{0, 1, -1.9}, {0, -5, 0.5}};
   };
 
   // Wildcat
-  class I_Heli_light_03_base_F: Helicopter_Base_F {
+  class Heli_light_03_base_F: Helicopter_Base_F {};
+  class I_Heli_light_03_base_F: Heli_light_03_base_F {
     AGM_FastRoping = 1;
     AGM_FastRoping_Positions[] = {{1.2, 2.5, 0.25}, {-1.1, 2.5, 0.25}};
   };

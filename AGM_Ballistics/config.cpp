@@ -373,7 +373,7 @@ class CfgMagazines {
 class Mode_SemiAuto;
 class Mode_FullAuto;
 class SlotInfo;
-//class MuzzleSlot;
+class MuzzleSlot;
 
 class CfgWeapons {
   class Pistol;
@@ -407,7 +407,7 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_H"};
       };
     };
@@ -464,7 +464,7 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_H"};
       };
     };
@@ -475,14 +475,14 @@ class CfgWeapons {
 
   class EBR_base_F: Rifle_Long_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_B"};
       };
     };
   };
   class DMR_01_base_F: Rifle_Long_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_B"};
       };
     };
@@ -496,7 +496,7 @@ class CfgWeapons {
       dispersion = 0.00175; // radians. Equal to 6 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_H"};
       };
     };
@@ -510,7 +510,7 @@ class CfgWeapons {
       dispersion = 0.00175; // radians. Equal to 6 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_B"};
       };
     };
@@ -533,7 +533,7 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_L"};
       };
     };
@@ -553,7 +553,7 @@ class CfgWeapons {
       dispersion = 0.00147; // radians. Equal to 5.1 MOA.
     };
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_L"};
       };
     };
@@ -579,21 +579,21 @@ class CfgWeapons {
 
   class pdw2000_base_F: Rifle_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
     };
   };
   class SMG_01_Base: Rifle_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
       };
     };
   };
   class SMG_02_base_F: Rifle_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
     };
@@ -604,7 +604,7 @@ class CfgWeapons {
 
   class hgun_P07_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
@@ -613,7 +613,7 @@ class CfgWeapons {
 
   class hgun_Rook40_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
         compatibleItems[] += {"AGM_muzzle_mzls_smg_02"};
       };
@@ -622,7 +622,7 @@ class CfgWeapons {
 
   class hgun_ACPC2_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
       };
     };
@@ -630,7 +630,7 @@ class CfgWeapons {
 
   class hgun_Pistol_heavy_01_F: Pistol_Base_F {
     class WeaponSlotsInfo: WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {
+      class MuzzleSlot: MuzzleSlot {
         compatibleItems[] += {"AGM_muzzle_mzls_smg_01"};
       };
     };

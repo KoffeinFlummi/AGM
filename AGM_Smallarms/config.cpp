@@ -187,6 +187,7 @@ class Mode_FullAuto;
 
 // config inheritance of weapon slot info v1.32
 class SlotInfo;
+class MuzzleSlot;
 class CowsSlot: SlotInfo {};
 class PointerSlot: SlotInfo {
   //compatibleItems[] = {"acc_flashlight","acc_pointer_IR", "AGM_acc_flashlight_tls"};
@@ -204,7 +205,7 @@ class CfgWeapons {
   class RifleCore;
   class Rifle: RifleCore {
     class WeaponSlotsInfo {
-      class MuzzleSlot: SlotInfo {};
+      class MuzzleSlot: MuzzleSlot {};
       class CowsSlot: CowsSlot {};
       class PointerSlot: PointerSlot {};
     };

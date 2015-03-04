@@ -171,8 +171,8 @@ class CfgVehicles {
       class CopilotTurret: CopilotTurret {};
     };*/
   };
-
-  class B_Heli_Light_01_F: Heli_Light_01_base_F {
+  class Heli_Light_01_unarmed_base_F;
+  class B_Heli_Light_01_F: Heli_Light_01_unarmed_base_F {
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
 
@@ -237,14 +237,14 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-
-  class I_Heli_light_03_base_F: Helicopter_Base_F {
+  class Heli_light_03_base_F: Helicopter_Base_F {};
+  class I_Heli_light_03_base_F: Heli_light_03_base_F {
     /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
     };*/
   };
-
-  class I_Heli_light_03_F: I_Heli_light_03_base_F {
+  class Heli_light_03_base_F;
+  class I_Heli_light_03_F: Heli_light_03_base_F {
     /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
 
@@ -571,8 +571,8 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-
-  class O_Truck_02_transport_F: Truck_02_base_F {
+  class Truck_02_transport_base_F;
+  class O_Truck_02_transport_F: Truck_02_transport_base_F {
     /*class Turrets: Turrets {
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
@@ -585,8 +585,8 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-
-  class I_Truck_02_transport_F: Truck_02_base_F {
+  class Truck_02_transport_base_F;
+  class I_Truck_02_transport_F: Truck_02_transport_base_F {
     /*class Turrets: Turrets {
       class CargoTurret_01: CargoTurret {};
       class CargoTurret_02: CargoTurret_01 {};
@@ -626,8 +626,8 @@ class CfgVehicles {
   class Van_01_base_F: Truck_F {
     class Turrets;
   };
-
-  class C_Van_01_transport_F: Van_01_base_F {
+  class Van_01_civil_transport_base_F;
+  class C_Van_01_transport_F: Van_01_civil_transport_base_F {
     //class Turrets: Turrets {};
   };
 
@@ -650,8 +650,8 @@ class CfgVehicles {
   class Kart_01_Base_F: Car_F {
     class Turrets;
   };
-
-  class B_Heli_Transport_03_base_F: Helicopter_Base_H {
+  class Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_base_F: Heli_Transport_03_base_F {
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
       class MainTurret: MainTurret {};
@@ -661,8 +661,8 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-
-  class B_Heli_Transport_03_unarmed_base_F: B_Heli_Transport_03_base_F {
+  class Heli_Transport_03_base_F;
+  class B_Heli_Transport_03_unarmed_base_F: Heli_Transport_03_base_F {
     /*class Turrets: Turrets {
       class CopilotTurret: CopilotTurret {};
       class MainTurret: MainTurret {};

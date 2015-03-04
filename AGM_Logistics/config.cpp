@@ -1112,14 +1112,17 @@ class CfgVehicles {
     AGM_fuelCapacity = AGM_FUELCAPACITY_KAMAZ;
     class AGM_Actions: AGM_Actions {};
   };
-  class O_Truck_02_box_F: Truck_02_base_F { // this is the repair variant because fuck naming conventions
+  class Truck_02_box_base_F: Truck_02_base_F {};
+  class O_Truck_02_box_F: Truck_02_box_base_F { // this is the repair variant because fuck naming conventions
     AGM_canRepair = 1;
     transportRepair = 0;
   };
-  class O_Truck_02_medical_F: O_Truck_02_box_F {  // medic inherits from repairer
+  class Truck_02_medical_base_F: Truck_02_box_base_F {};
+  class O_Truck_02_medical_F: Truck_02_medical_base_F {  // medic inherits from repairer
     AGM_canRepair = 0;
   };
-  class O_Truck_02_fuel_F: Truck_02_base_F {
+  class Truck_02_fuel_base_F: Truck_02_base_F {};
+  class O_Truck_02_fuel_F: Truck_02_fuel_base_F {
     class AGM_Actions: AGM_Actions {
       MACRO_REFUELCARGO
     };
@@ -1129,14 +1132,15 @@ class CfgVehicles {
   /*class O_Truck_02_ammo_F: Truck_02_base_F {
     transportAmmo = 30000;
   };*/
-  class I_Truck_02_box_F: Truck_02_base_F { // this is the repair variant because fuck naming conventions
+  class Truck_02_box_base_F ;
+  class I_Truck_02_box_F: Truck_02_box_base_F  { // this is the repair variant because fuck naming conventions
     AGM_canRepair = 1;
     transportRepair = 0;
   };
-  class I_Truck_02_medical_F: I_Truck_02_box_F {  // medic inherits from repairer
+  class I_Truck_02_medical_F: Truck_02_medical_base_F {
     AGM_canRepair = 0;
   };
-  class I_Truck_02_fuel_F: Truck_02_base_F {
+  class I_Truck_02_fuel_F: Truck_02_fuel_base_F {
     class AGM_Actions: AGM_Actions {
       MACRO_REFUELCARGO
     };
@@ -1192,7 +1196,8 @@ class CfgVehicles {
     AGM_fuelCapacityCargo = AGM_FUELCAPACITYCARGO_VAN;
     transportFuel = 0;
   };
-  class C_Van_01_fuel_F: Van_01_base_F {
+  class Van_01_civil_fuel_base_F: Van_01_base_F {};
+  class C_Van_01_fuel_F: Van_01_civil_fuel_base_F {
     class AGM_Actions: AGM_Actions {
       MACRO_REFUELCARGO
     };
