@@ -164,7 +164,6 @@ class CfgVehicles {
   class B_Heli_Light_01_armed_F: Heli_Light_01_armed_base_F {
     displayName = "$STR_AGM_RealisticNames_Heli_Light_01_armed_Name";
   };
-  class Heli_Transport_03_base_F;
   class B_Heli_Transport_03_F: Heli_Transport_03_base_F  {
     displayName = "$STR_AGM_RealisticNames_Heli_Transport_03_Name";
   };
@@ -211,12 +210,10 @@ class CfgVehicles {
   class I_APC_Wheeled_03_cannon_F: I_APC_Wheeled_03_base_F {
     displayName = "$STR_AGM_RealisticNames_APC_Wheeled_03_cannon_Name";
   };
-  class Truck_02_base_F;
   class Truck_02_transport_base_F;
   class I_Truck_02_transport_F: Truck_02_transport_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_transport_Name";
   };
-  class Truck_02_base_F;
   class I_Truck_02_covered_F: Truck_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_covered_Name";
   };
@@ -232,8 +229,8 @@ class CfgVehicles {
   class I_Truck_02_box_F: Truck_02_box_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_box_Name";
   };
-  
-  class O_Truck_02_transport_F: Truck_02_transport_base_F {
+  class Truck_02_medical_base_F;
+  class I_Truck_02_medical_F: Truck_02_medical_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_medical_Name";
   };
   class Heli_light_03_base_F ;
@@ -296,13 +293,12 @@ class CfgVehicles {
     displayName = "$STR_AGM_RealisticNames_APC_Wheeled_02_rcws_Name";
   };
 
-  class O_Truck_02_transport_F: Truck_02_base_F {
+  class O_Truck_02_transport_F: Truck_02_transport_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_transport_Name";
   };
   class O_Truck_02_covered_F: Truck_02_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_covered_Name";
   };
-   class Truck_02_Ammo_base_F;
    class O_Truck_02_ammo_F: Truck_02_Ammo_base_F {
     displayName = "$STR_AGM_RealisticNames_Truck_02_ammo_Name";
   };
@@ -312,7 +308,6 @@ class CfgVehicles {
   class O_Truck_02_box_F: Truck_02_box_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_box_Name";
   };
-  class Truck_02_medical_base_F ;
   class O_Truck_02_medical_F: Truck_02_medical_base_F  {
     displayName = "$STR_AGM_RealisticNames_Truck_02_medical_Name";
   };
