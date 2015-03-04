@@ -243,7 +243,6 @@ class CfgVehicles {
       class MainTurret: MainTurret {};
     };*/
   };
-  class Heli_light_03_base_F;
   class I_Heli_light_03_F: Heli_light_03_base_F {
     /*class Turrets: Turrets {
       class MainTurret: MainTurret {};
@@ -585,7 +584,6 @@ class CfgVehicles {
       class CargoTurret_02: CargoTurret_01 {};
     };*/
   };
-  class Truck_02_transport_base_F;
   class I_Truck_02_transport_F: Truck_02_transport_base_F {
     /*class Turrets: Turrets {
       class CargoTurret_01: CargoTurret {};
