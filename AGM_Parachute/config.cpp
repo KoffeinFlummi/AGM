@@ -78,7 +78,8 @@ class CfgVehicles {
 		displayName = "$STR_AGM_Parachute_NonSteerableParachute";
 		//picture = "\A3\Characters_F\data\ui\icon_b_parachute_ca.paa";	// @todo
 		//model = "\A3\Weapons_F\Ammoboxes\Bags\Backpack_Parachute";	// @todo
-		backpackSimulation = "ParachuteNonSteerable";	//ParachuteSteerable
+        //1.40 broke backpackSimulation, commenting out, but it still seems to respect the parachuteClass
+		// backpackSimulation = "ParachuteNonSteerable";	//ParachuteSteerable
 		ParachuteClass = "NonSteerable_Parachute_F";
 		maximumLoad = 0;
 		mass = 100;
