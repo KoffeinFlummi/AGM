@@ -54,9 +54,15 @@ _lightinjuries = "";
 _heavyinjuries = "";
 if (AGM_Medical_SingleBandage) then {
   _string = _string + (switch True do {
-    case (damage _unit >= 0.5): {"<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>"};
-    case (damage _unit < 0.5):  {"<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightlyInjured" + "</t>"};
-    default                     {"<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured"};
+    case (damage _unit >= 0.5): {
+      "<br/><br/><t color='#FF0000'>" + localize "STR_AGM_Medical_PatientHeavilyInjured" + "</t>"
+    };
+    case (damage _unit > 0 && damage _unit < 0.5): {
+      "<br/><br/><t color='#FFFF00'>" + localize "STR_AGM_Medical_PatientLightlyInjured" + "</t>"
+    };
+    default {
+      "<br/><br/>" + localize "STR_AGM_Medical_PatientNotInjured"
+    };
   });
 } else {
   _heavyinjuries = "";
