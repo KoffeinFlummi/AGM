@@ -97,7 +97,7 @@ if (_hold) then {
         _theCount = _theCount - 1;
         if (_theCount <= -5) then {
           AGM_vectorConfig = [0, time];
-          0 spawn AGM_Vector_settings;
+          0 spawn AGM_Vector_fnc_settings;
         } else {
           AGM_vectorConfig = [_theCount, time];
           AGM_isVectorReady = true;
