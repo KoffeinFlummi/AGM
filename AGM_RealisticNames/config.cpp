@@ -746,9 +746,6 @@ class CfgWeapons {
     };
     class Rocket_04_AP_Plane_CAS_01_F: Rocket_04_HE_Plane_CAS_01_F {
       displayName = "Hydra 70";
-      class Burst: Burst {
-        displayName = "Hydra 70";
-      };
     };
     class Rocket_03_HE_Plane_CAS_02_F: Rocket_04_HE_Plane_CAS_01_F {
       displayName = "S-8";
@@ -758,9 +755,9 @@ class CfgWeapons {
     };
     class Rocket_03_AP_Plane_CAS_02_F: Rocket_04_AP_Plane_CAS_01_F {
       displayName = "S-8";
-      // class Burst: Burst { //I dunno
-        // displayName = "S-8";
-      // };
+      class Burst: Burst { //I dunno
+        displayName = "S-8";
+      };
     };
     class rockets_Skyfire: RocketPods {
       displayName = "Skyfire-70";
