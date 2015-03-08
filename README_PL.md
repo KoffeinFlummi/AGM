@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat"
+    <img src="http://img.shields.io/badge/release-0.95.3-green.svg?style=flat"
          alt="AGM version" />
   </a>
-  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.94.1/AGM_v0.94.1.rar">
-    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat"
+  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.3/AGM_v0.95.3.zip">
+    <img src="http://img.shields.io/badge/download-21.8_MB-blue.svg?style=flat"
          alt="AGM download" />
   </a>
   <a href="https://github.com/KoffeinFlummi/AGM/issues">
@@ -18,6 +18,8 @@
   </a>
 </p>
 <p align="center"><sup><strong>Wymaga najnowszej wersji <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://makearmanotwar.com/entry/7jnWM53S2e">Make Arma Not War</a> | <a href="http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification">Temat na forum BIS</a></strong></sup></p>
+
+<p align="center"><img src="http://makearmanotwar.com/assets/img/badges/Total-Modification.png" height="150" /></p>
 
 **AGM** jest modularnym modem realizmu / autentyczności dla Arma 3, częścowo opartym na pracy Taosenai przy [TMR](https://github.com/Taosenai/tmr).
 
