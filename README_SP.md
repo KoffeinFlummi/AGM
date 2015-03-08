@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95.1-green.svg?style=flat"
+    <img src="http://img.shields.io/badge/release-0.95.3-green.svg?style=flat"
          alt="AGM version" />
   </a>
-  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.1/AGM_v0.95.1.zip">
-    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat"
+  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.3/AGM_v0.95.3.zip">
+    <img src="http://img.shields.io/badge/download-21.9_MB-blue.svg?style=flat"
          alt="AGM download" />
   </a>
   <a href="https://github.com/KoffeinFlummi/AGM/issues">
@@ -18,6 +18,8 @@
   </a>
 </p>
 <p align="center"><sup><strong>Requiere la versión más reciente de <a href="http://www.armaholic.com/page.php?id=18767">CBA A3</a> | <a href="http://makearmanotwar.com/entry/7jnWM53S2e">Make Arma Not War</a> | <a href="http://forums.bistudio.com/showthread.php?178253-Authentic-Gameplay-Modification">BIF thread</a></strong></sup></p>
+
+<p align="center"><img src="http://makearmanotwar.com/assets/img/badges/Total-Modification.png" height="150" /></p>
 
 **AGM** es un mod modular de autenticidad/realismo para Arma 3, parcialmente basado en el trabajo de Taosenai con [TMR](https://github.com/Taosenai/tmr).
 
@@ -65,6 +67,3 @@ A fin de que los addons sean binarizados correctamente, es necesario excluir los
 
 ---
 <p align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=HPAXPTVCNLDZS"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="max-width:100%;"></a></p>
-
----
-- Traducido al Castellano por Viper "Cavallers del Cel – Comunitat Catalana de Simulació"
