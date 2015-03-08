@@ -580,6 +580,431 @@ class CfgVehicles {
     };
   };
 
+  class B_Soldier_VR_F: B_Soldier_base_F {
+    class HitPoints {
+      class body {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitBody: body {
+        name = "body";
+        visual = "Camo_body";
+        armor = 2;
+        explosionShielding = 10;
+        passThrough = 1;
+        radius = 0.15;
+      };
+
+      class hand_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftArm: hand_l {
+        name = "hand_l";
+        visual = "Camo_arm_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class hand_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightArm: hand_r {
+        name = "hand_r";
+        visual = "Camo_arm_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class head {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitHead: head {
+        name = "head";
+        visual = "Camo_head";
+        armor = 1;
+        explosionShielding = 0.5;
+        passThrough = 1;
+        radius = 0.1;
+      };
+
+      class leg_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftLeg: leg_l {
+        name = "leg_l";
+        visual = "Camo_leg_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+
+      class leg_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightLeg: leg_r {
+        name = "leg_r";
+        visual = "Camo_leg_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+    };
+  };
+
+  class O_Soldier_VR_F: O_Soldier_base_F {
+    class HitPoints {
+      class body {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitBody: body {
+        name = "body";
+        visual = "Camo_body";
+        armor = 2; //6;
+        explosionShielding = 10; //1.5;
+        passThrough = 1; //0.5;
+        radius = 0.15;
+      };
+
+      class hand_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftArm: hand_l {
+        name = "hand_l";
+        visual = "Camo_arm_left";
+        armor = ARM_LEG_ARMOR_CSAT; //8;
+        explosionShielding = 1; //0.8;
+        passThrough = 0.85; //0.5;
+        radius = 0.06; //0.08;
+      };
+
+      class hand_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightArm: hand_r {
+        name = "hand_r";
+        visual = "Camo_arm_right";
+        armor = ARM_LEG_ARMOR_CSAT; //8;
+        explosionShielding = 1; //0.8;
+        passThrough = 0.85; //0.5;
+        radius = 0.06; //0.08;
+      };
+
+      class head {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitHead: head {
+        name = "head";
+        visual = "Camo_head";
+        armor = 1;
+        explosionShielding = 0.5;
+        passThrough = 1;
+        radius = 0.1;
+      };
+
+      class leg_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftLeg: leg_l {
+        name = "leg_l";
+        visual = "Camo_leg_left";
+        armor = ARM_LEG_ARMOR_CSAT; //8;
+        explosionShielding = 1; //0.8;
+        passThrough = 0.85; //0.5;
+        radius = 0.08; //0.1;
+      };
+
+      class leg_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightLeg: leg_r {
+        name = "leg_r";
+        visual = "Camo_leg_right";
+        armor = ARM_LEG_ARMOR_CSAT; //8;
+        explosionShielding = 1; //0.8;
+        passThrough = 0.85; //0.5;
+        radius = 0.08; //0.1;
+      };
+    };
+  };
+
+  class I_Soldier_VR_F: I_Soldier_base_F {
+    class HitPoints {
+      class body {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitBody: body {
+        name = "body";
+        visual = "Camo_body";
+        armor = 2;
+        explosionShielding = 10;
+        passThrough = 1;
+        radius = 0.15;
+      };
+
+      class hand_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftArm: hand_l {
+        name = "hand_l";
+        visual = "Camo_arm_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class hand_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightArm: hand_r {
+        name = "hand_r";
+        visual = "Camo_arm_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class head {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitHead: head {
+        name = "head";
+        visual = "Camo_head";
+        armor = 1;
+        explosionShielding = 0.5;
+        passThrough = 1;
+        radius = 0.1;
+      };
+
+      class leg_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftLeg: leg_l {
+        name = "leg_l";
+        visual = "Camo_leg_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+
+      class leg_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightLeg: leg_r {
+        name = "leg_r";
+        visual = "Camo_leg_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+    };
+  };
+
+  class C_man_1;
+  class C_Soldier_VR_F: C_man_1 {
+    class HitPoints {
+      class body {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitBody: body {
+        name = "body";
+        visual = "Camo_body";
+        armor = 2;
+        explosionShielding = 10;
+        passThrough = 1;
+        radius = 0.15;
+      };
+
+      class hand_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftArm: hand_l {
+        name = "hand_l";
+        visual = "Camo_arm_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class hand_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightArm: hand_r {
+        name = "hand_r";
+        visual = "Camo_arm_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //2;
+        explosionShielding = 1;
+        passThrough = 1;
+        radius = 0.06; //0.08;
+      };
+
+      class head {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitHead: head {
+        name = "head";
+        visual = "Camo_head";
+        armor = 1;
+        explosionShielding = 0.5;
+        passThrough = 1;
+        radius = 0.1;
+      };
+
+      class leg_l {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitLeftLeg: leg_l {
+        name = "leg_l";
+        visual = "Camo_leg_left";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+
+      class leg_r {
+        name = "";
+        visual = "";
+        armor = 999;
+        explosionShielding = 0;
+        radius = 0;
+      };
+
+      class HitRightLeg: leg_r {
+        name = "leg_r";
+        visual = "Camo_leg_right";
+        armor = ARM_LEG_ARMOR_DEFAULT; //1;
+        explosionShielding = 1; //0.5;
+        passThrough = 1;
+        radius = 0.08; //0.1;
+      };
+    };
+  };
+
   class LandVehicle;
   class Car: LandVehicle {
     class AGM_Actions {
