@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/KoffeinFlummi/AGM/master/.devfiles/Assets/Logo/agm_logo_black_transparent.png" height="150px" /><br />
   <a href="https://github.com/KoffeinFlummi/AGM/releases">
-    <img src="http://img.shields.io/badge/release-0.95.2-green.svg?style=flat"
+    <img src="http://img.shields.io/badge/release-0.95.3-green.svg?style=flat"
          alt="AGM version" />
   </a>
-  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.2/AGM_v0.95.2.zip">
-    <img src="http://img.shields.io/badge/download-22_MB-blue.svg?style=flat"
+  <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.3/AGM_v0.95.3.zip">
+    <img src="http://img.shields.io/badge/download-21.8_MB-blue.svg?style=flat"
          alt="AGM download" />
   </a>
   <a href="https://github.com/KoffeinFlummi/AGM/issues">
