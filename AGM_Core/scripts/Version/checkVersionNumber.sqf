@@ -18,11 +18,19 @@ if (missionNamespace getVariable ["AGM_Version_CheckAll", false]) then {
   } forEach activatedAddons;
 };
 
-_versionMain = parseNumber getText (configFile >> "CfgPatches" >> "AGM_Core" >> "version");
+private "_fnc_parseVersionNumber";
+_fnc_parseVersionNumber = {
+  private "_versionAr";
+  _versionAr = getArray (configFile >> "CfgPatches" >> _this >> "versionAr");
+
+  (_versionAr select 0) + 1E-2 * (_versionAr select 1) + 1E-4 * (_versionAr select 2)
+};
+
+_versionMain = "AGM_Core" call _fnc_parseVersionNumber;
 
 _versions = [];
 {
-  _version = parseNumber getText (configFile >> "CfgPatches" >> _x >> "version");
+  _version = _x call _fnc_parseVersionNumber;
   _versions set [_forEachIndex, _version];
 } forEach _files;
 
