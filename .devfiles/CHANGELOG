@@ -1,3 +1,17 @@
+# v0.95.3
+
+- Fixed: Broken hitpoints for VA people in v1.40 (#2162)
+- Fixed: Disable Team-Management module did not disable join group (#2032)
+- Fixed: Holstering a weapon in a FFV seat would make you stand up (#2098)
+- Fixed: Inheritance issues with v1.40 (#2151, #2156)
+- Fixed: Kick option in Check PBOs module broken (#2081)
+- Fixed: Low resolution when using Vector with mils (#2125)
+- Fixed: Undefined variable in Vector function (#2122)
+- Fixed: Unnecessary setVariable calls in diagnosis (#2009)
+- Fixed: Version number check didn't account for patch versions (#2163)
+- Fixed: Weapon IK in combat pace (#2095)
+
+
 # v0.95.2
 
 - Changed: Markers are now sent over network using the classname, not the index (#1966)
