@@ -5,7 +5,7 @@
          alt="AGM version" />
   </a>
   <a href="https://github.com/KoffeinFlummi/AGM/releases/download/v0.95.3/AGM_v0.95.3.zip">
-    <img src="http://img.shields.io/badge/download-21.8_MB-blue.svg?style=flat"
+    <img src="http://img.shields.io/badge/download-21.9_MB-blue.svg?style=flat"
          alt="AGM download" />
   </a>
   <a href="https://github.com/KoffeinFlummi/AGM/issues">
