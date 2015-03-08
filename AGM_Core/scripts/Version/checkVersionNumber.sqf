@@ -23,6 +23,10 @@ _fnc_parseVersionNumber = {
   private "_versionAr";
   _versionAr = getArray (configFile >> "CfgPatches" >> _this >> "versionAr");
 
+  if (count _versionAr < 3) exitWith {
+    parseNumber getText (configFile >> "CfgPatches" >> _this >> "version")
+  };
+
   (_versionAr select 0) + 1E-2 * (_versionAr select 1) + 1E-4 * (_versionAr select 2)
 };
 
