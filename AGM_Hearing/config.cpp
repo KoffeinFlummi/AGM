@@ -180,7 +180,7 @@ class CfgWeapons {
   class AGM_EarBuds: AGM_ItemCore {
     displayName = "$STR_AGM_Hearing_Earbuds_Name";
     descriptionShort = "$STR_AGM_Hearing_Earbuds_Description";
-    model = "\AGM_Hearing\agm_earbugs.p3d";
+    model = "\AGM_Hearing\agm_earplugs.p3d";
     picture = "\AGM_Hearing\UI\agm_earplugs_x_ca.paa";
     scope = 2;
     class ItemInfo: InventoryItem_Base_F {
