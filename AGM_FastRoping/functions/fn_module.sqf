@@ -1,18 +1,18 @@
 /*
-	Name: AGM_FastRoping_fnc_module
+  Name: AGM_FastRoping_fnc_module
 
-	Author: Matthew Graham (JonBons)
+  Author: Matthew Graham (JonBons)
 
-	Description:
-		Initialises the restrictions for the fast roping module
+  Description:
+    Initialises the restrictions for the fast roping module
 
-	Parameters:
-		Things
+  Parameters:
+    Things
 
-	Returns:
-		Nothing
+  Returns:
+    Nothing
 
-	Example:
+  Example:
 
 */
 if !(isServer) exitWith {};
