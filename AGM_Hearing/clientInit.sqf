@@ -9,6 +9,9 @@ AGM_NewStrength = 0;
 0 spawn {
   while {true} do {
     _player = AGM_player;
+    _player addEventHandler ["Killed", {
+      if ((_this select 0) getVariable ["AGM_hasEarPlugsIn",false]) then {(_this select 0) setVariable ["AGM_hasEarPlugsIn", false, true]}
+    }];
 
     // Check if new noises increase deafness
     if (AGM_NewStrength * STRENGHTODEAFNESS > AGM_CurrentDeafness) then {
