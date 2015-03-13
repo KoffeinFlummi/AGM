@@ -37,6 +37,7 @@ _this spawn {
   _ctrlProgressBar ctrlCommit (_time / accTime);
 
   _ctrlProgressBarTitle ctrlSetText _title;
+  player setVariable ["AGM_currentProgressBarTitle",_title];
   //_ctrlProgressBarTitle ctrlSetStructuredText _title;
 
   _time = time + _time;
@@ -46,6 +47,7 @@ _this spawn {
   };
 
   closeDialog 0;
+  player setVariable ["AGM_currentProgressBarTitle",""];
 
   _progress = 1;
   if (time > _time) then {
