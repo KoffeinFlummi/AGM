@@ -1,5 +1,5 @@
 /*
- * Author: commy2, CAA-Picard
+ * Author: commy2, CAA-Picard, 654wak654
  *
  * Draw the nametag and rank icon.
  *
@@ -43,6 +43,12 @@ _color = if !(group _target == group _player) then {
 };
 
 _name = [_target, true] call AGM_Core_fnc_getName;
+
+if ((profileNamespace getVariable ["AGM_showPlayerActions", true]) && isPlayer _target) then {
+  _action = _target getVariable ["AGM_currentProgressBarTitle", ""];
+  if (_action isEqualTo "") exitWith {};
+  _name = _name + " (" + _action ")";
+};
 
 _rank = TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1);
 _size = [0, 1] select (profileNamespace getVariable ["AGM_showPlayerRanks", true]);
