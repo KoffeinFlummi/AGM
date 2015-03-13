@@ -70,7 +70,7 @@ class AGM_Core_Options {
   };
   class showPlayerActions {
     displayName = "$STR_AGM_NameTags_showPlayerActions";
-    default = 1;
+    default = 0;
   };
   class showVehicleCrewInfo {
     displayName = "$STR_AGM_CrewInfo_ShowVehicleCrewInfo";
