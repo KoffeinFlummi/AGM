@@ -62,15 +62,15 @@
     </Key>
     <Key ID="STR_AGM_NameTags_showPlayerActions">
       <English>Show player actions (requires player names)</English>
-      <German></German>
-      <Polish></Polish>
-      <Spanish></Spanish>
-      <French></French>
-      <Czech></Czech>
-      <Italian></Italian>
-      <Portuguese></Portuguese>
-      <Hungarian></Hungarian>
-      <Russian></Russian>
+      <German> (benötig Spielernamen)</German>
+      <Polish> (wymaga nazw graczy)</Polish>
+      <Spanish> (requiere Mostrar nombres de jugadores)</Spanish>
+      <French> (si noms affichés)</French>
+      <Czech> (vyžaduje jména hráčů)</Czech>
+      <Italian> (richiede i nomi dei giocatori abilitati)</Italian>
+      <Portuguese> (requer nome de jogadores)</Portuguese>
+      <Hungarian> (névcímke szükséges)</Hungarian>
+      <Russian> (требует имен игроков)</Russian>
     </Key>
   </Package>
   <Package name="CrewInfo">
