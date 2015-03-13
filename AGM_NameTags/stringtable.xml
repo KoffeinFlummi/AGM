@@ -60,6 +60,18 @@
       <Hungarian>Játékosok rendfokozatának mutatása (névcímke szükséges)</Hungarian>
       <Russian>Показать звания игроков (требует имен игроков)</Russian>
     </Key>
+    <Key ID="STR_AGM_NameTags_showPlayerActions">
+      <English>Show player actions</English>
+      <German></German>
+      <Polish></Polish>
+      <Spanish></Spanish>
+      <French></French>
+      <Czech></Czech>
+      <Italian></Italian>
+      <Portuguese></Portuguese>
+      <Hungarian></Hungarian>
+      <Russian></Russian>
+    </Key>
   </Package>
   <Package name="CrewInfo">
     <Key ID="STR_AGM_CrewInfo_ShowVehicleCrewInfo">
