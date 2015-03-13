@@ -37,8 +37,9 @@ _this spawn {
   _ctrlProgressBar ctrlCommit (_time / accTime);
 
   _ctrlProgressBarTitle ctrlSetText _title;
+  _player = AGM_player;
   [
-    [[player, _title],
+    [[_player, _title],
     {(_this select 0) setVariable ["AGM_currentPBAction", (_this select 1), true]}],
     "BIS_fnc_call",
     true,
@@ -55,7 +56,7 @@ _this spawn {
 
   closeDialog 0;
   [
-    [[player],
+    [[_player],
     {(_this select 0) setVariable ["AGM_currentPBAction", "", true]}],
     "BIS_fnc_call",
     true,
