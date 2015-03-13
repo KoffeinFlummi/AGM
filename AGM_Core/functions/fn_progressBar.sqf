@@ -37,9 +37,7 @@ _this spawn {
   _ctrlProgressBar ctrlCommit (_time / accTime);
 
   _ctrlProgressBarTitle ctrlSetText _title;
-  if ("agm_nametags" in actiavedAddons) then {
-    [[[player, _text], {(_this select 0) setVariable ["AGM_currentPBAction", (_this select 1), true]}], "BIS_fnc_call", true, false, true] call BIS_fnc_MP;
-  };
+  [[[player,_text],{(_this select 0) setVariable ["AGM_currentPBAction",(_this select 1),true]}],"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
   //_ctrlProgressBarTitle ctrlSetStructuredText _title;
 
   _time = time + _time;
@@ -49,9 +47,7 @@ _this spawn {
   };
 
   closeDialog 0;
-  if ("agm_nametags" in actiavedAddons) then {
-    [[[player], {(_this select 0) setVariable ["AGM_currentPBAction", "", true]}], "BIS_fnc_call", true, false, true] call BIS_fnc_MP;
-  };
+  [[[player],{(_this select 0) setVariable ["AGM_currentPBAction","",true]}],"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
 
   _progress = 1;
   if (time > _time) then {
