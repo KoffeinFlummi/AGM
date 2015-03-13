@@ -37,7 +37,7 @@ _this spawn {
   _ctrlProgressBar ctrlCommit (_time / accTime);
 
   _ctrlProgressBarTitle ctrlSetText _title;
-  [[[player,_text],{(_this select 0) setVariable ["AGM_currentPBAction",(_this select 1),true]}],"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
+  [[[player,_title], {(_this select 0) setVariable ["AGM_currentPBAction",(_this select 1),true]}],"BIS_fnc_call",true,false,true] call BIS_fnc_MP;
   //_ctrlProgressBarTitle ctrlSetStructuredText _title;
 
   _time = time + _time;
