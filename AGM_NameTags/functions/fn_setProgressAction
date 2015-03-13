@@ -1,0 +1,16 @@
+/*
+ * Author: 654wak654
+ *
+ * Set's currentAction variable on the player unit and boradcast it globally.
+ *
+ * Argument:
+ * 0: Unit which'll set the variable (Object)
+ * 1: Value to set the variable (String)
+ *
+ * Return value:
+ * Nothing
+ */
+
+_unit = [_this, 0, objNull, [objNull]] call BIS_fnc_param;
+_text = [_this, 0, "", [""]] call BIS_fnc_param;
+_unit setVariable ["AGM_currentProgressBarAction", _text, true];
