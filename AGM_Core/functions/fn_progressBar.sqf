@@ -61,7 +61,7 @@ _this spawn {
     "BIS_fnc_call",
     true,
     false,
-	    true
+    true
   ] call BIS_fnc_MP;
 
   _progress = 1;
