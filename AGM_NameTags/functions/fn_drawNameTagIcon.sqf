@@ -47,7 +47,7 @@ _name = [_target, true] call AGM_Core_fnc_getName;
 if ((profileNamespace getVariable ["AGM_showPlayerActions", true]) && isPlayer _target) then {
   _action = _target getVariable ["AGM_currentProgressBarTitle", ""];
   if (_action isEqualTo "") exitWith {};
-  _name = _name + " (" + _action ")";
+  _name = _name + " (" + _action + ")";
 };
 
 _rank = TEXTURES_RANKS select ((["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"] find rank _target) + 1);
