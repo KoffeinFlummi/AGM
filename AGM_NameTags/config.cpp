@@ -68,6 +68,10 @@ class AGM_Core_Options {
     displayName = "$STR_AGM_NameTags_ShowPlayerRanks";
     default = 1;
   };
+  class showPlayerActions {
+    displayName = "$STR_AGM_NameTags_showPlayerActions";
+    default = 1;
+  };
   class showVehicleCrewInfo {
     displayName = "$STR_AGM_CrewInfo_ShowVehicleCrewInfo";
     default = 1;
