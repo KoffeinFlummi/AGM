@@ -63,5 +63,5 @@ drawIcon3D [
   _name,
   2,
   0.033,
-  "PuristaSemiBold"
+  "PuristaMedium"
 ];
