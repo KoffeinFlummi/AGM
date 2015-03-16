@@ -44,7 +44,7 @@ _color = if !(group _target == group _player) then {
 
 _name = [_target, true] call AGM_Core_fnc_getName;
 
-if ((profileNamespace getVariable ["AGM_showPlayerActions", true]) && isPlayer _target) then {
+if ((profileNamespace getVariable ["AGM_showPlayerActions", true]) && [_target] call AGM_Core_fnc_isPlayer) then {
   _action = _target getVariable ["AGM_currentPBAction", ""];
   if (_action isEqualTo "") exitWith {};
   _name = _name + " (" + _action + ")";
