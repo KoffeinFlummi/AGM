@@ -42,6 +42,7 @@ switch (_type) do {
   case "bandage" : {
     private ["_selection", "_damage"];
 
+    [_unit, _target, "AGM_Bandage", true] call AGM_Medical_fnc_takeItem;
     _selection = _this select 3;
     if (_selection == "All") then {
       _target setDamage ((damage _target - BANDAGEHEAL) max 0);
@@ -61,6 +62,7 @@ switch (_type) do {
   case "morphine" : {
     private ["_painkillerOld", "_painkiller"];
 
+    [_unit, _target, "AGM_Morphine", true] call AGM_Medical_fnc_takeItem;
     _painkillerOld = _target getVariable ["AGM_Painkiller", 1];
 
     // reduce pain, pain sensitivity
@@ -87,12 +89,14 @@ switch (_type) do {
   };
 
   case "epipen" : {
+    [_unit, _target, "AGM_Epipen", true] call AGM_Medical_fnc_takeItem;
     [_target] call AGM_Medical_fnc_wakeUp; // short and sweet
   };
 
   case "bloodbag" : {
     private ["_blood"];
 
+    [_unit, _target, "AGM_Bloodbag", true] call AGM_Medical_fnc_takeItem;
     _blood = ((_target getVariable ["AGM_Blood", 1]) + BLOODBAGHEAL) min 1;
     _target setVariable ["AGM_Blood", _blood, True];
   };
