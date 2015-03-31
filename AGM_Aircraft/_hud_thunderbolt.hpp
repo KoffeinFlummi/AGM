@@ -1,6 +1,3 @@
-
-
-
 class MFD3
 {
   class HUD_1
