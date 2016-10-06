@@ -15,12 +15,12 @@
  * Nothing
  */
 
-private ["_unit", "_animation", "_priority", "_force"];
+private ["_unit", "_animation", "_priority"/*, "_force"*/];
 
 _unit = _this select 0;
 _animation = _this select 1;
 _priority = _this select 2;
-_force = False;
+/*_force = False;
 
 // no animation given
 if (isNil "_animation") exitWith {
@@ -42,7 +42,7 @@ if (_unit getVariable ["AGM_isUnconscious", false] && {!_force}) exitWith {
 };
 
 // don't go unconscious if the unit isn't unconscious
-if (_animation == "Unconscious" && {!(_unit getVariable ["AGM_isUnconscious", false])}) exitWith {};
+if (_animation == "Unconscious" && {!(_unit getVariable ["AGM_isUnconscious", false])}) exitWith {};*/
 
 // switchMove "" no longer works in dev 1.37
 if (_animation == "") then {

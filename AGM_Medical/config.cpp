@@ -20,6 +20,7 @@ class CfgFunctions {
       class aiCanTreat;
       class aiInitTask;
       class aiTreat;
+      class animUnconscious;
       class checkDamage;
       class diagnose;
       class displayText;
@@ -53,6 +54,13 @@ class Extended_Init_EventHandlers {
     };
   };
 };
+class Extended_AnimStateChanged_EventHandlers {
+  class CAManBase {
+    class AGM_Medical_ForceUnconsciousAnim {
+      AnimStateChanged = "if ((_this select 0) getVariable ['AGM_isUnconscious', false] && {_this select 1 != 'unconscious'}) then {[_this select 0] call AGM_Medical_fnc_animUnconscious}";
+    };
+  };
+};
 class Extended_Respawn_EventHandlers {
   class CAManBase {
     class AGM_Medical {
@@ -74,13 +82,13 @@ class Extended_Take_EventHandlers {
     };
   };
 };
-class Extended_GetOut_EventHandlers {
+/*class Extended_GetOut_EventHandlers {
   class All {
     class AGM_Medical_LeaveVehicle {
-      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isUnconscious', false]}) then {[_this select 2, 'unconscious', 2, true] call AGM_Core_fnc_doAnimation;}";
+      getOut = "if (local (_this select 2) && {(_this select 2) getVariable ['AGM_isUnconscious', false]}) then {[_this select 2] call AGM_Medical_fnc_animUnconscious}";
     };
   };
-};
+};*/
 
 class Extended_PostInit_EventHandlers {
   class AGM_Medical {
