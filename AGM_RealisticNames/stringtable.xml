@@ -76,7 +76,7 @@
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AT_Name">
       <English>Mini-Spike Launcher (AT)</English>
-      <German>Mini-Spike Lenkflugkörper (AT)</German>
+      <German>Mini-Spike Lenkflugkörper (Panzerabwehr)</German>
       <Spanish>Lanzador Mini-Spike (AT)</Spanish>
       <French>Poste de tir Mini-Spike (AC)</French>
       <Czech>Mini-Spike Odpalovač (AT)</Czech>
@@ -88,7 +88,7 @@
     </Key>
     <Key ID="STR_AGM_RealisticNames_static_AA_Name">
       <English>Mini-Spike Launcher (AA)</English>
-      <German>Mini-Spike Lenkflugkörper (AA)</German>
+      <German>Mini-Spike Lenkflugkörper (Flugabwehr)</German>
       <Spanish>Lanzador Mini-Spike (AA)</Spanish>
       <French>Poste de tir Mini-Spike (AA)</French>
       <Czech>Mini-Spike Odpalovač (AA)</Czech>
@@ -776,7 +776,7 @@
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_Fighter_03_CAS_Name">
       <English>L-159 ALCA (CAS)</English>
-      <German>L-159 ALCA (CAS)</German>
+      <German>L-159 ALCA (Luftnahunterstützung)</German>
       <Spanish>L-159 ALCA (CAS)</Spanish>
       <Polish>L-159 ALCA (CAS)</Polish>
       <Czech>L-159 ALCA (CAS)</Czech>
@@ -788,7 +788,7 @@
     </Key>
     <Key ID="STR_AGM_RealisticNames_Plane_Fighter_03_AA_Name">
       <English>L-159 ALCA (AA)</English>
-      <German>L-159 ALCA (AA)</German>
+      <German>L-159 ALCA (Flugabwehr)</German>
       <Spanish>L-159 ALCA (AA)</Spanish>
       <Polish>L-159 ALCA (AA)</Polish>
       <Czech>L-159 ALCA (AA)</Czech>
