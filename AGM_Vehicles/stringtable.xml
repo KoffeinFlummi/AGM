@@ -6,7 +6,7 @@
       <English>Speed Limiter on</English>
       <German>Begrenzer an</German>
       <Spanish>Limitador de velocidad activado</Spanish>
-      <Polish>Ogranicznik prędkości włączony</Polish>
+      <Polish>Tempomat włączony</Polish>
       <Czech>Omezovač rychlosti zapnout</Czech>
       <French>Limiteur de vitesse Activé</French>
       <Russian>Ограничение скорости включено</Russian>
@@ -18,7 +18,7 @@
       <English>Speed Limiter off</English>
       <German>Begrenzer aus</German>
       <Spanish>Limitador de velocidad desactivado</Spanish>
-      <Polish>Ogranicznik prędkości wyłączony</Polish>
+      <Polish>Tempomat wyłączony</Polish>
       <Czech>Omezovač rychlosti vypnout</Czech>
       <French>Limiteur de vitesse Désactivé</French>
       <Russian>Ограничение скорости выключено</Russian>
@@ -31,7 +31,7 @@
       <English>Speed Limiter</English>
       <German>Begrenzer</German>
       <Spanish>Limitador de velocidad</Spanish>
-      <Polish>Ogranicznik prędkości</Polish>
+      <Polish>Tempomat</Polish>
       <Czech>Omezovač rychlosti</Czech>
       <French>Limiteur de vitesse</French>
       <Russian>Ограничение скорости</Russian>
