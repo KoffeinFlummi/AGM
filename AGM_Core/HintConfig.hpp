@@ -17,8 +17,10 @@ class RscTitles {
 			class HintBox: RscStructuredText {
 				idc = 1;
 				text = "";
+				type = 13;
 				size = "1 / 40 / (getResolution select 5)";
 				sizeEx = 1;
+				style = 0;
 				colorText[] = {1, 1, 1, 1};
 				colorBackground[] = {"(profilenamespace getvariable ['IGUI_BCG_RGB_R',0])","(profilenamespace getvariable ['IGUI_BCG_RGB_G',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_B',1])","(profilenamespace getvariable ['IGUI_BCG_RGB_A',0.8])"};
 				x = safeZoneW + safeZoneX - 0 * safezoneW;	//safeZoneW + safeZoneX - 0.2 * safezoneW;
@@ -41,8 +43,10 @@ class RscTitles {
 			class HintBox: RscStructuredText {
 				idc = 1;
 				text = "";
+				type = 13;
 				size = "1 / 40 / (getResolution select 5)";
 				sizeEx = 1;
+				style = 0;
 				colorText[] = {1, 1, 1, 1};
 				colorBackground[] = {0.8, 0, 0, 0.5};
 				x = 0.3 * safeZoneW + safeZoneX;
