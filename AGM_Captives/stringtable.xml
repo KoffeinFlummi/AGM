@@ -130,5 +130,8 @@
       <Russian>Обыскать человека</Russian>
       <Portuguese>Revistar</Portuguese>
     </Key>
+    <Key ID="STR_AGM_Captives_Disarm">
+       <English>Disarm</English>
+    </Key>
   </Package>
 </Project>
