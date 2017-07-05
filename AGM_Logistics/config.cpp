@@ -148,7 +148,8 @@ class CfgFunctions {
   class AGM_Paradrop {
     class AGM_Paradrop {
       file = "\AGM_Logistics\functions\Paradrop";
-      class paradrop;
+      class openParadropUI;
+      class paraDrop;
     };
   };
   class AGM_Fortifications {

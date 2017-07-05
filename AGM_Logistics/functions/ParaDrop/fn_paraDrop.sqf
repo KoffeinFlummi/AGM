@@ -1,9 +1,12 @@
-//marc_book, commy2, CAA-Picard
-
-private ["_vehicle", "_fnc_smoke", "_fnc_light", "_items", "_count", "_item", "_position", "_parachute", "_smoke", "_light"];
-
+//marc_book, commy2, CAA-Picard, Ir0n1E
 _this spawn {
-  _vehicle = _this select 0;
+  _vehicle      = _this select 0;
+  _itemHolder   = (_this select 1) select 0;
+  _varIndex     = (_this select 1) select 1;
+  _item         = (_vehicle getVariable _itemHolder) select _varIndex;
+  _loadedItems  = _vehicle getVariable [_itemHolder, []];
+
+  if !(_item in _loadedItems) exitWith {};
 
   _fnc_smoke = {
     _smoke = "SmokeshellYellow" createVehicle (_position);
@@ -15,15 +18,16 @@ _this spawn {
     _light attachTo [_item, [0, 0, 0]];
   };
 
-  _items = _vehicle getVariable ["AGM_Logistics_loadedItems", []];
-  _count = count _items;
-  _item = _items select (_count - 1);
-  _items = _items - [_item];
+  _loadedItems = _loadedItems - [_item];
+  _vehicle setVariable [_itemHolder, _loadedItems, true];
 
-  _vehicle setVariable ["AGM_Logistics_loadedItems", _items, true];
   _position = ((vectorDir _vehicle) vectorMultiply -15) vectorAdd getPosASL _vehicle;
 
   detach _item;
+  _item enableSimulationGlobal true;
+  _item hideObjectGlobal false;
+  [_item, "{{_x reveal _this} forEach allUnits}", 2] call AGM_Core_fnc_execRemoteFnc;
+
   _item setPosASL _position;
 
   sleep 0.7;
