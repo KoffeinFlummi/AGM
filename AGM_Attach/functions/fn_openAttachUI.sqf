@@ -13,10 +13,14 @@
     Nothing
   
   Example:
-    [player] call AGM_Attach_fnc_openAttachUI;
+    [player, player] call AGM_Attach_fnc_openAttachUI;
 */
-private ["_unit", "_actions", "_attachables", "_item"];
+private ["_unit", "_attachToVehicle", "_attachToPointName", "_listed", "_attachables", "_actions", "_item"];
+
 _unit = _this select 0;
+_attachToVehicle = _this select 1;
+_attachToPointName = _this select 2;
+
 _listed = [];
 _attachables = magazines _unit;
 _actions = [localize "STR_AGM_Attach_AttachDetach", localize "STR_AGM_Attach_Attach"] call AGM_Interaction_fnc_prepareSelectMenu;
@@ -53,7 +57,7 @@ _attachables = items _unit;
 [
   _actions,
   {
-    [AGM_player, _this] call AGM_Attach_fnc_attach;
+    [AGM_player, AGM_Interaction_Target, _this] call AGM_Attach_fnc_attach;
     call AGM_Interaction_fnc_hideMenu;
   },
   {

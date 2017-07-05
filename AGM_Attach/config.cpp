@@ -21,6 +21,10 @@ class CfgFunctions {
       class canDetach;
       class detach;
       class openAttachUI;
+      class Place_Approve;
+      class Place_Cancel;
+      class vehicleCanAttach;
+      class vehicleCanDetach;
     };
   };
 };
@@ -30,6 +34,29 @@ class CfgFunctions {
   count = COUNT; \
 };
 
+#define MACRO_ATTACHTOVEHICLE \
+  class AGM_Actions { \
+    class AGM_AttachVehicle { \
+      displayName = "$STR_AGM_Attach_AttachDetach"; \
+      condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanAttach"; \
+      statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_openAttachUI;"; \
+      exceptions[] = {"AGM_Drag_isNotDragging"}; \
+      showDisabled = 0; \
+      priority = 0; \
+      icon = "\AGM_Attach\UI\attach_ca.paa"; \
+      hotkey = "T"; \
+    }; \
+    class AGM_Attach_DetachVehicle { \
+      displayName = "$STR_AGM_Attach_Detach"; \
+      condition = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_vehicleCanDetach"; \
+      statement = "[_player, AGM_Interaction_Target] call AGM_Attach_fnc_detach"; \
+      exceptions[] = {"AGM_Drag_isNotDragging"}; \
+      showDisabled = 0; \
+      priority = 0; \
+      icon = "\AGM_Attach\UI\detach_ca.paa"; \
+    }; \
+  };
+
 class CfgVehicles {
   class Man;
   class CAManBase: Man {
@@ -38,7 +65,7 @@ class CfgVehicles {
         class AGM_Attach {
           displayName = "$STR_AGM_Attach_AttachDetach";
           condition = "[_player, ''] call AGM_Attach_fnc_canAttach";
-          statement = "[_player] call AGM_Attach_fnc_openAttachUI;";
+          statement = "[_player, _player] call AGM_Attach_fnc_openAttachUI;";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 5;
@@ -48,7 +75,7 @@ class CfgVehicles {
         class AGM_Attach_Detach {
           displayName = "$STR_AGM_Attach_Detach";
           condition = "[_player] call AGM_Attach_fnc_canDetach";
-          statement = "[_player] call AGM_Attach_fnc_detach";
+          statement = "[_player, _player] call AGM_Attach_fnc_detach";
           exceptions[] = {"AGM_Drag_isNotDragging"};
           showDisabled = 0;
           priority = 5;
@@ -57,6 +84,25 @@ class CfgVehicles {
         };
       };
     };
+  };
+
+  class LandVehicle;
+  class Car: LandVehicle {
+    MACRO_ATTACHTOVEHICLE
+  };
+  class Tank: LandVehicle {
+    MACRO_ATTACHTOVEHICLE
+  };
+  class Air;
+  class Helicopter: Air {
+    MACRO_ATTACHTOVEHICLE
+  };
+  class Plane: Air {
+    MACRO_ATTACHTOVEHICLE
+  };
+  class Ship;
+  class Ship_F: Ship {
+    MACRO_ATTACHTOVEHICLE
   };
 
   class All;
