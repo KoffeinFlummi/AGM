@@ -21,6 +21,8 @@
 
 <p align="center"><img src="http://makearmanotwar.com/assets/img/badges/Total-Modification.png" height="150" /></p>
 
+### &#x26A0; THIS MOD IS DISCONTINUED. PLEASE MOVE TO [ACE3](https://github.com/acemod/ACE3)
+
 **AGM** is a modular authenticism/realism mod for Arma 3, partly based on Taosenai's work with [TMR](https://github.com/Taosenai/tmr).
 
 This mod is entirely **open-source**, and everyone is free to propose changes or maintain their own, customized version as long as they make their changes open to the public in accordance with the GNU General Public License (for more information check the license file attached to this project).
