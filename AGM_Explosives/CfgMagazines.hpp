@@ -11,6 +11,10 @@ class CfgMagazines {
 				digDistance = 0.1;
 			};
 		};
+		class AGM_Action {
+			condition = "true";
+			statement = "[_this select 2] call AGM_Explosives_fnc_openTriggerSelectionUI;";
+		};
 	};
 	class APERSBoundingMine_Range_Mag:ATMine_Range_Mag{
 		AGM_SetupObject = "AGM_Explosives_Place_APERSBoundingMine";
@@ -49,6 +53,10 @@ class CfgMagazines {
 				FuseTime = 0.5;
 			};
 		};
+		class AGM_Action {
+			condition = "true";
+			statement = "[_this select 2] call AGM_Explosives_fnc_openTriggerSelectionUI;";
+		};
 	};
 	
 	class SatchelCharge_Remote_Mag:CA_Magazine{
@@ -66,6 +74,10 @@ class CfgMagazines {
 			};
 			class MK16_Transmitter:Command{};
 			class DeadmanSwitch:Command{};
+		};
+		class AGM_Action {
+			condition = "true";
+			statement = "[_this select 2] call AGM_Explosives_fnc_openTriggerSelectionUI;";
 		};
 	};
 	class DemoCharge_Remote_Mag:SatchelCharge_Remote_Mag{
