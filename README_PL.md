@@ -21,6 +21,8 @@
 
 <p align="center"><img src="http://makearmanotwar.com/assets/img/badges/Total-Modification.png" height="150" /></p>
 
+### &#x26A0; TEN MOD NIE JEST JUŻ KONTYNUOWANY. PROSZĘ PRZEJŚĆ DO [ACE3](https://github.com/acemod/ACE3)
+
 **AGM** jest modularnym modem realizmu / autentyczności dla Arma 3, częścowo opartym na pracy Taosenai przy [TMR](https://github.com/Taosenai/tmr).
 
 Jest to mod **open-source**, każdy może zaproponować do niego zmiany bądź prowadzić swoją własną, zmodyfikowaną wersję dopóki zmiany, jakie ta osoba wprowadzi, będą publiczne zgodnie z licencją GNU General Public License (po więcej informacji sprawdź plik licencji dołączony do tego projektu).
