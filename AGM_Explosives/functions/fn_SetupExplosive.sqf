@@ -26,6 +26,7 @@ _this spawn {
   _config = _this select 2;
   _timer = _this select 3;
   AGM_Explosives_placer = _unit;
+  
   // Commented out due to the fact there is a distinction between who can deactivate mines and who can plant them in standard configs.
   // Would require custom config entries (AGM_ExplosiveSpecialist/AGM_Specialist) which excludes custom mods.
   //if (AGM_Explosives_RequireSpecialist && {!([_unit] call AGM_Core_fnc_isEOD)}) exitWith {};
@@ -35,13 +36,14 @@ _this spawn {
   
   AGM_Explosives_Setup = getText(ConfigFile >> "CfgMagazines" >> _class >> "AGM_SetupObject") createVehicleLocal [0,0,-10000];
   
-  AGM_Explosives_Setup enableSimulationGlobal false;
+  //AGM_Explosives_Setup enableSimulationGlobal false; 
   AGM_Explosives_Setup setVariable ["AGM_Class", _class];
   AGM_Explosives_Setup setVariable ["AGM_Trigger", _config];
   //AGM_Explosives_Setup setVariable ["AGM_Offset", GetArray(ConfigFile >> "CfgVehicles" >> typeof AGM_Explosives_Setup >> "AGM_Offset")];
   if (!isNil "_timer") then {
     AGM_Explosives_Setup setVariable ["AGM_Timer", _timer];
   };
+  AGM_Explosives_Setup setVariable ["AGM_Enable_Place", 0];
   
   [_unit, "AGM_Explosives", true] call AGM_Core_fnc_setForceWalkStatus;
   AGM_Explosives_TweakedAngle = 180;
@@ -59,7 +61,25 @@ _this spawn {
       AGM_Explosives_Setup setDir (AGM_Explosives_TweakedAngle + getDir _player);
     };
   }] call BIS_fnc_addStackedEventHandler;
+  AGM_Explosives_Setup addEventHandler ["EpeContactStart", {
+    private ["_enabled","_disable"];
+	AGM_Explosives_Setup = _this select 0;
+    _enabled = AGM_Explosives_Setup getVariable ["AGM_Enable_Place", 0];
+    if (_enabled == 1) then{
+	  call AGM_Explosives_fnc_Place_Approve;
+	};
+	_disable=0;
+	_disable
+  }];
   [localize "STR_AGM_Explosives_PlaceAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;
-  _unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler];
+  _unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {
+	_unit = call AGM_Core_fnc_player;
+    AGM_Explosives_Setup setVariable ["AGM_Enable_Place", 1]; 
+    AGM_Explosives_Setup enableSimulationGlobal true;
+    [_unit, "DefaultAction", _unit getVariable ["AGM_Explosive_Place", -1]] call AGM_Core_fnc_removeActionEventHandler;
+	call AGM_Interaction_fnc_hideMouseHint;
+	[localize "STR_AGM_Explosives_PlantAction", localize "STR_AGM_Explosives_CancelAction",localize "STR_AGM_Explosives_ScrollAction"] call AGM_Interaction_fnc_showMouseHint;
+	_unit setVariable ["AGM_Explosive_Place", [_unit, "DefaultAction", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {AGM_Explosives_Setup enableSimulationGlobal false; call AGM_Explosives_fnc_Place_Approve;}] call AGM_Core_fnc_AddActionEventHandler]; 
+  }] call AGM_Core_fnc_AddActionEventHandler];
   _unit setVariable ["AGM_Explosive_Cancel", [_unit, "MenuBack", {AGM_Explosives_pfeh_running AND !isNull (AGM_Explosives_setup)}, {call AGM_Explosives_fnc_Place_Cancel;}] call AGM_Core_fnc_AddActionEventHandler];
 };

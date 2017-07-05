@@ -55,7 +55,19 @@
       <German>Platzieren</German>
       <Spanish>Colocar</Spanish>
       <Polish>Umieść</Polish>
-      <French>Placer</French>
+      <French>Mettre</French>
+      <Czech>Položit</Czech>
+      <Italian>Piazza</Italian>
+      <Hungarian>Elhelyezés</Hungarian>
+      <Portuguese>Colocar</Portuguese>
+      <Russian>Положить</Russian>
+    </Key>
+	<Key ID="STR_AGM_Explosives_PlantAction">
+      <English>Plant</English>
+      <German>Platzieren</German>
+      <Spanish>Colocar</Spanish>
+      <Polish>Umieść</Polish>
+      <French>Poser</French>
       <Czech>Položit</Czech>
       <Italian>Piazza</Italian>
       <Hungarian>Elhelyezés</Hungarian>
