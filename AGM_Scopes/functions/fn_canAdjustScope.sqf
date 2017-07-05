@@ -23,6 +23,8 @@ _weapons = [
 
 if !(currentWeapon _unit in _weapons) exitWith {false};
 
+if (currentMuzzle _unit != currentWeapon _unit) exitWith {false};
+
 if (isNil "AGM_Scopes_Adjustment") then {
   AGM_Scopes_Adjustment = [[0,0], [0,0], [0,0]];
 };
